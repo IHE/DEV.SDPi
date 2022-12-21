@@ -1,0 +1,11 @@
+---
+disable_autonumbering: true
+feedback:
+  - active: true
+    dashboard:
+      label: New Issue
+      url: https://github.com/IHE/supplement-template/issues/new/choose
+  - active: true
+    dashboard:
+      label: Issues
+      url: https://github.com/IHE/supplement-template/issues

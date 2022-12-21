@@ -1,0 +1,5 @@
+@startuml
+agent "Client" as Client
+agent "Server" as Server
+Client -- Server : "go [domain-YY] ↓"
+@enduml
