@@ -1,0 +1,130 @@
+
+.R8012
+[sdpi_requirement#r8012,sdpi_req_level=shall,sdpi_max_occurrence=2]
+****
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the OBX-3 field to the identifier of the element in the hierarchical containment tree such as MDS, VMD, CHAN, or the actual related metric to be exported.
+
+.Notes
+[%collapsible]
+====
+NOTE: <<ref_tbl_dec_obx3_mds_mapping>>, <<ref_tbl_dec_obx3_vmd_mapping>>, <<ref_tbl_dec_obx3_chan_mapping>> and <<ref_tbl_dec_obx3_metric_mapping>> define the mapping of the SDC containment tree element to the data fields of the HL7 data type *CWE* used in the OBX-3 field.
+====
+****
+
+.R8013
+[sdpi_requirement#r8013,sdpi_req_level=shall,sdpi_max_occurrence=2]
+****
+If a private *MDC* code is used for the coding of the SDC containment tree element, the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall map an identifier of the element in the hierarchical containment tree such as MDS, VMD, CHAN, or the actual related metric as described in section <<ref_private_coding_system_note>>.
+****
+
+[#ref_tbl_dec_obx3_mds_mapping]
+.OBX-3 Observation Identifier Mapping - MDS Level
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBX-3/CWE-1
+|Identifier
+|pm:Mds+++<wbr/>+++/pm:Type+++<wbr/>+++/@Code
+|
+
+|OBX-3/CWE-2
+|Text
+|If *@Code* is an MDC code, this field contains the RefId of the MDC code.
+
+In all other cases, the field is set to the pm:Mds+++<wbr/>+++/pm:Type+++<wbr/>+++/@SymbolicCodeName.
+| Note that MDC is the default coding system if no coding system is specified.
+
+|OBX-3/CWE-3
+|Name of Coding System
+|*"MDC"* if no other coding system is specified.
+
+In all other cases, the field is set to pm:Mds+++<wbr/>+++/pm:Type+++<wbr/>+++/@CodingSystem.
+
+|Note that MDC is the default coding system if no coding system is specified.
+
+|===
+
+[#ref_tbl_dec_obx3_vmd_mapping]
+.OBX-3 Observation Identifier Mapping - VMD Level
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBX-3/CWE-1
+|Identifier
+|pm:Vmd+++<wbr/>+++/pm:Type+++<wbr/>+++/@Code
+|
+
+|OBX-3/CWE-2
+|Text
+|If *@Code* is an MDC code, this field contains the RefId of the MDC code.
+
+In all other cases, the field is set to the pm:Vmd+++<wbr/>+++/pm:Type+++<wbr/>+++/@SymbolicCodeName.
+| Note that MDC is the default coding system if no coding system is specified.
+
+|OBX-3/CWE-3
+|Name of Coding System
+|*"MDC"* if no other coding system is specified.
+
+In all other cases, the field is set to pm:Vmd+++<wbr/>+++/pm:Type+++<wbr/>+++/@CodingSystem.
+
+|Note that MDC is the default coding system if no coding system is specified.
+
+|===
+
+[#ref_tbl_dec_obx3_chan_mapping]
+.OBX-3 Observation Identifier Mapping - CHAN Level
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBX-3/CWE-1
+|Identifier
+|pm:Channel+++<wbr/>+++/pm:Type+++<wbr/>+++/@Code
+|
+
+|OBX-3/CWE-2
+|Text
+|If *@Code* is an MDC code, this field contains the RefId of the MDC code.
+
+In all other cases, the field is set to the pm:Channel+++<wbr/>+++/pm:Type+++<wbr/>+++/@SymbolicCodeName.
+| Note that MDC is the default coding system if no coding system is specified.
+
+|OBX-3/CWE-3
+|Name of Coding System
+|*"MDC"* if no other coding system is specified.
+
+In all other cases, the field is set to pm:Channel /pm:Type /@CodingSystem.
+
+|Note that MDC is the default coding system if no coding system is specified.
+
+|===
+
+[#ref_tbl_dec_obx3_metric_mapping]
+.OBX-3 Observation Identifier Mapping - Metric Level
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBX-3/CWE-1
+|Identifier
+|pm:NumericMetricDescriptor+++<wbr/>+++/pm:Type+++<wbr/>+++/@Code
+
+pm:StringMetricDescriptor+++<wbr/>+++/pm:Type+++<wbr/>+++/@Code
+
+pm:EnumStringMetricDescriptor+++<wbr/>+++/pm:Type+++<wbr/>+++/@Code
+|
+
+|OBX-3/CWE-2
+|Text
+|If *@Code* is an MDC code, this field contains the RefId of the MDC code.
+
+In all other cases, the field is set to the pm:AbstractMetricDescriptor+++<wbr/>+++/pm:Type+++<wbr/>+++/@SymbolicCodeName.
+|Note that MDC is the default coding system if no coding system is specified.
+
+|OBX-3/CWE-3
+|Name of Coding System
+|*"MDC"* if no other coding system is specified.
+
+In all other cases, the field is set to pm:AbstractMetricDescriptor+++<wbr/>+++/pm:Type+++<wbr/>+++/@CodingSystem.
+
+|Note that MDC is the default coding system if no coding system is specified.
+
+|===

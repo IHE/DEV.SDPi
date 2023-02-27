@@ -1,0 +1,72 @@
+[#vol1_clause_appendix_c_use_case_aars,sdpi_offset=7]
+
+=== Use Case Feature {var_use_case_id}: <<label_use_case_name_aars>> (<<acronym_aars>>)
+
+// NOTE:  See use case labels in document-declarations.adoc
+
+==== Narrative
+
+Mumbai General is in the process of installing an IT system which will capture alerts from their ICU devices (patient monitors, ventilators, infusion devices, etc.) for the purposes of occasional review by physicians and post-discharge analysis.  (Other related use cases could include EHR capture of alerts or alert analysis).
+
+==== Benefits
+The ability to review alerts allows clinicians to track the condition of a patient over a longer time span.  For example to see whether a medication is reducing the occurrence of specific events such as ventricular beats or tachycardia events.
+
+==== Technical View
+
+.<<label_use_case_name_aars>> (<<acronym_aars>>) -- Technical View
+
+image::../images/vol1-diagram-use-case-aars-tech-view.svg[]
+
+
+[#vol1_clause_appendix_c_use_case_aars_technical_precondition]
+==== Technical Pre-Conditions
+
+*Given* All devices communicate using a common <<acronym_md_lan>> protocol
+
+*And* At least one <<label_system_type_name_agw>> (<<acronym_agw>>) Service on the <<acronym_md_lan>>
+
+*And* At least one Alert Recording System is connected to the <<label_system_type_name_agw>> (<<acronym_agw>>) Service.
+
+*And* All devices report either a device label and/or location and/or patient ID
+
+*And* The AGW Service is associated with a specific set of device labels, and/or location(s)
+.
+
+[#vol1_clause_appendix_c_use_case_aars_scenarios]
+==== Scenarios
+
+===== Scenario: <<acronym_aars>> {var_use_case_id}.1 - New device is connected to network with AGW service
+
+*Given* the AGW Service has detected a new device in its scope
+
+*When* the AGW Service is operational
+
+*Then* the AGW Service will connect to the device and communicate alerts to the Alert Recording System
+
+===== Scenario: <<acronym_aars>> {var_use_case_id}.2 - The AGW service loses connectivity with the ICU devices
+
+*Given* the AGW Service no longer communicates with ICU devices in its scope
+
+*When* There is a communications failure
+
+*Then* the AGW will notify the Alert Recording System of the failure
+
+*Then* when the AGW regains communication with the devices it will resume reporting active alerts to the Alert Recording System and attempt to backfill any missing alerts
+
+===== Scenario: <<acronym_aars>> {var_use_case_id}.3 - The AGW service fails
+
+*Given* the AGW fails
+
+*Then* the Alert Recording System will detect a loss of communications with the AGW
+
+*Then* when the AGW Service recovers it will resume reporting active alerts to the Alert Recording System and attempt to backfill any missing alerts
+
+===== Scenario: <<acronym_aars>> {var_use_case_id}.4 - The Alert Recording System loses connectivity with the AGW
+
+*Given* the Alert Recording System can no longer communicate with the AGW
+
+*Then* the Alert Recording System will detect a loss of communications with the AGW Service
+
+*Then*  when the AGW Service regains communication with the Alert Recording System it will resume reporting active alerts to the Alert Recording System and backfill any missing alerts.
+
+

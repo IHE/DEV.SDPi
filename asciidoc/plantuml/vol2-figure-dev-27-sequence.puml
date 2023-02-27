@@ -1,0 +1,34 @@
+@startuml
+
+skinparam monochrome true
+autonumber
+
+!global $str_somds_consumer = "SOMDS Consumer"
+!global $str_somds_provider = "SOMDS Provider"
+
+participant "$str_somds_consumer" as consumer
+participant "$str_somds_provider" as provider
+
+==SDPi [DEV-27] Manage BICEPS Subscription==
+
+consumer -> provider: Subscribe(Filter)
+consumer <<-- provider: SubscribeResponse(Subscription Manager, Expiration Time)
+
+par
+    loop while subscription is running and events ensue
+        consumer <<- provider: Notification(Payload)
+    end
+else
+    loop when ExpirationTime is about to expire
+        consumer -> provider: Renew(Subscription Manager)
+        consumer <<-- provider: RenewResponse(Expiration Time)
+    end
+end
+
+alt consumer decides to quit subscription
+    consumer -> provider: Unsubscribe(Subscription Manager)
+    consumer <<-- provider: UnsubscribeResponse()
+else provider decides to quit subscription
+    consumer <<- provider: SubscriptionEnd(Subscription Manager, Status)
+end
+@enduml

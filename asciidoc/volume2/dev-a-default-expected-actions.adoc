@@ -1,0 +1,5 @@
+====== Expected Actions
+
+There are no additional or alternative expected actions other than those defined in {var_expected_actions_ref}.
+
+:!var_expected_actions_ref:

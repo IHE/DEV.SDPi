@@ -1,0 +1,125 @@
+= Service-oriented Device Point-of-care Interoperability (SDPi) Technical Framework
+:doctype: book
+// CAUTION: do not change the xrefstyle attribute as otherwise numbering will be broken
+:xrefstyle: short
+:toc-title: Contents
+:toc: left
+:toclevels: 3
+:multipage-level: 2
+:sectnums:
+:icons: font
+:imagesoutdir: images/
+:imagesdir: images/
+:docinfo: shared
+
+:ihe_supplement_sdpi_revision: 1.0.2
+:ihe_supplement_sdpi_revision_date: {localdatetime}
+:ihe_supplement_sdpi_revision_label: Draft in Preparation for Public Comment
+
+////
+
+#TODO:  David G. says "use CSS style ober blank lines"#
+
+////
+
+{empty} +
+
+[subs=attributes]
+++++
+<div class="logos">
+    <div>
+        <img src="{imagesdir}ihe-logo.svg"/>
+        <img src="{imagesdir}hl7-intl-logo.svg"/>
+    </div>
+    <div><strong>A Joint HL7-IHE Gemini Device Interoperability Project</strong></div>
+</div>
+<p style="font-size: 2.75em; text-align: center"><strong>IHE Devices</strong></p>
+
+<p style="font-size: 2.75em; text-align: center"><strong>Technical Framework Supplement</strong></p>
+
+<p style="font-size: 2.75em; text-align: center"><strong>Service-oriented Device Point-of-care</strong></p>
+
+<p style="font-size: 2.75em; text-align: center"><strong>Interoperability (SDPi)</strong></p>
+
+<p style="text-align: center">Revision {ihe_supplement_sdpi_revision} &mdash; {ihe_supplement_sdpi_revision_label}</p>
+++++
+
+{empty} +
+
+[%noheader]
+[cols="1,4"]
+[frame=none,grid=none]
+|===
+| *Date:*
+| {ihe_supplement_sdpi_revision_date}
+
+| *Author:*
+| Devices Technical Committee / DPI Program
+
+| *Email:*
+| DEV@ihe.net
+|===
+
+{empty} +
+
+*Please verify you have the most recent version of this document.*
+See https://profiles.ihe.net/DEV/[*HERE*] for Trial Implementation and Final Text versions and https://profiles.ihe.net/DEV/#1.2[*HERE*] for Public Comment versions.
+
+{empty} +
+
+// Forward declarations of common labels & acronyms & variables
+include::document-declarations.adoc[]
+
+
+[#supplement_clause_foreword,sdpi_offset=clear]
+= Foreword
+
+This is a supplement to the IHE Devices Technical Framework Revision 10.0. Each supplement undergoes a process of public comment and trial implementation before being incorporated into the volumes of the Technical Frameworks.
+
+__<For Public Comment:>__ This supplement is published on <Month XX, 201x> for Public Comment. Comments are invited and can be submitted at http://www.ihe.net/Public_Comment/#domainname. In order to be considered in development of the Trial Implementation version of the supplement, comments must be received by <Month XX, 201X>.
+
+__<For Trial Implementation:>__ This supplement is published on <Month XX, 201X> for Trial Implementation and may be available for testing at subsequent IHE Connectathons. The supplement may be amended based on the results of testing. Following successful testing it will be incorporated into the Devices Technical Framework. Comments are invited and can be submitted at http://www.ihe.net/Public_Comment/#domainname.
+
+This supplement describes changes to the existing technical framework documents.
+
+“Boxed” instructions like the sample below indicate to the Volume Editor how to integrate the relevant section(s) into the relevant Technical Framework volume.
+|===
+|__Amend section W.X by the following:__
+|===
+
+Where the amendment adds text, make the added text bold underline. Where the amendment removes text, make the removed text bold strikethrough. When entire new sections are added, introduce with editor’s instructions to “add new text” or similar, which for readability are not bolded or underlined.
+
+General information about IHE can be found at www.ihe.net.
+
+Information about the IHE Devices domain can be found at ihe.net/IHE_Domains.
+
+Information about the organization of IHE Technical Frameworks and Supplements and the process used to create them can be found at http://ihe.net/IHE_Process and http://ihe.net/Profiles.
+
+The current version of the IHE DevicesTechnical Framework can be found at http://ihe.net/Technical_Frameworks.
+
+__<Comments may be submitted on IHE Technical Framework templates any time at http://ihe.net/Templates_Public_Comments. Please enter comments/issues as soon as they are found. Do not wait until a future review cycle is announced.>__
+
+// NOTE:  The traditional IHE Supplement Table of Contents would go here, but since this supplement is being rendered as HTML with a side-bar ToC, there is no need to add it explicitly here.
+
+include::sdpi-supplement-intro.adoc[]
+
+include::sdpi-supplement-issues.adoc[]
+
+// = Volume 0 -- IHE Technical Frameworks General Introduction
+
+include::volume0/tf0-main.adoc[]
+
+// = Volume 1 -- Profiles
+
+include::volume1/tf1-main.adoc[]
+
+// = Volume 2 -- Transactions
+
+include::volume2/tf2-main.adoc[]
+
+// = Volume 3 -- Content Modules
+
+include::volume3/tf3-main.adoc[]
+
+
+

@@ -1,0 +1,120 @@
+// = Device Point-of-care Interoperability (DPI) Use Cases
+
+[appendix#vol1_appendix_c_dpi_use_cases,sdpi_offset=C]
+== Device Point-of-care Interoperability (DPI) Use Cases
+
+// C.1
+[sdpi_offset=1]
+=== General Overview of DPI Use Cases & Analysis
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+| *SDPi Supplement Version Note*: This initial section of Appendix C is mostly informative and is still being detailed.  Completion is deferred until the Public Comment version or version 1.x or later.
+It provides general background detail around how general (non-technology specific) clinical use case specifications are being utilized in this supplement.
+
+*REVIEWER QUESTION*:  Please review the intended topics and identify any additional content that should be considered.  Especialy helpful would be references to related standards and materials that would inform the approach taken in this appendix.
+|===
+
+////
+#TODO: ADD GENERAL RATIONALE FOR THIS APPENDIX, FUNCTIONAL REQUIREMENTS SOURCES, MAPPING TO PROFILE-SPECIFIC USE CASE SECTIONS, ETC.#
+////
+
+==== Rich History of Medical Device Interoperability (MDI) Use Cases
+
+The vision of plug-and-play medical device interoperability has been an active pursuit since the early 1980's, with the IEEE 1073 group's formation in those early years.  Over the 40+ years, many projects -- both industry and standards-based -- have contributed to an ever growing set of real-world use cases, and the ISO/IEEE 11073 SDC program is no different.
+
+Looking to leverage this wealth of use cases in considering SDPi, a "compendium of medical device oriented use cases" was created to facilitate referencing and use.  The use cases detailed in this appendix build on those that are captured in this document:  <<ref_ihe_pcd_sdpi_use_cases_compendium_2019>>
+
+==== Overview of Architectural & Business Systems Concepts
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+|===
+
+////
+#TODO:  Include difference between logical actors and business (real world implementation) systems#
+////
+
+==== Use Case Specification Conventions Using Cucumber/Gherkin
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  This section contains initial content that will be greatly expanded in future versions.
+|===
+
+////
+#TODO:  ADD UML MODEL FOR GHERKIN HERE + DISCUSSION#
+////
+
+Each Use Case (also called a Feature in Gherkin) is organized as follows:
+
+* *Narrative* – a description of the desired functionality from the user perspective
+* *Technical View* - graphic representation of typical business system actors utilized in this use case
+* *Technical Pre-Conditions* – any assumptions or pre-conditions
+* *Scenario(s)* – the scenarios explore both the Happy Path when everything goes according to plan and the Alternative Paths where things do not go according to plan.
+
+////
+##TODO:  Include model graphic showing relationships ...##
+////
+
+==== Use Case Requirements Modeling
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+|===
+
+////
+#TODO:  Detail how functional requirements are captured with metadata per the gherkin specification model#
+
+#TODO:  Add use case metadata strategy -- See also SDPi-P Use Case references to STAD#
+////
+
+// [mdi_use_case#use_case_stad,actors='actor_somds_provider actor_somds_consumer',figure=vol2_figure_dev_24_probe_sequence,messages='message_announce_network_presence']
+
+// FROM TF-2 DEV-24 Transaction document
+// [sdpi_transaction#transaction_dev_24,actors='actor_somds_provider actor_somds_consumer',figure=vol2_figure_dev_24_probe_sequence,messages='message_announce_network_presence']
+
+==== Application of ISO/IEC 60601-1-8 Concepts & Definitions
+
+include::tf1-ch-c-60601-1-8.adoc[]
+
+// Variables for Use Cases
+:var_use_case_id: 1
+
+// C.2  Use Case Feature: Synchronized Time Across Devices (STAD)
+:var_use_case_id: 1
+include::tf1-ch-c-use-case-stad.adoc[]
+
+// C.3  Use Case Feature: Standalone ICU Dashboard SP (SICDSP)
+:var_use_case_id: 2
+include::tf1-ch-c-use-case-sicdsp.adoc[]
+
+// C.4  Use Case Feature: Standalone ICU Dashboard MP (SICDMP)
+:var_use_case_id: 3
+include::tf1-ch-c-use-case-sicdmp.adoc[]
+
+// C.5  Use Case Feature: Device Data to Enterprise Systems (DDES)
+:var_use_case_id: 4
+include::tf1-ch-c-use-case-ddes.adoc[]
+
+// C.6  Use Case Feature: Alerts to Clinician Notification Systems (ACNS)
+:var_use_case_id: 5
+include::tf1-ch-c-use-case-acns.adoc[]
+
+// C.7  Use Case Feature: Alerts to Alert Recording Systems (AARS)
+:var_use_case_id: 6
+include::tf1-ch-c-use-case-aars.adoc[]
+
+
+
+

@@ -1,0 +1,5 @@
+====== Trigger Events
+
+There are no additional or alternative trigger events other than those defined in {var_trigger_events_ref}.
+
+:!var_trigger_events_ref:

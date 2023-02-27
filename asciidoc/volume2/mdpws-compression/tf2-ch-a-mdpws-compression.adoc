@@ -1,0 +1,48 @@
+==== MDPWS Compression Option
+
+MDPWS <<ref_ieee_11073_20702_2016>> defines EXI as the designated means to compress XML data. However, EXI is lagging in adoption. Therefore, instead of using EXI compression, it is recommended to use HTTP compression with gzip (RFC 1952) as the minimum agreement between clients and servers. One issue with that is the missing official support for HTTP compression in HTTP request messages. Request headers are allowed to include Content-Encoding, but those might not be accepted by HTTP servers.
+
+.R0005
+[sdpi_requirement#r0005,sdpi_req_level=should]
+****
+In its role as an HTTP client, a <<actor_somds_participant>> should request gzip compression by using Accept-Encoding with "gzip".
+
+.Examples
+[%collapsible]
+====
+.HTTP request header to request compression
+[source]
+----
+GET /path/to/resource HTTP/1.1
+Host: www.example.com
+Accept-Encoding: gzip
+----
+
+The client indicates gzip compression to be an accepted response encoding. Note that the server is nevertheless free to send the response without compression.
+
+.HTTP response header indicating compressed content
+[source]
+----
+HTTP/1.1 200 OK
+Date: sun, 26 June 2016 22:38:34 GMT
+Server: Apache/1.3.3.7 (Unix)  (Red-Hat/Linux)
+Last-Modified: Wed, 08 Jan 2020 23:11:55 GMT
+Accept-Ranges: bytes
+Content-Length: 438
+Connection: close
+Content-Type: text/xml; charset=UTF-8
+Content-Encoding: gzip
+----
+
+The HTTP server decided to encode the response with the gzip compression. Note that servers are not required to actually compress (e.g. due to load conditions or unknown algorithms they are entitled to answer with identity encoding).
+
+====
+****
+Unluckily, SDC makes heavy use of request payloads when delivering notifications. Hence, it is further recommended to allow for <<actor_somds_provider>>s to send compressed WS-Eventing Notification requests if a Subscribe request already included an accepted encoding.
+
+.R0006
+[sdpi_requirement#r0006,sdpi_req_level=may]
+****
+If a <<actor_somds_consumer>> includes an Accept-Encoding header field in an HTTP header in a WS-Eventing Subscribe request, the <<actor_somds_provider>> may transmit Notifications related to that subscription encoded with the encoding that was defined in the Subscribe request.
+****
+

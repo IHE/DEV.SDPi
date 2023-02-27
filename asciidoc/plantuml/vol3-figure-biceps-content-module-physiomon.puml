@@ -1,0 +1,39 @@
+@startuml
+
+skinparam monochrome true
+
+object Monitor_Mds
+Monitor_Mds : MDC_DEV_METER_PHYSIO_MULTI_PARAM_MDS
+object BP_Vmd
+BP_Vmd : MDC_DEV_METER_PRESS_BLD_VMD
+object NIBP_Channel
+NIBP_Channel : MDC_DEV_PRESS_BLD_NONINV_CHAN
+object NIBPSystolic_Metric
+NIBPSystolic_Metric : MDC_PRESS_BLD_NONINV_SYS
+NIBPSystolic_Metric : Metric unit: mmHg
+object NIBPDiastolic_Metric
+NIBPDiastolic_Metric : MDC_PRESS_BLD_NONINV_DIA
+NIBPDiastolic_Metric : Metric unit: mmHg
+object MonContexts_Context
+object MonLocContext_LocationContext
+object MonAlerts_AlertSystem
+object Beep_AlertSignal
+object PressureHigh_AlertCondition
+object DiastolicLimitLow_LimitAlertCondition
+object DiastolicLimitHigh_LimitAlertCondition
+
+Monitor_Mds o-- BP_Vmd
+BP_Vmd o-- NIBP_Channel
+NIBP_Channel o-- NIBPSystolic_Metric
+NIBP_Channel o-- NIBPDiastolic_Metric
+
+Monitor_Mds o-- MonContexts_Context
+MonContexts_Context o-- MonLocContext_LocationContext
+
+Monitor_Mds o-- MonAlerts_AlertSystem
+MonAlerts_AlertSystem o-- Beep_AlertSignal
+MonAlerts_AlertSystem o-- PressureHigh_AlertCondition
+PressureHigh_AlertCondition o-- DiastolicLimitLow_LimitAlertCondition
+PressureHigh_AlertCondition o-- DiastolicLimitHigh_LimitAlertCondition
+
+@enduml

@@ -1,0 +1,46 @@
+[#vol3_clause_gender]
+====== Gender
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*: As mentioned in the main text below, <<acronym_biceps>> does not currently provide sex and gender semantic support at the same level of detail as foundational existing and emerging standards.
+The following sex & gender harmonization policy will be taken in this and future SPDi specification versions until clear direction is available.
+
+[none]
+. *STANDARDIZATION NOTE:*  There is active work to finalize the informatics standards related to sex and gender, including within HL7, SNOMED, ISO/TC215 and in other standards development organizations .
+Once this standardization is complete, especially within HL7 FHIR and Version 2, the SDC standards and the SDPi profiles and gateway specifications will be harmonized.
+Until that time, the mappings below represent a "best effort" given the status of the underlying standards.
+
+See the related note on sex and gender in the gateway mappings specified in <<vol2_appendix_b_gateways>>.
+
+|===
+
+BICEPS does not provide means to convey the administrative gender in the pm:PatientDemographicsCoreData element.
+As nowadays the distinction between biological sex and administrative gender is an essential feature of patient demographics and required by protocols such as HL7 FHIR, this profile adds an extension to the BICEPS participant model in order to allow for a <<vol1_spec_sdpi_p_actor_somds_participant>> to provide the administrative gender in addition to the already existing biological sex (as specified in pm:PatientDemographicsCoreData/pm:Sex).
+
+The extension is based on the terminology of <<ref_hl7_fhir>>: https://hl7.org/fhir/valueset-administrative-gender.html.
+
+[sdpi_level=+1]
+====== Model
+
+The Gender XML Schema is available in <<vol3_appendix_a_xml_schemas_gender>>. <<vol3_example_extension_gender>> shows an exemplary XML instance of a <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> including the Gender extension in the state part of the MDIB.
+
+.Patient demographics core data with added gender
+[#vol3_example_extension_gender]
+====
+[source,xml]
+----
+include::../../listings/vol3-clause-biceps-content-example-gender.xml[]
+----
+====
+
+[sdpi_level=+1]
+====== Requirements
+
+.R0012
+[sdpi_requirement#r0012,sdpi_req_level=shall]
+****
+If the administrative gender of a patient described by a pm:PatientDemographicsCoreData element is available, a <<vol1_spec_sdpi_p_actor_somds_participant>> shall at least add the sdpi:Gender extension to the pm:PatientDemographicsCoreData/ext:Extension element.
+****

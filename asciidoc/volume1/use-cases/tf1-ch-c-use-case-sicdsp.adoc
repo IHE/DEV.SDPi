@@ -1,0 +1,50 @@
+[#vol1_clause_appendix_c_use_case_sicdsp,sdpi_offset=3]
+=== Use Case Feature {var_use_case_id}: <<label_use_case_name_sicdsp>> (<<acronym_sicdsp>>)
+
+// NOTE:  See use case labels in document-declarations.adoc
+
+==== Narrative
+
+Dr. Reich is in one of her patient’s ICU room checking on their status. She can view previous radiology results, electrosurgical equipment settings, patient readings such as HR, Blood Pressure, SpO2 and associated waveforms integrated on his real-time ‘Dashboard’ display.  The dashboard display can display visual alarms but does not sound alerts or provide any remote-control capabilities.  (This display can be considered an xDISsp as described in <<vol1_appendix_c_60601_1_8_concepts_for_dis_das_cdas>>.)
+
+==== Benefits
+The concept of a 'dashboard display' supports the display of data in various locations in a care facility with reduced functionality and therefore reduced risk.  By removing the requirement that the device annunciate alerts and support remote control the potential types of users is expanded improving access to the patient's data and status.
+
+==== Technical View
+
+.<<label_use_case_name_sicdsp>> (<<acronym_sicdsp>>) -- Technical View
+
+image::../images/vol1-diagram-use-case-sicdsp-tech-view.svg[]
+
+[#vol1_clause_appendix_c_use_case_sicdsp_technical_precondition]
+==== Technical Pre-Conditions
+
+*Given* All devices communicate using a common <<acronym_md_lan>> protocol
+
+*And* At least one ICU <<system_type_dashboard>> display
+
+*And* Devices in the room have already been assigned to the <<system_type_dashboard>>
+
+[#vol1_clause_appendix_c_use_case_sicdsp_scenarios]
+==== Scenarios
+
+===== Scenario: <<acronym_sicdsp>> {var_use_case_id}.1 - Devices are Accessible to the Dashboard
+
+*Given* Dashboard has detected at least one assigned accessible ICU device
+
+*When* the ICU devices are communicating on the <<acronym_md_lan>>
+
+*Then* the <<system_type_dashboard>> will display parameter, waveform, alarm, setting, imagine, etc. information from all assigned accessible devices
+
+===== Scenario: <<acronym_sicdsp>> {var_use_case_id}.2 - ICU Devices are Inaccessible to the Dashboard
+
+*Given* Dashboard cannot detect any assigned accessible ICU devices
+
+*Then* the <<system_type_dashboard>> will display an error message
+
+===== Scenario: <<acronym_sicdsp>> {var_use_case_id}.3 - One or more ICU devices become Inaccessible to the Dashboard
+
+*Given* <<system_type_dashboard>> cannot detect a previously detected assigned ICU device
+
+*Then* the <<system_type_dashboard>> will display an error message
+

@@ -1,0 +1,4 @@
+// DEV-24 Transaction Summary
+
+This transaction is used to discover and resolve all available <<vol1_spec_sdpi_p_actor_somds_provider>>s a <<vol1_spec_sdpi_p_actor_somds_consumer>> is potentially interested in.
+

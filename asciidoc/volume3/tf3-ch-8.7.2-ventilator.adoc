@@ -1,0 +1,23 @@
+
+// = Device:  Ventilator
+
+// 8.3.2
+==== Device:  Ventilator
+
+
+[%noheader]
+[cols="1"]
+|===
+| Add the following BICEPS subsection to the end of the Ventilator specification content.
+|===
+
+// 8.3.2.4
+[#vol3_clause_device_ventilator,sdpi_offset=6]
+===== SDC/BICEPS content module
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  Content for this section will be extended in SDPi 1.x and subsequent versions.  The initial content will reflect what is provided in SDPi 1.0 <<vol3_clause_device_physiological_monitor>>.
+|===

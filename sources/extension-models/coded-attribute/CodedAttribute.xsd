@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ext="http://standards.ieee.org/downloads/11073/11073-10207-2017/extension" xmlns:sdpi="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1" xmlns:pm="http://standards.ieee.org/downloads/11073/11073-10207-2017/participant" targetNamespace="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1" elementFormDefault="qualified" attributeFormDefault="unqualified" xml:lang="en">
+	<xsd:import namespace="http://standards.ieee.org/downloads/11073/11073-10207-2017/extension" schemaLocation="../ExtensionPoint.xsd"/>
+	<xsd:import namespace="http://standards.ieee.org/downloads/11073/11073-10207-2017/participant" schemaLocation="../BICEPS_ParticipantModel.xsd"/>
+	<!---->
+	<!---->
+	<!--CodedStringAttribute-->
+	<xsd:element name="CodedAttributes" type="sdpi:CodedAttributesType"/>
+	<xsd:complexType name="CodedAttributesType">
+		<xsd:sequence>
+			<xsd:element ref="sdpi:CodedStringAttribute" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="sdpi:CodedIntegerAttribute" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="sdpi:CodedDecimalAttribute" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute ref="ext:MustUnderstand" use="optional"/>
+	</xsd:complexType>
+	<!---->
+	<!---->
+	<xsd:element name="CodedStringAttribute" type="sdpi:CodedStringAttributeType">
+		<xsd:annotation>
+			<xsd:documentation>A key value pair to include string attributes of the IEEE 11073 classic domain information model that are not available from the BICEPS participant model.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="CodedStringAttributeType">
+		<xsd:annotation>
+			<xsd:documentation>Type definition of CodedStringAttribute.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="sdpi:MdcAttribute">
+				<xsd:annotation>
+					<xsd:documentation>Key of the key value pair. Describes the meaning of Value.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Value" type="xsd:string">
+				<xsd:annotation>
+					<xsd:documentation>Value (user data) of the key value pair.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!---->
+	<!---->
+	<!--CodedIntegerAttribute-->
+	<xsd:element name="CodedIntegerAttribute" type="sdpi:CodedIntegerAttributeType">
+		<xsd:annotation>
+			<xsd:documentation>A key value pair to include integer attributes of the IEEE 11073 classic domain information model that are not available from the BICEPS participant model.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="CodedIntegerAttributeType">
+		<xsd:annotation>
+			<xsd:documentation>Type definition of CodedIntegerAttribute.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="sdpi:MdcAttribute">
+				<xsd:annotation>
+					<xsd:documentation>Key of the key value pair. Describes the meaning of Value.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Value" type="xsd:integer">
+				<xsd:annotation>
+					<xsd:documentation>Value (user data) of the key value pair.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!---->
+	<!---->
+	<!--CodedDecimalAttribute-->
+	<xsd:element name="CodedDecimalAttribute" type="sdpi:CodedDecimalAttributeType">
+		<xsd:annotation>
+			<xsd:documentation>A key value pair to include decimal attributes of the IEEE 11073 classic domain information model that are not available from the BICEPS participant model.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="CodedDecimalAttributeType">
+		<xsd:annotation>
+			<xsd:documentation>Type definition of CodedDecimalAttribute.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="sdpi:MdcAttribute">
+				<xsd:annotation>
+					<xsd:documentation>Key of the key value pair. Describes the meaning of Value.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Value" type="xsd:decimal">
+				<xsd:annotation>
+					<xsd:documentation>Value (user data) of the key value pair.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!---->
+	<!---->
+	<xsd:element name="MdcAttribute" type="sdpi:MdcAttributeType">
+		<xsd:annotation>
+			<xsd:documentation>Specifies the concept of the key in a key value pair as laid out by coded attributes.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="MdcAttributeType">
+		<xsd:annotation>
+			<xsd:documentation>Type definition of MdcAttribute.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Code" type="pm:CodeIdentifier" use="required"/>
+		<xsd:attribute name="CodingSystem" type="xsd:anyURI" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>The coding system of the this coded attribute. The implied value is "urn:oid:1.3.111.2.11073.10101.1".</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="CodingSystemVersion" type="xsd:string" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>CodingSystemVersion can be used to discriminate between different versions of a coding system. CodingSystemVersion is an optional value and can be omitted in cases where a coding system is backwards compatible or CodingSystem includes versioning information.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="SymbolicCodeName" type="pm:SymbolicCodeName" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>If present, SymbolicCodeName is an alternative representation that can be used to perform a plausibility check against Code.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+</xsd:schema>

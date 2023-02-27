@@ -1,0 +1,61 @@
+[#ref_private_coding_system_note]
+==== Private MDC Codes Consideration
+The default coding system utilized in SDC is *"MDC"* (Medical Device Communications) also known as *"ISO/IEEE 11073-10101"* nomenclature.
+
+In addition to the standard codes, *MDC* defines private code ranges that can be used by medical device vendors for defining their own codes, for example, for concepts for which standard codes do not exist. Private codes should be avoided whenever possible since this undermines interoperability.
+
+Coded elements in SDC using *MDC* private codes require also to contain a *pm:Translation* element that defines the vendor-specific coding system.
+
+Please refer to <<ref_ieee_11073_10700_2022>> *TR1358* for further information.
+
+The following example uses the SDC *pm:Type* to demonstrate the mapping of private MDC codes.
+
+[#ref_tbl_private_code_mapping]
+.Private Code Mapping (CWE data type example)
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|CWE-1
+|Identifier
+|pm:Type+++<wbr/>+++/@Code
+| This attribute contains the private *MDC* code.
+
+|CWE-2
+|Text
+|If available: pm:Type+++<wbr/>+++/@SymbolicCodeName, 
+otherwise: "*MDC_PRIVATE_*<CWE-1>"
+|If pm:Type+++<wbr/>+++/@SymbolicCodeName is available for a private code, this value is used. Otherwise, the field is required to be set to a private RefId that consists of the prefix *"MDC_PRIVATE_"* plus the private code defined in CWE-1.
+
+|CWE-3
+|Name of Coding System
+|
+|Set to coding system *"MDC"*.
+
+|CWE-4
+|Alternate Identifier
+|pm:Type+++<wbr/>+++/pm:Translation+++<wbr/>+++/@Code
+|This code is required to be identical with the *pm:Type/@Code* attribute.
+
+|CWE-6
+|Name of Alternate Coding System
+|pm:Type+++<wbr/>+++/pm:Translation+++<wbr/>+++/@CodingSystem
+|This attribute specifies the vendor-specific or local coding system that has defined the private *MDC* code.
+
+|CWE-7
+|Coding System Version ID
+|pm:Type+++<wbr/>+++/@CodingSystemVersion
+|
+
+|CWE-8
+|Alternate Coding System Version ID
+|pm:Type+++<wbr/>+++/pm:Translation+++<wbr/>+++/@CodingSystemVersion
+|
+
+|===
+
+.MDC Private Code Mapping Output
+====
+123455\^MDC_PRIVATE_123455^MDC\^123455^^urn:oid:1.3.6.1.4.1.1234.2
+
+123455\^MDC_PRIVATE_123455^MDC\^123455^^99PHL
+====

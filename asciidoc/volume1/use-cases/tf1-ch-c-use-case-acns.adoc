@@ -1,0 +1,70 @@
+[#vol1_clause_appendix_c_use_case_acns,sdpi_offset=6]
+=== Use Case Feature {var_use_case_id}: <<label_use_case_name_acns>> (<<acronym_acns>>)
+
+// NOTE:  See use case labels in document-declarations.adoc
+
+==== Narrative
+
+Bonjour Hospital is in the process of installing a nurse alert notification system which will communicate alerts from the ICU devices (patient monitors, ventilators, infusion devices, etc.) directly to nurse devices such as pagers or smartphones.  Bobby Thornton is responsible for integrating data from their ICU devices with the alert notification system.  Once they are done, the alerts from the devices will be forwarded by the gateway to the nurse devices for viewing in a timely manner.
+
+==== Benefits
+The ability of the system to share alert events directly with the responsible nurse allows that nurse to be aware of issues with the patient without being next to or near the patient.  It is also the first step in implementing a Quiet Hospital or Silent Hospital approach where alerts are not signalled at the patient bedside thereby reducing the amount of noise that the patient is subjected to and improving their ability to recuperate.
+
+==== Technical View
+
+.<<label_use_case_name_acns>> (<<acronym_acns>>) -- Technical View
+
+image::../images/vol1-diagram-use-case-acns-tech-view.svg[]
+
+[#vol1_clause_appendix_c_use_case_acns_technical_precondition]
+==== Technical Pre-Conditions
+
+*Given* All devices communicate using a common <<acronym_md_lan>> protocol
+
+*And* At least one Alert <<system_type_device_gateway>> (AGW) Service on the <<acronym_md_lan>> network
+
+*And* At least one <<system_type_clinical_notification_system>> is connected to the AGW Service.
+
+*And* All devices report either a device label and/or location and/or patient ID
+
+*And* The AGW Service is associated with a specific set of device labels, and/or location(s) (Scope)
+
+
+[#vol1_clause_appendix_c_use_case_acns_scenarios]
+==== Scenarios
+
+===== Scenario: <<acronym_acns>> {var_use_case_id}.1 - New device is connected to network with AGW service
+
+*Given* the AGW Service has detected a new device in its scope
+
+*When* the AGW Service is operational
+
+*Then* the AGW Service will connect to the device and communicate alerts to the Clinician Notification System
+
+===== Scenario: <<acronym_acns>> {var_use_case_id}.2 - The AGW service loses connectivity with the ICU devices
+
+*Given* the AGW Service no longer communicates with ICU devices in its scope
+
+*When* There is a communications failure
+
+*Then* the AGW Service will notify the Clinician Notification System of the failure
+
+*Then* when the AGW Service regains communication with the devices it will resume reporting active alerts to the Clinician Notification System
+
+===== Scenario: <<acronym_acns>> {var_use_case_id}.3 - The AGW service fails
+
+*Given* the AGW Service fails
+
+*Then* the Clinician Notification System will detect a loss of communications with the AGW Service
+
+*Then* when the AGW Service recovers it will resume reporting active alerts to the Clinician Notification System
+
+===== Scenario: <<acronym_acns>> {var_use_case_id}.4 - The Clinician Notification System loses connectivity with the AGW
+
+*Given* the Clinician Notification System can no longer communicate with the AGW Service
+
+*Then* the Clinician Notification System will detect a loss of communications with the AGW Service
+
+*Then*  when connectivity recovers, the Clinician Notification System will resume reporting active alerts
+
+

@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1041.3334"
+   height="531.33331"
+   overflow="hidden"
+   version="1.1"
+   id="svg181"
+   sodipodi:docname="vol1-diagram-sdpi-a-actor.svg"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview183"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     fit-margin-top="15"
+     fit-margin-left="15"
+     fit-margin-right="15"
+     fit-margin-bottom="15"
+     inkscape:zoom="0.8609375"
+     inkscape:cx="519.78221"
+     inkscape:cy="264.24682"
+     inkscape:window-width="1620"
+     inkscape:window-height="1058"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g179" />
+  <defs
+     id="defs5">
+    <clipPath
+       id="clip0">
+      <rect
+         x="0"
+         y="0"
+         width="1280"
+         height="720"
+         id="rect2" />
+    </clipPath>
+  </defs>
+  <g
+     clip-path="url(#clip0)"
+     id="g179"
+     transform="translate(-119.83333,-94.833335)">
+    <rect
+       style="fill:#ffffff"
+       id="rect229"
+       width="1089.51"
+       height="570.30853"
+       x="97.764366"
+       y="77.410469" />
+    <rect
+       x="162.5"
+       y="468.5"
+       width="142"
+       height="121"
+       stroke="#000000"
+       stroke-width="0.666667"
+       stroke-miterlimit="8"
+       fill="#ffffff"
+       id="rect9" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="24px"
+       transform="translate(195.317,522)"
+       id="text11">SOMDS</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="24px"
+       transform="translate(190.67,551)"
+       id="text13">Provider</text>
+    <rect
+       x="304.5"
+       y="468.5"
+       width="161"
+       height="121"
+       stroke="#000000"
+       stroke-width="0.666667"
+       stroke-miterlimit="8"
+       fill="#ffffff"
+       id="rect15" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="24px"
+       transform="translate(346.815,507)"
+       id="text17">SOMDS</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="24px"
+       transform="translate(317.389,536)"
+       id="text19">Medical Alert</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="24px"
+       transform="translate(342.169,565)"
+       id="text21">Provider</text>
+    <rect
+       x="162.5"
+       y="123.5"
+       width="141"
+       height="122"
+       stroke="#000000"
+       stroke-width="0.666667"
+       stroke-miterlimit="8"
+       fill="#ffffff"
+       id="rect23" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="24px"
+       transform="translate(195.123,177)"
+       id="text25">SOMDS</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="24px"
+       transform="translate(182.29,206)"
+       id="text27">Consumer</text>
+    <rect
+       x="303.5"
+       y="123.5"
+       width="161"
+       height="122"
+       stroke="#000000"
+       stroke-width="0.666667"
+       stroke-miterlimit="8"
+       fill="#ffffff"
+       id="rect29" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="24px"
+       transform="translate(346.341,163)"
+       id="text31">SOMDS</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="24px"
+       transform="translate(316.914,192)"
+       id="text33">Medical Alert</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="24px"
+       transform="translate(333.507,221)"
+       id="text35">Consumer</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(165.643,271)"
+       id="text37">DEV</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(197.643,271)"
+       id="text39">-</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(203.309,271)"
+       id="text41">38 Establish</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(165.643,294)"
+       id="text43">Medical Alert Exchange</text>
+    <path
+       d="M 1,-4.70969e-7 1.0001,216.25 H -0.999898 L -1,4.70969e-7 Z M 4.0001,214.917 l -3.999995013,8 -4.000004987,-8 z"
+       transform="matrix(-1,0,0,1,373,245)"
+       id="path45" />
+    <path
+       d="M 1,-4.73805e-7 1.0001,214.916 H -0.999898 L -1,4.73805e-7 Z M 4.0001,213.582 l -3.999995013,8 -4.000004987,-8 z"
+       transform="matrix(1,0,0,-1,394,466.582)"
+       id="path47" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(165.643,379)"
+       id="text49">DEV</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(197.643,379)"
+       id="text51">-</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(203.309,379)"
+       id="text53">41 Manage Medical</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(165.643,402)"
+       id="text55">Alert Delegation</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(411.085,306)"
+       id="text57">DEV</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(443.085,306)"
+       id="text59">-</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(448.751,306)"
+       id="text61">39 Publish</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(411.085,329)"
+       id="text63">Medical Alert Update</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(633.801,549)"
+       id="text65">DEV</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(665.801,549)"
+       id="text67">-</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(671.468,549)"
+       id="text69">39</text>
+    <path
+       d="M 6.42258e-7,-1 156.798,-0.999899 V 1.0001 L -6.42258e-7,1 Z M 155.465,-3.9999 l 8,4.000004987 -8,3.999995013 z"
+       transform="matrix(-1,0,0,1,751.465,511)"
+       id="path71" />
+    <path
+       d="M 0.001885,-0.999998 133.299,-0.748733 133.295,1.25126 -0.001885,0.999998 Z M 131.971,-3.75124 l 7.993,4.015072 -8.008,3.984908 z"
+       transform="matrix(1,0,0,-1,589,527.264)"
+       id="path73" />
+    <rect
+       x="970.5"
+       y="447.5"
+       width="175"
+       height="100"
+       stroke="#000000"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       stroke-dasharray="5.33333, 4"
+       fill="none"
+       id="rect75" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(1011.18,504)"
+       id="text77">DEV ACM</text>
+    <rect
+       x="729.5"
+       y="444.5"
+       width="161"
+       height="100"
+       stroke="#000000"
+       stroke-width="0.666667"
+       stroke-miterlimit="8"
+       fill="#ffffff"
+       id="rect79" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="24px"
+       transform="translate(771.837,488)"
+       id="text81">SOMDS</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="24px"
+       transform="translate(739.057,517)"
+       id="text83">ACM Gateway</text>
+    <rect
+       x="729.5"
+       y="545.5"
+       width="161"
+       height="65"
+       stroke="#000000"
+       stroke-width="0.666667"
+       stroke-miterlimit="8"
+       fill="#ffffff"
+       id="rect85" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="24px"
+       transform="translate(755.948,571)"
+       id="text87">SOMDS V2</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="24px"
+       transform="translate(765.781,600)"
+       id="text89">Gateway</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(410.638,382)"
+       id="text91">DEV</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(442.638,382)"
+       id="text93">-</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(448.305,382)"
+       id="text95">42 Delegate</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(410.638,405)"
+       id="text97">Medical Alert</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(165.643,325)"
+       id="text99">DEV</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(197.643,325)"
+       id="text101">-</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(203.309,325)"
+       id="text103">40 Retrieve Medical</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(165.643,348)"
+       id="text105">Alert Status</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(633.707,466)"
+       id="text107">DEV</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(665.707,466)"
+       id="text109">-</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(671.374,466)"
+       id="text111">38</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(165.642,433)"
+       id="text113">DEV</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(197.642,433)"
+       id="text115">-</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(203.309,433)"
+       id="text117">43 Update Alert</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(165.642,456)"
+       id="text119">Acknowledgement Status</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(633.707,486)"
+       id="text121">DEV</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(665.707,486)"
+       id="text123">-</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(671.374,486)"
+       id="text125">40</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(633.707,503)"
+       id="text127">DEV</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(665.707,503)"
+       id="text129">-</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(671.374,503)"
+       id="text131">43</text>
+    <rect
+       x="135.5"
+       y="110.5"
+       width="454"
+       height="500"
+       stroke="#000000"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       stroke-dasharray="5.33333, 4"
+       fill="none"
+       id="rect133" />
+    <path
+       d="m 890,475 h 73.386 v 2 H 890 Z m 72.053,-3 8,4 -8,4 z"
+       id="path135" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(902.69,443)"
+       id="text137">DEV</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(934.69,443)"
+       id="text139">-</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(940.356,443)"
+       id="text141">04</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(897.023,466)"
+       id="text143">(PCD</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(934.523,466)"
+       id="text145">-</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(940.19,466)"
+       id="text147">04</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(959.19,466)"
+       id="text149">)</text>
+    <path
+       d="M 0.0131857,-0.999913 73.3998,-0.0321743 73.3735,1.96765 -0.0131857,0.999913 Z M 72.1061,-3.04949 l 7.9466,4.10513 -8.052,3.89417 z"
+       transform="matrix(-1,0,0,1,970.053,497)"
+       id="path151" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(901.611,520)"
+       id="text153">DEV</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(933.611,520)"
+       id="text155">-</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(939.278,520)"
+       id="text157">04</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(901.611,538)"
+       id="text159">DEV</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(933.611,538)"
+       id="text161">-</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(939.278,538)"
+       id="text163">05</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(897.112,561)"
+       id="text165">(PCD</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(934.612,561)"
+       id="text167">-</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(940.279,561)"
+       id="text169">04</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(902.7,578)"
+       id="text171">PCD</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(934.367,578)"
+       id="text173">-</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(940.033,578)"
+       id="text175">05</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="19px"
+       transform="translate(959.033,578)"
+       id="text177">)</text>
+  </g>
+</svg>

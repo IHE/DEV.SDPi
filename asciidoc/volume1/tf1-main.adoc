@@ -1,0 +1,29 @@
+[#vol1_clause_profiles, sdpi_volume_caption=1]
+= Volume 1 -- Profiles
+
+// == Profiles
+
+// 2.
+include::tf1-ch-2-overview.adoc[]
+
+// 10.
+include::tf1-ch-10-sdpi-p.adoc[]
+
+// 11.
+include::tf1-ch-11-sdpi-r.adoc[]
+
+// 12.
+include::tf1-ch-12-sdpi-a.adoc[]
+
+// 13.
+include::tf1-ch-13-sdpi-xc.adoc[]
+
+// Appendix A
+include::tf1-ch-a-requirements-interoperability.adoc[]
+
+// Appendix B
+include::tf1-ch-b-ref-standards-conformance.adoc[]
+
+// Appendix C
+include::use-cases/tf1-ch-c-use-cases.adoc[]
+

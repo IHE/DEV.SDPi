@@ -1,0 +1,138 @@
+
+[appendix#vol1_appendix_b_references,sdpi_offset=B]
+== References
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+| *SDPi Supplement Version Note*: The inclusion of a References appendix is unique for IHE Technical Framework specifications.
+Typically, referenced standards sections are distributed throughout the specifications where appropriate; however, standards from other organizations (e.g., IEEE, ISO, IEC) typically have a "Normative References" clause and when desired a "Bibliography" clause.
+Also, integration of explicit standards' <<term_implementation_conformance_statement>> specifications (e.g., <<ref_ieee_11073_10207_2017>> <<acronym_ics>> tables) is unique, but needed to support requirements interoperability.
+
+Ultimately, the content of this appendix may be rearranged and even relocated; however, for early versions of the SDPi supplement, it has proven helpful, and even of critical importance and value.
+|===
+
+// Appendix B.x
+[bibliography]
+=== Referenced Standards
+
+* [[[ref_aami_2700_1_2019,AAMI 2700-1:2019]]]  AAMI 2700-1:2019  Medical Devices And Medical Systems - Essential Safety And Performance Requirements For Equipment Comprising The Patient-Centric Integrated Clinical Environment (ICE) - Part 1: General Requirements And Conceptual Model, available at https://webstore.ansi.org/Standards/AAMI/ansiaami27002019[ANSI/AAMI web store].
+
+* [[[ref_hl7_fhir,HL7 FHIR]]]  HL7^&#174;^ Fast Healthcare Interoperability Resources (FHIR^&#174;^), available at http://hl7.org/fhir/[hl7.org/fhir/].
+
+* [[[ref_hl7_fhir_pocd_ig,HL7 FHIR Point-of-Care Device Implementation Guide]]] HL7 FHIR Point-of-Care Device Implementation Guide, drafts available on the https://confluence.hl7.org/display/DOF/Devices+On+FHIR[Devices on FHIR project page], and a continuous build version at http://build.fhir.org/ig/HL7/uv-pocd/[Point-of-Care Device Implementation Guide web page].
+
+* [[[ref_hl7_v2,HL7 V2]]] HL7^&#174;^ Version 2 (V2), available at https://www.hl7.org/implement/standards/product_brief.cfm?product_id=185[HL7 Version 2 Product Suite web page].
+
+* [[[ref_iec_60601_1_8_2020,IEC 60601-1-8:2020]]], IEC 60601-1-8:2006/AMD2:2020, Medical electrical equipment — Part 1-8: General requirements for basic safety and essential performance — Collateral standard: General requirements, tests and guidance for alarm systems in medical electrical equipment and medical electrical systems; Amendment 1:2020, and Amendment 2:2020. available at https://webstore.iec.ch/publication/59648[IEC Webstore] and the https://www.iso.org/standard/41986.html[ISO standards store].
+
+* [[[ref_ieee_11073_10101_2020,IEEE 11073-10101:2020]]] IEEE 11073-10101™ International Standard - Health informatics--Device interoperability--Part 10101:Point-of-care medical device communication--Nomenclature.  Available at hhttps://standards.ieee.org/ieee/11073-10101/10343/[IEEE online standards store].
+
+* [[[ref_ieee_11073_10201_2004,IEEE 11073-10201:2004]]] IEEE 11073-10201™ International Standard - Health informatics--Device interoperability--Part 10201:Point-of-care medical device communication--Domain information model.  Note this was updated in 2020.  Available at https://standards.ieee.org/ieee/11073-10201/10263/[IEEE online standards store].
+
+* [[[ref_ieee_11073_10207_2017,ISO/IEEE 11073-10207:2017]]] ISO/IEEE 11073-10207-2017, Health informatics — Point-of-care medical device communication — Part 10207: Domain Information and Service Model for Service-Oriented Point-of-Care Medical Device Communication, 2017-12, available at https://standards.ieee.org/ieee/11073-10207/6032 footnote:ieee_permission[]
+
+* [[[ref_ieee_11073_10700_2022,IEEE 11073-10700:2022]]] IEEE P11073-10700™/D7 Draft Standard for Health Informatics – Device Interoperability – Part 10700: Point-of-Care Medical Device Communication – Standard for Base Requirements for Participants in a Service-Oriented Device Connectivity (SDC) System.
+
+* [[[ref_ieee_11073_10701_2022,IEEE 11073-10701:2022]]] IEEE P11073-10701™/D4 Draft Standard for Health Informatics – Device Interoperability – Part 10701: Point-of-Care Medical Device Communication - Metric Provisioning by Participants in a Service-Oriented Device Connectivity (SDC) System
+
+* [[[ref_ieee_11073_10702_202x,IEEE 11073-10702:202x]]] IEEE P11073-10702™/D1 Draft Standard for Health Informatics – Device Interoperability – Part 10702: Point-of-Care Medical Device Communication – Alert Provisioning by Participants in a Service-Oriented Device Connectivity (SDC) System
+
+* [[[ref_ieee_11073_10703_202x,IEEE 11073-10703:202x]]] IEEE P11073-10703™/Draft Standard for Health Informatics – Device Interoperability – Part 10703: Point-of-Care Medical Device Communication – External Control by Participants in a Service-Oriented Device Connectivity (SDC) System, in development.
+
+* [[[ref_ieee_11073_20701_2018,ISO/IEEE 11073-20701:2018]]] ISO/IEEE 11073-20701-2018, Health informatics — Point-of-care medical device communication — Part 20701: Service-Oriented Medical Device Exchange Architecture and Protocol Binding, 2018-09, available at https://standards.ieee.org/ieee/11073-20701/6059
+
+* [[[ref_ieee_11073_20702_2016,ISO/IEEE 11073-20702:2016]]] ISO/IEEE 11073-20702-2016, Health informatics — Point-of-care medical device communication — Part 20702: Medical Devices Communication Profile for Web Services, 2016-09, available at https://standards.ieee.org/ieee/11073-20702/6034
+
+* [[[ref_iec_80001_1_2021,ISO/IEC 80001-1:2021]]], IEC 80001-1:2021 Application of risk management for IT-networks incorporating medical devices — Part 1: Safety, effectiveness and security in the implementation and use of connected medical devices or connected health software.  Available at https://webstore.iec.ch/publication/34263[IEC Webstore] and https://www.iso.org/standard/72026.html[ISO standards store].
+
+* [[[ref_iso_81001_1_2021,ISO/IEC 81001-1:2021]]], ISO 81001-1:2021  Health software and health IT systems safety, effectiveness and security — Part 1: Principles and concepts.  Availabe at https://www.iso.org/standard/71538.html[ISO standards store] and https://webstore.iec.ch/publication/34286[IEC Webstore].
+
+* [[[ref_ihe_pcd_tf_1_2019,IHE PCD TF-1:2019]]] IHE Patient Care Device Technical Framework, Vol. 1, available at https://www.ihe.net/uploadedFiles/Documents/PCD/IHE_PCD_TF_Vol1.pdf.
+
+* [[[ref_ihe_pcd_tf_2_2019,IHE PCD TF-2:2019]]] IHE Patient Care Device Technical Framework, Vol. 2, available at https://www.ihe.net/uploadedFiles/Documents/PCD/IHE_PCD_TF_Vol2.pdf.
+
+* [[[ref_ihe_pcd_tf_3_2019,IHE PCD TF-3:2019]]] IHE Patient Care Device Technical Framework, Vol. 3, available at https://www.ihe.net/uploadedFiles/Documents/PCD/IHE_PCD_TF_Vol3.pdf.
+
+* [[[ref_rfc_3986, RFC 3986]]] T. Berners-Lee et al., RFC 3986, Uniform Resource Identifier (URI): Generic Syntax, January 2005, available at https://www.rfc-editor.org/rfc/rfc3986
+
+* [[[ref_oasis_dpws_2009,OASIS DPWS:2009]]] OASIS Standard, Devices Profile for Web Services Version 1.1, OASIS Standard, 1 July 2009, available at http://docs.oasis-open.org/ws-dd/dpws/wsdd-dpws-1.1-spec.html
+
+* [[[ref_oasis_soap_over_udp_v1_1, OASIS SOAP-over-UDP Version 1.1]]] OASIS Standard, SOAP-over-UDP Version 1.1, July 2009, available at http://docs.oasis-open.org/ws-dd/soapoverudp/1.1/os/wsdd-soapoverudp-1.1-spec-os.docx.
+
+* [[[ref_oasis_ws_discovery_2009,OASIS WS-Discovery:2009]]] OASIS Standard, Web Services Dynamic Discovery (WS-Discovery) Version 1.1, OASIS Standard, 1 July 2009, available at http://docs.oasis-open.org/ws-dd/discovery/1.1/wsdd-discovery-1.1-spec.html
+
+* [[[ref_wc3_ws_transfer_2006,WC3 Standard, WS-Transfer:2006]]] WC3 Web Services Transfer (WS-Transfer), W3C Standard, 27 September 2006, available at https://www.w3.org/Submission/WS-Transfer/
+
+// Appendix B.x
+[#vol1_appendix_b_referenced_standards_conformance]
+=== Referenced Standards Conformance
+
+// Appendix B.x
+[sdpi_offset=1]
+==== Mapping Foundational Standard Requirements to SDPi Constructs
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+|===
+
+////
+#TODO:  Add RI overview & spec / styleguide for how requirements from ICS tables and similar are mapped to where they are satisfied + a link / reference to the general discussion in TF-1 Appendix A and the Referenced Standards model for RI#
+////
+
+// Appendix B.x
+==== Overview of Standards Conformity Statements
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+|===
+
+////
+#TODO:  Provide a general overview of the topic, including some standards that provide Conformity statements, ICS tables, etc., and those that are moot on the topic - and how all of this is handled in this appendix and TF specification#
+////
+
+// ISO/IEEE 11073-10207:2017 ICS
+
+include::conformance-statements/tf1-ch-c-conformance-statement-ieee-11073-10207-2017.adoc[]
+
+// Appendix B.x
+=== Bibliography
+
+In addition to Referenced Standards, which include normative requirements and capabilities that this technical framework utilizes, there are other standards, specifications, publications, presentations, materials, etc. that have proven valuable in both developing and understanding the framework's content.  This list identifies those items, including many of which are referenced throughout the specifications.
+
+[bibliography]
+==== Media (non-standards) References
+
+* [[[ref_iso_81001_temple,ISO 81001-1 "The Temple"]]], ISO/IEC 81001-1 Figure 1 "The Temple" Diagram, Copyright &#169; 2019 NHS Digital, licensed via Wikimedia Commons, http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3[Greg Wye, NHS Digital, OGL 3], available at https://81001.org/page/Framework[81001.org Framework].
+
+
+[bibliography]
+==== Standards & Publications
+
+* [[[ref_ihe_pcd_sdpi_use_cases_compendium_2019,IHE PCD SDPi Use Cases Compendium:2019]]] IHE Patient Care Devices (PCD) Compendium of Medical Device Oriented Use Cases, Companion to the "Service-oriented Device Point-of-Care Interoperability (SDPi)" White Paper, Revision 1.1, November 1, 2019.  Available at https://profiles.ihe.net/DEV/[profiles.ihe.net/DEV/].
+
+* [[[ref_ihe_pcd_sdpi_white_paper_2019,IHE PCD SDPi White Paper:2019]]] IHE Patient Care Devices (PCD) Service-oriented Device Point-of-Care Interoperability (SDPi) White Paper, Revision 1.1, November 1, 2019.  Available at https://profiles.ihe.net/DEV/[profiles.ihe.net/DEV/].
+
+* [[[ref_iso_iec_14977_1996, ISO/IEC 14977:1996]]] ISO/IEC 14977, Information technology - Syntactic
+metalanguage - Extended BNF, 15 December 1996, available at https://standards.iso.org/ittf/PubliclyAvailableStandards/s026153_ISO_IEC_14977_1996(E).zip
+
+* [[[ref_omg_sysml_2_0_intro_graphical_model,OMG SysML ^&#174;^ Intro-Graphical Notation 2.0]]]  OMG Systems Modeling Language&#8482;  (SysML^&#174;^), Version 2.0, Introduction to the Graphical Model, Object Management Group (OMG) standard.  Available at https://github.com/Systems-Modeling/SysML-v2-Release/tree/master/doc[github.com/Systems-Modeling/SysML-v2-Release/doc/]
+
+* [[[ref_omg_sysml_2_0_spec,OMG SysML ^&#174;^ 2.0]]]  OMG Systems Modeling Language &#8482; (SysML^&#174;^), Version 2.0, Object Management Group (OMG) specification.  Available at https://github.com/Systems-Modeling/SysML-v2-Release/tree/master/doc[github.com/Systems-Modeling/SysML-v2-Release/doc/]
+* [[[ref_gender_harmony_project, HL7-GENDER]]] HL7 gender harmony project, available at https://confluence.hl7.org/display/VOC/The+Gender+Harmony+Project
+
+
+[bibliography]
+==== Presentations
+
+* [[[ref_ihe_eu_experience_2021_presentation_cooper_schlichting,IHE EU Experience-2021 IHE CA for MedTech Solutions]]], "IHE & IHE Catalyst: Advancing Interoperable MedTec Solutions with "Regulatory Submission Ready" Conformity Assessment", presentation by Todd Cooper and Dr. Stefan Schlichting, available at https://connectathon.ihe-europe.net/experience-sessions-2021-presentations[IHE Europe Experience 2021 Presentations web page].
+
+
+

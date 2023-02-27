@@ -1,0 +1,20 @@
+[appendix#vol2_appendix_b_gateways,sdpi_offset=B]
+== Gateways (Normative)
+
+//NOTE: This file integrates all the Volume 2 / Appendix B Gateway profiling and examples. +
+//{empty} +
+//__This file is currently in the volume2 folder and integrate the transaction specific MDPWS content from the transaction subfolders. __
+
+[sdpi_offset=1]
+=== Overview SDC Gateways
+
+// Gateway:  HL7 V2 General Mappings
+include::gateways/tf2-ch-b-gateway-v2.adoc[]
+
+// Gateway:  IHE DEV / PCD DEC Profile
+include::gateways/tf2-ch-b-gateway-dec.adoc[]
+
+// Gateway:  IHE DEV / PCD ACM Profile
+include::gateways/tf2-ch-b-gateway-acm.adoc[]
+
+

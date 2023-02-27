@@ -1,0 +1,270 @@
+
+:var_transaction_id: DEV-27
+
+:var_label_dev_27_message_subscribe: Subscribe
+:var_label_dev_27_message_subscribe_response: SubscribeResponse
+:var_label_dev_27_message_notification: Notification
+:var_label_dev_27_message_renew: Renew
+:var_label_dev_27_message_renew_response: RenewResponse
+:var_label_dev_27_message_unsubscribe: Unsubscribe
+:var_label_dev_27_message_unsubscribe_response: UnsubscribeResponse
+:var_label_dev_27_message_subscription_end: SubscriptionEnd
+
+//reset|+1|off
+[#vol2_clause_dev_27,sdpi_offset=27]
+=== Manage BICEPS Subscription [{var_transaction_id}]
+
+==== Scope
+
+include::tf2-dev-27-summary.adoc[]
+
+==== Actor Roles
+
+.Actor Roles {var_transaction_id}
+[cols="1,2"]
+|===
+|Actor |Roles
+
+|<<actor_somds_consumer>>
+|Initiates communication by first subscribing to a <<actor_somds_provider>> by sending a <<vol2_clause_dev_27_message_subscribe, {var_label_dev_27_message_subscribe}>> message. While the subscription is running, the subscription is kept alive by sending <<vol2_clause_dev_27_message_renew, {var_label_dev_27_message_renew}>> messages and receiving <<vol2_clause_dev_27_message_notification, {var_label_dev_27_message_notification}>> messages.
+
+Finally, the <<actor_somds_consumer>> unsubscribes from a <<actor_somds_provider>> by sending an <<vol2_clause_dev_27_message_unsubscribe, {var_label_dev_27_message_unsubscribe}>> message.
+
+|<<actor_somds_provider>>
+|Listens for <<vol2_clause_dev_27_message_subscribe, {var_label_dev_27_message_subscribe}>>, <<vol2_clause_dev_27_message_renew, {var_label_dev_27_message_renew}>> and <<vol2_clause_dev_27_message_unsubscribe, {var_label_dev_27_message_unsubscribe}>> messages, which it responds to with <<vol2_clause_dev_27_message_subscribe_response, {var_label_dev_27_message_subscribe_response}>>, <<vol2_clause_dev_27_message_renew_response, {var_label_dev_27_message_renew_response}>> or <<vol2_clause_dev_27_message_unsubscribe_response, {var_label_dev_27_message_unsubscribe_response}>> messages respectively.
+
+While a subscription is running, the <<actor_somds_provider>> delivers <<vol2_clause_dev_27_message_notification, {var_label_dev_27_message_notification}>> messages.
+
+When at some point the subscription has to be ended, the <<actor_somds_provider>> sends a <<vol2_clause_dev_27_message_subscription_end, {var_label_dev_27_message_subscription_end}>> message.
+
+|===
+
+==== Referenced Standards
+
+* <<ref_ieee_11073_10207_2017>> Section 7.2.3 Request-Response
+* <<ref_ieee_11073_10207_2017>> Section 7.2.4 Streaming
+* <<ref_ieee_11073_10207_2017>> Annex C
+
+==== Messages
+
+.Message Interaction Diagram {var_transaction_id}
+[plantuml#vol2_figure_dev_27_sequence, target=puml-dev-27-sequence, format=svg, 40width=100%]
+....
+include::../../plantuml/vol2-figure-dev-27-sequence.puml[]
+....
+
+
+// ---------- SUBSCRIBE ---------
+
+
+[#vol2_clause_dev_27_message_subscribe]
+===== {var_label_dev_27_message_subscribe} Message
+
+The {var_label_dev_27_message_subscribe} message is sent as part of the BICEPS publish-subscribe and streaming message exchange for allowing <<actor_somds_consumer>>s to subscribe to data changes of <<actor_somds_provider>>s.
+
+[#vol2_clause_dev_27_message_subscribe_trigger_events]
+====== Trigger Events
+
+The {var_label_dev_27_message_subscribe} message is sent whenever a <<actor_somds_consumer>> intends to get notified on certain changes of a <<actor_somds_provider>> comprising
+
+- publish-subscribe message exchange and
+- stream message exchange.
+
+[#vol2_clause_dev_27_message_subscribe_semantics]
+====== Message Semantics
+
+[[payload_dev_27_susbcribe_filter]]Filter:: A filter to subscribe to a certain set of data items, including but not limited to one or multiple of the following:
+
+- DescriptionModificationReport as specified in <<ref_ieee_11073_10207_2017>>, Annex C.5
+- EpisodicAlertReport as specified in <<ref_ieee_11073_10207_2017>>, Annex C.11
+- EpisodicComponentReport as specified in <<ref_ieee_11073_10207_2017>>, Annex C.12
+- EpisodicContextReport as specified in <<ref_ieee_11073_10207_2017>>, Annex C.13
+- EpisodicMetricReport as specified in <<ref_ieee_11073_10207_2017>>, Annex C.14
+- EpisodicOperationalStateReport as specified in <<ref_ieee_11073_10207_2017>>, Annex C.15
+- OperationInvokedReport as specified in <<ref_ieee_11073_10207_2017>>, Annex C.77
+- WaveformStream as specified in <<ref_ieee_11073_10207_2017>>, Annex C.112
+
+[[payload_dev_27_susbcribe_expiration_time]]Expiration Time:: A time requested for subscription expiration.
+
+[#vol2_clause_dev_27_message_subscribe_expected_actions]
+====== Expected Actions
+
+When a <<actor_somds_consumer>> sends this message, the receiving <<actor_somds_provider>> responds with a <<vol2_clause_dev_27_message_subscribe_response, {var_label_dev_27_message_subscribe_response}>> message.
+
+
+// ---------- SUBSCRIBE RESPONSE ---------
+
+
+[#vol2_clause_dev_27_message_subscribe_response]
+===== {var_label_dev_27_message_subscribe_response} Message
+
+The {var_label_dev_27_message_subscribe_response} message is sent as part of the BICEPS publish-subscribe and streaming message exchange in response to a <<vol2_clause_dev_27_message_subscribe, {var_label_dev_27_message_subscribe}>> message to confirm a subscription.
+
+[#vol2_clause_dev_27_message_subscribe_response_trigger_events]
+====== Trigger Events
+
+The {var_label_dev_27_message_subscribe_response} message is sent whenever a <<actor_somds_provider>> receives a <<vol2_clause_dev_27_message_subscribe, {var_label_dev_27_message_subscribe}>> message.
+
+[#vol2_clause_dev_27_message_probe_match_semantics]
+====== Message Semantics
+
+[[payload_dev_27_subscribe_response_subscription_manager]]Subscription Manager:: Dedicated instance that manages the subscription, i.e. allows for a <<actor_somds_consumer>> to renew or cancel the subscription.
+[[payload_dev_27_subscribe_response_expiration_time]]Expiration Time:: Actual expiration time, which does not necessarily equals the requested expiration time.
+
+[#vol2_clause_dev_27_message_probe_match_expected_actions]
+====== Expected Actions
+
+The <<actor_somds_consumer>> that receives a {var_label_dev_27_message_subscribe_response} message can use the <<payload_dev_27_subscribe_response_subscription_manager>> to renew the subscription shortly before the <<payload_dev_27_subscribe_response_expiration_time>> exceeds or cancel the subscription if it is no longer interested in updates.
+
+Once received, the <<actor_somds_consumer>> listens for <<vol2_clause_dev_27_message_notification, {var_label_dev_27_message_notification}>> messages.
+
+
+// ---------- NOTIFICATION ---------
+
+
+[#vol2_clause_dev_27_message_notification]
+===== {var_label_dev_27_message_notification} Message
+
+The {var_label_dev_27_message_notification} message contains updated data and is delivered by a <<actor_somds_provider>> to subscribed <<actor_somds_consumer>>s.
+
+The data items conveyed in {var_label_dev_27_message_notification} messages depend on the <<payload_dev_27_susbcribe_filter>> that was requested as part of the <<vol2_clause_dev_27_message_subscribe, {var_label_dev_27_message_subscribe}>> message.
+
+[#vol2_clause_dev_27_message_notification_trigger_events]
+====== Trigger Events
+
+A {var_label_dev_27_message_notification} message is sent whenever a <<actor_somds_provider>> detects a change to its internal representation that is intended to be communicated to <<actor_somds_consumer>>s. The <<actor_somds_provider>> sends a {var_label_dev_27_message_notification} message to a <<actor_somds_consumer>> if and only if a matching <<payload_dev_27_susbcribe_filter>> has been requested by the <<actor_somds_consumer>>.
+
+[#vol2_clause_dev_27_message_notification_message_semantics]
+====== Message Semantics
+
+[[payload_dev_27_payload]]Payload:: Payload specific to the <<payload_dev_27_susbcribe_filter>> that was subscribed by the <<actor_somds_consumer>> that receives the {var_label_dev_27_message_notification} message.
+
+[#vol2_clause_dev_27_message_notification_expected_actions]
+====== Expected Actions
+
+When a <<actor_somds_provider>> sends this message, there is no expected or required responses.
+
+
+// ---------- RENEW ---------
+
+
+[#vol2_clause_dev_27_message_renew]
+===== {var_label_dev_27_message_renew} Message
+
+The {var_label_dev_27_message_renew} message is sent as part of the BICEPS publish-subscribe and streaming message exchange to renew a subscription when it is about to expire.
+
+[#vol2_clause_dev_27_message_renew_trigger_events]
+====== Trigger Events
+
+The {var_label_dev_27_message_renew} message is sent whenever a subscription is about to expire according to the subscribe response <<payload_dev_27_subscribe_response_expiration_time>> or renew response <<payload_dev_27_renew_response_expiration_time>> respectively.
+
+[#vol2_clause_dev_27_message_renew_message_semantics]
+====== Message Semantics
+
+[[payload_dev_27_renew_expiration_time]]Expiration Time:: A new time requested for subscription expiration.
+
+[#vol2_clause_dev_27_message_renew_expected_actions]
+====== Expected Actions
+
+When a <<actor_somds_consumer>> sends this message, the receiving <<actor_somds_provider>> responds with a <<vol2_clause_dev_27_message_renew_response, {var_label_dev_27_message_renew_response}>> message.
+
+
+// ---------- RENEW RESPONSE ---------
+
+
+[#vol2_clause_dev_27_message_renew_response]
+===== {var_label_dev_27_message_renew_response} Message
+
+The {var_label_dev_27_message_renew_response} message is sent as part of the BICEPS publish-subscribe and streaming message exchange in response to a <<vol2_clause_dev_27_message_renew, {var_label_dev_27_message_renew}>> message to confirm renewal of a subscription.
+
+[#vol2_clause_dev_27_message_renew_response_trigger_events]
+====== Trigger Events
+
+The {var_label_dev_27_message_renew_response} message is sent whenever a <<actor_somds_provider>> receives a <<vol2_clause_dev_27_message_renew, {var_label_dev_27_message_renew}>> message.
+
+[#vol2_clause_dev_27_message_renew_response_semantics]
+====== Message Semantics
+
+[[payload_dev_27_renew_response_expiration_time]]Expiration Time:: Actual new expiration time, which does not necessarily equals the requested expiration time.
+
+[#vol2_clause_dev_27_message_renew_response_expected_actions]
+====== Expected Actions
+
+Once received, the <<actor_somds_consumer>> keeps listening for <<vol2_clause_dev_27_message_notification, {var_label_dev_27_message_notification}>> messages.
+
+
+// ---------- UNSUBSCRIBE ---------
+
+
+[#vol2_clause_dev_27_message_unsubscribe]
+===== {var_label_dev_27_message_unsubscribe} Message
+
+The {var_label_dev_27_message_unsubscribe} message is sent as part of the BICEPS publish-subscribe and streaming message exchange to unsubscribe from a running subscription.
+
+[#vol2_clause_dev_27_message_unsubscribe_trigger_events]
+====== Trigger Events
+
+The {var_label_dev_27_message_unsubscribe} message is sent by a <<actor_somds_consumer>> whenever it intends to end a running subscription of a <<actor_somds_provider>>.
+
+[#vol2_clause_dev_27_message_unsubscribe_message_semantics]
+====== Message Semantics
+
+The {var_label_dev_27_message_unsubscribe} message does not contain any further semantics.
+
+[#vol2_clause_dev_27_message_unsubscribe_expected_actions]
+====== Expected Actions
+
+When a <<actor_somds_consumer>> sends this message, the receiving <<actor_somds_provider>> responds with a <<vol2_clause_dev_27_message_unsubscribe_response, {var_label_dev_27_message_unsubscribe_response}>> message.
+
+
+// ---------- UNSUBSCRIBE RESPONSE ---------
+
+
+[#vol2_clause_dev_27_message_unsubscribe_response]
+===== {var_label_dev_27_message_unsubscribe_response} Message
+
+The {var_label_dev_27_message_unsubscribe_response} message is sent as part of the BICEPS publish-subscribe and streaming message exchange in response to a <<vol2_clause_dev_27_message_unsubscribe, {var_label_dev_27_message_unsubscribe}>> message to confirm the termination of the subscription.
+
+[#vol2_clause_dev_27_message_unsubscribe_response_trigger_events]
+====== Trigger Events
+
+The {var_label_dev_27_message_unsubscribe_response} message is sent whenever a <<actor_somds_provider>> receives a <<vol2_clause_dev_27_message_unsubscribe, {var_label_dev_27_message_unsubscribe}>> message.
+
+[#vol2_clause_dev_27_message_unsubscribe_response_semantics]
+====== Message Semantics
+
+The {var_label_dev_27_message_unsubscribe_response} message does not contain any further semantics.
+
+[#vol2_clause_dev_27_message_unsubscribe_response_expected_actions]
+====== Expected Actions
+
+Once received, the <<actor_somds_consumer>> cannot expect any further incoming <<vol2_clause_dev_27_message_notification, {var_label_dev_27_message_notification}>> messages.
+
+
+// ---------- SUBSCRIPTION END ---------
+
+
+[#vol2_clause_dev_27_message_subscription_end]
+===== {var_label_dev_27_message_subscription_end} Message
+
+The {var_label_dev_27_message_subscription_end} is delivered by a <<actor_somds_provider>> to signify the expected or unexpected end of a subscription, e.g. due to a shutdown of the <<actor_somds_provider>>.
+
+[#vol2_clause_dev_27_message_subscription_end_trigger_events]
+====== Trigger Events
+
+A {var_label_dev_27_message_subscription_end} message is sent whenever a <<actor_somds_provider>> intends to communicate the end of a subscription.
+
+[#vol2_clause_dev_27_message_subscription_end_message_semantics]
+====== Message Semantics
+
+[[payload_dev_27_subscription_end_subscription_manager]]Subscription Manager:: The subscription manager that was closed.
+[[payload_dev_27_subscription_end_status]]Status:: Status that signifies the general reason for the subscription end.
+
+[#vol2_clause_dev_27_message_subscription_end_expected_actions]
+====== Expected Actions
+
+Once received, the <<actor_somds_consumer>> cannot expect any further incoming <<vol2_clause_dev_27_message_notification, {var_label_dev_27_message_notification}>> messages.
+
+[#vol2_clause_dev_27_manage_biceps_subscription_ses]
+include::../dev-x-default-ses-secured-mode.adoc[]
+

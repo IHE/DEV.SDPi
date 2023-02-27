@@ -1,0 +1,376 @@
+===== PID - Patient Identification Segment
+The HL7 Patient Identification (PID) segment requires a mapping from the <<acronym_mdib>> patient context information element *pm:PatientContextState* to the PID segment fields.
+
+====== Prerequisite of Valid Patient Context
+.R8102
+[sdpi_requirement#r8102,sdpi_req_level=shall,sdpi_max_occurrence=2]
+****
+The SDC patient context information shall only be mapped to the corresponding fields in the HL7 PID segment when the requirements for a valid SDC patient context as defined in <<ref_ieee_11073_10700_2022>> are fulfilled.
+
+.Notes
+[%collapsible]
+====
+NOTE: For a valid *pm:PatientContextState*, the *pm:AbstractContextState/@ContextAssociation* attribute is set to *"Assoc"* and the *pm:AbstractContextState/pm:Validator* is set to a valid validator. A corresponding inferred patient ensemble context is not required for the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>>.
+
+NOTE: If the SDC patient context information is not intended to be used for the mapping, please refer to the <<ref_ihe_pcd_tf_2_2019>> on how to populate the fields of the PID segment in this case.
+====
+****
+
+====== PID-3 Patient Identifier List
+.R8103
+[sdpi_requirement#r8103,sdpi_req_level=shall,sdpi_max_occurrence=2]
+****
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall map the patient identifiers to the PID-3 field.
+
+.Notes
+[%collapsible]
+====
+NOTE: The PID-3 is a list of patient identifiers (e.g. medical record number, socal security number, visit number, account number, etc.)
+
+NOTE: <<ref_tbl_pid3_mapping>> defines the mapping of the <<acronym_mdib>> patient identification to the data fields of the HL7 data type *CX* used in the PID-3 field.
+
+NOTE: If the <<acronym_mdib>> patient identification element *pm:PatientContextState/pm:Identification* contains more than one patient identifier, each SDC patient identifier is mapped according to the <<ref_tbl_pid3_mapping>> table and added to the PID-3 patient identifier list.
+====
+****
+
+[#ref_tbl_pid3_mapping]
+.PID-3 Patient Identifier List Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|PID-3/CX-1
+|ID Number
+|pm:PatientContextState+++<wbr/>+++/pm:Identification+++<wbr/>+++/@Extension
+|The @Extension attribute contains the unique patient identifer.
+
+*Note that the field may contain a null value indicating that the identifier is missing.*
+
+|PID-3/CX-4
+|Assigning Authority
+|pm:PatientContextState+++<wbr/>+++/pm:Identification
+| HL7 data type *HD*
+
+|PID-3/CX-4.1
+|Namespace ID
+|/@Root
+|The @Root contains the unique identification of the HDO.
+
+*Note that if the HDO identifier is not defined the CX-4 field is left empty.*
+
+|PID-3/CX-5
+|Identifier Type Code
+|pm:PatientContextState+++<wbr/>+++/pm:Identification+++<wbr/>+++/pm:Type+++<wbr/>+++/@Code
+|The type of the patient identifier set in the @Code attribute is set to a value from HL7 V2 table 0203. The @CodingSystem is set to `urn:oid:2.16.840.1.113883.18.108`.
+
+|===
+
+The following identifier type codes are proposed to be used for the patient identifier in the point of care device:
+
+[#ref_tbl_pid5_itc_valueset]
+.Patient Identifier Type Code Value Set
+|===
+|Value |Description
+
+|AN
+|Account Number
+
+|MR
+|Medical Record Number
+
+|PI
+|Patient Internal Identifier
+
+|U
+|Unspecified Identifier
+
+|VN
+|Visit Number
+
+|===
+
+====== PID-5 Patient Name
+.R8104
+[sdpi_requirement#r8104,sdpi_req_level=shall,sdpi_max_occurrence=2]
+****
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-5 field to the patient name information.
+
+.Notes
+[%collapsible]
+====
+NOTE: <<ref_tbl_pid5_mapping>> defines the mapping of the SDC patient name information to the data fields of the HL7 data type *XPN* used in the PID-5 field.
+====
+****
+
+[#ref_tbl_pid5_mapping]
+.PID-5 Patient Name Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|PID-5/XPN-1
+|Family Name
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData
+|HL7 data type *FN*
+
+|PID-5/XPN-1.1
+|Surname
+|/pm:Familyname
+|
+
+|PID-5/XPN-2
+|Given Name
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Givenname
+|
+
+|PID-5/XPN-3
+|Second and Further Given Names or Initials
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Middlename
+|
+
+|PID-5/XPN-5
+|Prefix (e.g. DR)
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Title
+|
+
+|PID-5/XPN-7
+|Name Type Code
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData
+|This field is set to "L" when a patient name is available, or "U" when the patient name is not set.
+
+Please refer also to the corresponding section in the <<ref_ihe_pcd_tf_2_2019>>.
+
+|===
+
+====== PID-6 Mother’s Maiden Name
+.R8105
+[sdpi_requirement#r8105,sdpi_req_level=shall,sdpi_max_occurrence=2]
+****
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-6 field to the mother's maiden name or birth name before marriage.
+
+.Notes
+[%collapsible]
+====
+NOTE: <<ref_tbl_pid6_mapping>> defines the mapping of the SDC patient name information to the data fields of the HL7 data type *XPN* used in the PID-6 field.
+====
+****
+
+[#ref_tbl_pid6_mapping]
+.PID-6 Mother’s Maiden Name Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|PID-6/XPN-1
+|Family Name
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData
+|HL7 data type *FN*
+
+|PID-6/XPN-1.1
+|Surname
+|/pm:Birthname
+|
+
+|===
+
+====== PID-7 Date/Time of Birth
+.R8106
+[sdpi_requirement#r8106,sdpi_req_level=shall,sdpi_max_occurrence=2]
+****
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-7 field to the date & time of birth.
+
+.Notes
+[%collapsible]
+====
+NOTE: <<ref_tbl_pid7_mapping>> defines the mapping of the SDC patient's date of birth information to the data fields of the HL7 data type *DTM* used in the PID-7 field.
+====
+****
+
+[#ref_tbl_pid7_mapping]
+.PID-7 Date/Time of Birth Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|PID-6/DTM-1
+|Date/Time
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:DateOfBirth
+|Note that the HL7 date & time format differs from the xsd date/time formats and requires a mapping accordingly (see also <<ref_expl_dt_mapping>>).
+
+|===
+
+[#ref_expl_dt_mapping]
+.Date/Time Format Mapping
+====
+xsd:dateTime: *2001-10-26T21:32:52* -> HL7 DTM: *20011026213252*
+
+xsd:date: *2001-10-26* -> HL7 DTM: *20011026*
+====
+
+====== PID-8 Administrative Sex
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*: At the moment, there are various opinions on how to map the biological sex vs. the administrative sex (gender) to an IHE PCD profile conform HL7 V2 message.
+
+The SDC BICEPS standard defines a generic field for the patient's sex (*pm:PatientContextState/pm:CoreData/pm:Sex*).
+This field shall be set to the biological sex (or sex for clinical use).
+In addition, there will be a gender extension that shall be set to the administrative gender (or administrative sex).
+
+The HL7 V2.6 messaging standard only supports a "Administrative Sex" field in the PID segment.
+
+[none]
+. *STANDARDIZATION NOTE:*  There is active work to finalize the informatics standards related to sex and gender, including within HL7, SNOMED, ISO/TC215 and in other standards development organizations .
+Once this standardization is complete, especially within HL7 FHIR and Version 2, the SDC standards and the SDPi profiles and gateway specifications will be harmonized.
+Until that time, the mappings below represent a "best effort" given the status of the underlying standards.
+
+See related note in <<vol3_clause_gender>>.
+
+The following list a couple of options and any comments from the reviewers are highly appreciated:
+
+. *No mapping of sex/gender information at all*: the information of the patient's sex and gender shall not be mapped at all. Pros: no risk of mapping incorrect information. Cons: no information about the sex set at the device which may have influenced certain clinical calculations and algorithms.
+
+. *Map the "sex for clinical use" to the PID-8 Administrative Sex field*: in the context of a PoC device the sex for clinical use is the most important information for clinical calculations and algorithm. Therefore, this information shall be mapped to the PID-8 Administrative Sex field - even this is not necessarily the administrative gender. In addition, the Administrative Sex/Gender may be mapped to a separate OBX segment (only possible for DEC profile). Pros: this is backward compatible to the existing IHE PCD profiles. Cons: the information are not set in the correct field and may lead to wrong interpretations.
+
+. *Map the "sex for clinical use" in a separate OBX segment (only possible for DEC profile but not for ACM) and the Administrative Sex/Gender to the PID-8 Administrative Sex field*: the administrative sex/gender information is mapped to the correctly named PID-8 "Administrative Sex" field, and the sex for clinical use is provided in a separate OBX segment in the IHE DEC profile conform export. The sex for clinical use information will be not available in the ACM profile conform export. Pros: the information are mapped to the correct fields. Cons: this mapping might not be backward compatible to the existing IHE PCD profile actors (reporter/consumer). Information of the sex for clinical use may get lost in some profiles such as ACM.
+
+*REVIEWER QUESTION*:  Please review the options listed above and provide comments on the mapping of this semantic content.
+
+|===
+
+.R8107
+[sdpi_requirement#r8107,sdpi_req_level=shall,sdpi_max_occurrence=2]
+****
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-8 field to the code for the administrative sex.
+
+However, in the clinical context of a point of care device the biological sex, or sex at birth is important for various algorithms.
+
+.Notes
+[%collapsible]
+====
+NOTE: <<ref_tbl_pid8_mapping>> defines the mapping of the SDC patient's sex information to the data fields of the HL7 data type *IS* used in the PID-8 field.
+====
+****
+
+[NOTE]
+====
+The sex and gender of a patient (or a newborn) cannot exactly be mapped from ISO/IEEE 11073-10207 to HL7 V2. The domain information and service model only contains an attribute for sex as defined by biological and physiological characteristics. HL7 V2, on the other hand, only provides a field for the administrative sex as defined by the socially constructed roles, behaviours, activities, and attributes that a given society considers appropriate. The biological sex, however, does not necessarily match a person’s administrative gender. Mapping from one to the other would therefore introduce errors. However, in the clinical context of a point of care device the biological sex, or sex at birth is important for various algorithms, and therefore, is required to be mapped to the PID-8 field.
+====
+
+[#ref_tbl_pid8_mapping]
+.PID-8 Administrative Sex Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|PID-8/IS-1
+|Administrative Sex
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Sex
+|Note that the HL7 Administrative Sex value set (HL7 table 0001) differs from the SDC pm:Sex value set and requires a mapping accordingly (see also <<ref_tbl_sex_mapping>>).
+
+|===
+
+[#ref_tbl_sex_mapping]
+.Patient's Sex Value Set Mapping
+|===
+|SDC Value |SDC Description |HL7 Value |HL7 Description
+
+|Unspec
+|Unspecified. Sex is not designated.
+|A
+|Ambiguous
+
+|M
+|Male. Indicates a male patient.
+|M
+|Male
+
+|F
+|Female. Indicates a female patient.
+|F
+|Female
+
+|Unkn
+|Unknown. Indicates that the sex is unknown for different reasons.
+|U
+|Unknown
+
+|===
+
+// https://build.fhir.org/ig/HL7/uv-pocd/StructureDefinition-Patient.html
+
+====== PID-10 Race
+.R8108
+[sdpi_requirement#r8108,sdpi_req_level=shall,sdpi_max_occurrence=2]
+****
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-10 field to the patient's race.
+
+.Notes
+[%collapsible]
+====
+NOTE: <<ref_tbl_pid10_mapping>> defines the mapping of the SDC patient's race information to the data fields of the HL7 data type *CWE* used in the PID-10 field.
+====
+****
+
+[#ref_tbl_pid10_mapping]
+.PID-10 Race Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|PID-10/CWE-1
+|Identifier
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Race
+/@Code
+|
+
+|PID-10/CWE-2
+|Text
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Race
+/@SymbolicCodeName
+|
+
+|PID-10/CWE-3
+|Name of Coding System
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Race
+/@CodingSystem
+|
+
+|PID-10/CWE-4
+|Alternate Identifier
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Race+++<wbr/>+++/pm:Translation
+/@Code
+|Note that only the first entry of the *pm:Translation* element list is to be mapped.
+
+|PID-10/CWE-6
+|Name of Alternate Coding System
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Race+++<wbr/>+++/pm:Translation
+/@CodingSystem
+|Note that only the first entry of the *pm:Translation* element list is to be mapped.
+
+|PID-10/CWE-7
+|Coding System Version ID
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Race
+/@CodingSystemVersion
+|
+
+|PID-10/CWE-8
+|Alternate Coding System Version ID
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Race+++<wbr/>+++/pm:Translation
+/@CodingSystemVersion
+|Note that only the first entry of the *pm:Translation* element list is to be mapped.
+
+|===
+
+====== PID-31 Identity Unknown Indicator
+.R8109
+[sdpi_requirement#r8109,sdpi_req_level=shall,sdpi_max_occurrence=2]
+****
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-31 field to an indicator whether the patient's identity is known.
+
+.Notes
+[%collapsible]
+====
+NOTE: For a valid *pm:PatientContextState*, the *pm:AbstractContextState/@ContextAssociation* attribute is set to *"Assoc"* and the *pm:AbstractContextState/pm:Validator* is set to a valid validator. In this case, the value is set to "N".
+
+NOTE: In all other cases, the value is set to "Y".
+
+NOTE: A corresponding inferred patient ensemble context is not required for the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> in order to determine a valid *pm:PatientContextState*.
+====
+****

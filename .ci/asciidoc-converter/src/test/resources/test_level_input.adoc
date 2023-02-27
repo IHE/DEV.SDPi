@@ -1,0 +1,73 @@
+:doctype: book
+
+[sdpi_offset=clear]
+== Level 1
+
+=== Level 2
+
+==== Level 3
+
+===== Level 4
+
+====== Level 5
+
+[sdpi_level=+1]
+====== Level 6
+
+[sdpi_level=+2]
+====== Level 7
+
+== Level 1
+
+=== Level 2
+
+==== Level 3
+
+===== Level 4
+
+====== Level 5
+
+[sdpi_level=+1]
+====== Level 6
+
+[sdpi_level=+2]
+====== Level 7
+
+== Level 1
+
+=== Level 2
+
+==== Level 3
+
+===== Level 4
+
+====== Level 5
+
+[sdpi_level=+1,sdpi_offset=5]
+====== Level 6
+
+[sdpi_level=+1]
+====== Level 6
+
+[sdpi_level=+2]
+====== Level 7
+
+[appendix]
+== Level 1
+
+=== Level 2
+
+==== Level 3
+
+===== Level 4
+
+====== Level 5
+
+[sdpi_level=+1,sdpi_offset=5]
+====== Level 6
+
+[sdpi_level=+1]
+====== Level 6
+
+[sdpi_level=+2]
+====== Level 7

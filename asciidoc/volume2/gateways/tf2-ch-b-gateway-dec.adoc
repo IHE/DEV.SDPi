@@ -1,0 +1,882 @@
+[#vol2_clause_appendix_sdpi_dec_gateway]
+=== SDPi DEC Gateway -- Mapping
+
+==== Scope
+This chapter defines the mapping from the <<acronym_mdib>> content as defined in this document and its underlying standards, to IHE Device Enterprise Communication (DEC) profile messages as defined in the <<ref_ihe_pcd_tf_2_2019>>.
+
+The <<actor_somds_dec_gateway>> represents the Device Observation Reporter (DOR) role of the IHE DEC profile.
+
+The following sections supplement the IHE DEC profile as appropriate. If there are no supplementing definitions, the definitions as described in the <<ref_ihe_pcd_tf_2_2019>> will apply.
+
+==== Referenced Standards & Profiles
+This section provides an overview about the referenced standards and profiles used in this chapter:
+
+* <<ref_ihe_pcd_tf_2_2019>>
+* <<ref_ieee_11073_10701_2022>>
+* <<ref_ieee_11073_10700_2022>>
+* <<ref_ieee_11073_10207_2017>>
+
+include::tf2-ch-b-gateway-private-mdc-mapping.adoc[]
+
+==== HL7 Segment Descriptions
+The following sections refer to the *Appendix B Common Segment Descriptions* of the <<ref_ihe_pcd_tf_2_2019>>.
+
+include::tf2-ch-b-gateway-msh-mapping.adoc[]
+
+include::tf2-ch-b-gateway-pid-mapping.adoc[]
+
+===== Height and Weight Mapping
+
+The *pm:PatientContextState/pm:CoreData* element may also contain elements for a patient's height and/or weight.
+
+.R8001
+[sdpi_requirement#r8001,sdpi_req_level=shall]
+****
+If available, the <<actor_somds_dec_gateway>> shall export height and weight as OBX segments on the MDS level.
+
+.Notes
+[%collapsible]
+====
+NOTE: The mapping for the height observation is defined in table <<ref_tbl_dec_obx_height_mapping>> and the weight mapping in table <<ref_tbl_dec_obx_weight_mapping>>.
+====
+****
+
+[#ref_height_weight_dt_issue_note]
+====== Height/Weight Observation Date Time Consideration
+
+In the SDC Domain Information and Service Model, there are no explicit timestamps for the height and weight observation in *pm:PatientContextState/pm:CoreData* element.
+The only timestamp associated with the current patient context state is the *pm:PatientContextState/@BindingStartTime*, but this timestamp is set only once when the context was associated regardless whether height and weight has been set or updated later.
+
+The gateway could also keep track of the *pm:PatientContextState* updates and evaluate height/weight value changes in the state updates.
+The state update timestamp has to be set by the SDC gateway consumer when it receives the new context state.
+That timestamp could be used for the height and/or weight observation that has been changed.
+The problem is that when the gateway loses connection to the PoC device it can only get the latest state update with a new version number but there is no timestamp related to the new state.
+
+.R8002
+[sdpi_requirement#r8002,sdpi_req_level=shall]
+****
+A <<actor_somds_dec_gateway>> shall use the *pm:PatientContextState/@BindingStartTime* as the timestamp for the height and weight observation and send new values as corrected results.
+****
+
+====== Height Mapping
+
+[#ref_tbl_dec_obx_height_mapping]
+.OBX Height Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBX-1
+|Set ID - OBX
+|
+|Please refer to the <<ref_ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information
+
+|OBX-2
+|Value Type
+|
+|Set to *"NM"* since height is always represented as a decimal number.
+
+|OBX-3/CWE-1
+|Identifier
+|
+|Set to MDC code *"68060"*.
+
+|OBX-3/CWE-2
+|Text
+|
+| Set to MDC RefId *"MDC_ATTR_PT_HEIGHT"*.
+
+|OBX-3/CWE-3
+|Name of Coding System
+|
+|Set to coding system *"MDC"*.
+
+|OBX-4
+|Observation Sub-ID
+|
+|Set to *"<MDS>.0.0.1"* where *<MDS>* is the number of the MDS level assigned by the gateway.
+See <<ref_dec_obx4>> for further information.
+
+|OBX-5
+|Observation Value
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Height+++<wbr/>+++/@MeasuredValue
+|Note that the decimal number needs to be formatted according to the HL7 numeric value formatting rules.
+
+|OBX-6
+|Units
+|
+|HL7 data type *CWE*
+
+|OBX-6/CWE-1
+|Identifier
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Height+++<wbr/>+++/pm:MeasurementUnit+++<wbr/>+++/@Code
+|
+
+|OBX-6/CWE-2
+|Text
+|If @Code is an MDC code, this field contains the RefId of the MDC code.
+
+In all other cases, the field is set to the pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Height+++<wbr/>+++/pm:MeasurementUnit+++<wbr/>+++/@SymbolicCodeName.
+|Note that MDC is the default coding system if no coding system is specified.
+
+|OBX-6/CWE-3
+|Name of Coding System
+|*"MDC"* if no other coding system is specified.
+
+In all other cases, the field is set to pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Height+++<wbr/>+++/pm:MeasurementUnit+++<wbr/>+++/@CodingSystem.
+|Note that MDC is the default coding system if no coding system is specified.
+
+|OBX-11
+|Observation Result Status
+|
+|When the patient context has been associated and a new *@BindingStartTime* has been set, the field is set to final result status *"F"*.
+
+When there are further updates of the height value after the association of the patient context, the field is set to *"C"*.
+
+|OBX-14
+|Date/Time of the Observation
+|pm:PatientContextState+++<wbr/>+++/@BindingStartTime
+|Note that the HL7 date & time format differs from the xsd date/time formats and requires a mapping accordingly (see also <<ref_expl_dt_mapping>>).
+
+|===
+
+====== Weight Mapping
+
+[#ref_tbl_dec_obx_weight_mapping]
+.OBX Weight Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBX-1
+|Set ID - OBX
+|
+|Please refer to the <<ref_ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information
+
+|OBX-2
+|Value Type
+|
+|Set to *"NM"* since weight is always represented as a decimal number.
+
+|OBX-3/CWE-1
+|Identifier
+|
+|Set to MDC code *"68063"*.
+
+|OBX-3/CWE-2
+|Text
+|
+| Set to MDC RefId *"MDC_ATTR_PT_WEIGHT"*.
+
+|OBX-3/CWE-3
+|Name of Coding System
+|
+|Set to coding system *"MDC"*.
+
+|OBX-4
+|Observation Sub-ID
+|
+|Set to *"<MDS>.0.0.2"* where *<MDS>* is the number of the MDS level assigned by the gateway.
+See <<ref_dec_obx4>> for further information.
+
+|OBX-5
+|Observation Value
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Weight+++<wbr/>+++/@MeasuredValue
+|Note that the decimal number needs to be formatted according to the HL7 numeric value formatting rules.
+
+|OBX-6
+|Units
+|
+|HL7 data type *CWE*
+
+|OBX-6/CWE-1
+|Identifier
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Weight+++<wbr/>+++/pm:MeasurementUnit
+/@Code
+|
+
+|OBX-6/CWE-2
+|Text
+|If @Code is an MDC code, this field contains the RefId of the MDC code.
+
+In all other cases, the field is set to the pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Weight+++<wbr/>+++/pm:MeasurementUnit
+/@SymbolicCodeName.
+|Note that MDC is the default coding system if no coding system is specified.
+
+|OBX-6/CWE-3
+|Name of Coding System
+|*"MDC"* if no other coding system is specified.
+
+In all other cases, the field is set to pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Weight+++<wbr/>+++/pm:MeasurementUnit
+/@CodingSystem.
+|Note that MDC is the default coding system if no coding system is specified.
+
+|OBX-11
+|Observation Result Status
+|
+|When the patient context has been associated and a new @BindingStartTime has been set, the field is set to final result status "F".
+
+When there are further updates of the weight value after the association of the patient context, the field is set to "C".
+
+|OBX-14
+|Date/Time of the Observation
+|pm:PatientContextState+++<wbr/>+++/@BindingStartTime
+|Note that the HL7 date & time format differs from the xsd date/time formats and requires a mapping accordingly (see also <<ref_expl_dt_mapping>>).
+
+|===
+
+include::tf2-ch-b-gateway-pv1-mapping.adoc[]
+
+===== OBR - Observation Request Segment
+The HL7 Obervation Request (OBR) segment requires a mapping from the SDC containment tree and metric data to the OBR segment fields.
+
+====== OBR-2 Placer Order Number
+
+.R8003
+[sdpi_requirement#r8003,sdpi_req_level=shall]
+****
+
+For the IHE DEC profile, the <<actor_somds_dec_gateway>> shall set the OBR-2 field to the identifier of the Device Observation Reporter (DOR) of the IHE DEC gateway (not the individual device identifier).
+
+.Notes
+[%collapsible]
+====
+NOTE: For further information, please refer to the <<ref_ihe_pcd_tf_2_2019>>.
+====
+****
+
+====== OBR-3 Filler Order Number
+
+.R8004
+[sdpi_requirement#r8004,sdpi_req_level=shall]
+****
+
+For the IHE DEC profile, the <<actor_somds_dec_gateway>> shall set the OBR-3 field to the identifier of the Device Observation Reporter (DOR) of the IHE DEC gateway (not the individual device identifier).
+
+.Notes
+[%collapsible]
+====
+NOTE: For further information, please refer to the <<ref_ihe_pcd_tf_2_2019>>.
+====
+****
+
+====== OBR-4 Universal Service ID
+
+.R8005
+[sdpi_requirement#r8005,sdpi_req_level=shall]
+****
+
+For the IHE DEC profile, the <<actor_somds_dec_gateway>> shall set the OBR-4 field to the service identifier of the <<actor_somds_provider>>.
+
+.Notes
+[%collapsible]
+====
+NOTE: For further information, please refer to the <<ref_ihe_pcd_tf_2_2019>>.
+====
+****
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  For SDPi 1.0 DEV Internal Review Version, this profile section needs to be updated in order to be compliant with the <<ref_ihe_pcd_tf_2_2019>>. The following issues need more investigations and discussions:
+
+* Mapping of the <<acronym_mdib>>-provided device types to SNOMED codes
+* Licensing requirements for utilizing SNOMED codes
+* Utilizing MDC codes instead of SNOMED which requires a change in the <<ref_ihe_pcd_tf_2_2019>>
+* Defining the special requirements for infusion pumps
+* Finalization of service ids
+
+|===
+
+====== OBR-7 Observation Date/Time
+The OBR-7 field specifies the time point or start of time interval for all OBX segments within the scope of this OBR segment, that is, OBX segments that are part of the ORDER_OBSERVATION segment group, that do not specify an overriding time point in the OBX-14 field.
+
+The presence of an overriding time point in OBX-14 indicates an episodic measurement such as non-invasive blood pressure.
+
+The absence of an overriding time point in the OBX-14 field implies that this is an instance of a periodically sampled observation with a time stamp given by OBR-7 field.
+
+
+.R8006
+[sdpi_requirement#r8006,sdpi_req_level=shall]
+****
+
+A <<actor_somds_dec_gateway>> shall set the OBR-7 field to the date and time of all continuously (periodically) measured metrics reported by a *msg:PeriodicMetricReport* to be exported within the same *msg:RetrievabilityInfo/@UpdatePeriod*.
+
+.Notes
+[%collapsible]
+====
+NOTE: If, for example, the *@UpdatePeriod* is set to one second, a *msg:PeriodicMetricReport* is expected every second with new periodic metric states to be exported within this one second interval. The OBR-7 field is set to the start time of the interval. The individual periodic metric *@DeterminationTime* is basically ignored, but has to be within the time boundaries of the current export interval.
+
+NOTE: <<ref_tbl_dec_obr7_mapping>> defines the mapping of the SDC metric measurement timestamp to the data fields of the HL7 data type *DTM* used in the OBR-7 field.
+====
+****
+
+.R8007
+[sdpi_requirement#r8007,sdpi_req_level=shall]
+****
+
+For episodic measurements and the absence of any continuously measured metrics for this export interval, a <<actor_somds_dec_gateway>> shall set the OBR-7 field to the oldest measurement timestamp of the episodic metrics to be exported in the current export interval.
+
+.Notes
+[%collapsible]
+====
+NOTE: Episodic metric measurements are usually exported along with the periodic metric measurements in the same export intervals triggered by *msg:PeriodicMetricReport* events. However, if a device does not provide periodic metric measurements, or if the *@UpdatePeriod* is too long, episodic metric measurements are exported independently of the periodic metric measurements in separate HL7 data export messages.
+
+NOTE: <<ref_tbl_dec_obr7_mapping>> defines the mapping of the SDC metric measurement timestamp to the data fields of the HL7 data type *DTM* used in the OBR-7 field.
+====
+****
+
+[NOTE]
+Only metrics that fulfil certain criteria are exported by the <<actor_somds_dec_gateway>>. Please refer to <<r8018>> and <<r8017>> for further information.
+
+[#ref_tbl_dec_obr7_mapping]
+.OBR-7 Metric Measurement Timestamp Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBR-7/DTM-1
+|Date/Time
+|pm:EnumStringMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@DeterminationTime
+
+pm:NumericMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@DeterminationTime
+
+pm:StringMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@DeterminationTime
+
+|If *pm:AbstractMetricDescriptor+++<wbr/>+++/@MetricAvailability* is set to "*Cont*", the field is set to the start time of the *msg:PeriodicMetricReport* event. The *@DeterminationTime* of the *pm:AbstractMetricState* of continuously measured metrics to be exported in the same export interval has to be within the start time of the *msg:PeriodicMetricReport* event and the *msg:RetrievabilityInfo+++<wbr/>+++/@UpdatePeriod*.
+
+New *pm:AbstractMetricState* elements of episodically measured metrics are exported in the same HL7 message with the *@DeterminationTime* set in HL7 OBX-14 field overriding the time point in the OBR-7 field.
+
+
+If *pm:AbstractMetricDescriptor+++<wbr/>+++/@MetricAvailability* is set to "*Intr*" and if there are no continuously measured metrics to be exported, the field is set to the oldest *@DeterminationTime* of the episodic metrics to be exported in the same HL7 message.
+
+Note that the HL7 date and time format differs from the XML Schema date/time formats and requires a mapping accordingly (see also <<ref_expl_dt_mapping>>).
+
+|===
+
+====== OBR-8 Observation End Date/Time
+
+.R8008
+[sdpi_requirement#r8008,sdpi_req_level=shall]
+****
+A <<actor_somds_dec_gateway>> shall not use the OBR-8 field.
+****
+
+[#ref_dec_obr10]
+====== OBR-10 Collector Identifier
+
+.R8009
+[sdpi_requirement#r8009,sdpi_req_level=shall]
+****
+A <<actor_somds_dec_gateway>> shall set the OBR-10 field to the operator (user) information if available.
+
+The field is left empty if there is no valid SDC operator context.
+
+.Notes
+[%collapsible]
+====
+NOTE: <<ref_tbl_OBR10_mapping>> defines the mapping of the SDC operator context information to the data fields of the HL7 data type *XCN* used in the OBR-10 field.
+
+NOTE: The SDC operator context is only valid when the *pm:OperatorContextState/@ContextAssociation* is set to *"Assoc"* and a *pm:OperatorContextState/@BindingStartTime* is set.
+====
+****
+
+[#ref_tbl_OBR10_mapping]
+.OBR-10 Operator Information Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBR-10/XCN-1
+|ID Number
+|pm:OperatorContextState+++<wbr/>+++/pm:Identification
+/@Extension
+|The @Extension attribute contains the unique operator identifier.
+
+*Note that the field may contain a null value indicating that the identifier is missing.*
+
+|OBR-10/XCN-2
+|Family Name
+|pm:OperatorContextState+++<wbr/>+++/pm:OperatorDetails
+|HL7 data type *FN*
+
+|OBR-10/XCN-2.1
+|Surname
+|/pm:Familyname
+|
+
+|OBR-10/XCN-3
+|Given Name
+|pm:OperatorContextState+++<wbr/>+++/pm:OperatorDetails+++<wbr/>+++/pm:Givenname
+|
+
+|OBR-10/XCN-4
+|Second and Further Given Names or Initials
+|pm:OperatorContextState+++<wbr/>+++/pm:OperatorDetails+++<wbr/>+++/pm:Middlename
+|
+
+|OBR-10/XCN-6
+|Prefix (e.g. DR)
+|pm:OperatorContextState
+/pm:OperatorDetails
+/pm:Title
+|
+
+|OBR-10/XCN-9
+|Assigning Authority
+|pm:OperatorContextState
+/pm:Identification
+| HL7 data type *HD*
+
+|OBR-10/XCN-9.1
+|Namespace ID
+|/@Root
+|The @Root contains the unique identification of the HDO.
+
+*Note that if the HDO identifier is not defined, the XCN-9 field is left empty.*
+
+|===
+
+[#ref_dec_obx_mapping]
+===== OBX - Observation/Result Segment
+The HL7 Observation/Result (OBX) segment requires a mapping from the SDC containment tree and metric items to the OBX segment fields.
+More information about the containment tree mapping can be found in *Appendix A Mapping ISO/IEEE 11073 Domain Information Model to HL7* in <<ref_ihe_pcd_tf_2_2019>>.
+
+====== OBX-1 Set ID - OBX
+Please refer to the [ihe_pcd_tf_2_2019] *OBX-1 Set ID - OBX* for further information.
+
+====== OBX-2 Value Type
+
+.R8010
+[sdpi_requirement#r8010,sdpi_req_level=shall]
+****
+A <<actor_somds_dec_gateway>> shall set the OBX-2 field to the metric value type code as define in *HL7 table 0125*.
+
+.Notes
+[%collapsible]
+====
+NOTE: <<ref_tbl_dec_obx2_mapping>> defines the mapping of the SDC metric type to the data fields of the HL7 data type *ID* used in the OBX-2 field.
+====
+****
+
+.R8011
+[sdpi_requirement#r8011,sdpi_req_level=shall]
+****
+A <<actor_somds_dec_gateway>> shall left the OBX-2 field empty for OBX segments defining the <<actor_somds_provider>>'s MDS, VMD, or CHAN containment tree elements.
+****
+
+
+[#ref_tbl_dec_obx2_mapping]
+.OBX-2 Value Type Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBX-2/ID-1
+|Coded Value for HL7-Defined Tables
+|*"NM"* if the metric state is of type *pm:NumericMetricState*.
+
+*"ST"* if the metric state is of type *pm:StringMetricState*.
+
+*"CWE"* if the metric state is of type *pm:EnumStringMetricState*.
+
+|
+
+|===
+
+====== OBX-3 Observation Identifier
+include::tf2-ch-b-gateway-obx3-mapping.adoc[]
+
+[#ref_dec_obx4]
+====== OBX-4 Observation Sub-ID
+include::tf2-ch-b-gateway-obx4-mapping.adoc[]
+
+====== OBX-5 Observation Value
+
+.R8016
+[sdpi_requirement#r8016,sdpi_req_level=shall]
+****
+A <<actor_somds_dec_gateway>> shall set the OBX-5 field to the value of the SDC metric.
+
+.Notes
+[%collapsible]
+====
+NOTE: The formatting of the data depends on the data type.
+====
+****
+
+.R8036
+[sdpi_requirement#r8036,sdpi_req_level=shall]
+****
+For a device-related element such as MDS, VMD, or channel, the OBX-5 field shall be left empty.
+****
+
+.R8017
+[sdpi_requirement#r8017,sdpi_req_level=shall]
+****
+A <<actor_somds_dec_gateway>> shall only export metrics with a *pm:AbstractMetricValue/pm:MetricQuality/@Validity* set to *Vld* (Valid) or *Vldated* (Validated Data).
+
+.Notes
+[%collapsible]
+====
+NOTE: Metrics with a different *@Validity* are skipped/ignored.
+====
+****
+
+.R8018
+[sdpi_requirement#r8018,sdpi_req_level=shall]
+****
+A <<actor_somds_dec_gateway>> shall only export metrics with the *pm:AbstractMetricDescriptor/@MetricCategory* set to *Msrmt* (Measurement), *Clc* (Calculation) or *Set* (Setting).
+
+.Notes
+[%collapsible]
+====
+NOTE: Metrics with a different *@MetricCategory* are skipped/ignored.
+====
+****
+
+[sdpi_level=+1]
+====== Numeric Metric
+
+.R8019
+[sdpi_requirement#r8019,sdpi_req_level=shall]
+****
+For each numeric metric that complies with <<r8017>> and <<r8018>>, a <<actor_somds_dec_gateway>> shall set the OBX-5 field to the *pm:NumericMetricState/pm:MetricValue/@Value*.
+
+.Notes
+[%collapsible]
+====
+NOTE: Note that the decimal number needs to be formatted according to the HL7 numeric value formatting rules.
+
+NOTE: Note that sample array metrics are not supported by the <<actor_somds_dec_gateway>>.
+====
+****
+
+[sdpi_level=+1]
+====== String Metric
+.R8020
+[sdpi_requirement#r8020,sdpi_req_level=shall]
+****
+For each string metric that complies with R8017 and R8018, a <<actor_somds_dec_gateway>> shall set the OBX-5 field to the *pm:StringMetricState/pm:MetricValue/@Value*.
+****
+
+[sdpi_level=+1]
+====== Enumeration String Metric
+
+.R8021
+[sdpi_requirement#r8021,sdpi_req_level=shall]
+****
+For each enumeration string metric that complies with R8017 and R8018, a <<actor_somds_dec_gateway>> shall set the OBX-5 field to a coded element value.
+
+.Notes
+[%collapsible]
+====
+NOTE: <<ref_tbl_dec_obx5_enum_mapping>> defines the mapping of the SDC coded element value to the data fields of the HL7 data type *CWE* used in the OBX-5 field.
+
+NOTE: The *pm:EnumStringMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@Value* contains the string of the selected enumerated element.
+The actual coded element value can be retrieved from the *pm:EnumStringMetricDescriptor+++<wbr/>+++/pm:AllowedValue* list by comparing the *pm:EnumStringMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@Value* with the *pm:EnumStringMetricDescriptor+++<wbr/>+++/pm:AllowedValue+++<wbr/>+++/pm:Value*.
+
+NOTE: If a match has been found, the *pm:EnumStringMetricDescriptor+++<wbr/>+++/pm:AllowedValue+++<wbr/>+++/pm:Type* is required to be mapped as defined in <<ref_tbl_dec_obx5_enum_mapping>>.
+
+NOTE: If no matching value has been found, the enumeration is treated as a string metric and the *pm:EnumStringMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@Value* is required to be set in the OBX-5 field, and
+the OBX-2 is required to be set to *"ST"* (see also <<ref_tbl_dec_obx2_mapping>> and <<r8020>>).
+====
+****
+
+.R8022
+[sdpi_requirement#r8022,sdpi_req_level=shall]
+****
+If a private *MDC* code is used for the coding of the SDC coded element value in OBX-5 mapping, a <<actor_somds_dec_gateway>> shall map the identifier as described in section <<ref_private_coding_system_note>>.
+****
+
+[#ref_tbl_dec_obx5_enum_mapping]
+.OBX-5 Enumeration String Metric Value Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBX-5/CWE-1
+|Identifier
+|pm:EnumStringMetricDescriptor+++<wbr/>+++/pm:AllowedValue+++<wbr/>+++/pm:Type+++<wbr/>+++/@Code
+|
+
+|OBX-5/CWE-2
+|Text
+|If *@Code* is an MDC code, this field contains the RefId of the MDC code.
+
+In all other cases, the field is set to the pm:EnumStringMetricDescriptor+++<wbr/>+++/pm:AllowedValue+++<wbr/>+++/pm:Type+++<wbr/>+++/@SymbolicCodeName.
+| Note that MDC is the default coding system if no coding system is specified.
+
+|OBX-5/CWE-3
+|Name of Coding System
+|*"MDC"* if no other coding system is specified.
+
+In all other cases, the field is set to pm:EnumStringMetricDescriptor+++<wbr/>+++/pm:AllowedValue+++<wbr/>+++/pm:Type+++<wbr/>+++/@CodingSystem.
+
+|Note that MDC is the default coding system if no coding system is specified.
+
+|===
+
+====== OBX-6 Units
+
+.R8023
+[sdpi_requirement#r8023,sdpi_req_level=shall]
+****
+For each numeric metric, a <<actor_somds_dec_gateway>> shall set the OBX-6 field to a measurement unit.
+
+.Notes
+[%collapsible]
+====
+NOTE: <<ref_tbl_dec_obx6_mapping>> defines the mapping of the SDC measurement unit to the data fields of the HL7 data type *CWE* used in the OBX-6 field.
+
+NOTE: For a device-releted element such as MDS, VMD, CHANNEL, or other metric types, the OBX-6 field is left empty.
+====
+****
+
+.R8024
+[sdpi_requirement#r8024,sdpi_req_level=shall]
+****
+If a private *MDC* code is used for the coding of the SDC measurement unit of a metric, a <<actor_somds_dec_gateway>> shall map the identifier as described in section <<ref_private_coding_system_note>>.
+****
+
+[#ref_tbl_dec_obx6_mapping]
+.OBX-6 Measurement Unit Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBX-6/CWE-1
+|Identifier
+|pm:NumericMetricDescriptor+++<wbr/>+++/pm:Unit+++<wbr/>+++/@Code
+|
+
+|OBX-6/CWE-2
+|Text
+|If *@Code* is an MDC code, this field contains the RefId of the MDC code.
+
+In all other cases, the field is set to the pm:NumericMetricDescriptor+++<wbr/>+++/pm:Unit+++<wbr/>+++/@SymbolicCodeName.
+| Note that MDC is the default coding system if no coding system is specified.
+
+|OBX-6/CWE-3
+|Name of Coding System
+|*"MDC"* if no other coding system is specified.
+
+In all other cases, the field is set to pm:NumericMetricDescriptor+++<wbr/>+++/pm:Unit+++<wbr/>+++/@CodingSystem.
+
+|Note that MDC is the default coding system if no coding system is specified.
+
+|===
+
+====== OBX-7 Reference Range
+
+.R8026
+[sdpi_requirement#r8026,sdpi_req_level=shall]
+****
+A <<actor_somds_dec_gateway>> shall define the range of the alert limits on the metric level, if the *@Handle* of the metric is referenced by a *pm:LimitAlertConditionDescriptor* in the *pm:LimitAlertConditionDescriptor/pm:Source* list, by the format `<Lower Limit> - <Upper Limit>` where
+
+* `<Lower Limit>` is set to *pm:LimitAlertConditionState/pm:Limits/@Lower* and
+* `<Upper Limit>` is set to *pm:LimitAlertConditionState/pm:Limits/@Upper*.
+
+.Notes
+[%collapsible]
+====
+NOTE: Note that the decimal number needs to be formatted according to the HL7 numeric value formatting rules.
+====
+****
+
+.R8025
+[sdpi_requirement#r8025,sdpi_req_level=shall]
+****
+A <<actor_somds_dec_gateway>> shall not set this field to the device measurement range capability for device related segments.
+
+.Notes
+[%collapsible]
+====
+NOTE: As stated in <<ref_ihe_pcd_tf_2_2019>> the reference range can only be set for device related segments (e.g. Channel). Within SDC the device measurement range refers to each metric and cannot be populated on higher levels in the containment tree.
+====
+****
+
+====== OBX-8 Abnormal Flags
+
+The OBX-8 field is not required to be set since the gateway exports valid and validated metric data only.
+
+.R8027
+[sdpi_requirement#r8027,sdpi_req_level=shall]
+****
+A <<actor_somds_dec_gateway>> shall leave the OBX-8 field empty as specified in the <<ref_ihe_pcd_tf_2_2019>> for valid and validated metric values.
+****
+
+====== OBX-11 Observation Result Status
+
+.R8028
+[sdpi_requirement#r8028,sdpi_req_level=shall]
+****
+For a device-related element such as MDS, VMD, or CHANNEL, a <<actor_somds_dec_gateway>> shall set the OBX-11 field to *"X"*.
+****
+
+.R8029
+[sdpi_requirement#r8029,sdpi_req_level=shall]
+****
+For metrics with the *pm:AbstractMetricValue/pm:MetricQuality/@Validity* set to *Vld* (Valid), a <<actor_somds_dec_gateway>> shall set the OBX-11 field to *"R"*.
+****
+
+.R8030
+[sdpi_requirement#r8030,sdpi_req_level=shall]
+****
+For metrics with the *pm:AbstractMetricValue/pm:MetricQuality/@Validity* set to *Vldated* (Validated Data), a <<actor_somds_dec_gateway>> shall set the OBX-11 field to *"F"*.
+****
+
+====== OBX-14 Date/Time of Observation
+
+.R8031
+[sdpi_requirement#r8031,sdpi_req_level=shall]
+****
+A <<actor_somds_dec_gateway>> shall set the OBX-14 field to the date and time of the intermittently measured metric value.
+
+.Notes
+[%collapsible]
+====
+NOTE: Intermittently measured metrics have the *pm:AbstractMetricDescriptor/@MetricAvailability* set to "*Intr*".
+
+NOTE: <<ref_tbl_dec_obx14_mapping>> defines the mapping of the SDC metric measurement timestamp to the data fields of the HL7 data type *DTM* used in the OBX-14 field.
+====
+****
+
+[#ref_tbl_dec_obx14_mapping]
+.OBX-14 Metric Measurement Timestamp Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBR-14/DTM-1
+|Date/Time
+|pm:EnumStringMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@DeterminationTime
+
+pm:NumericMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@DeterminationTime
+
+pm:StringMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@DeterminationTime
+|Note that the HL7 date & time format differs from the xsd date/time formats and requires a mapping accordingly (see also <<ref_expl_dt_mapping>>).
+
+|===
+
+====== OBX-16 Responsible Observer
+
+.R8032
+[sdpi_requirement#r8032,sdpi_req_level=shall]
+****
+If available, a <<actor_somds_dec_gateway>> shall set the OBX-16 field to the operator.
+
+.Notes
+[%collapsible]
+====
+NOTE: Please refer to <<ref_dec_obr10>> for further information.
+
+NOTE: The <<ref_ihe_pcd_tf_2_2019>> requires only the map the "ID Number", and optionally the "Family Name" and "Given Name" in this field, whereas the OBR-10 field may contain additional information about the operator.
+====
+****
+
+====== OBX-17 Observation Method
+
+.R8033
+[sdpi_requirement#r8033,sdpi_req_level=shall]
+****
+A <<actor_somds_dec_gateway>> shall set the OBX-17 field to one of the coded terms as specified in <<ref_tbl_dec_obx17_mapping>>, depending on the *pm:AbstractMetricDescriptor/@MetricCategory* (Category) and the *pm:AbstractMetricDescriptor/@DerivationMethod* (Derivation).
+****
+
+[#ref_tbl_dec_obx17_mapping]
+.OBX-17 Observation Method Mapping
+|===
+|SDC Category |SDC Derivation |HL7 OBX-17 Field Value
+
+|Msmt
+|Auto
+|OBX-17 field is left empty (recommended).
+
+Or set to "AMEAS\^auto-measurement^MDC" if required.
+
+|Msmt
+|Man
+|MMEAS\^manual-measurement^MDC
+
+|Clc
+|Auto
+|ACALC\^auto-calculation^MDC
+
+|Clc
+|Man
+|MCALC\^manual-calculation^MDC
+
+|Set
+|Auto
+|ASET\^auto-setting^MDC
+
+|Set
+|Man
+|MSET\^manual-setting^MDC
+
+|===
+
+====== OBX-18 Equipment Instance Identifier
+include::tf2-ch-b-gateway-obx18-mapping.adoc[]
+
+====== OBX-20 Observation Site
+
+.R8034
+[sdpi_requirement#r8034,sdpi_req_level=shall]
+****
+If available for the metric, a <<actor_somds_dec_gateway>> shall set the OBX-20 field to body site.
+
+.Notes
+[%collapsible]
+====
+NOTE: If the *pm:AbstractMetricState/pm:BodySite* element and the *pm:AbstractMetricDescriptor/pm:BodySite* element are available, the body site defined in the *pm:AbstractMetricState* is the preferred *pm:BodySite* element to be mapped.
+
+NOTE: If *pm:BodySite* element list contains more than one *pm:BodySite* element, only the first entry of the list is used for the mapping.
+
+NOTE: <<ref_tbl_dec_obx20_mapping>> defines the mapping of the SDC body site element to the data fields of the HL7 data type *CWE* used in the OBX-20 field.
+
+NOTE: For a device-releted element such as MDS, VMD, or CHANNEL, the OBX-20 field is left empty.
+====
+****
+
+.R8035
+[sdpi_requirement#r8035,sdpi_req_level=shall]
+****
+If a private *MDC* code is used for the coding of a body site, a <<actor_somds_dec_gateway>> shall map the identifier as described in section <<ref_private_coding_system_note>>.
+****
+
+[#ref_tbl_dec_obx20_mapping]
+.OBX-20 Observation Site (Body Site) Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBX-20/CWE-1
+|Identifier
+|pm:AbstractMetricState+++<wbr/>+++/pm:BodySite+++<wbr/>+++/@Code
+
+or
+
+pm:AbstractMetricDescriptor+++<wbr/>+++/pm:BodySite+++<wbr/>+++/@Code, if pm:BodySite is not available in pm:AbstractMetricState
+|Note that only the first pm:BodySite element from the list is required to be mapped.
+
+|OBX-20/CWE-2
+|Text
+|If *@Code* is an MDC code, this field contains the RefId of the MDC code.
+
+In all other cases, the field is set to the pm:AbstractMetricState+++<wbr/>+++/pm:BodySite+++<wbr/>+++/@SymbolicCodeName
+
+or
+
+pm:AbstractMetricDescriptor+++<wbr/>+++/pm:BodySite+++<wbr/>+++@SymbolicCodeName, if pm:BodySite is not available in pm:AbstractMetricState
+| Note that MDC is the default coding system if no coding system is specified.
+
+Note that only the first pm:BodySite element from the list is required to be mapped.
+
+|OBX-20/CWE-3
+|Name of Coding System
+|*"MDC"* if no other coding system is specified.
+
+In all other cases, the field is set to pm:AbstractMetricState+++<wbr/>+++/pm:BodySite+++<wbr/>+++/@CodingSystem
+
+or
+
+pm:AbstractMetricDescriptor+++<wbr/>+++/pm:BodySite+++<wbr/>+++@CodingSystem, if pm:BodySite is not available in pm:AbstractMetricState
+
+|Note that MDC is the default coding system if no coding system is specified.
+
+Note that only the first pm:BodySite element from the list is required to be mapped.
+
+|===

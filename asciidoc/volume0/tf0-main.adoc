@@ -1,0 +1,26 @@
+[#vol0_clause_ihe_technical_frameworks_general_introduction, sdpi_volume_caption=0]
+= Volume 0 -- IHE Technical Frameworks General Introduction
+
+[#vol0_clause_general,sdpi_offset=clear]
+== IHE Technical Frameworks General Introduction
+The http://ihe.net/Technical_Frameworks/#GenIntro[IHE Technical Framework General Introduction] is shared by all of the IHE domain technical frameworks. Each technical framework volume contains links to this document where appropriate.
+
+include::tf0-ch-9-copyrights.adoc[]
+
+// 10 Trademark
+
+[sdpi_offset=10]
+== Trademark
+IHE^®^ and the IHE logo are trademarks of the Healthcare Information Management Systems Society in the United States and trademarks of IHE Europe in the European Community. They may only be used with the written consent of the IHE International Board Operations Committee, which may be given to a Member Organization in broad terms for any use that is consistent with the IHE mission and operating principles.
+
+[sdpi_offset=1]
+[sdpi_offset=clear]
+== IHE Technical Frameworks General Introduction Appendices
+The http://ihe.net/Technical_Frameworks/#GenIntro[IHE Technical Framework General Introduction Appendices] are components shared by all of the IHE domain technical frameworks. Each technical framework volume contains links to these documents where appropriate.
+
+include::tf0-ch-a-actors.adoc[]
+
+include::tf0-ch-b-transactions.adoc[]
+
+include::tf0-ch-d-glossary.adoc[]
+

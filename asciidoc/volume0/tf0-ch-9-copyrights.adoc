@@ -1,0 +1,69 @@
+[sdpi_offset=9]
+== Copyright Licenses
+
+IHE International hereby grants to each Member Organization, and to any other user of these documents, an irrevocable, worldwide, perpetual, royalty-free, nontransferable, nonexclusive, non-sublicensable license under its copyrights in any IHE profiles and Technical Framework documents, as well as any additional copyrighted materials that will be owned by IHE International and will be made available for use by Member Organizations, to reproduce and distribute (in any and all print, electronic or other means of reproduction, storage or transmission) such IHE Technical Documents.
+
+The licenses covered by this Copyright License are only to those copyrights owned or controlled by IHE International itself. If parts of the Technical Framework are included in products that also include materials owned or controlled by other parties, licenses to use those products are beyond the scope of this IHE document and would have to be obtained from that other party.
+
+=== Copyright of Base Standards
+IHE technical documents refer to and make use of a number of standards developed and published by several standards development organizations. All rights for their respective base standards are reserved by these organizations. This agreement does not supersede any copyright provisions applicable to such base standards. Copyright license information for frequently referenced base standards is provided below.
+
+==== DICOM (Digital Imaging and Communications in Medicine)
+DICOM^®^ is the registered trademark of the National Electrical Manufacturers Association for its standards publications relating to digital communications of medical information.
+
+==== HL7 (Health Level Seven)
+_<Please refer to the Fast Healthcare Interoperability Resources as the "HL7^®^ FHIR^®^ standard".>_
+
+HL7^®^, Health Level Seven^®^, CDA^®^, FHIR^®^, and the FHIR [FLAME DESIGN] ^®^ are registered trademarks of Health Level Seven International.
+Health Level Seven, Inc. has granted permission to IHE to reproduce tables from the HL7 standard. The HL7 tables in this document are copyrighted by Health Level Seven, Inc. All rights reserved. Material drawn from these documents is credited where used.
+
+==== LOINC (Logical Observation Identifiers Names and Codes)
+LOINC^®^ is registered United States trademarks of Regenstrief Institute, Inc.
+
+==== SNOMED CT (Systematized Nomenclature of Medicine -- Clinical Terms)
+Some IHE Profiles incorporate SNOMED^®^ CT, which is used by permission of the International Health Terminology Standards Development Organisation. SNOMED CT© was originally created by the College of American Pathologists. SNOMED CT is a registered trademark of the International Health Terminology Standards Development Organisation, all rights reserved.
+
+[%noheader]
+[cols="1"]
+|===
+|Amend section 9.1.x by adding the following:
+|===
+
+==== IEEE 11073 (Health Device Interoperability)
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  The content below is verbatim from the IEEE permission letter.
+An abbreviated version may be provided in subsequent supplement versions with a reference to the complete letter.
+The copyright language will need to be updated to support the PKP standards (e.g., <<ref_ieee_11073_10700_2022>>.
+It may also need to be updated for <<ref_ieee_11073_10101_2020>>, which is needing to be renewed.
+Note that NIST and the RTTMS tools are a key factor in the nomenclature aspect of the licensing discussion.
+
+|===
+
+IEEE^®^ and IEEE 11073^®^ are registered trademarks of the The Institute of Electrical and Electronics Engineers, Inc.  IEEE has granted permission to IHE to use portions of 11073-10207, 11073-20701, 11073-20702 (the “Material”), subject to the following conditions:
+
+. IHE’s use of the Material shall be for the following purpose: (the “Purpose”):
+
+* IHE specification developers want to include the Implementation Conformance Specification (ICS) tables from   each of these standards and add to the "Support" column the specifics of how and where the IHE specifications address the SDC capability.
+
+* Additionally, the IHE profile specifications may include summarization and references to specific content and in a few cases, inclusion of a graphic that would then point the reader back to standard for detailed review. For example, 11073-10207, Figure 2 "BICEPS component decomposition".
+
+* Finally, all three of these standards have integrated requirement designations. For example, 11073-20701, section (10.1) "R0064: An SDC PARTICIPANT SHOULD utilize the highest TLS version." These requirements may also be referenced (at least by Rxxxx designator) to indicate when and how they are addressed in the IHE specification(s). IHE agrees to share with the 11073 working groups any iteration of its derivative work for the benefits of the 11073 community of users.
+
+. IHE understands and agrees that the following shall appear in each section where the material is used:
+
+* _Adapted and reprinted with permission from IEEE. Copyright IEEE Year.  All rights reserved._*  footnote:ieee_permission[Adapted and reprinted with permission from IEEE. Copyright IEEE Year.  All rights reserved.]
+
+. IHE understands and agrees that the Material is the intellectual property of IEEE. Except as provided in this agreement no ownership rights to the Material shall be transferred to IHE.
+
+. Except as necessary to give effect to the Purpose, no other use of the Material including, but not limited to, reproduction or distribution of the IEEE Standards in any format is prohibited without prior written consent of IEEE.
+
+. The Material is provided “as is,” To the extent permitted by law, IEEE disclaims all representations and warranties to the Material.
+
+. IHE shall note that any comments or interpretations of the Material are its own and do not represent the views of IEEE, its members or affiliates.
+
+. IHE understands and agrees that this grant permission may not be transferred or assigned without the express written permission of IEEE.
+

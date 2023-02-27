@@ -1,0 +1,77 @@
+
+:var_transaction_id: DEV-23
+
+:var_label_dev_23_message_hello: Hello
+:var_label_dev_23_payload_provider_uid: Provider UID
+:val_label_dev_23_payload_discovery_scope: Discovery Scope
+
+[#vol2_clause_dev_23,sdpi_offset=23]
+=== Announce Network Presence [{var_transaction_id}]
+
+==== Scope
+
+[sdpi_transaction#transaction_dev_23,actors='actor_somds_provider actor_somds_consumer',figure=vol2_figure_dev_23_sequence,messages='message_announce_network_presence']
+
+include::tf2-dev-23-summary.adoc[]
+
+==== Actor Roles
+
+.Actor Roles {var_transaction_id}
+[cols="1,2"]
+|===
+|Actor |Roles
+
+|<<vol1_spec_sdpi_p_actor_somds_provider>>
+|Announces its presence by multicasting <<vol2_clause_dev_23_message_hello, {var_label_dev_23_message_hello}>> messages to all listening systems.
+
+|<<actor_somds_consumer>>
+|Listens for <<vol2_clause_dev_23_message_hello, {var_label_dev_23_message_hello}>> messages to identify any <<actor_somds_provider>>s that it may exchange messages with and further retrieve a <<actor_somds_provider>>'s service capabilities.
+
+|===
+
+==== Referenced Standards
+
+* <<ref_ieee_11073_10207_2017>> Section 9.2 Implicit Discovery
+
+==== Messages
+
+.Message Interaction Diagram {var_transaction_id}
+[plantuml#vol2_figure_dev_23_sequence, target=puml-dev-23-sequence, format=svg, 40width=100%]
+....
+include::../../plantuml/vol2-figure-dev-23-sequence.puml[]
+....
+
+[#vol2_clause_dev_23_message_hello]
+===== {var_label_dev_23_message_hello} Message
+
+<<acronym_biceps>> specifies an implicit discovery protocol for allowing <<actor_somds_consumer>>s to receive a notification when a <<actor_somds_provider>> is ready to exchange messages with other <<actor_somds_consumer>>s.
+The corresponding message for this transaction is called _{var_label_dev_23_message_hello}_.
+
+Note that the {var_label_dev_23_message_hello} message described in this clause is a generic/abstract concept that can be implemented differently.
+It should not be confused with actual transport message specifications like, e.g. the WS-Discovery Hello message as described in <<vol2_clause_appendix_mdpws_dev_23>>.
+
+The {var_label_dev_23_message_hello} is a multicast message that is sent from each <<actor_somds_provider>> to all listening <<actor_somds_consumer>>s (zero to many). Limited but sufficient information is provided with the message to enable <<actor_somds_consumer>>s to determine if they are interested in connecting with the <<actor_somds_provider>> discovering additional information.
+
+[#vol2_clause_dev_23_message_announce_network_presence_trigger_events]
+====== Trigger Events
+
+This message is sent
+
+1. whenever a <<actor_somds_provider>> joins an <<acronym_md_lan>>,
+2. when a <<actor_somds_provider>> returns to normal _on-line_ operation after having indicated temporary suspension of message exchanges, or
+3. when a <<actor_somds_provider>> changes its <<payload_dev_23_discovery_scope>>.
+
+[#vol2_clause_dev_23_message_announce_network_presence_message_semantics]
+====== Message Semantics
+
+[[payload_dev_23_provider_uid]]Provider UID:: The <<term_somds_provider_uid>>.
+[[payload_dev_23_discovery_scope]]Discovery Scope:: The <<term_discovery_scope>> of the <<actor_somds_provider>>.
+
+[#vol2_clause_dev_23_message_announce_network_presence_expected_actions]
+====== Expected Actions
+
+When a <<actor_somds_provider>> sends this message, there is no expected or required responses. This is due to the fact that either there are no <<actor_somds_consumer>>s listening for announcement messages, or the information in the message (e.g., Discovery Type) is not of interest to any receiving <<actor_somds_consumer>>s.
+
+[#vol2_clause_dev_23_message_announce_network_presence_ses]
+include::../dev-x-default-ses-unsecured-mode.adoc[]
+

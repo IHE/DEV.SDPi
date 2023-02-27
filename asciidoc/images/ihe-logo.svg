@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="193.8425"
+   height="96.906548"
+   viewBox="0 0 193.8425 96.906548"
+   version="1.1"
+   id="svg5655"
+   sodipodi:docname="ihe-logo.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata5659">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>IHE International</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1957"
+     inkscape:window-height="1095"
+     id="namedview5657"
+     showgrid="false"
+     inkscape:zoom="2.3556402"
+     inkscape:cx="67.117697"
+     inkscape:cy="138.83488"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="ihe-international"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <!-- Created by Xeno Media, Inc. -->
+  <title
+     id="title5583">IHE International</title>
+  <desc
+     id="desc5585">Integrating the Healthcare Enterprise</desc>
+  <defs
+     id="defs5592">
+    <linearGradient
+       id="purple-gradient"
+       x1="0"
+       y1="0"
+       x2="0"
+       y2="1">
+      <stop
+         offset="0%"
+         style="stop-color:rgb(80, 57, 139);stop-opacity:1"
+         id="stop5587" />
+      <stop
+         offset="100%"
+         style="stop-color:rgb(62, 44, 114);stop-opacity:1"
+         id="stop5589" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#purple-gradient"
+       id="linearGradient6285"
+       x1="125.17869"
+       y1="0.8072623"
+       x2="125.17869"
+       y2="66.482033"
+       gradientTransform="scale(0.83051676,1.2040696)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#purple-gradient"
+       id="linearGradient6287"
+       x1="28.635975"
+       y1="1.822559"
+       x2="28.635975"
+       y2="75.491158"
+       gradientTransform="scale(0.95421935,1.0479771)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#purple-gradient"
+       id="linearGradient6289"
+       x1="0.63986963"
+       y1="0.98205948"
+       x2="0.63986963"
+       y2="40.677315"
+       gradientTransform="scale(0.51416725,1.9448924)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#purple-gradient"
+       id="linearGradient6291"
+       x1="0.23262048"
+       y1="1.3747199"
+       x2="0.23262048"
+       y2="113.21497"
+       gradientTransform="scale(1.4143209,0.70705314)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#purple-gradient"
+       id="linearGradient6293"
+       x1="0.23262048"
+       y1="1.3747199"
+       x2="0.23262048"
+       y2="113.21497"
+       gradientTransform="scale(1.4143209,0.70705314)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#purple-gradient"
+       id="linearGradient6295"
+       x1="0.23262048"
+       y1="9.8606453"
+       x2="0.23262048"
+       y2="121.7009"
+       gradientTransform="scale(1.4143209,0.70705314)"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     id="ihe-international"
+     style="fill:none;fill-rule:evenodd;stroke:none;stroke-width:1"
+     transform="translate(-72.490808,-7.8210259)">
+    <g
+       id="ihe-logo"
+       style="fill:url(#linearGradient6295)"
+       transform="matrix(1.2254707,0,0,1.2254707,72.087628,-0.7229558)">
+      <g
+         id="logo"
+         transform="translate(0,6)"
+         style="fill:url(#linearGradient6293)">
+        <g
+           id="ihe"
+           style="fill:url(#linearGradient6291)">
+          <path
+             d="m 156.121,2.325 c -4.182,-0.521 -10.147,-1.353 -23.032,-1.353 -15.392,0 -29.126,3.33 -29.126,22.24 v 34.504 c 0,18.906 13.606,22.333 29.006,22.333 12.889,0 18.97,-0.83 23.152,-1.347 1.679,-0.209 2.386,-0.838 2.386,-2.183 v -9.666 c 0,-1.149 -1.076,-2.071 -2.386,-2.071 h -24.235 c -5.597,0 -7.634,-1.669 -7.634,-7.066 v -11.02 h 30.92 c 1.309,0 2.38,-0.942 2.38,-2.085 V 34.74 c 0,-1.144 -1.071,-2.066 -2.38,-2.066 h -30.92 v -9.462 c 0,-5.397 2.037,-7.069 7.634,-7.069 h 24.235 c 1.31,0 2.386,-0.928 2.386,-2.071 V 4.407 c 0,-1.354 -0.707,-1.881 -2.386,-2.082"
+             id="ihe-e"
+             style="fill:url(#linearGradient6285)"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 29.705,79.113 h 15.637 c 1.307,0 2.384,-0.93 2.384,-2.069 V 47.003 h 29.482 v 30.041 c 0,1.139 1.079,2.069 2.393,2.069 h 15.637 c 1.304,0 2.383,-0.93 2.383,-2.069 V 3.88 c 0,-1.141 -1.079,-1.97 -2.383,-1.97 H 79.601 c -1.314,0 -2.393,0.829 -2.393,1.97 V 31.525 H 47.726 V 3.88 c 0,-1.141 -1.077,-1.97 -2.384,-1.97 H 29.705 c -1.312,0 -2.38,0.829 -2.38,1.97 v 73.164 c 0,1.139 1.068,2.069 2.38,2.069"
+             id="ihe-h"
+             style="fill:url(#linearGradient6287)"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 20.739,3.88 c 0,-1.141 -0.952,-1.97 -2.271,-1.97 H 2.473 c -1.311,0 -2.144,0.829 -2.144,1.97 v 73.164 c 0,1.139 0.833,2.069 2.144,2.069 h 15.995 c 1.319,0 2.271,-0.93 2.271,-2.069 V 3.88"
+             id="ihe-i"
+             style="fill:url(#linearGradient6289)"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,25 @@
+
+// = Devices:  Surgical
+
+
+[%noheader]
+[cols="1"]
+|===
+| Add the following Surgical device section after the Physiologic Monitor specification.
+|===
+
+
+
+// 8.3.4
+==== Device:  Surgical
+
+// 8.3.4.4
+[#vol3_clause_device_surgical,sdpi_offset=1]
+===== SDC/BICEPS content module
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  Content for this section will be extended in SDPi 1.x and subsequent versions.  The initial content will reflect what is provided in SDPi 1.0 <<vol3_clause_device_physiological_monitor>>.
+|===

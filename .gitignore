@@ -1,0 +1,6 @@
+.idea
+puml-*.png
+puml-*.svg
+*.pdf
+*.html
+.asciidoctor

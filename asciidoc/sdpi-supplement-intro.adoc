@@ -1,0 +1,149 @@
+
+[#supplement_clause_introduction_to_supplement,sdpi_offset=clear]
+= Introduction to this Supplement
+
+[%noheader]
+[%autowidth]
+[cols="1a"]
+|===
+|Whenever possible, IHE profiles are based on established and stable underlying standards. However, if an IHE domain determines that an emerging standard has high likelihood of industry adoption, and the standard offers significant benefits for the use cases it is attempting to address, the domain may develop IHE profiles based on such a standard. During Trial Implementation, the IHE domain will update and republish the IHE profile as the underlying standard evolves.
+
+Product implementations and site deployments may need to be updated in order for them to remain interoperable and conformant with an updated IHE profile.
+
+This <profile acronym> Profile (or This Technical Framework Supplement) is based on Release 4 of the emerging HL7^®^{empty}footnote:[HL7 is the registered trademark of Health Level Seven International.]  FHIR^®^{empty}footnote:[FHIR is the registered trademark of Health Level Seven International.]  specification. HL7 describes FHIR Change Management and Versioning at https://www.hl7.org/fhir/versions.html.
+
+HL7 provides a rating of the maturity of FHIR content based on the FHIR Maturity Model (FMM): level 0 (draft) through N (Normative). See http://hl7.org/fhir/versions.html#maturity.
+
+The FMM levels for FHIR content used in this profile are:
+
+[%header]
+[width=50%]
+[cols="^2,^1"]
+!====
+.^! FHIR Content +
+(Resources, ValueSets, etc.) !FMM Level
+
+!  !
+
+!  !
+
+! <e.g., Communication ! 2>
+
+!====
+{empty} +
+
+|===
+
+{empty} +
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi 1.0 Supplement -- _DEV-Internal Review Version_ -- Note*:
+
+This release of the SDPi 1.0 supplement is intended for *IHE Devices "internal" review*, with a focus on technical content.
+It is recognized that there are editorial issues that need to be resolved before the Public Comment version is released.  Known issues with this DEV Internal Review version include:
+
+. The content is scoped per the *_SDPi 1.0 version capabilities specification_* (see https://github.com/IHE/sdpi-fhir/wiki/SDPi-Editorial-Planning-and-Versions#sdpi-version-10-detail-[wiki article "SDPi Version 1.0 (Detail)"]), though future capabilities may be included in a Reviewer Note; *_continued development of SDPi 1.x and beyond will begin early in 2023 DURING the 1.0 review periods_*;
+. *For SDPi 1.0 DEV Internal review version 1*, content is fairly complete -- in other words, at a level worth reviewing in detail, except:  *_SDPi-R, SDPi-A & SDPi-xC_*.  These sections have content such as actor models, but need to have the remaining content in the Word version of the supplement migrated to AsciiDoc and then integrated with the remaining content; this will be accomplished early January doing the DEV Internal review period and an *_updated version published by mid-January_*;
+. Supplement organization is *_based on the IHE Supplement Template from 2020_*; recently a newer template has been released but is not factored into this version of the supplement; also, the section allocation and organization anticipates the IHE PCD 2019 (see <<vol1_appendix_b_references>>) being updated into an IHE DEV 202x version that also conforms to the updated IHE Techncial Feramework template(s);
+. This supplement includes (4) SDPi profiles; however, the general IHE Supplement Template is organized for a single profile; as a result, some adjustments have been made, especially in the supplement overview section where there is a general SDPi overview and then basic overviews for each of the profiles; challenging areas include profile "options" where there are FOUR sections vs. one; it is a work in progress and feedback is appreciated, especially for clarity;
+. *Known Issue:*  *_Figure & Table numbering needs to be fixed_* per IHE TF style guide conventions (e.g., section-specific numbering, for example:  Figure x.y.z-2); this will be fixed before the Public Comment version;
+. *Known Issue:*  Some *_section header text does not always support text replacement_* of "variables"; this will be fixed before the Public Comment version;
+. *Known Issue:*  *_Appendix references do not always render with the correct letter_*;  this will be fixed before the Public Comment version;
+. *Open / Closed Issues tables* -- for SDPi 1.0 there is an initial approach that integrates with the Gemini SES+MDI program work flow (from Confluence issues to Github Issues to specification content); however, there is discussion around how to better improve this in future
+. Technical content in TF-2 Transactions is complete; however, *_TF-1 and TF-3_* though technically complete for 1.0 features, *_will require additional EDITORIAL content_*; limited content is provided in this DEV internal review draft, BUT guidance on what needs to be added for the Public Comment version vs. in the 1.x version should be identified;
+. *Requirements boxes* (e.g., "R1234") have been added especially in TF-2 and some in TF-3; this is an initial approach that *_will be significantly expanded in future versions of the supplement_*; a more robust, expanded approach is provided in <<vol1_clause_sdpi_requirements_modeling_integration>>;
+. *_<<term_safe_effective_secure>> Sections_* (see <<vol1_clause_appendix_a_ses_considerations_section_template>>) are included in the specification; however, their use and content will be significantly extended in SDPi 1.x and subsequent versions;
+. This supplement is currently rendered as a *"long form"* document -- one single HTML file; however, in subsequent versions the intent is to consider a multi-page / file HTML rendering + addition of a tabbed menu for navigating the sections of the supplement;
+. *FOR THE PUBLIC COMMENT* version of the supplement, it is intended to migrate the current content in the sdpi-fhir Github repository to a new DEV.SDPi repository, in alignment with current IHE conventions; major / minor version tagging, issue and pull-requiest management, etc. will be managed in that new repository. *REVIEWER COMMENTS* for this Devices-Internal review version will be tracked as Issues in the current sdpi-fhir repository.
+. The inclusion of *PlantUML sources* that are dynamically rendered then converted to HTML is not aligned with IHE style convention of including the source but also rendering to SVG and including both in the output.
+This should not make any visible difference to the rendered HTML document, and it may be changed in future versions if required and appropriate.
+
+*"SDPi 1.0 Supplement Note"* boxes are provided throughout the document to help guide reviewers and to ask specific questions for feedback requested by the supplement editors.
+
+*REVIEWER FOCUS*:  Please review the document especially with a technical and general organizational focus.
+Does the information flow logically and sufficiently for adopters and implementers?
+Is the text clear and sufficient or do specific subject areas need to be expanded or reworked.
+Do the links work and lead to the right "best" destinations?  Focus on *_what must be addressed BEFORE Public Comment publication_*, recognizing that supplement development with 1.x and beyond will begin January 1st.
+
+|===
+
+// Forward declarations of common labels & acronyms & variables
+include::document-declarations.adoc[]
+
+
+[#supplement_clause_sdpi_supplement_overview]
+== SDPi Supplement Overview
+
+[#supplement_clause_sdpi_supplement_organization]
+=== SDPi Supplement Organization
+
+This IHE Devices Technical Framework supplement introduces a new _family of interoperability profiles_, Service-oriented Device Point-of-care Interoperability (SDPi), that comprise (4) separate profiles:
+
+* SDPi-Plug-and-trust (*SDPi-P*) Profile
+* SDPi-Reporting (*SDPi-R*) Profile
+* SDPi-Alerting (*SDPi-A*) Profile
+* SDPi-external Control (*SDPi-xC*) Profile
+
+To that end, the supplement includes updates to all (3) IHE DEV TF volumes, including:
+
+*TF-1  Integration Profiles*
+
+* General overview of the SDPi architectural approach & integrated set of profiles
+* Profile specific sections
+* Related appendices, for example the integration of this family of SDPi profiles with other sources of requirements - use cases or reference standards
+
+*TF-2  Transactions*
+
+* Extensive new set of transactions based on ISO/IEEE 11073 Service-oriented Device Connectivity (SDC) medical device interoperability standards.
+* Related appendices, for example the specialized use of web services messaging for device communication and gateways to other protocols or profiles
+
+*TF-3  Content Modules*
+
+* New content covering the application of ISO/IEEE 11073 SDC semantic standards to device content modules, with a primary focus on specifications related to the ISO/IEEE 11073-10207 BICEPS standard.
+
+{empty} +
+
+[#supplement_clause_joint_ihe_hl7_gemini_ses_mdi_project_development]
+=== Joint IHE-HL7 Gemini SES+MDI Project Development
+This supplement is the result of a joint https://confluence.hl7.org/x/Xzf9Aw[IHE-HL7 Gemini Device Interoperability program] which began early 2020.
+Extensive notes and discussion materials are provided on the project's HL7 Confluence site, including a https://confluence.hl7.org/pages/viewpage.action?pageId=113674346#LibrarywithEVERYTHINGyoueverwantedtoknow...-GeneralUpdate&BriefingPresentations[Library with extensive presentations and other materials].
+This Library also includes *_briefings (slides and recordings) to provide background for those reviewing the specification_*.
+
+The joint IHE-HL7 devices team leveraged tools from both organizations, as well as participated jointly throughout the project's multi-year efforts.
+
+The methods currently employed are provided in the wiki article:  https://github.com/IHE/sdpi-fhir/wiki/Program-Coordination-Co-Working-Spaces#program-coordination--co-working-spaces[Program Coordination & Co-Working Spaces].
+
+[#supplement_clause_supplement_support_for_ri_mc_rr_using_asciidoc]
+=== Supplement Support for RI+MC+RR using AsciiDoc
+In addition to the supplement's technical specification content, a development approach has been advanced that represents added value to adopters and implementers over the traditional document oriented approach.
+These are referred to as:
+
+[none]
+. *_Requirements Interoperability + Model Centric + Regulatory Ready_*
+
+Or *RI+MC+RR* for short.
+
+These three objectives may be summarized as follows:
+
+[none]
+* *Requirements Interoperability (RI)*
+[none]
+** Ability to integrate & automate requirements and capabilities from component specifications & standards to enable traceability & coverage at <<term_conformity_assessment>> (<<acronym_ca>>) of the component product interface
+* *Model Centric (MC)*
+[none]
+** Transition from a document-centric to a _computable model-based "single source of truth"_ specification from which the Technical Framework becomes a view of the model
+* *Regulatory Ready (RR)*
+[none]
+** Enable CA test reports that are genuinely _"regulatory submission ready"_ (e.g., inclusion in a U.S. FDA 510(k) submission package)
+
+The initial SDPi 1.0 version of the supplement has *_begun to take small steps_* toward support of these objectives, especially Requirements Interoperability, as well as the use of AsciiDoc metadata to annotate the document sources for post-processing.
+Clearly, moving toward <<term_model_centric>> specifications and full integration of <<term_model_based_systems_engineering>> (<<acronym_mbse>>) will take considerable effort and time; however, this supplement represents a humble start in that direction.
+Subsequent supplement versions will build upon these objectives and support a new level of rigor for connectathon and product conformity assessment testing and ultimately test reports that directly impact the challenges around medical product regulatory submissions.
+
+Additional discussion is provided in <<vol1_appendix_a_requirements_management_for_p_n_t_interperability>>, and on the https://confluence.hl7.org/pages/viewpage.action?pageId=82906664#ConformityAssessment&Tooling-RI+MC+RRforMedTechSpecificationsInitiative[Gemini project's confluence pages].
+See also related discussions on the Gemini Project's https://confluence.hl7.org/x/XhPUB[Pathway to an Ecosystem of Plug-and-Trust Products].
+
+

@@ -1,0 +1,170 @@
+
+:var_transaction_id: DEV-24
+
+:var_label_dev_24_message_probe: Probe
+:var_label_dev_24_message_probe_match: ProbeMatch
+:var_label_dev_24_message_resolve: Resolve
+:var_label_dev_24_message_resolve_match: ResolveMatch
+
+//reset|+1|off
+[#vol2_clause_dev_24,sdpi_offset=24]
+=== Discover Network Topology [{var_transaction_id}]
+
+==== Scope
+
+// [sdpi_transaction#transaction_dev_24,actors='actor_somds_provider actor_somds_consumer',figure=vol2_figure_dev_24_probe_sequence,messages='message_announce_network_presence']
+
+include::tf2-dev-24-summary.adoc[]
+
+==== Actor Roles
+
+.Actor Roles {var_transaction_id}
+[cols="1,2"]
+|===
+|Actor |Roles
+
+|<<vol1_spec_sdpi_p_actor_somds_consumer>>
+|Initiates communication by sending <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_probe}>> or <<vol2_clause_dev_24_message_resolve, {var_label_dev_24_message_resolve}>> messages to <<vol1_spec_sdpi_p_actor_somds_provider>>s. Then listens for <<vol2_clause_dev_24_message_probe_match, {var_label_dev_24_message_probe_match}>> and <<vol2_clause_dev_24_message_resolve_match, {var_label_dev_24_message_resolve_match}>> messages to discover those <<vol1_spec_sdpi_p_actor_somds_provider>>s that it intends to exchange messages with and further retrieves the <<vol1_spec_sdpi_p_actor_somds_provider>>'s service capabilities.
+
+|<<vol1_spec_sdpi_p_actor_somds_provider>>
+|Listens for <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_probe}>> and <<vol2_clause_dev_24_message_resolve, {var_label_dev_24_message_resolve}>> messages, which it responds to with <<vol2_clause_dev_24_message_probe_match, {var_label_dev_24_message_probe_match}>> or <<vol2_clause_dev_24_message_resolve_match, {var_label_dev_24_message_resolve_match}>> messages, respectively.
+
+|===
+
+==== Referenced Standards
+
+* <<ref_ieee_11073_10207_2017>> Section 9.3 Explicit Discovery
+
+==== Messages
+
+.Message Interaction Diagram {var_transaction_id}
+[plantuml#vol2_figure_dev_24_sequence, target=puml-dev-24-sequence, format=svg, 40width=100%]
+....
+include::../../plantuml/vol2-figure-dev-24-sequence.puml[]
+....
+
+
+// ---------- PROBE ---------
+
+
+[#vol2_clause_dev_24_message_probe]
+===== {var_label_dev_24_message_probe} Message
+
+<<acronym_biceps>> specifies an explicit discovery protocol for allowing <<vol1_spec_sdpi_p_actor_somds_consumer>>s to discover all <<vol1_spec_sdpi_p_actor_somds_provider>>s that are ready to exchange messages with <<vol1_spec_sdpi_p_actor_somds_consumer>>s.
+The corresponding message to seek <<vol1_spec_sdpi_p_actor_somds_provider>> based on filter criteria is called _{var_label_dev_24_message_probe}_.
+
+Note that the {var_label_dev_24_message_probe} message described in this clause is a generic/abstract concept that can be implemented differently.
+It should not be confused with actual transport message specifications like, e.g. the WS-Discovery Probe message as described in <<vol2_clause_appendix_mdpws_dev_24>>.
+
+If a specific <<term_somds_provider_uid>> is unknown to a <<vol1_spec_sdpi_p_actor_somds_consumer>>, the <<vol1_spec_sdpi_p_actor_somds_consumer>> can send a {var_label_dev_24_message_probe} multicast message to all listening <<vol1_spec_sdpi_p_actor_somds_provider>>s.
+Limited but sufficient information is provided with the message to enable <<vol1_spec_sdpi_p_actor_somds_provider>>s to determine if they match the <<term_discovery_scope>> requested by the <<vol1_spec_sdpi_p_actor_somds_consumer>>.
+
+[#vol2_clause_dev_24_message_probe_trigger_events]
+====== Trigger Events
+
+The {var_label_dev_24_message_probe} message is sent whenever a <<vol1_spec_sdpi_p_actor_somds_consumer>> joins an <<acronym_md_lan>> and is ready to exchange messages with <<vol1_spec_sdpi_p_actor_somds_provider>>s.
+
+[#vol2_clause_dev_24_message_probe_semantics]
+====== Message Semantics
+
+[[payload_dev_24_probe_discovery_scope]]Discovery Scope:: A <<term_discovery_scope>> to filter against.
+
+[#vol2_clause_dev_24_message_probe_expected_actions]
+====== Expected Actions
+
+When a <<vol1_spec_sdpi_p_actor_somds_consumer>> sends this message, every receiving <<vol1_spec_sdpi_p_actor_somds_provider>> that matches the requested <<payload_dev_24_probe_discovery_scope>> responds with a <<vol2_clause_dev_24_message_probe_match, {var_label_dev_24_message_probe_match}>> message.
+
+// ---------- PROBE MATCH ---------
+
+[#vol2_clause_dev_24_message_probe_match]
+===== {var_label_dev_24_message_probe_match} Message
+
+The {var_label_dev_24_message_probe_match} message is sent as part of the BICEPS _explicit discovery_ protocol in response to an incoming <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_probe}>> message.
+
+Note that the {var_label_dev_24_message_probe_match} message described in this clause is a generic/abstract concept that can be implemented differently.
+It should not be confused with actual transport message specifications like, e.g. the WS-Discovery ProbeMatch message as described in <<vol2_clause_appendix_mdpws_dev_24>>.
+
+The {var_label_dev_24_message_probe_match} message is a uni-cast message that is sent by a <<vol1_spec_sdpi_p_actor_somds_provider>> when an incoming <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_probe}>> message contains a <<payload_dev_24_probe_discovery_scope>> that matches the <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<term_discovery_scope>>. Limited but sufficient information is provided with the message to enable <<vol1_spec_sdpi_p_actor_somds_consumer>>s to determine a matching <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<payload_dev_24_probe_match_provider_uid>> and <<payload_dev_24_probe_match_transport_address>>.
+
+[#vol2_clause_dev_24_message_probe_match_trigger_events]
+====== Trigger Events
+
+The {var_label_dev_24_message_probe_match} message is sent whenever a <<vol1_spec_sdpi_p_actor_somds_provider>> receives a <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_probe}>> message that contains a <<payload_dev_24_probe_discovery_scope>> that matches the <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<term_discovery_scope>>.
+
+[#vol2_clause_dev_24_message_probe_match_semantics]
+====== Message Semantics
+
+[[payload_dev_24_probe_match_provider_uid]]Provider UID:: The <<term_somds_provider_uid>>.
+[[payload_dev_24_probe_match_transport_address]]Transport Address:: The <<term_transport_address>> under which the <<vol1_spec_sdpi_p_actor_somds_provider>> can receive secured messages.
+
+[#vol2_clause_dev_24_message_probe_match_expected_actions]
+====== Expected Actions
+
+The <<vol1_spec_sdpi_p_actor_somds_consumer>> that receives a {var_label_dev_24_message_probe_match} message can use the <<payload_dev_24_probe_match_transport_address>> to exchange secured messages with the <<vol1_spec_sdpi_p_actor_somds_provider>> from which it received the <<vol2_clause_dev_24_message_probe_match, {var_label_dev_24_message_probe_match}>> message.
+
+
+// ---------- RESOLVE ---------
+
+
+[#vol2_clause_dev_24_message_resolve]
+===== {var_label_dev_24_message_resolve} Message
+
+<<acronym_biceps>> specifies an explicit discovery protocol for allowing <<vol1_spec_sdpi_p_actor_somds_consumer>>s to discover all <<vol1_spec_sdpi_p_actor_somds_provider>>s that are ready to exchange messages with <<vol1_spec_sdpi_p_actor_somds_consumer>>s.
+The corresponding message to seek <<vol1_spec_sdpi_p_actor_somds_provider>>s based on a unique identifier is called _{var_label_dev_24_message_resolve}_.
+
+Note that the {var_label_dev_24_message_resolve} message described in this clause is a generic/abstract concept that can be implemented differently.
+It should not be confused with actual transport message specifications like, e.g. the WS-Discovery Resolve message as described in <<vol2_clause_appendix_mdpws_dev_24>>.
+
+If a specific <<term_somds_provider_uid>> is known to a <<vol1_spec_sdpi_p_actor_somds_consumer>>, the <<vol1_spec_sdpi_p_actor_somds_consumer>> can send a {var_label_dev_24_message_resolve} multicast message to all listening <<vol1_spec_sdpi_p_actor_somds_provider>>s. Limited but sufficient information is provided with the message to enable <<vol1_spec_sdpi_p_actor_somds_provider>>s to determine if they match the <<term_somds_provider_uid>> requested by the <<vol1_spec_sdpi_p_actor_somds_consumer>>.
+
+[#vol2_clause_dev_24_message_resolve_trigger_events]
+====== Trigger Events
+
+The {var_label_dev_24_message_resolve} message is sent
+
+1. whenever a <<vol1_spec_sdpi_p_actor_somds_consumer>> joins an <<acronym_md_lan>> and is ready to exchange messages with <<vol1_spec_sdpi_p_actor_somds_provider>>s or
+2. when a <<vol1_spec_sdpi_p_actor_somds_consumer>> runs in a mode where it periodically checks for availability of <<vol1_spec_sdpi_p_actor_somds_provider>>s matching a specific <<term_somds_provider_uid>>.
+
+[#vol2_clause_dev_24_message_resolve_semantics]
+====== Message Semantics
+
+[[payload_dev_24_resolve_provider_uid]]Provider UID:: The <<term_somds_provider_uid>> to resolve.
+
+[#vol2_clause_dev_24_message_resolve_expected_actions]
+====== Expected Actions
+
+When a <<vol1_spec_sdpi_p_actor_somds_consumer>> sends this message, every receiving <<vol1_spec_sdpi_p_actor_somds_provider>> that matches the requested <<term_somds_provider_uid>> responds with a <<vol2_clause_dev_24_message_resolve_match, {var_label_dev_24_message_resolve_match}>> message.
+
+
+// ---------- RESOLVE MATCH ---------
+
+
+[#vol2_clause_dev_24_message_resolve_match]
+===== {var_label_dev_24_message_resolve_match} Message
+
+The {var_label_dev_24_message_resolve_match} message is sent as part of the BICEPS _explicit discovery_ protocol in response to an incoming <<vol2_clause_dev_24_message_resolve, {var_label_dev_24_message_resolve}>> message.
+
+Note that the {var_label_dev_24_message_resolve_match} message described in this clause is a generic/abstract concept that can be implemented differently.
+It should not be confused with actual transport message specifications like, e.g. the WS-Discovery ResolveMatch message as described in <<vol2_clause_appendix_mdpws_dev_24>>.
+
+The {var_label_dev_24_message_resolve_match} message is a uni-cast message that is sent by a <<vol1_spec_sdpi_p_actor_somds_provider>> when an incoming <<vol2_clause_dev_24_message_resolve, {var_label_dev_24_message_resolve}>> message contains a <<payload_dev_24_provider_uid>> that matches the <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<term_somds_provider_uid>>. Limited but sufficient information is provided with the message to enable <<vol1_spec_sdpi_p_actor_somds_consumer>>s to determine a matching <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<payload_dev_24_probe_match_transport_address>>.
+
+[#vol2_clause_dev_24_message_resolve_match_trigger_events]
+====== Trigger Events
+
+The {var_label_dev_24_message_resolve_match} message is sent whenever a <<vol1_spec_sdpi_p_actor_somds_provider>> receives a <<vol2_clause_dev_24_message_resolve, {var_label_dev_24_message_resolve}>> message that contains a <<payload_dev_24_probe_discovery_scope>> that matches the <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<term_discovery_scope>>.
+
+[#vol2_clause_dev_24_message_resolve_match_semantics]
+====== Message Semantics
+
+[[payload_dev_24_provider_uid]]Provider UID:: The <<term_somds_provider_uid>>.
+[[payload_dev_24_transport_address]]Transport Address:: The <<term_transport_address>> under which the <<vol1_spec_sdpi_p_actor_somds_provider>> can receive secured messages.
+
+[#vol2_clause_dev_24_message_resolve_match_expected_actions]
+====== Expected Actions
+
+The <<vol1_spec_sdpi_p_actor_somds_consumer>> that receives a {var_label_dev_24_message_resolve_match} message can use the <<payload_dev_24_probe_match_transport_address>> to exchange secured messages with the <<vol1_spec_sdpi_p_actor_somds_provider>> from which it received the <<vol2_clause_dev_24_message_resolve_match, {var_label_dev_24_message_resolve_match}>> message.
+
+[#vol2_clause_dev_24_message_probe_ses]
+include::../dev-x-default-ses-unsecured-mode.adoc[]
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s12:Envelope
+        xmlns:s12="http://www.w3.org/2003/05/soap-envelope"
+        xmlns:wsa="http://www.w3.org/2005/08/addressing"
+        xmlns:wse="http://schemas.xmlsoap.org/ws/2004/08/eventing">
+    <s12:Header>
+        <wsa:Action>http://schemas.xmlsoap.org/ws/2004/08/eventing/SubscribeResponse</wsa:Action>
+        <wsa:MessageID><!-- ... --></wsa:MessageID>
+        <wsa:RelatesTo><!-- ... --></wsa:RelatesTo>
+    </s12:Header>
+    <s12:Body>
+        <wse:SubscribeResponse>
+            <wse:SubscriptionManager>
+                <wsa:Address><!-- ... --></wsa:Address>
+            </wse:SubscriptionManager>
+            <wse:Expires><!-- ... --></wse:Expires>
+        </wse:SubscribeResponse>
+    </s12:Body>
+</s12:Envelope>

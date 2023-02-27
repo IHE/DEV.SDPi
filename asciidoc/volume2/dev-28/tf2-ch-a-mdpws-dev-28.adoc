@@ -1,0 +1,36 @@
+:var_uri_ws_eventing_notification: https://www.w3.org/Submission/2006/SUBM-WS-Eventing-20060315/#Notifications
+:var_uri_dpws_messaging: http://docs.oasis-open.org/ws-dd/dpws/1.1/os/wsdd-dpws-1.1-spec-os.html#_Toc228672084
+
+[#vol2_clause_appendix_mdpws_dev_28]
+==== MDPWS: Notify Change in System Context and Capabilities  [DEV-28]
+
+This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_28>>.
+
+// ---------- EpisodicContextReport ---------
+
+
+===== {var_label_dev_28_message_contextreport} Message
+
+The <<vol2_clause_dev_28_message_notification, {var_label_dev_28_message_contextreport}>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
+
+====== Referenced Standards
+
+* <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
+
+====== Message Outline
+
+.EpisodicContextReport message
+[source#vol2_clause_appendix_a_mdpws_dev_28_contextreport,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-28-contextreport.xml[]
+----
+
+:var_trigger_events_ref: <<vol2_clause_dev_28_message_notification>>
+include::../dev-a-default-trigger-events.adoc[]
+
+====== Message Semantics
+
+`s12:Envelope/s12:Body/msg:EpisodicContextReport`:: Updated context information of a <<vol1_spec_sdpi_p_actor_somds_provider>>.
+
+:var_expected_actions_ref: <<vol2_clause_dev_28_message_notification>>
+include::../dev-a-default-expected-actions.adoc[]

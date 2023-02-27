@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s12:Envelope
+        xmlns:dpws="http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01"
+        xmlns:wsa="http://www.w3.org/2005/08/addressing"
+        xmlns:wsm="http://schemas.xmlsoap.org/ws/2004/09/mex"
+        xmlns:s12="http://www.w3.org/2003/05/soap-envelope">
+    <s12:Header>
+        <wsa:Action>http://schemas.xmlsoap.org/ws/2004/09/transfer/GetResponse</wsa:Action>
+        <wsa:MessageID><!-- ... --></wsa:MessageID>
+        <wsa:RelatesTo><!-- ... --></wsa:RelatesTo>
+    </s12:Header>
+    <s12:Body>
+        <wsm:Metadata>
+            <wsm:MetadataSection Dialect="http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01/ThisModel">
+                <dpws:ThisModel>
+                    <dpws:Manufacturer xml:lang="..."><!-- ... --></dpws:Manufacturer>
+                    <dpws:ManufacturerUrl><!-- ... --></dpws:ManufacturerUrl>
+                    <dpws:ModelName><!-- ... --></dpws:ModelName>
+                    <dpws:ModelNumber><!-- ... --></dpws:ModelNumber>
+                    <dpws:PresentationUrl><!-- ... --></dpws:PresentationUrl>
+                </dpws:ThisModel>
+            </wsm:MetadataSection>
+            <wsm:MetadataSection Dialect="http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01/ThisDevice">
+                <dpws:ThisDevice>
+                    <dpws:FriendlyName xml:lang="..."><!-- ... --></dpws:FriendlyName>
+                    <dpws:FirmwareVersion><!-- ... --></dpws:FirmwareVersion>
+                    <dpws:SerialNumber><!-- ... --></dpws:SerialNumber>
+                </dpws:ThisDevice>
+            </wsm:MetadataSection>
+            <wsm:MetadataSection Dialect="http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01/Relationship">
+                <dpws:Relationship Type="http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01/host">
+                    <dpws:Host>
+                        <wsa:EndpointReference>
+                            <wsa:Address><!-- ... --></wsa:Address>
+                        </wsa:EndpointReference>
+                        <dpws:Types xmlns="http://standards.ieee.org/downloads/11073/11073-20702-2016"><!-- ... --></dpws:Types>
+                    </dpws:Host>
+                    <dpws:Hosted>
+                        <wsa:EndpointReference>
+                            <wsa:Address><!-- ... --></wsa:Address>
+                        </wsa:EndpointReference>
+                        <dpws:Types><!-- ... --></dpws:Types>
+                        <dpws:ServiceId><!-- ... --></dpws:ServiceId>
+                    </dpws:Hosted>
+                </dpws:Relationship>
+            </wsm:MetadataSection>
+        </wsm:Metadata>
+    </s12:Body>
+</s12:Envelope>

@@ -1,0 +1,21 @@
+@startuml
+
+skinparam monochrome true
+autonumber
+
+!global $str_somds_consumer = "SOMDS Consumer"
+!global $str_somds_provider = "SOMDS Provider"
+
+participant "$str_somds_consumer" as consumer
+participant "$str_somds_provider" as provider
+
+==SDPi [DEV-24] Discover Network Topology==
+
+alt
+    consumer ->> provider: Probe(Discovery Scope)
+    consumer <<-- provider: ProbeMatch(Provider UID, Transport Address)
+else
+    consumer ->> provider: Resolve(Provider UID)
+    consumer <<-- provider: ResolveMatch(Transport Address)
+end
+@enduml

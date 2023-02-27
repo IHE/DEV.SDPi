@@ -1,0 +1,321 @@
+:var_uri_ws_eventing_subscribe: https://www.w3.org/Submission/2006/SUBM-WS-Eventing-20060315/#Subscribe
+:var_uri_ws_eventing_subscribe_response: https://www.w3.org/Submission/2006/SUBM-WS-Eventing-20060315/#Subscribe
+:var_uri_ws_eventing_renew: https://www.w3.org/Submission/2006/SUBM-WS-Eventing-20060315/#Renew
+:var_uri_ws_eventing_renew_response: https://www.w3.org/Submission/2006/SUBM-WS-Eventing-20060315/#Renew
+:var_uri_ws_eventing_unsubscribe: https://www.w3.org/Submission/2006/SUBM-WS-Eventing-20060315/#Unsubscribe
+:var_uri_ws_eventing_unsubscribe_response: https://www.w3.org/Submission/2006/SUBM-WS-Eventing-20060315/#Unsubscribe
+:var_uri_ws_eventing_subscription_end: https://www.w3.org/Submission/2006/SUBM-WS-Eventing-20060315/#Subscription_End
+:var_uri_ws_eventing_notification: https://www.w3.org/Submission/2006/SUBM-WS-Eventing-20060315/#Notifications
+:var_uri_dpws_eventing: http://docs.oasis-open.org/ws-dd/dpws/1.1/os/wsdd-dpws-1.1-spec-os.html#_Toc228672097
+:var_uri_xsd_duration: https://www.w3.org/TR/xmlschema-2/#duration
+:var_xsd_duration_regex: ^PT(\d+H)?(\d+M)?(\d+(.\d+)?S)?(?<!PT)$
+:var_filter_dialect_action: http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01/Action
+:var_status_delivery_failure: http://schemas.xmlsoap.org/ws/2004/08/eventing/DeliveryFailure
+:var_status_shutdown: http://schemas.xmlsoap.org/ws/2004/08/eventing/SourceShuttingDown
+:var_status_cancel: http://schemas.xmlsoap.org/ws/2004/08/eventing/SourceCancelling
+:var_uri_strcmp0: http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/strcmp0
+:var_uri_rfc3986: http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/rfc3986
+
+[#vol2_clause_appendix_mdpws_dev_27]
+==== MDPWS: Manage BICEPS Subscription [DEV-27]
+
+This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_27>>.
+
+// ---------- SUBSCRIBE ---------
+
+
+===== {var_label_dev_27_message_subscribe} Message
+
+The <<vol2_clause_dev_27_message_subscribe, {var_label_dev_27_message_subscribe}>> message is encoded by using {var_uri_ws_eventing_subscribe}[WS-Eventing Subscribe].
+
+====== Referenced Standards
+
+* <<ref_oasis_ws_discovery_2009>> {var_uri_ws_eventing_subscribe}[Section 3.1 Subscribe]
+* <<ref_oasis_dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
+
+====== Message Outline
+
+.WS-Eventing Subscribe message
+[source#vol2_clause_appendix_a_mdpws_dev_27_subscribe,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-27-subscribe.xml[]
+----
+
+:var_trigger_events_ref: <<vol2_clause_dev_27_message_subscribe>>
+include::../dev-a-default-trigger-events.adoc[]
+
+====== Message Semantics
+
+`s12:Envelope/s12:Body/wse:Subscribe/wse:EndTo/wsa:Address`:: HTTPS server address at which <<vol2_clause_dev_27_message_subscription_end, {var_label_dev_27_message_subscription_end}>> messages are supposed to be delivered.
+`s12:Envelope/s12:Body/wse:Subscribe/wse:Delivery/wse:NotifyTo/wsa:Address`:: HTTPS server address at which <<vol2_clause_dev_27_message_notification, {var_label_dev_27_message_notification}>> messages are supposed to be delivered.
+`s12:Envelope/s12:Body/wse:Subscribe/wse:Expires`:: <<payload_dev_27_susbcribe_expiration_time>> as an {var_uri_xsd_duration}[XML Schema duration], constrained to hours, minutes and seconds (regular expression: `{var_xsd_duration_regex}`)
+`s12:Envelope/s12:Body/wse:Subscribe/wse:Filter/@Dialect`:: In accordance with DPWS, support for at least `{var_filter_dialect_action}`.
+`s12:Envelope/s12:Body/wse:Subscribe/wse:Filter`:: If `s12:Envelope/s12:Body/wse:Subscribe/wse:Filter/@Dialect` is `{var_filter_dialect_action}`, <<payload_dev_27_susbcribe_filter>> is specified by a list of action URIs as defined in
+<<vol2_table_appendix_mdpws_dev_27_subscribe_filter>> that contains at least one URI. There is no normative support for other filters at the moment.
+
+.Filter mapping of BICEPS reports to action URIs
+[#vol2_table_appendix_mdpws_dev_27_subscribe_filter, cols="1,2"]
+|===
+|BICEPS report type |Action URI
+
+|DescriptionModificationReport as specified in <<ref_ieee_11073_10207_2017>>, Annex C.5
+|http://standards.ieee.org/downloads/11073/11073-20701-2018/DescriptionEventService/DescriptionModificationReport
+
+|EpisodicAlertReport as specified in <<ref_ieee_11073_10207_2017>>, Annex C.11
+|http://standards.ieee.org/downloads/11073/11073-20701-2018/StateEventService/EpisodicAlertReport
+
+|EpisodicComponentReport as specified in <<ref_ieee_11073_10207_2017>>, Annex C.12
+|http://standards.ieee.org/downloads/11073/11073-20701-2018/StateEventService/EpisodicComponentReport
+
+|EpisodicContextReport as specified in <<ref_ieee_11073_10207_2017>>, Annex C.13
+|http://standards.ieee.org/downloads/11073/11073-20701-2018/ContextService/EpisodicContextReport
+
+|EpisodicMetricReport as specified in <<ref_ieee_11073_10207_2017>>, Annex C.14
+|http://standards.ieee.org/downloads/11073/11073-20701-2018/StateEventService/EpisodicMetricReport
+
+|EpisodicOperationalStateReport as specified in <<ref_ieee_11073_10207_2017>>, Annex C.15
+|http://standards.ieee.org/downloads/11073/11073-20701-2018/StateEventService/EpisodicOperationalStateReport
+
+|OperationInvokedReport as specified in <<ref_ieee_11073_10207_2017>>, Annex C.77
+|http://standards.ieee.org/downloads/11073/11073-20701-2018/SetService/OperationInvokedReport
+
+|WaveformStream as specified in <<ref_ieee_11073_10207_2017>>, Annex C.112
+|http://standards.ieee.org/downloads/11073/11073-20701-2018/WaveformService/WaveformStream
+|===
+
+.R7001
+[sdpi_requirement#r7001,sdpi_req_level=shall]
+****
+When a <<actor_somds_consumer>> requests `{var_filter_dialect_action}` filter processing in a Subscribe message, the <<actor_somds_consumer>> shall assume the receiving <<actor_somds_provider>> to perform the `{var_uri_strcmp0}` matching rule.
+
+.Notes
+[%collapsible]
+====
+NOTE: The `{var_uri_rfc3986}` matching rule definition implemented by <<actor_somds_provider>>s ambiguously includes the term `prefix`.
+As `{var_uri_rfc3986}` subsumes `{var_uri_strcmp0}`, a fallback to case-sensitive string comparison is explicit and failsafe.
+====
+****
+
+:var_expected_actions_ref: <<vol2_clause_dev_27_message_subscribe>>
+include::../dev-a-default-expected-actions.adoc[]
+
+// ---------- SUBSCRIBE RESPONSE ---------
+
+
+===== {var_label_dev_27_message_subscribe_response} Message
+
+The <<vol2_clause_dev_27_message_subscribe_response, {var_label_dev_27_message_subscribe_response}>> message is encoded by using {var_uri_ws_eventing_subscribe_response}[WS-Eventing SubscribeResponse].
+
+====== Referenced Standards
+
+* <<ref_oasis_ws_discovery_2009>> {var_uri_ws_eventing_subscribe}[Section 3.1 Subscribe]
+* <<ref_oasis_dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
+
+====== Message Outline
+
+.WS-Eventing SubscribeResponse message
+[source#vol2_clause_appendix_a_mdpws_dev_27_subscribe_response,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-27-subscribe-response.xml[]
+----
+
+:var_trigger_events_ref: <<vol2_clause_dev_27_message_subscribe_response>>
+include::../dev-a-default-trigger-events.adoc[]
+
+====== Message Semantics
+
+`s12:Envelope/s12:Body/wse:SubscribeResponse/wse:SubscriptionManager/wsa:Address`:: URI that serves as an access point to manage the subscription, which satisfies <<payload_dev_27_subscribe_response_subscription_manager>>.
+`s12:Envelope/s12:Body/wse:SubscribeResponse/wse:Expires`:: <<payload_dev_27_subscribe_response_expiration_time>> as an {var_uri_xsd_duration}[XML Schema duration], constrained to hours, minutes and seconds (regular expression: `{var_xsd_duration_regex}`).
+
+:var_expected_actions_ref: <<vol2_clause_dev_27_message_subscribe_response>>
+include::../dev-a-default-expected-actions.adoc[]
+
+====== Additional Consideration
+
+[sdpi_level=+1]
+====== Path dispatching
+
+.R7003
+[sdpi_requirement#r7003,sdpi_req_level=shall]
+****
+A <<actor_somds_participant>> shall leverage HTTP path dispatching to identify subscription managers and notification/end-to sinks.
+
+
+.Notes
+[%collapsible]
+====
+NOTE: WS-Eventing allows for an event source or sink to make use of WS-Addressing endpoint reference parameters in order to identify endpoints, which is discouraged because of additional unnecessary complexity in processing complex XML elements.
+====
+****
+
+// ---------- NOTIFICATION ---------
+
+
+===== {var_label_dev_27_message_notification} Message
+
+Production of <<vol2_clause_dev_27_message_notification, {var_label_dev_27_message_notification}>> messages is not constrained herein as - depending on the subscription filter - any message can be a notification.
+
+====== Referenced Standards
+
+* <<ref_oasis_ws_discovery_2009>> {var_uri_ws_eventing_notification}[Section 4 Notifications]
+* <<ref_oasis_dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
+
+
+// ---------- RENEW ---------
+
+
+===== {var_label_dev_27_message_renew} Message
+
+The <<vol2_clause_dev_27_message_renew, {var_label_dev_27_message_renew}>> message is encoded by using {var_uri_ws_eventing_renew}[WS-Eventing Renew].
+
+====== Referenced Standards
+
+* <<ref_oasis_ws_discovery_2009>> {var_uri_ws_eventing_renew}[Section 3.2 Renew]
+* <<ref_oasis_dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
+
+====== Message Outline
+
+.WS-Eventing Renew message
+[source#vol2_clause_appendix_a_mdpws_dev_27_renew,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-27-renew.xml[]
+----
+
+:var_trigger_events_ref: <<vol2_clause_dev_27_message_renew>>
+include::../dev-a-default-trigger-events.adoc[]
+
+====== Message Semantics
+
+`s12:Envelope/s12:Body/wse:Renew/wse:Expires`:: <<payload_dev_27_renew_expiration_time>> as an {var_uri_xsd_duration}[XML Schema duration], constrained to hours, minutes and seconds (regular expression: `{var_xsd_duration_regex}`)
+
+:var_expected_actions_ref: <<vol2_clause_dev_27_message_renew>>
+include::../dev-a-default-expected-actions.adoc[]
+
+
+// ---------- RENEW RESPONSE ---------
+
+
+===== {var_label_dev_27_message_renew_response} Message
+
+The <<vol2_clause_dev_27_message_renew_response, {var_label_dev_27_message_renew_response}>> message is encoded by using {var_uri_ws_eventing_renew_response}[WS-Eventing RenewResponse].
+
+====== Referenced Standards
+
+* <<ref_oasis_ws_discovery_2009>> {var_uri_ws_eventing_renew}[Section 3.2 Renew]
+* <<ref_oasis_dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
+
+====== Message Outline
+
+.WS-Eventing RenewResponse message
+[source#vol2_clause_appendix_a_mdpws_dev_27_renew_response,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-27-renew-response.xml[]
+----
+
+:var_trigger_events_ref: <<vol2_clause_dev_27_message_renew_response>>
+include::../dev-a-default-trigger-events.adoc[]
+
+====== Message Semantics
+
+`s12:Envelope/s12:Body/wse:RenewResponse/wse:Expires`:: <<payload_dev_27_renew_response_expiration_time>> as an {var_uri_xsd_duration}[XML Schema duration], constrained to hours, minutes and seconds (regular expression: `{var_xsd_duration_regex}`).
+
+:var_expected_actions_ref: <<vol2_clause_dev_27_message_renew_response>>
+include::../dev-a-default-expected-actions.adoc[]
+
+// ---------- UNSUBSCRIBE ---------
+
+
+===== {var_label_dev_27_message_unsubscribe} Message
+
+The <<vol2_clause_dev_27_message_unsubscribe, {var_label_dev_27_message_unsubscribe}>> message is encoded by using {var_uri_ws_eventing_unsubscribe}[WS-Eventing Unsubscribe].
+
+====== Referenced Standards
+
+* <<ref_oasis_ws_discovery_2009>> {var_uri_ws_eventing_unsubscribe}[Section 3.4 Unsubscribe]
+* <<ref_oasis_dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
+
+====== Message Outline
+
+.WS-Eventing Unsubscribe message
+[source#vol2_clause_appendix_a_mdpws_dev_27_unsubscribe,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-27-unsubscribe.xml[]
+----
+
+:var_trigger_events_ref: <<vol2_clause_dev_27_message_unsubscribe>>
+include::../dev-a-default-trigger-events.adoc[]
+
+====== Message Semantics
+
+The WS-Eventing RenewResponse message does not contain any further semantics.
+
+:var_expected_actions_ref: <<vol2_clause_dev_27_message_unsubscribe>>
+include::../dev-a-default-expected-actions.adoc[]
+
+// ---------- UNSUBSCRIBE RESPONSE ---------
+
+
+===== {var_label_dev_27_message_unsubscribe_response} Message
+
+The <<vol2_clause_dev_27_message_unsubscribe_response, {var_label_dev_27_message_unsubscribe_response}>> message is encoded by using {var_uri_ws_eventing_unsubscribe_response}[WS-Eventing UnsubscribeResponse].
+
+====== Referenced Standards
+
+* <<ref_oasis_ws_discovery_2009>> {var_uri_ws_eventing_unsubscribe_response}[Section 3.4 Unsubscribe]
+* <<ref_oasis_dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
+
+====== Message Outline
+
+.WS-Eventing UnsubscribeResponse message
+[source#vol2_clause_appendix_a_mdpws_dev_27_unsubscribe_response,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-27-unsubscribe-response.xml[]
+----
+
+:var_trigger_events_ref: <<vol2_clause_dev_27_message_unsubscribe_response>>
+include::../dev-a-default-trigger-events.adoc[]
+
+====== Message Semantics
+
+The WS-Eventing UnsubscribeResponse message does not contain any further semantics.
+
+:var_expected_actions_ref: <<vol2_clause_dev_27_message_unsubscribe_response>>
+include::../dev-a-default-expected-actions.adoc[]
+
+// ---------- SUBSCRIPTION END ---------
+
+
+===== {var_label_dev_27_message_subscription_end} Message
+
+The <<vol2_clause_dev_27_message_subscription_end, {var_label_dev_27_message_subscription_end}>> message is encoded by using {var_uri_ws_eventing_subscription_end}[WS-Eventing Subscription End].
+
+====== Referenced Standards
+
+* <<ref_oasis_ws_discovery_2009>> {var_uri_ws_eventing_subscription_end}[Section 3.5 Subscription End]
+* <<ref_oasis_dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
+* <<ref_ieee_11073_20702_2016>>
+* <<ref_ieee_11073_20701_2018>>
+
+====== Message Outline
+
+.WS-Eventing SubscriptionEnd message
+[source#vol2_clause_appendix_a_mdpws_dev_27_subscription_end,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-27-subscription-end.xml[]
+----
+
+:var_trigger_events_ref: <<vol2_clause_dev_27_message_subscription_end>>
+include::../dev-a-default-trigger-events.adoc[]
+
+====== Message Semantics
+
+`s12:Envelope/s12:Body/wse:SubscriptionEnd/wse:SubscriptionManager/wsa:Address`:: <<payload_dev_27_renew_response_expiration_time>> as an {var_uri_xsd_duration}[XML Schema duration], constrained to hours, minutes and seconds (regular expression: `{var_xsd_duration_regex}`).
+`s12:Envelope/s12:Body/wse:SubscriptionEnd/wse:Status`:: <<payload_dev_27_subscription_end_status>> which is encoded in accordance with WS-Eventing to one of {var_status_delivery_failure}, {var_status_shutdown} or {var_status_cancel}.
+
+:var_expected_actions_ref: <<vol2_clause_dev_27_message_subscription_end>>
+include::../dev-a-default-expected-actions.adoc[]
+
+// cleanup of variables where the likelihood of ambiguity is increased
+:!var_status_delivery_failure:
+:!var_status_shutdown:
+:!var_status_cancel:

@@ -1,0 +1,48 @@
+
+.R8014
+[sdpi_requirement#r8014,sdpi_req_level=shall,sdpi_max_occurrence=2]
+****
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the OBX-4 field to a hierarchical representation of the SDC element in the hierarchical containment tree.
+
+.Notes
+[%collapsible]
+====
+NOTE: Please refer to the IHE technical framework <<ref_ihe_pcd_tf_2_2019>> for further information.
+====
+****
+
+.R8015
+[sdpi_requirement#r8015,sdpi_req_level=shall,sdpi_max_occurrence=2]
+****
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall assign the handles (which are required to be unique in the same <<acronym_mdib>>) of the containment tree elements representing MDSs, VMDs, channels and metrics to unique integer numbers per child level of the same parent.
+
+.Notes
+[%collapsible]
+====
+NOTE: This implies that, e.g. channel elements may use the same numbers as VMD elements but on the channel level the numbers must be unique for the channels related to the same VMD.
+
+NOTE: There is no requirement to preserve the same assigned number for a containment tree element from message to message, but it is highly recommended since this makes it much easier for the DOC to process the HL7 V2 messages.
+====
+
+.Examples
+[%collapsible]
+====
+
+Example for Containment Tree Element Handle Assignment:
+
+The gateway assigns the handles of the containment tree elements to
+
+* `3` for pm:MdsDescriptor/@Handle = "My1Mds",
+* `1` for pm:VmdDescriptor/@Handle = "Vmd.1",
+* `2` for pm:ChannelDescriptor/@Handle = "Chan.4 and
+* `1` for pm:AbstractMetricDescriptor/@Handle = "Metric.Spo2".
+
+The OBX-4 field for the containment tree elements is set to
+
+* `3.0.0.0` for the MDS OBX segment,
+* `3.1.0.0` for the VMD OBX segment,
+* `3.1.2.0` for the CHAN OBX segment and
+* `3.1.2.1` for the Metric OBX segment.
+
+====
+****

@@ -1,0 +1,95 @@
+:var_transaction_id: DEV-30
+
+:var_label_dev_30_message_getmdib: GetMdib
+:var_label_dev_30_message_getmdibresponse: GetMdibResponse
+
+
+//reset|+1|off
+[#vol2_clause_dev_30,sdpi_offset=30]
+=== Retrieve BICEPS Content [{var_transaction_id}]
+
+==== Scope
+
+include::tf2-dev-30-summary.adoc[]
+
+==== Actor Roles
+
+.Actor Roles {var_transaction_id}
+[cols="1,2"]
+|===
+|Actor |Roles
+
+|<<actor_somds_consumer>>
+|Initiates communication by sending a <<vol2_clause_dev_30_message_getmdib, {var_label_dev_30_message_getmdib}>> message to a <<actor_somds_provider>>. Then listens for a <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> message to retrieve the <<actor_somds_provider>>'s MDIB.
+
+|<<actor_somds_provider>>
+|Listens for <<vol2_clause_dev_30_message_getmdib, {var_label_dev_30_message_getmdib}>> messages, which it responds to with <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> messages respectively.
+
+|===
+
+==== Referenced Standards
+
+* <<ref_ieee_11073_10207_2017>> Section 7.3.2 Get Service
+
+==== Messages
+
+.Message Interaction Diagram {var_transaction_id}
+[plantuml#vol2_figure_dev_30_sequence, target=puml-dev-30-sequence, format=svg, 40width=100%]
+....
+include::../../plantuml/vol2-figure-dev-30-sequence.puml[]
+....
+
+
+// ---------- GetMdib ---------
+
+
+[#vol2_clause_dev_30_message_getmdib]
+===== {var_label_dev_30_message_getmdib} Message
+
+The {var_label_dev_30_message_getmdib} message is sent as part of the BICEPS GET SERVICE for allowing <<actor_somds_consumer>>s to retrieve the description and state of an MDIB from a <<actor_somds_provider>>.
+
+[#vol2_clause_dev_30_message_getmdib_trigger_events]
+====== Trigger Events
+
+The {var_label_dev_30_message_getmdib} message is sent whenever a <<actor_somds_consumer>> wants to retrieve the description and state of an MDIB of a <<actor_somds_provider>>.
+
+[#vol2_clause_dev_30_message_getmdib_semantics]
+====== Message Semantics
+
+The {var_label_dev_30_message_getmdib} message does not contain any further semantics.
+
+[#vol2_clause_dev_30_message_getmdib_expected_actions]
+====== Expected Actions
+
+When a <<actor_somds_consumer>> sends this message, the receiving <<actor_somds_provider>> responds with a <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> message.
+
+
+// ---------- Get Mdib Response ---------
+
+
+[#vol2_clause_dev_30_message_getmdibresponse]
+===== {var_label_dev_30_message_getmdibresponse} Message
+
+The {var_label_dev_30_message_getmdibresponse} message is sent as part of the BICEPS GET SERVICE in response to an incoming <<vol2_clause_dev_30_message_getmdib, {var_label_dev_30_message_getmdib}>> message.
+
+
+[#vol2_clause_dev_30_message_getmdibresponse_trigger_events]
+====== Trigger Events
+
+The {var_label_dev_30_message_getmdibresponse} message is sent whenever a <<actor_somds_provider>> receives a <<vol2_clause_dev_30_message_getmdib, {var_label_dev_30_message_getmdib}>> message.
+
+[#vol2_clause_dev_30_message_getmdibresponse_semantics]
+====== Message Semantics
+
+[[payload_dev_30_getmdibresponse_mddescription]]MdDescription:: The descriptive part of an MDIB.
+[[payload_dev_30_getmdibresponse_mdstate]]MdState:: The state part of an MDIB.
+(As the communication is encrypted, this can include ContextStates without violating <<ref_ieee_11073_10207_2017>> R0121.)
+
+[#vol2_clause_dev_30_message_getmdibresponse_expected_actions]
+====== Expected Actions
+
+When a <<actor_somds_provider>> sends this message, there is no expected or required response.
+
+[#vol2_clause_dev_30_retrieve_biceps_content_ses]
+include::../dev-x-default-ses-secured-mode.adoc[]
+

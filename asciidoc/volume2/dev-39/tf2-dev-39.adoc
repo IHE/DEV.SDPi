@@ -1,0 +1,41 @@
+:var_transaction_id: DEV-39
+
+
+//reset|+1|off
+[#vol2_clause_dev_39,sdpi_offset=39]
+=== Publish Medical Alert Update [{var_transaction_id}]
+
+==== Scope
+
+include::tf2-dev-39-summary.adoc[]
+
+==== Actor Roles
+
+.Actor Roles {var_transaction_id}
+[cols="1,2"]
+|===
+|Actor |Roles
+
+|<<actor_somds_consumer>>
+|Listens for a Notification message to retrieve medical alert updates.
+
+|<<actor_somds_provider>>
+|While a subscription is running, the <<actor_somds_provider>> delivers Notification messages.
+
+|===
+
+==== Referenced Standards
+
+* <<ref_ieee_11073_10207_2017>> Section 7.4 Message Model
+
+==== Messages
+
+.Message Interaction Diagram {var_transaction_id}
+[plantuml#vol2_figure_dev_39_sequence, target=puml-dev-39-sequence, format=svg, 40width=100%]
+....
+include::../../plantuml/vol2-figure-dev-39-sequence.puml[]
+....
+
+[#vol2_clause_dev_239_publish_medical_alert_update_ses]
+include::../dev-x-default-ses-secured-mode.adoc[]
+

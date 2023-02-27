@@ -1,0 +1,19 @@
+@startuml
+
+skinparam monochrome true
+autonumber
+
+!global $str_somds_consumer = "SOMDS Consumer"
+!global $str_somds_provider = "SOMDS Provider"
+
+participant "$str_somds_consumer" as consumer
+participant "$str_somds_provider" as provider
+
+==SDPi [DEV-23] Announce Network Presence==
+|||
+group unsecured
+    provider ->> consumer: Hello(Provider UID, Discovery Scope)
+end
+|||
+
+@enduml

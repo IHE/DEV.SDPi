@@ -1,0 +1,398 @@
+[appendix#vol0_appendix_d_glossary,sdpi_offset=D]
+=== Glossary
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+| *SDPi Supplement Version Note*: The TF-0 Appendix D Glossary in this initial version of the supplement includes all terms and acronyms that are utilized throughout the other volumes.  Subsequent versions of the supplement may re-locate items to other tables and sections within the technical framework.  To help differentiate between various classes or categories of terms, a *_new "Type" column_* has been added.  This could enable future dynamic resorting of the table by those users who are interested in, for example, only organizational definitions.  Finally, a *_References column_* has been added to pull this information out of the Definition column.
+|===
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+|Add the following *_new or updated_* glossary terms to the IHE Technical Frameworks General Introduction Appendix D.
+|===
+
+[%autowidth]
+[cols="^2,3,^1,^1,^1,^1"]
+|===
+|New Glossary Term |Definition |Synonyms |Acronyms / Abbreviation |References |Type
+
+| [[term_american_national_standards_institute,American National Standards Institute (ANSI)]] American National Standards Institute
+| The primary United States <<acronym_sdo>> recognition and facilitation organization.  See https://ansi.org/[ANSI.org] for more information.
+| ...
+| [[acronym_ansi,ANSI]] ANSI
+|
+| Organization
+
+|[[term_basic_ice_protocol_specification,Basic ICE Protocol Specification (BICEPS)]] Basic ICE Protocol Specification
+| General reference to the abstract, implementation technology independent SDC components defined in the ISO/IEEE 11073-10207 standard.  (See <<ref_ieee_11073_10207_2017>>)
+|
+| [[acronym_biceps,BICEPS]] BICEPS
+|
+| SDC
+
+| [[term_central_station,Central Station]] Central Station
+| A system that supports a multi-patient workplace with capabilities similar to a Cockpit.
+|
+|
+| See extended description and discussion in <<vol3_clause_system_type_nomenclature_extensions>>
+|
+
+| [[term_classic_dim,Classic DIM]] Classic Domain Information Model (DIM)
+| The foundational domain information model (DIM) that is recognized and implemented in all IEEE 11073 standards and profiles, for both <<acronym_pocd>> and <<acronym_phd>> devices.
+|
+| [[acronym_dim,DIM]] DIM
+| <<<<ref_ieee_11073_10201_2004>>>>
+| SDC
+
+| [[term_clinical_function,Clinical Function]] Clinical Function
+| Function or feature intended to be used for one or more specific medical purposes including but not limited to examination, monitoring, or modification of the structure or function of an individual's body; prediction, prevention, diagnosis, prognosis, treatment, or alleviation of a medical condition.
+|
+| [[acronym_cf,CF]] CF
+| <<ref_ieee_11073_10700_2022>>
+| SDC
+
+| [[term_coded_attribute, Coded Attribute]] Coded Attribute
+| A BICEPS participant model extension that allows for a <<actor_somds_provider>> to provide attributes from the first partition of the IEEE 11073-10101 nomenclature. Specified in <<vol3_clause_coded_attribute>>.
+|
+|
+| See https://www.nist.gov/conformity-assessment[NIST CA resources page]
+| SDC
+
+| [[term_conformity_assessment, Conformity Assessment]] Conformity Assessment
+| The activity of verifying that a standard or technical specification was applied in the design, manufacturing, installation, maintenance or repair of a device or system.  "Product CA" is often mentioned to clarify its use in the context of this document.
+|
+|[[acronym_ca,CA]] CA
+|
+| SES
+
+| [[term_device_to_device, Device-to-Device]] Device-to-Device
+| Direct communication between two devices across a communications infrastructure.  It is used here to differentiate between "device gateway-to-gateway" or intermediary-based communication.
+| peer-to-peer, machine to machine
+| [[acronym_d2d,D2D]] D2D
+| https://en.wikipedia.org/wiki/Device-to-device[Device-to-device wikipedia article with references]
+| SDC
+
+| [[term_discovery_scope, Discovery Scope]] Discovery Scope
+| A set of zero to many identifiers that allows for organizing <<actor_somds_provider>>s into logical groups.
+|
+|
+|
+| SDC
+
+| [[term_electronic_health_record, Electronic Health Record]] Electronic Health Record
+| An electronic record derived from a computer system that maintains a longitudinal view of a patient’s history. It contains comprehensive information on a patient’s health used primarily for delivering patient care in a clinical setting..
+|
+| [[acronym_ehr,EHR]] EHR
+| https://profiles.ihe.net/GeneralIntro/ch-D.html[IHE TF-0 Appendix D Glossary]
+| IHE
+
+| [[term_fast_healthcare_interoperability_resources,Fast Healthcare Interoperability Resources (FHIR)]] Fast Healthcare Interoperability Resources
+| An <<acronym_hl7>> standard for health care data exchange, built on RESTful technology that utilizes _resources_ to enable rapid creation of interoperable healthcare applications.
+|
+| [[acronym_fhir,FHIR]] FHIR
+| https://hl7.org/fhir/[HL7 FHIR home]
+| Standard
+
+| [[term_health_level_seven_international,Health Level Seven International (HL7)]] Health Level Seven International
+| Organization dedicated to providing a comprehensive framework and related standards for the exchange, integration, sharing, and retrieval of electronic health information that supports clinical practice and the management, delivery and evaluation of health services.
+|
+| [[acronym_hl7,HL7]] HL7
+| https://www.hl7.org/about/index.cfm?ref=nav[About -- HL7]
+| Organization
+
+| [[term_implementation_conformance_statement,Implementation Conformance Statement (ICS)]] Implementation Conformance Statement
+| A clause in many standards that specifies how conformance claims to that standard should be formalized, including identification of any deviations, extensions and option selection.
+|
+| [[acronym_ics,ICS]] ICS
+|
+|
+
+| [[term_institute_of_electrical_and_electronics_engineers,Institute of Electrical and Electronic Engineers (IEEE)]] Institute of Electrical and Electronic Engineers
+| Organization dedicated to advancing innovation and technological excellence for the benefit of humanity, and is the world's largest technical professional society
+|
+| [[acronym_ieee,IEEE]] IEEE
+| https://www.ieee.org/about/ieee-history.html?utm_source=linkslist_text&utm_medium=lp-about&utm_campaign=history[About -- History of IEEE]
+| Organization
+
+| [[term_integratec_clinical_environment,Integrated Clinical Environment (ICE)]] Integrated Clinical Environment
+| Environment that combines interoperable heterogeneous POINT-OF-CARE (PoC) MEDICAL DEVICEs and other equipment integrated to create a medical device system for the care of a single high acuity patient.
+|
+| [[acronym_ice,ICE]] ICE
+| <<ref_ieee_11073_20701_2018>>; <<ref_aami_2700_1_2019>>
+| SDC
+
+| [[term_international_medical_device_regulators_forum,International Medical Device Regulators Forum (IMDRF)]] International Medical Device Regulators Forum
+|  A voluntary group of medical device regulators from around the world who have come together to build on the strong foundational work of the Global Harmonization Task Force on Medical Devices (GHTF) and aim to accelerate international medical device regulatory harmonization and convergence.
+|
+| [[acronym_imdrf,IMDRF]] IMDRF
+| https://www.imdrf.org/[IMDRF.org]
+| Organization
+
+| [[term_international_standards_organization,International Standards Organization (ISO)]] International Standards Organization
+| A globally recognized one-country-one-vote <<acronym_sdo>> that is composed of 100's of technical committees and other groups.
+|
+| [[acronym_iso,ISO]] ISO
+| https://www.iso.org/home.html[www.ISO.org]
+| Organization
+
+| [[term_joint_working_group_7,ISO/IEC Joint Working Group 7 (JWG7)]] ISO/IEC Joint Working Group 7
+| A joint standardization group between ISO/TC 215 and IEC/SC 62A focused on the <<term_safe_effective_secure>> health software and health IT systems, including those incorporating medical devices.
+|
+| [[acronym_jwg7,JWG7]] JWG7
+| https://www.iso.org/committee/54960.html[ISO/TC 215 Health Informatics], https://www.iec.ch/dyn/www/f?p=103:29:::::FSP_ORG_ID:1359[IEC SC/62A]
+| Organization
+
+| Local Area Network
+| A computer network that interconnects computers within a limited area such as a hospital, ICU bed, laboratory, or office building. By contrast, a wide area network (WAN) not only covers a larger geographic distance, but also generally involves leased telecommunication circuits. See https://en.wikipedia.org/wiki/Local_area_network["Local area network" article] for more information and references.
+|
+| [[acronym_lan,LAN]] LAN
+|
+|
+
+| [[term_manufacturer, Manufacturer]] Manufacturer
+| Natural or legal person with responsibility for the design, manufacture, packaging, or labeling of medical electrical equipment, assembling a medical electrical system, or adapting medical electrical equipment or a medical electrical system, regardless of whether these operations are performed by that person or on that person's behalf.
+|
+|
+|
+| Organization
+
+| [[term_medical_data_information_base,Medical Data Information Base (MDIB)]] Medical Data Information Base
+| Structured collection of any data objects that are provided by a <<actor_somds_provider>> or <<actor_biceps_content_creator>>, including both descriptive and state information.
+|
+| [[acronym_mdib,MDIB]] MDIB
+| <<ref_ieee_11073_10207_2017>>
+| SDC
+
+| [[term_medical_device,Medical Device (MD)]] Medical Device
+| A device that is used to diagnose, monitor and treat disease.  Formal definitions may vary per legal jurisdictions; however, the international, harmonized (and *_very lengthy_*) definition is available from the <<term_international_medical_device_regulators_forum>> web site.
+|
+| [[acronym_medical_device,MD]] MD
+| <<term_international_medical_device_regulators_forum>>
+|
+
+| [[term_medical_device_communication,Medical Device Communication (MDC)]] Medical Device Communication
+| A general term that refers to all aspects of standards-based exchanges between medical (and health) devices, including <<acronym_pocd>> and <<acronym_phd>>; in some contexts, for example <<acronym_hl7>>, it refers to the ISO/IEEE 11073-10101 Nomenclature or "coding system".
+|
+| [[acronym_mdc,MDC]] MDC
+| <<ref_ieee_11073_10101_2020>>
+|
+
+| [[term_medical_device_interoperability,Medical Device Interoperability (MDI)]] Medical Device Interoperability
+| The application of informatics technology standards to achieve seamless and dynamic connection of <<term_point_of_care_device>>'s.
+|
+| [[acronym_mdi,MDI]] MDI
+|
+|
+
+| [[term_medical_device_lan,Medical Device LAN (MD LAN)]] Medical Device LAN
+| A local area network that integrates <<term_medical_device>>s often around a single bedside <<term_point_of_care>> or care area (e.g., operating room, ICU or Emergency Department).
+| [[acronym_sdc_lan,SDC LAN]] SDC LAN
+| [[acronym_md_lan,MD LAN]] MD LAN
+|
+|
+
+| [[term_medical_device_system,Medical Device System (MDS)]] Medical Device System
+| A core object type in the ISO/IEEE 11073 device communication standards.  It represents the top-level containment of the hierarchy of information objects contained in a device.
+|
+| [[acronym_mds,MDS]] MDS
+| <<ref_ieee_11073_10207_2017>>, <<ref_ieee_11073_10201_2004>>
+|
+
+| [[term_model_based_systems_engineering,Model-Based Systems Engineering (MBSE)]] Model-Based Systems Engineering
+| An approach to systems engineering where a single, highly integrated, executable model is created (often using OMG System's Modeling Language (e.g., <<ref_omg_sysml_2_0_spec>>), to capture all elements, from requirements to system components to Verification & Validation test cases.
+|
+| [[acronym_mbse,MBSE]] MBSE
+| See also <<acronym_ri>>, <<acronym_mc>> and <<acronym_rr>>
+| SES
+
+| [[term_model_centric,Model-Centric (MC)]] Model-Centric
+| An approach to systems specification that captures all information in a single model (e.g., using <<acronym_mbse>>), and from which "views" are generated to support all specification stakeholders and usages.
+elements, from requirements to system components to Verification & Validation test cases.  Note: The _model-centric_ approach replaces the traditional _document-centric_ approach.
+| [[acronym_ri_mc_rr,RI+MC+RR]] RI+MC+RR
+| [[acronym_mc,MC]] MC
+| See also <<acronym_ri>> and <<acronym_rr>>
+| SES
+
+| [[term_network_time_protocol,Network Time Protocol (NTP)]] Network Time Protocol
+| A networking protocol for clock synchronization between computer systems over packet-switched, variable-latency data networks.
+|
+| [[acronym_ntp,NTP]] NTP
+| https://en.wikipedia.org/wiki/Network_Time_Protocol[NTP wikipedia article]
+|
+
+| [[term_object_management_group, Object Management Group (OMG)]] Object Management Group
+| An international, membership-driven, not-for-profit consortium <<acronym_sdo>>.
+|
+| [[acronym_omg,OMG]] OMG
+| https://www.omg.org/[OMG.org]
+| Organization
+
+| [[term_participant_key_purposes,Participant Key Purposes (PKP)]] Participant Key Purposes
+| These generally refer to the ISO/IEEE 11073-1070x standards that provide a consensus set of risk control measures aligned with the four core <<acronym_mdi>> functions:  <<term_plug_and_trust>>, reporting, alerting and external control.
+|
+| [[acronym_pkp,PKP]] PKP
+| <<ref_ieee_11073_10700_2022>>
+| SDC
+
+// FOR THE FOLLOWING ROW ADD TO THE REFERENCES COLUMN:
+//     #TODO:  ADD 11073 PHD REFERENCES?#
+| [[term_personal_health_device,Personal Health Device (PHD)]] Personal Health Device
+| A healthcare device that is used by individuals for their own personal health purposes.
+|
+| [[acronym_phd,PHD]] PHD
+|
+|
+
+| [[term_plug_and_trust,Plug-and-Trust (PnT)]] Plug-and-Trust
+| The integration of an SES framework and MDI  plug-and-play technology to enable the dynamic establishment of trust between participant systems at the point of connection to a <<acronym_somds>> network.
+| [[acronym_ses_mdi,SES+MDI]] SES+MDI
+| [[acronym_pnt,PnT]] PnT
+|
+|
+
+| [[term_point_of_care,Point of Care (PoC)]] Point of Care
+| Typically where the patient is, such as their clinical bedside; although, it may also be used to include mobile patients (e.g., that are connected to telemetry monitoring).
+|
+| [[acronym_poc,PoC]] PoC
+|
+|
+
+| [[term_poc_cockpit,PoC Cockpit]] Point of Care Cockpit
+| A system that supports information viewing and control of multiple devices and systems associated with a single patient <<term_point_of_care>>.
+| [[term_cockpit,Cockpit]] Cockpit
+|
+|
+|
+
+| [[term_poc_dashboard,PoC Dashboard]] Point of Care Dashboard
+| A system that displays information from one or more <<actor_somds_participant>> systems associated with a single patient. Similar to a <<term_cockpit>> but without device-external control capabilities. May include both metric and alert information.
+| Dashboard
+|
+|
+|
+
+| [[term_point_of_care_device,Point of Care Device (PoCD)]] Point of Care Device
+| A healthcare device that is used at a <<term_point_of_care>>, typically at a patient’s clinical bedside.  May include patient-connected mobile devices, such as telemetry monitors.
+|
+| [[acronym_pocd,PoCD]] PoCD
+|
+|
+
+| [[term_regulatory_ready,Regulatory Ready (RR)]] Regulatory Ready
+| For regulated medical device technology, integrating <<acronym_ses>> and <<acronym_ri>> content such that conformity assessment test reports may be directly included as supporting evidence in pre-market submissions to regulatory agencies.  It is part of the Requirements Interoperability + Model Centric + Regulatory Ready (<<acronym_ri_mc_rr>>) focus of the IHE Devices Technical Framework.
+| <<acronym_ri_mc_rr>>
+| [[acronym_rr,RR]] RR
+| See also <<acronym_ri>> and <<acronym_mc>>
+|
+
+| [[term_requirements_interoperability,Requirements Interoperability (RI)]] Requirements Interoperability
+| The ability to specify the requirements of one specification in such a way that they can be connected with capabilities of other specifications.  It is part of the Requirements Interoperability + Model Centric + Regulatory Ready (RI+MC+RR) focus of the IHE Devices Technical Framework.
+| RI+MC+RR
+| [[acronym_ri,RI]] RI
+| See also <<acronym_mc>> and <<acronym_rr>>
+|
+
+| [[term_safe_effective_secure,Safe Effective & Secure (SES)]] Safe, Effective & Secure
+| General name given to the requirements, general and specific, derived by the application of medical device and health software quality standards.
+|
+| [[acronym_ses,SES]] SES
+| <<ref_iso_81001_1_2021>>; <<ref_iec_80001_1_2021>>
+|
+
+| [[term_service_oriented_device_connectivity,Service-oriented Device Connectivity (SDC)]] Service-oriented Device Connectivity
+| Application of service-oriented architecture to support healthcare device interoperability.
+|
+| [[acronym_sdc,SDC]] SDC
+| <<ref_ieee_11073_20701_2018>>
+| SDC
+
+| [[term_service_oriented_device_poc_interoperability,Service-oriented Device Point of Care Interoperability (SDPi)]] Service-oriented Device Point of Care Interoperability
+| A set of (4) IHE specifications that profile the <<acronym_sdc>> standards for device-to-device plug-and-play interoperability.
+|
+| [[acronym_sdpi,SDPi]] SDPi
+|
+| Profile
+
+| [[term_service_oriented_architecture,Service-oriented Architecture (SOA)]] Service-oriented Architecture
+| An architectural style that focuses on discrete services, where provider components supply services (discrete units of functionality) to consumer components across a communications network infrastructure.
+|
+| [[acronym_soa,SOA]] SOA
+|
+| SDC
+
+| [[term_service_oriented_medical_device_system,Service-oriented Medical Device System (SOMDS)]] Service-oriented Medical Device System
+| A point-of-care system of products that
+implements a service-oriented <<acronym_sdc>> architecture composed of service providers and service consumers.
+|
+| [[acronym_somds,SOMDS]] SOMDS
+| <<ref_ieee_11073_10207_2017>>
+| SDC
+
+| [[term_smart_alarm_system,Smart Alarm System (SAS)]] Smart Alarm System
+| A system that provides consolidated alarm and alert events (actionable alerts), and advisories (e.g., patient deterioration alerts).
+|
+| [[acronym_sas,SAS]] SAS
+| Note:  This is based on the initial description in <<vol1_table_system_type_nomenclature_extensions>>.  SDPi 2.0 will more fully define the term.
+|
+
+| [[term_software_as_a_medical_device,Software as a Medical Device (SaMD)]] Software as a Medical Device
+| Software intended to be used for one or more medical purposes that perform these purposes without being part of a hardware medical device.
+|
+| [[acronym_samd,SaMD]] SaMD
+| https://www.fda.gov/medical-devices/cdrh-international-programs/international-medical-device-regulators-forum-imdrf[Source: <<acronym_imdrf>>]
+|
+
+| [[term_somds_provider_uid, SOMDS Provider UID]] SOMDS Provider UID
+| A globally unique identifier <<acronym_uid>> for a <<actor_somds_provider>> that is stable across re-initializations.
+| [[acronym_uid,UID]] UID
+|
+|
+| SDC
+
+| [[term_standards_development_organization,Standards Development Organization (SDO)]]  Standards Development Organization
+| An organization that has a core objective of developing consensus-based standards, typically recognized or accredited by national and international organizations (e.g., <<acronym_ansi>> or <<acronym_iso>>)
+|
+| [[acronym_sdo,SDO]] SDO
+| https://en.wikipedia.org/wiki/Standards_organization["Standards organization" wikipedia article]
+| Organization
+
+| [[term_system_function_contribution,System Function Contribution (SFC)]] System Function Contribution
+| Function of a <<actor_somds_participant>> that contributes to a <<term_clinical_function>> provided by a <<term_service_oriented_medical_device_system>>.
+|
+| [[acronym_sfc,SFC]] SFC
+| Adapted from <<ref_ieee_11073_10700_2022>>.
+| SDC
+
+| [[term_time_synchronization_service,Time Synchronization Service (TS Service)]] Time Synchronization Service
+| A general network service capability that enables systems to obtain and synchronize to a common and accurate time source.  For example, <<term_network_time_protocol>>.
+|
+| [[acronym_ts_service,TS Service]] TS Service
+|
+|
+
+| [[term_transport_address, Transport Address]] Transport Address
+| A physical endpoint address that can be used to communicate with a <<actor_somds_provider>>.
+| XAddr
+|
+|
+|
+
+| [[term_q_name, QName]] QName
+| XML Schema QName. In this specification, QNames are encoded as `{<namespace>}<local-name>`.
+|
+|
+
+| ...
+| ...
+| ...
+| ...
+| ...
+| ...
+
+|===
+
+

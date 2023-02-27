@@ -1,0 +1,66 @@
+[#vol1_clause_appendix_c_use_case_ddes,sdpi_offset=5]
+=== Use Case Feature {var_use_case_id}: <<label_use_case_name_ddes>> (<<acronym_ddes>>)
+
+// NOTE:  See use case labels in document-declarations.adoc
+
+==== Narrative
+
+Mercy Hospital is in the middle of a new <<acronym_ehr>> (Epic, Cerner, etc.) rollout.  Joe Furst is responsible for integrating data from their ICU devices (patient monitors, ventilators, infusion devices, etc.) with the new <<acronym_ehr>>.  Once they are done, the data from the devices will be reviewed/validated by the ICU clinicians and then automatically entered into the patient’s clinical record.
+
+==== Benefits
+Automatically feeding patient data from the medical devices to medical record applications reduces the documentation burden on the clinicians, improves the accuracy of the medical record and enables 'real-time' analysis of the data which can be used to generate (potentially AI based) smart alerts to the clinical staff.
+
+==== Technical View
+
+.<<label_use_case_name_ddes>> (<<acronym_ddes>>) -- Technical View
+
+image::../images/vol1-diagram-use-case-ddes-tech-view.svg[]
+
+[#vol1_clause_appendix_c_use_case_ddes_technical_precondition]
+==== Technical Pre-Conditions
+
+*Given* All devices communicate using a common <<acronym_md_lan>> protocol
+
+*And* There is at least one Data <<system_type_device_gateway>> (<<acronym_dgw>>) Service
+
+*And* All devices report either a device label and/or location
+
+*And* A <<acronym_dgw>> Service is associated with a specific set of device labels, and/or location(s) (i.e. devices in scope).
+
+[#vol1_clause_appendix_c_use_case_ddes_scenarios]
+==== Scenarios
+
+===== Scenario: <<acronym_ddes>> {var_use_case_id}.1 - New in scope device is connected to network with <<acronym_dgw>> service
+
+*Given* The <<acronym_dgw>> Service has detected a new in scope device
+
+*When* The <<acronym_dgw>> Service is operational
+
+*Then* The <<acronym_dgw>> Service will connect to the device and export data to the EHR using the HL7 v2 based IHE DEV DOR actor of the DEV DEC profile
+
+////
+#TODO:  REMOVE EXPLICIT PROFILE REFERENCES; let profiles link to gateway actors & profile roles#
+////
+
+===== Scenario: <<acronym_ddes>> {var_use_case_id}.2 - <<label_system_type_name_dgw>> Service is connected to the EHR
+
+*Given* The <<acronym_dgw>> Service is exporting data to the EHR
+
+*Then* The <<acronym_dgw>> Service will comply with all IHE DEV DEC profile DOR actor functional and test requirements.
+
+===== Scenario: <<acronym_ddes>> {var_use_case_id}.3 - <<label_system_type_name_dgw>> Service has a failure
+
+*Given* The <<acronym_dgw>> Service was connected to in scope devices and to an Enterprise system and fails
+
+*Then* The <<acronym_dgw>> Service will backfill its data store and then backfill to the EHR when it recovers from its failure
+
+===== Scenario: <<acronym_ddes>> {var_use_case_id}.4 - <<label_system_type_name_dgw>> Service connection to the Enterprise System fails
+
+*Given* The Enterprise System stops receiving data from the <<acronym_dgw>> Service
+
+*When* There is a communications failure between the <<acronym_dgw>> Service and the Enterprise System
+
+*Then* The <<acronym_dgw>> Service will backfill missed data to the Enterprise System when communications resumes
+
+
+

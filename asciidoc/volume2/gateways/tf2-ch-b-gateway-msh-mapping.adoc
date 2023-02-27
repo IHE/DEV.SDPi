@@ -1,0 +1,64 @@
+===== MSH - Message Header Segment
+The HL7 Message Header (MSH) segment requires a mapping between the <<acronym_mdib>> content and the MSH segment fields.
+
+.R8100
+[sdpi_requirement#r8100,sdpi_req_level=shall,sdpi_max_occurrence=2]
+****
+If not differently specified in this section, the MSH segment fields shall be in compliance with the [PCD-01] or [PCD-04] transaction, retrospectively, as described in the <<ref_ihe_pcd_tf_2_2019>>.
+****
+
+.R8101
+[sdpi_requirement#r8101,sdpi_req_level=shall,sdpi_max_occurrence=2]
+****
+If the <<acronym_mdib>> contains several MDS elements that could operate in different *pm:MdsState/@OperatingMode* states, there shall be a separate [PCD-01] message per MDS.
+****
+
+====== MSH-11 Processing ID
+.R8118
+[sdpi_requirement#r8118,sdpi_req_level=shall,sdpi_max_occurrence=2]
+****
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the MSH-11 field to the code for the processing ID which is either be *"P"* (Production) or *"D"* (Debugging).
+
+.Notes
+[%collapsible]
+====
+NOTE: <<ref_tbl_msh11_mapping>> defines the mapping of the SDC MDS information to the data fields of the HL7 data type *PT* used in the MSH-11 field.
+====
+****
+
+[#ref_tbl_msh11_mapping]
+.MSH-11 Processing ID Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|MSH-11/PT-1
+|Processing ID
+|pm:MdsState+++<wbr/>+++/@OperatingMode
+|Note that the HL7 Processing ID value set (HL7 table 0103) differs from the SDC pm:MdsOperatingMode value set and requires a mapping accordingly (see also <<ref_tbl_mdsopmode_mapping>>).
+
+|===
+
+[#ref_tbl_mdsopmode_mapping]
+.pm:mdsOperatingMode to Processing ID Value Set Mapping
+|===
+|SDC Value |SDC Description |HL7 Value |HL7 Description
+
+|Nml
+|Nml = Normal
+|P
+|Production
+
+|Dmo
+
+Srv
+
+Mtn
+|Dmo = Demo
+
+Srv = Service
+
+Mtn = Maintenance
+|D
+|Debugging
+
+|===

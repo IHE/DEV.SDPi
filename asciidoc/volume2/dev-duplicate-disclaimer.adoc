@@ -1,0 +1,4 @@
+CAUTION: Transaction {var_duplicated_transaction} syntactically duplicates {var_dupicates_list}. This a deliberate action as {var_transaction_id} is expected to receive <<acronym_ses>> constraints in the future which will require exclusive conformity statements. For the sake of brevity this clause does not duplicate the trigger events, message semantics and expected actions.
+
+:!var_duplicated_transaction:
+:!var_dupicates_list:

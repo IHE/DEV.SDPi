@@ -1,0 +1,67 @@
+= SDPi Editors AsciiDoc Cheat Sheet
+0.1, 2022.09.08: AsciiDoc article / repo wiki
+:doctype: book
+:xrefstyle: short
+:toc-title: Contents
+:toc: left
+:toclevels: 3
+:sectnums:
+:icons: font
+:imagesoutdir: images/
+:imagesdir: images/
+
+WARNING: This is a straw-man article. Content hackers welcomed!  *_Add issues to the <<Parking Lot Stuff>> section._*
+
+== 'Sup with this "Cheat Sheet"?
+Though the article https://github.com/IHE/sdpi-fhir/wiki/IHE-TF-SDPi-Content-in-AsciiDoc[_IHE Technical Framework / SDPi Content in AsciiDoc_] covers AsciiDoc application to specific content needs of the SDPi supplement, for those who are just getting started with the language, figuring out where the basics (and advanced) usage is documented is ... challenging.
+
+This quick reference guide helps cover that space between the content conventions and the actual AsciiDoc language.  For more detailed information on the AsciiDoc use conventions, see the article https://github.com/IHE/sdpi-fhir/blob/50ace3692b9299cdfcea434501df87b192f5220c/SDPi_Supplement/articles/sdpi-article-ihe-tf-asciidoc-cookbook.adoc[IHE TF / SDPi AsciiDoc Cookbook].
+
+The document links are generally to https://docs.asciidoctor.org/asciidoc/latest/[_Asciidoctor Docs online documentation_].
+
+== Document Stuff
+Add:  Process basics:  AsciiDoc source => AsciiDoctor processor => convert to published format (HTML)
+Add:  Line oriented / stacks of blocks (starting with block=line)
+
+== Blocks Stuff
+ADD:  Basic blocks references
+ADD:  References for types of blocks
+ADD:
+
+== Reference Stuff
+Add:  [#xuze, reftext=YIKES]
+Add:  :attribute: value  pairs
+Add:  macro::name()  ... e.g., image::AFCisGreat.png(...)
+
+== Text Formatting Stuff
+
+ADD:  Admonitions
+ADD:  So you want to indent do you ... good luck!
+
+== Table Stuff
+ADD:  Basic table references
+ADD:  Table formatting examples (alignment, spanning, ...)
+
+== Parking Lot Stuff
+
+(in no particular #order#)
+
+* admonitions
+
+* indenting
+
+* empty lines
+
+* Table Formatting
+
+* attributes
+
+* references
+
+* anchors
+
+* https://docs.asciidoctor.org/asciidoc/latest/tables/data-format/#data-table-formats[Tables from Files (CSV, TSV, DSV)]
+
+*  ...
+
+

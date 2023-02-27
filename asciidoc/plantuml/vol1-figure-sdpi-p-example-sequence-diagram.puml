@@ -1,0 +1,50 @@
+@startuml
+
+skinparam dpi 300
+skinparam monochrome true
+
+!global $str_sdpi_p_somds_prov = "SOMDS Provider"
+!global $str_sdpi_p_somds_cons = "SOMDS Consumer"
+
+participant "$str_sdpi_p_somds_prov" as sdpi_somds_provider
+participant "$str_sdpi_p_somds_cons" as sdpi_somds_consumer
+
+== SDPi-P (Plug-and-trust) -  Transaction Exchange Example ==
+|||
+group unsecured
+    sdpi_somds_provider ->> sdpi_somds_consumer: Announce Network Presence
+
+    sdpi_somds_consumer -> sdpi_somds_provider: Discover Network Topology
+    sdpi_somds_provider -->> sdpi_somds_consumer
+end
+
+group secured
+    sdpi_somds_consumer -> sdpi_somds_provider: Discover BICEPS Services
+    sdpi_somds_provider -->> sdpi_somds_consumer
+
+    sdpi_somds_consumer -> sdpi_somds_provider: Discover System Context & Capabilities
+    sdpi_somds_provider -->> sdpi_somds_consumer
+
+    group pub/sub
+        sdpi_somds_consumer -> sdpi_somds_provider: Manage BICEPS Subscription
+        sdpi_somds_provider -->> sdpi_somds_consumer
+
+        loop
+            sdpi_somds_provider ->> sdpi_somds_consumer: Publish BICEPS Update Reports
+        end
+
+        loop
+            sdpi_somds_provider ->> sdpi_somds_consumer: Notify Change in System Context & Capabilities
+        end
+     end
+
+    sdpi_somds_consumer -> sdpi_somds_provider: Retrieve BICEPS Content
+    sdpi_somds_provider -->> sdpi_somds_consumer
+end
+
+group unsecured
+    sdpi_somds_provider ->> sdpi_somds_consumer: Announce Network Departure
+end
+|||
+
+@enduml

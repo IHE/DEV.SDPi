@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="965.16669"
+   height="570.33331"
+   overflow="hidden"
+   version="1.1"
+   id="svg177"
+   sodipodi:docname="vol1-diagram-hanging-gardens.svg"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview179"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     fit-margin-top="15"
+     fit-margin-left="15"
+     fit-margin-right="15"
+     fit-margin-bottom="15"
+     inkscape:zoom="0.8609375"
+     inkscape:cx="482.61343"
+     inkscape:cy="237.53176"
+     inkscape:window-width="1620"
+     inkscape:window-height="1058"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g175" />
+  <defs
+     id="defs5">
+    <clipPath
+       id="clip0">
+      <rect
+         x="0"
+         y="0"
+         width="1280"
+         height="720"
+         id="rect2" />
+    </clipPath>
+  </defs>
+  <g
+     clip-path="url(#clip0)"
+     id="g175"
+     transform="translate(-157.83333,-121.83333)">
+    <rect
+       style="fill:#ffffff"
+       id="rect247"
+       width="1005.8802"
+       height="612.12341"
+       x="136.92589"
+       y="102.08741" />
+    <rect
+       x="429.5"
+       y="534.5"
+       width="260"
+       height="103"
+       stroke="#2f528f"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="#4472c4"
+       id="rect9" />
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="21px"
+       transform="translate(488.264,593)"
+       id="text15">20702 <tspan
+   font-size="21px"
+   x="59"
+   y="0"
+   id="tspan11">-</tspan><tspan
+   font-size="21px"
+   x="70.333397"
+   y="0"
+   id="tspan13">MDPWS</tspan></text>
+    <rect
+       x="429.5"
+       y="485.5"
+       width="343"
+       height="42"
+       stroke="#2f528f"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="#4472c4"
+       id="rect17" />
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="21px"
+       transform="translate(462.275,513)"
+       id="text23">10207 <tspan
+   font-size="21px"
+   x="59"
+   y="0"
+   id="tspan19">–</tspan><tspan
+   font-size="21px"
+   x="74.5"
+   y="0"
+   id="tspan21">DIM and Service Model</tspan></text>
+    <rect
+       x="289.5"
+       y="652.5"
+       width="607"
+       height="24"
+       stroke="#2f528f"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="none"
+       id="rect25" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="21px"
+       transform="translate(418.701,671)"
+       id="text29">Physical Layers (Ethernet, Wi<tspan
+   font-size="21px"
+   x="248.34"
+   y="0"
+   id="tspan27">-</tspan>Fi, BT, etc.)</text>
+    <rect
+       x="289.5"
+       y="485.5"
+       width="135"
+       height="151"
+       stroke="#2f528f"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="#4472c4"
+       id="rect31" />
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="21px"
+       transform="translate(321.999,542)"
+       id="text39">20701 <tspan
+   font-size="21px"
+   x="59"
+   y="0"
+   id="tspan33">–</tspan><tspan
+   font-size="21px"
+   x="-18.84"
+   y="26"
+   id="tspan35">Architecture</tspan><tspan
+   font-size="21px"
+   x="-20.213301"
+   y="51"
+   id="tspan37">and Protocol</tspan></text>
+    <rect
+       x="291.5"
+       y="268.5"
+       width="604"
+       height="43"
+       stroke="#2f528f"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="#c5e0b4"
+       id="rect41" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="21px"
+       transform="translate(345.249,297)"
+       id="text47">Key Interoperability Properties &amp; Controls (<tspan
+   font-size="21px"
+   x="372.37299"
+   y="0"
+   id="tspan43">PRACtical</tspan><tspan
+   font-size="21px"
+   x="459.207"
+   y="0"
+   id="tspan45">SES)</tspan></text>
+    <rect
+       x="290.5"
+       y="435.5"
+       width="481"
+       height="45"
+       stroke="#2f528f"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="#70ad47"
+       id="rect49" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="21px"
+       transform="translate(318.667,465)"
+       id="text53">IEEE 11073<tspan
+   font-size="21px"
+   x="95.833298"
+   y="0"
+   id="tspan51">-</tspan>1070x Participant Key Purposes (PKP)</text>
+    <rect
+       x="291.5"
+       y="386.5"
+       width="481"
+       height="43"
+       stroke="#2f528f"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="#ffe699"
+       id="rect55" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="21px"
+       transform="translate(334.045,415)"
+       id="text57">IEEE 11073-1072x -10799 SDC Specializations</text>
+    <rect
+       x="692.5"
+       y="534.5"
+       width="80"
+       height="102"
+       stroke="#2f528f"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       stroke-dasharray="5.33333, 4"
+       fill="none"
+       id="rect59" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(706.779,552)"
+       id="text73">2070x <tspan
+   font-size="16px"
+   x="43.333302"
+   y="0"
+   id="tspan61">–</tspan><tspan
+   font-size="16px"
+   x="6.0799599"
+   y="19"
+   id="tspan63">gRPC/</tspan><tspan
+   font-size="16px"
+   x="-4.46667"
+   y="38"
+   id="tspan65">Protobuf</tspan><tspan
+   font-size="16px"
+   x="51.799999"
+   y="38"
+   id="tspan67">,</tspan><tspan
+   font-size="16px"
+   x="-4.4000201"
+   y="58"
+   id="tspan69">REST, IoT,</tspan><tspan
+   font-size="16px"
+   x="2.8333099"
+   y="77"
+   id="tspan71">DDS, …</tspan></text>
+    <rect
+       x="916.5"
+       y="215.5"
+       width="191"
+       height="45"
+       stroke="#ffc000"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       id="rect75" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="15px"
+       transform="translate(949.026,233)"
+       id="text79">Sensors / Actuators / <tspan
+   font-size="15px"
+   x="2.5866699"
+   y="17"
+   id="tspan77">Intelligence Bundles</tspan></text>
+    <rect
+       x="290.5"
+       y="137.5"
+       width="605"
+       height="32"
+       stroke="#2f528f"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="#00b0f0"
+       id="rect81" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="21px"
+       transform="translate(403.97,160)"
+       id="text83">User Narratives / Use Cases / Requirements</text>
+    <rect
+       x="290.5"
+       y="175.5"
+       width="605"
+       height="32"
+       stroke="#2f528f"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="#f8cbad"
+       id="rect85" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="21px"
+       transform="translate(426.747,198)"
+       id="text87">Reference Architectures / Frameworks</text>
+    <rect
+       x="290.5"
+       y="320.5"
+       width="605"
+       height="43"
+       stroke="#2f528f"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="#9dc3e6"
+       id="rect89" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="21px"
+       transform="translate(490.601,349)"
+       id="text93">SDPi+FHIR<tspan
+   font-size="21px"
+   x="94.5"
+   y="0"
+   id="tspan91">Profiles / IGs</tspan></text>
+    <rect
+       x="788.5"
+       y="560.5"
+       width="107"
+       height="77"
+       stroke="#2f528f"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="#2f5597"
+       id="rect95" />
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="21px"
+       transform="translate(802.515,606)"
+       id="text97">HL7 FHIR</text>
+    <rect
+       x="786.5"
+       y="484.5"
+       width="109"
+       height="69"
+       stroke="#2f528f"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="#2f5597"
+       id="rect99" />
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="21px"
+       transform="translate(807.648,513)"
+       id="text103">Devices <tspan
+   font-size="21px"
+   x="-0.64001501"
+   y="26"
+   id="tspan101">on FHIR</tspan></text>
+    <rect
+       x="289.5"
+       y="216.5"
+       width="606"
+       height="44"
+       stroke="#2f528f"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="#ffe699"
+       id="rect105" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="21px"
+       transform="translate(418.463,245)"
+       id="text107">Device / Health Software Specializations</text>
+    <rect
+       x="250.5"
+       y="379.5"
+       width="527"
+       height="266"
+       stroke="#00b0f0"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       stroke-dasharray="5.33333, 4"
+       fill="none"
+       id="rect109" />
+    <text
+       fill="#0070c0"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="24px"
+       transform="rotate(-90,454.836,179.164)"
+       id="text111">ISO/IEEE 11073 SDC</text>
+    <path
+       d="m 841.833,370.5 v 105.499 h -0.666 V 370.5 Z m 3.667,104.165 -4,8 -4,-8 z"
+       fill="#4472c4"
+       id="path113" />
+    <path
+       d="m 901,269 c 4.142,0 7.5,0.56 7.5,1.25 v 18.5 c 0,0.69 3.358,1.25 7.5,1.25 -4.142,0 -7.5,0.56 -7.5,1.25 v 18.5 c 0,0.69 -3.358,1.25 -7.5,1.25"
+       stroke="#70ad47"
+       stroke-width="2"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       id="path115" />
+    <path
+       d="m 896,222 c 5.523,0 10,0.746 10,1.667 v 15.666 c 0,0.921 4.477,1.667 10,1.667 -5.523,0 -10,0.746 -10,1.667 v 15.666 c 0,0.921 -4.477,1.667 -10,1.667"
+       stroke="#ffe699"
+       stroke-width="2"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       id="path117" />
+    <path
+       d="M 0,-0.333333 H 1.8141 V 33.9394 L 1.48077,33.6061 H 31.2046 v 0.6667 H 1.14743 V 0 L 1.48077,0.333333 H 0 Z m 29.8713,30.272733 8,4 -8,4 z"
+       fill="#4472c4"
+       transform="matrix(0,1,1,0,780.5,443.5)"
+       id="path119" />
+    <rect
+       x="173.5"
+       y="147.5"
+       width="30"
+       height="498"
+       stroke="#2f528f"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="#70ad47"
+       id="rect121" />
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="19px"
+       transform="rotate(-90,400.361,206.639)"
+       id="text123">ISO/IEC JWG7 Safety, Effectiveness &amp; Security Standards</text>
+    <rect
+       x="210.5"
+       y="147.5"
+       width="31"
+       height="497"
+       stroke="#2f528f"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="#7030a0"
+       id="rect125" />
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="19px"
+       transform="rotate(-90,423.233,191.767)"
+       id="text135">ISO/IEEE 11073<tspan
+   font-size="19px"
+   x="116"
+   y="2.1308899e-14"
+   id="tspan127">-</tspan><tspan
+   font-size="19px"
+   x="122"
+   y="2.2410999e-14"
+   id="tspan129">1010x Nomenclature &amp; 11073</tspan><tspan
+   font-size="19px"
+   x="350"
+   y="6.4294002e-14"
+   id="tspan131">-</tspan><tspan
+   font-size="19px"
+   x="355"
+   y="6.5212403e-14"
+   id="tspan133">10201 DIM</tspan></text>
+    <rect
+       x="916.5"
+       y="494.5"
+       width="162"
+       height="27"
+       stroke="#4472c4"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       id="rect137" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="15px"
+       transform="translate(951.896,513)"
+       id="text139">Core Standards</text>
+    <path
+       d="m 900,379 c 4.142,0 7.5,0.56 7.5,1.25 v 126.5 c 0,0.69 3.358,1.25 7.5,1.25 -4.142,0 -7.5,0.56 -7.5,1.25 v 126.5 c 0,0.69 -3.358,1.25 -7.5,1.25"
+       stroke="#4472c4"
+       stroke-width="2"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       id="path141" />
+    <rect
+       x="250.5"
+       y="190.5"
+       width="651"
+       height="180"
+       stroke="#00b0f0"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       stroke-dasharray="5.33333, 4"
+       fill="none"
+       id="rect143" />
+    <text
+       fill="#0070c0"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="24px"
+       transform="rotate(-90,318.6745,42.3255)"
+       id="text145">Gemini SES MDI</text>
+    <path
+       d="m 902,319 c 4.142,0 7.5,0.56 7.5,1.25 v 18.5 c 0,0.69 3.358,1.25 7.5,1.25 -4.142,0 -7.5,0.56 -7.5,1.25 v 18.5 c 0,0.69 -3.358,1.25 -7.5,1.25"
+       stroke="#9dc3e6"
+       stroke-width="2"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       id="path147" />
+    <rect
+       x="915.5"
+       y="319.5"
+       width="192"
+       height="46"
+       stroke="#9dc3e6"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#ffffff"
+       id="rect149" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="15px"
+       transform="translate(939.263,338)"
+       id="text153">Stakeholder Community <tspan
+   font-size="15px"
+   x="-13.8333"
+   y="17"
+   id="tspan151">Implementation Agreements</tspan></text>
+    <rect
+       x="915.5"
+       y="267.5"
+       width="192"
+       height="45"
+       stroke="#70ad47"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#ffffff"
+       id="rect155" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="15px"
+       transform="translate(940.429,286)"
+       id="text159">Safe, Effective &amp; Secure <tspan
+   font-size="15px"
+   x="24.333401"
+   y="17"
+   id="tspan157">Interoperability</tspan></text>
+    <rect
+       x="915.5"
+       y="178.5"
+       width="191"
+       height="27"
+       stroke="#f8cbad"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#ffffff"
+       id="rect161" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="15px"
+       transform="translate(953.083,196)"
+       id="text163">SOA, MDIRA/ICE, …</text>
+    <path
+       d="m 902,179 c 3.314,0 6,0.448 6,1 v 11.473 c 0,0.553 2.686,1 6,1 -3.314,0 -6,0.448 -6,1 V 204 c 0,0.552 -2.686,1 -6,1"
+       stroke="#f8cbad"
+       stroke-width="2"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       id="path165" />
+    <path
+       d="m 896,138 c 5.247,0 9.5,0.709 9.5,1.583 v 11.834 c 0,0.874 4.253,1.583 9.5,1.583 -5.247,0 -9.5,0.709 -9.5,1.583 v 11.834 c 0,0.874 -4.253,1.583 -9.5,1.583"
+       stroke="#00b0f0"
+       stroke-width="2"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       id="path167" />
+    <rect
+       x="915.5"
+       y="139.5"
+       width="190"
+       height="28"
+       stroke="#00b0f0"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#ffffff"
+       id="rect169" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="15px"
+       transform="translate(957.422,158)"
+       id="text173">Real<tspan
+   font-size="15px"
+   x="25.6667"
+   y="0"
+   id="tspan171">-</tspan>world Needs</text>
+  </g>
+</svg>

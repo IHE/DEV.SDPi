@@ -1,0 +1,79 @@
+[appendix#vol2_appendix_a_mdpws_messages,sdpi_offset=A]
+== ISO/IEEE 11073 SDC / MDPWS Message Specifications (Normative)
+
+=== Service Mapping
+
+include::service-mapping/tf2-ch-a-mdpws-service-mapping.adoc[]
+
+=== Message Mapping
+
+// Announce Network Presence [DEV-23]
+include::dev-23/tf2-ch-a-mdpws-dev-23.adoc[]
+
+// Discover Network Topology [DEV-24]
+include::dev-24/tf2-ch-a-mdpws-dev-24.adoc[]
+
+//=== Discover BICEPS Services [DEV-25]
+include::dev-25/tf2-ch-a-mdpws-dev-25.adoc[]
+
+//=== Discover System Context and Capabilities [DEV-26]
+//
+// Manage BICEPS Subscription [DEV-27]
+include::dev-27/tf2-ch-a-mdpws-dev-27.adoc[]
+
+//
+//=== Notify Change in System Context and Capabilities [DEV-28]
+include::dev-28/tf2-ch-a-mdpws-dev-28.adoc[]
+
+//=== Publish BICEPS Update Reports [DEV-29]
+include::dev-29/tf2-ch-a-mdpws-dev-29.adoc[]
+
+//=== Retrieve BICEPS Content [DEV-30]
+include::dev-30/tf2-ch-a-mdpws-dev-30.adoc[]
+
+//=== Retrieve Localization Information [DEV-33]
+//
+//=== Announce Network Departure [DEV-34]
+include::dev-34/tf2-ch-a-mdpws-dev-34.adoc[]
+
+//=== Establish Medical Data Exchange [DEV-35]
+//
+//=== Publish Medical Data [DEV-36]
+//
+//=== Retrieve Medical Data [DEV-37]
+//
+//=== Establish Medical Alert Exchange [DEV-38]
+//
+//=== Publish Medical Alert Update [DEV-39]
+//
+//=== Retrieve Medical Alert Status [DEV-40]
+
+=== Security Considerations
+
+In TR1164, <<ref_ieee_11073_10700_2022, IEEE 11073-10700>> requires a <<vol1_spec_sdpi_p_actor_somds_provider>> to protect <<acronym_biceps>> services against unauthenticated access.
+In order to fulfill TR1164, <<ref_ieee_11073_20701_2018, IEEE 11073-20701>> specifies the need to establish secure channels between <<vol1_spec_sdpi_p_actor_somds_participant>> by using TLS with mutual authentication.
+
+.R0502
+[sdpi_requirement#r0502,sdpi_req_level=shall]
+****
+A <<vol1_spec_sdpi_p_actor_somds_participant>> shall use HTTPS with mutual authentication for those transactions that are required to be secured.
+
+.Notes
+[%collapsible]
+====
+NOTE: Each section that specifies a transaction indicates security requirements in the __Security Requirements & Considerations__ subsection beneath the __Safety, Effectiveness, Security Considerations and Requirements__ of each transaction.
+
+NOTE: Essentially, this profile asks for secured transmission of data except when ad-hoc discovery is performed.
+====
+****
+
+CAUTION: This appendix does not specify any processes towards certificate governance. Certificate governance is a separate topic that needs to be addressed in future revisions of this profile.
+
+=== Amendments and Corrigenda
+
+include::connect-time-algorithm/tf2-ch-a-mdpws-connect-time-algorithm.adoc[]
+
+include::mdib-report-retrofit/tf2-ch-a-mdpws-mdib-report-retrofit.adoc[]
+
+include::mdpws-compression/tf2-ch-a-mdpws-compression.adoc[]
+include::discovery-scopes/tf2-ch-a-mdpws-discovery-scopes.adoc[]

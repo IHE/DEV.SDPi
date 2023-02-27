@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<msg:Mdib MdibVersion="........" SequenceId="urn:uuid:.........">
+		<pm:MdDescription DescriptionVersion="..">
+			<pm:Mds Handle="1" DescriptorVersion=".." SafetyClassification="MedA">
+				<pm:Type Code="69837">
+					<pm:ConceptDescription>MDC_DEV_METER_PHYSIO_MULTI_PARAM_MDS</pm:ConceptDescription>
+				</pm:Type>
+				<pm:AlertSystem Handle="Alertsystem.mds0" SafetyClassification="MedA" SelfCheckPeriod="PT4S">
+					<!-- This (non-displayed) AlertSystem section describes the AlertConditions and AlertSignals -->
+				</pm:AlertSystem>
+				<pm:SystemContext Handle="Systemcontext.mds0">
+					<!-- This (non-displayed) SystemContext section describes the different contexts, such as PatientContext, LocationContext and EnsembleContext -->
+				</pm:SystemContext>
+				<pm:Vmd Handle="1.1" SafetyClassification="MedA">
+					<pm:Type Code="69854">
+						<pm:ConceptDescription>MDC_DEV_METER_PRESS_BLD_VMD</pm:ConceptDescription>
+					</pm:Type>
+					<pm:Channel Handle="1.1.1" SafetyClassification="MedA">
+						<ext:Extension>
+							<msg:Retrievability xmlns:msg="http://standards.ieee.org/downloads/11073/11073-10207-2017/message">
+								<msg:By Method="Get"/>
+								<msg:By Method="Ep"/>
+							</msg:Retrievability>
+						</ext:Extension>
+						<pm:Type Code="70687">
+							<pm:ConceptDescription>MDC_DEV_PRESS_BLD_NONINV_CHAN</pm:ConceptDescription>
+						</pm:Type>
+						<pm:Metric xsi:type="pm:NumericMetricDescriptor" Handle="0x0000B10D" SafetyClassification="MedA" Resolution="1" MetricCategory="Msrmt" MetricAvailability="Intr" LifeTimePeriod="PT24H">
+							<ext:Extension>
+								<msg:Retrievability xmlns:msg="http://standards.ieee.org/downloads/11073/11073-10207-2017/message">
+									<msg:By Method="Get"/>
+									<msg:By Method="Ep"/>
+								</msg:Retrievability>
+							</ext:Extension>
+							<pm:Type Code="150021">
+								<pm:ConceptDescription>MDC_PRESS_BLD_NONINV_SYS</pm:ConceptDescription>
+							</pm:Type>
+							<pm:Unit Code="266016">
+								<pm:ConceptDescription>mmHg</pm:ConceptDescription>
+							</pm:Unit>
+							<pm:TechnicalRange Lower="0" Upper="400"/>
+						</pm:Metric>
+						<pm:Metric xsi:type="pm:NumericMetricDescriptor" Handle="0x0000B10E" SafetyClassification="MedA" Resolution="1" MetricCategory="Msrmt" MetricAvailability="Intr" LifeTimePeriod="PT24H">
+							<ext:Extension>
+								<msg:Retrievability xmlns:msg="http://standards.ieee.org/downloads/11073/11073-10207-2017/message">
+									<msg:By Method="Get"/>
+									<msg:By Method="Ep"/>
+								</msg:Retrievability>
+							</ext:Extension>
+							<pm:Type Code="150022">
+								<pm:ConceptDescription>MDC_PRESS_BLD_NONINV_DIA</pm:ConceptDescription>
+							</pm:Type>
+							<pm:Unit Code="266016">
+								<pm:ConceptDescription>mmHg</pm:ConceptDescription>
+							</pm:Unit>
+							<pm:TechnicalRange Lower="0" Upper="400"/>
+						</pm:Metric>
+					</pm:Channel>
+				</pm:Vmd>
+			</pm:Mds>
+		</pm:MdDescription>
+		<pm:MdState StateVersion="...">
+			<!-- This (non-displayed) MdState section contains the state of Metrics, Channels, VMDs, Context, AlertSystems, AlertConditions, AlertSignals, LimitsAlertConditions, etc. - referring to the handles defined in the MdDescription section -->
+		</pm:MdState>
+	</msg:Mdib>

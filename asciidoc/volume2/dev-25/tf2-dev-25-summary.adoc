@@ -1,0 +1,4 @@
+// DEV-25 Transaction Summary
+
+This transaction is used to exchange the resources metadata between a <<actor_somds_provider>> and a <<actor_somds_consumer>>.
+

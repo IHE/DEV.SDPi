@@ -1,0 +1,47 @@
+:var_transaction_id: DEV-40
+:var_label_dev_40_message_getmdib: GetMdib
+:var_label_dev_40_message_getmdibresponse: GetMdibResponse
+
+
+//reset|+1|off
+[#vol2_clause_dev_40,sdpi_offset=40]
+=== Retrieve Medical Alert Status [{var_transaction_id}]
+
+==== Scope
+
+include::tf2-dev-40-summary.adoc[]
+
+==== Actor Roles
+
+.Actor Roles {var_transaction_id}
+[cols="1,2"]
+|===
+|Actor |Roles
+
+|<<actor_somds_consumer>>
+|Initiates communication by sending a {var_label_dev_40_message_getmdib} message to a <<actor_somds_provider>>. Then listens for a {var_label_dev_40_message_getmdibresponse} message to retrieve the <<actor_somds_provider>>'s MDIB.
+
+|<<actor_somds_provider>>
+|Listens for {var_label_dev_40_message_getmdib} messages, which it responds to with {var_label_dev_40_message_getmdibresponse} messages respectively.
+
+|===
+
+==== Referenced Standards
+
+* <<ref_ieee_11073_10207_2017>> Section 7.3.2 Get Service
+
+==== Messages
+
+.Message Interaction Diagram {var_transaction_id}
+[plantuml#vol2_figure_dev_40_sequence, target=puml-dev-40-sequence, format=svg, 40width=100%]
+....
+include::../../plantuml/vol2-figure-dev-40-sequence.puml[]
+....
+
+:var_duplicated_transaction: {var_transaction_id}
+:var_dupicates_list: DEV-30 (<<vol2_clause_dev_30>>) and DEV-37 (<<vol2_clause_dev_37>>)
+include::../dev-duplicate-disclaimer.adoc[]
+
+[#vol2_clause_dev_40_retrieve_medical_alert_status_ses]
+include::../dev-x-default-ses-secured-mode.adoc[]
+

@@ -1,0 +1,114 @@
+:var_uri_percent_unreserved: https://www.rfc-editor.org/rfc/rfc3986#section-2.3
+:var_uri_percent_encoding: https://www.rfc-editor.org/rfc/rfc3986#section-2.1
+
+==== Discovery Scopes
+
+<<ref_ieee_11073_20701_2018>> specifies requirements to the encoding of certain <<acronym_mdib>> data as WS-Discovery Scopes provided by <<actor_somds_provider>>s. This clause further details encoding rules for production specifications and attributes as laid out in the IEEE 11073-10101 nomenclature.
+
+===== Encoding of Production Specifications
+
+.R0010
+[sdpi_requirement#r0010,sdpi_req_level=shall]
+****
+If a <<term_manufacturer>> of a <<actor_somds_provider>> intends to include MDS production specifications in the WS-Discovery Scopes of the <<actor_somds_provider>>, the <<actor_somds_provider>> shall encode the production specifications by using the rules in <<vol2_listing_encoding_production_specification_mds>>.
+
+.Notes
+[%collapsible]
+====
+NOTE: The URI encoding of production specifications is defined in <<vol2_listing_encoding_production_specification>>.
+
+NOTE: <<term_manufacturer>>s can also encode metadata information as production specification, according to the mapping in <<vol3_table_production_specifications_mapping>>.
+====
+
+.Examples
+[%collapsible]
+====
+URIs of a <<term_manufacturer>> name and serial number:
+
+- `sdc.mds.prodspec:MediHealth:531970`
+- `sdc.mds.prodspec:DE12345678:531972,urn%3Aoid%3A1.3.111.2.11073.10101.3`
+====
+****
+
+.<<ref_iso_iec_14977_1996, Extended Backus-Naur Form>> for the encoding of production specifications
+[source#vol2_listing_encoding_production_specification]
+----
+Char ::= unreserved | pct-encoded
+CharSequenceNz ::= Char { Char }
+CodingSystem ::= CharSequenceNz
+CodingSystemVersion ::= CharSequenceNz
+Code ::= CharSequenceNz
+CodedValue ::= Code [ ',' CodingSystem [ ',' CodingSystemVersion ] ]
+Root ::= CharSequenceNz
+Extension ::= CharSequenceNz
+InstanceIdentifier ::= Root [ ',' Extension ]
+ProductionSpec ::= { Char }
+SpecType ::= CodedValue
+ComponentId ::= InstanceIdentifier
+ProductionSpecification ::= ProductionSpec ':' SpecType [ ':' ComponentId ]
+----
+
+[NOTE]
+====
+- `unreserved` is specified in <<ref_rfc_3986>>, {var_uri_percent_unreserved}[2.3. Unreserved Characters]
+- `pct-encoded` is specified in <<ref_rfc_3986>>, {var_uri_percent_encoding}[2.1. Percent-Encoding]
+====
+
+.<<ref_iso_iec_14977_1996, Extended Backus-Naur Form>> for the encoding of MDS production specifications
+[source#vol2_listing_encoding_production_specification_mds]
+----
+Scheme ::= 'sdc.mds.prodspec'
+MdsProductionSpecification ::= Scheme ':' ProductionSpecification
+----
+
+NOTE: `ProductionSpecification` is specified in <<vol2_listing_encoding_production_specification>>.
+
+===== Encoding of Attributes
+
+.R0011
+[sdpi_requirement#r0011,sdpi_req_level=shall]
+****
+If a <<term_manufacturer>> of a <<actor_somds_provider>> intends to include MDS attributes in the WS-Discovery Scopes of the <<actor_somds_provider>>, the <<actor_somds_provider>> shall encode the attributes by using the rules in <<vol2_listing_encoding_attribute_mds>>.
+
+.Notes
+[%collapsible]
+====
+NOTE: The URI encoding of attributes is defined by the Extended Backus-Naur Form <<ref_iso_iec_14977_1996>> in <<vol2_listing_encoding_attribute>>.
+====
+
+.Examples
+[%collapsible]
+====
+URI of a Soft ID named _PatMon 03_: `sdc.mds.attr:PatMon%2003:67886`
+====
+****
+
+.<<ref_iso_iec_14977_1996, Extended Backus-Naur Form>> for the encoding of attributes
+[source#vol2_listing_encoding_attribute]
+----
+Char ::= unreserved | pct-encoded
+CharSequenceNz ::= Char { Char }
+CodingSystem ::= CharSequenceNz
+CodingSystemVersion ::= CharSequenceNz
+Code ::= CharSequenceNz
+CodedValue ::= Code [ ',' CodingSystem [ ',' CodingSystemVersion ] ]
+AttributeValue ::= { Char }
+AttributeCode ::= CodedValue
+Attribute ::=  AttributeValue ':'  AttributeCode
+----
+
+[NOTE]
+====
+- `unreserved` is specified in <<ref_rfc_3986>>, {var_uri_percent_unreserved}[2.3. Unreserved Characters]
+- `pct-encoded` is specified in <<ref_rfc_3986>>, {var_uri_percent_encoding}[2.1. Percent-Encoding]
+====
+
+.<<ref_iso_iec_14977_1996, Extended Backus-Naur Form>> for the encoding of MDS attribute specifications
+[source#vol2_listing_encoding_attribute_mds]
+----
+Scheme ::= 'sdc.mds.attr'
+MdsAttribute ::= Scheme ':' Attribute
+----
+
+NOTE: `Attribute` is specified in <<vol2_listing_encoding_attribute>>.
+

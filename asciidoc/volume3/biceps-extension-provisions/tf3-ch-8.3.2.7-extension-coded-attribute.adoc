@@ -1,0 +1,49 @@
+[#vol3_clause_coded_attribute]
+====== Coded Attribute
+
+BICEPS does not provide means to generically add attributes from the first partition of the IEEE 11073-10101 nomenclature to the <<acronym_mdib>>.
+This becomes challenging if there are attributes required by <<vol1_spec_sdpi_p_actor_somds_provider>>s to provide information that is not covered by the BICEPS participant model.
+
+For example, BICEPS only supports the following MDS meta information below the `pm:Mds/pm:MetaData` element:
+
+* UDI
+* Lot number
+* <<term_manufacturer>> name
+* Expiration date
+* Model name
+* Model number
+* Serial number
+
+Some statically configured meta information like firmware versions or software versions can be added by means of production specification elements.
+However, attributes like equipment labels do not exist and cannot be conveyed by using production specifications.
+
+This profile specifies the <<term_coded_attribute>> extension that allows for a <<vol1_spec_sdpi_p_actor_somds_provider>> to provide attributes from the first partition of the IEEE 11073-10101 nomenclature for which there is no information item specified in the BICEPS participant model.
+
+[sdpi_level=+1]
+====== Model
+
+The CodedAttribute XML Schema is available in <<vol3_appendix_a_xml_schemas_coded_attribute>>. <<vol3_example_extension_coded_attribute>> shows an exemplary XML instance of a <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> including the `MDC_ATTR_ID_SOFT` attribute as an additional metadata item.
+
+.MDS with CodedAttribute representing a Soft ID
+[#vol3_example_extension_coded_attribute]
+====
+[source,xml]
+----
+include::../../listings/vol3-clause-biceps-content-example-equipment-label.xml[]
+----
+====
+
+[sdpi_level=+1]
+====== Requirements
+
+.R0007
+[sdpi_requirement#r0007,sdpi_req_level=shall]
+****
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall set `sdpi:MdcAttribute/@Code` to any code from the first partition of the IEEE 11073-10101 nomenclature in the range of 67841 (1::2305) to 68609 (1::3073).
+
+.Notes
+[%collapsible]
+====
+NOTE: This prevents <<term_manufacturer>>s from using codes outside the intended range of attributes.
+====
+****

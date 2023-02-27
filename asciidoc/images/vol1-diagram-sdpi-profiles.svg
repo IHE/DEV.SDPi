@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1170.7284"
+   height="620.16669"
+   overflow="hidden"
+   version="1.1"
+   id="svg155"
+   sodipodi:docname="vol1-diagram-sdpi-profiles.svg"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview157"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     fit-margin-top="15"
+     fit-margin-left="15"
+     fit-margin-right="15"
+     fit-margin-bottom="15"
+     inkscape:zoom="0.8609375"
+     inkscape:cx="583.66606"
+     inkscape:cy="289.80036"
+     inkscape:window-width="1620"
+     inkscape:window-height="1058"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g153" />
+  <defs
+     id="defs5">
+    <clipPath
+       id="clip0">
+      <rect
+         x="0"
+         y="0"
+         width="1280"
+         height="720"
+         id="rect2" />
+    </clipPath>
+  </defs>
+  <g
+     clip-path="url(#clip0)"
+     id="g153"
+     transform="translate(-56.331656,-70)">
+    <rect
+       style="fill:#ffffff"
+       id="rect363"
+       width="1211.4701"
+       height="651.61523"
+       x="40.070312"
+       y="54.900181" />
+    <rect
+       x="269"
+       y="85"
+       width="742"
+       height="387"
+       fill="#064578"
+       id="rect9" />
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(370.957,126)"
+       id="text11">IHE SDPi Profiles for “PRACtical” Device Interoperability</text>
+    <rect
+       x="442.5"
+       y="154.5"
+       width="396"
+       height="117"
+       stroke="#ffffff"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="#694db7"
+       id="rect13" />
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(481.043,206)"
+       id="text15">SDPi Plug</text>
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(572.043,206)"
+       id="text17">-</text>
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(579.377,206)"
+       id="text19">and</text>
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(616.21,206)"
+       id="text21">-</text>
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(623.543,206)"
+       id="text23">Trust</text>
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(677.29,206)"
+       id="text25">Connectivity</text>
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(600.997,235)"
+       id="text27">(SDPi</text>
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(651.997,235)"
+       id="text29">-</text>
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(659.33,235)"
+       id="text31">P)</text>
+    <rect
+       x="779.5"
+       y="324.5"
+       width="181"
+       height="117"
+       stroke="#ffffff"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="#694db7"
+       id="rect33" />
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(805.278,361)"
+       id="text35">SDPi external</text>
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(833.725,390)"
+       id="text37">Control</text>
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(825.338,419)"
+       id="text39">(SDPi</text>
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(876.338,419)"
+       id="text41">-</text>
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(883.671,419)"
+       id="text43">xC</text>
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(906.838,419)"
+       id="text45">)</text>
+    <rect
+       x="320.5"
+       y="322.5"
+       width="181"
+       height="117"
+       stroke="#ffffff"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="#694db7"
+       id="rect47" />
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(335.238,374)"
+       id="text49">SDPi Reporting</text>
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(371.111,403)"
+       id="text51">(SDPi</text>
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(422.111,403)"
+       id="text53">-</text>
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(429.444,403)"
+       id="text55">R)</text>
+    <rect
+       x="550.5"
+       y="324.5"
+       width="180"
+       height="117"
+       stroke="#ffffff"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="#694db7"
+       id="rect57" />
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(574.083,376)"
+       id="text59">SDPi Alerting</text>
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(600.25,405)"
+       id="text61">(SDPi</text>
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(651.25,405)"
+       id="text63">-</text>
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(658.583,405)"
+       id="text65">A)</text>
+    <rect
+       x="300.5"
+       y="308.5"
+       width="681"
+       height="150"
+       stroke="#ffffff"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       stroke-dasharray="5.33333, 4"
+       fill="none"
+       id="rect67" />
+    <path
+       d="m 791.186,273.68 78.84,49.174 -1.059,1.697 -78.84,-49.174 z m -1.515,4.948 L 785,271 l 8.905,0.84 z"
+       fill="#ffffff"
+       id="path69" />
+    <path
+       d="m 641,277.667 v 46.036 h -2 v -46.036 z m -5,1.333 4,-8 4,8 z"
+       fill="#ffffff"
+       id="path71" />
+    <path
+       d="M 6.24105,2.54832 85.7072,49.8101 84.6848,51.5291 5.21871,4.26728 Z M 4.83117,7.52727 0,0 8.92052,0.651429 Z"
+       fill="#ffffff"
+       transform="matrix(-1,0,0,1,495.196,271)"
+       id="path73" />
+    <path
+       d="m 1011.67,497.34 -27.243,-33.535 1.552,-1.261 27.241,33.535 z M 982.939,466.732 981,458 l 8.149,3.688 z"
+       fill="#ff0000"
+       id="path75" />
+    <text
+       fill="#1e22aa"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(1041.98,509)"
+       id="text77">“medical”</text>
+    <text
+       fill="#1e22aa"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(1014.98,538)"
+       id="text79">interoperability</text>
+    <text
+       fill="#1e22aa"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(1049.97,567)"
+       id="text81">purpose</text>
+    <rect
+       x="320.5"
+       y="497.5"
+       width="181"
+       height="77"
+       stroke="#ffffff"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="#ad1f2f"
+       id="rect83" />
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(366.653,529)"
+       id="text85">HL7 FHIR</text>
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(371.14,558)"
+       id="text87">PoCD</text>
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(428.827,558)"
+       id="text89">IG</text>
+    <rect
+       x="320.5"
+       y="597.5"
+       width="181"
+       height="76"
+       stroke="#ffffff"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="#ad1f2f"
+       id="rect91" />
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(362.274,628)"
+       id="text93">FHIR Base</text>
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(361.081,657)"
+       id="text95">Resources</text>
+    <rect
+       x="779.5"
+       y="497.5"
+       width="181"
+       height="76"
+       stroke="#ffffff"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="#76a32e"
+       id="rect97" />
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(829.084,528)"
+       id="text99">SDC PKP</text>
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(821.231,557)"
+       id="text101">Standards</text>
+    <rect
+       x="779.5"
+       y="598.5"
+       width="181"
+       height="76"
+       stroke="#ffffff"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="#064578"
+       id="rect103" />
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(824.911,629)"
+       id="text105">SDC Core</text>
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(821.231,658)"
+       id="text107">Standards</text>
+    <rect
+       x="550.5"
+       y="498.5"
+       width="82"
+       height="76"
+       stroke="#ffffff"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="#ee2e24"
+       id="rect109" />
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(571.136,543)"
+       id="text111">DEC</text>
+    <rect
+       x="550.5"
+       y="597.5"
+       width="180"
+       height="76"
+       stroke="#ffffff"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="#ee2e24"
+       id="rect113" />
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(605.663,628)"
+       id="text115">HL7 V2</text>
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(588.25,657)"
+       id="text117">Messaging</text>
+    <path
+       d="M 0.139844,-0.990173 25.3525,2.57066 25.0728,4.551 -0.139844,0.990173 Z M 24.4517,-0.586325 31.8138,4.49312 23.333,7.33506 Z"
+       fill="#ff0000"
+       transform="matrix(-1,0,0,1,991.814,531)"
+       id="path119" />
+    <path
+       d="m 871,465 v 25.896 h -2 V 465 Z m 3,24.562 -4,8.001 -4,-8 z"
+       fill="#ff0000"
+       id="path121" />
+    <path
+       d="m 871,573 v 17.496 h -2 V 573 Z m 3,16.163 -4,8 -4,-8 z"
+       fill="#ff0000"
+       id="path123" />
+    <path
+       d="M 1,-3.55262e-6 1.00008,22.8852 -0.999919,22.8853 -1,3.55262e-6 Z M 4.00008,21.5519 l -3.999975013,8 -4.000024987,-8 z"
+       transform="matrix(-1,0,0,1,591,574)"
+       id="path125" />
+    <path
+       d="m 411,568.993 0.152,21.731 -2,0.014 L 409,569.007 Z m 3.143,20.377 -3.944,8.028 -4.056,-7.972 z"
+       id="path127" />
+    <rect
+       x="648.5"
+       y="498.5"
+       width="82"
+       height="76"
+       stroke="#ffffff"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="#ee2e24"
+       id="rect129" />
+    <text
+       fill="#ffffff"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(665.84,543)"
+       id="text131">ACM</text>
+    <path
+       d="M 1,-3.55262e-6 1.00008,22.8852 -0.999919,22.8853 -1,3.55262e-6 Z M 4.00008,21.5519 l -3.999975013,8 -4.000024987,-8 z"
+       transform="matrix(-1,0,0,1,697,569)"
+       id="path133" />
+    <path
+       d="m 640.752,440.341 44.943,51.289 -1.504,1.318 -44.943,-51.289 z m 46.321,48.309 2.263,8.653 -8.28,-3.38 z"
+       id="path135" />
+    <path
+       d="m 410.373,438.072 135.002,54.255 -0.746,1.855 -135.002,-54.254 z m 134.883,50.974 5.932,6.695 -8.915,0.728 z"
+       id="path137" />
+    <path
+       d="m 411,438.998 0.111,51.59 -2,0.005 L 409,439.002 Z m 3.108,50.251 -3.982,8.008 -4.017,-7.991 z"
+       id="path139" />
+    <path
+       d="M 0,1.66667 H -198.904 L -197.237,0 v 357.232 l -1.667,-1.667 H 42.6561 v 3.334 H -200.57 V -1.66667 H 0 Z m 40.9895,350.56533 10,5 -10,5 z"
+       fill="#00b050"
+       transform="matrix(-1,0,0,1,1011.49,278.5)"
+       id="path141" />
+    <path
+       d="M 0.344468,-0.938798 133.422,47.8905 132.733,49.7681 -0.344468,0.938798 Z M 133.203,44.6148 l 6.133,6.511 -8.888,0.9994 z"
+       transform="matrix(-1,0,0,1,640.336,441)"
+       id="path143" />
+    <rect
+       x="300.5"
+       y="480.5"
+       width="448"
+       height="99"
+       stroke="#000000"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       stroke-dasharray="5.33333, 4"
+       fill="none"
+       id="rect145" />
+    <text
+       fill="#1e22aa"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(71.2415,557)"
+       id="text147">IHE “Gateway”</text>
+    <text
+       fill="#1e22aa"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(70.9215,586)"
+       id="text149">Actors Defined</text>
+    <path
+       d="M 0.507267,-0.861789 53.9862,30.617 52.9716,32.3406 -0.507267,0.861789 Z M 54.3589,27.3553 l 4.8652,7.5053 -8.9233,-0.611 z"
+       transform="matrix(1,0,0,-1,241,564.861)"
+       id="path151" />
+  </g>
+</svg>

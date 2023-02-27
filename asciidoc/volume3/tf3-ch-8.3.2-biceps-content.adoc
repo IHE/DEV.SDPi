@@ -1,0 +1,221 @@
+
+// 8.3.2.1
+[#vol3_clause_sdc_biceps_semantic_content_module]
+===== SDC/BICEPS Content Module
+
+The <<acronym_biceps>> standard, <<ref_ieee_11073_10207_2017>>, provides an extensive semantic model for all information exchanged between <<vol1_spec_sdpi_p_actor_somds_participant>> systems.  This section provides a general background for <<acronym_biceps>>-based content, including both what is unique to this standard (e.g., different from the <<term_classic_dim>>), and any extensions that are made by this SDPi supplement.
+
+
+.R0701
+[sdpi_requirement#r0701,sdpi_req_level=shall]
+****
+All <<vol1_spec_sdpi_p_actor_somds_participant>> systems shall fully implement the semantic content requirements in the <<ref_ieee_11073_10207_2017>> <<acronym_biceps>> standard.
+
+.Notes
+[%collapsible]
+====
+NOTE: This includes strict implementation of the <<acronym_biceps>> <<acronym_mdib>> specification, as well as use of the <<acronym_mdc>> nomenclature.
+
+////
+#TODO:  ADD SPECIFIC BICEPS REQUIREMENT NUMBERS HERE?  THE ICS TABLE WILL BE ADDED TO TF-1 Appendix B in SDPi 1.x#
+////
+
+====
+****
+
+
+
+// 8.3.2.
+===== BICEPS Descriptive Model
+
+As described in <<vol1_clause_sdpi_p_soa_somds_architecture_alignment>> (see <<figure_sdc_biceps_mdib_descriptors_states>>), all <<vol1_spec_sdpi_p_actor_somds_participant>> systems support an <<acronym_mdib>> model that has both medical device description and state components.  <<figure_sdc_participant_model_descriptive_part>> below provides the next level of detail for the descriptive part of the <<acronym_mdib>>:
+
+.SDC/BICEPS MDIB Descriptive Model Components
+[#figure_sdc_participant_model_descriptive_part]
+image::../images/vol3-diagram-sdc-participant-model-descriptive-part.svg[align=center]
+
+This model, detailed in <<ref_ieee_11073_10207_2017>>, provides a basic set of objects and containment relationships for describing the information and services supported by a medical device.
+
+The core Medical Device System (*MDS*), Virtual Medical Device (*VMD*), Channel, and Metric objects are utilized for communicating basic information; whereas, the Alert System objects (not all are included on this diagram) support the specialized information around medical device alerts, alarms, and special events.
+What is unique to this descriptor model, though, is the inclusion of a set of SystemContext objects, as identified in <<figure_sdc_biceps_mdib_system_context_types_model>> below:
+
+.SDC/BICEPS MDIB System Context Types Model
+[#figure_sdc_biceps_mdib_system_context_types_model]
+image::../images/vol3-diagram-sdc-system-context-types.svg[align=center]
+
+These  context types combine to support description of the operational environment for a device.
+Depending on a systems capabilities, they may be configured -- statically or dynamically -- with context information such as location or patient identification, or they may discover a <<vol1_spec_sdpi_p_actor_somds_provider>> on the network from which they can retrieve the information.
+These context types represent a significant improvement over previous medical device <<acronym_mdib>> description capabilities.
+
+NOTE:  A detailed description of this <<acronym_biceps>> description information model is beyond the scope of this specification.  Detailed information is available in the <<ref_ieee_11073_10207_2017>> standard and other materials identified in <<vol1_appendix_b_references>>.
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*: This version of the supplement does not fully support profiles of all the elements in the descriptive model, including:
+
+* Service Control Object (SCO) and Operations
+* Battery objects
+
+Additionally, only limited support for the *_AlertSystem_* (and related objects), and for the *_SystemContext_* types are provided in SDPi 1.0.
+Subsequent versions of the specification will address complete functionality.
+|===
+
+[#vol3_clause_biceps_relationship_to_classic_dim]
+===== BICEPS Relationship to Classic DIM
+
+As can be seen from <<figure_sdc_participant_model_descriptive_part>> above, the core elements of the <<term_classic_dim>> (as specified in <<ref_ieee_11073_10201_2004>> and described in <<vol3_clause_ieee_11073_10201_classic_dim_content_modules>>), are directly supported by the <<acronym_biceps>> model above in <<figure_sdc_participant_model_descriptive_part>>.
+The basic containment from MDS to VMD to Channel to Metric is maintained within <<acronym_biceps>>, ensuring continuity with the broadly-implemented <<term_classic_dim>>
+
+
+[#vol3_clause_biceps_mapping_using_somds_connector_content_modules]
+===== BICEPS Mapping using SOMDS Connector content modules
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  This clause is intentionally left blank for this version.
+Future versions will include general discussion about how BICEPS-based content is formally mapped to that of other protocols, typically utilizing a <<vol1_spec_sdpi_p_actor_somds_connector>>.
+
+|===
+
+// 8.3.2.
+===== Nomenclature Considerations – Private Extensions & External Systems
+
+The <<acronym_biceps>> specification fully supports the private nomenclature extensions as defined in <<ref_ieee_11073_10101_2020>>.  Additionally it supports integration of other non-<<acronym_mdc>> terminology systems.
+
+See <<ref_ieee_11073_10207_2017>> for additional details.
+
+// 8.3.2.
+[#vol3_clause_system_type_nomenclature_extensions]
+===== System Type Nomenclature Extensions
+In addition to specific device specializations (see <<vol3_clause_device_specialization_content_modules>> below), SDPi specifications, especially TF-1 use cases, refer to a number of general classes or types of systems.  These systems provide common services to all other <<vol1_spec_sdpi_p_actor_somds_participant>>'s; however, in order to be discovered on the network, they must have system type identifiers that can be recognized by these other systems (explicitly / implicitly).
+
+
+[#vol1_table_system_type_nomenclature_extensions]
+.MDC Nomenclature System Type Extensions
+
+[%autowidth]
+[cols="1,1,1,1"]
+|===
+.^| <<acronym_mds>> System Type
+.^| <<acronym_mdc>> Term Identifier
+.^| Acronym
+.^| Description
+
+.^| [[label_system_type_name_central_station,Central Station]] Central Station
+.^| (tba)
+.^| [[acronym_cs,CS]] CS
+.^| A system that supports a multi-patient workplace with capabilities similar to a _Cockpit_.
+
+.^| [[system_type_clinical_notification_system,Clinical Notification System]] Clinical Notification System
+.^| (tba)
+.^| [[acronym_cns,CNS]] CNS
+.^| A system that supports sending notifications (e.g., alerts) to individual clinicians
+
+.^| Cockpit
+.^| (tba)
+.^|
+.^| Supports information viewing and control of multiple devices and systems associated with a single patient.
+
+.^| [[system_type_device_aggregator,Device Aggregator]] Device Aggregator
+.^| (tba)
+.^|
+.^| A system that discovers and integrates or "aggregates" information from one or more devices and makes them accessible from a single <<vol1_spec_sdpi_p_actor_somds_provider>> <<acronym_mdib>>. Aggregated devices may be <<vol1_spec_sdpi_p_actor_somds_participant>>s that support <<acronym_sdc>> connectivity or may be interfaced to the aggregator system by some other non-standardized means (e.g., analog sensors or proprietary protocols).
+
+.^| [[system_type_dashboard,Dashboard]] Dashboard
+.^| (tba)
+.^|
+.^| A system that displays information from one or more <<vol1_spec_sdpi_p_actor_somds_participant>> systems associated with a single patient.  Similar to a _Cockpit_ but without device-external control capabilities.  May include both metric and alert information.
+
+.^| [[system_type_device_gateway,Gateway]] Gateway
+.^| (tba)
+.^| [[acronym_dgw,DGW]] DGW, <<acronym_agw>>
+.^| Gateway PARTICIPANT that provides, for example, ADT information or laboratory results (inbound). Note:  <<acronym_agw>> is for an <<label_system_type_name_agw>> system.  (For example, see <<vol1_clause_appendix_c_use_case_acns_technical_precondition>>)
+
+.^| [[system_type_device_smart_alerting,Smart Alerting]] Smart Alerting
+.^| (tba)
+.^| [[acronuym_sas,SAS]] SAS
+.^| Smart Alerting system that provides consolidated alert event (actionable alerts), advisories such as patient deteriorations, etc.
+
+|===
+
+////
+#TODO:  ADD TERM CODE IDENTIFIERS FOR THE SYSTEM TYPES IN THE TABLE ABOVE + SEE ADDITIONAL TYPES AT https://confluence.hl7.org/pages/viewpage.action?pageId=86972238[ToI "What is a Central?"]#
+////
+
+[#vol3_clause_biceps_ses_content_requirements_considerations]
+===== Safety, Effectiveness, Security Content Requirements & Considerations
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  The <<acronym_sdc>> standards community is evaluating the use of safety class elements in the BICEPS specification (see <<ref_ieee_11073_10207_2017>>), and the related https://github.com/IHE/sdpi-fhir/issues/61[Github Issue #61 _Topic: SDPi-xC with Mixed Device Safety Classes_].  The result of that discussion will directly impact the BICEPS SES Considerations section below.
+
+For this version of the specification, the following wording has been suggested:
+
+[none]
+. _The purpose of the BICEPS attribute @SafetyClassification is to classify the quality and criticality of data and operations. The usage of this attribute is under discussion in IEEE 11073 PoCD and IHE DEV DPI. Additionally, the value set definition in BICEPS is under discussion. Consequently, this document version does not yet include guidance or requirements on the usage of @SafetyClassification._
+
+|===
+
+
+====== SES General Considerations
+Requirements from the <<ref_iso_81001_1_2021>>, <<ref_iec_80001_1_2021>>, and related standards should be fully applied to this technical framework element.
+
+For additional guidance, see section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
+
+====== Safety Requirements & Considerations
+No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
+
+====== Effectiveness Requirements & Considerations
+No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
+
+====== Security Requirements & Considerations
+Secure exchange of content between medical devices is a foundational requirement for all system-to-system interactions.
+Though management of secure connections is generally a technical issue and not one specific to semantic content, close consideration should be made to ensure that information exchanged in potentially unsecured contexts does not pose an unacceptable risk.
+
+Additional security requirements and considerations may be identified in the  <<acronym_sdpi_p>> profile, and those specified in the _<<acronym_ses>> General Considerations_ section above.
+
+// 8.3.2.
+===== BICEPS Conventions for device specialization content modules
+
+// 8.3.2.
+[#vol3_clause_biceps_extension_model]
+===== BICEPS Extension Model
+
+IEEE 11073-10207 provides a flexible extension model.
+This enables manufacturers to add information that does not fit into the defined structure.
+Therefore, nearly every element in the participant and message model contains an extension point (`ext:Extension`).
+However, the fundamental rules are: Do not use a proprietary extension if the purpose of the extension can be expressed by (in the specified order)
+
+. the given participant and message models,
+. a standardized coded value,
+. a standardized extension, or
+. a private coded value.
+
+
+The borders of using extension are given by:
+
+* <<ref_ieee_11073_10207_2017>> Clause 8, especially R0109, and
+* <<ref_ieee_11073_10700_2022>> Clause 6.7
+
+There are two kinds of extensions, those the <<vol1_spec_sdpi_p_actor_somds_consumer>> must understand to perform system functions safely with the <<vol1_spec_sdpi_p_actor_somds_provider>>, and those the <<vol1_spec_sdpi_p_actor_somds_consumer>> does not have to understand.
+This is indicated by the Boolean attribute `@ext:MustUnderstand`.
+Consequently, a manufacturer of a <<vol1_spec_sdpi_p_actor_somds_provider>> should be careful defining extensions with `@ext:MustUnderstand = true`, as this potentially reduces interoperability.
+
+There are standardized extensions, like those that are specified in the PKP standards or this profile, which can be considered common knowledge and therefore do not break interoperability between different manufacturers.
+
+include::biceps-content-module/tf3-ch-8.3.2.7-applicable-productions-specification-type-codes.adoc[]
+
+include::biceps-content-module/tf3-ch-8.3.2.7-applicable-attribute-type-codes.adoc[]
+
+include::biceps-extension-provisions/tf3-ch-8.3.2.7-extension-coded-attribute.adoc[]
+
+// 8.3.2.8
+===== BICEPS Sex and Gender Extensions
+// This content will also be referenced from TF-2 Appendix B DEC Gateway
+include::biceps-extension-provisions/tf3-ch-8.3.2.8-extension-gender.adoc[]

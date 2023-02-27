@@ -1,0 +1,1 @@
+This folder contains content artifacts that are referencd from the SDPi supplement. For example, BICEPS XML profiles, or value set CSV files.  

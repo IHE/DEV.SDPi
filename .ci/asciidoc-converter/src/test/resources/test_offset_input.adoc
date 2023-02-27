@@ -1,0 +1,67 @@
+:doctype: book
+
+[sdpi_offset=clear]
+== Chapter
+
+=== Chapter Section
+
+=== Chapter Section Sub-Section
+
+== Chapter 2
+
+[sdpi_offset=10]
+== Chapter 10
+
+=== Chapter 10 Section 1
+
+=== Chapter 10 Section 2
+
+== Chapter 11
+
+= Part 1
+
+== Part 1 Chapter 1
+
+[sdpi_offset=clear]
+== Part 1 Chapter
+
+=== Part 1 Chapter Section
+
+== Part 1 Chapter 3
+
+[sdpi_offset=10]
+== Part 1 Chapter 10
+
+=== Part 1 Chapter 10 Section 1
+
+=== Part 1 Chapter 10 Section 2
+
+=== Part 1 Chapter 10 Section 3
+
+==== Part 1 Chapter 10 Section 3 Sub-Section 1
+
+==== Part 1 Chapter 10 Section 3 Sub-Section 2
+
+==== Part 1 Chapter 4 Section 3 Sub-Section 3
+
+= Part 2
+
+[appendix]
+== Part 2 Appendix A
+
+=== Part 2 Appendix A Section 1
+
+=== Part 2 Appendix A Section 2
+
+[appendix]
+== Part 2 Appendix B
+
+[appendix,sdpi_offset=X]
+== Part 2 Appendix X
+
+=== Part 2 Appendix X Section 1
+
+=== Part 2 Appendix X Section 1
+
+[appendix]
+== Part 2 Appendix Y

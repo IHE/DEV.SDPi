@@ -1,0 +1,1 @@
+This folder is intended to be used as a sink for source files that are used to create content that is included in the supplement, but are not directly supported by AsciiDoc (e.g., PowerPoint or Excel).  

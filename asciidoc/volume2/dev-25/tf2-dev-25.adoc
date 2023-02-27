@@ -1,0 +1,82 @@
+//reset|+1|off
+[#vol2_clause_dev_25,sdpi_offset=25]
+=== Discover BICEPS Services [DEV-25]
+
+==== Scope
+[sdpi_transaction#transaction-dev-25,actors='actor-somds-provider actor-somds-consumer',figure=vol2-figure-dev-25-sequence,messages='message-discover-biceps-services']
+
+include::tf2-dev-25-summary.adoc[]
+
+==== Actor Roles
+
+.Actor Roles DEV-25
+[cols="1,2"]
+|===
+|Actor |Roles
+
+|<<actor_somds_consumer>>
+| Asks for the resource representation of the <<actor_somds_provider>> via the <<vol2_clause_dev_25_message_get_metadata, GetMetadata>> message.
+
+|<<actor_somds_provider>>
+| Sends its resource representation to the <<actor_somds_consumer>> via the <<vol2_clause_dev_25_message_get_metadata_response, GetMetadataResponse>> message.
+
+|===
+
+==== Referenced Standards
+
+* <<ref_ieee_11073_10207_2017>> Section 9 Discovery Model
+* <<ref_ieee_11073_10207_2017>> Section 7.3 Service Model
+
+==== Messages
+.Message Interaction Diagram DEV-25
+[plantuml#vol2_figure_dev_25_sequence, target=puml-dev-25-sequence, format=svg, 40width=100%]
+
+....
+include::../../plantuml/vol2-figure-dev-25-sequence.puml[]
+....
+
+[#vol2_clause_dev_25_message_get_metadata]
+===== GetMetadata Message
+The GetMetadata message is used by a <<actor_somds_consumer>> to request the resource representation data of a <<actor_somds_provider>>.
+
+====== Trigger Events
+This message is sent when a <<actor_somds_consumer>> has discovered a <<term_transport_address>> for a <<actor_somds_provider>>.
+
+====== Expected Actions
+When a <<actor_somds_consumer>> sends this message, the <<vol2_clause_dev_25_message_get_metadata_response, GetMetadataResponse>> message is expected as a response.
+
+[#vol2_clause_dev_25_message_get_metadata_response]
+===== GetMetadataResponse Message
+The GetMetadataResponse message is sent in response to an incoming <<vol2_clause_dev_25_message_get_metadata, GetMetadata>> message.
+
+====== Trigger Events
+The GetMetadataResponse message is sent whenever a <<actor_somds_provider>> receives a <<vol2_clause_dev_25_message_get_metadata, GetMetadata>> message.
+
+====== Message Semantics
+[[payload_dev_25_get_metadata_biceps_services]]BICEPS Services:: Collection of BICEPS services the <<actor_somds_provider>> offers, including but not limited to one or multiple of the following BICEPS services (<<ref_ieee_11073_10207_2017>> Section 7.3 Service Model):
+* GET SERVICE (mandatory)
+* SET SERVICE
+* DESCRIPTION EVENT SERVICE
+* STATE EVENT SERVICE
+* CONTEXT SERVICE
+* WAVEFORM SERVICE
+
+NOTE: There is currently no mandatory support for provision of the LOCALIZATION SERVICE, CONTAINMENT TREE SERVICE and ARCHIVE SERVICE.
+
+[#message_semantics_discover_biceps_services_device]
+Device Metadata:: Expresses <<actor_somds_provider>> characteristics that typically vary from one <<actor_somds_provider>> to another of the same kind, e.g.:
+* Friendly name
+* Firmware version
+* Serial number
+[#message_semantics_discover_biceps_services_model]
+Model Metadata:: Expresses <<actor_somds_provider>> characteristics that are typically fixed across all <<actor_somds_provider>>s of the same model by their <<term_manufacturer>>, e.g.:
+* <<term_manufacturer>>
+* Model name
+* Model number
+
+====== Expected Actions
+When a <<actor_somds_provider>> sends this message, there is no expected or required response.
+
+[#vol2_clause_dev_23_message_announce_network_presence_ses]
+include::../dev-x-default-ses-secured-mode.adoc[]
+

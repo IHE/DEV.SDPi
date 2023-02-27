@@ -1,0 +1,3 @@
+// DEV-35 Transaction Summary
+
+This transaction is used to establish the exchange of medical data between a <<actor_somds_provider>> and a <<actor_somds_consumer>>.

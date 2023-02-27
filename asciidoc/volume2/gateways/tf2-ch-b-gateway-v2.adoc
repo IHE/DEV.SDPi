@@ -1,0 +1,20 @@
+[#vol2_clause_appendix_sdpi_gateway_hl7_v2_general_mapping]
+=== SDPi Gateway -- HL7 V2 General Mapping
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*: Complete mappings from <<acronym_sdc>> to HL7 V2 are specified in the <<vol2_clause_appendix_sdpi_dec_gateway>> and <<vol2_clause_appendix_sdpi_acm_gateway>> sections below.  This includes general SDC-to-HL7 V2 mappings that are common in both gateway specifications.  This general V2 mapping section will be editorially updated with the content from these two gateway specifications before Public Comment Publication.
+
+|===
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *REVIEWER QUESTION*:  Issue: HL7 Local Time vs. SDC UTC time: SDC requires that all timestamps are in UTC. The time zone is optional. In HL7 V2 all timestamps are local time and the time zone is optional as well.
+
+*_Do Device Observation Consumer (DOC) and Alarm Manager (AM) expect the gateway to convert UTC to local time?_*
+
+|===

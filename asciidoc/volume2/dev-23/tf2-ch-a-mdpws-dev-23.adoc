@@ -1,0 +1,89 @@
+:var_uri_ws_discovery_hello: http://docs.oasis-open.org/ws-dd/discovery/1.1/os/wsdd-discovery-1.1-spec-os.html#_Toc234231821
+:var_uri_dpws_discovery: http://docs.oasis-open.org/ws-dd/dpws/1.1/os/wsdd-dpws-1.1-spec-os.html#_Toc228672091
+
+[#vol2_clause_appendix_mdpws_dev_23]
+==== MDPWS: Announce Network Presence [DEV-23]
+
+This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_23>>.
+
+===== {var_label_dev_23_message_hello} Message
+
+The {var_label_dev_23_message_hello} message is encoded by using {var_uri_ws_discovery_hello}[WS-Discovery Hello].
+
+====== Referenced Standards
+
+* <<ref_oasis_ws_discovery_2009>> {var_uri_ws_discovery_hello}[Section 4.1 Hello]
+* <<ref_oasis_dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
+* <<ref_ieee_11073_20702_2016>>
+* <<ref_ieee_11073_20701_2018>>
+
+====== Message Outline
+
+.Hello message
+[source#vol2_clause_appendix_a_mdpws_dev_23_hello,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-23-hello.xml[]
+----
+
+====== Message Semantics
+
+`s12:Envelope/s12:Body/wsd:Hello/wsa:EndpointReference/wsa:Address`:: The <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<payload_dev_23_provider_uid>> as URI.
+`s12:Envelope/s12:Body/wsd:Hello/wsd:Scopes`:: The <<actor_somds_provider>>'s <<payload_dev_23_discovery_scope>> as a list of URIs.
+
+[#vol2_clause_appendix_mdpws_dev_23_hello_message_trigger_events]
+====== Trigger Events
+
+The abstracted trigger events as listed in <<vol2_clause_dev_23_message_announce_network_presence_trigger_events>> are specialized as follows:
+
+This message is sent
+
+1. when a <<actor_somds_provider>> is assigned an IP address after having joined the network,
+2. when a <<actor_somds_provider>> is reassigned an IP address, or
+3. when a <<actor_somds_provider>> changes its <<payload_dev_23_discovery_scope>>.
+
+IP address reassignment can occur because of intended or unintended interruptions in the network connection, network reconfiguration during operation (e.g. by plugging of Ethernet switches), or other causes.
+
+It is assumed that <<actor_somds_participant>> are connected to an IP network that uses dynamic IP address assignment managed by a DHCP server.
+The use of static IP addresses is discouraged as it may lead to IP address conflicts, and hence severe communication disruption, in case of network reconfiguration during operation (e.g. by plugging of Ethernet switches).
+
+.R2000
+[sdpi_requirement#r2000,sdpi_req_level=should]
+****
+A <<actor_somds_participant>> should use a dynamically configured IP address.
+****
+
+:var_expected_actions_ref: <<vol2_clause_dev_23_message_hello>>
+include::../dev-a-default-expected-actions.adoc[]
+
+====== Additional Consideration
+
+[#vol2_clause_appendix_mdpws_dev_23_recurring_hello,sdpi_level=+1]
+====== Recurring Hello
+In addition to the Hello message trigger events defined in <<vol2_clause_appendix_mdpws_dev_23_hello_message_trigger_events>>, recurring Hello messages are needed to decrease the likelihood of missed discovery messages in case of network topology changes during operation, e.g. when operational networks are extended by plugging switches (together) at runtime.
+
+.R2001
+[sdpi_requirement#r2001,sdpi_req_level=shall]
+****
+A <<actor_somds_provider>> shall periodically send Hello messages at random intervals between 60 seconds and 120 seconds.
+
+.Notes
+[%collapsible]
+====
+The random interval between 60 seconds and 120 seconds aims to prevent <<actor_somds_provider>>s from congesting the network by sending recurring Hello messages at the same time.
+====
+****
+
+[#vol2_clause_appendix_mdpws_dev_23_hello_message_size,sdpi_level=+1]
+====== Hello Message Size
+In IT networks such as WLAN, messages can get lost or fragmented and data can consequently be delivered in the wrong order, especially with increasing concurrent data traffic caused by an increasing number of <<actor_somds_participant>>s.
+This becomes crucial when connectionless transport protocols like UDP are used.
+<<ref_ieee_11073_20701_2018>> leverages UDP for service discovery and hence suffers from the aforementioned issue.
+To mitigate this, <<actor_somds_provider>>s are advised to create Hello messages of less than the MTU size over UDP, in accordance requirement R0029 in <<ref_oasis_dpws_2009>>.
+
+Moreover, as further mitigation measure, note that <<ref_oasis_soap_over_udp_v1_1>> already defines a non-normative retry and back-off algorithm.
+
+.R2002
+[sdpi_requirement#r2002,sdpi_req_level=should]
+****
+A <<actor_somds_participant>> should implement the retry and back-off algorithm defined in SOAP-over-UDP, Appendix A.
+****

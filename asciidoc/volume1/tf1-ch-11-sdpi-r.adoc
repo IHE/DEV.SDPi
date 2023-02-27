@@ -1,0 +1,319 @@
+// = Service-oriented Device Point-of-care Interoperability - Reporting (SDPi-R) Profile
+
+[#vol1_clause_sdpi_r_profile,sdpi_offset=11]
+== Service-oriented Device Point-of-care Interoperability - Reporting (SDPi-R) Profile
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version 1.0 Note*:  This initial version of the <<acronym_sdpi_r>> Profile is built upon the foundational <<acronym_sdpi_p>> Profile but does not provide substantially more capabilities.
+This is due to the fact that the primary purpose of this profile, namely communication of medical data to accomplish intended medical purposes, requires the completion and integration of two emerging ISO/IEEE standards:  <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>>.
+When these are published *_in early 2023_*, their requirements will be integrated into this supplement, with their <<term_implementation_conformance_statement>> added to section <<vol1_appendix_b_referenced_standards_conformance>> below.
+Many of those requirements will be mapped to the Actors and Transactions and other specifications in this profile.
+
+Additionally, though the <<actor_somds_dec_gateway>> is defined below and fully specified in <<vol2_clause_appendix_sdpi_dec_gateway>>, the implementation guide for mapping from <<acronym_biceps>> to <<acronym_hl7>> <<acronym_fhir>> remains in development, pushing the specification of the <<vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway>> to a later version of this supplement.
+
+|===
+
+[#vol1_clause_sdpi_r_profile_reftext,reftext="SDPi-R Profile"]
+The SDPi-Reporting ([[acronym_sdpi_r,SDPi-R]] SDPi-R) Profile supports the communication of information from one <<term_service_oriented_medical_device_system>> to other <<acronym_somds>> systems or to other external non-<<acronym_somds>> systems utilizing a <<label_system_type_name_dgw>>.
+Most of the Actors and Transactions in this profile are specialized versions of their counterparts in the <<acronym_sdpi_p>> Profile; however, are differentiated in that they are specifically designed to communicate information with an _intended medical purpose_.
+As a result, additional requirements are added to each actor and transaction to support address these additional safety and effectiveness requirements (See section <<vol1_clause_sdpi_r_ses_considerations>> below).
+
+The profile builds upon the foundational <<term_plug_and_trust>> capabilities provided by the <<vol1_clause_sdpi_p_profile_reftext>>.
+These extended capabilities for medical data exchange are achieved by various means, including:
+
+. Grouping <<acronym_sdpi_r>> Actors with their <<acronym_sdpi_p>> counterparts
+. Addressing requirements from the emerging <<acronym_pkp>> ISO/IEEE standards:  <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>>
+. Requiring capabilities that in the <<vol1_clause_sdpi_p_profile_reftext>> may be optional
+. Requiring additional <<acronym_biceps>> data elements or content modules
+
+
+[#vol1_clause_sdpi_r_actors_transactions_content_modules]
+=== SDPi-R Actors, Transactions, and Content Modules
+
+This section defines the actors, transactions, and/or content modules in this profile.
+General definitions of actors are given in the https://profiles.ihe.net/GeneralIntro/ch-A.html[_Technical Frameworks General Introduction Appendix A_].
+IHE Transactions can be found in the https://profiles.ihe.net/GeneralIntro/ch-B.html[_Technical Frameworks General Introduction Appendix B_].
+Both appendices are located at https://profiles.ihe.net/GeneralIntro/[_profiles.ihe.net/GeneralIntro_].
+
+<<vol1_figure_sdpi_r_actor_diagram>> shows the actors directly involved in the SDPi-R Profile.
+The relevant transactions between them are detailed in the subsequent <<vol1_table_sdpi_r_actors_transactions>>.
+Actor groupings, including abstract with concrete are detailed in <<vol1_clause_sdpi_r_required_actor_groupings>>.
+
+[#vol1_figure_sdpi_r_actor_diagram]
+.SDPi-R Actor Diagram
+
+image::../images/vol1-diagram-sdpi-r-actor.svg[]
+
+{empty} +
+
+////
+
+#TODO:  In the table below, are any of these Receiver vs. Responder?  If so, then we may need to add a note like in SDPi-P
+
+////
+
+[#vol1_table_sdpi_r_actors_transactions]
+.SDPi-R Profile - Actors and Transactions
+[%autowidth]
+[cols="1,2,1,1,3"]
+|===
+.^|Actors
+.^|Transactions
+.^|Initiator or Responder
+.^|Optionality
+.^|Reference
+
+.3+| <<vol1_clause_sdpi_r_somds_medical_data_provider>>
+.^| <<transaction_name_establish_medical_data_exchange>>
+.^| Responder
+.^| R
+| <<vol2_clause_dev_35>>
+
+| <<transaction_name_publish_medical_data>>
+| Initiator
+| R
+| <<vol2_clause_dev_36>>
+
+| <<transaction_name_retrieve_medical_data>>
+| Responder
+| R
+| <<vol2_clause_dev_37>>
+
+.3+| <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>>
+.^| <<transaction_name_establish_medical_data_exchange>>
+.^| Initiator
+.^| R
+| <<vol2_clause_dev_35>>
+
+| <<transaction_name_publish_medical_data>>
+| Responder
+| R
+| <<vol2_clause_dev_36>>
+
+| <<transaction_name_retrieve_medical_data>>
+| Initiator
+| O
+| <<vol2_clause_dev_37>>
+
+.3+| <<vol1_spec_sdpi_r_actor_somds_dec_gateway>>
+.^| <<transaction_name_establish_medical_data_exchange>>
+.^| Initiator ^(See^ ^Note^ ^1)^
+.^| R
+| <<vol2_clause_dev_35>>
+
+| <<transaction_name_publish_medical_data>>
+| Responder ^(See^ ^Note^ ^1)^
+| R
+| <<vol2_clause_dev_36>>
+
+| <<transaction_name_retrieve_medical_data>>
+| Initiator ^(See^ ^Note^ ^1)^
+| O
+| <<vol2_clause_dev_37>>
+
+5+<|
+Note 1: If the <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> implements the <<vol1_clause_sdpi_r_actor_option_retrieve_remote_data_reftext>>, then bidirectional exchange is supported and the roles are expanded to "Initiator & Responder".
+
+|===
+
+[#vol1_clause_sdpi_r_actor_descriptions_actor_profile_requirements]
+==== Actor Descriptions and Actor Profile Requirements
+
+[#vol1_clause_sdpi_r_somds_medical_data_consumer]
+===== SOMDS Medical Data Consumer
+[#vol1_spec_sdpi_r_actor_somds_medical_data_consumer, reftext='SOMDS Medical Data Consumer']
+Actor Summary Definition:
+[none]
+. A <<vol1_spec_sdpi_p_actor_somds_consumer>> grouped actor that receives medical data from a <<vol1_spec_sdpi_p_actor_somds_provider>>.
+
+This Actor is designed to process information with an _intended medical purpose_, and thus will fully address applicable requirements from the core <<acronym_sdc>> standards (<<ref_ieee_11073_10207_2017>> and <<ref_ieee_11073_20701_2018>>), as well as the <<acronym_pkp>> standards (<<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>>).
+
+Every <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_consumer>> to enable <<acronym_somds>>-based connectivity.
+This Actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_consumer>>.
+Note that optional capabilities for this profile, as specified in <<vol1_clause_sdpi_r_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_clause_sdpi_p_profile_reftext>>.
+
+A system that participates in a <<acronym_somds>> network instance can integrate both <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> and <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> capabilities.
+
+[#vol1_clause_sdpi_r_somds_medical_data_provider]
+===== SOMDS Medical Data Provider
+[#vol1_spec_sdpi_r_actor_somds_medical_data_provider, reftext='SOMDS Medical Data Provider']
+Actor Summary Definition:
+[none]
+. A <<vol1_spec_sdpi_p_actor_somds_provider>> grouped actor that sends medical data to a <<vol1_spec_sdpi_p_actor_somds_consumer>>.
+
+This Actor is designed to process information with an _intended medical purpose_, and thus will fully address applicable requirements from the core <<acronym_sdc>> standards (<<ref_ieee_11073_10207_2017>> and <<ref_ieee_11073_20701_2018>>), as well as the <<acronym_pkp>> standards (<<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>>).
+
+Every <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_provider>> to enable <<acronym_somds>>-based connectivity.
+This Actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_provider>>.
+Note that optional capabilities for this profile, as specified in <<vol1_clause_sdpi_r_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_provider>> and <<vol1_clause_sdpi_p_profile_reftext>>.
+
+A system that participates in a <<acronym_somds>> network instance can integrate both <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> and <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> capabilities.
+
+[#vol1_clause_sdpi_r_somds_dec_gateway]
+===== SOMDS DEC Gateway
+[#vol1_spec_sdpi_r_actor_somds_dec_gateway, reftext='SOMDS DEC Gateway']
+Actor Summary Definition:
+[none]
+. A <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> grouped actor that supports the bi-directional exchange of medical data using IHE Device Enterprise Communication (DEC) messages with non-SOMDS systems and applications.
+
+This Actor is designed to process information with an _intended medical purpose_, and thus will fully address applicable requirements from the core <<acronym_sdc>> standards (<<ref_ieee_11073_10207_2017>> and <<ref_ieee_11073_20701_2018>>), as well as the <<acronym_pkp>> standards (<<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>>).
+
+Every <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> to enable <<acronym_somds>>-based connectivity.
+This Actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>.
+Note that optional capabilities for this profile, as specified in <<vol1_clause_sdpi_r_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> and <<vol1_clause_sdpi_p_profile_reftext>>.
+
+This Actor shall implement the <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> capabilities, receiving information provided by <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> systems and publishing them as DEV-01 / PCD-01 Transactions to external DEC Device Observation Consumer (DOC) systems.
+If <<vol1_clause_sdpi_r_actor_option_retrieve_remote_data_reftext>> is implemented, then this Actor will also support the <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> capabilities, receiving DEV-01 / PCD-01 Transactions from external DEC Device Observation Reporter (DOR) systems and making them available to other <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> systems.
+Note:  Not supported are <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> systems that only implement the <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> and not <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> capabilities.
+
+Detailed specifications for mapping from <<acronym_somds>>/<<acronym_biceps>>  to <<acronym_hl7>> V2 / DEC transactions are provided in <<vol2_clause_appendix_sdpi_dec_gateway>>.
+
+[#vol1_clause_sdpi_r_somds_fhir_medical_data_gateway]
+===== SOMDS FHIR Medical Data Gateway
+[#vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway, reftext='SOMDS FHIR Medical Data Gateway']
+Actor Summary Definition:
+[none]
+. A <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>> grouped actor that supports exchange of medical data between <<acronym_somds>>-based systems and <<acronym_hl7>> <<acronym_fhir>>-based systems.
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  The HL7 FHIR resources and related Point-of-Care Device FHIR Implementation Guide (PoCD FHIR IG) is still under active development.
+Initial mappings have been made from <<acronym_sdc>> to <<acronym_fhir>>; however, they are not yet ready for profiling and product implementation.
+When the FHIR specifications are finalized, then this Actor will be fully specified in a future SDPI Supplement version.
+
+See <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>> for additional information.
+|===
+
+
+[#vol1_clause_sdpi_r_actor_options]
+=== SDPi-R Actor Options
+
+[#vol1_clause_sdpi_r_actor_option_retrieve_remote_data]
+==== Retrieve Remote Data
+
+[#vol1_clause_sdpi_r_actor_option_retrieve_remote_data_reftext, reftext='SDPi-R Option: Retrieve Remote Data']
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  This section is left intentionally blank to indicate capabilities that will be added in a future version of the SDPi Supplement.
+
+This option will enable <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> systems to access information in remote systems that are not part of its <<acronym_somds>> network instance.  This access will be provided by either a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> or <<vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway>>.
+For example, retrieving the latest laboratory information for a specific patient.
+|===
+
+
+[#vol1_clause_sdpi_r_required_actor_groupings]
+=== SDPi-R Required Actor Groupings
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  As indicated in <<vol1_figure_sdpi_r_actor_diagram>> above, there are four grouped actors:
+
+[none]
+. <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> with <<vol1_spec_sdpi_p_actor_somds_consumer>>
+. <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> with <<vol1_spec_sdpi_p_actor_somds_provider>>
+. <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> with <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>
+. <<vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway>> with <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>>
+
+This section will be more completely detailed in a future version of the supplement.
+
+|===
+
+=== SDPi-R Overview
+
+// 11.4.1
+==== Concepts
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  An overview of the concepts for this <<vol1_clause_sdpi_r_profile_reftext>> will be provided in a future supplement version.
+Note that this profile extends the concepts established in the base <<vol1_clause_sdpi_p_profile_reftext>>.
+
+|===
+
+[#vol1_clause_sdpi_r_use_cases_reftext, reftext='SDPi-R Use Cases']
+==== Use Cases
+The SDPi-R profile supports requirements from use cases detailed in <<vol1_appendix_c_dpi_use_cases>>.  The following subsections identify the specific use case requirements that are fulfilled with capabilities provided by this profile.
+
+
+===== <<label_use_case_name_sicdsp>> (<<acronym_sicdsp>>)
+This use case provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_sicdsp>>.
+
+Specific capabilities supporting the <<acronym_sicdsp>> use case include:
+
+* *System Type*:  N/A
+* *Service Type*:  N/A
+* *Technical Pre-Conditions*: N/A
+* *Scenarios*: <<acronym_sicdsp>> <<vol1_clause_appendix_c_use_case_sicdsp_scenarios>> communication of medical data to a <<vol1_spec_sdpi_p_actor_somds_consumer>> <<system_type_dashboard>>
+
+
+===== <<label_use_case_name_sicdmp>> (<<acronym_sicdmp>>)
+This use case provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_sicdmp>>.
+
+Specific capabilities supporting the <<acronym_sicdmp>> use case include:
+
+* *System Type*:  N/A
+* *System Type*:  N/A
+* *Technical Pre-Conditions*: N/A
+* *Scenarios*: <<acronym_sicdmp>> <<vol1_clause_appendix_c_use_case_sicdmp_scenarios>> communication of medical data to a <<vol1_spec_sdpi_p_actor_somds_consumer>> <<system_type_dashboard>>
+
+
+===== <<label_use_case_name_ddes>> (<<acronym_ddes>>)
+This use case provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_ddes>>.
+
+Specific capabilities supporting the <<acronym_ddes>> use case include:
+
+* *System Type*:  N/A
+* *Service Type*: N/A
+* *Technical Pre-Conditions*: N/A
+* *Scenarios*: <<acronym_ddes>> <<vol1_clause_appendix_c_use_case_ddes_scenarios>> communication of medical data to a <<vol1_spec_sdpi_p_actor_somds_consumer>> <<system_type_device_gateway>>
+
+////
+#TODO:  Reference DEC Gateway / DOR actor from generic use case scenario reference#
+////
+
+[#vol1_clause_sdpi_r_ses_considerations]
+=== SDPi-R Safety, Effectiveness, Security Considerations and Requirements
+
+==== SES General Considerations
+Requirements from the <<ref_iso_81001_1_2021>>, <<ref_iec_80001_1_2021>>, and related standards should be fully applied to this technical framework element.
+
+A primary source of safety requirements for this <<acronym_sdpi_r>> Profile come from the <<ref_ieee_11073_10701_2022>> Metric <<term_participant_key_purposes>> standard.
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version 1.0 Note*:  The <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>> standards are currently being published by the IEEE.
+Once published, their requirements will be integrated into this supplement, with many of them being mapped to elements in this <<acronym_sdpi_r>> Profile.
+
+|===
+
+For additional guidance, see section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
+
+==== Safety Requirements & Considerations
+No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
+
+==== Effectiveness Requirements & Considerations
+No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
+
+==== Security Requirements & Considerations
+No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P profile (see <<vol1_clause_appendix_a_ses_considerations_section_template>>), and those specified in the _<<acronym_ses>> General Considerations_ section above.
+
+=== SDPi-R Cross Profile Considerations
+No additional cross profile considerations have been identified.
+
+////
+#TODO:  See the template instructions + PCD 2019 and other TF's to see if any content should go in this section for SDPi-R.#
+////
+

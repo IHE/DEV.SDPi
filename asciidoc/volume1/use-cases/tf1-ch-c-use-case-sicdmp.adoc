@@ -1,0 +1,54 @@
+[#vol1_clause_appendix_c_use_case_sicdmp,sdpi_offset=4]
+=== Use Case Feature {var_use_case_id}: <<label_use_case_name_sicdmp>> (<<acronym_sicdmp>>)
+
+// NOTE:  See use case labels in document-declarations.adoc
+
+==== Narrative
+
+Dr. Presky is in the ICU evaluating a trauma patient from a remote location in the ICU.  The dashboard allows access to multiple patients, so he first needs to select the patient of interest.  This can be done by location or by patient name (if available).
+
+He can view previous radiology results, electrosurgical equipment settings, patient readings such as HR, Blood Pressure, SpO2 and associated waveforms integrated on his real-time ‘Dashboard’ display.  The dashboard display can display visual alarms but does not sound alerts or provide any remote-control capabilities.  (This display can be considered an xDISmp as described in <<vol1_appendix_c_60601_1_8_concepts_for_dis_das_cdas>>.)
+
+==== Benefits
+The concept of a 'dashboard display' supports the display of data in various locations in a care facility with reduced functionality and therefore reduced risk.  By removing the requirement that the device annunciate alerts and support remote control the potential types of users is expanded improving access to multiple patient's data and status.
+
+==== Technical View
+
+.<<label_use_case_name_sicdmp>> (<<acronym_sicdmp>>) -- Technical View
+
+image::../images/vol1-diagram-use-case-sicdmp-tech-view.svg[]
+
+[#vol1_clause_appendix_c_use_case_sicdmp_technical_precondition]
+==== Technical Pre-Conditions
+
+*Given* All devices communicate using a common <<acronym_md_lan>> protocol
+
+*And* At least one ICU Dashboard display
+
+*And* Devices from specific ICU rooms have been assigned to the Dashboard
+
+
+[#vol1_clause_appendix_c_use_case_sicdmp_scenarios]
+==== Scenarios
+
+===== Scenario: <<acronym_sicdmp>> {var_use_case_id}.1 - ICU Devices are Accessible to the Dashboard
+
+*Given* Dashboard has detected at least one assigned accessible ICU device
+
+*When* the ICU Devices are communicating on the <<acronym_md_lan>>
+
+*Then* the Dashboard will display parameter, waveform, setting, alarm, imaging, etc. information from those devices (based on configuration)
+
+===== Scenario: <<acronym_sicdmp>> {var_use_case_id}.2 - ICU Devices are Inccessible to the Dashboard
+
+*Given* Dashboard cannot detect any assigned accessible ICU devices
+
+*Then* the Dashboard will display an error message
+
+===== Scenario: <<acronym_sicdmp>> {var_use_case_id}.3 - One or more ICU Devices are Inccessible to the Dashboard
+
+*Given* Dashboard cannot detect any previously assigned accessible ICU devices
+
+*Then* the Dashboard will display an error message
+
+

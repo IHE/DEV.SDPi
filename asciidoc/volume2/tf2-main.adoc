@@ -1,0 +1,120 @@
+[#vol2, sdpi_volume_caption=2]
+= Volume 2 -- Transactions
+
+[#vol2_clause_transactions,sdpi_offset=3]
+== Transactions
+
+// Announce Network Presence
+include::dev-23/tf2-dev-23.adoc[]
+
+// Discover Network Topology [DEV-24]
+include::dev-24/tf2-dev-24.adoc[]
+
+// Discover BICEPS Services [DEV-25]
+include::dev-25/tf2-dev-25.adoc[]
+
+//=== Discover System Context and Capabilities [DEV-26]
+
+// Manage BICEPS Subscription [DEV-27]
+include::dev-27/tf2-dev-27.adoc[]
+
+//=== Notify Change in System Context and Capabilities [DEV-28]
+include::dev-28/tf2-dev-28.adoc[]
+
+//=== Publish BICEPS Update Reports [DEV-29]
+include::dev-29/tf2-dev-29.adoc[]
+
+//=== Retrieve BICEPS Content [DEV-30]
+include::dev-30/tf2-dev-30.adoc[]
+
+//=== Announce Network Departure [DEV-34]
+include::dev-34/tf2-dev-34.adoc[]
+
+//=== Establish Medical Data Exchange [DEV-35]
+include::dev-35/tf2-dev-35.adoc[]
+
+//=== Publish Medical Data [DEV-36]
+include::dev-36/tf2-dev-36.adoc[]
+
+//=== Retrieve Medical Data [DEV-37]
+include::dev-37/tf2-dev-37.adoc[]
+
+//=== Establish Medical Alert Exchange [DEV-38]
+include::dev-38/tf2-dev-38.adoc[]
+
+//=== Publish Medical Alert Update [DEV-39]
+include::dev-39/tf2-dev-39.adoc[]
+
+//=== Retrieve Medical Alert Status [DEV-40]
+include::dev-40/tf2-dev-40.adoc[]
+
+// TODO how does this differ from DEV-30
+//
+//[appendix#clause-mdpws-constraints-corrigenda-adjuncts]
+//== MDPWS Constraints, Corrigenda & Adjuncts
+//
+//=== Handling missed discovery messages
+//
+// TODO https://confluence.hl7.org/display/GP/Topic%3A+Handling+missed+discovery+messages
+//
+//=== Compression Option
+//
+// TODO https://confluence.hl7.org/display/GP/Topic%3A+SDPi-P+Compression+Option
+//
+//=== XML Pretty Print
+//
+// TODO finding from PAT: no use of XML pretty print; see https://confluence.hl7.org/pages/viewpage.action?pageId=104579763
+//
+//
+//=== WS-Eventing
+//
+//=== Subscription / Subscription Manager Identifier
+//
+// TODO finding from PAT: no use of wse:identifier, use path dispatching; see https://confluence.hl7.org/pages/viewpage.action?pageId=104579763
+//
+//=== SubscribeResponse Outline and XML Schema Conflict
+//
+// TODO finding from PAT: no use of infinite subscriptions; see https://confluence.hl7.org/pages/viewpage.action?pageId=131051997
+//
+//=== Use of SubscriptionManager Addresses for Renew and Unsubscribe
+//
+// TODO finding from PAT: requirement is should, make it mandatory; see https://confluence.hl7.org/pages/viewpage.action?pageId=131051997
+//
+//[appendix#clause-biceps-constraints-corrigenda-adjuncts]
+//== BICEPS Constraints, Corrigenda & Adjuncts
+//
+//=== SystemContext Profiling & Use
+//
+// TODO https://confluence.hl7.org/pages/viewpage.action?pageId=86970701
+//
+//=== Profiling BICEPS Services in SDPi-P
+//
+// no TOI contents available yet
+//
+//=== MDIB Version Update Guidelines
+//
+// no TOI contents available yet
+//
+//[appendix#clause-sdc-glue-constraints-corrigenda-adjuncts]
+//== SDC Glue Constraints, Corrigenda & Adjuncts
+//
+//=== Info exchanged during unsecured discovery
+//
+// TODO https://confluence.hl7.org/display/GP/Topic%3A+Info+exchanged+during+unsecured+discovery
+//
+//=== Connect Time Delay Algorithm
+//
+// TODO https://confluence.hl7.org/display/GP/Topic%3A+Connect+Time+Delay+Algorithm
+//
+
+//NOTE:  This document integrates all the content that makes up the supplement volume 2 document.
+//
+//IMPORTANT:  Migrate the content below from main.adoc into this document OR rename main.adoc to this ... though the content is different.  +
+//{empty} +
+//*_See the Word document for what this is supposed to look like_*.
+
+include::tf2-ch-a-mdpws.adoc[]
+
+include::tf2-ch-b-gateways.adoc[]
+
+

@@ -1,0 +1,3 @@
+// DEV-34 Transaction Summary
+
+This transaction is used to notify all <<actor_somds_consumer>>s that a <<actor_somds_provider>> is leaving the network.

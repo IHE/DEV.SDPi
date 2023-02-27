@@ -1,0 +1,82 @@
+[#vol1_clause_appendix_c_use_case_stad,sdpi_offset=2]
+=== Use Case Feature {var_use_case_id}: <<label_use_case_name_stad>> (<<acronym_stad>>)
+
+// NOTE:  See use case labels in document-declarations.adoc
+
+==== Narrative
+Nurse Jean attaches a ventilator to the medical device network in the ICU.  It automatically obtains the correct time.
+
+==== Benefits
+Automatically acquiring the time saves the user from spending time entering the time into the device.  It also guarantees that the correct time will be entered.
+It is also important for all devices to have a consistent time since the data being exported to consuming devices and systems will use the time stamps from the device to mark the time that the clinical data was acquired.  Since this is part of the clinical record, accuracy is very important.
+
+==== Technical View
+
+.<<label_use_case_name_stad>> (<<acronym_stad>>) -- Technical View
+
+image::../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
+
+[#vol1_clause_appendix_c_use_case_stad_technical_precondition]
+==== Technical Pre-Conditions
+
+*Given* All devices communicate using a common <<acronym_md_lan>> protocol
+
+*And* A Time Source (TS) Service is on the <<acronym_md_lan>> network
+
+[#vol1_clause_appendix_c_use_case_stad_scenarios]
+==== Scenarios
+
+===== Scenario: <<acronym_stad>> {var_use_case_id}.1 - Device is connected to the MD LAN network with a Time Source service
+
+*Given* Device has detected at least one <<acronym_ts_service>>
+
+*When* The <<acronym_ts_service>> is operational
+
+*Then* The device will synchronize its time with the <<acronym_ts_service>>
+
+
+===== Scenario: <<acronym_stad>> {var_use_case_id}.2 - Device is connected to the MD LAN network with a TS Service and a user wants to change the device's time
+
+*Given* Device has detected at least one <<acronym_ts_service>>
+
+*When* The <<acronym_ts_service>> is operational
+
+*And* The user attempts to change the time on the device manually
+
+*Then* The device will disable the ability to change its time manually
+
+
+===== Scenario: <<acronym_stad>> {var_use_case_id}.3 - Device is connected to the MD LAN network and cannot connect to a TS Service
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+| *SDPi Supplement Version Note*:  This scenario is currently out of scope
+|===
+
+*Given* Device has just connected to the <<acronym_md_lan>> network and has not detected any <<acronym_ts_service>>s
+
+*When* The <<acronym_ts_service>> is not operational or inaccessible
+
+*Then* The device will not participate on the <<acronym_md_lan>> network until it detects and connects to a <<acronym_ts_service>>
+
+===== Scenario: <<acronym_stad>> {var_use_case_id}.4 - Devices are connected to the MD LAN network but cannot connect to a TS Service and a device’s time setting is changed manually
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+| *SDPi Supplement Version Note*:  This scenario is currently out of scope
+|===
+
+*Given* Device has not detected any <<acronym_ts_service>>s
+
+*When* The <<acronym_ts_service>> is not operational or inaccessible
+
+*And* The time at the device is changed manually
+
+*Then* The device will resync its clock when the <<acronym_ts_service>> is operational or accessible
+
+*And* The devices on the network will maintain their own clocks until the <<acronym_ts_service>> is operational or accessible.
+

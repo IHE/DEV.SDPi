@@ -1,0 +1,163 @@
+
+[appendix#vol0_appendix_b_transadtion_summary_definitions,sdpi_offset=B]
+=== Transaction Summary Definitions
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+|Add the following *_new or modified_* transactions to the IHE Technical Frameworks General Introduction Appendix B:
+|===
+
+////
+
+#TODO: The syntax in the following table does not work when referenced; you cannot have [[...]] [[...]] back to back without some text in between.  Each entry needs to be modified to enable proper use of the block IDs#
+
+////
+
+[cols="^1,^2,3"]
+|===
+|New Transaction Number |New Transaction Name |Definition
+
+.^| [[vol0_transaction_summary_dev_23,DEV-23 Announce Network Presence]]
+[[transaction_number_dev_23,DEV-23]] DEV-23
+| [[transaction_name_announce_network_presence,Announce Network Presence]] Announce Network Presence
+|
+include::../volume2/dev-23/tf2-dev-23-summary.adoc[]
+
+.^| [[vol0_transaction_summary_dev_24,DEV-24 Discover Network Topology]]
+[[transaction_number_dev_24,DEV-24]] DEV-24
+| [[transaction_name_discover_network_topology,Discover Network Topology]] Discover Network Topology
+|
+include::../volume2/dev-24/tf2-dev-24-summary.adoc[]
+
+.^| [[vol0_transaction_summary_dev_25,DEV-25 Discover BICEPS Services]]
+[[transaction_number_dev_25,DEV-25]] DEV-25
+| [[transaction_name_discover_biceps_services,Discover BICEPS Services]] Discover BICEPS Services
+|
+include::../volume2/dev-25/tf2-dev-25-summary.adoc[]
+
+.^| [[vol0_transaction_summary_dev_26,DEV-26 Discover System Context and Capabilities]]
+[[transaction_number_dev_26,DEV-26]] DEV-26
+| [[transaction_name_discover_system_context_and_capabilities,Discover System Context and Capabilities]] Discover System Context and Capabilities
+| Deferred to SDPi 1.x
+// include::../volume2/dev-26/tf2-dev-26-summary.adoc[]
+
+.^| [[vol0_transaction_summary_dev_27,DEV-27 Manage BICEPS Subscription]]
+[[transaction_number_dev_27,DEV-27]] DEV-27
+| [[transaction_name_manage_biceps_subscription,Manage BICEPS Subscription]] Manage BICEPS Subscription
+|
+include::../volume2/dev-27/tf2-dev-27-summary.adoc[]
+
+.^| [[vol0_transaction_summary_dev_28,DEV-28 Notify Change in System Context and Capabilities]]
+[[transaction_number_dev_28,DEV-28]] DEV-28
+| [[transaction_name_notify_change_in_system_context_and_capabilities,Notify Change in System Context and Capabilities]] Notify Change in System Context and Capabilities
+|
+include::../volume2/dev-28/tf2-dev-28-summary.adoc[]
+.^| [[vol0_transaction_summary_dev_29,DEV-29 Publish BICEPS Update Reports]]
+[[transaction_number_dev_29,DEV-29]] DEV-29
+| [[transaction_name_publish_biceps_update_reports,Publish BICEPS Update Reports]] Publish BICEPS Update Reports
+|
+include::../volume2/dev-29/tf2-dev-29-summary.adoc[]
+
+.^| [[vol0_transaction_summary_dev_30,DEV-30 Retrieve BICEPS Content]]
+[[transaction_number_dev_30,DEV-30]] DEV-30
+| [[transaction_name_retrieve_biceps_content,Retrieve BICEPS Content]] Retrieve BICEPS Content
+|
+include::../volume2/dev-30/tf2-dev-30-summary.adoc[]
+.^| [[vol0_transaction_summary_dev_31,DEV-31 Set Provider State]]
+[[transaction_number_dev_31,DEV-31]] DEV-31
+| [[transaction_name_set_provider_state,Set Provider State]] Set Provider State
+| Deferred to SDPi-xC
+// include::../volume2/dev-31/tf2-dev-31-summary.adoc[]
+
+.^| [[vol0_transaction_summary_dev_32,DEV-32 Retrieve Archive Data]]
+[[transaction_number_dev_30,DEV-32]] DEV-32
+| [[transaction_name_retrieve_archive_data,Retrieve Archive Data]] Retrieve Archive Data
+| Deferred to SDPi 1.x
+// include::../volume2/dev-32/tf2-dev-32-summary.adoc[]
+.^| [[vol0_transaction_summary_dev_33,DEV-33 Retrieve Localization Information]]
+[[transaction_number_dev_33,DEV-33]] DEV-33
+| [[transaction_name_retrieve_localization_information,Retrieve Localization Information]] Retrieve Localization Information
+| Deferred to SDPi 1.x
+// include::../volume2/dev-33/tf2-dev-33-summary.adoc[]
+
+.^| [[vol0_transaction_summary_dev_34,DEV-34 Announce Network Departure]]
+[[transaction_number_dev_34,DEV-34]] DEV-34
+| [[transaction_name_announce_network_departure,Announce Network Departure]] Announce Network Departure
+|
+include::../volume2/dev-34/tf2-dev-34-summary.adoc[]
+.^| [[vol0_transaction_summary_dev_35,DEV-35 Establish Medical Data Exchange]]
+[[transaction_number_dev_35,DEV-35]] DEV-35
+| [[transaction_name_establish_medical_data_exchange,Establish Medical Data Exchange]] Establish Medical Data Exchange
+|
+include::../volume2/dev-35/tf2-dev-35-summary.adoc[]
+.^| [[vol0_transaction_summary_dev_36,DEV-36 Publish Medical Data]]
+[[transaction_number_dev_36,DEV-36]] DEV-36
+| [[transaction_name_publish_medical_data,Publish Medical Data]] Publish Medical Data
+|
+include::../volume2/dev-36/tf2-dev-36-summary.adoc[]
+.^| [[vol0_transaction_summary_dev_37,DEV-37 Retrieve Medical Data]]
+[[transaction_number_dev_37,DEV-37]] DEV-37
+| [[transaction_name_retrieve_medical_data,Retrieve Medical Data]] Retrieve Medical Data
+|
+include::../volume2/dev-37/tf2-dev-37-summary.adoc[]
+
+.^| [[vol0_transaction_summary_dev_38,DEV-38 Establish Medical Alert Exchange]]
+[[transaction_number_dev_38,DEV-38]] DEV-38
+| [[transaction_name_establish_medical_alert_exchange,Establish Medical Alert Exchange]] Establish Medical Alert Exchange
+|
+include::../volume2/dev-38/tf2-dev-38-summary.adoc[]
+
+.^| [[vol0_transaction_summary_dev_39,DEV-39 Publish Medical Alert Update]]
+[[transaction_number_dev_39,DEV-39]] DEV-39
+| [[transaction_name_publish_medical_alert_update,Publish Medical Alert Update]] Publish Medical Alert Update
+|
+include::../volume2/dev-39/tf2-dev-39-summary.adoc[]
+
+.^| [[vol0_transaction_summary_dev_40,DEV-40 Retrieve Medical Alert Status]]
+[[transaction_number_dev_40,DEV-40]] DEV-40
+| [[transaction_name_retrieve_medical_alert_status,Retrieve Medical Alert Status]] Retrieve Medical Alert Status
+|
+include::../volume2/dev-40/tf2-dev-40-summary.adoc[]
+
+.^| [[vol0_transaction_summary_dev_41,DEV-41 Manage Medical Alert Delegation]]
+[[transaction_number_dev_41,DEV-41]] DEV-41
+| [[transaction_name_manage_medical_alert_delegation,Manage Medical Alert Delegation]] Manage Medical Alert Delegation
+| Deferred to SDPi 2.0
+// include::../volume2/dev-41/tf2-dev-41-summary.adoc[]
+
+.^| [[vol0_transaction_summary_dev_42,DEV-42 Delegate Medical Alert]]
+[[transaction_number_dev_42,DEV-42]] DEV-42
+| [[transaction_name_delegate_medical_alert,Delegate Medical Alert]] Delegate Medical Alert
+| Deferred to SDPi 2.0
+// include::../volume2/dev-42/tf2-dev-42-summary.adoc[]
+
+.^| [[vol0_transaction_summary_dev_43,DEV-43 Update Alert Acknowledgement Status]]
+[[transaction_number_dev_43,DEV-43]] DEV-43
+| [[transaction_name_update_alert_acknowledgement_status,Update Alert Acknowledgement Status]] Update Alert Acknowledgement Status
+| Deferred to SDPi 2.0
+// include::../volume2/dev-43/tf2-dev-43-summary.adoc[]
+
+
+.^| [[vol0_transaction_summary_dev_44,DEV-44 Manage Medical External Control]]
+[[transaction_number_dev_44,DEV-44]] DEV-44
+| [[transaction_name_manage_medical_external_control,Manage Medical External Control]] Manage Medical External Control
+| Deferred to SDPi-xC
+// include::../volume2/dev-44/tf2-dev-44-summary.adoc[]
+
+.^| [[vol0_transaction_summary_dev_45,DEV-45 Invoke Medical Control Services]]
+[[transaction_number_dev_45,DEV-45]] DEV-45
+| [[transaction_name_invoke_medical_control_services,Invoke Medical Control Services]] Invoke Medical Control Services
+| Deferred to SDPi-xC
+// include::../volume2/dev-45/tf2-dev-45-summary.adoc[]
+
+
+.^| DEV-46 | _Reserved_ |
+.^| DEV-47 | _Reserved_ |
+.^| DEV-48 | _Reserved_ |
+.^| DEV-49 | _Reserved_ |
+.^| DEV-50 | _Reserved_ |
+
+|===
+

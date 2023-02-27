@@ -1,0 +1,34 @@
+// = Device:  Physiologic monitor
+
+[%noheader]
+[cols="1"]
+|===
+| Add the following BICEPS subsection to the end of the Physiologic monitor specification content.
+|===
+
+// 8.3.3
+==== Device:  Physiologic monitor
+
+// 8.3.3.4
+[#vol3_clause_device_physiological_monitor,sdpi_offset=17]
+===== SDC/BICEPS content module
+
+
+The following BICEPS containment tree represents a highly-simplified physiologic monitor example. The represented physiologic monitor's Medical Device System (MDS) comprises a blood pressure Virtual Medical Device (VMD), a Context and an AlertSystem:
+
+.Physiologic Monitor Containment Tree Example
+[plantuml#vol3-figure-biceps-content-module-physiomon, target=puml-figure-biceps-content-module-physiomon, format=svg,width=100%]
+....
+include::../plantuml/vol3-figure-biceps-content-module-physiomon.puml[]
+....
+
+The following XML snippet profiles BICEPS semantics in line with the containment tree shown in <<vol3-figure-biceps-content-module-physiomon>>. The snippet focuses on the descriptive part of the MDIB file and, more specifically, on the VMDs / Channels / Metrics substructure (i.e. the leftmost branch of <<vol3-figure-biceps-content-module-physiomon>>):
+
+.BICEPS MDIB snippet of physiologic monitor describing VMDs / Channels / Metrics
+[%collapsible]
+====
+[source#vol3_clause_sdc_biceps_content_module_physio_monitor_snippet1,xml]
+----
+include::../../listings/vol3_clause_sdc_biceps_content_module_physio_monitor_snippet1.xml[]
+----
+====

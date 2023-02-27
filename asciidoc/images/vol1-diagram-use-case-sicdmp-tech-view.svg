@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="883.66669"
+   height="357.83334"
+   overflow="hidden"
+   version="1.1"
+   id="svg69"
+   sodipodi:docname="vol1-diagram-use-case-sicdmp-tech-view.svg"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview71"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     fit-margin-top="15"
+     fit-margin-left="15"
+     fit-margin-right="15"
+     fit-margin-bottom="15"
+     inkscape:zoom="0.8609375"
+     inkscape:cx="436.15245"
+     inkscape:cy="74.91833"
+     inkscape:window-width="1620"
+     inkscape:window-height="1058"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g67" />
+  <defs
+     id="defs5">
+    <clipPath
+       id="clip0">
+      <rect
+         x="0"
+         y="0"
+         width="1280"
+         height="720"
+         id="rect2" />
+    </clipPath>
+  </defs>
+  <g
+     clip-path="url(#clip0)"
+     id="g67"
+     transform="translate(-203.16666,-285)">
+    <rect
+       style="fill:#ffffff"
+       id="rect117"
+       width="981.48822"
+       height="441.3793"
+       x="165.99788"
+       y="253.63884" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="21px"
+       transform="translate(401.323,595)"
+       id="text9">Patient</text>
+    <rect
+       x="577.5"
+       y="300.5"
+       width="128"
+       height="49"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#a4c2f4"
+       id="rect11" />
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="19px"
+       transform="translate(624.625,320)"
+       id="text13">ICU</text>
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="19px"
+       transform="translate(595.212,343)"
+       id="text15">Dashboard</text>
+    <rect
+       x="269.5"
+       y="509.5"
+       width="101"
+       height="49"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#9fc5e8"
+       id="rect17" />
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="19px"
+       transform="translate(288.065,540)"
+       id="text19">Monitor</text>
+    <rect
+       x="389.5"
+       y="509.5"
+       width="86"
+       height="49"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#9fc5e8"
+       id="rect21" />
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="19px"
+       transform="translate(407.504,540)"
+       id="text23">Pump</text>
+    <rect
+       x="493.5"
+       y="509.5"
+       width="101"
+       height="49"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#9fc5e8"
+       id="rect25" />
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="19px"
+       transform="translate(503.732,540)"
+       id="text27">Ventilator</text>
+    <path
+       d="m 273.5,444.5 h 747.73"
+       stroke="#44546a"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       id="path29" />
+    <path
+       d="M 320.5,508.642 V 442.5"
+       stroke="#44546a"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       id="path31" />
+    <path
+       d="M 0,0 1.04987e-4,67.2126"
+       stroke="#44546a"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       transform="matrix(1,0,0,-1,429.5,510.713)"
+       id="path33" />
+    <path
+       d="M 548.5,510.713 V 443.5"
+       stroke="#44546a"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       id="path35" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="21px"
+       transform="translate(387.105,431)"
+       id="text37">MD</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="21px"
+       transform="translate(423.271,431)"
+       id="text39">LAN</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="21px"
+       transform="translate(828.96,595)"
+       id="text41">Patient</text>
+    <rect
+       x="696.5"
+       y="509.5"
+       width="101"
+       height="49"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#9fc5e8"
+       id="rect43" />
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="19px"
+       transform="translate(715.702,540)"
+       id="text45">Monitor</text>
+    <rect
+       x="816.5"
+       y="509.5"
+       width="87"
+       height="49"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#9fc5e8"
+       id="rect47" />
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="19px"
+       transform="translate(835.14,540)"
+       id="text49">Pump</text>
+    <rect
+       x="920.5"
+       y="509.5"
+       width="101"
+       height="49"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#9fc5e8"
+       id="rect51" />
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="19px"
+       transform="translate(931.369,540)"
+       id="text53">Ventilator</text>
+    <path
+       d="M 748.5,508.642 V 442.5"
+       stroke="#44546a"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       id="path55" />
+    <path
+       d="M 0,0 1.04987e-4,67.2126"
+       stroke="#44546a"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       transform="matrix(1,0,0,-1,857.5,510.713)"
+       id="path57" />
+    <path
+       d="M 975.5,510.713 V 443.5"
+       stroke="#44546a"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       id="path59" />
+    <path
+       d="M 0,0 1.04987e-4,96.9004"
+       stroke="#44546a"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       transform="matrix(1,0,0,-1,642.5,446.4)"
+       id="path61" />
+    <rect
+       x="219.5"
+       y="372.5"
+       width="405"
+       height="254"
+       stroke="#2f528f"
+       stroke-width="2.66667"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       stroke-dasharray="10.6667, 8"
+       fill="none"
+       id="rect63" />
+    <rect
+       x="666.5"
+       y="372.5"
+       width="404"
+       height="254"
+       stroke="#2f528f"
+       stroke-width="2.66667"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       stroke-dasharray="10.6667, 8"
+       fill="none"
+       id="rect65" />
+  </g>
+</svg>

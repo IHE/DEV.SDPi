@@ -1,0 +1,42 @@
+// Standard Conformance Statement:  IEEE 11073-10207:2017
+
+==== ISO/IEC 11073-10207 BICEPS ICS Tables
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+| *SDPi Supplement Version Note*: This section is provided as a placeholder for the <<acronym_ics>> table specification that will be added in the subsequent SDPi 1.1 supplement version.  The tables will have an additional SDPi column added to the right side that indicates *if* and TBD *where* the requirement is satisfied.  Requirement Definition (this table's rows) will be referenced where they are satisfied; however, these tables may also include forward references, at least in general, to what capabilities / requirements satisfy the referenced standard requirement.
+|===
+
+*Standard Version:*  IEEE 11073-10207:2017
+
+===== General
+
+WARNING:  GEN-1 & GEN-4 are broken references, GEN-2 and GEN-3 are satisfied by Glue, GEN-4 should be mandatory as extensions.
+
+ADD IEEE:  *Table 20 -- General ICSs table here*
+
+===== Service Provider
+
+Optional requirements for the service provider side excluding contexts and external control.
+
+ADD IEEE:  *Service Provider ICS table here*
+
+===== Service Consumer
+
+NOTE:  CONS-1 is broken; R0115 is not optional in the released document.
+
+ADD IEEE:  *Service Consumer ICS table here*
+
+===== Remote Control
+
+ADD IEEE:  *Remote Control ICS table here*
+
+===== Context Processing
+
+NOTE: Context processing pertains to effective utilization of context information like workflow (e.g., orders) info, patient demographics and locations.
+A general concept should be described how to cope with contexts in terms of SDPi, i.e. device coupling mechanisms should be described informally in TF-1 and formally in TF-2 (as transaction?).
+
+ADD IEEE:  *Context Processing ICS table here*
+
