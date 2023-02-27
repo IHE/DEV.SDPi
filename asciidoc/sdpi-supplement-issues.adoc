@@ -2,6 +2,7 @@
 [sdpi_offset=clear]
 == SDPi Issue Management
 
+#PUB TODO: DAVID - should we update the github issue links, duplicates, ???#
 
 [sdpi_offset=clear]
 === SDPi "Topic of Interest" Issue Management

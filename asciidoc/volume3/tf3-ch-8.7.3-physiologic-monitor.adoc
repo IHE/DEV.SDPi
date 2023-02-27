@@ -16,6 +16,8 @@
 
 The following BICEPS containment tree represents a highly-simplified physiologic monitor example. The represented physiologic monitor's Medical Device System (MDS) comprises a blood pressure Virtual Medical Device (VMD), a Context and an AlertSystem:
 
+#PUB TODO: DAVID - CHECK WHY THIS DOESN'T RENDER IN THE CONVERTED DOCUMENT#
+
 .Physiologic Monitor Containment Tree Example
 [plantuml#vol3-figure-biceps-content-module-physiomon, target=puml-figure-biceps-content-module-physiomon, format=svg,width=100%]
 ....

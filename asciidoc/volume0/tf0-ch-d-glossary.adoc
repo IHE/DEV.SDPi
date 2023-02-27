@@ -5,7 +5,7 @@
 [%autowidth]
 [cols="1"]
 |===
-| *SDPi Supplement Version Note*: The TF-0 Appendix D Glossary in this initial version of the supplement includes all terms and acronyms that are utilized throughout the other volumes.  Subsequent versions of the supplement may re-locate items to other tables and sections within the technical framework.  To help differentiate between various classes or categories of terms, a *_new "Type" column_* has been added.  This could enable future dynamic resorting of the table by those users who are interested in, for example, only organizational definitions.  Finally, a *_References column_* has been added to pull this information out of the Definition column.
+| *SDPi Supplement Version Note*: The General Introduction Appendix D Glossary in this initial version of the supplement includes all terms and acronyms that are utilized throughout the other volumes.  Subsequent versions of the supplement may re-locate items to other tables and sections within the technical framework.  To help differentiate between various classes or categories of terms, a *_new "Type" column_* has been added.  This could enable future dynamic resorting of the table by those users who are interested in, for example, only organizational definitions.  Finally, a *_References column_* has been added to pull this information out of the Definition column.
 |===
 
 [%noheader]
@@ -87,7 +87,7 @@
 | An electronic record derived from a computer system that maintains a longitudinal view of a patient’s history. It contains comprehensive information on a patient’s health used primarily for delivering patient care in a clinical setting..
 |
 | [[acronym_ehr,EHR]] EHR
-| https://profiles.ihe.net/GeneralIntro/ch-D.html[IHE TF-0 Appendix D Glossary]
+| https://profiles.ihe.net/GeneralIntro/ch-D.html[IHE General Introduction Appendix D Glossary]
 | IHE
 
 | [[term_fast_healthcare_interoperability_resources,Fast Healthcare Interoperability Resources (FHIR)]] Fast Healthcare Interoperability Resources

@@ -1,27 +1,7 @@
 [sdpi_offset=9]
 == Copyright Licenses
+IHE technical documents refer to, and make use of, a number of standards developed and published by several standards development organizations. Please refer to the IHE Technical Frameworks General Introduction, https://profiles.ihe.net/GeneralIntro/ch-9.html[Section 9 - Copyright Licenses] for copyright license information for frequently referenced base standards. Information pertaining to the use of IHE International copyrighted materials is also available there.
 
-IHE International hereby grants to each Member Organization, and to any other user of these documents, an irrevocable, worldwide, perpetual, royalty-free, nontransferable, nonexclusive, non-sublicensable license under its copyrights in any IHE profiles and Technical Framework documents, as well as any additional copyrighted materials that will be owned by IHE International and will be made available for use by Member Organizations, to reproduce and distribute (in any and all print, electronic or other means of reproduction, storage or transmission) such IHE Technical Documents.
-
-The licenses covered by this Copyright License are only to those copyrights owned or controlled by IHE International itself. If parts of the Technical Framework are included in products that also include materials owned or controlled by other parties, licenses to use those products are beyond the scope of this IHE document and would have to be obtained from that other party.
-
-=== Copyright of Base Standards
-IHE technical documents refer to and make use of a number of standards developed and published by several standards development organizations. All rights for their respective base standards are reserved by these organizations. This agreement does not supersede any copyright provisions applicable to such base standards. Copyright license information for frequently referenced base standards is provided below.
-
-==== DICOM (Digital Imaging and Communications in Medicine)
-DICOM^®^ is the registered trademark of the National Electrical Manufacturers Association for its standards publications relating to digital communications of medical information.
-
-==== HL7 (Health Level Seven)
-_<Please refer to the Fast Healthcare Interoperability Resources as the "HL7^®^ FHIR^®^ standard".>_
-
-HL7^®^, Health Level Seven^®^, CDA^®^, FHIR^®^, and the FHIR [FLAME DESIGN] ^®^ are registered trademarks of Health Level Seven International.
-Health Level Seven, Inc. has granted permission to IHE to reproduce tables from the HL7 standard. The HL7 tables in this document are copyrighted by Health Level Seven, Inc. All rights reserved. Material drawn from these documents is credited where used.
-
-==== LOINC (Logical Observation Identifiers Names and Codes)
-LOINC^®^ is registered United States trademarks of Regenstrief Institute, Inc.
-
-==== SNOMED CT (Systematized Nomenclature of Medicine -- Clinical Terms)
-Some IHE Profiles incorporate SNOMED^®^ CT, which is used by permission of the International Health Terminology Standards Development Organisation. SNOMED CT© was originally created by the College of American Pathologists. SNOMED CT is a registered trademark of the International Health Terminology Standards Development Organisation, all rights reserved.
 
 [%noheader]
 [cols="1"]
@@ -29,6 +9,7 @@ Some IHE Profiles incorporate SNOMED^®^ CT, which is used by permission of the 
 |Amend section 9.1.x by adding the following:
 |===
 
+[sdpi_offset=5]
 ==== IEEE 11073 (Health Device Interoperability)
 
 [%noheader]

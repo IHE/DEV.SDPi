@@ -18,7 +18,7 @@ NOTES:
 |===
 a| *SDPi Supplement Version Note*:
 
-The following table is included in this version of the supplement to capture *_"forward" declarations of acronyms and labels_* that are used in the text but are not intended to be part of the TF-0 Glossary.
+The following table is included in this version of the supplement to capture *_"forward" declarations of acronyms and labels_* that are used in the text but are not intended to be part of the General Introduction Appendix D Glossary.
 "Forward" means that they are used BEFORE the document section in which they are formally defined.
 Since AsciiDoc is a one-pass processor, forward declarations are required.
 
