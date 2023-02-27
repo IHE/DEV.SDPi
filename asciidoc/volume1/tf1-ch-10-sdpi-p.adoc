@@ -383,7 +383,7 @@ Actor Summary Definition:
 All systems participating in a SOMDS network instance must implement this Abstract Actor.
 
 All SDPi profiles Actors are grouped with (inherit from) this Actor, including both transport / transaction Actors and content module Actors.
-This required grouping ensures that all systems connecting to a SOMDS network support the <<acronym_ses_mdi>>  requirements footnote:[See #TF-0  Appendix A for more detail on <<acronym_ses_mdi>>] necessary for establishing a <<term_plug_and_trust>> ecosystem, including the secure and dynamic provision of an implementation’s <<term_system_function_contribution>>.
+This required grouping ensures that all systems connecting to a SOMDS network support the <<acronym_ses_mdi>>  requirements footnote:[See #General Introduction  Appendix A for more detail on <<acronym_ses_mdi>>] necessary for establishing a <<term_plug_and_trust>> ecosystem, including the secure and dynamic provision of an implementation’s <<term_system_function_contribution>>.
 See <<vol1_clause_appendix_a_requirements_from_narratives_to_pnt_interfaces>> for additional discussion.
 
 ////
@@ -804,7 +804,7 @@ a| *SDPi Supplement Version Note*:  This section intentionally left blank for th
 |===
 
 ////
-#TODO: discuss the challenges of drawing a line between transport profile actors in SDPi and applications of those actors in more care context / workflow applications, such as Smart Alarming or MDIRA/ICE or ICU Integration etc.  Reference TF-0 profile "types" - workflow vs. transport vs. content (???) ]#
+#TODO: discuss the challenges of drawing a line between transport profile actors in SDPi and applications of those actors in more care context / workflow applications, such as Smart Alarming or MDIRA/ICE or ICU Integration etc.  Reference General Introduction profile "types" - workflow vs. transport vs. content (???) ]#
 ////
 
 ===== SDC / BICEPS MDIB Versioning Management
