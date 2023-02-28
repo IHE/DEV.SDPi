@@ -37,7 +37,7 @@ The background for <<acronym_ses>> is discussed in detail in <<vol1_appendix_a_i
 These standards are primarily, though not exclusively, focused on *_risk management of health software_* (including <<acronym_samd>>) *_and medical devices that are deployed on various kinds of infrastructure_*, with a focus to managing three key properties:  *Safety, Effectiveness and Security*.
 Thus the "<<acronym_ses>> Considerations" sections in this supplement are intended to reflect the results of that risk management and to guide those who are tasked with deploying and managing these interoperable solutions during use.
 
-Note that specific requirements from the above mentioned standards, may also be captured in section <<vol1_appendix_b_referenced_standards_conformance>> below.
+Note that specific requirements from the above mentioned standards, may also be captured in <<vol1_appendix_b_referenced_standards_conformance>>.
 Generally, requirements from these standards would be mapped to the appropriate <<acronym_ses>> Considerations sections throughout the specification.
 
 // 2.3

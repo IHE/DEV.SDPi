@@ -52,7 +52,7 @@ https://github.com/IHE/sdpi-fhir/issues/33[Github Issue #33 _Topic: Connect Time
 * *Issue: _Handling missed discovery messages_*
 ** https://github.com/IHE/sdpi-fhir/issues/96[Github Issue #96 _Append TOI: Handling missed discovery messages_]
 
-** Changes were made in line with https://confluence.hl7.org/display/GP/Topic%3A+Handling+missed+discovery+messages[TOI Page: Handling missed discovery messages]; Requirements were introduced on the use of Hello message recurrence and size, SOAP-over-UDP, and Probe message recurrence. This was implemented in Vol 2, Annex A, Sections <<vol2_clause_appendix_mdpws_dev_23_recurring_hello>>,<<vol2_clause_appendix_mdpws_dev_23_hello_message_size>>, and <<vol2_clause_appendix_mdpws_dev_24_recurring_probe>>.
+** Changes were made in line with https://confluence.hl7.org/display/GP/Topic%3A+Handling+missed+discovery+messages[TOI Page: Handling missed discovery messages]; Requirements were introduced on the use of Hello message recurrence and size, SOAP-over-UDP, and Probe message recurrence. This was implemented in Vol 2, Annex A, <<vol2_clause_appendix_mdpws_dev_23_recurring_hello>>,<<vol2_clause_appendix_mdpws_dev_23_hello_message_size>>, and <<vol2_clause_appendix_mdpws_dev_24_recurring_probe>>.
 
 * *Issue: _SDPi-P Compression Option_*
 ** https://github.com/IHE/sdpi-fhir/issues/97[Github Issue #97 _Append TOI: Compression Option_] +
