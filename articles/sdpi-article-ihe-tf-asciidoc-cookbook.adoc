@@ -18,7 +18,7 @@ This article provides a *_handy_* reference place for the conventions and templa
 Related articles that support the information below include:
 
 * https://github.com/IHE/sdpi-fhir/blob/50ace3692b9299cdfcea434501df87b192f5220c/SDPi_Supplement/articles/sdpi-article-asciidoc-cheat-sheet.adoc[AsciiDoc Cheat Sheet]
-* https://github.com/IHE/sdpi-fhir/wiki/SDPi-File-Organization-Scheme[SDPi File Organization Scheme]
+* link:SDPi-File-Organization-Scheme[SDPi File Organization Scheme]
 
 There are a few methods to review the HTML that will be rendered from the AsciiDoc sources:
 
@@ -179,7 +179,7 @@ When installing, accept the normal "default" configuration options.  Our use of 
 ==== PowerPoint to SVG
 The first part of the process is to convert a PowerPoint graphic to SVG format:
 
-. PowerPoint file should have a *_single slide with the graphics_* to be converted.  File should be named according to the file naming conventions (See sdpi-fhir wiki article https://github.com/IHE/sdpi-fhir/wiki/SDPi-File-Organization-Scheme#file-naming-conventions[SDPi File Organization Scheme -- File Naming Conventions]).
+. PowerPoint file should have a *_single slide with the graphics_* to be converted.  File should be named according to the file naming conventions (See sdpi-fhir wiki article link:SDPi-File-Organization-Scheme#file-naming-conventions[SDPi File Organization Scheme -- File Naming Conventions]).
 
 .  During development & conversion, maintain the files (.pptx & .svg) in a separate local directory.  Ultimately, they will be moved to the appropriate directories in the github repository (per the above article's conventions)
 

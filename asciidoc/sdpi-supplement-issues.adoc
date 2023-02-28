@@ -7,12 +7,12 @@
 [sdpi_offset=clear]
 === SDPi "Topic of Interest" Issue Management
 
-All SDPi supplement issues are tracked in the https://github.com/IHE/sdpi-fhir/issues[IHE Github sdpi-fhir repository Issues section]. Filter the issues on "SDPi Topic of Interest" to see a full list.  +
+All SDPi supplement issues are tracked in the https://github.com/IHE/DEV.SDPi/issues[IHE Github sdpi-fhir repository Issues section]. Filter the issues on "SDPi Topic of Interest" to see a full list.  +
 
 * To see the full list of OPEN issues, filter on: is:issue is:open label:"SDPi Topic of Interest"
 * To see the full list of CLOSED issues, filter on: is:issue is:closed label:"SDPi Topic of Interest"
 
-For more detailed information on how the Gemini SES+MDI program manages issues from identification to resolution to incorporation into this supplement, see the wiki article https://github.com/IHE/sdpi-fhir/wiki/Program-Coordination-Co-Working-Spaces#overview-from-discussion-to-planning-to-development[_Overview: From Discussion to Planning to Development_] and the confluence article https://confluence.hl7.org/pages/viewpage.action?pageId=82912211#TopicsofInterest-TopicResolutionWorkflow[_Topics of Interest -- Topic Resolution Workflow_].
+For more detailed information on how the Gemini SES+MDI program manages issues from identification to resolution to incorporation into this supplement, see the wiki article https://github.com/IHE/DEV.SDPi/wiki/Program-Coordination-Co-Working-Spaces#overview-from-discussion-to-planning-to-development[_Overview: From Discussion to Planning to Development_] and the confluence article https://confluence.hl7.org/pages/viewpage.action?pageId=82912211#TopicsofInterest-TopicResolutionWorkflow[_Topics of Interest -- Topic Resolution Workflow_].
 
 [sdpi_offset=clear]
 === Open Issues and Questions
@@ -37,7 +37,7 @@ For more detailed information on how the Gemini SES+MDI program manages issues f
 ** ISO/IEEE 11073 SDC provides for both implicit and explicit discovery; however, for some implementations this may result in unwanted message traffic across the network; the use of a "discovery proxy" has been proposed and could be added as an optional SDPi actor.
 
 * *Issue: _SDPi-xC with Mixed Device Safety Classes_*
-** https://github.com/IHE/sdpi-fhir/issues/61[Github Issue #61 _Topic: SDPi-xC with Mixed Device Safety Classes_]
+** https://github.com/IHE/DEV.SDPi/issues/11[Github Issue #11 _Topic: SDPi-xC with Mixed Device Safety Classes_]
 ** FOR SDPi 1.0 -- Basic text was added to the SES template sections to indicate the nature of the issue, but not to indicate its resolution or even if WILL be explicitly resolved (incl. if the safety classification aspect of <<acronym_biceps>> will be maintained).  See <<vol3_clause_biceps_ses_content_requirements_considerations>> Reviewers Note box that presents the issue in SDPi 1.0 and beyond.
 
 [sdpi_offset=clear]
