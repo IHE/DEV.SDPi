@@ -13,7 +13,7 @@
 WARNING: This is a straw-man article. Content hackers welcomed!  *_Add issues to the <<Parking Lot Stuff>> section._*
 
 == 'Sup with this "Cheat Sheet"?
-Though the article https://github.com/IHE/sdpi-fhir/wiki/IHE-TF-SDPi-Content-in-AsciiDoc[_IHE Technical Framework / SDPi Content in AsciiDoc_] covers AsciiDoc application to specific content needs of the SDPi supplement, for those who are just getting started with the language, figuring out where the basics (and advanced) usage is documented is ... challenging.
+Though the article link:IHE-TF-SDPi-Content-in-AsciiDoc[_IHE Technical Framework / SDPi Content in AsciiDoc_] covers AsciiDoc application to specific content needs of the SDPi supplement, for those who are just getting started with the language, figuring out where the basics (and advanced) usage is documented is ... challenging.
 
 This quick reference guide helps cover that space between the content conventions and the actual AsciiDoc language.  For more detailed information on the AsciiDoc use conventions, see the article https://github.com/IHE/sdpi-fhir/blob/50ace3692b9299cdfcea434501df87b192f5220c/SDPi_Supplement/articles/sdpi-article-ihe-tf-asciidoc-cookbook.adoc[IHE TF / SDPi AsciiDoc Cookbook].
 

@@ -7,7 +7,7 @@
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*: This SDPi-xC (External Control) profile section is generally out-of-scope for the SDPi 1.0 version (see https://github.com/IHE/sdpi-fhir/wiki/SDPi-Editorial-Planning-and-Versions#sdpi-version-10-detail-[wiki article "SDPi Version 1.0 (Detail)"]); however, it is provided here to indicate the intended direction of the SDPi profiles, with details being added in subsequent versions.  Depending on capabilities, some very basic controls may need to be provided in 2023 as part of the 1.x or 2.0 versions, especially around external adjustment of settings (e.g., alert limits or to trigger a blood-pressure reading).
+a| *SDPi Supplement Version Note*: This SDPi-xC (External Control) profile section is generally out-of-scope for the SDPi 1.0 version (see https://github.com/IHE/DEV.SDPi/wiki/SDPi-Editorial-Planning-and-Versions#sdpi-version-10-detail-[wiki article "SDPi Version 1.0 (Detail)"]); however, it is provided here to indicate the intended direction of the SDPi profiles, with details being added in subsequent versions.  Depending on capabilities, some very basic controls may need to be provided in 2023 as part of the 1.x or 2.0 versions, especially around external adjustment of settings (e.g., alert limits or to trigger a blood-pressure reading).
 
 |===
 
