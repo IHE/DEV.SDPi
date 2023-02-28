@@ -2,6 +2,7 @@
 == Copyright Licenses
 IHE technical documents refer to, and make use of, a number of standards developed and published by several standards development organizations. Please refer to the IHE Technical Frameworks General Introduction, https://profiles.ihe.net/GeneralIntro/ch-9.html[Section 9 - Copyright Licenses] for copyright license information for frequently referenced base standards. Information pertaining to the use of IHE International copyrighted materials is also available there.
 
+=== Copyright of Base Standards
 
 [%noheader]
 [cols="1"]
@@ -10,7 +11,7 @@ IHE technical documents refer to, and make use of, a number of standards develop
 |===
 
 [sdpi_offset=5]
-=== IEEE 11073 (Health Device Interoperability)
+==== IEEE 11073 (Health Device Interoperability)
 
 [%noheader]
 [%autowidth]
