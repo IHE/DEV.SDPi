@@ -163,7 +163,8 @@ a {
     // append bottom navigation bar once document is loaded
     $(document).ready(function() {
         var elemDiv = document.createElement('div');
-        elemDiv.innerHTML = '<div class="bottom_bar"><div class="copyright_note">Copyright &#169; 2023: Health Level Seven International, and IHE International, Inc.</div><a href="#top">Top</a><a href="#vol3">Volume 3</a><a href="#vol2">Volume 2</a><a href="#vol1_clause_profiles">Volume 1</a><a href="#vol0_clause_ihe_technical_frameworks_general_introduction">General</a></div>';
+        var copyrightYear = new Date().getFullYear()
+        elemDiv.innerHTML = '<div class="bottom_bar"><div class="copyright_note">Copyright &#169; ' + copyrightYear + ': Health Level Seven International, and IHE International, Inc.</div><a href="#top">Top</a><a href="#vol3">Volume 3</a><a href="#vol2">Volume 2</a><a href="#vol1_clause_profiles">Volume 1</a><a href="#vol0_clause_ihe_technical_frameworks_general_introduction">General</a></div>';
         elemDiv.className = 'bottom_bar';
         document.body.appendChild(elemDiv);
     });
