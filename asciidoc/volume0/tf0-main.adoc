@@ -1,8 +1,8 @@
-[#vol0_clause_ihe_technical_frameworks_general_introduction, sdpi_volume_caption=0]
+[#vol0_clause_ihe_technical_frameworks_general_introduction]
 = IHE Technical Frameworks General Introduction
 
-[#vol0_clause_general,sdpi_offset=clear]
-== IHE Technical Frameworks General Introduction
+== General
+
 The https://profiles.ihe.net/GeneralIntro[IHE Technical Frameworks General Introduction] is shared by all of the IHE domain technical frameworks. Each technical framework volume contains links to this document where appropriate.
 
 include::tf0-ch-9-copyrights.adoc[]
