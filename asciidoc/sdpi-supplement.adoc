@@ -76,7 +76,11 @@ include::document-declarations.adoc[]
 [#supplement_clause_foreword,sdpi_offset=clear]
 = Foreword
 
+////
+
 #PUB TODO: MARY - VERIFY THAT THIS IS THE RIGHT DESIGNATION FOR THE IHE Devices TF revision; should this be IHE PCD 2019 version 9?  Or the forthcoming 2023 version? Should we reference the IHE PCD OR have more explanatory text or ... ???#
+
+////
 
 This is a supplement to the IHE Devices Technical Framework Revision 10.0. Each supplement undergoes a process of public comment and trial implementation before being incorporated into the volumes of the Technical Frameworks.
 
@@ -89,9 +93,9 @@ This supplement describes changes to the existing technical framework documents.
 |__Amend section W.X by the following:__
 |===
 
-#PUB TODO:  DAVID - How best to add underline & strikethrough to the bolds below?  (Change bold underline to bold underline & bold strikethrough to bold strikethrough)#
-
-Where the amendment adds text, make the added text *bold underline*. Where the amendment removes text, make the removed text *bold strikethrough*. When entire new sections are added, introduce with editor’s instructions to “add new text” or similar, which for readability are not bolded or underlined.
+Where the amendment adds text, make the added text +++<u><b>some text bold underline</b></u>+++.
+Where the amendment removes text, make the removed text +++<b><s>bold strikethrough</s></b>+++.
+When entire new sections are added, introduce with editor’s instructions to “add new text” or similar, which for readability are not bolded or underlined.
 
 General information about IHE can be found at http://www.ihe.net/[IHE].
 
@@ -101,7 +105,11 @@ Information about the organization of IHE Technical Frameworks and Supplements a
 
 The current version of the IHE Devices Technical Framework can be found at https://profiles.ihe.net/DEV/[DEV Technical Framework].
 
+////
+
 #PUB TODO:  MARY - This is where you insert the "Comments may be submitted on IHE ... templates ..." clause#
+
+////
 
 include::sdpi-supplement-intro.adoc[]
 
