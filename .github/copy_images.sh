@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo apt install graphviz
 gem install asciidoctor
 gem install asciidoctor-diagram
 asciidoctor -V
