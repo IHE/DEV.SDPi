@@ -9,7 +9,7 @@
 |===
 a| *SDPi Supplement Version 1.0 Note*:  This initial version of the <<acronym_sdpi_r>> Profile is built upon the foundational <<acronym_sdpi_p>> Profile but does not provide substantially more capabilities.
 This is due to the fact that the primary purpose of this profile, namely communication of medical data to accomplish intended medical purposes, requires the completion and integration of two emerging ISO/IEEE standards:  <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>>.
-When these are published *_in early 2023_*, their requirements will be integrated into this supplement, with their <<term_implementation_conformance_statement>> added to section <<vol1_appendix_b_referenced_standards_conformance>> below.
+When these are published *_in early 2023_*, their requirements will be integrated into this supplement, with their <<term_implementation_conformance_statement>> added to <<vol1_appendix_b_referenced_standards_conformance>> below.
 Many of those requirements will be mapped to the Actors and Transactions and other specifications in this profile.
 
 Additionally, though the <<actor_somds_dec_gateway>> is defined below and fully specified in <<vol2_clause_appendix_sdpi_dec_gateway>>, the implementation guide for mapping from <<acronym_biceps>> to <<acronym_hl7>> <<acronym_fhir>> remains in development, pushing the specification of the <<vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway>> to a later version of this supplement.
@@ -19,7 +19,7 @@ Additionally, though the <<actor_somds_dec_gateway>> is defined below and fully 
 [#vol1_clause_sdpi_r_profile_reftext,reftext="SDPi-R Profile"]
 The SDPi-Reporting ([[acronym_sdpi_r,SDPi-R]] SDPi-R) Profile supports the communication of information from one <<term_service_oriented_medical_device_system>> to other <<acronym_somds>> systems or to other external non-<<acronym_somds>> systems utilizing a <<label_system_type_name_dgw>>.
 Most of the Actors and Transactions in this profile are specialized versions of their counterparts in the <<acronym_sdpi_p>> Profile; however, are differentiated in that they are specifically designed to communicate information with an _intended medical purpose_.
-As a result, additional requirements are added to each actor and transaction to support address these additional safety and effectiveness requirements (See section <<vol1_clause_sdpi_r_ses_considerations>> below).
+As a result, additional requirements are added to each actor and transaction to support address these additional safety and effectiveness requirements (See <<vol1_clause_sdpi_r_ses_considerations>> below).
 
 The profile builds upon the foundational <<term_plug_and_trust>> capabilities provided by the <<vol1_clause_sdpi_p_profile_reftext>>.
 These extended capabilities for medical data exchange are achieved by various means, including:

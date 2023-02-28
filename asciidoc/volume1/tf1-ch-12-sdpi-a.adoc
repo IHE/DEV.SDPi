@@ -9,7 +9,7 @@
 |===
 a| *SDPi Supplement Version 1.0 Note*:  This initial version of the <<acronym_sdpi_a>> Profile is built upon the foundational <<acronym_sdpi_p>> Profile but adds services specialized for the communication and management of medical device alerting.
 Additionally, since the primary purpose of this profile is the communication of medical alert information to accomplish intended medical purposes, it will require the completion and integration of the emerging ISO/IEEE 11073 Alert <<acronym_pkp>> standard  <<ref_ieee_11073_10702_202x>>.
-When this new standard is published *_in late 2023 or early 2024_*, its requirements will be integrated into this supplement, with its <<term_implementation_conformance_statement>> added to section <<vol1_appendix_b_referenced_standards_conformance>> below.
+When this new standard is published *_in late 2023 or early 2024_*, its requirements will be integrated into this supplement, with its <<term_implementation_conformance_statement>> added to <<vol1_appendix_b_referenced_standards_conformance>>.
 Many of those requirements will be mapped to the Actors, Transactions and other specifications in this profile.
 
 Two of the transactions identified below, DEV-41 and DEV-42 are related to Medical Alert Delegation; however, at this stage there is considerable standards development activity to update the current <<acronym_sdc>> standards, particularly in association with completing the Alert <<acronym_pkp>> standard  <<ref_ieee_11073_10702_202x>>.
@@ -36,7 +36,7 @@ These extended capabilities for medical data exchange are achieved by various me
 . Requiring capabilities that in the <<vol1_clause_sdpi_p_profile_reftext>> may be optional
 . Requiring additional <<acronym_biceps>> data elements or content modules
 
-Additional requirements to addressed safety and effectiveness requirements are provided in section <<vol1_clause_sdpi_a_ses_considerations>> below.
+Additional requirements to addressed safety and effectiveness requirements are provided in <<vol1_clause_sdpi_a_ses_considerations>>.
 
 [#vol1_clause_sdpi_a_actors_transactions_content_modules]
 === SDPi-A Actors, Transactions, and Content Modules
