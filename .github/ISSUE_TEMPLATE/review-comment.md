@@ -2,7 +2,7 @@
 name: Review Comment
 about: Files a comment for review
 title: ""
-labels: Comment Review, Comment NEW
+labels: "Comment Review,Comment NEW"
 assignees: ''
 
 ---
