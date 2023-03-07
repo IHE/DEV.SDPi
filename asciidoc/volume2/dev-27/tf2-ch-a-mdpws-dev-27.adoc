@@ -24,13 +24,13 @@ This section specifies the MDPWS data transmission for messages defined in <<vol
 // ---------- SUBSCRIBE ---------
 
 
-===== {var_label_dev_27_message_subscribe} Message
+===== Subscribe Message
 
 The <<vol2_clause_dev_27_message_subscribe, {var_label_dev_27_message_subscribe}>> message is encoded by using {var_uri_ws_eventing_subscribe}[WS-Eventing Subscribe].
 
 ====== Referenced Standards
 
-* <<ref_oasis_ws_discovery_2009>> {var_uri_ws_eventing_subscribe}[Section 3.1 Subscribe]
+* <<ref_oasis_ws_eventing_2006>> {var_uri_ws_eventing_subscribe}[Section 3.1 Subscribe]
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
 
 ====== Message Outline
@@ -102,13 +102,13 @@ include::../dev-a-default-expected-actions.adoc[]
 // ---------- SUBSCRIBE RESPONSE ---------
 
 
-===== {var_label_dev_27_message_subscribe_response} Message
+===== SubscribeResponse Message
 
 The <<vol2_clause_dev_27_message_subscribe_response, {var_label_dev_27_message_subscribe_response}>> message is encoded by using {var_uri_ws_eventing_subscribe_response}[WS-Eventing SubscribeResponse].
 
 ====== Referenced Standards
 
-* <<ref_oasis_ws_discovery_2009>> {var_uri_ws_eventing_subscribe}[Section 3.1 Subscribe]
+* <<ref_oasis_ws_eventing_2006>> {var_uri_ws_eventing_subscribe}[Section 3.1 Subscribe]
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
 
 ====== Message Outline
@@ -148,29 +148,45 @@ NOTE: WS-Eventing allows for an event source or sink to make use of WS-Addressin
 ====
 ****
 
+[sdpi_level=+1]
+====== Subscription Expiration
+
+.R7004
+[sdpi_requirement#r7004,sdpi_req_level=shall]
+****
+
+In a SubscribeResponse message, a <<actor_somds_provider>> shall provide an _Expires_ element.
+
+.Notes
+[%collapsible]
+====
+NOTE: The WS-Eventing specification that is normatively included in <<ref_oasis_dpws_2009>> explains the absence of _Expires_ in a SubscribeResponse message (see <<ref_oasis_ws_eventing_2006>>, Section 3.1), which is actually prohibited according to the XML Schema. This profile underlines the need to provide an _Expires_ element in SubscribeResponse messages.
+====
+****
+
 // ---------- NOTIFICATION ---------
 
 
-===== {var_label_dev_27_message_notification} Message
+===== Notification Message
 
 Production of <<vol2_clause_dev_27_message_notification, {var_label_dev_27_message_notification}>> messages is not constrained herein as - depending on the subscription filter - any message can be a notification.
 
 ====== Referenced Standards
 
-* <<ref_oasis_ws_discovery_2009>> {var_uri_ws_eventing_notification}[Section 4 Notifications]
+* <<ref_oasis_ws_eventing_2006>> {var_uri_ws_eventing_notification}[Section 4 Notifications]
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
 
 
 // ---------- RENEW ---------
 
 
-===== {var_label_dev_27_message_renew} Message
+===== Renew Message
 
 The <<vol2_clause_dev_27_message_renew, {var_label_dev_27_message_renew}>> message is encoded by using {var_uri_ws_eventing_renew}[WS-Eventing Renew].
 
 ====== Referenced Standards
 
-* <<ref_oasis_ws_discovery_2009>> {var_uri_ws_eventing_renew}[Section 3.2 Renew]
+* <<ref_oasis_ws_eventing_2006>> {var_uri_ws_eventing_renew}[Section 3.2 Renew]
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
 
 ====== Message Outline
@@ -195,13 +211,13 @@ include::../dev-a-default-expected-actions.adoc[]
 // ---------- RENEW RESPONSE ---------
 
 
-===== {var_label_dev_27_message_renew_response} Message
+===== RenewResponse Message
 
 The <<vol2_clause_dev_27_message_renew_response, {var_label_dev_27_message_renew_response}>> message is encoded by using {var_uri_ws_eventing_renew_response}[WS-Eventing RenewResponse].
 
 ====== Referenced Standards
 
-* <<ref_oasis_ws_discovery_2009>> {var_uri_ws_eventing_renew}[Section 3.2 Renew]
+* <<ref_oasis_ws_eventing_2006>> {var_uri_ws_eventing_renew}[Section 3.2 Renew]
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
 
 ====== Message Outline
@@ -222,16 +238,35 @@ include::../dev-a-default-trigger-events.adoc[]
 :var_expected_actions_ref: <<vol2_clause_dev_27_message_renew_response>>
 include::../dev-a-default-expected-actions.adoc[]
 
+====== Additional Consideration
+
+[sdpi_level=+1]
+====== Subscription Expiration
+
+.R7005
+[sdpi_requirement#r7005,sdpi_req_level=shall]
+****
+
+In a RenewResponse message, a <<actor_somds_provider>> shall provide an _Expires_ element.
+
+.Notes
+[%collapsible]
+====
+NOTE: The WS-Eventing specification that is normatively included in <<ref_oasis_dpws_2009>> does not explain the absence of _Expires_ in a RenewResponse message (see <<ref_oasis_ws_eventing_2006>>, Section 3.2). This profile prohibits the absence of _Expires_ in RenewResponse messages to avoid subscriptions that run infinitely.
+====
+****
+
+
 // ---------- UNSUBSCRIBE ---------
 
 
-===== {var_label_dev_27_message_unsubscribe} Message
+===== Unsubscribe Message
 
 The <<vol2_clause_dev_27_message_unsubscribe, {var_label_dev_27_message_unsubscribe}>> message is encoded by using {var_uri_ws_eventing_unsubscribe}[WS-Eventing Unsubscribe].
 
 ====== Referenced Standards
 
-* <<ref_oasis_ws_discovery_2009>> {var_uri_ws_eventing_unsubscribe}[Section 3.4 Unsubscribe]
+* <<ref_oasis_ws_eventing_2006>> {var_uri_ws_eventing_unsubscribe}[Section 3.4 Unsubscribe]
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
 
 ====== Message Outline
@@ -255,13 +290,13 @@ include::../dev-a-default-expected-actions.adoc[]
 // ---------- UNSUBSCRIBE RESPONSE ---------
 
 
-===== {var_label_dev_27_message_unsubscribe_response} Message
+===== UnsubscribeResponse Message
 
 The <<vol2_clause_dev_27_message_unsubscribe_response, {var_label_dev_27_message_unsubscribe_response}>> message is encoded by using {var_uri_ws_eventing_unsubscribe_response}[WS-Eventing UnsubscribeResponse].
 
 ====== Referenced Standards
 
-* <<ref_oasis_ws_discovery_2009>> {var_uri_ws_eventing_unsubscribe_response}[Section 3.4 Unsubscribe]
+* <<ref_oasis_ws_eventing_2006>> {var_uri_ws_eventing_unsubscribe_response}[Section 3.4 Unsubscribe]
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
 
 ====== Message Outline
@@ -285,13 +320,13 @@ include::../dev-a-default-expected-actions.adoc[]
 // ---------- SUBSCRIPTION END ---------
 
 
-===== {var_label_dev_27_message_subscription_end} Message
+===== SubscriptionEnd Message
 
 The <<vol2_clause_dev_27_message_subscription_end, {var_label_dev_27_message_subscription_end}>> message is encoded by using {var_uri_ws_eventing_subscription_end}[WS-Eventing Subscription End].
 
 ====== Referenced Standards
 
-* <<ref_oasis_ws_discovery_2009>> {var_uri_ws_eventing_subscription_end}[Section 3.5 Subscription End]
+* <<ref_oasis_ws_eventing_2006>> {var_uri_ws_eventing_subscription_end}[Section 3.5 Subscription End]
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
 * <<ref_ieee_11073_20702_2016>>
 * <<ref_ieee_11073_20701_2018>>
