@@ -76,4 +76,7 @@ include::connect-time-algorithm/tf2-ch-a-mdpws-connect-time-algorithm.adoc[]
 include::mdib-report-retrofit/tf2-ch-a-mdpws-mdib-report-retrofit.adoc[]
 
 include::mdpws-compression/tf2-ch-a-mdpws-compression.adoc[]
+
 include::discovery-scopes/tf2-ch-a-mdpws-discovery-scopes.adoc[]
+
+include::pretty-print/tf2-ch-a-mdpws-pretty-print.adoc[]
