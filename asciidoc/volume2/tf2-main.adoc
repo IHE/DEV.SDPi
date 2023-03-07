@@ -61,11 +61,6 @@ include::dev-40/tf2-dev-40.adoc[]
 //
 // TODO https://confluence.hl7.org/display/GP/Topic%3A+SDPi-P+Compression+Option
 //
-//=== XML Pretty Print
-//
-// TODO finding from PAT: no use of XML pretty print; see https://confluence.hl7.org/pages/viewpage.action?pageId=104579763
-//
-//
 //=== WS-Eventing
 //
 //=== Subscription / Subscription Manager Identifier
