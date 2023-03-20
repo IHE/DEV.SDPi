@@ -42,7 +42,7 @@ class RequirementLevelProcessor : Treeprocessor() {
     }
 
     private fun processRequirement(block: Block) {
-        val attributes = Attributes(block.attributes)
+        val attributes = Attributes.create(block.attributes)
         val levelRaw = attributes[BlockAttribute.REQUIREMENT_LEVEL]
         checkNotNull(levelRaw) {
             ("Missing requirement level for SDPi requirement with id ${attributes[BlockAttribute.ID]}").also {

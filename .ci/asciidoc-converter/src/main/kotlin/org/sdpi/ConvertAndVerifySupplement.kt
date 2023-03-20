@@ -34,7 +34,7 @@ class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {
         .file()
         .required()
         .validate {
-            require(it.parentFile.exists()) { "Output parent folder '${it.parentFile.absolutePath}' does not exist." }
+            require(it.absoluteFile.parentFile.exists()) { "Output parent folder '${it.parentFile.absolutePath}' does not exist." }
             if (!it.exists()) {
                 require(it.mkdir()) { "Output folder '${it.absolutePath}' could not be created" }
             }
