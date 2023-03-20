@@ -385,13 +385,15 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 | XML Schema QName. In this specification, QNames are encoded as `{<namespace>}<local-name>`.
 |
 |
+|
+|
 
-| ...
-| ...
-| ...
-| ...
-| ...
-| ...
+| [[term_medical_device_system,Virtual Medical Device (VMD)]] Virtual Medical Device
+| A core object type in the ISO/IEEE 11073 device communication standards. It represents the second-level containment of the hierarchy of information objects contained in a device.
+|
+| [[acronym_vmd,VMD]] VMD
+| <<ref_ieee_11073_10207_2017>>, <<ref_ieee_11073_10201_2004>>
+|
 
 |===
 
