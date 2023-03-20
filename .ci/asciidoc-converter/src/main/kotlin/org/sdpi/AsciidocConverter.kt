@@ -52,7 +52,7 @@ class AsciidocConverter(
         }
 
         asciidoctor.shutdown()
-
+        
         val referencedArtifactsName = "referenced-artifacts"
         val path = Path.of(outputFile.parentFile.absolutePath, referencedArtifactsName)
         Files.createDirectories(path)
