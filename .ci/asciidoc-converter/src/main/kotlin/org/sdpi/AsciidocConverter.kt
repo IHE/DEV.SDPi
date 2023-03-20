@@ -8,6 +8,8 @@ import org.asciidoctor.SafeMode
 import org.sdpi.asciidoc.extension.*
 import java.io.File
 import java.io.OutputStream
+import java.nio.file.Files
+import java.nio.file.Path
 
 class AsciidocConverter(
     private val inputType: Input,
@@ -51,10 +53,11 @@ class AsciidocConverter(
 
         asciidoctor.shutdown()
 
-        val reqsDumpFile =
-            File(outputFile.parentFile.absolutePath + File.separator + outputFile.nameWithoutExtension + ".json")
+        val referencedArtifactsName = "referenced-artifacts"
+        val path = Path.of(outputFile.parentFile.absolutePath, referencedArtifactsName)
+        Files.createDirectories(path)
         val reqsDump = Json.encodeToString(requirementsBlockProcessor.detectedRequirements())
-        reqsDumpFile.writeText(reqsDump)
+        Path.of(path.toFile().absolutePath, "sdpi-requirements.json").toFile().writeText(reqsDump)
     }
 
     private companion object {
