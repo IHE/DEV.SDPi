@@ -26,13 +26,13 @@ include::../../listings/vol3-clause-biceps-content-example-equipment-identifier.
 .R0014
 [sdpi_requirement#r0014,sdpi_req_level=shall]
 ****
-For the `sdpi:EquipmentLabel` extension, a <<actor_somds_provider>> shall use a stable and globally unique URI that is constant across re-initializations of the <<actor_somds_provider>>.
+For the `sdpi:EquipmentIdentifier` extension, a <<actor_somds_provider>> shall use a stable and globally unique URI that is constant across re-initializations of the <<actor_somds_provider>>.
 ****
 
 .R0015
 [sdpi_requirement#r0015,sdpi_req_level=should]
 ****
-For the `sdpi:EquipmentLabel` extension, a <<actor_somds_provider>> should use URI-encoded UUIDs or OIDs.
+For the `sdpi:EquipmentIdentifier` extension, a <<actor_somds_provider>> should use URI-encoded UUIDs or OIDs.
 ****
 
 .R0016
@@ -44,11 +44,11 @@ To test if two equipment identifiers are equal, a <<actor_somds_participant>> sh
 .R0017
 [sdpi_requirement#r0017,sdpi_req_level=shall]
 ****
-A <<actor_somds_provider>> shall add the `sdpi:EquipmentLabel` extension to each pm:MdsDescriptor in its <<acronym_mdib>>.
+A <<actor_somds_provider>> shall add the `sdpi:EquipmentIdentifier` extension to each pm:MdsDescriptor in its <<acronym_mdib>>.
 ****
 
 .R0018
 [sdpi_requirement#r0018,sdpi_req_level=should]
 ****
-A <<actor_somds_provider>> should add the `sdpi:EquipmentLabel` extension to each pm:VmdDescriptor in its <<acronym_mdib>>.
+A <<actor_somds_provider>> should add the `sdpi:EquipmentIdentifier` extension to each pm:VmdDescriptor in its <<acronym_mdib>>.
 ****
