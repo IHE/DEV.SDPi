@@ -9,11 +9,11 @@
         <pm:MdDescription>
             <pm:Mds Handle="mds0">
                 <ext:Extension>
-                    <sdpi:EquipmentLabel>urn:uuid:9c057bb4-8d83-4fc1-9ad1-832ad543e2b2</sdpi:EquipmentLabel>
+                    <sdpi:EquipmentIdentifier>urn:uuid:9c057bb4-8d83-4fc1-9ad1-832ad543e2b2</sdpi:EquipmentIdentifier>
                 </ext:Extension>
                 <pm:Vmd Handle="vmd0">
                     <ext:Extension>
-                        <sdpi:EquipmentLabel>urn:uuid:84051cdb-5353-47af-a916-b1f007e08ed8</sdpi:EquipmentLabel>
+                        <sdpi:EquipmentIdentifier>urn:uuid:84051cdb-5353-47af-a916-b1f007e08ed8</sdpi:EquipmentIdentifier>
                     </ext:Extension>
                     <!-- containment subtree elements -->
                 </pm:Vmd>

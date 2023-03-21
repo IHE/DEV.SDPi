@@ -30,10 +30,10 @@ This extension can be attached to the pm:MdsDescriptor/ext:Extension or pm:VmdDe
 		<xsd:annotation>
 			<xsd:documentation>Type defining the EquipmentIdentifier.
 
-The equipment identifier is an absolute URI. It is stable, globally unique and constant across re-initializations of the SOMDS Provider.</xsd:documentation>
+The equipment identifier is an URI. It is stable, globally unique and constant across re-initializations of the SOMDS Provider.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:anyURI">
-			<xsd:maxLength value="1"/>
+			<xsd:minLength value="1"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 </xsd:schema>
