@@ -3,6 +3,6 @@
 
 XML Schemas in this appendix include the BICEPS message, participant and extension model files as provided as an additional resource at https://standards.ieee.org/ieee/11073-10207/6032/.
 
-include::biceps-extension-provisions/tf2-ch-a-xml-schemas-coded-attribute.adoc[]
+include::biceps-extension-provisions/tf3-ch-a-xml-schemas-coded-attribute.adoc[]
 
-include::biceps-extension-provisions/tf2-ch-a-xml-schemas-gender.adoc[]
+include::biceps-extension-provisions/tf3-ch-a-xml-schemas-gender.adoc[]

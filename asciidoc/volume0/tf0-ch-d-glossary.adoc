@@ -282,6 +282,13 @@ elements, from requirements to system components to Verification & Validation te
 |
 |
 
+| [[term_q_name, QName]] QName
+| XML Schema QName. In this specification, QNames are encoded as `{<namespace>}<local-name>`.
+|
+|
+|
+|
+
 | [[term_regulatory_ready,Regulatory Ready (RR)]] Regulatory Ready
 | For regulated medical device technology, integrating <<acronym_ses>> and <<acronym_ri>> content such that conformity assessment test reports may be directly included as supporting evidence in pre-market submissions to regulatory agencies.  It is part of the Requirements Interoperability + Model Centric + Regulatory Ready (<<acronym_ri_mc_rr>>) focus of the IHE Devices Technical Framework.
 | <<acronym_ri_mc_rr>>
@@ -377,13 +384,6 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 | [[term_transport_address, Transport Address]] Transport Address
 | A physical endpoint address that can be used to communicate with a <<actor_somds_provider>>.
 | XAddr
-|
-|
-|
-
-| [[term_q_name, QName]] QName
-| XML Schema QName. In this specification, QNames are encoded as `{<namespace>}<local-name>`.
-|
 |
 |
 |
