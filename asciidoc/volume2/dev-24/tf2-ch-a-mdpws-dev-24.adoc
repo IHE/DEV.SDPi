@@ -127,10 +127,10 @@ include::../dev-a-default-trigger-events.adoc[]
 
 `s12:Envelope/s12:Body/wsd:ProbeMatches`:: In cases where multiple <<vol1_spec_sdpi_p_actor_somds_provider>>s are running on a single machine, `wsd:ProbeMatches` can contain multiple `wsd:ProbeMatch` results.
 `s12:Envelope/s12:Body/wsd:ProbeMatches/wsd:ProbeMatch/wsa:EndpointReference/wsa:Address`:: The <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<term_somds_provider_uid>> encoded as URI.
-`s12:Envelope/s12:Body/wsd:ProbeMatches/wsd:Types`:: List of types that contains at least `dpws:Device` and mdpws:MedicalDevice`, which expresses the <<vol1_spec_sdpi_p_actor_somds_provider>> to conform to DPWS and MDPWS.
-`s12:Envelope/s12:Body/wsd:ProbeMatches/wsd:Scopes`:: The <<term_discovery_scope>> of the <<vol1_spec_sdpi_p_actor_somds_provider>>, encoded as a list of URIs.
-`s12:Envelope/s12:Body/wsd:ProbeMatches/wsd:XAddrs`:: A list of HTTPS addresses under which the <<vol1_spec_sdpi_p_actor_somds_provider>> receives secured messages.
-`s12:Envelope/s12:Body/wsd:ProbeMatches/wsd:MetadataVersion`:: A metadata version of the <<vol1_spec_sdpi_p_actor_somds_provider>>. To be ignored as the transmission of the Probe Match message is unsecure.
+`s12:Envelope/s12:Body/wsd:ProbeMatches/wsd:ProbeMatch/wsd:Types`:: List of types that contains at least `dpws:Device` and mdpws:MedicalDevice`, which expresses the <<vol1_spec_sdpi_p_actor_somds_provider>> to conform to DPWS and MDPWS.
+`s12:Envelope/s12:Body/wsd:ProbeMatches/wsd:ProbeMatch/wsd:Scopes`:: The <<term_discovery_scope>> of the <<vol1_spec_sdpi_p_actor_somds_provider>>, encoded as a list of URIs.
+`s12:Envelope/s12:Body/wsd:ProbeMatches/wsd:ProbeMatch/wsd:XAddrs`:: A list of HTTPS addresses under which the <<vol1_spec_sdpi_p_actor_somds_provider>> receives secured messages.
+`s12:Envelope/s12:Body/wsd:ProbeMatches/wsd:ProbeMatch/wsd:MetadataVersion`:: A metadata version of the <<vol1_spec_sdpi_p_actor_somds_provider>>. To be ignored as the transmission of the Probe Match message is unsecure.
 
 :var_expected_actions_ref: <<vol2_clause_dev_24_message_probe_match>>
 include::../dev-a-default-expected-actions.adoc[]
@@ -192,10 +192,10 @@ include::../dev-a-default-trigger-events.adoc[]
 ====== Message Semantics
 
 `s12:Envelope/s12:Body/wsd:ResolveMatches/wsd:ResolveMatch/wsa:EndpointReference/wsa:Address`:: The <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<term_somds_provider_uid>> encoded as URI.
-`s12:Envelope/s12:Body/wsd:ResolveMatches/wsd:Types`:: List of types that contains at least `dpws:Device` and mdpws:MedicalDevice`, which expresses the <<vol1_spec_sdpi_p_actor_somds_provider>> to conform to DPWS and MDPWS.
-`s12:Envelope/s12:Body/wsd:ResolveMatches/wsd:Scopes`:: The <<term_discovery_scope>> of the <<vol1_spec_sdpi_p_actor_somds_provider>>, encoded as a list of URIs.
-`s12:Envelope/s12:Body/wsd:ResolveMatches/wsd:XAddrs`:: A list of HTTPS addresses under which the <<vol1_spec_sdpi_p_actor_somds_provider>> receives secured messages.
-`s12:Envelope/s12:Body/wsd:ResolveMatches/wsd:MetadataVersion`:: A metadata version of the <<vol1_spec_sdpi_p_actor_somds_provider>>. To be ignored as the transmission of the Resolve Match message is unsecure.
+`s12:Envelope/s12:Body/wsd:ResolveMatches/wsd:ResolveMatch/wsd:Types`:: List of types that contains at least `dpws:Device` and mdpws:MedicalDevice`, which expresses the <<vol1_spec_sdpi_p_actor_somds_provider>> to conform to DPWS and MDPWS.
+`s12:Envelope/s12:Body/wsd:ResolveMatches/wsd:ResolveMatch/wsd:Scopes`:: The <<term_discovery_scope>> of the <<vol1_spec_sdpi_p_actor_somds_provider>>, encoded as a list of URIs.
+`s12:Envelope/s12:Body/wsd:ResolveMatches/wsd:ResolveMatch/wsd:XAddrs`:: A list of HTTPS addresses under which the <<vol1_spec_sdpi_p_actor_somds_provider>> receives secured messages.
+`s12:Envelope/s12:Body/wsd:ResolveMatches/wsd:ResolveMatch/wsd:MetadataVersion`:: A metadata version of the <<vol1_spec_sdpi_p_actor_somds_provider>>. To be ignored as the transmission of the Resolve Match message is unsecure.
 
 :var_expected_actions_ref: <<vol2_clause_dev_24_message_resolve_match>>
 include::../dev-a-default-expected-actions.adoc[]
