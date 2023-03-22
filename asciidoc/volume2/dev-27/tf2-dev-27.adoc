@@ -109,7 +109,7 @@ The {var_label_dev_27_message_subscribe_response} message is sent whenever a <<a
 ====== Message Semantics
 
 [[payload_dev_27_subscribe_response_subscription_manager]]Subscription Manager:: Dedicated instance that manages the subscription, i.e. allows for a <<actor_somds_consumer>> to renew or cancel the subscription.
-[[payload_dev_27_subscribe_response_expiration_time]]Expiration Time:: Actual expiration time, which does not necessarily equals the requested expiration time.
+[[payload_dev_27_subscribe_response_expiration_time]]Expiration Time:: Actual expiration time, which does not necessarily equal the requested expiration time.
 
 [#vol2_clause_dev_27_message_probe_match_expected_actions]
 ====== Expected Actions
@@ -185,7 +185,7 @@ The {var_label_dev_27_message_renew_response} message is sent whenever a <<actor
 [#vol2_clause_dev_27_message_renew_response_semantics]
 ====== Message Semantics
 
-[[payload_dev_27_renew_response_expiration_time]]Expiration Time:: Actual new expiration time, which does not necessarily equals the requested expiration time.
+[[payload_dev_27_renew_response_expiration_time]]Expiration Time:: Actual new expiration time, which does not necessarily equal the requested expiration time.
 
 [#vol2_clause_dev_27_message_renew_response_expected_actions]
 ====== Expected Actions
