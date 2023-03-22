@@ -14,7 +14,8 @@ enum class LabelSource {
     SECTION,
     TABLE_OR_FIGURE,
     APPENDIX,
-    VOLUME
+    VOLUME,
+    UNKNOWN
 }
 
 data class LabelInfo(
@@ -25,8 +26,7 @@ data class LabelInfo(
 )
 
 class ReferenceSanitizerPostprocessor(
-    private val anchorLabels: Map<String, LabelInfo>,
-    private val customReferences: Set<String>
+    private val anchorLabels: Map<String, LabelInfo>
 ) : Postprocessor() {
     override fun process(document: Document, output: String): String {
         // skip numbering if xref style has been changed to reduce likelihood of broken references
@@ -84,6 +84,7 @@ class ReferenceSanitizerPostprocessor(
                     LabelSource.TABLE_OR_FIGURE -> anchor.text(anchorText ?: it.label)
                     LabelSource.APPENDIX -> anchor.text(anchorText ?: "$appendixSig${it.prefix}:${it.label}")
                     LabelSource.VOLUME -> anchor.text(anchorText ?: "$chapterSig${it.prefix}")
+                    LabelSource.UNKNOWN -> anchor.text(anchorText ?: it.label)
                 }
             }
         }
