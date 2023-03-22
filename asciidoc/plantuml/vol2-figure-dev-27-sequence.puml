@@ -20,7 +20,7 @@ par
     end
 else
     loop when ExpirationTime is about to expire
-        consumer -> provider: Renew(Subscription Manager)
+        consumer -> provider: Renew(Expiration Time)
         consumer <<-- provider: RenewResponse(Expiration Time)
     end
 end
