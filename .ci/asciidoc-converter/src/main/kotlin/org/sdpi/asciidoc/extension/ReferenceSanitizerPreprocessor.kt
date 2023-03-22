@@ -7,7 +7,9 @@ import java.net.URLEncoder
 import java.util.*
 
 
-class ReferenceSanitizerPreprocessor : Preprocessor() {
+class ReferenceSanitizerPreprocessor(
+    private val anchorReplacements: MutableMap<String, LabelInfo>
+) : Preprocessor() {
     private val variables = mutableMapOf<String, String>()
 
     override fun process(document: org.asciidoctor.ast.Document, reader: PreprocessorReader) {
@@ -23,6 +25,7 @@ class ReferenceSanitizerPreprocessor : Preprocessor() {
                     val substitutedVariables = substituteVariables(refs[1].trim())
                     val encodedRefText = URLEncoder.encode(substitutedVariables, Charsets.UTF_8)
                     val transformed = "<<${refs[0]}$refSeparator$encodedRefText>>"
+                    anchorReplacements[refs[0]] = LabelInfo(substitutedVariables, LabelSource.UNKNOWN)
                     logger.info { "Found reference with custom label: ${it.groupValues.first()} => $transformed" }
                     transformed
                 }
