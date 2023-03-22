@@ -17,7 +17,7 @@
                 <wsa:Address><!-- ... --></wsa:Address>
             </wsa:EndpointReference>
             <wsd:Types>dpws:Device mdpws:MedicalDevice</wsd:Types>
-            <wsd:Scopes><!-- ... --></wsd:Scopes>
+            <wsd:Scopes>sdc.mds.pkp:1.2.840.10004.20701.1.1 <!-- ... --></wsd:Scopes>
             <wsd:MetadataVersion><!-- ... --></wsd:MetadataVersion>
         </wsd:Hello>
     </s12:Body>
