@@ -209,7 +209,7 @@ The {var_label_dev_27_message_unsubscribe} message is sent by a <<actor_somds_co
 [#vol2_clause_dev_27_message_unsubscribe_message_semantics]
 ====== Message Semantics
 
-The {var_label_dev_27_message_unsubscribe} message does not contain any further semantics.
+[[payload_dev_27_unsusbcribe_subscription_manager]]Subscription Manager:: The subscription manager for which a subscription is requested to be unsubscribed.
 
 [#vol2_clause_dev_27_message_unsubscribe_expected_actions]
 ====== Expected Actions
