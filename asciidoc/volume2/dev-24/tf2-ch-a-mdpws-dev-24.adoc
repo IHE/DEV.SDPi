@@ -109,6 +109,8 @@ The <<vol2_clause_dev_24_message_probe_match, {var_label_dev_24_message_probe_ma
 
 * <<ref_oasis_ws_discovery_2009>> {var_uri_ws_discovery_probe_match}[Section 5.3 Probe Match]
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
+* <<ref_ieee_11073_20702_2016>>
+* <<ref_ieee_11073_20701_2018>>
 
 ====== Message Outline
 
