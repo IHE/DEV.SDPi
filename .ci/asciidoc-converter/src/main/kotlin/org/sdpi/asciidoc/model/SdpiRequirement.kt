@@ -1,5 +1,6 @@
 package org.sdpi.asciidoc.model
 
+import kotlinx.serialization.Serializable
 import org.sdpi.asciidoc.*
 
 /**
@@ -22,6 +23,7 @@ enum class RequirementLevel(val keyword: String) {
  * @property asciiDocAttributes All attributes captured by the block that represents this requirement.
  * @property asciiDocLines The actual ASCIIdoc source.
  */
+@Serializable
 data class SdpiRequirement(
     val number: Int,
     val level: RequirementLevel,

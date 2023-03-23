@@ -46,7 +46,10 @@ class RequirementsBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
     override fun process(
         parent: StructuralNode, reader: Reader,
         attributes: MutableMap<String, Any>
-    ): Any = retrieveRequirement(reader, Attributes(attributes)).let { requirement ->
+    ): Any = retrieveRequirement(
+        reader,
+        Attributes.create(attributes)
+    ).let { requirement ->
         logger.info { "Found SDPi requirement #${requirement.number}: $requirement" }
         requirement.asciiDocAttributes[BlockAttribute.ROLE] = REQUIREMENT_ROLE
         storeRequirement(requirement)
@@ -115,11 +118,14 @@ class RequirementsBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
             }
         }
 
-        check(!detectedRequirements.containsKey(requirement.number) ||
-                intendedDuplicates[requirement.number]!! <= requirement.maxOccurrence) {
+        check(
+            !detectedRequirements.containsKey(requirement.number) ||
+                    intendedDuplicates[requirement.number]!! <= requirement.maxOccurrence
+        ) {
             "SDPi requirement #'${requirement.number}' already exists".also {
                 logger.error { it }
             }
         }
     }
 }
+

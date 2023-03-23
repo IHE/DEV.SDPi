@@ -99,7 +99,8 @@ class NumberingProcessor(
                     isInAppendix.add(node.wrapped.isAppendix())
 
                     if (level == 0 && !node.wrapped.isAppendix()) {
-                        currentVolumeCaption = Attributes(node.wrapped.attributes)[BlockAttribute.VOLUME_CAPTION] ?: ""
+
+                        currentVolumeCaption = Attributes.create(node.wrapped.attributes)[BlockAttribute.VOLUME_CAPTION] ?: ""
                     }
 
                     initSectionNumbers(node.wrapped, level)
