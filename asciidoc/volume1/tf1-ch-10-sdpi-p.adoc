@@ -699,7 +699,7 @@ Therefore, though the <<acronym_mdib>> of a <<actor_somds_provider>> system must
 
 For an example of how <<acronym_biceps>> components (see <<figure_sdc_biceps_components_model>>) and <<acronym_mdib>> descriptors and states (see <<figure_sdc_biceps_mdib_descriptors_states>>) support <<term_plug_and_trust>> interoperability, a typical conversation is provided in <<vol1_figure_sdpi_p_example_sequence_diagram>>.
 
-===== Medical Device Profile for Web Services (MDPWS)
+===== Medical Devices Communication Profile for Web Services (MDPWS)
 To support the <<acronym_soa>>-based connectivity described above, the *_default transport technology_* for this <<vol1_clause_sdpi_p_profile_reftext>> is the XML-based Web Services as specified in <<ref_ieee_11073_20702_2016>>.
 Additional "glue" constraints for this <<acronym_mdpws>> specification are provided in the companion standard: <<ref_ieee_11073_20701_2018>>.
 Specific <<vol1_clause_sdpi_p_profile_reftext>> transaction message bindings and examples are provided in <<vol2_appendix_a_mdpws_messages>>.
