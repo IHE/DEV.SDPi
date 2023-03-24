@@ -68,7 +68,7 @@ NOTE:  Forward Declarations in the following table are being added "on demand" o
 | Use Case
 
 | [[acronym_mdpws,MDPWS]] MDPWS
-| [[label_use_case_name_mdpws,Medical Device Profile for Web Services]] Medical Device Profile for Web Services
+| [[label_use_case_name_mdpws,Medical Devices Communication Profile for Web Services]] Medical Devices Communication Profile for Web Services
 | <<ref_ieee_11073_20702_2016>>
 | Standard
 
