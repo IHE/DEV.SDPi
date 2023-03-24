@@ -287,6 +287,7 @@ a| *SDPi Supplement Version Note*:  For SDPi 1.0 DEV Internal Review Version, th
 
 |===
 
+[#ref_dec_OBR7_mapping]
 ====== OBR-7 Observation Date/Time
 The OBR-7 field specifies the time point or start of time interval for all OBX segments within the scope of this OBR segment, that is, OBX segments that are part of the ORDER_OBSERVATION segment group, that do not specify an overriding time point in the OBX-14 field.
 
@@ -294,19 +295,45 @@ The presence of an overriding time point in OBX-14 indicates an episodic measure
 
 The absence of an overriding time point in the OBX-14 field implies that this is an instance of a periodically sampled observation with a time stamp given by OBR-7 field.
 
+.R8037
+[sdpi_requirement#r8037,sdpi_req_level=shall]
+****
+
+A <<actor_somds_dec_gateway>> shall export continuously (periodically) measured metrics periodically at a defined interval.
+
+.Notes
+[%collapsible]
+====
+NOTE: It is up to the <<actor_somds_dec_gateway>> how the export interval is defined. The interval might be a fixed interval of e.g. 30 seconds, or a configurable interval ranging e.g. between 10 seconds and 2 minutes.
+
+====
+****
+
+.R8038
+[sdpi_requirement#r8038,sdpi_req_level=shall]
+****
+
+A <<actor_somds_dec_gateway>> shall set the OBR-7 field to the start date and time of current export interval.
+
+.Notes
+[%collapsible]
+====
+NOTE: If, for example, the export interval is set to 30 seconds, the <<actor_somds_dec_gateway>> will export HL7 messages every 30 seconds with the OBR-7 field set to start date and time of the interval e.g. *20231030155930*, *20231030160000*, *20231030160030*, and so on.
+
+====
+****
 
 .R8006
 [sdpi_requirement#r8006,sdpi_req_level=shall]
 ****
 
-A <<actor_somds_dec_gateway>> shall set the OBR-7 field to the date and time of all continuously (periodically) measured metrics reported by a *msg:PeriodicMetricReport* to be exported within the same *msg:RetrievabilityInfo/@UpdatePeriod*.
+A <<actor_somds_dec_gateway>> shall export the latest metric value of all continuously (periodically) measured metrics with a *pm:AbstractMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@DeterminationTime* which is equal or greater than the start date and time of the current interval, and less than the start date and time of the next export interval.
 
 .Notes
 [%collapsible]
 ====
-NOTE: If, for example, the *@UpdatePeriod* is set to one second, a *msg:PeriodicMetricReport* is expected every second with new periodic metric states to be exported within this one second interval. The OBR-7 field is set to the start time of the interval. The individual periodic metric *@DeterminationTime* is basically ignored, but has to be within the time boundaries of the current export interval.
+NOTE: The OBR-7 field is set to the start time of the interval. The individual periodic metric value *@DeterminationTime* is basically ignored, but has to be within the time boundaries of the current export interval.
 
-NOTE: <<ref_tbl_dec_obr7_mapping>> defines the mapping of the SDC metric measurement timestamp to the data fields of the HL7 data type *DTM* used in the OBR-7 field.
 ====
 ****
 
@@ -314,50 +341,38 @@ NOTE: <<ref_tbl_dec_obr7_mapping>> defines the mapping of the SDC metric measure
 [sdpi_requirement#r8007,sdpi_req_level=shall]
 ****
 
-For episodic measurements and the absence of any continuously measured metrics for this export interval, a <<actor_somds_dec_gateway>> shall set the OBR-7 field to the oldest measurement timestamp of the episodic metrics to be exported in the current export interval.
+For exporting episodic metric values and the absence of any continuously measured metric values for the current export interval, a <<actor_somds_dec_gateway>> shall set the OBR-7 field to the start date and time of current export interval.
 
 .Notes
 [%collapsible]
 ====
-NOTE: Episodic metric measurements are usually exported along with the periodic metric measurements in the same export intervals triggered by *msg:PeriodicMetricReport* events. However, if a device does not provide periodic metric measurements, or if the *@UpdatePeriod* is too long, episodic metric measurements are exported independently of the periodic metric measurements in separate HL7 data export messages.
+NOTE: Episodic metric values are usually exported along with the periodic metric values in the same export intervals. However, if a device does not provide periodic metric values in the current export interval, episodic metric values are exported in current export interval without periodic metric values.
 
-NOTE: <<ref_tbl_dec_obr7_mapping>> defines the mapping of the SDC metric measurement timestamp to the data fields of the HL7 data type *DTM* used in the OBR-7 field.
+NOTE: The *pm:AbstractMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@DeterminationTime* of an episodic metric value is set in the OBX-14 field and will override the timestamp defined in the OBR-7 field.
+
 ====
 ****
 
 [NOTE]
 Only metrics that fulfil certain criteria are exported by the <<actor_somds_dec_gateway>>. Please refer to <<r8018>> and <<r8017>> for further information.
 
-[#ref_tbl_dec_obr7_mapping]
-.OBR-7 Metric Measurement Timestamp Mapping
-|===
-|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
 
-|OBR-7/DTM-1
-|Date/Time
-|pm:EnumStringMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@DeterminationTime
-
-pm:NumericMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@DeterminationTime
-
-pm:StringMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@DeterminationTime
-
-|If *pm:AbstractMetricDescriptor+++<wbr/>+++/@MetricAvailability* is set to "*Cont*", the field is set to the start time of the *msg:PeriodicMetricReport* event. The *@DeterminationTime* of the *pm:AbstractMetricState* of continuously measured metrics to be exported in the same export interval has to be within the start time of the *msg:PeriodicMetricReport* event and the *msg:RetrievabilityInfo+++<wbr/>+++/@UpdatePeriod*.
-
-New *pm:AbstractMetricState* elements of episodically measured metrics are exported in the same HL7 message with the *@DeterminationTime* set in HL7 OBX-14 field overriding the time point in the OBR-7 field.
-
-
-If *pm:AbstractMetricDescriptor+++<wbr/>+++/@MetricAvailability* is set to "*Intr*" and if there are no continuously measured metrics to be exported, the field is set to the oldest *@DeterminationTime* of the episodic metrics to be exported in the same HL7 message.
-
-Note that the HL7 date and time format differs from the XML Schema date/time formats and requires a mapping accordingly (see also <<ref_expl_dt_mapping>>).
-
-|===
 
 ====== OBR-8 Observation End Date/Time
 
 .R8008
-[sdpi_requirement#r8008,sdpi_req_level=shall]
+[sdpi_requirement#r8008,sdpi_req_level=may]
 ****
-A <<actor_somds_dec_gateway>> shall not use the OBR-8 field.
+A <<actor_somds_dec_gateway>> may set the OBR-8 field to the end date and time of the current export interval.
+
+.Notes
+[%collapsible]
+====
+NOTE: This requirement relates to the OBR-7 field mapping. Please refer to <<ref_dec_OBR7_mapping>> for further information.
+
+NOTE: If, for example, the export interval is set to 30 seconds, the <<actor_somds_dec_gateway>> will export HL7 messages every 30 seconds with the OBR-7 field set to start date and time of the current interval and the OBR-8 field set to the start date and time of the next interval e.g.  *20231030155930*|*20231030160000*, *20231030160000*|*20231030160030*, and so on.
+====
+
 ****
 
 [#ref_dec_obr10]
