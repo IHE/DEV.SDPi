@@ -84,7 +84,7 @@
 | SDC
 
 | [[term_electronic_health_record, Electronic Health Record]] Electronic Health Record
-| An electronic record derived from a computer system that maintains a longitudinal view of a patient’s history. It contains comprehensive information on a patient’s health used primarily for delivering patient care in a clinical setting..
+| An electronic record derived from a computer system that maintains a longitudinal view of a patient’s history. It contains comprehensive information on a patient’s health used primarily for delivering patient care in a clinical setting.
 |
 | [[acronym_ehr,EHR]] EHR
 | https://profiles.ihe.net/GeneralIntro/ch-D.html[IHE General Introduction Appendix D Glossary]
