@@ -45,7 +45,7 @@
 | The foundational domain information model (DIM) that is recognized and implemented in all IEEE 11073 standards and profiles, for both <<acronym_pocd>> and <<acronym_phd>> devices.
 |
 | [[acronym_dim,DIM]] DIM
-| <<<<ref_ieee_11073_10201_2004>>>>
+| <<ref_ieee_11073_10201_2004>>
 | SDC
 
 | [[term_clinical_function,Clinical Function]] Clinical Function
@@ -386,7 +386,7 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 |
 |
 
-| 
+|
 |
 | ...
 | ...
