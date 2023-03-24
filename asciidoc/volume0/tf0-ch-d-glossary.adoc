@@ -22,7 +22,7 @@
 
 | [[term_american_national_standards_institute,American National Standards Institute (ANSI)]] American National Standards Institute
 | The primary United States <<acronym_sdo>> recognition and facilitation organization.  See https://ansi.org/[ANSI.org] for more information.
-| ...
+|
 | [[acronym_ansi,ANSI]] ANSI
 |
 | Organization
@@ -386,8 +386,8 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 |
 |
 
-| ...
-| ...
+| 
+|
 | ...
 | ...
 | ...
