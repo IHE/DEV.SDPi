@@ -44,11 +44,15 @@ To test if two equipment identifiers are equal, a <<actor_somds_participant>> sh
 .R0017
 [sdpi_requirement#r0017,sdpi_req_level=shall]
 ****
-A <<actor_somds_provider>> shall add the `sdpi:EquipmentIdentifier` extension to each pm:MdsDescriptor in its <<acronym_mdib>>.
+A <<actor_somds_provider>> shall provide the `sdpi:EquipmentIdentifier` extension for each pm:MdsDescriptor in its <<acronym_mdib>>.
+
+NOTE: This requirement allows a <<actor_somds_consumer>> to rely on the `sdpi:EquipmentIdentifier` to be present in each <<acronym_mds>> at any time.
+
+NOTE: If a <<term_manufacturer>> provides a globally unique UDI, it can generate a the `sdpi:EquipmentIdentifier` UUID from that UDI. Alternatively, UUIDs can also be generated from UUIDv5 having a manufacturer specific namespace and the serial number as a name.
 ****
 
 .R0018
 [sdpi_requirement#r0018,sdpi_req_level=should]
 ****
-A <<actor_somds_provider>> should add the `sdpi:EquipmentIdentifier` extension to each pm:VmdDescriptor in its <<acronym_mdib>>.
+For each <<term_removable_subsystem>> <<acronym_vmd>> of a <<actor_somds_provider>>, the <<actor_somds_provider>> should provide the `sdpi:EquipmentIdentifier` extension for the pm:VmdDescriptor in its <<acronym_mdib>>.
 ****

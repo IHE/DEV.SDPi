@@ -296,6 +296,13 @@ elements, from requirements to system components to Verification & Validation te
 | See also <<acronym_ri>> and <<acronym_mc>>
 |
 
+| [[term_removable_subsystem,Removable Subsystem]] Removable Subsystem
+| A subsystem of a <<actor_somds_provider>> that can be attached to or removed from the <<actor_somds_provider>> and that is represented in the <<acronym_mdib>>.
+|
+|
+| See also <<ref_ieee_11073_10700_2022>>
+|
+
 | [[term_requirements_interoperability,Requirements Interoperability (RI)]] Requirements Interoperability
 | The ability to specify the requirements of one specification in such a way that they can be connected with capabilities of other specifications.  It is part of the Requirements Interoperability + Model Centric + Regulatory Ready (RI+MC+RR) focus of the IHE Devices Technical Framework.
 | RI+MC+RR
