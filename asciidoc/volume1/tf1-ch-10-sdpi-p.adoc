@@ -33,7 +33,7 @@ Deferred transactions have been so indicated in the transactions table.
 
 |===
 
-This section defines the Actors, transactions, and/or content modules in this profile.
+This section defines the Actors, transactions, and/or content modules in this specification.
 General definitions of Actors are given in the https://profiles.ihe.net/GeneralIntro/ch-A.html[_Technical Frameworks General Introduction Appendix A_].
 IHE Transactions can be found in the https://profiles.ihe.net/GeneralIntro/ch-B.html[_Technical Frameworks General Introduction Appendix B_].
 Both appendices are located at https://profiles.ihe.net/GeneralIntro/[_profiles.ihe.net/GeneralIntro_].
@@ -50,7 +50,7 @@ Actor groupings, including abstract with concrete are detailed in <<vol1_clause_
 image::../images/vol1-diagram-sdpi-p-actor.svg[]
 
 <<vol1_table_sdpi_p_actors_transactions>> lists the transactions for each Actor directly involved in the SDPi-P Profile.
-To claim conformity with this profile, an Actor shall support all required transactions (labeled “R”) and may support the optional transactions (labeled “O”).
+To claim conformity with this specification, an Actor shall support all required transactions (labeled “R”) and may support the optional transactions (labeled “O”).
 Note that “Consumer” is indicated for Actors that receive but do not directly respond to a specific transaction.
 
 {empty} +
@@ -263,8 +263,8 @@ However, the content might also be formalized in a document as opposed to a mess
 
 Note that in the case of external control, where a <<vol1_spec_sdpi_p_actor_somds_consumer>> actor is creating and sending content (e.g., patient demographics information) to a <<vol1_spec_sdpi_p_actor_somds_provider>> actor, the content module creator / consumer roles will be reversed.
 
-A product implementation using this profile may group Actors from this profile with Actors from a workflow or transport profile to be functional.
-The grouping of the content module described in this profile to specific Actors is described in more detail in <<vol1_clause_sdpi_p_required_actor_groupings>> or in <<vol1_clause_sdpi_p_cross_profile_considerations>>.
+A product implementation using this specification may group Actors from this specification with Actors from a workflow or transport profile to be functional.
+The grouping of the content module described in this specification to specific Actors is described in more detail in <<vol1_clause_sdpi_p_required_actor_groupings>> or in <<vol1_clause_sdpi_p_cross_profile_considerations>>.
 
 {empty} +
 
@@ -273,7 +273,7 @@ The grouping of the content module described in this profile to specific Actors 
 
 image::../images/vol1-diagram-sdpi-p-content-actor.svg[]
 
-<<vol1_table_sdpi_p_actors_content_modules>> lists the content module(s) defined in the SDPi-P Profile. To claim support with this profile, an actor shall support all required content modules (labeled “R”) and may support optional content modules (labeled “O”).
+<<vol1_table_sdpi_p_actors_content_modules>> lists the content module(s) defined in the SDPi-P Profile. To claim support with this specification, an actor shall support all required content modules (labeled “R”) and may support optional content modules (labeled “O”).
 
 
 [#vol1_table_sdpi_p_actors_content_modules]
@@ -631,7 +631,7 @@ Future versions *_MAY_* include options such as the following (not in priority o
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  As indicated in <<vol1_figure_sdpi_p_actor_diagram>> above, there are no explicit grouped actors in this profile; however, there are abstract Actors (<<vol1_spec_sdpi_p_actor_somds_participant>> and <<vol1_spec_sdpi_p_actor_somds_connector>>), and the <<vol1_spec_sdpi_p_actor_somds_connector>> may implement interfaces to <<vol1_spec_sdpi_p_actor_somds_provider>> or <<vol1_spec_sdpi_p_actor_somds_consumer>> to provide bidirectional exchanges with non-<<acronym_somds>> systems.
+a| *SDPi Supplement Version Note*:  As indicated in <<vol1_figure_sdpi_p_actor_diagram>> above, there are no explicit grouped actors in this specification; however, there are abstract Actors (<<vol1_spec_sdpi_p_actor_somds_participant>> and <<vol1_spec_sdpi_p_actor_somds_connector>>), and the <<vol1_spec_sdpi_p_actor_somds_connector>> may implement interfaces to <<vol1_spec_sdpi_p_actor_somds_provider>> or <<vol1_spec_sdpi_p_actor_somds_consumer>> to provide bidirectional exchanges with non-<<acronym_somds>> systems.
 These actor relationships do not represent typical IHE grouped actors, but should be represented in more explicit detail.
 The best approach for achieving that clarity and specificity will be addressed in a future version after further review and discussion by the supplement development team.
 
@@ -823,7 +823,7 @@ a| *SDPi Supplement Version Note*:  This section intentionally left blank for th
 [#vol1_clause_sdpi_p_use_cases]
 ==== Use Cases
 [#vol1_clause_sdpi_p_use_cases_reftext, reftext='SDPi-P Use Cases']
-The SDPi-P profile supports requirements from use cases detailed in <<vol1_appendix_c_dpi_use_cases>>.  The following subsections identify the specific use case requirements that are fulfilled with capabilities provided by this profile.
+The SDPi-P profile supports requirements from use cases detailed in <<vol1_appendix_c_dpi_use_cases>>.  The following subsections identify the specific use case requirements that are fulfilled with capabilities provided by this specification.
 
 ////
 #TODO:  For each of these, add discussion to HOW and WHERE (with links) that the requirements are met.  Include a Requirements usage block?  CT DEPENDENCY IN SOMDS_PARTICIPANT MEETS THESE REQUIREMENTS#

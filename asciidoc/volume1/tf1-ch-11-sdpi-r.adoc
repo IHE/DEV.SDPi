@@ -8,9 +8,9 @@
 [cols="1"]
 |===
 a| *SDPi Supplement Version 1.0 Note*:  This initial version of the <<acronym_sdpi_r>> Profile is built upon the foundational <<acronym_sdpi_p>> Profile but does not provide substantially more capabilities.
-This is due to the fact that the primary purpose of this profile, namely communication of medical data to accomplish intended medical purposes, requires the completion and integration of two emerging ISO/IEEE standards:  <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>>.
+This is due to the fact that the primary purpose of this specification, namely communication of medical data to accomplish intended medical purposes, requires the completion and integration of two emerging ISO/IEEE standards:  <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>>.
 When these are published *_in early 2023_*, their requirements will be integrated into this supplement, with their <<term_implementation_conformance_statement>> added to <<vol1_appendix_b_referenced_standards_conformance>> below.
-Many of those requirements will be mapped to the Actors and Transactions and other specifications in this profile.
+Many of those requirements will be mapped to the Actors and Transactions and other specifications in this specification.
 
 Additionally, though the <<actor_somds_dec_gateway>> is defined below and fully specified in <<vol2_clause_appendix_sdpi_dec_gateway>>, the implementation guide for mapping from <<acronym_biceps>> to <<acronym_hl7>> <<acronym_fhir>> remains in development, pushing the specification of the <<vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway>> to a later version of this supplement.
 
@@ -18,7 +18,7 @@ Additionally, though the <<actor_somds_dec_gateway>> is defined below and fully 
 
 [#vol1_clause_sdpi_r_profile_reftext,reftext="SDPi-R Profile"]
 The SDPi-Reporting ([[acronym_sdpi_r,SDPi-R]] SDPi-R) Profile supports the communication of information from one <<term_service_oriented_medical_device_system>> to other <<acronym_somds>> systems or to other external non-<<acronym_somds>> systems utilizing a <<label_system_type_name_dgw>>.
-Most of the Actors and Transactions in this profile are specialized versions of their counterparts in the <<acronym_sdpi_p>> Profile; however, are differentiated in that they are specifically designed to communicate information with an _intended medical purpose_.
+Most of the Actors and Transactions in this specification are specialized versions of their counterparts in the <<acronym_sdpi_p>> Profile; however, are differentiated in that they are specifically designed to communicate information with an _intended medical purpose_.
 As a result, additional requirements are added to each actor and transaction to support address these additional safety and effectiveness requirements (See <<vol1_clause_sdpi_r_ses_considerations>> below).
 
 The profile builds upon the foundational <<term_plug_and_trust>> capabilities provided by the <<vol1_clause_sdpi_p_profile_reftext>>.
@@ -33,7 +33,7 @@ These extended capabilities for medical data exchange are achieved by various me
 [#vol1_clause_sdpi_r_actors_transactions_content_modules]
 === SDPi-R Actors, Transactions, and Content Modules
 
-This section defines the actors, transactions, and/or content modules in this profile.
+This section defines the actors, transactions, and/or content modules in this specification.
 General definitions of actors are given in the https://profiles.ihe.net/GeneralIntro/ch-A.html[_Technical Frameworks General Introduction Appendix A_].
 IHE Transactions can be found in the https://profiles.ihe.net/GeneralIntro/ch-B.html[_Technical Frameworks General Introduction Appendix B_].
 Both appendices are located at https://profiles.ihe.net/GeneralIntro/[_profiles.ihe.net/GeneralIntro_].
@@ -133,7 +133,7 @@ This Actor is designed to process information with an _intended medical purpose_
 
 Every <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_consumer>> to enable <<acronym_somds>>-based connectivity.
 This Actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_consumer>>.
-Note that optional capabilities for this profile, as specified in <<vol1_clause_sdpi_r_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_clause_sdpi_p_profile_reftext>>.
+Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_r_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_clause_sdpi_p_profile_reftext>>.
 
 A system that participates in a <<acronym_somds>> network instance can integrate both <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> and <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> capabilities.
 
@@ -148,7 +148,7 @@ This Actor is designed to process information with an _intended medical purpose_
 
 Every <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_provider>> to enable <<acronym_somds>>-based connectivity.
 This Actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_provider>>.
-Note that optional capabilities for this profile, as specified in <<vol1_clause_sdpi_r_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_provider>> and <<vol1_clause_sdpi_p_profile_reftext>>.
+Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_r_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_provider>> and <<vol1_clause_sdpi_p_profile_reftext>>.
 
 A system that participates in a <<acronym_somds>> network instance can integrate both <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> and <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> capabilities.
 
@@ -163,7 +163,7 @@ This Actor is designed to process information with an _intended medical purpose_
 
 Every <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> to enable <<acronym_somds>>-based connectivity.
 This Actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>.
-Note that optional capabilities for this profile, as specified in <<vol1_clause_sdpi_r_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> and <<vol1_clause_sdpi_p_profile_reftext>>.
+Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_r_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> and <<vol1_clause_sdpi_p_profile_reftext>>.
 
 This Actor shall implement the <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> capabilities, receiving information provided by <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> systems and publishing them as DEV-01 / PCD-01 Transactions to external DEC Device Observation Consumer (DOC) systems.
 If <<vol1_clause_sdpi_r_actor_option_retrieve_remote_data_reftext>> is implemented, then this Actor will also support the <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> capabilities, receiving DEV-01 / PCD-01 Transactions from external DEC Device Observation Reporter (DOR) systems and making them available to other <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> systems.
@@ -237,13 +237,13 @@ This section will be more completely detailed in a future version of the supplem
 [cols="1"]
 |===
 a| *SDPi Supplement Version Note*:  An overview of the concepts for this <<vol1_clause_sdpi_r_profile_reftext>> will be provided in a future supplement version.
-Note that this profile extends the concepts established in the base <<vol1_clause_sdpi_p_profile_reftext>>.
+Note that this specification extends the concepts established in the base <<vol1_clause_sdpi_p_profile_reftext>>.
 
 |===
 
 [#vol1_clause_sdpi_r_use_cases_reftext, reftext='SDPi-R Use Cases']
 ==== Use Cases
-The SDPi-R profile supports requirements from use cases detailed in <<vol1_appendix_c_dpi_use_cases>>.  The following subsections identify the specific use case requirements that are fulfilled with capabilities provided by this profile.
+The SDPi-R profile supports requirements from use cases detailed in <<vol1_appendix_c_dpi_use_cases>>.  The following subsections identify the specific use case requirements that are fulfilled with capabilities provided by this specification.
 
 
 ===== <<label_use_case_name_sicdsp>> (<<acronym_sicdsp>>)

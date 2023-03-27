@@ -8,9 +8,9 @@
 [cols="1"]
 |===
 a| *SDPi Supplement Version 1.0 Note*:  This initial version of the <<acronym_sdpi_a>> Profile is built upon the foundational <<acronym_sdpi_p>> Profile but adds services specialized for the communication and management of medical device alerting.
-Additionally, since the primary purpose of this profile is the communication of medical alert information to accomplish intended medical purposes, it will require the completion and integration of the emerging ISO/IEEE 11073 Alert <<acronym_pkp>> standard  <<ref_ieee_11073_10702_202x>>.
+Additionally, since the primary purpose of this specification is the communication of medical alert information to accomplish intended medical purposes, it will require the completion and integration of the emerging ISO/IEEE 11073 Alert <<acronym_pkp>> standard  <<ref_ieee_11073_10702_202x>>.
 When this new standard is published *_in late 2023 or early 2024_*, its requirements will be integrated into this supplement, with its <<term_implementation_conformance_statement>> added to <<vol1_appendix_b_referenced_standards_conformance>>.
-Many of those requirements will be mapped to the Actors, Transactions and other specifications in this profile.
+Many of those requirements will be mapped to the Actors, Transactions and other specifications in this specification.
 
 Two of the transactions identified below, DEV-41 and DEV-42 are related to Medical Alert Delegation; however, at this stage there is considerable standards development activity to update the current <<acronym_sdc>> standards, particularly in association with completing the Alert <<acronym_pkp>> standard  <<ref_ieee_11073_10702_202x>>.
 As a result, the completion of these two transactions has been deferred to a subsequent version of the supplement.
@@ -25,7 +25,7 @@ As a result, a "SOMDS Medical Alert FHIR Gateway" is not included as an actor at
 
 [#vol1_clause_sdpi_a_profile_reftext,reftext="SDPi-A Profile"]
 The SDPi-Alerting ([[acronym_sdpi_a,SDPi-A]] SDPi-A) Profile supports the communication of alert information from one <<term_service_oriented_medical_device_system>> to other <<acronym_somds>> systems or to other external non-<<acronym_somds>> systems utilizing a <<label_system_type_name_agw>>.
-The Actors and Transactions in this profile are specialized versions of their counterparts in the <<vol1_clause_sdpi_p_profile_reftext>>; however, are differentiated in that they are specifically designed to communicate alert information to fulfill an _intended medical purpose_, primarily to notify a clinician of a patient or device-related condition that requires their attention.
+The Actors and Transactions in this specification are specialized versions of their counterparts in the <<vol1_clause_sdpi_p_profile_reftext>>; however, are differentiated in that they are specifically designed to communicate alert information to fulfill an _intended medical purpose_, primarily to notify a clinician of a patient or device-related condition that requires their attention.
 Additional services have been provided to specifically support the exchange and management of this medical device alert information, providing a high-level of reliability and performance, commensurate with the potential risk to the patient if they are not promptly addressed.
 
 The profile builds upon the foundational <<term_plug_and_trust>> capabilities provided by the <<vol1_clause_sdpi_p_profile_reftext>>.
@@ -41,7 +41,7 @@ Additional requirements to addressed safety and effectiveness requirements are p
 [#vol1_clause_sdpi_a_actors_transactions_content_modules]
 === SDPi-A Actors, Transactions, and Content Modules
 
-This section defines the actors, transactions, and/or content modules in this profile.
+This section defines the actors, transactions, and/or content modules in this specification.
 General definitions of actors are given in the https://profiles.ihe.net/GeneralIntro/ch-A.html[_Technical Frameworks General Introduction Appendix A_].
 IHE Transactions can be found in the https://profiles.ihe.net/GeneralIntro/ch-B.html[_Technical Frameworks General Introduction Appendix B_].
 Both appendices are located at https://profiles.ihe.net/GeneralIntro/[_profiles.ihe.net/GeneralIntro_].
@@ -188,7 +188,7 @@ Given this _intended medical purpose_, the actor will fully address applicable r
 
 Every <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_consumer>> to enable <<acronym_somds>>-based connectivity.
 This Actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_consumer>>.
-Note that optional capabilities for this profile, as specified in <<vol1_clause_sdpi_a_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_clause_sdpi_p_profile_reftext>>.
+Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_a_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_clause_sdpi_p_profile_reftext>>.
 
 Note that if a <<label_system_type_name_sas>> is being created, it may incorporate both <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> and <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> Actors, both receiving and publishing alerts.
 
@@ -206,7 +206,7 @@ Given this _intended medical purpose_, the actor will fully address applicable r
 
 Every <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_provider>> to enable <<acronym_somds>>-based connectivity.
 This Actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_consumer>>.
-Note that optional capabilities for this profile, as specified in <<vol1_clause_sdpi_a_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_clause_sdpi_p_profile_reftext>>.
+Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_a_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_clause_sdpi_p_profile_reftext>>.
 
 Note that if a <<label_system_type_name_sas>> is being created, it may incorporate both <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> and <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> Actors, both receiving and publishing alerts.
 
@@ -221,7 +221,7 @@ This Actor is designed to exchange medical device alert information to external 
 
 Every <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> to enable <<acronym_somds>>-based connectivity.
 This Actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>.
-Note that optional capabilities for this profile, as specified in <<vol1_clause_sdpi_r_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> and <<vol1_clause_sdpi_p_profile_reftext>>.
+Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_r_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> and <<vol1_clause_sdpi_p_profile_reftext>>.
 
 Transactions enabled for this actor are identified in <<vol1_table_sdpi_a_actors_transactions>> above.
 
@@ -316,12 +316,12 @@ This section will be more completely detailed in a future version of the supplem
 [cols="1"]
 |===
 a| *SDPi Supplement Version Note*:  An overview of the concepts for this <<vol1_clause_sdpi_a_profile_reftext>> will be provided in a future supplement version.
-Note that this profile extends the concepts established in the base <<vol1_clause_sdpi_p_profile_reftext>>.
+Note that this specification extends the concepts established in the base <<vol1_clause_sdpi_p_profile_reftext>>.
 |===
 
 [#vol1_clause_sdpi_a_use_cases_reftext, reftext='SDPi-A Use Cases']
 ==== Use Cases
-The SDPi-A profile supports requirements from use cases detailed in <<vol1_appendix_c_dpi_use_cases>>.  The following subsections identify the specific use case requirements that are fulfilled with capabilities provided by this profile.
+The SDPi-A profile supports requirements from use cases detailed in <<vol1_appendix_c_dpi_use_cases>>.  The following subsections identify the specific use case requirements that are fulfilled with capabilities provided by this specification.
 
 
 ===== <<label_use_case_name_sicdsp>> (<<acronym_sicdsp>>)

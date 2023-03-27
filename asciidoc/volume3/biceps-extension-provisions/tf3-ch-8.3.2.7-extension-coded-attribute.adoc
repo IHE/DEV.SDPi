@@ -17,7 +17,7 @@ For example, BICEPS only supports the following MDS meta information below the `
 Some statically configured meta information like firmware versions or software versions can be added by means of production specification elements.
 However, attributes like equipment labels do not exist and cannot be conveyed by using production specifications.
 
-This profile specifies the <<term_coded_attribute>> extension that allows for a <<vol1_spec_sdpi_p_actor_somds_provider>> to provide attributes from the first partition of the IEEE 11073-10101 nomenclature for which there is no information item specified in the BICEPS participant model.
+This specification specifies the <<term_coded_attribute>> extension that allows for a <<vol1_spec_sdpi_p_actor_somds_provider>> to provide attributes from the first partition of the IEEE 11073-10101 nomenclature for which there is no information item specified in the BICEPS participant model.
 
 [sdpi_level=+1]
 ====== Model

@@ -160,7 +160,7 @@ In a SubscribeResponse message, a <<actor_somds_provider>> shall provide an _Exp
 .Notes
 [%collapsible]
 ====
-NOTE: The WS-Eventing specification that is normatively included in <<ref_oasis_dpws_2009>> explains the absence of _Expires_ in a SubscribeResponse message (see <<ref_w3c_ws_eventing_2006>>, Section 3.1), which is actually prohibited according to the XML Schema. This profile underlines the need to provide an _Expires_ element in SubscribeResponse messages.
+NOTE: The WS-Eventing specification that is normatively included in <<ref_oasis_dpws_2009>> explains the absence of _Expires_ in a SubscribeResponse message (see <<ref_w3c_ws_eventing_2006>>, Section 3.1), which is actually prohibited according to the XML Schema. This specification underlines the need to provide an _Expires_ element in SubscribeResponse messages.
 ====
 ****
 
@@ -252,7 +252,7 @@ In a RenewResponse message, a <<actor_somds_provider>> shall provide an _Expires
 .Notes
 [%collapsible]
 ====
-NOTE: The WS-Eventing specification that is normatively included in <<ref_oasis_dpws_2009>> does not explain the absence of _Expires_ in a RenewResponse message (see <<ref_w3c_ws_eventing_2006>>, Section 3.2). This profile prohibits the absence of _Expires_ in RenewResponse messages to avoid subscriptions that run infinitely.
+NOTE: The WS-Eventing specification that is normatively included in <<ref_oasis_dpws_2009>> does not explain the absence of _Expires_ in a RenewResponse message (see <<ref_w3c_ws_eventing_2006>>, Section 3.2). This specification prohibits the absence of _Expires_ in RenewResponse messages to avoid subscriptions that run infinitely.
 ====
 ****
 

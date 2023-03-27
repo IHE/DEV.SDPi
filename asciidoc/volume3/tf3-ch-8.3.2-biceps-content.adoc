@@ -207,7 +207,7 @@ There are two kinds of extensions, those the <<vol1_spec_sdpi_p_actor_somds_cons
 This is indicated by the Boolean attribute `@ext:MustUnderstand`.
 Consequently, a manufacturer of a <<vol1_spec_sdpi_p_actor_somds_provider>> should be careful defining extensions with `@ext:MustUnderstand = true`, as this potentially reduces interoperability.
 
-There are standardized extensions, like those that are specified in the PKP standards or this profile, which can be considered common knowledge and therefore do not break interoperability between different manufacturers.
+There are standardized extensions, like those that are specified in the PKP standards or this specification, which can be considered common knowledge and therefore do not break interoperability between different manufacturers.
 
 include::biceps-content-module/tf3-ch-8.3.2.7-applicable-productions-specification-type-codes.adoc[]
 
