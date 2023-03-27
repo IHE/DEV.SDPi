@@ -16,6 +16,7 @@ The <<vol2_clause_dev_28_message_notification, {var_label_dev_28_message_context
 ====== Referenced Standards
 
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
+* <<ref_ieee_11073_10207_2017>> msg:EpisodicContextReport
 
 ====== Message Outline
 
