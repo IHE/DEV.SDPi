@@ -11,7 +11,7 @@ Please refer to <<ref_ieee_11073_10700_2022>> *TR1358* for further information.
 .R8119
 [sdpi_requirement#r8119,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
-A <<actor_somds_provider>> shall provide exactly one *pm:Translation* where *pm:Translation/@Code* is identical with *pm:CodedValue/@Code*.
+For each private code a <<actor_somds_provider>> shall provide exactly one *pm:Translation* where *pm:Translation/@Code* is identical with *pm:CodedValue/@Code*.
 
 .Notes
 [%collapsible]
