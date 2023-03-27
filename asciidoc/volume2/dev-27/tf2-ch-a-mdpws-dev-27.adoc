@@ -344,7 +344,7 @@ include::../dev-a-default-trigger-events.adoc[]
 
 ====== Message Semantics
 
-`s12:Envelope/s12:Body/wse:SubscriptionEnd/wse:SubscriptionManager/wsa:Address`:: <<payload_dev_27_renew_response_expiration_time>> as an {var_uri_xsd_duration}[XML Schema duration], constrained to hours, minutes and seconds (regular expression: `{var_xsd_duration_regex}`).
+`s12:Envelope/s12:Body/wse:SubscriptionEnd/wse:SubscriptionManager/wsa:Address`:: URI of the <<payload_dev_27_subscribe_response_subscription_manager>> that manages the subscription that ended.
 `s12:Envelope/s12:Body/wse:SubscriptionEnd/wse:Status`:: <<payload_dev_27_subscription_end_status>> which is encoded in accordance with WS-Eventing to one of {var_status_delivery_failure}, {var_status_shutdown} or {var_status_cancel}.
 
 :var_expected_actions_ref: <<vol2_clause_dev_27_message_subscription_end>>
