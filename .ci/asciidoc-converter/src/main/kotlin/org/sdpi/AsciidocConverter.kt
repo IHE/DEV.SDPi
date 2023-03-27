@@ -1,11 +1,15 @@
 package org.sdpi
 
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 import org.asciidoctor.Asciidoctor
 import org.asciidoctor.Options
 import org.asciidoctor.SafeMode
 import org.sdpi.asciidoc.extension.*
 import java.io.File
 import java.io.OutputStream
+import java.nio.file.Files
+import java.nio.file.Path
 
 class AsciidocConverter(
     private val inputType: Input,
@@ -24,7 +28,8 @@ class AsciidocConverter(
         val anchorReplacements = mutableMapOf<String, LabelInfo>()
         val customReferences = mutableSetOf<String>()
 
-        asciidoctor.javaExtensionRegistry().block(RequirementsBlockProcessor())
+        val requirementsBlockProcessor = RequirementsBlockProcessor()
+        asciidoctor.javaExtensionRegistry().block(requirementsBlockProcessor)
         asciidoctor.javaExtensionRegistry().treeprocessor(
             NumberingProcessor(
                 when (mode) {
@@ -47,6 +52,12 @@ class AsciidocConverter(
         }
 
         asciidoctor.shutdown()
+        
+        val referencedArtifactsName = "referenced-artifacts"
+        val path = Path.of(outputFile.parentFile.absolutePath, referencedArtifactsName)
+        Files.createDirectories(path)
+        val reqsDump = Json.encodeToString(requirementsBlockProcessor.detectedRequirements())
+        Path.of(path.toFile().absolutePath, "sdpi-requirements.json").toFile().writeText(reqsDump)
     }
 
     private companion object {

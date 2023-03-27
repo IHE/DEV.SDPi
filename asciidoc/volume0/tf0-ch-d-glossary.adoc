@@ -22,7 +22,7 @@
 
 | [[term_american_national_standards_institute,American National Standards Institute (ANSI)]] American National Standards Institute
 | The primary United States <<acronym_sdo>> recognition and facilitation organization.  See https://ansi.org/[ANSI.org] for more information.
-| ...
+|
 | [[acronym_ansi,ANSI]] ANSI
 |
 | Organization
@@ -45,7 +45,7 @@
 | The foundational domain information model (DIM) that is recognized and implemented in all IEEE 11073 standards and profiles, for both <<acronym_pocd>> and <<acronym_phd>> devices.
 |
 | [[acronym_dim,DIM]] DIM
-| <<<<ref_ieee_11073_10201_2004>>>>
+| <<ref_ieee_11073_10201_2004>>
 | SDC
 
 | [[term_clinical_function,Clinical Function]] Clinical Function
@@ -84,7 +84,7 @@
 | SDC
 
 | [[term_electronic_health_record, Electronic Health Record]] Electronic Health Record
-| An electronic record derived from a computer system that maintains a longitudinal view of a patient’s history. It contains comprehensive information on a patient’s health used primarily for delivering patient care in a clinical setting..
+| An electronic record derived from a computer system that maintains a longitudinal view of a patient’s history. It contains comprehensive information on a patient’s health used primarily for delivering patient care in a clinical setting.
 |
 | [[acronym_ehr,EHR]] EHR
 | https://profiles.ihe.net/GeneralIntro/ch-D.html[IHE General Introduction Appendix D Glossary]
