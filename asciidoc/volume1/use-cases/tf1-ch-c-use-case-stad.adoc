@@ -78,5 +78,5 @@ image::../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
 
 *Then* The device will resync its clock when the <<acronym_ts_service>> is operational or accessible
 
-*And* The devices on the network will maintain their own clocks until the <<acronym_ts_service>> is operational or accessible.
+*And* The devices on the network will maintain their own clocks until the <<acronym_ts_service>> is operational or accessible
 

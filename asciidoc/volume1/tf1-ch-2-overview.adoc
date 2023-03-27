@@ -53,7 +53,7 @@ a| *SDPi Supplement Version Note*: The template for this section assumes that it
 
 In this version, the content is added as 2.3.1, and then the profiles as 2.3.10 to 2.3.13.  Though the content is valid, it may be repositioned in subsequent versions to better integrate with the IHE DEV TF at a future date.
 
-*_Omitted from this version are  profile-specific option summaries_* (e.g., 3.10.1 ?).  It is unclear where to best place this content, and they are listed explicitly in each profile's detailed specification.
+*_Omitted from this version are  profile-specific option summaries_* (e.g., 3.10.1?).  It is unclear where to best place this content, and they are listed explicitly in each profile's detailed specification.
 
 |===
 
@@ -104,7 +104,7 @@ The above figure illustrates how this balance was achieved, including:
 . C -> SDPi-xControl
 
 It should be noted that the _primary use context_ for SDPi-enabled technologies is high acuity points of care, namely Operating Rooms, ICU beds, emergency beds, etc.
-The intent is <<acronym_d2d>> interactions with Gateway Actors providing integration with systems beyond the bedside, typically though not necessarily using other protocols.
+The intent is <<acronym_d2d>> interactions with Gateway actors providing integration with systems beyond the bedside, typically though not necessarily using other protocols.
 This <<acronym_d2d>> is differentiated with the current implementation reality where devices use proprietary protocols to talk with their manufacturer's gateway server, requiring a level of indirection (server-to-server integration), and the attendant performance, quality and capability limitations.
 
 See section <<vol1_clause_sdpi_p_soa_somds_architecture_alignment>> below for additional conceptual overview information on the conceptual foundations of the <<acronym_sdc>> standards.
@@ -180,17 +180,17 @@ Given the significant risks associated with allowing device-external control fun
 
 | <<acronym_sdpi_p>>
 | Consistent Time (CT)
-| Each <<acronym_sdpi_p>> actor implementation (i.e., <<vol1_spec_sdpi_p_actor_somds_participant>>) shall be grouped with the CT Time Client actor.  Note:  All <<acronym_sdpi>> actors based on the <<vol1_spec_sdpi_p_actor_somds_participant>> actor.
+| Each <<acronym_sdpi_p>> actor implementation (i.e., <<vol1_spec_sdpi_p_actor_somds_participant>>) shall be grouped with the CT Time Client Actor. Note:  All <<acronym_sdpi>> actors based on the <<vol1_spec_sdpi_p_actor_somds_participant>> Actor.
 | Required for consistent time-stamping of transactions and data.
 
 | <<acronym_sdpi_r>>
 | Device Enterprise Communication (DEC))
-| The <<actor_somds_dec_gateway>> integrates DEC Device Observation Reporter (DOR) actor specifications
+| The <<actor_somds_dec_gateway>> integrates DEC Device Observation Reporter (DOR) Actor specifications.
 | Required for mapping from <<acronym_sdc>> & <<acronym_biceps>>  to HL7 V2 and DEC transactions.
 
 | <<acronym_sdpi_a>>
 | Alert Communication Management (ACM)
-| The <<actor_somds_acm_gateway>> integrates ACM Alert Reporter (AR) actor specifications
+| The <<actor_somds_acm_gateway>> integrates ACM Alert Reporter (AR) Actor specifications.
 | Required for mapping from <<acronym_sdc>> & <<acronym_biceps>>  to HL7 V2 and ACM transactions.
 
 |===

@@ -7,7 +7,7 @@ IHE technical documents refer to, and make use of, a number of standards develop
 [%noheader]
 [cols="1"]
 |===
-|Amend section 9.1.x by adding the following:
+|Amend section 9.1 by adding the following new Section 9.1.5:
 |===
 
 [sdpi_offset=5]
