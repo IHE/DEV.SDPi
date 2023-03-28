@@ -63,11 +63,11 @@ A <<vol1_spec_sdpi_p_actor_somds_participant>> shall use HTTPS with mutual authe
 ====
 NOTE: Each section that specifies a transaction indicates security requirements in the __Security Requirements & Considerations__ subsection beneath the __Safety, Effectiveness, Security Considerations and Requirements__ of each transaction.
 
-NOTE: Essentially, this profile asks for secured transmission of data except when ad-hoc discovery is performed.
+NOTE: Essentially, this specification asks for secured transmission of data except when ad-hoc discovery is performed.
 ====
 ****
 
-CAUTION: This appendix does not specify any processes towards certificate governance. Certificate governance is a separate topic that needs to be addressed in future revisions of this profile.
+CAUTION: This appendix does not specify any processes towards certificate governance. Certificate governance is a separate topic that needs to be addressed in future revisions of this specification.
 
 === Amendments and Corrigenda
 

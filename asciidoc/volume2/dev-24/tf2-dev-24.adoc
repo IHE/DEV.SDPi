@@ -152,7 +152,7 @@ The {var_label_dev_24_message_resolve_match} message is a uni-cast message that 
 [#vol2_clause_dev_24_message_resolve_match_trigger_events]
 ====== Trigger Events
 
-The {var_label_dev_24_message_resolve_match} message is sent whenever a <<vol1_spec_sdpi_p_actor_somds_provider>> receives a <<vol2_clause_dev_24_message_resolve, {var_label_dev_24_message_resolve}>> message that contains a <<payload_dev_24_probe_discovery_scope>> that matches the <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<term_discovery_scope>>.
+The {var_label_dev_24_message_resolve_match} message is sent whenever a <<vol1_spec_sdpi_p_actor_somds_provider>> receives a <<vol2_clause_dev_24_message_resolve, {var_label_dev_24_message_resolve}>> message that contains a <<payload_dev_24_provider_uid>> that is equal to the <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<term_somds_provider_uid>>.
 
 [#vol2_clause_dev_24_message_resolve_match_semantics]
 ====== Message Semantics

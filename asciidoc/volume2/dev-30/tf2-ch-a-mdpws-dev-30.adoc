@@ -15,6 +15,7 @@ The <<vol2_clause_dev_30_message_getmdib, {var_label_dev_30_message_getmdib}>> m
 ====== Referenced Standards
 
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
+* <<ref_ieee_11073_10207_2017>> msg:GetMdib
 
 ====== Message Outline
 
@@ -43,6 +44,7 @@ The <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getm
 ====== Referenced Standards
 
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
+* <<ref_ieee_11073_10207_2017>> msg:GetMdibResponse
 
 ====== Message Outline
 
