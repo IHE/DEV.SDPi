@@ -215,7 +215,6 @@ include::biceps-content-module/tf3-ch-8.3.2.7-applicable-attribute-type-codes.ad
 
 include::biceps-extension-provisions/tf3-ch-8.3.2.7-extension-coded-attribute.adoc[]
 
-// 8.3.2.8
-===== BICEPS Sex and Gender Extensions
-// This content will also be referenced from TF-2 Appendix B DEC Gateway
 include::biceps-extension-provisions/tf3-ch-8.3.2.8-extension-gender.adoc[]
+
+include::biceps-extension-provisions/tf3-ch-8.3.2.9-extension-equipment-identifier.adoc[]

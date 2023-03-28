@@ -10,33 +10,30 @@
 	<xsd:import namespace="http://standards.ieee.org/downloads/11073/11073-10207-2017/extension" schemaLocation="../ExtensionPoint.xsd"/>
 	<!---->
 	<!---->
-	<!--Gender-->
-	<xsd:element name="Gender">
+	<!--Equipment Identifier-->
+	<xsd:element name="EquipmentIdentifier">
 		<xsd:annotation>
-			<xsd:documentation>An extension to qualify the administrative gender for patients in BICEPS.
+			<xsd:documentation>An extension to identify equipment provided by the MDIB of a SOMDS Provider.
 
-This extension can be attached to the pm:PatientDemographicsCoreData/ext:Extension element.
+This extension can be attached to the pm:MdsDescriptor/ext:Extension or pm:VmdDescriptor/ext:Extension element.
 		</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
 			<xsd:simpleContent>
-				<xsd:extension base="sdpi:GenderType">
+				<xsd:extension base="sdpi:EquipmentIdentifierType">
 					<xsd:attribute ref="ext:MustUnderstand" use="optional"/>
 				</xsd:extension>
 			</xsd:simpleContent>
 		</xsd:complexType>
 	</xsd:element>
-	<xsd:simpleType name="GenderType">
+	<xsd:simpleType name="EquipmentIdentifierType">
 		<xsd:annotation>
-			<xsd:documentation>Type defining the gender information of a patient.
+			<xsd:documentation>Type defining the EquipmentIdentifier.
 
-This allows the differentiation between Sex and Gender in a pm:PatientDemographicsCoreData as in HL7 FHIR (https://hl7.org/fhir/valueset-administrative-gender.html).</xsd:documentation>
+The equipment identifier is an URI. It is stable, globally unique and constant across re-initializations of the SOMDS Provider.</xsd:documentation>
 		</xsd:annotation>
-		<xsd:restriction base="xsd:string">
-			<xsd:enumeration value="Male"/>
-			<xsd:enumeration value="Female"/>
-			<xsd:enumeration value="Other"/>
-			<xsd:enumeration value="Unknown"/>
+		<xsd:restriction base="xsd:anyURI">
+			<xsd:minLength value="1"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 </xsd:schema>

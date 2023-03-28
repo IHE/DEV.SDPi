@@ -61,9 +61,13 @@ Ultimately, the content of this appendix may be rearranged and even relocated; h
 
 * [[[ref_oasis_soap_over_udp_v1_1, OASIS SOAP-over-UDP Version 1.1]]] OASIS Standard, SOAP-over-UDP Version 1.1, July 2009, available at http://docs.oasis-open.org/ws-dd/soapoverudp/1.1/os/wsdd-soapoverudp-1.1-spec-os.docx.
 
+* [[[ref_oasis_ws_addressing_2006,W3C Recommendation, WS-Addressing:2006]]] Web Services Addressing 1.0 - Core (WS-Eventing), W3C Recommendation 9 May 2006, available at https://www.w3.org/TR/2006/REC-ws-addr-core-20060509/
+
 * [[[ref_oasis_ws_discovery_2009,OASIS WS-Discovery:2009]]] OASIS Standard, Web Services Dynamic Discovery (WS-Discovery) Version 1.1, OASIS Standard, 1 July 2009, available at http://docs.oasis-open.org/ws-dd/discovery/1.1/wsdd-discovery-1.1-spec.html
 
 * [[[ref_w3c_ws_eventing_2006,W3C Submission, WS-Eventing:2006]]] W3C Web Services Eventing (WS-Eventing), W3C Member Submission 15 March 2006, available at https://www.w3.org/Submission/2006/SUBM-WS-Eventing-20060315/
+
+* [[[ref_w3c_ws_metadata_exchange_2008,W3C Submission, WS-MetadataExchange:2008]]] Web Services Metadata Exchange 1.1 (WS-MetadataExchange), W3C Member Submission 13 August 2008, available at https://www.w3.org/Submission/2008/SUBM-WS-MetadataExchange-20080813/
 
 * [[[ref_wc3_ws_transfer_2006,WC3 Standard, WS-Transfer:2006]]] WC3 Web Services Transfer (WS-Transfer), W3C Standard, 27 September 2006, available at https://www.w3.org/Submission/WS-Transfer/
 
