@@ -12,7 +12,7 @@
     <s12:Body>
         <wsd:Probe>
             <wsd:Types>mdpws:MedicalDevice</wsd:Types>
-            <wsd:Scopes MatchBy="http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/rfc3986"><!-- ... --></wsd:Scopes>
+            <wsd:Scopes MatchBy="http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/rfc3986">sdc.mds.pkp:1.2.840.10004.20701.1.1 <!-- ... --></wsd:Scopes>
         </wsd:Probe>
     </s12:Body>
 </s12:Envelope>

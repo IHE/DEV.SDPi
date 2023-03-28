@@ -21,8 +21,8 @@ The <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_probe}>> messa
 
 * <<ref_oasis_ws_discovery_2009>> {var_uri_ws_discovery_probe}[Section 5.2 Probe]
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
-* <<ref_ieee_11073_20702_2016>>
-* <<ref_ieee_11073_20701_2018>>
+* <<ref_ieee_11073_20702_2016>> mdpws:MedicalDevice
+* <<ref_ieee_11073_20701_2018>> sdc.mds.pkp:1.2.840.10004.20701.1.1
 
 ====== Message Outline
 
@@ -109,8 +109,8 @@ The <<vol2_clause_dev_24_message_probe_match, {var_label_dev_24_message_probe_ma
 
 * <<ref_oasis_ws_discovery_2009>> {var_uri_ws_discovery_probe_match}[Section 5.3 Probe Match]
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
-* <<ref_ieee_11073_20702_2016>>
-* <<ref_ieee_11073_20701_2018>>
+* <<ref_ieee_11073_20702_2016>> mdpws:MedicalDevice
+* <<ref_ieee_11073_20701_2018>> sdc.mds.pkp:1.2.840.10004.20701.1.1
 
 ====== Message Outline
 
@@ -177,6 +177,8 @@ The <<vol2_clause_dev_24_message_probe_match, {var_label_dev_24_message_resolve_
 
 * <<ref_oasis_ws_discovery_2009>> {var_uri_ws_discovery_resolve_match}[Section 6.3 Resolve Match]
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
+* <<ref_ieee_11073_20702_2016>> mdpws:MedicalDevice
+* <<ref_ieee_11073_20701_2018>> sdc.mds.pkp:1.2.840.10004.20701.1.1
 
 ====== Message Outline
 
