@@ -161,6 +161,7 @@ The {var_label_dev_27_message_renew} message is sent whenever a subscription is 
 [#vol2_clause_dev_27_message_renew_message_semantics]
 ====== Message Semantics
 
+[[payload_dev_27_subscribe_response_subscription_manager]]Subscription Manager:: Dedicated instance that manages the subscription, i.e. allows for a <<actor_somds_consumer>> to renew or cancel the subscription.
 [[payload_dev_27_renew_expiration_time]]Expiration Time:: A new time requested for subscription expiration.
 
 [#vol2_clause_dev_27_message_renew_expected_actions]
