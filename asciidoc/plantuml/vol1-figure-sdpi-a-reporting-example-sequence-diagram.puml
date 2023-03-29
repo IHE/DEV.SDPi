@@ -1,0 +1,23 @@
+@startuml
+
+!global $str_sdc_sc = "SOMDS Consumer"
+!global $str_sdc_sp = "SOMDS Provider"
+
+participant "$str_sdc_sc" as sdc_sc
+participant "$str_sdc_sp" as sdc_sp
+
+group secured
+    group pub/sub
+        sdc_sc -> sdc_sp: Manage BICEPS Subscription
+        sdc_sp -->> sdc_sc
+
+    loop
+        opt
+            sdc_sc <- sdc_sp: DescriptionModificationReport
+        end
+
+        sdc_sc <- sdc_sp: EpisodicAlertReport
+    end
+end
+
+@enduml

@@ -1,0 +1,26 @@
+@startuml
+
+skinparam monochrome true
+autonumber
+
+!global $str_sdc_sc = "SOMDS Consumer"
+!global $str_sdc_sp = "SOMDS Provider"
+
+participant "$str_sdc_sc" as sdc_sc
+participant "$str_sdc_sp" as sdc_sp
+
+group secured
+    group pub/sub
+        sdc_sc -> sdc_sp: Manage BICEPS Subscription
+        sdc_sp -->> sdc_sc
+
+        sdc_sc -> sdc_sp: Invoke SetOperation
+        sdc_sp -->> sdc_sc: Initial confirmation
+
+        loop
+            sdc_sp -> sdc_sc: Notify progress
+        end
+     end
+end
+
+@enduml
