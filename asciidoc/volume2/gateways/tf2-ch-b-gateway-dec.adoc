@@ -447,7 +447,7 @@ Please refer to the [ihe_pcd_tf_2_2019] *OBX-1 Set ID - OBX* for further informa
 .R8010
 [sdpi_requirement#r8010,sdpi_req_level=shall]
 ****
-A <<actor_somds_dec_gateway>> shall set the OBX-2 field to the metric value type code as define in *HL7 table 0125*.
+A <<actor_somds_dec_gateway>> shall set the OBX-2 field to the metric value type code as defined in *HL7 table 0125*.
 
 .Notes
 [%collapsible]
@@ -459,7 +459,7 @@ NOTE: <<ref_tbl_dec_obx2_mapping>> defines the mapping of the SDC metric type to
 .R8011
 [sdpi_requirement#r8011,sdpi_req_level=shall]
 ****
-A <<actor_somds_dec_gateway>> shall left the OBX-2 field empty for OBX segments defining the <<actor_somds_provider>>'s MDS, VMD, or CHAN containment tree elements.
+A <<actor_somds_dec_gateway>> shall leave the OBX-2 field empty for OBX segments defining the <<actor_somds_provider>>'s MDS, VMD, or CHAN containment tree elements.
 ****
 
 
