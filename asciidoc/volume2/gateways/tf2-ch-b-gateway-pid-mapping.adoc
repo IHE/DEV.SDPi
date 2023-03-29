@@ -188,7 +188,7 @@ NOTE: <<ref_tbl_pid7_mapping>> defines the mapping of the SDC patient's date of 
 |===
 |HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
 
-|PID-6/DTM-1
+|PID-7/DTM-1
 |Date/Time
 |pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:DateOfBirth
 |Note that the HL7 date & time format differs from the xsd date/time formats and requires a mapping accordingly (see also <<ref_expl_dt_mapping>>).
