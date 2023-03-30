@@ -188,7 +188,7 @@ NOTE: <<ref_tbl_pid7_mapping>> defines the mapping of the SDC patient's date of 
 |===
 |HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
 
-|PID-6/DTM-1
+|PID-7/DTM-1
 |Date/Time
 |pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:DateOfBirth
 |Note that the HL7 date & time format differs from the xsd date/time formats and requires a mapping accordingly (see also <<ref_expl_dt_mapping>>).
@@ -336,7 +336,7 @@ NOTE: <<ref_tbl_pid10_mapping>> defines the mapping of the SDC patient's race in
 |Alternate Identifier
 |pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Race+++<wbr/>+++/pm:Translation
 /@Code
-|Note that only the first entry of the *pm:Translation* element list is to be mapped.
+|Note that if *pm:Race/@Code* contains a private code, the corresponding translation is to be mapped. Otherwise the first entry of the *pm:Translation* element list is to be mapped.
 
 |PID-10/CWE-6
 |Name of Alternate Coding System

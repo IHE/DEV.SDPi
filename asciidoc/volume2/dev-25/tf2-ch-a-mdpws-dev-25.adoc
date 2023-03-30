@@ -16,8 +16,6 @@ The GetMetadata message is encoded by using {var_uri_ws_discovery_transfer}[WS-G
 
 * <<ref_wc3_ws_transfer_2006>> {var_uri_ws_discovery_transfer}[Section 3.1 Get]
 * <<ref_oasis_dpws_2009>> {var_uri_dpws}[Section 4]
-* <<ref_ieee_11073_20702_2016>>
-* <<ref_ieee_11073_20701_2018>>
 
 ====== Message Outline
 .GetMetadata message

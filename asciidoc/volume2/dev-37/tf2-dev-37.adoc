@@ -37,6 +37,10 @@ include::tf2-dev-37-summary.adoc[]
 include::../../plantuml/vol2-figure-dev-37-sequence.puml[]
 ....
 
+:var_duplicated_transaction: {var_transaction_id}
+:var_dupicates_list: DEV-30 (<<vol2_clause_dev_30>>)
+include::../dev-duplicate-disclaimer.adoc[]
+
 [#vol2_clause_dev_37_retrieve_medical_data_ses]
 include::../dev-x-default-ses-secured-mode.adoc[]
 

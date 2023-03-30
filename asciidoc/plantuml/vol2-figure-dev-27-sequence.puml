@@ -11,7 +11,7 @@ participant "$str_somds_provider" as provider
 
 ==SDPi [DEV-27] Manage BICEPS Subscription==
 
-consumer -> provider: Subscribe(Filter)
+consumer -> provider: Subscribe(Filter, Expiration Time)
 consumer <<-- provider: SubscribeResponse(Subscription Manager, Expiration Time)
 
 par
@@ -20,7 +20,7 @@ par
     end
 else
     loop when ExpirationTime is about to expire
-        consumer -> provider: Renew(Subscription Manager)
+        consumer -> provider: Renew(Expiration Time)
         consumer <<-- provider: RenewResponse(Expiration Time)
     end
 end

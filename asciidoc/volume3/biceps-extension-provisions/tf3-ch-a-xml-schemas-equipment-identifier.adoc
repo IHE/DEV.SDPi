@@ -1,0 +1,7 @@
+[#vol3_appendix_a_xml_schemas_equipment_identifier]
+=== Equipment Identifier XML Schema
+
+[source,xml]
+----
+include::../../../sources/extension-models/equipment-identifier/EquipmentIdentifier.xsd[]
+----

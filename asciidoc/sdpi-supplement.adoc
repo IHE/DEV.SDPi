@@ -2,6 +2,9 @@
 :doctype: book
 // CAUTION: do not change the xrefstyle attribute as otherwise numbering will be broken
 :xrefstyle: short
+:stylesdir: css
+:!webfonts:
+:!iconfont-remote:
 :toc-title: Contents
 :toc: left
 :toclevels: 3
