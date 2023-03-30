@@ -192,8 +192,9 @@ class NumberingProcessor(
                     it + 1
                 }
             }
-            val newTitle = "$sectionNumber-$objectNumber. ${block.title.replaceHtmlTags()}"
-            block.title = newTitle
+
+            block.caption = ""
+            block.title = "$sectionNumber-$objectNumber. ${block.title.replaceHtmlTags()}"
             block.id?.let {
                 anchorReplacements.put(block.id, LabelInfo("$sectionNumber-$objectNumber", LabelSource.TABLE_OR_FIGURE))
             }
