@@ -7,8 +7,6 @@ import org.jsoup.Jsoup
 import org.jsoup.nodes.Element
 import java.net.URI
 import java.net.URLDecoder
-import java.nio.charset.Charset
-import java.util.*
 
 enum class LabelSource {
     SECTION,
@@ -26,7 +24,7 @@ data class LabelInfo(
 )
 
 class ReferenceSanitizerPostprocessor(
-    private val anchorLabels: Map<String, LabelInfo>
+    private val anchorLabels: AnchorReplacementsMap
 ) : Postprocessor() {
     override fun process(document: Document, output: String): String {
         // skip numbering if xref style has been changed to reduce likelihood of broken references
@@ -61,36 +59,41 @@ class ReferenceSanitizerPostprocessor(
                 continue
             }
 
-            val fragment = URI.create(href).fragment
-            if (fragment.isNullOrEmpty()) {
+
+            val parsedFragment = URI.create(href).fragment
+            if (parsedFragment.isNullOrEmpty()) {
                 continue
             }
 
-            val (id, label) = if (fragment.contains(ReferenceSanitizerPreprocessor.refSeparator)) {
-                val parts = fragment.split(ReferenceSanitizerPreprocessor.refSeparator)
-                Pair(parts[0], URLDecoder.decode(parts[1], Charsets.UTF_8).trim()).also { (id, label) ->
-                    logger.info { "Found custom reference: $id => $label"}
+            val rawFragment = href.substring(1)
+            val (id, encodedLabel) = if (rawFragment.contains(ReferenceSanitizerPreprocessor.refSeparator)) {
+                val parts = rawFragment.split(ReferenceSanitizerPreprocessor.refSeparator)
+                Pair(parts[0], parts[1]).also { (id, label) ->
+                    val decoded = decodeLabel(label)
+                    logger.info { "Found custom reference: $id => $label => $decoded" }
                 }
             } else {
-                logger.info { "Found regular reference: $fragment"}
-                Pair(fragment, null)
+                logger.info { "Found regular reference: $rawFragment" }
+                Pair(rawFragment, null)
             }
 
             anchor.attr("href", "#$id")
-            anchorLabels[id]?.also {
-                val anchorText = it.refText ?: label
-                when (it.source) {
-                    LabelSource.SECTION -> anchor.text(anchorText ?: "$sectionSig${it.label}")
-                    LabelSource.TABLE_OR_FIGURE -> anchor.text(anchorText ?: it.label)
-                    LabelSource.APPENDIX -> anchor.text(anchorText ?: "$appendixSig${it.prefix}:${it.label}")
-                    LabelSource.VOLUME -> anchor.text(anchorText ?: "$chapterSig${it.prefix}")
-                    LabelSource.UNKNOWN -> anchor.text(anchorText ?: it.label)
-                }
+            val item = encodedLabel?.let { anchorLabels.get(id, it) } ?: anchorLabels.get(id) ?: continue
+
+            val anchorText = (encodedLabel?.let { decodeLabel(it) }) ?: item.refText
+            when (item.source) {
+                LabelSource.SECTION -> anchor.text(anchorText ?: "$sectionSig${item.label}")
+                LabelSource.TABLE_OR_FIGURE -> anchor.text(anchorText ?: item.label)
+                LabelSource.APPENDIX -> anchor.text(anchorText ?: "$appendixSig${item.prefix}:${item.label}")
+                LabelSource.VOLUME -> anchor.text(anchorText ?: "$chapterSig${item.prefix}")
+                LabelSource.UNKNOWN -> anchor.text(anchorText ?: item.label)
             }
         }
 
         return doc.html()
     }
+
+    private fun decodeLabel(encodedLabel: String) = URLDecoder.decode(encodedLabel, Charsets.UTF_8).trim()
 
     private fun sanitizeSig(sig: String) = when (sig.isEmpty()) {
         true -> ""

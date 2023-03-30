@@ -31,7 +31,7 @@ fun String.replaceHtmlTags() = this.replace("""<.+?>""".toRegex(), "")
  */
 class NumberingProcessor(
     private val structureDump: OutputStream? = null,
-    private val anchorReplacements: MutableMap<String, LabelInfo>
+    private val anchorReplacements: AnchorReplacementsMap
 ) : Treeprocessor() {
     private var numbering = mutableListOf<Number>()
     private var currentAdditionalLevel = 0
@@ -100,7 +100,8 @@ class NumberingProcessor(
 
                     if (level == 0 && !node.wrapped.isAppendix()) {
 
-                        currentVolumeCaption = Attributes.create(node.wrapped.attributes)[BlockAttribute.VOLUME_CAPTION] ?: ""
+                        currentVolumeCaption =
+                            Attributes.create(node.wrapped.attributes)[BlockAttribute.VOLUME_CAPTION] ?: ""
                     }
 
                     initSectionNumbers(node.wrapped, level)
@@ -112,24 +113,26 @@ class NumberingProcessor(
 
                     createSectionId(numbering, level).let {
                         currentSection = it
-                        anchorReplacements[node.wrapped.id] = if (isInAppendix()) {
-                            if (node.wrapped.isAppendix()) {
-                                LabelInfo(
-                                    (currentAppendix - 1).toString(),
-                                    LabelSource.APPENDIX,
-                                    currentVolumeCaption,
-                                    refText
-                                )
+                        anchorReplacements.put(
+                            node.wrapped.id, if (isInAppendix()) {
+                                if (node.wrapped.isAppendix()) {
+                                    LabelInfo(
+                                        (currentAppendix - 1).toString(),
+                                        LabelSource.APPENDIX,
+                                        currentVolumeCaption,
+                                        refText
+                                    )
+                                } else {
+                                    LabelInfo(it, LabelSource.APPENDIX, currentVolumeCaption, refText)
+                                }
                             } else {
-                                LabelInfo(it, LabelSource.APPENDIX, currentVolumeCaption, refText)
+                                if (level == 0) {
+                                    LabelInfo(it, LabelSource.VOLUME, currentVolumeCaption, refText)
+                                } else {
+                                    LabelInfo(it, LabelSource.SECTION, currentVolumeCaption, refText)
+                                }
                             }
-                        } else {
-                            if (level == 0) {
-                                LabelInfo(it, LabelSource.VOLUME, currentVolumeCaption, refText)
-                            } else {
-                                LabelInfo(it, LabelSource.SECTION, currentVolumeCaption, refText)
-                            }
-                        }
+                        )
 
                         val volPrefix = if (!node.wrapped.isAppendix()) {
                             volumePrefix(level)
@@ -159,6 +162,10 @@ class NumberingProcessor(
                     }
                 }
 
+                is StructuralNodeWrapper.Listing -> {
+                    replaceCaption(node.wrapped, "Figure")
+                }
+
                 is StructuralNodeWrapper.Image -> replaceCaption(node.wrapped, "Figure")
 
                 is StructuralNodeWrapper.Table -> replaceCaption(node.wrapped, "Table")
@@ -185,11 +192,10 @@ class NumberingProcessor(
                     it + 1
                 }
             }
-            block.caption = ""
-            block.title = "$sectionNumber-$objectNumber. ${block.title.replaceHtmlTags()}"
+            val newTitle = "$sectionNumber-$objectNumber. ${block.title.replaceHtmlTags()}"
+            block.title = newTitle
             block.id?.let {
-                anchorReplacements[block.id] =
-                    LabelInfo("$sectionNumber-$objectNumber", LabelSource.TABLE_OR_FIGURE)
+                anchorReplacements.put(block.id, LabelInfo("$sectionNumber-$objectNumber", LabelSource.TABLE_OR_FIGURE))
             }
         }
     }
