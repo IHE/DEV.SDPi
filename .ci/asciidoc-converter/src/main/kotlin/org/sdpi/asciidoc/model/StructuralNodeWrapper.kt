@@ -14,6 +14,7 @@ fun StructuralNode.toSealed(): StructuralNodeWrapper {
         "paragraph" -> StructuralNodeWrapper.Paragraph(this as Block)
         "image" -> StructuralNodeWrapper.Image(this as Block)
         "table" -> StructuralNodeWrapper.Table(this as Table)
+        "listing" -> StructuralNodeWrapper.Listing(this as Block)
         "sidebar" -> this.attributes.entries.find {
             it.key == "1" && it.value == BLOCK_NAME_SDPI_REQUIREMENT
         }?.let {
@@ -34,6 +35,7 @@ sealed class StructuralNodeWrapper {
     data class Paragraph(val wrapped: Block): StructuralNodeWrapper()
     data class Image(val wrapped: Block): StructuralNodeWrapper()
     data class Table(val wrapped: org.asciidoctor.ast.Table): StructuralNodeWrapper()
+    data class Listing(val wrapped: Block): StructuralNodeWrapper()
     object Unknown : StructuralNodeWrapper()
 }
 

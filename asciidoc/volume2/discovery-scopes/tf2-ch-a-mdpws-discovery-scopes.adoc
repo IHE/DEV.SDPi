@@ -30,7 +30,7 @@ URIs of a <<term_manufacturer>> name and serial number:
 ====
 ****
 
-.<<ref_iso_iec_14977_1996, Extended Backus-Naur Form>> for the encoding of production specifications
+.Extended Backus-Naur Form for the encoding of production specifications
 [source#vol2_listing_encoding_production_specification]
 ----
 Char ::= unreserved | pct-encoded
@@ -54,7 +54,7 @@ ProductionSpecification ::= ProductionSpec ':' SpecType [ ':' ComponentId ]
 - `pct-encoded` is specified in <<ref_rfc_3986>>, {var_uri_percent_encoding}[2.1. Percent-Encoding]
 ====
 
-.<<ref_iso_iec_14977_1996, Extended Backus-Naur Form>> for the encoding of MDS production specifications
+.Extended Backus-Naur Form for the encoding of MDS production specifications
 [source#vol2_listing_encoding_production_specification_mds]
 ----
 Scheme ::= 'sdc.mds.prodspec'
@@ -83,7 +83,7 @@ URI of a Soft ID named _PatMon 03_: `sdc.mds.attr:PatMon%2003:67886`
 ====
 ****
 
-.<<ref_iso_iec_14977_1996, Extended Backus-Naur Form>> for the encoding of attributes
+.Extended Backus-Naur Form for the encoding of attributes
 [source#vol2_listing_encoding_attribute]
 ----
 Char ::= unreserved | pct-encoded
@@ -103,7 +103,7 @@ Attribute ::=  AttributeValue ':'  AttributeCode
 - `pct-encoded` is specified in <<ref_rfc_3986>>, {var_uri_percent_encoding}[2.1. Percent-Encoding]
 ====
 
-.<<ref_iso_iec_14977_1996, Extended Backus-Naur Form>> for the encoding of MDS attribute specifications
+.Extended Backus-Naur Form for the encoding of MDS attribute specifications
 [source#vol2_listing_encoding_attribute_mds]
 ----
 Scheme ::= 'sdc.mds.attr'
