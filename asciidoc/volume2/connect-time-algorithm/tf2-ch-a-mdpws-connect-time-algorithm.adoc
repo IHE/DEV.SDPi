@@ -27,7 +27,9 @@ NOTE: It is up to the <<term_manufacturer>> of the <<actor_somds_provider>> to c
 
 ===== Consumer-controlled Delay
 
-<<ref_ieee_11073_20701_2018>> proposes the concept of priority groups. If a priority group is configured for a <<actor_somds_consumer>>, it postpones initial connection requests once in retrieved the <<term_transport_address>> of a <<actor_somds_provider>>. Depending on the priority groups 0 to 9, with increasing group numbers the initial connection delay increases linearly based on random or fixed durations in predefined intervals.
+<<ref_ieee_11073_20701_2018>> introduces the concept of priority groups.
+According to <<ref_ieee_11073_20701_2018, glue:R0076>>, a <<actor_somds_consumer>> is required to have a priority group assigned, which causes the <<actor_somds_consumer>> to postpone initial connection requests by a certain time once it retrieved the <<term_transport_address>> of a <<actor_somds_provider>>.
+Depending on the priority groups 0 to 9, with increasing group numbers the initial connection delay increases linearly based on random or fixed durations in predefined intervals.
 
 <<ref_ieee_11073_20701_2018>> does not define numbers for specific purposes but rather appeal to <<term_manufacturer>>s to implement priority groups meaningful to their <<actor_somds_consumer>>'s purpose.
 
