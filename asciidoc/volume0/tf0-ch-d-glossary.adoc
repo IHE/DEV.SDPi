@@ -22,7 +22,7 @@
 
 | [[term_american_national_standards_institute,American National Standards Institute (ANSI)]] American National Standards Institute
 | The primary United States <<acronym_sdo>> recognition and facilitation organization.  See https://ansi.org/[ANSI.org] for more information.
-| ...
+|
 | [[acronym_ansi,ANSI]] ANSI
 |
 | Organization
@@ -45,7 +45,7 @@
 | The foundational domain information model (DIM) that is recognized and implemented in all IEEE 11073 standards and profiles, for both <<acronym_pocd>> and <<acronym_phd>> devices.
 |
 | [[acronym_dim,DIM]] DIM
-| <<<<ref_ieee_11073_10201_2004>>>>
+| <<ref_ieee_11073_10201_2004>>
 | SDC
 
 | [[term_clinical_function,Clinical Function]] Clinical Function
@@ -84,7 +84,7 @@
 | SDC
 
 | [[term_electronic_health_record, Electronic Health Record]] Electronic Health Record
-| An electronic record derived from a computer system that maintains a longitudinal view of a patient’s history. It contains comprehensive information on a patient’s health used primarily for delivering patient care in a clinical setting..
+| An electronic record derived from a computer system that maintains a longitudinal view of a patient’s history. It contains comprehensive information on a patient’s health used primarily for delivering patient care in a clinical setting.
 |
 | [[acronym_ehr,EHR]] EHR
 | https://profiles.ihe.net/GeneralIntro/ch-D.html[IHE General Introduction Appendix D Glossary]
@@ -282,11 +282,25 @@ elements, from requirements to system components to Verification & Validation te
 |
 |
 
+| [[term_q_name, QName]] QName
+| XML Schema QName. In this specification, QNames are encoded as `{<namespace>}<local-name>`.
+|
+|
+|
+|
+
 | [[term_regulatory_ready,Regulatory Ready (RR)]] Regulatory Ready
 | For regulated medical device technology, integrating <<acronym_ses>> and <<acronym_ri>> content such that conformity assessment test reports may be directly included as supporting evidence in pre-market submissions to regulatory agencies.  It is part of the Requirements Interoperability + Model Centric + Regulatory Ready (<<acronym_ri_mc_rr>>) focus of the IHE Devices Technical Framework.
 | <<acronym_ri_mc_rr>>
 | [[acronym_rr,RR]] RR
 | See also <<acronym_ri>> and <<acronym_mc>>
+|
+
+| [[term_removable_subsystem,Removable Subsystem]] Removable Subsystem
+| A subsystem of a <<actor_somds_provider>> that can be attached to or removed from the <<actor_somds_provider>> and that is represented in the <<acronym_mdib>>.
+|
+|
+| See also <<ref_ieee_11073_10700_2022>>
 |
 
 | [[term_requirements_interoperability,Requirements Interoperability (RI)]] Requirements Interoperability
@@ -381,17 +395,12 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 |
 |
 
-| [[term_q_name, QName]] QName
-| XML Schema QName. In this specification, QNames are encoded as `{<namespace>}<local-name>`.
+| [[term_medical_device_system,Virtual Medical Device (VMD)]] Virtual Medical Device
+| A core object type in the ISO/IEEE 11073 device communication standards. It represents the second-level containment of the hierarchy of information objects contained in a device.
 |
+| [[acronym_vmd,VMD]] VMD
+| <<ref_ieee_11073_10207_2017>>, <<ref_ieee_11073_10201_2004>>
 |
-
-| ...
-| ...
-| ...
-| ...
-| ...
-| ...
 
 |===
 

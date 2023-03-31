@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:ext="http://standards.ieee.org/downloads/11073/11073-10207-2017/extension"
+		xmlns:sdpi="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1"
+		targetNamespace="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1"
+		elementFormDefault="qualified"
+		attributeFormDefault="unqualified"
+		xml:lang="en">
+	<xsd:import namespace="http://standards.ieee.org/downloads/11073/11073-10207-2017/extension" schemaLocation="../ExtensionPoint.xsd"/>
+	<!---->
+	<!---->
+	<!--Equipment Identifier-->
+	<xsd:element name="EquipmentIdentifier">
+		<xsd:annotation>
+			<xsd:documentation>An extension to identify equipment provided by the MDIB of a SOMDS Provider.
+
+This extension can be attached to the pm:MdsDescriptor/ext:Extension or pm:VmdDescriptor/ext:Extension element.
+		</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="sdpi:EquipmentIdentifierType">
+					<xsd:attribute ref="ext:MustUnderstand" use="optional"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:simpleType name="EquipmentIdentifierType">
+		<xsd:annotation>
+			<xsd:documentation>Type defining the EquipmentIdentifier.
+
+The equipment identifier is an URI. It is stable, globally unique and constant across re-initializations of the SOMDS Provider.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:anyURI">
+			<xsd:minLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

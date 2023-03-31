@@ -98,13 +98,13 @@ Note:  A <<actor_somds_provider>> is the primary actor providing communication f
 
 |===
 
-The table below lists _existing_ actors that are utilized in this profile.
+The table below lists _existing_ actors that are utilized in this specification.
 
 ////
 #TODO: VERIFY THAT THE GATEWAY ACTORS ARE FULLY ACCOUNTED FOR + ANY ADDITIONAL DEPENDENT ACTORS#
 ////
 
-.Complete List of Existing Actors Utilized in this Profile
+.Complete List of Existing Actors Utilized in this specification
 [cols="1,2"]
 |===
 |Existing Actor Name |Definition

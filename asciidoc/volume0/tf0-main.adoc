@@ -24,3 +24,40 @@ include::tf0-ch-b-transactions.adoc[]
 
 include::tf0-ch-d-glossary.adoc[]
 
+=== XML Namespaces
+
+The XML namespace URI that is used by this profile is: `urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1`.
+
+<<vol0_table_xml_namespaces>> lists XML namespaces and prefixes that are used in this profile.
+The choice of any namespace prefix is arbitrary and not semantically significant.
+
+.Prefixes and XML namespaces used in this profile.
+[#vol0_table_xml_namespaces,cols="1,5,2",width=100%,]
+|===
+|Prefix |XML Namespace |Specification
+
+|dpws
+|http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01
+|<<ref_oasis_dpws_2009>>
+
+|sdpi
+|urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1
+|This profile
+
+|wsa
+|http://www.w3.org/2005/08/addressing
+|<<ref_oasis_ws_addressing_2006>>
+
+|wsd
+|http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01
+|<<ref_oasis_ws_discovery_2009>>
+
+|wse
+|http://schemas.xmlsoap.org/ws/2004/08/eventing
+|<<ref_w3c_ws_eventing_2006>>
+
+|wsm
+|http://schemas.xmlsoap.org/ws/2004/09/mex
+|<<ref_w3c_ws_metadata_exchange_2008>>
+
+|===

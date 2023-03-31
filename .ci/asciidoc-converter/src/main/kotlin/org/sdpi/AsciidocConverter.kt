@@ -26,7 +26,6 @@ class AsciidocConverter(
         val asciidoctor = Asciidoctor.Factory.create()
 
         val anchorReplacements = mutableMapOf<String, LabelInfo>()
-        val customReferences = mutableSetOf<String>()
 
         val requirementsBlockProcessor = RequirementsBlockProcessor()
         asciidoctor.javaExtensionRegistry().block(requirementsBlockProcessor)
@@ -41,9 +40,9 @@ class AsciidocConverter(
         )
         asciidoctor.javaExtensionRegistry().treeprocessor(RequirementLevelProcessor())
         asciidoctor.javaExtensionRegistry().preprocessor(DisableSectNumsProcessor())
-        asciidoctor.javaExtensionRegistry().preprocessor(ReferenceSanitizerPreprocessor())
+        asciidoctor.javaExtensionRegistry().preprocessor(ReferenceSanitizerPreprocessor(anchorReplacements))
         asciidoctor.javaExtensionRegistry()
-            .postprocessor(ReferenceSanitizerPostprocessor(anchorReplacements, customReferences))
+            .postprocessor(ReferenceSanitizerPostprocessor(anchorReplacements))
 
         asciidoctor.requireLibrary("asciidoctor-diagram") // enables plantuml
         when (inputType) {

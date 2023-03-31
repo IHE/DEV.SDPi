@@ -8,6 +8,18 @@ Coded elements in SDC using *MDC* private codes require also to contain a *pm:Tr
 
 Please refer to <<ref_ieee_11073_10700_2022>> *TR1358* for further information.
 
+.R8119
+[sdpi_requirement#r8119,sdpi_req_level=shall,sdpi_max_occurrence=2]
+****
+For each private code a <<actor_somds_provider>> shall provide exactly one *pm:Translation* where *pm:Translation/@Code* is identical with *pm:CodedValue/@Code*.
+
+.Notes
+[%collapsible]
+====
+NOTE: Multiple translations are allowed, but exactly one translation is specified for a private code.
+====
+****
+
 The following example uses the SDC *pm:Type* to demonstrate the mapping of private MDC codes.
 
 [#ref_tbl_private_code_mapping]

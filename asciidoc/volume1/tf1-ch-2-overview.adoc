@@ -113,7 +113,7 @@ See section <<vol1_clause_sdpi_p_soa_somds_architecture_alignment>> below for ad
 ==== Service-oriented Device Point-of-care Interoperability - Plug-and-trust (SPDi-P) Profile
 Within the framework of the SDPi architecture, the Plug-and-Trust ([[acronym_sdpi_p,SDPi-P]] SDPi-P) profile provides for *_secure plug-and-play connectivity_* between all actors.
 The primary use context is acute care beds (e.g., ICU, operating room, emergency department), though it may be used in other healthcare contexts.
-This profile provides for plug-and-trust (secured) communication for healthcare devices, systems and applications, regardless of whether they are "regulated" medical devices.
+This specification provides for plug-and-trust (secured) communication for healthcare devices, systems and applications, regardless of whether they are "regulated" medical devices.
 That said, the SDPi-P profile fully supports the safety and security requirements specified in the <<ref_ieee_11073_10700_2022>> Base <<acronym_pkp>> standard.
 Other SDPi profiles provide direct support for _interoperable medical systems_.
 Taking this approach allows non-medical technology to interact with other SDPi-enabled systems but without the added burden of having to support the more rigorous requirements associated with technology intended for a medical purpose (e.g., additional risk control mitigation measures).
@@ -123,14 +123,14 @@ The baseline profile supports core functionality needed by all participating sys
 [sdpi_offset=11]
 ==== Service-oriented Device Point-of-care Interoperability - Reporting (SPDi-R) Profile
 The SDPi Reporting profile builds on the basic <<acronym_pnt>> capabilities of the <<acronym_sdpi_p>> profile, but adds the requirements to fully support *_medical data reporting_*.
-To that end, this profile fully supports the safety and security requirements in the <<ref_ieee_11073_10701_2022>> metric reporting <<acronym_pkp>> standard.
+To that end, this specification fully supports the safety and security requirements in the <<ref_ieee_11073_10701_2022>> metric reporting <<acronym_pkp>> standard.
 
 The profile supports core medical data reporting functionality needed by all participating systems; whereas, profile options are provided for those additional capabilities that may be added.
 
 [sdpi_offset=12]
 ==== Service-oriented Device Point-of-care Interoperability - Alerting (SPDi-A) Profile
 The SDPi Alerting profile builds on the basic <<acronym_pnt>> capabilities of the <<acronym_sdpi_p>> profile, but adds the requirements to fully support *_medical alerting_*.
-To that end, this profile implements the safety and security requirements of the <<ref_ieee_11073_10702_202x>> alert <<acronym_pkp>> standard (expected to be completed in 2023).
+To that end, this specification implements the safety and security requirements of the <<ref_ieee_11073_10702_202x>> alert <<acronym_pkp>> standard (expected to be completed in 2023).
 
 The profile supports core medical alerting functionality needed by all participating systems; whereas, profile options are provided for those additional capabilities that may be added (e.g., alert delegation).
 
@@ -151,7 +151,7 @@ It is *_not part of the capabilities specified for 1.0_* and even basic controls
 
 The SDPi External Control profile builds on the basic <<acronym_pnt>> capabilities of the <<acronym_sdpi_p>> profile, but adds support for *_medical device external control capabilities_*.
 For example, the ability to have a system initiate a blood pressure reading, or set a breath rate, or tritrate an infusion pump's delivery rate.
-Given the significant risks associated with allowing device-external control functions in a network of <<acronym_pnt>> systems, this profile implements the safety and security requirements of the <<ref_ieee_11073_10703_202x>> external control <<acronym_pkp>> standard (in development, anticipated in 2023 or later).
+Given the significant risks associated with allowing device-external control functions in a network of <<acronym_pnt>> systems, this specification implements the safety and security requirements of the <<ref_ieee_11073_10703_202x>> external control <<acronym_pkp>> standard (in development, anticipated in 2023 or later).
 
 
 [sdpi_offset=5]
