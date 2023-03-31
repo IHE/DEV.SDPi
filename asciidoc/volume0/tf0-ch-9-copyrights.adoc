@@ -25,11 +25,11 @@ Note that NIST and the RTTMS tools are a key factor in the nomenclature aspect o
 
 |===
 
-IEEE^®^ and IEEE 11073^®^ are registered trademarks of the The Institute of Electrical and Electronics Engineers, Inc.  IEEE has granted permission to IHE to use portions of 11073-10207, 11073-20701, 11073-20702 (the “Material”), subject to the following conditions:
+IEEE^®^ and IEEE 11073^®^ are registered trademarks of the The Institute of Electrical and Electronics Engineers, Inc.  IEEE has granted permission to IHE and HL7 to use portions of 11073-10207, 11073-20701, 11073-20702, 11073-10700, 11073-10701 (the “Material”), subject to the following conditions:
 
 . IHE’s use of the Material shall be for the following purpose: (the “Purpose”):
 
-* IHE specification developers want to include the Implementation Conformance Specification (ICS) tables from   each of these standards and add to the "Support" column the specifics of how and where the IHE specifications address the SDC capability.
+* IHE specification developers want to include the Implementation Conformance Specification (ICS) tables from each of these standards and add to the "Support" column the specifics of how and where the IHE specifications address the SDC capability.
 
 * Additionally, the IHE profile specifications may include summarization and references to specific content and in a few cases, inclusion of a graphic that would then point the reader back to standard for detailed review. For example, 11073-10207, Figure 2 "BICEPS component decomposition".
 
