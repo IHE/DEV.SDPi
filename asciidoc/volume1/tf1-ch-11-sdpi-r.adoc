@@ -10,7 +10,7 @@
 a| *SDPi Supplement Version 1.0 Note*:  This initial version of the <<acronym_sdpi_r>> Profile is built upon the foundational <<acronym_sdpi_p>> Profile but does not provide substantially more capabilities.
 This is due to the fact that the primary purpose of this specification, namely communication of medical data to accomplish intended medical purposes, requires the completion and integration of two emerging ISO/IEEE standards:  <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>>.
 When these are published *_in early 2023_*, their requirements will be integrated into this supplement, with their <<term_implementation_conformance_statement>> added to <<vol1_appendix_b_referenced_standards_conformance>> below.
-Many of those requirements will be mapped to the Actors and Transactions and other specifications in this specification.
+Many of those requirements will be mapped to the actors and transactions and other specifications in this specification.
 
 Additionally, though the <<actor_somds_dec_gateway>> is defined below and fully specified in <<vol2_clause_appendix_sdpi_dec_gateway>>, the implementation guide for mapping from <<acronym_biceps>> to <<acronym_hl7>> <<acronym_fhir>> remains in development, pushing the specification of the <<vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway>> to a later version of this supplement.
 
@@ -18,13 +18,13 @@ Additionally, though the <<actor_somds_dec_gateway>> is defined below and fully 
 
 [#vol1_clause_sdpi_r_profile_reftext,reftext="SDPi-R Profile"]
 The SDPi-Reporting ([[acronym_sdpi_r,SDPi-R]] SDPi-R) Profile supports the communication of information from one <<term_service_oriented_medical_device_system>> to other <<acronym_somds>> systems or to other external non-<<acronym_somds>> systems utilizing a <<label_system_type_name_dgw>>.
-Most of the Actors and Transactions in this specification are specialized versions of their counterparts in the <<acronym_sdpi_p>> Profile; however, are differentiated in that they are specifically designed to communicate information with an _intended medical purpose_.
+Most of the actors and transactions in this specification are specialized versions of their counterparts in the <<acronym_sdpi_p>> Profile; however, are differentiated in that they are specifically designed to communicate information with an _intended medical purpose_.
 As a result, additional requirements are added to each actor and transaction to support address these additional safety and effectiveness requirements (See <<vol1_clause_sdpi_r_ses_considerations>> below).
 
 The profile builds upon the foundational <<term_plug_and_trust>> capabilities provided by the <<vol1_clause_sdpi_p_profile_reftext>>.
 These extended capabilities for medical data exchange are achieved by various means, including:
 
-. Grouping <<acronym_sdpi_r>> Actors with their <<acronym_sdpi_p>> counterparts
+. Grouping <<acronym_sdpi_r>> actors with their <<acronym_sdpi_p>> counterparts
 . Addressing requirements from the emerging <<acronym_pkp>> ISO/IEEE standards:  <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>>
 . Requiring capabilities that in the <<vol1_clause_sdpi_p_profile_reftext>> may be optional
 . Requiring additional <<acronym_biceps>> data elements or content modules
@@ -40,7 +40,7 @@ Both appendices are located at https://profiles.ihe.net/GeneralIntro/[_profiles.
 
 <<vol1_figure_sdpi_r_actor_diagram>> shows the actors directly involved in the SDPi-R Profile.
 The relevant transactions between them are detailed in the subsequent <<vol1_table_sdpi_r_actors_transactions>>.
-Actor groupings, including abstract with concrete are detailed in <<vol1_clause_sdpi_r_required_actor_groupings>>.
+actor groupings, including abstract with concrete are detailed in <<vol1_clause_sdpi_r_required_actor_groupings>>.
 
 [#vol1_figure_sdpi_r_actor_diagram]
 .SDPi-R Actor Diagram
@@ -129,10 +129,10 @@ Actor Summary Definition:
 [none]
 . A <<vol1_spec_sdpi_p_actor_somds_consumer>> grouped actor that receives medical data from a <<vol1_spec_sdpi_p_actor_somds_provider>>.
 
-This Actor is designed to process information with an _intended medical purpose_, and thus will fully address applicable requirements from the core <<acronym_sdc>> standards (<<ref_ieee_11073_10207_2017>> and <<ref_ieee_11073_20701_2018>>), as well as the <<acronym_pkp>> standards (<<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>>).
+This actor is designed to process information with an _intended medical purpose_, and thus will fully address applicable requirements from the core <<acronym_sdc>> standards (<<ref_ieee_11073_10207_2017>> and <<ref_ieee_11073_20701_2018>>), as well as the <<acronym_pkp>> standards (<<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>>).
 
 Every <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_consumer>> to enable <<acronym_somds>>-based connectivity.
-This Actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_consumer>>.
+This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_consumer>>.
 Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_r_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_clause_sdpi_p_profile_reftext>>.
 
 A system that participates in a <<acronym_somds>> network instance can integrate both <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> and <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> capabilities.
@@ -144,10 +144,10 @@ Actor Summary Definition:
 [none]
 . A <<vol1_spec_sdpi_p_actor_somds_provider>> grouped actor that sends medical data to a <<vol1_spec_sdpi_p_actor_somds_consumer>>.
 
-This Actor is designed to process information with an _intended medical purpose_, and thus will fully address applicable requirements from the core <<acronym_sdc>> standards (<<ref_ieee_11073_10207_2017>> and <<ref_ieee_11073_20701_2018>>), as well as the <<acronym_pkp>> standards (<<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>>).
+This actor is designed to process information with an _intended medical purpose_, and thus will fully address applicable requirements from the core <<acronym_sdc>> standards (<<ref_ieee_11073_10207_2017>> and <<ref_ieee_11073_20701_2018>>), as well as the <<acronym_pkp>> standards (<<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>>).
 
 Every <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_provider>> to enable <<acronym_somds>>-based connectivity.
-This Actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_provider>>.
+This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_provider>>.
 Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_r_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_provider>> and <<vol1_clause_sdpi_p_profile_reftext>>.
 
 A system that participates in a <<acronym_somds>> network instance can integrate both <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> and <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> capabilities.
@@ -159,14 +159,14 @@ Actor Summary Definition:
 [none]
 . A <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> grouped actor that supports the bi-directional exchange of medical data using IHE Device Enterprise Communication (DEC) messages with non-SOMDS systems and applications.
 
-This Actor is designed to process information with an _intended medical purpose_, and thus will fully address applicable requirements from the core <<acronym_sdc>> standards (<<ref_ieee_11073_10207_2017>> and <<ref_ieee_11073_20701_2018>>), as well as the <<acronym_pkp>> standards (<<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>>).
+This actor is designed to process information with an _intended medical purpose_, and thus will fully address applicable requirements from the core <<acronym_sdc>> standards (<<ref_ieee_11073_10207_2017>> and <<ref_ieee_11073_20701_2018>>), as well as the <<acronym_pkp>> standards (<<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>>).
 
 Every <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> to enable <<acronym_somds>>-based connectivity.
-This Actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>.
+This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>.
 Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_r_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> and <<vol1_clause_sdpi_p_profile_reftext>>.
 
-This Actor shall implement the <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> capabilities, receiving information provided by <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> systems and publishing them as DEV-01 / PCD-01 Transactions to external DEC Device Observation Consumer (DOC) systems.
-If <<vol1_clause_sdpi_r_actor_option_retrieve_remote_data_reftext>> is implemented, then this Actor will also support the <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> capabilities, receiving DEV-01 / PCD-01 Transactions from external DEC Device Observation Reporter (DOR) systems and making them available to other <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> systems.
+This actor shall implement the <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> capabilities, receiving information provided by <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> systems and publishing them as DEV-01 / PCD-01 Transactions to external DEC Device Observation Consumer (DOC) systems.
+If <<vol1_clause_sdpi_r_actor_option_retrieve_remote_data_reftext>> is implemented, then this actor will also support the <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> capabilities, receiving DEV-01 / PCD-01 Transactions from external DEC Device Observation Reporter (DOR) systems and making them available to other <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> systems.
 Note:  Not supported are <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> systems that only implement the <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> and not <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> capabilities.
 
 Detailed specifications for mapping from <<acronym_somds>>/<<acronym_biceps>>  to <<acronym_hl7>> V2 / DEC transactions are provided in <<vol2_clause_appendix_sdpi_dec_gateway>>.
@@ -184,7 +184,7 @@ Actor Summary Definition:
 |===
 a| *SDPi Supplement Version Note*:  The HL7 FHIR resources and related Point-of-Care Device FHIR Implementation Guide (PoCD FHIR IG) is still under active development.
 Initial mappings have been made from <<acronym_sdc>> to <<acronym_fhir>>; however, they are not yet ready for profiling and product implementation.
-When the FHIR specifications are finalized, then this Actor will be fully specified in a future SDPI Supplement version.
+When the FHIR specifications are finalized, then this actor will be fully specified in a future SDPI Supplement version.
 
 See <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>> for additional information.
 |===

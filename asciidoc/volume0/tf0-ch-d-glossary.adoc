@@ -12,7 +12,7 @@
 [%autowidth]
 [cols="1"]
 |===
-|Add the following *_new or updated_* glossary terms to the IHE Technical Frameworks General Introduction Appendix D.
+|Add the following *_new or updated_* glossary terms to the IHE Technical Frameworks General Introduction https://profiles.ihe.net/GeneralIntro/ch-D.html[Appendix D].
 |===
 
 [%autowidth]

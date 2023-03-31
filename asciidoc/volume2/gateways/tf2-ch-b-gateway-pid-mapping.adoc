@@ -218,7 +218,7 @@ In addition, there will be a gender extension that shall be set to the administr
 The HL7 V2.6 messaging standard only supports a "Administrative Sex" field in the PID segment.
 
 [none]
-. *STANDARDIZATION NOTE:*  There is active work to finalize the informatics standards related to sex and gender, including within HL7, SNOMED, ISO/TC215 and in other standards development organizations .
+. *STANDARDIZATION NOTE:*  There is active work to finalize the informatics standards related to sex and gender, including within HL7, SNOMED, ISO/TC215 and in other standards development organizations.
 Once this standardization is complete, especially within HL7 FHIR and Version 2, the SDC standards and the SDPi profiles and gateway specifications will be harmonized.
 Until that time, the mappings below represent a "best effort" given the status of the underlying standards.
 

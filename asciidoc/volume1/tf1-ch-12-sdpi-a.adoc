@@ -10,7 +10,7 @@
 a| *SDPi Supplement Version 1.0 Note*:  This initial version of the <<acronym_sdpi_a>> Profile is built upon the foundational <<acronym_sdpi_p>> Profile but adds services specialized for the communication and management of medical device alerting.
 Additionally, since the primary purpose of this specification is the communication of medical alert information to accomplish intended medical purposes, it will require the completion and integration of the emerging ISO/IEEE 11073 Alert <<acronym_pkp>> standard  <<ref_ieee_11073_10702_202x>>.
 When this new standard is published *_in late 2023 or early 2024_*, its requirements will be integrated into this supplement, with its <<term_implementation_conformance_statement>> added to <<vol1_appendix_b_referenced_standards_conformance>>.
-Many of those requirements will be mapped to the Actors, Transactions and other specifications in this specification.
+Many of those requirements will be mapped to the actors, transactions and other specifications in this specification.
 
 Two of the transactions identified below, DEV-41 and DEV-42 are related to Medical Alert Delegation; however, at this stage there is considerable standards development activity to update the current <<acronym_sdc>> standards, particularly in association with completing the Alert <<acronym_pkp>> standard  <<ref_ieee_11073_10702_202x>>.
 As a result, the completion of these two transactions has been deferred to a subsequent version of the supplement.
@@ -25,13 +25,13 @@ As a result, a "SOMDS Medical Alert FHIR Gateway" is not included as an actor at
 
 [#vol1_clause_sdpi_a_profile_reftext,reftext="SDPi-A Profile"]
 The SDPi-Alerting ([[acronym_sdpi_a,SDPi-A]] SDPi-A) Profile supports the communication of alert information from one <<term_service_oriented_medical_device_system>> to other <<acronym_somds>> systems or to other external non-<<acronym_somds>> systems utilizing a <<label_system_type_name_agw>>.
-The Actors and Transactions in this specification are specialized versions of their counterparts in the <<vol1_clause_sdpi_p_profile_reftext>>; however, are differentiated in that they are specifically designed to communicate alert information to fulfill an _intended medical purpose_, primarily to notify a clinician of a patient or device-related condition that requires their attention.
+The actors and transactions in this specification are specialized versions of their counterparts in the <<vol1_clause_sdpi_p_profile_reftext>>; however, are differentiated in that they are specifically designed to communicate alert information to fulfill an _intended medical purpose_, primarily to notify a clinician of a patient or device-related condition that requires their attention.
 Additional services have been provided to specifically support the exchange and management of this medical device alert information, providing a high-level of reliability and performance, commensurate with the potential risk to the patient if they are not promptly addressed.
 
 The profile builds upon the foundational <<term_plug_and_trust>> capabilities provided by the <<vol1_clause_sdpi_p_profile_reftext>>.
 These extended capabilities for medical data exchange are achieved by various means, including:
 
-. Grouping <<acronym_sdpi_r>> Actors with their <<acronym_sdpi_p>> counterparts
+. Grouping <<acronym_sdpi_r>> actors with their <<acronym_sdpi_p>> counterparts
 . Addressing requirements from the emerging <<acronym_pkp>> ISO/IEEE standards:  <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>>
 . Requiring capabilities that in the <<vol1_clause_sdpi_p_profile_reftext>> may be optional
 . Requiring additional <<acronym_biceps>> data elements or content modules
@@ -181,13 +181,13 @@ Actor Summary Definition:
 [none]
 . A <<vol1_spec_sdpi_p_actor_somds_consumer>> grouped actor that receives medical alert information from a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>.
 
-This Actor is designed to receive and manage medical device alert information to communicate it safely and reliably to a clinician.
+This actor is designed to receive and manage medical device alert information to communicate it safely and reliably to a clinician.
 Transactions enabled for this actor are identified in <<vol1_table_sdpi_a_actors_transactions>> above.
 
 Given this _intended medical purpose_, the actor will fully address applicable requirements from the core <<acronym_sdc>> standards (<<ref_ieee_11073_10207_2017>> and <<ref_ieee_11073_20701_2018>>), as well as the <<acronym_pkp>> standards <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10702_202x>> (Alert <<acronym_pkp>>).
 
 Every <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_consumer>> to enable <<acronym_somds>>-based connectivity.
-This Actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_consumer>>.
+This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_consumer>>.
 Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_a_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_clause_sdpi_p_profile_reftext>>.
 
 Note that if a <<label_system_type_name_sas>> is being created, it may incorporate both <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> and <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> Actors, both receiving and publishing alerts.
@@ -199,13 +199,13 @@ Actor Summary Definition:
 [none]
 . A <<vol1_spec_sdpi_p_actor_somds_provider>> grouped actor that sends medical alert information to a <<actor_somds_medical_alert_consumer>>.
 
-This Actor is designed to publish medical device alert information to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>, which in turn can communicate it safely and reliably to a clinician.
+This actor is designed to publish medical device alert information to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>, which in turn can communicate it safely and reliably to a clinician.
 Transactions enabled for this actor are identified in <<vol1_table_sdpi_a_actors_transactions>> above.
 
 Given this _intended medical purpose_, the actor will fully address applicable requirements from the core <<acronym_sdc>> standards (<<ref_ieee_11073_10207_2017>> and <<ref_ieee_11073_20701_2018>>), as well as the <<acronym_pkp>> standards <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10702_202x>> (Alert <<acronym_pkp>>).
 
 Every <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_provider>> to enable <<acronym_somds>>-based connectivity.
-This Actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_consumer>>.
+This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_consumer>>.
 Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_a_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_clause_sdpi_p_profile_reftext>>.
 
 Note that if a <<label_system_type_name_sas>> is being created, it may incorporate both <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> and <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> Actors, both receiving and publishing alerts.
@@ -217,23 +217,23 @@ Actor Summary Definition:
 [none]
 . A <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> grouped actor that supports the bi-directional exchange of medical alert information with non-SOMDS systems and applications using IHE Alert Communication Management (ACM) transactions.
 
-This Actor is designed to exchange medical device alert information to external non-<<acronym_somds>> systems using the <<acronym_hl7>> V2-based Alert Communication Management (ACM) profile transactions.
+This a is designed to exchange medical device alert information to external non-<<acronym_somds>> systems using the <<acronym_hl7>> V2-based Alert Communication Management (ACM) profile transactions.
 
 Every <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> to enable <<acronym_somds>>-based connectivity.
-This Actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>.
+This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>.
 Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_r_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> and <<vol1_clause_sdpi_p_profile_reftext>>.
 
 Transactions enabled for this actor are identified in <<vol1_table_sdpi_a_actors_transactions>> above.
 
 Given this _intended medical purpose_, the actor will fully address applicable requirements from the core <<acronym_sdc>> standards (<<ref_ieee_11073_10207_2017>> and <<ref_ieee_11073_20701_2018>>), as well as the <<acronym_pkp>> standards <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10702_202x>> (Alert <<acronym_pkp>>).
 
-This Actor shall implement the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> capabilities, receiving alert information provided by <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> systems and publishing them as DEV-04 / PCD-04 Transactions to external ACM Alert Manager (AM) systems.
-If <<vol1_clause_sdpi_a_actor_option_remote_alert_signaling_reftext>> is implemented, then this Actor will also support the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> capabilities, receiving DEV-04 / PCD-04 Transactions from external ACM Device Observation Reporter (DOR) systems and making them available to other <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> systems.
+This actor shall implement the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> capabilities, receiving alert information provided by <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> systems and publishing them as DEV-04 / PCD-04 Transactions to external ACM Alert Manager (AM) systems.
+If <<vol1_clause_sdpi_a_actor_option_remote_alert_signaling_reftext>> is implemented, then this actor will also support the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> capabilities, receiving DEV-04 / PCD-04 Transactions from external ACM Device Observation Reporter (DOR) systems and making them available to other <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> systems.
 Note:  Not supported are <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> systems that only implement the <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> and not <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> capabilities.
 
 Detailed specifications for mapping from <<acronym_somds>>/<<acronym_biceps>>  to <<acronym_hl7>> V2 / ACM DEV-04/PCD-04 transactions are provided in <<vol2_clause_appendix_sdpi_acm_gateway>>.
 
-NOTE: This Actor is not intended to play the role of an ACM Alert Manager.
+NOTE: This actor is not intended to play the role of an ACM Alert Manager.
 If DEV-04 transactions are received by the gateway, they will be simply mapped to <<acronym_somds>>/<<acronym_biceps>> semantics and provided to <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> systems.
 
 If a <<label_system_type_name_sas>> is being created, it may incorporate both <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> and <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> Actors, both receiving and publishing alerts to external ACM-based systems.
