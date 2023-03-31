@@ -1,4 +1,4 @@
 // DEV-23 Transaction Summary
 
-This transaction is used to notify all <<vol1_spec_sdpi_p_actor_somds_consumer>>s that a <<vol1_spec_sdpi_p_actor_somds_provider>> is connected to the network and ready to exchange messages with other <<actor_somds_participant>>s.
+Notify all <<vol1_spec_sdpi_p_actor_somds_consumer>>s that a <<vol1_spec_sdpi_p_actor_somds_provider>> is connected to the network and ready to exchange messages with other <<actor_somds_participant>>s.
 

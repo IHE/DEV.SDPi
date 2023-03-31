@@ -19,24 +19,23 @@
 
 |[[actor_biceps_content_consumer,BICEPS Content Consumer]] BICEPS Content Consumer
 
-|Processes <<acronym_mdib>> information conformant to <<ref_ieee_11073_10207_2017>> BICEPS specifications provided by <<actor_biceps_content_creator>> systems.
+|Processes BICEPS-conformant content.
 
 |[[actor_biceps_content_creator,BICEPS Content Creator]] BICEPS Content Creator
 
-|Provides <<acronym_mdib>> content conformant to <<ref_ieee_11073_10207_2017>> BICEPS specification and for consumption by other <<actor_biceps_content_consumer>> systems.
+|Provides BICEPS-conformant content.
 
 |[[actor_somds_acm_gateway,SOMDS ACM Gateway]] SOMDS ACM Gateway
 
-|A <<actor_somds_v2_gateway>> grouped actor that supports the bi-directional exchange of medical alert information with non-SOMDS systems and applications using IHE Alert Communication Management (ACM) transactions.
+|Exchanges medical alert information with an IHE ACM-based environment
 
 |[[actor_somds_connector,SOMDS Connector]] SOMDS Connector
 
-|A <<actor_somds_participant>> that enables seamless interaction with systems and software applications that are outside the scope of the SOMDS network instance.  This abstract actor provides a consistent method for interacting, as a <<actor_somds_consumer>> and / or <<actor_somds_provider>>, with a specific SOMDS instance, as the foundation for protocol-specific gateway and platform actors.
+|Enables seamless interaction with systems and software applications that are outside the scope of the SOMDS network instance.
 
 |[[actor_somds_consumer,SOMDS Consumer]] SOMDS Consumer
 
-|A <<actor_somds_participant>> that discovers and utilizes at least one service, functional capability, exposed to a network communications backbone by a <<actor_somds_provider>>. (See <<ref_ieee_11073_10207_2017>>  “SERVICE CONSUMER” and “SERVICE” definitions.)
-Note:  A <<actor_somds_consumer>> is the primary actor providing communication for the <<actor_biceps_content_consumer>>.
+|Discovers and utilizes service(s) exposed by a <<actor_somds_provider>>.
 
 |[[actor_somds_dec_gateway,SOMDS DEC Gateway]] SOMDS DEC Gateway
 
@@ -56,15 +55,16 @@ Note:  A <<actor_somds_consumer>> is the primary actor providing communication f
 
 |[[actor_somds_medical_alert_provider,SOMDS Medical Alert Provider]] SOMDS Medical Alert Provider
 
-|A <<actor_somds_provider>> grouped actor that sends medical alert information to a <<actor_somds_medical_alert_consumer>>.
+|Makes service(s) available to <<actor_somds_consumer>>s.
 
 |[[actor_somds_medical_control_consumer,SOMDS Medical Control Consumer]] SOMDS Medical Control Consumer
 
-|A <<actor_somds_consumer>> grouped actor that receives medical device external control service capability information from a <<actor_somds_medical_control_provider>> to both invoke the controls and manage the device's operation.
+|Discovers and invokes external control services supported by a
+<<actor_somds_medical_control_provider>>.
 
 |[[actor_somds_medical_control_provider,SOMDS Medical Control Provider]] SOMDS Medical Control Provider
 
-|A <<actor_somds_provider>> grouped actor that provides medical device external control service capability information to a <<actor_somds_medical_control_consumer>> enabling both external control service invocation and allowing management of its operation.
+|Supports a set of external control services that may be discovered and invoked by a <<actor_somds_medical_control_consumer>>.
 
 |[[actor_somds_medical_data_consumer,SOMDS Medical Data Consumer]] SOMDS Medical Data Consumer
 
@@ -72,7 +72,7 @@ Note:  A <<actor_somds_consumer>> is the primary actor providing communication f
 
 |[[actor_somds_medical_data_provider,SOMDS Medical Data Provider]] SOMDS Medical Data Provider
 
-|A <<actor_somds_provider>> grouped actor that sends medical data to a <<actor_somds_consumer>>.
+|Sends medical data to a <<actor_somds_medical_data_consumer>>.
 
 |[[actor_somds_participant,SOMDS Participant]] SOMDS Participant
 
