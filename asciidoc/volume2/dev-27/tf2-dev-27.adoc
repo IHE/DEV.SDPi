@@ -56,6 +56,7 @@ include::../../plantuml/vol2-figure-dev-27-sequence.puml[]
 
 // ---------- SUBSCRIBE ---------
 
+CAUTION: Transaction {var_transaction_id} supports a general <<vol2_clause_dev_27_message_notification>> message.  Specialized notification messages are detailed in <<vol2_clause_dev_28>> and <<vol2_clause_dev_29>>, based on payload content and trigger events.
 
 [#vol2_clause_dev_27_message_subscribe]
 ===== {var_label_dev_27_message_subscribe} Message

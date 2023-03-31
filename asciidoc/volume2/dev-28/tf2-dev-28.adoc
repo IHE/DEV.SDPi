@@ -42,6 +42,7 @@ include::../../plantuml/vol2-figure-dev-28-sequence.puml[]
 
 // ---------- EpisodicContextReport ---------
 
+CAUTION: Transaction {var_transaction_id} supports a specialized instance of the general <<vol2_clause_dev_27_message_notification>> message, based on payload content and trigger events.
 
 [#vol2_clause_dev_28_message_notification]
 ===== {var_label_dev_28_message_contextreport} Message
