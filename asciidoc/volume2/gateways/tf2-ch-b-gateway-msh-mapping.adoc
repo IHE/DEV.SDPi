@@ -17,7 +17,7 @@ If the <<acronym_mdib>> contains several MDS elements that could operate in diff
 .R8118
 [sdpi_requirement#r8118,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
-A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the MSH-11 field to the code for the processing ID which is either be *"P"* (Production) or *"D"* (Debugging).
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the MSH-11 field to the code for the processing ID, which is either be *"P"* (Production) or *"D"* (Debugging).
 
 .Notes
 [%collapsible]
