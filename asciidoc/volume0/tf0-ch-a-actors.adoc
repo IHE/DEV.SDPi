@@ -31,7 +31,7 @@
 
 |[[actor_somds_connector,SOMDS Connector]] SOMDS Connector
 
-|Enables seamless interaction with systems and software applications that are outside the scope of the SOMDS network instance.
+|Enables seamless interaction with systems and software applications that are outside the scope of the SOMDS network.
 
 |[[actor_somds_consumer,SOMDS Consumer]] SOMDS Consumer
 
@@ -39,23 +39,23 @@
 
 |[[actor_somds_dec_gateway,SOMDS DEC Gateway]] SOMDS DEC Gateway
 
-|A <<actor_somds_v2_gateway>> grouped actor that supports the bi-directional exchange of medical data using IHE Device Enterprise Communication (DEC) messages with non-SOMDS systems and applications.
+|Exchanges medical data with an IHE DEC-based environment
 
 |[[actor_somds_fhir_gateway,SOMDS FHIR Gateway]] SOMDS FHIR Gateway
 
-|A <<actor_somds_connector>> that supports use of HL7 FHIR for bi-directional exchange with non-SOMDS Systems.
+|Exchanges information between SOMDS and HL7 FHIR-based environments.
 
 |[[actor_somds_fhir_medical_data_gateway,SOMDS FHIR Medical Data Gateway]] SOMDS FHIR Medical Data Gateway
 
-|A <<actor_somds_fhir_gateway>> grouped actor that supports exchange of medical data between <<acronym_somds>>-based systems and <<acronym_hl7>> <<acronym_fhir>>-based systems.
+|Exchanges medical data between SOMDS and HL7 FHIR-based environments.
 
 |[[actor_somds_medical_alert_consumer,SOMDS Medical Alert Consumer]] SOMDS Medical Alert Consumer
 
-|A <<actor_somds_consumer>> grouped actor that receives medical alert information from a <<actor_somds_medical_alert_provider>>.
+|Receives medical alert information from a <<actor_somds_medical_alert_provider>>.
 
 |[[actor_somds_medical_alert_provider,SOMDS Medical Alert Provider]] SOMDS Medical Alert Provider
 
-|Makes service(s) available to <<actor_somds_consumer>>s.
+|Makes medical alert information and service(s) available to <<actor_somds_medical_alert_consumer>>s.
 
 |[[actor_somds_medical_control_consumer,SOMDS Medical Control Consumer]] SOMDS Medical Control Consumer
 
@@ -76,25 +76,24 @@
 
 |[[actor_somds_participant,SOMDS Participant]] SOMDS Participant
 
-|A foundational abstract actor that provides the SOA architectural constructs for interoperating in a <<term_service_oriented_medical_device_system>> network instance, including information, messaging and dynamic behavior models.   (See <<ref_ieee_11073_10207_2017>>  “PARTICIPANT” definition)
+|Provides basic common connectivity capabilities for all actors that are part of a SOMDS network.
 
 |[[actor_somds_provider,SOMDS Provider]] SOMDS Provider
 
-|A <<actor_somds_participant>> that provides at least one service to the other participant systems.  (See <<ref_ieee_11073_10207_2017>>  “SERVICE PROVIDER” definition)
-Note:  A <<actor_somds_provider>> is the primary actor providing communication for the <<actor_biceps_content_creator>>.
+|Makes service(s) available to <<actor_somds_consumer>>s.
 
 
 |[[actor_somds_sensor_gateway,SOMDS Sensor Gateway]] SOMDS Sensor Gateway
 
-|A _<<actor_somds_connector>>_  that supports integration of sensors external to a SOMDS network.
+|Supports integration of sensors external to a SOMDS network.
 
 |[[actor_somds_smart_app_platform,SOMDS Smart App Platform]] SOMDS Smart App Platform
 
-|A _<<actor_somds_connector>>_  that supports connection to a SOMDS network that is optimized for applications, including <<term_software_as_a_medical_device>>.
+|Supports connection of software applications to a SOMDS network, including <<term_software_as_a_medical_device>>.
 
 |[[actor_somds_v2_gateway,SOMDS V2 Gateway]] SOMDS V2 Gateway
 
-|A _<<actor_somds_connector>>_ that supports use of HL7 Version 2 (V2) for interoperating with Non-SOMDS Systems.
+|Exchanges information between SOMDS and HL7 Version 2 (V2) environments.
 
 |===
 
