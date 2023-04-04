@@ -174,6 +174,27 @@ Note 1: If the <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> supports  <<vol1_cla
 [#vol1_clause_sdpi_a_actor_descriptions_actor_profile_requirements]
 ==== Actor Descriptions and Actor Profile Requirements
 
+SDPi-A actor roles and responsibilities are described in the subsections below.
+
+Unless otherwise specified below, individual transaction requirements are specified in TF-2   <<vol2_clause_transactions>>, and requirements related to content modules are detailed in TF-3 <<vol3_clause_content_modules>>.
+This section documents any additional requirements on the profile’s content actors.
+
+////
+TODO:
+    - Consider adding more descriptive content to this sequence diagram, especially the intersection of this profile and SDPi-P (adding transactions from the start of the conversation + SDPi-P actors;
+    - Add a gateway sequence diagram here or below in the gateway actor
+////
+
+<<vol1_figure_sdpi_a_example_sequence_diagram>> illustrates a typical (not comprehensive) exchange scenario between SDPi-A actors:
+
+[#vol1_figure_sdpi_a_example_sequence_diagram]
+.SDPi-A Example Sequence Diagram
+
+[plantuml, target=puml-sdpi-a-example-sequence-diagram, format=svg]
+....
+include::../plantuml/vol1-figure-sdpi-a-example-sequence-diagram.puml[]
+....
+
 [#vol1_clause_sdpi_a_somds_medical_alert_consumer]
 ===== SOMDS Medical Alert Consumer
 [#vol1_spec_sdpi_a_actor_somds_medical_alert_consumer, reftext='SOMDS Medical Alert Consumer']
@@ -249,12 +270,32 @@ If a <<label_system_type_name_sas>> is being created, it may incorporate both <<
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  This section is left intentionally blank to indicate capabilities that will be added in a future version of the SDPi Supplement.
+a| *SDPi Supplement Version Note*:  This section is intentionally left incomplete blank to indicate capabilities that will be added in a future version of the SDPi Supplement.
+As stated elsewhere, the completion of the <<ref_ieee_11073_10702_202x>> standard is required before this profile can be completed (beyond alert reporting for DIS capabilities), and that is esecially the case for alert delegation.
+
+*_The sequence diagram below for delegation is provided for informative purposes only and will be finalized when the IEEE standard and this profile option are completed._*
 
 This option will enable <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> systems to safely and reliably transfer or "delegate" audible annunciation of alert conditions to another system.
 This option will enable both the DEV-41 <<transaction_name_manage_medical_alert_delegation>> and DEV-42 <<transaction_name_delegate_medical_alert>> transactions.
 
 |===
+
+////
+TODO:
+    - Consider adding more descriptive content to this sequence diagram, especially the intersection of this profile and SDPi-P (adding transactions from the start of the conversation + SDPi-P actors;
+    - Add a gateway sequence diagram here or below in the gateway actor
+////
+
+<<vol1_figure_sdpi_a_option_delegate_medical_alert_example_sequence_diagram>> illustrates a typical (not comprehensive) alert delegation scenario between SDPi-A actors:
+
+[#vol1_figure_sdpi_a_option_delegate_medical_alert_example_sequence_diagram]
+.SDPi-A Delegate Medical Alert Example Sequence Diagram
+
+[plantuml, target=puml-sdpi-a-delegation_example-sequence-diagram, format=svg]
+....
+include::../plantuml/vol1-figure-sdpi-a-delegation-example-sequence-diagram.puml[]
+....
+
 
 [#vol1_clause_sdpi_a_actor_option_alert_user_acknowledgement]
 ==== Alert User Acknowledgement Option

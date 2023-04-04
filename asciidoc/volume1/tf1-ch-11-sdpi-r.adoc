@@ -49,12 +49,6 @@ image::../images/vol1-diagram-sdpi-r-actor.svg[]
 
 {empty} +
 
-////
-
-#TODO:  In the table below, are any of these Receiver vs. Responder?  If so, then we may need to add a note like in SDPi-P
-
-////
-
 [#vol1_table_sdpi_r_actors_transactions]
 .SDPi-R Profile - Actors and Transactions
 [%autowidth]
@@ -121,6 +115,27 @@ Note 1: If the <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> implements the <<vol
 
 [#vol1_clause_sdpi_r_actor_descriptions_actor_profile_requirements]
 ==== Actor Descriptions and Actor Profile Requirements
+
+SDPi-R actor roles and responsibilities are described in the subsections below.
+
+Unless otherwise specified below, individual transaction requirements are specified in TF-2   <<vol2_clause_transactions>>, and requirements related to content modules are detailed in TF-3 <<vol3_clause_content_modules>>.
+This section documents any additional requirements on the profile’s content actors.
+
+////
+TODO:
+    - Consider adding more descriptive content to this sequence diagram, especially the intersection of this profile and SDPi-P (adding transactions from the start of the conversation + SDPi-P actors;
+    - Add a gateway sequence diagram here or below in the gateway actor
+////
+
+<<vol1_figure_sdpi_r_example_sequence_diagram>> illustrates a typical (not comprehensive) exchange scenario between SDPi-R actors:
+
+[#vol1_figure_sdpi_r_example_sequence_diagram]
+.SDPi-R Example Sequence Diagram
+
+[plantuml, target=puml-sdpi-r-example-sequence-diagram, format=svg]
+....
+include::../plantuml/vol1-figure-sdpi-r-example-sequence-diagram.puml[]
+....
 
 [#vol1_clause_sdpi_r_somds_medical_data_consumer]
 ===== SOMDS Medical Data Consumer
