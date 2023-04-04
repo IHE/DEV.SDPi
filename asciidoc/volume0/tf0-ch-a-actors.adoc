@@ -112,19 +112,16 @@ The table below lists _existing_ actors that are utilized in this specification.
 *_(TBD) -- If the ACM Gateway uses this_*
 | This actor receives alerts from the Alert Reporter and collects status events related to the dissemination of the alert.
 
-|[[actor_alert_consumer,Alert Consumer]] Alert Consumer  +
-*_(TBD) -- If the ACM Gateway uses this_*
+|[[actor_alert_consumer,Alert Consumer]] Alert Consumer
 | The Alert Consumer (ACON) receives the alert from the Alert Reporter (AR) and uses the alert information strictly as a consumer of the alert being raised.  There is no implementation requirement for how the ACON ultimately uses the alert information.
 
-|[[actor_alert_manager,Alert Manager]] Alert Manager  +
-*_(TBD) External to the ACM Gateway ... but will be indicated ... externally ... include?_*
+|[[actor_alert_manager,Alert Manager]] Alert Manager
 | The Alert Manager (AM) receives the alerts from the Alert Reporter (AR), potentially analyzes the alert, and dispatches the alert to the Alert Communicator (AC), and optionally, provides the alert to the Alert Archiver (AA) or Alert Consumer (ACON) upon subscription.
 
 |[[actor_alert_reporter,Alert Reporter]] Alert Reporter
 | This actor originates the alert (an alarm, either physiological or technical, or an advisory). May also query the Alert Aggregator for the status of the alert.
 
-|[[actor_device_observation_consumer,Device Observation Consumer]] Device Observation Consumer  +
-*_(TBD) Needed if any SOMDS-external info coming back; NOT IMPLEMENTED IN SDPi 1.0 but included in the actor diagram_*
+|[[actor_device_observation_consumer,Device Observation Consumer]] Device Observation Consumer
 | The actor responsible for receiving PCD data from the Device Observation Reporter, the Device Observation Filter, or both.
 
 |[[actor_device_observation_reporter,Device Observation Reporter]] Device Observation Reporter
