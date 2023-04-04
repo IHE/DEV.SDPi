@@ -31,7 +31,7 @@
 
 |[[actor_somds_connector,SOMDS Connector]] SOMDS Connector
 
-|Enables seamless interaction with systems and software applications that are outside the scope of the SOMDS network.
+|Enables seamless interaction with systems and software applications that are outside the scope of a SOMDS network.
 
 |[[actor_somds_consumer,SOMDS Consumer]] SOMDS Consumer
 
