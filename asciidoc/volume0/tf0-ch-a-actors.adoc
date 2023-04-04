@@ -39,7 +39,7 @@
 
 |[[actor_somds_dec_gateway,SOMDS DEC Gateway]] SOMDS DEC Gateway
 
-|Exchanges medical data with an IHE DEC-based environment
+|Exchanges information between SOMDS and IHE DEC-based environments.
 
 |[[actor_somds_fhir_gateway,SOMDS FHIR Gateway]] SOMDS FHIR Gateway
 
@@ -59,12 +59,12 @@
 
 |[[actor_somds_medical_control_consumer,SOMDS Medical Control Consumer]] SOMDS Medical Control Consumer
 
-|Discovers and invokes external control services supported by a
+|Discovers and invokes device-external control services supported by a
 <<actor_somds_medical_control_provider>>.
 
 |[[actor_somds_medical_control_provider,SOMDS Medical Control Provider]] SOMDS Medical Control Provider
 
-|Supports a set of external control services that may be discovered and invoked by a <<actor_somds_medical_control_consumer>>.
+|Supports a set of device-external control services that may be discovered and invoked by a <<actor_somds_medical_control_consumer>>.
 
 |[[actor_somds_medical_data_consumer,SOMDS Medical Data Consumer]] SOMDS Medical Data Consumer
 
@@ -76,7 +76,7 @@
 
 |[[actor_somds_participant,SOMDS Participant]] SOMDS Participant
 
-|Provides basic common connectivity capabilities for all actors that are part of a SOMDS network.
+|Provides basic, common connectivity capabilities that are shared by all actors that are part of a SOMDS network.
 
 |[[actor_somds_provider,SOMDS Provider]] SOMDS Provider
 
