@@ -1,5 +1,4 @@
 // DEV-37 Transaction Summary
 
-This transaction is used to for a <<actor_somds_consumer>> to retrieve medical data from a <<actor_somds_provider>>.
-Note, that there is no particular get operation for retrieving medical alert status information.
-Thus, the generic GetMdib/GetMdibResponse mechanisms are described here.
+Retrieve medical data from a <<actor_somds_provider>>.
+
