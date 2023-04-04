@@ -3,8 +3,8 @@
 skinparam monochrome true
 autonumber
 
-!global $str_sdc_sc = "SOMDS Consumer"
-!global $str_sdc_sp = "SOMDS Provider"
+!global $str_sdc_sc = "SOMDS Medical Control Consumer"
+!global $str_sdc_sp = "SOMDS Medical Control Provider"
 
 participant "$str_sdc_sc" as sdc_sc
 participant "$str_sdc_sp" as sdc_sp

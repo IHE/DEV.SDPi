@@ -75,6 +75,28 @@ image::../images/vol1-diagram-sdpi-xc-actor.svg[]
 [#vol1_clause_sdpi_xd_actor_descriptions_actor_profile_requirements]
 ==== Actor Descriptions and Actor Profile Requirements
 
+SDPi-xC actor roles and responsibilities are described in the subsections below.
+
+Unless otherwise specified below, individual transaction requirements are specified in TF-2   <<vol2_clause_transactions>>, and requirements related to content modules are detailed in TF-3 <<vol3_clause_content_modules>>.
+This section documents any additional requirements on the profile’s content actors.
+
+////
+TODO:
+    - Consider adding more descriptive content to this sequence diagram, especially the intersection of this profile and SDPi-P (adding transactions from the start of the conversation + SDPi-P actors;
+    - Add a gateway sequence diagram here or below in the gateway actor
+////
+
+<<vol1_figure_sdpi_xc_example_sequence_diagram>> illustrates a typical (not comprehensive) exchange scenario between SDPi-xC actors:
+
+[#vol1_figure_sdpi_xc_example_sequence_diagram]
+.SDPi-xC Example Sequence Diagram
+
+[plantuml, target=puml-sdpi-xc-example-sequence-diagram, format=svg]
+....
+include::../plantuml/vol1-figure-sdpi-xc-example-sequence-diagram.puml[]
+....
+
+
 [#vol1_clause_sdpi_xc_somds_medical_control_consumer]
 ===== SOMDS Medical Control Consumer
 [#vol1_spec_sdpi_xc_actor_somds_medical_control_consumer, reftext='SOMDS Medical Control Consumer']
