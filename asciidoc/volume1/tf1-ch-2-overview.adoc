@@ -123,7 +123,7 @@ This baseline profile supports the _*core*_ functionality needed by all particip
 Profile options are provided for additional capabilities that may be required to support extended scenarios  (e.g., "ensemble context" management).
 
 [sdpi_offset=11]
-==== Service-oriented Device Point-of-care Interoperability - Reporting (SPDi-R) Profile
+==== Service-oriented Device Point-of-care Interoperability - Reporting (SDPi-R) Profile
 The SDPi Reporting profile builds on the basic <<acronym_pnt>> capabilities of the <<acronym_sdpi_p>> profile, but adds the requirements to fully support *_medical data reporting_*.
 To that end, this specification fully supports the safety and security requirements in the <<ref_ieee_11073_10701_2022>> metric reporting <<acronym_pkp>> standard.
 
@@ -131,7 +131,7 @@ The profile supports core medical data reporting functionality needed by all par
 Profile options are provided for additional capabilities that may be required to support extended scenarios.
 
 [sdpi_offset=12]
-==== Service-oriented Device Point-of-care Interoperability - Alerting (SPDi-A) Profile
+==== Service-oriented Device Point-of-care Interoperability - Alerting (SDPi-A) Profile
 The SDPi Alerting profile builds on the basic <<acronym_pnt>> capabilities of the <<acronym_sdpi_p>> profile, but adds the requirements to fully support *_medical alerting_*.
 To that end, this specification implements the safety and security requirements of the <<ref_ieee_11073_10702_202x>> alert <<acronym_pkp>> standard (expected to be completed in 2023).
 
@@ -143,7 +143,7 @@ Profile options are provided for additional capabilities that may be required to
 ////
 
 [sdpi_offset=13]
-==== Service-oriented Device Point-of-care Interoperability - External Control (SPDi-xC) Profile
+==== Service-oriented Device Point-of-care Interoperability - External Control (SDPi-xC) Profile
 
 [%noheader]
 [%autowidth]
