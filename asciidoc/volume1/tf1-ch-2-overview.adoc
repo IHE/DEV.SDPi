@@ -104,7 +104,7 @@ The above figure illustrates how this balance was achieved, including:
 . C -> SDPi-xControl
 
 It should be noted that the _primary use context_ for SDPi-enabled technologies is high acuity points of care, namely Operating Rooms, ICU beds, emergency beds, etc.
-Within this conterxt, the core focus of these profiles is direct <<acronym_d2d>> interactions at the point of care.
+Within this context, the core focus of these profiles is direct <<acronym_d2d>> interactions at the point of care.
 Gateway actors provide integration with systems beyond the scope of the acute bedside context, typically though not necessarily using other protocols.
 This <<acronym_d2d>> is differentiated with the current implementation reality where devices use proprietary protocols to talk with their manufacturer's gateway server, requiring a level of indirection (server-to-server integration), and the attendant performance, quality and capability limitations.
 
