@@ -1,4 +1,4 @@
 // DEV-27 Transaction Summary
 
-Establish a publish-subscribe session between a <<actor_somds_provider>>, acting as the event source, and a <<actor_somds_consumer>>, acting as the event sink.
+Establish a publish-subscribe session between a <<vol1_spec_sdpi_p_actor_somds_provider>>, acting as the event source, and a <<vol1_spec_sdpi_p_actor_somds_consumer>>, acting as the event sink.
 

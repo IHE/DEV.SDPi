@@ -681,7 +681,7 @@ The <<acronym_sdc>> <<acronym_biceps>> standard, which SDPi-P profiles, consists
 [#figure_sdc_biceps_components_model]
 image::../images/vol1-diagram-sdc-biceps-component-view.svg[align=center]
 
-The <<term_medical_data_information_base>> component applies to all participating systems and consists of a *_descriptive model_* (e.g., what services and information a <<actor_somds_provider>> supports), and a state model.
+The <<term_medical_data_information_base>> component applies to all participating systems and consists of a *_descriptive model_* (e.g., what services and information a <<vol1_spec_sdpi_p_actor_somds_provider>> supports), and a state model.
 The discovery and communications models combine to enable device-to-device messaging and to identify both systems and services available on the network.
 The descriptive model is covered in more detail in <<vol3_clause_sdc_biceps_semantic_content_module>>, but the following <<figure_sdc_biceps_mdib_descriptors_states>> shows how network efficiency is achieved by searating descriptive information from dynamic state information:
 
@@ -689,9 +689,9 @@ The descriptive model is covered in more detail in <<vol3_clause_sdc_biceps_sema
 [#figure_sdc_biceps_mdib_descriptors_states]
 image::../images/vol1-diagram-sdc-biceps-mdib-description-state.svg[align=center]
 
-For every <<actor_somds_provider>> system, there is a descriptive model that includes a detailed specification of every element in the <<acronym_mdib>>.
+For every <<vol1_spec_sdpi_p_actor_somds_provider>> system, there is a descriptive model that includes a detailed specification of every element in the <<acronym_mdib>>.
 For each Descriptor, though, there is a State element (note the inclusion of a State::DescriptorHandle), that can be used to determine the value and change status for the associated descriptor.
-Therefore, though the <<acronym_mdib>> of a <<actor_somds_provider>> system must be retrieved at discovery and connection time, subsequent updates can be made upon state changes, greatly reducing network communication overhead.
+Therefore, though the <<acronym_mdib>> of a <<vol1_spec_sdpi_p_actor_somds_provider>> system must be retrieved at discovery and connection time, subsequent updates can be made upon state changes, greatly reducing network communication overhead.
 
 For an example of how <<acronym_biceps>> components (see <<figure_sdc_biceps_components_model>>) and <<acronym_mdib>> descriptors and states (see <<figure_sdc_biceps_mdib_descriptors_states>>) support <<term_plug_and_trust>> interoperability, a typical conversation is provided in <<vol1_figure_sdpi_p_example_sequence_diagram>>.
 
@@ -915,7 +915,7 @@ No additional safety requirements or considerations are identified for this tech
 ==== Effectiveness Requirements & Considerations
 No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
 ==== Security Requirements & Considerations
-Security is foundational for all interactions between <<actor_somds_participant>> Actors, with a clear distinction being made between information that may be exchanged outside of a secure connection (e.g., during network discovery transactions).
+Security is foundational for all interactions between <<vol1_spec_sdpi_p_actor_somds_participant>> Actors, with a clear distinction being made between information that may be exchanged outside of a secure connection (e.g., during network discovery transactions).
 Specific security technologies may vary based on the implementation technology being used, and will be detailed in the appropriate TF-2 technology specifications.
 All transactions indicate whether they require secure or unsecured connections.
 

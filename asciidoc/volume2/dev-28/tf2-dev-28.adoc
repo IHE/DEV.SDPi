@@ -23,7 +23,7 @@ include::tf2-dev-28-summary.adoc[]
 |Listens for a <<vol2_clause_dev_28_message_notification, {var_label_dev_28_message_contextreport}>> message to retrieve context updates.
 
 |<<vol1_spec_sdpi_p_actor_somds_provider>>
-|While a subscription is running, the <<actor_somds_provider>> delivers <<vol2_clause_dev_28_message_notification, {var_label_dev_28_message_contextreport}>> messages.
+|While a subscription is running, the <<vol1_spec_sdpi_p_actor_somds_provider>> delivers <<vol2_clause_dev_28_message_notification, {var_label_dev_28_message_contextreport}>> messages.
 
 |===
 
@@ -47,12 +47,12 @@ CAUTION: Transaction {var_transaction_id} supports a specialized instance of the
 [#vol2_clause_dev_28_message_notification]
 ===== {var_label_dev_28_message_contextreport} Message
 
-The {var_label_dev_28_message_contextreport} message contains updated context data and is delivered by a <<actor_somds_provider>> to subscribed <<actor_somds_consumer>>s.
+The {var_label_dev_28_message_contextreport} message contains updated context data and is delivered by a <<vol1_spec_sdpi_p_actor_somds_provider>> to subscribed <<vol1_spec_sdpi_p_actor_somds_consumer>>s.
 
 [#vol2_clause_dev_28_message_notification_trigger_events]
 ====== Trigger Events
 
-The {var_label_dev_28_message_contextreport} message is sent whenever a context of a <<actor_somds_provider>> is updated and a <<actor_somds_consumer>> is subscribed to context reports of a <<actor_somds_provider>>.
+The {var_label_dev_28_message_contextreport} message is sent whenever a context of a <<vol1_spec_sdpi_p_actor_somds_provider>> is updated and a <<vol1_spec_sdpi_p_actor_somds_consumer>> is subscribed to context reports of a <<vol1_spec_sdpi_p_actor_somds_provider>>.
 
 [#vol2_clause_dev_28_message_notification_semantics]
 ====== Message Semantics
@@ -62,7 +62,7 @@ The {var_label_dev_28_message_contextreport} message is sent whenever a context 
 [#vol2_clause_dev_28_message_contextreport_expected_actions]
 ====== Expected Actions
 
-When a <<actor_somds_provider>> sends this message, there is no expected action or required responses.
+When a <<vol1_spec_sdpi_p_actor_somds_provider>> sends this message, there is no expected action or required responses.
 
 [#vol2_clause_dev_28_notify_change_ses]
 include::../dev-x-default-ses-secured-mode.adoc[]

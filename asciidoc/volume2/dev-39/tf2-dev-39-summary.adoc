@@ -1,3 +1,3 @@
 // DEV-39 Transaction Summary
 
-Notify a <<actor_somds_consumer>> about changes in the medical alert status of a <<actor_somds_provider>>.
+Notify a <<vol1_spec_sdpi_p_actor_somds_consumer>> about changes in the medical alert status of a <<vol1_spec_sdpi_p_actor_somds_provider>>.

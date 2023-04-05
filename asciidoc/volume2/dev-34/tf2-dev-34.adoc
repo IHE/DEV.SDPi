@@ -18,11 +18,11 @@ include::tf2-dev-34-summary.adoc[]
 |===
 |Actor |Roles
 
-|<<actor_somds_provider>>
+|<<vol1_spec_sdpi_p_actor_somds_provider>>
 |Announces its departure by multicasting <<vol2_clause_dev_34_message_bye, {var_label_dev_34_message_bye}>> messages to all listening systems.
 
-|<<actor_somds_consumer>>
-|Listens for <<vol2_clause_dev_34_message_bye, {var_label_dev_34_message_bye}>> messages to identify any <<actor_somds_provider>>s that will leave the <<term_medical_device_lan>>.
+|<<vol1_spec_sdpi_p_actor_somds_consumer>>
+|Listens for <<vol2_clause_dev_34_message_bye, {var_label_dev_34_message_bye}>> messages to identify any <<vol1_spec_sdpi_p_actor_somds_provider>>s that will leave the <<term_medical_device_lan>>.
 
 |===
 
@@ -41,14 +41,14 @@ include::../../plantuml/vol2-figure-dev-34-sequence.puml[]
 [#vol2_clause_dev_34_message_bye]
 ===== {var_label_dev_34_message_bye} Message
 
-The {var_label_dev_34_message_bye} message is part of the BICEPS _implicit discovery_ protocol for allowing <<actor_somds_consumer>>s to receive a notification when a <<actor_somds_provider>> is leaving the network.
+The {var_label_dev_34_message_bye} message is part of the BICEPS _implicit discovery_ protocol for allowing <<vol1_spec_sdpi_p_actor_somds_consumer>>s to receive a notification when a <<vol1_spec_sdpi_p_actor_somds_provider>> is leaving the network.
 
-The {var_label_dev_34_message_bye} is a multicast message that is sent from each <<actor_somds_provider>> to all listening <<actor_somds_consumer>>s (zero to many).
+The {var_label_dev_34_message_bye} is a multicast message that is sent from each <<vol1_spec_sdpi_p_actor_somds_provider>> to all listening <<vol1_spec_sdpi_p_actor_somds_consumer>>s (zero to many).
 
 [#vol2_clause_dev_34_message_announce_network_departure_trigger_events]
 ====== Trigger Events
 
-This message is sent whenever a <<actor_somds_provider>> leaves a network.
+This message is sent whenever a <<vol1_spec_sdpi_p_actor_somds_provider>> leaves a network.
 
 [#vol2_clause_dev_34_message_announce_network_departure_message_semantics]
 ====== Message Semantics
@@ -59,7 +59,7 @@ This message is sent whenever a <<actor_somds_provider>> leaves a network.
 [#vol2_clause_dev_34_message_announce_network_departure_expected_actions]
 ====== Expected Actions
 
-When a <<actor_somds_provider>> sends this message, there is no expected or required response.
+When a <<vol1_spec_sdpi_p_actor_somds_provider>> sends this message, there is no expected or required response.
 
 
 [#vol2_clause_dev_34_message_announce_network_departure_ses]

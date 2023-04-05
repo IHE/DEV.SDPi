@@ -264,7 +264,7 @@ NOTE: For further information, please refer to the <<ref_ihe_pcd_tf_2_2019>>.
 [sdpi_requirement#r8005,sdpi_req_level=shall]
 ****
 
-For the IHE DEC profile, the <<actor_somds_dec_gateway>> shall set the OBR-4 field to the service identifier of the <<actor_somds_provider>>.
+For the IHE DEC profile, the <<actor_somds_dec_gateway>> shall set the OBR-4 field to the service identifier of the <<vol1_spec_sdpi_p_actor_somds_provider>>.
 
 .Notes
 [%collapsible]
@@ -474,7 +474,7 @@ NOTE: <<ref_tbl_dec_obx2_mapping>> defines the mapping of the SDC metric type to
 .R8011
 [sdpi_requirement#r8011,sdpi_req_level=shall]
 ****
-A <<actor_somds_dec_gateway>> shall leave the OBX-2 field empty for OBX segments defining the <<actor_somds_provider>>'s MDS, VMD, or CHAN containment tree elements.
+A <<actor_somds_dec_gateway>> shall leave the OBX-2 field empty for OBX segments defining the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDS, VMD, or CHAN containment tree elements.
 ****
 
 
