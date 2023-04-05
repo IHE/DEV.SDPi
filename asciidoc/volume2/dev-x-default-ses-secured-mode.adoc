@@ -17,5 +17,5 @@ This transaction is intended to execute over *_SECURED_* transmission channels.
 Protocol-specific security requirements for this transaction are detailed in the related TF-2 messaging technology appendix.
 For example, <<vol2_appendix_a_mdpws_messages>> for <<acronym_mdpws>>-based communication.
 
-Appropriate security risk management shall be performed to ensure that no unacceptable harm results during *_SECURED_* message exchange.
+Appropriate security risk management is performed in order to ensure that no unacceptable harm results during *_SECURED_* message exchange.
 

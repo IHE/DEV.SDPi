@@ -122,7 +122,8 @@
 | Environment that combines interoperable heterogeneous POINT-OF-CARE (PoC) MEDICAL DEVICEs and other equipment integrated to create a medical device system for the care of a single high acuity patient.
 |
 | [[acronym_ice,ICE]] ICE
-| <<ref_ieee_11073_20701_2018>>; <<ref_aami_2700_1_2019>>
+| <<ref_ieee_11073_20701_2018>>;
+<<ref_aami_2700_1_2019>>
 | SDC
 
 | [[term_international_medical_device_regulators_forum,International Medical Device Regulators Forum (IMDRF)]] International Medical Device Regulators Forum
@@ -185,7 +186,7 @@
 | The application of informatics technology standards to achieve seamless and dynamic connection of <<term_point_of_care_device>>'s.
 |
 | [[acronym_mdi,MDI]] MDI
-|
+| https://www.fda.gov/medical-devices/digital-health-center-excellence/medical-device-interoperability[See also U.S. FDA MDI Definition]
 |
 
 | [[term_medical_device_lan,Medical Device LAN (MD LAN)]] Medical Device LAN
