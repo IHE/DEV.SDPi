@@ -1,0 +1,54 @@
+[appendix#vol3_appendix_b_biceps_extension_namespace,sdpi_offset=B]
+== BICEPS Extension Namespace
+
+All BICEPS model extensions should utilize the namespace extnension OIDs as specified below.
+
+IHE Devices domain Top-level OID (see https://wiki.ihe.net/index.php/OID_Registration[IHE Domain Namespaces wiki]):  1.3.6.1.4.1.19376.1.6
+
+See https://wiki.ihe.net/index.php/PCD_OID_Management[IHE DEV OID Identifier Management wiki page] for a more complete listing of OIDs within the IHE Devices namespace.
+
+<<vol3_table_sdpi_biceps_extension_namespace>> details the OID extensions for semantics related to the SDC BICEPS model.  (See <<ref_ieee_11073_10207_2017>>)
+
+[#vol3_table_sdpi_biceps_extension_namespace]
+.SDPi BICEPS Extension Namespaces
+[%autowidth]
+[cols="2,^1,3"]
+|===
+.^|*OID*
+.^|*Namespace*
+.^|*Notes*
+
+| 1.3.6.1.4.1.19376.1.6
+| IHE DEV
+| Namespace allocated for the IHE Devices domain
+
+| 1.3.6.1.4.1.19376.1.6.2
+| Profile
+| Profile specific OIDs
+
+| 1.3.6.1.4.1.19376.1.6.2.10
+| SDPi
+| Namespace for general SDPi identifiers; non-profile specific
+
+| 1.3.6.1.4.1.19376.1.6.2.10.1
+| Extensions
+|
+
+| 1.3.6.1.4.1.19376.1.6.2.10.1.1
+| SDC BICEPS Extension
+| SDPi extension to the identifiers in the BICEPS model published in the <<ref_ieee_11073_10207_2017>> standard
+
+| 1.3.6.1.4.1.19376.1.6.2.10.1.1.x
+| Version
+| For example, Version 1 would be 1.3.6.1.4.1.19376.1.6.2.10.1.1.1
+
+| 1.3.6.1.4.1.19376.1.6.2.10.1.2
+| <tbd>
+| Other general SDPi extensions
+
+|===
+
+////
+TODO:  Add the complete OID extensions and updates SOMEWHERE in the SDPi profiles.  This appendix may be as good as it gets.
+////
+

@@ -59,7 +59,9 @@ https://github.com/IHE/sdpi-fhir/issues/33[Github Issue #33 _Topic: Connect Time
 
 * *Issue: _Info exchanged during unsecured discovery_*
 ** https://github.com/IHE/sdpi-fhir/issues/102[Github Issue #102 _Append TOI: Info exchanged during unsecured discovery_]
-** #Identify list of updates to this supplement w/ links#
+////
+TODO:  ** Identify list of updates to this supplement w/ links
+////
 
 * *Issue: _What is a Central?_*
 ** https://github.com/IHE/sdpi-fhir/issues/123[Github Issue #123 _Append TOI: What is a Central?_]
