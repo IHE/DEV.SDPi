@@ -86,12 +86,12 @@ include::../dev-a-default-trigger-events.adoc[]
 .R7001
 [sdpi_requirement#r7001,sdpi_req_level=shall]
 ****
-When a <<actor_somds_consumer>> requests `{var_filter_dialect_action}` filter processing in a Subscribe message, the <<actor_somds_consumer>> shall assume the receiving <<actor_somds_provider>> to perform the `{var_uri_strcmp0}` matching rule.
+When a <<vol1_spec_sdpi_p_actor_somds_consumer>> requests `{var_filter_dialect_action}` filter processing in a Subscribe message, the <<vol1_spec_sdpi_p_actor_somds_consumer>> shall assume the receiving <<vol1_spec_sdpi_p_actor_somds_provider>> to perform the `{var_uri_strcmp0}` matching rule.
 
 .Notes
 [%collapsible]
 ====
-NOTE: The `{var_uri_rfc3986}` matching rule definition implemented by <<actor_somds_provider>>s ambiguously includes the term `prefix`.
+NOTE: The `{var_uri_rfc3986}` matching rule definition implemented by <<vol1_spec_sdpi_p_actor_somds_provider>>s ambiguously includes the term `prefix`.
 As `{var_uri_rfc3986}` subsumes `{var_uri_strcmp0}`, a fallback to case-sensitive string comparison is explicit and failsafe.
 ====
 ****
@@ -138,7 +138,7 @@ include::../dev-a-default-expected-actions.adoc[]
 .R7003
 [sdpi_requirement#r7003,sdpi_req_level=shall]
 ****
-A <<actor_somds_participant>> shall leverage HTTP path dispatching to identify subscription managers and notification/end-to sinks.
+A <<vol1_spec_sdpi_p_actor_somds_participant>> shall leverage HTTP path dispatching to identify subscription managers and notification/end-to sinks.
 
 
 .Notes
@@ -155,7 +155,7 @@ NOTE: WS-Eventing allows for an event source or sink to make use of WS-Addressin
 [sdpi_requirement#r7004,sdpi_req_level=shall]
 ****
 
-In a SubscribeResponse message, a <<actor_somds_provider>> shall provide an _Expires_ element.
+In a SubscribeResponse message, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall provide an _Expires_ element.
 
 .Notes
 [%collapsible]
@@ -247,7 +247,7 @@ include::../dev-a-default-expected-actions.adoc[]
 [sdpi_requirement#r7005,sdpi_req_level=shall]
 ****
 
-In a RenewResponse message, a <<actor_somds_provider>> shall provide an _Expires_ element.
+In a RenewResponse message, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall provide an _Expires_ element.
 
 .Notes
 [%collapsible]

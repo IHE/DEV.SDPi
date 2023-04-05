@@ -16,11 +16,11 @@ include::tf2-dev-39-summary.adoc[]
 |===
 |Actor |Roles
 
-|<<actor_somds_consumer>>
+|<<vol1_spec_sdpi_p_actor_somds_consumer>>
 |Listens for a Notification message to retrieve medical alert updates.
 
-|<<actor_somds_provider>>
-|While a subscription is running, the <<actor_somds_provider>> delivers Notification messages.
+|<<vol1_spec_sdpi_p_actor_somds_provider>>
+|While a subscription is running, the <<vol1_spec_sdpi_p_actor_somds_provider>> delivers Notification messages.
 
 |===
 

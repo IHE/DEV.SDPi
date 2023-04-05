@@ -1,3 +1,3 @@
 // DEV-40 Transaction Summary
 
-Retrieve the medical alert status of a <<actor_somds_provider>>.
+Retrieve the medical alert status of a <<vol1_spec_sdpi_p_actor_somds_provider>>.

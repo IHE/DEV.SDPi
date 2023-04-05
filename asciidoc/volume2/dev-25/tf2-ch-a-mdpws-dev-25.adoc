@@ -54,9 +54,9 @@ include::../dev-a-default-trigger-events.adoc[]
 
 ====== Message Semantics
 
-`s12:Envelope/s12:Body/wsm:Metadata/wsm:MetadataSection/dpws:ThisModel`:: The <<actor_somds_provider>>'s metadata that maps to the <<message_semantics_discover_biceps_services_model, Model Metadata>>.
+`s12:Envelope/s12:Body/wsm:Metadata/wsm:MetadataSection/dpws:ThisModel`:: The <<vol1_spec_sdpi_p_actor_somds_provider>>'s metadata that maps to the <<message_semantics_discover_biceps_services_model, Model Metadata>>.
 
-`s12:Envelope/s12:Body/wsm:Metadata/wsm:MetadataSection/dpws:ThisDevice`:: The <<actor_somds_provider>>'s metadata that maps to the <<message_semantics_discover_biceps_services_device, Device Metadata>>.
+`s12:Envelope/s12:Body/wsm:Metadata/wsm:MetadataSection/dpws:ThisDevice`:: The <<vol1_spec_sdpi_p_actor_somds_provider>>'s metadata that maps to the <<message_semantics_discover_biceps_services_device, Device Metadata>>.
 
 `s12:Envelope/s12:Body/wsm:Metadata/wsm:MetadataSection/dpws:Relationship/dpws:Hosted/dpws:Types`:: Designates available <<payload_dev_25_get_metadata_biceps_services>> by providing a list of service types that contains at least one or more of the BICEPS services as mapped in <<vol2_table_appendix_mdpws_dev_25_hosted_types>>.
 

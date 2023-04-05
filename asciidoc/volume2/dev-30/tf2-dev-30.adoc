@@ -19,10 +19,10 @@ include::tf2-dev-30-summary.adoc[]
 |===
 |Actor |Roles
 
-|<<actor_somds_consumer>>
-|Initiates communication by sending a <<vol2_clause_dev_30_message_getmdib, {var_label_dev_30_message_getmdib}>> message to a <<actor_somds_provider>>. Then listens for a <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> message to retrieve the <<actor_somds_provider>>'s MDIB.
+|<<vol1_spec_sdpi_p_actor_somds_consumer>>
+|Initiates communication by sending a <<vol2_clause_dev_30_message_getmdib, {var_label_dev_30_message_getmdib}>> message to a <<vol1_spec_sdpi_p_actor_somds_provider>>. Then listens for a <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> message to retrieve the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDIB.
 
-|<<actor_somds_provider>>
+|<<vol1_spec_sdpi_p_actor_somds_provider>>
 |Listens for <<vol2_clause_dev_30_message_getmdib, {var_label_dev_30_message_getmdib}>> messages, which it responds to with <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> messages respectively.
 
 |===
@@ -46,12 +46,12 @@ include::../../plantuml/vol2-figure-dev-30-sequence.puml[]
 [#vol2_clause_dev_30_message_getmdib]
 ===== {var_label_dev_30_message_getmdib} Message
 
-The {var_label_dev_30_message_getmdib} message is sent as part of the BICEPS GET SERVICE for allowing <<actor_somds_consumer>>s to retrieve the description and state of an MDIB from a <<actor_somds_provider>>.
+The {var_label_dev_30_message_getmdib} message is sent as part of the BICEPS GET SERVICE for allowing <<vol1_spec_sdpi_p_actor_somds_consumer>>s to retrieve the description and state of an MDIB from a <<vol1_spec_sdpi_p_actor_somds_provider>>.
 
 [#vol2_clause_dev_30_message_getmdib_trigger_events]
 ====== Trigger Events
 
-The {var_label_dev_30_message_getmdib} message is sent whenever a <<actor_somds_consumer>> wants to retrieve the description and state of an MDIB of a <<actor_somds_provider>>.
+The {var_label_dev_30_message_getmdib} message is sent whenever a <<vol1_spec_sdpi_p_actor_somds_consumer>> wants to retrieve the description and state of an MDIB of a <<vol1_spec_sdpi_p_actor_somds_provider>>.
 
 [#vol2_clause_dev_30_message_getmdib_semantics]
 ====== Message Semantics
@@ -61,7 +61,7 @@ The {var_label_dev_30_message_getmdib} message does not contain any further sema
 [#vol2_clause_dev_30_message_getmdib_expected_actions]
 ====== Expected Actions
 
-When a <<actor_somds_consumer>> sends this message, the receiving <<actor_somds_provider>> responds with a <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> message.
+When a <<vol1_spec_sdpi_p_actor_somds_consumer>> sends this message, the receiving <<vol1_spec_sdpi_p_actor_somds_provider>> responds with a <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> message.
 
 
 // ---------- Get Mdib Response ---------
@@ -76,7 +76,7 @@ The {var_label_dev_30_message_getmdibresponse} message is sent as part of the BI
 [#vol2_clause_dev_30_message_getmdibresponse_trigger_events]
 ====== Trigger Events
 
-The {var_label_dev_30_message_getmdibresponse} message is sent whenever a <<actor_somds_provider>> receives a <<vol2_clause_dev_30_message_getmdib, {var_label_dev_30_message_getmdib}>> message.
+The {var_label_dev_30_message_getmdibresponse} message is sent whenever a <<vol1_spec_sdpi_p_actor_somds_provider>> receives a <<vol2_clause_dev_30_message_getmdib, {var_label_dev_30_message_getmdib}>> message.
 
 [#vol2_clause_dev_30_message_getmdibresponse_semantics]
 ====== Message Semantics
@@ -88,7 +88,7 @@ The {var_label_dev_30_message_getmdibresponse} message is sent whenever a <<acto
 [#vol2_clause_dev_30_message_getmdibresponse_expected_actions]
 ====== Expected Actions
 
-When a <<actor_somds_provider>> sends this message, there is no expected or required response.
+When a <<vol1_spec_sdpi_p_actor_somds_provider>> sends this message, there is no expected or required response.
 
 [#vol2_clause_dev_30_retrieve_biceps_content_ses]
 include::../dev-x-default-ses-secured-mode.adoc[]

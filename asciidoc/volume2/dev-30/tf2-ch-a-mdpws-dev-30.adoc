@@ -59,9 +59,9 @@ include::../dev-a-default-trigger-events.adoc[]
 
 ====== Message Semantics
 
-`s12:Envelope/s12:Body/msg:GetMdibResponse/msg:Mdib/pm:MdDescription`:: The <<actor_somds_provider>>'s descriptive part of the MDIB.
+`s12:Envelope/s12:Body/msg:GetMdibResponse/msg:Mdib/pm:MdDescription`:: The <<vol1_spec_sdpi_p_actor_somds_provider>>'s descriptive part of the MDIB.
 
-`s12:Envelope/s12:Body/msg:GetMdibResponse/msg:Mdib/pm:MdState`:: The <<actor_somds_provider>>'s state part of the MDIB.
+`s12:Envelope/s12:Body/msg:GetMdibResponse/msg:Mdib/pm:MdState`:: The <<vol1_spec_sdpi_p_actor_somds_provider>>'s state part of the MDIB.
 
 :var_expected_actions_ref: <<vol2_clause_dev_30_message_getmdibresponse>>
 include::../dev-a-default-expected-actions.adoc[]
@@ -74,7 +74,7 @@ include::../dev-a-default-expected-actions.adoc[]
 .R7002
 [sdpi_requirement#r7002,sdpi_req_level=shall]
 ****
-A <<actor_somds_provider>> shall enclose all context states in pm:GetMdibResponse messages.
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall enclose all context states in pm:GetMdibResponse messages.
 
 .Notes
 [%collapsible]

@@ -10,7 +10,7 @@ However, if the serializer is not XML-Schema-agnostic, it ignores _mixed content
 [sdpi_requirement#r0013,sdpi_req_level=shall]
 ****
 
-A <<actor_somds_participant>> shall serialize XML instance documents in accordance to its applicable XML Schema definitions.
+A <<vol1_spec_sdpi_p_actor_somds_participant>> shall serialize XML instance documents in accordance to its applicable XML Schema definitions.
 
 .Notes
 [%collapsible]
