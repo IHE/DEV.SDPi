@@ -21,7 +21,7 @@ NOTE: If the SDC patient and/or location context information is not be used for 
 .R8112
 [sdpi_requirement#r8112,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
-A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-2 field to the code for the patient class.
+If <<r8111>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-2 field to the code for the patient class.
 
 .Notes
 [%collapsible]
@@ -38,7 +38,7 @@ The SDC data model does not support the concept of a patient class. Therefore, t
 .R8113
 [sdpi_requirement#r8113,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
-A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-3 field to the patient's assigned location.
+If <<r8111>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-3 field to the patient's assigned location.
 
 .Notes
 [%collapsible]
@@ -93,7 +93,7 @@ NOTE: <<ref_tbl_pv13_mapping>> defines the mapping of the SDC patient location i
 .R8114
 [sdpi_requirement#r8114,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
-A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-19 field to the patient's visit identifier.
+If <<r8111>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-19 field to the patient's visit identifier.
 
 If the SDC patient identifier element *pm:PatientContextState/pm:Identification* contains more than one patient identifier, only the unique identifier assigned to the patient's visit is mapped according to the <<ref_tbl_pv119_mapping>> table.
 
@@ -145,7 +145,7 @@ Valid *"Identifier Type Code"* values for a visit number are, for example, *"VN"
 .R8115
 [sdpi_requirement#r8115,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
-A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-44 field to the patient's admission date/time.
+If <<r8111>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-44 field to the patient's admission date/time.
 
 The SDC data model does not support the concept of an admission date/time. There are also different types of admissions; e.g. hospital admission, care unit admission, etc.
 
@@ -156,7 +156,7 @@ This said, it is up to the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gatew
 .R8116
 [sdpi_requirement#r8116,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
-A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-51 field to the code for the visit indicator.
+If <<r8111>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-51 field to the code for the visit indicator.
 
 If *"pm:PatientContextState/pm:Identification/pm:Type/@Code"* is "VN" (Visit Number), the field is set to *"V"*.
 

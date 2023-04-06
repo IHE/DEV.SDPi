@@ -1,3 +1,3 @@
 // DEV-36 Transaction Summary
 
-This transaction is used to publish medical data from a <<actor_somds_provider>> to a <<actor_somds_consumer>>.
+Publish medical data from a <<vol1_spec_sdpi_p_actor_somds_provider>> to a <<vol1_spec_sdpi_p_actor_somds_consumer>>.

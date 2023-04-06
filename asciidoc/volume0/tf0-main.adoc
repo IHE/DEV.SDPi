@@ -16,7 +16,7 @@ IHE^®^ and the IHE logo are trademarks of the Healthcare Information Management
 
 [sdpi_offset=clear]
 == IHE Technical Frameworks General Introduction Appendices
-The https://profiles.ihe.net/GeneralIntro/index.html[IHE Technical Framework General Introduction Appendices] are components shared by all of the IHE domain technical frameworks. Each technical framework volume contains links to these documents where appropriate.
+The https://profiles.ihe.net/GeneralIntro/index.html#3[IHE Technical Framework General Introduction Appendices] are components shared by all of the IHE domain technical frameworks. Each technical framework volume contains links to these documents where appropriate.
 
 include::tf0-ch-a-actors.adoc[]
 

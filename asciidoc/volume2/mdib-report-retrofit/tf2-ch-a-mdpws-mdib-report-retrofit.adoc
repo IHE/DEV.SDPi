@@ -1,18 +1,18 @@
 [#vol2_clause_appendix_a_mdib_report_retrofit]
 ==== MDIB Report Retrofit
 
-In addition to <<vol3_clause_mdib_report_retrofit>>, this section specifies requirements to an MDPWS transport binding. The requirements aim to verify that <<acronym_mdib>> versions received by a <<actor_somds_consumer>> are not decremented and present no gap.
+In addition to <<vol3_clause_mdib_report_retrofit>>, this section specifies requirements to an MDPWS transport binding. The requirements aim to verify that <<acronym_mdib>> versions received by a <<vol1_spec_sdpi_p_actor_somds_consumer>> are not decremented and present no gap.
 
 .R1001
 [sdpi_requirement#r1001,sdpi_req_level=shall]
 ****
-A <<actor_somds_provider>> shall only establish one TCP connection at a time for every subscribed <<actor_somds_consumer>>.
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall only establish one TCP connection at a time for every subscribed <<vol1_spec_sdpi_p_actor_somds_consumer>>.
 ****
 
 .R1002
 [sdpi_requirement#r1002,sdpi_req_level=shall]
 ****
-A <<actor_somds_participant>> shall utilize TCP to exchange messages with other <<actor_somds_participant>>s except for messages exchanged in the WS-Discovery Ad-hoc mode.
+A <<vol1_spec_sdpi_p_actor_somds_participant>> shall utilize TCP to exchange messages with other <<vol1_spec_sdpi_p_actor_somds_participant>>s except for messages exchanged in the WS-Discovery Ad-hoc mode.
 
 .Notes
 [%collapsible]
@@ -24,7 +24,7 @@ NOTE: The WS-Discovery Ad-hoc mode utilizes UDP to exchange messages, see <<ref_
 .R1003
 [sdpi_requirement#r1003,sdpi_req_level=shall]
 ****
-A <<actor_somds_participant>> shall only utilize HTTP 1.1 without HTTP pipelining for any HTTP traffic.
+A <<vol1_spec_sdpi_p_actor_somds_participant>> shall only utilize HTTP 1.1 without HTTP pipelining for any HTTP traffic.
 
 .Notes
 [%collapsible]
@@ -36,17 +36,17 @@ NOTE: Enforces use of HTTP 1.1 in order to limit choices by which a re-ordering 
 .R1004
 [sdpi_requirement#r1004,sdpi_req_level=shall]
 ****
-A <<actor_somds_provider>> shall transmit msg:WaveformStream, msg:AbstractMetricReport, msg:AbstractOperationalStateReport, msg:AbstractComponentReport, msg:AbstractAlertReport, msg:ObservedValueStream, msg:DescriptionModificationReport, and msg:AbstractContextReport messages sequentially.
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall transmit msg:WaveformStream, msg:AbstractMetricReport, msg:AbstractOperationalStateReport, msg:AbstractComponentReport, msg:AbstractAlertReport, msg:ObservedValueStream, msg:DescriptionModificationReport, and msg:AbstractContextReport messages sequentially.
 
 .Notes
 [%collapsible]
 ====
-NOTE: This allows for a <<actor_somds_consumer>> to apply report data on internal <<acronym_mdib>> data structures before receiving the next report without buffering.
+NOTE: This allows for a <<vol1_spec_sdpi_p_actor_somds_consumer>> to apply report data on internal <<acronym_mdib>> data structures before receiving the next report without buffering.
 ====
 ****
 
 .R1005
 [sdpi_requirement#r1005,sdpi_req_level=should]
 ****
-A <<actor_somds_consumer>> should reconnect or go into a fail-safe mode when it receives a report with an <<acronym_mdib>> version that is either lower than the last received version or more than one version higher than the last received version.
+A <<vol1_spec_sdpi_p_actor_somds_consumer>> should reconnect or go into a fail-safe mode when it receives a report with an <<acronym_mdib>> version that is either lower than the last received version or more than one version higher than the last received version.
 ****

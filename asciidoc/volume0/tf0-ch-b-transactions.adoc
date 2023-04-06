@@ -1,12 +1,12 @@
 
-[appendix#vol0_appendix_b_transadtion_summary_definitions,sdpi_offset=B]
-=== Transaction Summary Definitions
+[appendix#vol0_appendix_b_transactions,sdpi_offset=B]
+=== Transactions
 
 [%noheader]
 [%autowidth]
 [cols="1"]
 |===
-|Add the following *_new or modified_* transactions to the IHE Technical Frameworks General Introduction Appendix B:
+|Add the following *_new or modified_* transactions to the IHE Technical Frameworks General Introduction https://profiles.ihe.net/GeneralIntro/ch-B.html[Appendix B].
 |===
 
 ////

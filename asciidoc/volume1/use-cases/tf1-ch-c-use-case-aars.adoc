@@ -25,12 +25,11 @@ image::../images/vol1-diagram-use-case-aars-tech-view.svg[]
 
 *And* At least one <<label_system_type_name_agw>> (<<acronym_agw>>) Service on the <<acronym_md_lan>>
 
-*And* At least one Alert Recording System is connected to the <<label_system_type_name_agw>> (<<acronym_agw>>) Service.
+*And* At least one Alert Recording System is connected to the <<label_system_type_name_agw>> (<<acronym_agw>>) Service
 
 *And* All devices report either a device label and/or location and/or patient ID
 
 *And* The AGW Service is associated with a specific set of device labels, and/or location(s)
-.
 
 [#vol1_clause_appendix_c_use_case_aars_scenarios]
 ==== Scenarios

@@ -20,7 +20,7 @@ NOTE: If the SDC patient context information is not intended to be used for the 
 .R8103
 [sdpi_requirement#r8103,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
-A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall map the patient identifiers to the PID-3 field.
+If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall map the patient identifiers to the PID-3 field.
 
 .Notes
 [%collapsible]
@@ -92,7 +92,7 @@ The following identifier type codes are proposed to be used for the patient iden
 .R8104
 [sdpi_requirement#r8104,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
-A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-5 field to the patient name information.
+If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-5 field to the patient name information.
 
 .Notes
 [%collapsible]
@@ -144,7 +144,7 @@ Please refer also to the corresponding section in the <<ref_ihe_pcd_tf_2_2019>>.
 .R8105
 [sdpi_requirement#r8105,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
-A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-6 field to the mother's maiden name or birth name before marriage.
+If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-6 field to the mother's maiden name or birth name before marriage.
 
 .Notes
 [%collapsible]
@@ -174,7 +174,7 @@ NOTE: <<ref_tbl_pid6_mapping>> defines the mapping of the SDC patient name infor
 .R8106
 [sdpi_requirement#r8106,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
-A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-7 field to the date & time of birth.
+If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-7 field to the date & time of birth.
 
 .Notes
 [%collapsible]
@@ -218,7 +218,7 @@ In addition, there will be a gender extension that shall be set to the administr
 The HL7 V2.6 messaging standard only supports a "Administrative Sex" field in the PID segment.
 
 [none]
-. *STANDARDIZATION NOTE:*  There is active work to finalize the informatics standards related to sex and gender, including within HL7, SNOMED, ISO/TC215 and in other standards development organizations .
+. *STANDARDIZATION NOTE:*  There is active work to finalize the informatics standards related to sex and gender, including within HL7, SNOMED, ISO/TC215 and in other standards development organizations.
 Once this standardization is complete, especially within HL7 FHIR and Version 2, the SDC standards and the SDPi profiles and gateway specifications will be harmonized.
 Until that time, the mappings below represent a "best effort" given the status of the underlying standards.
 
@@ -239,7 +239,7 @@ The following list a couple of options and any comments from the reviewers are h
 .R8107
 [sdpi_requirement#r8107,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
-A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-8 field to the code for the administrative sex.
+If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-8 field to the code for the administrative sex.
 
 However, in the clinical context of a point of care device the biological sex, or sex at birth is important for various algorithms.
 
@@ -300,7 +300,7 @@ The sex and gender of a patient (or a newborn) cannot exactly be mapped from ISO
 .R8108
 [sdpi_requirement#r8108,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
-A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-10 field to the patient's race.
+If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-10 field to the patient's race.
 
 .Notes
 [%collapsible]
@@ -362,7 +362,7 @@ NOTE: <<ref_tbl_pid10_mapping>> defines the mapping of the SDC patient's race in
 .R8109
 [sdpi_requirement#r8109,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
-A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-31 field to an indicator whether the patient's identity is known.
+If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-31 field to an indicator whether the patient's identity is known.
 
 .Notes
 [%collapsible]

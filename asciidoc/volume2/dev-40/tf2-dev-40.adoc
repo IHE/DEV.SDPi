@@ -18,10 +18,10 @@ include::tf2-dev-40-summary.adoc[]
 |===
 |Actor |Roles
 
-|<<actor_somds_consumer>>
-|Initiates communication by sending a {var_label_dev_40_message_getmdib} message to a <<actor_somds_provider>>. Then listens for a {var_label_dev_40_message_getmdibresponse} message to retrieve the <<actor_somds_provider>>'s MDIB.
+|<<vol1_spec_sdpi_p_actor_somds_consumer>>
+|Initiates communication by sending a {var_label_dev_40_message_getmdib} message to a <<vol1_spec_sdpi_p_actor_somds_provider>>. Then listens for a {var_label_dev_40_message_getmdibresponse} message to retrieve the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDIB.
 
-|<<actor_somds_provider>>
+|<<vol1_spec_sdpi_p_actor_somds_provider>>
 |Listens for {var_label_dev_40_message_getmdib} messages, which it responds to with {var_label_dev_40_message_getmdibresponse} messages respectively.
 
 |===
@@ -37,6 +37,9 @@ include::tf2-dev-40-summary.adoc[]
 ....
 include::../../plantuml/vol2-figure-dev-40-sequence.puml[]
 ....
+
+Note that there is no particular get operation for retrieving medical alert status information.
+Thus, the generic GetMdib/GetMdibResponse mechanisms are described here.
 
 :var_duplicated_transaction: {var_transaction_id}
 :var_dupicates_list: DEV-30 (<<vol2_clause_dev_30>>) and DEV-37 (<<vol2_clause_dev_37>>)

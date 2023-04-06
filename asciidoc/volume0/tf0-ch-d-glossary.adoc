@@ -12,7 +12,7 @@
 [%autowidth]
 [cols="1"]
 |===
-|Add the following *_new or updated_* glossary terms to the IHE Technical Frameworks General Introduction Appendix D.
+|Add the following *_new or updated_* glossary terms to the IHE Technical Frameworks General Introduction https://profiles.ihe.net/GeneralIntro/ch-D.html[Appendix D].
 |===
 
 [%autowidth]
@@ -56,7 +56,7 @@
 | SDC
 
 | [[term_coded_attribute, Coded Attribute]] Coded Attribute
-| A BICEPS participant model extension that allows for a <<actor_somds_provider>> to provide attributes from the first partition of the IEEE 11073-10101 nomenclature. Specified in <<vol3_clause_coded_attribute>>.
+| A BICEPS participant model extension that allows for a <<vol1_spec_sdpi_p_actor_somds_provider>> to provide attributes from the first partition of the IEEE 11073-10101 nomenclature. Specified in <<vol3_clause_coded_attribute>>.
 |
 |
 | See https://www.nist.gov/conformity-assessment[NIST CA resources page]
@@ -77,7 +77,7 @@
 | SDC
 
 | [[term_discovery_scope, Discovery Scope]] Discovery Scope
-| A set of zero to many identifiers that allows for organizing <<actor_somds_provider>>s into logical groups.
+| A set of zero to many identifiers that allows for organizing <<vol1_spec_sdpi_p_actor_somds_provider>>s into logical groups.
 |
 |
 |
@@ -122,7 +122,8 @@
 | Environment that combines interoperable heterogeneous POINT-OF-CARE (PoC) MEDICAL DEVICEs and other equipment integrated to create a medical device system for the care of a single high acuity patient.
 |
 | [[acronym_ice,ICE]] ICE
-| <<ref_ieee_11073_20701_2018>>; <<ref_aami_2700_1_2019>>
+| <<ref_ieee_11073_20701_2018>>;
+<<ref_aami_2700_1_2019>>
 | SDC
 
 | [[term_international_medical_device_regulators_forum,International Medical Device Regulators Forum (IMDRF)]] International Medical Device Regulators Forum
@@ -161,7 +162,7 @@
 | Organization
 
 | [[term_medical_data_information_base,Medical Data Information Base (MDIB)]] Medical Data Information Base
-| Structured collection of any data objects that are provided by a <<actor_somds_provider>> or <<actor_biceps_content_creator>>, including both descriptive and state information.
+| Structured collection of any data objects that are provided by a <<vol1_spec_sdpi_p_actor_somds_provider>> or <<actor_biceps_content_creator>>, including both descriptive and state information.
 |
 | [[acronym_mdib,MDIB]] MDIB
 | <<ref_ieee_11073_10207_2017>>
@@ -185,7 +186,7 @@
 | The application of informatics technology standards to achieve seamless and dynamic connection of <<term_point_of_care_device>>'s.
 |
 | [[acronym_mdi,MDI]] MDI
-|
+| https://www.fda.gov/medical-devices/digital-health-center-excellence/medical-device-interoperability[See also U.S. FDA MDI Definition]
 |
 
 | [[term_medical_device_lan,Medical Device LAN (MD LAN)]] Medical Device LAN
@@ -269,7 +270,7 @@ elements, from requirements to system components to Verification & Validation te
 |
 
 | [[term_poc_dashboard,PoC Dashboard]] Point of Care Dashboard
-| A system that displays information from one or more <<actor_somds_participant>> systems associated with a single patient. Similar to a <<term_cockpit>> but without device-external control capabilities. May include both metric and alert information.
+| A system that displays information from one or more <<vol1_spec_sdpi_p_actor_somds_participant>> systems associated with a single patient. Similar to a <<term_cockpit>> but without device-external control capabilities. May include both metric and alert information.
 | Dashboard
 |
 |
@@ -297,7 +298,7 @@ elements, from requirements to system components to Verification & Validation te
 |
 
 | [[term_removable_subsystem,Removable Subsystem]] Removable Subsystem
-| A subsystem of a <<actor_somds_provider>> that can be attached to or removed from the <<actor_somds_provider>> and that is represented in the <<acronym_mdib>>.
+| A subsystem of a <<vol1_spec_sdpi_p_actor_somds_provider>> that can be attached to or removed from the <<vol1_spec_sdpi_p_actor_somds_provider>> and that is represented in the <<acronym_mdib>>.
 |
 |
 | See also <<ref_ieee_11073_10700_2022>>
@@ -361,7 +362,7 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 |
 
 | [[term_somds_provider_uid, SOMDS Provider UID]] SOMDS Provider UID
-| A globally unique identifier <<acronym_uid>> for a <<actor_somds_provider>> that is stable across re-initializations.
+| A globally unique identifier <<acronym_uid>> for a <<vol1_spec_sdpi_p_actor_somds_provider>> that is stable across re-initializations.
 | [[acronym_uid,UID]] UID
 |
 |
@@ -375,7 +376,7 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 | Organization
 
 | [[term_system_function_contribution,System Function Contribution (SFC)]] System Function Contribution
-| Function of a <<actor_somds_participant>> that contributes to a <<term_clinical_function>> provided by a <<term_service_oriented_medical_device_system>>.
+| Function of a <<vol1_spec_sdpi_p_actor_somds_participant>> that contributes to a <<term_clinical_function>> provided by a <<term_service_oriented_medical_device_system>>.
 |
 | [[acronym_sfc,SFC]] SFC
 | Adapted from <<ref_ieee_11073_10700_2022>>.
@@ -389,7 +390,7 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 |
 
 | [[term_transport_address, Transport Address]] Transport Address
-| A physical endpoint address that can be used to communicate with a <<actor_somds_provider>>.
+| A physical endpoint address that can be used to communicate with a <<vol1_spec_sdpi_p_actor_somds_provider>>.
 | XAddr
 |
 |

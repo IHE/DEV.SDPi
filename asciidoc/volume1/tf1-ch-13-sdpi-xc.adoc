@@ -26,7 +26,7 @@ Both appendices are located at https://profiles.ihe.net/GeneralIntro/[_profiles.
 
 <<vol1_figure_sdpi_xc_actor_diagram>> shows the actors directly involved in the SDPi-xC profile.
 The relevant transactions between them are detailed in the subsequent <<vol1_table_sdpi_xc_actors_transactions>>.
-Actor groupings, including abstract with concrete are detailed in <<vol1_clause_sdpi_xc_required_actor_groupings>>.
+actor groupings, including abstract with concrete are detailed in <<vol1_clause_sdpi_xc_required_actor_groupings>>.
 
 [#vol1_figure_sdpi_xc_actor_diagram]
 .SDPi-xC Actor Diagram
@@ -75,6 +75,28 @@ image::../images/vol1-diagram-sdpi-xc-actor.svg[]
 [#vol1_clause_sdpi_xd_actor_descriptions_actor_profile_requirements]
 ==== Actor Descriptions and Actor Profile Requirements
 
+SDPi-xC actor roles and responsibilities are described in the subsections below.
+
+Unless otherwise specified below, individual transaction requirements are specified in TF-2   <<vol2_clause_transactions>>, and requirements related to content modules are detailed in TF-3 <<vol3_clause_content_modules>>.
+This section documents any additional requirements on the profile’s content actors.
+
+////
+TODO:
+    - Consider adding more descriptive content to this sequence diagram, especially the intersection of this profile and SDPi-P (adding transactions from the start of the conversation + SDPi-P actors;
+    - Add a gateway sequence diagram here or below in the gateway actor
+////
+
+<<vol1_figure_sdpi_xc_example_sequence_diagram>> illustrates a typical (not comprehensive) exchange scenario between SDPi-xC actors:
+
+[#vol1_figure_sdpi_xc_example_sequence_diagram]
+.SDPi-xC Example Sequence Diagram
+
+[plantuml, target=puml-sdpi-xc-example-sequence-diagram, format=svg]
+....
+include::../plantuml/vol1-figure-sdpi-xc-example-sequence-diagram.puml[]
+....
+
+
 [#vol1_clause_sdpi_xc_somds_medical_control_consumer]
 ===== SOMDS Medical Control Consumer
 [#vol1_spec_sdpi_xc_actor_somds_medical_control_consumer, reftext='SOMDS Medical Control Consumer']
@@ -82,13 +104,13 @@ Actor Summary Definition:
 [none]
 . A <<vol1_spec_sdpi_p_actor_somds_consumer>> grouped actor that invokes operational control services on a <<vol1_spec_sdpi_xc_actor_somds_medical_control_provider>>.
 
-This Actor is designed to invoke and manage medical device control operations, safely, effectively and securely.
+This actor is designed to invoke and manage medical device control operations, safely, effectively and securely.
 Transactions enabled for this actor are identified in <<vol1_table_sdpi_xc_actors_transactions>> above.
 
 Given this _intended medical purpose_, the actor will fully address applicable requirements from the core <<acronym_sdc>> standards (<<ref_ieee_11073_10207_2017>> and <<ref_ieee_11073_20701_2018>>), as well as the <<acronym_pkp>> standards <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10703_202x>> (Control <<acronym_pkp>>).
 
 Every <<vol1_spec_sdpi_xc_actor_somds_medical_control_consumer>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_consumer>> to enable <<acronym_somds>>-based connectivity.
-This Actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_consumer>>.
+This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_consumer>>.
 Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_a_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_clause_sdpi_p_profile_reftext>>.
 
 [#vol1_clause_sdpi_xc_somds_medical_control_provider]
@@ -98,13 +120,13 @@ Actor Summary Definition:
 [none]
 . A <<vol1_spec_sdpi_p_actor_somds_provider>> grouped actor that provides operational control services to a <<vol1_spec_sdpi_xc_actor_somds_medical_control_consumer>>.
 
-This Actor is designed to publish medical device operational control services to a <<vol1_spec_sdpi_xc_actor_somds_medical_control_consumer>>, which in turn can invoke the services and remotely manage the device, safely and securely.
+This actor is designed to publish medical device operational control services to a <<vol1_spec_sdpi_xc_actor_somds_medical_control_consumer>>, which in turn can invoke the services and remotely manage the device, safely and securely.
 Transactions enabled for this actor are identified in <<vol1_table_sdpi_xc_actors_transactions>> above.
 
 Given this _intended medical purpose_, the actor will fully address applicable requirements from the core <<acronym_sdc>> standards (<<ref_ieee_11073_10207_2017>> and <<ref_ieee_11073_20701_2018>>), as well as the <<acronym_pkp>> standards <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10703_202x>> (Control <<acronym_pkp>>).
 
 Every <<vol1_spec_sdpi_xc_actor_somds_medical_control_provider>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_provider>> to enable <<acronym_somds>>-based connectivity.
-This Actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_consumer>>.
+This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_consumer>>.
 Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_a_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_clause_sdpi_p_profile_reftext>>.
 
 [#vol1_clause_sdpi_xc_actor_options]

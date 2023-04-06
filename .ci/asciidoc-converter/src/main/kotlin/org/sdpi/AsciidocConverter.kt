@@ -25,7 +25,7 @@ class AsciidocConverter(
 
         val asciidoctor = Asciidoctor.Factory.create()
 
-        val anchorReplacements = mutableMapOf<String, LabelInfo>()
+        val anchorReplacements = AnchorReplacementsMap()
 
         val requirementsBlockProcessor = RequirementsBlockProcessor()
         asciidoctor.javaExtensionRegistry().block(requirementsBlockProcessor)

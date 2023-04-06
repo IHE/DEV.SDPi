@@ -1,0 +1,33 @@
+@startuml
+
+skinparam monochrome true
+autonumber
+
+!global $str_sdc_sc = "SOMDS Medical Data Consumer"
+!global $str_sdc_sp = "SOMDS Medical Data Provider"
+
+participant "$str_sdc_sc" as sdc_sc
+participant "$str_sdc_sp" as sdc_sp
+
+group secured
+    group pub/sub
+        sdc_sc -> sdc_sp: Manage BICEPS Subscription
+        sdc_sp -->> sdc_sc
+
+    loop
+        opt
+            sdc_sc <- sdc_sp: DescriptionModificationReport
+        end
+
+        group one or more of
+            sdc_sc <- sdc_sp: EpisodicMetricReport
+            sdc_sc <- sdc_sp: EpisodicContextReport
+            sdc_sc <- sdc_sp: EpisodicComponentReport
+            sdc_sc <- sdc_sp: WaveformStream
+        end
+    end
+end
+
+
+
+@enduml

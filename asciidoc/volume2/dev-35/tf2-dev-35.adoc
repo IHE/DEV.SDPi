@@ -17,10 +17,10 @@ include::tf2-dev-35-summary.adoc[]
 [cols="1,2"]
 |===
 |Actor |Roles
-|<<actor_somds_consumer>>
-|Initiates communication by first subscribing to a <<actor_somds_provider>> by sending a {var_label_dev_35_message_subscribe} message.
+|<<vol1_spec_sdpi_p_actor_somds_consumer>>
+|Initiates communication by first subscribing to a <<vol1_spec_sdpi_p_actor_somds_provider>> by sending a {var_label_dev_35_message_subscribe} message.
 
-|<<actor_somds_provider>>
+|<<vol1_spec_sdpi_p_actor_somds_provider>>
 |Listens for {var_label_dev_35_message_subscribe} messages, which it responds to with {var_label_dev_35_message_subscribe_response}.
 
 

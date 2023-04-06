@@ -1,13 +1,13 @@
 ==== Connection Time Delay
 
-When a <<actor_somds_provider>> joins a network and sends out a <<vol2_clause_dev_23_message_hello, {var_label_dev_23_message_hello}>> message, depending on the number of <<actor_somds_consumer>>s that are interested in the data of that <<actor_somds_provider>>, the <<actor_somds_provider>> can get overwhelmed by incoming TCP connection requests and TLS handshakes. <<actor_somds_provider>>s and <<actor_somds_consumer>>s can implement different actions in order to avoid flooding of TCP connection requests and TLS handshakes under normal operating conditions. Each action comes with individual advantages and disadvantages.
+When a <<vol1_spec_sdpi_p_actor_somds_provider>> joins a network and sends out a <<vol2_clause_dev_23_message_hello, {var_label_dev_23_message_hello}>> message, depending on the number of <<vol1_spec_sdpi_p_actor_somds_consumer>>s that are interested in the data of that <<vol1_spec_sdpi_p_actor_somds_provider>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> can get overwhelmed by incoming TCP connection requests and TLS handshakes. <<vol1_spec_sdpi_p_actor_somds_provider>>s and <<vol1_spec_sdpi_p_actor_somds_consumer>>s can implement different actions in order to avoid flooding of TCP connection requests and TLS handshakes under normal operating conditions. Each action comes with individual advantages and disadvantages.
 
 ===== Provider-controlled Delay
 
-<<ref_ieee_11073_20701_2018>> normatively references <<ref_oasis_dpws_2009>> which in turn leverages <<ref_oasis_ws_discovery_2009>> to provide distributed (ad-hoc) or centralized (managed) service registries. WS-Discovery decomposes into two message sequences, <<vol2_clause_appendix_mdpws_dev_23, implicit discovery>> and <<vol2_clause_appendix_mdpws_dev_24, explicit discovery>> of which implicit discovery can lead to loss of performance for <<actor_somds_provider>>s when multiple <<actor_somds_consumer>>s attempt to connect at the same time.
+<<ref_ieee_11073_20701_2018>> normatively references <<ref_oasis_dpws_2009>> which in turn leverages <<ref_oasis_ws_discovery_2009>> to provide distributed (ad-hoc) or centralized (managed) service registries. WS-Discovery decomposes into two message sequences, <<vol2_clause_appendix_mdpws_dev_23, implicit discovery>> and <<vol2_clause_appendix_mdpws_dev_24, explicit discovery>> of which implicit discovery can lead to loss of performance for <<vol1_spec_sdpi_p_actor_somds_provider>>s when multiple <<vol1_spec_sdpi_p_actor_somds_consumer>>s attempt to connect at the same time.
 
 
-In order to suppress concurrent connection attempts, in the ad-hoc mode a <<actor_somds_provider>> can omit the <<term_transport_address>> from the {var_label_dev_23_message_hello} message. Subsequently, a <<actor_somds_consumer>> needs to send a {var_label_dev_24_message_resolve} message to resolve the <<actor_somds_provider>>'s <<term_transport_address>>.
+In order to suppress concurrent connection attempts, in the ad-hoc mode a <<vol1_spec_sdpi_p_actor_somds_provider>> can omit the <<term_transport_address>> from the {var_label_dev_23_message_hello} message. Subsequently, a <<vol1_spec_sdpi_p_actor_somds_consumer>> needs to send a {var_label_dev_24_message_resolve} message to resolve the <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<term_transport_address>>.
 
 [none]
 * icon:plus[] Deferral is controlled by the entity that is affected by concurrent connection attempts.
@@ -16,20 +16,22 @@ In order to suppress concurrent connection attempts, in the ad-hoc mode a <<acto
 .R0001
 [sdpi_requirement#r0001,sdpi_req_level=may]
 ****
-A <<actor_somds_provider>> may delay sending a Resolve Match response to a Resolve message.
+A <<vol1_spec_sdpi_p_actor_somds_provider>> may delay sending a Resolve Match response to a Resolve message.
 
 .Notes
 [%collapsible]
 ====
-NOTE: It is up to the <<term_manufacturer>> of the <<actor_somds_provider>> to choose a delay that fits the hardware capabilities of the <<actor_somds_provider>> for concurrent connection requests.
+NOTE: It is up to the <<term_manufacturer>> of the <<vol1_spec_sdpi_p_actor_somds_provider>> to choose a delay that fits the hardware capabilities of the <<vol1_spec_sdpi_p_actor_somds_provider>> for concurrent connection requests.
 ====
 ****
 
 ===== Consumer-controlled Delay
 
-<<ref_ieee_11073_20701_2018>> proposes the concept of priority groups. If a priority group is configured for a <<actor_somds_consumer>>, it postpones initial connection requests once in retrieved the <<term_transport_address>> of a <<actor_somds_provider>>. Depending on the priority groups 0 to 9, with increasing group numbers the initial connection delay increases linearly based on random or fixed durations in predefined intervals.
+<<ref_ieee_11073_20701_2018>> introduces the concept of priority groups.
+According to <<ref_ieee_11073_20701_2018, glue:R0076>>, a <<vol1_spec_sdpi_p_actor_somds_consumer>> is required to have a priority group assigned, which causes the <<vol1_spec_sdpi_p_actor_somds_consumer>> to postpone initial connection requests by a certain time once it retrieved the <<term_transport_address>> of a <<vol1_spec_sdpi_p_actor_somds_provider>>.
+Depending on the priority groups 0 to 9, with increasing group numbers the initial connection delay increases linearly based on random or fixed durations in predefined intervals.
 
-<<ref_ieee_11073_20701_2018>> does not define numbers for specific purposes but rather appeal to <<term_manufacturer>>s to implement priority groups meaningful to their <<actor_somds_consumer>>'s purpose.
+<<ref_ieee_11073_20701_2018>> does not define numbers for specific purposes but rather appeal to <<term_manufacturer>>s to implement priority groups meaningful to their <<vol1_spec_sdpi_p_actor_somds_consumer>>'s purpose.
 
 [none]
 * icon:plus[] The deferral works in ad-hoc and managed mode discovery.
@@ -38,12 +40,12 @@ NOTE: It is up to the <<term_manufacturer>> of the <<actor_somds_provider>> to c
 .R0002
 [sdpi_requirement#r0002,sdpi_req_level=should]
 ****
-A <<actor_somds_consumer>> should be configurable with a priority group number in accordance with <<ref_ieee_11073_20701_2018>> R0076.
+A <<vol1_spec_sdpi_p_actor_somds_consumer>> should be configurable with a priority group number in accordance with <<ref_ieee_11073_20701_2018>> R0076.
 
 .Notes
 [%collapsible]
 ====
-NOTE: As it is not trivial to determine the priority of a <<actor_somds_consumer>> in all and every circumstance, the <<term_manufacturer>> can provide configurable options that allow for flexible adaptation on environmental changes.
+NOTE: As it is not trivial to determine the priority of a <<vol1_spec_sdpi_p_actor_somds_consumer>> in all and every circumstance, the <<term_manufacturer>> can provide configurable options that allow for flexible adaptation on environmental changes.
 ====
 ****
 
@@ -52,7 +54,7 @@ NOTE: As it is not trivial to determine the priority of a <<actor_somds_consumer
 .R0003
 [sdpi_requirement#r0003,sdpi_req_level=shall]
 ****
-If a <<term_manufacturer>> does not intend to enforce configuration of priority groups during installation of its <<actor_somds_consumer>>, the manufacturer shall pre-configure priority groups to a reasonable default value that reflects the highest criticality of the <<actor_somds_consumer>>'s system function.
+If a <<term_manufacturer>> does not intend to enforce configuration of priority groups during installation of its <<vol1_spec_sdpi_p_actor_somds_consumer>>, the manufacturer shall pre-configure priority groups to a reasonable default value that reflects the highest criticality of the <<vol1_spec_sdpi_p_actor_somds_consumer>>'s system function.
 
 .Notes
 [%collapsible]
@@ -68,12 +70,12 @@ NOTE: Guidelines for reasonable default values are shown in <<vol2_clause_append
 .R0004
 [sdpi_requirement#r0004,sdpi_req_level=may]
 ****
-If a <<term_manufacturer>> does not intend to allow for a user to configure a priority group after the installation process of its <<actor_somds_consumer>> is finished, the manufacturer may dynamically determine a reasonable priority group for its <<actor_somds_consumer>> according to the highest criticality of the <<actor_somds_consumer>>'s system function on startup.
+If a <<term_manufacturer>> does not intend to allow for a user to configure a priority group after the installation process of its <<vol1_spec_sdpi_p_actor_somds_consumer>> is finished, the manufacturer may dynamically determine a reasonable priority group for its <<vol1_spec_sdpi_p_actor_somds_consumer>> according to the highest criticality of the <<vol1_spec_sdpi_p_actor_somds_consumer>>'s system function on startup.
 
 .Notes
 [%collapsible]
 ====
-NOTE: In order to dynamically determine the priority group within a certain range, a <<actor_somds_consumer>> can use, for example, a random number generator function or a real-time clock.
+NOTE: In order to dynamically determine the priority group within a certain range, a <<vol1_spec_sdpi_p_actor_somds_consumer>> can use, for example, a random number generator function or a real-time clock.
 
 NOTE: Guidelines for reasonable priority group ranges are shown in <<vol2_clause_appendix_a_mdpws_connect_time_algorithm_priority_groups>>.
 ====
@@ -81,7 +83,7 @@ NOTE: Guidelines for reasonable priority group ranges are shown in <<vol2_clause
 
 ====== Priority Group Guidelines
 
-<<vol2_clause_appendix_a_mdpws_connect_time_algorithm_priority_groups>> exhibits guidelines to <<term_manufacturer>>s or responsible organizations as to which priority group can be used for a certain <<actor_somds_consumer>> system function criticality.
+<<vol2_clause_appendix_a_mdpws_connect_time_algorithm_priority_groups>> exhibits guidelines to <<term_manufacturer>>s or responsible organizations as to which priority group can be used for a certain <<vol1_spec_sdpi_p_actor_somds_consumer>> system function criticality.
 
 .Exemplary priority group assignments
 [#vol2_clause_appendix_a_mdpws_connect_time_algorithm_priority_groups,cols="1,1,2,4"]

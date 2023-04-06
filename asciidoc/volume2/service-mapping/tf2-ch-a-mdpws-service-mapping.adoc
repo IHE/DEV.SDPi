@@ -6,12 +6,12 @@ MDPWS is based on DPWS which in turn leverages a profiled SOAP-based Web Service
 .R0500
 [sdpi_requirement#r0500,sdpi_req_level=shall]
 ****
-A <<actor_somds_provider>> shall at least provide the port types as specified in <<vol2_table_appendix_mdpws_service_mapping_port_types>>.
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall at least provide the port types as specified in <<vol2_table_appendix_mdpws_service_mapping_port_types>>.
 
 .Notes
 [%collapsible]
 ====
-NOTE: According to <<acronym_biceps>>, the GET SERVICE is the only mandatory service to be implemented. This specification extends the list of mandatory services to increase interoperability between <<actor_somds_participant>>s.
+NOTE: According to <<acronym_biceps>>, the GET SERVICE is the only mandatory service to be implemented. This specification extends the list of mandatory services to increase interoperability between <<vol1_spec_sdpi_p_actor_somds_participant>>s.
 NOTE: All port types of SDC are {uri_sdc_wsdl}[available for download].
 
 NOTE: Other port types are currently out of scope of this specification and may be added in a future revision.
@@ -43,13 +43,13 @@ NOTE: Other port types are currently out of scope of this specification and may 
 .R0501
 [sdpi_requirement#r0501,sdpi_req_level=should]
 ****
-A <<actor_somds_consumer>> should not request context states by using the `GetContextStatesByIdentification` and `GetContextStatesByFilter` operations of the {{uri_sdc_port_type}}ContextService port type.
+A <<vol1_spec_sdpi_p_actor_somds_consumer>> should not request context states by using the `GetContextStatesByIdentification` and `GetContextStatesByFilter` operations of the {{uri_sdc_port_type}}ContextService port type.
 
 .Notes
 [%collapsible]
 ====
 NOTE: `GetContextStatesByIdentification` and `GetContextStatesByFilter` are insufficiently defined in <<ref_ieee_11073_10207_2017>> and are likely to be obsoleted in a future revision of the specification.
 
-NOTE: A <<actor_somds_consumer>> may retrieve context states by using `GetContextStates` and perform filtering by itself.
+NOTE: A <<vol1_spec_sdpi_p_actor_somds_consumer>> may retrieve context states by using `GetContextStates` and perform filtering by itself.
 ====
 ****

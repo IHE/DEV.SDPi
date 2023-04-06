@@ -23,7 +23,7 @@ image::../images/vol1-diagram-use-case-acns-tech-view.svg[]
 
 *And* At least one Alert <<system_type_device_gateway>> (AGW) Service on the <<acronym_md_lan>> network
 
-*And* At least one <<system_type_clinical_notification_system>> is connected to the AGW Service.
+*And* At least one <<system_type_clinical_notification_system>> is connected to the AGW Service
 
 *And* All devices report either a device label and/or location and/or patient ID
 

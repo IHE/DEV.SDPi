@@ -30,7 +30,7 @@ include::../dev-a-default-trigger-events.adoc[]
 
 ====== Message Semantics
 
-`s12:Envelope/s12:Body/wsd:Bye/wsa:EndpointReference/wsa:Address`:: The <<actor_somds_provider>>'s <<payload_dev_34_provider_uid>> as URI.
+`s12:Envelope/s12:Body/wsd:Bye/wsa:EndpointReference/wsa:Address`:: The <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<payload_dev_34_provider_uid>> as URI.
 
 :var_expected_actions_ref: <<vol2_clause_dev_34_message_bye>>
 include::../dev-a-default-expected-actions.adoc[]

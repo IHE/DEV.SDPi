@@ -1,0 +1,30 @@
+@startuml
+
+!global $str_sdc_sc = "SOMDS Medical Alert Consumer"
+!global $str_sdc_sp = "SOMDS Medical Alert Provider"
+
+participant "$str_sdc_sc" as sdc_sc
+participant "$str_sdc_sp" as sdc_sp
+
+group secured
+    group pub/sub
+        sdc_sc -> sdc_sp: Manage BICEPS Subscription
+        sdc_sp -->> sdc_sc
+
+    sdc_sp -> sdc_sp: annunciate alert
+    sdc_sc <- sdc_sc: annunciate alert
+
+    ==Delegate alert==
+    loop
+        sdc_sc -> sdc_sp: Delegation Heartbeat
+        sdc_sp -->> sdc_sc
+        sdc_sp -> sdc_sp: suppress alert
+        sdc_sc <- sdc_sp: EpisodicAlertReport
+        sdc_sc <- sdc_sc: annunciate alert
+    end
+
+    sdc_sp -> sdc_sp: annunciate alert
+    sdc_sc <- sdc_sc: annunciate alert
+end
+
+@enduml

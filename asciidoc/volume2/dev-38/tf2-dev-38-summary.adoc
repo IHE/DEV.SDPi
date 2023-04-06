@@ -1,3 +1,3 @@
 // DEV-38 Transaction Summary
 
-This transaction is used to establish the exchange of medical alerts from a <<actor_somds_provider>> to a <<actor_somds_consumer>>.
+Establish the exchange of medical alerts from a <<vol1_spec_sdpi_p_actor_somds_provider>> to a <<vol1_spec_sdpi_p_actor_somds_consumer>>.

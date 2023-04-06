@@ -73,7 +73,7 @@ This Library also includes *_briefings (slides and recordings) to provide backgr
 
 The joint IHE-HL7 devices team leveraged tools from both organizations, as well as participated jointly throughout the project's multi-year efforts.
 
-The methods currently employed are provided in the wiki article:  https://github.com/IHE/sdpi-fhir/wiki/Program-Coordination-Co-Working-Spaces#program-coordination--co-working-spaces[Program Coordination & Co-Working Spaces].
+The methods currently employed are provided in the wiki article:  https://github.com/IHE/DEV.SDPi/wiki/Program-Coordination-Co-Working-Spaces#program-coordination--co-working-spaces[Program Coordination & Co-Working Spaces].
 
 [#supplement_clause_supplement_support_for_ri_mc_rr_using_asciidoc]
 === Supplement Support for RI+MC+RR using AsciiDoc

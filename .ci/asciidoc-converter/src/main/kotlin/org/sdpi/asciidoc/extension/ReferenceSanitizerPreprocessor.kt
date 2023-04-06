@@ -6,9 +6,38 @@ import org.asciidoctor.extension.PreprocessorReader
 import java.net.URLEncoder
 import java.util.*
 
+class AnchorReplacementsMap {
+    private val anchorReplacements: MutableMap<String, MutableMap<String, LabelInfo>> = mutableMapOf()
+
+    fun put(firstLevel: String, secondLevel: String, value: LabelInfo) {
+        val secondLevelMap = anchorReplacements[firstLevel].let {
+            if (it == null) {
+                anchorReplacements[firstLevel] = mutableMapOf()
+            }
+            anchorReplacements[firstLevel]!!
+        }
+        secondLevelMap[secondLevel] = value
+    }
+
+    fun put(firstLevel: String, value: LabelInfo) {
+        put(firstLevel, defaultKey, value)
+    }
+
+    fun get(firstLevel: String): LabelInfo? {
+        return get(firstLevel, defaultKey)
+    }
+
+    fun get(firstLevel: String, secondLevel: String): LabelInfo? {
+        return anchorReplacements[firstLevel]?.let { it[secondLevel] }
+    }
+
+    private companion object {
+        val defaultKey = UUID.randomUUID().toString()
+    }
+}
 
 class ReferenceSanitizerPreprocessor(
-    private val anchorReplacements: MutableMap<String, LabelInfo>
+    private val anchorReplacements: AnchorReplacementsMap
 ) : Preprocessor() {
     private val variables = mutableMapOf<String, String>()
 
@@ -24,8 +53,14 @@ class ReferenceSanitizerPreprocessor(
                 } else {
                     val substitutedVariables = substituteVariables(refs[1].trim())
                     val encodedRefText = URLEncoder.encode(substitutedVariables, Charsets.UTF_8)
-                    val transformed = "<<${refs[0]}$refSeparator$encodedRefText>>"
-                    anchorReplacements[refs[0]] = LabelInfo(substitutedVariables, LabelSource.UNKNOWN)
+                    val key = "${refs[0]}$refSeparator$encodedRefText"
+                    val transformed = "<<$key>>"
+
+                    anchorReplacements.put(
+                        refs[0],
+                        encodedRefText,
+                        LabelInfo(substitutedVariables, LabelSource.UNKNOWN)
+                    )
                     logger.info { "Found reference with custom label: ${it.groupValues.first()} => $transformed" }
                     transformed
                 }
