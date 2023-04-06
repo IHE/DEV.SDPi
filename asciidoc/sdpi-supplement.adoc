@@ -17,8 +17,8 @@
 
 :ihe_supplement_sdpi_revision: 1.0.0
 :ihe_supplement_sdpi_revision_date: {localdatetime}
-:ihe_supplement_sdpi_revision_label: Draft for Public Comment
-:ihe_supplement_sdpi_publication_month: February 28, 2023
+:ihe_supplement_sdpi_revision_label: Trial Implementation
+:ihe_supplement_sdpi_publication_month: April 7, 2023
 :ihe_supplement_sdpi_public_comment_submission_deadline: March 28, 2023
 
 ////
@@ -81,13 +81,13 @@ include::document-declarations.adoc[]
 
 ////
 
-#PUB TODO: MARY - VERIFY THAT THIS IS THE RIGHT DESIGNATION FOR THE IHE Devices TF revision; should this be IHE PCD 2019 version 9?  Or the forthcoming 2023 version? Should we reference the IHE PCD OR have more explanatory text or ... ???#
+#PUB TODO: MARY - VERIFY THAT THIS IS THE RIGHT DESIGNATION FOR THE IHE Devices TF revision; should this be IHE PCD 2019 version 9?  Or the forthcoming 2023 version? Should we reference the IHE PCD OR have more explanatory text or ... ???MJ: I removed the version and left Devices.
 
 ////
 
-This is a supplement to the IHE Devices Technical Framework Revision 10.0. Each supplement undergoes a process of public comment and trial implementation before being incorporated into the volumes of the Technical Frameworks.
+This is a supplement to the IHE Devices Technical Framework. Each supplement undergoes a process of public comment and trial implementation before being incorporated into the volumes of the Technical Frameworks.
 
-This supplement is published on {ihe_supplement_sdpi_publication_month} for Public Comment. Comments are invited and can be submitted at http://www.ihe.net/Public_Comment/#domainname. In order to be considered in development of the Trial Implementation version of the supplement, comments must be received by {ihe_supplement_sdpi_public_comment_submission_deadline}.
+This supplement is published on {ihe_supplement_sdpi_publication_month} for Trial Implementation and may be available for testing at subsequent IHE Connectathons. The supplement may be amended based on the results of testing. Following successful testing it will be incorporated into the Devices Technical Framework. Comments are invited and can be submitted at https://www.ihe.net/DEV_Public_Comments/[Devices Public Comments] or by submitting a https://github.com/IHE/DEV.SDPi/issues/new/choose[GitHub Issue].
 
 This supplement describes changes to the existing technical framework documents.
 
@@ -110,7 +110,7 @@ The current version of the IHE Devices Technical Framework can be found at https
 
 ////
 
-#PUB TODO:  MARY - This is where you insert the "Comments may be submitted on IHE ... templates ..." clause#
+#PUB TODO:  MARY - This is where you insert the "Comments may be submitted on IHE ... templates ..." clause MJ: that is only for the template, it gets removed prior to publication#
 
 ////
 
