@@ -14,6 +14,7 @@
 :imagesoutdir: images/
 :imagesdir: images/
 :docinfo: shared
+:source-highlighter: highlight.js
 :highlightjsdir: js/highlight
 
 :ihe_supplement_sdpi_revision: 1.0.0
