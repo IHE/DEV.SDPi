@@ -14,6 +14,7 @@
 :imagesoutdir: images/
 :imagesdir: images/
 :docinfo: shared
+:highlightjsdir: js/highlight
 
 :ihe_supplement_sdpi_revision: 1.0.0
 :ihe_supplement_sdpi_revision_date: {localdatetime}
