@@ -81,12 +81,6 @@ include::document-declarations.adoc[]
 [#supplement_clause_foreword,sdpi_offset=clear]
 = Foreword
 
-////
-
-#PUB TODO: MARY - VERIFY THAT THIS IS THE RIGHT DESIGNATION FOR THE IHE Devices TF revision; should this be IHE PCD 2019 version 9?  Or the forthcoming 2023 version? Should we reference the IHE PCD OR have more explanatory text or ... ???MJ: I removed the version and left Devices.
-
-////
-
 This is a supplement to the IHE Devices Technical Framework. Each supplement undergoes a process of public comment and trial implementation before being incorporated into the volumes of the Technical Frameworks.
 
 This supplement is published on {ihe_supplement_sdpi_publication_month} for Trial Implementation and may be available for testing at subsequent IHE Connectathons. The supplement may be amended based on the results of testing. Following successful testing it will be incorporated into the Devices Technical Framework. Comments are invited and can be submitted at https://www.ihe.net/DEV_Public_Comments/[Devices Public Comments] or by submitting a https://github.com/IHE/DEV.SDPi/issues/new/choose[GitHub Issue].
@@ -109,12 +103,6 @@ Information about the IHE Devices domain can be found at https://www.ihe.net/ihe
 Information about the organization of IHE Technical Frameworks and Supplements and the process used to create them can be found at https://www.ihe.net/resources/profiles/[Profiles] and https://www.ihe.net/about_ihe/ihe_process/[IHE Processes].
 
 The current version of the IHE Devices Technical Framework can be found at https://profiles.ihe.net/DEV/[DEV Technical Framework].
-
-////
-
-#PUB TODO:  MARY - This is where you insert the "Comments may be submitted on IHE ... templates ..." clause MJ: that is only for the template, it gets removed prior to publication#
-
-////
 
 include::sdpi-supplement-intro.adoc[]
 

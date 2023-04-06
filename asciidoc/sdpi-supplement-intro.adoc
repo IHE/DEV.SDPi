@@ -6,26 +6,20 @@
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi 1.0 Supplement -- _Public Comment Review Version_ -- Note*:
+a| *SDPi 1.0 Supplement -- _Trial Implementation Version_ -- Note*:
 
-This release of the SDPi 1.0 supplement is intended for *IHE Public Comment review*, with a focus on both technical content as well editorial maturity (e.g., clarity, grammar, formatting, etc.).
-It is recognized that there are both technical and editorial issues that need to be resolved before the Trial Implementation version is released.  Known issues with this Public Comment version include:
+This first release of the SDPi 1.0 Trial Implementation supplement represents a major multi-year milestone, enabling prototyping and testing of device-to-device plug-and-trust interoperability.
+It is recognized, though, that this is an *initial* 1.0 release and in that sense is understandably incomplete with work continuing for 1.1 and subsequent versions.
+These known limitations include:
 
-. The content is scoped per the *_SDPi 1.0 version capabilities specification_* (see link:SDPi-Editorial-Planning-and-Versions#sdpi-version-10-detail-[wiki article "SDPi Version 1.0 (Detail)"]), though future capabilities may be included in a Reviewer Note; *_continued development of SDPi 1.x and beyond will begin early in 2023 DURING the 1.0 review periods_*;
-. Supplement organization is *_based on the IHE Supplement Template from 2020 and 2022 (v10.6)_*; as a supplement to the IHE Devices technical framework, the section allocation and organization anticipates the IHE PCD 2019 (see <<vol1_appendix_b_references>>) being updated into an IHE DEV 2022 version that also conforms to the updated IHE Techncial Feramework template(s);
-. This supplement includes (4) SDPi profiles; however, the general IHE Supplement Template is organized for a single profile; as a result, some adjustments have been made, especially in the supplement overview section where there is a general SDPi overview and then basic overviews for each of the profiles; challenging areas include profile "options" where there are FOUR sections vs. one; it is a work in progress and feedback is appreciated, especially for clarity;
+
+. The content is scoped per the *_SDPi 1.0 version capabilities specification_* (see https://github.com/IHE/DEV.SDPi/wiki/SDPi-Editorial-Planning-and-Versions#sdpi-version-10-detail-[wiki article "SDPi Version 1.0 (Detail)"]), though future capabilities may be included in a Version Note
+. This supplement includes (4) SDPi profiles, though the typical IHE supplement is organized for a single profile; as a result, some adjustments have been made, especially in the supplement overview section where there is a general SDPi overview and then basic overviews for each of the profiles; challenging areas include profile "options" where there are FOUR sections vs. one; it is a work in progress and feedback is appreciated, especially to enhance clarity
 . *Open / Closed Issues tables* -- for SDPi 1.0 there is an initial approach that integrates with the Gemini SES+MDI program work flow (from Confluence issues to Github Issues to specification content); however, there is discussion around how to better improve this in future
 . *Requirements boxes* (e.g., "R1234") have been added especially in TF-2 and some in TF-3; this is an initial approach that *_will be significantly expanded in future versions of the supplement_*; an initial approach is provided in <<vol1_clause_sdpi_requirements_modeling_integration>>, with discussion related to how it will be expanded in future versions of the supplement;
 . *_<<term_safe_effective_secure>> Sections_* (see <<vol1_clause_appendix_a_ses_considerations_section_template>>) are included in the specification; however, their use and content will be significantly extended in SDPi 1.x and subsequent versions;
 . This supplement is currently rendered as a *"long form"* document -- one single HTML file; however, in subsequent versions the intent is to consider a multi-page / file HTML rendering + addition of a tabbed menu for navigating the sections of the supplement;
-. *FOR THE PUBLIC COMMENT* version of the supplement, the document source was migrated from the IHE sdpi-fhir Github to a new IHE DEV.SDPi profile-specific Github repository; links to the old repository may remain or may be updated to the new depending on the material being referenced (e.g., in open / closed issues).
-
-*"SDPi 1.0 Supplement Note"* boxes are provided throughout the document to help guide reviewers and to ask specific questions for feedback requested by the supplement editors.
-
-*REVIEWER FOCUS*:  Please review the document especially with a technical and general organizational focus.
-Does the information flow logically and sufficiently for adopters and implementers?
-Is the text clear and sufficient or do specific subject areas need to be expanded or reworked.
-Do the links work and lead to the right "best" destinations?
+. *"SDPi 1.0 Supplement Note"* boxes are provided throughout the document to help guide reviewers and implementers.
 
 |===
 
