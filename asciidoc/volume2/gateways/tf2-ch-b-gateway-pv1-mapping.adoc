@@ -21,7 +21,7 @@ NOTE: If the SDC patient and/or location context information is not be used for 
 .R8112
 [sdpi_requirement#r8112,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
-If <<r8111>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-2 field to the code for the patient class.
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-2 field to the code for the patient class.
 
 .Notes
 [%collapsible]
