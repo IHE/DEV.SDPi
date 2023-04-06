@@ -23,12 +23,6 @@
 :ihe_supplement_sdpi_publication_month: April 7, 2023
 :ihe_supplement_sdpi_public_comment_submission_deadline: March 28, 2023
 
-////
-
-#TODO:  David G. says "use CSS style ober blank lines"#
-
-////
-
 {empty} +
 
 [subs=attributes]
@@ -74,9 +68,6 @@ See https://profiles.ihe.net/DEV/[*HERE*] for Trial Implementation and Final Tex
 
 {empty} +
 
-// Forward declarations of common labels & acronyms & variables
-include::document-declarations.adoc[]
-
 
 [#supplement_clause_foreword,sdpi_offset=clear]
 = Foreword
@@ -103,6 +94,9 @@ Information about the IHE Devices domain can be found at https://www.ihe.net/ihe
 Information about the organization of IHE Technical Frameworks and Supplements and the process used to create them can be found at https://www.ihe.net/resources/profiles/[Profiles] and https://www.ihe.net/about_ihe/ihe_process/[IHE Processes].
 
 The current version of the IHE Devices Technical Framework can be found at https://profiles.ihe.net/DEV/[DEV Technical Framework].
+
+// Forward declarations of common labels & acronyms & variables
+include::document-declarations.adoc[]
 
 include::sdpi-supplement-intro.adoc[]
 
