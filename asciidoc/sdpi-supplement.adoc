@@ -95,9 +95,6 @@ Information about the organization of IHE Technical Frameworks and Supplements a
 
 The current version of the IHE Devices Technical Framework can be found at https://profiles.ihe.net/DEV/[DEV Technical Framework].
 
-// Forward declarations of common labels & acronyms & variables
-include::document-declarations.adoc[]
-
 include::sdpi-supplement-intro.adoc[]
 
 include::sdpi-supplement-issues.adoc[]
