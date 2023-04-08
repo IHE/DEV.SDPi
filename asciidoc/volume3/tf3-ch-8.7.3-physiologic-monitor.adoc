@@ -30,6 +30,6 @@ The following XML snippet profiles BICEPS semantics in line with the containment
 ====
 [source#vol3_clause_sdc_biceps_content_module_physio_monitor_snippet1,xml]
 ----
-include::../../listings/vol3-clause-sdc-biceps-content-module-physio-monitor-snippet1.xml[]
+include::../listings/vol3-clause-sdc-biceps-content-module-physio-monitor-snippet1.xml[]
 ----
 ====
