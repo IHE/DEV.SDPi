@@ -228,7 +228,7 @@ class NumberingProcessor(
                     }
 
                     else -> if (section.isAppendix()) {
-                        currentAppendix = sdpiOffset.first()
+                        currentAppendix = sdpiOffset.first() - 1
                     } else {
                         numbering[level] = sdpiOffset.toInt().let {
                             numbering[level].copy(offset = it)
@@ -307,11 +307,12 @@ class NumberingProcessor(
         numbering[level] = numbering[level].copy(
             title = section.title,
             appendix = if (section.isAppendix()) {
-                validate(currentAppendix <= 'Z', section) {
+                val appendixChar = ++currentAppendix
+                validate(appendixChar <= 'Z', section) {
                     "Maximum number of appendices exceeded (26, A to Z)."
                 }
-                section.caption = "$appendixCaption${volumePrefix()}$currentAppendix "
-                (currentAppendix++).toString()
+                section.caption = "$appendixCaption${volumePrefix()}$appendixChar "
+                appendixChar.toString()
             } else {
                 null
             }

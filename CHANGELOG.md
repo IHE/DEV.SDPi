@@ -20,4 +20,7 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Changed
 
+- Wrong appendix numbering offset in tables to be aligned with appendix letter (#134).
+- Path to XML file to correctly render Figure 3:8.7.3.17-1 Physiologic Monitor Containment Tree Example (#136).
+
 ### Removed
