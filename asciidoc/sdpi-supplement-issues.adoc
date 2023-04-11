@@ -44,8 +44,8 @@ For more detailed information on how the Gemini SES+MDI program manages issues f
 * *Issue: _Connect Time Delay Algorithm_*
 ** https://github.com/IHE/sdpi-fhir/issues/103[Github Issue #103 _Append TOI: Connect Time Delay Algorithm_] +
 https://github.com/IHE/sdpi-fhir/issues/33[Github Issue #33 _Topic: Connect Time Delay Algorithm_] +
-** Section added:  <<vol2_appendix_a_mdpws_messages>>, Amendments and Corrigenda, Connection Time Delay +
-SubscriptionEnd Message added to <<vol2_appendix_a_mdpws_messages>>, <<vol2_clause_appendix_mdpws_dev_27>>
+** Section added:  TF-2 Appendix A: Amendments and Corrigenda: Connection Time Delay;  +
+SubscriptionEnd Message added to <<vol2_clause_appendix_mdpws_dev_27>>
 
 * *Issue: _Handling missed discovery messages_*
 ** https://github.com/IHE/sdpi-fhir/issues/96[Github Issue #96 _Append TOI: Handling missed discovery messages_]
