@@ -9,18 +9,21 @@ and this project adheres to the following versioning scheme describe in the [SDP
 
 The SDPi changelog shall not contain the following sections
    - Deprecated
-   - Fixed
    - Security
 
-Each section shall contain a list of action items of the following format: `<brief one-sentence description of what has been done> (#<issue number>).`
+Each section shall contain a list of action items of the following format: `<brief one-sentence description of what has been done> (#<issue number & URL>).`
 
 ## [Unreleased]
 
 ### Added
 
 ### Changed
-
-- Wrong appendix numbering offset in tables to be aligned with appendix letter (#134).
-- Path to XML file to correctly render Figure 3:8.7.3.17-1 Physiologic Monitor Containment Tree Example (#136).
+- Replaced high-lighting from "Closed Issues" section with correct list  ([#139](https://github.com/IHE/DEV.SDPi/issues/139)) 
 
 ### Removed
+
+### Editorial Fixes
+- Wrong appendix numbering offset in tables to be aligned with appendix letter ([#134](https://github.com/IHE/DEV.SDPi/issues/134)).
+- Path to XML file to correctly render Figure 3:8.7.3.17-1 Physiologic Monitor Containment Tree Example ([#136](https://github.com/IHE/DEV.SDPi/issues/136)).
+- Corrected the PUML file name in TF-1:12.1.1-1 SDPi-A to render the alert reporting sequence diagram ([#135](https://github.com/IHE/DEV.SDPi/issues/135))
+
