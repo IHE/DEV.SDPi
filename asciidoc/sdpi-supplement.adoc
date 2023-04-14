@@ -17,7 +17,7 @@
 :source-highlighter: highlight.js
 :highlightjsdir: js/highlight
 
-:ihe_supplement_sdpi_revision: 1.0.0
+:ihe_supplement_sdpi_revision: 1.0.1
 :ihe_supplement_sdpi_revision_date: {localdatetime}
 :ihe_supplement_sdpi_revision_label: Trial Implementation
 :ihe_supplement_sdpi_publication_month: April 7, 2023
