@@ -181,8 +181,14 @@ class NumberingProcessor(
             else -> currentSection
         }
 
+        val sectionWithSuffix = if (section.isEmpty()) {
+            ""
+        } else {
+            "$section-"
+        }
+
         if (block.title != null) {
-            val sectionNumber = "$prefix ${volumePrefix()}${section}"
+            val sectionNumber = "$prefix ${volumePrefix()}${sectionWithSuffix}"
             val objectNumber = localFigureTableNumbers[sectionNumber].let {
                 if (it == null) {
                     localFigureTableNumbers[sectionNumber] = 1
@@ -194,9 +200,9 @@ class NumberingProcessor(
             }
 
             block.caption = ""
-            block.title = "$sectionNumber-$objectNumber. ${block.title.replaceHtmlTags()}"
+            block.title = "$sectionNumber$objectNumber. ${block.title.replaceHtmlTags()}"
             block.id?.let {
-                anchorReplacements.put(block.id, LabelInfo("$sectionNumber-$objectNumber", LabelSource.TABLE_OR_FIGURE))
+                anchorReplacements.put(block.id, LabelInfo("$sectionNumber$objectNumber", LabelSource.TABLE_OR_FIGURE))
             }
         }
     }
