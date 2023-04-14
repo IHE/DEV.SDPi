@@ -6,7 +6,7 @@
 [cols="1"]
 |===
 a| *SDPi Supplement Version Note*: As mentioned in the main text below, <<acronym_biceps>> does not currently provide sex and gender semantic support at the same level of detail as foundational existing and emerging standards.
-The following sex & gender harmonization policy will be taken in this and future SPDi specification versions until clear direction is available.
+The following sex & gender harmonization policy will be taken in this and future SDPi specification versions until clear direction is available.
 
 [none]
 . *STANDARDIZATION NOTE:*  There is active work to finalize the informatics standards related to sex and gender, including within HL7, SNOMED, ISO/TC215 and in other standards development organizations.

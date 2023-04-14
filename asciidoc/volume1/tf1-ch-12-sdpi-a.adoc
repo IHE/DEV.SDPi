@@ -196,7 +196,7 @@ TODO:
 
 [plantuml, target=puml-sdpi-a-example-sequence-diagram, format=svg]
 ....
-include::../plantuml/vol1-figure-sdpi-a-example-sequence-diagram.puml[]
+include::../plantuml/vol1-figure-sdpi-a-reporting-example-sequence-diagram.puml[]
 ....
 
 [#vol1_clause_sdpi_a_somds_medical_alert_consumer]
