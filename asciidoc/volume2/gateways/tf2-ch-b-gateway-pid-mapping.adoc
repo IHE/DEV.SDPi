@@ -336,13 +336,13 @@ NOTE: <<ref_tbl_pid10_mapping>> defines the mapping of the SDC patient's race in
 |Alternate Identifier
 |pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Race+++<wbr/>+++/pm:Translation
 /@Code
-|Note that if *pm:Race/@Code* contains a private code, the corresponding translation is to be mapped. Otherwise the first entry of the *pm:Translation* element list is to be mapped.
+|Note that if *pm:Race/@Code* contains a private code, the corresponding translation is to be mapped. In this case, only the first entry of the *pm:Translation* element list is to be mapped.
 
 |PID-10/CWE-6
 |Name of Alternate Coding System
 |pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Race+++<wbr/>+++/pm:Translation
 /@CodingSystem
-|Note that only the first entry of the *pm:Translation* element list is to be mapped.
+|Note that if *pm:Race/@Code* contains a private code, the corresponding translation is to be mapped. In this case, only the first entry of the *pm:Translation* element list is to be mapped.
 
 |PID-10/CWE-7
 |Coding System Version ID
@@ -354,7 +354,7 @@ NOTE: <<ref_tbl_pid10_mapping>> defines the mapping of the SDC patient's race in
 |Alternate Coding System Version ID
 |pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Race+++<wbr/>+++/pm:Translation
 /@CodingSystemVersion
-|Note that only the first entry of the *pm:Translation* element list is to be mapped.
+|Note that if *pm:Race/@Code* contains a private code, the corresponding translation is to be mapped. In this case, only the first entry of the *pm:Translation* element list is to be mapped.
 
 |===
 
