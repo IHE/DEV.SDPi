@@ -446,6 +446,11 @@ In all other cases, the field is required to be set to pm:AlertConditionDescript
 
 |Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
+|OBX-3/CWE-7
+|Coding System Version ID
+|pm:AlertConditionDescriptor+++<wbr/>+++/pm:Type+++<wbr/>+++/@CodingSystemVersion.
+|
+
 |OBX-4
 |Observation Sub-ID
 |
@@ -552,6 +557,11 @@ In all other cases, the field is required to be set to the pm:AlertConditionDesc
 In all other cases, the field is required to be set to pm:AlertConditionDescriptor+++<wbr/>+++/pm:Type+++<wbr/>+++/@CodingSystem.
 
 |Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
+
+|OBX-5/CWE-7
+|Coding System Version ID
+|pm:AlertConditionDescriptor+++<wbr/>+++/pm:Type+++<wbr/>+++/@CodingSystemVersion.
+|
 
 |OBX-5/CWE-9
 |Original Text
@@ -715,6 +725,11 @@ In all other cases, the field is required to be set to the pm:Mds or pm:Vmd or p
 In all other cases, the field is required to be set to pm:Mds or pm:Vmd or pm:Channel or pm:Metric+++<wbr/>+++/pm:Type+++<wbr/>+++/@CodingSystem.
 
 |Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
+
+|OBX-5/CWE-7
+|Coding System Version ID
+|pm:Mds or pm:Vmd or pm:Channel or pm:Metric+++<wbr/>+++/pm:Type+++<wbr/>+++/@CodingSystemVersion.
+|
 
 |OBX-11
 |Observation Result Status
