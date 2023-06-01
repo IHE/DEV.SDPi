@@ -455,7 +455,7 @@ The HL7 Observation/Result (OBX) segment requires a mapping from the SDC contain
 More information about the containment tree mapping can be found in *Appendix A Mapping ISO/IEEE 11073 Domain Information Model to HL7* in <<ref_ihe_pcd_tf_2_2019>>.
 
 ====== OBX-1 Set ID - OBX
-Please refer to the [ihe_pcd_tf_2_2019] *OBX-1 Set ID - OBX* for further information.
+Please refer to the <<ref_ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information.
 
 ====== OBX-2 Value Type
 
