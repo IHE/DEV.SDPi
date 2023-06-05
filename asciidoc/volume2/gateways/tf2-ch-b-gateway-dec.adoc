@@ -811,8 +811,8 @@ NOTE: The <<ref_ihe_pcd_tf_2_2019>> requires only the map the "ID Number", and o
 A <<actor_somds_dec_gateway>> shall set the OBX-17 field to one of the coded terms as specified in <<ref_tbl_dec_obx17_mapping>>, depending on the *pm:AbstractMetricDescriptor/@MetricCategory* (Category) and the *pm:AbstractMetricDescriptor/@DerivationMethod* (Derivation).
 ****
 
-.R8036
-[sdpi_requirement#r8036,sdpi_req_level=should]
+.R8039
+[sdpi_requirement#r8039,sdpi_req_level=should]
 ****
 A <<actor_somds_dec_gateway>> should repeat the OBX-17 field to express the *pm:AbstractMetricDescriptor/@MetricAvailability* as specified in <<ref_tbl_dec_obx17_mapping2>>.
 ****
