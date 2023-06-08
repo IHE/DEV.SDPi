@@ -811,6 +811,12 @@ NOTE: The <<ref_ihe_pcd_tf_2_2019>> requires only the map the "ID Number", and o
 A <<actor_somds_dec_gateway>> shall set the OBX-17 field to one of the coded terms as specified in <<ref_tbl_dec_obx17_mapping>>, depending on the *pm:AbstractMetricDescriptor/@MetricCategory* (Category) and the *pm:AbstractMetricDescriptor/@DerivationMethod* (Derivation).
 ****
 
+.R8039
+[sdpi_requirement#r8039,sdpi_req_level=should]
+****
+A <<actor_somds_dec_gateway>> should repeat the OBX-17 field to express the *pm:AbstractMetricDescriptor/@MetricAvailability* as specified in <<ref_tbl_dec_obx17_mapping2>>.
+****
+
 [#ref_tbl_dec_obx17_mapping]
 .OBX-17 Observation Method Mapping
 |===
@@ -841,6 +847,18 @@ Or set to "AMEAS\^auto-measurement^MDC" if required.
 |Set
 |Man
 |MSET\^manual-setting^MDC
+
+|===
+
+[#ref_tbl_dec_obx17_mapping2]
+.OBX-17 Observation Method Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBR-17/CWE-1
+|Identifier
+|pm:AbstractMetricDescriptor+++<wbr/>+++/@MetricAvailability
+|
 
 |===
 
