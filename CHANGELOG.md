@@ -17,6 +17,8 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Added
 
+- Process requirement R1500 for consideration of clock misalignment ([#154](https://github.com/IHE/DEV.SDPi/issues/154)).
+
 ### Changed
 
 ### Removed

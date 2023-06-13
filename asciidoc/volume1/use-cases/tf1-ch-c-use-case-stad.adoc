@@ -80,3 +80,22 @@ image::../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
 
 *And* The devices on the network will maintain their own clocks until the <<acronym_ts_service>> is operational or accessible
 
+==== Safety, Effectiveness & Security Considerations and Requirements
+
+.R1500
+[sdpi_requirement#r1500,sdpi_req_level=shall]
+****
+The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_participant>> shall consider the risk of workflow interruption due to misaligned clocks.
+
+.Notes
+[%collapsible]
+====
+NOTE: Clocks of <<vol1_spec_sdpi_p_actor_somds_participant>>s run apart due to lack of synchronization with NTP servers, different clock drifts or cyberattacks.
+
+NOTE: Typically, a <<term_manufacturer>> assumes that system functionality in general may not be available due to loss of network connections, and risks are mitigated accordingly.
+====
+****
+
+Requirement: The manufacturer of a SOMDS Participant SHALL consider the risk of a workflow interruption due to misaligned clocks.
+Note:
+Note:
