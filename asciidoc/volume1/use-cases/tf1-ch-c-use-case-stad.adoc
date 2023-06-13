@@ -14,7 +14,7 @@ It is also important for all devices to have a consistent time since the data be
 
 .<<label_use_case_name_stad>> (<<acronym_stad>>) -- Technical View
 
-image::../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
+*image*:../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
 
 [#vol1_clause_appendix_c_use_case_stad_technical_precondition]
 ==== Technical Pre-Conditions
@@ -76,7 +76,46 @@ image::../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
 
 *And* The time at the device is changed manually
 
-*Then* The device will resync its clock when the <<acronym_ts_service>> is operational or accessible
+*Then* The device will resynchronize its clock as soon as the <<acronym_ts_service>> is operational or accessible again
 
 *And* The devices on the network will maintain their own clocks until the <<acronym_ts_service>> is operational or accessible
 
+===== Scenario: <<acronym_stad>> {var_use_case_id}.5 - Devices are operational in the MD LAN network but cannot access the TS Service
+
+*Given* Device is operational on the <<acronym_md_lan>> network
+
+*When* The <<acronym_ts_service>> is no longer operational or otherwise inaccessible
+
+*Then* The device will rely on its internal clock for time synchronization
+
+*And* The device will provide the accuracy of its clock in its <<acronym_mdib>>
+
+*And* The device will periodically attempt to reconnect to the <<acronym_ts_service>>
+
+*And* The device will notify the user about the fact, that the <<acronym_ts_service>> cannot be reached
+
+*And* The device will create a log entry noting the disconnection from the <<acronym_ts_service>>
+
+*And* The ability to change the device time manually will remain disabled
+
+NOTE: Device internal clocks are usually accurate enough to bridge short periods of time when no time-servers are accessible. Manual time synchronization is considered too inaccurate for SDC System Functionality.
+
+NOTE: By using the device's clock accuracy, a consumer can decide if received data is accurate enough for its use case. This may cause the consumer to disconnect from the device.
+
+NOTE: A <<term_manufacturer>> may decide to limit user notification of technical issues to certain user groups (e.g., biomed).
+
+===== Scenario: <<acronym_stad>> {var_use_case_id}.6 - Devices are operational in the MD LAN network but cannot access the TS Service and clock drift is unacceptable
+
+*Given* Device is operational on the <<acronym_md_lan>> network
+
+*And* The <<acronym_ts_service>> is no longer operational or otherwise inaccessible
+
+*When* The clock drift of the device exceeds an internal threshold
+
+*Then* The device will notify the user that time synchronization is no longer functional, which may limit the availability of SDC System Functionality
+
+*And* The device will create a log entry noting inaccurate time synchronization
+
+*And* The device will periodically attempt to reconnect to the <<acronym_md_lan>> and <<acronym_ts_service>>
+
+*And* Based on a <<term_manufacturer>>'s risk management, the device may be disconnected entirely from the <<acronym_md_lan>> network.
