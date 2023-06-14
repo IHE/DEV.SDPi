@@ -95,7 +95,3 @@ NOTE: Clocks of <<vol1_spec_sdpi_p_actor_somds_participant>>s run apart due to l
 NOTE: Typically, a <<term_manufacturer>> assumes that system functionality in general may not be available due to loss of network connections, and risks are mitigated accordingly.
 ====
 ****
-
-Requirement: The manufacturer of a SOMDS Participant SHALL consider the risk of a workflow interruption due to misaligned clocks.
-Note:
-Note:
