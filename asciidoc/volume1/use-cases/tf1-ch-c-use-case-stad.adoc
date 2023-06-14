@@ -14,7 +14,7 @@ It is also important for all devices to have a consistent time since the data be
 
 .<<label_use_case_name_stad>> (<<acronym_stad>>) -- Technical View
 
-*image*:../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
+image::../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
 
 [#vol1_clause_appendix_c_use_case_stad_technical_precondition]
 ==== Technical Pre-Conditions
@@ -61,26 +61,7 @@ It is also important for all devices to have a consistent time since the data be
 
 *Then* The device will not participate on the <<acronym_md_lan>> network until it detects and connects to a <<acronym_ts_service>>
 
-===== Scenario: <<acronym_stad>> {var_use_case_id}.4 - Devices are connected to the MD LAN network but cannot connect to a TS Service and a device’s time setting is changed manually
-
-[%noheader]
-[%autowidth]
-[cols="1"]
-|===
-| *SDPi Supplement Version Note*:  This scenario is currently out of scope
-|===
-
-*Given* Device has not detected any <<acronym_ts_service>>s
-
-*When* The <<acronym_ts_service>> is not operational or inaccessible
-
-*And* The time at the device is changed manually
-
-*Then* The device will resynchronize its clock as soon as the <<acronym_ts_service>> is operational or accessible again
-
-*And* The devices on the network will maintain their own clocks until the <<acronym_ts_service>> is operational or accessible
-
-===== Scenario: <<acronym_stad>> {var_use_case_id}.5 - Devices are operational in the MD LAN network but cannot access the TS Service
+===== Scenario: <<acronym_stad>> {var_use_case_id}.4 - Devices are operational in the MD LAN network but cannot access the TS Service
 
 *Given* Device is operational on the <<acronym_md_lan>> network
 
@@ -104,7 +85,7 @@ NOTE: By using the device's clock accuracy, a consumer can decide if received da
 
 NOTE: A <<term_manufacturer>> may decide to limit user notification of technical issues to certain user groups (e.g., biomed).
 
-===== Scenario: <<acronym_stad>> {var_use_case_id}.6 - Devices are operational in the MD LAN network but cannot access the TS Service and clock drift is unacceptable
+===== Scenario: <<acronym_stad>> {var_use_case_id}.5 - Devices are operational in the MD LAN network but cannot access the TS Service and clock drift is unacceptable
 
 *Given* Device is operational on the <<acronym_md_lan>> network
 
