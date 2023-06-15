@@ -48,13 +48,6 @@ image::../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
 
 ===== Scenario: <<acronym_stad>> {var_use_case_id}.3 - Device is connected to the MD LAN network and cannot connect to a TS Service
 
-[%noheader]
-[%autowidth]
-[cols="1"]
-|===
-| *SDPi Supplement Version Note*:  This scenario is currently out of scope
-|===
-
 *Given* Device has just connected to the <<acronym_md_lan>> network and has not detected any <<acronym_ts_service>>s
 
 *When* The <<acronym_ts_service>> is not operational or inaccessible
