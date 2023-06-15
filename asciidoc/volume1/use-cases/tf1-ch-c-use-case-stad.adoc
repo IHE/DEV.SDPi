@@ -43,17 +43,17 @@ image::../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
 
 *Then* The device will disable the ability to change its time manually
 
-==== Safety, Effectiveness & Security Considerations and Requirements
+====== Safety, Effectiveness & Security Considerations and Requirements
 
 .R1510
 [sdpi_requirement#r1510,sdpi_req_level=shall]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_participant>> shall not allow manual configuration of its internal clock.
+A <<vol1_spec_sdpi_p_actor_somds_participant>> shall not allow manual configuration of its internal clock while the device is is operational in <<acronym_md_lan>> network.
 
 .Notes
 [%collapsible]
 ====
-NOTE: Manual change of the devices clock is not even allowed as a backup in case of the <<acronym_ts_service>> not being available. This is done since manual configuration introduces a risk of having plausible but still inaccurate timestamps, that may confuse clinicians.
+NOTE: Manual change of the devices clock is not even allowed as a backup in case of the <<acronym_ts_service>> not being available. This is done since manual configuration would lead to plausible but still inaccurate timestamps.
 ====
 ****
 
