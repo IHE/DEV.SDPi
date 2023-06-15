@@ -35,7 +35,7 @@ image::../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
 *Then* The device will synchronize its time with the <<acronym_ts_service>>
 
 
-===== Scenario: <<acronym_stad>> {var_use_case_id}.2 - Device is connected to the MD LAN network and a user wants to change the device's time
+===== Scenario: <<acronym_stad>> {var_use_case_id}.1 - Device is connected to the MD LAN network and a user wants to change the device's time
 
 *Given* Device is operational in <<acronym_md_lan>> network
 
