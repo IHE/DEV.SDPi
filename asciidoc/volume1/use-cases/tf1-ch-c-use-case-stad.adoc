@@ -140,16 +140,50 @@ The <<vol1_spec_sdpi_p_actor_somds_participant>> shall create a log entry, if th
 
 ===== Scenario: <<acronym_stad>> {var_use_case_id}.5 - Devices are operational in the MD LAN network but cannot access the TS Service and clock drift is unacceptable
 
-*Given* Device is operational on the <<acronym_md_lan>> network
+*Given* The <<vol1_spec_sdpi_p_actor_somds_consumer>> is operational on the <<acronym_md_lan>> network
 
 *And* The <<acronym_ts_service>> is no longer operational or otherwise inaccessible
 
-*When* The clock drift of the device exceeds an internal threshold
+*When* The clock drift of the device internal clock exceeds an internal threshold
 
-*Then* The device will notify the user that time synchronization is no longer functional, which may limit the availability of SDC System Functionality
+*Or* The timestamps of the received data are no longer accurate enough
+
+*Then* The device will notify the user that time synchronization is no longer functional, which will limit the availability of SDC System Functionality
 
 *And* The device will create a log entry noting inaccurate time synchronization
 
 *And* The device will periodically attempt to reconnect to the <<acronym_md_lan>> and <<acronym_ts_service>>
 
 *And* Based on a <<term_manufacturer>>'s risk management, the device may be disconnected entirely from the <<acronym_md_lan>> network.
+
+NOTE: It is the <<vol1_spec_sdpi_p_actor_somds_consumer>>'s responsibility to decide if timestamps are still accurate enough to execute its <<term_system_function_contribution>>.
+
+====== Safety, Effectiveness & Security Considerations and Requirements
+
+.R1540
+[sdpi_requirement#r1540,sdpi_req_level=shall]
+****
+If a <<vol1_spec_sdpi_p_actor_somds_consumer>> receives an <<term_medical_data_information_base>> containing a ClockState/@Accuracy that is no longer sufficient for at least one of its <<term_system_function_contribution>>, it shall disable all affected <<term_system_function_contribution>>s.
+****
+
+.R1541
+[sdpi_requirement#r1541,sdpi_req_level=shall]
+****
+If a <<vol1_spec_sdpi_p_actor_somds_consumer>>'s  internal clock is no longer sufficient for at least one of its <<term_system_function_contribution>>, it shall disable all affected <<term_system_function_contribution>>s.
+****
+
+.R1542
+[sdpi_requirement#r1542,sdpi_req_level=shall]
+****
+If a <<vol1_spec_sdpi_p_actor_somds_consumer>> disables one or more <<term_system_function_contribution>>s it shall notify the user.
+****
+
+.R1543
+[sdpi_requirement#r1543,sdpi_req_level=shall]
+****
+If a <<vol1_spec_sdpi_p_actor_somds_consumer>> disables one or more <<term_system_function_contribution>>s it shall create a log entry, noting the disabled <<term_system_function_contribution>>s as well as the cause for disabling them.
+****
+
+
+
+
