@@ -100,7 +100,7 @@ For every MDS of a <<vol1_spec_sdpi_p_actor_somds_provider>>, if the <<vol1_spec
 .Notes
 [%collapsible]
 ====
-NOTE: This allows the <<vol1_spec_sdpi_p_actor_somds_consumer>> to decide if timestamps are still accurate enough for its specific use case.
+NOTE: This allows for the <<vol1_spec_sdpi_p_actor_somds_consumer>> to decide if timestamps are accurate enough for its specific use case.
 ====
 ****
 *REVIEWER QUESTION*:Is R1531 too challenging for legacy devices?
