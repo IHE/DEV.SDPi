@@ -163,7 +163,7 @@ NOTE: It is the <<vol1_spec_sdpi_p_actor_somds_consumer>>'s responsibility to de
 .R1540
 [sdpi_requirement#r1540,sdpi_req_level=shall]
 ****
-If a <<vol1_spec_sdpi_p_actor_somds_consumer>> receives an <<term_medical_data_information_base>> containing a ClockState/@Accuracy that is no longer sufficient for at least one of its <<term_system_function_contribution>>, it shall disable all affected <<term_system_function_contribution>>s.
+If a <<vol1_spec_sdpi_p_actor_somds_consumer>> receives an <<term_medical_data_information_base>> containing a pm:ClockState/@Accuracy that is no longer sufficient for at least one of its <<term_system_function_contribution>>s, the <<vol1_spec_sdpi_p_actor_somds_consumer>> shall disable all affected <<term_system_function_contribution>>s.
 ****
 
 .R1541
