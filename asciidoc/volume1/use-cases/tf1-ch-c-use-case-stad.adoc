@@ -156,7 +156,7 @@ The <<vol1_spec_sdpi_p_actor_somds_participant>> shall create a log entry, if th
 
 *And* Based on a <<term_manufacturer>>'s risk management, the device may be disconnected entirely from the <<acronym_md_lan>> network.
 
-NOTE: It is the <<vol1_spec_sdpi_p_actor_somds_consumer>>'s responsibility to decide if timestamps are still accurate enough to execute its <<term_system_function_contribution>>.
+NOTE: It is the <<vol1_spec_sdpi_p_actor_somds_consumer>>'s responsibility to decide if timestamps are accurate enough to execute its <<term_system_function_contribution>>.
 
 ====== Safety, Effectiveness & Security Considerations and Requirements
 
