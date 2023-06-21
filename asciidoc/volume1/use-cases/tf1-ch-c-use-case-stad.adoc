@@ -109,7 +109,7 @@ NOTE: This allows for the <<vol1_spec_sdpi_p_actor_somds_consumer>> to decide if
 .R1532
 [sdpi_requirement#r1532,sdpi_req_level=shall]
 ****
-The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_consumer>> shall consider the risk of providing the <<vol1_spec_sdpi_p_actor_somds_consumer>>'s <<term_system_function_contribution>>, if the accuracy of the device internal clock decreases due to an unreachable <<acronym_ts_service>>.
+The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_consumer>> shall consider the risk of providing the <<vol1_spec_sdpi_p_actor_somds_consumer>>'s <<term_system_function_contribution>> if the accuracy of the device internal clock decreases due to an unreachable <<acronym_ts_service>>.
 
 ****
 
