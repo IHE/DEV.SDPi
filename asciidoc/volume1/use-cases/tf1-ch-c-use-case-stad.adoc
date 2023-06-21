@@ -48,7 +48,7 @@ image::../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
 .R1510
 [sdpi_requirement#r1510,sdpi_req_level=shall]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_participant>> shall not allow manual configuration of its internal clock while the device is is operational in <<acronym_md_lan>> network.
+A <<vol1_spec_sdpi_p_actor_somds_participant>> shall not allow manual configuration of its internal clock while the device is operational in an <<acronym_md_lan>> network.
 
 .Notes
 [%collapsible]
