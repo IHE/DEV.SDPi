@@ -18,7 +18,7 @@ See the related note on sex and gender in the gateway mappings specified in <<vo
 |===
 
 BICEPS does not provide means to convey the administrative gender in the pm:PatientDemographicsCoreData element.
-As nowadays the distinction between biological sex and administrative gender is an essential feature of patient demographics and required by protocols such as HL7 FHIR, this specification adds an extension to the BICEPS participant model in order to allow for a <<vol1_spec_sdpi_p_actor_somds_participant>> to provide the administrative gender in addition to the already existing biological sex (as specified in pm:PatientDemographicsCoreData/pm:Sex).
+As nowadays the distinction between biological sex and administrative gender is an essential feature of patient demographics and required by protocols such as HL7 FHIR, this specification adds an extension to the BICEPS Participant Model in order to allow for a <<vol1_spec_sdpi_p_actor_somds_participant>> to provide the administrative gender in addition to the already existing biological sex (as specified in pm:PatientDemographicsCoreData/pm:Sex).
 
 The extension is based on the terminology of <<ref_hl7_fhir>>: https://hl7.org/fhir/valueset-administrative-gender.html.
 

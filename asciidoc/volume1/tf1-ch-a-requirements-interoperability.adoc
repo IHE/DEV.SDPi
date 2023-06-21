@@ -63,7 +63,7 @@ Last accessed 2022.10.04.], some general observations will help understand the v
 . <profiles navigate from the top to the bottom similar with each layer contributing to those below and converging in a single interface capability bundle>;
 . <physical layers are leveraged / not re-invented!>;
 . <requirements interoperability traces "profile lines" from top to bottom>;
-. <requirements TYPEs are rooted in the layers that they represent and link Defs to Usage, see <<vol1_clause_sdpi_requirements_core_model> section below.>.
+. <requirements TYPEs are rooted in the layers that they represent and link Defs to Usage, see <<vol1_clause_sdpi_requirements_core_model>> section below.>.
 
 ////
 #TODO:  ADD INTEROPERABILITY PATHS EXAMPLE VIA A TABLE (VS. LINES THROUGH GRAPHIC)#
