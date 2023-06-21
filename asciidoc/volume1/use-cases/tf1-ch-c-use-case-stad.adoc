@@ -123,7 +123,7 @@ The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_consumer>> shall c
 ====
 NOTE: In accordance with <<r1531>>, a <<vol1_spec_sdpi_p_actor_somds_consumer>> can assume that the accuracy of a <<vol1_spec_sdpi_p_actor_somds_provider>>'s clock is at least 50ms if no other value is provided in the <<term_medical_data_information_base>> pm:ClockState/@Accuracy.
 
-NOTE: This goes beyond considering the risk for erroneous timestamps required by the Base Participant Key Purpose Standard, since it forces the <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_consumer>> to define a minimum accuracy acceptable for a <<term_system_function_contribution>>.
+NOTE: This goes beyond considering the risk of erroneous timestamps required by the Base <<acronym_pkp>> Standard, since it forces the <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_consumer>> to define a minimum accuracy acceptable for a <<term_system_function_contribution>>.
 
 ====
 ****
