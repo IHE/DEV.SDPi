@@ -19,6 +19,7 @@ Each section shall contain a list of action items of the following format: `<bri
 
 - Process requirement R1500 for consideration of clock misalignment ([#154](https://github.com/IHE/DEV.SDPi/issues/154)).
 - Use cases _Devices are operational in the MD LAN network but cannot access the TS Service_ and _Devices are operational in the MD LAN network but cannot access the TS Service and clock drift is unacceptable_ ([#155](https://github.com/IHE/DEV.SDPi/issues/155)). 
+- MDIB Efficiency clause ([#50](https://github.com/IHE/DEV.SDPi/issues/50)).
 
 ### Changed
 
