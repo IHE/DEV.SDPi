@@ -95,7 +95,7 @@ NOTE: It is likely that a <<vol1_spec_sdpi_p_actor_somds_participant>> needs mul
 .R1531
 [sdpi_requirement#r1531,sdpi_req_level=shall]
 ****
-If a <<vol1_spec_sdpi_p_actor_somds_provider>> cannot reach the <<acronym_ts_service>> and can no longer guarantee a 50ms accuracy, it shall provide ClockState/@Accuracy.
+For every MDS of a <<vol1_spec_sdpi_p_actor_somds_provider>>, if the <<vol1_spec_sdpi_p_actor_somds_provider>> cannot reach the <<acronym_ts_service>> and is no longer able to provide a maximum error of 50ms relative to the <<acronym_ts_service>>'s clock, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall provide pm:ClockState/@Accuracy.
 
 .Notes
 [%collapsible]
