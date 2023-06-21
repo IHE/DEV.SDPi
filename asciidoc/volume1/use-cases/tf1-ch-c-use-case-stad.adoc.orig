@@ -68,6 +68,23 @@ image::../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
 
 *And* The device will notify the user about the fact, that the <<acronym_ts_service>> cannot be reached
 
+<<<<<<< HEAD
+==== Safety, Effectiveness & Security Considerations and Requirements
+
+.R1500
+[sdpi_requirement#r1500,sdpi_req_level=shall]
+****
+The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_participant>> shall consider the risk of workflow interruption due to misaligned clocks.
+
+.Notes
+[%collapsible]
+====
+NOTE: Clocks of <<vol1_spec_sdpi_p_actor_somds_participant>>s run apart due to lack of synchronization with NTP servers, different clock drifts or cyberattacks.
+
+NOTE: Typically, a <<term_manufacturer>> assumes that system functionality in general may not be available due to loss of network connections, and risks are mitigated accordingly.
+====
+****
+=======
 *And* The device will create a log entry noting the disconnection from the <<acronym_ts_service>>
 
 *And* The ability to change the device time manually will remain disabled
@@ -92,20 +109,5 @@ NOTE: A <<term_manufacturer>> may decide to limit user notification of technical
 
 *And* The device will periodically attempt to reconnect to the <<acronym_md_lan>> and <<acronym_ts_service>>
 
-==== Safety, Effectiveness & Security Considerations and Requirements
-
-.R1500
-[sdpi_requirement#r1500,sdpi_req_level=shall]
-****
-The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_participant>> shall consider the risk of workflow interruption due to misaligned clocks.
-
-.Notes
-[%collapsible]
-====
-
-NOTE: Clocks of <<vol1_spec_sdpi_p_actor_somds_participant>>s run apart due to lack of synchronization with NTP servers, different clock drifts or cyberattacks.
-
-NOTE: This requirement supplements RR1162 in <<ref_ieee_11073_10700_2022>>: _The MANUFACTURER of an SDC BASE CONSUMER SHALL consider the RISKs resulting from erroneous timestamps._
-
-====
-****
+*And* Based on a <<term_manufacturer>>'s risk management, the device may be disconnected entirely from the <<acronym_md_lan>> network.
+>>>>>>> master
