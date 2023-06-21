@@ -175,7 +175,7 @@ If a <<vol1_spec_sdpi_p_actor_somds_consumer>>'s internal clock is no longer suf
 .R1542
 [sdpi_requirement#r1542,sdpi_req_level=shall]
 ****
-If a <<vol1_spec_sdpi_p_actor_somds_consumer>> disables one or more <<term_system_function_contribution>>s it shall notify the user.
+When a <<vol1_spec_sdpi_p_actor_somds_consumer>> disables one or more <<term_system_function_contribution>>s, the <<vol1_spec_sdpi_p_actor_somds_consumer>> shall notify the user.
 ****
 
 .R1543
