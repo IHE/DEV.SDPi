@@ -53,7 +53,7 @@ A <<vol1_spec_sdpi_p_actor_somds_participant>> shall not allow manual configurat
 .Notes
 [%collapsible]
 ====
-NOTE: Manual change of the devices clock is not even allowed as a backup in case of the <<acronym_ts_service>> not being available. This is done since manual configuration would lead to plausible but still inaccurate timestamps.
+NOTE: Since manual time adjustments of the device's internal clock would lead to plausible but still inaccurate timestamps, this requirement also prohibits manual adjustments when the <<acronym_ts_service>> is not available.
 ====
 ****
 
