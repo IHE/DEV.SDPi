@@ -133,7 +133,7 @@ NOTE: This goes beyond considering the risk of erroneous timestamps required by 
 .R1534
 [sdpi_requirement#r1534,sdpi_req_level=shall]
 ****
-The <<vol1_spec_sdpi_p_actor_somds_participant>> shall create a log entry, if the <<acronym_ts_service>> cannot be reached.
+If a <<vol1_spec_sdpi_p_actor_somds_participant>> cannot reach the <<acronym_ts_service>>, the <<vol1_spec_sdpi_p_actor_somds_participant>> shall create a log entry.
 
 ****
 *REVIEWER QUESTION*:Do we need a requirement stating this explicitly, or is BPKP TR0916 sufficient, since a <<acronym_ts_service>> not being available can be considered as a change in the <<acronym_ts_service>>.
