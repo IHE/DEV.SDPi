@@ -102,7 +102,10 @@ The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_participant>> shal
 .Notes
 [%collapsible]
 ====
+
 NOTE: Clocks of <<vol1_spec_sdpi_p_actor_somds_participant>>s run apart due to lack of synchronization with NTP servers, different clock drifts or cyberattacks.
+
+NOTE: This requirement supplements RR1162 in <<ref_ieee_11073_10700_2022>>: _The MANUFACTURER of an SDC BASE CONSUMER SHALL consider the RISKs resulting from erroneous timestamps._
 
 ====
 ****
