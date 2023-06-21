@@ -116,7 +116,7 @@ The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_consumer>> shall c
 .R1533
 [sdpi_requirement#r1533,sdpi_req_level=shall]
 ****
-The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_consumer>> shall consider the risk of providing the <<vol1_spec_sdpi_p_actor_somds_consumer>>'s <<term_system_function_contribution>>, if the accuracy of the <<vol1_spec_sdpi_p_actor_somds_provider>>'s timestamps decreases.
+The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_consumer>> shall consider the risk of providing the <<vol1_spec_sdpi_p_actor_somds_consumer>>'s <<term_system_function_contribution>> if the accuracy of the <<vol1_spec_sdpi_p_actor_somds_provider>>'s clock decreases.
 
 .Notes
 [%collapsible]
