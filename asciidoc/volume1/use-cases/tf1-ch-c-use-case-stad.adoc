@@ -181,7 +181,7 @@ When a <<vol1_spec_sdpi_p_actor_somds_consumer>> disables one or more <<term_sys
 .R1543
 [sdpi_requirement#r1543,sdpi_req_level=shall]
 ****
-If a <<vol1_spec_sdpi_p_actor_somds_consumer>> disables one or more <<term_system_function_contribution>>s it shall create a log entry, noting the disabled <<term_system_function_contribution>>s as well as the cause for disabling them.
+If a <<vol1_spec_sdpi_p_actor_somds_consumer>> disables one or more <<term_system_function_contribution>>s, the <<vol1_spec_sdpi_p_actor_somds_consumer>> shall create a log entry, noting the disabled <<term_system_function_contribution>>s as well as the cause for disabling them.
 ****
 
 
