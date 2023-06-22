@@ -18,8 +18,8 @@ Each section shall contain a list of action items of the following format: `<bri
 ### Added
 
 - Use cases _Devices are operational in the MD LAN network but cannot access the TS Service_ and _Devices are operational in the MD LAN network but cannot access the TS Service and clock drift is unacceptable_ ([#155](https://github.com/IHE/DEV.SDPi/issues/155)). 
-- Added safety, security and effectiveness requirements to use case _Devices are operational in the MD LAN network but cannot access the TS Service_ ([#31](https://github.com/IHE/DEV.SDPi/issues/31)) 
-- Added safety, security and effectiveness requirements for use case _Devices are operational in the MD LAN network but cannot access the TS Service and clock drift is unacceptable_ ([#31](https://github.com/IHE/DEV.SDPi/issues/31))
+- Added safety, security and effectiveness requirements to use case _Devices are operational in the MD LAN network but cannot access the TS Service_ ([#31](https://github.com/IHE/DEV.SDPi/issues/31)).
+- Added safety, security and effectiveness requirements for use case _Devices are operational in the MD LAN network but cannot access the TS Service and clock drift is unacceptable_ ([#31](https://github.com/IHE/DEV.SDPi/issues/31)).
 
 ### Changed
 - Changed use case _Devices are operational in the MD LAN network but cannot access the TS Service and clock drift is unacceptable_ so that the decision to continue/discontinue the execution of a System Function while the clocks become less accurate lies with the consumer. 
