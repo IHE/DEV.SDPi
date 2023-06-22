@@ -46,7 +46,7 @@ The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_participant>> shal
 .Notes
 [%collapsible]
 ====
-NOTE: The 50ms target accuracy is suitable for highly demanding use cases like real time waveform comparison.  Since <<acronym_ts_service>> configuration will only happen during the <<acronym_md_lan>> network initial setup, it is based on the worst case scenario.
+NOTE: The 50ms target accuracy is suitable for highly demanding use cases like real time waveform comparison.
 ====
 ****
 
