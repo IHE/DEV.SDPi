@@ -43,6 +43,7 @@ The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_participant>> shal
 
  * The responsible organization needs to provide a <<acronym_ts_service>> with 50 millisecond accuracy.
  * The responsible organization needs to provide a redundant <<acronym_ts_service>> configuration with at least one backup server.
+
 .Notes
 [%collapsible]
 ====
