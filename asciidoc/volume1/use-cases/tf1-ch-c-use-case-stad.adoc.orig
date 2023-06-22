@@ -34,45 +34,17 @@ image::../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
 
 *Then* The device will synchronize its time with the <<acronym_ts_service>>
 
-====== Safety, Effectiveness & Security Considerations and Requirements
 
-.R1520
-[sdpi_requirement#r1520,sdpi_req_level=shall]
-****
-The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_participant>> shall include all of the following information in the accompanying documentation:
+===== Scenario: <<acronym_stad>> {var_use_case_id}.2 - Device is connected to the MD LAN network with a TS Service and a user wants to change the device's time
 
- * The responsible organization needs to provide a <<acronym_ts_service>> with 50 millisecond accuracy.
- * The responsible organization needs to provide a redundant <<acronym_ts_service>> configuration with at least one backup server.
-.Notes
-[%collapsible]
-====
-NOTE: The 50ms target accuracy is suitable for highly demanding use cases like real time waveform comparison.
-====
-****
+*Given* Device has detected at least one <<acronym_ts_service>>
 
+*When* The <<acronym_ts_service>> is operational
 
-
-===== Scenario: <<acronym_stad>> {var_use_case_id}.2 - Device is connected to the MD LAN network and a user wants to change the device's time
-
-*Given* Device is operational in <<acronym_md_lan>> network
-
-*When*  The user attempts to change the time on the device manually
+*And* The user attempts to change the time on the device manually
 
 *Then* The device will disable the ability to change its time manually
 
-====== Safety, Effectiveness & Security Considerations and Requirements
-
-.R1510
-[sdpi_requirement#r1510,sdpi_req_level=shall]
-****
-A <<vol1_spec_sdpi_p_actor_somds_participant>> shall not allow manual configuration of its internal clock while the device is operational in an <<acronym_md_lan>> network.
-
-.Notes
-[%collapsible]
-====
-NOTE: Since manual time adjustments of the device's internal clock would lead to plausible but still inaccurate timestamps, this requirement also prohibits manual adjustments when the <<acronym_ts_service>> is not available.
-====
-****
 
 ===== Scenario: <<acronym_stad>> {var_use_case_id}.3 - Device is connected to the MD LAN network and cannot connect to a TS Service
 
@@ -96,6 +68,23 @@ NOTE: Since manual time adjustments of the device's internal clock would lead to
 
 *And* The device will notify the user about the fact, that the <<acronym_ts_service>> cannot be reached
 
+<<<<<<< HEAD
+==== Safety, Effectiveness & Security Considerations and Requirements
+
+.R1500
+[sdpi_requirement#r1500,sdpi_req_level=shall]
+****
+The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_participant>> shall consider the risk of workflow interruption due to misaligned clocks.
+
+.Notes
+[%collapsible]
+====
+NOTE: Clocks of <<vol1_spec_sdpi_p_actor_somds_participant>>s run apart due to lack of synchronization with NTP servers, different clock drifts or cyberattacks.
+
+NOTE: Typically, a <<term_manufacturer>> assumes that system functionality in general may not be available due to loss of network connections, and risks are mitigated accordingly.
+====
+****
+=======
 *And* The device will create a log entry noting the disconnection from the <<acronym_ts_service>>
 
 *And* The ability to change the device time manually will remain disabled
@@ -120,20 +109,5 @@ NOTE: A <<term_manufacturer>> may decide to limit user notification of technical
 
 *And* The device will periodically attempt to reconnect to the <<acronym_md_lan>> and <<acronym_ts_service>>
 
-==== Safety, Effectiveness & Security Considerations and Requirements
-
-.R1500
-[sdpi_requirement#r1500,sdpi_req_level=shall]
-****
-The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_participant>> shall consider the risk of workflow interruption due to misaligned clocks.
-
-.Notes
-[%collapsible]
-====
-
-NOTE: Clocks of <<vol1_spec_sdpi_p_actor_somds_participant>>s run apart due to lack of synchronization with NTP servers, different clock drifts or cyberattacks.
-
-NOTE: This requirement supplements RR1162 in <<ref_ieee_11073_10700_2022>>: _The MANUFACTURER of an SDC BASE CONSUMER SHALL consider the RISKs resulting from erroneous timestamps._
-
-====
-****
+*And* Based on a <<term_manufacturer>>'s risk management, the device may be disconnected entirely from the <<acronym_md_lan>> network.
+>>>>>>> master

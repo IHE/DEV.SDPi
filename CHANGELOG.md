@@ -17,10 +17,13 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Added
 
+- Process requirement R1500 for consideration of clock misalignment ([#154](https://github.com/IHE/DEV.SDPi/issues/154)).
 - Use cases _Devices are operational in the MD LAN network but cannot access the TS Service_ and _Devices are operational in the MD LAN network but cannot access the TS Service and clock drift is unacceptable_ ([#155](https://github.com/IHE/DEV.SDPi/issues/155)). 
+- Requirement explicitly forbidding manual TS service configuration ([#30](https://github.com/IHE/DEV.SDPi/issues/30))
 - Labeling requirement to use case _Device is connected to the MD LAN network with a Time Source service_ to specify NTP configuration ([#151](https://github.com/IHE/DEV.SDPi/issues/151)). 
-### Changed
 
+### Changed
+- Use case _Device is connected to the MD LAN network and a user wants to change the device's time_ to account for the fact, that configuring the TS service manually is always forbidden, not just when TS service is operational. ([#30](https://github.com/IHE/DEV.SDPi/issues/30))
 ### Removed
 
 ### Editorial Fixes
