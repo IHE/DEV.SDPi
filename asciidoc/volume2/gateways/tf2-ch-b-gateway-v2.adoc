@@ -22,3 +22,14 @@ NOTE: In <<ref_hl7_v2>>, all timestamps are defined as local time and the time z
 NOTE: It is not always guaranteed that the timezone configured at the <<actor_somds_provider>> and/or <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> corresponds with the timezone of the <<acronym_mds>> entities, for example, when a <<actor_somds_provider>> acting as device aggregator and/or the  <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> are running in a data center located in a different timezone than the <<acronym_mds>> entities.
 ====
 ****
+
+include::tf2-ch-b-gateway-private-mdc-mapping.adoc[]
+
+==== HL7 Segment Descriptions
+The following sections refer to the *Appendix B Common Segment Descriptions* of the <<ref_ihe_pcd_tf_2_2019>>.
+
+include::tf2-ch-b-gateway-msh-mapping.adoc[]
+
+include::tf2-ch-b-gateway-pid-mapping.adoc[]
+
+include::tf2-ch-b-gateway-pv1-mapping.adoc[]
