@@ -22,6 +22,8 @@ Each section shall contain a list of action items of the following format: `<bri
 - Requirement explicitly forbidding manual TS service configuration ([#30](https://github.com/IHE/DEV.SDPi/issues/30))
 - Added safety, security and effectiveness requirements to use case _Devices are operational in the MD LAN network but cannot access the TS Service_ ([#31](https://github.com/IHE/DEV.SDPi/issues/31)).
 - Added safety, security and effectiveness requirements for use case _Devices are operational in the MD LAN network but cannot access the TS Service and clock drift is unacceptable_ ([#31](https://github.com/IHE/DEV.SDPi/issues/31)).
+- Labeling requirement to use case _Device is connected to the MD LAN network with a Time Source service_ to specify NTP configuration ([#151](https://github.com/IHE/DEV.SDPi/issues/151)). 
+
 
 ### Changed
 
