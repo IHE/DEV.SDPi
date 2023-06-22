@@ -35,16 +35,27 @@ image::../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
 *Then* The device will synchronize its time with the <<acronym_ts_service>>
 
 
-===== Scenario: <<acronym_stad>> {var_use_case_id}.2 - Device is connected to the MD LAN network with a TS Service and a user wants to change the device's time
+===== Scenario: <<acronym_stad>> {var_use_case_id}.2 - Device is connected to the MD LAN network and a user wants to change the device's time
 
-*Given* Device has detected at least one <<acronym_ts_service>>
+*Given* Device is operational in <<acronym_md_lan>> network
 
-*When* The <<acronym_ts_service>> is operational
-
-*And* The user attempts to change the time on the device manually
+*When*  The user attempts to change the time on the device manually
 
 *Then* The device will disable the ability to change its time manually
 
+====== Safety, Effectiveness & Security Considerations and Requirements
+
+.R1510
+[sdpi_requirement#r1510,sdpi_req_level=shall]
+****
+A <<vol1_spec_sdpi_p_actor_somds_participant>> shall not allow manual configuration of its internal clock while the device is operational in an <<acronym_md_lan>> network.
+
+.Notes
+[%collapsible]
+====
+NOTE: Since manual time adjustments of the device's internal clock would lead to plausible but still inaccurate timestamps, this requirement also prohibits manual adjustments when the <<acronym_ts_service>> is not available.
+====
+****
 
 ===== Scenario: <<acronym_stad>> {var_use_case_id}.3 - Device is connected to the MD LAN network and cannot connect to a TS Service
 
@@ -160,6 +171,22 @@ NOTE: It is the <<vol1_spec_sdpi_p_actor_somds_consumer>>'s responsibility to de
 
 ====== Safety, Effectiveness & Security Considerations and Requirements
 
+.R1500
+[sdpi_requirement#r1500,sdpi_req_level=shall]
+****
+The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_participant>> shall consider the risk of workflow interruption due to misaligned clocks.
+
+.Notes
+[%collapsible]
+====
+
+NOTE: Clocks of <<vol1_spec_sdpi_p_actor_somds_participant>>s run apart due to lack of synchronization with NTP servers, different clock drifts or cyberattacks.
+
+NOTE: This requirement supplements RR1162 in <<ref_ieee_11073_10700_2022>>: _The MANUFACTURER of an SDC BASE CONSUMER SHALL consider the RISKs resulting from erroneous timestamps._
+
+====
+****
+
 .R1540
 [sdpi_requirement#r1540,sdpi_req_level=shall]
 ****
@@ -183,7 +210,5 @@ When a <<vol1_spec_sdpi_p_actor_somds_consumer>> disables one or more <<term_sys
 ****
 If a <<vol1_spec_sdpi_p_actor_somds_consumer>> disables one or more <<term_system_function_contribution>>s, the <<vol1_spec_sdpi_p_actor_somds_consumer>> shall create a log entry, noting the disabled <<term_system_function_contribution>>s as well as the cause for disabling them.
 ****
-
-
 
 
