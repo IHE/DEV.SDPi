@@ -510,11 +510,11 @@ A <<actor_somds_dec_gateway>> shall leave the OBX-2 field empty for OBX segments
 |===
 
 ====== OBX-3 Observation Identifier
-include::tf2-ch-b-gateway-obx3-mapping.adoc[]
+Please refer to general section <<ref_gateway_obx3_mapping>>.
 
 [#ref_dec_obx4]
 ====== OBX-4 Observation Sub-ID
-include::tf2-ch-b-gateway-obx4-mapping.adoc[]
+Please refer to general section <<ref_gateway_obx4_mapping>>.
 
 ====== OBX-5 Observation Value
 
@@ -867,7 +867,7 @@ Or set to "AMEAS\^auto-measurement^MDC" if required.
 |===
 
 ====== OBX-18 Equipment Instance Identifier
-include::tf2-ch-b-gateway-obx18-mapping.adoc[]
+Please refer to general section <<ref_gateway_obx18_mapping>>.
 
 ====== OBX-20 Observation Site
 
