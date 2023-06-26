@@ -1,3 +1,4 @@
+[#vol2_clause_mdpws_compression_option]
 ==== MDPWS Compression Option
 
 MDPWS <<ref_ieee_11073_20702_2016>> defines EXI as the designated means to compress XML data. However, EXI is lagging in adoption. Therefore, instead of using EXI compression, it is recommended to use HTTP compression with gzip (RFC 1952) as the minimum agreement between clients and servers. One issue with that is the missing official support for HTTP compression in HTTP request messages. Request headers are allowed to include Content-Encoding, but those might not be accepted by HTTP servers.

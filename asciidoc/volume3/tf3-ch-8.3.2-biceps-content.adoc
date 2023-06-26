@@ -183,7 +183,7 @@ Additional security requirements and considerations may be identified in the  <<
 // 8.3.2.
 ===== BICEPS Conventions for device specialization content modules
 
-// 8.3.2.
+// 8.3.2.9
 [#vol3_clause_biceps_extension_model]
 ===== BICEPS Extension Model
 
@@ -209,12 +209,15 @@ Consequently, a manufacturer of a <<vol1_spec_sdpi_p_actor_somds_provider>> shou
 
 There are standardized extensions, like those that are specified in the PKP standards or this specification, which can be considered common knowledge and therefore do not break interoperability between different manufacturers.
 
-include::biceps-content-module/tf3-ch-8.3.2.7-applicable-productions-specification-type-codes.adoc[]
+include::biceps-content-module/tf3-ch-8.3.2.9.1-applicable-productions-specification-type-codes.adoc[]
 
-include::biceps-content-module/tf3-ch-8.3.2.7-applicable-attribute-type-codes.adoc[]
+include::biceps-content-module/tf3-ch-8.3.2.9.2-applicable-attribute-type-codes.adoc[]
 
-include::biceps-extension-provisions/tf3-ch-8.3.2.7-extension-coded-attribute.adoc[]
+include::biceps-extension-provisions/tf3-ch-8.3.2.9.3-extension-coded-attribute.adoc[]
 
-include::biceps-extension-provisions/tf3-ch-8.3.2.8-extension-gender.adoc[]
+include::biceps-extension-provisions/tf3-ch-8.3.2.9.4-extension-gender.adoc[]
 
-include::biceps-extension-provisions/tf3-ch-8.3.2.9-extension-equipment-identifier.adoc[]
+include::biceps-extension-provisions/tf3-ch-8.3.2.9.5-extension-equipment-identifier.adoc[]
+
+// 8.3.2.10
+include::mdib-efficieny/tf3-ch-8.3.2.10-mdib-efficiency-considerations.adoc[]

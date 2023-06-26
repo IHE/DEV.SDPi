@@ -1,4 +1,27 @@
 [#vol3_clause_mdib_efficiency_considerations]
 ===== MDIB Efficiency Considerations
 
-The
+Typically, the product software of a medical device is neither designed to internally process data in accordance with the BICEPS Participant and Message Model nor does it natively implement an <<acronym_mdib>> for use in an SDC System.
+This results in the need for a <<term_manufacturer>> to transform a device's internal data model into the BICEPS Participant Model.
+
+This clause gives guidance regarding efficient distribution of <<acronym_mdib>> data, which reduces processor load as well as bandwidth consumption in the <<acronym_md_lan>>.
+
+====== Compression
+
+Messages should be compressed such that the overall data rate in the <<acronym_md_lan>> is reduced (see <<vol2_clause_mdpws_compression_option>>).
+Even though compression and decompression of data requires devices to consume additional CPU cycles, the transmission of data in the <<acronym_md_lan>> is more expensive especially when using wireless technology.
+
+====== Modelling
+
+The modelling of <<acronym_mds>>s plays a crucial role in the efficiency of data distribution.
+The <<acronym_mdib>> should be modelled in a minimalistic way, which results in the following recommendations:
+
+Low-frequent @DeterminationPeriod:: Determination periods of metrics should be short enough such that data remains clinically relevant when transmitted, but long enough such that data transmission does not cause high processor and network load.
+
+Metrics having a common @DeterminationPeriod:: This allows for the <<actor_somds_provider>> to collect updates in a single metric report instead of clustering updates across many metric reports.
+
+Waveforms having a common @DeterminationPeriod:: Real-time sample array metrics are used to model waveforms and are distributed by using the BICEPS WAVEFORM service.
+Analogous to other metric types, real-time sample array metrics should also share the same @DeterminationPeriod.
+This optimization is even more relevant since in general the determination period of real-time sample array metrics is significantly lower than of other metrics.
+
+Localization:: By moving the provision of texts in different languages and sizes from the <<acronym_mdib>> to the BICEPS LOCALIZATION SERVICE, a <<vol1_spec_sdpi_p_actor_somds_provider>> can tremendously reduce the overall size of the <<acronym_mdib>>, which in turn reduces the workload required to initially retrieve BICEPS contents (see <<vol2_clause_dev_30>>).

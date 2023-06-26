@@ -56,7 +56,7 @@
 | SDC
 
 | [[term_coded_attribute, Coded Attribute]] Coded Attribute
-| A BICEPS participant model extension that allows for a <<vol1_spec_sdpi_p_actor_somds_provider>> to provide attributes from the first partition of the IEEE 11073-10101 nomenclature. Specified in <<vol3_clause_coded_attribute>>.
+| A BICEPS Participant Model extension that allows for a <<vol1_spec_sdpi_p_actor_somds_provider>> to provide attributes from the first partition of the IEEE 11073-10101 nomenclature. Specified in <<vol3_clause_coded_attribute>>.
 |
 |
 | See https://www.nist.gov/conformity-assessment[NIST CA resources page]
