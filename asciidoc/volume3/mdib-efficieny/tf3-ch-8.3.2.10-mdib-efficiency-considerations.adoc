@@ -9,7 +9,7 @@ This clause gives guidance regarding efficient distribution of <<acronym_mdib>> 
 ====== Compression
 
 Messages should be compressed such that the overall data rate in the <<acronym_md_lan>> is reduced (see <<vol2_clause_mdpws_compression_option>>).
-Even though compression und decompression of data requires devices to consume additional CPU cycles, the transmission of data in the <<acronym_md_lan>> is more expensive especially when using wireless technology.
+Even though compression and decompression of data requires devices to consume additional CPU cycles, the transmission of data in the <<acronym_md_lan>> is more expensive especially when using wireless technology.
 
 ====== Modelling
 
