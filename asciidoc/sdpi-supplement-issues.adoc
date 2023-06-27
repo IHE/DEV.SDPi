@@ -13,75 +13,18 @@ All SDPi supplement issues are tracked in the https://github.com/IHE/DEV.SDPi/is
 For more detailed information on how the Gemini SES+MDI program manages issues from identification to resolution to incorporation into this supplement, see the wiki article https://github.com/IHE/DEV.SDPi/wiki/Program-Coordination-Co-Working-Spaces#overview-from-discussion-to-planning-to-development[_Overview: From Discussion to Planning to Development_] and the confluence article https://confluence.hl7.org/pages/viewpage.action?pageId=82912211#TopicsofInterest-TopicResolutionWorkflow[_Topics of Interest -- Topic Resolution Workflow_].
 
 [sdpi_offset=clear]
-=== Open Issues and Questions
+=== Open Issues and Topic of Interests
 
-* *Issue:* https://confluence.hl7.org/pages/viewpage.action?pageId=86970701[*SystemContext Profiling & Use*]
-** How should SDPi profile(s) use the SDC SystemContext (Location, Patient, Ensemble, Workflow) capabilities?  Including device pairing / coupling.  Which SystemContext component?  Is this an option on the SDPi-P profile?  Other profiles?  IEEE 11073-1070x PKP requirements?
+==== Open Issues
 
-* *Issue:* *_MDIB Version Update Guidelines_*
-** SDC provides "version" indicators to enable CONSUMER systems to determine what has changed.  However, this can result in considerable "chatter" on the network if not properly managed.  What guidelines and requirements should be specified in SDPi-P?  Also how managed with waveforms vs. parameters.
+// open issues are inserted here
 
-* *Issue:* *_Profiling BICEPS Services in SDPi-P_*
-** SDC/BICEPS provides a general service model that supports many implementation approaches.  How should the services be utilized in SDPi-Plug-n-trust 1.0?
+==== Topic of Interests
 
-* *Issue:* https://confluence.hl7.org/pages/viewpage.action?pageId=91994093[*_Security Certificate Provisioning_*]
-** ISO/IEEE 11073-20702 MDPWS defines how WS-Security w/ X.509 certificates and Extended Key Use (EKU) provisions should be adapted for SDC; however, SDPi profiles will not only add specificity, but also address operationalization challenges including security certificate provisioning.  What should be added to the SDPi supplement to support this operationalization?  What should be added to the Gemini SDPi+FHIR program, including tooling and testing, to support SDPi security?
-
-* *Issue:* *_BICEPS Extension Model Use in SDPi?_*
-** SDC provides for extensions, especially in BICEPS.  How should these be included and utilized in SDPi?  A key issue to avoid is the infamous HL7 V2 "Z" segment, which was over used and negatively impacted interoperability.
-
-* *Issue:* https://confluence.hl7.org/display/GP/Topic%3A+Discovery+Proxy+Actors[*_Discovery Proxy Actors_*]
-** Note: _This issue is targeted for v1.1 but may have some element in v1.0_
-** ISO/IEEE 11073 SDC provides for both implicit and explicit discovery; however, for some implementations this may result in unwanted message traffic across the network; the use of a "discovery proxy" has been proposed and could be added as an optional SDPi actor.
-
-* *Issue: _SDPi-xC with Mixed Device Safety Classes_*
-** https://github.com/IHE/DEV.SDPi/issues/11[Github Issue #11 _Topic: SDPi-xC with Mixed Device Safety Classes_]
-** FOR SDPi 1.0 -- Basic text was added to the SES template sections to indicate the nature of the issue, but not to indicate its resolution or even if WILL be explicitly resolved (incl. if the safety classification aspect of <<acronym_biceps>> will be maintained).  See <<vol3_clause_biceps_ses_content_requirements_considerations>> Reviewers Note box that presents the issue in SDPi 1.0 and beyond.
+// toi issues are inserted here
 
 [sdpi_offset=clear]
 === Closed Issues
 
-* *Issue: _Connect Time Delay Algorithm_*
-** https://github.com/IHE/sdpi-fhir/issues/103[Github Issue #103 _Append TOI: Connect Time Delay Algorithm_] +
-https://github.com/IHE/sdpi-fhir/issues/33[Github Issue #33 _Topic: Connect Time Delay Algorithm_] +
-** Section added:  TF-2 Appendix A: Amendments and Corrigenda: Connection Time Delay;  +
-SubscriptionEnd Message added to <<vol2_clause_appendix_mdpws_dev_27>>
-
-* *Issue: _Handling missed discovery messages_*
-** https://github.com/IHE/sdpi-fhir/issues/96[Github Issue #96 _Append TOI: Handling missed discovery messages_]
-
-** Changes were made in line with https://confluence.hl7.org/display/GP/Topic%3A+Handling+missed+discovery+messages[TOI Page: Handling missed discovery messages]; Requirements were introduced on the use of Hello message recurrence and size, SOAP-over-UDP, and Probe message recurrence. This was implemented in Vol 2, Annex A, <<vol2_clause_appendix_mdpws_dev_23_recurring_hello>>,<<vol2_clause_appendix_mdpws_dev_23_hello_message_size>>, and <<vol2_clause_appendix_mdpws_dev_24_recurring_probe>>.
-
-* *Issue: _SDPi-P Compression Option_*
-** https://github.com/IHE/sdpi-fhir/issues/97[Github Issue #97 _Append TOI: Compression Option_] +
-
-** Changes were made in line with https://confluence.hl7.org/display/GP/Topic%3A+SDPi-P+Compression+Option[TOI Page: SDPi-P Compression Option]; In a nutshell, two requirements on gzip compression were introduced. This was implemented in Vol 2, Annex A, Section <<vol2_appendix_a_mdpws_messages>>.
-
-* *Issue: _Info exchanged during unsecured discovery_*
-** https://github.com/IHE/sdpi-fhir/issues/102[Github Issue #102 _Append TOI: Info exchanged during unsecured discovery_]
-
-////
-TODO:  ** Identify list of updates to this supplement w/ links
-////
-
-* *Issue: _What is a Central?_*
-** https://github.com/IHE/sdpi-fhir/issues/123[Github Issue #123 _Append TOI: What is a Central?_]
-** Section added:  <<vol3_clause_system_type_nomenclature_extensions>>
-
-* *Issue: _What is a Smart Alert System?_*
-** https://github.com/IHE/sdpi-fhir/issues/124[Github Issue #124 _Append TOI: What is a Smart Alert System?_]
-** Section added:  <<vol3_clause_system_type_nomenclature_extensions>>
-
-* *Issue: _SDPi BICEPS Extension Namespace_*
-** https://github.com/IHE/sdpi-fhir/issues/125[Github Issue #125 _Append TOI: SDPi BICEPS Extension Namespace_]
-** Sections added:  <<vol3_clause_biceps_extension_model>>, <<vol3_appendix_a_xml_schemas>>
-
-* *Issue: _MDIB/MDS Modeling for Device Aggregators_*
-** https://github.com/IHE/sdpi-fhir/issues/126[Github Issue #126 _Append TOI: MDIB/MDS Modeling for Device Aggregators_]
-** SDPi 1.0 Note:  This topic will be extended in subsequent revisions; very basic information is provided in this revision.
-** Section added:  <<vol3_clause_system_type_nomenclature_extensions>>
-
-* *Issue:* https://confluence.hl7.org/pages/viewpage.action?pageId=104761310[*_MDIB Report Retrofit / Best Practices_*]
-** https://github.com/IHE/sdpi-fhir/issues/104[Github Issue \#104 _Append TOI: MDIB Report Retrofit / Best Practices_] +
-** Sections added:  <<vol2_clause_appendix_a_mdib_report_retrofit>> & <<vol3_clause_mdib_report_retrofit>>
+// closed issues are inserted here
 

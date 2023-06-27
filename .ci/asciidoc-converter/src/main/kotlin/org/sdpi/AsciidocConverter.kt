@@ -6,6 +6,7 @@ import org.asciidoctor.Asciidoctor
 import org.asciidoctor.Options
 import org.asciidoctor.SafeMode
 import org.sdpi.asciidoc.extension.*
+import org.sdpi.asciidoc.github.Issues
 import java.io.File
 import java.io.OutputStream
 import java.nio.file.Files
@@ -14,7 +15,8 @@ import java.nio.file.Path
 class AsciidocConverter(
     private val inputType: Input,
     private val outputFile: File,
-    private val mode: Mode = Mode.Productive
+    private val githubToken: String?,
+    private val mode: Mode = Mode.Productive,
 ) : Runnable {
     override fun run() {
         val options = Options.builder()
@@ -39,6 +41,7 @@ class AsciidocConverter(
             )
         )
         asciidoctor.javaExtensionRegistry().treeprocessor(RequirementLevelProcessor())
+        asciidoctor.javaExtensionRegistry().preprocessor(IssuesSectionPreprocessor(githubToken))
         asciidoctor.javaExtensionRegistry().preprocessor(DisableSectNumsProcessor())
         asciidoctor.javaExtensionRegistry().preprocessor(ReferenceSanitizerPreprocessor(anchorReplacements))
         asciidoctor.javaExtensionRegistry()
@@ -51,7 +54,7 @@ class AsciidocConverter(
         }
 
         asciidoctor.shutdown()
-        
+
         val referencedArtifactsName = "referenced-artifacts"
         val path = Path.of(outputFile.parentFile.absolutePath, referencedArtifactsName)
         Files.createDirectories(path)
