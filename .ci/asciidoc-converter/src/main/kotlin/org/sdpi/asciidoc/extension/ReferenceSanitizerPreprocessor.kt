@@ -86,7 +86,7 @@ class ReferenceSanitizerPreprocessor(
 
     companion object : Logging {
         private val referenceMatcher = """<<(.+?)>>""".toRegex()
-        private val variableDeclarationMatcher = """^:(!?)(.+?):(.*)$""".toRegex()
+        private val variableDeclarationMatcher = VariableDeclarationRegex()
         private val variableReferenceMatcher = """\{(.+?)}""".toRegex()
         val refSeparator = UUID.randomUUID().toString()
     }

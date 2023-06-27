@@ -9,6 +9,7 @@ import com.github.ajalt.clikt.parameters.types.choice
 import com.github.ajalt.clikt.parameters.types.file
 import org.apache.logging.log4j.kotlin.Logging
 import org.sdpi.asciidoc.AsciidocErrorChecker
+import org.sdpi.asciidoc.github.IssueImport
 import java.io.File
 import kotlin.system.exitProcess
 
@@ -44,6 +45,8 @@ class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {
         .choice("pdf", "html", ignoreCase = true)
         .default("html")
 
+    private val githubToken by option("--github-token", help = "Github token to request issues")
+
     override fun run() {
         runCatching {
             val asciidocErrorChecker = AsciidocErrorChecker()
@@ -56,7 +59,7 @@ class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {
 
             logger.info { "Write output to '${outFile.canonicalPath}'" }
 
-            AsciidocConverter(AsciidocConverter.Input.FileInput(adocInputFile), outFile).run()
+            AsciidocConverter(AsciidocConverter.Input.FileInput(adocInputFile), outFile, githubToken).run()
 
             asciidocErrorChecker.run()
 
