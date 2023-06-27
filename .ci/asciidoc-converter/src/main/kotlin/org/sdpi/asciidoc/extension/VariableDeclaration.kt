@@ -7,12 +7,11 @@ data class VariableDeclaration(
 ) {
     companion object {
         fun fromLine(line: String): VariableDeclaration? {
-            return when (val match = VariableDeclarationRegex().find(line)) {
-                null -> null
-                else -> VariableDeclaration(
-                    terminate = match.groupValues[1] == "!",
-                    variableName = match.groupValues[2].trim(),
-                    variableValue = match.groupValues[3].trim()
+            return VariableDeclarationRegex().find(line)?.let {
+                VariableDeclaration(
+                    terminate = it.groupValues[1] == "!",
+                    variableName = it.groupValues[2].trim(),
+                    variableValue = it.groupValues[3].trim()
                 )
             }
         }
