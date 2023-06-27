@@ -21,18 +21,6 @@ class IssueImport(
     private val closedIssuesInMilestones: MutableList<GHIssue> = mutableListOf()
     private val openIssuesInMilestones: MutableList<GHIssue> = mutableListOf()
 
-    private fun issuesInMilestones(
-        repository: GHRepository,
-        state: GHIssueState,
-        vararg milestones: String
-    ): List<GHIssue> {
-        return milestones.map { ms ->
-            repository.listMilestones(GHIssueState.ALL).first { it.title == ms }.let {
-                repository.getIssues(state, it)
-            }
-        }.flatten()
-    }
-
     private companion object : Logging {
         const val IHE_ORG = "IHE"
         const val SDPI_REPO = "DEV.SDPi"
@@ -74,11 +62,29 @@ class IssueImport(
         )
 
         toiIssues.addAll(
-            sdpiRepository.queryIssues().label(TOI_LABEL).state(GHIssueState.OPEN).list().toList()
+            sdpiRepository.queryIssues().label(TOI_LABEL).state(GHIssueState.OPEN).list()
+                .filterNot { it.isPullRequest }
+                .toList()
         )
 
         logger.info { "Found ${openIssuesInMilestones.size} open, ${closedIssuesInMilestones.size} closed and ${toiIssues.size} TOI issues" }
 
         return this
+    }
+
+
+    private fun issuesInMilestones(
+        repository: GHRepository,
+        state: GHIssueState,
+        vararg milestones: String
+    ): List<GHIssue> {
+        return milestones
+            .map { ms ->
+                repository.listMilestones(GHIssueState.ALL).first { it.title == ms }.let {
+                    repository.getIssues(state, it)
+                }
+            }
+            .flatten()
+            .filterNot { it.isPullRequest }
     }
 }

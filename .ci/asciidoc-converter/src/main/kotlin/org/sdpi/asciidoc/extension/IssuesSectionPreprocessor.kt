@@ -1,5 +1,6 @@
 package org.sdpi.asciidoc.extension
 
+import org.apache.logging.log4j.kotlin.Logging
 import org.asciidoctor.extension.Preprocessor
 import org.asciidoctor.extension.PreprocessorReader
 import org.kohsuke.github.GHIssue
@@ -14,6 +15,7 @@ class IssuesSectionPreprocessor(
     override fun process(document: org.asciidoctor.ast.Document, reader: PreprocessorReader) {
         val lines = reader.readLines()
         if (githubToken == null) {
+            logger.info { "Skip requesting issues, no Github token available" }
             reader.restoreLines(lines)
             return
         }
@@ -46,11 +48,9 @@ class IssuesSectionPreprocessor(
         }
     }
 
-    private companion object {
+    private companion object : Logging {
         const val INSTR_OPEN_ISSUES = "// open issues are inserted here"
-
         const val INSTR_CLOSED_ISSUES = "// closed issues are inserted here"
-
         const val INSTR_TOI_ISSUES = "// toi issues are inserted here"
 
         const val VAR_MILESTONE_PUBLICATION = "sdpi_milestone_publication"
