@@ -17,6 +17,9 @@
 :source-highlighter: highlight.js
 :highlightjsdir: js/highlight
 
+:sdpi_milestone_publication: SDPi 1.1 Publication
+:sdpi_milestone_review: SDPi 1.1 Review
+
 :ihe_supplement_sdpi_revision: 1.0.1
 :ihe_supplement_sdpi_revision_date: {localdatetime}
 :ihe_supplement_sdpi_revision_label: Trial Implementation
@@ -24,6 +27,11 @@
 :ihe_supplement_sdpi_public_comment_submission_deadline: March 28, 2023
 
 {empty} +
+++++
+<script>
+$('body').prepend('<div id="load-screen"><div style="margin-top: -64px">SDPi is loading</div></div>')
+</script>
+++++
 
 [subs=attributes]
 ++++
