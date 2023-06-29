@@ -14,7 +14,7 @@ NOTE: <<ref_tbl_dec_obx3_mds_mapping>>, <<ref_tbl_dec_obx3_vmd_mapping>>, <<ref_
 .R8013
 [sdpi_requirement#r8013,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
-If a private *MDC* code is used for the coding of the SDC containment tree element, the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall map an identifier of the element in the hierarchical containment tree such as MDS, VMD, CHAN, or the actual related metric as described in section <<ref_private_coding_system_note>>.
+If a private *<<acronym_mdc>>* code is used for the coding of the SDC containment tree element, the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall map an identifier of the element in the hierarchical containment tree such as MDS, VMD, CHAN, or the actual related metric as described in section <<ref_private_coding_system_note>>.
 ****
 
 [#ref_tbl_dec_obx3_mds_mapping]
@@ -29,18 +29,23 @@ If a private *MDC* code is used for the coding of the SDC containment tree eleme
 
 |OBX-3/CWE-2
 |Text
-|If *@Code* is an MDC code, this field contains the RefId of the MDC code.
+|If *@Code* is an <<acronym_mdc>> code, this field contains the RefId of the <<acronym_mdc>> code.
 
 In all other cases, the field is set to the pm:Mds+++<wbr/>+++/pm:Type+++<wbr/>+++/@SymbolicCodeName.
-| Note that MDC is the default coding system if no coding system is specified.
+| Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
 |OBX-3/CWE-3
 |Name of Coding System
-|*"MDC"* if no other coding system is specified.
+|*<<acronym_mdc>>* if no other coding system is specified.
 
 In all other cases, the field is set to pm:Mds+++<wbr/>+++/pm:Type+++<wbr/>+++/@CodingSystem.
 
-|Note that MDC is the default coding system if no coding system is specified.
+|Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
+
+|OBX-3/CWE-7
+|Coding System Version ID
+|pm:Mds+++<wbr/>+++/pm:Type+++<wbr/>+++/@CodingSystemVersion.
+|
 
 |===
 
@@ -56,19 +61,23 @@ In all other cases, the field is set to pm:Mds+++<wbr/>+++/pm:Type+++<wbr/>+++/@
 
 |OBX-3/CWE-2
 |Text
-|If *@Code* is an MDC code, this field contains the RefId of the MDC code.
+|If *@Code* is an <<acronym_mdc>> code, this field contains the RefId of the <<acronym_mdc>> code.
 
 In all other cases, the field is set to the pm:Vmd+++<wbr/>+++/pm:Type+++<wbr/>+++/@SymbolicCodeName.
-| Note that MDC is the default coding system if no coding system is specified.
+| Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
 |OBX-3/CWE-3
 |Name of Coding System
-|*"MDC"* if no other coding system is specified.
+|*<<acronym_mdc>>* if no other coding system is specified.
 
 In all other cases, the field is set to pm:Vmd+++<wbr/>+++/pm:Type+++<wbr/>+++/@CodingSystem.
 
-|Note that MDC is the default coding system if no coding system is specified.
+|Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
+|OBX-3/CWE-7
+|Coding System Version ID
+|pm:Vmd+++<wbr/>+++/pm:Type+++<wbr/>+++/@CodingSystemVersion.
+|
 |===
 
 [#ref_tbl_dec_obx3_chan_mapping]
@@ -83,19 +92,23 @@ In all other cases, the field is set to pm:Vmd+++<wbr/>+++/pm:Type+++<wbr/>+++/@
 
 |OBX-3/CWE-2
 |Text
-|If *@Code* is an MDC code, this field contains the RefId of the MDC code.
+|If *@Code* is an <<acronym_mdc>> code, this field contains the RefId of the <<acronym_mdc>> code.
 
 In all other cases, the field is set to the pm:Channel+++<wbr/>+++/pm:Type+++<wbr/>+++/@SymbolicCodeName.
-| Note that MDC is the default coding system if no coding system is specified.
+| Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
 |OBX-3/CWE-3
 |Name of Coding System
-|*"MDC"* if no other coding system is specified.
+|*<<acronym_mdc>>* if no other coding system is specified.
 
 In all other cases, the field is set to pm:Channel /pm:Type /@CodingSystem.
 
-|Note that MDC is the default coding system if no coding system is specified.
+|Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
+|OBX-3/CWE-7
+|Coding System Version ID
+|pm:Channel+++<wbr/>+++/pm:Type+++<wbr/>+++/@CodingSystemVersion.
+|
 |===
 
 [#ref_tbl_dec_obx3_metric_mapping]
@@ -114,17 +127,21 @@ pm:EnumStringMetricDescriptor+++<wbr/>+++/pm:Type+++<wbr/>+++/@Code
 
 |OBX-3/CWE-2
 |Text
-|If *@Code* is an MDC code, this field contains the RefId of the MDC code.
+|If *@Code* is an <<acronym_mdc>> code, this field contains the RefId of the <<acronym_mdc>> code.
 
 In all other cases, the field is set to the pm:AbstractMetricDescriptor+++<wbr/>+++/pm:Type+++<wbr/>+++/@SymbolicCodeName.
-|Note that MDC is the default coding system if no coding system is specified.
+|Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
 |OBX-3/CWE-3
 |Name of Coding System
-|*"MDC"* if no other coding system is specified.
+|*<<acronym_mdc>>* if no other coding system is specified.
 
 In all other cases, the field is set to pm:AbstractMetricDescriptor+++<wbr/>+++/pm:Type+++<wbr/>+++/@CodingSystem.
 
-|Note that MDC is the default coding system if no coding system is specified.
+|Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
+|OBX-3/CWE-7
+|Coding System Version ID
+|pm:AbstractMetricDescriptor+++<wbr/>+++/pm:Type+++<wbr/>+++/@CodingSystemVersion.
+|
 |===

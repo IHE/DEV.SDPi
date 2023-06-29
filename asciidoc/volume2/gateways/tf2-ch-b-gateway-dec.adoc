@@ -78,17 +78,17 @@ A <<actor_somds_dec_gateway>> shall use the *pm:PatientContextState/@BindingStar
 |OBX-3/CWE-1
 |Identifier
 |
-|Set to MDC code *"68060"*.
+|Set to <<acronym_mdc>> code *"68060"*.
 
 |OBX-3/CWE-2
 |Text
 |
-| Set to MDC RefId *"MDC_ATTR_PT_HEIGHT"*.
+| Set to <<acronym_mdc>> RefId *"MDC_ATTR_PT_HEIGHT"*.
 
 |OBX-3/CWE-3
 |Name of Coding System
 |
-|Set to coding system *"MDC"*.
+|Set to coding system *"<<acronym_mdc>>"*.
 
 |OBX-4
 |Observation Sub-ID
@@ -113,17 +113,22 @@ See <<ref_dec_obx4>> for further information.
 
 |OBX-6/CWE-2
 |Text
-|If @Code is an MDC code, this field contains the RefId of the MDC code.
+|If @Code is an <<acronym_mdc>> code, this field contains the RefId of the <<acronym_mdc>> code.
 
 In all other cases, the field is set to the pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Height+++<wbr/>+++/pm:MeasurementUnit+++<wbr/>+++/@SymbolicCodeName.
-|Note that MDC is the default coding system if no coding system is specified.
+|Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
 |OBX-6/CWE-3
 |Name of Coding System
-|*"MDC"* if no other coding system is specified.
+|*"<<acronym_mdc>>"* if no other coding system is specified.
 
 In all other cases, the field is set to pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Height+++<wbr/>+++/pm:MeasurementUnit+++<wbr/>+++/@CodingSystem.
-|Note that MDC is the default coding system if no coding system is specified.
+|Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
+
+|OBX-6/CWE-7
+|Coding System Version ID
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Height+++<wbr/>+++/pm:MeasurementUnit+++<wbr/>+++/@CodingSystemVersion.
+|
 
 |OBX-11
 |Observation Result Status
@@ -159,17 +164,17 @@ When there are further updates of the height value after the association of the 
 |OBX-3/CWE-1
 |Identifier
 |
-|Set to MDC code *"68063"*.
+|Set to <<acronym_mdc>> code *"68063"*.
 
 |OBX-3/CWE-2
 |Text
 |
-| Set to MDC RefId *"MDC_ATTR_PT_WEIGHT"*.
+| Set to <<acronym_mdc>> RefId *"MDC_ATTR_PT_WEIGHT"*.
 
 |OBX-3/CWE-3
 |Name of Coding System
 |
-|Set to coding system *"MDC"*.
+|Set to coding system *"<<acronym_mdc>>"*.
 
 |OBX-4
 |Observation Sub-ID
@@ -195,19 +200,24 @@ See <<ref_dec_obx4>> for further information.
 
 |OBX-6/CWE-2
 |Text
-|If @Code is an MDC code, this field contains the RefId of the MDC code.
+|If @Code is an <<acronym_mdc>> code, this field contains the RefId of the <<acronym_mdc>> code.
 
 In all other cases, the field is set to the pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Weight+++<wbr/>+++/pm:MeasurementUnit
 /@SymbolicCodeName.
-|Note that MDC is the default coding system if no coding system is specified.
+|Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
 |OBX-6/CWE-3
 |Name of Coding System
-|*"MDC"* if no other coding system is specified.
+|*"<<acronym_mdc>>"* if no other coding system is specified.
 
 In all other cases, the field is set to pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Weight+++<wbr/>+++/pm:MeasurementUnit
 /@CodingSystem.
-|Note that MDC is the default coding system if no coding system is specified.
+|Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
+
+|OBX-6/CWE-7
+|Coding System Version ID
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Weight+++<wbr/>+++/pm:MeasurementUnit+++<wbr/>+++/@CodingSystemVersion.
+|
 
 |OBX-11
 |Observation Result Status
@@ -455,7 +465,7 @@ The HL7 Observation/Result (OBX) segment requires a mapping from the SDC contain
 More information about the containment tree mapping can be found in *Appendix A Mapping ISO/IEEE 11073 Domain Information Model to HL7* in <<ref_ihe_pcd_tf_2_2019>>.
 
 ====== OBX-1 Set ID - OBX
-Please refer to the [ihe_pcd_tf_2_2019] *OBX-1 Set ID - OBX* for further information.
+Please refer to the <<ref_ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information.
 
 ====== OBX-2 Value Type
 
@@ -597,7 +607,7 @@ the OBX-2 is required to be set to *"ST"* (see also <<ref_tbl_dec_obx2_mapping>>
 .R8022
 [sdpi_requirement#r8022,sdpi_req_level=shall]
 ****
-If a private *MDC* code is used for the coding of the SDC coded element value in OBX-5 mapping, a <<actor_somds_dec_gateway>> shall map the identifier as described in section <<ref_private_coding_system_note>>.
+If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded element value in OBX-5 mapping, a <<actor_somds_dec_gateway>> shall map the identifier as described in section <<ref_private_coding_system_note>>.
 ****
 
 [#ref_tbl_dec_obx5_enum_mapping]
@@ -612,18 +622,23 @@ If a private *MDC* code is used for the coding of the SDC coded element value in
 
 |OBX-5/CWE-2
 |Text
-|If *@Code* is an MDC code, this field contains the RefId of the MDC code.
+|If *@Code* is an <<acronym_mdc>> code, this field contains the RefId of the <<acronym_mdc>> code.
 
 In all other cases, the field is set to the pm:EnumStringMetricDescriptor+++<wbr/>+++/pm:AllowedValue+++<wbr/>+++/pm:Type+++<wbr/>+++/@SymbolicCodeName.
-| Note that MDC is the default coding system if no coding system is specified.
+| Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
 |OBX-5/CWE-3
 |Name of Coding System
-|*"MDC"* if no other coding system is specified.
+|*"<<acronym_mdc>>"* if no other coding system is specified.
 
 In all other cases, the field is set to pm:EnumStringMetricDescriptor+++<wbr/>+++/pm:AllowedValue+++<wbr/>+++/pm:Type+++<wbr/>+++/@CodingSystem.
 
-|Note that MDC is the default coding system if no coding system is specified.
+|Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
+
+|OBX-5/CWE-7
+|Coding System Version ID
+|pm:EnumStringMetricDescriptor+++<wbr/>+++/pm:AllowedValue+++<wbr/>+++/pm:Type+++<wbr/>+++/@CodingSystemVersion.
+|
 
 |===
 
@@ -646,7 +661,7 @@ NOTE: For a device-releted element such as MDS, VMD, CHANNEL, or other metric ty
 .R8024
 [sdpi_requirement#r8024,sdpi_req_level=shall]
 ****
-If a private *MDC* code is used for the coding of the SDC measurement unit of a metric, a <<actor_somds_dec_gateway>> shall map the identifier as described in section <<ref_private_coding_system_note>>.
+If a private *<<acronym_mdc>>* code is used for the coding of the SDC measurement unit of a metric, a <<actor_somds_dec_gateway>> shall map the identifier as described in section <<ref_private_coding_system_note>>.
 ****
 
 [#ref_tbl_dec_obx6_mapping]
@@ -661,18 +676,23 @@ If a private *MDC* code is used for the coding of the SDC measurement unit of a 
 
 |OBX-6/CWE-2
 |Text
-|If *@Code* is an MDC code, this field contains the RefId of the MDC code.
+|If *@Code* is an <<acronym_mdc>> code, this field contains the RefId of the <<acronym_mdc>> code.
 
 In all other cases, the field is set to the pm:NumericMetricDescriptor+++<wbr/>+++/pm:Unit+++<wbr/>+++/@SymbolicCodeName.
-| Note that MDC is the default coding system if no coding system is specified.
+| Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
 |OBX-6/CWE-3
 |Name of Coding System
-|*"MDC"* if no other coding system is specified.
+|*"<<acronym_mdc>>"* if no other coding system is specified.
 
 In all other cases, the field is set to pm:NumericMetricDescriptor+++<wbr/>+++/pm:Unit+++<wbr/>+++/@CodingSystem.
 
-|Note that MDC is the default coding system if no coding system is specified.
+|Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
+
+|OBX-6/CWE-7
+|Coding System Version ID
+|pm:NumericMetricDescriptor+++<wbr/>+++/pm:Unit+++<wbr/>+++/@CodingSystemVersion.
+|
 
 |===
 
@@ -791,6 +811,12 @@ NOTE: The <<ref_ihe_pcd_tf_2_2019>> requires only the map the "ID Number", and o
 A <<actor_somds_dec_gateway>> shall set the OBX-17 field to one of the coded terms as specified in <<ref_tbl_dec_obx17_mapping>>, depending on the *pm:AbstractMetricDescriptor/@MetricCategory* (Category) and the *pm:AbstractMetricDescriptor/@DerivationMethod* (Derivation).
 ****
 
+.R8039
+[sdpi_requirement#r8039,sdpi_req_level=should]
+****
+A <<actor_somds_dec_gateway>> should repeat the OBX-17 field to express the *pm:AbstractMetricDescriptor/@MetricAvailability* as specified in <<ref_tbl_dec_obx17_mapping2>>.
+****
+
 [#ref_tbl_dec_obx17_mapping]
 .OBX-17 Observation Method Mapping
 |===
@@ -824,6 +850,18 @@ Or set to "AMEAS\^auto-measurement^MDC" if required.
 
 |===
 
+[#ref_tbl_dec_obx17_mapping2]
+.OBX-17 Observation Method Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBR-17/CWE-1
+|Identifier
+|pm:AbstractMetricDescriptor+++<wbr/>+++/@MetricAvailability
+|
+
+|===
+
 ====== OBX-18 Equipment Instance Identifier
 include::tf2-ch-b-gateway-obx18-mapping.adoc[]
 
@@ -850,7 +888,7 @@ NOTE: For a device-releted element such as MDS, VMD, or CHANNEL, the OBX-20 fiel
 .R8035
 [sdpi_requirement#r8035,sdpi_req_level=shall]
 ****
-If a private *MDC* code is used for the coding of a body site, a <<actor_somds_dec_gateway>> shall map the identifier as described in section <<ref_private_coding_system_note>>.
+If a private *<<acronym_mdc>>* code is used for the coding of a body site, a <<actor_somds_dec_gateway>> shall map the identifier as described in section <<ref_private_coding_system_note>>.
 ****
 
 [#ref_tbl_dec_obx20_mapping]
@@ -869,29 +907,38 @@ pm:AbstractMetricDescriptor+++<wbr/>+++/pm:BodySite+++<wbr/>+++/@Code, if pm:Bod
 
 |OBX-20/CWE-2
 |Text
-|If *@Code* is an MDC code, this field contains the RefId of the MDC code.
+|If *@Code* is an <<acronym_mdc>> code, this field contains the RefId of the <<acronym_mdc>> code.
 
 In all other cases, the field is set to the pm:AbstractMetricState+++<wbr/>+++/pm:BodySite+++<wbr/>+++/@SymbolicCodeName
 
 or
 
 pm:AbstractMetricDescriptor+++<wbr/>+++/pm:BodySite+++<wbr/>+++@SymbolicCodeName, if pm:BodySite is not available in pm:AbstractMetricState
-| Note that MDC is the default coding system if no coding system is specified.
+| Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
 Note that only the first pm:BodySite element from the list is required to be mapped.
 
 |OBX-20/CWE-3
 |Name of Coding System
-|*"MDC"* if no other coding system is specified.
+|*"<<acronym_mdc>>"* if no other coding system is specified.
 
 In all other cases, the field is set to pm:AbstractMetricState+++<wbr/>+++/pm:BodySite+++<wbr/>+++/@CodingSystem
 
 or
 
-pm:AbstractMetricDescriptor+++<wbr/>+++/pm:BodySite+++<wbr/>+++@CodingSystem, if pm:BodySite is not available in pm:AbstractMetricState
+pm:AbstractMetricDescriptor+++<wbr/>+++/pm:BodySite+++<wbr/>+++/@CodingSystem, if pm:BodySite is not available in pm:AbstractMetricState
 
-|Note that MDC is the default coding system if no coding system is specified.
+|Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
 Note that only the first pm:BodySite element from the list is required to be mapped.
+
+|OBX-20/CWE-7
+|Coding System Version ID
+|pm:AbstractMetricState+++<wbr/>+++/pm:BodySite+++<wbr/>+++/@CodingSystemVersion
+
+or
+
+pm:AbstractMetricDescriptor+++<wbr/>+++/pm:BodySite+++<wbr/>+++/@CodingSystemVersion, if pm:BodySite is not available in pm:AbstractMetricState
+|Note that only the first pm:BodySite element from the list is required to be mapped.
 
 |===

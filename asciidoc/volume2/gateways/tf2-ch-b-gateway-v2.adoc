@@ -9,12 +9,16 @@ a| *SDPi Supplement Version Note*: Complete mappings from <<acronym_sdc>> to HL7
 
 |===
 
-[%noheader]
-[%autowidth]
-[cols="1"]
-|===
-a| *REVIEWER QUESTION*:  Issue: HL7 Local Time vs. SDC UTC time: SDC requires that all timestamps are in UTC. The time zone is optional. In HL7 V2 all timestamps are local time and the time zone is optional as well.
+.R8120
+[sdpi_requirement#r8120,sdpi_req_level=shall,sdpi_max_occurrence=1]
+****
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall only export data from <<acronym_mds>> entities, which have a valid timezone defined in the *pm:ClockState/@TimeZone* attribute.
 
-*_Do Device Observation Consumer (DOC) and Alarm Manager (AM) expect the gateway to convert UTC to local time?_*
+.Notes
+[%collapsible]
+====
+NOTE: In <<ref_hl7_v2>>, all timestamps are defined as local time and the time zone is optional. Therefore, a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> is required to convert the UTC time provided by the <<actor_somds_provider>> into local time.
 
-|===
+NOTE: It is not always guaranteed that the timezone configured at the <<actor_somds_provider>> and/or <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> corresponds with the timezone of the <<acronym_mds>> entities, for example, when a <<actor_somds_provider>> acting as device aggregator and/or the  <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> are running in a data center located in a different timezone than the <<acronym_mds>> entities.
+====
+****
