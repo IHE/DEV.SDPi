@@ -31,6 +31,7 @@ Each section shall contain a list of action items of the following format: `<bri
 - Use case _Device is connected to the MD LAN network and a user wants to change the device's time_ to account for the fact, that configuring the TS service manually is always forbidden, not just when TS service is operational ([#30](https://github.com/IHE/DEV.SDPi/issues/30)).
 - Changed use case _Devices are operational in the MD LAN network but cannot access the TS Service and clock drift is unacceptable_ so that the decision to continue/discontinue the execution of a System Function while the clocks become less accurate lies with the consumer ([#31](https://github.com/IHE/DEV.SDPi/issues/31)). 
 - Open/Closed Issues sections have been revised. Sections are now generated automatically from Github issues ([#20](https://github.com/IHE/DEV.SDPi/issues/20)).
+- Remove R1540 and R1541 and rephrase R1531 due to unclear responsibilities for time related risks ([#185](https://github.com/IHE/DEV.SDPi/issues/185)). 
 
 ### Removed
 
