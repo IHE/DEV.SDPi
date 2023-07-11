@@ -1,10 +1,11 @@
+[#ref_gateway_pv1_mapping]
 ===== PV1 - Patient Visit Segment
 The HL7 Patient Visit (PV1) segment requires a mapping from the SDC patient and location context information to the PV1 segment fields.
 
 ====== Prerequisite of Valid Patient & Location Context
 
 .R8111
-[sdpi_requirement#r8111,sdpi_req_level=shall,sdpi_max_occurrence=2]
+[sdpi_requirement#r8111,sdpi_req_level=shall,sdpi_max_occurrence=1]
 ****
 The SDC patient and location context information shall only be mapped to the corresponding fields in the HL7 PV1 segment when the requirements for a valid SDC patient and location context as defined in the <<ref_ieee_11073_10700_2022>> are fulfilled.
 
@@ -19,7 +20,7 @@ NOTE: If the SDC patient and/or location context information is not be used for 
 
 ====== PV1-2 Patient Class
 .R8112
-[sdpi_requirement#r8112,sdpi_req_level=shall,sdpi_max_occurrence=2]
+[sdpi_requirement#r8112,sdpi_req_level=shall,sdpi_max_occurrence=1]
 ****
 A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-2 field to the code for the patient class.
 
@@ -36,7 +37,7 @@ The SDC data model does not support the concept of a patient class. Therefore, t
 
 ====== PV1-3 Assigned Patient Location
 .R8113
-[sdpi_requirement#r8113,sdpi_req_level=shall,sdpi_max_occurrence=2]
+[sdpi_requirement#r8113,sdpi_req_level=shall,sdpi_max_occurrence=1]
 ****
 If <<r8111>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-3 field to the patient's assigned location.
 
@@ -91,7 +92,7 @@ NOTE: <<ref_tbl_pv13_mapping>> defines the mapping of the SDC patient location i
 
 ====== PV1-19 Visit Number
 .R8114
-[sdpi_requirement#r8114,sdpi_req_level=shall,sdpi_max_occurrence=2]
+[sdpi_requirement#r8114,sdpi_req_level=shall,sdpi_max_occurrence=1]
 ****
 If <<r8111>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-19 field to the patient's visit identifier.
 
@@ -143,7 +144,7 @@ Valid *"Identifier Type Code"* values for a visit number are, for example, *"VN"
 
 ====== PV1-44 Admit Time / Date
 .R8115
-[sdpi_requirement#r8115,sdpi_req_level=shall,sdpi_max_occurrence=2]
+[sdpi_requirement#r8115,sdpi_req_level=shall,sdpi_max_occurrence=1]
 ****
 If <<r8111>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-44 field to the patient's admission date/time.
 
@@ -154,7 +155,7 @@ This said, it is up to the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gatew
 
 ====== PV1-51 Visit Indicator
 .R8116
-[sdpi_requirement#r8116,sdpi_req_level=shall,sdpi_max_occurrence=2]
+[sdpi_requirement#r8116,sdpi_req_level=shall,sdpi_max_occurrence=1]
 ****
 If <<r8111>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-51 field to the code for the visit indicator.
 

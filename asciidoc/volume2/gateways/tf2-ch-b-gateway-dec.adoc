@@ -16,14 +16,17 @@ This section provides an overview about the referenced standards and profiles us
 * <<ref_ieee_11073_10700_2022>>
 * <<ref_ieee_11073_10207_2017>>
 
-include::tf2-ch-b-gateway-private-mdc-mapping.adoc[]
+==== Private MDC Codes Consideration
+Please refer to general section <<ref_private_coding_system_note>>.
 
 ==== HL7 Segment Descriptions
 The following sections refer to the *Appendix B Common Segment Descriptions* of the <<ref_ihe_pcd_tf_2_2019>>.
 
-include::tf2-ch-b-gateway-msh-mapping.adoc[]
+===== MSH - Message Header Segment
+Please refer to general section <<ref_gateway_msh_mapping>>.
 
-include::tf2-ch-b-gateway-pid-mapping.adoc[]
+===== PID - Patient Identification Segment
+Please refer to general section <<ref_gateway_pid_mapping>>.
 
 ===== Height and Weight Mapping
 
@@ -233,7 +236,8 @@ When there are further updates of the weight value after the association of the 
 
 |===
 
-include::tf2-ch-b-gateway-pv1-mapping.adoc[]
+===== PV1 - Patient Visit Segment
+Please refer to general section <<ref_gateway_pv1_mapping>>.
 
 ===== OBR - Observation Request Segment
 The HL7 Obervation Request (OBR) segment requires a mapping from the SDC containment tree and metric data to the OBR segment fields.
@@ -506,11 +510,11 @@ A <<actor_somds_dec_gateway>> shall leave the OBX-2 field empty for OBX segments
 |===
 
 ====== OBX-3 Observation Identifier
-include::tf2-ch-b-gateway-obx3-mapping.adoc[]
+Please refer to general section <<ref_gateway_obx3_mapping>>.
 
 [#ref_dec_obx4]
 ====== OBX-4 Observation Sub-ID
-include::tf2-ch-b-gateway-obx4-mapping.adoc[]
+Please refer to general section <<ref_gateway_obx4_mapping>>.
 
 ====== OBX-5 Observation Value
 
@@ -863,7 +867,7 @@ Or set to "AMEAS\^auto-measurement^MDC" if required.
 |===
 
 ====== OBX-18 Equipment Instance Identifier
-include::tf2-ch-b-gateway-obx18-mapping.adoc[]
+Please refer to general section <<ref_gateway_obx18_mapping>>.
 
 ====== OBX-20 Observation Site
 
