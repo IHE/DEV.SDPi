@@ -29,7 +29,8 @@
 {empty} +
 ++++
 <script>
-$('body').prepend('<div id="load-screen"><div style="margin-top: -64px">SDPi is loading</div></div>')
+    $('body').prepend('<div id="load-screen"><div style="margin-top: -64px">Menu is loading</div></div>');
+    document.getElementsByClassName('sectlevel0')[0].style.visibility = "hidden";
 </script>
 ++++
 
@@ -122,6 +123,3 @@ include::volume2/tf2-main.adoc[]
 // = Volume 3 -- Content Modules
 
 include::volume3/tf3-main.adoc[]
-
-
-

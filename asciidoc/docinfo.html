@@ -115,7 +115,7 @@ a {
 }
 
 #load-screen {
-    width:100%;
+    width: 30%;
     height:100%;
     position:fixed;
     text-align: center;
@@ -124,8 +124,8 @@ a {
     color: #dee2e6;
     vertical-align: middle;
     font-weight: 300;
-    font-size: 1.6875em;
-    background:url("images/loading.png") no-repeat center center rgba(0,0,0,0.8)
+    font-size: 1.125em;
+    background:url("images/loading.png") no-repeat center center rgba(0,0,0,0.6)
 }
 
 </style>
@@ -135,7 +135,16 @@ a {
         var state = document.readyState
         if (state == 'complete') {
             setTimeout(function() {
+                // show left menu bar
                 document.getElementById('load-screen').style.visibility = "hidden";
+                document.getElementById('toc').style.visibility = "visible"
+
+                // add bottom menu bar
+                var elemDiv = document.createElement('div');
+                var copyrightYear = new Date().getFullYear();
+                elemDiv.innerHTML = '<div class="bottom_bar"><div class="copyright_note">Copyright &#169; ' + copyrightYear + ': Health Level Seven International, and IHE International, Inc.</div><a href="#top">Top</a><a href="#vol3">Volume 3</a><a href="#vol2">Volume 2</a><a href="#vol1_clause_profiles">Volume 1</a><a href="#vol0_clause_ihe_technical_frameworks_general_introduction">General</a></div>';
+                elemDiv.className = 'bottom_bar';
+                document.body.appendChild(elemDiv);
             },500);
         }
     }
@@ -183,15 +192,6 @@ a {
 
         $(window).resize(handleTocOnResize);
         handleTocOnResize();
-    });
-
-    // append bottom navigation bar once document is loaded
-    $(document).ready(function() {
-        var elemDiv = document.createElement('div');
-        var copyrightYear = new Date().getFullYear()
-        elemDiv.innerHTML = '<div class="bottom_bar"><div class="copyright_note">Copyright &#169; ' + copyrightYear + ': Health Level Seven International, and IHE International, Inc.</div><a href="#top">Top</a><a href="#vol3">Volume 3</a><a href="#vol2">Volume 2</a><a href="#vol1_clause_profiles">Volume 1</a><a href="#vol0_clause_ihe_technical_frameworks_general_introduction">General</a></div>';
-        elemDiv.className = 'bottom_bar';
-        document.body.appendChild(elemDiv);
     });
 
     // Set up before/after handlers
