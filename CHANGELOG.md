@@ -32,6 +32,7 @@ Each section shall contain a list of action items of the following format: `<bri
 - Changed use case _Devices are operational in the MD LAN network but cannot access the TS Service and clock drift is unacceptable_ so that the decision to continue/discontinue the execution of a System Function while the clocks become less accurate lies with the consumer ([#31](https://github.com/IHE/DEV.SDPi/issues/31)). 
 - Open/Closed Issues sections have been revised. Sections are now generated automatically from Github issues ([#20](https://github.com/IHE/DEV.SDPi/issues/20)).
 - Rephrase R1542 to make sure, that system functions not being available don't lead to unnecessary alarms ([#180] (https://github.com/IHE/DEV.SDPi/issues/180)). 
+- Moved requirements R1542 & R1543 to the SDPi-P SES / Effectiveness section from Github issues ([#182](https://github.com/IHE/DEV.SDPi/issues/182))
 
 ### Removed
 
