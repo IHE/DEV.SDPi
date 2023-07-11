@@ -913,7 +913,25 @@ For additional guidance, see section <<vol1_clause_appendix_a_ses_considerations
 No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
 
 ==== Effectiveness Requirements & Considerations
-No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
+
+===== Specific Risk Control Measures for <<vol1_spec_sdpi_p_actor_somds_consumer>>s
+
+.R1542
+[sdpi_requirement#r1542,sdpi_req_level=shall]
+****
+When a <<vol1_spec_sdpi_p_actor_somds_consumer>> disables one or more <<term_system_function_contribution>>s, the <<vol1_spec_sdpi_p_actor_somds_consumer>> shall inform the affected users.
+****
+
+.R1543
+[sdpi_requirement#r1543,sdpi_req_level=shall]
+****
+If a <<vol1_spec_sdpi_p_actor_somds_consumer>> disables one or more <<term_system_function_contribution>>s, the <<vol1_spec_sdpi_p_actor_somds_consumer>> shall create a log entry, noting the disabled <<term_system_function_contribution>>s as well as the cause for disabling them.
+****
+
+===== Additional Requirements
+
+Additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
+
 ==== Security Requirements & Considerations
 Security is foundational for all interactions between <<vol1_spec_sdpi_p_actor_somds_participant>> Actors, with a clear distinction being made between information that may be exchanged outside of a secure connection (e.g., during network discovery transactions).
 Specific security technologies may vary based on the implementation technology being used, and will be detailed in the appropriate TF-2 technology specifications.
@@ -921,6 +939,7 @@ All transactions indicate whether they require secure or unsecured connections.
 
 For the default <<acronym_sdpi_p>> connectivity technology, namely ISO/IEEE 11073 <<term_service_oriented_device_connectivity>>, TLS 1.2 (or later versions) support is required (See <<ref_ieee_11073_20701_2018>> and <<ref_ieee_11073_20702_2016>>).
 Additional information and requirements may be provided in <<vol2_appendix_a_mdpws_messages>>.
+
 
 [#vol1_clause_sdpi_p_cross_profile_considerations]
 === SDPi-P Cross Profile Considerations
