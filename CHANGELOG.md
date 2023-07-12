@@ -49,5 +49,5 @@ Each section shall contain a list of action items of the following format: `<bri
 - Corrected the PUML file name in TF-1:12.1.1-1 SDPi-A to render the alert reporting sequence diagram ([#135](https://github.com/IHE/DEV.SDPi/issues/135)).
 - Replaced high-lighting from "Closed Issues" section with correct list ([#139](https://github.com/IHE/DEV.SDPi/issues/139)).
 - Remove leading dashes from table and figure captions if the section number is empty ([#144](https://github.com/IHE/DEV.SDPi/issues/144)).
-- Reviewed all "Verson Note" and version-specific (i.e, 1.0) content and either reworded or removed ([#162](https://github.com/IHE/DEV.SDPi/issues/162)))
-- 
+- Reviewed all "Verson Note" and version-specific (i.e, 1.0) content and either reworded or removed ([#148](https://github.com/IHE/DEV.SDPi/issues/148))
+- Updated all references to the sdpi-fhir Github ([#162](https://github.com/IHE/DEV.SDPi/issues/162))
