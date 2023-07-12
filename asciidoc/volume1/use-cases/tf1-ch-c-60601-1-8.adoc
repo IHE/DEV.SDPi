@@ -8,7 +8,7 @@
 The following is a quick guide to the functionality of DIS, CDIS, DAS and CDAS systems and how we have used and interpreted them for the purpose of this IHE Profile Supplement.
 Please refer to the next section on Definitions from <<ref_iec_60601_1_8_2020>> for normative definitions for these terms.
 
-NOTE: Note that the 1.0 version of the SDPi Profile only supports the Distributed Information System (DIS) model detailed below.
+NOTE: Note that the 1.1 version of the SDPi Profile only supports the Distributed Information System (DIS) model detailed below.
 The other models are anticipated for subsequent versions.
 
 

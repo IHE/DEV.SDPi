@@ -58,7 +58,7 @@ a| *SDPi Supplement Version Note*: This version of the supplement does not fully
 * Service Control Object (SCO) and Operations
 * Battery objects
 
-Additionally, only limited support for the *_AlertSystem_* (and related objects), and for the *_SystemContext_* types are provided in SDPi 1.0.
+Additionally, only limited support for the *_AlertSystem_* (and related objects), and for the *_SystemContext_* types are provided in SDPi 1.1.
 Subsequent versions of the specification will address complete functionality.
 |===
 
@@ -153,7 +153,8 @@ In addition to specific device specializations (see <<vol3_clause_device_special
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  The <<acronym_sdc>> standards community is evaluating the use of safety class elements in the BICEPS specification (see <<ref_ieee_11073_10207_2017>>), and the related https://github.com/IHE/sdpi-fhir/issues/61[Github Issue #61 _Topic: SDPi-xC with Mixed Device Safety Classes_].  The result of that discussion will directly impact the BICEPS SES Considerations section below.
+a| *SDPi Supplement Version Note*:  The <<acronym_sdc>> standards community is evaluating the use of safety class elements in the BICEPS specification (see <<ref_ieee_11073_10207_2017>>), and the related https://github.com/IHE/sdpi-fhir/issues/61[Github Issue #61 _Topic: SDPi-xC with Mixed Device Safety Classes_].
+The result of that discussion will directly impact the BICEPS SES Considerations section below.
 
 For this version of the specification, the following wording has been suggested:
 

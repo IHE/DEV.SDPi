@@ -10,15 +10,9 @@
 [cols="1"]
 |===
 a| *SDPi Supplement Version Note*:  This appendix provides informative (vs. normative) information related to the unique way in which this supplement integrates requirements, both from referenced foundational standards and within this specification.
-*For SDPi 1.0*, given its non-normative nature, full detailing of the concepts and specifications is deferred to a subsequent revision of the specification.
+*For SDPi 1.1*, given its non-normative nature, full detailing of the concepts and specifications is deferred to a subsequent revision of the specification.
 So, please excuse the incomplete sections with "placeholder" version notes!
 There is value, though, in giving the existing content a quick review and providing feedback that would inform subsequent revisions of the specification.
-
-*REVIEWER QUESTION*:  Please consider the topics that are included in this section and are either detailed or have version notes and provide feedback on:
-
-. What additional topics should be included?
-. What is the priority for the detailing and integration of these topics?
-. Are there any that should be moved elsewhere -- noting that the content of this appendix is intended to be considered for the IHE DEV Technical Framework as Final Text.
 
 |===
 
@@ -113,8 +107,8 @@ How does this address the "interoperability trust gap"?  By integrating SES dire
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  For SDPi 1.0, the inclusion of SES Considerations sections is early and will be significantly extended in subsequent versions of the specification.
-Especially when requirements from the <<acronym_pkp>> standards are included in SDPi 1.1 and following.
+a| *SDPi Supplement Version Note*:  For SDPi 1.1, the inclusion of SES Considerations sections is early and will be significantly extended in subsequent versions of the specification.
+Especially when requirements from the <<acronym_pkp>> standards are included in SDPi 1.2 and following.
 
 Note:  When the <<acronym_pkp>> standards are integrated into this specification, then specific requirements will be directly linked to these <<acronym_ses>> Considerations sections.
 |===

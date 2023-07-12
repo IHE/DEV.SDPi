@@ -17,12 +17,6 @@ As a result of these basic changes in the scope and organization of the IHE DEV 
 
 These general concepts will help the technical framework reader understand the broader context into which the profile specifications are intended to be implemented.
 
-*REVIEWER QUESTION*:
-
-. Should the sections above be included in an updated IHE DEV TF specification?
-
-. If so, should they be added in this SDPi Supplement or should they be added as a separate Change Proposal to the main IHE DEV TF (version 2022 or later)?
-
 {empty} +
 |===
 
@@ -149,8 +143,8 @@ Profile options are provided for additional capabilities that may be required to
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  For SDPi 1.0, the SDPi-xC profile is provided for completeness and to show the general direction of the family of SDPi profiles.
-It is *_not part of the capabilities specified for 1.0_* and even basic controls will not be added until SDPi 2.0 or later.
+a| *SDPi Supplement Version Note*:  For SDPi 1.1, the SDPi-xC profile is provided for completeness and to show the general direction of the family of SDPi profiles.
+It is *_not part of the capabilities specified for 1.1_* and even basic controls will not be added until SDPi 2.0 or later.
 |===
 
 The SDPi External Control profile builds on the basic <<acronym_pnt>> capabilities of the <<acronym_sdpi_p>> profile, but adds support for *_medical device external control capabilities_*.
