@@ -6,20 +6,20 @@
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi 1.0 Supplement -- _Trial Implementation Version_ -- Note*:
+a| *SDPi 1.1 Supplement -- _Trial Implementation Version_ -- Note*:
 
-This first release of the SDPi 1.0 Trial Implementation supplement represents a major multi-year milestone, enabling prototyping and testing of device-to-device plug-and-trust interoperability.
-It is recognized, though, that this is an *initial* 1.0 release and in that sense is understandably incomplete with work continuing for 1.1 and subsequent versions.
+This release of the SDPi 1.1 Trial Implementation supplement establishes a quarterly update cadence, enabling prototyping and testing of device-to-device plug-and-trust interoperability.
+It is recognized, though, that this is an *incremental* 1.1 release and in that sense is understandably incomplete with work continuing for 1.2 and subsequent versions.
 These known limitations include:
 
 
-. The content is scoped per the *_SDPi 1.0 version capabilities specification_* (see https://github.com/IHE/DEV.SDPi/wiki/SDPi-Editorial-Planning-and-Versions#sdpi-version-10-detail-[wiki article "SDPi Version 1.0 (Detail)"]), though future capabilities may be included in a Version Note
+. The content is scoped per the *_SDPi 1.1 version capabilities specification_* (see https://github.com/IHE/DEV.SDPi/wiki/SDPi-Editorial-Planning-and-Versions#sdpi-version-11-detail---[wiki article "SDPi Version 1.1 (Detail)"]), though future capabilities may be included in a Version Note
 . This supplement includes (4) SDPi profiles, though the typical IHE supplement is organized for a single profile; as a result, some adjustments have been made, especially in the supplement overview section where there is a general SDPi overview and then basic overviews for each of the profiles; challenging areas include profile "options" where there are FOUR sections vs. one; it is a work in progress and feedback is appreciated, especially to enhance clarity
-. *Open / Closed Issues tables* -- for SDPi 1.0 there is an initial approach that integrates with the Gemini SES+MDI program work flow (from Confluence issues to Github Issues to specification content); however, there is discussion around how to better improve this in future
-. *Requirements boxes* (e.g., "R1234") have been added especially in TF-2 and some in TF-3; this is an initial approach that *_will be significantly expanded in future versions of the supplement_*; an initial approach is provided in <<vol1_clause_sdpi_requirements_modeling_integration>>, with discussion related to how it will be expanded in future versions of the supplement;
+. *Open / Closed Issues tables* -- for SDPi 1.1 the approach for the open / closed issues section has been integrated with the Github Issues that are related to this release; it is expected that this automation will continue to evolve in subsequent releases;
+. *Requirements boxes* (e.g., "R1234") have been added especially in TF-2, with some also part of TF-1 and TF-3; this is an initial approach that *_will be significantly expanded in future versions of the supplement_*; an initial approach is provided in <<vol1_clause_sdpi_requirements_modeling_integration>>, with discussion related to how it will be expanded in future versions of the supplement;
 . *_<<term_safe_effective_secure>> Sections_* (see <<vol1_clause_appendix_a_ses_considerations_section_template>>) are included in the specification; however, their use and content will be significantly extended in SDPi 1.x and subsequent versions;
 . This supplement is currently rendered as a *"long form"* document -- one single HTML file; however, in subsequent versions the intent is to consider a multi-page / file HTML rendering + addition of a tabbed menu for navigating the sections of the supplement;
-. *"SDPi 1.0 Supplement Note"* boxes are provided throughout the document to help guide reviewers and implementers.
+. *"SDPi 1.1 Supplement Note"* boxes are provided throughout the document to help guide reviewers and implementers.
 
 |===
 
@@ -92,7 +92,7 @@ These three objectives may be summarized as follows:
 [none]
 ** Enable CA test reports that are genuinely _"regulatory submission ready"_ (e.g., inclusion in a U.S. FDA 510(k) submission package)
 
-The initial SDPi 1.0 version of the supplement has *_begun to take small steps_* toward support of these objectives, especially Requirements Interoperability, as well as the use of AsciiDoc metadata to annotate the document sources for post-processing.
+The SDPi 1.1 version of the supplement has *_begun to take small steps_* toward support of these objectives, especially Requirements Interoperability, as well as the use of AsciiDoc metadata to annotate the document sources for post-processing.
 Clearly, moving toward <<term_model_centric>> specifications and full integration of <<term_model_based_systems_engineering>> (<<acronym_mbse>>) will take considerable effort and time; however, this supplement represents a humble start in that direction.
 Subsequent supplement versions will build upon these objectives and support a new level of rigor for connectathon and product conformity assessment testing and ultimately test reports that directly impact the challenges around medical product regulatory submissions.
 
