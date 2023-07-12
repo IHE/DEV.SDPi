@@ -124,15 +124,9 @@ NOTE: It is likely that a <<vol1_spec_sdpi_p_actor_somds_participant>> needs mul
 .R1531
 [sdpi_requirement#r1531,sdpi_req_level=shall]
 ****
-For every MDS of a <<vol1_spec_sdpi_p_actor_somds_provider>>, if the <<vol1_spec_sdpi_p_actor_somds_provider>> cannot reach the <<acronym_ts_service>> and is no longer able to provide a maximum error of 50ms relative to the <<acronym_ts_service>>'s clock, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall provide pm:ClockState/@Accuracy.
-
-.Notes
-[%collapsible]
-====
-NOTE: This allows for the <<vol1_spec_sdpi_p_actor_somds_consumer>> to decide if timestamps are accurate enough for its specific use case.
-====
+For every MDS of a <<vol1_spec_sdpi_p_actor_somds_provider>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall provide pm:ClockState/@Accuracy.
 ****
-*REVIEWER QUESTION*:Is R1531 too challenging for legacy devices?
+
 
 
 .R1532
@@ -150,7 +144,6 @@ The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_consumer>> shall c
 .Notes
 [%collapsible]
 ====
-NOTE: In accordance with <<r1531>>, a <<vol1_spec_sdpi_p_actor_somds_consumer>> can assume that the accuracy of a <<vol1_spec_sdpi_p_actor_somds_provider>>'s clock is at least 50ms if no other value is provided in the <<term_medical_data_information_base>> pm:ClockState/@Accuracy.
 
 NOTE: This goes beyond considering the risk of erroneous timestamps required by the Base <<acronym_pkp>> Standard, since it forces the <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_consumer>> to define a minimum accuracy acceptable for a <<term_system_function_contribution>>.
 
@@ -205,17 +198,6 @@ NOTE: This requirement supplements RR1162 in <<ref_ieee_11073_10700_2022>>: _The
 ====
 ****
 
-.R1540
-[sdpi_requirement#r1540,sdpi_req_level=shall]
-****
-If a <<vol1_spec_sdpi_p_actor_somds_consumer>> receives an <<term_medical_data_information_base>> containing a pm:ClockState/@Accuracy that is no longer sufficient for at least one of its <<term_system_function_contribution>>s, the <<vol1_spec_sdpi_p_actor_somds_consumer>> shall disable all affected <<term_system_function_contribution>>s.
-****
-
-.R1541
-[sdpi_requirement#r1541,sdpi_req_level=shall]
-****
-If a <<vol1_spec_sdpi_p_actor_somds_consumer>>'s internal clock is no longer sufficient for at least one of its <<term_system_function_contribution>>s, the <<vol1_spec_sdpi_p_actor_somds_consumer>> shall disable all affected <<term_system_function_contribution>>s.
-****
 
 
 
