@@ -1,13 +1,9 @@
 [#vol2_clause_appendix_sdpi_gateway_hl7_v2_general_mapping]
 === SDPi Gateway -- HL7 V2 General Mapping
+This section specifies general <<acronym_hl7>> V2 requirements and mappings, which apply to the <<vol2_clause_appendix_sdpi_dec_gateway>> as well as to the <<vol2_clause_appendix_sdpi_acm_gateway>> sections below.
 
-[%noheader]
-[%autowidth]
-[cols="1"]
-|===
-a| *SDPi Supplement Version Note*: Complete mappings from <<acronym_sdc>> to HL7 V2 are specified in the <<vol2_clause_appendix_sdpi_dec_gateway>> and <<vol2_clause_appendix_sdpi_acm_gateway>> sections below.  This includes general SDC-to-HL7 V2 mappings that are common in both gateway specifications.  This general V2 mapping section will be editorially updated with the content from these two gateway specifications in a subsequent 1.x version of the supplement.
-
-|===
+==== Time Zone Setting
+For the <<acronym_hl7>> V2 data reporting, it is impportant that the time zone is set correctly at the <<term_point_of_care_device>>.
 
 .R8120
 [sdpi_requirement#r8120,sdpi_req_level=shall,sdpi_max_occurrence=1]
@@ -22,3 +18,23 @@ NOTE: In <<ref_hl7_v2>>, all timestamps are defined as local time and the time z
 NOTE: It is not always guaranteed that the timezone configured at the <<actor_somds_provider>> and/or <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> corresponds with the timezone of the <<acronym_mds>> entities, for example, when a <<actor_somds_provider>> acting as device aggregator and/or the  <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> are running in a data center located in a different timezone than the <<acronym_mds>> entities.
 ====
 ****
+
+include::tf2-ch-b-gateway-private-mdc-mapping.adoc[]
+
+==== HL7 Segment Descriptions
+The following sections specify the general <<acronym_hl7>> V2 segment mappings. Please refer to the *Appendix B Common Segment Descriptions* of the <<ref_ihe_pcd_tf_2_2019>> for further information.
+
+include::tf2-ch-b-gateway-msh-mapping.adoc[]
+
+include::tf2-ch-b-gateway-pid-mapping.adoc[]
+
+include::tf2-ch-b-gateway-pv1-mapping.adoc[]
+
+==== HL7 Field Descriptions
+The following sections specify the general <<acronym_hl7>> V2 field mappings. Please refer to the *Appendix B Common Segment Descriptions* of the <<ref_ihe_pcd_tf_2_2019>> for further information.
+
+include::tf2-ch-b-gateway-obx3-mapping.adoc[]
+
+include::tf2-ch-b-gateway-obx4-mapping.adoc[]
+
+include::tf2-ch-b-gateway-obx18-mapping.adoc[]

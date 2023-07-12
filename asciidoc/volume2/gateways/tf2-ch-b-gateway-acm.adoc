@@ -17,16 +17,20 @@ This section provides an overview about the referenced standards and profiles us
 * <<ref_ieee_11073_10700_2022>>
 * <<ref_ieee_11073_10207_2017>>
 
-include::tf2-ch-b-gateway-private-mdc-mapping.adoc[]
+==== Private MDC Codes Consideration
+Please refer to general section <<ref_private_coding_system_note>>.
 
 ==== HL7 Segment Descriptions
 The following sections refer to the *Appendix B Common Segment Descriptions* of the <<ref_ihe_pcd_tf_2_2019>>.
 
-include::tf2-ch-b-gateway-msh-mapping.adoc[]
+===== MSH - Message Header Segment
+Please refer to general section <<ref_gateway_msh_mapping>>.
 
-include::tf2-ch-b-gateway-pid-mapping.adoc[]
+===== PID - Patient Identification Segment
+Please refer to general section <<ref_gateway_pid_mapping>>.
 
-include::tf2-ch-b-gateway-pv1-mapping.adoc[]
+===== PV1 - Patient Visit Segment
+Please refer to general section <<ref_gateway_pv1_mapping>>.
 
 ===== OBR - Observation Request Segment
 The HL7 Observation Request (OBR) segment requires a mapping from the SDC containment tree and metric data to the OBR segment fields.
@@ -225,11 +229,11 @@ The OBX segments representing the alert event attributes are preceded by up to t
 
 [#ref_acm_containment_tree_mapping]
 ===== Containment Tree Hierarchy Representation
-include::tf2-ch-b-gateway-obx4-mapping.adoc[]
+Please refer to general section <<ref_gateway_obx4_mapping>>.
 
 [#ref_acm_equipment_id_mapping]
 ===== Equipment Instance Identifier Mapping
-include::tf2-ch-b-gateway-obx18-mapping.adoc[]
+Please refer to general section <<ref_gateway_obx18_mapping>>.
 
 [#ref_acm_obx_device_related_mapping]
 ====== Device-related OBX Segments
@@ -299,7 +303,7 @@ Note that this field is only required to be set for the MDS and/or the VMD eleme
 
 [#ref_acm_obs_id_mapping,sdpi_level=+1]
 ====== Observation Identifier Mapping
-include::tf2-ch-b-gateway-obx3-mapping.adoc[]
+Please refer to general section <<ref_gateway_obx3_mapping>>.
 
 [NOTE]
 ====

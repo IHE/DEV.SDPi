@@ -1,6 +1,8 @@
+[#ref_gateway_obx4_mapping]
+===== OBX-4 Observation Sub-ID
 
 .R8014
-[sdpi_requirement#r8014,sdpi_req_level=shall,sdpi_max_occurrence=2]
+[sdpi_requirement#r8014,sdpi_req_level=shall,sdpi_max_occurrence=1]
 ****
 A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the OBX-4 field to a hierarchical representation of the SDC element in the hierarchical containment tree.
 
@@ -12,7 +14,7 @@ NOTE: Please refer to the IHE technical framework <<ref_ihe_pcd_tf_2_2019>> for 
 ****
 
 .R8015
-[sdpi_requirement#r8015,sdpi_req_level=shall,sdpi_max_occurrence=2]
+[sdpi_requirement#r8015,sdpi_req_level=shall,sdpi_max_occurrence=1]
 ****
 A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall assign the handles (which are required to be unique in the same <<acronym_mdib>>) of the containment tree elements representing MDSs, VMDs, channels and metrics to unique integer numbers per child level of the same parent.
 
