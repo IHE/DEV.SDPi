@@ -117,7 +117,7 @@ class NumberingProcessor(
                             node.wrapped.id, if (isInAppendix()) {
                                 if (node.wrapped.isAppendix()) {
                                     LabelInfo(
-                                        (currentAppendix - 1).toString(),
+                                        currentAppendix.toString(),
                                         LabelSource.APPENDIX,
                                         currentVolumeCaption,
                                         refText
