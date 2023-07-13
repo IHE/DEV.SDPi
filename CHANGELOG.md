@@ -40,6 +40,8 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Editorial Fixes
 
+- Wrong appendix numbering in references ([#189](https://github.com/IHE/DEV.SDPi/issues/189))).
+
 ## [1.0.1] - 2023-04-14
 
 ### Editorial Fixes
