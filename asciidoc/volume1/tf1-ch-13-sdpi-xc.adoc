@@ -168,7 +168,7 @@ Note that this specification extends the concepts established in the base <<vol1
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  _*For SDPi 1.1*_, no use cases have been included that provide functional requirements for device external control.  These will be added to a future version of the SDPi supplement.
+a| *SDPi Supplement Version Note*:  For *_SDPi 1.1_*, no use cases have been included that provide functional requirements for device external control.  These will be added to a future version of the SDPi supplement.
 Therefore, with this release of the SDPi specification, this section remains incomplete.
 |===
 

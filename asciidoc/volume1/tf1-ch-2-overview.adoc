@@ -13,7 +13,7 @@ It is intended to amend a new IHE DEV Technical Framework (TF), that covers the 
 As a result of these basic changes in the scope and organization of the IHE DEV domain, some additional TF sections have been proposed to help the community understand how these technical specifications are integrated.  For example,
 
 . Section(s) for General IHE Devices architecture, use contexts, and (4) <<term_participant_key_purposes>> functions -- Connecting, Reporting, Alerting, and Controlling (external)
-. Section addressing "What is a device?" (aligned with a similar topic within the joint IHE-HL7 Gemini project); especially relevant given the differences between <<term_personal_health_device>> and <<term_point_of_care_device>> as well as the increasing prevalence of <<term_software_as_a_medical_device>> applications.  (See https://confluence.hl7.org/x/Iw7xB["Paper:  What is a device?"] for additional background)
+. Section addressing "What is a device?" (aligned with a similar topic within the joint IHE-HL7 Gemini project); especially relevant given the differences between <<term_personal_health_device>> and <<term_point_of_care_device>> as well as the increasing prevalence of <<term_software_as_a_medical_device>> applications.  (See https://confluence.hl7.org/x/Iw7xB["Paper:  What is a device?"] for additional background.)
 
 These general concepts will help the technical framework reader understand the broader context into which the profile specifications are intended to be implemented.
 
@@ -113,7 +113,7 @@ That said, the SDPi-P profile fully supports the safety and security requirement
 Other SDPi profiles provide direct support for _interoperable medical systems_.
 Taking this approach allows non-medical technology to interact with other SDPi-enabled systems but without the added burden of having to support the more rigorous requirements associated with technology intended for a medical purpose (e.g., additional risk control mitigation measures).
 
-This baseline profile supports the _*core*_ functionality needed by all participating systems.
+This baseline profile supports the *_core_* functionality needed by all participating systems.
 Profile options are provided for additional capabilities that may be required to support extended scenarios  (e.g., "ensemble context" management).
 
 [sdpi_offset=11]

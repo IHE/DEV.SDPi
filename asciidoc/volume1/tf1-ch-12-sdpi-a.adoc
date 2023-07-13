@@ -366,7 +366,8 @@ Note that this specification extends the concepts established in the base <<vol1
 
 [#vol1_clause_sdpi_a_use_cases_reftext, reftext='SDPi-A Use Cases']
 ==== Use Cases
-The SDPi-A profile supports requirements from use cases detailed in <<vol1_appendix_c_dpi_use_cases>>.  The following subsections identify the specific use case requirements that are fulfilled with capabilities provided by this specification.
+The SDPi-A Profile supports requirements from use cases detailed in <<vol1_appendix_c_dpi_use_cases>>.
+The following subsections identify the specific use case requirements that are fulfilled with capabilities provided by this SDPi-A Profile.
 
 
 ===== <<label_use_case_name_sicdsp>> (<<acronym_sicdsp>>)

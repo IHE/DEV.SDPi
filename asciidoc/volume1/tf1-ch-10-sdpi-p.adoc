@@ -264,7 +264,7 @@ However, the content might also be formalized in a document as opposed to a mess
 
 Note that in the case of external control, where a <<vol1_spec_sdpi_p_actor_somds_consumer>> is creating and sending content (e.g., patient demographics information) to a <<vol1_spec_sdpi_p_actor_somds_provider>> , the content module creator / consumer roles will be reversed.
 
-A product implementation using this specification may group afrom this profile with actors from a workflow or transport profile to be functional.
+A product implementation using this specification may group from this profile with actors from a workflow or transport profile to be functional.
 The grouping of the content module described in this profile to specific actors is described in more detail in <<vol1_clause_sdpi_p_required_actor_groupings>> or in <<vol1_clause_sdpi_p_cross_profile_considerations>>.
 
 {empty} +
@@ -392,7 +392,7 @@ See <<vol1_clause_appendix_a_requirements_from_narratives_to_pnt_interfaces>> fo
 [#vol1_spec_sdpi_p_actor_somds_provider, reftext='SOMDS Provider']
 Actor Summary Definition:
 [none]
-. A <<vol1_spec_sdpi_p_actor_somds_participant>> that provides at least one service to the other participant systems.  (See <<ref_ieee_11073_10207_2017>>  “SERVICE PROVIDER” definition)
+. A <<vol1_spec_sdpi_p_actor_somds_participant>> that provides at least one service to the other participant systems.  (See <<ref_ieee_11073_10207_2017>>  “SERVICE PROVIDER” definition.)
 
 Every <<vol1_spec_sdpi_p_actor_somds_provider>> is paired with (inherits from) the abstract _<<vol1_spec_sdpi_p_actor_somds_participant>>_ Actor.
 
@@ -420,7 +420,7 @@ Every abstract _<<vol1_spec_sdpi_p_actor_somds_connector>>_ is grouped with (inh
 
 A _<<vol1_spec_sdpi_p_actor_somds_connector>>_ can implement both <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_spec_sdpi_p_actor_somds_provider>>.
 
-In the case of a connector implementing a <<vol1_spec_sdpi_p_actor_somds_consumer>> , it is able to interact with other <<vol1_spec_sdpi_p_actor_somds_provider>>  to either obtain information that is then made available to Non-SOMDS Systems or invoke services that are requested from the external Non-SOMDS Systems.
+In the case of a connector implementing a <<vol1_spec_sdpi_p_actor_somds_consumer>>, it is able to interact with other <<vol1_spec_sdpi_p_actor_somds_provider>>  to either obtain information that is then made available to Non-SOMDS Systems or invoke services that are requested from the external Non-SOMDS Systems.
 For example, forwarding patient respiratory rate readings to an external “flow sheet” application or invoking a device’s “pause alert audio” service when a clinician indicates they are responding to a physiological alert condition (e.g., high respiratory rate).
 
 In the case of a connector implementing a <<vol1_spec_sdpi_p_actor_somds_provider>>, service capabilities for interacting with Non-SOMDS Systems are provided to the other networked <<vol1_spec_sdpi_p_actor_somds_consumer>>.
@@ -661,10 +661,12 @@ This generalized model includes (3) system roles:
 
 . *Service Providers* -- indicate the capabilities or services that they support, often published to a centralized registry that all participating systems recognize;
 
-. *Service Registry* -- a <<acronym_soa>> network capability enabling participating systems to *_discover_* services provided by networked systems, as well as information for how a service consumer system can
+. *Service Registry* -- a <<acronym_soa>> network capability enabling participating systems to *_discover_* or "find" services provided by networked systems, as well as information for how a service consumer system can initiate a connection with specific *Service Providers*;
+
+. *Service Consumer* -- a <<acronym_soa>> network system that utilizes the capabilities registered by a *Service Provider*.
 
 ////
-#TODO: ADD --#
+#TODO: ADD --
 
 * #why somds#
 * #distributed registry#

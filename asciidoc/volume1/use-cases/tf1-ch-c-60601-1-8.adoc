@@ -18,7 +18,7 @@ The other models are anticipated for subsequent versions.
 
 • Cannot rely on it for alarm signaling as a risk control
 
-• Optional support operator alarm management* response locally
+• Optional support operator alarm management response locally
 
 • Example -- patient remote display, hallway display, one-way pager
 
@@ -31,7 +31,7 @@ NOTE: CDIS is not recognized in 60601-1-8, however it is implemented in practise
 
 • Cannot rely on it for alarm signaling as a risk control
 
-• Optional support operator alarm management* response locally and remotely
+• Optional support operator alarm management response locally and remotely
 
 • Example –- two-way pager (open loop)
 
@@ -179,7 +179,7 @@ NOTE: NOTE 1 The parts of a DISTRIBUTED ALARM SYSTEM can be widely separated in 
 
 NOTE: NOTE 2 A DISTRIBUTED ALARM SYSTEM is intended to notify OPERATORS of the existence of an ALARM CONDITION.
 
-NOTE: NOTE 3 For the purposes of this document, technical confirmation means that each element of a DISTRIBUTED ALARM SYSTEM confirms or guarantees the successful delivery of the ALARM CONDITION to the next element or appropriate TECHNICAL ALARM CONDITIONS are created as described in 6.11.2.2.1.
+NOTE: NOTE 3 For the purposes of this document, technical confirmation means that each element of a DISTRIBUTED ALARM SYSTEM confirms or guarantees the successful delivery of the ALARM CONDITION to the next element or appropriate TECHNICAL ALARM CONDITIONS are created as described in clause 6.11.2.2.1 of <<ref_iec_60601_1_8_2020>>.
 
 {empty} +
 
