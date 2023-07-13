@@ -33,14 +33,14 @@ Each section shall contain a list of action items of the following format: `<bri
 - Open/Closed Issues sections have been revised. Sections are now generated automatically from Github issues ([#20](https://github.com/IHE/DEV.SDPi/issues/20)).
 - Created a common section for the ACM and DEC gateways such that requirement numbers are not duplicated anymore ([#53](https://github.com/IHE/DEV.SDPi/issues/53).  
 - Rephrase R1542 to make sure, that system functions not being available don't lead to unnecessary alarms ([#180] (https://github.com/IHE/DEV.SDPi/issues/180)). 
-- Moved requirements R1542 & R1543 to the SDPi-P SES / Effectiveness section from Github issues ([#182](https://github.com/IHE/DEV.SDPi/issues/182))
-
+- Moved requirements R1542 & R1543 to the SDPi-P SES / Effectiveness section from Github issues ([#182](https://github.com/IHE/DEV.SDPi/issues/182)).
 
 ### Removed
 
 ### Editorial Fixes
 
-- Wrong appendix numbering in references ([#189](https://github.com/IHE/DEV.SDPi/issues/189))).
+- Wrong appendix numbering in references ([#189](https://github.com/IHE/DEV.SDPi/issues/189)).
+- Missing volume number in section references ([#189](https://github.com/IHE/DEV.SDPi/issues/189)).
 
 ## [1.0.1] - 2023-04-14
 
