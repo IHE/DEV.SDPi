@@ -113,7 +113,7 @@ Especially when requirements from the <<acronym_pkp>> standards are included in 
 Note:  When the <<acronym_pkp>> standards are integrated into this specification, then specific requirements will be directly linked to these <<acronym_ses>> Considerations sections.
 |===
 
-Given the forgoing discussion in Section <<vol1_clause_ses_considerations_requirements>>, a standardized template is defined for addressing <<acronym_ses>> requirements as appropriate, including within the scope of profiles, actors, transactions, and content modules.
+Given the forgoing discussion in <<vol1_clause_ses_considerations_requirements>>, a standardized template is defined for addressing <<acronym_ses>> requirements as appropriate, including within the scope of profiles, actors, transactions, and content modules.
 The content in the following sections should be included and then specialized as appropriate for the associated technical framework element.
 
 ////
@@ -182,7 +182,7 @@ a| *SDPi Supplement Version Note*:  This section intentionally left blank for th
 
 As pointed out above, requirements interoperability (RI) based on robust model-based metadata is a core, innovative aspect of this SDPi profiles specification.
 Given the ultimate intent to realize this description as a _Model Centric (MC) single-source-of-truth, computable, simulatable, verifiable and validatable system of systems interoperability specification_, and recognizing that it will take a significant transition period from a document-centric approach to a model-centric approach, a simplified requirements model is provided below but is aligned with the <<ref_omg_sysml_2_0_spec>> Section 7.20 Requirements language.
-Of course, that specification provides for significantly more detailed and complext modeling, the general constructs may be used in this document to start the transition toward that model.
+Of course, that specification provides for significantly more detailed and complex modeling, the general constructs may be used in this document to start the transition toward that model.
 Note that SysML 2.0 also better supports model interoperability (tool-independent model exchange) and _<<term_model_based_systems_engineering>>_ (see https://en.wikipedia.org/wiki/Model-based_systems_engineering[MBSE Wikipedia article and references]), as well as the <<ref_ihe_eu_experience_2021_presentation_cooper_schlichting>> for an overview presentation of MBSE, MedTech system V&V, and IHE Conformity Assessment.
 
 It should be further noted that though conformity testing aspects are beyond this revision of the SDPi specification, the modeling constructs used below will also be integrated with <<ref_omg_sysml_2_0_spec>> Section 7.23 Verification Cases, to provide for advanced V&V of interoperable system components and entire systems of products.

@@ -102,7 +102,7 @@ Within this context, the core focus of these profiles is direct <<acronym_d2d>> 
 Gateway actors provide integration with systems beyond the scope of the acute bedside context, typically though not necessarily using other protocols.
 This <<acronym_d2d>> is differentiated with the current implementation reality where devices use proprietary protocols to talk with their manufacturer's gateway server, requiring a level of indirection (server-to-server integration), and the attendant performance, quality and capability limitations.
 
-See Section <<vol1_clause_sdpi_p_soa_somds_architecture_alignment>> below for additional conceptual overview information on the conceptual foundations of the <<acronym_sdc>> standards.
+See <<vol1_clause_sdpi_p_soa_somds_architecture_alignment>> below for additional conceptual overview information on the conceptual foundations of the <<acronym_sdc>> standards.
 
 [sdpi_offset=10]
 ==== Service-oriented Device Point-of-care Interoperability - Plug-and-trust (SDPi-P) Profile
