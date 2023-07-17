@@ -25,7 +25,7 @@ image::../images/vol1-diagram-use-case-ddes-tech-view.svg[]
 
 *And* All devices report either a device label and/or location
 
-*And* A <<acronym_dgw>> Service is associated with a specific set of device labels, and/or location(s) (i.e. devices in scope)
+*And* A <<acronym_dgw>> Service is associated with a specific set of device labels, and/or location(s) (i.e., devices in scope)
 
 [#vol1_clause_appendix_c_use_case_ddes_scenarios]
 ==== Scenarios
@@ -46,7 +46,7 @@ image::../images/vol1-diagram-use-case-ddes-tech-view.svg[]
 
 *Given* The <<acronym_dgw>> Service is exporting data to the EHR
 
-*Then* The <<acronym_dgw>> Service will comply with all IHE DEV DEC profile DOR actor functional and test requirements
+*Then* The <<acronym_dgw>> Service will comply with all IHE DEV / PCD DEC Profile DOR actor functional and test requirements
 
 ===== Scenario: <<acronym_ddes>> {var_use_case_id}.3 - <<label_system_type_name_dgw>> Service has a failure
 

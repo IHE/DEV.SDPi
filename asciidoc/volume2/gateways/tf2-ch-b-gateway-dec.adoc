@@ -2,11 +2,11 @@
 === SDPi DEC Gateway -- Mapping
 
 ==== Scope
-This chapter defines the mapping from the <<acronym_mdib>> content as defined in this document and its underlying standards, to IHE Device Enterprise Communication (DEC) profile messages as defined in the <<ref_ihe_pcd_tf_2_2019>>.
+This chapter defines the mapping from the <<acronym_mdib>> content as defined in this document and its underlying standards, to IHE Device Enterprise Communication (DEC) Profile messages as defined in the <<ref_ihe_pcd_tf_2_2019>>.
 
 The <<actor_somds_dec_gateway>> represents the Device Observation Reporter (DOR) role of the IHE DEC profile.
 
-The following sections supplement the IHE DEC profile as appropriate. If there are no supplementing definitions, the definitions as described in the <<ref_ihe_pcd_tf_2_2019>> will apply.
+The following sections supplement the IHE DEC Profile as appropriate. If there are no supplementing definitions, the definitions as described in the <<ref_ihe_pcd_tf_2_2019>> will apply.
 
 ==== Referenced Standards & Profiles
 This section provides an overview about the referenced standards and profiles used in this chapter:
@@ -17,16 +17,16 @@ This section provides an overview about the referenced standards and profiles us
 * <<ref_ieee_11073_10207_2017>>
 
 ==== Private MDC Codes Consideration
-Please refer to general section <<ref_private_coding_system_note>>.
+Please refer to general Section <<ref_private_coding_system_note>>.
 
 ==== HL7 Segment Descriptions
 The following sections refer to the *Appendix B Common Segment Descriptions* of the <<ref_ihe_pcd_tf_2_2019>>.
 
 ===== MSH - Message Header Segment
-Please refer to general section <<ref_gateway_msh_mapping>>.
+Please refer to general Section <<ref_gateway_msh_mapping>>.
 
 ===== PID - Patient Identification Segment
-Please refer to general section <<ref_gateway_pid_mapping>>.
+Please refer to general Section <<ref_gateway_pid_mapping>>.
 
 ===== Height and Weight Mapping
 
@@ -237,7 +237,7 @@ When there are further updates of the weight value after the association of the 
 |===
 
 ===== PV1 - Patient Visit Segment
-Please refer to general section <<ref_gateway_pv1_mapping>>.
+Please refer to general Section <<ref_gateway_pv1_mapping>>.
 
 ===== OBR - Observation Request Segment
 The HL7 Obervation Request (OBR) segment requires a mapping from the SDC containment tree and metric data to the OBR segment fields.
@@ -319,7 +319,7 @@ A <<actor_somds_dec_gateway>> shall export continuously (periodically) measured 
 .Notes
 [%collapsible]
 ====
-NOTE: It is up to the <<actor_somds_dec_gateway>> how the export interval is defined. The interval might be a fixed interval of e.g. 30 seconds, or a configurable interval ranging e.g. between 10 seconds and 2 minutes.
+NOTE: It is up to the <<actor_somds_dec_gateway>> how the export interval is defined. The interval might be a fixed interval of e.g., 30 seconds, or a configurable interval ranging e.g., between 10 seconds and 2 minutes.
 
 ====
 ****
@@ -333,7 +333,7 @@ A <<actor_somds_dec_gateway>> shall set the OBR-7 field to the start date and ti
 .Notes
 [%collapsible]
 ====
-NOTE: If, for example, the export interval is set to 30 seconds, the <<actor_somds_dec_gateway>> will export HL7 messages every 30 seconds with the OBR-7 field set to start date and time of the interval e.g. *20231030155930*, *20231030160000*, *20231030160030*, and so on.
+NOTE: If, for example, the export interval is set to 30 seconds, the <<actor_somds_dec_gateway>> will export HL7 messages every 30 seconds with the OBR-7 field set to start date and time of the interval e.g., *20231030155930*, *20231030160000*, *20231030160030*, and so on.
 
 ====
 ****
@@ -385,7 +385,7 @@ A <<actor_somds_dec_gateway>> may set the OBR-8 field to the end date and time o
 ====
 NOTE: This requirement relates to the OBR-7 field mapping. Please refer to <<ref_dec_OBR7_mapping>> for further information.
 
-NOTE: If, for example, the export interval is set to 30 seconds, the <<actor_somds_dec_gateway>> will export HL7 messages every 30 seconds with the OBR-7 field set to start date and time of the current interval and the OBR-8 field set to the start date and time of the next interval e.g.  *20231030155930*|*20231030160000*, *20231030160000*|*20231030160030*, and so on.
+NOTE: If, for example, the export interval is set to 30 seconds, the <<actor_somds_dec_gateway>> will export HL7 messages every 30 seconds with the OBR-7 field set to start date and time of the current interval and the OBR-8 field set to the start date and time of the next interval e.g.,  *20231030155930*|*20231030160000*, *20231030160000*|*20231030160030*, and so on.
 ====
 
 ****
@@ -443,7 +443,7 @@ NOTE: The SDC operator context is only valid when the *pm:OperatorContextState/@
 |
 
 |OBR-10/XCN-6
-|Prefix (e.g. DR)
+|Prefix (e.g., DR)
 |pm:OperatorContextState
 /pm:OperatorDetails
 /pm:Title
@@ -511,11 +511,11 @@ A <<actor_somds_dec_gateway>> shall leave the OBX-2 field empty for OBX segments
 |===
 
 ====== OBX-3 Observation Identifier
-Please refer to general section <<ref_gateway_obx3_mapping>>.
+Please refer to general Section <<ref_gateway_obx3_mapping>>.
 
 [#ref_dec_obx4]
 ====== OBX-4 Observation Sub-ID
-Please refer to general section <<ref_gateway_obx4_mapping>>.
+Please refer to general Section <<ref_gateway_obx4_mapping>>.
 
 ====== OBX-5 Observation Value
 
@@ -612,7 +612,7 @@ the OBX-2 is required to be set to *"ST"* (see also <<ref_tbl_dec_obx2_mapping>>
 .R8022
 [sdpi_requirement#r8022,sdpi_req_level=shall]
 ****
-If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded element value in OBX-5 mapping, a <<actor_somds_dec_gateway>> shall map the identifier as described in section <<ref_private_coding_system_note>>.
+If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded element value in OBX-5 mapping, a <<actor_somds_dec_gateway>> shall map the identifier as described in Section <<ref_private_coding_system_note>>.
 ****
 
 [#ref_tbl_dec_obx5_enum_mapping]
@@ -666,7 +666,7 @@ NOTE: For a device-releted element such as MDS, VMD, CHANNEL, or other metric ty
 .R8024
 [sdpi_requirement#r8024,sdpi_req_level=shall]
 ****
-If a private *<<acronym_mdc>>* code is used for the coding of the SDC measurement unit of a metric, a <<actor_somds_dec_gateway>> shall map the identifier as described in section <<ref_private_coding_system_note>>.
+If a private *<<acronym_mdc>>* code is used for the coding of the SDC measurement unit of a metric, a <<actor_somds_dec_gateway>> shall map the identifier as described in Section <<ref_private_coding_system_note>>.
 ****
 
 [#ref_tbl_dec_obx6_mapping]
@@ -726,7 +726,7 @@ A <<actor_somds_dec_gateway>> shall not set this field to the device measurement
 .Notes
 [%collapsible]
 ====
-NOTE: As stated in <<ref_ihe_pcd_tf_2_2019>> the reference range can only be set for device related segments (e.g. Channel). Within SDC the device measurement range refers to each metric and cannot be populated on higher levels in the containment tree.
+NOTE: As stated in <<ref_ihe_pcd_tf_2_2019>> the reference range can only be set for device related segments (e.g., Channel). Within SDC the device measurement range refers to each metric and cannot be populated on higher levels in the containment tree.
 ====
 ****
 
@@ -868,7 +868,7 @@ Or set to "AMEAS\^auto-measurement^MDC" if required.
 |===
 
 ====== OBX-18 Equipment Instance Identifier
-Please refer to general section <<ref_gateway_obx18_mapping>>.
+Please refer to general Section <<ref_gateway_obx18_mapping>>.
 
 ====== OBX-20 Observation Site
 
@@ -893,7 +893,7 @@ NOTE: For a device-releted element such as MDS, VMD, or CHANNEL, the OBX-20 fiel
 .R8035
 [sdpi_requirement#r8035,sdpi_req_level=shall]
 ****
-If a private *<<acronym_mdc>>* code is used for the coding of a body site, a <<actor_somds_dec_gateway>> shall map the identifier as described in section <<ref_private_coding_system_note>>.
+If a private *<<acronym_mdc>>* code is used for the coding of a body site, a <<actor_somds_dec_gateway>> shall map the identifier as described in Section <<ref_private_coding_system_note>>.
 ****
 
 [#ref_tbl_dec_obx20_mapping]

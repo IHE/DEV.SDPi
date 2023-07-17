@@ -81,7 +81,7 @@ The above figure illustrates how this balance was achieved, including:
 .. The profiles are built upon a solid foundation of existing standards from various <<acronym_sdo>>s and that are currently implemented for device information exchange, albeit in different use contexts such as healthcare enterprise / <<acronym_ehr>> integration.
 .. The actors provide defined mappings from SDPi transactions and semantics to those of other standards and standards profiles (e.g., IHE DEC or ACM).
 .. Gateways can be bi-directional, receiving information from non-SDPi enabled systems, such as patient demographics information from an <<acronym_ehr>>.
-.. For a more complete "Big Picture" perspective, see the discussion in section <<vol1_clause_appendix_a_requirements_from_narratives_to_pnt_interfaces>> below.
+.. For a more complete "Big Picture" perspective, see the discussion in <<vol1_clause_appendix_a_requirements_from_narratives_to_pnt_interfaces>>.
 . *PKPs for Medical Purposes*
 [none]
 .. A unique aspect of the IEEE 11073 <<acronym_sdc>> family of standards are the inclusion of the <<term_participant_key_purposes>> standards that advance <<term_safe_effective_secure>> "medical" interoperability.
@@ -102,14 +102,14 @@ Within this context, the core focus of these profiles is direct <<acronym_d2d>> 
 Gateway actors provide integration with systems beyond the scope of the acute bedside context, typically though not necessarily using other protocols.
 This <<acronym_d2d>> is differentiated with the current implementation reality where devices use proprietary protocols to talk with their manufacturer's gateway server, requiring a level of indirection (server-to-server integration), and the attendant performance, quality and capability limitations.
 
-See section <<vol1_clause_sdpi_p_soa_somds_architecture_alignment>> below for additional conceptual overview information on the conceptual foundations of the <<acronym_sdc>> standards.
+See Section <<vol1_clause_sdpi_p_soa_somds_architecture_alignment>> below for additional conceptual overview information on the conceptual foundations of the <<acronym_sdc>> standards.
 
 [sdpi_offset=10]
 ==== Service-oriented Device Point-of-care Interoperability - Plug-and-trust (SDPi-P) Profile
-Within the framework of the SDPi architecture, the Plug-and-Trust ([[acronym_sdpi_p,SDPi-P]] SDPi-P) profile provides for *_secure plug-and-play connectivity_* between all actors.
+Within the framework of the SDPi architecture, the Plug-and-Trust ([[acronym_sdpi_p,SDPi-P]] SDPi-P) Profile provides for *_secure plug-and-play connectivity_* between all actors.
 The primary use context is acute care beds (e.g., ICU, operating room, emergency department), though it may be used in other healthcare contexts.
 This specification provides for plug-and-trust (secured) communication for healthcare devices, systems and applications, regardless of whether they are "regulated" medical devices.
-That said, the SDPi-P profile fully supports the safety and security requirements specified in the <<ref_ieee_11073_10700_2022>> Base <<acronym_pkp>> standard.
+That said, the SDPi-P Profile fully supports the safety and security requirements specified in the <<ref_ieee_11073_10700_2022>> Base <<acronym_pkp>> standard.
 Other SDPi profiles provide direct support for _interoperable medical systems_.
 Taking this approach allows non-medical technology to interact with other SDPi-enabled systems but without the added burden of having to support the more rigorous requirements associated with technology intended for a medical purpose (e.g., additional risk control mitigation measures).
 
@@ -118,7 +118,7 @@ Profile options are provided for additional capabilities that may be required to
 
 [sdpi_offset=11]
 ==== Service-oriented Device Point-of-care Interoperability - Reporting (SDPi-R) Profile
-The SDPi Reporting profile builds on the basic <<acronym_pnt>> capabilities of the <<acronym_sdpi_p>> profile, but adds the requirements to fully support *_medical data reporting_*.
+The SDPi Reporting Profile builds on the basic <<acronym_pnt>> capabilities of the <<acronym_sdpi_p>> profile, but adds the requirements to fully support *_medical data reporting_*.
 To that end, this specification fully supports the safety and security requirements in the <<ref_ieee_11073_10701_2022>> metric reporting <<acronym_pkp>> standard.
 
 The profile supports core medical data reporting functionality needed by all participating systems.
@@ -126,7 +126,7 @@ Profile options are provided for additional capabilities that may be required to
 
 [sdpi_offset=12]
 ==== Service-oriented Device Point-of-care Interoperability - Alerting (SDPi-A) Profile
-The SDPi Alerting profile builds on the basic <<acronym_pnt>> capabilities of the <<acronym_sdpi_p>> profile, but adds the requirements to fully support *_medical alerting_*.
+The SDPi Alerting Profile builds on the basic <<acronym_pnt>> capabilities of the <<acronym_sdpi_p>> profile, but adds the requirements to fully support *_medical alerting_*.
 To that end, this specification implements the safety and security requirements of the <<ref_ieee_11073_10702_202x>> alert <<acronym_pkp>> standard (expected to be completed in 2023).
 
 The profile supports core medical alerting functionality needed by all participating systems.
@@ -143,11 +143,11 @@ Profile options are provided for additional capabilities that may be required to
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  For SDPi 1.1, the SDPi-xC profile is provided for completeness and to show the general direction of the family of SDPi profiles.
+a| *SDPi Supplement Version Note*:  For SDPi 1.1, the SDPi-xC Profile is provided for completeness and to show the general direction of the family of SDPi profiles.
 It is *_not part of the capabilities specified for 1.1_* and even basic controls will not be added until SDPi 2.0 or later.
 |===
 
-The SDPi External Control profile builds on the basic <<acronym_pnt>> capabilities of the <<acronym_sdpi_p>> profile, but adds support for *_medical device external control capabilities_*.
+The SDPi External Control Profile builds on the basic <<acronym_pnt>> capabilities of the <<acronym_sdpi_p>> profile, but adds support for *_medical device external control capabilities_*.
 For example, the ability to have a system initiate a blood pressure reading, or set a breath rate, or titrate an infusion pump's delivery rate.
 Given the significant risks associated with allowing device-external control functions in a network of <<acronym_pnt>> systems, this specification implements the safety and security requirements of the <<ref_ieee_11073_10703_202x>> external control <<acronym_pkp>> standard (in development, anticipated in 2023 or later).
 

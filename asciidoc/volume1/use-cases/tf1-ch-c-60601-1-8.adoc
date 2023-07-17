@@ -192,7 +192,7 @@ Examples include:
 - EXAMPLE 1 – A central station
 - EXAMPLE 2 – An electronic record-keeping device
 - EXAMPLE 3 – Remote viewing from home or office
-- EXAMPLE 4 – Bed-to-bed viewing of ALARM CONDITIONS (e.g. one nurse for two beds).
+- EXAMPLE 4 – Bed-to-bed viewing of ALARM CONDITIONS (e.g., one nurse for two beds).
 - EXAMPLE 5 – Transmission of ALARM CONDITIONS to pagers, cell phones, hand-held computers, etc.
 
 ====== CDAS - DISTRIBUTED ALARM SYSTEM WITH OPERATOR CONFIRMATION
@@ -251,7 +251,7 @@ A similar configuration might be provided for other DISTRIBUTED ALARM SYSTEMS, f
 
 Care is needed in the design of a CDAS when there is a non-homogenous set of SOURCES.
 The logic (REDIRECTION and ESCALATION) behind the processing of RESPONSIBILITY UNDEFINED can become very complex and needs to take into account how each SOURCE responds to the resulting states.
-These complex systems can inadvertently cause ALARM FLOOD or ‘lost’ ALARM CONDITIONS (i.e. no assigned COMMUNICATOR).
+These complex systems can inadvertently cause ALARM FLOOD or ‘lost’ ALARM CONDITIONS (i.e., no assigned COMMUNICATOR).
 
 Such a configuration would not be expected in ME EQUIPMENT without a DISTRIBUTED ALARM SYSTEM.
 For example, an anaesthesia workstation, for which an OPERATOR is normally present during all PATIENT care, would not be expected to provide these functions.

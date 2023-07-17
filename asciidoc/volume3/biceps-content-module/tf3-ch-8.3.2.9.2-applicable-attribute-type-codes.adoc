@@ -20,7 +20,7 @@ NOTE: Other attributes may be used for types that are not listed in <<vol3_table
 |RefId |Description| IEEE 11073-10101 <Partition>::<Code>| Context-free Code
 
 |MDC_ATTR_ID_SOFT
-a|Identifier specific to a hospital (non-manufacturer) that is configured by (service) personnel, e.g. a hospital inventory number. Synonyms used by different manufacturers:
+a|Identifier specific to a hospital (non-manufacturer) that is configured by (service) personnel, e.g., a hospital inventory number. Synonyms used by different manufacturers:
 
 - Equipment label
 - Device name

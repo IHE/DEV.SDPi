@@ -148,7 +148,7 @@ Valid *"Identifier Type Code"* values for a visit number are, for example, *"VN"
 ****
 If <<r8111>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-44 field to the patient's admission date/time.
 
-The SDC data model does not support the concept of an admission date/time. There are also different types of admissions; e.g. hospital admission, care unit admission, etc.
+The SDC data model does not support the concept of an admission date/time. There are also different types of admissions; e.g., hospital admission, care unit admission, etc.
 
 This said, it is up to the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> to figure out the admission date/time to be set in the PV1-44 field. If the gateway is not able to determine the admission date/time, the field is left empty.
 ****

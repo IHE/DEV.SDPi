@@ -64,12 +64,12 @@ The GetMetadataResponse message is sent whenever a <<vol1_spec_sdpi_p_actor_somd
 NOTE: There is currently no mandatory support for provision of the LOCALIZATION SERVICE, CONTAINMENT TREE SERVICE and ARCHIVE SERVICE.
 
 [#message_semantics_discover_biceps_services_device]
-Device Metadata:: Expresses <<vol1_spec_sdpi_p_actor_somds_provider>> characteristics that typically vary from one <<vol1_spec_sdpi_p_actor_somds_provider>> to another of the same kind, e.g.:
+Device Metadata:: Expresses <<vol1_spec_sdpi_p_actor_somds_provider>> characteristics that typically vary from one <<vol1_spec_sdpi_p_actor_somds_provider>> to another of the same kind, for example:
 * Friendly name
 * Firmware version
 * Serial number
 [#message_semantics_discover_biceps_services_model]
-Model Metadata:: Expresses <<vol1_spec_sdpi_p_actor_somds_provider>> characteristics that are typically fixed across all <<vol1_spec_sdpi_p_actor_somds_provider>>s of the same model by their <<term_manufacturer>>, e.g.:
+Model Metadata:: Expresses <<vol1_spec_sdpi_p_actor_somds_provider>> characteristics that are typically fixed across all <<vol1_spec_sdpi_p_actor_somds_provider>>s of the same model by their <<term_manufacturer>>, for example:
 * <<term_manufacturer>>
 * Model name
 * Model number

@@ -109,7 +109,7 @@ The {var_label_dev_27_message_subscribe_response} message is sent whenever a <<v
 [#vol2_clause_dev_27_message_probe_match_semantics]
 ====== Message Semantics
 
-[[payload_dev_27_subscribe_response_subscription_manager]]Subscription Manager:: Dedicated instance that manages the subscription, i.e. allows for a <<vol1_spec_sdpi_p_actor_somds_consumer>> to renew or cancel the subscription.
+[[payload_dev_27_subscribe_response_subscription_manager]]Subscription Manager:: Dedicated instance that manages the subscription, i.e., allows for a <<vol1_spec_sdpi_p_actor_somds_consumer>> to renew or cancel the subscription.
 [[payload_dev_27_subscribe_response_expiration_time]]Expiration Time:: Actual expiration time, which does not necessarily equal the requested expiration time.
 
 [#vol2_clause_dev_27_message_probe_match_expected_actions]
@@ -162,7 +162,7 @@ The {var_label_dev_27_message_renew} message is sent whenever a subscription is 
 [#vol2_clause_dev_27_message_renew_message_semantics]
 ====== Message Semantics
 
-[[payload_dev_27_subscribe_response_subscription_manager]]Subscription Manager:: Dedicated instance that manages the subscription, i.e. allows for a <<vol1_spec_sdpi_p_actor_somds_consumer>> to renew or cancel the subscription.
+[[payload_dev_27_subscribe_response_subscription_manager]]Subscription Manager:: Dedicated instance that manages the subscription, i.e., allows for a <<vol1_spec_sdpi_p_actor_somds_consumer>> to renew or cancel the subscription.
 [[payload_dev_27_renew_expiration_time]]Expiration Time:: A new time requested for subscription expiration.
 
 [#vol2_clause_dev_27_message_renew_expected_actions]
@@ -249,7 +249,7 @@ Once received, the <<vol1_spec_sdpi_p_actor_somds_consumer>> cannot expect any f
 [#vol2_clause_dev_27_message_subscription_end]
 ===== {var_label_dev_27_message_subscription_end} Message
 
-The {var_label_dev_27_message_subscription_end} is delivered by a <<vol1_spec_sdpi_p_actor_somds_provider>> to signify the expected or unexpected end of a subscription, e.g. due to a shutdown of the <<vol1_spec_sdpi_p_actor_somds_provider>>.
+The {var_label_dev_27_message_subscription_end} is delivered by a <<vol1_spec_sdpi_p_actor_somds_provider>> to signify the expected or unexpected end of a subscription, e.g., due to a shutdown of the <<vol1_spec_sdpi_p_actor_somds_provider>>.
 
 [#vol2_clause_dev_27_message_subscription_end_trigger_events]
 ====== Trigger Events

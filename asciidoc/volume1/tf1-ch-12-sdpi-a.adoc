@@ -242,7 +242,7 @@ Actor Summary Definition:
 [none]
 . A <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> grouped actor that supports the bi-directional exchange of medical alert information with non-SOMDS systems and applications using IHE Alert Communication Management (ACM) transactions.
 
-This a is designed to exchange medical device alert information to external non-<<acronym_somds>> systems using the <<acronym_hl7>> V2-based Alert Communication Management (ACM) profile transactions.
+This a is designed to exchange medical device alert information to external non-<<acronym_somds>> systems using the <<acronym_hl7>> V2-based Alert Communication Management (ACM) Profile transactions.
 
 Every <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> to enable <<acronym_somds>>-based connectivity.
 This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>.
@@ -421,16 +421,16 @@ Specific capabilities supporting the <<acronym_aars>> use case include:
 ==== SES General Considerations
 Requirements from the <<ref_iso_81001_1_2021>>, <<ref_iec_80001_1_2021>>, and related standards should be fully applied to this technical framework element.
 
-For additional guidance, see section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
+For additional guidance, see Section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
 
 ==== Safety Requirements & Considerations
-No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
+No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 ==== Effectiveness Requirements & Considerations
-No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
+No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 ==== Security Requirements & Considerations
-No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P profile (see <<vol1_clause_appendix_a_ses_considerations_section_template>>), and those specified in the _<<acronym_ses>> General Considerations_ section above.
+No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P Profile (see <<vol1_clause_appendix_a_ses_considerations_section_template>>), and those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 // 12.6
 === SDPi-A Cross Profile Considerations

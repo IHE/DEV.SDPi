@@ -11,7 +11,7 @@ In order to suppress concurrent connection attempts, in the ad-hoc mode a <<vol1
 
 [none]
 * icon:plus[] Deferral is controlled by the entity that is affected by concurrent connection attempts.
-* icon:minus[] The deferral does not work in managed mode, i.e. when a discovery proxy is in charge to respond to {var_label_dev_24_message_resolve} messages (unless the discovery proxy implements a similar behavior).
+* icon:minus[] The deferral does not work in managed mode, i.e., when a discovery proxy is in charge to respond to {var_label_dev_24_message_resolve} messages (unless the discovery proxy implements a similar behavior).
 
 .R0001
 [sdpi_requirement#r0001,sdpi_req_level=may]

@@ -44,6 +44,9 @@ Each section shall contain a list of action items of the following format: `<bri
 - Updated all references to the sdpi-fhir Github ([#162](https://github.com/IHE/DEV.SDPi/issues/162))
 - Addressed editorial issues from the IHE Publications review ([#189](https://github.com/IHE/DEV.SDPi/issues/189))
 - Wrong appendix numbering in references ([#189](https://github.com/IHE/DEV.SDPi/issues/189))).
+- All instances of "i.e." or "e.g." replaced with "i.e.," and "e.g.,", respectivelly ([#189](https://github.com/IHE/DEV.SDPi/issues/189))).
+- Normalized "profile" to "Profile" where appropriate ([#189](https://github.com/IHE/DEV.SDPi/issues/189))).
+- Normalized "section" to "Section" when it was referring to a specific clause within the document ([#189](https://github.com/IHE/DEV.SDPi/issues/189))).
 
 ## [1.0.1] - 2023-04-14
 

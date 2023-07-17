@@ -21,7 +21,7 @@ A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall assign the han
 .Notes
 [%collapsible]
 ====
-NOTE: This implies that, e.g. channel elements may use the same numbers as VMD elements but on the channel level the numbers must be unique for the channels related to the same VMD.
+NOTE: This implies that, e.g., channel elements may use the same numbers as VMD elements but on the channel level the numbers must be unique for the channels related to the same VMD.
 
 NOTE: There is no requirement to preserve the same assigned number for a containment tree element from message to message, but it is highly recommended since this makes it much easier for the DOC to process the HL7 V2 messages.
 ====

@@ -41,10 +41,10 @@ This message is sent
 2. when a <<vol1_spec_sdpi_p_actor_somds_provider>> is reassigned an IP address, or
 3. when a <<vol1_spec_sdpi_p_actor_somds_provider>> changes its <<payload_dev_23_discovery_scope>>.
 
-IP address reassignment can occur because of intended or unintended interruptions in the network connection, network reconfiguration during operation (e.g. by plugging of Ethernet switches), or other causes.
+IP address reassignment can occur because of intended or unintended interruptions in the network connection, network reconfiguration during operation (e.g., by plugging of Ethernet switches), or other causes.
 
 It is assumed that <<vol1_spec_sdpi_p_actor_somds_participant>> are connected to an IP network that uses dynamic IP address assignment managed by a DHCP server.
-The use of static IP addresses is discouraged as it may lead to IP address conflicts, and hence severe communication disruption, in case of network reconfiguration during operation (e.g. by plugging of Ethernet switches).
+The use of static IP addresses is discouraged as it may lead to IP address conflicts, and hence severe communication disruption, in case of network reconfiguration during operation (e.g., by plugging of Ethernet switches).
 
 .R2000
 [sdpi_requirement#r2000,sdpi_req_level=should]
@@ -59,7 +59,7 @@ include::../dev-a-default-expected-actions.adoc[]
 
 [#vol2_clause_appendix_mdpws_dev_23_recurring_hello,sdpi_level=+1]
 ====== Recurring Hello
-In addition to the Hello message trigger events defined in <<vol2_clause_appendix_mdpws_dev_23_hello_message_trigger_events>>, recurring Hello messages are needed to decrease the likelihood of missed discovery messages in case of network topology changes during operation, e.g. when operational networks are extended by plugging switches (together) at runtime.
+In addition to the Hello message trigger events defined in <<vol2_clause_appendix_mdpws_dev_23_hello_message_trigger_events>>, recurring Hello messages are needed to decrease the likelihood of missed discovery messages in case of network topology changes during operation, e.g., when operational networks are extended by plugging switches (together) at runtime.
 
 .R2001
 [sdpi_requirement#r2001,sdpi_req_level=shall]

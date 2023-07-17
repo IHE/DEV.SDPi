@@ -258,7 +258,7 @@ Note that this specification extends the concepts established in the base <<vol1
 
 [#vol1_clause_sdpi_r_use_cases_reftext, reftext='SDPi-R Use Cases']
 ==== Use Cases
-The SDPi-R profile supports requirements from use cases detailed in <<vol1_appendix_c_dpi_use_cases>>.  The following subsections identify the specific use case requirements that are fulfilled with capabilities provided by this specification.
+The SDPi-R Profile supports requirements from use cases detailed in <<vol1_appendix_c_dpi_use_cases>>.  The following subsections identify the specific use case requirements that are fulfilled with capabilities provided by this specification.
 
 
 ===== <<label_use_case_name_sicdsp>> (<<acronym_sicdsp>>)
@@ -314,16 +314,16 @@ Once published, their requirements will be integrated into this supplement, with
 
 |===
 
-For additional guidance, see section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
+For additional guidance, see Section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
 
 ==== Safety Requirements & Considerations
-No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
+No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 ==== Effectiveness Requirements & Considerations
-No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
+No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 ==== Security Requirements & Considerations
-No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P profile (see <<vol1_clause_appendix_a_ses_considerations_section_template>>), and those specified in the _<<acronym_ses>> General Considerations_ section above.
+No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P Profile (see <<vol1_clause_appendix_a_ses_considerations_section_template>>), and those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 [#vol1_clause_sdpi_r_cross_profile_considerations]
 === SDPi-R Cross Profile Considerations

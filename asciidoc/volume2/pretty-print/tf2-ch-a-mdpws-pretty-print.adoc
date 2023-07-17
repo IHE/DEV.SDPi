@@ -4,7 +4,7 @@ XML processor implementations may pretty-print XML by default when serializing X
 Pretty-printed XML aligns XML elements in new lines and adds indentation where necessary to beautify serialized data and therewith increase human-readability.
 However, if the serializer is not XML-Schema-agnostic, it ignores _mixed content_ declarations and hence can change the meaning of elements in instance documents that are supposed to contain _mixed content_.
 
-<<r0013>> requires XML serializers to be XML Schema agnostic. If, e.g. for technical reasons, a serializer cannot be XML Schema agnostic, it is not allowed to pretty-print XML data as it may generate invalid XML markup.
+<<r0013>> requires XML serializers to be XML Schema agnostic. If, e.g., for technical reasons, a serializer cannot be XML Schema agnostic, it is not allowed to pretty-print XML data as it may generate invalid XML markup.
 
 .R0013
 [sdpi_requirement#r0013,sdpi_req_level=shall]

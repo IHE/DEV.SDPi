@@ -54,7 +54,7 @@ include::../../plantuml/vol2-figure-dev-24-sequence.puml[]
 The corresponding message to seek <<vol1_spec_sdpi_p_actor_somds_provider>> based on filter criteria is called _{var_label_dev_24_message_probe}_.
 
 Note that the {var_label_dev_24_message_probe} message described in this clause is a generic/abstract concept that can be implemented differently.
-It should not be confused with actual transport message specifications like, e.g. the WS-Discovery Probe message as described in <<vol2_clause_appendix_mdpws_dev_24>>.
+It should not be confused with actual transport message specifications like, e.g., the WS-Discovery Probe message as described in <<vol2_clause_appendix_mdpws_dev_24>>.
 
 If a specific <<term_somds_provider_uid>> is unknown to a <<vol1_spec_sdpi_p_actor_somds_consumer>>, the <<vol1_spec_sdpi_p_actor_somds_consumer>> can send a {var_label_dev_24_message_probe} multicast message to all listening <<vol1_spec_sdpi_p_actor_somds_provider>>s.
 Limited but sufficient information is provided with the message to enable <<vol1_spec_sdpi_p_actor_somds_provider>>s to determine if they match the <<term_discovery_scope>> requested by the <<vol1_spec_sdpi_p_actor_somds_consumer>>.
@@ -82,7 +82,7 @@ When a <<vol1_spec_sdpi_p_actor_somds_consumer>> sends this message, every recei
 The {var_label_dev_24_message_probe_match} message is sent as part of the BICEPS _explicit discovery_ protocol in response to an incoming <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_probe}>> message.
 
 Note that the {var_label_dev_24_message_probe_match} message described in this clause is a generic/abstract concept that can be implemented differently.
-It should not be confused with actual transport message specifications like, e.g. the WS-Discovery ProbeMatch message as described in <<vol2_clause_appendix_mdpws_dev_24>>.
+It should not be confused with actual transport message specifications like, e.g., the WS-Discovery ProbeMatch message as described in <<vol2_clause_appendix_mdpws_dev_24>>.
 
 The {var_label_dev_24_message_probe_match} message is a uni-cast message that is sent by a <<vol1_spec_sdpi_p_actor_somds_provider>> when an incoming <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_probe}>> message contains a <<payload_dev_24_probe_discovery_scope>> that matches the <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<term_discovery_scope>>. Limited but sufficient information is provided with the message to enable <<vol1_spec_sdpi_p_actor_somds_consumer>>s to determine a matching <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<payload_dev_24_probe_match_provider_uid>> and <<payload_dev_24_probe_match_transport_address>>.
 
@@ -113,7 +113,7 @@ The <<vol1_spec_sdpi_p_actor_somds_consumer>> that receives a {var_label_dev_24_
 The corresponding message to seek <<vol1_spec_sdpi_p_actor_somds_provider>>s based on a unique identifier is called _{var_label_dev_24_message_resolve}_.
 
 Note that the {var_label_dev_24_message_resolve} message described in this clause is a generic/abstract concept that can be implemented differently.
-It should not be confused with actual transport message specifications like, e.g. the WS-Discovery Resolve message as described in <<vol2_clause_appendix_mdpws_dev_24>>.
+It should not be confused with actual transport message specifications like, e.g., the WS-Discovery Resolve message as described in <<vol2_clause_appendix_mdpws_dev_24>>.
 
 If a specific <<term_somds_provider_uid>> is known to a <<vol1_spec_sdpi_p_actor_somds_consumer>>, the <<vol1_spec_sdpi_p_actor_somds_consumer>> can send a {var_label_dev_24_message_resolve} multicast message to all listening <<vol1_spec_sdpi_p_actor_somds_provider>>s. Limited but sufficient information is provided with the message to enable <<vol1_spec_sdpi_p_actor_somds_provider>>s to determine if they match the <<term_somds_provider_uid>> requested by the <<vol1_spec_sdpi_p_actor_somds_consumer>>.
 
@@ -145,7 +145,7 @@ When a <<vol1_spec_sdpi_p_actor_somds_consumer>> sends this message, every recei
 The {var_label_dev_24_message_resolve_match} message is sent as part of the BICEPS _explicit discovery_ protocol in response to an incoming <<vol2_clause_dev_24_message_resolve, {var_label_dev_24_message_resolve}>> message.
 
 Note that the {var_label_dev_24_message_resolve_match} message described in this clause is a generic/abstract concept that can be implemented differently.
-It should not be confused with actual transport message specifications like, e.g. the WS-Discovery ResolveMatch message as described in <<vol2_clause_appendix_mdpws_dev_24>>.
+It should not be confused with actual transport message specifications like, e.g., the WS-Discovery ResolveMatch message as described in <<vol2_clause_appendix_mdpws_dev_24>>.
 
 The {var_label_dev_24_message_resolve_match} message is a uni-cast message that is sent by a <<vol1_spec_sdpi_p_actor_somds_provider>> when an incoming <<vol2_clause_dev_24_message_resolve, {var_label_dev_24_message_resolve}>> message contains a <<payload_dev_24_provider_uid>> that matches the <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<term_somds_provider_uid>>. Limited but sufficient information is provided with the message to enable <<vol1_spec_sdpi_p_actor_somds_consumer>>s to determine a matching <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<payload_dev_24_probe_match_transport_address>>.
 

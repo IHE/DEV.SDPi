@@ -2,11 +2,11 @@
 === SDPi ACM Gateway -- Mapping
 
 ==== Scope
-This chapter defines the mapping from the <<acronym_mdib>> content as defined in this document and its underlying standards, to IHE Alert Communication Management (ACM) profile messages as defined in the <<ref_ihe_pcd_tf_2_2019>>.
+This chapter defines the mapping from the <<acronym_mdib>> content as defined in this document and its underlying standards, to IHE Alert Communication Management (ACM) Profile messages as defined in the <<ref_ihe_pcd_tf_2_2019>>.
 
 The <<actor_somds_acm_gateway>> represents the Alarm Reporter (AR) role of the IHE ACM profile.
 
-The following sections supplement the IHE ACM profile as appropriate. If there are no supplementing definitions, the definitions as described in the <<ref_ihe_pcd_tf_2_2019>> apply.
+The following sections supplement the IHE ACM Profile as appropriate. If there are no supplementing definitions, the definitions as described in the <<ref_ihe_pcd_tf_2_2019>> apply.
 
 ==== Referenced Standards & Profiles
 This section provides an overview about the referenced standards and profiles used in this chapter:
@@ -18,19 +18,19 @@ This section provides an overview about the referenced standards and profiles us
 * <<ref_ieee_11073_10207_2017>>
 
 ==== Private MDC Codes Consideration
-Please refer to general section <<ref_private_coding_system_note>>.
+Please refer to general Section <<ref_private_coding_system_note>>.
 
 ==== HL7 Segment Descriptions
 The following sections refer to the *Appendix B Common Segment Descriptions* of the <<ref_ihe_pcd_tf_2_2019>>.
 
 ===== MSH - Message Header Segment
-Please refer to general section <<ref_gateway_msh_mapping>>.
+Please refer to general Section <<ref_gateway_msh_mapping>>.
 
 ===== PID - Patient Identification Segment
-Please refer to general section <<ref_gateway_pid_mapping>>.
+Please refer to general Section <<ref_gateway_pid_mapping>>.
 
 ===== PV1 - Patient Visit Segment
-Please refer to general section <<ref_gateway_pv1_mapping>>.
+Please refer to general Section <<ref_gateway_pv1_mapping>>.
 
 ===== OBR - Observation Request Segment
 The HL7 Observation Request (OBR) segment requires a mapping from the SDC containment tree and metric data to the OBR segment fields.
@@ -229,11 +229,11 @@ The OBX segments representing the alert event attributes are preceded by up to t
 
 [#ref_acm_containment_tree_mapping]
 ===== Containment Tree Hierarchy Representation
-Please refer to general section <<ref_gateway_obx4_mapping>>.
+Please refer to general Section <<ref_gateway_obx4_mapping>>.
 
 [#ref_acm_equipment_id_mapping]
 ===== Equipment Instance Identifier Mapping
-Please refer to general section <<ref_gateway_obx18_mapping>>.
+Please refer to general Section <<ref_gateway_obx18_mapping>>.
 
 [#ref_acm_obx_device_related_mapping]
 ====== Device-related OBX Segments
@@ -253,7 +253,7 @@ NOTE: There might be up to three device-related OBX segments for the MDS, VMD, a
 .R8058
 [sdpi_requirement#r8058,sdpi_req_level=shall]
 ****
-If a private *<<acronym_mdc>>* code is used for the coding of the SDC device-related element, the identifier shall be mapped as described in section <<ref_private_coding_system_note>>.
+If a private *<<acronym_mdc>>* code is used for the coding of the SDC device-related element, the identifier shall be mapped as described in Section <<ref_private_coding_system_note>>.
 ****
 
 [#ref_tbl_acm_obx_device_related_mapping]
@@ -303,7 +303,7 @@ Note that this field is only required to be set for the MDS and/or the VMD eleme
 
 [#ref_acm_obs_id_mapping,sdpi_level=+1]
 ====== Observation Identifier Mapping
-Please refer to general section <<ref_gateway_obx3_mapping>>.
+Please refer to general Section <<ref_gateway_obx3_mapping>>.
 
 [NOTE]
 ====
@@ -383,21 +383,21 @@ NOTE: The HL7 date & time format differs from the xsd date/time formats and requ
 |update
 |*pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* or *pm:AlertSignalState+++<wbr/>+++/pm:DeterminationTime* for any updates/changes to be reported but does not match any other Alert Event Phase mapping criteria.
 
-Note that the *pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* changes only when the *@Presence* attribute is updated. The gateway has to determine the date/time by itself when other attributes have changed (e.g. alert priority).
+Note that the *pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* changes only when the *@Presence* attribute is updated. The gateway has to determine the date/time by itself when other attributes have changed (e.g., alert priority).
 
 |escalate
 |*pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* which represents the change of the alert priority.
 
 Please refer to <<r8077>>.
 
-Note that the *pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* changes only when the *@Presence* attribute is updated. The gateway has to determine the date/time by itself when other attributes have changed (e.g. alert priority).
+Note that the *pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* changes only when the *@Presence* attribute is updated. The gateway has to determine the date/time by itself when other attributes have changed (e.g., alert priority).
 
 |deescalate
 |*pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* which represents the change of the alert priority.
 
 Please refer to <<r8077>>.
 
-Note that the *pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* changes only when the *@Presence* attribute is updated. The gateway has to determine the date/time by itself when other attributes have changed (e.g. alert priority).
+Note that the *pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* changes only when the *@Presence* attribute is updated. The gateway has to determine the date/time by itself when other attributes have changed (e.g., alert priority).
 
 |reset
 |*pm:AlertSignalState+++<wbr/>+++/pm:DeterminationTime* which represents the end of a latched alert event state.
@@ -412,7 +412,7 @@ The event identification mapping for a physiological alert is defined in table <
 .R8063
 [sdpi_requirement#r8063,sdpi_req_level=shall]
 ****
-If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded element value, the identifier shall be mapped as described in section <<ref_private_coding_system_note>>.
+If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded element value, the identifier shall be mapped as described in Section <<ref_private_coding_system_note>>.
 ****
 
 [#ref_tbl_acm_obx_event_phy_mapping]
@@ -497,7 +497,7 @@ The event identification mapping for a technical alert is defined in table <<ref
 .R8064
 [sdpi_requirement#r8064,sdpi_req_level=shall]
 ****
-If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded element value, the identifier shall be mapped as described in section <<ref_private_coding_system_note>>.
+If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded element value, the identifier shall be mapped as described in Section <<ref_private_coding_system_note>>.
 ****
 
 [#ref_tbl_acm_obx_event_tec_mapping]
@@ -664,7 +664,7 @@ The source identification mapping for a technical alert is defined in table <<re
 .R8069
 [sdpi_requirement#r8069,sdpi_req_level=shall]
 ****
-If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded element value, the identifier shall be mapped as described in section <<ref_private_coding_system_note>>.
+If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded element value, the identifier shall be mapped as described in Section <<ref_private_coding_system_note>>.
 ****
 
 [#ref_tbl_acm_obx_source_tec_mapping]
@@ -849,12 +849,12 @@ Note that for latching alert signals, the Alert State (see also <<ref_tbl_alert_
 |Any updates/changes to be reported but does not match any other Alert Event Phase mapping criteria.
 
 |escalate
-|Alert Priority (see also <<ref_acm_alert_priority_obx_mapping>>) changed to a higher priority; e.g. from *"PM"* to *"PH"*.
+|Alert Priority (see also <<ref_acm_alert_priority_obx_mapping>>) changed to a higher priority; e.g., from *"PM"* to *"PH"*.
 
 Please refer to <<r8078>>.
 
 |deescalate
-|Alert Priority (see also <<ref_acm_alert_priority_obx_mapping>>) changed to a lower priority; e.g. from *"PH"* to *"PM"*.
+|Alert Priority (see also <<ref_acm_alert_priority_obx_mapping>>) changed to a lower priority; e.g., from *"PH"* to *"PM"*.
 
 Please refer to <<r8078>>.
 

@@ -45,7 +45,7 @@ To that end, the supplement includes updates to all (3) IHE DEV TF volumes, incl
 *TF-1  Profiles*
 
 * General overview of the SDPi architectural approach & integrated set of profiles
-* Profile specific sections
+* Profile-specific sections
 * Related appendices, for example the integration of this family of SDPi profiles with other sources of requirements - use cases or reference standards
 
 *TF-2  Transactions*
