@@ -73,7 +73,6 @@ For the *initial alert event announcement message*, a <<actor_somds_acm_gateway>
 [%collapsible]
 ====
 NOTE: This identifer consists of the *pm:AlertConditionState/@DescriptorHandle*  plus the *SequenceId* plus the *pm:AlertConditionState/@StateVersion* of the state report.
-
 ====
 
 .Examples
@@ -100,7 +99,6 @@ For the *subsequent alert event messages for the same alert event*, a <<actor_so
 [%collapsible]
 ====
 NOTE: This identifier is usually defined by the gateway.
-
 ====
 
 .Examples
@@ -246,7 +244,6 @@ A <<actor_somds_acm_gateway>> shall export device-related OBX segments, which de
 [%collapsible]
 ====
 NOTE: There might be up to three device-related OBX segments for the MDS, VMD, and CHANNEL dependent on the specific device's containment tree. The general mapping of the device-related OBX segments is defined in table <<ref_tbl_acm_obx_device_related_mapping>>.
-
 ====
 ****
 
@@ -333,7 +330,6 @@ A <<actor_somds_acm_gateway>> shall export an Event Identification OBX segment w
 [%collapsible]
 ====
 NOTE: The mapping differs for physiological alert events and technical/advisory alert events (please refer also to <<ref_tbl_acm_obx_alert_type_mapping>> for further information).
-
 ====
 ****
 
@@ -360,7 +356,6 @@ NOTE: This either applies to a change of the *pm:AlertConditionState* or the *pm
 NOTE: The date/time to be set in the OBX-14 field relates to the alert event phase. <<ref_tbl_acm_obx14_alert_phase_mapping>> defines the date/time mapping per alert event phase.
 
 NOTE: The HL7 date & time format differs from the xsd date/time formats and requires a mapping accordingly (please refer to <<ref_expl_dt_mapping>> for further information).
-
 ====
 ****
 
@@ -1072,7 +1067,6 @@ A <<actor_somds_acm_gateway>> shall map the SDC *pm:AlertConditionDescriptor/@Pr
 [%collapsible]
 ====
 NOTE: The mapping is defined in table <<ref_tbl_acm_obx_alert_priority_mapping>>.
-
 ====
 
 .Examples

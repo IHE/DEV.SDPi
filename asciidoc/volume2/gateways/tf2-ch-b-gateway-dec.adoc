@@ -320,7 +320,6 @@ A <<actor_somds_dec_gateway>> shall export continuously (periodically) measured 
 [%collapsible]
 ====
 NOTE: It is up to the <<actor_somds_dec_gateway>> how the export interval is defined. The interval might be a fixed interval of e.g., 30 seconds, or a configurable interval ranging e.g., between 10 seconds and 2 minutes.
-
 ====
 ****
 
@@ -334,7 +333,6 @@ A <<actor_somds_dec_gateway>> shall set the OBR-7 field to the start date and ti
 [%collapsible]
 ====
 NOTE: If, for example, the export interval is set to 30 seconds, the <<actor_somds_dec_gateway>> will export HL7 messages every 30 seconds with the OBR-7 field set to start date and time of the interval e.g., *20231030155930*, *20231030160000*, *20231030160030*, and so on.
-
 ====
 ****
 
@@ -348,7 +346,6 @@ A <<actor_somds_dec_gateway>> shall export the latest metric value of all contin
 [%collapsible]
 ====
 NOTE: The OBR-7 field is set to the start time of the interval. The individual periodic metric value *@DeterminationTime* is basically ignored, but has to be within the time boundaries of the current export interval.
-
 ====
 ****
 
@@ -364,7 +361,6 @@ For exporting episodic metric values and the absence of any continuously measure
 NOTE: Episodic metric values are usually exported along with the periodic metric values in the same export intervals. However, if a device does not provide periodic metric values in the current export interval, episodic metric values are exported in current export interval without periodic metric values.
 
 NOTE: The *pm:AbstractMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@DeterminationTime* of an episodic metric value is set in the OBX-14 field and will override the timestamp defined in the OBR-7 field.
-
 ====
 ****
 

@@ -69,7 +69,7 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall periodically send Hello messag
 .Notes
 [%collapsible]
 ====
-The random interval between 60 seconds and 120 seconds aims to prevent <<vol1_spec_sdpi_p_actor_somds_provider>>s from congesting the network by sending recurring Hello messages at the same time.
+NOTE: The random interval between 60 seconds and 120 seconds aims to prevent <<vol1_spec_sdpi_p_actor_somds_provider>>s from congesting the network by sending recurring Hello messages at the same time.
 ====
 ****
 
