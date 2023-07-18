@@ -220,7 +220,7 @@ The HL7 V2.6 messaging standard only supports a "Administrative Sex" field in th
 
 [none]
 . *STANDARDIZATION NOTE:*  There is active work to finalize the informatics standards related to sex and gender, including within HL7, SNOMED, ISO/TC215 and in other standards development organizations.
-Once this standardization is complete, especially within HL7 FHIR and Version 2, the SDC standards and the SDPi profiles and gateway specifications will be harmonized.
+Once this standardization is complete, especially within HL7 FHIR and Version 2, the SDC standards and the SDPi Profiles and gateway specifications will be harmonized.
 Until that time, the mappings below represent a "best effort" given the status of the underlying standards.
 
 See related note in <<vol3_clause_gender>>.
@@ -229,7 +229,7 @@ The following list a couple of options and any comments from the reviewers are h
 
 . *No mapping of sex/gender information at all*: the information of the patient's sex and gender shall not be mapped at all. Pros: no risk of mapping incorrect information. Cons: no information about the sex set at the device which may have influenced certain clinical calculations and algorithms.
 
-. *Map the "sex for clinical use" to the PID-8 Administrative Sex field*: in the context of a PoC device the sex for clinical use is the most important information for clinical calculations and algorithm. Therefore, this information shall be mapped to the PID-8 Administrative Sex field - even this is not necessarily the administrative gender. In addition, the Administrative Sex/Gender may be mapped to a separate OBX segment (only possible for DEC profile). Pros: this is backward compatible to the existing IHE PCD profiles. Cons: the information are not set in the correct field and may lead to wrong interpretations.
+. *Map the "sex for clinical use" to the PID-8 Administrative Sex field*: in the context of a PoC device the sex for clinical use is the most important information for clinical calculations and algorithm. Therefore, this information shall be mapped to the PID-8 Administrative Sex field - even this is not necessarily the administrative gender. In addition, the Administrative Sex/Gender may be mapped to a separate OBX segment (only possible for DEC profile). Pros: this is backward compatible to the existing IHE PCD Profiles. Cons: the information are not set in the correct field and may lead to wrong interpretations.
 
 . *Map the "sex for clinical use" in a separate OBX segment (only possible for the DEC Profile but not for ACM) and the Administrative Sex/Gender to the PID-8 Administrative Sex field*: the administrative sex/gender information is mapped to the correctly named PID-8 "Administrative Sex" field, and the sex for clinical use is provided in a separate OBX segment in the IHE DEC Profile conform export. The sex for clinical use information will be not available in the ACM Profile conform export. Pros: the information are mapped to the correct fields. Cons: this mapping might not be backward compatible to the existing IHE DEV/PCD profile actors (reporter/consumer). Information of the sex for clinical use may get lost in some profiles such as ACM.
 

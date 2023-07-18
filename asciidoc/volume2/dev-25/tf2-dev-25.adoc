@@ -9,7 +9,7 @@ include::tf2-dev-25-summary.adoc[]
 
 ==== Actor Roles
 
-.Actor Roles DEV-25
+.Actor Roles [DEV-25]
 [cols="1,2"]
 |===
 |Actor |Roles
@@ -28,7 +28,7 @@ include::tf2-dev-25-summary.adoc[]
 * <<ref_ieee_11073_10207_2017>> Section 7.3 Service Model
 
 ==== Messages
-.Message Interaction Diagram DEV-25
+.Message Interaction Diagram [DEV-25]
 [plantuml#vol2_figure_dev_25_sequence, target=puml-dev-25-sequence, format=svg, 40width=100%]
 
 ....

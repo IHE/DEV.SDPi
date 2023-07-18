@@ -10,7 +10,7 @@ The following sex & gender harmonization policy will be taken in this and future
 
 [none]
 . *STANDARDIZATION NOTE:*  There is active work to finalize the informatics standards related to sex and gender, including within HL7, SNOMED, ISO/TC215 and in other standards development organizations.
-Once this standardization is complete, especially within HL7 FHIR and Version 2, the SDC standards and the SDPi profiles and gateway specifications will be harmonized.
+Once this standardization is complete, especially within HL7 FHIR and Version 2, the SDC standards and the SDPi Profiles and gateway specifications will be harmonized.
 Until that time, the mappings below represent a "best effort" given the status of the underlying standards.
 
 See the related note on sex and gender in the gateway mappings specified in <<vol2_appendix_b_gateways>>.

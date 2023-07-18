@@ -85,7 +85,7 @@ One of the key challenges for implementing this standard, though, is what might 
 This is the technology "hand off" space between the left side of the lifecycle -- Design and development phase, where key responsibility is by each of the "Accountable Manufacturer" organizations, and the right side of the lifecycle -- Implementation phase & Clinical use phase, where key responsibility is on the Accountable Healthcare Delivery Organization (HDO).
 Though this reads well in the standards and the model organizes everything in a clear fashion, operationalizing this in real world use remains a Sisyphean effort, primarily due to the amount of expertise, time and resources needed to effectively implement the SES standards as part of normal operating business in HDOs.
 
-To address this <<acronym_ses>> implementation problem, the SDPi profiles:
+To address this <<acronym_ses>> implementation problem, the SDPi Profiles:
 
 . Leverage the ISO/IEEE 11073-1070x <<term_participant_key_purposes>> standards, which represent a consensus standard for risk management of technologies that are implemented in that left-right gap on the Temple model;
 . <<term_implementation_conformance_statement>> tables from each of these <<acronym_pkp>> standards is included in <<vol1_appendix_b_references>> of this specification, with indication as to whether, how and where each requirement is addressed;
@@ -180,7 +180,7 @@ a| *SDPi Supplement Version Note*:  This section intentionally left blank for th
 [#vol1_clause_sdpi_requirements_modeling_integration]
 === SDPi Requirements Modeling & Integration
 
-As pointed out above, requirements interoperability (RI) based on robust model-based metadata is a core, innovative aspect of this SDPi profiles specification.
+As pointed out above, requirements interoperability (RI) based on robust model-based metadata is a core, innovative aspect of this SDPi Profiles specification.
 Given the ultimate intent to realize this description as a _Model Centric (MC) single-source-of-truth, computable, simulatable, verifiable and validatable system of systems interoperability specification_, and recognizing that it will take a significant transition period from a document-centric approach to a model-centric approach, a simplified requirements model is provided below but is aligned with the <<ref_omg_sysml_2_0_spec>> Section 7.20 Requirements language.
 Of course, that specification provides for significantly more detailed and complex modeling, the general constructs may be used in this document to start the transition toward that model.
 Note that SysML 2.0 also better supports model interoperability (tool-independent model exchange) and _<<term_model_based_systems_engineering>>_ (see https://en.wikipedia.org/wiki/Model-based_systems_engineering[MBSE Wikipedia article and references]), as well as the <<ref_ihe_eu_experience_2021_presentation_cooper_schlichting>> for an overview presentation of MBSE, MedTech system V&V, and IHE Conformity Assessment.

@@ -14,7 +14,7 @@ include::tf2-dev-29-summary.adoc[]
 
 ==== Actor Roles
 
-.Actor Roles {var_transaction_id}
+.Actor Roles [{var_transaction_id}]
 [cols="1,2"]
 |===
 |Actor |Roles
@@ -33,7 +33,7 @@ include::tf2-dev-29-summary.adoc[]
 
 ==== Messages
 
-.Message Interaction Diagram {var_transaction_id}
+.Message Interaction Diagram [{var_transaction_id}]
 [plantuml#vol2_figure_dev_29_sequence, target=puml-dev-29-sequence, format=svg, 40width=100%]
 ....
 include::../../plantuml/vol2-figure-dev-29-sequence.puml[]
@@ -42,7 +42,7 @@ include::../../plantuml/vol2-figure-dev-29-sequence.puml[]
 
 // ---------- Notification ---------
 
-CAUTION: Transaction {var_transaction_id} supports a specialized instance of the general <<vol2_clause_dev_27_message_notification>> message, based on payload content and trigger events.
+CAUTION: Transaction [{var_transaction_id}] supports a specialized instance of the general <<vol2_clause_dev_27_message_notification>> message, based on payload content and trigger events.
 
 [#vol2_clause_dev_29_message_notification]
 ===== {var_label_dev_29_message_notification} Message

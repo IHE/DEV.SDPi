@@ -54,7 +54,7 @@ In this version, the content is added as 2.3.1, and then the profiles as 2.3.10 
 [#vol1_clause_sdpi_overview_framework]
 ==== Service-oriented Device Point-of-care Interoperability (SDPi) – Overview & Framework
 
-The Service-oriented Device Point-of-care Interoperability (SDPi) profiles are built upon a foundation of standards and profiles from <<acronym_hl7>>, <<acronym_ieee>>, IHE and other organizations.  An overview of the profiles and their relationships is provided in <<figure_sdpi_profiles_foundational_standards>>.
+The Service-oriented Device Point-of-care Interoperability (SDPi) Profiles are built upon a foundation of standards and profiles from <<acronym_hl7>>, <<acronym_ieee>>, IHE and other organizations.  An overview of the profiles and their relationships is provided in <<figure_sdpi_profiles_foundational_standards>>.
 
 .IHE SDPi Profiles & Foundational Standards
 [#figure_sdpi_profiles_foundational_standards]
@@ -66,7 +66,7 @@ There is a particular challenge with SDPi profiling of <<acronym_sdc>> that resu
 . *__How to represent a <<acronym_soa>>-based architecture supporting an interactive <<term_plug_and_trust>> device-to-device (multi-way, M:N) interoperability specification using established IHE technical framework constructs? __*
 
 NOTE: The arrows indicate reference relationships and not specializations.
-For example, The three SDPi-R, -A and -xC profiles refer to the foundational SDPi-P profile.
+For example, The three SDPi-R, -A and -xC Profiles refer to the foundational SDPi-P profile.
 This is achieved by the use of IHE "grouped actors".
 Or IHE "gateway" actors include mappings to the foundational, non-SDC standards.
 
@@ -78,7 +78,7 @@ The above figure illustrates how this balance was achieved, including:
 .. By separating SDPi into four separate but integrated profiles, the complexity of the <<term_plug_and_trust>> system-to-system interactions + the optionality of real-world systems is better managed.
 . *Gateway Actors*
 [none]
-.. The profiles are built upon a solid foundation of existing standards from various <<acronym_sdo>>s and that are currently implemented for device information exchange, albeit in different use contexts such as healthcare enterprise / <<acronym_ehr>> integration.
+.. The Profiles are built upon a solid foundation of existing standards from various <<acronym_sdo>>s and that are currently implemented for device information exchange, albeit in different use contexts such as healthcare enterprise / <<acronym_ehr>> integration.
 .. The actors provide defined mappings from SDPi transactions and semantics to those of other standards and standards profiles (e.g., IHE DEC or ACM).
 .. Gateways can be bi-directional, receiving information from non-SDPi enabled systems, such as patient demographics information from an <<acronym_ehr>>.
 .. For a more complete "Big Picture" perspective, see the discussion in <<vol1_clause_appendix_a_requirements_from_narratives_to_pnt_interfaces>>.
@@ -89,7 +89,7 @@ The above figure illustrates how this balance was achieved, including:
 .. These standards represent shared or consensus risk management requirements (e.g., risk mitigations) that together address how to implement <<acronym_ses>> interoperable *medical device* technologies.
 .. The diagram illustrates how the <<acronym_sdc>> Core Standards provide for basic healthcare connectivity; whereas the <<acronym_pkp>> standards add a requirements layer for devices that have a *_medical interoperability purpose_*.
 
-"**PRAC**tical" Device Interoperability may be a bit "cute"; however, it does map to the (4) profiles, which together provide a practical, pragmatic way toward genuine <<acronym_pnt>> interoperability:
+"**PRAC**tical" Device Interoperability may be a bit "cute"; however, it does map to the (4) Profiles, which together provide a practical, pragmatic way toward genuine <<acronym_pnt>> interoperability:
 
 [none]
 . P -> SDPi-Plug-and-trust
@@ -98,7 +98,7 @@ The above figure illustrates how this balance was achieved, including:
 . C -> SDPi-xControl
 
 It should be noted that the _primary use context_ for SDPi-enabled technologies is high acuity points of care, namely Operating Rooms, ICU beds, emergency beds, etc.
-Within this context, the core focus of these profiles is direct <<acronym_d2d>> interactions at the point of care.
+Within this context, the core focus of these Profiles is direct <<acronym_d2d>> interactions at the point of care.
 Gateway actors provide integration with systems beyond the scope of the acute bedside context, typically though not necessarily using other protocols.
 This <<acronym_d2d>> is differentiated with the current implementation reality where devices use proprietary protocols to talk with their manufacturer's gateway server, requiring a level of indirection (server-to-server integration), and the attendant performance, quality and capability limitations.
 
@@ -110,7 +110,7 @@ Within the framework of the SDPi architecture, the Plug-and-Trust ([[acronym_sdp
 The primary use context is acute care beds (e.g., ICU, operating room, emergency department), though it may be used in other healthcare contexts.
 This specification provides for plug-and-trust (secured) communication for healthcare devices, systems and applications, regardless of whether they are "regulated" medical devices.
 That said, the SDPi-P Profile fully supports the safety and security requirements specified in the <<ref_ieee_11073_10700_2022>> Base <<acronym_pkp>> standard.
-Other SDPi profiles provide direct support for _interoperable medical systems_.
+Other SDPi Profiles provide direct support for _interoperable medical systems_.
 Taking this approach allows non-medical technology to interact with other SDPi-enabled systems but without the added burden of having to support the more rigorous requirements associated with technology intended for a medical purpose (e.g., additional risk control mitigation measures).
 
 This baseline profile supports the *_core_* functionality needed by all participating systems.
@@ -143,7 +143,7 @@ Profile options are provided for additional capabilities that may be required to
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  For SDPi 1.1, the SDPi-xC Profile is provided for completeness and to show the general direction of the family of SDPi profiles.
+a| *SDPi Supplement Version Note*:  For SDPi 1.1, the SDPi-xC Profile is provided for completeness and to show the general direction of the family of SDPi Profiles.
 It is *_not part of the capabilities specified for 1.1_* and even basic controls will not be added until SDPi 2.0 or later.
 |===
 
