@@ -9,7 +9,7 @@ autonumber
 participant "$str_somds_consumer" as consumer
 participant "$str_somds_provider" as provider
 
-== SDPi [DEV-39] Publish Medical Alert Update  ==
+==SDPi Publish Medical Alert Update [DEV-39]==
 
 
 consumer <<- provider: Notification(EpisodicAlertReport)

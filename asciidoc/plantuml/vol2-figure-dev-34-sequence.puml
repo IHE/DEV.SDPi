@@ -9,7 +9,7 @@ autonumber
 participant "$str_somds_consumer" as consumer
 participant "$str_somds_provider" as provider
 
-==SDPi [DEV-34] Announce Network Departure==
+==SDPi Announce Network Departure [DEV-34]==
 |||
 group unsecured
     provider ->> consumer: Bye(Provider UID)

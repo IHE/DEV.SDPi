@@ -9,7 +9,7 @@ autonumber
 participant "$str_somds_consumer" as consumer
 participant "$str_somds_provider" as provider
 
-== SDPi [DEV-29] Publish BICEPS Update Reports  ==
+==SDPi Publish BICEPS Update Reports [DEV-29]==
 opt
 consumer <<- provider: Notification(EpisodicAlertReport)
 end

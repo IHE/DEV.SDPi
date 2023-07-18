@@ -9,7 +9,7 @@ autonumber
 participant "$str_somds_consumer" as consumer
 participant "$str_somds_provider" as provider
 
-==SDPi [DEV-23] Announce Network Presence==
+==SDPi Announce Network Presence [DEV-23]==
 |||
 group unsecured
     provider ->> consumer: Hello(Provider UID, Discovery Scope)
