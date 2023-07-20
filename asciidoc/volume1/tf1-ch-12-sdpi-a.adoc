@@ -312,7 +312,7 @@ include::../plantuml/vol1-figure-sdpi-a-delegation-example-sequence-diagram.puml
 a| *SDPi Supplement Version Note*:  This section is left intentionally blank to indicate capabilities that will be added in a future version of the SDPi Supplement.
 
 This option will enable <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> systems to safely and reliably receive from <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> systems user (clinician) acknowledgement of previously reported alert conditions.
-This option will enable the [DEV-43] <<transaction_name_update_alert_acknowledgement_status>> transaction.
+This option will enable the <<transaction_name_update_alert_acknowledgement_status>> [DEV-43] transaction.
 
 |===
 
@@ -327,7 +327,7 @@ This option will enable the [DEV-43] <<transaction_name_update_alert_acknowledge
 a| *SDPi Supplement Version Note*:  This section is left intentionally blank to indicate capabilities that will be added in a future version of the SDPi Supplement.
 
 This option will enable <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> systems to receive [DEV-04]/[PCD-04] transactions from an ACM Alert Manager and then act as a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> to communicate the signals to <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> systems
-This option will enable the <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> to respond to [DEV-38] <<transaction_name_establish_medical_alert_exchange>> and [DEV-40] <<transaction_name_retrieve_medical_alert_status>> transactions, and to initiate [DEV-39] <<transaction_name_publish_medical_alert_update>> transactions.
+This option will enable the <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> to respond to <<transaction_name_establish_medical_alert_exchange>> [DEV-38] and <<transaction_name_retrieve_medical_alert_status>> [DEV-40] transactions, and to initiate <<transaction_name_publish_medical_alert_update>> [DEV-39] transactions.
 
 |===
 

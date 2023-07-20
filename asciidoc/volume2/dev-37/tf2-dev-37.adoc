@@ -41,7 +41,7 @@ Note that there is no particular get operation for retrieving medical alert stat
 Thus, the generic GetMdib/GetMdibResponse mechanisms are described here.
 
 :var_duplicated_transaction: {var_transaction_id}
-:var_dupicates_list: DEV-30 (<<vol2_clause_dev_30>>)
+:var_dupicates_list: [DEV-30] (<<vol2_clause_dev_30>>)
 include::../dev-duplicate-disclaimer.adoc[]
 
 [#vol2_clause_dev_37_retrieve_medical_data_ses]
