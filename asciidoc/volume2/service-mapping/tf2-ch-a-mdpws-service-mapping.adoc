@@ -12,6 +12,7 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall at least provide the port type
 [%collapsible]
 ====
 NOTE: According to <<acronym_biceps>>, the GET SERVICE is the only mandatory service to be implemented. This specification extends the list of mandatory services to increase interoperability between <<vol1_spec_sdpi_p_actor_somds_participant>>s.
+
 NOTE: All port types of SDC are {uri_sdc_wsdl}[available for download].
 
 NOTE: Other port types are currently out of scope of this specification and may be added in a future revision.

@@ -35,7 +35,7 @@ Content-Type: text/xml; charset=UTF-8
 Content-Encoding: gzip
 ----
 
-The HTTP server decided to encode the response with the gzip compression. Note that servers are not required to actually compress (e.g. due to load conditions or unknown algorithms they are entitled to answer with identity encoding).
+The HTTP server decided to encode the response with the gzip compression. Note that servers are not required to actually compress (e.g., due to load conditions or unknown algorithms they are entitled to answer with identity encoding).
 
 ====
 ****

@@ -23,7 +23,7 @@ The following BICEPS containment tree represents a highly-simplified physiologic
 include::../plantuml/vol3-figure-biceps-content-module-physiomon.puml[]
 ....
 
-The following XML snippet profiles BICEPS semantics in line with the containment tree shown in <<vol3-figure-biceps-content-module-physiomon>>. The snippet focuses on the descriptive part of the MDIB file and, more specifically, on the VMDs / Channels / Metrics substructure (i.e. the leftmost branch of <<vol3-figure-biceps-content-module-physiomon>>):
+The following XML snippet profiles BICEPS semantics in line with the containment tree shown in <<vol3-figure-biceps-content-module-physiomon>>. The snippet focuses on the descriptive part of the MDIB file and, more specifically, on the VMDs / Channels / Metrics substructure (i.e., the leftmost branch of <<vol3-figure-biceps-content-module-physiomon>>):
 
 .BICEPS MDIB snippet of physiologic monitor describing VMDs / Channels / Metrics
 [%collapsible]

@@ -14,7 +14,7 @@ These known limitations include:
 
 
 . The content is scoped per the *_SDPi 1.1 version capabilities specification_* (see https://github.com/IHE/DEV.SDPi/wiki/SDPi-Editorial-Planning-and-Versions#sdpi-version-11-detail---[wiki article "SDPi Version 1.1 (Detail)"]), though future capabilities may be included in a Version Note
-. This supplement includes (4) SDPi profiles, though the typical IHE supplement is organized for a single profile; as a result, some adjustments have been made, especially in the supplement overview section where there is a general SDPi overview and then basic overviews for each of the profiles; challenging areas include profile "options" where there are FOUR sections vs. one; it is a work in progress and feedback is appreciated, especially to enhance clarity
+. This supplement includes (4) SDPi Profiles, though the typical IHE supplement is organized for a single profile; as a result, some adjustments have been made, especially in the supplement overview section where there is a general SDPi overview and then basic overviews for each of the Profiles; challenging areas include profile "options" where there are FOUR sections vs. one; it is a work in progress and feedback is appreciated, especially to enhance clarity
 . *Open / Closed Issues tables* -- for SDPi 1.1 the approach for the open / closed issues section has been integrated with the Github Issues that are related to this release; it is expected that this automation will continue to evolve in subsequent releases;
 . *Requirements boxes* (e.g., "R1234") have been added especially in TF-2, with some also part of TF-1 and TF-3; this is an initial approach that *_will be significantly expanded in future versions of the supplement_*; an initial approach is provided in <<vol1_clause_sdpi_requirements_modeling_integration>>, with discussion related to how it will be expanded in future versions of the supplement;
 . *_<<term_safe_effective_secure>> Sections_* (see <<vol1_clause_appendix_a_ses_considerations_section_template>>) are included in the specification; however, their use and content will be significantly extended in SDPi 1.x and subsequent versions;
@@ -45,8 +45,8 @@ To that end, the supplement includes updates to all (3) IHE DEV TF volumes, incl
 *TF-1  Profiles*
 
 * General overview of the SDPi architectural approach & integrated set of profiles
-* Profile specific sections
-* Related appendices, for example the integration of this family of SDPi profiles with other sources of requirements - use cases or reference standards
+* Profile-specific sections
+* Related appendices, for example the integration of this family of SDPi Profiles with other sources of requirements - use cases or reference standards
 
 *TF-2  Transactions*
 

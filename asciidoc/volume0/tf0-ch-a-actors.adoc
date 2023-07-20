@@ -6,7 +6,7 @@
 [%autowidth]
 [cols="1"]
 |===
-|Add the following _*new or modified*_ actors to the IHE Technical Frameworks General Introduction https://profiles.ihe.net/GeneralIntro/ch-A.html[Appendix A].
+|Add the following *_new or modified_* actors to the IHE Technical Frameworks General Introduction https://profiles.ihe.net/GeneralIntro/ch-A.html[Appendix A].
 |===
 
 ////

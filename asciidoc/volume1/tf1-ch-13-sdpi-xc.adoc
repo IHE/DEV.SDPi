@@ -7,7 +7,7 @@
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*: This SDPi-xC (External Control) profile section is generally out-of-scope for the SDPi 1.1 version (see https://github.com/IHE/DEV.SDPi/wiki/SDPi-Editorial-Planning-and-Versions#sdpi-version-11-detail---[wiki article "SDPi Version 1.1 (Detail)"]); however, it is provided here to indicate the intended direction of the SDPi profiles, with details being added in subsequent versions.  Depending on capabilities, some very basic controls may need to be provided in 2023 as part of the 1.x or 2.0 versions, especially around external adjustment of settings (e.g., alert limits or to trigger a blood-pressure reading).
+a| *SDPi Supplement Version Note*: This SDPi-xC (External Control) Profile Section is generally out-of-scope for the SDPi 1.1 version (see https://github.com/IHE/DEV.SDPi/wiki/SDPi-Editorial-Planning-and-Versions#sdpi-version-11-detail---[wiki article "SDPi Version 1.1 (Detail)"]); however, it is provided here to indicate the intended direction of the SDPi Profiles, with details being added in subsequent versions.  Depending on capabilities, some very basic controls may need to be provided in 2023 as part of the 1.x or 2.0 versions, especially around external adjustment of settings (e.g., alert limits or to trigger a blood-pressure reading).
 
 |===
 
@@ -48,26 +48,26 @@ image::../images/vol1-diagram-sdpi-xc-actor.svg[]
 .^| <<transaction_name_manage_medical_external_control>> (_deferred_)
 .^| Responder
 .^| R
-| DEV-44 Deferred to SDPi 3.0 or later
+| [DEV-44] Deferred to SDPi 3.0 or later
 // <<vol2_clause_dev_44>>
 
 | <<transaction_name_invoke_medical_control_services>> (_deferred_)
 | Responder
 | R
-| DEV-45 Deferred to SDPi 3.0 or later
+| [DEV-45] Deferred to SDPi 3.0 or later
 // <<vol2_clause_dev_45>>
 
 .2+| <<vol1_spec_sdpi_xc_actor_somds_medical_control_consumer>>
 .^| <<transaction_name_manage_medical_external_control>> (_deferred_)
 .^| Initiator
 .^| R
-| DEV-44 Deferred to SDPi 3.0 or later
+| [DEV-44] Deferred to SDPi 3.0 or later
 // <<vol2_clause_dev_44>>
 
 | <<transaction_name_invoke_medical_control_services>> (_deferred_)
 | Initiator
 | R
-| DEV-45 Deferred to SDPi 3.0 or later
+| [DEV-45] Deferred to SDPi 3.0 or later
 // <<vol2_clause_dev_45>>
 
 |===
@@ -168,7 +168,7 @@ Note that this specification extends the concepts established in the base <<vol1
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  _*For SDPi 1.1*_, no use cases have been included that provide functional requirements for device external control.  These will be added to a future version of the SDPi supplement.
+a| *SDPi Supplement Version Note*:  For *_SDPi 1.1_*, no use cases have been included that provide functional requirements for device external control.  These will be added to a future version of the SDPi supplement.
 Therefore, with this release of the SDPi specification, this section remains incomplete.
 |===
 
@@ -182,16 +182,16 @@ Therefore, with this release of the SDPi specification, this section remains inc
 ==== SES General Considerations
 Requirements from the <<ref_iso_81001_1_2021>>, <<ref_iec_80001_1_2021>>, and related standards should be fully applied to this technical framework element.
 
-For additional guidance, see section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
+For additional guidance, see Section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
 
 ==== Safety Requirements & Considerations
-No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
+No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 ==== Effectiveness Requirements & Considerations
-No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
+No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 ==== Security Requirements & Considerations
-No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P profile (see <<vol1_clause_appendix_a_ses_considerations_section_template>>), and those specified in the _<<acronym_ses>> General Considerations_ section above.
+No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P Profile (see <<vol1_clause_appendix_a_ses_considerations_section_template>>), and those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 === SDPi-xC Cross Profile Considerations
 No additional cross profile considerations have been identified.

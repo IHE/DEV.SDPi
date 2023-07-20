@@ -154,7 +154,7 @@ In addition to specific device specializations (see <<vol3_clause_device_special
 [cols="1"]
 |===
 a| *SDPi Supplement Version Note*:  The <<acronym_sdc>> standards community is evaluating the use of safety class elements in the BICEPS specification (see <<ref_ieee_11073_10207_2017>>), and the related https://github.com/IHE/DEV.SDPi/issues/11[Github Issue #11 _Topic: SDPi-xC with Mixed Device Safety Classes_].
-The result of that discussion will directly impact the BICEPS SES Considerations section below.
+The result of that discussion will directly impact the BICEPS SES Considerations Section below.
 
 For this version of the specification, the following wording has been suggested:
 
@@ -167,19 +167,19 @@ For this version of the specification, the following wording has been suggested:
 ====== SES General Considerations
 Requirements from the <<ref_iso_81001_1_2021>>, <<ref_iec_80001_1_2021>>, and related standards should be fully applied to this technical framework element.
 
-For additional guidance, see section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
+For additional guidance, see Section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
 
 ====== Safety Requirements & Considerations
-No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
+No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 ====== Effectiveness Requirements & Considerations
-No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
+No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 ====== Security Requirements & Considerations
 Secure exchange of content between medical devices is a foundational requirement for all system-to-system interactions.
 Though management of secure connections is generally a technical issue and not one specific to semantic content, close consideration should be made to ensure that information exchanged in potentially unsecured contexts does not pose an unacceptable risk.
 
-Additional security requirements and considerations may be identified in the  <<acronym_sdpi_p>> profile, and those specified in the _<<acronym_ses>> General Considerations_ section above.
+Additional security requirements and considerations may be identified in the  <<acronym_sdpi_p>> profile, and those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 // 8.3.2.
 ===== BICEPS Conventions for device specialization content modules

@@ -59,10 +59,10 @@ Therefore, in order to prevent the network congestion from Probe / ProbeMatch me
 ****
 A <<vol1_spec_sdpi_p_actor_somds_consumer>> should not periodically send Probe messages.
 
-.Note
+.Notes
 [%collapsible]
 ====
-If Probe messages are sent periodically, a rationale needs to be provided, since <<vol1_spec_sdpi_p_actor_somds_provider>>s send Hello messages periodically.
+NOTE: If Probe messages are sent periodically, a rationale needs to be provided, since <<vol1_spec_sdpi_p_actor_somds_provider>>s send Hello messages periodically.
 ====
 ****
 
@@ -71,10 +71,10 @@ If Probe messages are sent periodically, a rationale needs to be provided, since
 ****
 A <<vol1_spec_sdpi_p_actor_somds_consumer>> may re-send Probe messages if demanded by a dedicated user interaction.
 
-.Note
+.Notes
 [%collapsible]
 ====
-A dedicated user interaction can be a button press on a <<vol1_spec_sdpi_p_actor_somds_consumer>>'s display or any other manual activation.
+NOTE: A dedicated user interaction can be a button press on a <<vol1_spec_sdpi_p_actor_somds_consumer>>'s display or any other manual activation.
 ====
 ****
 

@@ -8,7 +8,7 @@ autonumber
 participant "$str_sdpi_p_somds_cons" as sdpi_somds_consumer
 participant "$str_sdpi_p_somds_prov" as sdpi_somds_provider
 
-== SDPi [DEV-23]  Announce Network Presence ==
+==SDPi Announce Network Presence [DEV-23]==
 |||
 group unsecured
 '    sdpi_somds_provider -> sdpi_somds_consumer: SDC: Hello(EndpointReference, Types, Scopes, [XAddrs])

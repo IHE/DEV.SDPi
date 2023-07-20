@@ -82,7 +82,7 @@ class ReferenceSanitizerPostprocessor(
 
             val anchorText = (encodedLabel?.let { decodeLabel(it) }) ?: item.refText
             when (item.source) {
-                LabelSource.SECTION -> anchor.text(anchorText ?: "$sectionSig${item.label}")
+                LabelSource.SECTION -> anchor.text(anchorText ?: "$sectionSig${item.prefix}:${item.label}")
                 LabelSource.TABLE_OR_FIGURE -> anchor.text(anchorText ?: item.label)
                 LabelSource.APPENDIX -> anchor.text(anchorText ?: "$appendixSig${item.prefix}:${item.label}")
                 LabelSource.VOLUME -> anchor.text(anchorText ?: "$chapterSig${item.prefix}")

@@ -12,10 +12,10 @@ Additionally, since the primary purpose of this specification is the communicati
 When this new standard is published *_in late 2023 or early 2024_*, its requirements will be integrated into this supplement, with its <<term_implementation_conformance_statement>> added to <<vol1_appendix_b_referenced_standards_conformance>>.
 Many of those requirements will be mapped to the actors, transactions and other specifications in this specification.
 
-Two of the transactions identified below, DEV-41 and DEV-42 are related to Medical Alert Delegation; however, at this stage there is considerable standards development activity to update the current <<acronym_sdc>> standards, particularly in association with completing the Alert <<acronym_pkp>> standard  <<ref_ieee_11073_10702_202x>>.
+Two of the transactions identified below, [DEV-41] and [DEV-42] are related to Medical Alert Delegation; however, at this stage there is considerable standards development activity to update the current <<acronym_sdc>> standards, particularly in association with completing the Alert <<acronym_pkp>> standard  <<ref_ieee_11073_10702_202x>>.
 As a result, the completion of these two transactions has been deferred to a subsequent version of the supplement.
 
-Similarly, a related transaction, DEV-43, namely providing clinician alert acknowledgement status information back to the alerting device, is also being discussed further and will be deferred to a subsequent version of the supplement.
+Similarly, a related transaction, [DEV-43], namely providing clinician alert acknowledgement status information back to the alerting device, is also being discussed further and will be deferred to a subsequent version of the supplement.
 
 Finally, it should be noted that  <<actor_somds_acm_gateway>> is defined below and fully specified in <<vol2_clause_appendix_sdpi_acm_gateway>>.
 Also in development is <<acronym_hl7>> <<acronym_fhir>> support for medical alerting (e.g., definition of a <<acronym_fhir>> DeviceAlert resource); however, that will not be completed until 2024 or beyond.
@@ -95,19 +95,19 @@ image::../images/vol1-diagram-sdpi-a-actor.svg[]
 | <<transaction_name_manage_medical_alert_delegation>> (_deferred_)
 | Responder
 | R ^(See^ ^Note^ ^1)^
-| DEV-41 Deferred to SDPi 2.0
+| [DEV-41] Deferred to SDPi 2.0
 // <<vol2_clause_dev_41>>
 
 | <<transaction_name_delegate_medical_alert>> (_deferred_)
 | Initiator
 | R ^(See^ ^Note^ ^1)^
-| DEV-42 Deferred to SDPi 2.0
+| [DEV-42] Deferred to SDPi 2.0
 // <<vol2_clause_dev_42>>
 
 | <<transaction_name_update_alert_acknowledgement_status>> (_deferred_)
 | Responder
 | R
-| DEV-43 Deferred to SDPi 2.0
+| [DEV-43] Deferred to SDPi 2.0
 // <<vol2_clause_dev_43>>
 
 .6+| <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>
@@ -129,19 +129,19 @@ image::../images/vol1-diagram-sdpi-a-actor.svg[]
 | <<transaction_name_manage_medical_alert_delegation>> (_deferred_)
 | Initiator
 | R ^(See^ ^Note^ ^1)^
-| DEV-41 Deferred to SDPi 2.0
+| [DEV-41] Deferred to SDPi 2.0
 // <<vol2_clause_dev_41>>
 
 | <<transaction_name_delegate_medical_alert>> (_deferred_)
 | Responder
 | R ^(See^ ^Note^ ^1)^
-| DEV-42 Deferred to SDPi 2.0
+| [DEV-42] Deferred to SDPi 2.0
 // <<vol2_clause_dev_42>>
 
 | <<transaction_name_update_alert_acknowledgement_status>> (_deferred_)
 | Initiator
 | R
-| DEV-43 Deferred to SDPi 2.0
+| [DEV-43] Deferred to SDPi 2.0
 // <<vol2_clause_dev_43>>
 
 .4+| <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> ^(See^ ^Note^ ^2)^
@@ -163,14 +163,14 @@ image::../images/vol1-diagram-sdpi-a-actor.svg[]
 | <<transaction_name_update_alert_acknowledgement_status>> (_deferred_)
 | Initiator
 | O
-| dev-43 Deferred to SDPi 2.0
+| [DEV-43] Deferred to SDPi 2.0
 // <<vol2_clause_dev_43>>
 
 5+<|
 Note 1: Transaction is required if <<vol1_clause_sdpi_a_actor_option_alert_delegation_reftext>> is supported.
 
-Note 2: By default, the <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> acts as a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>, initiating DEV-04 transactions when they are received from <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>s.
-If the gateway supports  <<vol1_clause_sdpi_a_actor_option_remote_alert_signaling_reftext>>, then it also acts as a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> and accepts inbound DEV-04 transactions from ACM Alert Reporters.
+Note 2: By default, the <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> acts as a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>, initiating [DEV-04] transactions when they are received from <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>s.
+If the gateway supports  <<vol1_clause_sdpi_a_actor_option_remote_alert_signaling_reftext>>, then it also acts as a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> and accepts inbound [DEV-04] transactions from ACM Alert Reporters.
 In this case, the gateway will support both "Initiator & Responder" for these transactions.
 
 |===
@@ -242,7 +242,7 @@ Actor Summary Definition:
 [none]
 . A <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> grouped actor that supports the bi-directional exchange of medical alert information with non-SOMDS systems and applications using IHE Alert Communication Management (ACM) transactions.
 
-This a is designed to exchange medical device alert information to external non-<<acronym_somds>> systems using the <<acronym_hl7>> V2-based Alert Communication Management (ACM) profile transactions.
+This a is designed to exchange medical device alert information to external non-<<acronym_somds>> systems using the <<acronym_hl7>> V2-based Alert Communication Management (ACM) Profile transactions.
 
 Every <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> to enable <<acronym_somds>>-based connectivity.
 This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>.
@@ -252,14 +252,14 @@ Transactions enabled for this actor are identified in <<vol1_table_sdpi_a_actors
 
 Given this _intended medical purpose_, the actor will fully address applicable requirements from the core <<acronym_sdc>> standards (<<ref_ieee_11073_10207_2017>> and <<ref_ieee_11073_20701_2018>>), as well as the <<acronym_pkp>> standards <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10702_202x>> (Alert <<acronym_pkp>>).
 
-This actor shall implement the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> capabilities, receiving alert information provided by <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> systems and publishing them as DEV-04 / PCD-04 Transactions to external ACM Alert Manager (AM) systems.
-If <<vol1_clause_sdpi_a_actor_option_remote_alert_signaling_reftext>> is implemented, then this actor will also support the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> capabilities, receiving DEV-04 / PCD-04 Transactions from external ACM Device Observation Reporter (DOR) systems and making them available to other <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> systems.
+This actor shall implement the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> capabilities, receiving alert information provided by <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> systems and publishing them as [DEV-04] / [PCD-04] Transactions to external ACM Alert Manager (AM) systems.
+If <<vol1_clause_sdpi_a_actor_option_remote_alert_signaling_reftext>> is implemented, then this actor will also support the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> capabilities, receiving [DEV-04] / [PCD-04] Transactions from external ACM Device Observation Reporter (DOR) systems and making them available to other <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> systems.
 Note:  Not supported are <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> systems that only implement the <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> and not <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> capabilities.
 
-Detailed specifications for mapping from <<acronym_somds>>/<<acronym_biceps>>  to <<acronym_hl7>> V2 / ACM DEV-04/PCD-04 transactions are provided in <<vol2_clause_appendix_sdpi_acm_gateway>>.
+Detailed specifications for mapping from <<acronym_somds>>/<<acronym_biceps>>  to <<acronym_hl7>> V2 / ACM [DEV-04]/[PCD-04] transactions are provided in <<vol2_clause_appendix_sdpi_acm_gateway>>.
 
 NOTE: This actor is not intended to play the role of an ACM Alert Manager.
-If DEV-04 transactions are received by the gateway, they will be simply mapped to <<acronym_somds>>/<<acronym_biceps>> semantics and provided to <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> systems.
+If [DEV-04] transactions are received by the gateway, they will be simply mapped to <<acronym_somds>>/<<acronym_biceps>> semantics and provided to <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> systems.
 
 If a <<label_system_type_name_sas>> is being created, it may incorporate both <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> and <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> Actors, both receiving and publishing alerts to external ACM-based systems.
 
@@ -280,7 +280,7 @@ As stated elsewhere, the completion of the <<ref_ieee_11073_10702_202x>> standar
 *_The sequence diagram below for delegation is provided for informative purposes only and will be finalized when the IEEE standard and this profile option are completed._*
 
 This option will enable <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> systems to safely and reliably transfer or "delegate" audible annunciation of alert conditions to another system.
-This option will enable both the DEV-41 <<transaction_name_manage_medical_alert_delegation>> and DEV-42 <<transaction_name_delegate_medical_alert>> transactions.
+This option will enable both the <<transaction_name_manage_medical_alert_delegation>> [DEV-41] and <<transaction_name_delegate_medical_alert>> [DEV-42] transactions.
 
 |===
 
@@ -312,7 +312,7 @@ include::../plantuml/vol1-figure-sdpi-a-delegation-example-sequence-diagram.puml
 a| *SDPi Supplement Version Note*:  This section is left intentionally blank to indicate capabilities that will be added in a future version of the SDPi Supplement.
 
 This option will enable <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> systems to safely and reliably receive from <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> systems user (clinician) acknowledgement of previously reported alert conditions.
-This option will enable the DEV-43 <<transaction_name_update_alert_acknowledgement_status>> transaction.
+This option will enable the <<transaction_name_update_alert_acknowledgement_status>> [DEV-43] transaction.
 
 |===
 
@@ -326,8 +326,8 @@ This option will enable the DEV-43 <<transaction_name_update_alert_acknowledgeme
 |===
 a| *SDPi Supplement Version Note*:  This section is left intentionally blank to indicate capabilities that will be added in a future version of the SDPi Supplement.
 
-This option will enable <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> systems to receive DEV-04/PCD-04 transactions from an ACM Alert Manager and then act as a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> to communicate the signals to <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> systems
-This option will enable the <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> to respond to DEV-38 <<transaction_name_establish_medical_alert_exchange>> and DEV-40 <<transaction_name_retrieve_medical_alert_status>> transactions, and to initiate DEV-39 <<transaction_name_publish_medical_alert_update>> transactions.
+This option will enable <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> systems to receive [DEV-04]/[PCD-04] transactions from an ACM Alert Manager and then act as a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> to communicate the signals to <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> systems
+This option will enable the <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> to respond to <<transaction_name_establish_medical_alert_exchange>> [DEV-38] and <<transaction_name_retrieve_medical_alert_status>> [DEV-40] transactions, and to initiate <<transaction_name_publish_medical_alert_update>> [DEV-39] transactions.
 
 |===
 
@@ -366,7 +366,8 @@ Note that this specification extends the concepts established in the base <<vol1
 
 [#vol1_clause_sdpi_a_use_cases_reftext, reftext='SDPi-A Use Cases']
 ==== Use Cases
-The SDPi-A profile supports requirements from use cases detailed in <<vol1_appendix_c_dpi_use_cases>>.  The following subsections identify the specific use case requirements that are fulfilled with capabilities provided by this specification.
+The SDPi-A Profile supports requirements from use cases detailed in <<vol1_appendix_c_dpi_use_cases>>.
+The following subsections identify the specific use case requirements that are fulfilled with capabilities provided by this SDPi-A Profile.
 
 
 ===== <<label_use_case_name_sicdsp>> (<<acronym_sicdsp>>)
@@ -420,16 +421,16 @@ Specific capabilities supporting the <<acronym_aars>> use case include:
 ==== SES General Considerations
 Requirements from the <<ref_iso_81001_1_2021>>, <<ref_iec_80001_1_2021>>, and related standards should be fully applied to this technical framework element.
 
-For additional guidance, see section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
+For additional guidance, see Section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
 
 ==== Safety Requirements & Considerations
-No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
+No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 ==== Effectiveness Requirements & Considerations
-No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
+No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 ==== Security Requirements & Considerations
-No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P profile (see <<vol1_clause_appendix_a_ses_considerations_section_template>>), and those specified in the _<<acronym_ses>> General Considerations_ section above.
+No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P Profile (see <<vol1_clause_appendix_a_ses_considerations_section_template>>), and those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 // 12.6
 === SDPi-A Cross Profile Considerations

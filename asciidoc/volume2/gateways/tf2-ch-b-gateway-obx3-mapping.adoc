@@ -16,7 +16,7 @@ NOTE: <<ref_tbl_dec_obx3_mds_mapping>>, <<ref_tbl_dec_obx3_vmd_mapping>>, <<ref_
 .R8013
 [sdpi_requirement#r8013,sdpi_req_level=shall,sdpi_max_occurrence=1]
 ****
-If a private *<<acronym_mdc>>* code is used for the coding of the SDC containment tree element, the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall map an identifier of the element in the hierarchical containment tree such as MDS, VMD, CHAN, or the actual related metric as described in section <<ref_private_coding_system_note>>.
+If a private *<<acronym_mdc>>* code is used for the coding of the SDC containment tree element, the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall map an identifier of the element in the hierarchical containment tree such as MDS, VMD, CHAN, or the actual related metric as described in Section <<ref_private_coding_system_note>>.
 ****
 
 [#ref_tbl_dec_obx3_mds_mapping]

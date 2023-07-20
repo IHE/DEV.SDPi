@@ -57,7 +57,7 @@ Last accessed 2022.10.04.], some general observations will help understand the v
 . <profiles navigate from the top to the bottom similar with each layer contributing to those below and converging in a single interface capability bundle>;
 . <physical layers are leveraged / not re-invented!>;
 . <requirements interoperability traces "profile lines" from top to bottom>;
-. <requirements TYPEs are rooted in the layers that they represent and link Defs to Usage, see <<vol1_clause_sdpi_requirements_core_model>> section below.>.
+. <requirements TYPEs are rooted in the layers that they represent and link Defs to Usage, see <<vol1_clause_sdpi_requirements_core_model>> Section below.>.
 
 ////
 #TODO:  ADD INTEROPERABILITY PATHS EXAMPLE VIA A TABLE (VS. LINES THROUGH GRAPHIC)#
@@ -85,7 +85,7 @@ One of the key challenges for implementing this standard, though, is what might 
 This is the technology "hand off" space between the left side of the lifecycle -- Design and development phase, where key responsibility is by each of the "Accountable Manufacturer" organizations, and the right side of the lifecycle -- Implementation phase & Clinical use phase, where key responsibility is on the Accountable Healthcare Delivery Organization (HDO).
 Though this reads well in the standards and the model organizes everything in a clear fashion, operationalizing this in real world use remains a Sisyphean effort, primarily due to the amount of expertise, time and resources needed to effectively implement the SES standards as part of normal operating business in HDOs.
 
-To address this <<acronym_ses>> implementation problem, the SDPi profiles:
+To address this <<acronym_ses>> implementation problem, the SDPi Profiles:
 
 . Leverage the ISO/IEEE 11073-1070x <<term_participant_key_purposes>> standards, which represent a consensus standard for risk management of technologies that are implemented in that left-right gap on the Temple model;
 . <<term_implementation_conformance_statement>> tables from each of these <<acronym_pkp>> standards is included in <<vol1_appendix_b_references>> of this specification, with indication as to whether, how and where each requirement is addressed;
@@ -113,7 +113,7 @@ Especially when requirements from the <<acronym_pkp>> standards are included in 
 Note:  When the <<acronym_pkp>> standards are integrated into this specification, then specific requirements will be directly linked to these <<acronym_ses>> Considerations sections.
 |===
 
-Given the forgoing discussion in section <<vol1_clause_ses_considerations_requirements>>, a standardized template is defined for addressing <<acronym_ses>> requirements as appropriate, including within the scope of profiles, actors, transactions, and content modules.
+Given the forgoing discussion in <<vol1_clause_ses_considerations_requirements>>, a standardized template is defined for addressing <<acronym_ses>> requirements as appropriate, including within the scope of profiles, actors, transactions, and content modules.
 The content in the following sections should be included and then specialized as appropriate for the associated technical framework element.
 
 ////
@@ -132,23 +132,23 @@ NOTE: This section includes guidance and requirements that are not further speci
 
 Requirements from the <<ref_iso_81001_1_2021>>, <<ref_iec_80001_1_2021>>, and related standards should be fully applied to this technical framework element.
 
-For additional guidance, see section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
+For additional guidance, see Section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
 
 ==== Safety Requirements & Considerations
 NOTE: This section includes guidance and requirements that are focused on unique *_Safety_* requirements associated with associated technical framework element.  Note: a simple definition of safety within the context of risk management is "freedom from unacceptable harm" (see https://81001.org/concept/safety[81001.org/safety])
 
-No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
+No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 ==== Effectiveness Requirements & Considerations
 NOTE: This section includes guidance and requirements that are focused on unique *_Effectiveness_* requirements associated with associated technical framework element.  Note:  in the context of risk management key properties, effectiveness is the ability to perform the intended use (see https://81001.org/concept/effectiveness[81001.org/effectiveness])
 
-No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
+No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 ==== Security Requirements & Considerations
 NOTE: This section includes guidance and requirements that are focused on unique *_Security_* requirements associated with associated technical framework element.
 In the context of risk management key properties, security is a state where information and systems are protected from unauthorized activities to a degree that the related risks to confidentiality, integrity, and availability are maintained at an acceptable level throughout the lifecycle (see https://81001.org/concept/security[81001.org/security])
 
-No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P profile, and those specified in the _<<acronym_ses>> General Considerations_ section above.
+No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P profile, and those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 === Use Cases, MBSE Requirements Modeling & SysML 2.0
 
@@ -170,7 +170,7 @@ a| *SDPi Supplement Version Note*:  This section intentionally left blank for th
 <<acronym_omg>>'s Systems Modeling Language 2.0 (see <<ref_omg_sysml_2_0_spec>> and <<ref_omg_sysml_2_0_intro_graphical_model>>), provides extended support for requirements modeling that not only provides the foundation for MBSE's Requirements Modeling, but also a computable specification that enables automated verification (e.g., using "Verification Cases").
 
 ////
-#TODO:  Add reference to SysML 2.0 section 7.20 Requirements & 7.23 Verification Cases#
+#TODO:  Add reference to SysML 2.0 Section 7.20 Requirements & 7.23 Verification Cases#
 
 #TODO:  Add reference to Hanging Gardens Framework ... use case requirements are the top level#
 
@@ -180,12 +180,12 @@ a| *SDPi Supplement Version Note*:  This section intentionally left blank for th
 [#vol1_clause_sdpi_requirements_modeling_integration]
 === SDPi Requirements Modeling & Integration
 
-As pointed out above, requirements interoperability (RI) based on robust model-based metadata is a core, innovative aspect of this SDPi profiles specification.
-Given the ultimate intent to realize this description as a _Model Centric (MC) single-source-of-truth, computable, simulatable, verifiable and validatable system of systems interoperability specification_, and recognizing that it will take a significant transition period from a document-centric approach to a model-centric approach, a simplified requirements model is provided below but is aligned with the <<ref_omg_sysml_2_0_spec>> section 7.20 Requirements language.
-Of course, that specification provides for significantly more detailed and complext modeling, the general constructs may be used in this document to start the transition toward that model.
+As pointed out above, requirements interoperability (RI) based on robust model-based metadata is a core, innovative aspect of this SDPi Profiles specification.
+Given the ultimate intent to realize this description as a _Model Centric (MC) single-source-of-truth, computable, simulatable, verifiable and validatable system of systems interoperability specification_, and recognizing that it will take a significant transition period from a document-centric approach to a model-centric approach, a simplified requirements model is provided below but is aligned with the <<ref_omg_sysml_2_0_spec>> Section 7.20 Requirements language.
+Of course, that specification provides for significantly more detailed and complex modeling, the general constructs may be used in this document to start the transition toward that model.
 Note that SysML 2.0 also better supports model interoperability (tool-independent model exchange) and _<<term_model_based_systems_engineering>>_ (see https://en.wikipedia.org/wiki/Model-based_systems_engineering[MBSE Wikipedia article and references]), as well as the <<ref_ihe_eu_experience_2021_presentation_cooper_schlichting>> for an overview presentation of MBSE, MedTech system V&V, and IHE Conformity Assessment.
 
-It should be further noted that though conformity testing aspects are beyond this revision of the SDPi specification, the modeling constructs used below will also be integrated with <<ref_omg_sysml_2_0_spec>> section 7.23 Verification Cases, to provide for advanced V&V of interoperable system components and entire systems of products.
+It should be further noted that though conformity testing aspects are beyond this revision of the SDPi specification, the modeling constructs used below will also be integrated with <<ref_omg_sysml_2_0_spec>> Section 7.23 Verification Cases, to provide for advanced V&V of interoperable system components and entire systems of products.
 
 [#vol1_clause_sdpi_requirements_core_model]
 ==== SDPi Requirements Core Model
@@ -233,7 +233,7 @@ Each type is a source of requirements that are explicitly identified and formali
 | SES
 |
 | sdpi_requirement_ses
-| See SES section <<vol1_appendix_a_integrating_ses>>
+| See SES Section <<vol1_appendix_a_integrating_ses>>
 
 | Tech Feature
 |
@@ -260,7 +260,7 @@ In that case, the general rule is:
 
 For example, in TF-2 Transactions, each transaction section is paired with a message transport section in <<vol2_appendix_a_mdpws_messages>>; however, future versions of the specification may provide options for alternative transports.
 In this case, the actual transaction definition will remain unchanged, but the bindings to transport messages and services would change.
-Given the rule above, bindings are made in the current TF-2 Appendix A MDPWS profile pointing backward (or upward!) to the transaction requirements that they satisfy.
+Given the rule above, bindings are made in the current TF-2 Appendix A MDPWS specification pointing backward (or upward!) to the transaction requirements that they satisfy.
 There are no bindings in the opposite direction.
 Taking this approach, a new transport appendix could be added in the future without impacting the core transaction specifications.
 

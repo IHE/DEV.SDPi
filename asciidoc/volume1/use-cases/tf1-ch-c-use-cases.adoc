@@ -81,7 +81,7 @@ a| *SDPi Supplement Version Note*:  This section intentionally left blank for th
 
 // [mdi_use_case#use_case_stad,actors='actor_somds_provider actor_somds_consumer',figure=vol2_figure_dev_24_probe_sequence,messages='message_announce_network_presence']
 
-// FROM TF-2 DEV-24 Transaction document
+// FROM TF-2 [DEV-24] Transaction document
 // [sdpi_transaction#transaction_dev_24,actors='actor_somds_provider actor_somds_consumer',figure=vol2_figure_dev_24_probe_sequence,messages='message_announce_network_presence']
 
 ==== Application of ISO/IEC 60601-1-8 Concepts & Definitions

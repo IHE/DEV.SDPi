@@ -7,7 +7,7 @@ IHE technical documents refer to, and make use of, a number of standards develop
 [%noheader]
 [cols="1"]
 |===
-|Amend section 9.1 by adding the following new Section 9.1.5:
+|Amend Section 9.1 by adding the following new Section 9.1.5:
 |===
 
 [sdpi_offset=5]
@@ -33,7 +33,7 @@ IEEE^®^ and IEEE 11073^®^ are registered trademarks of the The Institute of El
 
 * Additionally, the IHE profile specifications may include summarization and references to specific content and in a few cases, inclusion of a graphic that would then point the reader back to standard for detailed review. For example, 11073-10207, Figure 2 "BICEPS component decomposition".
 
-* Finally, all three of these standards have integrated requirement designations. For example, 11073-20701, section (10.1) "R0064: An SDC PARTICIPANT SHOULD utilize the highest TLS version." These requirements may also be referenced (at least by Rxxxx designator) to indicate when and how they are addressed in the IHE specification(s). IHE agrees to share with the 11073 working groups any iteration of its derivative work for the benefits of the 11073 community of users.
+* Finally, all three of these standards have integrated requirement designations. For example, 11073-20701, Section (10.1) "R0064: An SDC PARTICIPANT SHOULD utilize the highest TLS version." These requirements may also be referenced (at least by Rxxxx designator) to indicate when and how they are addressed in the IHE specification(s). IHE agrees to share with the 11073 working groups any iteration of its derivative work for the benefits of the 11073 community of users.
 
 . IHE understands and agrees that the following shall appear in each section where the material is used:
 

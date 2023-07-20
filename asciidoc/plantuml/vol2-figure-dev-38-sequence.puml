@@ -9,7 +9,7 @@ autonumber
 participant "$str_somds_consumer" as consumer
 participant "$str_somds_provider" as provider
 
-==SDPi [DEV-38] Establish Medical Alert Exchange==
+==SDPi Establish Medical Alert Exchange [DEV-38]==
 
 consumer -> provider: Subscribe(Filter, Expiration Time)
 consumer <<-- provider: SubscribeResponse(Subscription Manager, Expiration Time)

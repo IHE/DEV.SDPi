@@ -9,7 +9,7 @@ autonumber
 participant "$str_somds_consumer" as consumer
 participant "$str_somds_provider" as provider
 
-== SDPi [DEV-30] Discover BICEPS Content  ==
+==SDPi Discover BICEPS Content [DEV-30]==
 
 consumer -> provider: GetMdib()
 consumer <<-- provider: GetMdibResponse(MdDescription, MdState [incl. ContextStates])

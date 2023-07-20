@@ -6,10 +6,10 @@ Requirements from the <<ref_iso_81001_1_2021>>, <<ref_iec_80001_1_2021>>, and re
 For additional guidance, see <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
 
 ===== Safety Requirements & Considerations
-No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
+No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 ===== Effectiveness Requirements & Considerations
-No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
+No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 ===== Security Requirements & Considerations
 This transaction is intended to execute over *_SECURED_* transmission channels.

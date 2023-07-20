@@ -39,7 +39,7 @@ ADD IEEE:  *Remote Control ICS table here*
 ===== Context Processing
 
 NOTE: Context processing pertains to effective utilization of context information like workflow (e.g., orders) info, patient demographics and locations.
-A general concept should be described how to cope with contexts in terms of SDPi, i.e. device coupling mechanisms should be described informally in TF-1 and formally in TF-2 (as transaction?).
+A general concept should be described how to cope with contexts in terms of SDPi, i.e., device coupling mechanisms should be described informally in TF-1 and formally in TF-2 (as transaction?).
 
 ADD IEEE:  *Context Processing ICS table here*
 
