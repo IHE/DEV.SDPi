@@ -23,7 +23,7 @@
 :ihe_supplement_sdpi_revision: 1.1.0
 :ihe_supplement_sdpi_revision_date: {localdatetime}
 :ihe_supplement_sdpi_revision_label: Trial Implementation
-:ihe_supplement_sdpi_publication_month: July 14, 2023
+:ihe_supplement_sdpi_publication_month: July 21, 2023
 :ihe_supplement_sdpi_public_comment_submission_deadline: N/A
 
 {empty} +
@@ -60,7 +60,10 @@
 [cols="1,4"]
 [frame=none,grid=none]
 |===
-| *Date:*
+| *Publication Date:*
+| {ihe_supplement_sdpi_publication_month}
+
+| *Build Date:*
 | {ihe_supplement_sdpi_revision_date}
 
 | *Author:*
