@@ -3,21 +3,16 @@
 This section specifies general <<acronym_hl7>> V2 requirements and mappings, which apply to the <<vol2_clause_appendix_sdpi_dec_gateway>> as well as to the <<vol2_clause_appendix_sdpi_acm_gateway>> sections below.
 
 ==== Time Zone Setting
-For the <<acronym_hl7>> V2 data reporting, it is impportant that the time zone is set correctly at the <<term_point_of_care_device>>.
+Timestamps can be specified in HL7 v2 in both UTC and local time.
 
-.R8120
-[sdpi_requirement#r8120,sdpi_req_level=shall,sdpi_max_occurrence=1]
-****
-A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall only export data from <<acronym_mds>> entities, which have a valid timezone defined in the *pm:ClockState/@TimeZone* attribute.
-
-.Notes
-[%collapsible]
 ====
-NOTE: In <<ref_hl7_v2>>, all timestamps are defined as local time and the time zone is optional. Therefore, a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> is required to convert the UTC time provided by the <<actor_somds_provider>> into local time.
+NOTE: As stated in <<ref_ihe_pcd_tf_2_2019>> all observation times reported SHOULD be UTC, as indicated by including a time zone offset of +0000.
+
+NOTE: If the timestamps are to be specified in local time, it is important that the time zone is set correctly at the <<term_point_of_care_device>>.
 
 NOTE: It is not always guaranteed that the timezone configured at the <<actor_somds_provider>> and/or <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> corresponds with the timezone of the <<acronym_mds>> entities, for example, when a <<actor_somds_provider>> acting as device aggregator and/or the  <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> are running in a data center located in a different timezone than the <<acronym_mds>> entities.
 ====
-****
+
 
 include::tf2-ch-b-gateway-private-mdc-mapping.adoc[]
 
