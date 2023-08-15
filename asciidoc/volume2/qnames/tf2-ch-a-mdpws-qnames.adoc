@@ -1,7 +1,7 @@
 ==== Processing of QNames
 
-<<term_q_name>>s are problematic when used in XML element or attribute content (see <<vol3_clause_extension_qname>>).
-Unfortunately, the BICEPS Participant and Message Model as well some Web Services standards that are normatively referenced by <<ref_oasis_dpws_2009, DPWS>>, use <<term_q_name>>s in XML element or attribute content.
+<<term_q_name>>s are problematic when used in XML element content or attribute values (see <<vol3_clause_extension_qname>>).
+Unfortunately, the BICEPS Participant and Message Model as well some Web Services standards that are normatively referenced by <<ref_oasis_dpws_2009, DPWS>>, use <<term_q_name>>s in XML element content or attribute values.
 
 In order to increase interoperability between implementations of this profile, this section specifies requirements towards <<term_q_name>> handling in XML instances.
 

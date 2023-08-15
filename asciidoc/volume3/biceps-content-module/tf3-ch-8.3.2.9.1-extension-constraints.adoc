@@ -39,8 +39,8 @@ A <<term_q_name>> is a tuple of a namespace plus a local name.
 In its serialized form, a <<term_q_name>> is represented by either a prefix plus the local name or without a prefix, which translates to the default namespace or no namespace if no default is specified.
 As long as <<term_q_name>>s are used as part of element or attribute names within an XML instance, its usage is well-defined.
 
-The use in element or attribute content however is specific to the application and hence not standardized at all.
-Depending on the XML Schema awareness, each XML processor handles <<term_q_name>>s in element or attribute content differently, to the extent that some are not round-trip-safe and others just pass through the element value to the user of the API.
+The use in element content or attribute values however is specific to the application and hence not standardized at all.
+Depending on the XML Schema awareness, each XML processor handles <<term_q_name>>s in element content or attribute values differently, to the extent that some are not round-trip-safe and others just pass through the element value to the user of the API.
 While the former may lead to interoperability issues, the latter is a leaky abstraction and requires API users to gain access to the XML instance that included the <<term_q_name>>.
 
 In order to strengthen interoperability and avoid leaky abstraction, <<r0020>> prohibits the use of <<term_q_name>> types in BICEPS extensions.
