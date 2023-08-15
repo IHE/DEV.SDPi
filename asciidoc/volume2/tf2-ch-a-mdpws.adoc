@@ -80,3 +80,5 @@ include::mdpws-compression/tf2-ch-a-mdpws-compression.adoc[]
 include::discovery-scopes/tf2-ch-a-mdpws-discovery-scopes.adoc[]
 
 include::pretty-print/tf2-ch-a-mdpws-pretty-print.adoc[]
+
+include::qnames/tf2-ch-a-mdpws-qnames.adoc[]

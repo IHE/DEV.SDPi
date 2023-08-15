@@ -1,0 +1,52 @@
+====== Extension Constraints
+
+[sdpi_level=+1]
+====== Mixed Content
+
+Some XML processor APIs do not support ordered access to XML Schema _mixed content_, which is the interlacing of XML elements with text content.
+
+.Example of mixed content in an XML instance
+[source#vol3_clause_extension_constraints_interlaced,xml]
+----
+<foo>
+    <bar>
+        Here
+        <interlaced1/>
+        is some
+        <interlaced2/>
+        <interlaced3/>
+        interlaced
+        <interlaced4/>
+        text
+    </bar>
+</foo>
+----
+
+There are APIs that do not fully implement the XML Document Object Model and hence cannot individually access text nodes (e.g. as in <<vol3_clause_extension_constraints_interlaced>>: "Here", "is some", "interlaced", and "text") in between the interlaced elements but only as concatenated text.
+This makes verification measures unnecessarily complicated.
+As mixed content is not required to be available in device to device communication, <<r0019>> prohibits the use of mixed content types in BICEPS extensions.
+
+.R0019
+[sdpi_requirement#r0019,sdpi_req_level=shall]
+****
+A <<vol1_spec_sdpi_p_actor_somds_participant>> shall not provide BICEPS extensions that use XML Schema mixed content types.
+****
+
+[#vol3_clause_extension_qname, sdpi_level=+1]
+====== QName
+
+A <<term_q_name>> is a tuple of a namespace plus a local name.
+In its serialized form, a <<term_q_name>> is represented by either a prefix plus the local name or without a prefix, which translates to the default namespace or no namespace if no default is specified.
+As long as <<term_q_name>>s are used as part of element or attribute names within an XML instance, its usage is well-defined.
+
+The use in element or attribute content however is specific to the application and hence not standardized at all.
+Depending on the XML Schema awareness, each XML processor handles <<term_q_name>>s in element or attribute content differently, to the extent that some are not round-trip-safe and others just pass through the element value to the user of the API.
+While the former may lead to interoperability issues, the latter is a leaky abstraction and requires API users to gain access to the XML instance that included the <<term_q_name>>.
+
+In order to strengthen interoperability and avoid leaky abstraction, <<r0020>> prohibits the use of <<term_q_name>> types in BICEPS extensions.
+
+.R0020
+[sdpi_requirement#r0020,sdpi_req_level=shall]
+****
+A <<vol1_spec_sdpi_p_actor_somds_participant>> shall not provide BICEPS extensions that are based on or use the XML Schema QName type.
+****
