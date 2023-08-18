@@ -17,6 +17,9 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Added
 
+- Requirements R0019 and R0020 to prohibit the use of QNames and XML mixed content ([#210](https://github.com/IHE/DEV.SDPi/issues/210).
+- Requirements R1012 and R1013 to process QNames in BICEPS and DPWS ([#210](https://github.com/IHE/DEV.SDPi/issues/210).
+
 ### Changed
 
 ### Removed
