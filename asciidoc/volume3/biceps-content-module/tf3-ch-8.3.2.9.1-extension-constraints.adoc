@@ -3,7 +3,7 @@
 [sdpi_level=+1]
 ====== Mixed Content
 
-Some XML processor APIs do not support ordered access to XML Schema _mixed content_, which is the interlacing of XML elements with text content.
+Some XML processor APIs do not support ordered access to XML _mixed content_, which is the interlacing of XML elements with text content.
 
 .Example of mixed content in an XML instance
 [source#vol3_clause_extension_constraints_interlaced,xml]
