@@ -29,13 +29,13 @@ As mixed content is not required to be available in device to device communicati
 .R0019
 [sdpi_requirement#r0019,sdpi_req_level=shall]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_participant>> shall not provide BICEPS extensions that use XML Schema mixed content types.
+A <<vol1_spec_sdpi_p_actor_somds_participant>> shall not provide BICEPS extensions that use XML mixed content.
 ****
 
 [#vol3_clause_extension_qname, sdpi_level=+1]
 ====== QName
 
-A <<term_q_name>> is a tuple of a namespace plus a local name.
+An expanded <<term_q_name>> is a tuple of an optional namespace plus a local name.
 In its serialized form, a <<term_q_name>> is represented by either a prefix plus the local name or without a prefix, which translates to the default namespace or no namespace if no default is specified.
 As long as <<term_q_name>>s are used as part of element or attribute names within an XML instance, its usage is well-defined.
 
