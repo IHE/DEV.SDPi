@@ -856,8 +856,8 @@ Or set to "AMEAS\^auto-measurement^MDC" if required.
 |===
 |HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
 
-|OBR-17/CWE-1
-|Identifier
+|OBR-17/CWE-2
+|Text
 |pm:AbstractMetricDescriptor+++<wbr/>+++/@MetricAvailability
 |
 
