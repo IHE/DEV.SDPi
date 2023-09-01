@@ -4,5 +4,5 @@ about: Files a task
 title: ""
 assignees: ''
 labels: "Comment NEW"
-projects: ["Gemini SDPi Releases IHE International"]
+projects: ["IHE/Projects/Gemini SDPi Releases", "IHE/6"]
 ---
