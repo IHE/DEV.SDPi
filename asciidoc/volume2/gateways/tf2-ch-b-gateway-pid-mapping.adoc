@@ -237,12 +237,36 @@ The following list a couple of options and any comments from the reviewers are h
 
 |===
 
+.R8120
+[sdpi_requirement#r8120,sdpi_req_level=shall,sdpi_max_occurrence=1]
+****
+If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall export the patient's sex as OBX segment on the MDS level.
+
+.Notes
+[%collapsible]
+====
+NOTE: The mapping for the patient's sex is defined in table <<ref_tbl_dec_obx_sex_mapping>>.
+====
+****
+
+.R8121
+[sdpi_requirement#r8121,sdpi_req_level=may,sdpi_max_occurrence=1]
+****
+If <<r8102>> is met and the patient's sex in the <<acronym_mdib>> is sourced from HL7 V2 ADT messages provided by the hospital ADT system, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> may set the PID-8 field to the code for the administrative sex.
+
+.Notes
+[%collapsible]
+====
+NOTE: <<ref_tbl_pid8_mapping>> defines the mapping of the SDC patient's sex information to the data fields of the HL7 data type *IS* used in the PID-8 field.
+====
+****
+
 .R8107
 [sdpi_requirement#r8107,sdpi_req_level=shall,sdpi_max_occurrence=1]
 ****
-If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-8 field to the code for the administrative sex.
+If <<r8102>> is met and the <<actor_somds_v2_gateway>> is configured to export the patient's sex in the PID-8 field, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-8 field to the code for the administrative sex.
 
-However, in the clinical context of a point of care device the biological sex, or sex at birth is important for various algorithms.
+The organization has to consider the risk that the patient's sex set in the <<acronym_mdib>> and mapped to the PID-8 field does not lead to a misinterpretation of the sex concept on <<actor_somds_v2_gateway>> consumer side.
 
 .Notes
 [%collapsible]
@@ -255,6 +279,62 @@ NOTE: <<ref_tbl_pid8_mapping>> defines the mapping of the SDC patient's sex info
 ====
 The sex and gender of a patient (or a newborn) cannot exactly be mapped from ISO/IEEE 11073-10207 to HL7 V2. The domain information and service model only contains an attribute for sex as defined by biological and physiological characteristics. HL7 V2, on the other hand, only provides a field for the administrative sex as defined by the socially constructed roles, behaviours, activities, and attributes that a given society considers appropriate. The biological sex, however, does not necessarily match a person’s administrative gender. Mapping from one to the other would therefore introduce errors. However, in the clinical context of a point of care device the biological sex, or sex at birth is important for various algorithms, and therefore, is required to be mapped to the PID-8 field.
 ====
+
+[#ref_tbl_dec_obx_sex_mapping]
+.OBX Sex Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBX-1
+|Set ID - OBX
+|
+|Please refer to the <<ref_ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information.
+
+|OBX-2
+|Value Type
+|
+|Set to *"ST"*.
+
+|OBX-3/CWE-1
+|Identifier
+|
+|Set to LOINC code *"46098-0"*.
+
+|OBX-3/CWE-2
+|Text
+|
+| Set to LOINC fully-specified name *"Sex"*.
+
+|OBX-3/CWE-3
+|Name of Coding System
+|
+|Set to coding system *"https://loinc.org"*.
+
+|OBX-4
+|Observation Sub-ID
+|
+|Set to *"<MDS>.0.0.3"* where *<MDS>* is the number of the MDS level assigned by the gateway.
+See <<ref_dec_obx4>> for further information.
+
+|OBX-5
+|Observation Value
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Sex
+|Note that the HL7 Administrative Sex value set (HL7 table 0001) differs from the SDC pm:Sex value set and requires a mapping accordingly (see also <<ref_tbl_sex_mapping>>).
+
+|OBX-11
+|Observation Result Status
+|
+|When the patient context has been associated and a new *@BindingStartTime* has been set, the field is set to final result status *"F"*.
+
+When there are further updates of the sex value after the association of the patient context, the field is set to *"C"*.
+
+|OBX-14
+|Date/Time of the Observation
+|pm:PatientContextState+++<wbr/>+++/@BindingStartTime
+|Note that the HL7 date & time format differs from the xsd date/time formats and requires a mapping accordingly (see also <<ref_expl_dt_mapping>>).
+
+|===
+
 
 [#ref_tbl_pid8_mapping]
 .PID-8 Administrative Sex Mapping
