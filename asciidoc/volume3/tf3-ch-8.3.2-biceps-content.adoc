@@ -146,6 +146,55 @@ In addition to specific device specializations (see <<vol3_clause_device_special
 #TODO:  ADD TERM CODE IDENTIFIERS FOR THE SYSTEM TYPES IN THE TABLE ABOVE + SEE ADDITIONAL TYPES AT https://confluence.hl7.org/pages/viewpage.action?pageId=86972238[ToI "What is a Central?"]#
 ////
 
+[#vol3_clause_globally_unique_code_system_id]
+===== Globally Unique Vendor-specific Coding System Identifier
+
+The <<ref_ieee_11073_10101_2020>> nomenclature standard gives medical device vendors the freedom to define their own codes for new concepts which are currently not part of the standard nomenclature.
+
+The <<ref_ieee_11073_10700_2022>> Base Requirements for Participants in a Service-Oriented Device Connectivity (SDC) System defines two requirements for use of private codes as detailed in <<ref_ieee_11073_10101_2020>>:
+
+* *TR1357*: If there is no standardized code to convey semantics, an SDC BASE PARTICIPANT S-H-O-U-L-D populate pm:CodedValue with a private code as detailed in [IEEE 11073-10101].
+
+* *TR1358*: If an SDC BASE PARTICIPANT uses a private code as detailed in [IEEE 11073-10101], the SDC BASE PARTICIPANT S-H-A-L-L refer to its definition by providing a *pm:Translation* with a *@CodingSystem* that uniquely identifies the private coding system that contains the code.
+
+NOTE: This implies that a MANUFACTURER that needs to use private codes has to keep a private coding system for these codes. Following the concept of private codes that is defined in <<ref_ieee_11073_10101_2020>>, a MANUFACTURER introduces and maintains a set of codes that adhere to the principles of the <<ref_ieee_11073_10101_2020>> nomenclature standards.
+
+There are different ways to define a globally unique identifier for the vendor-specific private coding system (e. g. URL, OID, etc.). In the context of medical device interoperability, the recommendation is to use  an "object identifier" (OID) for private codes as detailed in <<ref_ieee_11073_10101_2020>> and other purposes (e. g. private SDC extensions):
+
+* Compared with other identifiers (e.g. URLs) OIDs are very compact, which helps to keep the size of data messages low
+
+* It is free of charge to register a globally unique enterprise OID with https://www.iana.org/assignments/enterprise-numbers/assignment/apply/[IANA].
+
+An enterprise OID assigned by IANA always starts with the prefix *iso.org.dod.internet.private.enterprise (1.3.6.1.4.1)*. The actual enterprise node number, which follows the prefix, is globally unique to the medical device vendor (e. g. "_1.3.6.1.4.1.12345_" for the *Medical Device XYZ Ltd.* company).
+
+Once the enterprise OID is registered, it is up to the medical device vendor to extend the OID by adding child nodes. The child nodes don't have a globally unique meaning, but the enterprise OID plus the child nodes shall be globally unique. It is highly recommended to define a child node schema, and assign unique numbers to the concepts on each node level.
+
+.OID Vendor-specific Child Node Schema
+====
+ * 1.3.6.1.4.1.12345.*<Namespace>*: this could be, for example, the business group id within the enterprise ("Patient Monitoring" = 1, "Ventilation" = 2, etc.).
+ * 1.3.6.1.4.1.12345.*<Namespace>*.*<Type>*: this could be, for example, the id of the type defined within the business group of the enterprise ("Private Code System" = 1, "SDC Extensions" = 2, etc.)
+* 1.3.6.1.4.1.12345.*<Namespace>*.*<Type>*.*<Version>*: it is highly recommended to define the version number as the last child node in the OID. Different versions indicate a major (maybe breaking) change to the *Type* defined by the parent node.
+====
+
+In the example above, the OID "_1.3.6.1.4.1.12345.2.1.1_" would represent a *private code system* identifier in version *1* issued by the the *ventilation* business group of the *Medical Device XYZ Ltd.* company.
+
+.R0702
+[sdpi_requirement#r0702,sdpi_req_level=shall]
+****
+The companies claiming compliance with the IHE SDPi profile shall disclose their OIDs used for private codes as detailed in <<ref_ieee_11073_10101_2020>>, for private SDC extensions, and so on.
+
+.Notes
+[%collapsible]
+====
+NOTE: A table of vendor-specific OIDs can be found in appendix _TBD_.
+
+////
+#TODO:  ADD appendix with vendor defined OIDs in volume 3#
+////
+
+====
+****
+
 [#vol3_clause_biceps_ses_content_requirements_considerations]
 ===== Safety, Effectiveness, Security Content Requirements & Considerations
 
