@@ -210,7 +210,7 @@ The sex and gender of a patient (or a newborn) cannot exactly be mapped from <<r
 
 In order to avoid an erroneous mapping of potentially different sex concept interpretations, the sex as defined in <<acronym_biceps>> is required to be mapped to a separate OBX segment as defined in <<r8120>>.
 
-Mappings to the *PID-8 Administrative Sex* field are allowed in certain cases as defined in <<r8121>> and <<8107>>.
+Mappings to the *PID-8 Administrative Sex* field are allowed in certain cases as defined in <<r8121>> and <<r8107>>.
 
 .R8120
 [sdpi_requirement#r8120,sdpi_req_level=shall,sdpi_max_occurrence=1]
