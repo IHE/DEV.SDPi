@@ -206,36 +206,11 @@ xsd:date: *2001-10-26* -> HL7 DTM: *20011026*
 
 ====== PID-8 Administrative Sex
 
-[%noheader]
-[%autowidth]
-[cols="1"]
-|===
-a| *SDPi Supplement Version Note*: At the moment, there are various opinions on how to map the biological sex vs. the administrative sex (gender) to an IHE DEV/PCD profile conform HL7 V2 message.
+The sex and gender of a patient (or a newborn) cannot exactly be mapped from <<ref_ieee_11073_10207_2017>> to <<ref_hl7_v2>>. The <<acronym_biceps>> model only contains an attribute for sex (*pm:PatientContextState/pm:CoreData/pm:Sex*) as defined by biological and physiological characteristics. <<ref_hl7_v2>>, on the other hand, only provides a field for the administrative sex as defined by the socially constructed roles, behaviours, activities, and attributes that a given society considers appropriate. The biological sex, however, does not necessarily match a person’s administrative gender or sex. Mapping from one to the other would therefore introduce errors. However, in the clinical context of a <<acronym_pocd>> the *sex for clinical use* is important for various algorithms, range and limit settings, and so on.
 
-The SDC BICEPS standard defines a generic field for the patient's sex (*pm:PatientContextState/pm:CoreData/pm:Sex*).
-This field shall be set to the biological sex (or sex for clinical use).
-In addition, there will be a gender extension that shall be set to the administrative gender (or administrative sex).
+In order to avoid an erroneous mapping of potentially different sex concept interpretations, the sex as defined in <<acronym_biceps>> is required to be mapped to a separate OBX segment as defined in <<r8120>>.
 
-The HL7 V2.6 messaging standard only supports a "Administrative Sex" field in the PID segment.
-
-[none]
-. *STANDARDIZATION NOTE:*  There is active work to finalize the informatics standards related to sex and gender, including within HL7, SNOMED, ISO/TC215 and in other standards development organizations.
-Once this standardization is complete, especially within HL7 FHIR and Version 2, the SDC standards and the SDPi Profiles and gateway specifications will be harmonized.
-Until that time, the mappings below represent a "best effort" given the status of the underlying standards.
-
-See related note in <<vol3_clause_gender>>.
-
-The following list a couple of options and any comments from the reviewers are highly appreciated:
-
-. *No mapping of sex/gender information at all*: the information of the patient's sex and gender shall not be mapped at all. Pros: no risk of mapping incorrect information. Cons: no information about the sex set at the device which may have influenced certain clinical calculations and algorithms.
-
-. *Map the "sex for clinical use" to the PID-8 Administrative Sex field*: in the context of a PoC device the sex for clinical use is the most important information for clinical calculations and algorithm. Therefore, this information shall be mapped to the PID-8 Administrative Sex field - even this is not necessarily the administrative gender. In addition, the Administrative Sex/Gender may be mapped to a separate OBX segment (only possible for DEC profile). Pros: this is backward compatible to the existing IHE PCD Profiles. Cons: the information are not set in the correct field and may lead to wrong interpretations.
-
-. *Map the "sex for clinical use" in a separate OBX segment (only possible for the DEC Profile but not for ACM) and the Administrative Sex/Gender to the PID-8 Administrative Sex field*: the administrative sex/gender information is mapped to the correctly named PID-8 "Administrative Sex" field, and the sex for clinical use is provided in a separate OBX segment in the IHE DEC Profile conform export. The sex for clinical use information will be not available in the ACM Profile conform export. Pros: the information are mapped to the correct fields. Cons: this mapping might not be backward compatible to the existing IHE DEV/PCD profile actors (reporter/consumer). Information of the sex for clinical use may get lost in some profiles such as ACM.
-
-*REVIEWER QUESTION*:  Please review the options listed above and provide comments on the mapping of this semantic content.
-
-|===
+Mappings to the *PID-8 Administrative Sex* field are allowed in certain cases as defined in <<r8121>> and <<8107>>.
 
 .R8120
 [sdpi_requirement#r8120,sdpi_req_level=shall,sdpi_max_occurrence=1]
@@ -252,7 +227,7 @@ NOTE: The mapping for the patient's sex is defined in table <<ref_tbl_dec_obx_se
 .R8121
 [sdpi_requirement#r8121,sdpi_req_level=may,sdpi_max_occurrence=1]
 ****
-If <<r8102>> is met and the patient's sex in the <<acronym_mdib>> is sourced from HL7 V2 ADT messages provided by the hospital ADT system, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> may set the PID-8 field to the code for the administrative sex.
+If <<r8102>> is met and the patient's sex in the <<acronym_mdib>> is sourced from the PID-8 field in HL7 V2 ADT messages provided by the hospital ADT system, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> may set the PID-8 field to the code for the administrative sex.
 
 .Notes
 [%collapsible]
@@ -274,11 +249,6 @@ The organization has to consider the risk that the patient's sex set in the <<ac
 NOTE: <<ref_tbl_pid8_mapping>> defines the mapping of the SDC patient's sex information to the data fields of the HL7 data type *IS* used in the PID-8 field.
 ====
 ****
-
-[NOTE]
-====
-The sex and gender of a patient (or a newborn) cannot exactly be mapped from ISO/IEEE 11073-10207 to HL7 V2. The domain information and service model only contains an attribute for sex as defined by biological and physiological characteristics. HL7 V2, on the other hand, only provides a field for the administrative sex as defined by the socially constructed roles, behaviours, activities, and attributes that a given society considers appropriate. The biological sex, however, does not necessarily match a person’s administrative gender. Mapping from one to the other would therefore introduce errors. However, in the clinical context of a point of care device the biological sex, or sex at birth is important for various algorithms, and therefore, is required to be mapped to the PID-8 field.
-====
 
 [#ref_tbl_dec_obx_sex_mapping]
 .OBX Sex Mapping
