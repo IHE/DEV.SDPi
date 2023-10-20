@@ -402,7 +402,7 @@ Note that the *pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* changes 
 
 [sdpi_level=+1]
 ====== Physiological Alerts
-The event identification mapping for a physiological alert is defined in table <<ref_tbl_acm_obx_event_phy_mapping>>.
+The event identification mapping for a physiological alert (alarm or advisory) is defined in table <<ref_tbl_acm_obx_event_phy_mapping>>.
 
 .R8063
 [sdpi_requirement#r8063,sdpi_req_level=shall]
@@ -481,13 +481,13 @@ Please refer to <<ref_acm_containment_tree_mapping>> for further information.
 
 .OBX Event Identification Mapping - Physiological Alert Event
 ====
-OBX|4|ST|196648\^MDC_EVT_HI^MDC|1.1.1.1.1|**ABPs 119>110||||||R|||20191121102600||||XY150Z0409\^^0009FBFFFF059322^EUI-64
+OBX|4|ST|196648\^MDC_EVT_HI^MDC|1.1.1.1.1|**ABPs 119>110||||||R|||20191121102600||||2A144AFE-7AD5-4549-95F9-BD805319CB47\^^2A144AFE-7AD5-4549-95F9-BD805319CB47^UUID
 ====
 
 
 [sdpi_level=+1]
 ====== Technical Alerts
-The event identification mapping for a technical alert is defined in table <<ref_tbl_acm_obx_event_tec_mapping>>.
+The event identification mapping for a technical alert (alarm or advisory) is defined in table <<ref_tbl_acm_obx_event_tec_mapping>>.
 
 .R8064
 [sdpi_requirement#r8064,sdpi_req_level=shall]
@@ -588,7 +588,7 @@ In all other cases, the field is required to be set to pm:AlertConditionDescript
 
 .OBX Event Identification Mapping - Technical Alert Event
 ====
-OBX|4|CWE|196616\^MDC_EVT_ALARM^MDC|1.1.1.1.1|196882\^MDC_EVT_LEADS_OFF^MDC^^^^^^!! ECG Leads Off||||||R|||||||XY150Z0409\^^0009FBFFFF059322^EUI-64
+OBX|4|CWE|196616\^MDC_EVT_ALARM^MDC|1.1.1.1.1|196882\^MDC_EVT_LEADS_OFF^MDC^^^^^^!! ECG Leads Off||||||R|||||||2A144AFE-7AD5-4549-95F9-BD805319CB47\^^2A144AFE-7AD5-4549-95F9-BD805319CB47^UUID
 ====
 
 [#ref_acm_obx_source_id_mapping]
@@ -626,7 +626,7 @@ For a technical or advisory alert event, a <<actor_somds_acm_gateway>> shall set
 .R8066
 [sdpi_requirement#r8066,sdpi_req_level=shall]
 ****
-A <<actor_somds_acm_gateway>> shall map the source identification for physiological alerts to an OBX segment as defined in <<ref_dec_obx_mapping>>. The gateway captures the state of the related metric at the time the alert event occurred.
+A <<actor_somds_acm_gateway>> shall map the source identification for physiological alerts (alarms or advisories) to an OBX segment as defined in <<ref_dec_obx_mapping>>. The gateway captures the state of the related metric at the time the alert event occurred.
 
 .Notes
 [%collapsible]
@@ -654,7 +654,7 @@ OBX|5|NM|150037\^MDC_PRESS_BLD_ART_ABP_SYS^MDC|1.1.1.1.2|119|266016\^MDC_DIM_MMH
 
 [sdpi_level=+1]
 ====== Technical Alerts
-The source identification mapping for a technical alert is defined in table <<ref_tbl_acm_obx_source_tec_mapping>>.
+The source identification mapping for a technical alert (alarm or advisory) is defined in table <<ref_tbl_acm_obx_source_tec_mapping>>.
 
 .R8069
 [sdpi_requirement#r8069,sdpi_req_level=shall]
@@ -1166,6 +1166,11 @@ pm:AlertConditionDescriptor
 
 |===
 
+[NOTE]
+====
+If a <<acronym_sdc>> ALERT CONDITION represents an avisory signal, the alert priority is set to *"None"* for this <<acronym_sdc>> ALERT CONDITION, and therefore, mapped to *"PN"* in the IHE ACM Alert Priority OBX segment.
+====
+
 ====== Alert Type OBX Segment
 .R8076
 [sdpi_requirement#r8076,sdpi_req_level=shall]
@@ -1184,6 +1189,19 @@ NOTE: The mapping is defined in table <<ref_tbl_acm_obx_alert_type_mapping>>.
 OBX|10|ST|68485\^MDC_ATTR_ALERT_TYPE^MDC|1.1.1.1.7|ST||||||R
 ====
 ****
+
+.R8079
+[sdpi_requirement#r8079,sdpi_req_level=shall]
+****
+If *pm:AlertConditionState+++<wbr/>+++/@ActualPriority* is available and set to *"None"*, or if *pm:AlertConditionState+++<wbr/>+++/@ActualPriority* is NOT available and *pm:AlertConditionDescriptor+++<wbr/>+++/@Priority* set to *"None"*, then the <<acronym_sdc>> ALERT CONDITION is an advisory, and the alert type shall be set to *"SA"* in the IHE ACM Alert Type OBX segment.
+
+.Examples
+[%collapsible]
+====
+OBX|10|ST|68485\^MDC_ATTR_ALERT_TYPE^MDC|1.1.1.1.7|SA||||||R
+====
+****
+
 
 [#ref_tbl_acm_obx_alert_type_mapping]
 .OBX Alert Type Mapping
@@ -1244,10 +1262,14 @@ Please refer to <<ref_acm_containment_tree_mapping>> for further information.
 |SP
 |Alert is Alarm – Physiological
 
+See exception when <<r8079>> is met.
+
 |Tec
 |Tec = Technical. The condition arises from a monitored equipment-related or ALERT SYSTEM-related variable.
 |ST
 |Alert is Alarm – Technical
+
+See exception when <<r8079>> is met.
 
 |Oth
 |Oth = Other. The condition arises from another origin, e.g., equipment-user
