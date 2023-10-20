@@ -1024,7 +1024,6 @@ Please refer to <<ref_acm_containment_tree_mapping>> for further information.
 |Observation Result Status
 |
 |Set to *"R"*.
-
 |===
 
 [#ref_tbl_alert_inactivation_state_mapping]
