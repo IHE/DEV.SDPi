@@ -825,9 +825,7 @@ A <<actor_somds_dec_gateway>> should repeat the OBX-17 field to express the *pm:
 
 |Msmt
 |Auto
-|OBX-17 field is left empty (recommended).
-
-Or set to "AMEAS\^auto-measurement^MDC" if required.
+|AMEAS\^auto-measurement^MDC
 
 |Msmt
 |Man
