@@ -104,6 +104,23 @@ This <<acronym_d2d>> is differentiated with the current implementation reality w
 
 See <<vol1_clause_sdpi_p_soa_somds_architecture_alignment>> below for additional conceptual overview information on the conceptual foundations of the <<acronym_sdc>> standards.
 
+[#vol1_clause_sdpi_scope]
+==== Service-oriented Device Point-of-care Interoperability (SDPi) – Scope of Application
+
+The SDPi profile specifications encompass the following application scope:
+
+[none]
+. Safe, effective and secure medical device interoperability
+. Optimized for high-acuity points of care (e.g., operating room, intensive care, and emergency)
+. utilizing services oriented architectures
+. providing seamless plug-and-play connectivity
+. between medical devices, health software (incl. SaMD), and other health-related systems and technologies
+. supporting medical reporting, alerting external control and other capabilities
+. and coordination / coupling between multiple devices for achieving clinical system functions
+
+Notes:    #<add additional explanatory / scoping notes here>#
+
+The Service-oriented Device Point-of-care Interoperability (SDPi) Profiles are
 [sdpi_offset=10]
 ==== Service-oriented Device Point-of-care Interoperability - Plug-and-trust (SDPi-P) Profile
 Within the framework of the SDPi architecture, the Plug-and-Trust ([[acronym_sdpi_p,SDPi-P]] SDPi-P) Profile provides for *_secure plug-and-play connectivity_* between all actors.
