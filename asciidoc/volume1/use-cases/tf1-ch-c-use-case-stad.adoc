@@ -71,7 +71,7 @@ When the <<vol1_spec_sdpi_p_actor_somds_provider>> detects a stepping adjustment
 .Notes
 [%collapsible]
 ====
-NOTE: Note: The <<vol1_spec_sdpi_p_actor_somds_consumer>> considers the possibility of a stepping clock adjustment having occurred at the <<vol1_spec_sdpi_p_actor_somds_provider>> when it receives a changed value in the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDIB sequence identifier.
+NOTE: Note: The <<term_manufacturer>> of the <<vol1_spec_sdpi_p_actor_somds_consumer>> considers the possibility of a stepping clock adjustment having occurred at the <<vol1_spec_sdpi_p_actor_somds_provider>> when the <<vol1_spec_sdpi_p_actor_somds_consumer>> receives a changed value in the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDIB sequence identifier.
 ====
 ****
 
