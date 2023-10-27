@@ -24,6 +24,8 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Removed
 
+- _OBX-17 field is not left empty_ as this would be interpreted as derivation method _auto_ ([#233](https://github.com/IHE/DEV.SDPi/issues/233).
+
 ### Editorial Fixes
 
 ## [1.1.0] - 2023-07-21
