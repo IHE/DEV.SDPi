@@ -239,15 +239,19 @@ NOTE: <<ref_tbl_pid8_mapping>> defines the mapping of the SDC patient's sex info
 .R8107
 [sdpi_requirement#r8107,sdpi_req_level=shall,sdpi_max_occurrence=1]
 ****
-If <<r8102>> is met and the <<actor_somds_v2_gateway>> is configured to export the patient's sex in the PID-8 field, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-8 field to the code for the administrative sex.
-
-The organization has to consider the risk that the patient's sex set in the <<acronym_mdib>> and mapped to the PID-8 field does not lead to a misinterpretation of the sex concept on <<actor_somds_v2_gateway>> consumer side.
+If <<r8102>> is met and the <<actor_somds_v2_gateway>> provides the Healthcare Delivery Organization (HDO) the possibility to configure the export of the patient's sex set in the <<acronym_mdib>> in the PID-8 field, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-8 field to the code for the administrative sex.
 
 .Notes
 [%collapsible]
 ====
 NOTE: <<ref_tbl_pid8_mapping>> defines the mapping of the SDC patient's sex information to the data fields of the HL7 data type *IS* used in the PID-8 field.
 ====
+****
+
+.R8122
+[sdpi_requirement#r8122,sdpi_req_level=shall,sdpi_max_occurrence=1]
+****
+If the <<actor_somds_v2_gateway>> provides the Healthcare Delivery Organization (HDO) the possibility to configure the export of the patient's sex in the PID-8 field, the manufacturer of the <<actor_somds_v2_gateway>> shall require in the ACCOMPANYING INFORMATION that the HDO has to consider the risk that the patient's sex set in the <<acronym_mdib>> and mapped to the PID-8 field does not lead to a misinterpretation of the sex concept on <<actor_somds_v2_gateway>> consumer side.
 ****
 
 [#ref_tbl_dec_obx_sex_mapping]
