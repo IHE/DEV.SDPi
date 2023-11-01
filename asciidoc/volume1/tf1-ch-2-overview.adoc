@@ -51,10 +51,40 @@ In this version, the content is added as 2.3.1, and then the profiles as 2.3.10 
 
 |===
 
-[#vol1_clause_sdpi_overview_framework]
-==== Service-oriented Device Point-of-care Interoperability (SDPi) – Overview & Framework
+[#vol1_clause_sdpi_integration_profiles_overview]
+==== Service-oriented Device Point-of-care Interoperability (SDPi)
 
-The Service-oriented Device Point-of-care Interoperability (SDPi) Profiles are built upon a foundation of standards and profiles from <<acronym_hl7>>, <<acronym_ieee>>, IHE and other organizations.  An overview of the profiles and their relationships is provided in <<figure_sdpi_profiles_foundational_standards>>.
+
+[#vol1_clause_sdpi_scope]
+===== SDPi Profiles – Scope of Application
+
+The Service-oriented Device Point-of-care Interoperability (SDPi) Profile specifications encompass the following application scope:
+
+#EdNote:  Working Draft - KF THC#
+[none]
+. The SDPi specifications provide detailed instructions for seamless plug-and-play interoperability between ISO/IEEE 11073 SDC-based medical devices (including SaMD), as well as between medical devices and health IT systems based on HL7 FHIR and HL7 Version 2.
+Key considerations include safety, security and effectiveness for data reporting, alert notification, device-external control and other high-acuity (e.g., ICU, OR, Step-Down, Emergency response) use cases.
+Provision is made for coordination of individual device functional contributions to support Clinical System Functions.
+
+
+#EdNote:  Original component points ...
+[none]
+. _Safe, effective and secure medical device interoperability_
+. Optimized for high-acuity points of care (e.g., operating room, intensive care, and emergency)
+. utilizing services oriented architectures
+. providing seamless plug-and-play connectivity
+. between medical devices, health software (incl. SaMD), and other health-related systems and technologies
+. supporting medical reporting, alerting external control and other capabilities
+. and coordination / coupling between multiple devices for achieving clinical system functions
+. ecosystem (vendor independent) of ... products ...
+
+Notes:    #<add additional explanatory / scoping notes here>#
+
+
+[#vol1_clause_sdpi_overview_framework]
+===== SDPi Profiles – Overview & Framework
+
+The SDPi Profiles are built upon a foundation of standards and profiles from <<acronym_hl7>>, <<acronym_ieee>>, IHE and other organizations.  An overview of the profiles and their relationships is provided in <<figure_sdpi_profiles_foundational_standards>>.
 
 .IHE SDPi Profiles & Foundational Standards
 [#figure_sdpi_profiles_foundational_standards]
@@ -104,23 +134,6 @@ This <<acronym_d2d>> is differentiated with the current implementation reality w
 
 See <<vol1_clause_sdpi_p_soa_somds_architecture_alignment>> below for additional conceptual overview information on the conceptual foundations of the <<acronym_sdc>> standards.
 
-[#vol1_clause_sdpi_scope]
-==== Service-oriented Device Point-of-care Interoperability (SDPi) – Scope of Application
-
-The SDPi profile specifications encompass the following application scope:
-
-[none]
-. Safe, effective and secure medical device interoperability
-. Optimized for high-acuity points of care (e.g., operating room, intensive care, and emergency)
-. utilizing services oriented architectures
-. providing seamless plug-and-play connectivity
-. between medical devices, health software (incl. SaMD), and other health-related systems and technologies
-. supporting medical reporting, alerting external control and other capabilities
-. and coordination / coupling between multiple devices for achieving clinical system functions
-
-Notes:    #<add additional explanatory / scoping notes here>#
-
-The Service-oriented Device Point-of-care Interoperability (SDPi) Profiles are
 [sdpi_offset=10]
 ==== Service-oriented Device Point-of-care Interoperability - Plug-and-trust (SDPi-P) Profile
 Within the framework of the SDPi architecture, the Plug-and-Trust ([[acronym_sdpi_p,SDPi-P]] SDPi-P) Profile provides for *_secure plug-and-play connectivity_* between all actors.
