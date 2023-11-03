@@ -38,8 +38,8 @@
 ++++
 <div class="logos">
     <div>
-        <img src="{imagesdir}ihe-logo.svg"/>
         <img src="{imagesdir}hl7-intl-logo.svg"/>
+        <img src="{imagesdir}ihe-logo.svg"/>
     </div>
     <div><strong>A Joint HL7-IHE Gemini Device Interoperability Project</strong></div>
 </div>
