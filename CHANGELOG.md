@@ -20,6 +20,7 @@ Each section shall contain a list of action items of the following format: `<bri
 - Requirements R0019 and R0020 to prohibit the use of QNames and XML mixed content ([#210](https://github.com/IHE/DEV.SDPi/issues/210).
 - Requirements R1012 and R1013 to process QNames in BICEPS and DPWS ([#210](https://github.com/IHE/DEV.SDPi/issues/210).
 - Scope of Application section added to TF-1 SDPi Overview ([#235](https://github.com/IHE/DEV.SDPi/issues/235))
+- Update Title Page to Better Reflect HL7 Aspects of the SDPi Standard ([#240](https://github.com/IHE/DEV.SDPi/issues/240))
 
 ### Changed
 
