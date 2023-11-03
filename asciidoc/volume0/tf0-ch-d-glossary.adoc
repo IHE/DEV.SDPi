@@ -21,17 +21,17 @@
 |New Glossary Term |Definition |Synonyms |Acronyms / Abbreviation |References |Type
 
 | [[term_american_national_standards_institute,American National Standards Institute (ANSI)]] American National Standards Institute
-| The primary United States <<acronym_sdo>> recognition and facilitation organization.  See https://ansi.org/[ANSI.org] for more information.
+| The primary United States <<acronym_sdo>> recognition and facilitation organization.
 |
 | [[acronym_ansi,ANSI]] ANSI
-|
+| https://ansi.org/[ANSI.org]
 | Organization
 
 |[[term_basic_ice_protocol_specification,Basic ICE Protocol Specification (BICEPS)]] Basic ICE Protocol Specification
-| General reference to the abstract, implementation technology independent SDC components defined in the ISO/IEEE 11073-10207 standard.  (See <<ref_ieee_11073_10207_2017>>)
+| General reference to the abstract, implementation technology independent SDC components defined in the ISO/IEEE 11073-10207 standard.
 |
 | [[acronym_biceps,BICEPS]] BICEPS
-|
+| <<ref_ieee_11073_10207_2017>>
 | SDC
 
 | [[term_central_station,Central Station]] Central Station
@@ -148,10 +148,10 @@
 | Organization
 
 | Local Area Network
-| A computer network that interconnects computers within a limited area such as a hospital, ICU bed, laboratory, or office building. By contrast, a wide area network (WAN) not only covers a larger geographic distance, but also generally involves leased telecommunication circuits. See https://en.wikipedia.org/wiki/Local_area_network["Local area network" article] for more information and references.
+| A computer network that interconnects computers within a limited area such as a hospital, ICU bed, laboratory, or office building. By contrast, a wide area network (WAN) not only covers a larger geographic distance, but also generally involves leased telecommunication circuits.
 |
 | [[acronym_lan,LAN]] LAN
-|
+| See https://en.wikipedia.org/wiki/Local_area_network["Local area network" article] for more information and references.
 |
 
 | [[term_manufacturer, Manufacturer]] Manufacturer
