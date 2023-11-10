@@ -181,7 +181,7 @@ In the example above, the OID "_1.3.6.1.4.1.12345.2.1.1_" would represent a *pri
 .R0702
 [sdpi_requirement#r0702,sdpi_req_level=shall]
 ****
-The companies claiming compliance with the IHE SDPi profile shall disclose their OIDs used for private codes as detailed in <<ref_ieee_11073_10101_2020>>, for private SDC extensions, and so on.
+The companies claiming conformity with the IHE SDPi profile shall disclose their OIDs used for private codes as detailed in <<ref_ieee_11073_10101_2020>>, for private SDC extensions, and so on.
 
 .Notes
 [%collapsible]
