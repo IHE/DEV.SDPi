@@ -167,7 +167,7 @@ There are different ways to define a globally unique identifier for the vendor-s
 
 An enterprise OID assigned by IANA always starts with the prefix *iso.org.dod.internet.private.enterprise (1.3.6.1.4.1)*. The actual enterprise node number, which follows the prefix, is globally unique to the medical device vendor (e. g. "_1.3.6.1.4.1.12345_" for the *Medical Device XYZ Ltd.* company).
 
-Once the enterprise OID is registered, it is up to the medical device vendor to extend the OID by adding child nodes. The child nodes don't have a globally unique meaning, but the enterprise OID plus the child nodes shall be globally unique. It is highly recommended to define a child node schema, and assign unique numbers to the concepts on each node level.
+Once the enterprise OID is registered, it is up to the medical device vendor to extend the OID by adding child nodes. The child nodes don't have a globally unique meaning, but the enterprise OID plus the child nodes are required to be globally unique. It is recommended to define a child node schema, and assign unique numbers to the concepts on each node level.
 
 .OID Vendor-specific Child Node Schema
 ====
