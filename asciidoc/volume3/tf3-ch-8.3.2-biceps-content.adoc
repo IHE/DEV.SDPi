@@ -186,6 +186,8 @@ The <<term_manufacturer>> shall disclose the OIDs that it uses throughout SDC co
 .Notes
 [%collapsible]
 ====
+NOTE: This includes OIDs for private codes as detailed in <<ref_ieee_11073_10101_2020>>, for private SDC extensions and for private PKPs.
+
 NOTE: A table of vendor-specific OIDs can be found in appendix _TBD_.
 
 ////
