@@ -17,13 +17,13 @@
 :source-highlighter: highlight.js
 :highlightjsdir: js/highlight
 
-:sdpi_milestone_publication: SDPi 1.1 Publication
-:sdpi_milestone_review: SDPi 1.1 Review
+:sdpi_milestone_publication: SDPi 1.2 Publication
+:sdpi_milestone_review: SDPi 1.2 Review
 
-:ihe_supplement_sdpi_revision: 1.1.0
+:ihe_supplement_sdpi_revision: 1.2.0
 :ihe_supplement_sdpi_revision_date: {localdatetime}
 :ihe_supplement_sdpi_revision_label: Standard for Trial Use / Implementation
-:ihe_supplement_sdpi_publication_month: July 21, 2023
+:ihe_supplement_sdpi_publication_month: December 8, 2023
 :ihe_supplement_sdpi_public_comment_submission_deadline: N/A
 
 {empty} +
