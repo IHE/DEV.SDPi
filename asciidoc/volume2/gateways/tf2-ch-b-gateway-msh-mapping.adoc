@@ -11,7 +11,13 @@ If not differently specified in this section, the MSH segment fields shall be in
 .R8101
 [sdpi_requirement#r8101,sdpi_req_level=shall,sdpi_max_occurrence=1]
 ****
-If the <<acronym_mdib>> contains several MDS elements that could operate in different *pm:MdsState/@OperatingMode* states, there shall be a separate [PCD-01] message per MDS.
+For each <<acronym_mds>> element in the <<acronym_mdib>>, a separate [PCD-01] message shall be exported.
+
+.Notes
+[%collapsible]
+====
+NOTE: The HL7 segments *MSH*, *PID*, and *PV1* contain information which can differ between multiple <<acronym_poc>> devices represented as <<acronym_mds>> elements in the <<acronym_mdib>> (e. g. operating mode, patient demographics, patient location, etc.). Since these segments are commonly defined for all <<acronym_mds>> elements in the HL7 [PCD-01] message, separate HL7 [PCD-01] messages per <<acronym_pocd>> are required to be exported.
+====
 ****
 
 ====== MSH-11 Processing ID

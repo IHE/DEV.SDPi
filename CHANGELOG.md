@@ -17,9 +17,16 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Added
 
+- Requirements R0019 and R0020 to prohibit the use of QNames and XML mixed content ([#210](https://github.com/IHE/DEV.SDPi/issues/210).
+- Requirements R1012 and R1013 to process QNames in BICEPS and DPWS ([#210](https://github.com/IHE/DEV.SDPi/issues/210).
+- Scope of Application section added to TF-1 SDPi Overview ([#235](https://github.com/IHE/DEV.SDPi/issues/235))
+- Update Title Page to Better Reflect HL7 Aspects of the SDPi Standard ([#240](https://github.com/IHE/DEV.SDPi/issues/240))
+
 ### Changed
 
 ### Removed
+
+- _OBX-17 field is not left empty_ as this would be interpreted as derivation method _auto_ ([#233](https://github.com/IHE/DEV.SDPi/issues/233).
 
 ### Editorial Fixes
 
@@ -68,3 +75,4 @@ Each section shall contain a list of action items of the following format: `<bri
 - Replaced high-lighting from "Closed Issues" section with correct list ([#139](https://github.com/IHE/DEV.SDPi/issues/139)).
 - Remove leading dashes from table and figure captions if the section number is empty ([#144](https://github.com/IHE/DEV.SDPi/issues/144)).
 - Reviewed all "Verson Note" and version-specific (i.e, 1.0) content and either reworded or removed ([#148](https://github.com/IHE/DEV.SDPi/issues/148))
+

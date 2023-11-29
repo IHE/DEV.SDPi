@@ -1,0 +1,23 @@
+==== Processing of QNames
+
+<<term_q_name>>s are problematic when used in XML element content or attribute values (see <<vol3_clause_extension_qname>>).
+Unfortunately, the BICEPS Participant and Message Model as well some Web Services standards that are normatively referenced by <<ref_oasis_dpws_2009, DPWS>>, use <<term_q_name>>s in XML element content or attribute values.
+
+In order to increase interoperability between implementations of this profile, this section specifies requirements towards <<term_q_name>> handling in XML instances.
+
+.R1012
+[sdpi_requirement#r1012,sdpi_req_level=shall]
+****
+
+A <<vol1_spec_sdpi_p_actor_somds_participant>> shall resolve the namespace of a prefixed <<term_q_name>> in XML attribute values and content of elements to the namespace that is associated with its prefix and is valid for the smallest element, which encloses the <<term_q_name>>, by XML content.
+
+****
+
+.R1013
+[sdpi_requirement#r1013,sdpi_req_level=shall]
+****
+
+A <<vol1_spec_sdpi_p_actor_somds_participant>> shall resolve the namespace of an unprefixed <<term_q_name>> in XML attribute values and content of elements to the default namespace that is valid for the smallest element, which encloses the <<term_q_name>>, by XML content.
+
+****
+

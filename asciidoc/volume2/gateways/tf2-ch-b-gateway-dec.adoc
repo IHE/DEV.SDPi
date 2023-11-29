@@ -825,9 +825,7 @@ A <<actor_somds_dec_gateway>> should repeat the OBX-17 field to express the *pm:
 
 |Msmt
 |Auto
-|OBX-17 field is left empty (recommended).
-
-Or set to "AMEAS\^auto-measurement^MDC" if required.
+|AMEAS\^auto-measurement^MDC
 
 |Msmt
 |Man
@@ -854,12 +852,13 @@ Or set to "AMEAS\^auto-measurement^MDC" if required.
 [#ref_tbl_dec_obx17_mapping2]
 .OBX-17 Observation Method Mapping
 |===
-|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+|SDC MetricAvailability |HL7 OBX-17 Field Value
 
-|OBR-17/CWE-1
-|Identifier
-|pm:AbstractMetricDescriptor+++<wbr/>+++/@MetricAvailability
-|
+|Cont
+|69123\^MDC_OBS_CTS^MDC
+
+|Int
+|69124\^MDC_OBS_NONCTS^MDC
 
 |===
 
