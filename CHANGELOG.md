@@ -17,14 +17,18 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Added
 
-- Requirements R0019 and R0020 to prohibit the use of QNames and XML mixed content ([#210](https://github.com/IHE/DEV.SDPi/issues/210).
-- Requirements R1012 and R1013 to process QNames in BICEPS and DPWS ([#210](https://github.com/IHE/DEV.SDPi/issues/210).
+- Requirements R0019 and R0020 to prohibit the use of QNames and XML mixed content ([#210](https://github.com/IHE/DEV.SDPi/issues/210)).
+- Requirements R1012 and R1013 to process QNames in BICEPS and DPWS ([#210](https://github.com/IHE/DEV.SDPi/issues/210)).
+- Added R0702 on private coding system identification in volume 3 and updated private mdc code mapping in volume 2 gateways ([#57](https://github.com/IHE/DEV.SDPi/issues/57)).
 
 ### Changed
 
 ### Removed
 
 ### Editorial Fixes
+
+- Moved reference content in glossary table between columns ([#166](https://github.com/IHE/DEV.SDPi/issues/166))
+
 
 ## [1.1.0] - 2023-07-21
 
