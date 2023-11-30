@@ -30,6 +30,8 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Editorial Fixes
 
+- Editorial Updates from Release 1.1 to 1.2 ([#245](https://github.com/IHE/DEV.SDPi/issues/245))
+
 ## [1.1.0] - 2023-07-21
 
 ### Added

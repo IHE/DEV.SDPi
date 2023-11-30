@@ -150,7 +150,7 @@ Profile options are provided for additional capabilities that may be required to
 [sdpi_offset=12]
 ==== Service-oriented Device Point-of-care Interoperability - Alerting (SDPi-A) Profile
 The SDPi Alerting Profile builds on the basic <<acronym_pnt>> capabilities of the <<acronym_sdpi_p>> profile, but adds the requirements to fully support *_medical alerting_*.
-To that end, this specification implements the safety and security requirements of the <<ref_ieee_11073_10702_202x>> alert <<acronym_pkp>> standard (expected to be completed in 2023).
+To that end, this specification implements the safety and security requirements of the <<ref_ieee_11073_10702_202x>> alert <<acronym_pkp>> standard (expected to be completed in 2024).
 
 The profile supports core medical alerting functionality needed by all participating systems.
 Profile options are provided for additional capabilities that may be required to support extended scenarios (e.g., alert delegation).
@@ -166,13 +166,13 @@ Profile options are provided for additional capabilities that may be required to
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  For SDPi 1.1, the SDPi-xC Profile is provided for completeness and to show the general direction of the family of SDPi Profiles.
-It is *_not part of the capabilities specified for 1.1_* and even basic controls will not be added until SDPi 2.0 or later.
+a| *SDPi Supplement Version Note*:  For SDPi 1.2, the SDPi-xC Profile is provided for completeness and to show the general direction of the family of SDPi Profiles.
+It is *_not part of the capabilities specified for 1.2_* and even basic controls will not be added until SDPi 2.0 or later.
 |===
 
 The SDPi External Control Profile builds on the basic <<acronym_pnt>> capabilities of the <<acronym_sdpi_p>> profile, but adds support for *_medical device external control capabilities_*.
 For example, the ability to have a system initiate a blood pressure reading, or set a breath rate, or titrate an infusion pump's delivery rate.
-Given the significant risks associated with allowing device-external control functions in a network of <<acronym_pnt>> systems, this specification implements the safety and security requirements of the <<ref_ieee_11073_10703_202x>> external control <<acronym_pkp>> standard (in development, anticipated in 2023 or later).
+Given the significant risks associated with allowing device-external control functions in a network of <<acronym_pnt>> systems, this specification implements the safety and security requirements of the <<ref_ieee_11073_10703_202x>> external control <<acronym_pkp>> standard (in development, anticipated in 2025 or later).
 
 
 [sdpi_offset=5]
