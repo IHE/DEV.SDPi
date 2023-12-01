@@ -21,6 +21,7 @@ Each section shall contain a list of action items of the following format: `<bri
 - Requirements R1012 and R1013 to process QNames in BICEPS and DPWS ([#210](https://github.com/IHE/DEV.SDPi/issues/210)).
 - Scope of Application section added to TF-1 SDPi Overview ([#235](https://github.com/IHE/DEV.SDPi/issues/235))
 - Update Title Page to Better Reflect HL7 Aspects of the SDPi Standard ([#240](https://github.com/IHE/DEV.SDPi/issues/240))
+- Added R0702 on private coding system identification in volume 3 and updated private mdc code mapping in volume 2 gateways ([#57](https://github.com/IHE/DEV.SDPi/issues/57)).
 
 ### Changed
 
@@ -29,6 +30,8 @@ Each section shall contain a list of action items of the following format: `<bri
 - _OBX-17 field is not left empty_ as this would be interpreted as derivation method _auto_ ([#233](https://github.com/IHE/DEV.SDPi/issues/233)).
 
 ### Editorial Fixes
+
+- Moved reference content in glossary table between columns ([#166](https://github.com/IHE/DEV.SDPi/issues/166)).
 
 ## [1.1.0] - 2023-07-21
 
@@ -42,7 +45,6 @@ Each section shall contain a list of action items of the following format: `<bri
 - Added safety, security and effectiveness requirements for use case _Devices are operational in the MD LAN network but cannot access the TS Service and clock drift is unacceptable_ ([#31](https://github.com/IHE/DEV.SDPi/issues/31)).
 - Labeling requirement to use case _Device is connected to the MD LAN network with a Time Source service_ to specify NTP configuration ([#151](https://github.com/IHE/DEV.SDPi/issues/151)). 
 - Added two requirements: One for the accompanying documentation to make sure that participants synchronize with the same time-server and one that explicitly forbids executing system functions without a TS service, when a device is connected to the network. ([#202](https://github.com/IHE/DEV.SDPi/issues/202))
-- Added R0702 on private coding system identification in volume 3 and updated private mdc code mapping in volume 2 gateways ([#57](https://github.com/IHE/DEV.SDPi/issues/57)).
 
 
 ### Changed
@@ -65,7 +67,6 @@ Each section shall contain a list of action items of the following format: `<bri
 - All instances of "i.e." or "e.g." replaced with "i.e.," and "e.g.,", respectivelly ([#189](https://github.com/IHE/DEV.SDPi/issues/189))).
 - Normalized "profile" to "Profile" where appropriate ([#189](https://github.com/IHE/DEV.SDPi/issues/189))).
 - Normalized "section" to "Section" when it was referring to a specific clause within the document ([#189](https://github.com/IHE/DEV.SDPi/issues/189)).
-- Moved reference content in glossary table between columns ([#166](https://github.com/IHE/DEV.SDPi/issues/166)).
 
 ## [1.0.1] - 2023-04-14
 
