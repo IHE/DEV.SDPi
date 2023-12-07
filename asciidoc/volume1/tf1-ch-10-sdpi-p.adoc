@@ -26,7 +26,7 @@ For example, Operating Room / Surgery Point-of-Care Integration, ICU Point-of-Ca
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*: For SDPi 1.1 some actors and transactions have been deferred to a subsequent version, but are included here for completeness.
+a| *SDPi Supplement Version Note*: For SDPi 1.2 some actors and transactions have been deferred to a subsequent version, but are included here for completeness.
 Specifically:  SOMDS FHIR Gateway, SOMDS Sensor Gateway & SOMDS Smart App Platform, have been deferred.
 
 Deferred transactions have been so indicated in the transactions table.
@@ -34,16 +34,14 @@ Deferred transactions have been so indicated in the transactions table.
 |===
 
 This section defines the actors, transactions, and/or content modules in this specification.
-General definitions of actors are given in the https://profiles.ihe.net/GeneralIntro/ch-A.html[_Technical Frameworks General Introduction Appendix A_].
-
-IHE Transactions can be found in the https://profiles.ihe.net/GeneralIntro/ch-B.html[_Technical Frameworks General Introduction Appendix B_].
+General definitions of actors are given in the https://profiles.ihe.net/GeneralIntro/ch-A.html[_Technical Frameworks General Introduction Appendix A_]. IHE Transactions can be found in the https://profiles.ihe.net/GeneralIntro/ch-B.html[_Technical Frameworks General Introduction Appendix B_].
 Both appendices are located at https://profiles.ihe.net/GeneralIntro/[_profiles.ihe.net/GeneralIntro_].
 
 <<vol1_figure_sdpi_p_actor_diagram>> shows the actors directly involved in the SDPi-P Profile.
 The relevant transactions between them are detailed in the subsequent <<vol1_table_sdpi_p_actors_transactions>>.
 Abstract actors (i.e., those that provide common specifications that are utilized in other “concrete” or implementation actors) are indicated by stereotype names in italics (e.g., "<< _SOMDS_Participant_ >>". The actors that inherit their capabilities include the stereotype at the top of their actor box.
 Alternatively, in accordance with traditional IHE style, the Abstract actor's name can be in italics with "{_abstract_}" (e.g., see _SOMDS Connector_ in <<vol1_figure_sdpi_p_actor_diagram>>).
-Actor groupings, including abstract with concrete are detailed in <<vol1_clause_sdpi_p_required_actor_groupings>>.
+Actor groupings, including abstract with concrete, are detailed in <<vol1_clause_sdpi_p_required_actor_groupings>>.
 
 [#vol1_figure_sdpi_p_actor_diagram]
 .SDPi-P Actor Diagram
@@ -436,7 +434,7 @@ See related discussion at <<vol3_clause_biceps_mapping_using_somds_connector_con
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*: For SDPi 1.1, the TF-3 SDC/BICEPS Mapping of SOMDS Connector Content Modules section is out-of-scope., but included above for completeness of this actor overview.
+a| *SDPi Supplement Version Note*: For SDPi 1.2, the TF-3 SDC/BICEPS Mapping of SOMDS Connector Content Modules section is out-of-scope., but included above for completeness of this actor overview.
 |===
 
 Although the SDPi-P Profile _<<vol1_spec_sdpi_p_actor_somds_connector>>_ provides for non-SOMDS _protocol-specific_ adaptors, they establish the foundation for specifying system and application-specific interfaces such as for EHR or decision support systems (e.g., sepsis determination). See <<vol1_clause_sdpi_p_ensuring_time_synchronization>>, and <<vol1_clause_sdpi_p_aggregators_proxies_sensors>> for additional perspectives and concepts on how SOMDS Connectors may be implemented.

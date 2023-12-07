@@ -17,13 +17,13 @@
 :source-highlighter: highlight.js
 :highlightjsdir: js/highlight
 
-:sdpi_milestone_publication: SDPi 1.1 Publication
-:sdpi_milestone_review: SDPi 1.1 Review
+:sdpi_milestone_publication: SDPi 1.2 Publication
+:sdpi_milestone_review: SDPi 1.2 Review
 
-:ihe_supplement_sdpi_revision: 1.1.0
+:ihe_supplement_sdpi_revision: 1.2.0
 :ihe_supplement_sdpi_revision_date: {localdatetime}
 :ihe_supplement_sdpi_revision_label: Standard for Trial Use / Implementation
-:ihe_supplement_sdpi_publication_month: July 21, 2023
+:ihe_supplement_sdpi_publication_month: December 8, 2023
 :ihe_supplement_sdpi_public_comment_submission_deadline: N/A
 
 {empty} +
@@ -102,11 +102,11 @@ This supplement describes changes to the existing technical framework documents.
 |__Amend section W.X by the following:__
 |===
 
-Where the amendment adds text, make the added text +++<u><b>some text bold underline</b></u>+++.
+Where the amendment adds text, make the added text +++<u><b>bold underline</b></u>+++.
 Where the amendment removes text, make the removed text +++<b><s>bold strikethrough</s></b>+++.
 When entire new sections are added, introduce with editor’s instructions to “add new text” or similar, which for readability are not bolded or underlined.
 
-General information about IHE can be found at http://www.ihe.net/[IHE].
+General information about IHE can be found at http://www.ihe.net/[IHE.net].
 
 Information about the IHE Devices domain can be found at https://www.ihe.net/ihe_domains/[IHE Domains].
 
