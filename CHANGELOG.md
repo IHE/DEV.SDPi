@@ -15,6 +15,8 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ## [Unreleased]
 
+## [1.2.0] - 2023-12-07
+
 ### Added
 
 - Requirements R0019 and R0020 to prohibit the use of QNames and XML mixed content ([#210](https://github.com/IHE/DEV.SDPi/issues/210)).
