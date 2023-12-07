@@ -48,7 +48,7 @@ Both appendices are located at https://profiles.ihe.net/GeneralIntro/[_profiles.
 
 <<vol1_figure_sdpi_a_actor_diagram>> shows the actors directly involved in the SDPi-A Profile.
 The relevant transactions between them are detailed in the subsequent <<vol1_table_sdpi_a_actors_transactions>>.
-Actor groupings, including abstract with concrete are detailed in <<vol1_clause_sdpi_a_required_actor_groupings>>.
+Actor groupings, including abstract with concrete, are detailed in <<vol1_clause_sdpi_a_required_actor_groupings>>.
 
 [#vol1_figure_sdpi_a_actor_diagram]
 .SDPi-A Actor Diagram

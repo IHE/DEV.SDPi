@@ -26,7 +26,7 @@ Both appendices are located at https://profiles.ihe.net/GeneralIntro/[_profiles.
 
 <<vol1_figure_sdpi_xc_actor_diagram>> shows the actors directly involved in the SDPi-xC profile.
 The relevant transactions between them are detailed in the subsequent <<vol1_table_sdpi_xc_actors_transactions>>.
-actor groupings, including abstract with concrete are detailed in <<vol1_clause_sdpi_xc_required_actor_groupings>>.
+actor groupings, including abstract with concrete, are detailed in <<vol1_clause_sdpi_xc_required_actor_groupings>>.
 
 [#vol1_figure_sdpi_xc_actor_diagram]
 .SDPi-xC Actor Diagram
