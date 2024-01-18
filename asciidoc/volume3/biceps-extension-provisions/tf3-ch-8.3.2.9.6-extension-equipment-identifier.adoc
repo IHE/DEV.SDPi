@@ -30,9 +30,9 @@ For the `sdpi:EquipmentIdentifier` extension, a <<vol1_spec_sdpi_p_actor_somds_p
 ****
 
 .R0015
-[sdpi_requirement#r0015,sdpi_req_level=should]
+[sdpi_requirement#r0015,sdpi_req_level=shall]
 ****
-For the `sdpi:EquipmentIdentifier` extension, a <<vol1_spec_sdpi_p_actor_somds_provider>> should use URI-encoded UUIDs or OIDs.
+For the `sdpi:EquipmentIdentifier` extension, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall use URI-encoded UUIDs or OIDs.
 ****
 
 .R0016
