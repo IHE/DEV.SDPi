@@ -1,0 +1,11 @@
+:var_label_dev_39_message_alertreport: EpisodicAlertReport
+:var_uri_dpws_messaging: http://docs.oasis-open.org/ws-dd/dpws/1.1/os/wsdd-dpws-1.1-spec-os.html#_Toc228672084
+
+[#vol2_clause_appendix_mdpws_dev_39]
+==== Publish Medical Alert Update  [DEV-39]
+
+This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_39>>.
+
+===== {var_label_dev_39_message_alertreport} Message
+
+The  {var_label_dev_39_message_alertreport} message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging]. Further message mapping details are defined in <<vol2_clause_appendix_a_mdpws_dev_29_alertreport>>.
