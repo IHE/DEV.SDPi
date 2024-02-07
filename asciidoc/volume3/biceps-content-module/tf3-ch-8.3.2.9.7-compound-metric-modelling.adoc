@@ -1,0 +1,68 @@
+[#vol3_clause_compound_metric_modelling]
+====== Compound Metric Modelling
+
+BICEPS does not natively support the concept of compound metrics. An example of compound metrics are blood pressures with their systolic, diastolic, and mean pressure components.
+
+However, BICEPS supports the concept of relations on the *pm:AbstractMetricDescriptor* element that can be utilized to model compound metrics.
+
+[sdpi_level=+1]
+====== Model
+This section defines the modelling of compound metrics.
+
+In order to define which metrics belong to the same compound metric, the *pm:AbstractMetricDescriptor+++<wbr/>+++/pm:Relation* element of each metric points to the other metrics which are also part of the same compound metric.
+
+The *pm:AbstractMetricDescriptor+++<wbr/>+++/pm:Relation+++<wbr/>+++/pm:Code* element defines the compound metric and is set to the same concept on all metrics belonging to this compound metric.
+
+.Non-invasive Blood Pressure Metric Compound Descriptor Example
+[#vol3_example_nibp_compound_metric_descriptor]
+====
+[source,xml]
+----
+include::../../listings/vol3-clause-biceps-content-example-compound-metric.xml[]
+----
+====
+
+[sdpi_level=+1]
+====== Requirements
+
+This section defines the requirements for compound metrics on the BICEPS descriptor and state part level.
+
+[sdpi_level=+2]
+====== Descriptor Part
+.R0703
+[sdpi_requirement#r0703,sdpi_req_level=shall]
+****
+The *pm:Relation* element of the *pm:AbstractMetricDescriptor* shall be used to group the individual metrics belonging to the same compound metric together.
+****
+
+.R0704
+[sdpi_requirement#r0704,sdpi_req_level=shall]
+****
+The *pm:Relation/pm:Code* element shall be set to the coded term of the compound metric on all metrics belonging to the same compound metric.
+****
+
+.R0705
+[sdpi_requirement#r0705,sdpi_req_level=shall]
+****
+The *pm:Relation/@kind* attribute shall be set to "*SST*" in order to identify the relationship as a compound metric.
+****
+
+.R0706
+[sdpi_requirement#r0706,sdpi_req_level=shall]
+****
+The *pm:Relation/@entries* attribute shall list the handles of the other metrics (excluding its own handle) belonging to the same compound metric.
+****
+
+[sdpi_level=+2]
+====== State Part
+.R0707
+[sdpi_requirement#r0707,sdpi_req_level=shall]
+****
+To indicate in the metric state that metric values from the individual metrics belonging to the same compound metric are part of the same measurement, either the *@DeterminationTime* of all values, or in the case of a *pm:NumericMetricValue* the *@starttime* and *@stoptime* of all values shall be set to the same timestamp for start and stop.
+****
+
+.R0708
+[sdpi_requirement#r0708,sdpi_req_level=may]
+****
+If the *@starttime* and *@stoptime* of all metric values are the same for start and stop, the *@DeterminationTime* may be different.
+****
