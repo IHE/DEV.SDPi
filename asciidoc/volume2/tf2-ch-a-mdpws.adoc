@@ -1,6 +1,13 @@
 [appendix#vol2_appendix_a_mdpws_messages,sdpi_offset=A]
 == ISO/IEEE 11073 SDC / MDPWS Message Specifications (Normative)
 
+[CAUTION]
+====
+Message outlines do not contain information regarding required/optional elements/attributes nor cardinalities.
+In order to produce valid messages, the implementation of a <<actor_somds_participant>> needs to conform to the
+referenced standards of which the message outlines herein were generated.
+====
+
 === Service Mapping
 
 include::service-mapping/tf2-ch-a-mdpws-service-mapping.adoc[]
