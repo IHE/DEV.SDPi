@@ -50,3 +50,12 @@ NOTE: This allows for a <<vol1_spec_sdpi_p_actor_somds_consumer>> to apply repor
 ****
 A <<vol1_spec_sdpi_p_actor_somds_consumer>> should reconnect or go into a fail-safe mode when it receives a report with an <<acronym_mdib>> version that is either lower than the last received version or more than one version higher than the last received version.
 ****
+
+.R1014
+[sdpi_requirement#r1014,sdpi_req_level=shall]
+****
+A <<actor_somds_provider>> shall not send a notification of a subscription as long as there is another notification pending for that subscription.
+
+NOTE: This also requires <<actor_somds_provider>>s to serialize delivery of msg:OperationInvokedReport messages.
+****
+
