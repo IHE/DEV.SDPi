@@ -3,7 +3,8 @@
 
 BICEPS does not natively support the concept of compound metrics. An example of compound metrics are blood pressures with their systolic, diastolic, and mean pressure components.
 
-However, BICEPS supports the concept of relations on the *pm:AbstractMetricDescriptor* element that can be utilized to model compound metrics.
+However, BICEPS supports the concept of relations in the *pm:AbstractMetricDescriptor* element that can be utilized to model compound metrics.
+
 
 [sdpi_level=+1]
 ====== Model
