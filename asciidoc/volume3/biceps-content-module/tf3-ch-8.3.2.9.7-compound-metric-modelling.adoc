@@ -39,7 +39,7 @@ For each compound metric, the <<actor_somds_provider>> shall provide a *pm:Relat
 .R0704
 [sdpi_requirement#r0704,sdpi_req_level=shall]
 ****
-The *pm:Relation/pm:Code* element shall be set to the coded term of the compound metric on all metrics belonging to the same compound metric.
+For each *pm:Relation* of a <<actor_somds_provider>> that expresses membership in a compound metric, the <<actor_somds_provider>> shall set *pm:Code* to the coded term of the compound metric it belongs to.
 ****
 
 .R0705
