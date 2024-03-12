@@ -51,7 +51,7 @@ For each *pm:Relation* of a <<actor_somds_provider>> that expresses membership i
 .R0706
 [sdpi_requirement#r0706,sdpi_req_level=shall]
 ****
-The *pm:Relation/@entries* attribute shall list the handles of the other metrics (excluding its own handle) belonging to the same compound metric.
+For each *pm:Relation* of a <<actor_somds_provider>> that expresses membership in a compound metric, the <<actor_somds_provider>> shall include all handle references of those metrics that belong to the same compound metric in *pm:Relation/@Entries* excluding the handle of the metric that contains the *pm:Relation*.
 ****
 
 [sdpi_level=+2]
