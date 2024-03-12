@@ -33,7 +33,7 @@ This section defines the requirements for compound metrics on the BICEPS descrip
 .R0703
 [sdpi_requirement#r0703,sdpi_req_level=shall]
 ****
-The *pm:Relation* element of the *pm:AbstractMetricDescriptor* shall be used to group the individual metrics belonging to the same compound metric together.
+For each compound metric, the <<actor_somds_provider>> shall provide a *pm:Relation* element to relate to all metrics belonging to the same compound metric.
 ****
 
 .R0704
