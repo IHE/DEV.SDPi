@@ -45,7 +45,7 @@ The *pm:Relation/pm:Code* element shall be set to the coded term of the compound
 .R0705
 [sdpi_requirement#r0705,sdpi_req_level=shall]
 ****
-The *pm:Relation/@kind* attribute shall be set to "*SST*" in order to identify the relationship as a compound metric.
+For each *pm:Relation* of a <<actor_somds_provider>> that expresses membership in a compound metric, the <<actor_somds_provider>> shall set *@Kind* to *SST*.
 ****
 
 .R0706
