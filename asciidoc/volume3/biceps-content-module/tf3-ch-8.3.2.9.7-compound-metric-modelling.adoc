@@ -26,7 +26,7 @@ include::../../listings/vol3-clause-biceps-content-example-compound-metric.xml[]
 [sdpi_level=+1]
 ====== Requirements
 
-This section defines the requirements for compound metrics on the BICEPS descriptor and state part level.
+This section defines the requirements to compound metrics provided in the MDIB descriptive and state parts.
 
 [sdpi_level=+2]
 ====== Descriptor Part
