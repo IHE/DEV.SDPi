@@ -56,14 +56,17 @@ For each *pm:Relation* of a <<actor_somds_provider>> that expresses membership i
 
 [sdpi_level=+2]
 ====== State Part
+
 .R0707
 [sdpi_requirement#r0707,sdpi_req_level=shall]
 ****
-To indicate in the metric state that metric values from the individual metrics belonging to the same compound metric are part of the same measurement, either the *@DeterminationTime* of all values, or in the case of a *pm:NumericMetricValue* the *@starttime* and *@stoptime* of all values shall be set to the same timestamp for start and stop.
+For each compound metric of a <<actor_somds_provider>>, if *@StartTime* and *@StopTime* are available, the <<actor_somds_provider>> shall provide the same values for *@StartTime* and *@StopTime* in each metric of the compound metric to signify the same measurement cycle.
+
+NOTE: *@DeterminationTime* may vary between individual metrics of the compound metric.
 ****
 
 .R0708
-[sdpi_requirement#r0708,sdpi_req_level=may]
+[sdpi_requirement#r0708,sdpi_req_level=shall]
 ****
-If the *@starttime* and *@stoptime* of all metric values are the same for start and stop, the *@DeterminationTime* may be different.
+For each compound metric of a <<actor_somds_provider>>, if *@StartTime* and *@StopTime* are not available, the <<actor_somds_provider>> shall provide the same value for *@DeterminationTime* in each metric of the compound metric to signify the same measurement cycle.
 ****
