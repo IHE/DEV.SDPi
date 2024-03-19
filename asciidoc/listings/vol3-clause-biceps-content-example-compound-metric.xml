@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<msg:GetMdibResponse
+        SequenceId="urn:uuid:09578906-7efd-43a7-8344-8bf37b674524"
+        xmlns:ext="http://standards.ieee.org/downloads/11073/11073-10207-2017/extension"
+        xmlns:pm="http://standards.ieee.org/downloads/11073/11073-10207-2017/participant"
+        xmlns:msg="http://standards.ieee.org/downloads/11073/11073-10207-2017/message"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:sdpi="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1">
+    <msg:Mdib SequenceId="urn:uuid:09578906-7efd-43a7-8344-8bf37b674524">
+        <pm:MdDescription>
+            <pm:Mds Handle="mds0">
+				<!-- containment subtree -->
+				<pm:Vmd Handle="vmd0" SafetyClassification="MedA">
+					<!-- containment subtree -->
+					<pm:Channel Handle="chan0" SafetyClassification="MedA">
+						<!-- containment subtree -->
+						<pm:Metric xsi:type="pm:NumericMetricDescriptor"
+								           Handle="metric0.sys"
+								           SafetyClassification="MedA"
+								           Resolution="1.0"
+								           MetricCategory="Msrmt"
+								           DerivationMethod="Auto"
+								           MetricAvailability="Intr"
+								           LifeTimePeriod="PT300S">
+							<pm:Type Code="150021">
+								<pm:ConceptDescription>Noninvasive systolic blood pressure</pm:ConceptDescription>
+							</pm:Type>
+							<pm:Unit Code="266016">
+								<pm:ConceptDescription>mmHg</pm:ConceptDescription>
+							</pm:Unit>
+							<pm:Relation Kind="SST" Entries="metric0.dia metric0.mean">
+								<pm:Code Code="150020">
+									<pm:ConceptDescription>Noninvasive blood pressure</pm:ConceptDescription>
+								</pm:Code>
+							</pm:Relation>
+						</pm:Metric>
+						<pm:Metric xsi:type="pm:NumericMetricDescriptor"
+								           Handle="metric0.dia"
+								           SafetyClassification="MedA"
+								           Resolution="1.0"
+								           MetricCategory="Msrmt"
+								           DerivationMethod="Auto"
+								           MetricAvailability="Intr"
+								           LifeTimePeriod="PT300S">
+							<pm:Type Code="150022">
+								<pm:ConceptDescription>Noninvasive diastolic blood pressure</pm:ConceptDescription>
+							</pm:Type>
+							<pm:Unit Code="266016">
+								<pm:ConceptDescription>mmHg</pm:ConceptDescription>
+							</pm:Unit>
+							<pm:Relation Kind="SST" Entries="metric0.sys metric0.mean">
+								<pm:Code Code="150020">
+									<pm:ConceptDescription>Noninvasive blood pressure</pm:ConceptDescription>
+								</pm:Code>
+							</pm:Relation>
+						</pm:Metric>
+						<pm:Metric xsi:type="pm:NumericMetricDescriptor"
+								           Handle="metric0.mean"
+								           SafetyClassification="MedA"
+								           Resolution="1.0"
+								           MetricCategory="Msrmt"
+								           DerivationMethod="Auto"
+								           MetricAvailability="Intr"
+								           LifeTimePeriod="PT300S">
+							<pm:Type Code="150023">
+								<pm:ConceptDescription>Noninvasive mean blood pressure</pm:ConceptDescription>
+							</pm:Type>
+							<pm:Unit Code="266016">
+								<pm:ConceptDescription>mmHg</pm:ConceptDescription>
+							</pm:Unit>
+							<pm:Relation Kind="SST" Entries="metric0.sys metric0.dia">
+								<pm:Code Code="150020">
+									<pm:ConceptDescription>Noninvasive blood pressure</pm:ConceptDescription>
+								</pm:Code>
+							</pm:Relation>
+						</pm:Metric>
+					</pm:Channel>
+				</pm:Vmd>
+            </pm:Mds>
+        </pm:MdDescription>
+        <pm:MdState>
+            <!-- states -->
+        </pm:MdState>
+    </msg:Mdib>
+</msg:GetMdibResponse>
