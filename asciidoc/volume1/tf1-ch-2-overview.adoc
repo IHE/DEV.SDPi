@@ -58,10 +58,7 @@ In this version, the content is added as 2.3.1, and then the profiles as 2.3.10 
 [#vol1_clause_sdpi_scope]
 ===== SDPi Profiles – Scope of Application
 
-The Service-oriented Device Point-of-care Interoperability (SDPi) Profile specifications encompass the following application scope:
-
-[none]
-. The SDPi specifications provide detailed instructions for seamless plug-and-play interoperability between ISO/IEEE 11073 SDC-based medical devices (including SaMD), as well as between medical devices and health IT systems based on HL7 FHIR and HL7 Version 2.
+The Service-oriented Device Point-of-care Interoperability (SDPi) Profile specifications provide detailed instructions for seamless plug-and-play interoperability between ISO/IEEE 11073 SDC-based medical devices (including SaMD), as well as between medical devices and health IT systems based on HL7 FHIR and HL7 Version 2.
 Key considerations include enabling safe, secure and effective interoperability for data reporting, alert notification, device-external control and other high-acuity point-of-care  use cases.
 Provision is made for coordination of individual device functional contributions to support clinical system functions that are provided by two or more participants.
 
