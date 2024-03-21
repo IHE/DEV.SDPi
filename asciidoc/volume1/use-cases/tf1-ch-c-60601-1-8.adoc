@@ -47,7 +47,7 @@ NOTE: CDIS is not recognized in 60601-1-8, however it is implemented in practise
 
 • Example -- Central Station
 
-====== CDAS - Distributed Information System with Confirmation
+====== CDAS - Distributed Alarm System with Confirmation
 
 *CDAS* is a system for reporting alarm signals with technical and operator confirmation (accept/reject) (of receipt).
 

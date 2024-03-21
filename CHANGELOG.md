@@ -34,7 +34,9 @@ Each section shall contain a list of action items of the following format: `<bri
 ### Editorial Fixes
 
 - Moved reference content in glossary table between columns ([#166](https://github.com/IHE/DEV.SDPi/issues/166)).
-- Apply several editorial fixes ([#247](https://github.com/IHE/DEV.SDPi/issues/247))
+- Apply several editorial fixes ([#247](https://github.com/IHE/DEV.SDPi/issues/247)) 
+- Corrected the CDAS section title to correctly reflect the meaning of the acronym ([#265](https://github.com/IHE/DEV.SDPi/issues/265)) 
+- Reformatted the SDPi profiles scope section for readability ([270](https://github.com/IHE/DEV.SDPi/issues/270)) 
 
 ## [1.1.0] - 2023-07-21
 
