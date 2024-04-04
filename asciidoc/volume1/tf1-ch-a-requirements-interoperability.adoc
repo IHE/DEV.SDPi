@@ -10,7 +10,7 @@
 [cols="1"]
 |===
 a| *SDPi Supplement Version Note*:  This appendix provides informative (vs. normative) information related to the unique way in which this supplement integrates requirements, both from referenced foundational standards and within this specification.
-*For SDPi 1.2*, given its non-normative nature, full detailing of the concepts and specifications is deferred to a subsequent revision of the specification.
+*For SDPi 1.3*, given its non-normative nature, full detailing of the concepts and specifications is deferred to a subsequent revision of the specification.
 So, please excuse the incomplete sections with "placeholder" version notes!
 There is value, though, in giving the existing content a quick review and providing feedback that would inform subsequent revisions of the specification.
 
@@ -107,8 +107,8 @@ How does this address the "interoperability trust gap"?  By integrating SES dire
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  For SDPi 1.2, the inclusion of SES Considerations sections is early and will be significantly extended in subsequent versions of the specification.
-Especially when requirements from the <<acronym_pkp>> standards are included in SDPi 1.2 and following.
+a| *SDPi Supplement Version Note*:  For SDPi 1.3, the inclusion of SES Considerations sections is early and will be significantly extended in subsequent versions of the specification.
+Especially when requirements from the <<acronym_pkp>> standards are included in SDPi 1.3 and following.
 
 Note:  When the <<acronym_pkp>> standards are integrated into this specification, then specific requirements will be directly linked to these <<acronym_ses>> Considerations sections.
 |===

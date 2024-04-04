@@ -13,9 +13,9 @@ The SDPi changelog shall not contain the following sections
 
 Each section shall contain a list of action items of the following format: `<brief one-sentence description of what has been done> (#<issue number & URL>).`
 
-## Unreleased
+## [Unreleased]
 
-## [1.3.0] - 2024-03-29
+- Remove / Update "1.2" comments from release 1.3.0 ([#282](https://github.com/IHE/DEV.SDPi/issues/282))
 
 ### Added
 
