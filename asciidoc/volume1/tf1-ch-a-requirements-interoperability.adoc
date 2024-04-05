@@ -108,7 +108,7 @@ How does this address the "interoperability trust gap"?  By integrating SES dire
 [cols="1"]
 |===
 a| *SDPi Supplement Version Note*:  For SDPi 1.3, the inclusion of SES Considerations sections is early and will be significantly extended in subsequent versions of the specification.
-Especially when requirements from the <<acronym_pkp>> standards are included in SDPi 1.3 and following.
+Especially when requirements from the <<acronym_pkp>> standards are included in SDPi 1.4 and following.
 
 Note:  When the <<acronym_pkp>> standards are integrated into this specification, then specific requirements will be directly linked to these <<acronym_ses>> Considerations sections.
 |===

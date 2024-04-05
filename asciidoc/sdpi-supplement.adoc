@@ -20,7 +20,7 @@
 :sdpi_milestone_publication: SDPi 1.3 Publication
 :sdpi_milestone_review: SDPi 1.3 Review
 
-:ihe_supplement_sdpi_revision: 1.3.0
+:ihe_supplement_sdpi_revision: 1.3.1
 :ihe_supplement_sdpi_revision_date: {localdatetime}
 :ihe_supplement_sdpi_revision_label: Standard for Trial Use / Implementation
 :ihe_supplement_sdpi_publication_month: March 29, 2024
