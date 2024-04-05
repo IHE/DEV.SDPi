@@ -163,8 +163,8 @@ Profile options are provided for additional capabilities that may be required to
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  For SDPi 1.2, the SDPi-xC Profile is provided for completeness and to show the general direction of the family of SDPi Profiles.
-It is *_not part of the capabilities specified for 1.2_* and even basic controls will not be added until SDPi 2.0 or later.
+a| *SDPi Supplement Version Note*:  For SDPi 1.3, the SDPi-xC Profile is provided for completeness and to show the general direction of the family of SDPi Profiles.
+It is *_not part of the capabilities specified for 1.3_* and even basic controls will not be added until SDPi 2.0 or later.
 |===
 
 The SDPi External Control Profile builds on the basic <<acronym_pnt>> capabilities of the <<acronym_sdpi_p>> Profile, but adds support for *_medical device external control capabilities_*.
