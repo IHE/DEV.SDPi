@@ -197,7 +197,7 @@ NOTE: This includes OIDs for private codes as detailed in <<ref_ieee_11073_10101
 ****
 
 [#vol3_clause_biceps_ses_content_requirements_considerations]
-===== Safety, Effectiveness, Security Content Requirements & Considerations
+===== Safety, Effectiveness and Security - Requirements and Considerations
 
 [%noheader]
 [%autowidth]

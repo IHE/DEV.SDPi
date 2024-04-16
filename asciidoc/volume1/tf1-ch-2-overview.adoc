@@ -22,17 +22,17 @@ These general concepts will help the technical framework reader understand the b
 
 // 2.2
 [#vol1_clause_ses_considerations_requirements,sdpi_offset=2]
-=== Safety, Effectiveness & Security Considerations and Requirements
+=== Safety, Effectiveness and Security - Requirements and Considerations
 IHE specifications often include sections for "Security Considerations" and "Safety Considerations", capturing both general and specific guidance and requirements for system implementers.
 This supplement extends these two concepts to include a third:  Effectiveness.
-The sections are termed: <<term_safe_effective_secure>> Considerations.
+The sections are titled "Safety, Effectiveness and Security - Requirements and Considerations" and make use of the underlying term <<term_safe_effective_secure>>.
 
 The background for <<acronym_ses>> is discussed in detail in <<vol1_appendix_a_integrating_ses>>; however, in general "<<acronym_ses>>" is used as a reference to the standards encompassed (directly and indirectly by reference) in <<term_joint_working_group_7>>, including <<ref_iso_81001_1_2021>> and <<ref_iec_80001_1_2021>>.
 These standards are primarily, though not exclusively, focused on *_risk management of health software_* (including <<acronym_samd>>) *_and medical devices that are deployed on various kinds of infrastructure_*, with a focus to managing three key properties:  *Safety, Effectiveness and Security*.
-Thus the "<<acronym_ses>> Considerations" sections in this supplement are intended to reflect the results of that risk management and to guide those who are tasked with deploying and managing these interoperable solutions during use.
+Thus the "Safety, Effectiveness and Security - Requirements and Considerations" sections in this supplement are intended to reflect the results of that risk management and to guide those who are tasked with deploying and managing these interoperable solutions during use.
 
 Note that specific requirements from the above mentioned standards, may also be captured in <<vol1_appendix_b_referenced_standards_conformance>>.
-Generally, requirements from these standards would be mapped to the appropriate <<acronym_ses>> Considerations sections throughout the specification.
+Generally, requirements from these standards would be mapped to the appropriate "Safety, Effectiveness and Security - Requirements and Considerations" sections throughout the specification.
 
 // 2.3
 [#vol1_clause_integration_profiles_overview]

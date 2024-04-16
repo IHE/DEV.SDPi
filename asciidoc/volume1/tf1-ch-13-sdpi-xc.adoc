@@ -177,7 +177,7 @@ Therefore, with this release of the SDPi specification, this section remains inc
 ////
 
 [#vol1_clause_sdpi_xc_ses_considerations]
-=== SDPi-xC Safety, Effectiveness, Security Considerations and Requirements
+=== SDPi-xC Safety, Effectiveness and Security - Requirements and Considerations
 
 ==== SES General Considerations
 Requirements from the <<ref_iso_81001_1_2021>>, <<ref_iec_80001_1_2021>>, and related standards should be fully applied to this technical framework element.
