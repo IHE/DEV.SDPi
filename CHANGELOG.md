@@ -15,6 +15,10 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ## [Unreleased]
 
+### Editorial Fixes
+
+- Correct SES section titles ([#272](https://github.com/IHE/DEV.SDPi/issues/272))
+
 ## [1.3.1] - 2024-04-05
 
 ### Editorial Fixes
