@@ -53,12 +53,12 @@ NOTE:  A detailed description of this <<acronym_biceps>> description information
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*: This version of the supplement does not fully support profiles of all the elements in the descriptive model, including:
+a| *{supplement_note}*: This version of the supplement does not fully support profiles of all the elements in the descriptive model, including:
 
 * Service Control Object (SCO) and Operations
 * Battery objects
 
-Additionally, only limited support for the *_AlertSystem_* (and related objects), and for the *_SystemContext_* types are provided in SDPi 1.3.
+Additionally, only limited support for the *_AlertSystem_* (and related objects), and for the *_SystemContext_* types are provided in SDPi {ihe_supplement_sdpi_revision_short}.
 Subsequent versions of the specification will address complete functionality.
 |===
 
@@ -76,7 +76,7 @@ The basic containment from MDS to VMD to Channel to Metric is maintained within 
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  This clause is intentionally left blank for this version.
+a| *{supplement_note}*:  This clause is intentionally left blank for this version.
 Future versions will include general discussion about how BICEPS-based content is formally mapped to that of other protocols, typically utilizing a <<vol1_spec_sdpi_p_actor_somds_connector>>.
 
 |===
@@ -203,7 +203,7 @@ NOTE: This includes OIDs for private codes as detailed in <<ref_ieee_11073_10101
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  The <<acronym_sdc>> standards community is evaluating the use of safety class elements in the BICEPS specification (see <<ref_ieee_11073_10207_2017>>), and the related https://github.com/IHE/DEV.SDPi/issues/11[Github Issue #11 _Topic: SDPi-xC with Mixed Device Safety Classes_].
+a| *{supplement_note}*:  The <<acronym_sdc>> standards community is evaluating the use of safety class elements in the BICEPS specification (see <<ref_ieee_11073_10207_2017>>), and the related https://github.com/IHE/DEV.SDPi/issues/11[Github Issue #11 _Topic: SDPi-xC with Mixed Device Safety Classes_].
 The result of that discussion will directly impact the BICEPS SES Considerations Section below.
 
 For this version of the specification, the following wording has been suggested:

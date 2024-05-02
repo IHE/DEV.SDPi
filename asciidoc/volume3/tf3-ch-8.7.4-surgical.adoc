@@ -21,6 +21,6 @@
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  Content for this section will be extended in SDPi 1.x and subsequent versions.
-The initial content will reflect what is provided in SDPi 1.3 <<vol3_clause_device_physiological_monitor>>.
+a| *{supplement_note}*:  Content for this section will be extended in SDPi 1.x and subsequent versions.
+The initial content will reflect what is provided in SDPi {ihe_supplement_sdpi_revision_short} <<vol3_clause_device_physiological_monitor>>.
 |===
