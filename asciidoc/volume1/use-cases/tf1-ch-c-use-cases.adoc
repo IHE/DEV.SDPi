@@ -11,7 +11,7 @@
 [%autowidth]
 [cols="1"]
 |===
-| *SDPi Supplement Version Note*: This initial section of Appendix C is informative and is still being detailed.  Completion is deferred to version 1.x or later.
+| *{supplement_note}*: This initial section of Appendix C is informative and is still being detailed.  Completion is deferred to version 1.x or later.
 It provides general background detail around how general (non-technology specific) clinical use case specifications are being utilized in this supplement.
 
 *REVIEWER QUESTION*:  Please review the intended topics and identify any additional content that should be considered.  Especialy helpful would be references to related standards and materials that would inform the approach taken in this appendix.
@@ -33,7 +33,7 @@ Looking to leverage this wealth of use cases in considering SDPi, a "compendium 
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
 
 ////
@@ -46,7 +46,7 @@ a| *SDPi Supplement Version Note*:  This section intentionally left blank for th
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  This section contains initial content that will be greatly expanded in future versions.
+a| *{supplement_note}*:  This section contains initial content that will be greatly expanded in future versions.
 |===
 
 ////
@@ -70,7 +70,7 @@ Each Use Case (also called a Feature in Gherkin) is organized as follows:
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
 
 ////

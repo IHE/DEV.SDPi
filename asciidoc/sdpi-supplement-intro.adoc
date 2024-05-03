@@ -1,3 +1,4 @@
+:supplement_note: SDPi {ihe_supplement_sdpi_revision_short} Supplement Note
 
 [#supplement_clause_introduction_to_supplement,sdpi_offset=clear]
 = Introduction to this Supplement
@@ -23,7 +24,7 @@ These known limitations include:
 . *Requirements boxes* (e.g., "R1234") have been added especially in TF-2, with some also part of TF-1 and TF-3; this is an initial approach that *_will be significantly expanded in future versions of the supplement_*; an initial approach is provided in <<vol1_clause_sdpi_requirements_modeling_integration>>, with discussion related to how it will be expanded in future versions of the supplement;
 . *_<<term_safe_effective_secure>> Sections_* (see <<vol1_clause_appendix_a_ses_considerations_section_template>>) are included in the specification; however, their use and content will be significantly extended in future versions;
 . This supplement is currently rendered as a *"long form"* document -- one single HTML file; however, in subsequent versions the intent is to consider a multi-page / file HTML rendering + addition of a tabbed menu for navigating the sections of the supplement;
-. *"SDPi 1.3 Supplement Note"* boxes are provided throughout the document to help guide reviewers and implementers.
+. *{supplement_note}* boxes are provided throughout the document to help guide reviewers and implementers.
 
 |===
 
