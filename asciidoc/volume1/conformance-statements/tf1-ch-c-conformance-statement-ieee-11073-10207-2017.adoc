@@ -6,7 +6,7 @@
 [%autowidth]
 [cols="1"]
 |===
-| *{supplement_note}*: This section is provided as a placeholder for the <<acronym_ics>> table specification that will be added in the subsequent SDPi 1.4 supplement version.
+| *{supplement_note}*: This section is provided as a placeholder for the <<acronym_ics>> table specification that will be added in a subsequent SDPi supplement version.
 The tables will have an additional SDPi column added to the right side that indicates *if* and TBD *where* the requirement is satisfied.
 Requirement Definition (this table's rows) will be referenced where they are satisfied; however, these tables may also include forward references, at least in general, to what capabilities / requirements satisfy the referenced standard requirement.
 
