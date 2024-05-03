@@ -18,6 +18,7 @@ Each section shall contain a list of action items of the following format: `<bri
 ### Editorial Fixes
 
 - Correct SES section titles ([#272](https://github.com/IHE/DEV.SDPi/issues/272))
+- Implement semi-automatic version referencing by adding Asciidoc variables ( ([#284](https://github.com/IHE/DEV.SDPi/issues/284)))
 
 ## [1.3.1] - 2024-04-05
 
