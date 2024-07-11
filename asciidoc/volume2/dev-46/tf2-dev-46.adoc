@@ -42,7 +42,7 @@ include::../../plantuml/vol2-figure-dev-46-sequence.puml[]
 ===== {var_label_dev_46_message_register} Message
 
 <<acronym_biceps>> specifies an implicit discovery protocol for allowing <<vol1_spec_sdpi_p_actor_somds_consumer>>s to receive a notification when a <<vol1_spec_sdpi_p_actor_somds_provider>> is ready to exchange messages with other <<vol1_spec_sdpi_p_actor_somds_consumer>>s.
-If a <<vol1_spec_sdpi_p_actor_somds_participant>> uses a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> to announce itself or seek other <<vol1_spec_sdpi_p_actor_somds_participant>>s in the <<acronym_somds>>, network presence is announced by using the _{var_label_dev_46_message_register}_ message of this transaction.
+If a <<vol1_spec_sdpi_p_actor_somds_participant>> uses a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>, network presence is announced by using the _{var_label_dev_46_message_register}_ message of this transaction.
 
 [#vol2_clause_dev_46_message_register_trigger_events]
 ====== Trigger Events
