@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   width="936"
-   height="235.31104"
+   width="1039"
+   height="236.31104"
    overflow="hidden"
    version="1.1"
-   id="svg77"
+   id="svg80"
    sodipodi:docname="vol1-diagram-sdpi-req-types-model.svg"
    inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs84" />
   <sodipodi:namedview
-     id="namedview79"
+     id="namedview82"
      pagecolor="#ffffff"
      bordercolor="#000000"
      borderopacity="0.25"
@@ -25,43 +27,30 @@
      fit-margin-right="15"
      fit-margin-bottom="15"
      inkscape:zoom="0.8609375"
-     inkscape:cx="484.93648"
+     inkscape:cx="536.04356"
      inkscape:cy="152.74047"
      inkscape:window-width="1620"
      inkscape:window-height="1058"
      inkscape:window-x="-6"
      inkscape:window-y="-6"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g75" />
-  <defs
-     id="defs5">
-    <clipPath
-       id="clip0">
-      <rect
-         x="0"
-         y="0"
-         width="1280"
-         height="720"
-         id="rect2" />
-    </clipPath>
-  </defs>
+     inkscape:current-layer="g78" />
   <g
-     clip-path="url(#clip0)"
-     id="g75"
-     transform="translate(-155,-206.68896)">
+     id="g78"
+     transform="translate(-103,-206.68896)">
     <rect
        style="fill:#ffffff"
-       id="rect1207"
-       width="1009.3648"
-       height="300.83484"
-       x="114.34664"
-       y="168.35866" />
+       id="rect188"
+       width="1058.1488"
+       height="249.72777"
+       x="92.54628"
+       y="196.23524" />
     <text
        font-family="Calibri, Calibri_MSFontService, sans-serif"
        font-weight="400"
        font-size="16px"
-       transform="translate(267.869,382)"
-       id="text9">0..1</text>
+       transform="translate(421.917,383)"
+       id="text4">0..1</text>
     <rect
        x="521"
        y="265"
@@ -72,52 +61,35 @@
        stroke-linejoin="round"
        stroke-miterlimit="10"
        fill="none"
-       id="rect11" />
+       id="rect6" />
     <text
        font-family="Calibri, Calibri_MSFontService, sans-serif"
        font-style="italic"
        font-weight="400"
        font-size="24px"
        transform="translate(560.462,292)"
-       id="text13">Requirement</text>
+       id="text8">Requirement</text>
     <text
        font-family="Calibri, Calibri_MSFontService, sans-serif"
        font-style="italic"
        font-weight="400"
        font-size="24px"
        transform="translate(575.149,321)"
-       id="text15">Definition</text>
+       id="text10">Definition</text>
     <text
        font-family="Calibri, Calibri_MSFontService, sans-serif"
        font-weight="400"
        font-size="19px"
        transform="translate(833.072,252)"
-       id="text17">satisfied</text>
+       id="text12">satisfied</text>
     <text
        font-family="Calibri, Calibri_MSFontService, sans-serif"
        font-weight="400"
        font-size="19px"
        transform="translate(833.072,275)"
-       id="text19">by</text>
+       id="text14">by</text>
     <rect
-       x="171"
-       y="386"
-       width="190"
-       height="39"
-       stroke="#0070c0"
-       stroke-width="2"
-       stroke-linejoin="round"
-       stroke-miterlimit="10"
-       fill="none"
-       id="rect21" />
-    <text
-       font-family="Calibri, Calibri_MSFontService, sans-serif"
-       font-weight="400"
-       font-size="24px"
-       transform="translate(181.821,413)"
-       id="text23">Use Case Feature</text>
-    <rect
-       x="409"
+       x="324"
        y="387"
        width="190"
        height="39"
@@ -126,15 +98,15 @@
        stroke-linejoin="round"
        stroke-miterlimit="10"
        fill="none"
-       id="rect25" />
+       id="rect16" />
     <text
        font-family="Calibri, Calibri_MSFontService, sans-serif"
        font-weight="400"
        font-size="24px"
-       transform="translate(421.615,414)"
-       id="text27">Ref. Standard ICS</text>
+       transform="translate(334.804,414)"
+       id="text18">Use Case Feature</text>
     <rect
-       x="647"
+       x="528"
        y="387"
        width="190"
        height="39"
@@ -143,15 +115,32 @@
        stroke-linejoin="round"
        stroke-miterlimit="10"
        fill="none"
-       id="rect29" />
+       id="rect20" />
     <text
        font-family="Calibri, Calibri_MSFontService, sans-serif"
        font-weight="400"
        font-size="24px"
-       transform="translate(725.372,414)"
-       id="text31">SES</text>
+       transform="translate(540.594,414)"
+       id="text22">Ref. Standard ICS</text>
     <rect
-       x="885"
+       x="732"
+       y="388"
+       width="190"
+       height="39"
+       stroke="#0070c0"
+       stroke-width="2"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       id="rect24" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(810.145,415)"
+       id="text26">SES</text>
+    <rect
+       x="936"
        y="387"
        width="190"
        height="39"
@@ -160,51 +149,52 @@
        stroke-linejoin="round"
        stroke-miterlimit="10"
        fill="none"
-       id="rect33" />
+       id="rect28" />
     <text
        font-family="Calibri, Calibri_MSFontService, sans-serif"
        font-weight="400"
        font-size="24px"
-       transform="translate(917.995,414)"
-       id="text35">Tech Feature</text>
+       transform="translate(968.563,414)"
+       id="text30">Tech Feature</text>
     <path
-       d="m 624.091,340.167 v 20.7 H 266.5 l 0.667,-0.667 v 26.701 h -1.334 v -27.367 h 357.591 l -0.667,0.666 v -20.033 z m -4.667,1.333 4,-8 4,8 z"
-       id="path37" />
+       d="m 624.108,340.167 v 21.039 H 419.5 l 0.667,-0.666 v 27.039 h -1.334 v -27.706 h 204.609 l -0.667,0.667 v -20.373 z m -4.666,1.333 4,-8 4,8 z"
+       id="path32" />
     <path
-       d="m 623.944,340.167 v 21.11 H 504.5 l 0.667,-0.667 v 27.11 h -1.334 v -27.777 h 119.444 l -0.666,0.667 v -20.443 z m -4.667,1.333 4,-8 4,8 z"
-       id="path39" />
-    <path
-       d="M 6.66667,-0.666667 H 27.7062 V 119.37 l -0.6667,-0.667 h 27.0396 v 1.333 H 26.3729 V 0 l 0.6666,0.666667 H 6.66667 Z M 8,4 0,0 8,-4 Z"
+       d="M 6.66667,-0.666667 H 27.7766 V 0.20147 L 27.1099,-0.465197 H 54.2198 V 0.868136 H 26.4433 V 0 l 0.6666,0.666667 H 6.66667 Z M 8,4 0,0 8,-4 Z"
        transform="matrix(0,1,1,0,623.5,333.5)"
-       id="path41" />
+       id="path34" />
     <path
-       d="M 6.66667,-0.666667 H 27.7062 V 357.517 l -0.6667,-0.667 h 27.0396 v 1.333 H 26.3729 V 0 l 0.6666,0.666667 H 6.66667 Z M 8,4 0,0 8,-4 Z"
+       d="M 6.66667,-0.666667 H 28.0577 V 204.143 l -0.6667,-0.667 h 27.3908 v 1.334 H 26.7244 V 0 L 27.391,0.666667 H 6.66667 Z M 8,4 0,0 8,-4 Z"
        transform="matrix(0,1,1,0,623.5,333.5)"
-       id="path43" />
+       id="path36" />
+    <path
+       d="M 6.66667,-0.666667 H 27.6429 V 408.084 l -0.6667,-0.666 H 53.952 v 1.333 H 26.3096 V 0 l 0.6666,0.666667 H 6.66667 Z M 8,4 0,0 8,-4 Z"
+       transform="matrix(0,1,1,0,623.5,333.5)"
+       id="path38" />
     <text
        font-family="Calibri, Calibri_MSFontService, sans-serif"
        font-weight="400"
        font-size="16px"
        transform="translate(636.51,355)"
-       id="text45">“is a”</text>
+       id="text40">“is a”</text>
     <text
        font-family="Calibri, Calibri_MSFontService, sans-serif"
        font-weight="400"
        font-size="16px"
-       transform="translate(509.993,383)"
-       id="text47">0..1</text>
+       transform="translate(628.972,383)"
+       id="text42">0..1</text>
     <text
        font-family="Calibri, Calibri_MSFontService, sans-serif"
        font-weight="400"
        font-size="16px"
-       transform="translate(748.14,382)"
-       id="text49">0..1</text>
+       transform="translate(832.913,383)"
+       id="text44">0..1</text>
     <text
        font-family="Calibri, Calibri_MSFontService, sans-serif"
        font-weight="400"
        font-size="16px"
-       transform="translate(988.801,383)"
-       id="text51">0..1</text>
+       transform="translate(1039.37,382)"
+       id="text46">0..1</text>
     <rect
        x="864"
        y="264"
@@ -215,63 +205,89 @@
        stroke-linejoin="round"
        stroke-miterlimit="10"
        fill="none"
-       id="rect53" />
+       id="rect48" />
     <text
        font-family="Calibri, Calibri_MSFontService, sans-serif"
        font-weight="400"
        font-size="24px"
        transform="translate(901.78,291)"
-       id="text55">Requirement</text>
+       id="text50">Requirement</text>
     <text
        font-family="Calibri, Calibri_MSFontService, sans-serif"
        font-weight="400"
        font-size="24px"
        transform="translate(935.654,320)"
-       id="text57">Usage</text>
+       id="text52">Usage</text>
     <path
        d="M 1.32411,-0.656226 138.079,0.42423 138.068,1.75752 1.31358,0.677066 Z M 8.94239,5.31333 -0.00308973,-2.44165e-5 9.02522,-5.17138 c 0.31949,-0.183 0.72684,-0.07235 0.90985,0.24714 0.18303,0.31949 0.07233,0.72684 -0.24714,0.90984 L 1.65131,0.588917 1.66041,-0.562752 9.62329,4.16697 C 9.93985,4.355 10.044,4.76405 9.85602,5.08061 9.66799,5.39716 9.25895,5.50136 8.94239,5.31333 Z m 121.50961,-9.52535 8.946,5.31336 -9.029,5.17135 c -0.319,0.183 -0.726,0.07236 -0.909,-0.24713 -0.183,-0.31949 -0.073,-0.72684 0.247,-0.90985 l 8.036,-4.603315 -0.009,1.151665 -7.963,-4.72972 c -0.316,-0.18803 -0.42,-0.59708 -0.232,-0.91363 0.188,-0.31656 0.597,-0.42076 0.913,-0.23273 z"
        transform="matrix(-1,0,0,1,863.895,298.5)"
-       id="path59" />
+       id="path54" />
     <text
        font-family="Calibri, Calibri_MSFontService, sans-serif"
        font-weight="400"
        font-size="16px"
        transform="translate(729.412,290)"
-       id="text61">1..*</text>
+       id="text56">1..*</text>
     <text
        font-family="Calibri, Calibri_MSFontService, sans-serif"
        font-weight="400"
        font-size="16px"
        transform="translate(836.285,319)"
-       id="text63">1..*</text>
+       id="text58">1..*</text>
     <text
        font-family="Calibri, Calibri_MSFontService, sans-serif"
        font-weight="400"
        font-size="19px"
        transform="translate(693.987,252)"
-       id="text65">satisfies</text>
+       id="text60">satisfies</text>
     <path
        d="M 0,0.833333 H -23.9998 L -23.1665,0 V 57.9283 L -23.9998,57.095 H 101.595 l -0.833,0.8333 V 40.5949 h 1.666 V 58.7616 H -24.8332 V -0.833333 H 0 Z m 97.5951,41.094867 3.9999,-8 4,8 z"
        fill="#4472c4"
        transform="matrix(1,0,0,-1,521,298.928)"
-       id="path67" />
+       id="path62" />
     <text
        font-family="Calibri, Calibri_MSFontService, sans-serif"
        font-weight="400"
        font-size="16px"
        transform="translate(597.125,258)"
-       id="text69">0..*</text>
+       id="text64">0..*</text>
     <text
        font-family="Calibri, Calibri_MSFontService, sans-serif"
        font-weight="400"
        font-size="19px"
        transform="translate(448.179,234)"
-       id="text71">requirement</text>
+       id="text66">requirement</text>
     <text
        font-family="Calibri, Calibri_MSFontService, sans-serif"
        font-weight="400"
        font-size="19px"
        transform="translate(448.179,257)"
-       id="text73">group</text>
+       id="text68">group</text>
+    <rect
+       x="119"
+       y="387"
+       width="190"
+       height="39"
+       stroke="#0070c0"
+       stroke-width="2"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       id="rect70" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(163.531,414)"
+       id="text72">IHE Profile</text>
+    <path
+       d="m 623.631,340.167 v 20.976 H 214.5 l 0.667,-0.667 v 26.976 h -1.334 v -27.643 h 409.132 l -0.667,0.667 v -20.309 z m -4.666,1.333 4,-8 4,8 z"
+       id="path74" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(219.476,382)"
+       id="text76">0..1</text>
   </g>
 </svg>

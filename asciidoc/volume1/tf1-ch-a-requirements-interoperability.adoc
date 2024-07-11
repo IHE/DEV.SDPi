@@ -190,15 +190,16 @@ It should be further noted that though conformity testing aspects are beyond thi
 [#vol1_clause_sdpi_requirements_core_model]
 ==== SDPi Requirements Core Model
 
-To formally integrate requirements in to this specification, the following requirements model provides the starting point:
+To formally integrate requirements in to this specification, the following model details the core types of requirements that will be defined:
 
 [#vol1_figure_appendix_a_sdpi_requirements_core_model]
-.SDPi Requirements - Core Model
+.SDPi Requirement Categories - Core Model
 
 image::../images/vol1-diagram-sdpi-req-types-model.svg[align=center]
 
-This model identifies a set of requirement "types" that are formalized in the specification.
-Each type is a source of requirements that are explicitly identified and formalized with appropriate metadata.
+This model identifies the set of requirement "types" that are utilized in the specification.
+
+Each type defines a unique class of requirements that build upon a foundational specification that may be specialized with additional metata to better capture the unique source and role of each specification.
 
 [%autowidth]
 [cols="^1,4,^1,^1"]
@@ -218,7 +219,12 @@ Each type is a source of requirements that are explicitly identified and formali
 | Usage
 | Requirement utilized in a specific use context that provides for its satisfaction.
 | sdpi_requirement_usage
-| 
+|
+
+| IHE Profile
+| Each IHE profile specification has a set of requirements that must be captured.  For example, Actor X in Profile Y requires support for Transaction A + B + C.
+| sdpi_requirement_ihe_profile
+|
 
 | Use Case Feature
 | A functional "feature" requirement based on clinical use case scenarios.
@@ -231,12 +237,12 @@ Each type is a source of requirements that are explicitly identified and formali
 |
 
 | SES
-|
+| Non-technical requirements related to Safety, Effectiveness, and Security are captured in these blocks.  These are especially relevant to mapping ISO/IEEE 11073-1070x Participant Key Purposes standard requirements to elements within the SDPi specification.
 | sdpi_requirement_ses
 | See SES Section <<vol1_appendix_a_integrating_ses>>
 
 | Tech Feature
-|
+| Technology focused requirements result from the use of a particular implementation approach.  For example, use of TLS 1.3 may also result in the need to address related technical capabilities.  
 | sdpi_requirement_tech_feature
 |
 |===
