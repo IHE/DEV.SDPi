@@ -15,6 +15,7 @@ discovery_proxy <- provider: Register(Provider UID, Discovery Scope)
 
 loop while SOMDS Provider does not send Unregister or responds to the Watchdog message
     provider <- discovery_proxy: Watchdog()
+    provider -->> discovery_proxy: acknowledge
 end
 
 discovery_proxy <- provider: Unregister(Provider UID)
