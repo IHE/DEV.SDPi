@@ -349,11 +349,11 @@ Note 1: _All content exchanged on a SOMDS shall conform to the general SDPi “B
 
 |===
 
-
 ==== Actor Descriptions and Actor Profile Requirements
+
 SDPi-P actor roles and responsibilities are described in the subsections below.
 
-Unless otherwise specified below, individual transaction requirements are specified in TF-2   <<vol2_clause_transactions>>, and requirements related to content modules are detailed in TF-3 <<vol3_clause_content_modules>>.
+Unless otherwise specified below, individual transaction requirements are specified in TF-2 <<vol2_clause_transactions>>, and requirements related to content modules are detailed in TF-3 <<vol3_clause_content_modules>>.
 This section documents any additional requirements on the profile’s content actors.
 
 <<vol1_figure_sdpi_p_example_sequence_diagram>> illustrates a typical (not comprehensive) exchange scenario between SDPi-P actors:
@@ -559,6 +559,15 @@ For robustness, a <<actor_biceps_content_consumer>> need only process the conten
 
 Note that although this SDPi-P content actor primarily supports information exchange between systems participating in a SOMDS network environment, they may be referenced by other non-SDPi profiles that utilize other non-SOMDS exchange architectures, transactions and technologies.
 
+===== SOMDS Discovery Proxy
+
+[#vol1_spec_sdpi_p_actor_somds_discovery_proxy, reftext='SOMDS Discovery Proxy']
+Actor Summary Definition:
+[none]
+. Accepts presence and absence messages by <<vol1_spec_sdpi_p_actor_somds_provider>>s, sends heartbeats to known <<vol1_spec_sdpi_p_actor_somds_provider>>s, and responds to <<vol1_spec_sdpi_p_actor_somds_consumer>>s querying endpoint metadata.
+
+This allows for a <<acronym_somds>> to provide centralized discovery of <<vol1_spec_sdpi_p_actor_somds_provider>>s in networks that cannot support decentralized discovery.
+
 [#vol1_clause_sdpi_p_actor_options]
 === SDPi-P Actor Options
 
@@ -578,6 +587,7 @@ Future versions *_MAY_* include options such as the following (not in priority o
 * Localization Service
 * Ensemble Participation
 * Mobile Health / Cloud Connected
+
 
 |===
 

@@ -1,0 +1,22 @@
+@startuml
+
+skinparam monochrome true
+autonumber
+
+
+!global $str_somds_provider = "SOMDS Provider"
+!global $str_somds_discovery_proxy = "SOMDS Discovery Proxy"
+
+participant "$str_somds_provider" as provider
+participant "$str_somds_discovery_proxy" as discovery_proxy
+
+==SDPi Manage Presence and Absence of Endpoint Metadata [DEV-46]==
+discovery_proxy <- provider: Register(Provider UID, Discovery Scope)
+
+loop while SOMDS Provider does not send Unregister or responds to the Watchdog message
+    provider <- discovery_proxy: Watchdog()
+end
+
+discovery_proxy <- provider: Unregister(Provider UID)
+
+@enduml

@@ -39,7 +39,11 @@
 
 |[[actor_somds_dec_gateway,SOMDS DEC Gateway]] SOMDS DEC Gateway
 
-|Exchanges information between SOMDS and IHE DEC-based environments.
+|Exchanges information between <<acronym_somds>> and IHE DEC-based environments.
+
+|[[actor_somds_discovery_proxy,SOMDS Discovery Proxy]] SOMDS Discovery Proxy
+
+|Accepts and makes available <<actor_somds_provider>> endpoint metadata in a <<acronym_somds>>.
 
 |[[actor_somds_fhir_gateway,SOMDS FHIR Gateway]] SOMDS FHIR Gateway
 

@@ -29,7 +29,7 @@ include::tf2-dev-25-summary.adoc[]
 
 ==== Messages
 .Message Interaction Diagram [DEV-25]
-[plantuml#vol2_figure_dev_25_sequence, target=puml-dev-25-sequence, format=svg, 40width=100%]
+[plantuml#vol2_figure_dev_25_sequence, target=puml-dev-25-sequence, format=svg, width=100%]
 
 ....
 include::../../plantuml/vol2-figure-dev-25-sequence.puml[]
