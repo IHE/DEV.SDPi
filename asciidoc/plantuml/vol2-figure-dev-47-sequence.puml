@@ -1,0 +1,28 @@
+@startuml
+
+skinparam monochrome true
+autonumber
+
+
+!global $str_somds_consumer = "SOMDS Consumer"
+!global $str_somds_discovery_proxy = "SOMDS Discovery Proxy"
+
+participant "$str_somds_consumer" as consumer
+participant "$str_somds_discovery_proxy" as discovery_proxy
+
+==Provide Endpoint Metadata [DEV-47]==
+
+opt
+    discovery_proxy -> consumer: Hello(Provider UID, Discovery Scope)
+    discovery_proxy <- consumer: Bye(discovery_proxy UID)
+end
+
+alt
+    consumer ->> discovery_proxy: Probe(Discovery Scope)
+    consumer <<-- discovery_proxy: ProbeMatch(Provider UID, Transport Address)
+else
+    consumer ->> discovery_proxy: Resolve(Provider UID)
+    consumer <<-- discovery_proxy: ResolveMatch(Transport Address)
+end
+
+@enduml

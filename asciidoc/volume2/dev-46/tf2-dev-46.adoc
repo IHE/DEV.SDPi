@@ -1,8 +1,7 @@
 :var_transaction_id: DEV-46
 
-:var_label_dev_46_message_register: Register
-:var_label_dev_46_message_unregister: Unregister
-:var_label_dev_46_message_watchdog: Watchdog
+:var_label_dev_46_message_hello: Hello
+:var_label_dev_46_message_bye: Bye
 
 
 //reset|+1|off
@@ -21,7 +20,7 @@ include::tf2-dev-46-summary.adoc[]
 |Actor |Roles
 
 |<<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>
-|Listens for <<vol2_clause_dev_46_message_register, {var_label_dev_46_message_register}>> messages to add or remove <<vol1_spec_sdpi_p_actor_somds_provider>> endpoint metadata to its internal database. Establishes a watchdog towards <<vol1_spec_sdpi_p_actor_somds_provider>>s to verify presence of added <<vol1_spec_sdpi_p_actor_somds_provider>>s.
+|Listens for <<vol2_clause_dev_46_message_hello, {var_label_dev_46_message_hello}>> or <<vol2_clause_dev_46_message_bye, {var_label_dev_46_message_bye}>> messages to add or remove <<vol1_spec_sdpi_p_actor_somds_provider>> endpoint metadata to/from its internal database.
 |<<vol1_spec_sdpi_p_actor_somds_provider>>
 |When joining a <<acronym_somds>>, it announces its presence to the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>. When deliberately leaving the <<acronym_somds>>, it announces its absence to the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>.
 |===
@@ -38,13 +37,13 @@ include::tf2-dev-46-summary.adoc[]
 include::../../plantuml/vol2-figure-dev-46-sequence.puml[]
 ....
 
-[#vol2_clause_dev_46_message_register]
-===== {var_label_dev_46_message_register} Message
+[#vol2_clause_dev_46_message_hello]
+===== {var_label_dev_46_message_hello} Message
 
 <<acronym_biceps>> specifies an implicit discovery protocol for allowing <<vol1_spec_sdpi_p_actor_somds_consumer>>s to receive a notification when a <<vol1_spec_sdpi_p_actor_somds_provider>> is ready to exchange messages with other <<vol1_spec_sdpi_p_actor_somds_consumer>>s.
-If a <<vol1_spec_sdpi_p_actor_somds_participant>> uses a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>, network presence is announced by using the _{var_label_dev_46_message_register}_ message of this transaction.
+If a <<vol1_spec_sdpi_p_actor_somds_participant>> uses a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>, network presence is announced to the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> by using the _{var_label_dev_46_message_hello}_ message of this transaction.
 
-[#vol2_clause_dev_46_message_register_trigger_events]
+[#vol2_clause_dev_46_message_hello_trigger_events]
 ====== Trigger Events
 
 If a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> is known to the <<vol1_spec_sdpi_p_actor_somds_provider>>, this message is sent
@@ -53,61 +52,61 @@ If a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> is known to the <<vol1_spe
 2. when a <<vol1_spec_sdpi_p_actor_somds_provider>> returns to normal _on-line_ operation after having indicated temporary suspension of message exchanges, or
 3. when a <<vol1_spec_sdpi_p_actor_somds_provider>> changes its <<payload_dev_23_discovery_scope>>.
 
-[#vol2_clause_dev_46_message_register_semantics]
+[#vol2_clause_dev_46_message_hello_semantics]
 ====== Message Semantics
 
-[[payload_dev_46_provider_uid]]Provider UID:: The <<term_somds_provider_uid>>.
+[[payload_dev_46_provider_uid_hello]]Provider UID:: The <<term_somds_provider_uid>>.
 [[payload_dev_46_discovery_scope]]Discovery Scope:: The <<term_discovery_scope>> of the <<vol1_spec_sdpi_p_actor_somds_provider>>.
 
-[#vol2_clause_dev_46_message_register_expected_actions]
+[#vol2_clause_dev_46_message_hello_expected_actions]
 ====== Expected Actions
 
 When a <<vol1_spec_sdpi_p_actor_somds_provider>> sends this message, there is no expected or required response.
-The <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> is supposed to internally store the <<vol1_spec_sdpi_p_actor_somds_provider>>'s endpoint <<payload_dev_46_provider_uid>> and <<payload_dev_46_discovery_scope>> in order to make it available to <<vol1_spec_sdpi_p_actor_somds_consumer>>s via <<vol0_transaction_summary_dev_47>> (see <<vol2_clause_dev_47>>).
+The <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> is supposed to internally store the <<vol1_spec_sdpi_p_actor_somds_provider>>'s endpoint <<payload_dev_46_provider_uid_hello>> and <<payload_dev_46_discovery_scope>> in order to make it available to <<vol1_spec_sdpi_p_actor_somds_consumer>>s via <<vol0_transaction_summary_dev_47>> (see <<vol2_clause_dev_47>>).
 
-[#vol2_clause_dev_46_message_unregister]
-===== {var_label_dev_46_message_unregister} Message
+[#vol2_clause_dev_46_message_bye]
+===== {var_label_dev_46_message_bye} Message
 
-If a <<vol1_spec_sdpi_p_actor_somds_participant>> uses a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> to announce itself or seek other <<vol1_spec_sdpi_p_actor_somds_participant>>s in the <<acronym_somds>>, network absence is announced by using the _{var_label_dev_46_message_unregister}_ message of this transaction.
+If a <<vol1_spec_sdpi_p_actor_somds_participant>> uses a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> to announce itself or seek other <<vol1_spec_sdpi_p_actor_somds_participant>>s in the <<acronym_somds>>, network absence is announced to the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> by using the _{var_label_dev_46_message_bye}_ message of this transaction.
 
-[#vol2_clause_dev_46_message_unregister_trigger_events]
+[#vol2_clause_dev_46_message_bye_trigger_events]
 ====== Trigger Events
 
-If a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> is known to the <<vol1_spec_sdpi_p_actor_somds_provider>>, this message is sent whenever a <<vol1_spec_sdpi_p_actor_somds_provider>> leaves the <<acronym_md_lan>> it previously joined via the {var_label_dev_46_message_register} message.
+If a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> is known to the <<vol1_spec_sdpi_p_actor_somds_provider>>, this message is sent whenever a <<vol1_spec_sdpi_p_actor_somds_provider>> leaves the <<acronym_md_lan>> it previously joined via the {var_label_dev_46_message_hello} message.
 
-[#vol2_clause_dev_46_message_unregister_semantics]
+[#vol2_clause_dev_46_message_bye_semantics]
 ====== Message Semantics
 
-[[payload_dev_47_provider_uid]]Provider UID:: The <<term_somds_provider_uid>>.
+[[payload_dev_46_provider_uid_bye]]Provider UID:: The <<term_somds_provider_uid>>.
 
-[#vol2_clause_dev_46_message_unregister_expected_actions]
+[#vol2_clause_dev_46_message_bye_expected_actions]
 ====== Expected Actions
 
 When a <<vol1_spec_sdpi_p_actor_somds_provider>> sends this message, there is no expected or required response.
 The <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> is supposed to remove <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<payload_dev_46_provider_uid>> and <<payload_dev_46_discovery_scope>> from its internal database and exposes the removal to <<vol1_spec_sdpi_p_actor_somds_consumer>>s via <<vol0_transaction_summary_dev_47>> (see <<vol2_clause_dev_47>>).
 
-[#vol2_clause_dev_46_message_watchdog]
-===== {var_label_dev_46_message_watchdog} Message
-
-Once a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> received a {var_label_dev_46_message_register} message from <<vol1_spec_sdpi_p_actor_somds_provider>>, the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> periodically verifies presence of the <<vol1_spec_sdpi_p_actor_somds_provider>> by sending _{var_label_dev_46_message_watchdog}_ messages.
-
-[#vol2_clause_dev_46_message_watchdog_trigger_events]
-====== Trigger Events
-
-The <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> starts sending this message periodically when a <<vol1_spec_sdpi_p_actor_somds_provider>> announced its presence by using the {var_label_dev_46_message_register} message.
-
-The <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> stops sending this message when a <<vol1_spec_sdpi_p_actor_somds_provider>> announced its absence by using the {var_label_dev_46_message_unregister} message.
-
-[#vol2_clause_dev_46_message_watchdog_semantics]
-====== Message Semantics
-
-There is no specific payload required.
-
-[#vol2_clause_dev_46_message_watchdog_expected_actions]
-====== Expected Actions
-
-When a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> sends this message, the receiving <<vol1_spec_sdpi_p_actor_somds_provider>> is requested to acknowledge reception.
-By receiving the acknowledgement, the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> verifies that the <<vol1_spec_sdpi_p_actor_somds_provider>> is still present in the <<acronym_somds>>.
+// [#vol2_clause_dev_46_message_watchdog]
+// ===== {var_label_dev_46_message_watchdog} Message
+//
+// Once a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> received a {var_label_dev_46_message_hello} message from <<vol1_spec_sdpi_p_actor_somds_provider>>, the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> periodically verifies presence of the <<vol1_spec_sdpi_p_actor_somds_provider>> by sending _{var_label_dev_46_message_watchdog}_ messages.
+//
+// [#vol2_clause_dev_46_message_watchdog_trigger_events]
+// ====== Trigger Events
+//
+// The <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> starts sending this message periodically when a <<vol1_spec_sdpi_p_actor_somds_provider>> announced its presence by using the {var_label_dev_46_message_hello} message.
+//
+// The <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> stops sending this message when a <<vol1_spec_sdpi_p_actor_somds_provider>> announced its absence by using the {var_label_dev_46_message_bye} message.
+//
+// [#vol2_clause_dev_46_message_watchdog_semantics]
+// ====== Message Semantics
+//
+// There is no specific payload required.
+//
+// [#vol2_clause_dev_46_message_watchdog_expected_actions]
+// ====== Expected Actions
+//
+// When a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> sends this message, the receiving <<vol1_spec_sdpi_p_actor_somds_provider>> is requested to acknowledge reception.
+// By receiving the acknowledgement, the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> verifies that the <<vol1_spec_sdpi_p_actor_somds_provider>> is still present in the <<acronym_somds>>.
 
 [#vol2_clause_dev_29_publish_biceps_update_reports_ses]
 include::../dev-x-default-ses-secured-mode.adoc[]

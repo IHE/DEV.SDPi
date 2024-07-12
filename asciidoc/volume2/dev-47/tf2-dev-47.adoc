@@ -1,16 +1,20 @@
 :var_transaction_id: DEV-47
 
-:var_label_dev_47_message_notification: Notification
+:var_label_dev_47_message_hello: Hello
+:var_label_dev_47_message_bye: Bye
+:var_label_dev_47_message_probe: Probe
+:var_label_dev_47_message_probe_match: ProbeMatch
+:var_label_dev_47_message_resolve: Resolve
+:var_label_dev_47_message_resolve_match: ResolveMatch
 
 
 //reset|+1|off
 [#vol2_clause_dev_47,sdpi_offset=47]
-=== Publish BICEPS Update Reports [{var_transaction_id}]
+=== Provide Endpoint Metadata [{var_transaction_id}]
 
 ==== Scope
 
 include::tf2-dev-47-summary.adoc[]
-
 
 ==== Actor Roles
 
@@ -19,53 +23,71 @@ include::tf2-dev-47-summary.adoc[]
 |===
 |Actor |Roles
 
+|<<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>
+|Forwards <<vol2_clause_dev_46_message_hello, {var_label_dev_46_message_hello}>> and <<vol2_clause_dev_46_message_hello, {var_label_dev_46_message_bye}>> messages received from <<vol1_spec_sdpi_p_actor_somds_provider>>s.
+Responds to incoming <<vol2_clause_dev_47_message_probe, {var_label_dev_47_message_probe}>> and <<vol2_clause_dev_47_message_resolve, {var_label_dev_47_message_resolve}>> messages
 |<<vol1_spec_sdpi_p_actor_somds_consumer>>
-|Listens for a <<vol2_clause_dev_47_message_notification, {var_label_dev_47_message_notification}>> message to retrieve update reports.
-
-|<<vol1_spec_sdpi_p_actor_somds_provider>>
-|While a subscription is running, the <<vol1_spec_sdpi_p_actor_somds_provider>> delivers <<vol2_clause_dev_47_message_notification, {var_label_dev_47_message_notification}>> messages.
-
+|Optionally subscribes to a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> in order to receive <<vol2_clause_dev_47_message_hello, {var_label_dev_47_message_hello}>> and <<vol2_clause_dev_47_message_hello, {var_label_dev_47_message_bye}>> messages.
+Uses <<vol2_clause_dev_47_message_probe, {var_label_dev_47_message_probe}>> and <<vol2_clause_dev_47_message_resolve, {var_label_dev_47_message_resolve}>> messages to seek endpoint metadata.
 |===
 
 ==== Referenced Standards
 
-* <<ref_ieee_11073_10207_2017>> Section 7.4 Message Model
+* <<ref_ieee_11073_10207_2017>> Section 9. Discovery Model
 
 ==== Messages
 
 .Message Interaction Diagram [{var_transaction_id}]
-[plantuml#vol2_figure_dev_47_sequence, target=puml-dev-29-sequence, format=svg, width=100%]
+[plantuml#vol2_figure_dev_47_sequence, target=puml-dev-47-sequence, format=svg, width=100%]
 ....
-include::../../plantuml/vol2-figure-dev-29-sequence.puml[]
+include::../../plantuml/vol2-figure-dev-47-sequence.puml[]
 ....
 
+[#vol2_clause_dev_47_message_hello]
+===== {var_label_dev_47_message_hello} Message
 
-// ---------- Notification ---------
+<<acronym_biceps>> specifies an implicit discovery protocol for allowing <<vol1_spec_sdpi_p_actor_somds_consumer>>s to receive a notification when a <<vol1_spec_sdpi_p_actor_somds_provider>> is ready to exchange messages with other <<vol1_spec_sdpi_p_actor_somds_consumer>>s.
+If a <<vol1_spec_sdpi_p_actor_somds_participant>> uses a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>, network presence is announced to <<vol1_spec_sdpi_p_actor_somds_consumer>>s by using the _{var_label_dev_47_message_hello}_ message of this transaction.
 
-CAUTION: Transaction [{var_transaction_id}] supports a specialized instance of the general <<vol2_clause_dev_27_message_notification>> message, based on payload content and trigger events.
-
-[#vol2_clause_dev_47_message_notification]
-===== {var_label_dev_47_message_notification} Message
-
-The {var_label_dev_47_message_notification} messages contain updated reports and is delivered by a <<vol1_spec_sdpi_p_actor_somds_provider>> to subscribed <<vol1_spec_sdpi_p_actor_somds_consumer>>s.
-
-[#vol2_clause_dev_47_message_notification_trigger_events]
+[#vol2_clause_dev_47_message_hello_trigger_events]
 ====== Trigger Events
 
-The {var_label_dev_47_message_notification} message is sent whenever a report of a <<vol1_spec_sdpi_p_actor_somds_provider>> is updated and a <<vol1_spec_sdpi_p_actor_somds_consumer>> is subscribed to reports of a <<vol1_spec_sdpi_p_actor_somds_provider>>.
+If a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> is known to the <<vol1_spec_sdpi_p_actor_somds_consumer>> and the <<vol1_spec_sdpi_p_actor_somds_consumer>> is interested in {var_label_dev_47_message_hello} messages, this message is sent
 
-[#vol2_clause_dev_47_message_notification_semantics]
+1. whenever a <<vol1_spec_sdpi_p_actor_somds_provider>> known to the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> joins an <<acronym_md_lan>>,
+2. when a <<vol1_spec_sdpi_p_actor_somds_provider>> known to the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> returns to normal _on-line_ operation after having indicated temporary suspension of message exchanges, or
+3. when a <<vol1_spec_sdpi_p_actor_somds_provider>> known to the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> changes its <<payload_dev_23_discovery_scope>>.
+
+[#vol2_clause_dev_47_message_hello_semantics]
 ====== Message Semantics
 
-[[payload_dev_47_notification_alert]]EpisodicAlertReport:: A change report that contains updated alert information.
-[[payload_dev_47_notification_metric]]EpisodicMetricReport:: A change report that contains updated metric information.
-[[payload_dev_47_notification_component]]EpisodicComponentReport:: A change report that contains updated component information.
-[[payload_dev_47_notification_waveform]]WaveformStream:: A message to transmit a set of samples of one or more waveforms.
+[[payload_dev_47_provider_uid_hello]]Provider UID:: The <<term_somds_provider_uid>>.
+[[payload_dev_47_discovery_scope]]Discovery Scope:: The <<term_discovery_scope>> of the <<vol1_spec_sdpi_p_actor_somds_provider>>.
 
-[#vol2_clause_dev_47_message_contextreport_expected_actions]
+[#vol2_clause_dev_47_message_hello_expected_actions]
 ====== Expected Actions
 
-When a <<vol1_spec_sdpi_p_actor_somds_provider>> sends this message, there is no expected action or required responses.
+When a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> sends this message, there is no expected or required response.
+
+[#vol2_clause_dev_47_message_bye]
+===== {var_label_dev_47_message_bye} Message
+
+If a <<vol1_spec_sdpi_p_actor_somds_participant>> uses a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> to announce itself or seek other <<vol1_spec_sdpi_p_actor_somds_participant>>s in the <<acronym_somds>>, network absence is announced to <<vol1_spec_sdpi_p_actor_somds_consumer>>s by using the _{var_label_dev_47_message_bye}_ message of this transaction.
+
+[#vol2_clause_dev_47_message_bye_trigger_events]
+====== Trigger Events
+
+If a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> is known to the <<vol1_spec_sdpi_p_actor_somds_consumer>> and the <<vol1_spec_sdpi_p_actor_somds_consumer>> is interested in {var_label_dev_47_message_bye} messages, this message is sent whenever a <<vol1_spec_sdpi_p_actor_somds_provider>> leaves the <<acronym_md_lan>> it previously joined via the {var_label_dev_46_message_hello} message.
+
+[#vol2_clause_dev_47_message_bye_semantics]
+====== Message Semantics
+
+[[payload_dev_47_provider_uid_bye]]Provider UID:: The <<term_somds_provider_uid>>.
+
+[#vol2_clause_dev_47_message_bye_expected_actions]
+====== Expected Actions
+
+When a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> sends this message, there is no expected or required response.
 
 [#vol2_clause_dev_47_publish_biceps_update_reports_ses]
 include::../dev-x-default-ses-secured-mode.adoc[]
