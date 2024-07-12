@@ -83,7 +83,7 @@ If a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> is known to the <<vol1_spe
 ====== Expected Actions
 
 When a <<vol1_spec_sdpi_p_actor_somds_provider>> sends this message, there is no expected or required response.
-The <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> is supposed to remove <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<payload_dev_46_provider_uid>> and <<payload_dev_46_discovery_scope>> from its internal database and exposes the removal to <<vol1_spec_sdpi_p_actor_somds_consumer>>s via <<vol0_transaction_summary_dev_47>> (see <<vol2_clause_dev_47>>).
+The <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> is supposed to remove <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<payload_dev_46_provider_uid_bye>> and <<payload_dev_46_discovery_scope>> from its internal database and exposes the removal to <<vol1_spec_sdpi_p_actor_somds_consumer>>s via <<vol0_transaction_summary_dev_47>> (see <<vol2_clause_dev_47>>).
 
 // [#vol2_clause_dev_46_message_watchdog]
 // ===== {var_label_dev_46_message_watchdog} Message

@@ -43,6 +43,8 @@ Uses <<vol2_clause_dev_47_message_probe, {var_label_dev_47_message_probe}>> and 
 include::../../plantuml/vol2-figure-dev-47-sequence.puml[]
 ....
 
+// ---------- HELLO ---------
+
 [#vol2_clause_dev_47_message_hello]
 ===== {var_label_dev_47_message_hello} Message
 
@@ -69,6 +71,8 @@ If a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> is known to the <<vol1_spe
 
 When a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> sends this message, there is no expected or required response.
 
+// ---------- BYE ---------
+
 [#vol2_clause_dev_47_message_bye]
 ===== {var_label_dev_47_message_bye} Message
 
@@ -88,6 +92,114 @@ If a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> is known to the <<vol1_spe
 ====== Expected Actions
 
 When a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> sends this message, there is no expected or required response.
+
+// ---------- PROBE ---------
+
+[#vol2_clause_dev_47_message_probe]
+===== {var_label_dev_47_message_probe} Message
+
+<<acronym_biceps>> specifies an explicit discovery protocol for allowing <<vol1_spec_sdpi_p_actor_somds_consumer>>s to discover all <<vol1_spec_sdpi_p_actor_somds_provider>>s that are ready to exchange messages with <<vol1_spec_sdpi_p_actor_somds_consumer>>s.
+The corresponding message to seek <<vol1_spec_sdpi_p_actor_somds_provider>>s based on filter criteria is called _{var_label_dev_47_message_probe}_.
+
+If a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> is known to the <<vol1_spec_sdpi_p_actor_somds_consumer>>
+
+If a <<vol1_spec_sdpi_p_actor_somds_consumer>> uses a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>, the <<vol1_spec_sdpi_p_actor_somds_consumer>> can send a {var_label_dev_47_message_probe} message to the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> to seek endpoint information based on filter criteria.
+
+[#vol2_clause_dev_47_message_probe_trigger_events]
+====== Trigger Events
+
+The {var_label_dev_47_message_probe} message is sent whenever a <<vol1_spec_sdpi_p_actor_somds_consumer>> joins an <<acronym_md_lan>> and is ready to exchange messages with <<vol1_spec_sdpi_p_actor_somds_provider>>s.
+
+[#vol2_clause_dev_47_message_probe_semantics]
+====== Message Semantics
+
+[[payload_dev_47_probe_discovery_scope]]Discovery Scope:: A <<term_discovery_scope>> to filter against.
+
+[#vol2_clause_dev_47_message_probe_expected_actions]
+====== Expected Actions
+
+When a <<vol1_spec_sdpi_p_actor_somds_consumer>> sends this message, the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> answers with all endpoint records that match the requested <<payload_dev_47_probe_discovery_scope>> by sending a <<vol2_clause_dev_47_message_probe_match, {var_label_dev_47_message_probe_match}>> message.
+
+// ---------- PROBE MATCH ---------
+
+[#vol2_clause_dev_47_message_probe_match]
+===== {var_label_dev_47_message_probe_match} Message
+
+The {var_label_dev_47_message_probe_match} message is sent as part of the BICEPS _explicit discovery_ protocol in response to an incoming <<vol2_clause_dev_47_message_probe, {var_label_dev_47_message_probe}>> message.
+
+The {var_label_dev_47_message_probe_match} message is sent by a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> when an incoming <<vol2_clause_dev_47_message_probe, {var_label_dev_47_message_probe}>> message contains a <<payload_dev_47_probe_discovery_scope>> that matches zero or more <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<term_discovery_scope>>s.
+
+[#vol2_clause_dev_47_message_probe_match_trigger_events]
+====== Trigger Events
+
+The {var_label_dev_47_message_probe_match} message is sent whenever a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> receives a <<vol2_clause_dev_47_message_probe, {var_label_dev_47_message_probe}>> message that contains a <<payload_dev_47_probe_discovery_scope>> that matches zero or more <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<term_discovery_scope>>s.
+
+[#vol2_clause_dev_47_message_probe_match_semantics]
+====== Message Semantics
+
+[[payload_dev_47_probe_match_provider_uid]]Provider UID:: The <<term_somds_provider_uid>>.
+[[payload_dev_47_probe_match_transport_address]]Transport Address:: The <<term_transport_address>> under which the <<vol1_spec_sdpi_p_actor_somds_provider>> can receive secured messages.
+
+[#vol2_clause_dev_47_message_probe_match_expected_actions]
+====== Expected Actions
+
+The <<vol1_spec_sdpi_p_actor_somds_consumer>> that receives a {var_label_dev_47_message_probe_match} message can use the <<payload_dev_47_probe_match_transport_address>> to exchange secured messages with the <<vol1_spec_sdpi_p_actor_somds_provider>> for which it received the <<vol2_clause_dev_47_message_probe_match, {var_label_dev_47_message_probe_match}>> message.
+
+
+// ---------- RESOLVE ---------
+
+
+[#vol2_clause_dev_47_message_resolve]
+===== {var_label_dev_47_message_resolve} Message
+
+<<acronym_biceps>> specifies an explicit discovery protocol for allowing <<vol1_spec_sdpi_p_actor_somds_consumer>>s to discover all <<vol1_spec_sdpi_p_actor_somds_provider>>s that are ready to exchange messages with <<vol1_spec_sdpi_p_actor_somds_consumer>>s.
+The corresponding message to seek <<vol1_spec_sdpi_p_actor_somds_provider>>s based on a unique identifier is called _{var_label_dev_47_message_resolve}_.
+
+If a specific <<term_somds_provider_uid>> is known to a <<vol1_spec_sdpi_p_actor_somds_consumer>>, the <<vol1_spec_sdpi_p_actor_somds_consumer>> can send a {var_label_dev_47_message_resolve} message to a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>.
+
+[#vol2_clause_dev_47_message_resolve_trigger_events]
+====== Trigger Events
+
+The {var_label_dev_47_message_resolve} message is sent to a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>
+
+1. whenever a <<vol1_spec_sdpi_p_actor_somds_consumer>> joins an <<acronym_md_lan>> and is ready to exchange messages with <<vol1_spec_sdpi_p_actor_somds_provider>>s or
+2. when a <<vol1_spec_sdpi_p_actor_somds_consumer>> runs in a mode where it periodically checks for availability of <<vol1_spec_sdpi_p_actor_somds_provider>>s matching a specific <<term_somds_provider_uid>>.
+
+[#vol2_clause_dev_47_message_resolve_semantics]
+====== Message Semantics
+
+[[payload_dev_47_resolve_provider_uid]]Provider UID:: The <<term_somds_provider_uid>> to resolve.
+
+[#vol2_clause_dev_47_message_resolve_expected_actions]
+====== Expected Actions
+
+When a <<vol1_spec_sdpi_p_actor_somds_consumer>> sends this message, the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> answers with the endpoint record that matches the requested <<payload_dev_47_resolve_provider_uid>>
+
+// ---------- RESOLVE MATCH ---------
+
+
+[#vol2_clause_dev_47_message_resolve_match]
+===== {var_label_dev_47_message_resolve_match} Message
+
+The {var_label_dev_47_message_resolve_match} message is sent as part of the BICEPS _explicit discovery_ protocol in response to an incoming <<vol2_clause_dev_47_message_resolve, {var_label_dev_47_message_resolve}>> message.
+
+The {var_label_dev_47_message_resolve_match} message is sent by a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> when an incoming <<vol2_clause_dev_47_message_resolve, {var_label_dev_47_message_resolve}>> message contains a <<payload_dev_47_provider_uid>> that matches zero or one <<term_somds_provider_uid>>.
+
+[#vol2_clause_dev_47_message_resolve_match_trigger_events]
+====== Trigger Events
+
+The {var_label_dev_47_message_resolve_match} message is sent whenever a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> receives a <<vol2_clause_dev_47_message_resolve, {var_label_dev_47_message_resolve}>> message that contains a <<payload_dev_47_provider_uid>> that is equal to a <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<term_somds_provider_uid>>.
+
+[#vol2_clause_dev_47_message_resolve_match_semantics]
+====== Message Semantics
+
+[[payload_dev_47_provider_uid]]Provider UID:: The <<term_somds_provider_uid>>.
+[[payload_dev_47_transport_address]]Transport Address:: The <<term_transport_address>> under which the <<vol1_spec_sdpi_p_actor_somds_provider>> can receive secured messages.
+
+[#vol2_clause_dev_47_message_resolve_match_expected_actions]
+====== Expected Actions
+
+The <<vol1_spec_sdpi_p_actor_somds_consumer>> that receives a {var_label_dev_47_message_resolve_match} message can use the <<payload_dev_47_probe_match_transport_address>> to exchange secured messages with the <<vol1_spec_sdpi_p_actor_somds_provider>> for which it received the <<vol2_clause_dev_47_message_resolve_match, {var_label_dev_47_message_resolve_match}>> message.
 
 [#vol2_clause_dev_47_publish_biceps_update_reports_ses]
 include::../dev-x-default-ses-secured-mode.adoc[]
