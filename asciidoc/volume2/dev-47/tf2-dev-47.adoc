@@ -49,7 +49,7 @@ include::../../plantuml/vol2-figure-dev-47-sequence.puml[]
 ===== {var_label_dev_47_message_hello} Message
 
 <<acronym_biceps>> specifies an implicit discovery protocol for allowing <<vol1_spec_sdpi_p_actor_somds_consumer>>s to receive a notification when a <<vol1_spec_sdpi_p_actor_somds_provider>> is ready to exchange messages with other <<vol1_spec_sdpi_p_actor_somds_consumer>>s.
-If a <<vol1_spec_sdpi_p_actor_somds_participant>> uses a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>, network presence is announced to <<vol1_spec_sdpi_p_actor_somds_consumer>>s by using the _{var_label_dev_47_message_hello}_ message of this transaction.
+If a <<vol1_spec_sdpi_p_actor_somds_consumer>> uses a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>, network presence is announced to <<vol1_spec_sdpi_p_actor_somds_consumer>>s by using the _{var_label_dev_47_message_hello}_ message of this transaction.
 
 [#vol2_clause_dev_47_message_hello_trigger_events]
 ====== Trigger Events
@@ -76,7 +76,7 @@ When a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> sends this message, ther
 [#vol2_clause_dev_47_message_bye]
 ===== {var_label_dev_47_message_bye} Message
 
-If a <<vol1_spec_sdpi_p_actor_somds_participant>> uses a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> to announce itself or seek other <<vol1_spec_sdpi_p_actor_somds_participant>>s in the <<acronym_somds>>, network absence is announced to <<vol1_spec_sdpi_p_actor_somds_consumer>>s by using the _{var_label_dev_47_message_bye}_ message of this transaction.
+If a <<vol1_spec_sdpi_p_actor_somds_consumer>> uses a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>, network absence is announced to <<vol1_spec_sdpi_p_actor_somds_consumer>>s by using the _{var_label_dev_47_message_bye}_ message of this transaction.
 
 [#vol2_clause_dev_47_message_bye_trigger_events]
 ====== Trigger Events
@@ -100,8 +100,6 @@ When a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> sends this message, ther
 
 <<acronym_biceps>> specifies an explicit discovery protocol for allowing <<vol1_spec_sdpi_p_actor_somds_consumer>>s to discover all <<vol1_spec_sdpi_p_actor_somds_provider>>s that are ready to exchange messages with <<vol1_spec_sdpi_p_actor_somds_consumer>>s.
 The corresponding message to seek <<vol1_spec_sdpi_p_actor_somds_provider>>s based on filter criteria is called _{var_label_dev_47_message_probe}_.
-
-If a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> is known to the <<vol1_spec_sdpi_p_actor_somds_consumer>>
 
 If a <<vol1_spec_sdpi_p_actor_somds_consumer>> uses a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>, the <<vol1_spec_sdpi_p_actor_somds_consumer>> can send a {var_label_dev_47_message_probe} message to the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> to seek endpoint information based on filter criteria.
 

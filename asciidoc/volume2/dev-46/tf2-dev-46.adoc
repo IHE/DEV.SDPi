@@ -41,7 +41,7 @@ include::../../plantuml/vol2-figure-dev-46-sequence.puml[]
 ===== {var_label_dev_46_message_hello} Message
 
 <<acronym_biceps>> specifies an implicit discovery protocol for allowing <<vol1_spec_sdpi_p_actor_somds_consumer>>s to receive a notification when a <<vol1_spec_sdpi_p_actor_somds_provider>> is ready to exchange messages with other <<vol1_spec_sdpi_p_actor_somds_consumer>>s.
-If a <<vol1_spec_sdpi_p_actor_somds_participant>> uses a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>, network presence is announced to the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> by using the _{var_label_dev_46_message_hello}_ message of this transaction.
+If a <<vol1_spec_sdpi_p_actor_somds_provider>> uses a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>, network presence is announced to the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> by using the _{var_label_dev_46_message_hello}_ message of this transaction.
 
 [#vol2_clause_dev_46_message_hello_trigger_events]
 ====== Trigger Events
@@ -67,7 +67,7 @@ The <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> is supposed to internally s
 [#vol2_clause_dev_46_message_bye]
 ===== {var_label_dev_46_message_bye} Message
 
-If a <<vol1_spec_sdpi_p_actor_somds_participant>> uses a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> to announce itself or seek other <<vol1_spec_sdpi_p_actor_somds_participant>>s in the <<acronym_somds>>, network absence is announced to the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> by using the _{var_label_dev_46_message_bye}_ message of this transaction.
+If a <<vol1_spec_sdpi_p_actor_somds_provider>> uses a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>, network absence is announced to the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> by using the _{var_label_dev_46_message_bye}_ message of this transaction.
 
 [#vol2_clause_dev_46_message_bye_trigger_events]
 ====== Trigger Events
@@ -84,29 +84,6 @@ If a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> is known to the <<vol1_spe
 
 When a <<vol1_spec_sdpi_p_actor_somds_provider>> sends this message, there is no expected or required response.
 The <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> is supposed to remove <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<payload_dev_46_provider_uid_bye>> and <<payload_dev_46_discovery_scope>> from its internal database and exposes the removal to <<vol1_spec_sdpi_p_actor_somds_consumer>>s via <<vol0_transaction_summary_dev_47>> (see <<vol2_clause_dev_47>>).
-
-// [#vol2_clause_dev_46_message_watchdog]
-// ===== {var_label_dev_46_message_watchdog} Message
-//
-// Once a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> received a {var_label_dev_46_message_hello} message from <<vol1_spec_sdpi_p_actor_somds_provider>>, the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> periodically verifies presence of the <<vol1_spec_sdpi_p_actor_somds_provider>> by sending _{var_label_dev_46_message_watchdog}_ messages.
-//
-// [#vol2_clause_dev_46_message_watchdog_trigger_events]
-// ====== Trigger Events
-//
-// The <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> starts sending this message periodically when a <<vol1_spec_sdpi_p_actor_somds_provider>> announced its presence by using the {var_label_dev_46_message_hello} message.
-//
-// The <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> stops sending this message when a <<vol1_spec_sdpi_p_actor_somds_provider>> announced its absence by using the {var_label_dev_46_message_bye} message.
-//
-// [#vol2_clause_dev_46_message_watchdog_semantics]
-// ====== Message Semantics
-//
-// There is no specific payload required.
-//
-// [#vol2_clause_dev_46_message_watchdog_expected_actions]
-// ====== Expected Actions
-//
-// When a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> sends this message, the receiving <<vol1_spec_sdpi_p_actor_somds_provider>> is requested to acknowledge reception.
-// By receiving the acknowledgement, the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> verifies that the <<vol1_spec_sdpi_p_actor_somds_provider>> is still present in the <<acronym_somds>>.
 
 [#vol2_clause_dev_29_publish_biceps_update_reports_ses]
 include::../dev-x-default-ses-secured-mode.adoc[]
