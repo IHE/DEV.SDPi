@@ -1,129 +1,72 @@
 :var_uri_ws_eventing_notification: https://www.w3.org/Submission/2006/SUBM-WS-Eventing-20060315/#Notifications
-:var_label_dev_29_message_alertreport: EpisodicAlertReport
-:var_label_dev_29_message_metricreport: EpisodicMetricReport
-:var_label_dev_29_message_componentreport: EpisodicComponentReport
-:var_label_dev_29_message_waveformstream: WaveformStream
+:var_label_dev_46_message_hello: Hello
+:var_label_dev_46_message_bye: Bye
+:var_label_dev_46_message_directed_probe: DirectedProbe
 :var_uri_dpws_messaging: http://docs.oasis-open.org/ws-dd/dpws/1.1/os/wsdd-dpws-1.1-spec-os.html#_Toc228672084
-
-[#vol2_clause_appendix_mdpws_dev_29]
-==== MDPWS: Publish BICEPS Update Reports  [DEV-29]
-
-This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_29>>.
-
-// ---------- EpisodicAlertReport ---------
+:var_uri_ws_discovery_hello: https://docs.oasis-open.org/ws-dd/discovery/1.1/os/wsdd-discovery-1.1-spec-os.html#_Toc234231821
+:var_uri_ws_discovery_bye: https://docs.oasis-open.org/ws-dd/discovery/1.1/os/wsdd-discovery-1.1-spec-os.html#_Toc234231825
 
 
-===== {var_label_dev_29_message_alertreport} Message
+[#vol2_clause_appendix_mdpws_dev_46]
+==== MDPWS: Manage Presence and Absence of Endpoint Metadata  [DEV-46]
 
-The <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_alertreport}>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
+This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_46>>.
+
+// ---------- Hello ---------
+
+
+===== {var_label_dev_46_message_hello} Message
+
+The <<vol2_clause_dev_46_message_hello, {var_label_dev_46_message_hello}>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
 
 ====== Referenced Standards
 
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
-* <<ref_ieee_11073_10207_2017>> msg:EpisodicAlertReport
+* <<ref_oasis_ws_discovery_2009>> {var_uri_ws_discovery_hello}[Section 4.1 Hello]
 
 ====== Message Outline
 
-.EpisodicAlertReport message
-[source#vol2_clause_appendix_a_mdpws_dev_29_alertreport,xml]
+.{var_label_dev_46_message_hello} message
+[source#vol2_clause_appendix_a_mdpws_dev_46_hello,xml]
 ----
-include::../../listings/vol2-clause-appendix-a-mdpws-dev-29-alertreport.xml[]
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-46-hello.xml[]
 ----
 
-:var_trigger_events_ref: <<vol2_clause_dev_29_message_notification>>
+:var_trigger_events_ref: <<vol2_clause_dev_46_message_hello>>
 include::../dev-a-default-trigger-events.adoc[]
 
 ====== Message Semantics
 
 `s12:Envelope/s12:Body/msg:EpisodicAlertReport`:: Updated alert information of a <<vol1_spec_sdpi_p_actor_somds_provider>>.
 
-:var_expected_actions_ref: <<vol2_clause_dev_29_message_notification>>
+:var_expected_actions_ref: <<vol2_clause_dev_46_message_hello>>
 include::../dev-a-default-expected-actions.adoc[]
 
-// ---------- EpisodicMetricReport ---------
+// ---------- Bye ---------
 
-===== {var_label_dev_29_message_metricreport} Message
+===== {var_label_dev_46_message_bye} Message
 
-The <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_metricreport}>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
+The <<vol2_clause_dev_46_message_bye, {var_label_dev_46_message_bye}>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
 
 ====== Referenced Standards
 
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
-* <<ref_ieee_11073_10207_2017>> msg:EpisodicMetricReport
+* <<ref_oasis_ws_discovery_2009>> {var_uri_ws_discovery_bye}[Section 4.1 Bye]
 
 ====== Message Outline
 
-.EpisodicMetricReport message
-[source#vol2_clause_appendix_a_mdpws_dev_29_metricreport,xml]
+.{var_label_dev_46_message_bye} message
+[source#vol2_clause_appendix_a_mdpws_dev_46_bye,xml]
 ----
-include::../../listings/vol2-clause-appendix-a-mdpws-dev-29-metricreport.xml[]
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-46-bye.xml[]
 ----
 
-:var_trigger_events_ref: <<vol2_clause_dev_29_message_notification>>
+:var_trigger_events_ref: <<vol2_clause_dev_46_message_bye>>
 include::../dev-a-default-trigger-events.adoc[]
 
 ====== Message Semantics
 
 `s12:Envelope/s12:Body/msg:EpisodicMetricReport`:: Updated metric information of a <<vol1_spec_sdpi_p_actor_somds_provider>>.
 
-:var_expected_actions_ref: <<vol2_clause_dev_29_message_notification>>
-include::../dev-a-default-expected-actions.adoc[]
-
-
-// ---------- EpisodicComponentReport ---------
-
-===== {var_label_dev_29_message_componentreport} Message
-
-The <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_componentreport}>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
-
-====== Referenced Standards
-
-* <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
-* <<ref_ieee_11073_10207_2017>> msg:EpisodicComponentReport
-
-====== Message Outline
-
-.EpisodicComponentReport message
-[source#vol2_clause_appendix_a_mdpws_dev_29_componentreport,xml]
-----
-include::../../listings/vol2-clause-appendix-a-mdpws-dev-29-componentreport.xml[]
-----
-
-:var_trigger_events_ref: <<vol2_clause_dev_29_message_notification>>
-include::../dev-a-default-trigger-events.adoc[]
-
-====== Message Semantics
-
-`s12:Envelope/s12:Body/msg:EpisodicComponentReport`:: Updated component information of a <<vol1_spec_sdpi_p_actor_somds_provider>>.
-
-:var_expected_actions_ref: <<vol2_clause_dev_29_message_notification>>
-include::../dev-a-default-expected-actions.adoc[]
-
-// ---------- WaveformStream ---------
-
-===== {var_label_dev_29_message_waveformstream} Message
-
-The <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_waveformstream}>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
-
-====== Referenced Standards
-
-* <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
-* <<ref_ieee_11073_10207_2017>> msg:WaveformStream
-
-====== Message Outline
-
-.WaveformStream message
-[source#vol2_clause_appendix_a_mdpws_dev_29_waveformstream,xml]
-----
-include::../../listings/vol2-clause-appendix-a-mdpws-dev-29-waveformstream.xml[]
-----
-
-:var_trigger_events_ref: <<vol2_clause_dev_29_message_notification>>
-include::../dev-a-default-trigger-events.adoc[]
-
-====== Message Semantics
-
-`s12:Envelope/s12:Body/msg:WaveformStream`:: Waveform stream of a <<vol1_spec_sdpi_p_actor_somds_provider>>.
-
-:var_expected_actions_ref: <<vol2_clause_dev_29_message_notification>>
+:var_expected_actions_ref: <<vol2_clause_dev_46_message_bye>>
 include::../dev-a-default-expected-actions.adoc[]
