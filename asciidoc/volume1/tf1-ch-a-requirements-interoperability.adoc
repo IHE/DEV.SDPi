@@ -222,7 +222,7 @@ Each type defines a unique class of requirements that build upon a foundational 
 |
 
 | IHE Profile
-| Each IHE profile specification has a set of requirements that must be captured.  For example, Actor X in Profile Y requires support for Transaction A + B + C.
+| Each IHE profile specification has a set of requirements that must be captured.  For example, Actor X in Profile Y requires support for Transaction A + B + C.  NOTE:  These requirements provide the anchor for all conformity assessment, since implementations will identify the actors + profile + profile option + role + transactions that they support.
 | sdpi_requirement_ihe_profile
 |
 
@@ -242,7 +242,7 @@ Each type defines a unique class of requirements that build upon a foundational 
 | See SES Section <<vol1_appendix_a_integrating_ses>>
 
 | Tech Feature
-| Technology focused requirements result from the use of a particular implementation approach.  For example, use of TLS 1.3 may also result in the need to address related technical capabilities.  
+| Technology focused requirements result from the use of a particular implementation approach.  For example, use of TLS 1.3 may also result in the need to address related technical capabilities.
 | sdpi_requirement_tech_feature
 |
 |===
