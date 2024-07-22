@@ -55,6 +55,11 @@ include::dev-34/tf2-ch-a-mdpws-dev-34.adoc[]
 //
 //=== Retrieve Medical Alert Status [DEV-40]
 
+include::dev-46/tf2-ch-a-mdpws-dev-46.adoc[]
+
+include::dev-47/tf2-ch-a-mdpws-dev-47.adoc[]
+
+
 === Security Considerations
 
 In TR1164, <<ref_ieee_11073_10700_2022, IEEE 11073-10700>> requires a <<vol1_spec_sdpi_p_actor_somds_provider>> to protect <<acronym_biceps>> services against unauthenticated access.
