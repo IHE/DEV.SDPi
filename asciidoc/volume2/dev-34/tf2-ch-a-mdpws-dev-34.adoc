@@ -22,7 +22,7 @@ The {var_label_dev_34_message_bye} message is encoded by using {var_uri_ws_disco
 .Bye message
 [source#vol2_clause_appendix_a_mdpws_dev_34_bye,xml]
 ----
-include::../../listings/vol2-clause-appendix-a-mdpws-dev-34-bye.xml[]
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-47-bye.xml[]
 ----
 
 :var_trigger_events_ref: <<vol2_clause_dev_34_message_bye>>
