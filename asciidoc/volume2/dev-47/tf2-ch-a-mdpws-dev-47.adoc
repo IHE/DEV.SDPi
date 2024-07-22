@@ -10,6 +10,67 @@
 
 This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_47>>.
 
+// ---------- Hello ---------
+
+===== {var_label_dev_47_message_hello} Message
+
+The <<vol2_clause_dev_47_message_hello, {var_label_dev_47_message_hello}>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
+
+====== Referenced Standards
+
+* <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
+* <<ref_oasis_ws_discovery_2009>> {var_uri_ws_discovery_hello}[Section 4.1 Hello]
+
+====== Message Outline
+
+.{var_label_dev_47_message_hello} message
+[source#vol2_clause_appendix_a_mdpws_dev_47_hello,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-47-hello.xml[]
+----
+
+:var_trigger_events_ref: <<vol2_clause_dev_47_message_hello>>
+include::../dev-a-default-trigger-events.adoc[]
+
+====== Message Semantics
+
+`s12:Envelope/s12:Body/wsd:Hello/wsa:EndpointReference/wsa:Address`:: The <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<payload_dev_47_provider_uid_hello>> as URI.
+`s12:Envelope/s12:Body/wsd:Hello/wsd:Scopes`:: The <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<payload_dev_47_discovery_scope>> as a list of URIs.
+
+:var_expected_actions_ref: <<vol2_clause_dev_47_message_hello>>
+include::../dev-a-default-expected-actions.adoc[]
+
+
+// ---------- Bye ---------
+
+[#vol2_clause_appendix_a_mdpws_dev_47_message_bye]
+===== {var_label_dev_47_message_bye} Message
+
+The <<vol2_clause_dev_47_message_bye, {var_label_dev_47_message_bye}>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
+
+====== Referenced Standards
+
+* <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
+* <<ref_oasis_ws_discovery_2009>> {var_uri_ws_discovery_bye}[Section 4.2 Bye]
+
+====== Message Outline
+
+.{var_label_dev_47_message_bye} message
+[source#vol2_clause_appendix_a_mdpws_dev_47_bye,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-47-bye.xml[]
+----
+
+:var_trigger_events_ref: <<vol2_clause_dev_47_message_bye>>
+include::../dev-a-default-trigger-events.adoc[]
+
+====== Message Semantics
+
+`s12:Envelope/s12:Body/wsd:Bye/wsa:EndpointReference/wsa:Address`:: The <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<payload_dev_47_provider_uid_bye>> as URI.
+
+:var_expected_actions_ref: <<vol2_clause_dev_47_message_bye>>
+include::../dev-a-default-expected-actions.adoc[]
+
 
 // ---------- PROBE ---------
 
