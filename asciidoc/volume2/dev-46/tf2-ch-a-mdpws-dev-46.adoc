@@ -111,7 +111,7 @@ If the request succeeds, there is no additional action required.
 
 If the request fails, the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> removes the <<vol1_spec_sdpi_p_actor_somds_provider>> endpoint metadata from its databases and informs <<vol1_spec_sdpi_p_actor_somds_consumer>>s about the <<vol1_spec_sdpi_p_actor_somds_provider>>'s absence.
 
-.R7004
+.R7006
 [sdpi_requirement#r7006,sdpi_req_level=shall]
 ****
 If <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> sends {var_label_dev_46_message_directed_probe} messages to verify presence of <<vol1_spec_sdpi_p_actor_somds_provider>>s, the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> shall notify all <<vol1_spec_sdpi_p_actor_somds_consumer>>s subscribed to Bye messages about the <<vol1_spec_sdpi_p_actor_somds_provider>>'s absence.
