@@ -47,7 +47,7 @@ jobs:
       
     - name: Upload artifact
       # if: success() && github.ref == 'refs/heads/master'
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: sdpi-supplement-${{ steps.extract_branch.outputs.branch }}
         path: sdpi-supplement
