@@ -6,7 +6,7 @@
 :var_uri_matching_rule: http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/rfc3986
 
 [#vol2_clause_appendix_mdpws_dev_47]
-==== MDPWS: Provide Endpoint Metadata [DEV-24]
+==== MDPWS: Provide Endpoint Metadata [DEV-47]
 
 This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_47>>.
 
@@ -91,7 +91,7 @@ The <<vol2_clause_dev_47_message_probe, {var_label_dev_47_message_probe}>> messa
 .WS-Discovery Probe message
 [source#vol2_clause_appendix_a_mdpws_dev_47_probe,xml]
 ----
-include::../../listings/vol2-clause-appendix-a-mdpws-dev-24-probe.xml[]
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-47-probe.xml[]
 ----
 
 :var_trigger_events_ref: <<vol2_clause_dev_47_message_probe>>
@@ -132,7 +132,7 @@ The <<vol2_clause_dev_47_message_probe_match, {var_label_dev_47_message_probe_ma
 .WS-Discovery Probe Match message
 [source#vol2_clause_appendix_a_mdpws_dev_47_probe_match,xml]
 ----
-include::../../listings/vol2-clause-appendix-a-mdpws-dev-24-probe-match.xml[]
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-47-probe-match.xml[]
 ----
 
 :var_trigger_events_ref: <<vol2_clause_dev_47_message_probe_match>>
