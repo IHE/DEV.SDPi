@@ -1,0 +1,100 @@
+<wsdl:definitions
+		targetNamespace="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.2.2"
+		xmlns:dp="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.2.2"
+		xmlns:dpws="http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01"
+		xmlns:s12="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+		xmlns:wsdd="http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01"
+		xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:wse="http://schemas.xmlsoap.org/ws/2004/08/eventing"
+		xmlns:wsp="http://www.w3.org/ns/ws-policy">
+	<wsdl:import namespace="http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01" location="http://docs.oasis-open.org/ws-dd/discovery/1.1/os/wsdd-discovery-1.1-schema-os.xsd"/>
+	<wsdl:message name="HelloMessage">
+		<wsdl:part name="parameters" element="wsdd:Hello"/>
+	</wsdl:message>
+	<wsdl:message name="ByeMessage">
+		<wsdl:part name="parameters" element="wsdd:Bye"/>
+	</wsdl:message>
+	<wsdl:message name="ProbeMessage">
+		<wsdl:part name="parameters" element="wsdd:Probe"/>
+	</wsdl:message>
+	<wsdl:message name="ProbeMatchMessage">
+		<wsdl:part name="parameters" element="wsdd:ProbeMatches"/>
+	</wsdl:message>
+	<wsdl:message name="ResolveMessage">
+		<wsdl:part name="parameters" element="wsdd:Resolve"/>
+	</wsdl:message>
+	<wsdl:message name="ResolveMatchMessage">
+		<wsdl:part name="parameters" element="wsdd:ResolveMatches"/>
+	</wsdl:message>
+	<wsdl:portType name="DiscoveryProxy" wse:EventSource="true">
+		<wsdl:operation name="HelloReport">
+			<wsdl:output message="dp:HelloMessage" wsam:Action="http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/Hello"/>
+		</wsdl:operation>
+		<wsdl:operation name="ByeReport">
+			<wsdl:output message="dp:ByeMessage" wsam:Action="http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/Bye"/>
+		</wsdl:operation>
+		<wsdl:operation name="Hello">
+			<wsdl:input message="dp:HelloMessage" wsam:Action="http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/Hello"/>
+		</wsdl:operation>
+		<wsdl:operation name="Bye">
+			<wsdl:input message="dp:ByeMessage" wsam:Action="http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/Bye"/>
+		</wsdl:operation>
+		<wsdl:operation name="Probe">
+			<wsdl:input message="dp:ProbeMessage" wsam:Action="http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/Probe"/>
+			<wsdl:output message="dp:ProbeMatchMessage" wsam:Action="http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/ProbeMatches"/>
+		</wsdl:operation>
+		<wsdl:operation name="Resolve">
+			<wsdl:input message="dp:ResolveMessage" wsam:Action="http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/Resolve"/>
+			<wsdl:output message="dp:ResolveMatchMessage" wsam:Action="http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/ResolveMatches"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="DiscoveryProxyBinding" type="dp:DiscoveryProxy">
+		<s12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsp:Policy>
+			<dpws:Profile wsp:Optional="true"/>
+		</wsp:Policy>
+		<wsdl:operation name="HelloReport">
+			<s12:operation soapAction="http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/Hello"/>
+			<wsdl:output>
+				<s12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ByeReport">
+			<s12:operation soapAction="http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/Bye"/>
+			<wsdl:output>
+				<s12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Hello">
+			<s12:operation soapAction="http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/Hello"/>
+			<wsdl:input>
+				<s12:body use="literal"/>
+			</wsdl:input>
+		</wsdl:operation>
+		<wsdl:operation name="Bye">
+			<s12:operation soapAction="http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/Bye"/>
+			<wsdl:input>
+				<s12:body use="literal"/>
+			</wsdl:input>
+		</wsdl:operation>
+		<wsdl:operation name="Probe">
+			<s12:operation soapAction="http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/Probe"/>
+			<wsdl:input>
+				<s12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<s12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Resolve">
+			<s12:operation soapAction="http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/Resolve"/>
+			<wsdl:input>
+				<s12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<s12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+</wsdl:definitions>

@@ -10,6 +10,8 @@
 
 This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_47>>.
 
+Additional implementation directions are defined in <<vol2_clause_appendix_mdpws_discovery_proxy>>.
+
 // ---------- Hello ---------
 
 ===== {var_label_dev_47_message_hello} Message
@@ -19,6 +21,7 @@ The <<vol2_clause_dev_47_message_hello, {var_label_dev_47_message_hello}>> messa
 ====== Referenced Standards
 
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
+* <<ref_oasis_ws_discovery_2009>> {var_uri_ws_discovery_hello}[Section 4.1 Hello]
 * <<ref_oasis_ws_discovery_2009>> {var_uri_ws_discovery_hello}[Section 4.1 Hello]
 
 ====== Message Outline

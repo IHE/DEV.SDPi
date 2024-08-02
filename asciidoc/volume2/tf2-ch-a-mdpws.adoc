@@ -59,6 +59,7 @@ include::dev-46/tf2-ch-a-mdpws-dev-46.adoc[]
 
 include::dev-47/tf2-ch-a-mdpws-dev-47.adoc[]
 
+include::discovery-proxy/tf2-ch-a-mdpws-discovery-proxy.adoc[]
 
 === Security Considerations
 
