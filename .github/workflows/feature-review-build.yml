@@ -32,7 +32,7 @@ jobs:
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
       
     - name: Create HTML with Gradle
-      uses: gradle/setup-gradle@v3
+      uses: gradle/actions/setup-gradle@v3
       with:
         arguments: run --args="--input-file ../../asciidoc/sdpi-supplement.adoc --output-folder ../../sdpi-supplement --github-token ${{ secrets.SDPI_API_ACCESS_TOKEN_SECRET }} --backend html"
         build-root-directory: .ci/asciidoc-converter
