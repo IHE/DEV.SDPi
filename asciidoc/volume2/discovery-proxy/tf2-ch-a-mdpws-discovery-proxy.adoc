@@ -1,5 +1,5 @@
 [#vol2_clause_appendix_mdpws_discovery_proxy]
-==== SOMDS Discovery Proxy implementation requirements
+=== SOMDS Discovery Proxy implementation requirements
 
 This chapter describes requirements to the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> <<acronym_mdpws>> binding that go beyond message outlines and semantics specified in <<vol2_clause_dev_46>> and <<vol2_clause_dev_47>>.
 
@@ -11,6 +11,7 @@ A <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> shall provide the Discovery P
 with the <<term_q_name>> dp:DiscoveryProxy.
 
 NOTE: The <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> port type is defined in <<vol2_clause_appendix_a_mdpws_wsdl>>.
+
 NOTE: The OID used for the target namespace of the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> WSDL file is listed in <<vol2_table_appendix_mdpws_discovery_proxy_oids>>.
 ****
 
@@ -34,7 +35,7 @@ every Subscribe request to a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>.
 NOTE: The OID used for the filter dialect is listed in <<vol2_table_appendix_mdpws_discovery_proxy_oids>>.
 ****
 
-===== Utilized OIDs
+==== Utilized OIDs
 
 All object identifiers used by the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> are specified in <<vol2_table_appendix_mdpws_discovery_proxy_oids>>.
 
@@ -67,10 +68,11 @@ All object identifiers used by the <<vol1_spec_sdpi_p_actor_somds_discovery_prox
 | wsdl
 |===
 
-===== Discovery Proxy WSDL
+==== Discovery Proxy WSDL
 
 <<vol2_clause_appendix_a_mdpws_wsdl>> shows the WSDL file that specifies the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Web Service interface.
 
+.Discovery Proxy WSDL outline
 [source#vol2_clause_appendix_a_mdpws_wsdl,xml]
 ----
 include::../../../sources/discovery-proxy/DiscoveryProxy.wsdl[]
