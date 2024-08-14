@@ -71,7 +71,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | ...
 | ...
 
-.12+| <<vol1_spec_sdpi_p_actor_somds_provider>>
+.13+| <<vol1_spec_sdpi_p_actor_somds_provider>>
 .^| <<transaction_name_announce_network_presence>>
 .^| Initiator
 .^| R
@@ -139,7 +139,12 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | R
 | <<vol2_clause_dev_34>>
 
-.12+| <<vol1_spec_sdpi_p_actor_somds_consumer>>
+.^| <<transaction_name_manage_presence_and_absence_of_endpoint_metadata>>
+.^| Initiator
+.^| O
+| <<vol2_clause_dev_46>>
+
+.13+| <<vol1_spec_sdpi_p_actor_somds_consumer>>
 .^| <<transaction_name_announce_network_presence>>
 .^| _Receiver_  ^(See^ ^Note^ ^2)^
 .^| O
@@ -207,6 +212,25 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | _Receiver_  ^(See^ ^Note^ ^2)^
 | O
 | <<vol2_clause_dev_34>>
+
+| <<transaction_name_provide_endpoint_metadata>>
+| Initiator
+| O
+| <<vol2_clause_dev_47>>
+
+
+.2+| <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>
+.^| <<transaction_name_manage_presence_and_absence_of_endpoint_metadata>>
+.^| _Receiver_  ^(See^ ^Note^ ^2)^
+.^| R
+| <<vol2_clause_dev_46>>
+
+| <<transaction_name_provide_endpoint_metadata>>
+| Responder
+| R
+| <<vol2_clause_dev_47>>
+
+|
 
 // FOR THE NEXT ROW:
 //     #TODO: TBD HOW TO REPLICATE TRANSACTIONS; ACTOR SUPPORTS ALL PROVIDER & CONSUMER TRANSACTIONS WITH SAME OPTIONALITY#
@@ -588,9 +612,21 @@ Future versions *_MAY_* include options such as the following (not in priority o
 * Ensemble Participation
 * Mobile Health / Cloud Connected
 
-
 |===
 
+Options that may be selected for this Integration Profile are listed in the #*_<table reference>_*# along with the actors to which they apply.
+Dependencies between options when applicable are specified in
+notes.
+
+#*<insert "SDPi-P Actors and Options" table>*#
+
+
+[#vol1_clause_sdpi_p_option_discovery_proxy]
+==== Discovery Proxy Option
+[#vol1_spec_sdpi_p_option_discovery_proxy, reftext='Discovery Proxy Option']
+
+#**<add high-level description of DP option, including sequence diagram, requirements, rationale, behaviour, etc.>
+**#
 ////
 #TODO:  Add description and detail specification in a subsequent SDPi Version#
 

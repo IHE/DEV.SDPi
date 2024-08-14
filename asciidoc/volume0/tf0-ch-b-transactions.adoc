@@ -155,13 +155,13 @@ include::../volume2/dev-40/tf2-dev-40-summary.adoc[]
 
 .^| [[vol0_transaction_summary_dev_46,DEV-46 Manage Presence and Absence of Endpoint Metadata]]
 [[transaction_number_dev_46,DEV-46]] DEV-46
-| Manage Presence and Absence of Endpoint Metadata
+| [[transaction_name_manage_presence_and_absence_of_endpoint_metadata,Manage Presence and Absence of Endpoint Metadata]] Manage Presence and Absence of Endpoint Metadata
 |
 include::../volume2/dev-46/tf2-dev-46-summary.adoc[]
 
 .^| [[vol0_transaction_summary_dev_47,DEV-47 Provide Endpoint Metadata]]
 [[transaction_number_dev_47,DEV-47]] DEV-47
-| Provide Endpoint Metadata
+| [[transaction_name_provide_endpoint_metadata,Provide Endpoint Metadata]]  Provide Endpoint Metadata
 |
 include::../volume2/dev-47/tf2-dev-47-summary.adoc[]
 
