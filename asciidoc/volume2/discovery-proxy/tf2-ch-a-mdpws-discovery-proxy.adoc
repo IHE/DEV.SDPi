@@ -40,7 +40,7 @@ NOTE: The OID used for the filter dialect is listed in <<vol2_table_appendix_mdp
 All object identifiers used by the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> are specified in <<vol2_table_appendix_mdpws_discovery_proxy_oids>>.
 
 [#vol2_table_appendix_mdpws_discovery_proxy_oids]
-.WS-Eventing subscription filter dialect OID assignment
+.WS-Eventing subscription filter dialect and WSDL target namespace OID assignments
 [cols="2,3,1",options="autowidth, header"]
 |===
 | Primary identifier
