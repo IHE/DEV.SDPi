@@ -1,0 +1,29 @@
+@startuml
+
+skinparam monochrome true
+autonumber
+
+
+!global $str_somds_provider = "SOMDS Provider"
+!global $str_somds_discovery_proxy = "SOMDS Discovery Proxy"
+!global $str_somds_consumer = "SOMDS Consumer"
+
+participant "$str_somds_provider" as somds_provider
+participant "$str_somds_discovery_proxy" as somds_discovery_proxy
+participant "$str_somds_consumer" as somds_consumer
+
+==SDPi-P Discovery Proxy Option==
+
+somds_provider ->> somds_discovery_proxy: Manage Network Presence Metadata
+
+somds_consumer ->> somds_discovery_proxy: Retrieve Network Presence Metadata
+somds_discovery_proxy  -->> somds_consumer: Return Network Presence Metadata
+
+group secured
+    somds_consumer -> somds_provider: Discover BICEPS Services
+    somds_provider -->> somds_consumer
+
+    note over somds_discovery_proxy:  Normal SDPi-P CONSUMER / PROVIDER Interactions
+end
+
+@enduml
