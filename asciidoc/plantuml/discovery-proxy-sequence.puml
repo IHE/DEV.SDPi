@@ -1,0 +1,37 @@
+@startuml
+
+skinparam monochrome true
+autonumber
+
+
+!global $str_somds_provider = "SOMDS Provider"
+!global $str_somds_discovery_proxy = "SOMDS Discovery Proxy"
+!global $str_somds_consumer = "SOMDS Consumer"
+
+participant "$str_somds_provider" as provider
+participant "$str_somds_discovery_proxy" as discovery_proxy
+participant "$str_somds_consumer" as consumer
+
+==SDPi Discovery Proxy Option==
+
+discovery_proxy <- provider: Hello
+
+opt
+    discovery_proxy -> consumer: Hello
+end
+
+alt
+    consumer ->> discovery_proxy: Probe
+    consumer <<-- discovery_proxy: ProbeMatch
+else
+    consumer ->> discovery_proxy: Resolve
+    consumer <<-- discovery_proxy: ResolveMatch
+end
+
+discovery_proxy <- provider: Bye
+
+opt
+    consumer <- discovery_proxy: Bye
+end
+
+@enduml
