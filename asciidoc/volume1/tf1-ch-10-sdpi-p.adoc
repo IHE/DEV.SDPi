@@ -146,7 +146,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 
 .13+| <<vol1_spec_sdpi_p_actor_somds_consumer>>
 .^| <<transaction_name_announce_network_presence>>
-.^| _Receiver_  ^(See^ ^Note^ ^2)^
+.^| _Receiver_  ^(See^ ^Note^ ^3)^
 .^| O
 | <<vol2_clause_dev_23>>
 
@@ -173,12 +173,12 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | <<vol2_clause_dev_27>>
 
 | <<transaction_name_notify_change_in_system_context_and_capabilities>>
-| _Receiver_  ^(See^ ^Note^ ^2)^
+| _Receiver_  ^(See^ ^Note^ ^3)^
 | O
 | <<vol2_clause_dev_28>>
 
 | <<transaction_name_publish_biceps_update_reports>>
-| _Receiver_  ^(See^ ^Note^ ^2)^
+| _Receiver_  ^(See^ ^Note^ ^3)^
 | R
 | <<vol2_clause_dev_29>>
 
@@ -209,19 +209,19 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 
 
 | <<transaction_name_announce_network_departure>>
-| _Receiver_  ^(See^ ^Note^ ^2)^
+| _Receiver_  ^(See^ ^Note^ ^3)^
 | O
 | <<vol2_clause_dev_34>>
 
 | <<transaction_name_provide_endpoint_metadata>>
 | Initiator
-| C   ^(See^ ^Note^ ^3)^
+| C   ^(See^ ^Note^ ^2)^
 | <<vol2_clause_dev_47>>
 
 
 .2+| <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>
 .^| <<transaction_name_manage_presence_and_absence_of_endpoint_metadata>>
-.^| _Receiver_  ^(See^ ^Note^ ^3)^
+.^| _Receiver_  ^(See^ ^Note^ ^2)^
 .^| R
 | <<vol2_clause_dev_46>>
 
@@ -230,7 +230,6 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | R
 | <<vol2_clause_dev_47>>
 
-|
 
 // FOR THE NEXT ROW:
 //     #TODO: TBD HOW TO REPLICATE TRANSACTIONS; ACTOR SUPPORTS ALL PROVIDER & CONSUMER TRANSACTIONS WITH SAME OPTIONALITY#
@@ -267,14 +266,9 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | ...
 
 5+<|
-Note 1: _“Notify Change in System Context and Capabilities”_ is required if there are dynamic changes that may need to be sent to subscribing systems.
+Note 1: _“Notify Change in System Context and Capabilities”_ is required if there are dynamic changes that may need to be sent to subscribing systems
 
-////
-Note 2: Conditional transaction is required if the SDPi-P Discovery Proxy Option is enabled.  Some deployments may support a mix of systems that use the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor as well as the default "ad hoc" discovery mode.  Additional details and requirements are provided in the <<vol1_clause_sdpi_p_option_discovery_proxy>> discussion.
-
-##CAN A LINK TO <<vol1_spec_sdpi_p_option_discovery_proxy>> BE ADDED HERE
-##
-////
+Note 2: Conditional transaction is required if the SDPi-P <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled.  Some deployments may support a mix of systems that use the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor as well as the default "ad hoc" discovery mode.  Additional details and requirements are provided in the <<vol1_clause_sdpi_p_option_discovery_proxy>> discussion.
 
 Note 3: _“Receiver”_ is included in this column, in _italics_, to indicate that though a <<vol1_spec_sdpi_p_actor_somds_consumer>> may "receive" the transaction, there is no response communicated to the message initiator.
 
