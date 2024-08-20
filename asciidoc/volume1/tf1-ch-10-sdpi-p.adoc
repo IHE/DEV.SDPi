@@ -266,7 +266,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | ...
 | ...
 
-6+<|
+5+<|
 Note 1: _“Notify Change in System Context and Capabilities”_ is required if there are dynamic changes that may need to be sent to subscribing systems.
 
 Note 2: _“Receiver”_ is included in this column, in _italics_, to indicate that though a <<vol1_spec_sdpi_p_actor_somds_consumer>> may "receive" the transaction, there is no response communicated to the message initiator.

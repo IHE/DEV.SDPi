@@ -14,10 +14,18 @@ participant "$str_somds_consumer" as somds_consumer
 
 ==SDPi-P Discovery Proxy Option==
 
+group secured
+
 somds_provider ->> somds_discovery_proxy: Manage Network Presence Metadata
+
+end
+
+group secured
 
 somds_consumer ->> somds_discovery_proxy: Retrieve Network Presence Metadata
 somds_discovery_proxy  -->> somds_consumer: Return Network Presence Metadata
+
+end
 
 group secured
     somds_consumer -> somds_provider: Discover BICEPS Services
