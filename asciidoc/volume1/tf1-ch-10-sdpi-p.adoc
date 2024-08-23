@@ -644,16 +644,11 @@ notes.
 ==== Discovery Proxy Option
 [#vol1_spec_sdpi_p_option_discovery_proxy, reftext='Discovery Proxy Option']
 
-#**<add DEV-47 option for subscription / proxy "pass through"; integrate david's comments from PR thread; sync / refactor transaction names to David's PR comments; multicast / unsecure vs. secure man-in-the-middle messaging >
-**#
+The Discovery Proxy profile option provides an alternative means for <<vol1_spec_sdpi_p_actor_somds_consumer>> Actors to discover the <<vol1_spec_sdpi_p_actor_somds_provider>> Actors that are present on the network.  The default "ad hoc" approach using the <<vol2_clause_dev_23>>, <<vol2_clause_dev_24>> and <<vol2_clause_dev_34>> transactions, requires use of unsecured multicast messaging; however, some deployments do not support or allow this mode of discovery.
+The addition of a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor enables a secure and non-multicast means for managing system discovery across the network.
+The <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor acts as a man-in-the-middle system, with <<vol1_spec_sdpi_p_actor_somds_provider>> Actors using the <<vol2_clause_dev_46>> transaction to provide endpoint metatdata and update their network presence or absence status.
+<<vol1_spec_sdpi_p_actor_somds_consumer>> Actors may then use the <<vol2_clause_dev_47>> transaction to determine available <<vol1_spec_sdpi_p_actor_somds_consumer>> systems and their endpoint metadata.
 
-Rationale:
-
-* "Ad Hoc" discovery is the default way in which SOMDS_Participant Actors manage their network presence and departure;
-* This default mode uses the DEV-23, DEV-24 and DEV-34 transactions, all of which rely on multicast services;
-* Some network configurations do not support or allow multicast services, requiring an alternative means of discovery and network presence and departure management;
-* The SOMDS Discovery Proxy Actor provides an alternative means for managing SOMDS_Provider Actor presence and departure from a network that does not require the use of multicast services;
-* Some configurations may allow network configurations that simultaneously support both "ad hoc" (default) and proxy-based discovery
 
 <<figure_sdpi-p-discovery-proxy-option-sequence-diagram>> provides an overview of the interactions of the SOMDS Consumer and Somes Provider Actors with the SOMDS Discovery Proxy Actor.
 
@@ -664,31 +659,20 @@ Rationale:
 include::../plantuml/vol1-figure-sdpi-p-discovery-proxy-option-sequence-diagram.puml[]
 ....
 
+Once the discovery process is complete, actor interactions continue as normal.
+See <<vol1_figure_sdpi_p_example_sequence_diagram>> for additional detail.
 
-* SOMDS_Provider systems shall support use of the SOMDS_Discovery_Proxy Actor (DEV-46)
-* SOMDS_Consumer systems shall support use of the SOMDS_Discovery_Proxy Actor (DEV-47)
+When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor, then it shall use the <<vol2_clause_dev_46>> transaction to update the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor on its network presence and departure.
+If a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor is configured or provisioned for the <<vol1_spec_sdpi_p_option_discovery_proxy>>, but the proxy system is not available, then the <<vol1_spec_sdpi_p_actor_somds_provider>> shall revert back to "ad hoc" discovery mode.
 
-#DESCRIBE DEV-46 usage + requirements#
+When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor, then it shall use the <<vol2_clause_dev_47>> transaction to retrieve <<vol1_spec_sdpi_p_actor_somds_provider>> network presence metadata from the  <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor.
+If a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor is configured or provisioned for the <<vol1_spec_sdpi_p_option_discovery_proxy>>, but the proxy system is not available, then the <<vol1_spec_sdpi_p_actor_somds_consumer>> shall revert back to "ad hoc" discovery mode.
 
-* IF the Discovery Proxy Option is enabled for a SOMDS_Provider Actor, then it shall use the DEV-46 transaction to update the SOMDS Discovery Proxy Actor on its network presence and departure
-* IF the Discovery Proxy Option is not enabled for a SOMDS_Provider, then it shall use the default "ad hoc" network presence transactions (DEV-23 -24 -34)
-* if a SOMDS_Provider Actor is configured or provisioned for the Discovery Proxy Option, but the proxy system is not available, then the provider will default back to "ad hoc" discovery mode
+When retrieving network presence metadata from a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor, a <<term_discovery_scope>> may be specified as a filter to identify a specific subset of <<vol1_spec_sdpi_p_actor_somds_provider>> systems.
+Additionally, a <<vol1_spec_sdpi_p_actor_somds_consumer>> may optionally use the <<vol2_clause_dev_47>> transaction to subscribe to all metadata updates from a set of <<vol1_spec_sdpi_p_actor_somds_consumer>> systems, essentially using the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor as a pass through for <<vol1_spec_sdpi_p_actor_somds_provider>> <<vol2_clause_dev_23>> and <<vol2_clause_dev_34>> transactions.
 
-#DESCRIBE DEV-47 usage + requirements#
-
-* IF the Discovery Proxy Option is enabled for a SOMDS_Consumer Actor, then it shall use the DEV-47 transaction to retrieve the current network presence metadata related to those systems that it is looking to discover (see transaction metadata detail);
-* IF the Discovery Proxy Option is not enabled for a SOMDS Consumer Actor, then it shall use the default "ad hoc" network presence transactions for discovery (DEV-23 -24 -34);
-* if a SOMDS Consumer Actor is configured / provisioned for the Discovery Proxy Option, but the proxy system is not available, then the consumer will default back to "ad hoc" discovery mode
-
-#DESCRIBE MIXED AD-HOC & PROXY-BASED Discovery + requirements#
-
-##David:  If ad hoc and managed mode is used in parallel, a provider should send hellos (DEV-23) no matter if the discovery proxy is reachable or not.
-##
-* IF both ad-hoc discovery (using the DEV-23 - 24 - 34 transactions) and proxy-based discovery management (using DEV-46 -47 transactions) are utilized in a SOMDS network deployment ...
-* Provider and Consumer systems shall prioritize use of the SOMDS Discovery Proxy Actor and related transactions;
-* Provider systems shall only use the DEV-46 transaction to update the proxy system, and not use the DEV-23 or DEV-34 transactions;
-* Consumer systems shall first use the DEV-47 transaction to determine the presence / absence of a given consumer or set of consumers;
-* IF a consumer is unable to discover the desired providers using the discovery proxy, then it may use the "ad hoc" DEV-24 to probe the presence of systems using multicast;
+Though it is not recommended, deployments may allow simultaneous use of both the default "ad hoc" discovery mode and the managed proxy-based discovery mode utilizing a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor.
+In these configurations, <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_spec_sdpi_p_actor_somds_provider>> systems should prioritize use of the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor.
 
 
 NOTE:  Provisioning of SOMDS_Participant systems to support use of a SOMDS Discovery Proxy Actor is out-of-scope for this specification.
