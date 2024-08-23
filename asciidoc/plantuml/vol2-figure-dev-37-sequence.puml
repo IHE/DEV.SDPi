@@ -9,7 +9,7 @@ autonumber
 participant "$str_somds_consumer" as consumer
 participant "$str_somds_provider" as provider
 
-==SDPi Retrieve Medical Data [DEV-37]==
+==Retrieve Medical Data [DEV-37]==
 
 consumer -> provider: GetMdib()
 consumer <<-- provider: GetMdibResponse(MdDescription, MdState [incl. ContextStates])

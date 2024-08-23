@@ -9,7 +9,7 @@ autonumber
 participant "$str_somds_consumer" as consumer
 participant "$str_somds_provider" as provider
 
-==SDPi Discover Network Topology [DEV-24]==
+==Discover Network Topology [DEV-24]==
 
 alt
     consumer ->> provider: Probe(Discovery Scope)

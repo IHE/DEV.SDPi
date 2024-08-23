@@ -139,9 +139,9 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | R
 | <<vol2_clause_dev_34>>
 
-.^| <<transaction_name_manage_presence_and_absence_of_endpoint_metadata>>
+.^| <<transaction_name_manage_network_presence_metadata>>
 .^| Initiator
-.^| C   ^(See^ ^Note^ ^2)^
+.^| O   ^(See^ ^Note^ ^2)^
 | <<vol2_clause_dev_46>>
 
 .13+| <<vol1_spec_sdpi_p_actor_somds_consumer>>
@@ -213,19 +213,19 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | O
 | <<vol2_clause_dev_34>>
 
-| <<transaction_name_provide_endpoint_metadata>>
+| <<transaction_name_retrieve_network_presence_metadata>>
 | Initiator
-| C   ^(See^ ^Note^ ^2)^
+| O   ^(See^ ^Note^ ^2)^
 | <<vol2_clause_dev_47>>
 
 
 .2+| <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>
-.^| <<transaction_name_manage_presence_and_absence_of_endpoint_metadata>>
+.^| <<transaction_name_manage_network_presence_metadata>>
 .^| _Receiver_  ^(See^ ^Note^ ^2)^
 .^| R
 | <<vol2_clause_dev_46>>
 
-| <<transaction_name_provide_endpoint_metadata>>
+| <<transaction_name_retrieve_network_presence_metadata>>
 | Responder
 | R
 | <<vol2_clause_dev_47>>
@@ -268,7 +268,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 5+<|
 Note 1: _“Notify Change in System Context and Capabilities”_ is required if there are dynamic changes that may need to be sent to subscribing systems
 
-Note 2: Conditional transaction is required if the SDPi-P <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled.  Some deployments may support a mix of systems that use the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor as well as the default "ad hoc" discovery mode.  Additional details and requirements are provided in the <<vol1_clause_sdpi_p_option_discovery_proxy>> discussion.
+Note 2: Optional transaction is required if the SDPi-P <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled.  Some deployments may support a mix of systems that use the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor as well as the default "ad hoc" discovery mode.  Additional details and requirements are provided in the <<vol1_clause_sdpi_p_option_discovery_proxy>> discussion.
 
 Note 3: _“Receiver”_ is included in this column, in _italics_, to indicate that though a <<vol1_spec_sdpi_p_actor_somds_consumer>> may "receive" the transaction, there is no response communicated to the message initiator.
 
@@ -596,12 +596,9 @@ This allows for a <<acronym_somds>> to provide centralized discovery of <<vol1_s
 [#vol1_clause_sdpi_p_actor_options]
 === SDPi-P Actor Options
 
-[%noheader]
-[%autowidth]
-[cols="1"]
-|===
-a| *{supplement_note}*:  Profile options are out-of-scope for this version of the supplement.
-Future versions *_MAY_* include options such as the following (not in priority order):
+////
+TODO
+Future versions *_MAY_* include options such as
 
 * Retrieve Remote Data
 * Streaming / Waveforms
@@ -614,12 +611,11 @@ Future versions *_MAY_* include options such as the following (not in priority o
 * Mobile Health / Cloud Connected
 
 |===
+////
 
 Options that may be selected for this Integration Profile are listed in the <<vol1_table_sdpi_p_actors_transactions>> along with the actors to which they apply.
 Dependencies between options when applicable are specified in
 notes.
-
-{empty} +
 
 [#vol1_table_sdpi_p_actors_transactions]
 .SDPi-P Profile - Actors and Options
@@ -648,7 +644,7 @@ notes.
 ==== Discovery Proxy Option
 [#vol1_spec_sdpi_p_option_discovery_proxy, reftext='Discovery Proxy Option']
 
-#**<add high-level description of DP option, including sequence diagram, requirements, rationale, behaviour, etc.>
+#**<add DEV-47 option for subscription / proxy "pass through"; integrate david's comments from PR thread; sync / refactor transaction names to David's PR comments; multicast / unsecure vs. secure man-in-the-middle messaging >
 **#
 
 Rationale:
@@ -668,8 +664,6 @@ Rationale:
 include::../plantuml/vol1-figure-sdpi-p-discovery-proxy-option-sequence-diagram.puml[]
 ....
 
-##David - how much of the information below is in the current TF-2 & TF-2A detail?  TBD whether the requirements should be here at a more generic level or there.  Theory of Operation and non-transaction-specific requirements should go in this section;
-##
 
 * SOMDS_Provider systems shall support use of the SOMDS_Discovery_Proxy Actor (DEV-46)
 * SOMDS_Consumer systems shall support use of the SOMDS_Discovery_Proxy Actor (DEV-47)
@@ -688,12 +682,13 @@ include::../plantuml/vol1-figure-sdpi-p-discovery-proxy-option-sequence-diagram.
 
 #DESCRIBE MIXED AD-HOC & PROXY-BASED Discovery + requirements#
 
+##David:  If ad hoc and managed mode is used in parallel, a provider should send hellos (DEV-23) no matter if the discovery proxy is reachable or not.
+##
 * IF both ad-hoc discovery (using the DEV-23 - 24 - 34 transactions) and proxy-based discovery management (using DEV-46 -47 transactions) are utilized in a SOMDS network deployment ...
 * Provider and Consumer systems shall prioritize use of the SOMDS Discovery Proxy Actor and related transactions;
 * Provider systems shall only use the DEV-46 transaction to update the proxy system, and not use the DEV-23 or DEV-34 transactions;
 * Consumer systems shall first use the DEV-47 transaction to determine the presence / absence of a given consumer or set of consumers;
-* IF a provider is unable to discover the desired consumers using the discovery proxy, then it may use the "ad hoc" DEV-24 to probe the presence of systems using multicast;
-* ... #question# ... what about a given provider that has both proxy and "ad hoc" discovery-based consumer connections?  It will always update the proxy but is there anyway to know that a connection was made via "ad hoc" discovery means and not via the proxy? ...
+* IF a consumer is unable to discover the desired providers using the discovery proxy, then it may use the "ad hoc" DEV-24 to probe the presence of systems using multicast;
 
 
 NOTE:  Provisioning of SOMDS_Participant systems to support use of a SOMDS Discovery Proxy Actor is out-of-scope for this specification.

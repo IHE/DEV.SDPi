@@ -10,7 +10,7 @@ autonumber
 participant "$str_somds_consumer" as consumer
 participant "$str_somds_discovery_proxy" as discovery_proxy
 
-==Provide Endpoint Metadata [DEV-47]==
+==Retrieve Network Presence Metadata [DEV-47]==
 
 opt
     discovery_proxy -> consumer: Hello(Provider UID, Discovery Scope)

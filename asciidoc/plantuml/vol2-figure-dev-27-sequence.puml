@@ -9,7 +9,7 @@ autonumber
 participant "$str_somds_consumer" as consumer
 participant "$str_somds_provider" as provider
 
-==SDPi Manage BICEPS Subscription [DEV-27]==
+==Manage BICEPS Subscription [DEV-27]==
 
 consumer -> provider: Subscribe(Filter, Expiration Time)
 consumer <<-- provider: SubscribeResponse(Subscription Manager, Expiration Time)

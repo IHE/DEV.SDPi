@@ -6,7 +6,7 @@
 
 //reset|+1|off
 [#vol2_clause_dev_46,sdpi_offset=46]
-=== Manage Presence and Absence of Endpoint Metadata [{var_transaction_id}]
+=== Manage Network Presence Metadata [{var_transaction_id}]
 
 ==== Scope
 

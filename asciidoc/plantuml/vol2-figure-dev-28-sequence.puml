@@ -9,7 +9,7 @@ autonumber
 participant "$str_somds_consumer" as consumer
 participant "$str_somds_provider" as provider
 
-==SDPi Notify Change in System Context and Capabilities [DEV-28]==
+==Notify Change in System Context and Capabilities [DEV-28]==
 
 
 consumer <<- provider: Notification(EpisodicContextReport)

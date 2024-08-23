@@ -8,7 +8,7 @@ autonumber
 participant "$str_sdpi_p_somds_cons" as sdpi_somds_consumer
 participant "$str_sdpi_p_somds_prov" as sdpi_somds_provider
 
-==SDPi Discover BICEPS Services [DEV-25]==
+==Discover BICEPS Services [DEV-25]==
 
 sdpi_somds_consumer -> sdpi_somds_provider: GetMetadata()
 sdpi_somds_consumer <<-- sdpi_somds_provider: GetMetadataResponse(BICEPS Services, Device Metadata, Model Metadata)

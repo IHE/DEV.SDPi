@@ -8,7 +8,7 @@
 :var_uri_ws_discovery_directed_probe: https://docs.oasis-open.org/ws-dd/discovery/1.1/os/wsdd-discovery-1.1-spec-os.html#_Toc234231831
 
 [#vol2_clause_appendix_mdpws_dev_46]
-==== MDPWS: Manage Presence and Absence of Endpoint Metadata  [DEV-46]
+==== MDPWS: Manage Network Presence Metadata  [DEV-46]
 
 This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_46>>.
 
