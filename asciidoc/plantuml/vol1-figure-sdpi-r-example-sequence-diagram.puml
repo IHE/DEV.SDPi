@@ -1,6 +1,6 @@
 @startuml
 
-!include common_style.inc.puml
+!include plantuml/common_style.inc.puml
 autonumber
 
 !global $str_sdc_sc = "SOMDS Medical Data Consumer"

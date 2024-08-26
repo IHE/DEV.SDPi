@@ -1,5 +1,5 @@
 @startuml
-!include common_style.inc.puml
+!include plantuml/common_style.inc.puml
 autonumber
 
 !global $str_sdpi_p_somds_cons = "SOMDS Consumer"
