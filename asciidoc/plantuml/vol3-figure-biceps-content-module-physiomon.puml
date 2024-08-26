@@ -1,6 +1,6 @@
 @startuml
 
-skinparam monochrome true
+!include common_style.inc.puml
 
 object Monitor_Mds
 Monitor_Mds : MDC_DEV_METER_PHYSIO_MULTI_PARAM_MDS

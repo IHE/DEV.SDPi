@@ -1,7 +1,6 @@
 @startuml
 
-skinparam dpi 300
-skinparam monochrome true
+!include common_style.inc.puml
 
 !global $str_sdpi_p_somds_prov = "SOMDS Provider"
 !global $str_sdpi_p_somds_cons = "SOMDS Consumer"

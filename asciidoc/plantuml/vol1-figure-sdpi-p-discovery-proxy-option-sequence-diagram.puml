@@ -1,6 +1,7 @@
 @startuml
 
-skinparam monochrome true
+!include common_style.inc.puml
+
 autonumber
 
 

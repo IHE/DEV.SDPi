@@ -1,6 +1,6 @@
 @startuml
 
-skinparam monochrome true
+!include common_style.inc.puml
 autonumber
 
 !global $str_somds_consumer = "SOMDS Consumer"
@@ -10,10 +10,9 @@ participant "$str_somds_consumer" as consumer
 participant "$str_somds_provider" as provider
 
 ==Announce Network Presence [DEV-23]==
-|||
+
 group unsecured
     provider ->> consumer: Hello(Provider UID, Discovery Scope)
 end
-|||
 
 @enduml
