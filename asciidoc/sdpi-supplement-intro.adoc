@@ -62,8 +62,6 @@ To that end, the supplement includes updates to all (3) IHE DEV TF volumes, incl
 
 * New content covering the application of ISO/IEEE 11073 SDC semantic standards to device content modules, with a primary focus on specifications related to the ISO/IEEE 11073-10207 BICEPS standard.
 
-{empty} +
-
 [#supplement_clause_joint_ihe_hl7_gemini_ses_mdi_project_development]
 === Joint IHE-HL7 Gemini SES+MDI Project Development
 This supplement is the result of a joint https://confluence.hl7.org/x/Xzf9Aw[IHE-HL7 Gemini Device Interoperability program] which began early 2020.
