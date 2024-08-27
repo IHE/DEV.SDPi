@@ -642,7 +642,6 @@ The addition of a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor enables
 The <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor acts as a man-in-the-middle system, with <<vol1_spec_sdpi_p_actor_somds_provider>> Actors using the <<vol2_clause_dev_46>> transaction to provide endpoint metatdata and update their network presence or absence status.
 <<vol1_spec_sdpi_p_actor_somds_consumer>> Actors may then use the <<vol2_clause_dev_47>> transaction to determine available <<vol1_spec_sdpi_p_actor_somds_consumer>> systems and their endpoint metadata.
 
-
 <<figure_sdpi-p-discovery-proxy-option-sequence-diagram>> provides an overview of the interactions of the SOMDS Consumer and Somes Provider Actors with the SOMDS Discovery Proxy Actor.
 
 .SDPi-P Discovery Proxy Option - Transaction Sequence Diagram
@@ -655,10 +654,10 @@ include::../plantuml/vol1-figure-sdpi-p-discovery-proxy-option-sequence-diagram.
 Once the discovery process is complete, actor interactions continue as normal.
 See <<vol1_figure_sdpi_p_example_sequence_diagram>> for additional detail.
 
-When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor, then it shall use the <<vol2_clause_dev_46>> transaction to update the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor on its network presence and departure.
+When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor, then it shall use the <<vol2_clause_dev_46, DEV-46>> transaction to update the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor on its network presence and departure.
 If a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor is configured or provisioned for the <<vol1_spec_sdpi_p_option_discovery_proxy>>, but the proxy system is not available, then the <<vol1_spec_sdpi_p_actor_somds_provider>> shall revert back to "ad hoc" discovery mode.
 
-When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor, then it shall use the <<vol2_clause_dev_47>> transaction to retrieve <<vol1_spec_sdpi_p_actor_somds_provider>> network presence metadata from the  <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor.
+When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor, then it shall use the <<vol2_clause_dev_47, DEV-47>> transaction to retrieve <<vol1_spec_sdpi_p_actor_somds_provider>> network presence metadata from the  <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor.
 If a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor is configured or provisioned for the <<vol1_spec_sdpi_p_option_discovery_proxy>>, but the proxy system is not available, then the <<vol1_spec_sdpi_p_actor_somds_consumer>> shall revert back to "ad hoc" discovery mode.
 
 When retrieving network presence metadata from a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor, a <<term_discovery_scope>> may be specified as a filter to identify a specific subset of <<vol1_spec_sdpi_p_actor_somds_provider>> systems.
@@ -667,8 +666,7 @@ Additionally, a <<vol1_spec_sdpi_p_actor_somds_consumer>> may optionally use the
 Though it is not recommended, deployments may allow simultaneous use of both the default "ad hoc" discovery mode and the managed proxy-based discovery mode utilizing a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor.
 In these configurations, <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_spec_sdpi_p_actor_somds_provider>> systems should prioritize use of the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor.
 
-
-NOTE:  Provisioning of SOMDS_Participant systems to support use of a SOMDS Discovery Proxy Actor is out-of-scope for this specification.
+NOTE: Provisioning of <<vol1_spec_sdpi_p_actor_somds_participant>> systems to support use of a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor is out-of-scope for this specification.
 
 ////
 #TODO:  Add description and detail specification in a subsequent SDPi Version#
@@ -706,7 +704,6 @@ NOTE:  Provisioning of SOMDS_Participant systems to support use of a SOMDS Disco
 
 [#vol1_clause_sdpi_p_required_actor_groupings]
 === SDPi-P Required Actor Groupings
-
 
 [%noheader]
 [%autowidth]
