@@ -8,7 +8,7 @@
 :var_uri_ws_discovery_directed_probe: https://docs.oasis-open.org/ws-dd/discovery/1.1/os/wsdd-discovery-1.1-spec-os.html#_Toc234231831
 
 [#vol2_clause_appendix_mdpws_dev_46]
-==== MDPWS: Manage Network Presence Metadata  [DEV-46]
+==== MDPWS: Update Network Presence  [DEV-46]
 
 This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_46>>.
 
@@ -79,7 +79,7 @@ include::../dev-a-default-expected-actions.adoc[]
 
 ===== {var_label_dev_46_message_directed_probe} Message
 
-In addition to {var_label_dev_46_message_hello} and {var_label_dev_46_message_bye}, this section proposes a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> to periodically probe all <<vol1_spec_sdpi_p_actor_somds_provider>>s it has recorded as present in the <<acronym_somds>> by using a {var_label_dev_46_message_directed_probe} message. This allows for the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> to verify if <<vol1_spec_sdpi_p_actor_somds_provider>>s reachable.
+In addition to {var_label_dev_46_message_hello} and {var_label_dev_46_message_bye}, this section proposes a <<vol1_spec_sdpi_p_actor_discovery_proxy>> to periodically probe all <<vol1_spec_sdpi_p_actor_somds_provider>>s it has recorded as present in the <<acronym_somds>> by using a {var_label_dev_46_message_directed_probe} message. This allows for the <<vol1_spec_sdpi_p_actor_discovery_proxy>> to verify if <<vol1_spec_sdpi_p_actor_somds_provider>>s reachable.
 
 The {var_label_dev_46_message_directed_probe} message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
 
@@ -99,8 +99,8 @@ include::../../listings/vol2-clause-appendix-a-mdpws-dev-46-directed-probe.xml[]
 
 ====== Trigger Events
 
-A <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> may periodically send {var_label_dev_46_message_directed_probe} messages to all present <<vol1_spec_sdpi_p_actor_somds_provider>>s.
-The periodicity can be determined by the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>.
+A <<vol1_spec_sdpi_p_actor_discovery_proxy>> may periodically send {var_label_dev_46_message_directed_probe} messages to all present <<vol1_spec_sdpi_p_actor_somds_provider>>s.
+The periodicity can be determined by the <<vol1_spec_sdpi_p_actor_discovery_proxy>>.
 
 ====== Message Semantics
 
@@ -110,12 +110,12 @@ No payload is required as the probe is intended to be used for watchdog purposes
 
 If the request succeeds, there is no additional action required.
 
-If the request fails, the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> removes the <<vol1_spec_sdpi_p_actor_somds_provider>> endpoint metadata from its databases and informs <<vol1_spec_sdpi_p_actor_somds_consumer>>s about the <<vol1_spec_sdpi_p_actor_somds_provider>>'s absence.
+If the request fails, the <<vol1_spec_sdpi_p_actor_discovery_proxy>> removes the <<vol1_spec_sdpi_p_actor_somds_provider>> endpoint metadata from its databases and informs <<vol1_spec_sdpi_p_actor_somds_consumer>>s about the <<vol1_spec_sdpi_p_actor_somds_provider>>'s absence.
 
 .R7006
 [sdpi_requirement#r7006,sdpi_req_level=shall]
 ****
-If <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> sends {var_label_dev_46_message_directed_probe} messages to verify presence of <<vol1_spec_sdpi_p_actor_somds_provider>>s, the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> shall notify all <<vol1_spec_sdpi_p_actor_somds_consumer>>s subscribed to Bye messages about the <<vol1_spec_sdpi_p_actor_somds_provider>>'s absence.
+If <<vol1_spec_sdpi_p_actor_discovery_proxy>> sends {var_label_dev_46_message_directed_probe} messages to verify presence of <<vol1_spec_sdpi_p_actor_somds_provider>>s, the <<vol1_spec_sdpi_p_actor_discovery_proxy>> shall notify all <<vol1_spec_sdpi_p_actor_somds_consumer>>s subscribed to Bye messages about the <<vol1_spec_sdpi_p_actor_somds_provider>>'s absence.
 
 NOTE: Absence of <<vol1_spec_sdpi_p_actor_somds_provider>>s is notified to <<vol1_spec_sdpi_p_actor_somds_consumer>>s by using the Bye message as specified in <<vol2_clause_appendix_a_mdpws_dev_47_message_bye>>.
 ****

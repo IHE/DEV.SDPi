@@ -48,7 +48,7 @@ include::dev-39/tf2-dev-39.adoc[]
 //=== Retrieve Medical Alert Status [DEV-40]
 include::dev-40/tf2-dev-40.adoc[]
 
-//=== Manage Network Presence Metadata [DEV-46]
+//=== Update Network Presence [DEV-46]
 include::dev-46/tf2-dev-46.adoc[]
 
 //=== Retrieve Network Presence Metadata [DEV-47]

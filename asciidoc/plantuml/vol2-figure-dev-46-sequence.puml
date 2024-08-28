@@ -10,7 +10,7 @@ autonumber
 participant "$str_somds_provider" as provider
 participant "$str_somds_discovery_proxy" as discovery_proxy
 
-==Manage Network Presence Metadata [DEV-46]==
+==Update Network Presence [DEV-46]==
 
 discovery_proxy <- provider: Hello(Provider UID, Discovery Scope)
 

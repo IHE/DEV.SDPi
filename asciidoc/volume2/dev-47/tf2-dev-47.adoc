@@ -23,12 +23,12 @@ include::tf2-dev-47-summary.adoc[]
 |===
 |Actor |Roles
 
-|<<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>
+|<<vol1_spec_sdpi_p_actor_discovery_proxy>>
 |Forwards <<vol2_clause_dev_46_message_hello, {var_label_dev_46_message_hello}>> and <<vol2_clause_dev_46_message_hello, {var_label_dev_46_message_bye}>> messages received from <<vol1_spec_sdpi_p_actor_somds_provider>>s.
 Responds to incoming <<vol2_clause_dev_47_message_probe, {var_label_dev_47_message_probe}>> and <<vol2_clause_dev_47_message_resolve, {var_label_dev_47_message_resolve}>> messages.
 |<<vol1_spec_sdpi_p_actor_somds_consumer>>
 |Uses <<vol2_clause_dev_47_message_probe, {var_label_dev_47_message_probe}>> and <<vol2_clause_dev_47_message_resolve, {var_label_dev_47_message_resolve}>> messages to seek endpoint metadata.
-Optionally subscribes to a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> in order to receive <<vol2_clause_dev_47_message_hello, {var_label_dev_47_message_hello}>> and <<vol2_clause_dev_47_message_hello, {var_label_dev_47_message_bye}>> messages.
+Optionally subscribes to a <<vol1_spec_sdpi_p_actor_discovery_proxy>> in order to receive <<vol2_clause_dev_47_message_hello, {var_label_dev_47_message_hello}>> and <<vol2_clause_dev_47_message_hello, {var_label_dev_47_message_bye}>> messages.
 |===
 
 ==== Referenced Standards
@@ -49,16 +49,16 @@ include::../../plantuml/vol2-figure-dev-47-sequence.puml[]
 ===== {var_label_dev_47_message_hello} Message
 
 <<acronym_biceps>> specifies an implicit discovery protocol for allowing <<vol1_spec_sdpi_p_actor_somds_consumer>>s to receive a notification when a <<vol1_spec_sdpi_p_actor_somds_provider>> is ready to exchange messages with other <<vol1_spec_sdpi_p_actor_somds_consumer>>s.
-If a <<vol1_spec_sdpi_p_actor_somds_consumer>> uses a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>, network presence is announced to the <<vol1_spec_sdpi_p_actor_somds_consumer>> by using the _{var_label_dev_47_message_hello}_ message of this transaction.
+If a <<vol1_spec_sdpi_p_actor_somds_consumer>> uses a <<vol1_spec_sdpi_p_actor_discovery_proxy>>, network presence is announced to the <<vol1_spec_sdpi_p_actor_somds_consumer>> by using the _{var_label_dev_47_message_hello}_ message of this transaction.
 
 [#vol2_clause_dev_47_message_hello_trigger_events]
 ====== Trigger Events
 
-If a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> is known to the <<vol1_spec_sdpi_p_actor_somds_consumer>> and the <<vol1_spec_sdpi_p_actor_somds_consumer>> is interested in {var_label_dev_47_message_hello} messages, this message is sent
+If a <<vol1_spec_sdpi_p_actor_discovery_proxy>> is known to the <<vol1_spec_sdpi_p_actor_somds_consumer>> and the <<vol1_spec_sdpi_p_actor_somds_consumer>> is interested in {var_label_dev_47_message_hello} messages, this message is sent
 
-1. whenever a <<vol1_spec_sdpi_p_actor_somds_provider>> known to the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> joins an <<acronym_md_lan>>,
-2. when a <<vol1_spec_sdpi_p_actor_somds_provider>> known to the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> returns to normal _on-line_ operation after having indicated temporary suspension of message exchanges, or
-3. when a <<vol1_spec_sdpi_p_actor_somds_provider>> known to the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> changes its <<payload_dev_23_discovery_scope>>.
+1. whenever a <<vol1_spec_sdpi_p_actor_somds_provider>> known to the <<vol1_spec_sdpi_p_actor_discovery_proxy>> joins an <<acronym_md_lan>>,
+2. when a <<vol1_spec_sdpi_p_actor_somds_provider>> known to the <<vol1_spec_sdpi_p_actor_discovery_proxy>> returns to normal _on-line_ operation after having indicated temporary suspension of message exchanges, or
+3. when a <<vol1_spec_sdpi_p_actor_somds_provider>> known to the <<vol1_spec_sdpi_p_actor_discovery_proxy>> changes its <<payload_dev_23_discovery_scope>>.
 
 [#vol2_clause_dev_47_message_hello_semantics]
 ====== Message Semantics
@@ -69,19 +69,19 @@ If a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> is known to the <<vol1_spe
 [#vol2_clause_dev_47_message_hello_expected_actions]
 ====== Expected Actions
 
-When a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> sends this message, there is no expected or required response.
+When a <<vol1_spec_sdpi_p_actor_discovery_proxy>> sends this message, there is no expected or required response.
 
 // ---------- BYE ---------
 
 [#vol2_clause_dev_47_message_bye]
 ===== {var_label_dev_47_message_bye} Message
 
-If a <<vol1_spec_sdpi_p_actor_somds_consumer>> uses a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>, network absence is announced to the <<vol1_spec_sdpi_p_actor_somds_consumer>> by using the _{var_label_dev_47_message_bye}_ message of this transaction.
+If a <<vol1_spec_sdpi_p_actor_somds_consumer>> uses a <<vol1_spec_sdpi_p_actor_discovery_proxy>>, network absence is announced to the <<vol1_spec_sdpi_p_actor_somds_consumer>> by using the _{var_label_dev_47_message_bye}_ message of this transaction.
 
 [#vol2_clause_dev_47_message_bye_trigger_events]
 ====== Trigger Events
 
-If a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> is known to the <<vol1_spec_sdpi_p_actor_somds_consumer>> and the <<vol1_spec_sdpi_p_actor_somds_consumer>> is interested in {var_label_dev_47_message_bye} messages, this message is sent whenever a <<vol1_spec_sdpi_p_actor_somds_provider>> leaves the <<acronym_md_lan>> it previously joined via the {var_label_dev_46_message_hello} message.
+If a <<vol1_spec_sdpi_p_actor_discovery_proxy>> is known to the <<vol1_spec_sdpi_p_actor_somds_consumer>> and the <<vol1_spec_sdpi_p_actor_somds_consumer>> is interested in {var_label_dev_47_message_bye} messages, this message is sent whenever a <<vol1_spec_sdpi_p_actor_somds_provider>> leaves the <<acronym_md_lan>> it previously joined via the {var_label_dev_46_message_hello} message.
 
 [#vol2_clause_dev_47_message_bye_semantics]
 ====== Message Semantics
@@ -91,7 +91,7 @@ If a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> is known to the <<vol1_spe
 [#vol2_clause_dev_47_message_bye_expected_actions]
 ====== Expected Actions
 
-When a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> sends this message, there is no expected or required response.
+When a <<vol1_spec_sdpi_p_actor_discovery_proxy>> sends this message, there is no expected or required response.
 
 // ---------- PROBE ---------
 
@@ -101,12 +101,12 @@ When a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> sends this message, ther
 <<acronym_biceps>> specifies an explicit discovery protocol for allowing <<vol1_spec_sdpi_p_actor_somds_consumer>>s to discover all <<vol1_spec_sdpi_p_actor_somds_provider>>s that are ready to exchange messages with <<vol1_spec_sdpi_p_actor_somds_consumer>>s.
 The corresponding message to seek <<vol1_spec_sdpi_p_actor_somds_provider>>s based on filter criteria is called _{var_label_dev_47_message_probe}_.
 
-If a <<vol1_spec_sdpi_p_actor_somds_consumer>> uses a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>, the <<vol1_spec_sdpi_p_actor_somds_consumer>> can send a {var_label_dev_47_message_probe} message to the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> to seek endpoint information based on filter criteria.
+If a <<vol1_spec_sdpi_p_actor_somds_consumer>> uses a <<vol1_spec_sdpi_p_actor_discovery_proxy>>, the <<vol1_spec_sdpi_p_actor_somds_consumer>> can send a {var_label_dev_47_message_probe} message to the <<vol1_spec_sdpi_p_actor_discovery_proxy>> to seek endpoint information based on filter criteria.
 
 [#vol2_clause_dev_47_message_probe_trigger_events]
 ====== Trigger Events
 
-The {var_label_dev_47_message_probe} message is sent to a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>
+The {var_label_dev_47_message_probe} message is sent to a <<vol1_spec_sdpi_p_actor_discovery_proxy>>
 
 1. whenever a <<vol1_spec_sdpi_p_actor_somds_consumer>> joins an <<acronym_md_lan>> and is ready to exchange messages with <<vol1_spec_sdpi_p_actor_somds_provider>>s or
 2. when a <<vol1_spec_sdpi_p_actor_somds_consumer>> runs in a mode where it periodically checks for availability of <<vol1_spec_sdpi_p_actor_somds_provider>>s matching specific filter criteria.
@@ -119,7 +119,7 @@ The {var_label_dev_47_message_probe} message is sent to a <<vol1_spec_sdpi_p_act
 [#vol2_clause_dev_47_message_probe_expected_actions]
 ====== Expected Actions
 
-When a <<vol1_spec_sdpi_p_actor_somds_consumer>> sends this message, the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> answers with all endpoint records that match the requested <<payload_dev_47_probe_discovery_scope>> by sending a <<vol2_clause_dev_47_message_probe_match, {var_label_dev_47_message_probe_match}>> message.
+When a <<vol1_spec_sdpi_p_actor_somds_consumer>> sends this message, the <<vol1_spec_sdpi_p_actor_discovery_proxy>> answers with all endpoint records that match the requested <<payload_dev_47_probe_discovery_scope>> by sending a <<vol2_clause_dev_47_message_probe_match, {var_label_dev_47_message_probe_match}>> message.
 
 // ---------- PROBE MATCH ---------
 
@@ -131,7 +131,7 @@ The {var_label_dev_47_message_probe_match} message is sent as part of the BICEPS
 [#vol2_clause_dev_47_message_probe_match_trigger_events]
 ====== Trigger Events
 
-The {var_label_dev_47_message_probe_match} message is sent whenever a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> receives a <<vol2_clause_dev_47_message_probe, {var_label_dev_47_message_probe}>> message that contains a <<payload_dev_47_probe_discovery_scope>> that matches zero or more <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<term_discovery_scope>>s.
+The {var_label_dev_47_message_probe_match} message is sent whenever a <<vol1_spec_sdpi_p_actor_discovery_proxy>> receives a <<vol2_clause_dev_47_message_probe, {var_label_dev_47_message_probe}>> message that contains a <<payload_dev_47_probe_discovery_scope>> that matches zero or more <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<term_discovery_scope>>s.
 
 [#vol2_clause_dev_47_message_probe_match_semantics]
 ====== Message Semantics
@@ -154,12 +154,12 @@ The <<vol1_spec_sdpi_p_actor_somds_consumer>> that receives a {var_label_dev_47_
 <<acronym_biceps>> specifies an explicit discovery protocol for allowing <<vol1_spec_sdpi_p_actor_somds_consumer>>s to discover all <<vol1_spec_sdpi_p_actor_somds_provider>>s that are ready to exchange messages with <<vol1_spec_sdpi_p_actor_somds_consumer>>s.
 The corresponding message to seek <<vol1_spec_sdpi_p_actor_somds_provider>>s based on a unique identifier is called _{var_label_dev_47_message_resolve}_.
 
-If a specific <<term_somds_provider_uid>> is known to a <<vol1_spec_sdpi_p_actor_somds_consumer>>, the <<vol1_spec_sdpi_p_actor_somds_consumer>> can send a {var_label_dev_47_message_resolve} message to a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>.
+If a specific <<term_somds_provider_uid>> is known to a <<vol1_spec_sdpi_p_actor_somds_consumer>>, the <<vol1_spec_sdpi_p_actor_somds_consumer>> can send a {var_label_dev_47_message_resolve} message to a <<vol1_spec_sdpi_p_actor_discovery_proxy>>.
 
 [#vol2_clause_dev_47_message_resolve_trigger_events]
 ====== Trigger Events
 
-The {var_label_dev_47_message_resolve} message is sent to a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>
+The {var_label_dev_47_message_resolve} message is sent to a <<vol1_spec_sdpi_p_actor_discovery_proxy>>
 
 1. whenever a <<vol1_spec_sdpi_p_actor_somds_consumer>> joins an <<acronym_md_lan>> and is ready to exchange messages with a specific <<vol1_spec_sdpi_p_actor_somds_provider>> for which it knows its <<term_somds_provider_uid>> or
 2. when a <<vol1_spec_sdpi_p_actor_somds_consumer>> runs in a mode where it periodically checks for availability of <<vol1_spec_sdpi_p_actor_somds_provider>>s matching a specific <<term_somds_provider_uid>>.
@@ -172,7 +172,7 @@ The {var_label_dev_47_message_resolve} message is sent to a <<vol1_spec_sdpi_p_a
 [#vol2_clause_dev_47_message_resolve_expected_actions]
 ====== Expected Actions
 
-When a <<vol1_spec_sdpi_p_actor_somds_consumer>> sends this message, the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> answers with the endpoint record that matches the requested <<payload_dev_47_resolve_provider_uid>>.
+When a <<vol1_spec_sdpi_p_actor_somds_consumer>> sends this message, the <<vol1_spec_sdpi_p_actor_discovery_proxy>> answers with the endpoint record that matches the requested <<payload_dev_47_resolve_provider_uid>>.
 
 // ---------- RESOLVE MATCH ---------
 
@@ -185,7 +185,7 @@ The {var_label_dev_47_message_resolve_match} message is sent as part of the BICE
 [#vol2_clause_dev_47_message_resolve_match_trigger_events]
 ====== Trigger Events
 
-The {var_label_dev_47_message_resolve_match} message is sent whenever a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> receives a <<vol2_clause_dev_47_message_resolve, {var_label_dev_47_message_resolve}>> message.
+The {var_label_dev_47_message_resolve_match} message is sent whenever a <<vol1_spec_sdpi_p_actor_discovery_proxy>> receives a <<vol2_clause_dev_47_message_resolve, {var_label_dev_47_message_resolve}>> message.
 
 [#vol2_clause_dev_47_message_resolve_match_semantics]
 ====== Message Semantics

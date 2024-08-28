@@ -137,7 +137,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | R
 | <<vol2_clause_dev_34>>
 
-.^| <<transaction_name_manage_network_presence_metadata>>
+.^| <<transaction_name_update_network_presence>>
 .^| Initiator
 .^| O   ^(See^ ^Note^ ^2)^
 | <<vol2_clause_dev_46>>
@@ -217,8 +217,8 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | <<vol2_clause_dev_47>>
 
 
-.2+| <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>
-.^| <<transaction_name_manage_network_presence_metadata>>
+.2+| <<vol1_spec_sdpi_p_actor_discovery_proxy>>
+.^| <<transaction_name_update_network_presence>>
 .^| _Receiver_  ^(See^ ^Note^ ^2)^
 .^| R
 | <<vol2_clause_dev_46>>
@@ -266,7 +266,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 5+<|
 Note 1: _“Notify Change in System Context and Capabilities”_ is required if there are dynamic changes that may need to be sent to subscribing systems
 
-Note 2: Optional transaction is required if the SDPi-P <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled.  Some deployments may support a mix of systems that use the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor as well as the default "ad hoc" discovery mode.  Additional details and requirements are provided in the <<vol1_clause_sdpi_p_option_discovery_proxy>> discussion.
+Note 2: Optional transaction is required if the SDPi-P <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled.  Some deployments may support a mix of systems that use the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor as well as the default "ad hoc" discovery mode.  Additional details and requirements are provided in the <<vol1_clause_sdpi_p_option_discovery_proxy>> discussion.
 
 Note 3: _“Receiver”_ is included in this column, in _italics_, to indicate that though a <<vol1_spec_sdpi_p_actor_somds_consumer>> may "receive" the transaction, there is no response communicated to the message initiator.
 
@@ -579,12 +579,14 @@ Note that although this SDPi-P content actor primarily supports information exch
 
 ===== Discovery Proxy
 
-[#vol1_spec_sdpi_p_actor_somds_discovery_proxy, reftext='Discovery Proxy']
+[#vol1_spec_sdpi_p_actor_discovery_proxy, reftext='Discovery Proxy']
 Actor Summary Definition:
 [none]
-. Accepts presence and absence messages by <<vol1_spec_sdpi_p_actor_somds_provider>>s, sends heartbeats to known <<vol1_spec_sdpi_p_actor_somds_provider>>s, and responds to <<vol1_spec_sdpi_p_actor_somds_consumer>>s querying endpoint metadata.
+. A centralized registry of system network presence and absence metadata.
 
-This allows for a <<acronym_somds>> to provide centralized discovery of <<vol1_spec_sdpi_p_actor_somds_provider>>s in networks that cannot support decentralized discovery.
+The <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor provides a centralized means for systems connected to a network to update a central registry when they are present and available, as well as notification when they are leaving and will be absent.
+This is necessary for network configurations that do not support decentralized system discovery.
+
 
 [#vol1_clause_sdpi_p_actor_options]
 === SDPi-P Actor Options
@@ -623,7 +625,7 @@ notes.
 | <<vol1_spec_sdpi_p_option_discovery_proxy>>
 | <<vol1_clause_sdpi_p_option_discovery_proxy>>
 
-| <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>
+| <<vol1_spec_sdpi_p_actor_discovery_proxy>>
 | <<vol1_spec_sdpi_p_option_discovery_proxy>>
 | <<vol1_clause_sdpi_p_option_discovery_proxy>>
 
@@ -634,39 +636,43 @@ notes.
 |===
 
 [#vol1_clause_sdpi_p_option_discovery_proxy]
-==== Discovery Proxy Option
-[#vol1_spec_sdpi_p_option_discovery_proxy, reftext='Discovery Proxy Option']
+==== Managed Discovery Option
+[#vol1_spec_sdpi_p_option_discovery_proxy, reftext='Managed Discovery Option']
 
 The Discovery Proxy profile option provides an alternative means for <<vol1_spec_sdpi_p_actor_somds_consumer>> Actors to discover the <<vol1_spec_sdpi_p_actor_somds_provider>> Actors that are present on the network.  The default "ad hoc" approach using the <<vol2_clause_dev_23>>, <<vol2_clause_dev_24>> and <<vol2_clause_dev_34>> transactions, requires use of unsecured multicast messaging; however, some deployments do not support or allow this mode of discovery.
-The addition of a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor enables a secure and non-multicast means for managing system discovery across the network.
-The <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor acts as a man-in-the-middle system, with <<vol1_spec_sdpi_p_actor_somds_provider>> Actors using the <<vol2_clause_dev_46>> transaction to provide endpoint metatdata and update their network presence or absence status.
-<<vol1_spec_sdpi_p_actor_somds_consumer>> Actors may then use the <<vol2_clause_dev_47>> transaction to determine available <<vol1_spec_sdpi_p_actor_somds_consumer>> systems and their endpoint metadata.
+The addition of a <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor enables a secure and non-multicast means for managing system discovery across the network.
+The <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor acts as a man-in-the-middle system, with <<vol1_spec_sdpi_p_actor_somds_provider>> Actors using the <<vol2_clause_dev_46>> Transaction to provide endpoint metatdata and update their network presence or absence status.
+<<vol1_spec_sdpi_p_actor_somds_consumer>> Actors may then use the <<vol2_clause_dev_47>> Transaction to determine available <<vol1_spec_sdpi_p_actor_somds_consumer>> systems and their endpoint metadata.
 
-<<figure_sdpi-p-discovery-proxy-option-sequence-diagram>> provides an overview of the interactions of the SOMDS Consumer and Somes Provider Actors with the Discovery Proxy Actor.
+<<figure_sdpi-p-managed-discovery-option -sequence-diagram>> provides an overview of the interactions of the SOMDS Consumer and Somes Provider Actors with the Discovery Proxy Actor.
 
-.SDPi-P Discovery Proxy Option - Transaction Sequence Diagram
-[#figure_sdpi-p-discovery-proxy-option-sequence-diagram]
-[plantuml, target=target=puml-sdpi-p-discovery-proxy-option-sequence-diagram, format=svg, format=svg]
+.SDPi-P Managed Discovery Option - Transaction Sequence Diagram
+[#figure_sdpi-p-managed-discovery-option -sequence-diagram]
+[plantuml, target=target=puml-sdpi-p-managed-discovery-option -sequence-diagram, format=svg, format=svg]
 ....
-include::../plantuml/vol1-figure-sdpi-p-discovery-proxy-option-sequence-diagram.puml[]
+include::../plantuml/vol1-figure-sdpi-p-managed-discovery-option -sequence-diagram.puml[]
 ....
 
 Once the discovery process is complete, actor interactions continue as normal.
 See <<vol1_figure_sdpi_p_example_sequence_diagram>> for additional detail.
 
-When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor, then it shall use the <<vol2_clause_dev_46, DEV-46>> transaction to update the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor on its network presence and departure.
+When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor, then it shall use the <<vol2_clause_dev_46, DEV-46>> Transaction to update the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor on its network presence and departure.
 If a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor is configured or provisioned for the <<vol1_spec_sdpi_p_option_discovery_proxy>>, but the proxy system is not available, then the <<vol1_spec_sdpi_p_actor_somds_provider>> shall revert back to "ad hoc" discovery mode.
 
-When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor, then it shall use the <<vol2_clause_dev_47, DEV-47>> transaction to retrieve <<vol1_spec_sdpi_p_actor_somds_provider>> network presence metadata from the  <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor.
+When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor, then it shall use the <<vol2_clause_dev_47, DEV-47>> Transaction to retrieve <<vol1_spec_sdpi_p_actor_somds_provider>> network presence metadata from the  <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor.
 If a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor is configured or provisioned for the <<vol1_spec_sdpi_p_option_discovery_proxy>>, but the proxy system is not available, then the <<vol1_spec_sdpi_p_actor_somds_consumer>> shall revert back to "ad hoc" discovery mode.
 
-When retrieving network presence metadata from a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor, a <<term_discovery_scope>> may be specified as a filter to identify a specific subset of <<vol1_spec_sdpi_p_actor_somds_provider>> systems.
-Additionally, a <<vol1_spec_sdpi_p_actor_somds_consumer>> may optionally use the <<vol2_clause_dev_47>> transaction to subscribe to all metadata updates from a set of <<vol1_spec_sdpi_p_actor_somds_consumer>> systems, essentially using the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor as a pass through for <<vol1_spec_sdpi_p_actor_somds_provider>> <<vol2_clause_dev_23>> and <<vol2_clause_dev_34>> transactions.
+When retrieving network presence metadata from a <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor, a <<term_discovery_scope>> may be specified as a filter to identify a specific subset of <<vol1_spec_sdpi_p_actor_somds_provider>> systems.
+Additionally, a <<vol1_spec_sdpi_p_actor_somds_consumer>> may optionally use the <<vol2_clause_dev_47>> Transaction to subscribe to all metadata updates from a set of <<vol1_spec_sdpi_p_actor_somds_consumer>> systems, essentially using the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor as a pass through for <<vol1_spec_sdpi_p_actor_somds_provider>> <<vol2_clause_dev_23>> and <<vol2_clause_dev_34>> Transactions.
 
-Though it is not recommended, deployments may allow simultaneous use of both the default "ad hoc" discovery mode and the managed proxy-based discovery mode utilizing a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor.
-In these configurations, <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_spec_sdpi_p_actor_somds_provider>> systems should prioritize use of the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor.
+In order to ensure that a systems's network presence information is up-to-date, during the period when the <<vol1_spec_sdpi_p_actor_discovery_proxy>> indicates that a system is present, it shall provide some means to determine that this state is still true.
+For example, issuing a periodic "heartbeat" check message or cable-connected check.
+Specification of these means will be provided for in the transport-specific implementation specification for the <<vol2_clause_dev_46, DEV-46>> Transaction.
 
-NOTE: Provisioning of <<vol1_spec_sdpi_p_actor_somds_participant>> systems to support use of a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor is out-of-scope for this specification.
+Though it is not recommended, deployments may allow simultaneous use of both the default "ad hoc" discovery mode and the managed proxy-based discovery mode utilizing a <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor.
+In these configurations, <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_spec_sdpi_p_actor_somds_provider>> systems should prioritize use of the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor.
+
+NOTE: Provisioning of <<vol1_spec_sdpi_p_actor_somds_participant>> systems to support use of a <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor is out-of-scope for this specification.
 
 ////
 #TODO:  Add description and detail specification in a subsequent SDPi Version#

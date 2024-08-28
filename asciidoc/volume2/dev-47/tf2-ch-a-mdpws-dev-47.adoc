@@ -143,7 +143,7 @@ include::../dev-a-default-trigger-events.adoc[]
 
 ====== Message Semantics
 
-`s12:Envelope/s12:Body/wsd:ProbeMatches`:: All matches found by the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>>.
+`s12:Envelope/s12:Body/wsd:ProbeMatches`:: All matches found by the <<vol1_spec_sdpi_p_actor_discovery_proxy>>.
 `s12:Envelope/s12:Body/wsd:ProbeMatches/wsd:ProbeMatch/wsa:EndpointReference/wsa:Address`:: The <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<term_somds_provider_uid>> encoded as URI.
 `s12:Envelope/s12:Body/wsd:ProbeMatches/wsd:ProbeMatch/wsd:Types`:: List of types that contains at least `dpws:Device` and mdpws:MedicalDevice`, which expresses the <<vol1_spec_sdpi_p_actor_somds_provider>> to conform to DPWS and MDPWS.
 `s12:Envelope/s12:Body/wsd:ProbeMatches/wsd:ProbeMatch/wsd:Scopes`:: The <<term_discovery_scope>> of the <<vol1_spec_sdpi_p_actor_somds_provider>>, encoded as a list of URIs.
