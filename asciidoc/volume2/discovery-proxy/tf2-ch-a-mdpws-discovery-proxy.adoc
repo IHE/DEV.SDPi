@@ -1,5 +1,5 @@
 [#vol2_clause_appendix_mdpws_discovery_proxy]
-=== SOMDS Discovery Proxy implementation requirements
+=== Discovery Proxy implementation requirements
 
 This chapter describes requirements to the <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> <<acronym_mdpws>> binding that go beyond message outlines and semantics specified in <<vol2_clause_dev_46>> and <<vol2_clause_dev_47>>.
 

@@ -577,9 +577,9 @@ For robustness, a <<actor_biceps_content_consumer>> need only process the conten
 
 Note that although this SDPi-P content actor primarily supports information exchange between systems participating in a SOMDS network environment, they may be referenced by other non-SDPi profiles that utilize other non-SOMDS exchange architectures, transactions and technologies.
 
-===== SOMDS Discovery Proxy
+===== Discovery Proxy
 
-[#vol1_spec_sdpi_p_actor_somds_discovery_proxy, reftext='SOMDS Discovery Proxy']
+[#vol1_spec_sdpi_p_actor_somds_discovery_proxy, reftext='Discovery Proxy']
 Actor Summary Definition:
 [none]
 . Accepts presence and absence messages by <<vol1_spec_sdpi_p_actor_somds_provider>>s, sends heartbeats to known <<vol1_spec_sdpi_p_actor_somds_provider>>s, and responds to <<vol1_spec_sdpi_p_actor_somds_consumer>>s querying endpoint metadata.
@@ -642,7 +642,7 @@ The addition of a <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor enables
 The <<vol1_spec_sdpi_p_actor_somds_discovery_proxy>> Actor acts as a man-in-the-middle system, with <<vol1_spec_sdpi_p_actor_somds_provider>> Actors using the <<vol2_clause_dev_46>> transaction to provide endpoint metatdata and update their network presence or absence status.
 <<vol1_spec_sdpi_p_actor_somds_consumer>> Actors may then use the <<vol2_clause_dev_47>> transaction to determine available <<vol1_spec_sdpi_p_actor_somds_consumer>> systems and their endpoint metadata.
 
-<<figure_sdpi-p-discovery-proxy-option-sequence-diagram>> provides an overview of the interactions of the SOMDS Consumer and Somes Provider Actors with the SOMDS Discovery Proxy Actor.
+<<figure_sdpi-p-discovery-proxy-option-sequence-diagram>> provides an overview of the interactions of the SOMDS Consumer and Somes Provider Actors with the Discovery Proxy Actor.
 
 .SDPi-P Discovery Proxy Option - Transaction Sequence Diagram
 [#figure_sdpi-p-discovery-proxy-option-sequence-diagram]
