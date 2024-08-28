@@ -644,10 +644,10 @@ The addition of a <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor enables a sec
 The <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor acts as a man-in-the-middle system, with <<vol1_spec_sdpi_p_actor_somds_provider>> Actors using the <<vol2_clause_dev_46>> Transaction to provide endpoint metatdata and update their network presence or absence status.
 <<vol1_spec_sdpi_p_actor_somds_consumer>> Actors may then use the <<vol2_clause_dev_47>> Transaction to determine available <<vol1_spec_sdpi_p_actor_somds_consumer>> systems and their endpoint metadata.
 
-<<figure_sdpi-p-managed-discovery-option -sequence-diagram>> provides an overview of the interactions of the SOMDS Consumer and Somes Provider Actors with the Discovery Proxy Actor.
+<<figure_sdpi-p-managed-discovery-option-sequence-diagram>> provides an overview of the interactions of the SOMDS Consumer and Somes Provider Actors with the Discovery Proxy Actor.
 
 .SDPi-P Managed Discovery Option - Transaction Sequence Diagram
-[#figure_sdpi-p-managed-discovery-option -sequence-diagram]
+[#figure_sdpi-p-managed-discovery-option-sequence-diagram]
 [plantuml, target=target=puml-sdpi-p-managed-discovery-option-sequence-diagram, format=svg, format=svg]
 ....
 include::../plantuml/vol1-figure-sdpi-p-managed-discovery-option-sequence-diagram.puml[]
