@@ -51,7 +51,7 @@ include::dev-40/tf2-dev-40.adoc[]
 //=== Update Network Presence [DEV-46]
 include::dev-46/tf2-dev-46.adoc[]
 
-//=== Retrieve Network Presence Metadata [DEV-47]
+//=== Retrieve Network Presence [DEV-47]
 include::dev-47/tf2-dev-47.adoc[]
 
 // TODO how does this differ from DEV-30

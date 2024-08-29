@@ -23,8 +23,8 @@ end
 
 group secured
 
-somds_consumer ->> somds_discovery_proxy: Retrieve Network Presence Metadata
-somds_discovery_proxy  -->> somds_consumer: Return Network Presence Metadata
+somds_consumer ->> somds_discovery_proxy: Retrieve Network Presence
+somds_discovery_proxy  -->> somds_consumer: Return Network Presence
 
 end
 

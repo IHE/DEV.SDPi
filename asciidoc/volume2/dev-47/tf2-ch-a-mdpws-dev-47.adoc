@@ -6,7 +6,7 @@
 :var_uri_matching_rule: http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/rfc3986
 
 [#vol2_clause_appendix_mdpws_dev_47]
-==== MDPWS: Retrieve Network Presence Metadata [DEV-47]
+==== MDPWS: Retrieve Network Presence [DEV-47]
 
 This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_47>>.
 

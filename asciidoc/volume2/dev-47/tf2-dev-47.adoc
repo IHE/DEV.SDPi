@@ -10,7 +10,7 @@
 
 //reset|+1|off
 [#vol2_clause_dev_47,sdpi_offset=47]
-=== Retrieve Network Presence Metadata [{var_transaction_id}]
+=== Retrieve Network Presence [{var_transaction_id}]
 
 ==== Scope
 
