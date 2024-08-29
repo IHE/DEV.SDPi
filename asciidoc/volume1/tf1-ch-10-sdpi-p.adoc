@@ -657,7 +657,7 @@ Once the discovery process is complete, actor interactions continue as normal.
 See <<vol1_figure_sdpi_p_example_sequence_diagram>> for additional detail.
 
 .R1021
-[sdpi_requirement#r1021,sdpi_req_level=shall]
+[sdpi_requirement#r1021,sdpi_req_level=shall,sdpi_req_type=ihe_tf, sdpi_req_subtype=profile_option]
 ****
 
 When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor, then it shall use the <<vol2_clause_dev_46, DEV-46>> transaction to update the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor on its network presence and departure.
@@ -692,7 +692,7 @@ If a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor is configured or provisione
 [sdpi_requirement#r1025,sdpi_req_level=shall]
 ****
 
-In order to ensure that a systems's network presence information is up-to-date, during the period when the <<vol1_spec_sdpi_p_actor_discovery_proxy>> indicates that a system is present, it shall provide some means to determine that this state is still true.
+In order to ensure that a system's network presence information is up-to-date and valid, during the period when the <<vol1_spec_sdpi_p_actor_discovery_proxy>> indicates that a system is present, it shall provide some means to determine that this state is still true.
 
 NOTE:  For example, issuing a periodic "heartbeat" check message or cable-connected check.
 Specification of these means will be provided for in the transport-specific implementation specification for the <<vol2_clause_dev_46, DEV-46>> transaction.

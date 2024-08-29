@@ -1,3 +1,3 @@
 // DEV-46 Transaction Summary
 
-Manage presence and absence of <<actor_somds_provider>>s in the <<acronym_somds>> by using a <<actor_somds_discovery_proxy>>.
+Provide network presence and absence of <<actor_somds_provider>> Actors in a <<acronym_somds>> network by updating the metadata in a <<actor_somds_discovery_proxy>> Actor.
