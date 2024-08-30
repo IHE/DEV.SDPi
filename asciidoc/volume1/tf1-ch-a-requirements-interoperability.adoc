@@ -258,7 +258,7 @@ In some cases, it may be necessary to provide bi-directional bindings; however, 
 #TODO: Answers the question "What does conformance to SDPi require?"#
 #METADATA includes TF element + subclass (incl. AIPO) + profile element (including use case requirement section)#
 
-
+////
 .R7666
 [sdpi_requirement#r7666,sdpi_req_level=shall]
 ****
@@ -273,7 +273,7 @@ In some cases, it may be necessary to provide bi-directional bindings; however, 
 NOTE: This includes a test of references from one file to another + export of new metadata to JSON
 ====
 ****
-
+////
 
 
 ==== Use Case Feature Metadata
