@@ -260,11 +260,12 @@ In some cases, it may be necessary to provide bi-directional bindings; however, 
 
 
 .R7666
-[sdpi_requirement#r7666,sdpi_req_level=shall,sdpi_req_profile=sdpi-p,sdpi_req_actor=discovery_proxy]
+[sdpi_requirement#r7666,sdpi_req_level=shall]
 ****
 Reference to a requirement in another AsciiDoc file:  <<r8007>>
 
-METADATA:  R7666 + SHALL + sdpi-p + discovery_proxy
+// METADATA:  R7666 + SHALL + sdpi-p + discovery_proxy
+// ,sdpi_req_profile=sdpi-p,sdpi_req_actor=discovery_proxy
 
 .Notes
 [%collapsible]
