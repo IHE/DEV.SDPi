@@ -3,7 +3,7 @@ sudo apt install graphviz
 gem install asciidoctor
 gem install asciidoctor-diagram
 asciidoctor -V
-cd asciidoc
+cd asciidoc || exit
 asciidoctor -r asciidoctor-diagram -D ../ sdpi-supplement.adoc
 cd ..
 mkdir sdpi-supplement
