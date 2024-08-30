@@ -657,7 +657,7 @@ Once the discovery process is complete, actor interactions continue as normal.
 See <<vol1_figure_sdpi_p_example_sequence_diagram>> for additional detail.
 
 .R1021
-[sdpi_requirement#r1021,sdpi_req_level=shall,sdpi_req_type=ihe_tf, sdpi_req_subtype=profile_option]
+[sdpi_requirement#r1021,sdpi_req_level=shall]
 ****
 
 When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor, then it shall use the <<vol2_clause_dev_46, DEV-46>> transaction to update the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor on its network presence and departure.
@@ -673,7 +673,6 @@ If a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor is configured or provisione
 .R1023
 [sdpi_requirement#r1023,sdpi_req_level=shall]
 ****
-##Link Test: <<r1022>> and <<r1025>> ##
 
 When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor, then it shall use the <<vol2_clause_dev_47, DEV-47>> transaction to retrieve <<vol1_spec_sdpi_p_actor_somds_provider>> network presence metadata from the  <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor.
 

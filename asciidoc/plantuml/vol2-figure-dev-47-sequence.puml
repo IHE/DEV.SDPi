@@ -14,7 +14,7 @@ participant "$str_somds_discovery_proxy" as discovery_proxy
 
 opt
     discovery_proxy -> consumer: Hello(Provider UID, Discovery Scope)
-    discovery_proxy -> consumer: Bye(discovery_proxy UID)
+    discovery_proxy -> consumer: Bye(Provider UID)
 end
 
 alt
