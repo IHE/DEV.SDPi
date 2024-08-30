@@ -277,7 +277,7 @@ NOTE: This includes a test of references from one file to another + export of ne
 
 
 .R7666
-[sdpi_requirement#r7666,sdpi_req_level=shall]
+[sdpi_requirement#r7666,sdpi_req_level=shall,sdpi_req_profile=sdpi-p,sdpi_req_actor=discovery_proxy,sdpi_req_profile_option=managed_discovery]
 ****
 A <<vol1_spec_sdpi_p_actor_somds_participant>> shall use HTTPS with mutual authentication for those transactions that are required to be secured.
 
