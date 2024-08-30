@@ -279,7 +279,7 @@ NOTE: This includes a test of references from one file to another + export of ne
 .R7666
 [sdpi_requirement#r7666,sdpi_req_level=shall,sdpi_req_profile=sdpi-p,sdpi_req_actor=discovery_proxy,sdpi_req_profile_option=managed_discovery]
 ****
-Requirement reference to a different file - shall implement:  TBD
+Requirement reference to a different file - shall implement:  <<r0500>>
 
 METADATA:  R7666 + SHALL + sdpi-p + discovery_proxy
 
