@@ -16,8 +16,6 @@ As a result of these basic changes in the scope and organization of the IHE DEV 
 . Section addressing "What is a device?" (aligned with a similar topic within the joint IHE-HL7 Gemini project); especially relevant given the differences between <<term_personal_health_device>> and <<term_point_of_care_device>> as well as the increasing prevalence of <<term_software_as_a_medical_device>> applications.  (See https://confluence.hl7.org/x/Iw7xB["Paper:  What is a device?"] for additional background.)
 
 These general concepts will help the technical framework reader understand the broader context into which the profile specifications are intended to be implemented.
-
-{empty} +
 |===
 
 // 2.2

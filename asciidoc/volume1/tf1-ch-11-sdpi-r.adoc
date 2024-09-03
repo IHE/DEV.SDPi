@@ -47,8 +47,6 @@ actor groupings, including abstract with concrete, are detailed in <<vol1_clause
 
 image::../images/vol1-diagram-sdpi-r-actor.svg[]
 
-{empty} +
-
 [#vol1_table_sdpi_r_actors_transactions]
 .SDPi-R Profile - Actors and Transactions
 [%autowidth]

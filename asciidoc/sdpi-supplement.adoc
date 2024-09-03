@@ -81,9 +81,6 @@ See https://profiles.ihe.net/DEV/[*HERE*] for STU/Trial Implementation and Final
 
 A PDF version of the specification is available upon request.
 
-{empty} +
-
-
 [#supplement_clause_foreword,sdpi_offset=clear]
 = Foreword
 

@@ -1,0 +1,9 @@
+@startuml
+
+skinparam {
+    monochrome true
+    defaultFontSize 16
+    dpi 100
+}
+
+@enduml

@@ -55,8 +55,6 @@ Actor groupings, including abstract with concrete, are detailed in <<vol1_clause
 
 image::../images/vol1-diagram-sdpi-a-actor.svg[]
 
-{empty} +
-
 ////
 
 #TODO:  In the table below, are any of these Receiver vs. Responder?  If so, then we may need to add a note like in SDPi-P

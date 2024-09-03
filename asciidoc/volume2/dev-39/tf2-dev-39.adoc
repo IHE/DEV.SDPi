@@ -31,7 +31,7 @@ include::tf2-dev-39-summary.adoc[]
 ==== Messages
 
 .Message Interaction Diagram [{var_transaction_id}]
-[plantuml#vol2_figure_dev_39_sequence, target=puml-dev-39-sequence, format=svg, 40width=100%]
+[plantuml#vol2_figure_dev_39_sequence, target=puml-dev-39-sequence, format=svg]
 ....
 include::../../plantuml/vol2-figure-dev-39-sequence.puml[]
 ....
