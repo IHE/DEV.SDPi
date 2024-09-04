@@ -169,9 +169,9 @@ Each type defines a unique class of requirements that build upon a foundational 
 | sdpi_requirement_group
 |
 
-| Requirement Usage
-| Requirement utilized in a specific use context that provides for its satisfaction.
-| sdpi_requirement_usage
+| Requirement Fulfillment
+| A capability provided in the specification that fulfills part or all of one or more requirements, and may be directly linked to a test assertion (external to the specification).
+| sdpi_requirement_fulfillment
 |
 
 | IHE Profile
@@ -257,38 +257,6 @@ In some cases, it may be necessary to provide bi-directional bindings; however, 
 
 #TODO: Answers the question "What does conformance to SDPi require?"#
 #METADATA includes TF element + subclass (incl. AIPO) + profile element (including use case requirement section)#
-
-////
-.R7666
-[sdpi_requirement#r7666,sdpi_req_level=shall]
-****
-//Reference to a requirement in another AsciiDoc file:  <<r8007>>
-
-//
-// ,sdpi_req_profile=sdpi-p,sdpi_req_actor=discovery_proxy
-
-.Notes
-[%collapsible]
-====
-NOTE: This includes a test of references from one file to another + export of new metadata to JSON
-====
-****
-////
-
-
-.R7666
-[sdpi_requirement#r7666,sdpi_req_level=shall,sdpi_req_profile=sdpi-p,sdpi_req_actor=discovery_proxy,sdpi_req_profile_option=managed_discovery]
-****
-Requirement reference to a different file - shall implement:  <<r0500>>
-
-METADATA:  R7666 + SHALL + sdpi-p + discovery_proxy
-
-.Notes
-[%collapsible]
-====
-NOTE: This includes a test of references from one file to another + export of new metadata to JSON.
-====
-****
 
 
 ==== Use Case Feature Metadata
