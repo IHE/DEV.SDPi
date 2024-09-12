@@ -18,10 +18,10 @@ jobs:
 
     steps:
     - name: Checkout branch
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     
     - name: Set up JDK 11
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v4
       with:
         java-version: '11'
         distribution: 'temurin'
@@ -33,12 +33,13 @@ jobs:
       with:
         ruby-version: '3.0' # Not needed with a .ruby-version file
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-      
+
+    - name: Setup gradle
+      uses: gradle/actions/setup-gradle@v4
+
     - name: Create HTML with Gradle
-      uses: gradle/gradle-build-action@v2
-      with:
-        arguments: run --args="--input-file ../../asciidoc/sdpi-supplement.adoc --output-folder ../../sdpi-supplement --github-token ${{ secrets.SDPI_API_ACCESS_TOKEN_SECRET }} --backend html"
-        build-root-directory: .ci/asciidoc-converter
+      run: ./gradlew run --args="--input-file ../../asciidoc/sdpi-supplement.adoc --output-folder ../../sdpi-supplement --github-token ${{ secrets.SDPI_API_ACCESS_TOKEN_SECRET }} --backend html"
+      working-directory: .ci/asciidoc-converter
 
     - name: Generate PlantUML diagrams and copy images
       run: .github/copy_images.sh

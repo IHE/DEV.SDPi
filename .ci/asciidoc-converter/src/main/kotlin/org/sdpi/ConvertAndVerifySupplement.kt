@@ -13,11 +13,11 @@ import org.sdpi.asciidoc.github.IssueImport
 import java.io.File
 import kotlin.system.exitProcess
 
-fun main(args: Array<String>) = ConvertAndVerifySupplement().main(
-    when (System.getenv().containsKey("CI")) {
-        true -> args.firstOrNull()?.split(" ") ?: listOf() // caution: blanks in quotes not covered here!
-        false -> args.toList()
-    }
+fun main(args: Array<String>) = ConvertAndVerifySupplement().main(args
+//    when (System.getenv().containsKey("CI")) {
+//        true -> args.firstOrNull()?.split(" ") ?: listOf() // caution: blanks in quotes not covered here!
+//        false -> args.toList()
+//    }
 )
 
 class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {

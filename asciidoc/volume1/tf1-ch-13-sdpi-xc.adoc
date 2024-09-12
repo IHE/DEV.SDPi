@@ -7,7 +7,7 @@
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*: This SDPi-xC (External Control) Profile Section is generally out-of-scope for the SDPi 1.2 version (see https://github.com/orgs/IHE/projects/6/views/1["Gemini SDPi Releases" Github project]); however, it is provided here to indicate the intended direction of the SDPi Profiles, with details being added in subsequent versions.  Depending on capabilities, some very basic controls may need to be provided in 2024 as part of the 1.x or 2.0 versions, especially around external adjustment of settings (e.g., alert limits or to trigger a blood-pressure reading).
+a| *{supplement_note}*: This SDPi-xC (External Control) Profile Section is generally out-of-scope for this version of the profile (see https://github.com/orgs/IHE/projects/6/views/1["Gemini SDPi Releases" Github project]); however, it is provided here to indicate the intended direction of the SDPi Profiles, with details being added in subsequent versions.  Depending on capabilities, some very basic controls may need to be provided in 2024 as part of the 1.x or 2.0 versions, especially around external adjustment of settings (e.g., alert limits or to trigger a blood-pressure reading).
 
 |===
 
@@ -139,7 +139,7 @@ No options are specified for this specification.
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  As indicated in <<vol1_figure_sdpi_xc_actor_diagram>> above, there are two grouped actors:
+a| *{supplement_note}*:  As indicated in <<vol1_figure_sdpi_xc_actor_diagram>> above, there are two grouped actors:
 
 [none]
 . <<vol1_spec_sdpi_xc_actor_somds_medical_control_consumer>> with <<vol1_spec_sdpi_p_actor_somds_consumer>>
@@ -157,7 +157,7 @@ This section will be more completely detailed in a future version of the supplem
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  An overview of the concepts for this <<vol1_clause_sdpi_a_profile_reftext>> will be provided in a future supplement version.
+a| *{supplement_note}*:  An overview of the concepts for this <<vol1_clause_sdpi_a_profile_reftext>> will be provided in a future supplement version.
 Note that this specification extends the concepts established in the base <<vol1_clause_sdpi_p_profile_reftext>>.
 |===
 
@@ -168,7 +168,7 @@ Note that this specification extends the concepts established in the base <<vol1
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  For *_SDPi 1.2_*, no use cases have been included that provide functional requirements for device external control.  These will be added to a future version of the SDPi supplement.
+a| *{supplement_note}*:  No use cases have been included that provide functional requirements for device external control.  These will be added to a future version of the SDPi supplement.
 Therefore, with this release of the SDPi specification, this section remains incomplete.
 |===
 
@@ -177,7 +177,7 @@ Therefore, with this release of the SDPi specification, this section remains inc
 ////
 
 [#vol1_clause_sdpi_xc_ses_considerations]
-=== SDPi-xC Safety, Effectiveness, Security Considerations and Requirements
+=== SDPi-xC Safety, Effectiveness and Security - Requirements and Considerations
 
 ==== SES General Considerations
 Requirements from the <<ref_iso_81001_1_2021>>, <<ref_iec_80001_1_2021>>, and related standards should be fully applied to this technical framework element.

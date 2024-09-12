@@ -1,0 +1,19 @@
+@startuml
+
+!include plantuml/common_style.inc.puml
+autonumber
+
+
+!global $str_somds_provider = "SOMDS Provider"
+!global $str_somds_discovery_proxy = "Discovery Proxy"
+
+participant "$str_somds_provider" as provider
+participant "$str_somds_discovery_proxy" as discovery_proxy
+
+==Update Network Presence [DEV-46]==
+
+discovery_proxy <- provider: Hello(Provider UID, Discovery Scope)
+
+discovery_proxy <- provider: Bye(Provider UID)
+
+@enduml

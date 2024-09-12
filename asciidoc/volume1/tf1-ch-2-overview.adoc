@@ -8,7 +8,7 @@
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*: This supplement is being written after the 2019 reorganization of the IHE Patient Care Devices (*PCD*) domain to the IHE Devices (*DEV*) domain.
+a| *{supplement_note}*: This supplement is being written after the 2019 reorganization of the IHE Patient Care Devices (*PCD*) domain to the IHE Devices (*DEV*) domain.
 It is intended to amend a new IHE DEV Technical Framework (TF), that covers the expanded areas not only of PCD devices (enterprise integration focused), but also Personal Connected Health (*PCH*) devices and Device Point-of-care Interoperability (*DPI*) for device-to-device integration around an acute point-of-care (e.g., operating room table, ICU bed, emergency department bed, etc.).
 As a result of these basic changes in the scope and organization of the IHE DEV domain, some additional TF sections have been proposed to help the community understand how these technical specifications are integrated.  For example,
 
@@ -16,23 +16,21 @@ As a result of these basic changes in the scope and organization of the IHE DEV 
 . Section addressing "What is a device?" (aligned with a similar topic within the joint IHE-HL7 Gemini project); especially relevant given the differences between <<term_personal_health_device>> and <<term_point_of_care_device>> as well as the increasing prevalence of <<term_software_as_a_medical_device>> applications.  (See https://confluence.hl7.org/x/Iw7xB["Paper:  What is a device?"] for additional background.)
 
 These general concepts will help the technical framework reader understand the broader context into which the profile specifications are intended to be implemented.
-
-{empty} +
 |===
 
 // 2.2
 [#vol1_clause_ses_considerations_requirements,sdpi_offset=2]
-=== Safety, Effectiveness & Security Considerations and Requirements
+=== Safety, Effectiveness and Security - Requirements and Considerations
 IHE specifications often include sections for "Security Considerations" and "Safety Considerations", capturing both general and specific guidance and requirements for system implementers.
 This supplement extends these two concepts to include a third:  Effectiveness.
-The sections are termed: <<term_safe_effective_secure>> Considerations.
+The sections are titled "Safety, Effectiveness and Security - Requirements and Considerations" and make use of the underlying term <<term_safe_effective_secure>>.
 
 The background for <<acronym_ses>> is discussed in detail in <<vol1_appendix_a_integrating_ses>>; however, in general "<<acronym_ses>>" is used as a reference to the standards encompassed (directly and indirectly by reference) in <<term_joint_working_group_7>>, including <<ref_iso_81001_1_2021>> and <<ref_iec_80001_1_2021>>.
 These standards are primarily, though not exclusively, focused on *_risk management of health software_* (including <<acronym_samd>>) *_and medical devices that are deployed on various kinds of infrastructure_*, with a focus to managing three key properties:  *Safety, Effectiveness and Security*.
-Thus the "<<acronym_ses>> Considerations" sections in this supplement are intended to reflect the results of that risk management and to guide those who are tasked with deploying and managing these interoperable solutions during use.
+Thus the "Safety, Effectiveness and Security - Requirements and Considerations" sections in this supplement are intended to reflect the results of that risk management and to guide those who are tasked with deploying and managing these interoperable solutions during use.
 
 Note that specific requirements from the above mentioned standards, may also be captured in <<vol1_appendix_b_referenced_standards_conformance>>.
-Generally, requirements from these standards would be mapped to the appropriate <<acronym_ses>> Considerations sections throughout the specification.
+Generally, requirements from these standards would be mapped to the appropriate "Safety, Effectiveness and Security - Requirements and Considerations" sections throughout the specification.
 
 // 2.3
 [#vol1_clause_integration_profiles_overview]
@@ -43,7 +41,7 @@ Generally, requirements from these standards would be mapped to the appropriate 
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*: The template for this section assumes that it will be integrated with the technical framework section that is organized based on TF-1 section headings (e.g., chapter 10 for SDPi- would have a summary here as 2.10.  No provision is made, though, for general introductory sections such as the SDPi Overview & Framework discussion below.
+a| *{supplement_note}*: The template for this section assumes that it will be integrated with the technical framework section that is organized based on TF-1 section headings (e.g., chapter 10 for SDPi- would have a summary here as 2.10.  No provision is made, though, for general introductory sections such as the SDPi Overview & Framework discussion below.
 
 In this version, the content is added as 2.3.1, and then the profiles as 2.3.10 to 2.3.13.  Though the content is valid, it may be repositioned in subsequent versions to better integrate with the IHE DEV TF at a future date.
 
@@ -163,8 +161,8 @@ Profile options are provided for additional capabilities that may be required to
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  For SDPi 1.2, the SDPi-xC Profile is provided for completeness and to show the general direction of the family of SDPi Profiles.
-It is *_not part of the capabilities specified for 1.2_* and even basic controls will not be added until SDPi 2.0 or later.
+a| *{supplement_note}*:  The SDPi-xC Profile is provided for completeness and to show the general direction of the family of SDPi Profiles.
+It is *_not part of the capabilities specified for {ihe_supplement_sdpi_revision_short}_* and even basic controls will not be added until SDPi 2.0 or later.
 |===
 
 The SDPi External Control Profile builds on the basic <<acronym_pnt>> capabilities of the <<acronym_sdpi_p>> Profile, but adds support for *_medical device external control capabilities_*.

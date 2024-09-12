@@ -1,4 +1,4 @@
-==== Safety, Effectiveness, Security Considerations and Requirements
+==== Safety, Effectiveness and Security - Requirements and Considerations
 
 ===== SES General Considerations
 Requirements from the <<ref_iso_81001_1_2021>>, <<ref_iec_80001_1_2021>>, and related standards should be fully applied to this technical framework element.

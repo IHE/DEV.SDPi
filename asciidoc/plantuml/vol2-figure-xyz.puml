@@ -1,5 +1,5 @@
-skinparam dpi 300
-skinparam monochrome true
+@startuml
+!include plantuml/common_style.inc.puml
 autonumber
 
 !global $str_sdpi_p_somds_cons = "SOMDS Consumer"
@@ -9,9 +9,8 @@ participant "$str_sdpi_p_somds_cons" as sdpi_somds_consumer
 participant "$str_sdpi_p_somds_prov" as sdpi_somds_provider
 
 ==SDPi Announce Network Presence [DEV-23]==
-|||
 group unsecured
 '    sdpi_somds_provider -> sdpi_somds_consumer: SDC: Hello(EndpointReference, Types, Scopes, [XAddrs])
     sdpi_somds_provider -> sdpi_somds_consumer: BICEPS: AnnounceNetworkPresence( PROVIDER UID, Discovery Type, ...)
 end
-|||
+@enduml

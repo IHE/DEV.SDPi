@@ -55,6 +55,12 @@ include::dev-34/tf2-ch-a-mdpws-dev-34.adoc[]
 //
 //=== Retrieve Medical Alert Status [DEV-40]
 
+include::dev-46/tf2-ch-a-mdpws-dev-46.adoc[]
+
+include::dev-47/tf2-ch-a-mdpws-dev-47.adoc[]
+
+include::discovery-proxy/tf2-ch-a-mdpws-discovery-proxy.adoc[]
+
 === Security Considerations
 
 In TR1164, <<ref_ieee_11073_10700_2022, IEEE 11073-10700>> requires a <<vol1_spec_sdpi_p_actor_somds_provider>> to protect <<acronym_biceps>> services against unauthenticated access.
@@ -68,7 +74,7 @@ A <<vol1_spec_sdpi_p_actor_somds_participant>> shall use HTTPS with mutual authe
 .Notes
 [%collapsible]
 ====
-NOTE: Each section that specifies a transaction indicates security requirements in the __Security Requirements & Considerations__ subsection beneath the __Safety, Effectiveness, Security Considerations and Requirements__ of each transaction.
+NOTE: Each section that specifies a transaction indicates security requirements in the __Security Requirements & Considerations__ subsection beneath the __Safety, Effectiveness and Security - Requirements and Considerations__ of each transaction.
 
 NOTE: Essentially, this specification asks for secured transmission of data except when ad-hoc discovery is performed.
 ====

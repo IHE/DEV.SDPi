@@ -9,7 +9,7 @@
         <wsa:Action>http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/ResolveMatches</wsa:Action>
         <wsa:MessageID><!-- ... --></wsa:MessageID>
         <wsa:RelatesTo><!-- ... --></wsa:RelatesTo>
-        <wsa:To>urn:docs-oasis-open-org:ws-dd:ns:discovery:2009:01</wsa:To>
+        <wsa:To>http://www.w3.org/2005/08/addressing/anonymous</wsa:To>
         <wsd:AppSequence InstanceId="..." MessageNumber="..."/>
     </s12:Header>
     <s12:Body>
