@@ -54,6 +54,8 @@ jobs:
     - name: Create release page
       uses: ncipollo/release-action@v1
       with:
+        name: "Release of ${{  github.ref_name }} for TI"
+        makeLatest: true
         body: "[📋Please click here for a detailed changelog](https://github.com/IHE/DEV.SDPi/blob/release-${{  github.ref_name }}/CHANGELOG.md)"
 #        artifacts: "sdpi-supplement.zip"
 
