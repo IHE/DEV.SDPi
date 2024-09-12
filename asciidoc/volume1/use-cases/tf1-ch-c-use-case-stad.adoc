@@ -34,7 +34,7 @@ image::../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
 
 *Then* The device will synchronize its time with the <<acronym_ts_service>>
 
-====== Safety, Effectiveness & Security Considerations and Requirements
+====== Safety, Effectiveness and Security - Requirements and Considerations
 
 .R1520
 [sdpi_requirement#r1520,sdpi_req_level=shall]
@@ -62,7 +62,7 @@ NOTE: The 50ms target accuracy is suitable for highly demanding use cases like r
 
 *Then* The device will disable the ability to change its time manually
 
-====== Safety, Effectiveness & Security Considerations and Requirements
+====== Safety, Effectiveness and Security - Requirements and Considerations
 
 .R1510
 [sdpi_requirement#r1510,sdpi_req_level=shall]
@@ -84,7 +84,7 @@ NOTE: Since manual time adjustments of the device's internal clock would lead to
 
 *Then* The device will not participate on the <<acronym_md_lan>> network until it detects and connects to a <<acronym_ts_service>>
 
-====== Safety, Effectiveness & Security Considerations and Requirements
+====== Safety, Effectiveness and Security - Requirements and Considerations
 
 .R1540
 [sdpi_requirement#r1540,sdpi_req_level=shall]
@@ -123,7 +123,7 @@ NOTE: By using the device's clock accuracy, a consumer can decide if received da
 
 NOTE: A <<term_manufacturer>> may decide to limit user notification of technical issues to certain user groups (e.g., biomed).
 
-====== Safety, Effectiveness & Security Considerations and Requirements
+====== Safety, Effectiveness and Security - Requirements and Considerations
 
 .R1530
 [sdpi_requirement#r1530,sdpi_req_level=shall]
@@ -196,7 +196,7 @@ If a <<vol1_spec_sdpi_p_actor_somds_participant>> cannot reach the <<acronym_ts_
 
 NOTE: It is the <<vol1_spec_sdpi_p_actor_somds_consumer>>'s responsibility to decide if timestamps are accurate enough to execute its <<term_system_function_contribution>>.
 
-====== Safety, Effectiveness & Security Considerations and Requirements
+====== Safety, Effectiveness and Security - Requirements and Considerations
 
 .R1500
 [sdpi_requirement#r1500,sdpi_req_level=shall]

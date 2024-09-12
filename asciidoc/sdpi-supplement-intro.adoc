@@ -1,3 +1,4 @@
+:supplement_note: SDPi {ihe_supplement_sdpi_revision_short} Supplement Note
 
 [#supplement_clause_introduction_to_supplement,sdpi_offset=clear]
 = Introduction to this Supplement
@@ -6,11 +7,14 @@
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi 1.2 Supplement -- _STU / TI Version_ -- Note*:
+a| *SDPi 1.3 Supplement -- _STU / TI Version_ -- Note*:
 
-This release of the SDPi 1.2 Standard for Trial Use (HL7 STU) / Trial Implementation (IHE TI) supplement is the first release that is intended for both an HL7 ballot cycle (January 2024), as well as the same IHE Devices release and review process, which was used for the first 3 releases of this supplement.
-Release 1.2 provides only a few _incremental_ updates to release 1.1; however, it continues the objective of quarterly _minor version_ releases and continues to advance support for prototyping and testing of device-to-device plug-and-trust interoperability.
-It is recognized, though, that this release is incomplete with work continuing for 1.3 and subsequent versions.
+This release of the SDPi 1.3 Standard for Trial Use (HL7 STU) / Trial Implementation (IHE TI) supplement is the first release that integrates resolutions from an HL7 ballot cycle (January 2024). This process implements links from HL7 ballot Jira tickets to IHE DEV.SDPi Github Issues that then enable tracking of the comment resolution implementation in this specification.
+
+Note:  The 1.3.1 release provides a few minor editorial corrections that were overlooked in the first release of 1.3.0.
+
+Release 1.3 provides only a few _incremental_ updates to release 1.2; however, it continues the objective of quarterly _minor version_ releases and continues to advance support for prototyping and testing of device-to-device plug-and-trust interoperability.
+It is recognized, though, that this release is incomplete with work continuing for 1.4 and subsequent versions.
 These known limitations include:
 
 
@@ -18,9 +22,9 @@ These known limitations include:
 . This supplement includes (4) SDPi Profiles, though the typical IHE supplement is organized for a single profile; as a result, some adjustments have been made, especially in the supplement overview section where there is a general SDPi overview and then basic overviews for each of the Profiles; challenging areas include profile "options" where there are FOUR sections vs. one; it is a work in progress and feedback is appreciated, especially to enhance clarity
 . *Open / Closed Issues tables* -- starting with SDPi 1.1 and subsequent, the approach for the IHE open / closed issues section has been transitioned to utilize https://github.com/IHE/DEV.SDPi/issues[Github Issues] that are related to this release; each release will update the changelog file, detailing what is Added, Changed or Removed
 . *Requirements boxes* (e.g., "R1234") have been added especially in TF-2, with some also part of TF-1 and TF-3; this is an initial approach that *_will be significantly expanded in future versions of the supplement_*; an initial approach is provided in <<vol1_clause_sdpi_requirements_modeling_integration>>, with discussion related to how it will be expanded in future versions of the supplement;
-. *_<<term_safe_effective_secure>> Sections_* (see <<vol1_clause_appendix_a_ses_considerations_section_template>>) are included in the specification; however, their use and content will be significantly extended in SDPi 1.x and subsequent versions;
+. *_<<term_safe_effective_secure>> Sections_* (see <<vol1_clause_appendix_a_ses_considerations_section_template>>) are included in the specification; however, their use and content will be significantly extended in future versions;
 . This supplement is currently rendered as a *"long form"* document -- one single HTML file; however, in subsequent versions the intent is to consider a multi-page / file HTML rendering + addition of a tabbed menu for navigating the sections of the supplement;
-. *"SDPi 1.2 Supplement Note"* boxes are provided throughout the document to help guide reviewers and implementers.
+. *{supplement_note}* boxes are provided throughout the document to help guide reviewers and implementers.
 
 |===
 
@@ -58,8 +62,6 @@ To that end, the supplement includes updates to all (3) IHE DEV TF volumes, incl
 
 * New content covering the application of ISO/IEEE 11073 SDC semantic standards to device content modules, with a primary focus on specifications related to the ISO/IEEE 11073-10207 BICEPS standard.
 
-{empty} +
-
 [#supplement_clause_joint_ihe_hl7_gemini_ses_mdi_project_development]
 === Joint IHE-HL7 Gemini SES+MDI Project Development
 This supplement is the result of a joint https://confluence.hl7.org/x/Xzf9Aw[IHE-HL7 Gemini Device Interoperability program] which began early 2020.
@@ -93,7 +95,7 @@ These three objectives may be summarized as follows:
 [none]
 ** Enable CA test reports that are genuinely _"regulatory submission ready"_ (e.g., inclusion in a U.S. FDA 510(k) submission package)
 
-The SDPi 1.2 version of the supplement continues to make small but significant steps toward support of these objectives, especially Requirements Interoperability, as well as the use of AsciiDoc metadata to annotate the document sources for post-processing.
+The SDPi 1.3 version of the supplement continues to make small but significant steps toward support of these objectives, especially Requirements Interoperability, as well as the use of AsciiDoc metadata to annotate the document sources for post-processing.
 Clearly, moving toward <<term_model_centric>> specifications and full integration of <<term_model_based_systems_engineering>> (<<acronym_mbse>>) will take considerable effort and time; however, this supplement represents a humble start in that direction.
 Subsequent supplement versions will build upon these objectives and support a new level of rigor for connectathon and product conformity assessment testing and ultimately test reports that directly impact the challenges around medical product regulatory submissions.
 

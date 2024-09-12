@@ -16,7 +16,7 @@ NOTES:
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:
+a| *{supplement_note}*:
 
 The following table is included in this version of the supplement to capture *_"forward" declarations of acronyms and labels_* that are used in the text but are not intended to be part of the General Introduction Appendix D Glossary.
 "Forward" means that they are used BEFORE the document section in which they are formally defined.
@@ -93,6 +93,3 @@ NOTE:  Forward Declarations in the following table are being added "on demand" o
 | Use Case
 
 |===
-
-{empty} +
-

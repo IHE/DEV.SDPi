@@ -13,7 +13,7 @@
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*: The organization of this Volume 3 supplement factors in two major changes:
+a| *{supplement_note}*: The organization of this Volume 3 supplement factors in two major changes:
 
 . IHE Supplement template (2020), with content mapped from the <<ref_ihe_pcd_tf_3_2019>> specification;
 
@@ -30,7 +30,7 @@ For the existing TF-3 content in the <<ref_ihe_pcd_tf_3_2019>>, especially Secti
 
 *_Updating the existing IHE DEV Technical Framework content will be either deferred to a later version of this SDPi supplement or will be accomplished through a specific Change Proposal (CP) to the published IHE DEV TF-3._*
 
-Additionally, for this version of SDPi 1.2, it isn't clear how best to address a similar division of the device specialization sections (e.g., infusion pump or ventilator).
+Additionally, for this version of SDPi, it isn't clear how best to address a similar division of the device specialization sections (e.g., infusion pump or ventilator).
 Version note boxes (like this one) have therefore been added to the specializations section and a single BICEPS subsection has been added.
 Subsequent versions of the specification may address this more comprehensively.
 
@@ -45,7 +45,7 @@ Subsequent versions of the specification may address this more comprehensively.
 [%noheader]
 [cols="1"]
 |===
-| Move IHE PCD 2019 TF-3 Section 3 (text immediately after the section header) to this SDPi 1.2 TF-3 Section 8.1
+| Move IHE PCD 2019 TF-3 Section 3 (text immediately after the section header) to this SDPi {ihe_supplement_sdpi_revision_short} TF-3 Section 8.1
 |===
 
 ////
@@ -58,14 +58,14 @@ Subsequent versions of the specification may address this more comprehensively.
 [%noheader]
 [cols="1"]
 |===
-| Move IHE PCD 2019 TF-3 sections 3.1 to this SDPi 1.2 TF-3 Section 8.2
+| Move IHE PCD 2019 TF-3 sections 3.1 to this SDPi {ihe_supplement_sdpi_revision_short} TF-3 Section 8.2
 |===
 
 [%noheader]
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*: The content in the IHE PCD 2019 TF-3 3.1 Section will need to be edited to be agnostic to the underlying protocol, with protocol specifics being relegated to subsections in <<vol3_clause_protocol_specific_content_module_considerations>> below.
+a| *{supplement_note}*: The content in the IHE PCD 2019 TF-3 3.1 Section will need to be edited to be agnostic to the underlying protocol, with protocol specifics being relegated to subsections in <<vol3_clause_protocol_specific_content_module_considerations>> below.
 |===
 
 
@@ -80,7 +80,7 @@ a| *SDPi Supplement Version Note*: The content in the IHE PCD 2019 TF-3 3.1 Sect
 [%noheader]
 [cols="1"]
 |===
-| Move IHE PCD 2019 TF-3 sections 3.2 to 3.7 to this SDPi 1.2 TF-3 Section 8.3.1.2 TO 8.3.1..7
+| Move IHE PCD 2019 TF-3 sections 3.2 to 3.7 to this SDPi {ihe_supplement_sdpi_revision_short} TF-3 Section 8.3.1.2 TO 8.3.1..7
 
 A new 8.3.1.1 Section should be added to the Classic DIM content section that addresses basic reporting.
 This content would be extracted from the existing (2019) Section 3.1, where that content is specific to the Classi DIM (see related note above).
@@ -102,7 +102,7 @@ include::mdib-report-retrofit/tf3-ch-8.3.2.9-mdib-report-retrofit.adoc[]
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*: This is a place holder section for content modules related to the Personal Health Device (PHD) semantics defined in the IEEE 11073-10206 and 11073-20601 standards.
+a| *{supplement_note}*: This is a place holder section for content modules related to the Personal Health Device (PHD) semantics defined in the IEEE 11073-10206 and 11073-20601 standards.
 Though there are no PHD requirements in this supplement, there are PHD profiles that may be integrated into the IHE DEV Technical Framework, and as a result may add content to this section.
 |===
 
@@ -112,7 +112,7 @@ Though there are no PHD requirements in this supplement, there are PHD profiles 
 [%noheader]
 [cols="1"]
 |===
-| Move IHE PCD 2019 TF-3 Section 4 Reserved to this SDPi 1.2 TF-3 Section 8.4
+| Move IHE PCD 2019 TF-3 Section 4 Reserved to this SDPi {ihe_supplement_sdpi_revision_short} TF-3 Section 8.4
 |===
 
 === RESERVED
@@ -120,7 +120,7 @@ Though there are no PHD requirements in this supplement, there are PHD profiles 
 [%noheader]
 [cols="1"]
 |===
-| Move IHE PCD 2019 TF-3 Section 5 Reserved to this SDPi 1.2 TF-3 Section 8.5
+| Move IHE PCD 2019 TF-3 Section 5 Reserved to this SDPi {ihe_supplement_sdpi_revision_short} TF-3 Section 8.5
 |===
 
 === RESERVED
@@ -128,7 +128,7 @@ Though there are no PHD requirements in this supplement, there are PHD profiles 
 [%noheader]
 [cols="1"]
 |===
-| Move IHE PCD 2019 TF-3 Section 6 Reserved to this SDPi 1.2 TF-3 Section 8.6
+| Move IHE PCD 2019 TF-3 Section 6 Reserved to this {ihe_supplement_sdpi_revision_short} TF-3 Section 8.6
 |===
 
 // 8.7

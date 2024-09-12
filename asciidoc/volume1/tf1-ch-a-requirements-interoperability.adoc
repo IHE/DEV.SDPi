@@ -9,8 +9,8 @@
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  This appendix provides informative (vs. normative) information related to the unique way in which this supplement integrates requirements, both from referenced foundational standards and within this specification.
-*For SDPi 1.2*, given its non-normative nature, full detailing of the concepts and specifications is deferred to a subsequent revision of the specification.
+a| *{supplement_note}*:  This appendix provides informative (vs. normative) information related to the unique way in which this supplement integrates requirements, both from referenced foundational standards and within this specification.
+Given its non-normative nature, full detailing of the concepts and specifications is deferred to a subsequent revision of the specification.
 So, please excuse the incomplete sections with "placeholder" version notes!
 There is value, though, in giving the existing content a quick review and providing feedback that would inform subsequent revisions of the specification.
 
@@ -67,7 +67,7 @@ NOTE:  The implementation of this framework will be extended as the specificatio
 
 // A.2
 [#vol1_appendix_a_integrating_ses]
-=== Integrating Safety, Effectiveness & Security Requirements & Considerations
+=== Integrating Safety, Effectiveness and Security Requirements and Considerations
 
 In 2007, a joint effort between ISO/TC 215 and IEC/SC 62A was launched -- Joint Working Group 7 (JWG7) -- to focus on how to apply risk management to medical devices and health information systems and software that needed to interoperate on shared (hospital owned & managed) networking infrastructure.
 The resulting standard, <<ref_iec_80001_1_2021>>, with a first edition published in 2010 and revised in 2021, not only provided a process for performing coordinated multi-stakeholder risk management for these technologies, but recognized the three *key properties* that would be the focus of that risk management:  *_Safety, Effectiveness & Security (SES)_* footnote:ses_definitions[For definitions of these and other related terms, consult the https://81001.org[NHS 81001.org web page.] Last accessed 2022.10.04.].
@@ -89,11 +89,11 @@ To address this <<acronym_ses>> implementation problem, the SDPi Profiles:
 
 . Leverage the ISO/IEEE 11073-1070x <<term_participant_key_purposes>> standards, which represent a consensus standard for risk management of technologies that are implemented in that left-right gap on the Temple model;
 . <<term_implementation_conformance_statement>> tables from each of these <<acronym_pkp>> standards is included in <<vol1_appendix_b_references>> of this specification, with indication as to whether, how and where each requirement is addressed;
-. "Safety, Effectiveness, Security Considerations and Requirements" sections are integrated throughout the profile specifications to link from the <<acronym_pkp>> <<acronym_ics>> table requirements to the satisfying capabilities.
+. "Safety, Effectiveness and Security - Requirements and Considerations" sections are integrated throughout the profile specifications to link from the <<acronym_pkp>> <<acronym_ics>> table requirements to the satisfying capabilities.
 [none]
 .. Additional non-PKP risk management will also be performed by subject matter experts and formalized in these <<acronym_ses>> Considerations sections, where appropriate.
 
-These <<acronym_ses>> Considerations sections grew out of the _IHE "Security Considerations"_ sections + the IHE Devices _"Safety Considerations"_ sections, but are now consolidated into a single SES Considerations section that integrates the 3rd risk management property, Effectiveness.
+These "Safety, Effectiveness and Security - Requirements and Considerations" sections grew out of the _IHE "Security Considerations"_ sections + the IHE Devices _"Safety Considerations"_ sections, but are now consolidated into a single SES section that integrates the 3rd risk management property, Effectiveness.
 Whenever possible, each of these considerations should be associated with the requirements of specific standards (e.g, <<ref_ieee_11073_10700_2022>>).
 
 NOTE:  The moniker *_<<acronym_ses_mdi>>_* is shorthand to refer to the integration of the technical medical device interoperability (MDI) specifications  with the application of quality / risk management SES standards and processes.
@@ -107,8 +107,8 @@ How does this address the "interoperability trust gap"?  By integrating SES dire
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  For SDPi 1.2, the inclusion of SES Considerations sections is early and will be significantly extended in subsequent versions of the specification.
-Especially when requirements from the <<acronym_pkp>> standards are included in SDPi 1.2 and following.
+a| *{supplement_note}*:  The inclusion of SES Considerations sections is early and will be significantly extended in subsequent versions of the specification.
+Especially when requirements from the <<acronym_pkp>> standards are included in SDPi 1.4 and following.
 
 Note:  When the <<acronym_pkp>> standards are integrated into this specification, then specific requirements will be directly linked to these <<acronym_ses>> Considerations sections.
 |===
@@ -125,7 +125,7 @@ The content in the following sections should be included and then specialized as
 ////
 
 [#vol1_clause_appendix_a_ses_considerations_and_requirements]
-=== Safety, Effectiveness, Security Considerations and Requirements
+=== Safety, Effectiveness and Security - Requirements and Considerations
 
 ==== SES General Considerations
 NOTE: This section includes guidance and requirements that are not further specialized for specific <<acronym_ses>> properties.
@@ -156,7 +156,7 @@ No additional security requirements and considerations are identified for this t
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
 
 ////
@@ -274,7 +274,7 @@ In some cases, it may be necessary to provide bi-directional bindings; however, 
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
 
 ////
@@ -306,7 +306,7 @@ NOTE: Verification Cases will be used to perform verification of "satisfy" usage
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
 
 ////
