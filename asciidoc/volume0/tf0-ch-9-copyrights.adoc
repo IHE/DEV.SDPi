@@ -17,7 +17,7 @@ IHE technical documents refer to, and make use of, a number of standards develop
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  The content below is verbatim from the IEEE permission letter.
+a| *{supplement_note}*:  The content below is verbatim from the IEEE permission letter.
 An abbreviated version may be provided in subsequent supplement versions with a reference to the complete letter.
 The copyright language will need to be updated to support the PKP standards (e.g., <<ref_ieee_11073_10700_2022>>.
 It may also need to be updated for <<ref_ieee_11073_10101_2020>>, which is needing to be renewed.

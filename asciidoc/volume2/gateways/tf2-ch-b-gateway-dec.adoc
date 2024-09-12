@@ -291,7 +291,7 @@ NOTE: For further information, please refer to the <<ref_ihe_pcd_tf_2_2019>>.
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  In this version of the SDPi Supplement, this section needs to be updated in order to be compliant with the <<ref_ihe_pcd_tf_2_2019>>.
+a| *{supplement_note}*:  In this version of the SDPi Supplement, this section needs to be updated in order to be compliant with the <<ref_ihe_pcd_tf_2_2019>>.
 The following issues need more investigations and discussions:
 
 * Mapping of the <<acronym_mdib>>-provided device types to SNOMED codes

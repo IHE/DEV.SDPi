@@ -6,7 +6,7 @@
 [%autowidth]
 [cols="1"]
 |===
-| *SDPi Supplement Version Note*: The inclusion of a References appendix is unique for IHE Technical Framework specifications.
+| *{supplement_note}*: The inclusion of a References appendix is unique for IHE Technical Framework specifications.
 Typically, referenced standards sections are distributed throughout the specifications where appropriate; however, standards from other organizations (e.g., IEEE, ISO, IEC) typically have a "Normative References" clause and when desired a "Bibliography" clause.
 Also, integration of explicit standards' <<term_implementation_conformance_statement>> specifications (e.g., <<ref_ieee_11073_10207_2017>> <<acronym_ics>> tables) is unique, but needed to support requirements interoperability.
 
@@ -83,7 +83,7 @@ Ultimately, the content of this appendix may be rearranged and even relocated; h
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
 
 ////
@@ -97,7 +97,7 @@ a| *SDPi Supplement Version Note*:  This section intentionally left blank for th
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
 
 ////

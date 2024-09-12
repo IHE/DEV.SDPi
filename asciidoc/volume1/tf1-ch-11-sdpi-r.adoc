@@ -7,7 +7,7 @@
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version 1.2 Note*:  This version of the <<acronym_sdpi_r>> Profile is built upon the foundational <<acronym_sdpi_p>> Profile but does not provide substantially more capabilities.
+a| *{supplement_note}*:  This version of the <<acronym_sdpi_r>> Profile is built upon the foundational <<acronym_sdpi_p>> Profile but does not provide substantially more capabilities.
 This is due to the fact that the primary purpose of this <<acronym_sdpi_r>> Profile, namely communication of medical data to accomplish intended medical purposes, requires the completion and integration of two emerging ISO/IEEE standards:  <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>>.
 When these are published *_in 2023 / 2024_*, their requirements will be integrated into this supplement, with their <<term_implementation_conformance_statement>> added to <<vol1_appendix_b_referenced_standards_conformance>> below.
 Many of those requirements will be mapped to the actors and transactions and other elements in this supplement, including this <<acronym_sdpi_r>> Profile.
@@ -46,8 +46,6 @@ actor groupings, including abstract with concrete, are detailed in <<vol1_clause
 .SDPi-R Actor Diagram
 
 image::../images/vol1-diagram-sdpi-r-actor.svg[]
-
-{empty} +
 
 [#vol1_table_sdpi_r_actors_transactions]
 .SDPi-R Profile - Actors and Transactions
@@ -197,7 +195,7 @@ Actor Summary Definition:
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  The HL7 FHIR resources and related Point-of-Care Device FHIR Implementation Guide (PoCD FHIR IG) is still under active development.
+a| *{supplement_note}*:  The HL7 FHIR resources and related Point-of-Care Device FHIR Implementation Guide (PoCD FHIR IG) is still under active development.
 Initial mappings have been made from <<acronym_sdc>> to <<acronym_fhir>>; however, they are not yet ready for profiling and product implementation.
 When the FHIR specifications are finalized, then this actor will be fully specified in a future SDPI Supplement version.
 
@@ -216,7 +214,7 @@ See <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>> for additional information.
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  This section is left intentionally blank to indicate capabilities that will be added in a future version of the SDPi Supplement.
+a| *{supplement_note}*:  This section is left intentionally blank to indicate capabilities that will be added in a future version of the SDPi Supplement.
 
 This option will enable <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> systems to access information in remote systems that are not part of its <<acronym_somds>> network instance.  This access will be provided by either a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> or <<vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway>>.
 For example, retrieving the latest laboratory information for a specific patient.
@@ -230,7 +228,7 @@ For example, retrieving the latest laboratory information for a specific patient
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  As indicated in <<vol1_figure_sdpi_r_actor_diagram>> above, there are four grouped actors:
+a| *{supplement_note}*:  As indicated in <<vol1_figure_sdpi_r_actor_diagram>> above, there are four grouped actors:
 
 [none]
 . <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> with <<vol1_spec_sdpi_p_actor_somds_consumer>>
@@ -251,7 +249,7 @@ This section will be more completely detailed in a future version of the supplem
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  An overview of the concepts for this <<vol1_clause_sdpi_r_profile_reftext>> will be provided in a future supplement version.
+a| *{supplement_note}*:  An overview of the concepts for this <<vol1_clause_sdpi_r_profile_reftext>> will be provided in a future supplement version.
 Note that this specification extends the concepts established in the base <<vol1_clause_sdpi_p_profile_reftext>>.
 
 |===
@@ -298,7 +296,7 @@ Specific capabilities supporting the <<acronym_ddes>> use case include:
 ////
 
 [#vol1_clause_sdpi_r_ses_considerations]
-=== SDPi-R Safety, Effectiveness, Security Considerations and Requirements
+=== SDPi-R Safety, Effectiveness and Security - Requirements and Considerations
 
 ==== SES General Considerations
 Requirements from the <<ref_iso_81001_1_2021>>, <<ref_iec_80001_1_2021>>, and related standards should be fully applied to this technical framework element.
@@ -309,7 +307,7 @@ A primary source of safety requirements for this <<acronym_sdpi_r>> Profile come
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version 1.2 Note*:  The <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>> standards are currently being published by the IEEE.
+a| *{supplement_note}*:  The <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>> standards are currently being published by the IEEE.
 Once published, their requirements will be integrated into this supplement, with many of them being mapped to elements in this <<acronym_sdpi_r>> Profile.
 
 |===

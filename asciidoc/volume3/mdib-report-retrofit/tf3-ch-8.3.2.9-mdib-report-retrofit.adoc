@@ -24,7 +24,7 @@ NOTE: BICEPS does not specify the order in which report messages are sent to <<v
 .R1007
 [sdpi_requirement#r1007,sdpi_req_level=shall]
 ****
-Within an <<acronym_mdib>> sequence, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall send msg:DescriptionModificationReport, msg:ObservedValueStream, msg:WaveformStream, msg:EpisodicAlertReport, msg:EpisodicComponentReport, msg:EpisodicContextReport, msg:EpisodicMetricReport, and msg:EpisodicOperationalStateReport messages with a strictly increasing msg:AbstractReport/@MdibVersion.
+Within an <<acronym_mdib>> sequence, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall send msg:WaveformStream, msg:EpisodicMetricReport, msg:EpisodicOperationalStateReport, msg:EpisodicComponentReport, msg:EpisodicAlertReport, msg:ObservedValueStream, msg:DescriptionModificationReport, and msg:EpisodicContextReport messages with a strictly increasing msg:AbstractReport/@MdibVersion.
 
 .Notes
 [%collapsible]

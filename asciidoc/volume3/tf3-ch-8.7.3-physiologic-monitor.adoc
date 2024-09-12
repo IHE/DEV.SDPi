@@ -18,7 +18,7 @@ The following BICEPS containment tree represents a highly-simplified physiologic
 
 
 .Physiologic Monitor Containment Tree Example
-[plantuml#vol3-figure-biceps-content-module-physiomon, target=puml-figure-biceps-content-module-physiomon, format=svg,width=100%]
+[plantuml#vol3-figure-biceps-content-module-physiomon, target=puml-figure-biceps-content-module-physiomon, format=svg, width=100%]
 ....
 include::../plantuml/vol3-figure-biceps-content-module-physiomon.puml[]
 ....

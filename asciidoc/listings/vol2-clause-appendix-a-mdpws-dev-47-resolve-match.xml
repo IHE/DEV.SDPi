@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s12:Envelope
+        xmlns:dpws="http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01"
+        xmlns:mdpws="http://standards.ieee.org/downloads/11073/11073-20702-2016"
+        xmlns:s12="http://www.w3.org/2003/05/soap-envelope"
+        xmlns:wsa="http://www.w3.org/2005/08/addressing"
+        xmlns:wsd="http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01">
+    <s12:Header>
+        <wsa:Action>http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/ResolveMatches</wsa:Action>
+        <wsa:MessageID><!-- ... --></wsa:MessageID>
+        <wsa:RelatesTo><!-- ... --></wsa:RelatesTo>
+        <wsa:To>http://www.w3.org/2005/08/addressing/anonymous</wsa:To>
+    </s12:Header>
+    <s12:Body>
+        <wsd:ResolveMatches>
+            <wsd:ResolveMatch>
+                <wsa:EndpointReference>
+                    <wsa:Address><!-- ... --></wsa:Address>
+                </wsa:EndpointReference>
+                <wsd:Types>dpws:Device mdpws:MedicalDevice <!-- ... --></wsd:Types>
+                <wsd:Scopes>sdc.mds.pkp:1.2.840.10004.20701.1.1 <!-- ... --></wsd:Scopes>
+                <wsd:XAddrs><!-- ... --></wsd:XAddrs>
+                <wsd:MetadataVersion><!-- ... --></wsd:MetadataVersion>
+            </wsd:ResolveMatch>
+        </wsd:ResolveMatches>
+    </s12:Body>
+</s12:Envelope>

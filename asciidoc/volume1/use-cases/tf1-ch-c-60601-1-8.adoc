@@ -8,7 +8,7 @@
 The following is a quick guide to the functionality of DIS, CDIS, DAS and CDAS systems and how we have used and interpreted them for the purpose of this IHE Profile Supplement.
 Please refer to the next section on Definitions from <<ref_iec_60601_1_8_2020>> for normative definitions for these terms.
 
-NOTE: Note that the 1.2 version of the SDPi Profile only supports the Distributed Information System (DIS) model detailed below.
+NOTE: Note that the {ihe_supplement_sdpi_revision_short} version of the SDPi Profile only supports the Distributed Information System (DIS) model detailed below.
 The other models are anticipated for subsequent versions.
 
 
@@ -149,7 +149,6 @@ NOTE: An xDIS can be either a DIS or CDIS.  Similarly an xDAS can be either a DA
 
 ^3^ Not recommended since there is no confirmation that the Source has received the commands
 |===
-{empty} +
 
 ===== ISO/IEC 60601-1-8 Definitions for DIS, DAS and CDAS
 
@@ -181,10 +180,7 @@ NOTE: NOTE 2 A DISTRIBUTED ALARM SYSTEM is intended to notify OPERATORS of the e
 
 NOTE: NOTE 3 For the purposes of this document, technical confirmation means that each element of a DISTRIBUTED ALARM SYSTEM confirms or guarantees the successful delivery of the ALARM CONDITION to the next element or appropriate TECHNICAL ALARM CONDITIONS are created as described in clause 6.11.2.2.1 of <<ref_iec_60601_1_8_2020>>.
 
-{empty} +
-
 .IEC 60601-1-8:2020, Figure 2 -- Functions of a DISTRIBUTED ALARM SYSTEM utilizing a MEDICAL IT NETWORK
-
 image::../images/vol1-diagram-60601-1-8-2020-figure-2.svg[]
 
 Examples include:

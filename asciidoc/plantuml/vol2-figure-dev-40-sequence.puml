@@ -1,6 +1,6 @@
 @startuml
 
-skinparam monochrome true
+!include plantuml/common_style.inc.puml
 autonumber
 
 !global $str_somds_consumer = "SOMDS Consumer"
@@ -9,7 +9,7 @@ autonumber
 participant "$str_somds_consumer" as consumer
 participant "$str_somds_provider" as provider
 
-==SDPi Medical Alert Status [DEV-40]==
+==Medical Alert Status [DEV-40]==
 
 consumer -> provider: GetMdib()
 consumer <<-- provider: GetMdibResponse(MdDescription, MdState [incl. ContextStates])

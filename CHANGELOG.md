@@ -15,6 +15,35 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ## [Unreleased]
 
+### Editorial Fixes
+
+- Correct SES section titles ([#272](https://github.com/IHE/DEV.SDPi/issues/272))
+- Implement semi-automatic version referencing by adding Asciidoc variables ( ([#284](https://github.com/IHE/DEV.SDPi/issues/284)))
+
+### Added
+
+- Add discovery proxy transactions scaffold and actor description ( ([152](https://github.com/IHE/DEV.SDPi/issues/152)))
+
+## [1.3.1] - 2024-04-05
+
+### Editorial Fixes
+
+- Remove / Update "1.2" comments from release 1.3.0 ([#282](https://github.com/IHE/DEV.SDPi/issues/282))
+
+## [1.3.0] - 2024-03-29
+
+### Added
+
+- Message mapping for DEV-39 ([#251](https://github.com/IHE/DEV.SDPi/issues/251))
+- Requirement to enforce serialization of any notification ([#259](https://github.com/IHE/DEV.SDPi/issues/259))
+- Info regarding correctness of message excerpts ([#260](https://github.com/IHE/DEV.SDPi/issues/260))
+- Modelling and requirements of compound metrics ([#228](https://github.com/IHE/DEV.SDPi/issues/228))
+
+### Editorial Fixes
+
+- Corrected the CDAS section title to correctly reflect the meaning of the acronym ([#265](https://github.com/IHE/DEV.SDPi/issues/265))
+- Reformatted the SDPi profiles scope section for readability ([270](https://github.com/IHE/DEV.SDPi/issues/270))
+
 ## [1.2.0] - 2023-12-07
 
 ### Added
@@ -25,8 +54,6 @@ Each section shall contain a list of action items of the following format: `<bri
 - Update Title Page to Better Reflect HL7 Aspects of the SDPi Standard ([#240](https://github.com/IHE/DEV.SDPi/issues/240))
 - Added R0702 on private coding system identification in volume 3 and updated private mdc code mapping in volume 2 gateways ([#57](https://github.com/IHE/DEV.SDPi/issues/57)).
 
-### Changed
-
 ### Removed
 
 - _OBX-17 field is not left empty_ as this would be interpreted as derivation method _auto_ ([#233](https://github.com/IHE/DEV.SDPi/issues/233)).
@@ -34,9 +61,7 @@ Each section shall contain a list of action items of the following format: `<bri
 ### Editorial Fixes
 
 - Moved reference content in glossary table between columns ([#166](https://github.com/IHE/DEV.SDPi/issues/166)).
-- Apply several editorial fixes ([#247](https://github.com/IHE/DEV.SDPi/issues/247)) 
-- Corrected the CDAS section title to correctly reflect the meaning of the acronym ([#265](https://github.com/IHE/DEV.SDPi/issues/265)) 
-- Reformatted the SDPi profiles scope section for readability ([270](https://github.com/IHE/DEV.SDPi/issues/270)) 
+- Apply several editorial fixes ([#247](https://github.com/IHE/DEV.SDPi/issues/247))
 
 ## [1.1.0] - 2023-07-21
 
