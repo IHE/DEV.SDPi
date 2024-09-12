@@ -42,7 +42,7 @@ jobs:
       working-directory: .ci/asciidoc-converter
 
     - name: Generate PlantUML diagrams and copy images
-      run: .github/copy_images.sh
+      run: .github/prepare_artifacts.sh "x.x.x"
       
     - name: Upload artifact
       # if: success() && github.ref == 'refs/heads/master'
