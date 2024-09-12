@@ -42,7 +42,7 @@ jobs:
       working-directory: .ci/asciidoc-converter
 
     - name: Generate PlantUML diagrams and copy images
-      run: .github/copy_images.sh
+      run: .github/prepare_artifacts.sh "${{  github.ref_name }}"
       
     - name: Upload artifact
       # if: success() && github.ref == 'refs/heads/master'
@@ -57,5 +57,5 @@ jobs:
         name: "Release of ${{  github.ref_name }} for TI"
         makeLatest: true
         body: "[📋Please click here for a detailed changelog](https://github.com/IHE/DEV.SDPi/blob/${{  github.ref_name }}/CHANGELOG.md)"
-        artifacts: "sdpi-supplement.zip"
+        artifacts: "sdpi-supplement-${{  github.ref_name }}.zip"
 
