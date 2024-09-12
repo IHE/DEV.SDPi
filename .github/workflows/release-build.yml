@@ -55,4 +55,4 @@ jobs:
       uses: ncipollo/release-action@v1
 #      with:
 #        artifacts: "sdpi-supplement.zip"
-#        body: "[📋Please click here for a detailed changelog](https://github.com/IHE/DEV.SDPi/blob/release-$GITHUB_REF_NAME/CHANGELOG.md)"
+#        body: [📋Please click here for a detailed changelog](https://github.com/IHE/DEV.SDPi/blob/release-$GITHUB_REF_NAME/CHANGELOG.md)
