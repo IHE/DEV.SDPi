@@ -13,3 +13,6 @@ cp -R asciidoc/css sdpi-supplement/css
 cp -R asciidoc/fonts sdpi-supplement/fonts
 rm -rf sdpi-supplement/.asciidoctor
 rm -rf sdpi-supplement/readme.md
+
+sudo apt-get install zip gzip tar
+zip -r "sdpi-supplement-$1.zip" sdpi-supplement
