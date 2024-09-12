@@ -1,6 +1,9 @@
-name: Feature Review Build
-
-on: [push]
+name: Release Build
+    
+on:
+  push:
+    tags:
+      - '*'
 
 env:
   CI: true
@@ -10,7 +13,7 @@ jobs:
 
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       packages: write
 
     steps:
@@ -30,7 +33,7 @@ jobs:
       with:
         ruby-version: '3.0' # Not needed with a .ruby-version file
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-      
+
     - name: Setup gradle
       uses: gradle/actions/setup-gradle@v4
 
@@ -39,16 +42,20 @@ jobs:
       working-directory: .ci/asciidoc-converter
 
     - name: Generate PlantUML diagrams and copy images
-      run: .github/prepare_artifacts.sh "x.x.x"
-      
-    - name: Extract branch name
-      shell: bash
-      run: echo "branch=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_OUTPUT
-      id: extract_branch
+      run: .github/prepare_artifacts.sh "${{  github.ref_name }}"
       
     - name: Upload artifact
       # if: success() && github.ref == 'refs/heads/master'
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3
       with:
-        name: sdpi-supplement-${{ steps.extract_branch.outputs.branch }}
+        name: sdpi-supplement
         path: sdpi-supplement
+
+    - name: Create release page
+      uses: ncipollo/release-action@v1
+      with:
+        name: "Release of ${{  github.ref_name }} for TI"
+        makeLatest: true
+        body: "[📋Please click here for a detailed changelog](https://github.com/IHE/DEV.SDPi/blob/${{  github.ref_name }}/CHANGELOG.md)"
+        artifacts: "sdpi-supplement-${{  github.ref_name }}.zip"
+
