@@ -15,9 +15,7 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ## [Unreleased]
 
-
-
-## [1.4.0] - 2024-04-05
+## [1.4.0] - 2024-09-13
 
 ### Editorial Fixes
 
@@ -28,10 +26,8 @@ Each section shall contain a list of action items of the following format: `<bri
 ### Added
 
 - Add discovery proxy transactions scaffold and actor description ( ([152](https://github.com/IHE/DEV.SDPi/issues/152)))
-
-### Added
-
-- Add discovery proxy transactions scaffold and actor description ( ([152](https://github.com/IHE/DEV.SDPi/issues/152)))
+- HL7 2024-May: Alert Requirements still under development ( ([152](https://github.com/IHE/DEV.SDPi/issues/294)))
+- SDPi RI for R1.4 (partially) ( ([152](https://github.com/IHE/DEV.SDPi/issues/299)))
 
 ## [1.3.1] - 2024-04-05
 

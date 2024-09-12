@@ -133,12 +133,23 @@ No additional security requirements and considerations are identified for this t
 [#vol1_clause_sdpi_requirements_modeling_integration]
 === SDPi Requirements Modeling & Integration
 
-As pointed out above, requirements interoperability (RI) based on robust model-based metadata is a core, innovative aspect of this SDPi Profiles specification.
-Given the ultimate intent to realize this description as a _Model Centric (MC) single-source-of-truth, computable, simulatable, verifiable and validatable system of systems interoperability specification_, and recognizing that it will take a significant transition period from a document-centric approach to a model-centric approach, a simplified requirements model is provided below but is aligned with the <<ref_omg_sysml_2_0_spec>> Section 7.20 Requirements language.
-Of course, that specification provides for significantly more detailed and complex modeling, the general constructs may be used in this document to start the transition toward that model.
-Note that SysML 2.0 also better supports model interoperability (tool-independent model exchange) and _<<term_model_based_systems_engineering>>_ (see https://en.wikipedia.org/wiki/Model-based_systems_engineering[MBSE Wikipedia article and references]), as well as the <<ref_ihe_eu_experience_2021_presentation_cooper_schlichting>> for an overview presentation of MBSE, MedTech system V&V, and IHE Conformity Assessment.
 
-It should be further noted that though conformity testing aspects are beyond this revision of the SDPi specification, the modeling constructs used below will also be integrated with <<ref_omg_sysml_2_0_spec>> Section 7.23 Verification Cases, to provide for advanced V&V of interoperable system components and entire systems of products.
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *{supplement_note}*: The information in this section includes both general requirements modeling information that captures the metadata that is ultimately exported for document-external use.
+It also includes specific AsciiDoc information (e.g., element labels) in order to provide all the related information in one location.
+Ultimately, the AsciiDoc and related information that is used for specification production and exportation (e.g., export JSON mapping and file format).
+
+|===
+
+
+As pointed out above, requirements interoperability (RI) based on robust model-based metadata is a core, innovative aspect of this SDPi Profiles specification.
+Given the ultimate intent to realize this description as a _Model Centric (MC) single-source-of-truth, computable, simulatable, verifiable and validatable system of systems interoperability specification_, and recognizing that it will take a significant transition period from a document-centric approach to a model-centric approach, a simplified requirements model is provided below.
+See section <<vol1_figure_appendix_a_sdpi_requirements_core_model>> below for possible pathways for fully achieving the vision above.
+
+It should be further noted that though conformity testing aspects are beyond this revision of the SDPi specification, the modeling constructs used below will also be directly associated with test assertions and integrated into test / verification cases to provide for advanced V&V of interoperable system components and entire systems of products.
 
 [#vol1_clause_sdpi_requirements_core_model]
 ==== SDPi Requirements Core Model
@@ -159,15 +170,17 @@ Each type defines a unique class of requirements that build upon a foundational 
 |===
 |Model Element |Description |AsciiDoc Attribute |Further Specified
 
-| SDPi Requirement
+| Requirement Definition
 | A defined stakeholder-imposed constraint that must be satisfied for a design solution to be valid.  This is an \{abstract} class model element.
 | sdpi_requirement
-| See subtypes
+| See subtypes; parent / sibling optional relationships provide for interrelationships between related requirements
 
-| SDPi Requirement Group
+////
+| Parent / Siblings
 | Two or more SDPi Requirements may be collected into a group that is focused around a specific _subject_ area.
-| sdpi_requirement_group
-|
+| sdpi_requirement_parent <linkage> & sdpi_requirement_sibling <label>
+| NOTE:  Groups may either be hyperlinked or share a comment parent "label"
+////
 
 | Requirement Fulfillment
 | A capability provided in the specification that fulfills part or all of one or more requirements, and may be directly linked to a test assertion (external to the specification).
@@ -184,7 +197,7 @@ Each type defines a unique class of requirements that build upon a foundational 
 | sdpi_requirement_use_case
 | See TF-1 Appendix C, gherkin model
 
-| Ref. Standard ICS
+| Referenced Standard ICS
 | Requirement definitions that are specified in a normative reference.
 | sdpi_requirement_ref_standard
 |
@@ -197,7 +210,7 @@ Each type defines a unique class of requirements that build upon a foundational 
 | Tech Feature
 | Technology focused requirements result from the use of a particular implementation approach.  For example, use of TLS 1.3 may also result in the need to address related technical capabilities.
 | sdpi_requirement_tech_feature
-|
+| "ICS" = Implementation Conformance Statement (e.g., a table identify how conformance to a standard may be detailed)
 |===
 
 ////
@@ -299,6 +312,7 @@ NOTE:  https://hl7.org/fhir/[HL7 FHIR] includes an https://hl7.org/fhir/testscri
 - IF THIS IS THE RIGHT PLACE TO DOCUMENT IT!
 ////
 
+[#[#vol1_figure_appendix_a_sdpi_requirements_core_model]]
 === Future extensibility: Use Cases, MBSE Requirements Modeling & SysML 2.0
 
 ////
@@ -310,6 +324,16 @@ NOTE:  https://hl7.org/fhir/[HL7 FHIR] includes an https://hl7.org/fhir/testscri
 ////
 
 <<acronym_omg>>'s Systems Modeling Language 2.0 (see <<ref_omg_sysml_2_0_spec>> and <<ref_omg_sysml_2_0_intro_graphical_model>>), provides extended support for requirements modeling that not only provides the foundation for MBSE's Requirements Modeling, but also a computable specification that enables automated verification (e.g., using "Verification Cases").  As these technologies evolve and are more generally accessible to standards communities, it will be possible to align the above requirements model with that specified in SysML 2.0 and ultimately to provide a specification that can be verified correct and validated through simulation.
+
+##REFACTOR NEXT TWO PARAGRAPHS - UPDATE TO ABOVE PARAGRAPH
+##
+
+but is aligned with the <<ref_omg_sysml_2_0_spec>> Section 7.20 Requirements language.
+Of course, that specification provides for significantly more detailed and complex modeling, the general constructs may be used in this document to start the transition toward that model.
+Note that SysML 2.0 also better supports model interoperability (tool-independent model exchange) and _<<term_model_based_systems_engineering>>_ (see https://en.wikipedia.org/wiki/Model-based_systems_engineering[MBSE Wikipedia article and references]), as well as the <<ref_ihe_eu_experience_2021_presentation_cooper_schlichting>> for an overview presentation of MBSE, MedTech system V&V, and IHE Conformity Assessment.
+
+It should be further noted that though conformity testing aspects are beyond this revision of the SDPi specification, the modeling constructs used below will also be integrated with <<ref_omg_sysml_2_0_spec>> Section 7.23 Verification Cases, to provide for advanced V&V of interoperable system components and entire systems of products.
+
 
 ////
 #TODO:  Add reference to SysML 2.0 Section 7.20 Requirements & 7.23 Verification Cases#
