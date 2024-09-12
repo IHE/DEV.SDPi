@@ -13,7 +13,8 @@ Also, integration of explicit standards' <<term_implementation_conformance_state
 Ultimately, the content of this appendix may be rearranged and even relocated; however, for early versions of the SDPi supplement, it has proven helpful, and even of critical importance and value.
 |===
 
-// Appendix B.x
+// Appendix B
+[#vol1_appendix_b_referenced_standards]
 [bibliography]
 === Referenced Standards
 
@@ -21,7 +22,9 @@ Ultimately, the content of this appendix may be rearranged and even relocated; h
 [%autowidth]
 [cols="1"]
 |===
-| *{supplement_note}*: The standards listed in this section are predominantly published. However, in the current version, three of them are unpublished drafts and are hence subject to requirement changes once they are published: <<ref_hl7_fhir_pocd_ig>>, <<ref_ieee_11073_10702_202x>> and <<ref_ieee_11073_10703_202x>>. No content from those three standards - including their requirements -  is normatively used in the current version.
+| *{supplement_note}*: The standards listed in this section are predominantly published.
+However, in the current version, three of them are unpublished drafts and are hence subject to requirement changes once they are published: <<ref_hl7_fhir_pocd_ig>>, <<ref_ieee_11073_10702_202x>> and <<ref_ieee_11073_10703_202x>>.
+No content from those three standards - including their requirements -  is normatively used in the current version.
 |===
 
 * [[[ref_aami_2700_1_2019,AAMI 2700-1:2019]]]  AAMI 2700-1:2019  Medical Devices And Medical Systems - Essential Safety And Performance Requirements For Equipment Comprising The Patient-Centric Integrated Clinical Environment (ICE) - Part 1: General Requirements And Conceptual Model, available at https://webstore.ansi.org/Standards/AAMI/ansiaami27002019[ANSI/AAMI web store].
