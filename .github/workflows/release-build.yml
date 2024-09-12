@@ -56,3 +56,4 @@ jobs:
       with:
         body: "[📋Please click here for a detailed changelog](https://github.com/IHE/DEV.SDPi/blob/release-$GITHUB_REF_NAME/CHANGELOG.md)"
 #        artifacts: "sdpi-supplement.zip"
+
