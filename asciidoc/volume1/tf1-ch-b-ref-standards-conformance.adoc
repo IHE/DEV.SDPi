@@ -13,9 +13,19 @@ Also, integration of explicit standards' <<term_implementation_conformance_state
 Ultimately, the content of this appendix may be rearranged and even relocated; however, for early versions of the SDPi supplement, it has proven helpful, and even of critical importance and value.
 |===
 
-// Appendix B.x
+// Appendix B
+[#vol1_appendix_b_referenced_standards]
 [bibliography]
 === Referenced Standards
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+| *{supplement_note}*: The standards listed in this section are predominantly published.
+However, in the current version, three of them are unpublished drafts and are hence subject to requirement changes once they are published: <<ref_hl7_fhir_pocd_ig>>, <<ref_ieee_11073_10702_202x>> and <<ref_ieee_11073_10703_202x>>.
+No content from those three standards - including their requirements -  is normatively used in the current version.
+|===
 
 * [[[ref_aami_2700_1_2019,AAMI 2700-1:2019]]]  AAMI 2700-1:2019  Medical Devices And Medical Systems - Essential Safety And Performance Requirements For Equipment Comprising The Patient-Centric Integrated Clinical Environment (ICE) - Part 1: General Requirements And Conceptual Model, available at https://webstore.ansi.org/Standards/AAMI/ansiaami27002019[ANSI/AAMI web store].
 
@@ -27,7 +37,7 @@ Ultimately, the content of this appendix may be rearranged and even relocated; h
 
 * [[[ref_iec_60601_1_8_2020,IEC 60601-1-8:2020]]], IEC 60601-1-8:2006/AMD2:2020, Medical electrical equipment — Part 1-8: General requirements for basic safety and essential performance — Collateral standard: General requirements, tests and guidance for alarm systems in medical electrical equipment and medical electrical systems; Amendment 1:2020, and Amendment 2:2020. available at https://webstore.iec.ch/publication/59648[IEC Webstore] and the https://www.iso.org/standard/41986.html[ISO standards store].
 
-* [[[ref_ieee_11073_10101_2020,IEEE 11073-10101:2020]]] IEEE 11073-10101™ International Standard - Health informatics--Device interoperability--Part 10101:Point-of-care medical device communication--Nomenclature.  Available at hhttps://standards.ieee.org/ieee/11073-10101/10343/[IEEE online standards store].
+* [[[ref_ieee_11073_10101_2020,IEEE 11073-10101:2020]]] IEEE 11073-10101™ International Standard - Health informatics--Device interoperability--Part 10101:Point-of-care medical device communication--Nomenclature.  Available at https://standards.ieee.org/ieee/11073-10101/10343/[IEEE online standards store].
 
 * [[[ref_ieee_11073_10201_2004,IEEE 11073-10201:2004]]] IEEE 11073-10201™ International Standard - Health informatics--Device interoperability--Part 10201:Point-of-care medical device communication--Domain information model.  Note this was updated in 2020.  Available at https://standards.ieee.org/ieee/11073-10201/10263/[IEEE online standards store].
 
