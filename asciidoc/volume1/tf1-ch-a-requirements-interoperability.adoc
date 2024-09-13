@@ -145,8 +145,8 @@ Ultimately, the AsciiDoc and related information that is used for specification 
 |===
 
 
-As pointed out above, requirements interoperability (RI) based on robust model-based metadata is a core, innovative aspect of this SDPi Profiles specification.
-Given the ultimate intent to realize this description as a _Model Centric (MC) single-source-of-truth, computable, simulatable, verifiable and validatable system of systems interoperability specification_, and recognizing that it will take a significant transition period from a document-centric approach to a model-centric approach, a simplified requirements model is provided below.
+As pointed out above, requirements interoperability (RI) based on robust model-based metadata is a core, innovative aspect of this specification.
+Given the ultimate intent for this document to be a _Model Centric (MC) single-source-of-truth, computable, simulatable, verifiable and validatable system of systems interoperability specification_, and recognizing that it will take a significant transition period from a document-centric approach to a model-centric approach, the simplified requirements model provided below represents a significant step toward realizing these objectives.
 See section <<vol1_figure_appendix_a_sdpi_requirements_core_model>> below for possible pathways for fully achieving the vision above.
 
 It should be further noted that though conformity testing aspects are beyond this revision of the SDPi specification, the modeling constructs used below will also be directly associated with test assertions and integrated into test / verification cases to provide for advanced V&V of interoperable system components and entire systems of products.
@@ -154,17 +154,18 @@ It should be further noted that though conformity testing aspects are beyond thi
 [#vol1_clause_sdpi_requirements_core_model]
 ==== SDPi Requirements Core Model
 
-To formally integrate requirements in to this specification, the following model details the core types of requirements that will be defined:
+To formally integrate requirements in to this specification, the following model details the core types of requirements that will be utilized:
 
 [#vol1_figure_appendix_a_sdpi_requirements_core_model]
 .SDPi Requirement Categories - Core Model
 
 image::../images/vol1-diagram-sdpi-req-types-model.svg[align=center]
 
-This model identifies the set of requirement "types" that are utilized in the specification.
+This model identifies the set of requirement "types" that are integrated into the specification.
+Each type defines a unique class of requirements that build upon a foundational Requirement Definition (abstract) definition that is specialized with additional metata to better capture the unique source and role of each requirement.
 
-Each type defines a unique class of requirements that build upon a foundational specification that may be specialized with additional metata to better capture the unique source and role of each specification.
-
+[#vol1_table_appendix_a_sdpi_requirement_core_model_element_descriptions]
+.SDPi Requirement - Core Model Element Descriptions
 [%autowidth]
 [cols="^1,4,^1,^1"]
 |===
@@ -173,14 +174,7 @@ Each type defines a unique class of requirements that build upon a foundational 
 | Requirement Definition
 | A defined stakeholder-imposed constraint that must be satisfied for a design solution to be valid.  This is an \{abstract} class model element.
 | sdpi_requirement
-| See subtypes; parent / sibling optional relationships provide for interrelationships between related requirements
-
-////
-| Parent / Siblings
-| Two or more SDPi Requirements may be collected into a group that is focused around a specific _subject_ area.
-| sdpi_requirement_parent <linkage> & sdpi_requirement_sibling <label>
-| NOTE:  Groups may either be hyperlinked or share a comment parent "label"
-////
+| NOTE: parent / sibling optional relationships provide for linking related requirements
 
 | Requirement Fulfillment
 | A capability provided in the specification that fulfills part or all of one or more requirements, and may be directly linked to a test assertion (external to the specification).
@@ -195,7 +189,7 @@ Each type defines a unique class of requirements that build upon a foundational 
 | Use Case Feature
 | A functional "feature" requirement based on clinical use case scenarios.
 | sdpi_requirement_use_case
-| See TF-1 Appendix C, gherkin model
+| See TF-1 Appendix C, Gherkin-based model
 
 | Referenced Standard ICS
 | Requirement definitions that are specified in a normative reference.
@@ -222,12 +216,101 @@ Each type defines a unique class of requirements that build upon a foundational 
 
 ////
 
-The following subsections provide additional detail for each element of the above requirements model.  Note that each item includes metadata that is used for computability purposes as well as textual elements that are visibly rendered in the document.  All content may be exported from the specification and contained in a requirements summary specification in a common format (e.g., JSON), and that may be used for purposes such as integration into requirements management tools and conformity assessment tooling.
+The following subsections provide additional detail for each element of the above requirements model.
+Note that each item includes metadata that is used for computability purposes as well as textual elements that are visibly rendered in the document.
+All content may be exported from the specification and contained in a requirements summary specification in a common format (e.g., JSON), which may be used for additional purposes such as integration into requirements management tools and conformity assessment testing artifacts.
 
-==== Requirement Definition
+[#vol1_clause_sdpi_requirement_type_requirement_definition]
+==== Requirement Type: _Requirement Definition_
 
-Each type of requirement shares a common set of metadata represented by the abstract "Requirement Definition" in the model above.  This metadata supports the basic capabilities of each requirement including classification (subtype), navigation (traceability), and grouping.
+Each type of requirement shares a common set of metadata represented by the abstract "Requirement Definition" in the model above.
+This metadata supports the basic capabilities of each requirement including classification (subtype), navigation (traceability), and grouping.
 
+
+[#vol1_table_appendix_a_sdpi_requirement_type_requirement_definition]
+.SDPi Requirement - Core Model Element Descriptions
+[%autowidth]
+[cols="^1,4,^1,^1,^1"]
+|===
+|Metadata Element |Description |AsciiDoc |Example |Additional Consideations
+
+| Unique Identifier
+| Each requirement instance must include an identifier that is unique within the scope of the specification
+| sdpi_requirement
+| [sdpi_requirement#r7009]
+| See <<vol1_clause_sdpi_requirement_unique_identifier_labeling>> for additional discussion.
+
+| Requirement Type
+| Each requirement instance is identified by its subtype
+| sdpi_req_type
+| [sdpi_req_type=use_case_feature]
+| See specific subtype sections below for additional enumerations
+
+| Requirement Level
+| Each requirement instance includes a conformance level:  shall, should, may
+| sdpi_req_level
+| [sdpi_req_level=shall]
+| Conditional requirements may need additional specification.
+
+| Requirement Text
+| Textual description of the requirement, intended for rendering in the specification
+|
+| "All requirements shall be identified as one of the core subtypes."
+| The requirement text should be kept simple and clear.  Additional explanatory text should be contained in requirement notes (see below)
+
+| Requirement Note(s)
+| Additional textual detail that supplements the Requirement Text
+| Free form text contained in a "NOTE"
+| "NOTE: The mapping for the height observation is defined in table ..."
+a|
+* More than one note may be included in a requirement specification.
+* The AsciiDoc [%collapsable] block option may be used to simplify the rendered text
+
+| Requirement Parent
+| Identifies a more general or related requirement that a requirement specializes
+| sdpi_req_parent
+| [sdpi_req_parent=r6789]
+| Unique identifiers may be used to link requirements
+
+| Requirement Sibling
+| Identifies one or more requirements that are related to this requirement
+| sdpi_req_sibling
+| [sdpi_req_sibling=r1234]
+a|
+* Unique identifiers may be used to link requirements
+* This is differentiated from a Requirement Fulfillment
+
+| Requirement Group(s)
+| A label that may be used to group related requirements
+| sepi_req_group
+| [sdp_req_group=ws_security]
+| Requirement groups or categories may be used independently of the parent/sibling linkages
+
+|===
+
+////
+# SHOULD WE KEEP THE FOLLOWING AS A TEMPLATE EXAMPLE?#
+.R7009
+[sdpi_requirement#r7009,sdpi_req_level=shall]
+****
+
+A <<vol1_spec_sdpi_p_actor_somds_consumer>> shall add the filter dialect urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.2.1 to
+every Subscribe request to a <<vol1_spec_sdpi_p_actor_discovery_proxy>>.
+
+NOTE: The OID used for the filter dialect is listed in <<vol2_table_appendix_mdpws_discovery_proxy_oids>>.
+
+.Notes
+[%collapsible]
+====
+NOTE: The mapping for the height observation is defined in table <<ref_tbl_dec_obx_height_mapping>> and the weight mapping in table <<ref_tbl_dec_obx_weight_mapping>>.
+====
+
+****
+////
+
+The following sections discuss additional aspects of requirements formalization using this foundational _Requirement Definition_ metadata.
+
+[#vol1_clause_sdpi_requirement_unique_identifier_labeling]
 ===== Unique Identifier Labeling
 
 #TODO: Requirements (incl. beyond SDPi) for unique requirement identifiers#
@@ -235,6 +318,8 @@ Each type of requirement shares a common set of metadata represented by the abst
 #TODO: Rubric for labeling / numbering requirements#
 
 sdpi_requirement#r1234
+
+unique scope is 1st within document then across specifications
 
 ===== Usage Levels
 
@@ -260,33 +345,47 @@ Taking this approach, a new transport appendix could be added in the future with
 
 Application of this rule would also hold true in other places such as backward references from a profile's Use Case section to the specific <<vol1_appendix_c_dpi_use_cases>> use case and scenario requirements that they satisfy.
 
-In some cases, it may be necessary to provide bi-directional bindings; however, that would be the exception and not the rule.
+In some cases, it may be necessary to provide bi-directional bindings; however, that would be the exception, not the rule.
 
-==== Technical Feature Metadata
+[#vol1_clause_sdpi_requirement_type_technical_feature]
+==== Requirement Type: _Technical Feature_
 
-#TODO:  Basic requirement with no additional metadata#
+*Description*:  A basic technical requirement that is not one of the other catageories and does not require additional metadata.
 
-==== IHE Profile Metadata
+*Metadata Requirements*:
+
+. Required Requirement Definition Metadata:  Unique Identifier, Requirement Level, Requirement Text
+. Requirement Type = tech_feature
+
+*Example*:  A <<vol1_spec_sdpi_p_actor_somds_participant>> should use a dynamically configured IP address.
+
+
+[#vol1_clause_sdpi_requirement_type_ihe_profile]
+==== Requirement Type: _IHE Profile_
 
 #TODO: Answers the question "What does conformance to SDPi require?"#
 #METADATA includes TF element + subclass (incl. AIPO) + profile element (including use case requirement section)#
 
 
-==== Use Case Feature Metadata
+[#vol1_clause_sdpi_requirement_type_use_case_feature]
+==== Requirement Type: _Use Case Feature_
 
 #TODO: links to a specific element of a use case in TF-1C#
 #METADATA includes use case identifier + element of use case + visible link to specific element that is navigable)
 
-==== Referenced Standard ICS Metadata
+[#vol1_clause_sdpi_requirement_type_referenced_standard_ics]
+==== Requirement Type: _Referenced Standard ICS_
 
 #TODO: a requirement that is linked to a specific standard called out in TF-1B#
 #METADATA includes standard ID + source requirement identifier + ?#
 
-==== SES Metadata
+[#vol1_clause_sdpi_requirement_type_ses]
+==== Requirement Type: _SES_
 
 #TODO: indicates a safety/effectiveness/security requirement contained in a SES section#
 
-==== Requirement Usage Metadata
+[#vol1_clause_sdpi_requirement_use_type_requirement_fulfillment]
+==== Requirement Use Type: _Requirement Fulfillment_
 
 #TODO:  Simply provides a reference to a requirement + perhaps some metadata to indicate any additional description of the implementation (e.g., means for "heartbeat") or fully/partially satisfies requirement#
 

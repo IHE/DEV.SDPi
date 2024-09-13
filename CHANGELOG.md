@@ -21,13 +21,11 @@ Each section shall contain a list of action items of the following format: `<bri
 
 - Correct SES section titles ([#272](https://github.com/IHE/DEV.SDPi/issues/272))
 - Implement semi-automatic version referencing by adding Asciidoc variables ( ([#284](https://github.com/IHE/DEV.SDPi/issues/284)))
-- Extended Requirements Interoperability (RI) specification, mostly in TF-1A ( ([#299](https://github.com/IHE/DEV.SDPi/issues/299)))
-
+- Extended Requirements Interoperability (RI) specification, mostly in TF-1A ( ([#299](https://github.com/IHE/DEV.SDPi/issues/299))); note: issue subtasks not completed in R1.4 have been pushed into ([315](https://github.com/IHE/DEV.SDPi/issues/315)).
+- HL7 2024-May: Alert Requirements still under development ( ([294](https://github.com/IHE/DEV.SDPi/issues/294)))
 ### Added
 
 - Add discovery proxy transactions scaffold and actor description ( ([152](https://github.com/IHE/DEV.SDPi/issues/152)))
-- HL7 2024-May: Alert Requirements still under development ( ([152](https://github.com/IHE/DEV.SDPi/issues/294)))
-- SDPi RI for R1.4 (partially) ( ([152](https://github.com/IHE/DEV.SDPi/issues/299)))
 
 ## [1.3.1] - 2024-04-05
 
