@@ -24,7 +24,7 @@
 :ihe_supplement_sdpi_revision_short: 1.4
 :ihe_supplement_sdpi_revision_date: {localdatetime}
 :ihe_supplement_sdpi_revision_label: Standard for Trial Use / Implementation
-:ihe_supplement_sdpi_publication_month: September 16, 2024
+:ihe_supplement_sdpi_publication_month: September 17, 2024
 :ihe_supplement_sdpi_public_comment_submission_deadline: N/A
 
 {empty} +
