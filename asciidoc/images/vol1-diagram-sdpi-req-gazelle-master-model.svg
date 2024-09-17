@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="851.0799"
+   height="380.81561"
+   overflow="hidden"
+   version="1.1"
+   id="svg106"
+   sodipodi:docname="vol1-diagram-sdpi-req-gazelle-master-model.svg"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs110" />
+  <sodipodi:namedview
+     id="namedview108"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     fit-margin-top="0.15"
+     fit-margin-left="0.15"
+     fit-margin-bottom="0.15"
+     fit-margin-right="0.15"
+     inkscape:zoom="0.8609375"
+     inkscape:cx="428.02178"
+     inkscape:cy="135.3176"
+     inkscape:window-width="1620"
+     inkscape:window-height="1058"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g104" />
+  <g
+     id="g104"
+     transform="translate(-210.85,-223.85)">
+    <rect
+       style="fill:#ffffff"
+       id="rect178"
+       width="885.08167"
+       height="407.6951"
+       x="191.10408"
+       y="207.58865" />
+    <rect
+       x="614"
+       y="225"
+       width="203"
+       height="38"
+       stroke="#0070c0"
+       stroke-width="2"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       id="rect4" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(683.458,251)"
+       id="text6">Profile</text>
+    <rect
+       x="453"
+       y="319"
+       width="203"
+       height="38"
+       stroke="#0070c0"
+       stroke-width="2"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       id="rect8" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(523.806,345)"
+       id="text10">Actors</text>
+    <rect
+       x="796"
+       y="319"
+       width="203"
+       height="38"
+       stroke="#0070c0"
+       stroke-width="2"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       id="rect12" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(836.558,345)"
+       id="text14">Transactions</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(709.613,333)"
+       id="text16">link</text>
+    <path
+       d="M 1.32411,-0.656226 138.079,0.42423 138.068,1.75752 1.31358,0.677066 Z M 8.94239,5.31333 -0.00308973,-2.44165e-5 9.02522,-5.17138 c 0.31949,-0.183 0.72684,-0.07235 0.90985,0.24714 0.18303,0.31949 0.07233,0.72684 -0.24714,0.90984 L 1.65131,0.588917 1.66041,-0.562752 9.62329,4.16697 C 9.93985,4.355 10.044,4.76405 9.85602,5.08061 9.66799,5.39716 9.25895,5.50136 8.94239,5.31333 Z m 121.50961,-9.52535 8.946,5.31336 -9.029,5.17135 c -0.319,0.183 -0.726,0.07236 -0.909,-0.24713 -0.183,-0.31949 -0.073,-0.72684 0.247,-0.90985 l 8.036,-4.603315 -0.009,1.151665 -7.963,-4.72972 c -0.316,-0.18803 -0.42,-0.59708 -0.232,-0.91363 0.188,-0.31656 0.597,-0.42076 0.913,-0.23273 z"
+       transform="matrix(-1,0,0,1,795.895,336.5)"
+       id="path18" />
+    <path
+       d="M 1.4133,0.435112 46.6351,43.9661 45.7105,44.9267 0.488625,1.39571 Z M 2.83681,10.0075 -0.00222625,-0.002143 10.1083,2.4536 c 0.3578,0.08691 0.5774,0.4474 0.4905,0.80519 -0.0869,0.35778 -0.4474,0.57738 -0.80521,0.49048 L 0.793637,1.56326 1.59236,0.733523 4.11955,9.64369 C 4.22001,9.99791 4.01431,10.3665 3.66009,10.467 3.30587,10.5674 2.93728,10.3617 2.83681,10.0075 Z"
+       transform="matrix(1,0,0,-1,621.5,312.946)"
+       id="path20" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(596.193,308)"
+       id="text22">2..*</text>
+    <path
+       d="m 829.725,306.604 -25.755,-33.699 1.06,-0.81 25.754,33.7 z m 0.041,-9.678 1.292,10.324 -9.623,-3.957 c -0.34,-0.14 -0.503,-0.529 -0.363,-0.87 0.141,-0.34 0.53,-0.503 0.871,-0.363 l 8.565,3.523 -0.915,0.699 -1.15,-9.19 c -0.046,-0.365 0.214,-0.699 0.579,-0.744 0.365,-0.046 0.698,0.213 0.744,0.578 z"
+       id="path24" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(846.311,303)"
+       id="text26">1..*</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(668.835,356)"
+       id="text28">1..*</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(766.778,355)"
+       id="text30">1..*</text>
+    <rect
+       x="820"
+       y="487"
+       width="204"
+       height="39"
+       stroke="#0070c0"
+       stroke-width="2"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       id="rect32" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(851.799,514)"
+       id="text34">Test Definition</text>
+    <rect
+       x="560"
+       y="408"
+       width="203"
+       height="39"
+       stroke="#0070c0"
+       stroke-width="2"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       id="rect36" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(592.744,435)"
+       id="text38">Test Summary</text>
+    <rect
+       x="560"
+       y="460"
+       width="203"
+       height="38"
+       stroke="#0070c0"
+       stroke-width="2"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       id="rect40" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(583.357,486)"
+       id="text42">Test Description</text>
+    <rect
+       x="560"
+       y="510"
+       width="203"
+       height="39"
+       stroke="#0070c0"
+       stroke-width="2"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       id="rect44" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(613.134,537)"
+       id="text46">Test Roles</text>
+    <rect
+       x="560"
+       y="560"
+       width="203"
+       height="39"
+       stroke="#0070c0"
+       stroke-width="2"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       id="rect48" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(634.877,587)"
+       id="text50">Steps</text>
+    <path
+       d="m 763.5,426.833 h 36.948 v 79.409 l -0.666,-0.666 h 21.417 v 1.333 H 799.115 V 427.5 l 0.667,0.667 H 763.5 Z m 57.699,72.743 6.666,6.666 -6.666,6.667 -6.667,-6.667 z"
+       id="path52" />
+    <path
+       d="m 763.5,479.5 h 36.282 v 27.061 h 21.417"
+       stroke="#000000"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="none"
+       fill-rule="evenodd"
+       id="path54" />
+    <path
+       d="M 0,0 H 36.2815 V 23.2423 H 57.6987"
+       stroke="#000000"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="none"
+       fill-rule="evenodd"
+       transform="matrix(1,0,0,-1,763.5,529.742)"
+       id="path56" />
+    <path
+       d="M 0,0 H 36.2815 V 73.5451 H 57.6987"
+       stroke="#000000"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="none"
+       fill-rule="evenodd"
+       transform="matrix(1,0,0,-1,763.5,580.045)"
+       id="path58" />
+    <path
+       d="m 817.5,243.833 h 231.64 v 263.54 h -23.34 v -1.334 h 22.68 l -0.67,0.667 V 244.5 l 0.67,0.667 H 817.5 Z m 215.96,268.116 -8.98,-5.243 8.98,-5.242 c 0.32,-0.186 0.73,-0.079 0.91,0.239 0.19,0.318 0.08,0.727 -0.24,0.912 l -8,4.667 v -1.152 l 8,4.667 c 0.32,0.185 0.43,0.594 0.24,0.912 -0.18,0.318 -0.59,0.425 -0.91,0.24 z"
+       id="path60" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(1038.92,527)"
+       id="text62">1..*</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(767.653,473)"
+       id="text64">1..1</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(769.827,419)"
+       id="text66">1..1</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(766.778,521)"
+       id="text68">1..*</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(766.778,574)"
+       id="text70">1..*</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(771.009,602)"
+       id="text72">{ordered}</text>
+    <path
+       d="M 0,-0.666667 H 31.4726 V 50.9694 H 1.33333 V 49.6361 H 30.8059 l -0.6667,0.6667 V 0 l 0.6667,0.666667 H 0 Z M 1.33333,56.9694 -5.33333,50.3028 1.33333,43.6361 8,50.3028 Z"
+       transform="matrix(-1,0,0,1,561.833,529.5)"
+       id="path74" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(533.808,545)"
+       id="text76">1..2</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(815.906,280)"
+       id="text78">1..*</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(670.69,283)"
+       id="text80">1..*</text>
+    <rect
+       x="212"
+       y="245"
+       width="204"
+       height="38"
+       stroke="#0070c0"
+       stroke-width="2"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       id="rect82" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(290.092,271)"
+       id="text84">AIPO</text>
+    <path
+       d="M 0,-0.666667 H 60.114 V 20.0734 L 59.4474,19.4067 H 197.815 v 1.3334 H 58.7807 V 0 l 0.6667,0.666667 H 0 Z m 197.815,14.073367 6.667,6.6667 -6.667,6.6667 -6.666,-6.6667 z"
+       transform="matrix(-1,0,0,1,614.315,244.5)"
+       id="path86" />
+    <path
+       d="M 0,0 H 54.6359 V 138.962"
+       stroke="#000000"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="none"
+       fill-rule="evenodd"
+       transform="matrix(0,-1,-1,0,555.462,319.136)"
+       id="path88" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(578.969,236)"
+       id="text90">1..1</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(524.536,313)"
+       id="text92">1..1</text>
+    <path
+       d="M 0,-0.666667 H 150.398 V 139.228 l -0.666,-0.667 h 81.069 v 1.333 H 149.065 V 0 l 0.667,0.666667 H 0 Z M 223.137,133.985 l 8.987,5.243 -8.987,5.242 c -0.318,0.186 -0.727,0.078 -0.912,-0.24 -0.186,-0.318 -0.078,-0.726 0.24,-0.911 l 8,-4.667 v 1.152 l -8,-4.667 c -0.318,-0.186 -0.426,-0.594 -0.24,-0.912 0.185,-0.318 0.594,-0.425 0.912,-0.24 z"
+       transform="matrix(0,-1,-1,0,524.728,515.621)"
+       id="path94" />
+    <path
+       d="m 525.5,516.5 h 30.15"
+       stroke="#000000"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="none"
+       fill-rule="evenodd"
+       id="path96" />
+    <text
+       fill="#0070c0"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="13px"
+       transform="translate(213.923,298)"
+       id="text98">Actor / Integration Profile /</text>
+    <text
+       fill="#0070c0"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="13px"
+       transform="translate(213.923,314)"
+       id="text100">Profile Option “Tuple”</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(393.349,313)"
+       id="text102">1..*</text>
+  </g>
+</svg>
