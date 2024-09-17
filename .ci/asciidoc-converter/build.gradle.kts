@@ -56,15 +56,12 @@ tasks.test {
     useJUnitPlatform()
 }
 
-val javaSource: Int = 17
-val jdkVersion: Int = javaSource
+val jvmVersion = JvmTarget.JVM_17
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(javaSource)
+        languageVersion = JavaLanguageVersion.of(jvmVersion.target)
     }
-    withJavadocJar()
-    withSourcesJar()
 }
 
 kotlin {
@@ -72,7 +69,6 @@ kotlin {
         jvmTarget = JvmTarget.JVM_17
     }
 }
-
 
 application {
     mainClass.set("org.sdpi.ConvertAndVerifySupplementKt")
