@@ -1,4 +1,4 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     java
@@ -68,7 +68,9 @@ java {
 }
 
 kotlin {
-    jvmToolchain(jdkVersion)
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_17
+    }
 }
 
 

@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="586.29999"
+   height="546.29999"
+   overflow="hidden"
+   version="1.1"
+   id="svg98"
+   sodipodi:docname="vol1-diagram-sdpi-req-ihe-profile.svg"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs102" />
+  <sodipodi:namedview
+     id="namedview100"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     fit-margin-top="0.15"
+     fit-margin-left="0.15"
+     fit-margin-bottom="0.15"
+     fit-margin-right="0.15"
+     inkscape:zoom="0.8609375"
+     inkscape:cx="292.12341"
+     inkscape:cy="258.4392"
+     inkscape:window-width="1620"
+     inkscape:window-height="1058"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g96" />
+  <g
+     id="g96"
+     transform="translate(-346.85,-100.85)">
+    <rect
+       style="fill:#ffffff"
+       id="rect170"
+       width="645.80762"
+       height="591.21594"
+       x="323.61951"
+       y="88.073227" />
+    <rect
+       x="615"
+       y="157"
+       width="154"
+       height="39"
+       stroke="#0070c0"
+       stroke-width="2"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       id="rect4" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(635.567,184)"
+       id="text6">SDPi Profile</text>
+    <rect
+       x="472"
+       y="245"
+       width="154"
+       height="39"
+       stroke="#0070c0"
+       stroke-width="2"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       id="rect8" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(522.351,272)"
+       id="text10">Actor</text>
+    <path
+       d="M 0.219253,-0.629581 142.028,48.7554 141.589,50.0145 -0.219253,0.629581 Z M 136.296,41.9139 l 6.763,7.9065 -10.212,1.9952 c -0.361,0.0706 -0.711,-0.1651 -0.782,-0.5264 -0.07,-0.3614 0.165,-0.7116 0.527,-0.7822 l 9.089,-1.776 -0.378,1.0876 -6.021,-7.0381 c -0.239,-0.2798 -0.206,-0.7006 0.074,-0.9399 0.28,-0.2393 0.7,-0.2065 0.94,0.0733 z"
+       transform="matrix(-1,0,0,1,692.556,196.5)"
+       id="path12" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(521.639,241)"
+       id="text14">2..*</text>
+    <rect
+       x="522"
+       y="467"
+       width="205"
+       height="67"
+       stroke="#0070c0"
+       stroke-width="2"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       id="rect16" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(589.466,493)"
+       id="text18">Actor</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(647.732,493)"
+       id="text20">–</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(534.172,522)"
+       id="text22">Transaction Model</text>
+    <path
+       d="M -1.32,0.666667 H -16.4378 L -15.7711,0 v 56.7076 l -0.6667,-0.6667 H 99.5568 v 1.3334 H -17.1045 V -0.666667 H -1.32 Z M -8.98409,-5.24252 0.00308994,0 -8.98409,5.24252 C -9.30212,5.42804 -9.71033,5.32061 -9.89585,5.00258 -10.0814,4.68455 -9.97395,4.27633 -9.65591,4.09081 l 8,-4.666663 v 1.151706 l -8,-4.666663 c -0.31804,-0.18552 -0.42549,-0.59374 -0.23994,-0.91177 0.18552,-0.31803 0.59373,-0.42546 0.91176,-0.23994 z M 91.8927,51.4651 l 8.9873,5.2425 -8.9873,5.2425 c -0.3181,0.1855 -0.7263,0.0781 -0.9118,-0.2399 -0.1855,-0.318 -0.0781,-0.7263 0.2399,-0.9118 l 8,-4.6666 v 1.1517 l -8,-4.6667 c -0.318,-0.1855 -0.4254,-0.5937 -0.2399,-0.9118 0.1855,-0.318 0.5937,-0.4254 0.9118,-0.2399 z"
+       transform="matrix(0,1,1,0,616.5,243.5)"
+       id="path24" />
+    <rect
+       x="679"
+       y="607"
+       width="253"
+       height="39"
+       stroke="#0070c0"
+       stroke-width="2"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       id="rect26" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(725.495,634)"
+       id="text28">Content Module</text>
+    <path
+       d="m 769.5,175.833 h 128.993 v 430.665 h -1.334 V 176.5 l 0.667,0.667 H 769.5 Z m 133.569,422.994 -5.243,8.987 -5.243,-8.987 c -0.185,-0.318 -0.078,-0.727 0.24,-0.912 0.318,-0.186 0.727,-0.078 0.912,0.24 l 4.667,8 h -1.152 l 4.667,-8 c 0.185,-0.318 0.594,-0.426 0.912,-0.24 0.318,0.185 0.425,0.594 0.24,0.912 z"
+       id="path30" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(867.071,598)"
+       id="text32">0..*</text>
+    <path
+       d="M 0,0.333333 H -33.1685 L -32.8352,0 v 43.3875 l -0.3333,-0.3333 H 77.1236 l -0.3334,0.3333 V 26.0542 h 0.6667 V 43.7208 H -33.5019 V -0.333333 H 0 Z m 73.1236,27.054167 4,-8 4,8 z"
+       fill="#4472c4"
+       transform="matrix(-1,0,0,1,626.624,265.5)"
+       id="path34" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(556.876,300)"
+       id="text36">0..*</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(628.578,281)"
+       id="text38">1..1</text>
+    <rect
+       x="348"
+       y="344"
+       width="166"
+       height="68"
+       stroke="#0070c0"
+       stroke-width="2"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       id="rect40" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(369.448,371)"
+       id="text42">Profile</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(432.728,371)"
+       id="text44">-</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(440.061,371)"
+       id="text46">Actor</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(397.521,400)"
+       id="text48">Option</text>
+    <rect
+       x="615"
+       y="345"
+       width="154"
+       height="68"
+       stroke="#0070c0"
+       stroke-width="2"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       id="rect50" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(680.774,372)"
+       id="text52">TF</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(636.094,401)"
+       id="text54">Transaction</text>
+    <path
+       d="M 0,-0.666667 H 75.4142 V 0.314121 L 74.7475,-0.352546 H 148.175 V 0.980787 H 74.0808 V 0 l 0.6667,0.666667 H 0 Z m 140.511,-4.261733 8.987,5.242521 -8.987,5.242519 c -0.318,0.18552 -0.726,0.0781 -0.912,-0.23994 -0.185,-0.31803 -0.078,-0.72624 0.24,-0.91177 l 8,-4.666662 v 1.151705 l -8,-4.666663 c -0.318,-0.18552 -0.425,-0.59374 -0.24,-0.91177 0.186,-0.31803 0.594,-0.42546 0.912,-0.23994 z"
+       transform="matrix(0,1,1,0,692.5,196.5)"
+       id="path56" />
+    <rect
+       x="741"
+       y="102"
+       width="165"
+       height="39"
+       stroke="#0070c0"
+       stroke-width="2"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       id="rect58" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(755.596,129)"
+       id="text60">Profile Option</text>
+    <path
+       d="m 691.833,157.78 v -35.947 h 48.415 v 1.334 H 692.5 l 0.667,-0.667 v 35.28 z m 40.75,-40.522 8.988,5.242 -8.988,5.243 c -0.318,0.185 -0.726,0.078 -0.911,-0.24 -0.186,-0.318 -0.078,-0.727 0.24,-0.912 l 8,-4.667 v 1.152 l -8,-4.667 c -0.318,-0.185 -0.426,-0.593 -0.24,-0.911 0.185,-0.319 0.593,-0.426 0.911,-0.24 z"
+       id="path62" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(715.167,141)"
+       id="text64">0..*</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(626.539,243)"
+       id="text66">2..*</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(643.56,339)"
+       id="text68">1..*</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(704.24,340)"
+       id="text70">1..*</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(770.858,169)"
+       id="text72">1..*</text>
+    <path
+       d="M 1.31997,-0.666667 H 162.243 V 275.039 l -0.667,-0.667 h 160.256 v 1.333 H 160.909 V 0 l 0.667,0.666667 H 1.31997 Z M 8.98409,5.24252 -0.00308994,0 8.98409,-5.24252 c 0.31803,-0.18552 0.72624,-0.07809 0.91176,0.23994 0.18555,0.31803 0.0781,0.72625 -0.23994,0.91177 l -8,4.666663 v -1.151706 l 8,4.666663 C 9.97395,4.27633 10.0814,4.68455 9.89585,5.00258 9.71033,5.32061 9.30212,5.42804 8.98409,5.24252 Z M 314.168,269.796 l 8.987,5.243 -8.987,5.242 c -0.318,0.186 -0.726,0.078 -0.912,-0.24 -0.185,-0.318 -0.078,-0.726 0.24,-0.911 l 8,-4.667 v 1.152 l -8,-4.667 c -0.318,-0.186 -0.425,-0.594 -0.24,-0.912 0.186,-0.318 0.594,-0.425 0.912,-0.24 z"
+       transform="matrix(0,1,1,0,533.5,284.5)"
+       id="path74" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(502.697,301)"
+       id="text76">0..*</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(774.915,599)"
+       id="text78">0..*</text>
+    <path
+       d="M 0,-0.666667 H 310.386 V 234.929 h -1.333 V 0 l 0.667,0.666667 H 0 Z M 314.962,227.266 l -5.242,8.987 -5.243,-8.987 c -0.185,-0.318 -0.078,-0.726 0.24,-0.912 0.318,-0.185 0.726,-0.078 0.912,0.24 l 4.666,8 h -1.151 l 4.666,-8 c 0.186,-0.318 0.594,-0.425 0.912,-0.24 0.318,0.186 0.426,0.594 0.24,0.912 z"
+       transform="matrix(-1,0,0,1,741.22,108.5)"
+       id="path80" />
+    <path
+       d="m 0.666669,1.31997 10e-5,56.86033 h -1.333333 l -10e-5,-56.86033 z M -5.2425,8.98409 0,-0.00308983 5.24254,8.98408 C 5.42806,9.30211 5.32063,9.71032 5.0026,9.89584 4.68456,10.0814 4.27635,9.97394 4.09083,9.65591 L -0.57585,1.65592 0.575855,1.65591 -4.0908,9.65592 C -4.27632,9.97396 -4.68453,10.0814 -5.00256,9.89586 -5.3206,9.71034 -5.42802,9.30213 -5.2425,8.98409 Z M 5.24261,50.5162 1.04849e-4,59.5033 -5.24243,50.5162 c -0.18552,-0.3181 -0.0781,-0.7263 0.23994,-0.9118 0.31803,-0.1855 0.72624,-0.0781 0.91176,0.24 l 4.666685,7.9999 H -0.57575 l 4.66665,-8 c 0.18552,-0.318 0.59373,-0.4254 0.91177,-0.2399 0.31803,0.1855 0.42546,0.5937 0.23994,0.9118 z"
+       transform="matrix(1,0,0,-1,483.5,346)"
+       id="path82" />
+    <path
+       d="M 0.666667,-1.28731e-6 0.666769,53.0501 H -0.666564 L -0.666667,1.28731e-6 Z M 5.24261,45.386 1.05086e-4,54.3732 -5.24243,45.386 c -0.18552,-0.318 -0.0781,-0.7262 0.23994,-0.9118 0.31803,-0.1855 0.72624,-0.0781 0.91176,0.24 l 4.666684,8 h -1.151705 l 4.666651,-8 c 0.18552,-0.3181 0.59373,-0.4255 0.91177,-0.24 0.31803,0.1855 0.42546,0.5937 0.23994,0.9118 z"
+       transform="matrix(1,0,0,-1,665.5,466.87)"
+       id="path84" />
+    <path
+       d="m 603.238,466.803 -2.387,-180.974 1.333,-0.018 2.387,180.975 z m -6.862,-173.251 5.124,-9.055 5.361,8.917 c 0.189,0.316 0.087,0.725 -0.228,0.915 -0.316,0.19 -0.725,0.088 -0.915,-0.228 l -4.772,-7.938 1.152,-0.015 -4.561,8.061 c -0.181,0.321 -0.588,0.433 -0.909,0.252 -0.32,-0.181 -0.433,-0.588 -0.252,-0.909 z"
+       id="path86" />
+    <path
+       d="m 769.5,378.833 h 73.855 v 225.359 h -1.334 V 379.5 l 0.667,0.667 H 769.5 Z m 78.431,217.696 -5.243,8.987 -5.242,-8.987 c -0.186,-0.318 -0.079,-0.726 0.239,-0.912 0.319,-0.185 0.727,-0.078 0.912,0.24 l 4.667,8 h -1.152 l 4.667,-8 c 0.185,-0.318 0.594,-0.425 0.912,-0.24 0.318,0.186 0.425,0.594 0.24,0.912 z"
+       id="path88" />
+    <path
+       d="m 727.5,500.833 h 23.134 V 606.812 H 749.3 V 501.5 l 0.667,0.667 H 727.5 Z m 27.71,98.314 -5.243,8.988 -5.242,-8.988 c -0.186,-0.318 -0.079,-0.726 0.239,-0.911 0.318,-0.186 0.727,-0.078 0.912,0.24 l 4.667,8 h -1.152 l 4.667,-8 c 0.185,-0.318 0.594,-0.426 0.912,-0.24 0.318,0.185 0.425,0.593 0.24,0.911 z"
+       id="path90" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(714.739,603)"
+       id="text92">0..*</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="16px"
+       transform="translate(579.172,305)"
+       id="text94">“Grouped”</text>
+  </g>
+</svg>
