@@ -25,12 +25,16 @@ class IssuesSectionPreprocessor(
             .filter { it.variableName == VAR_MILESTONE_PUBLICATION || it.variableName == VAR_MILESTONE_REVIEW }
             .associateBy(VariableDeclaration::variableName)
 
-        val issues = IssueImport(
-            githubToken,
-            variables[VAR_MILESTONE_PUBLICATION]!!.variableValue,
-            variables[VAR_MILESTONE_REVIEW]!!.variableValue
-        ).requestIssues().issues()
-
+        val issues = try {
+            IssueImport(
+                githubToken,
+                variables[VAR_MILESTONE_PUBLICATION]!!.variableValue,
+                variables[VAR_MILESTONE_REVIEW]!!.variableValue
+            ).requestIssues().issues()
+        } catch (e: Exception) {
+            logger.error(e) { e.message }
+            throw e
+        }
         reader.restoreLines(lines.fold(mutableListOf<String>()) { acc, line ->
 
             when (line.trim().lowercase()) {

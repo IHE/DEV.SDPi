@@ -1,10 +1,11 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     java
-    kotlin("jvm") version "1.8.10"
-    kotlin("plugin.serialization") version "1.8.10"
     application
+    idea
+    kotlin("jvm") version "2.0.10"
+    kotlin("plugin.serialization") version "2.0.10"
 }
 
 group = "org.sdpi"
@@ -15,9 +16,8 @@ repositories {
 }
 
 dependencies {
-
     // regex pattern
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.7.10")
+    implementation(kotlin("stdlib"))
 
     // command line parsing
     // https://mvnrepository.com/artifact/com.github.ajalt/clikt
@@ -44,11 +44,10 @@ dependencies {
     // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine
     runtimeOnly(group = "org.junit.jupiter", name = "junit-jupiter-engine", version = "5.7.1")
 
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.1")
 
     // https://mvnrepository.com/artifact/org.kohsuke/github-api
     implementation("org.kohsuke:github-api:1.315")
-
 
     testImplementation(kotlin("test"))
 }
@@ -57,9 +56,23 @@ tasks.test {
     useJUnitPlatform()
 }
 
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+val javaSource: Int = 17
+val jdkVersion: Int = javaSource
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(javaSource)
+    }
+    withJavadocJar()
+    withSourcesJar()
 }
+
+kotlin {
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_17
+    }
+}
+
 
 application {
     mainClass.set("org.sdpi.ConvertAndVerifySupplementKt")

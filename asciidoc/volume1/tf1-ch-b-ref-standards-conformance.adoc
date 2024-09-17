@@ -14,8 +14,7 @@ Ultimately, the content of this appendix may be rearranged and even relocated; h
 |===
 
 // Appendix B
-[#vol1_appendix_b_referenced_standards]
-[bibliography]
+[bibliography#vol1_appendix_b_referenced_standards]
 === Referenced Standards
 
 [%noheader]

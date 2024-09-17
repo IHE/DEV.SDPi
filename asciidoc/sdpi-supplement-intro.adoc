@@ -112,3 +112,19 @@ Additional discussion is provided in <<vol1_appendix_a_requirements_management_f
 See also related discussions on the Gemini Project's https://confluence.hl7.org/x/XhPUB[Pathway to an Ecosystem of Plug-and-Trust Products].
 
 
+[#supplement_clause_requirements_glossary]
+=== Requirements Glossary
+
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *Editor's Note*:
+
+This "glossary" provides a defined set of requirements terminology and meta data is required in order to ensure consistency and processing / automation of requirements throughout the specification.
+
+It is differentiated from the IHE TF-0 Glossary in that it is specifically created to support the integration of formal requirements interoperability specification content; whereas, the IHE glossary provides general terminology more at the application level that is used throughout all IHE technical frameworks and profile specifications.
+
+|===
+
