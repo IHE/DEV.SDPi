@@ -1,5 +1,6 @@
 
 [sdpi_offset=clear]
+[#sdpi_issue_management]
 == SDPi Issue Management
 
 [sdpi_offset=clear]

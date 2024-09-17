@@ -72,15 +72,14 @@ class IssueImport(
         return this
     }
 
-
     private fun issuesInMilestones(
         repository: GHRepository,
         state: GHIssueState,
         vararg milestones: String
     ): List<GHIssue> {
         return milestones
-            .map { ms ->
-                repository.listMilestones(GHIssueState.ALL).first { it.title == ms }.let {
+            .mapNotNull { ms ->
+                repository.listMilestones(GHIssueState.ALL).firstOrNull { it.title == ms }?.let {
                     repository.getIssues(state, it)
                 }
             }
