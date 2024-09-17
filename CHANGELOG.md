@@ -15,10 +15,7 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ## [Unreleased]
 
-
-
-## [1.4.0] - 2024-04-05
-## [1.4.0] - 2024-09-13
+## [1.4.0] - 2024-09-17
 
 ### Editorial Fixes
 
