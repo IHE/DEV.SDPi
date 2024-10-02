@@ -26,7 +26,7 @@ The other models are anticipated for subsequent versions.
 
 *CDIS* is a system for reporting alarm signals with no technical confirmation but with operator confirmation (accept/reject).
 
-NOTE: CDIS is not recognized in 60601-1-8, however it is implemented in practise and therefore included
+NOTE: CDIS is not recognized in 60601-1-8, however it is implemented in practice and therefore included
 
 
 • Cannot rely on it for alarm signaling as a risk control
