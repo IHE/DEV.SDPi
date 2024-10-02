@@ -5,7 +5,7 @@
 == Requirements Management for Plug-and-Trust Interoperability
 
 
-These SDPi specifications include the model-centric integration of requirements from multiple sources -- both within IHE and from other <<acronym_sdo>>s -- enabling a new level of *requirements management* that provides new value to all stakeholders.  Also termed *_<<term_requirements_interoperability>>_*, innovative capabilties include:
+These SDPi specifications include the model-centric integration of requirements from multiple sources -- both within IHE and from other <<acronym_sdo>>s -- enabling a new level of *requirements management* that provides new value to all stakeholders.  Also termed *_<<term_requirements_interoperability>>_*, innovative capabilities include:
 
 . Explicit linking of requirements from their definition to their satisfaction / utilization in defined _capabilities_;
 . Explicit linking of requirements from external sources (e.g., normative standards references) to where they are supported in the profile specification, either completely, partially, unsupported or out-of-scope;
