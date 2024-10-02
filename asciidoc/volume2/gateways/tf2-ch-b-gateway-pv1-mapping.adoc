@@ -131,7 +131,7 @@ NOTE: A visit identifier could be a visit number, an account number, or any othe
 |/@Root
 |The @Root contains the unique identification of the HDO.
 
-*Note that if the HDO identifer is not defined the CX-4 field is required to be left empty.*
+*Note that if the HDO identifier is not defined the CX-4 field is required to be left empty.*
 
 |PV1-19/CX-5
 |Identifier Type Code
