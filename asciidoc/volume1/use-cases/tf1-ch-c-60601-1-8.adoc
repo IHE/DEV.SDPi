@@ -174,11 +174,11 @@ Examples include:
 ====== DAS - DISTRIBUTED ALARM SYSTEM
 ALARM SYSTEM that involves more than one item of equipment in a ME SYSTEM intended for delivery of ALARM CONDITIONS with technical confirmation
 
-NOTE: NOTE 1 The parts of a DISTRIBUTED ALARM SYSTEM can be widely separated in distance.
+NOTE: NOTE 1: The parts of a DISTRIBUTED ALARM SYSTEM can be widely separated in distance.
 
-NOTE: NOTE 2 A DISTRIBUTED ALARM SYSTEM is intended to notify OPERATORS of the existence of an ALARM CONDITION.
+NOTE: NOTE 2: A DISTRIBUTED ALARM SYSTEM is intended to notify OPERATORS of the existence of an ALARM CONDITION.
 
-NOTE: NOTE 3 For the purposes of this document, technical confirmation means that each element of a DISTRIBUTED ALARM SYSTEM confirms or guarantees the successful delivery of the ALARM CONDITION to the next element or appropriate TECHNICAL ALARM CONDITIONS are created as described in clause 6.11.2.2.1 of <<ref_iec_60601_1_8_2020>>.
+NOTE: NOTE 3: For the purposes of this document, technical confirmation means that each element of a DISTRIBUTED ALARM SYSTEM confirms or guarantees the successful delivery of the ALARM CONDITION to the next element or appropriate TECHNICAL ALARM CONDITIONS are created as described in clause 6.11.2.2.1 of <<ref_iec_60601_1_8_2020>>.
 
 .IEC 60601-1-8:2020, Figure 2 -- Functions of a DISTRIBUTED ALARM SYSTEM utilizing a MEDICAL IT NETWORK
 image::../images/vol1-diagram-60601-1-8-2020-figure-2.svg[]
