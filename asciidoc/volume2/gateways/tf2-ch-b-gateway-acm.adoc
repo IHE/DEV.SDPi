@@ -72,7 +72,7 @@ For the *initial alert event announcement message*, a <<actor_somds_acm_gateway>
 .Notes
 [%collapsible]
 ====
-NOTE: This identifer consists of the *pm:AlertConditionState/@DescriptorHandle*  plus the *SequenceId* plus the *pm:AlertConditionState/@StateVersion* of the state report.
+NOTE: This identifier consists of the *pm:AlertConditionState/@DescriptorHandle*  plus the *SequenceId* plus the *pm:AlertConditionState/@StateVersion* of the state report.
 ====
 
 .Examples
@@ -647,7 +647,7 @@ A <<actor_somds_acm_gateway>> shall set the OBX-4 Observation Sub-ID to *"<MDS>.
 A <<actor_somds_acm_gateway>> shall set the OBX-11 Observation Result Status to *"R"*.
 ****
 
-.OBX Source Identification Mapping - Pysiological Alert Event
+.OBX Source Identification Mapping - Physiological Alert Event
 ====
 OBX|5|NM|150037\^MDC_PRESS_BLD_ART_ABP_SYS^MDC|1.1.1.1.2|119|266016\^MDC_DIM_MMHG^MDC|90-110||||R
 ====
@@ -1167,7 +1167,7 @@ pm:AlertConditionDescriptor
 
 [NOTE]
 ====
-If a <<acronym_sdc>> ALERT CONDITION represents an avisory signal, the alert priority is set to *"None"* for this <<acronym_sdc>> ALERT CONDITION, and therefore, mapped to *"PN"* in the IHE ACM Alert Priority OBX segment.
+If a <<acronym_sdc>> ALERT CONDITION represents an advisory signal, the alert priority is set to *"None"* for this <<acronym_sdc>> ALERT CONDITION, and therefore, mapped to *"PN"* in the IHE ACM Alert Priority OBX segment.
 ====
 
 ====== Alert Type OBX Segment
