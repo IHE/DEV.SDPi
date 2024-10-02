@@ -644,7 +644,7 @@ The addition of a <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor enables a sec
 The <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor acts as a man-in-the-middle system, with <<vol1_spec_sdpi_p_actor_somds_provider>> Actors using the <<vol2_clause_dev_46>> transaction to provide endpoint metatdata and update their network presence or absence status.
 <<vol1_spec_sdpi_p_actor_somds_consumer>> Actors may then use the <<vol2_clause_dev_47>> transaction to determine available <<vol1_spec_sdpi_p_actor_somds_consumer>> systems and their endpoint metadata.
 
-<<figure_sdpi-p-managed-discovery-option-sequence-diagram>> provides an overview of the interactions of the SOMDS Consumer and Somes Provider Actors with the Discovery Proxy Actor.
+<<figure_sdpi-p-managed-discovery-option-sequence-diagram>> provides an overview of the interactions of the SOMDS Consumer and SOMDS Provider Actors with the Discovery Proxy Actor.
 
 .SDPi-P Managed Discovery Option - transaction Sequence Diagram
 [#figure_sdpi-p-managed-discovery-option-sequence-diagram]
@@ -804,7 +804,7 @@ image::../images/vol1-diagram-sdc-biceps-component-view.svg[align=center]
 
 The <<term_medical_data_information_base>> component applies to all participating systems and consists of a *_descriptive model_* (e.g., what services and information a <<vol1_spec_sdpi_p_actor_somds_provider>> supports), and a state model.
 The discovery and communications models combine to enable device-to-device messaging and to identify both systems and services available on the network.
-The descriptive model is covered in more detail in <<vol3_clause_sdc_biceps_semantic_content_module>>, but the following <<figure_sdc_biceps_mdib_descriptors_states>> shows how network efficiency is achieved by searating descriptive information from dynamic state information:
+The descriptive model is covered in more detail in <<vol3_clause_sdc_biceps_semantic_content_module>>, but the following <<figure_sdc_biceps_mdib_descriptors_states>> shows how network efficiency is achieved by separating descriptive information from dynamic state information:
 
 .SDC/BICEPS MDIB Descriptors & States
 [#figure_sdc_biceps_mdib_descriptors_states]
