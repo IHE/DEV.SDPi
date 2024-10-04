@@ -240,7 +240,7 @@ When there are further updates of the weight value after the association of the 
 Please refer to general Section <<ref_gateway_pv1_mapping>>.
 
 ===== OBR - Observation Request Segment
-The HL7 Obervation Request (OBR) segment requires a mapping from the SDC containment tree and metric data to the OBR segment fields.
+The HL7 Observation Request (OBR) segment requires a mapping from the SDC containment tree and metric data to the OBR segment fields.
 
 ====== OBR-2 Placer Order Number
 
@@ -655,7 +655,7 @@ For each numeric metric, a <<actor_somds_dec_gateway>> shall set the OBX-6 field
 ====
 NOTE: <<ref_tbl_dec_obx6_mapping>> defines the mapping of the SDC measurement unit to the data fields of the HL7 data type *CWE* used in the OBX-6 field.
 
-NOTE: For a device-releted element such as MDS, VMD, CHANNEL, or other metric types, the OBX-6 field is left empty.
+NOTE: For a device-related element such as MDS, VMD, CHANNEL, or other metric types, the OBX-6 field is left empty.
 ====
 ****
 
@@ -881,7 +881,7 @@ NOTE: If *pm:BodySite* element list contains more than one *pm:BodySite* element
 
 NOTE: <<ref_tbl_dec_obx20_mapping>> defines the mapping of the SDC body site element to the data fields of the HL7 data type *CWE* used in the OBX-20 field.
 
-NOTE: For a device-releted element such as MDS, VMD, or CHANNEL, the OBX-20 field is left empty.
+NOTE: For a device-related element such as MDS, VMD, or CHANNEL, the OBX-20 field is left empty.
 ====
 ****
 

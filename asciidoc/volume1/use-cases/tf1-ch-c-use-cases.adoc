@@ -14,7 +14,7 @@
 | *{supplement_note}*: This initial section of Appendix C is informative and is still being detailed.  Completion is deferred to version 1.x or later.
 It provides general background detail around how general (non-technology specific) clinical use case specifications are being utilized in this supplement.
 
-*REVIEWER QUESTION*:  Please review the intended topics and identify any additional content that should be considered.  Especialy helpful would be references to related standards and materials that would inform the approach taken in this appendix.
+*REVIEWER QUESTION*:  Please review the intended topics and identify any additional content that should be considered.  Especially helpful would be references to related standards and materials that would inform the approach taken in this appendix.
 |===
 
 ////

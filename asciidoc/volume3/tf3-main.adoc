@@ -83,7 +83,7 @@ a| *{supplement_note}*: The content in the IHE PCD 2019 TF-3 3.1 Section will ne
 | Move IHE PCD 2019 TF-3 sections 3.2 to 3.7 to this SDPi {ihe_supplement_sdpi_revision_short} TF-3 Section 8.3.1.2 TO 8.3.1..7
 
 A new 8.3.1.1 Section should be added to the Classic DIM content section that addresses basic reporting.
-This content would be extracted from the existing (2019) Section 3.1, where that content is specific to the Classi DIM (see related note above).
+This content would be extracted from the existing (2019) Section 3.1, where that content is specific to the Classic DIM (see related note above).
 |===
 
 // 8.3.2
