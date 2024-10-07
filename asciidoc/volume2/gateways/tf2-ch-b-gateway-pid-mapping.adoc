@@ -26,7 +26,7 @@ If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gate
 .Notes
 [%collapsible]
 ====
-NOTE: The PID-3 is a list of patient identifiers (e.g., medical record number, socal security number, visit number, account number, etc.)
+NOTE: The PID-3 is a list of patient identifiers (e.g., medical record number, social security number, visit number, account number, etc.)
 
 NOTE: <<ref_tbl_pid3_mapping>> defines the mapping of the <<acronym_mdib>> patient identification to the data fields of the HL7 data type *CX* used in the PID-3 field.
 
@@ -42,7 +42,7 @@ NOTE: If the <<acronym_mdib>> patient identification element *pm:PatientContextS
 |PID-3/CX-1
 |ID Number
 |pm:PatientContextState+++<wbr/>+++/pm:Identification+++<wbr/>+++/@Extension
-|The @Extension attribute contains the unique patient identifer.
+|The @Extension attribute contains the unique patient identifier.
 
 *Note that the field may contain a null value indicating that the identifier is missing.*
 

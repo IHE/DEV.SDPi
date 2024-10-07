@@ -39,13 +39,13 @@ image::../images/vol1-diagram-use-case-sicdmp-tech-view.svg[]
 
 *Then* the Dashboard will display parameter, waveform, setting, alarm, imaging, etc. information from those devices (based on configuration)
 
-===== Scenario: <<acronym_sicdmp>> {var_use_case_id}.2 - ICU Devices are Inccessible to the Dashboard
+===== Scenario: <<acronym_sicdmp>> {var_use_case_id}.2 - ICU Devices are Inaccessible to the Dashboard
 
 *Given* Dashboard cannot detect any assigned accessible ICU devices
 
 *Then* the Dashboard will display an error message
 
-===== Scenario: <<acronym_sicdmp>> {var_use_case_id}.3 - One or more ICU Devices are Inccessible to the Dashboard
+===== Scenario: <<acronym_sicdmp>> {var_use_case_id}.3 - One or more ICU Devices are Inaccessible to the Dashboard
 
 *Given* Dashboard cannot detect any previously assigned accessible ICU devices
 

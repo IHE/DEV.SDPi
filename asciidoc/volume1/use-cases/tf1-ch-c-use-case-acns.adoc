@@ -8,7 +8,7 @@
 Bonjour Hospital is in the process of installing a nurse alert notification system which will communicate alerts from the ICU devices (patient monitors, ventilators, infusion devices, etc.) directly to nurse devices such as pagers or smartphones.  Bobby Thornton is responsible for integrating data from their ICU devices with the alert notification system.  Once they are done, the alerts from the devices will be forwarded by the gateway to the nurse devices for viewing in a timely manner.
 
 ==== Benefits
-The ability of the system to share alert events directly with the responsible nurse allows that nurse to be aware of issues with the patient without being next to or near the patient.  It is also the first step in implementing a Quiet Hospital or Silent Hospital approach where alerts are not signalled at the patient bedside thereby reducing the amount of noise that the patient is subjected to and improving their ability to recuperate.
+The ability of the system to share alert events directly with the responsible nurse allows that nurse to be aware of issues with the patient without being next to or near the patient.  It is also the first step in implementing a Quiet Hospital or Silent Hospital approach where alerts are not signaled at the patient bedside thereby reducing the amount of noise that the patient is subjected to and improving their ability to recuperate.
 
 ==== Technical View
 
