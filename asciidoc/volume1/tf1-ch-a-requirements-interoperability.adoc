@@ -34,17 +34,17 @@ In order to manage this diversity and wealth of specifications and standards, th
 [#hanging_gardens_framework]
 image::../images/vol1-diagram-hanging-gardens.svg[]
 
-Though a full explanation of the this framework is beyond this discussion footnote:hanging_gardens_framework_article[A more detailed explanation of this model is provided on the https://confluence.hl7.org/x/4ijxB[IHE-HL7 Gemini _Hanging Gardens Framework_ confluence page].
+Though a full explanation of the framework is beyond this discussion footnote:hanging_gardens_framework_article[A more detailed explanation of this model is provided on the https://confluence.hl7.org/x/4ijxB[IHE-HL7 Gemini _Hanging Gardens Framework_ confluence page].
 Last accessed 2022.10.04.], some general observations will help understand the value and use of the framework:
 
-. Real-world Requirements are at the top -- use case requirements, detailing clinical system functions ensure that all requirements and capabilities are rooted in the purposes that technology users are advancing, namely to provide safe;
+. Real-world Requirements are at the top -- use case-based requirements that detail clinical system function scenarios, ensuring that all requirements and capabilities in the specifications are rooted in the healthcare purposes that technology *_users_* are expecting to be supported: effectively, safely and securely;
 . Each layer or "garden" and contained specification(s) define - implicitly or explicitly - how they integrate with other layers:  _*capabilities*_ that are provided (to meet the needs of other layers), and _*requirements*_ (needed capabilities) for other layers and implementations;
 . Standards are sometimes grouped into families (e.g., ISO/IEEE 11073 SDC) - this indicates that they are internally cohesive as well as able to be integrated as a group with other areas;
 . _*Vertical*_ groupings on the left indicate standards that apply to all of the _*horizontal*_ layers in the core of the model;
 . Profile standards, such as the SDPi+FHIR, generally integrate specifications through the layers from the top to the bottom similar, with each layer contributing to those below and converging in a single interface capability bundle;
 . Physical layers are leveraged, not re-invented, which is why there is no color in the bottom layer;
 . _*Requirements interoperability*_ is achieved by tracing "profile lines" from top to bottom, integrating requirements from one layer's specification to the capabilities provided by another layer;
-. Requirement TYPEs are rooted in the layers that they represent and link type definitions to their use in this specification; see <<vol1_clause_sdpi_requirements_core_model>> Section below.>.
+. Requirement TYPEs are rooted in the layers that they represent and link type definitions to their use in this specification; see <<vol1_clause_sdpi_requirements_core_model>> Section below.
 
 NOTE:  The implementation of this high-level framework will be extended as the specifications and tooling mature.
 
