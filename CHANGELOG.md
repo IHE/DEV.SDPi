@@ -15,6 +15,16 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ## [Unreleased]
 
+## [1.4.1] - 2024-10-04
+
+### Editorial Fixes
+
+- IHE Publications Editor review corrections - typos and style corrections ([#319](https://github.com/IHE/DEV.SDPi/pull/319))
+- Unclarities and typos in TF-1:A.1 ([#316](https://github.com/IHE/DEV.SDPi/issues/316))
+
+### Added
+- No additions
+
 ## [1.4.0] - 2024-09-17
 
 ### Editorial Fixes
