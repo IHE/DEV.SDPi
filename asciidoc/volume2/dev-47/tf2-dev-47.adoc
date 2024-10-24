@@ -133,6 +133,8 @@ The {var_label_dev_47_message_probe_match} message is sent as part of the BICEPS
 
 The {var_label_dev_47_message_probe_match} message is sent whenever a <<vol1_spec_sdpi_p_actor_discovery_proxy>> receives a <<vol2_clause_dev_47_message_probe, {var_label_dev_47_message_probe}>> message that contains a <<payload_dev_47_probe_discovery_scope>> that matches zero or more <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<term_discovery_scope>>s.
 
+NOTE: The <<vol1_spec_sdpi_p_actor_discovery_proxy>> always responds to the <<vol2_clause_dev_47_message_probe, {var_label_dev_47_message_probe}>> message of the <<vol1_spec_sdpi_p_actor_somds_consumer>> with a <<vol2_clause_dev_47_message_probe_match, {var_label_dev_47_message_probe_match}>> message, even when there are zero <<payload_dev_47_probe_discovery_scope>> matches. Thus, the <<vol1_spec_sdpi_p_actor_somds_consumer>> can always recognize whether the <<vol1_spec_sdpi_p_actor_discovery_proxy>> has completed the transaction. This is possible in this transaction because of the non-multicast nature of its <<vol2_clause_dev_47_message_probe, {var_label_dev_47_message_probe}>> and <<vol2_clause_dev_47_message_probe_match, {var_label_dev_47_message_probe_match}>> messages. The behavior is different in the <<vol0_transaction_summary_dev_24>> transaction, which uses multicast messaging.
+
 [#vol2_clause_dev_47_message_probe_match_semantics]
 ====== Message Semantics
 
