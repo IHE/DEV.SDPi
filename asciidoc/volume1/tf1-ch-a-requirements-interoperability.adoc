@@ -52,7 +52,7 @@ NOTE:  The implementation of this high-level framework will be extended as the s
 [#vol1_appendix_a_integrating_ses]
 === Integrating Safety, Effectiveness and Security Requirements and Considerations
 
-In 2007, a joint effort between ISO/TC 215 and IEC/SC 62A was launched -- Joint Working Group 7 (JWG7) -- to focus on how to apply risk management to medical devices and health information systems and software that needed to interoperate on shared (hospital owned & managed) networking infrastructure.
+In 2007, a joint effort between ISO/TC 215 and IEC/SC 62A was launched -- Joint Working Group 7 (JWG7) -- to focus on how to apply risk management to medical devices and health information systems and software that needed to interoperate on shared (hospital owned and managed) networking infrastructure.
 The resulting standard, <<ref_iec_80001_1_2021>>, with a first edition published in 2010 and revised in 2021, not only provided a process for performing coordinated multi-stakeholder risk management for these technologies, but recognized the three *key properties* that would be the focus of that risk management:  *_Safety, Effectiveness & Security (SES)_* footnote:ses_definitions[For definitions of these and other related terms, consult the https://81001.org[NHS 81001.org web page.] Last accessed 2022.10.04.].
 
 During the development of the 80001-1 standard, though, it was recognized that risk management is just one of a number of other core themes that had to be managed in concert (e.g., quality management, human factors / usability).
@@ -65,7 +65,7 @@ image::../images/vol1-diagram-81001-temple.svg[algin=center]
 . Source:  <<ref_iso_81001_temple>>
 
 One of the key challenges for implementing this standard, though, is what might be labeled:  *_The Interoperability Trust Gap_*.
-This is the technology "hand off" space between the left side of the lifecycle -- Design and development phase, where key responsibility is by each of the "Accountable Manufacturer" organizations, and the right side of the lifecycle -- Implementation phase & Clinical use phase, where key responsibility is on the Accountable Healthcare Delivery Organization (HDO).
+This is the technology "hand off" space between the left side of the lifecycle -- Design and development phase, where key responsibility is by each of the "Accountable Manufacturer" organizations, and the right side of the lifecycle -- Implementation phase and Clinical use phase, where key responsibility is on the Accountable Healthcare Delivery Organization (HDO).
 Though this reads well in the standards and the model organizes everything in a clear fashion, operationalizing this in real world use remains a Sisyphean effort, primarily due to the amount of expertise, time and resources needed to effectively implement the SES standards as part of normal operating business in HDOs.
 
 To address this <<acronym_ses>> implementation problem, the SDPi Profiles:

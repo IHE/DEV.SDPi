@@ -15,8 +15,8 @@ All the SDPi-P actors are therefore scoped with “<<acronym_somds>>” to clear
 
 Although all information exchanged between SDPi-P <<acronym_somds>> participating systems and applications must conform to the basic <<acronym_sdc>>/<<acronym_biceps>> content module requirements footnote:[See <<vol3_clause_sdc_biceps_semantic_content_module>>. ], content modules have been defined for common high-acuity medical devices such as infusion pumps, ventilators and physiologic monitors.
 
-Note that future IHE _workflow profiles_ may be defined that build upon the transport & content module foundation established by the SDPi-P profile.
-For example, Operating Room / Surgery Point-of-Care Integration, ICU Point-of-Care Integration, or more service-focused profiles such as Point-of-Care Identity Management (PCIM) for device-patient association management, or Silent ICU & Quiet Hospital, where the acute point-of-care is integrated with enterprise systems around device alerting and alert distribution to provide an improved environment of care (reduced noise level and improved safety) and clinician interaction.
+Note that future IHE _workflow profiles_ may be defined that build upon the transport and content module foundation established by the SDPi-P profile.
+For example, Operating Room / Surgery Point-of-Care Integration, ICU Point-of-Care Integration, or more service-focused profiles such as Point-of-Care Identity Management (PCIM) for device-patient association management, or Silent ICU / Quiet Hospital, where the acute point-of-care is integrated with enterprise systems around device alerting and alert distribution to provide an improved environment of care (reduced noise level and improved safety) and clinician interaction.
 
 
 [#vol1_clause_sdpi_p_actors_transactions_content_modules,sdpi_offset=1]
@@ -27,7 +27,7 @@ For example, Operating Room / Surgery Point-of-Care Integration, ICU Point-of-Ca
 [cols="1"]
 |===
 a| *{supplement_note}*: Some actors and transactions have been deferred to a subsequent version, but are included here for completeness.
-Specifically:  SOMDS FHIR Gateway, SOMDS Sensor Gateway & SOMDS Smart App Platform, have been deferred.
+Specifically:  SOMDS FHIR Gateway, SOMDS Sensor Gateway and SOMDS Smart App Platform, have been deferred.
 
 Deferred transactions have been so indicated in the transactions table.
 

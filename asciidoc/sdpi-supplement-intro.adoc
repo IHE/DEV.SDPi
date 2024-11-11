@@ -58,7 +58,7 @@ To that end, the supplement includes updates to all (3) IHE DEV TF volumes, incl
 
 *TF-1  Profiles*
 
-* General overview of the SDPi architectural approach & integrated set of profiles
+* General overview of the SDPi architectural approach and integrated set of profiles
 * Profile-specific sections
 * Related appendices, for example the integration of this family of SDPi Profiles with other sources of requirements - use cases or reference standards
 
@@ -96,7 +96,7 @@ These three objectives may be summarized as follows:
 [none]
 * *Requirements Interoperability (RI)*
 [none]
-** Ability to integrate & automate requirements and capabilities from component specifications & standards to enable traceability & coverage at <<term_conformity_assessment>> (<<acronym_ca>>) of the component product interface
+** Ability to integrate and automate requirements and capabilities from component specifications and standards to enable traceability and coverage at <<term_conformity_assessment>> (<<acronym_ca>>) of the component product interface
 * *Model Centric (MC)*
 [none]
 ** Transition from a document-centric to a _computable model-based "single source of truth"_ specification from which the Technical Framework becomes a view of the model
@@ -105,10 +105,10 @@ These three objectives may be summarized as follows:
 ** Enable CA test reports that are genuinely _"regulatory submission ready"_ (e.g., inclusion in a U.S. FDA 510(k) submission package)
 
 The SDPi {ihe_supplement_sdpi_revision} version of the supplement continues to make small but significant steps toward support of these objectives, especially Requirements Interoperability, as well as the use of AsciiDoc metadata to annotate the document sources for post-processing.
-Clearly, moving toward <<term_model_centric>> specifications and full integration of <<term_model_based_systems_engineering>> (<<acronym_mbse>>) will take considerable effort and time; however, this supplement represents a humble start in that direction.
+Clearly, moving toward <<term_model_centric>> specifications and full integration of <<term_model_based_systems_engineering>> will take considerable effort and time; however, this supplement represents a humble start in that direction.
 Subsequent supplement versions will build upon these objectives and support a new level of rigor for connectathon and product conformity assessment testing and ultimately test reports that directly impact the challenges around medical product regulatory submissions.
 
-Additional discussion is provided in <<vol1_appendix_a_requirements_management_for_p_n_t_interperability>>, and on the https://confluence.hl7.org/pages/viewpage.action?pageId=82906664#ConformityAssessment&Tooling-RI+MC+RRforMedTechSpecificationsInitiative[Gemini project's confluence pages].
+Additional discussion is provided in <<vol1_appendix_a_requirements_management_for_p_n_t_interperability>>, and on the https://confluence.hl7.org/pages/viewpage.action?pageId=82906664#ConformityAssessment&Tooling-RI+MC+RRforMedTechSpecificationsInitiative[Gemini project's Confluence pages].
 See also related discussions on the Gemini Project's https://confluence.hl7.org/x/XhPUB[Pathway to an Ecosystem of Plug-and-Trust Products].
 
 
