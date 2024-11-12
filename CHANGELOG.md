@@ -14,6 +14,7 @@ The SDPi changelog shall not contain the following sections
 Each section shall contain a list of action items of the following format: `<brief one-sentence description of what has been done> (#<issue number & URL>).`
 
 ## [Unreleased]
+- Fixed action URN in waveform stream example ([#292](https://github.com/IHE/DEV.SDPi/issues/292))
 
 ## [1.4.1] - 2024-10-04
 
