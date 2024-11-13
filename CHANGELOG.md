@@ -17,16 +17,9 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Editorial Fixes
 - Fixed action URN in waveform stream example ([#292](https://github.com/IHE/DEV.SDPi/issues/292))
-
-## [2.0.0] - TBD release date
-
-### Editorial Fixes
-
 - Clarified intentionality of difference between ad-hoc and managed discovery ([#317](https://github.com/IHE/DEV.SDPi/issues/317))
 
-### Added
 
--
 ## [1.4.1] - 2024-10-04
 
 ### Editorial Fixes
