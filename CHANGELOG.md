@@ -31,8 +31,9 @@ Each section shall contain a list of action items of the following format: `<bri
 
 
 ### Added
+- Clarified intentionality of difference between ad-hoc and managed discovery ([#317](https://github.com/IHE/DEV.SDPi/issues/317))
 
--
+
 ## [1.4.1] - 2024-10-04
 
 ### Editorial Fixes
