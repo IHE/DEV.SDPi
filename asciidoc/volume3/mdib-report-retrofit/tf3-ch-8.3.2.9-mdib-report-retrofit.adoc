@@ -42,6 +42,8 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall not send msg:DescriptionModifi
 [%collapsible]
 ====
 NOTE: This requirement simplifies processing of changes for a <<vol1_spec_sdpi_p_actor_somds_consumer>> in a way that the <<vol1_spec_sdpi_p_actor_somds_consumer>> can apply description modification changes one by one without additional consistency checks. If deletion and re-insertion of objects is needed, a <<vol1_spec_sdpi_p_actor_somds_provider>> sends out two description modification reports successively.
+
+NOTE: DEPRECATION NOTICE - This requirement is being incorporated into the IEEE 11073-10207 BICEPS standard through a corrigendum. Once IEEE has published the IEEE 11073-10207 BICEPS Corrigenda, this SDPi requirement will be no longer needed, and will hence be removed.
 ====
 ****
 
@@ -54,6 +56,8 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall order msg:DescriptionModificat
 [%collapsible]
 ====
 NOTE: This explicitly requires to only communicate children as inserted if the parent has been inserted already, which simplifies insertion of descriptors on the <<vol1_spec_sdpi_p_actor_somds_consumer>> side.
+
+NOTE: DEPRECATION NOTICE - This requirement is being incorporated into the IEEE 11073-10207 BICEPS standard through a corrigendum (albeit without the clarification note immediately above). Once IEEE has published the IEEE 11073-10207 BICEPS Corrigenda, this SDPi requirement will be no longer needed, and will hence be removed.
 ====
 ****
 
@@ -84,5 +88,7 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall communicate a parent descripto
 [%collapsible]
 ====
 NOTE: Replaces biceps:R5046: "If a parent descriptor is deleted, then all child descriptors of that parent SHALL communicated as deleted in advance."
+
+NOTE: DEPRECATION NOTICE - This requirement is being incorporated into the IEEE 11073-10207 BICEPS standard through a corrigendum. Once IEEE has published the IEEE 11073-10207 BICEPS Corrigenda, this SDPi requirement will be no longer needed, and will hence be removed.
 ====
 ****
