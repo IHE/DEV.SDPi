@@ -15,10 +15,15 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ## [Unreleased]
 
-### Editorial Fixes
+### Changed
+
 - Fixed action URN in waveform stream example ([#292](https://github.com/IHE/DEV.SDPi/issues/292))
+
+### Editorial Fixes
+
 - Added deprecation notice for three requirements due to expected impact of BICEPS standard corrigendum ([#334](https://github.com/IHE/DEV.SDPi/issues/334))
 - Improved clarity of Issue Management descriptive text ([#274](https://github.com/IHE/DEV.SDPi/issues/274))
+- Addressed three JIRA tickets listed in issue ([#275](https://github.com/IHE/DEV.SDPi/issues/275))
 
 ## [1.4.1] - 2024-10-04
 
