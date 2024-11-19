@@ -25,16 +25,6 @@ Each section shall contain a list of action items of the following format: `<bri
 - Updated SDPi "Topic of Interest" issue management for clarity ([#274](https://github.com/IHE/DEV.SDPi/issues/274))
 - Addressed three JIRA tickets listed in issue ([#275](https://github.com/IHE/DEV.SDPi/issues/275))
 
-## [2.0.0] - TBD release date
-
-### Editorial Fixes
-
-- Clarified intentionality of difference between ad-hoc and managed discovery ([#317](https://github.com/IHE/DEV.SDPi/issues/317))
-
-
-### Added
-
--
 ## [1.4.1] - 2024-10-04
 
 ### Editorial Fixes
