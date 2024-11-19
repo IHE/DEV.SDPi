@@ -17,7 +17,6 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Editorial Fixes
 - Fixed action URN in waveform stream example ([#292](https://github.com/IHE/DEV.SDPi/issues/292))
-- Miscellaneous editorial review / updates ([#275](https://github.com/IHE/DEV.SDPi/issues/275))
 
 ## [1.4.1] - 2024-10-04
 
