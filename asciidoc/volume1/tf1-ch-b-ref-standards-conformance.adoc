@@ -26,37 +26,37 @@ However, in the current version, three of them are unpublished drafts and are he
 No content from those three standards - including their requirements -  is normatively used in the current version.
 |===
 
-* [[[ref_aami_2700_1_2019,AAMI 2700-1:2019]]]  AAMI 2700-1:2019  Medical Devices And Medical Systems - Essential Safety And Performance Requirements For Equipment Comprising The Patient-Centric Integrated Clinical Environment (ICE) - Part 1: General Requirements And Conceptual Model, available at https://webstore.ansi.org/Standards/AAMI/ansiaami27002019[ANSI/AAMI web store].
+* [[[ref_aami_2700_1_2019,AAMI 2700-1:2019]]]  AAMI 2700-1:2019  Medical Devices And Medical Systems - Essential Safety And Performance Requirements For Equipment Comprising The Patient-Centric Integrated Clinical Environment (ICE) - Part 1: General Requirements And Conceptual Model, available at https://webstore.ansi.org/Standards/AAMI/ansiaami27002019.
 
 * [[[ref_hl7_fhir,HL7 FHIR]]]  HL7^&#174;^ Fast Healthcare Interoperability Resources (FHIR^&#174;^), available at http://hl7.org/fhir/[hl7.org/fhir/].
 
-* [[[ref_hl7_fhir_pocd_ig,HL7 FHIR Point-of-Care Device Implementation Guide]]] HL7 FHIR Point-of-Care Device Implementation Guide, drafts available on the https://confluence.hl7.org/display/DOF/Devices+On+FHIR[Devices on FHIR project page], and a continuous build version at http://build.fhir.org/ig/HL7/uv-pocd/[Point-of-Care Device Implementation Guide web page].
+* [[[ref_hl7_fhir_pocd_ig,HL7 FHIR Point-of-Care Device Implementation Guide]]] HL7 FHIR Point-of-Care Device Implementation Guide, drafts available at https://confluence.hl7.org/display/DOF/Devices+On+FHIR and (continuous build version) at https://build.fhir.org/ig/HL7/uv-pocd/.
 
-* [[[ref_hl7_v2,HL7 V2]]] HL7^&#174;^ Version 2 (V2), available at https://www.hl7.org/implement/standards/product_brief.cfm?product_id=185[HL7 Version 2 Product Suite web page].
+* [[[ref_hl7_v2,HL7 V2]]] HL7^&#174;^ Version 2 (V2), available at https://www.hl7.org/implement/standards/product_brief.cfm?product_id=185.
 
-* [[[ref_iec_60601_1_8_2020,IEC 60601-1-8:2020]]], IEC 60601-1-8:2006/AMD2:2020, Medical electrical equipment — Part 1-8: General requirements for basic safety and essential performance — Collateral standard: General requirements, tests and guidance for alarm systems in medical electrical equipment and medical electrical systems; Amendment 1:2020, and Amendment 2:2020. available at https://webstore.iec.ch/publication/59648[IEC Webstore] and the https://www.iso.org/standard/41986.html[ISO standards store].
+* [[[ref_iec_60601_1_8_2020,IEC 60601-1-8:2020]]], IEC 60601-1-8:2006/AMD2:2020, Medical electrical equipment — Part 1-8: General requirements for basic safety and essential performance — Collateral standard: General requirements, tests and guidance for alarm systems in medical electrical equipment and medical electrical systems; Amendment 1:2020, and Amendment 2:2020, available at https://webstore.iec.ch/publication/59648 and https://www.iso.org/standard/41986.html.
 
-* [[[ref_ieee_11073_10101_2020,IEEE 11073-10101:2020]]] IEEE 11073-10101™ International Standard - Health informatics--Device interoperability--Part 10101:Point-of-care medical device communication--Nomenclature.  Available at https://standards.ieee.org/ieee/11073-10101/10343/[IEEE online standards store].
+* [[[ref_ieee_11073_10101_2020,IEEE 11073-10101:2020]]] IEEE 11073-10101™ International Standard - Health informatics--Device interoperability--Part 10101:Point-of-care medical device communication--Nomenclature, available at https://standards.ieee.org/ieee/11073-10101/10343/.
 
-* [[[ref_ieee_11073_10201_2004,IEEE 11073-10201:2004]]] IEEE 11073-10201™ International Standard - Health informatics--Device interoperability--Part 10201:Point-of-care medical device communication--Domain information model.  Note this was updated in 2020.  Available at https://standards.ieee.org/ieee/11073-10201/10263/[IEEE online standards store].
+* [[[ref_ieee_11073_10201_2004,IEEE 11073-10201:2004]]] IEEE 11073-10201™ International Standard - Health informatics--Device interoperability--Part 10201:Point-of-care medical device communication--Domain information model.  Note this was updated in 2020.  Available at https://standards.ieee.org/ieee/11073-10201/10263/.
 
-* [[[ref_ieee_11073_10207_2017,ISO/IEEE 11073-10207:2017]]] ISO/IEEE 11073-10207-2017, Health informatics — Point-of-care medical device communication — Part 10207: Domain Information and Service Model for Service-Oriented Point-of-Care Medical Device Communication, 2017-12, available at https://standards.ieee.org/ieee/11073-10207/6032 footnote:ieee_permission[]
+* [[[ref_ieee_11073_10207_2017,ISO/IEEE 11073-10207:2017]]] ISO/IEEE 11073-10207-2017, Health informatics — Point-of-care medical device communication — Part 10207: Domain Information and Service Model for Service-Oriented Point-of-Care Medical Device Communication, 2017-12, available at https://standards.ieee.org/ieee/11073-10207/6032 footnote:ieee_permission[].
 
-* [[[ref_ieee_11073_10700_2022,IEEE 11073-10700:2022]]] IEEE P11073-10700™/D7 Draft Standard for Health Informatics – Device Interoperability – Part 10700: Point-of-Care Medical Device Communication – Standard for Base Requirements for Participants in a Service-Oriented Device Connectivity (SDC) System.
+* [[[ref_ieee_11073_10700_2022,IEEE 11073-10700:2022]]] IEEE 11073-10700™ IEEE Standard -- Health Informatics--Device Interoperability Part 10700: Point‐of‐Care Medical Device Communication--Standard for Base Requirements for Participants in a Service‐Oriented Device Connectivity (SDC) System, available at https://standards.ieee.org/ieee/11073-10700/10630/.
 
-* [[[ref_ieee_11073_10701_2022,IEEE 11073-10701:2022]]] IEEE P11073-10701™/D4 Draft Standard for Health Informatics – Device Interoperability – Part 10701: Point-of-Care Medical Device Communication - Metric Provisioning by Participants in a Service-Oriented Device Connectivity (SDC) System
+* [[[ref_ieee_11073_10701_2022,IEEE 11073-10701:2022]]] IEEE 11073-10701™ IEEE Standard for Health Informatics - Device Interoperability - Part 10701: Point-of-Care Medical Device Communication - Metric Provisioning by Participants in a Service-Oriented Device Connectivity (SDC) System, available at https://standards.ieee.org/ieee/11073-10701/7538/.
 
-* [[[ref_ieee_11073_10702_202x,IEEE 11073-10702:202x]]] IEEE P11073-10702™/D1 Draft Standard for Health Informatics – Device Interoperability – Part 10702: Point-of-Care Medical Device Communication – Alert Provisioning by Participants in a Service-Oriented Device Connectivity (SDC) System
+* [[[ref_ieee_11073_10702_202x,IEEE 11073-10702:202x]]] IEEE P11073-10702™/D1 Draft Standard for Health Informatics – Device Interoperability – Part 10702: Point-of-Care Medical Device Communication – Alert Provisioning by Participants in a Service-Oriented Device Connectivity (SDC) System, in development.
 
 * [[[ref_ieee_11073_10703_202x,IEEE 11073-10703:202x]]] IEEE P11073-10703™/Draft Standard for Health Informatics – Device Interoperability – Part 10703: Point-of-Care Medical Device Communication – External Control by Participants in a Service-Oriented Device Connectivity (SDC) System, in development.
 
-* [[[ref_ieee_11073_20701_2018,ISO/IEEE 11073-20701:2018]]] ISO/IEEE 11073-20701-2018, Health informatics — Point-of-care medical device communication — Part 20701: Service-Oriented Medical Device Exchange Architecture and Protocol Binding, 2018-09, available at https://standards.ieee.org/ieee/11073-20701/6059
+* [[[ref_ieee_11073_20701_2018,ISO/IEEE 11073-20701:2018]]] ISO/IEEE 11073-20701-2018, Health informatics — Point-of-care medical device communication — Part 20701: Service-Oriented Medical Device Exchange Architecture and Protocol Binding, 2018-09, available at https://standards.ieee.org/ieee/11073-20701/6059.
 
 * [[[ref_ieee_11073_20702_2016,ISO/IEEE 11073-20702:2016]]] ISO/IEEE 11073-20702-2016, Health informatics — Point-of-care medical device communication — Part 20702: Medical Devices Communication Profile for Web Services, 2016-09, available at https://standards.ieee.org/ieee/11073-20702/6034
 
-* [[[ref_iec_80001_1_2021,ISO/IEC 80001-1:2021]]], IEC 80001-1:2021 Application of risk management for IT-networks incorporating medical devices — Part 1: Safety, effectiveness and security in the implementation and use of connected medical devices or connected health software.  Available at https://webstore.iec.ch/publication/34263[IEC Webstore] and https://www.iso.org/standard/72026.html[ISO standards store].
+* [[[ref_iec_80001_1_2021,ISO/IEC 80001-1:2021]]], IEC 80001-1:2021 Application of risk management for IT-networks incorporating medical devices — Part 1: Safety, effectiveness and security in the implementation and use of connected medical devices or connected health software, available at https://webstore.iec.ch/publication/34263 and https://www.iso.org/standard/72026.html.
 
-* [[[ref_iso_81001_1_2021,ISO/IEC 81001-1:2021]]], ISO 81001-1:2021  Health software and health IT systems safety, effectiveness and security — Part 1: Principles and concepts.  Availabe at https://www.iso.org/standard/71538.html[ISO standards store] and https://webstore.iec.ch/publication/34286[IEC Webstore].
+* [[[ref_iso_81001_1_2021,ISO/IEC 81001-1:2021]]], ISO 81001-1:2021  Health software and health IT systems safety, effectiveness and security — Part 1: Principles and concepts, available at https://www.iso.org/standard/71538.html and https://webstore.iec.ch/publication/34286.
 
 * [[[ref_ihe_pcd_tf_1_2019,IHE PCD TF-1:2019]]] IHE Patient Care Device Technical Framework, Vol. 1, available at https://www.ihe.net/uploadedFiles/Documents/PCD/IHE_PCD_TF_Vol1.pdf.
 
@@ -70,15 +70,15 @@ No content from those three standards - including their requirements -  is norma
 
 * [[[ref_oasis_soap_over_udp_v1_1, OASIS SOAP-over-UDP Version 1.1]]] OASIS Standard, SOAP-over-UDP Version 1.1, July 2009, available at http://docs.oasis-open.org/ws-dd/soapoverudp/1.1/os/wsdd-soapoverudp-1.1-spec-os.docx.
 
-* [[[ref_oasis_ws_addressing_2006,W3C Recommendation, WS-Addressing:2006]]] Web Services Addressing 1.0 - Core (WS-Eventing), W3C Recommendation 9 May 2006, available at https://www.w3.org/TR/2006/REC-ws-addr-core-20060509/
+* [[[ref_oasis_ws_addressing_2006,W3C Recommendation, WS-Addressing:2006]]] Web Services Addressing 1.0 - Core (WS-Eventing), W3C Recommendation 9 May 2006, available at https://www.w3.org/TR/2006/REC-ws-addr-core-20060509/.
 
-* [[[ref_oasis_ws_discovery_2009,OASIS WS-Discovery:2009]]] OASIS Standard, Web Services Dynamic Discovery (WS-Discovery) Version 1.1, OASIS Standard, 1 July 2009, available at http://docs.oasis-open.org/ws-dd/discovery/1.1/wsdd-discovery-1.1-spec.html
+* [[[ref_oasis_ws_discovery_2009,OASIS WS-Discovery:2009]]] OASIS Standard, Web Services Dynamic Discovery (WS-Discovery) Version 1.1, OASIS Standard, 1 July 2009, available at http://docs.oasis-open.org/ws-dd/discovery/1.1/wsdd-discovery-1.1-spec.html.
 
-* [[[ref_w3c_ws_eventing_2006,W3C Submission, WS-Eventing:2006]]] W3C Web Services Eventing (WS-Eventing), W3C Member Submission 15 March 2006, available at https://www.w3.org/Submission/2006/SUBM-WS-Eventing-20060315/
+* [[[ref_w3c_ws_eventing_2006,W3C Submission, WS-Eventing:2006]]] W3C Web Services Eventing (WS-Eventing), W3C Member Submission 15 March 2006, available at https://www.w3.org/Submission/2006/SUBM-WS-Eventing-20060315/.
 
-* [[[ref_w3c_ws_metadata_exchange_2008,W3C Submission, WS-MetadataExchange:2008]]] Web Services Metadata Exchange 1.1 (WS-MetadataExchange), W3C Member Submission 13 August 2008, available at https://www.w3.org/Submission/2008/SUBM-WS-MetadataExchange-20080813/
+* [[[ref_w3c_ws_metadata_exchange_2008,W3C Submission, WS-MetadataExchange:2008]]] Web Services Metadata Exchange 1.1 (WS-MetadataExchange), W3C Member Submission 13 August 2008, available at https://www.w3.org/Submission/2008/SUBM-WS-MetadataExchange-20080813/.
 
-* [[[ref_wc3_ws_transfer_2006,WC3 Standard, WS-Transfer:2006]]] WC3 Web Services Transfer (WS-Transfer), W3C Standard, 27 September 2006, available at https://www.w3.org/Submission/WS-Transfer/
+* [[[ref_wc3_ws_transfer_2006,WC3 Standard, WS-Transfer:2006]]] WC3 Web Services Transfer (WS-Transfer), W3C Standard, 27 September 2006, available at https://www.w3.org/Submission/WS-Transfer/.
 
 // Appendix B.x
 [#vol1_appendix_b_referenced_standards_conformance]

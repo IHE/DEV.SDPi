@@ -23,10 +23,9 @@ Each section shall contain a list of action items of the following format: `<bri
 - Added deprecation notice for three requirements due to expected impact of BICEPS standard corrigendum ([#334](https://github.com/IHE/DEV.SDPi/issues/334))
 - Updated SDPi "Topic of Interest" issue management for clarity ([#274](https://github.com/IHE/DEV.SDPi/issues/274))
 - Addressed three JIRA tickets listed in issue ([#275](https://github.com/IHE/DEV.SDPi/issues/275))
+- Corrected some entries in "1:B.1 Referenced Standards" for consistency ([#267](https://github.com/IHE/DEV.SDPi/issues/267))
 
-### Added
 
--
 ## [1.4.1] - 2024-10-04
 
 ### Editorial Fixes
