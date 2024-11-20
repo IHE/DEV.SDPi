@@ -202,12 +202,12 @@ Given the significant risks associated with allowing device-external control fun
 | <<acronym_sdpi_r>>
 | Device Enterprise Communication (DEC))
 | The <<actor_somds_dec_gateway>> integrates DEC Device Observation Reporter (DOR) Actor specifications.
-| Required for mapping from <<acronym_sdc>> & <<acronym_biceps>>  to HL7 V2 and DEC transactions.
+| Required for mapping from <<acronym_sdc>> and <<acronym_biceps>>  to HL7 V2 and DEC transactions.
 
 | <<acronym_sdpi_a>>
 | Alert Communication Management (ACM)
 | The <<actor_somds_acm_gateway>> integrates ACM Alert Reporter (AR) Actor specifications.
-| Required for mapping from <<acronym_sdc>> & <<acronym_biceps>>  to HL7 V2 and ACM transactions.
+| Required for mapping from <<acronym_sdc>> and <<acronym_biceps>>  to HL7 V2 and ACM transactions.
 
 |===
 

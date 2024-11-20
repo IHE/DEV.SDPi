@@ -12,7 +12,7 @@ Filter the issues on "Topic of Interest" to see a full list related to any "Topi
 * To see the full list of OPEN issues, go to https://github.com/IHE/DEV.SDPi/issues?q=is%3Aissue+is%3Aopen+label%3A%22Topic+of+Interest%22
 * To see the full list of CLOSED issues, go to https://github.com/IHE/DEV.SDPi/issues?q=is%3Aissue+is%3Aclosed+label%3A%22Topic+of+Interest%22
 
-For more detailed information on how the Gemini SES+MDI program manages issues from identification to resolution to incorporation into this supplement, see the wiki article https://github.com/IHE/DEV.SDPi/wiki/Program-Coordination-Co-Working-Spaces#overview-from-discussion-to-planning-to-development[_Overview: From Discussion to Planning to Development_] and the confluence article https://confluence.hl7.org/pages/viewpage.action?pageId=82912211#TopicsofInterest-TopicResolutionWorkflow[_Topics of Interest -- Topic Resolution Workflow_].
+For more detailed information on how the Gemini SES+MDI program manages issues from identification to resolution to incorporation into this supplement, see the wiki article https://github.com/IHE/DEV.SDPi/wiki/Program-Coordination-Co-Working-Spaces#overview-from-discussion-to-planning-to-development[_Overview: From Discussion to Planning to Development_] and the Confluence article https://confluence.hl7.org/pages/viewpage.action?pageId=82912211#TopicsofInterest-TopicResolutionWorkflow[_Topics of Interest -- Topic Resolution Workflow_].
 
 [sdpi_offset=clear]
 === Open Issues and Topic of Interests
