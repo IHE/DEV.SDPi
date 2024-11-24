@@ -12,7 +12,6 @@ import org.sdpi.asciidoc.BlockAttribute
 import org.sdpi.asciidoc.model.SdpiRequirement
 import org.sdpi.asciidoc.model.StructuralNodeWrapper
 import org.sdpi.asciidoc.model.toSealed
-import org.sdpi.asciidoc.model.SdpiRequirementList
 import org.sdpi.asciidoc.plainContext
 
 class RequirementListProcessor(private val requirements : RequirementsBlockProcessor): Treeprocessor()

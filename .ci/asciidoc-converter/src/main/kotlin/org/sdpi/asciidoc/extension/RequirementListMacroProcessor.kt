@@ -9,7 +9,6 @@ import org.apache.logging.log4j.kotlin.Logging
 import org.asciidoctor.Options
 import org.asciidoctor.ast.ContentModel
 import org.sdpi.asciidoc.Attributes
-import org.sdpi.asciidoc.model.SdpiRequirementList
 
 const val BLOCK_MACRO_NAME_SDPI_REQUIREMENT_LIST = "sdpi_requirement_list"
 
