@@ -170,7 +170,10 @@ class NumberingProcessor(
 
                 is StructuralNodeWrapper.Table -> replaceCaption(node.wrapped, "Table")
 
-                else -> logger.debug { "Ignore block of type '${block.context}'" }
+                else ->
+                    {
+                    //logger.debug { "Ignore block of type '${block.context}'" }
+                    }
             }
         }
     }

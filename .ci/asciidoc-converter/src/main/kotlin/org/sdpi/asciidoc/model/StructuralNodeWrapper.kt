@@ -11,9 +11,9 @@ fun StructuralNode.toSealed(): StructuralNodeWrapper {
     return when (this.context) {
         "section" -> StructuralNodeWrapper.Section(this as Section)
         "document" -> StructuralNodeWrapper.Document(this as Document)
-        "paragraph" -> StructuralNodeWrapper.Paragraph(this as Block)
+        "paragraph" -> createParagraphWrapper(this)
         "image" -> StructuralNodeWrapper.Image(this as Block)
-        "table" -> StructuralNodeWrapper.Table(this as Table)
+        "table" -> createTableWrapper(this)
         "listing" -> StructuralNodeWrapper.Listing(this as Block)
         "sidebar" -> this.attributes.entries.find {
             it.key == "1" && it.value == BLOCK_NAME_SDPI_REQUIREMENT
@@ -24,6 +24,21 @@ fun StructuralNode.toSealed(): StructuralNodeWrapper {
     }
 }
 
+fun createParagraphWrapper(n : StructuralNode): StructuralNodeWrapper
+{
+    return StructuralNodeWrapper.Paragraph(n as Block)
+}
+
+fun createTableWrapper(n:StructuralNode) : StructuralNodeWrapper
+{
+    if (n.hasRole("requirement-list"))
+    {
+        return StructuralNodeWrapper.SdpiRequirementList(n as Table)
+    }
+
+    return StructuralNodeWrapper.Table(n as Table)
+}
+
 /**
  * Wrapper class for improved functional dispatching.
  */
@@ -32,6 +47,7 @@ sealed class StructuralNodeWrapper {
     data class Document(val wrapped: org.asciidoctor.ast.Document) : StructuralNodeWrapper()
     data class Sidebar(val wrapped: Block) : StructuralNodeWrapper()
     data class SdpiRequirement(val wrapped: Block) : StructuralNodeWrapper()
+    data class SdpiRequirementList(val wrapped: org.asciidoctor.ast.Table) : StructuralNodeWrapper()
     data class Paragraph(val wrapped: Block): StructuralNodeWrapper()
     data class Image(val wrapped: Block): StructuralNodeWrapper()
     data class Table(val wrapped: org.asciidoctor.ast.Table): StructuralNodeWrapper()

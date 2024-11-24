@@ -29,7 +29,16 @@ class AsciidocConverter(
 
         val anchorReplacements = AnchorReplacementsMap()
 
-        val requirementsBlockProcessor = RequirementsBlockProcessor()
+        // todo: load from somewhere, e.g. JSON file.
+        val sourceSpecifications : Map<String, String> = mapOf(
+            "sdpi" to "1.3.6.1.4.1.19376.1.6.2.10.1.1.1",
+            "sdpi-p" to "1.3.6.1.4.1.19376.1.6.2.11",
+            "sdpi-a" to "1.3.6.1.4.1.19376.1.6.2.x",
+            "sdpi-r" to "1.3.6.1.4.1.19376.1.6.2.x",
+            "sdpi-xC" to "1.3.6.1.4.1.19376.1.6.2.x",
+        )
+
+        val requirementsBlockProcessor = RequirementsBlockProcessor(sourceSpecifications)
         asciidoctor.javaExtensionRegistry().block(requirementsBlockProcessor)
         asciidoctor.javaExtensionRegistry().treeprocessor(
             NumberingProcessor(
@@ -40,6 +49,12 @@ class AsciidocConverter(
                 anchorReplacements
             )
         )
+
+        val requirementsListBlockMacroProcess = RequirementListMacroProcessor()
+        val requirementsListProcessor = RequirementListProcessor(requirementsBlockProcessor)
+        asciidoctor.javaExtensionRegistry().blockMacro(requirementsListBlockMacroProcess)
+        asciidoctor.javaExtensionRegistry().treeprocessor(requirementsListProcessor)
+
         asciidoctor.javaExtensionRegistry().treeprocessor(RequirementLevelProcessor())
         asciidoctor.javaExtensionRegistry().preprocessor(IssuesSectionPreprocessor(githubToken))
         asciidoctor.javaExtensionRegistry().preprocessor(DisableSectNumsProcessor())

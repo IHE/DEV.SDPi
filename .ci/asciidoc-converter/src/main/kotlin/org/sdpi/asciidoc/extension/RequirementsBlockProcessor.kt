@@ -25,7 +25,7 @@ private typealias Occurrence = Int
 @Name(BLOCK_NAME_SDPI_REQUIREMENT)
 @Contexts(Contexts.SIDEBAR)
 @ContentModel(ContentModel.COMPOUND)
-class RequirementsBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
+class RequirementsBlockProcessor(val sourceSpecifications : Map<String,String>) : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
     private val intendedDuplicates = mutableMapOf<RequirementNumber, Occurrence>()
 
     private companion object : Logging {
@@ -48,15 +48,17 @@ class RequirementsBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
         attributes: MutableMap<String, Any>
     ): Any = retrieveRequirement(
         reader,
-        Attributes.create(attributes)
+        attributes
     ).let { requirement ->
         logger.info { "Found SDPi requirement #${requirement.number}: $requirement" }
         requirement.asciiDocAttributes[BlockAttribute.ROLE] = REQUIREMENT_ROLE
+        attributes["role"] = REQUIREMENT_ROLE
         storeRequirement(requirement)
         createBlock(
             parent, plainContext(Contexts.SIDEBAR), mapOf(
                 Options.ATTRIBUTES to attributes, // copy attributes for further processing
-                ContentModel.KEY to ContentModel.COMPOUND // signify construction of a compound object
+                ContentModel.KEY to ContentModel.COMPOUND, // signify construction of a compound object
+
             )
         ).also {
             // make sure to separately parse contents since reader was requested by retrieveRequirement()
@@ -65,9 +67,49 @@ class RequirementsBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
         }
     }
 
-    private fun retrieveRequirement(reader: Reader, attributes: Attributes): SdpiRequirement {
-        val matchResults = REQUIREMENT_NUMBER_FORMAT.findAll(attributes.id())
-        val requirementNumber = matchResults.map { it.groupValues[1] }.toList().first().toInt()
+    private fun retrieveRequirement(reader: Reader, mutableAttributes: MutableMap<String, Any>): SdpiRequirement {
+        val requirementNumber : Int
+        val strId = mutableAttributes["id"]
+        if (strId != null) {
+            val matchResults = REQUIREMENT_NUMBER_FORMAT.findAll(strId.toString())
+            requirementNumber = matchResults.map { it.groupValues[1] }.toList().first().toInt()
+        }
+        else {
+            val strTitle = mutableAttributes["title"]
+            requirementNumber = REQUIREMENT_TITLE_FORMAT.findAll(strTitle.toString())
+                .map { it.groupValues[2] }.toList().first().toInt()
+            mutableAttributes["id"] = "r$requirementNumber"
+        }
+
+        var strGlobalId : String? = null
+        val strSourceSpecification = mutableAttributes["sdpi_req_specification"]
+        if (strSourceSpecification != null){
+            val strSourceId = sourceSpecifications[strSourceSpecification]
+            if (strSourceId != null){
+                strGlobalId = "$strSourceId.2.$requirementNumber"
+            }
+        }
+        checkNotNull(strGlobalId){
+            ("Missing source specification for SDPi requirement #$requirementNumber"). also {
+                logger.error(it)
+            }
+        }
+
+        mutableAttributes["id"] = strGlobalId
+        mutableAttributes["title"] = "R${String.format("%04d", requirementNumber)} [.global-id]#`(${strGlobalId})`#"
+
+        val aGroups : List<String>
+        val strGroups = mutableAttributes["sdpi_req_group"]
+        if (strGroups != null)
+        {
+            aGroups = strGroups.toString().split(",")
+        }
+        else
+        {
+            aGroups = listOf()
+        }
+
+        val attributes = Attributes.create((mutableAttributes))
         val maxOccurrence = attributes[BlockAttribute.MAX_OCCURRENCE]?.toInt() ?: 1
 
         if (intendedDuplicates.containsKey(requirementNumber)) {
@@ -86,7 +128,9 @@ class RequirementsBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
         try {
             return SdpiRequirement(
                 requirementNumber,
+                strGlobalId,
                 requirementLevel,
+                aGroups,
                 maxOccurrence,
                 attributes,
                 lines
@@ -103,6 +147,8 @@ class RequirementsBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
     }
 
     private fun validateRequirement(requirement: SdpiRequirement) {
+        // Don't need this; we generate the title now.
+        /*
         val reqNumberFromTitle = REQUIREMENT_TITLE_FORMAT.findAll(requirement.blockTitle)
             .map { it.groupValues[2] }.toList().first().toInt()
         check(reqNumberFromTitle == requirement.number) {
@@ -110,7 +156,7 @@ class RequirementsBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
                     "title=${requirement.blockTitle}, id=${requirement.blockId}").also {
                 logger.error { it }
             }
-        }
+        }*/
 
         checkNotNull(requirement.asciiDocAttributes[BlockAttribute.ROLE]) {
             "SDPi requirement #'${requirement.number}' has no role; expected '$REQUIREMENT_ROLE'".also {
