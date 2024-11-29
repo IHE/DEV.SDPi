@@ -23,4 +23,10 @@ A <<actor_somds_provider>> that has implemented the *<<acronym_biceps>> LOCALIZA
 NOTE: The version number can be part of unique text catalog identifier, e. g. the last sub-node of the *OID*. In this case, it is not necessary that the <<actor_somds_provider>> provides a text catalog verion number in the *pm:MdsDescriptor+++<wbr/>+++/ProductionSpecification*.
 ****
 
+.R0711
+[sdpi_requirement#r0711,sdpi_req_level=shall]
+****
+A <<actor_somds_provider>> that provides a unique text catalog identifier in the *pm:MdsDescriptor+++<wbr/>+++/ProductionSpecification* but does not support versioning of the text catalog shall provide a new unique text catalog identifier for each new version of the text catalog.
+****
+
 *TBD*: #which codes can be used for the text catalog id and the version in the ProductSpecification? Do we need new codes? Can we define SDPi OIDs or some similar for that?#
