@@ -10,23 +10,23 @@ In order to reduce the effort for a <<actor_somds_consumer>> for managing indivi
 .R0709
 [sdpi_requirement#r0709,sdpi_req_level=should]
 ****
-A <<actor_somds_provider>> that has implemented the *<<acronym_biceps>> LOCALIZATION SERVICE* should provide a unique text catalog identifier in the *pm:MdsDescriptor+++<wbr/>+++/ProductionSpecification*.
+A <<actor_somds_provider>> that has implemented the *<<acronym_biceps>> LOCALIZATION SERVICE* should provide a unique text catalog identifier in the *pm:MdsDescriptor+++<wbr/>+++/pm:ProductionSpecification* list with *pm:ProductionSpecification+++<wbr/>+++/pm:SpecType+++<wbr/>+++/@Code = 68008 (MDC_ATTR_VMS_MDS_TEXT_CAT)*.
 
-NOTE: The unique text catalog identifier can be an *urn* of type *uuid* or *oid*, e. g. *"urn:oid:1.3.6.1.4.1.1234.4.1.2.1"*.
+NOTE: The unique text catalog identifier defined in the corresponding *pm:ProductionSpecification+++<wbr/>+++/pm:ProductionSpec* can be an *urn* of type *uuid* or *oid*, e. g. *"urn:oid:1.3.6.1.4.1.1234.4.1.2.1"*.
 ****
 
 .R0710
 [sdpi_requirement#r0710,sdpi_req_level=should]
 ****
-A <<actor_somds_provider>> that has implemented the *<<acronym_biceps>> LOCALIZATION SERVICE* and supports versioning of the text catalog should provide a unique version number along with the unique text catalog identifier in the *pm:MdsDescriptor+++<wbr/>+++/ProductionSpecification*.
+A <<actor_somds_provider>> that has implemented the *<<acronym_biceps>> LOCALIZATION SERVICE* and supports versioning of the text catalog should provide a unique version number concatenated with the unique text catalog identifier and separated from the unique text catalog identifier by two colons (*"::"*) in the *pm:MdsDescriptor+++<wbr/>+++/ProductionSpecification+++<wbr/>+++/pm:ProductionSpec*.
 
-NOTE: The version number can be part of unique text catalog identifier, e. g. the last sub-node of the *OID*. In this case, it is not necessary that the <<actor_somds_provider>> provides a text catalog verion number in the *pm:MdsDescriptor+++<wbr/>+++/ProductionSpecification*.
+NOTE: *"urn:oid:1.3.6.1.4.1.1234.4.1.2.1::v1.2.2*" is an example of a unique text catalog id with a concatenated text catalog version.
+
+NOTE: The version number can be part of unique text catalog identifier, e. g. the last sub-node of the *OID*. In this case, the requirement does not apply.
 ****
 
 .R0711
 [sdpi_requirement#r0711,sdpi_req_level=shall]
 ****
-A <<actor_somds_provider>> that provides a unique text catalog identifier in the *pm:MdsDescriptor+++<wbr/>+++/ProductionSpecification* but does not support versioning of the text catalog shall provide a new unique text catalog identifier for each new version of the text catalog.
+A <<actor_somds_provider>> that provides a unique text catalog identifier in the *pm:MdsDescriptor+++<wbr/>+++/pm:ProductionSpecification* list but does not support versioning of the text catalog shall provide a new unique text catalog identifier for each new version of the text catalog.
 ****
-
-*TBD*: #which codes can be used for the text catalog id and the version in the ProductSpecification? Do we need new codes? Can we define SDPi OIDs or some similar for that?#
