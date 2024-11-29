@@ -17,26 +17,28 @@ enum class RequirementLevel(val keyword: String) {
 /**
  * Define requirement types. See SDPi Requirements Core Model [[SDPi:§1:A.4.1]]
  * @property keyword: the ascii doc attribute key.
+ * @property description: friendly label for the requirement type (e.g., to
+ * describe types in tables).
  */
-enum class RequirementType(val keyword: String)
+enum class RequirementType(val keyword: String, val description: String)
 {
     // A requirement in a high-level, profile-independent use case specification
-    USE_CASE("use_case_feature"),
+    USE_CASE("use_case_feature", "Use case feature" ),
 
     // A basic technical requirement that is not one of the other categories
     // and does not require additional metadata.
-    TECH("tech_feature"),
+    TECH("tech_feature", "Technical feature"),
 
     // Requirement associated to an aspect of an IHE profile specification
-    IHE_PROFILE("ihe_profile"),
+    IHE_PROFILE("ihe_profile", "IHE profile"),
 
     // A requirement linked to an implementation conformance statement in
     // a referenced standard
-    REF_ICS("ref_ics"),
+    REF_ICS("ref_ics", "Referenced implementation conformance statement"),
 
     // Requirement that represents a quality aspect of the specification typically
     // related to risk management activities and resulting mitigations
-    RISK_MITIGATION("risk_mitigation"),
+    RISK_MITIGATION("risk_mitigation", "Risk management and mitigation"),
 }
 
 /**
@@ -67,4 +69,9 @@ data class SdpiRequirement(
     val blockId = globalId
     val localId = String.format("R%04d", number)
     val blockTitle = asciiDocAttributes.title()
+
+    fun makeLink() : String
+    {
+        return "link:#$blockId[$localId]"
+    }
 }

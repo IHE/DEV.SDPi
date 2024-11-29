@@ -216,14 +216,7 @@ class RequirementsBlockProcessor() : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT)
      * Retrieves the list of groups the requirement belongs to (if any).
      */
     private fun getRequirementGroupMembership(mutableAttributes: MutableMap<String, Any>): List<String> {
-        val strGroups = mutableAttributes[BlockAttribute.REQUIREMENT_GROUPS.key]
-        if (strGroups == null) {
-            // Requirement isn't a member of any groups; that's okay.
-            return listOf()
-        }
-        val aGroups = strGroups.toString().split(",")
-
-        return aGroups
+        return  getRequirementGroups( mutableAttributes[BlockAttribute.REQUIREMENT_GROUPS.key])
     }
 
     /**

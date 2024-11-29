@@ -9,33 +9,55 @@ import org.apache.logging.log4j.kotlin.Logging
 import org.asciidoctor.Options
 import org.asciidoctor.ast.ContentModel
 import org.sdpi.asciidoc.Attributes
+import org.sdpi.asciidoc.BlockAttribute
 
 const val BLOCK_MACRO_NAME_SDPI_REQUIREMENT_LIST = "sdpi_requirement_list"
 
+/**
+ * The role applied to requirement list placeholder tables. This role
+ * enables the RequirementListProcessor to figure out which tables it
+ * needs to populate.
+ */
+const val REQUIREMENT_LIST_ROLE = "requirement-list"
+
+/**
+ * Processor for requirement list block macros.
+ * The requirement list block macro provides a mechanism to insert a table
+ * summarizing requirements that match a filter included in the macro. For
+ * example, all requirement in a group.
+ *
+ * Filter parameters are included as macro attributes. Available filters are:
+ *      - groups (sdpi_req_group): include requirements belonging to any
+ *              of the supplied groups.
+ *
+ * Example: to include a table of all requirements in the consumer or
+ * discovery-proxy groups insert:
+ * sdpi_requirement_list::[sdpi_req_group="consumer,discovery-proxy"]
+ *
+ * Not all requirements may be defined when the block macro is processed so
+ * this processor prepares the document for the RequirementListProcessor
+ * to actually populate the table; it simply inserts a table placeholer.
+ */
 @Name(BLOCK_MACRO_NAME_SDPI_REQUIREMENT_LIST)
 class RequirementListMacroProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_SDPI_REQUIREMENT_LIST)
 {
     private companion object : Logging {
-
     }
 
     override fun process(parent: StructuralNode, target: String, attributes: MutableMap<String, Any>): Any
     {
-        logger.info {"Found SDPi requirement list"}
+        attributes["role"] = REQUIREMENT_LIST_ROLE
+        val placeholderTable = createTable(parent)
+        placeholderTable.attributes["role"] = REQUIREMENT_LIST_ROLE
 
-        attributes["role"] = "requirement-list"
-        //val myNode = createBlock(parent, plainContext(Contexts.PARAGRAPH), mapOf( Options.ATTRIBUTES  to attributes, ContentModel.KEY to ContentModel.COMPOUND))
-
-        val myNode = createTable(parent)
-        myNode.attributes["role"] = "requirement-list"
-
-        val strGroup = attributes["sdpi_req_group"]
+        // Add filter attributes to the table for the tree processor to consume.
+        val strGroup = attributes[BlockAttribute.REQUIREMENT_GROUPS.key]
         if (strGroup != null)
         {
-            myNode.attributes["sdpi_req_group"] = strGroup
+            placeholderTable.attributes[BlockAttribute.REQUIREMENT_GROUPS.key] = strGroup
         }
 
-        return myNode
+        return placeholderTable
     }
 
 }
