@@ -272,7 +272,10 @@ include::biceps-extension-provisions/tf3-ch-8.3.2.9.5-extension-gender.adoc[]
 
 include::biceps-extension-provisions/tf3-ch-8.3.2.9.6-extension-equipment-identifier.adoc[]
 
+
 include::biceps-content-module/tf3-ch-8.3.2.9.7-compound-metric-modelling.adoc[]
+
+include::biceps-extension-provisions/tf3-ch-8.3.2.9.7-extension-timestamp.adoc[]
 
 // 8.3.2.10
 include::mdib-efficiency/tf3-ch-8.3.2.10-mdib-efficiency-considerations.adoc[]
