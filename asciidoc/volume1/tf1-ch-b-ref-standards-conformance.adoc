@@ -141,8 +141,14 @@ metalanguage - Extended BNF, 15 December 1996, available at https://standards.is
 * [[[ref_omg_sysml_2_0_intro_graphical_model,OMG SysML ^&#174;^ Intro-Graphical Notation 2.0]]]  OMG Systems Modeling Language&#8482;  (SysML^&#174;^), Version 2.0, Introduction to the Graphical Model, Object Management Group (OMG) standard.  Available at https://github.com/Systems-Modeling/SysML-v2-Release/tree/master/doc[github.com/Systems-Modeling/SysML-v2-Release/doc/]
 
 * [[[ref_omg_sysml_2_0_spec,OMG SysML ^&#174;^ 2.0]]]  OMG Systems Modeling Language &#8482; (SysML^&#174;^), Version 2.0, Object Management Group (OMG) specification.  Available at https://github.com/Systems-Modeling/SysML-v2-Release/tree/master/doc[github.com/Systems-Modeling/SysML-v2-Release/doc/]
+
 * [[[ref_gender_harmony_project, HL7-GENDER]]] HL7 gender harmony project, available at https://confluence.hl7.org/display/VOC/The+Gender+Harmony+Project
 
+* [[[ref_paper_connecting_clinical_it_to_soa_arch_of_medical_devices, Connecting the clinical IT infrastructure to a service-oriented architecture of medical devices]]] Paper reviewing use of SOA architecture to integrate medical devices into clinical IT infrastructure, available at https://pubmed.ncbi.nlm.nih.gov/29272252/
+
+* [[[ref_ornet_soa_for_safe_dynamic_medical_device_interoperability, OR.NET: a service-oriented architecture for safe and dynamic medical device intoperability]]] Paper reviewing use of SOA architecture to enable an interoperable and safe ecosystem of medical devices, available at https://pubmed.ncbi.nlm.nih.gov/29346114/
+
+* [[[ref_paper_design_pattern_for_soa_integration_of_medical_devices,Standardized Device Services - A Design Pattern for Service Oriented Integration of Medical Devices]]]  C. Mauro, A. Sunyaev, J. M. Leimeister, and H. Krcmar, 2010 43rd Hawaii International Conference on System Sciences, Honolulu, HI, USA: IEEE, Jan. 2010, pp. 1–10. doi: 10.1109/HICSS.2010.347.
 
 [bibliography]
 ==== Presentations

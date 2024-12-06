@@ -796,7 +796,12 @@ This generalized model includes (3) system roles:
 * #same system can support both roles; all systems mush support participant#
 ////
 
-NOTE:  A detailed overview of <<acronym_soa>> concepts is beyond the scope of this specification.  See <<vol1_appendix_b_references>> for additional background materials.
+As SOA concepts and implementations have evolved, many different approaches have been defined, building upon some of the basic principles (as listed above) and adding detail appropriate for their specific application use.
+A detailed overview of <<acronym_soa>> concepts is beyond the scope of this specification; however, a number of foundational references related to how SOA has been leveraged for medical device interoperability have been provided in <<vol1_appendix_b_references>>, including:
+
+. <<ref_paper_connecting_clinical_it_to_soa_arch_of_medical_devices>>
+. <<ref_ornet_soa_for_safe_dynamic_medical_device_interoperability>>
+. <<ref_paper_design_pattern_for_soa_integration_of_medical_devices>>
 
 The <<acronym_sdc>> <<acronym_biceps>> standard, which SDPi-P profiles, consists of (3) core components, as illustrated in <<figure_sdc_biceps_components_model>>:
 
