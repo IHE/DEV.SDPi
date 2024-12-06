@@ -71,6 +71,18 @@ To that end, the supplement includes updates to all (3) IHE DEV TF volumes, incl
 
 * New content covering the application of ISO/IEEE 11073 SDC semantic standards to device content modules, with a primary focus on specifications related to the ISO/IEEE 11073-10207 BICEPS standard.
 
+[#supplement_clause_mapping_clinical_scenarios_to_profile_requirements]
+=== Use Cases:  Mapping Clinical Scenarios to Profile Requirements
+IHE technical framework integration profile specifications include use case sections to ensure that the technical solutions are rooted in real-world application requirements.
+These sections typically include a basic description of use case scenarios, identify the key systems that exchange information, application-level detail of the information exchanged, and perhaps even some sequence diagrams.
+This information may also be used to drive the test cases that are used for conformity assessment, ensuring that the resulting specification implementation meets the intended needs.
+
+This supplement includes this same organization; however, it also defines a set of general, non-profile-specific clinical use cases that provide requirements, which may be mapped to multiple SDPi integration profiles.
+Section <<vol1_appendix_c_dpi_use_cases>> provides a collection of these high-level clinical use cases.
+
+FOR READERS OF THIS SUPPLEMENT, a good strategy might be to first review the use cases in the Volume 1 appendix (e.g., <<vol1_clause_appendix_c_use_case_sicdmp>> ), and then review the specific profiles to which the clinical scenario requiremets have been mapped.
+Reviewing the use case specifications in this order will provide the needed context to understand what is presented in each profile.
+
 [#supplement_clause_joint_ihe_hl7_gemini_ses_mdi_project_development]
 === Joint IHE-HL7 Gemini SES+MDI Project Development
 This supplement is the result of a joint https://confluence.hl7.org/x/Xzf9Aw[IHE-HL7 Gemini Device Interoperability program] which began early 2020.
