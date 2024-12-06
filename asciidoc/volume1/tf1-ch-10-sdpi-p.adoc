@@ -474,12 +474,13 @@ They shall implement either a <<vol1_spec_sdpi_p_actor_somds_provider>> and / or
 
 The <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>> actor identifies and specifies the logic necessary for connecting a SOMDS network environment with Non-SOMDS Systems that utilize <<ref_hl7_fhir>> for their interoperability protocol.  Generally, this logic is defined in the HL7 <<ref_hl7_fhir_pocd_ig>>.
 
-Gateways implementing this actor can support any of the FHIR architectural approaches:  RESTful, messaging, documents, and SOA.
-For example, a <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>> can utilize a <<vol1_spec_sdpi_p_actor_somds_consumer>> to retrieve information from other _<<vol1_spec_sdpi_p_actor_somds_participant>>_ systems, map it into FHIR Bundle resources and forward it on to non-SOMDS systems in a FHIR message.
+Gateways implementing this actor can generally support any of the FHIR architectural approaches:  RESTful, messaging, documents, and SOA - although the primary approaches are RESTful and messaging. A specific <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>> specification in <<vol2_appendix_b_gateways>> will constrain to (a) specific approach(es). To facilitate interoperability, named options may be added to specialized actors to clearly indicate what a given implementation supports.
+
+For example, a <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>> could utilize a <<vol1_spec_sdpi_p_actor_somds_consumer>> to retrieve information from other _<<vol1_spec_sdpi_p_actor_somds_participant>>_ systems, map it into FHIR Bundle resources and forward it on to non-SOMDS systems in a FHIR message.
 
 Alternatively, the <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>> could implement a FHIR server and provide support for systems to discover and retrieve information asynchronously, including the use of FHIR publication / subscription (“pub/sub”) services.
 
-The <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>> can also support SOMDS services invoked by FHIR-based systems, such as requesting a snapshot of the latest vital signs measurements for a specific patient and triggering a blood-pressure cuff reading.
+The <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>> could also support SOMDS services invoked by FHIR-based systems, such as requesting a snapshot of the latest vital signs measurements for a specific patient and triggering a blood-pressure cuff reading.
 
 [#vol1_clause_sdpi_p_somds_v2_gateway]
 ===== SOMDS V2 Gateway
