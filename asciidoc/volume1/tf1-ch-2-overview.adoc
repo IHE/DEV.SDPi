@@ -145,7 +145,7 @@ Profile options are provided for additional capabilities that may be required to
 [sdpi_offset=12]
 ==== Service-oriented Device Point-of-care Interoperability - Alerting (SDPi-A) Profile
 The SDPi Alerting Profile builds on the basic <<acronym_pnt>> capabilities of the <<acronym_sdpi_p>> profile, but adds the requirements to fully support *_medical alerting_*.
-To that end, this specification implements the safety and security requirements of the <<ref_ieee_11073_10702_202x>> alert <<acronym_pkp>> standard (expected to be completed in 2024).
+To that end, this specification implements the safety and security requirements of the <<ref_ieee_11073_10702_202x>> alert <<acronym_pkp>> standard (expected to be completed in 2025).
 
 The profile supports core medical alerting functionality needed by all participating systems.
 Profile options are provided for additional capabilities that may be required to support extended scenarios (e.g., alert delegation).
