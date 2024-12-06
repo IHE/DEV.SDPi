@@ -26,6 +26,7 @@ Each section shall contain a list of action items of the following format: `<bri
 - Addressed three JIRA tickets listed in issue ([#275](https://github.com/IHE/DEV.SDPi/issues/275))
 - Corrected some entries in "1:B.1 Referenced Standards" for consistency ([#267](https://github.com/IHE/DEV.SDPi/issues/267))
 - Commented out concept sections 1:10.4.1.3 thru 1:10.4.1.10 and minimized referencing to years for improving readability ([#268](https://github.com/IHE/DEV.SDPi/issues/268))
+- Removed TBD statements from Table A-1 ([#273](https://github.com/IHE/DEV.SDPi/issues/273))
 
 
 ## [1.4.1] - 2024-10-04
