@@ -32,6 +32,9 @@ Thus the "Safety, Effectiveness and Security - Requirements and Considerations" 
 Note that specific requirements from the above mentioned standards, may also be captured in <<vol1_appendix_b_referenced_standards_conformance>>.
 Generally, requirements from these standards would be mapped to the appropriate "Safety, Effectiveness and Security - Requirements and Considerations" sections throughout the specification.
 
+NOTE:  The SES sections in this document are not intended to be comprehensive, but provide helpful guidance to risk managers.
+Implementers must ensure that all appropriate risk management processes have been performed.
+
 // 2.3
 [#vol1_clause_integration_profiles_overview]
 === Integration Profiles Overview
