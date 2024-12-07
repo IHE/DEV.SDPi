@@ -209,38 +209,38 @@ NOTE: This requirement supplements RR1162 in <<ref_ieee_11073_10700_2022>>: _The
 ====
 ****
 
-
+[#vol1_clause_appendix_c_use_case_stad_non_slew]
 ===== Scenario: <<acronym_stad>> {var_use_case_id}.6 - A device, operational in the MD LAN network, determines a non-slewing time adjustment is required
 
-*Given* The <<vol1_spec_sdpi_p_actor_somds_participant>> is operational on the <<acronym_md_lan>> network,
+*Given* The device is operational on the <<acronym_md_lan>> network,
 
-*When* The <<vol1_spec_sdpi_p_actor_somds_participant>>'s clock-discipline algorithm determines a non-slewing time adjustment is required,
+*When* The device's clock-discipline algorithm determines a non-slewing time adjustment is required,
 
 *Then* The device will create a log entry that includes at least a time-stamp for the adjustment in both the time-reference frame before and after the non-slewing adjustment was made,
 
-*And* The <<vol1_spec_sdpi_p_actor_somds_provider>> will notify <<vol1_spec_sdpi_p_actor_somds_consumer>>s using its system function contributions of the change to the provider's time-reference frame,  
+*And* The <<vol1_spec_sdpi_p_actor_somds_provider>> will notify <<vol1_spec_sdpi_p_actor_somds_consumer>>s using its system function contributions (<<acronym_sfc>>) of the change to the provider's time-reference frame,  
 
 *Or* The <<vol1_spec_sdpi_p_actor_somds_provider>> will initiate a new MDIB sequence.
 
-NOTE: during a non-slewing time adjustment the device's time-reference frame may jump forward or backward in time, from the perspective of an external observer, in a single, large, step. 
+NOTE: a device's time-reference frame may jump forward or backward in time in a single, large, step, from the perspective of an external observer, following a non-slewing time adjustment. 
 
-NOTE: a non-slewing time adjustment creates two distinct epochs, each with their own time-reference frames. Both the rate of the passage of time and the determination time assigned to a single event may differ significantly between epochs. 
+NOTE: two distinct epochs are created by a non-slewing time adjustment, each with a distinct time-reference frame. Both the rate of the passage of time and the determination time assigned to a single event may differ significantly between epochs. 
 
-NOTE: non-slewing time adjustments may occur, for example, when a <<vol1_spec_sdpi_p_actor_somds_participant>> rejoin a network, an absent TS Service returns to operation or be caused by hardware failure or operator error (e.g., making non-slewing adjustments to the TS Service time-reference frame while it is being used by one or more <<vol1_spec_sdpi_p_actor_somds_participant>>s).
+NOTE: non-slewing time adjustments may occur, for example, when a device rejoins a network, an absent <<acronym_ts_service>> returns to operation or be caused by hardware failure or operator error (e.g., making non-slewing adjustments to the <<acronym_ts_service>> time-reference frame while it is being used by one or more <<vol1_spec_sdpi_p_actor_somds_participant>>s). 
+
+NOTE: non-slewing time adjustments may result in a constant or variable offset between epochs. For constant offsets, the difference (to an unbiased observer) between any two timestamps obtained in different epochs is constant. For variable offsets, the difference (to an unbiased observer) between any two timestamps obtained in different epochs depends on when, within each epoch, the timestamp was obtained. 
 
 ====== Safety, Effectiveness & Security Considerations and Requirements
 
 // This provides information for auditing. 
 .R1560
-[sdpi_requirement#r1560,sdpi_req_level=should]
+[sdpi_requirement#r1560,sdpi_req_level=shall]
 ****
-The <<vol1_spec_sdpi_p_actor_somds_participant>> should include the determination time in the log entry for each non-slewing time adjustment in both the time-reference frame before, and after, the non-slewing adjustment was made.
+The <<vol1_spec_sdpi_p_actor_somds_participant>> shall include the determination time of the log entry in both the time-reference frame before, and after, each non-slewing clock adjustment. 
 
 .Notes
 [%collapsible]
 ====
-
-NOTE: The determination time, recorded in each time-reference frame, should represent, as near as practical, the same point in time to an external observer unaffected by the change in time-reference frames. 
 
 NOTE: This requirement supplements TR1340 in <<ref_ieee_11073_10700_2022>>: _An SDC BASE PARTICIPANT SHOULD log each non-slewing adjustment of the local clock._
 
@@ -256,24 +256,24 @@ NOTE: This requirement supplements TR1340 in <<ref_ieee_11073_10700_2022>>: _An 
 .R1522
 [sdpi_requirement#r1522,sdpi_req_level=shall]
 ****
-When the <<vol1_spec_sdpi_p_actor_somds_provider>> detects a stepping adjustment of its system clock, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall either:
+When the <<vol1_spec_sdpi_p_actor_somds_provider>> detects a step adjustment of its system clock used as part of its System Function Contribution (<<acronym_sfc>>), the <<vol1_spec_sdpi_p_actor_somds_provider>> shall either:
 
 * initiate a new MDIB sequence by assigning a new MDIB sequence identifier, or
-* set `ClockState/@LastSet` to the earliest time that is unambiguously in the current epoch and increment `Epochs/@Current` by exactly 1.
+* set `pm:ClockState/@LastSet` to the earliest time that is unambiguously in the current epoch and increment `sdpi:Epochs/@Current`.
 
 .Notes
 [%collapsible]
 ====
-NOTE: The <<term_manufacturer>> of the <<vol1_spec_sdpi_p_actor_somds_consumer>> considers the risks arising from timestamps spanning time-reference frames from a non-slewing clock adjustment having occurred at the <<vol1_spec_sdpi_p_actor_somds_provider>> when the <<vol1_spec_sdpi_p_actor_somds_consumer>> receives a changed value in the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDIB sequence identifier or `ClockState/@LastSet` and `Epochs/@Current`.
+NOTE: The <<term_manufacturer>> of the <<vol1_spec_sdpi_p_actor_somds_consumer>> considers the risks arising from timestamps spanning time-reference frames from a non-slewing clock adjustment having occurred at the <<vol1_spec_sdpi_p_actor_somds_provider>> when the <<vol1_spec_sdpi_p_actor_somds_consumer>> receives a changed value in the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDIB sequence identifier or `pm:ClockState/@LastSet` and `sdpi:Epochs/@Current`.
 
-NOTE: This clarifies the ambiguity in <<ref_ieee_11073_10207_2017>>, section B.182 when slewing is used to smoothly adjust the time-reference frame (using, for example, the NTPv4 clock-discipline algorithm) where information from one or more TS Services is used to maintain clock-discipline and does not "set" the clock.
+NOTE: This clarifies the ambiguity in <<ref_ieee_11073_10207_2017>>, section B.182 when slewing is used to smoothly adjust the time-reference frame (using, for example, the <<ref_rfc_5905, NTPv4>> clock-discipline algorithm) where information from one or more <<acronym_ts_service>>s is used to maintain clock-discipline and does not "set" the clock.
 
-NOTE: Any timestamps in the MDIB prior to `ClockState/@LastSet` may not have been obtained from the current time-reference.
+NOTE: Any timestamps in the MDIB prior to `pm:ClockState/@LastSet` may not have been obtained from the current time-reference.
 
 ====
 ****
 
-Any time-stamps obtained in an ealier epoch may be treated with greater suspicion than those obtained in the current epoch by a <<vol1_spec_sdpi_p_actor_somds_participant>>. `ClockState/@LastSet` may be used to determine if an unversioned timestamp was unambiguously obtained in the current epoch. For example, when a non-slewing adjustment moves the device's time-frame reference forward, any states in the MDIB with timestamps greater than the first timestamp available from the new epoch are unambiguously in the new epoch. In contrast, when the device's time-frame reference moves backward, only timestamps greater than a timestamp obtained from the old epoch's time-frame reference when the non-slewing adjustment occurred are unambiguously in the current epoch. That is, the first timestamps obtained from the new time-frame reference may overlap timestamps obtained from the prior time-frame reference. These examples are illustrated below:
+Any time-stamps obtained in an ealier epoch may be treated with greater suspicion than those obtained in the current epoch by a <<vol1_spec_sdpi_p_actor_somds_participant>>. `pm:ClockState/@LastSet` provides the unambiguous begining of the current epoch in the time-frame reference of the current epoch. For example, when a non-slewing adjustment moves the device's time-frame reference forward, any timestamps in the MDIB greater than start of the new epoch are unambiguously in the new epoch. In contrast, when the device's time-frame reference moves backward, only timestamps greater than the latest timestamp obtained from the epoch before the time-reference frame moved backward are unambiguously in the current epoch. That is, the timestamps obtained from the new time-frame reference may overlap timestamps obtained from the prior time-frame reference. These examples are illustrated below:
 
 There is no overlap in timestamps when a non-slewing adjustment shifts the device clock forward in time. 
 
@@ -287,6 +287,7 @@ When a device experiences multiple non-slewing adjustments in a short period of 
 
 image::vol1-diagram-use-case-stad-ns-back-forth.svg[align=center]
 
+// This is to introduce versioning epochs. 
 .R1561
 [sdpi_requirement#r1561,sdpi_req_level=may]
 ****
@@ -296,7 +297,7 @@ The <<vol1_spec_sdpi_p_actor_somds_provider>> may indicate a timestamp belongs t
 [NOTE]
 [%collapsible]
 ====
-Timestamps for states that are not updated frequently may be versioned with a specific epoch. 
+Binding timestamps in the <<acronym_mdib>> to a specific epoch may be useful for states that are not updated frequently. 
 
 ====
 ****
@@ -304,30 +305,31 @@ Timestamps for states that are not updated frequently may be versioned with a sp
 .R1562
 [sdpi_requirement#r1562,sdpi_req_level=shall]
 ****
-The <<vol1_spec_sdpi_p_actor_somds_provider>> shall report epoch adjustments from the earliest versioned timestamp's time-frame referenced in the MDIB to the current time-frame reference.  
+The <<vol1_spec_sdpi_p_actor_somds_consumer>> shall consider the risks arising from relying on timestamps obtained from different epochs.  
 
 .Notes
 [NOTE]
 [%collapsible]
 ====
-Epoch adjustments are optionally provided for <<vol1_spec_sdpi_p_actor_somds_participant>>s to adjust historic data. All relevant adjustments must be provided when versioned timestamps are included in an MDIB. 
+It may not be possible to reliably determine the relationship between timestamps obtained from different time-frame references without addition information regarding the cause of the non-slewing adjustment. For example, if a non-slewing adjustment arises because the device clock was running faster (or slower) than the reference clock then the arithmetic difference between two events spanning the adjustment (even when combined with the step adjustment duration) may not match the actual different in time measured by an unbiased observer.  
 
 ====
 ****
 
-// This is for the sledge hammer approach. I figure out what a universal rule could be or how to communicate epoch changes
+
+// This is for the sledge hammer approach. I can't figure out what a universal rule could be or how to communicate epoch changes
 // across MdibVersionGroup/@SequenceId since it seems that any information inside the MDS implicitly is scoped to the 
 // sequence id. 
 .R1566
 [sdpi_requirement#r1566,sdpi_req_level=shall]
 ****
-The <<vol1_spec_sdpi_p_actor_somds_provider>> that changes the MDIB sequence identifier when it can no longer make smooth adjustments to its time-frame reference shall consider the risks arising from gaps in continuous data. 
+The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_provider>> that changes the MDIB sequence identifier when it can no longer make smooth adjustments to its time-frame reference shall consider the risks arising from gaps in continuous data. 
 
 .Notes
 [NOTE]
 [%collapsible]
 ====
-Non-slewing time-adjustments may be a serious error that impacts data that has already been:
+Non-slewing time-adjustments may indicate a serious error that impacts data that has already been:
  
  * displayed on a chart to the user,
  * exported to other systems.
@@ -340,12 +342,11 @@ Non-slewing time-adjustments may be a serious error that impacts data that has a
 .R1568
 [sdpi_requirement#r1568,sdpi_req_level=shall]
 ****
-The <<term_manufacturer>> of the <<vol1_spec_sdpi_p_actor_somds_provider>> that chooses to omit epoch versions from any timestamp shall consider the risks arising from erroneous timestamps. 
+The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_provider>> that chooses to omit epoch versions from any timestamp shall consider the risks arising from erroneous timestamps. 
 
 [NOTE]
 [%collapsible]
 ====
-
 Epoch versions may not be required for timestamps on items that update frequently. 
 
 ====
@@ -364,7 +365,7 @@ A <<vol1_spec_sdpi_p_actor_somds_participant>> may enter a fault state by, for e
 ====
 
 * A sudden change in a participant's time-frame reference may require intervention by the OPERATOR or RESPONSIBLE ORGANIZATION.  
-* A <<vol1_spec_sdpi_p_actor_somds_participant>> may continue delivery with a subset of its nominal SYSTEM FUNCTION CONTRIBUTION following a non-slewing adjustment reporting the activation state of components using `AbstractDeviceComponentState/@ActivationState`.
+* A <<vol1_spec_sdpi_p_actor_somds_participant>> may continue delivery with a subset one or more of its nominal SYSTEM FUNCTION CONTRIBUTION following a non-slewing adjustment reporting the activation state of components using `AbstractDeviceComponentState/@ActivationState`.
 
 ====
 ****
