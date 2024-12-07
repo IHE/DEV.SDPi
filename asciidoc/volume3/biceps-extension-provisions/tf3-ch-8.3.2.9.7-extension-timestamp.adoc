@@ -4,11 +4,11 @@
 BICEPS does not provide any means to convey step-changes in a <<vol1_spec_sdpi_p_actor_somds_participant>>'s local time-reference frame (see <<vol1_clause_appendix_c_use_case_stad_non_slew, use case for non-slewing time adjustments>>). 
 
 A <<vol1_spec_sdpi_p_actor_somds_provider>> includes timestamps in many state updates including `pm:AlertConditionState/@DeterminationTime`, `pm:AbstractMetricValue/@DeterminationTime` and `pm:AbstractContextState/@BindingStartTime`. From time-to-time, though rarely in normal operation, a 
-<<vol1_spec_sdpi_p_actor_somds_participant>> may determine that the difference between its time-reference frame and that of the <<acronym_ts_service>> is greater than can be accomodated by smooth adjustments to its clock source. This may occur, for example:
+<<vol1_spec_sdpi_p_actor_somds_participant>> may determine that the difference between its time-reference frame and that of the <<acronym_ts_service>> is greater than can be accomodated by smooth adjustments to its clock. This may occur, for example:
 
 * when the <<acronym_ts_service>> is unreachable for a prolonged period, or
 * following hardware failures and/or operator errors in the <<vol1_spec_sdpi_p_actor_somds_provider>> and/or <<acronym_ts_service>>, or
-* after switching to a different and/or backup <<acronym_ts_service>> when the primary <<acronym_ts_service>> becomes unavailable,
+* after switching to a different and/or backup <<acronym_ts_service>> when the primary <<acronym_ts_service>> becomes unavailable, or
 * when network congestion leads to asymmetrical network transport delays while exchanging messages with the <<acronym_ts_service>>.
 
 In <<ref_rfc_5905>> this is referred to as a step-adjustment or a non-slewing time adjustment. In the absence of step-adjustments, timestamps generated within a <<vol1_spec_sdpi_p_actor_somds_participant>>'s time-reference frame are well-behaved:
@@ -17,37 +17,37 @@ In <<ref_rfc_5905>> this is referred to as a step-adjustment or a non-slewing ti
 * have a well defined relationship to timestamps within the same time-reference frame, and
 * have well defined relationships to peer time sources.
 
-The presence of non-slewing time adjustments creates epochs, periods where the <<vol1_spec_sdpi_p_actor_somds_participant>>'s timestamps are well-behaved, separated by step-changes. At best, <<vol1_spec_sdpi_p_actor_somds_participant>>'s can guess at the relationship between each time-reference frame between epochs; at worst they may have insufficient information (e.g., non-slewing adjustment is caused by change at the <<acronym_ts_service>> and does not represent a change in elapsed time to an unbiased observer). 
+The presence of non-slewing time adjustments creates epochs of consistency: punctuated equilibria where the <<vol1_spec_sdpi_p_actor_somds_participant>>'s timestamps are well-behaved, separated by step-changes. At best, epochs are separated by a constant temporal offset; at worst <<vol1_spec_sdpi_p_actor_somds_participant>>s may have insufficient information to determine the relationship between epochs (e.g., changes at the <<acronym_ts_service>> that do not represent a change in elapsed time to unbiased observers). 
 
 [NOTE]
 ====
-* R1520 excludes non-slewing adjustments to the <<acronym_ts_service>> by the RESPONSIBLE ORGANIZATION during normal operation. 
+R1520 excludes non-slewing adjustments to the <<acronym_ts_service>> by the RESPONSIBLE ORGANIZATION during normal operation. 
 
 ====
 
-The diagram below illustrates a sequence of state updates incorporating time-stamps from two different epochs. In the illustration, a non-slewing adjustment has shifted the devices time-frame reference forward, creating (from the device's perspective) a gap in time. Timestamps obtained in epoch 0, the time-frame reference immediately before the time-step was detected, may not be accurate. 
+The diagram below illustrates a sequence of state updates incorporating time-stamps from two different epochs. In the illustration, a non-slewing adjustment has shifted the devices time-reference frame forward, creating (from the device's perspective) a gap in time. Timestamps obtained in epoch 0, the time-reference frame immediately before the time-step was detected, may not be accurate. 
 
 image::vol3-diagram-biceps-ext-non-slewing_time.svg[align=center]
 
 
-A <<vol1_spec_sdpi_p_actor_somds_provider>> may start a new MDIB versioning sequence when it encounters a non-slewing time adjustments. However, this may disrupt one or more System Function Contributions (<<acronym_sfc>>) either by the <<vol1_spec_sdpi_p_actor_somds_provider>> or its <<acronym_somds>> peers. 
+A <<vol1_spec_sdpi_p_actor_somds_provider>> may start a new MDIB versioning sequence when it encounters a non-slewing time adjustments. However, this may disrupt one or more System Function Contributions (<<acronym_sfc>>) by the <<vol1_spec_sdpi_p_actor_somds_provider>> or its <<acronym_somds>> peers. 
 
 This specification adds an extension to the BICEPS Participant Model enabling richer communication of changes to the <<vol1_spec_sdpi_p_actor_somds_participant>>'s local time-reference frame using:
 
 * epoch versioning,
-* optional epoch time-step deltas,
-* optional versioning of `CalibrationInfo/@Time`, `AlertSystemState/@LastSelfCheck`, `AlertConditionState/@DeterminationTime`, `AbstractMetricValue/@StartTime`, `AbstractMetricValue/@StopTime`, `AbstractMetricValue/@DeterminationTime`, `AbstractContextState/@BindingStartTime` and `AbstractContextState/@BindingEndTime`. 
+* optional epoch time-step offsets,
+* optional versioning of `pm:CalibrationInfo/@Time`, `pm:AlertSystemState/@LastSelfCheck`, `pm:AlertConditionState/@DeterminationTime`, `pm:AbstractMetricValue/@StartTime`, `pm:AbstractMetricValue/@StopTime`, `pm:AbstractMetricValue/@DeterminationTime`, `pm:AbstractContextState/@BindingStartTime` and `pm:AbstractContextState/@BindingEndTime`. 
 
 [sdpi_level=+1]
 ====== Model
 
 The clock epoch schema is available in <<vol3_appendix_a_xml_schemas_timestamp_version>>. <<vol3_example_extension_clock_discontinuities>> shows an exemplary XML instance of a <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> from a device that has experienced two recent non-slewing time adjustments following three adjustments some time in the past. Of particular note:
 
-* the clock state includes epoch time-step deltas for epoch 3 and 4; earlier versions are not referenced and therefore not required,
+* the clock state includes epoch time-step offsets for epochs 3 and 4; earlier versions are not referenced and therefore not required,
 * the state for metric `m1` references epoch version 3; all timestamps in this state are versioned,
 * the timestamp for metric `m2` is not versioned; its timestamp is less than `pm:ClockState/@LastSet` and its value should be treated with greater suspicion than later timestamps, 
-* although the current time (`pm:ClockState/@DateAndTime`) is also less than `pm:ClockState/@LastSet`, the current time is always reported using the current time-frame reference; its value need not be treated with any more suspicion than normal,
-* each epoch time-step delta includes a version, timestamp and offset; the timestamp is in the time-frame reference of the versioned epoch,
+* although the current time (`pm:ClockState/@DateAndTime`) is also less than `pm:ClockState/@LastSet`, the current time is always reported using the current time-reference frame; its value need not be treated with any more suspicion than normal,
+* each `sdpi:Epoch` includes a `@Version`, `@Timestamp` and `@Offset`; the timestamp is in the time-reference frame of the versioned epoch, adding the `@Timestamp` and `@Offset` provides a timestamp for an equivalent point in time for the next epoch version,
 * the default value of any timestamp not specifically versioned is the current epoch version. 
 
 .Example MDIB state following two recent non-slewing time adjustments
@@ -72,14 +72,14 @@ The <<vol1_spec_sdpi_p_actor_somds_provider>> shall increment `sdpi:Epochs/@Vers
 .R0601
 [sdpi_requirement#r0601,sdpi_req_level=shall]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_provider>> that versions timestamps in any `pm:AbstractMetricValue`, `pm:AbstractContextState`, `pm:AlertSystemState`, `pm:CalibrationInfo` and/or `pm:AlertConditionState` shall include, in every clock state update, the complete history of epoch time-step deltas from the earliest version referenced in the MDIB to the current time reference-frame version.  
+A <<vol1_spec_sdpi_p_actor_somds_provider>> that versions timestamps in any `pm:AbstractMetricValue`, `pm:AbstractContextState`, `pm:AlertSystemState`, `pm:CalibrationInfo` and/or `pm:AlertConditionState` shall include, in every clock state update, the complete history of epoch offsets from the earliest version referenced in the MDIB to the current time-reference frame version.  
 
 .Notes
 [NOTE]
 [%collapsible]
 ====
-* Epoch time-step deltas provide a mechanism for consumers to (approximately) reconstruct time between epochs. Reconstruction can only be approximate because there is no mechanism to determine the source and timing of any external discrepancies that led to the abrupt change in time. 
-* This allows a provider to select which timestamps it wants to version. For example context binding timestamps (which may remain out of date significantly longer than other metrics) could be versioned but regularly updated metrics might not need timestamp versions. 
+* Epoch offsets provide a mechanism for consumers to (approximately) reconstruct time between epochs. Reconstruction can only be approximate because there is no mechanism to determine the source and timing of any external discrepancies that led to the abrupt change in a time-reference frame. 
+* This allows a <<vol1_spec_sdpi_p_actor_somds_provider>> to choose which timestamps it versions. For example context binding timestamps (which may remain out of date significantly longer than other metrics) could be versioned but regularly updated metrics may not require timestamp versions. 
 ====
 ****
 
