@@ -20,6 +20,7 @@ Each section shall contain a list of action items of the following format: `<bri
 - Clarified intentionality of difference between ad-hoc and managed discovery ([#317](https://github.com/IHE/DEV.SDPi/issues/317))
 - Clarified FHIR Gateway support for multiple paradigms ([#264](https://github.com/IHE/DEV.SDPi/issues/264))
 - Clarified that the SES sections are not comprehensive for risk management ([#271](https://github.com/IHE/DEV.SDPi/issues/271))
+- SDPi Use Case Approach explanatory text added to start of supplement ([#263](https://github.com/IHE/DEV.SDPi/issues/263))
 
 ### Editorial Fixes
 - Added deprecation notice for three requirements due to expected impact of BICEPS standard corrigendum ([#334](https://github.com/IHE/DEV.SDPi/issues/334))
