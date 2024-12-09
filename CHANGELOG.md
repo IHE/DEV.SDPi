@@ -19,9 +19,8 @@ Each section shall contain a list of action items of the following format: `<bri
 - Fixed action URN in waveform stream example ([#292](https://github.com/IHE/DEV.SDPi/issues/292))
 - Clarified intentionality of difference between ad-hoc and managed discovery ([#317](https://github.com/IHE/DEV.SDPi/issues/317))
 - Clarified FHIR Gateway support for multiple paradigms ([#264](https://github.com/IHE/DEV.SDPi/issues/264))
-
 - Enhanced explanation of SOA aspects of the SDC/SDPi specification (HL7 Ballot) ([#276](https://github.com/IHE/DEV.SDPi/issues/276))
-- 
+
 ### Editorial Fixes
 - Added deprecation notice for three requirements due to expected impact of BICEPS standard corrigendum ([#334](https://github.com/IHE/DEV.SDPi/issues/334))
 - Updated SDPi "Topic of Interest" issue management for clarity ([#274](https://github.com/IHE/DEV.SDPi/issues/274))
