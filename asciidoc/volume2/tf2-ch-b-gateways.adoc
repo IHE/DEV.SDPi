@@ -17,4 +17,7 @@ include::gateways/tf2-ch-b-gateway-dec.adoc[]
 // Gateway:  IHE DEV / PCD ACM Profile
 include::gateways/tf2-ch-b-gateway-acm.adoc[]
 
+// Gateway:  HL7 FHIR General Mappings
+include::gateways/tf2-ch-b-gateway-fhir.adoc[]
+
 
