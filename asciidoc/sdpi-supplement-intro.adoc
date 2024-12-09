@@ -21,7 +21,7 @@ For HL7 ballot comment resolution, links are made from HL7 ballot Jira tickets t
 
 
 NOTE: This supplement also includes both normative and informative references to other specifications (see <<vol1_appendix_b_references>>), some of which are finalized and published and others that are either being developed or in revision.
-For example, the IEEE 11073-10702 PKP standard is in development with balloting expected late 2024 and publication mid-2025; however, some requirements from that pre-standard may be included in this SDPi specification, providing a pathway to early experience and validation.
+For example, the IEEE 11073-10702 PKP standard is in mature development stage; however, some requirements from that pre-standard may be included in this SDPi specification, providing a pathway to early experience and validation.
 When a referenced specification is used that is in development or revision, a note will be provided in the <<vol1_appendix_b_referenced_standards>> clearly indicating its status.
 
 It is recognized that this release is a work-in-progress that will continue to subsequent versions.
