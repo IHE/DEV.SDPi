@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xsd:schema xmlns:ext="http://standards.ieee.org/downloads/11073/11073-10207-2017/extension"
+            xmlns:sdpi="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1"
+            xmlns:pm="http://standards.ieee.org/downloads/11073/11073-10207-2017/participant"
+            attributeFormDefault="unqualified"
+            elementFormDefault="qualified"
+            targetNamespace="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1"
+            xml:lang="en"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="../ExtensionPoint.xsd"
+              namespace="http://standards.ieee.org/downloads/11073/11073-10207-2017/extension" />
+  <xsd:import schemaLocation="../BICEPS_ParticipantModel.xsd"
+              namespace="http://standards.ieee.org/downloads/11073/11073-10207-2017/participant" />
+  <xsd:simpleType name="EpochVersion">
+    <xsd:annotation>
+      <xsd:documentation>Time-stamp epoch version. The default version for any timestamp not versioned is the current epoch version. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:nonNegativeInteger" />
+  </xsd:simpleType>
+  <!---->
+  <!---->
+  <!--Epochs-->
+  <xsd:element name="Epochs">
+    <xsd:annotation>
+      <xsd:documentation>An extension to version epochs arising from non-slewing time adjustments.
+
+This extension can be attached to the pm:ClockState/ext:Extension element.
+		</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="sdpi:EpochsType">
+          <xsd:attribute name="Version"
+                         default="0">
+            <xsd:annotation>
+              <xsd:documentation>Current epoch version.</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+              <xsd:restriction base="sdpi:EpochVersion">
+                <xsd:minInclusive value="0" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:attribute>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="EpochsType">
+    <xsd:annotation>
+      <xsd:documentation>Collection of timesteps between epochs. Must include every version referenced elsewhere in the MDIB.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="Epoch"
+                   type="sdpi:EpochType"
+                   minOccurs="0"
+                   maxOccurs="unbounded" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="EpochType">
+    <xsd:annotation>
+      <xsd:documentation>
+Type defining step change to a new Epochs.
+
+Defines the from the previous time-frame reference to the next time-frame reference. Adding this offset to this Timestamp gives the point in time (to an unbiased external observer) when this non-slewing time-step occurred in the next epoch's time-frame reference.
+
+For example, if device time advanced by 1 hour in epoch 0 at 10 am, there will be an Epoch entry for epoch version 0 with a timestamp of 10am and Offset of +1 hour. The equivalent time in epoch version 1 will be 11 am.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute ref="ext:MustUnderstand"
+                   use="optional" />
+    <xsd:attribute name="Version"
+                   use="required">
+      <xsd:annotation>
+        <xsd:documentation>Epoch version when the non-slewing timeadjustment occurred. </xsd:documentation>
+      </xsd:annotation>
+      <xsd:simpleType>
+        <xsd:restriction base="sdpi:EpochVersion" />
+      </xsd:simpleType>
+    </xsd:attribute>
+    <xsd:attribute name="Timestamp"
+                   type="pm:Timestamp"
+                   use="required">
+      <xsd:annotation>
+        <xsd:documentation>Timestamp, in the time-frame reference of this epoch version, when the non-slewing time adjustment occurred.
+</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="Offset"
+                   type="xsd:duration"
+                   use="required">
+      <xsd:annotation>
+        <xsd:documentation>Offset from this time-frame reference to the next time-frame reference. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType name="TimestampEpochVersionType">
+    <xsd:annotation>
+      <xsd:documentation>Base type for extensions that version timestamps. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="Clock"
+                   use="optional">
+      <xsd:annotation>
+        <xsd:documentation>The clock versioned by this element. </xsd:documentation>
+      </xsd:annotation>
+      <xsd:simpleType>
+        <xsd:restriction base="pm:HandleRef" />
+      </xsd:simpleType>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:element name="MetricEpoch"
+               type="sdpi:AbstractMetricValueEpochType">
+    <xsd:annotation>
+      <xsd:documentation>An extension to version timestamps on a pm:AbstractMetricValue.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="AbstractMetricValueEpochType">
+    <xsd:annotation>
+      <xsd:documentation>An extension to version timestamps on a pm:AbstractMetricValue.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="sdpi:TimestampEpochVersionType">
+        <xsd:attribute name="DeterminationTime"
+                       type="sdpi:EpochVersion">
+          <xsd:annotation>
+            <xsd:documentation>Epoch version for the enclosing pm:AbstractMetricValue/@DeterminationTime.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="StartTime"
+                       type="sdpi:EpochVersion">
+          <xsd:annotation>
+            <xsd:documentation>Epoch version for the enclosing pm:AbstractMetricValue/@StartTime</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="StopTime"
+                       type="sdpi:EpochVersion">
+          <xsd:annotation>
+            <xsd:documentation>Epoch version for the enclosing pm:AbstractMetricValue/@StopTime</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="CalibrationInfoEpoch"
+               type="sdpi:CalibrationInfoEpochType">
+    <xsd:annotation>
+      <xsd:documentation>An extension to version timestamps on a pm:CalibrationInfo.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="CalibrationInfoEpochType">
+    <xsd:annotation>
+      <xsd:documentation>An extension to version timestamps on a pm:CalibrationInfo/@Time</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="sdpi:TimestampEpochVersionType">
+        <xsd:attribute name="Time"
+                       type="sdpi:EpochVersion">
+          <xsd:annotation>
+            <xsd:documentation>Epoch version for the enclosing pm:CalibrationInfo/@Time</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AlertSystemStateEpoch"
+               type="sdpi:AlertSystemStateEpochType">
+    <xsd:annotation>
+      <xsd:documentation>An extension to version timestamps on a pm:AlertSystemState.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="AlertSystemStateEpochType">
+    <xsd:annotation>
+      <xsd:documentation>An extension to version timestamps on a pm:AlertSystemState</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="sdpi:TimestampEpochVersionType">
+        <xsd:attribute name="LastSelfCheck"
+                       type="sdpi:EpochVersion">
+          <xsd:annotation>
+            <xsd:documentation>Epoch version for the enclosing pm:AlertSystemState/@LastSelfCheck</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AlertConditionStateEpoch"
+               type="sdpi:AlertConditionStateEpochType">
+    <xsd:annotation>
+      <xsd:documentation>An extension to version timestamps on a pm:AlertConditionState.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="AlertConditionStateEpochType">
+    <xsd:annotation>
+      <xsd:documentation>An extension to version timestamps on a pm:AlertConditionState/@DeterminationTime</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="sdpi:TimestampEpochVersionType">
+        <xsd:attribute name="DeterminationTime"
+                       type="sdpi:EpochVersion">
+          <xsd:annotation>
+            <xsd:documentation>Epoch version for the enclosing pm:AlertConditionState/@DeterminationTime</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AbstractContextStateEpoch"
+               type="sdpi:AbstractContextStateEpochType">
+    <xsd:annotation>
+      <xsd:documentation>An extension to version timestamps on a pm:AbstractContextState.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="AbstractContextStateEpochType">
+    <xsd:annotation>
+      <xsd:documentation>An extension to version timestamps on a pm:AbstractContextState</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="sdpi:TimestampEpochVersionType">
+        <xsd:attribute name="BindingStartTime"
+                       type="sdpi:EpochVersion">
+          <xsd:annotation>
+            <xsd:documentation>Epoch version for the enclosing pm:AbstractContextState/@BindingStartTime</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="BindingEndTime"
+                       type="sdpi:EpochVersion">
+          <xsd:annotation>
+            <xsd:documentation>Epoch version for the enclosing pm:AbstractContextState/@BindingEndTime</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>
