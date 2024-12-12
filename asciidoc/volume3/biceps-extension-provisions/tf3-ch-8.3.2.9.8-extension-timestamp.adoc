@@ -72,6 +72,20 @@ The <<vol1_spec_sdpi_p_actor_somds_provider>> shall increment `sdpi:Epochs/@Vers
 .R0601
 [sdpi_requirement#r0601,sdpi_req_level=shall]
 ****
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall reset all versioned timestamps when it assigns a new MDIB sequence identifier (`pm:MdibVersionGroup/@SequenceId`). 
+
+.Notes
+[NOTE]
+[%collapsible]
+====
+* Epoch versions are scoped to the `pm:MdibVersionGroup/@SequenceId`.
+
+====
+****
+
+.R0605
+[sdpi_requirement#r0605,sdpi_req_level=shall]
+****
 A <<vol1_spec_sdpi_p_actor_somds_provider>> that versions timestamps in any `pm:AbstractMetricValue`, `pm:AbstractContextState`, `pm:AlertSystemState`, `pm:CalibrationInfo` and/or `pm:AlertConditionState` shall include, in every clock state update, the complete history of epoch offsets from the earliest version referenced in the MDIB to the current time-reference frame version.  
 
 .Notes
@@ -80,6 +94,7 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> that versions timestamps in any `pm:
 ====
 * Epoch offsets provide a mechanism for consumers to (approximately) reconstruct time between epochs. Reconstruction can only be approximate because there is no mechanism to determine the source and timing of any external discrepancies that led to the abrupt change in a time-reference frame. 
 * This allows a <<vol1_spec_sdpi_p_actor_somds_provider>> to choose which timestamps it versions. For example context binding timestamps (which may remain out of date significantly longer than other metrics) could be versioned but regularly updated metrics may not require timestamp versions. 
+
 ====
 ****
 
