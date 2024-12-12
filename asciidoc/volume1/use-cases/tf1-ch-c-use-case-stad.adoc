@@ -312,7 +312,7 @@ NOTE: This requirement supplements TR1340 in <<ref_ieee_11073_10700_2022>>&mdash
 .R1522
 [sdpi_requirement#r1522,sdpi_req_level=shall]
 ****
-When the <<vol1_spec_sdpi_p_actor_somds_provider>> detects a step adjustment of a system clock, used in making its System Function Contribution (<<acronym_sfc>>), the <<vol1_spec_sdpi_p_actor_somds_provider>> shall either:
+When the <<vol1_spec_sdpi_p_actor_somds_provider>> detects an abrupt time adjustment of a system clock, used in making its System Function Contribution (<<acronym_sfc>>), the <<vol1_spec_sdpi_p_actor_somds_provider>> shall either:
 
 * initiate a new MDIB sequence by assigning a new MDIB sequence identifier, or
 * set `pm:ClockState/@ActivationState` to `StndBy` when any timestamp in a <<acronym_mdib>> version was not obtained from the time-reference frame of the active clock in the same version, or 

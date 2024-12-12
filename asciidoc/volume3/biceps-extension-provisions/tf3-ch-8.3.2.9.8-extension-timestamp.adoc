@@ -47,8 +47,12 @@ The clock epoch schema is available in <<vol3_appendix_a_xml_schemas_timestamp_v
 * the state for metric `m1` references epoch version 3; all timestamps in this state are versioned,
 * the timestamp for metric `m2` is not versioned; its timestamp is less than `pm:ClockState/@LastSet` and its value should be treated with greater suspicion than later timestamps, 
 * although the current time (`pm:ClockState/@DateAndTime`) is also less than `pm:ClockState/@LastSet`, the current time is always reported using the current time-reference frame; its value need not be treated with any more suspicion than normal,
-* each `sdpi:Epoch` includes a `@Version`, `@Timestamp` and `@Offset`; the timestamp is in the time-reference frame of the versioned epoch, adding the `@Timestamp` and `@Offset` provides a timestamp for an equivalent point in time for the next epoch version,
+* each `sdpi:Epoch` includes a `@Version`, `@Timestamp` and `@Offset`; the timestamp is in the time-reference frame of the versioned epoch, adding the `@Timestamp` and `@Offset` provides a timestamp for an equivalent point in time for the next epoch version (see illustration below),
 * the default value of any timestamp not specifically versioned is the current epoch version. 
+
+`sdpi:Epoch/@Offset` gives the change in time from the `sdpi:Epoch/@Timestamp` in the previous epoch to an equivalent point in time in the new epoch: 
+
+image::vol3-diagram-biceps-ext-non-slewing_adj.svg[align=center]
 
 .Example MDIB state following two recent non-slewing time adjustments
 [#vol3_example_extension_clock_discontinuities]
