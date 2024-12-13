@@ -25,6 +25,8 @@ Each section shall contain a list of action items of the following format: `<bri
 - Addressed three JIRA tickets listed in issue ([#275](https://github.com/IHE/DEV.SDPi/issues/275))
 - Corrected some entries in "1:B.1 Referenced Standards" for consistency ([#267](https://github.com/IHE/DEV.SDPi/issues/267))
 
+### Added
+- Unique identification of text catalog ([#256](https://github.com/IHE/DEV.SDPi/issues/256))
 
 ## [1.4.1] - 2024-10-04
 
