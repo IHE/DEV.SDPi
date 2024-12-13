@@ -107,7 +107,7 @@ image::../images/vol1-diagram-sdpi-r-actor.svg[]
 | <<vol2_clause_dev_37>>
 
 5+<|
-Note 1: If the <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> implements the <<vol1_clause_sdpi_r_actor_option_retrieve_remote_data_reftext>>, then bidirectional exchange is supported and the roles are expanded to "Initiator & Responder".
+Note 1: If the <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> implements the <<vol1_clause_sdpi_r_actor_option_retrieve_remote_data_reftext>>, then bidirectional exchange is supported and the roles are expanded to "Initiator & Responder."
 
 |===
 

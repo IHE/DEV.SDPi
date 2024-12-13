@@ -779,7 +779,7 @@ From a conceptual perspective, <<acronym_sdc>> implements a <<acronym_soa>> arch
 [#figure_general_soa_model]
 image::../images/vol1-diagram-sdc-soa-conceptual-model.svg[align=center]
 
-This generalized model includes (3) system roles:
+This generalized model includes three system roles:
 
 . *Service Providers* -- indicate the capabilities or services that they support, often published to a centralized registry that all participating systems recognize;
 
@@ -804,7 +804,7 @@ A detailed overview of <<acronym_soa>> concepts is beyond the scope of this spec
 . <<ref_ornet_soa_for_safe_dynamic_medical_device_interoperability>>
 . <<ref_paper_design_pattern_for_soa_integration_of_medical_devices>>
 
-The <<acronym_sdc>> <<acronym_biceps>> standard, which SDPi-P profiles, consists of (3) core components, as illustrated in <<figure_sdc_biceps_components_model>>:
+The <<acronym_sdc>> <<acronym_biceps>> standard, which SDPi-P profiles, consists of three core components, as illustrated in <<figure_sdc_biceps_components_model>>:
 
 .SDC/BICEPS Components Model
 [#figure_sdc_biceps_components_model]
