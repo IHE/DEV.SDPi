@@ -337,7 +337,7 @@ NOTE: The mapping differs for physiological alert events and technical/advisory 
 [sdpi_requirement#r8077,sdpi_req_level=shall]
 ****
 
-A <<actor_somds_acm_gateway>> shall report the Alert Event Phase as "update", when there are more updates than just the Alert Priority as specified in <<ref_tbl_acm_obx14_alert_phase_mapping>>  for the "update" Alert Event Phase.
+A <<actor_somds_acm_gateway>> shall report the Alert Event Phase as "update" when there are more updates than just the Alert Priority as specified in <<ref_tbl_acm_obx14_alert_phase_mapping>>  for the "update" Alert Event Phase.
 
 ****
 
@@ -770,7 +770,7 @@ OBX|6|ST|68481\^MDC_ATTR_EVENT_PHASE^MDC|1.1.1.1.3|start||||||R
 [sdpi_requirement#r8078,sdpi_req_level=shall]
 ****
 
-A <<actor_somds_acm_gateway>> shall report the Alert Event Phase as "update", when there are more updates than just the Alert Priority as specified in <<ref_tbl_alert_phase_mapping>> for the "update" Alert Event Phase.
+A <<actor_somds_acm_gateway>> shall report the Alert Event Phase as "update" when there are more updates than just the Alert Priority as specified in <<ref_tbl_alert_phase_mapping>> for the "update" Alert Event Phase.
 
 ****
 
