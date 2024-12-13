@@ -122,14 +122,20 @@ include::conformance-statements/tf1-ch-c-conformance-statement-ieee-11073-10207-
 
 In addition to Referenced Standards, which include normative requirements and capabilities that this technical framework utilizes, there are other standards, specifications, publications, presentations, materials, etc. that have proven valuable in both developing and understanding the framework's content.  This list identifies those items, including many of which are referenced throughout the specifications.
 
+NOTE: The subcategories for the following sections are solely intended to provide organization to the list of entries, facilitating the use of this section.
+
 [bibliography]
 ==== Media (non-standards) References
+
+The following bibliographic references include graphics, "infographic", and similar media.
 
 * [[[ref_iso_81001_temple,ISO 81001-1 "The Temple"]]], ISO/IEC 81001-1 Figure 1 "The Temple" Diagram, Copyright &#169; 2019 NHS Digital, licensed via Wikimedia Commons, http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3[Greg Wye, NHS Digital, OGL 3], available at https://81001.org/page/Framework[81001.org Framework].
 
 
 [bibliography]
 ==== Standards & Publications
+
+The following bibliographic references include standards that are related to this specification but do not contain normative requirements, as well as papers that are useful in understanding related concepts.
 
 * [[[ref_ihe_pcd_sdpi_use_cases_compendium_2019,IHE PCD SDPi Use Cases Compendium:2019]]] IHE Patient Care Devices (PCD) Compendium of Medical Device Oriented Use Cases, Companion to the "Service-oriented Device Point-of-Care Interoperability (SDPi)" White Paper, Revision 1.1, November 1, 2019.  Available at https://profiles.ihe.net/DEV/[profiles.ihe.net/DEV/].
 
@@ -146,6 +152,8 @@ metalanguage - Extended BNF, 15 December 1996, available at https://standards.is
 
 [bibliography]
 ==== Presentations
+
+The following bibliographic references include slide decks and recordings that are helpful in understanding these specifications.
 
 * [[[ref_ihe_eu_experience_2021_presentation_cooper_schlichting,IHE EU Experience-2021 IHE CA for MedTech Solutions]]], "IHE & IHE Catalyst: Advancing Interoperable MedTec Solutions with "Regulatory Submission Ready" Conformity Assessment", presentation by Todd Cooper and Dr. Stefan Schlichting, available at https://connectathon.ihe-europe.net/experience-sessions-2021-presentations[IHE Europe Experience 2021 Presentations web page].
 
