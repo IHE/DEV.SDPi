@@ -33,6 +33,8 @@ Each section shall contain a list of action items of the following format: `<bri
 - Commented out concept sections 1:10.4.1.3 thru 1:10.4.1.10 and minimized referencing to years for improving readability ([#268](https://github.com/IHE/DEV.SDPi/issues/268))
 - Removed TBD statements from Table A-1 ([#273](https://github.com/IHE/DEV.SDPi/issues/273))
 
+### Added
+- Unique identification of text catalog ([#256](https://github.com/IHE/DEV.SDPi/issues/256))
 
 ## [1.4.1] - 2024-10-04
 
