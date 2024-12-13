@@ -12,7 +12,7 @@ a| *{supplement_note}*: This supplement is being written after the 2019 reorgani
 It is intended to amend a new IHE DEV Technical Framework (TF), that covers the expanded areas not only of PCD devices (enterprise integration focused), but also Personal Connected Health (*PCH*) devices and Device Point-of-care Interoperability (*DPI*) for device-to-device integration around an acute point-of-care (e.g., operating room table, ICU bed, emergency department bed, etc.).
 As a result of these basic changes in the scope and organization of the IHE DEV domain, some additional TF sections have been proposed to help the community understand how these technical specifications are integrated.  For example,
 
-. Section(s) for General IHE Devices architecture, use contexts, and (4) <<term_participant_key_purposes>> functions -- Connecting, Reporting, Alerting, and Controlling (external)
+. Section(s) for General IHE Devices architecture, use contexts, and four <<term_participant_key_purposes>> functions -- Connecting, Reporting, Alerting, and Controlling (external)
 . Section addressing "What is a device?" (aligned with a similar topic within the joint IHE-HL7 Gemini project); especially relevant given the differences between <<term_personal_health_device>> and <<term_point_of_care_device>> as well as the increasing prevalence of <<term_software_as_a_medical_device>> applications.  (See https://confluence.hl7.org/x/Iw7xB["Paper:  What is a device?"] for additional background.)
 
 These general concepts will help the technical framework reader understand the broader context into which the profile specifications are intended to be implemented.
@@ -31,6 +31,9 @@ Thus the "Safety, Effectiveness and Security - Requirements and Considerations" 
 
 Note that specific requirements from the above mentioned standards, may also be captured in <<vol1_appendix_b_referenced_standards_conformance>>.
 Generally, requirements from these standards would be mapped to the appropriate "Safety, Effectiveness and Security - Requirements and Considerations" sections throughout the specification.
+
+NOTE:  The *_SES sections in this document are not intended to be comprehensive_*, but provide helpful guidance to risk managers.
+Implementers must ensure that all appropriate risk management processes have been performed.
 
 // 2.3
 [#vol1_clause_integration_profiles_overview]
@@ -78,7 +81,7 @@ The SDPi Profiles are built upon a foundation of standards and profiles from <<a
 [#figure_sdpi_profiles_foundational_standards]
 image::../images/vol1-diagram-sdpi-profiles.svg[align=center]
 
-There is a particular challenge with SDPi profiling of <<acronym_sdc>> that resulted in the definition of (4) profiles and not one:
+There is a particular challenge with SDPi profiling of <<acronym_sdc>> that resulted in the definition of four profiles and not one:
 
 [none]
 . *__How to represent a <<acronym_soa>>-based architecture supporting an interactive <<term_plug_and_trust>> device-to-device (multi-way, M:N) interoperability specification using established IHE technical framework constructs? __*
@@ -91,7 +94,7 @@ Or IHE "gateway" actors include mappings to the foundational, non-SDC standards.
 The above figure illustrates how this balance was achieved, including:
 
 [none]
-. *4 Profiles* --
+. *Four Profiles*
 [none]
 .. By separating SDPi into four separate but integrated profiles, the complexity of the <<term_plug_and_trust>> system-to-system interactions + the optionality of real-world systems is better managed.
 . *Gateway Actors*
@@ -107,7 +110,7 @@ The above figure illustrates how this balance was achieved, including:
 .. These standards represent shared or consensus risk management requirements (e.g., risk mitigations) that together address how to implement <<acronym_ses>> interoperable *medical device* technologies.
 .. The diagram illustrates how the <<acronym_sdc>> Core Standards provide for basic healthcare connectivity; whereas the <<acronym_pkp>> standards add a requirements layer for devices that have a *_medical interoperability purpose_*.
 
-"**PRAC**tical" Device Interoperability may be a bit "cute"; however, it does map to the (4) Profiles, which together provide a practical, pragmatic way toward genuine <<acronym_pnt>> interoperability:
+"**PRAC**tical" Device Interoperability may be a bit "cute"; however, it does map to the four Profiles, which together provide a practical, pragmatic way toward genuine <<acronym_pnt>> interoperability:
 
 [none]
 . P -> SDPi-Plug-and-trust
@@ -145,7 +148,7 @@ Profile options are provided for additional capabilities that may be required to
 [sdpi_offset=12]
 ==== Service-oriented Device Point-of-care Interoperability - Alerting (SDPi-A) Profile
 The SDPi Alerting Profile builds on the basic <<acronym_pnt>> capabilities of the <<acronym_sdpi_p>> profile, but adds the requirements to fully support *_medical alerting_*.
-To that end, this specification implements the safety and security requirements of the <<ref_ieee_11073_10702_202x>> alert <<acronym_pkp>> standard (expected to be completed in 2024).
+To that end, this specification implements the safety and security requirements of the <<ref_ieee_11073_10702_202x>> alert <<acronym_pkp>> standard (expected to be completed in 2025).
 
 The profile supports core medical alerting functionality needed by all participating systems.
 Profile options are provided for additional capabilities that may be required to support extended scenarios (e.g., alert delegation).
@@ -202,12 +205,12 @@ Given the significant risks associated with allowing device-external control fun
 | <<acronym_sdpi_r>>
 | Device Enterprise Communication (DEC))
 | The <<actor_somds_dec_gateway>> integrates DEC Device Observation Reporter (DOR) Actor specifications.
-| Required for mapping from <<acronym_sdc>> & <<acronym_biceps>>  to HL7 V2 and DEC transactions.
+| Required for mapping from <<acronym_sdc>> and <<acronym_biceps>>  to HL7 V2 and DEC transactions.
 
 | <<acronym_sdpi_a>>
 | Alert Communication Management (ACM)
 | The <<actor_somds_acm_gateway>> integrates ACM Alert Reporter (AR) Actor specifications.
-| Required for mapping from <<acronym_sdc>> & <<acronym_biceps>>  to HL7 V2 and ACM transactions.
+| Required for mapping from <<acronym_sdc>> and <<acronym_biceps>>  to HL7 V2 and ACM transactions.
 
 |===
 

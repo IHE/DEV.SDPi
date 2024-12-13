@@ -4,7 +4,7 @@
         xmlns:msg="http://standards.ieee.org/downloads/11073/11073-10207-2017/message"
         xmlns:wsa="http://www.w3.org/2005/08/addressing">
     <s12:Header>
-        <wsa:Action>http://standards.ieee.org/downloads/11073/11073-20701-2018/StateEventService/WaveformStream</wsa:Action>
+        <wsa:Action>http://standards.ieee.org/downloads/11073/11073-20701-2018/WaveformService/WaveformStream</wsa:Action>
         <wsa:MessageID><!-- ... --></wsa:MessageID>
         <wsa:To><!-- ... --></wsa:To>
     </s12:Header>

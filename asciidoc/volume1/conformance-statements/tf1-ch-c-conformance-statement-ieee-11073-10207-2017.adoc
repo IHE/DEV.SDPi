@@ -16,7 +16,7 @@ Requirement Definition (this table's rows) will be referenced where they are sat
 
 ===== General
 
-WARNING:  GEN-1 & GEN-4 are broken references, GEN-2 and GEN-3 are satisfied by Glue, GEN-4 should be mandatory as extensions.
+WARNING:  GEN-1 and GEN-4 are broken references, GEN-2 and GEN-3 are satisfied by Glue, GEN-4 should be mandatory as extensions.
 
 ADD IEEE:  *Table 20 -- General ICSs table here*
 

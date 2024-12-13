@@ -175,7 +175,7 @@ NOTE: <<ref_tbl_pid6_mapping>> defines the mapping of the SDC patient name infor
 .R8106
 [sdpi_requirement#r8106,sdpi_req_level=shall,sdpi_max_occurrence=1]
 ****
-If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-7 field to the date & time of birth.
+If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-7 field to the date and time of birth.
 
 .Notes
 [%collapsible]
@@ -192,7 +192,7 @@ NOTE: <<ref_tbl_pid7_mapping>> defines the mapping of the SDC patient's date of 
 |PID-7/DTM-1
 |Date/Time
 |pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:DateOfBirth
-|Note that the HL7 date & time format differs from the xsd date/time formats and requires a mapping accordingly (see also <<ref_expl_dt_mapping>>).
+|Note that the HL7 date and time format differs from the xsd date/time formats and requires a mapping accordingly (see also <<ref_expl_dt_mapping>>).
 
 |===
 
@@ -305,7 +305,7 @@ When there are further updates of the sex value after the association of the pat
 |OBX-14
 |Date/Time of the Observation
 |pm:PatientContextState+++<wbr/>+++/@BindingStartTime
-|Note that the HL7 date & time format differs from the xsd date/time formats and requires a mapping accordingly (see also <<ref_expl_dt_mapping>>).
+|Note that the HL7 date and time format differs from the xsd date/time formats and requires a mapping accordingly (see also <<ref_expl_dt_mapping>>).
 
 |===
 

@@ -20,11 +20,11 @@
 :sdpi_milestone_publication: SDPi 1.4 Publication
 :sdpi_milestone_review: SDPi 1.4 Review
 
-:ihe_supplement_sdpi_revision: 1.4.0
+:ihe_supplement_sdpi_revision: 1.4.1
 :ihe_supplement_sdpi_revision_short: 1.4
 :ihe_supplement_sdpi_revision_date: {localdatetime}
 :ihe_supplement_sdpi_revision_label: Standard for Trial Use / Implementation
-:ihe_supplement_sdpi_publication_month: September 17, 2024
+:ihe_supplement_sdpi_publication_month: October 7, 2024
 :ihe_supplement_sdpi_public_comment_submission_deadline: N/A
 
 {empty} +

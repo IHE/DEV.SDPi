@@ -15,6 +15,38 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ## [Unreleased]
 
+### Changes
+- Fixed action URN in waveform stream example ([#292](https://github.com/IHE/DEV.SDPi/issues/292))
+- Clarified intentionality of difference between ad-hoc and managed discovery ([#317](https://github.com/IHE/DEV.SDPi/issues/317))
+- Clarified FHIR Gateway support for multiple paradigms ([#264](https://github.com/IHE/DEV.SDPi/issues/264))
+- Clarified that the SES sections are not comprehensive for risk management ([#271](https://github.com/IHE/DEV.SDPi/issues/271))
+- Bibliography note added indicating the rationale for the subcategories ([#266](https://github.com/IHE/DEV.SDPi/issues/266))
+- SDPi Use Case Approach explanatory text added to start of supplement ([#263](https://github.com/IHE/DEV.SDPi/issues/263))
+
+- Enhanced explanation of SOA aspects of the SDC/SDPi specification (HL7 Ballot) ([#276](https://github.com/IHE/DEV.SDPi/issues/276))
+
+### Editorial Fixes
+- Added deprecation notice for three requirements due to expected impact of BICEPS standard corrigendum ([#334](https://github.com/IHE/DEV.SDPi/issues/334))
+- Updated SDPi "Topic of Interest" issue management for clarity ([#274](https://github.com/IHE/DEV.SDPi/issues/274))
+- Addressed three JIRA tickets listed in issue ([#275](https://github.com/IHE/DEV.SDPi/issues/275))
+- Corrected some entries in "1:B.1 Referenced Standards" for consistency ([#267](https://github.com/IHE/DEV.SDPi/issues/267))
+- Commented out concept sections 1:10.4.1.3 thru 1:10.4.1.10 and minimized referencing to years for improving readability ([#268](https://github.com/IHE/DEV.SDPi/issues/268))
+- Removed TBD statements from Table A-1 ([#273](https://github.com/IHE/DEV.SDPi/issues/273))
+- Updated per IHE Style Conventions for numbers-in-text, em dashes, punctuation marks, etc. ([#269](https://github.com/IHE/DEV.SDPi/issues/269))
+
+### Added
+- Added SDPi FHIR Gateway ([#252](https://github.com/IHE/DEV.SDPi/issues/252))
+
+## [1.4.1] - 2024-10-04
+
+### Editorial Fixes
+
+- IHE Publications Editor review corrections - typos and style corrections ([#319](https://github.com/IHE/DEV.SDPi/pull/319))
+- Unclarities and typos in TF-1:A.1 ([#316](https://github.com/IHE/DEV.SDPi/issues/316))
+
+### Added
+- No additions
+
 ## [1.4.0] - 2024-09-17
 
 ### Editorial Fixes
