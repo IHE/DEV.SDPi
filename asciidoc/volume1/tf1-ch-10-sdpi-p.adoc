@@ -779,7 +779,7 @@ From a conceptual perspective, <<acronym_sdc>> implements a <<acronym_soa>> arch
 [#figure_general_soa_model]
 image::../images/vol1-diagram-sdc-soa-conceptual-model.svg[align=center]
 
-This generalized model includes (3) system roles:
+This generalized model includes three system roles:
 
 . *Service Providers* -- indicate the capabilities or services that they support, often published to a centralized registry that all participating systems recognize;
 
@@ -799,7 +799,7 @@ This generalized model includes (3) system roles:
 
 NOTE:  A detailed overview of <<acronym_soa>> concepts is beyond the scope of this specification.  See <<vol1_appendix_b_references>> for additional background materials.
 
-The <<acronym_sdc>> <<acronym_biceps>> standard, which SDPi-P profiles, consists of (3) core components, as illustrated in <<figure_sdc_biceps_components_model>>:
+The <<acronym_sdc>> <<acronym_biceps>> standard, which SDPi-P profiles, consists of three core components, as illustrated in <<figure_sdc_biceps_components_model>>:
 
 .SDC/BICEPS Components Model
 [#figure_sdc_biceps_components_model]

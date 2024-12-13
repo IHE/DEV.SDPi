@@ -28,7 +28,7 @@ It is recognized that this release is a work-in-progress that will continue to s
 These known limitations and forward-looking content include:
 
 . Releases along with the planned capability additions are managed in the project's https://github.com/orgs/IHE/projects/6[DEV.SDPi "Gemini SDPi Releases" Github project]
-. This supplement includes (4) SDPi Profiles, though the typical IHE supplement is organized for a single profile; as a result, some adjustments have been made, especially in the supplement overview section where there is a general SDPi overview and then basic overviews for each of the Profiles; challenging areas include profile "options" where there are FOUR sections vs. one; it is a work in progress and feedback is appreciated, especially to enhance clarity
+. This supplement includes four SDPi Profiles, though the typical IHE supplement is organized for a single profile; as a result, some adjustments have been made, especially in the supplement overview section where there is a general SDPi overview and then basic overviews for each of the Profiles; challenging areas include profile "options" where there are FOUR sections vs. one; it is a work in progress and feedback is appreciated, especially to enhance clarity
 . *Open / Closed Issues tables* -- starting with SDPi 1.1 and subsequent, the approach for the IHE open / closed issues section has been transitioned to utilize https://github.com/IHE/DEV.SDPi/issues[Github Issues] that are related to this release; each release will update the changelog file, detailing what is Added, Changed or Removed
 . *Requirements boxes* (e.g., "R1234") have been added especially in TF-2, with some also part of TF-1 and TF-3; this is an initial approach that *_will be significantly expanded in future versions of the supplement_*; documentation is provided in <<vol1_clause_sdpi_requirements_modeling_integration>>, including discussion related to how it will be expanded in future versions of the supplement;
 . *_<<term_safe_effective_secure>> Sections_* (see <<vol1_clause_appendix_a_ses_considerations_section_template>>) are included in the specification; however, their use and content will be significantly extended in future versions;
@@ -47,14 +47,14 @@ include::document-declarations.adoc[]
 [#supplement_clause_sdpi_supplement_organization]
 === SDPi Supplement Organization
 
-This IHE Devices Technical Framework supplement introduces a new _family of interoperability profiles_, Service-oriented Device Point-of-care Interoperability (SDPi), that comprise (4) separate profiles:
+This IHE Devices Technical Framework supplement introduces a new _family of interoperability profiles_, Service-oriented Device Point-of-care Interoperability (SDPi), that comprise four separate profiles:
 
 * SDPi-Plug-and-trust (*SDPi-P*) Profile
 * SDPi-Reporting (*SDPi-R*) Profile
 * SDPi-Alerting (*SDPi-A*) Profile
 * SDPi-external Control (*SDPi-xC*) Profile
 
-To that end, the supplement includes updates to all (3) IHE DEV TF volumes, including:
+To that end, the supplement includes updates to all three IHE DEV TF volumes, including:
 
 *TF-1  Profiles*
 
