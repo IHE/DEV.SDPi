@@ -1,0 +1,13 @@
+[#vol2_clause_appendix_sdpi_fhir_gateway]
+=== SDPi FHIR Gateway
+==== Scope
+This chapter defines the mapping from the <<acronym_mdib>> content as defined in this document and its underlying standards, to <<acronym_hl7>> <<acronym_fhir>> resources.
+
+The <<actor_somds_fhir_gateway>> represents a <<acronym_pocd>> data and/or alert reporter, which is defined in the <<ref_hl7_fhir_pocd_ig>>.
+
+The section https://build.fhir.org/ig/HL7/uv-pocd/mappingsdc.html[SDC to FHIR Mapping] of the <<ref_hl7_fhir_pocd_ig>> details the mapping from the <<acronym_mdib>> content to <<acronym_hl7>> <<acronym_fhir>> resources.
+
+==== Referenced Standards & Profiles
+This section provides an overview about the referenced standards and profiles used in this chapter:
+
+* <<ref_hl7_fhir_pocd_ig>>
