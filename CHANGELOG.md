@@ -8,12 +8,15 @@ and this project adheres to the following versioning scheme describe in the [SDP
 ## Modifications to the Keep a Changelog format
 
 The SDPi changelog shall not contain the following sections
-   - Deprecated
-   - Security
+ 
+- Deprecated
+- Security
 
 Each section shall contain a list of action items of the following format: `<brief one-sentence description of what has been done> (#<issue number & URL>).`
 
 ## [Unreleased]
+
+## [2.0.0] - 2024-12-13
 
 ### Changes
 - Fixed action URN in waveform stream example ([#292](https://github.com/IHE/DEV.SDPi/issues/292))
