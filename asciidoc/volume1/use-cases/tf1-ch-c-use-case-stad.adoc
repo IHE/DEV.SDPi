@@ -394,8 +394,10 @@ Non-slewing time-adjustments may indicate a serious error that impacts data that
 ====
 ****
 
-// This may be unneccessary since it applies to all participants from 10700:§5.2.2,RR1162. It does make it clear
-// that epoch versions aren't required though. 
+// This is also encouragement not to just reset the sequence id when a time step occurs. However, PKP's put the
+// responsibility of dealing with broken timestamps on the consumer, so we don't need this. 
+// Remove during cleanup. 
+ifeval::[1 < 0]
 .R1568
 [sdpi_requirement#r1568,sdpi_req_level=shall]
 ****
@@ -408,6 +410,7 @@ Epoch versions may not be required for timestamps on items that update frequentl
 
 ====
 ****
+endif::[]
 
 // This may be unnecessary as the device could fault at any time. However, perhaps it is useful as a way
 // to surface behaviours as part of conformity statements. And it emphasises the myriad of problems with
