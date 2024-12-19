@@ -386,10 +386,12 @@ The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_provider>> that ch
 [NOTE]
 [%collapsible]
 ====
-Non-slewing time-adjustments may indicate a serious error that impacts data that has already been:
+An abrupt time adjustment may indicate a serious error that impacts data that has already been:
  
  * displayed on a chart to the user,
  * exported to other systems.
+
+Abrupt time-adjustments are also known as step-changes and non-slewing time adjustments, particularly when using <<ref_rfc_5905, NTP>> to syncronize a device clock.
 
 ====
 ****
