@@ -76,7 +76,7 @@ The <<vol1_spec_sdpi_p_actor_somds_provider>> shall increment `sdpi:Epochs/@Vers
 .R0601
 [sdpi_requirement#r0601,sdpi_req_level=shall]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_provider>> shall reset all versioned timestamps when it assigns a new MDIB sequence identifier (`pm:MdibVersionGroup/@SequenceId`). 
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall set the version of all versioned timestamps to 0 when it assigns a new MDIB sequence identifier (`pm:MdibVersionGroup/@SequenceId`). 
 
 .Notes
 [NOTE]
