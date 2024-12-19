@@ -323,7 +323,7 @@ When the <<vol1_spec_sdpi_p_actor_somds_provider>> detects an abrupt time adjust
 ====
 NOTE: The <<term_manufacturer>> of the <<vol1_spec_sdpi_p_actor_somds_consumer>> considers the risks arising from timestamps spanning time-reference frames from a non-slewing clock adjustment having occurred at the <<vol1_spec_sdpi_p_actor_somds_provider>> when the <<vol1_spec_sdpi_p_actor_somds_consumer>> receives a changed value in the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDIB sequence identifier or when the `pm:ClockState/@ActivationState` is `StndBy`.
 
-NOTE: This clarifies the ambiguity in <<ref_ieee_11073_10207_2017>>, section B.182 when slewing is used to smoothly adjust the time-reference frame (using, for example, the <<ref_rfc_5905, NTPv4>> clock-discipline algorithm) where information from one or more <<acronym_ts_service>>s is used to maintain clock-discipline and does not (generally) "set" the clock.
+NOTE: This clarifies the ambiguity in <<ref_ieee_11073_10207_2017>>, section B.182 and <<ref_ieee_11073_20701_2018>>, R0014 when slewing is used to smoothly adjust the time-reference frame (using, for example, the <<ref_rfc_5905, NTPv4>> clock-discipline algorithm) where information from one or more <<acronym_ts_service>>s is used to maintain clock-discipline and does not (generally) "set" the clock.
 
 NOTE: Any timestamps strictly-less than `pm:ClockState/@LastSet` in the MDIB when `pm:ClockState/@ActivationState` is set to `StndBy` may be untrustworthy. 
 
