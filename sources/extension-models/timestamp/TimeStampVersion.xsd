@@ -47,7 +47,7 @@ This extension can be attached to the pm:ClockState/ext:Extension element.
   </xsd:element>
   <xsd:complexType name="EpochsType">
     <xsd:annotation>
-      <xsd:documentation>Collection of timesteps between epochs. Must include every version referenced elsewhere in the MDIB.</xsd:documentation>
+      <xsd:documentation>Collection of versioned transitions between epochs. Must include every version referenced elsewhere in the MDIB.</xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
       <xsd:element name="Epoch"
@@ -59,9 +59,9 @@ This extension can be attached to the pm:ClockState/ext:Extension element.
   <xsd:complexType name="EpochType">
     <xsd:annotation>
       <xsd:documentation>
-Type defining step change to a new Epochs.
+Type defining a transition between epochs.
 
-Defines the from the previous time-frame reference to the next time-frame reference. Adding this offset to this Timestamp gives the point in time (to an unbiased external observer) when this non-slewing time-step occurred in the next epoch's time-frame reference.
+Defines the step-change, which occurs at a single point in time, from the previous time-reference frame to the next time-reference frame. Adding this Offset to this Timestamp gives the point in time (to an unbiased external observer) when this time-step occurred in the next epoch's time-reference frame.
 
 For example, if device time advanced by 1 hour in epoch 0 at 10 am, there will be an Epoch entry for epoch version 0 with a timestamp of 10am and Offset of +1 hour. The equivalent time in epoch version 1 will be 11 am.</xsd:documentation>
     </xsd:annotation>
@@ -70,7 +70,7 @@ For example, if device time advanced by 1 hour in epoch 0 at 10 am, there will b
     <xsd:attribute name="Version"
                    use="required">
       <xsd:annotation>
-        <xsd:documentation>Epoch version when the non-slewing timeadjustment occurred. </xsd:documentation>
+        <xsd:documentation>Epoch version when the abrupt time adjustment occurred.</xsd:documentation>
       </xsd:annotation>
       <xsd:simpleType>
         <xsd:restriction base="sdpi:EpochVersion" />
@@ -80,15 +80,14 @@ For example, if device time advanced by 1 hour in epoch 0 at 10 am, there will b
                    type="pm:Timestamp"
                    use="required">
       <xsd:annotation>
-        <xsd:documentation>Timestamp, in the time-frame reference of this epoch version, when the non-slewing time adjustment occurred.
-</xsd:documentation>
+        <xsd:documentation>Timestamp, in the time-reference frame of this epoch version, when the abrupt time adjustment occurred.</xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="Offset"
                    type="xsd:duration"
                    use="required">
       <xsd:annotation>
-        <xsd:documentation>Offset from this time-frame reference to the next time-frame reference. </xsd:documentation>
+        <xsd:documentation>Offset from this time-reference frame to the next time-reference frame. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
