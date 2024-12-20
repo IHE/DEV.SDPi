@@ -69,12 +69,29 @@ include::../../listings/vol3-clause-biceps-content-example-timestamp-version.xml
 .R0600
 [sdpi_requirement#r0600,sdpi_req_level=shall]
 ****
-The <<vol1_spec_sdpi_p_actor_somds_provider>> shall increment `sdpi:Epochs/@Version` by exactly one, beginning from 0, for every non-slewing time adjustment to any system clock used as part of its System Function Contribution (<<acronym_sfc>>). 
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall include the `sdpi:EpochSupport` extension and set `sdpi:EpochSupport/@Version=1` in every system clock `pm:ClockDescriptor`, used as part of its System Function Contribution (<<acronym_sfc>>), that uses epoch versioning for abrupt time adjustments. A <<vol1_spec_sdpi_p_actor_somds_consumer>> shall ignore all epoch version information on any system clocks that do not include the `sdpi:EpochSupport` extension in any MDIB version.
+
+.Notes
+[NOTE]
+[%collapsible]
+====
+* The presence of `sdpi:EpochSupport` indicates support for this extension and related requirements. 
+* A <<vol1_spec_sdpi_p_actor_somds_provider>> can set `ext:MustUnderstand="true"` to exclude consumers that do not understand this extension. 
+* A <<vol1_spec_sdpi_p_actor_somds_consumer>> may rely on future versions of the extension being backwards compatible. 
+
+====
 
 ****
 
 .R0601
 [sdpi_requirement#r0601,sdpi_req_level=shall]
+****
+The <<vol1_spec_sdpi_p_actor_somds_provider>> shall increment `sdpi:Epochs/@Version` by exactly one, beginning from 0, for every non-slewing time adjustment to any system clock used as part of its System Function Contribution (<<acronym_sfc>>). 
+
+****
+
+.R0602
+[sdpi_requirement#r0602,sdpi_req_level=shall]
 ****
 A <<vol1_spec_sdpi_p_actor_somds_provider>> shall set the version of all versioned timestamps to 0 when it assigns a new MDIB sequence identifier (`pm:MdibVersionGroup/@SequenceId`). 
 

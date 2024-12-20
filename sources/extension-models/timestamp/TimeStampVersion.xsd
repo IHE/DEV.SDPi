@@ -11,6 +11,33 @@
               namespace="http://standards.ieee.org/downloads/11073/11073-10207-2017/extension" />
   <xsd:import schemaLocation="../BICEPS_ParticipantModel.xsd"
               namespace="http://standards.ieee.org/downloads/11073/11073-10207-2017/participant" />
+  <xsd:element name="EpochSupport"
+               type="sdpi:EpochSupportType">
+    <xsd:annotation>
+      <xsd:documentation>
+An extension to indicate the MDIB may include versioned timestamps, particularly if an abrupt time adjustment occurs. 
+
+This extension can be attached to the pm:ClockDescriptor descriptor.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="EpochSupportType">
+    <xsd:annotation>
+      <xsd:documentation>Advises epoch versioning support level. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute ref="ext:MustUnderstand"
+                   use="optional">
+      <xsd:annotation>
+        <xsd:documentation>True if consumers are not permitted to use information from the MDIB if they do not understand the version indicated. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="Version"
+                   default="1"
+                   type="xsd:unsignedShort">
+      <xsd:annotation>
+        <xsd:documentation>Epoch support used in the MDIB. Currently only version 1 support is defined. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
   <xsd:simpleType name="EpochVersion">
     <xsd:annotation>
       <xsd:documentation>Time-stamp epoch version. The default version for any timestamp not versioned is the current epoch version. </xsd:documentation>
