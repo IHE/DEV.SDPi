@@ -34,7 +34,9 @@ class RequirementLevelProcessor : Treeprocessor() {
                 is StructuralNodeWrapper.SdpiRequirement -> {
                     processRequirement(node.wrapped)
                 }
-                else -> logger.debug { "Ignore block of type '${block.context}'" }
+                else -> {
+                    //logger.debug { "Ignore block of type '${block.context}'" }
+                }
             }
         }
 

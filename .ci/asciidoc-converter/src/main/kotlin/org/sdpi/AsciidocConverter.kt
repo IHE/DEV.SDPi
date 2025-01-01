@@ -6,7 +6,6 @@ import org.asciidoctor.Asciidoctor
 import org.asciidoctor.Options
 import org.asciidoctor.SafeMode
 import org.sdpi.asciidoc.extension.*
-import org.sdpi.asciidoc.github.Issues
 import java.io.File
 import java.io.OutputStream
 import java.nio.file.Files
@@ -29,8 +28,18 @@ class AsciidocConverter(
 
         val anchorReplacements = AnchorReplacementsMap()
 
-        val requirementsBlockProcessor = RequirementsBlockProcessor()
-        asciidoctor.javaExtensionRegistry().block(requirementsBlockProcessor)
+        // Formats sdpi_requirement blocks & their content.
+        //   * RequirementBlockProcessor2 handles the containing sdpi_requirement block
+        //   * RelatedBlockProcessor handles [RELATED] blocks within requirement blocks.
+        //   * RequirementExampleBlockProcessor handles [EXAMPLE] blocks within requirement blocks.
+        asciidoctor.javaExtensionRegistry().block(RequirementBlockProcessor2())
+        asciidoctor.javaExtensionRegistry().block(RelatedBlockProcessor())
+        asciidoctor.javaExtensionRegistry().block(RequirementExampleBlockProcessor())
+
+        // Handle sdpi_requirement blocks.
+        // Obsolete: now handled by RequirementBlockProcessor2
+        //val requirementsListProcessor = RequirementListProcessor(requirementsBlockProcessor)
+
         asciidoctor.javaExtensionRegistry().treeprocessor(
             NumberingProcessor(
                 when (mode) {
@@ -41,17 +50,33 @@ class AsciidocConverter(
             )
         )
 
-        val requirementsListBlockMacroProcess = RequirementListMacroProcessor()
-        val requirementsListProcessor = RequirementListProcessor(requirementsBlockProcessor)
-        asciidoctor.javaExtensionRegistry().blockMacro(requirementsListBlockMacroProcess)
-        asciidoctor.javaExtensionRegistry().treeprocessor(requirementsListProcessor)
+        // Gather SDPI specific information from the document such as
+        // requirements and use-cases.
+        val infoCollector = SdpiInformationCollector()
+        asciidoctor.javaExtensionRegistry().treeprocessor(infoCollector)
 
-        asciidoctor.javaExtensionRegistry().treeprocessor(RequirementLevelProcessor())
+        // Support to insert tables of requirements etc. sdpi_requirement_table macros.
+        // Block macro processors insert placeholders that are populated when the tree is ready.
+        // Tree processors fill in the placeholders.
+        asciidoctor.javaExtensionRegistry().blockMacro(RequirementQuery_InsertPlaceholder())
+        asciidoctor.javaExtensionRegistry().treeprocessor(RequirementQuery_Populater(infoCollector))
+
+        // Check requirement keywords (e.g., shall requirements include only shall).
+        // Obsolete: now handled by SdpiInformationCollector.
+        // asciidoctor.javaExtensionRegistry().treeprocessor(RequirementLevelProcessor())
+
+        // Handle inline macros to cross-reference information from the document tree.
+        asciidoctor.javaExtensionRegistry().inlineMacro(RequirementReferenceMacroProcessor(infoCollector))
+        asciidoctor.javaExtensionRegistry().inlineMacro(UseCaseReferenceMacroProcessor(infoCollector))
+
         asciidoctor.javaExtensionRegistry().preprocessor(IssuesSectionPreprocessor(githubToken))
         asciidoctor.javaExtensionRegistry().preprocessor(DisableSectNumsProcessor())
         asciidoctor.javaExtensionRegistry().preprocessor(ReferenceSanitizerPreprocessor(anchorReplacements))
-        asciidoctor.javaExtensionRegistry()
-            .postprocessor(ReferenceSanitizerPostprocessor(anchorReplacements))
+        asciidoctor.javaExtensionRegistry().postprocessor(ReferenceSanitizerPostprocessor(anchorReplacements))
+
+
+        // Dumps tree of document structure to stdio.
+        asciidoctor.javaExtensionRegistry().treeprocessor(DumpTreeInfo())
 
         asciidoctor.requireLibrary("asciidoctor-diagram") // enables plantuml
         when (inputType) {
@@ -61,11 +86,18 @@ class AsciidocConverter(
 
         asciidoctor.shutdown()
 
-        val referencedArtifactsName = "referenced-artifacts"
-        val path = Path.of(outputFile.parentFile.absolutePath, referencedArtifactsName)
+        val jsonFormatter = Json { prettyPrint = true }
+
+        writeArtifact("sdpi-requirements", jsonFormatter.encodeToString(infoCollector.requirements()))
+        writeArtifact("sdpi-use-cases", jsonFormatter.encodeToString(infoCollector.useCases()))
+    }
+
+    private fun writeArtifact(strArtifactName : String, strArtifact : String)
+    {
+        val referencedArtifactsFolder = "referenced-artifacts"
+        val path = Path.of(outputFile.parentFile.absolutePath, referencedArtifactsFolder)
         Files.createDirectories(path)
-        val reqsDump = Json.encodeToString(requirementsBlockProcessor.detectedRequirements())
-        Path.of(path.toFile().absolutePath, "sdpi-requirements.json").toFile().writeText(reqsDump)
+        Path.of(path.toFile().absolutePath, "${strArtifactName}.json").toFile().writeText(strArtifact)
     }
 
     private companion object {

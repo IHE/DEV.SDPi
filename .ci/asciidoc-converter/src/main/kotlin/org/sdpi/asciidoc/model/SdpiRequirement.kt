@@ -1,6 +1,11 @@
 package org.sdpi.asciidoc.model
 
+import com.fasterxml.jackson.annotation.JsonGetter
+import com.fasterxml.jackson.annotation.JsonProperty
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import org.asciidoctor.ast.PhraseNode
+import org.asciidoctor.ast.StructuralNode
 import org.sdpi.asciidoc.*
 
 /**
@@ -41,6 +46,21 @@ enum class RequirementType(val keyword: String, val description: String)
     RISK_MITIGATION("risk_mitigation", "Risk management and mitigation"),
 }
 
+enum class RiskMitigationType(val keyword: String, val description : String)
+{
+    GENERAL("general", "General risk mitigation"),
+    SAFETY("safety", "Safety risk mitigation"),
+    EFFECTIVENESS("effectiveness", "Effectiveness risk mitigation"),
+    SECURITY("security", "Security risk mitigation"),
+    AUDIT("audit", "Traceability risk mitigation"),
+}
+
+enum class RiskMitigationTestability(val keyword: String, val description : String)
+{
+    INSPECTION("inspect", "Verification requires behaviour inspection"),
+    INTEROPERABILITY("wire", "Verification can be done by a test tool")
+}
+
 /**
  * Structure that represents an SDPi requirement.
  *
@@ -74,4 +94,215 @@ data class SdpiRequirement(
     {
         return "link:#$blockId[$localId]"
     }
+}
+
+@Serializable
+data class RequirementSpecification(
+    val normativeContent : List<Content>,
+    val noteContent : List<Content>,
+    val exampleContent : List<Content>,
+    val relatedContent : List<Content>)
+{
+
+}
+
+@Serializable
+sealed class SdpiRequirement2
+{
+    abstract val requirementNumber : Int
+    abstract val localId : String
+    abstract val globalId : String
+    abstract val level : RequirementLevel
+    abstract val groups : List<String>
+    abstract val specification: RequirementSpecification
+
+    /**
+     * Human friendly description of the requirement type.
+     */
+    abstract fun getTypeDescription() : String
+
+    fun makeLink(): String
+    {
+        return "link:#${getBlockId()}[${localId}]"
+    }
+
+    fun getBlockId(): String
+    {
+        return globalId
+    }
+
+    @Serializable
+    @SerialName("tech-feature")
+    data class TechFeature(
+        override val requirementNumber : Int,
+        override val localId : String,
+        override val globalId : String,
+        override val level : RequirementLevel,
+        override val groups : List<String>,
+        override val specification: RequirementSpecification) : SdpiRequirement2()
+    {
+        override fun getTypeDescription(): String
+        {
+            return RequirementType.TECH.description
+        }
+    }
+
+
+    @Serializable
+    @SerialName("use-case")
+    data class UseCase(
+        override val requirementNumber : Int,
+        override val localId : String,
+        override val globalId : String,
+        override val level : RequirementLevel,
+        override val groups : List<String>,
+        override val specification: RequirementSpecification,
+        val useCaseId : String) : SdpiRequirement2()
+    {
+        override fun getTypeDescription(): String
+        {
+            return RequirementType.USE_CASE.description
+        }
+    }
+
+
+    @Serializable
+    @SerialName("ref-ics")
+    data class ReferencedImplementationConformanceStatement(
+        override val requirementNumber : Int,
+        override val localId : String,
+        override val globalId : String,
+        override val level : RequirementLevel,
+        override val groups : List<String>,
+        override val specification: RequirementSpecification,
+        val referenceId : String,
+        val referenceSection : String,
+        val referenceRequirement : String) : SdpiRequirement2()
+    {
+        override fun getTypeDescription(): String
+        {
+            return RequirementType.REF_ICS.description
+        }
+    }
+
+    @Serializable
+    @SerialName("risk-mitigation")
+    data class RiskMitigation(
+        override val requirementNumber : Int,
+        override val localId : String,
+        override val globalId : String,
+        override val level : RequirementLevel,
+        override val groups : List<String>,
+        override val specification: RequirementSpecification,
+        val mitigating : RiskMitigationType,
+        val test : RiskMitigationTestability) : SdpiRequirement2()
+    {
+        override fun getTypeDescription(): String
+        {
+            return RequirementType.RISK_MITIGATION.description
+        }
+    }
+
+}
+
+@Serializable
+data class SdpiUseCase(
+    val id : String,
+    val title : String,
+    val anchor : String,
+)
+
+/**
+ * Storage for content elements (e.g., requirement normative statements,
+ * notes, etc). Supports writing to json format.
+ */
+@Serializable
+sealed class Content()
+{
+    abstract fun countKeyword(strKeyword : String) : Int
+
+    @Serializable
+    @SerialName("block")
+    data class Content_Block(val lines : List<String>) : Content()
+    {
+        override fun countKeyword(strKeyword : String) : Int
+        {
+            val searcher = Regex(strKeyword)
+            var nCount : Int = 0
+            for(str in lines)
+            {
+                nCount += searcher.findAll(str).count()
+            }
+
+            return nCount
+        }
+    }
+
+    @Serializable
+    @SerialName("listing")
+    data class Content_Listing(val title : String, val lines : List<String>) : Content()
+    {
+        override fun countKeyword(strKeyword : String) : Int
+        {
+            val searcher = Regex(strKeyword)
+            var nCount : Int = searcher.findAll(title).count()
+            for(str in lines)
+            {
+                nCount += searcher.findAll(str).count()
+            }
+
+            return nCount
+        }
+    }
+
+    @Serializable
+    @SerialName("olist")
+    data class Content_OrderedList(val items : List<Content>): Content()
+    {
+        override fun countKeyword(strKeyword: String): Int
+        {
+            var nCount : Int = 0
+            for(item in items)
+            {
+                nCount += item.countKeyword(strKeyword)
+            }
+            return nCount
+        }
+    }
+
+    @Serializable
+    @SerialName("ulist")
+    data class Content_UnorderedList(val items : List<Content>): Content()
+    {
+        override fun countKeyword(strKeyword: String): Int
+        {
+            var nCount : Int = 0
+            for(item in items)
+            {
+                nCount += item.countKeyword(strKeyword)
+            }
+            return nCount
+        }
+    }
+
+    @Serializable
+    @SerialName("item")
+    data class Content_ListItem(val strMarker : String, val strText : String): Content()
+    {
+        override fun countKeyword(strKeyword : String) : Int
+        {
+            val searcher = Regex(strKeyword)
+            return  searcher.findAll(strText).count()
+        }
+    }
+}
+
+fun countKeyword(strKeyword: String, contents : List<Content>) : Int
+{
+    var nCount : Int = 0
+    for (content in contents)
+    {
+        nCount += content.countKeyword(strKeyword)
+    }
+    return nCount
 }

@@ -2,27 +2,22 @@ package org.sdpi.asciidoc.extension
 
 import org.asciidoctor.ast.StructuralNode;
 import org.asciidoctor.extension.BlockMacroProcessor;
-import org.asciidoctor.extension.Contexts
 import org.asciidoctor.extension.Name;
-import org.sdpi.asciidoc.plainContext
 import org.apache.logging.log4j.kotlin.Logging
-import org.asciidoctor.Options
-import org.asciidoctor.ast.ContentModel
-import org.sdpi.asciidoc.Attributes
 import org.sdpi.asciidoc.BlockAttribute
 
-const val BLOCK_MACRO_NAME_SDPI_REQUIREMENT_LIST = "sdpi_requirement_list"
+const val BLOCK_MACRO_NAME_SDPI_REQUIREMENT_TABLE = "sdpi_requirement_table"
 
 /**
  * The role applied to requirement list placeholder tables. This role
  * enables the RequirementListProcessor to figure out which tables it
  * needs to populate.
  */
-const val REQUIREMENT_LIST_ROLE = "requirement-list"
+const val REQUIREMENT_TABLE_ROLE = "requirement-table"
 
 /**
- * Processor for requirement list block macros.
- * The requirement list block macro provides a mechanism to insert a table
+ * Processor for requirement table block macro.
+ * The requirement table block macro provides a mechanism to insert a table
  * summarizing requirements that match a filter included in the macro. For
  * example, all requirement in a group.
  *
@@ -32,23 +27,23 @@ const val REQUIREMENT_LIST_ROLE = "requirement-list"
  *
  * Example: to include a table of all requirements in the consumer or
  * discovery-proxy groups insert:
- * sdpi_requirement_list::[sdpi_req_group="consumer,discovery-proxy"]
+ * sdpi_requirement_table::[sdpi_req_group="consumer,discovery-proxy"]
  *
  * Not all requirements may be defined when the block macro is processed so
- * this processor prepares the document for the RequirementListProcessor
- * to actually populate the table; it simply inserts a table placeholer.
+ * this processor prepares the document for the RequirementQuery_Populater
+ * to actually populate the table; it simply inserts a table placeholder.
  */
-@Name(BLOCK_MACRO_NAME_SDPI_REQUIREMENT_LIST)
-class RequirementListMacroProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_SDPI_REQUIREMENT_LIST)
+@Name(BLOCK_MACRO_NAME_SDPI_REQUIREMENT_TABLE)
+class RequirementQuery_InsertPlaceholder : BlockMacroProcessor(BLOCK_MACRO_NAME_SDPI_REQUIREMENT_TABLE)
 {
     private companion object : Logging {
     }
 
     override fun process(parent: StructuralNode, target: String, attributes: MutableMap<String, Any>): Any
     {
-        attributes["role"] = REQUIREMENT_LIST_ROLE
+        attributes["role"] = REQUIREMENT_TABLE_ROLE
         val placeholderTable = createTable(parent)
-        placeholderTable.attributes["role"] = REQUIREMENT_LIST_ROLE
+        placeholderTable.attributes["role"] = REQUIREMENT_TABLE_ROLE
 
         // Add filter attributes to the table for the tree processor to consume.
         val strGroup = attributes[BlockAttribute.REQUIREMENT_GROUPS.key]

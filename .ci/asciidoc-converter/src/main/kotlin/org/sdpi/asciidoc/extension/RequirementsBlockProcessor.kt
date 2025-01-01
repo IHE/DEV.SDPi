@@ -3,6 +3,7 @@ package org.sdpi.asciidoc.extension
 import org.apache.logging.log4j.kotlin.Logging
 import org.asciidoctor.Options
 import org.asciidoctor.ast.ContentModel
+import org.asciidoctor.ast.ContentNode
 import org.asciidoctor.ast.StructuralNode
 import org.asciidoctor.extension.BlockProcessor
 import org.asciidoctor.extension.Contexts
@@ -99,7 +100,7 @@ class RequirementsBlockProcessor() : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT)
         reader,
         attributes
     ).let { requirement ->
-        logger.info { "Found SDPi requirement #${requirement.number}: $requirement" }
+        logger.info { "Found SDPi requirement #${requirement.number}"}//: $requirement" }
         requirement.asciiDocAttributes[BlockAttribute.ROLE] = REQUIREMENT_ROLE
         attributes["role"] = REQUIREMENT_ROLE
         storeRequirement(requirement)
@@ -124,6 +125,7 @@ class RequirementsBlockProcessor() : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT)
         val requirementType : RequirementType = getRequirementType(requirementNumber, mutableAttributes)
 
         mutableAttributes["id"] = strGlobalId
+        mutableAttributes["requirement-number"] = requirementNumber
         mutableAttributes["title"] = formatRequirementTitle(requirementNumber, strGlobalId)
 
         val attributes = Attributes.create(mutableAttributes)
@@ -136,6 +138,7 @@ class RequirementsBlockProcessor() : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT)
         }
 
         val lines = reader.readLines()
+        //val lines = listOf<String>()
 
         try {
             return SdpiRequirement(
@@ -191,6 +194,7 @@ class RequirementsBlockProcessor() : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT)
                 logger.error { it }
             }
         }
+
         return reqType
     }
 
@@ -260,7 +264,7 @@ class RequirementsBlockProcessor() : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT)
         val strAttribute : String = "sdpi_oid${strOidId}"
         val strOid = document.attributes[strAttribute]
         checkNotNull(strOid) {
-            ("SDPi requirement #'${requirementNumber}' has an invalid oid id: '${strOidId}'"). also {
+            ("The oid id ('${strOidId}') for SDPi requirement #'${requirementNumber}' cannot be found."). also {
                 logger.error(it)
             }
         }

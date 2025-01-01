@@ -1,25 +1,24 @@
 package org.sdpi.asciidoc.extension
 
 import org.apache.logging.log4j.kotlin.Logging
-import org.asciidoctor.ast.Block
 import org.asciidoctor.ast.Document
 import org.asciidoctor.ast.StructuralNode
 import org.asciidoctor.ast.Table
 import org.asciidoctor.extension.Contexts
 import org.asciidoctor.extension.Treeprocessor
-import org.asciidoctor.extension.Name
 import org.sdpi.asciidoc.BlockAttribute
 import org.sdpi.asciidoc.getRequirementGroups
 import org.sdpi.asciidoc.model.SdpiRequirement
+import org.sdpi.asciidoc.model.SdpiRequirement2
 import org.sdpi.asciidoc.model.StructuralNodeWrapper
 import org.sdpi.asciidoc.model.toSealed
 import org.sdpi.asciidoc.plainContext
 
 /**
- * Tree processor to populate requirement tables.
- * The requirement list macro processor inserts placeholder tables that we populate
+ * Tree processor to populate requirement table placeholders, which are inserted
+ * by the RequirementTableMacroProcessor.
  */
-class RequirementListProcessor(private val requirements : RequirementsBlockProcessor): Treeprocessor()
+class RequirementQuery_Populater(private val docInfo : SdpiInformationCollector): Treeprocessor()
 {
     private companion object : Logging {
     }
@@ -32,41 +31,38 @@ class RequirementListProcessor(private val requirements : RequirementsBlockProce
 
     private fun processBlock(block: StructuralNode)
     {
-        block.toSealed().let { node ->
-            when (node) {
-                is StructuralNodeWrapper.SdpiRequirementList ->
-                {
-                    processRequirementList(node.wrapped)
-                }
-                else ->
-                {
-                   // logger.debug { "Ignore block of type '${block.context}', attributes=${block.attributes}, role=${block.roles.size}" }
-                }
+        if (block.hasRole(REQUIREMENT_TABLE_ROLE))
+        {
+            populateTable(block as Table)
+        }
+        else
+        {
+            for(child in block.blocks)
+            {
+                processBlock(child)
             }
         }
-
-        block.blocks.forEach { processBlock(it) }
     }
 
     /**
      * Processes a requirements list placeholder table by determining
      * which requirements should be included in the table and adding them.
      */
-    private fun processRequirementList(block : Table)
+    private fun populateTable(block : Table)
     {
         logger.info {"Processing requirements list '${block.context}', attributes=${block.attributes}, role=${block.roles.size}"}
 
-        val requirementsInDocument = requirements.detectedRequirements()
+        val requirementsInDocument = docInfo.requirements()
 
         val aGroups = getRequirementGroups(block.attributes[BlockAttribute.REQUIREMENT_GROUPS.key])
-        val selectedRequirements = requirementsInDocument.values.filter { it.groups.any{ it in aGroups} }
+        val selectedRequirements = requirementsInDocument.values.filter { it -> it.groups.any{ it in aGroups} }
         populateTable(block, selectedRequirements)
     }
 
     /**
      * Populates the table with the supplied requirements
      */
-    private fun populateTable(table : Table, requirements : Collection<SdpiRequirement>)
+    private fun populateTable(table : Table, requirements : Collection<SdpiRequirement2>)
     {
         val colId = createTableColumn(table, 0)
         val colLocalId = createTableColumn(table, 1)
@@ -83,11 +79,9 @@ class RequirementListProcessor(private val requirements : RequirementsBlockProce
 
         for (req in requirements)
         {
-            val strLocalId = req.localId
-            val strLinkId = req.blockId
             val strGlobalId = req.globalId
             val level = req.level
-            val type = req.type
+            val strType = req.getTypeDescription()
 
             val strIdLink = req.makeLink()
 
@@ -98,7 +92,7 @@ class RequirementListProcessor(private val requirements : RequirementsBlockProce
             row.cells.add(createTableCell(colId, cellGlobalId))
             row.cells.add(createTableCell(colLocalId, strIdLink))
             row.cells.add(createTableCell(colLevel, level.keyword))
-            row.cells.add(createTableCell(colType, type.description))
+            row.cells.add(createTableCell(colType, strType))
 
             table.body.add(row)
         }
