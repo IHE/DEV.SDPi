@@ -1,1 +1,321 @@
-{"1021":{"number":1021,"globalId":"1.3.6.1.4.1.19376.1.6.2.11.2.1021","type":"TECH","level":"SHALL","groups":["provider","discovery-proxy"],"maxOccurrence":1,"asciiDocAttributes":{"attributes":{"1":"sdpi_requirement","sdpi_req_type":"tech_feature","cloaked-context":"sidebar","role":"requirement","sdpi_req_specification":"sdpi-p","sdpi_req_level":"shall","id":"1.3.6.1.4.1.19376.1.6.2.11.2.1021","title":"R1021 [.global-id]#`(1.3.6.1.4.1.19376.1.6.2.11.2.1021)`#","sdpi_req_group":"provider,discovery-proxy"}},"asciiDocLines":["","[NORMATIVE]","When the vol1_spec_sdpi_p_option_discovery_proxy is enabled for a vol1_spec_sdpi_p_actor_somds_provider Actor, then it shall use the vol2_clause_dev_46, DEV-46 transaction to update the vol1_spec_sdpi_p_actor_discovery_proxy Actor on its network presence and departure.","","[NOTE]","====",". doh",". ray",". me","====","",".Related","[%collapsible]","====",". <<ref_w3c_ws_eventing_2006>>, section 3.1",". <<ref_ieee_11073_10207_2017>>, §C.57, R0121","====",""]},"1001":{"number":1001,"globalId":"1.3.6.1.4.1.19376.1.6.2.x.2.1001","type":"TECH","level":"SHOULD","groups":["consumer"],"maxOccurrence":1,"asciiDocAttributes":{"attributes":{"1":"sdpi_requirement","sdpi_req_type":"tech_feature","cloaked-context":"sidebar","role":"requirement","sdpi_req_specification":"sdpi-a","sdpi_req_level":"should","id":"1.3.6.1.4.1.19376.1.6.2.x.2.1001","title":"R1001 [.global-id]#`(1.3.6.1.4.1.19376.1.6.2.x.2.1001)`#","sdpi_req_group":"consumer"}},"asciiDocLines":["","[NORMATIVE]","When the vol1_spec_sdpi_p_option_discovery_proxy is enabled for a vol1_spec_sdpi_p_actor_somds_provider Actor, then it should use the vol2_clause_dev_46, DEV-46 transaction to update the vol1_spec_sdpi_p_actor_discovery_proxy Actor on its network presence and departure.","","[NOTE]","Let's start at the very beginning; a very good place to start!","",".Related","[%collapsible]","====",". <<ref_w3c_ws_eventing_2006>>, section 3.1","====",""]}}
+{
+    "1021": {
+        "type": "tech-feature",
+        "requirementNumber": 1021,
+        "localId": "R1021",
+        "globalId": "1.3.6.1.4.1.19376.1.6.2.11.2.1021",
+        "level": "SHALL",
+        "groups": [
+            "provider",
+            "discovery-proxy"
+        ],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "When the vol1_spec_sdpi_p_option_discovery_proxy is enabled for a vol1_spec_sdpi_p_actor_somds_provider Actor, then it shall use the vol2_clause_dev_46, DEV-46 transaction to update the vol1_spec_sdpi_p_actor_discovery_proxy Actor on its network presence and departure."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "olist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": ".",
+                            "strText": "doh"
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": ".",
+                            "strText": "ray"
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": ".",
+                            "strText": "me"
+                        }
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": [
+                {
+                    "type": "olist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": ".",
+                            "strText": "<a href=\"#ref_w3c_ws_eventing_2006\">[W3C Submission, WS-Eventing:2006]</a>, section 3.1"
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": ".",
+                            "strText": "<a href=\"#ref_ieee_11073_10207_2017\">[ISO/IEEE 11073-10207:2017]</a>, §C.57, R0121"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "1001": {
+        "type": "tech-feature",
+        "requirementNumber": 1001,
+        "localId": "R1001",
+        "globalId": "1.3.6.1.4.1.19376.1.6.2.x.2.1001",
+        "level": "SHOULD",
+        "groups": [
+            "consumer"
+        ],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The term_manufacturer of a vol1_spec_sdpi_p_actor_somds_participant should include all of the following information in the accompanying documentation:"
+                    ]
+                },
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The responsible organization needs to provide a acronym_ts_service with 50 millisecond accuracy."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The responsible organization needs to provide a redundant acronym_ts_service configuration with at least one backup server."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The responsible organization needs to configure the same  acronym_ts_service for vol1_spec_sdpi_p_actor_somds_participants that execute term_system_function_contributions together."
+                        }
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Let's start at the very beginning; a very good place to start!"
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": [
+                {
+                    "type": "olist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": ".",
+                            "strText": "<a href=\"#ref_w3c_ws_eventing_2006\">[W3C Submission, WS-Eventing:2006]</a>, section 3.1"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "5": {
+        "type": "tech-feature",
+        "requirementNumber": 5,
+        "localId": "R0005",
+        "globalId": "1.3.6.1.4.1.19376.1.6.2.10.1.1.1.2.5",
+        "level": "SHOULD",
+        "groups": [
+            "consumer",
+            "discovery"
+        ],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "In its role as an HTTP client, a vol1_spec_sdpi_p_actor_somds_participant should request gzip compression by using Accept-Encoding with \"gzip\"."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [
+                {
+                    "type": "listing",
+                    "title": "HTTP request header to request compression",
+                    "lines": [
+                        "GET /path/to/resource HTTP/1.1",
+                        "Host: www.example.com",
+                        "Accept-Encoding: gzip"
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "The client indicates gzip compression to be an accepted response encoding. Note that the server is nevertheless free to send the response without compression."
+                    ]
+                },
+                {
+                    "type": "listing",
+                    "title": "HTTP response header indicating compressed content",
+                    "lines": [
+                        "HTTP/1.1 200 OK",
+                        "Date: sun, 26 June 2016 22:38:34 GMT",
+                        "Server: Apache/1.3.3.7 (Unix)  (Red-Hat/Linux)",
+                        "Last-Modified: Wed, 08 Jan 2020 23:11:55 GMT",
+                        "Accept-Ranges: bytes",
+                        "Content-Length: 438",
+                        "Connection: close",
+                        "Content-Type: text/xml; charset=UTF-8",
+                        "Content-Encoding: gzip"
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "The HTTP server decided to encode the response with the gzip compression. Note that servers are not required to actually compress (e.g., due to load conditions or unknown algorithms they are entitled to answer with identity encoding)."
+                    ]
+                }
+            ],
+            "relatedContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "ref_rfc_7231, section 5.3.4"
+                    ]
+                }
+            ]
+        }
+    },
+    "15": {
+        "type": "tech-feature",
+        "requirementNumber": 15,
+        "localId": "R0015",
+        "globalId": "1.3.6.1.4.1.19376.1.6.2.10.1.1.1.2.15",
+        "level": "SHOULD",
+        "groups": [
+            "consumer",
+            "discovery"
+        ],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "In its role as an HTTP client, a vol1_spec_sdpi_p_actor_somds_participant should request gzip compression by using Accept-Encoding with \"gzip\"."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "16": {
+        "type": "ref-ics",
+        "requirementNumber": 16,
+        "localId": "R0016",
+        "globalId": "1.3.6.1.4.1.19376.1.6.2.10.1.1.1.2.16",
+        "level": "SHOULD",
+        "groups": [
+            "consumer",
+            "discovery"
+        ],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "In its role as an HTTP client, a vol1_spec_sdpi_p_actor_somds_participant should request gzip compression by using Accept-Encoding with \"gzip\"."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        },
+        "referenceId": "ref_ieee_11073_10700_2022",
+        "referenceSection": "5.2.4",
+        "referenceRequirement": "RR1067"
+    },
+    "17": {
+        "type": "risk-mitigation",
+        "requirementNumber": 17,
+        "localId": "R0017",
+        "globalId": "1.3.6.1.4.1.19376.1.6.2.10.1.1.1.2.17",
+        "level": "SHOULD",
+        "groups": [
+            "consumer",
+            "discovery"
+        ],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "In its role as an HTTP client, a vol1_spec_sdpi_p_actor_somds_participant should request gzip compression by using Accept-Encoding with \"gzip\"."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        },
+        "mitigating": "SAFETY",
+        "test": "INTEROPERABILITY"
+    },
+    "1520": {
+        "type": "use-case",
+        "requirementNumber": 1520,
+        "localId": "R1520",
+        "globalId": "1.3.6.1.4.1.19376.1.6.2.x.2.1520",
+        "level": "SHALL",
+        "groups": [
+            "consumer",
+            "time"
+        ],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The term_manufacturer of a vol1_spec_sdpi_p_actor_somds_participant shall include all of the following information in the accompanying documentation:"
+                    ]
+                },
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The responsible organization needs to provide a acronym_ts_service with 50 millisecond accuracy."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The responsible organization needs to provide a redundant acronym_ts_service configuration with at least one backup server."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The responsible organization needs to configure the same  acronym_ts_service for vol1_spec_sdpi_p_actor_somds_participants that execute term_system_function_contributions together."
+                        }
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The 50ms target accuracy is suitable for highly demanding use cases like real time waveform comparison."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        },
+        "useCaseId": "stad"
+    }
+}

@@ -10,11 +10,23 @@
 :sdpi_oid.sdpi-a: 1.3.6.1.4.1.19376.1.6.2.x
 :sdpi_oid.sdpi-r: 1.3.6.1.4.1.19376.1.6.2.x
 :sdpi_oid.sdpi-xC: 1.3.6.1.4.1.19376.1.6.2.x
+:sdpi_oid.dpi: 1.3.6.1.4.1.19376.1.6.2.x
 
 
 Don't worry about gumberoos or splintercats.
 Something far more fearsome plagues the days, nights, and inbetweens.
 Wolpertingers.
+
+Check out RefRequirement:r1001[], it is super important!
+
+And don't forget to look at RefUseCase:stad[], it is a good one. 
+
+== Acronyms
+
+
+[[acronym_stad,STAD]] STAD
+[[label_use_case_name_stad,Synchronized Time Across Devices]] Synchronized Time Across Devices
+
 
 == Origins
 
@@ -24,15 +36,15 @@ Wolpertingers are {url-wolpertinger}[ravenous beasts].
 
 Here are the requirements for providers. 
 
-sdpi_requirement_list::[sdpi_req_group=provider]
+sdpi_requirement_table::[sdpi_req_group=provider]
 
 Here are the requirements for consumers. 
 
-sdpi_requirement_list::[sdpi_req_group=consumer]
+sdpi_requirement_table::[sdpi_req_group=consumer]
 
 Here are the requirements for consumers and discovery proxies. 
 
-sdpi_requirement_list::[sdpi_req_group="consumer,discovery-proxy"]
+sdpi_requirement_table::[sdpi_req_group="consumer,discovery-proxy"]
 
 == Some requirements
 
@@ -50,8 +62,7 @@ When the vol1_spec_sdpi_p_option_discovery_proxy is enabled for a vol1_spec_sdpi
 . me
 ====
 
-.Related
-[%collapsible]
+[RELATED]
 ====
 . <<ref_w3c_ws_eventing_2006>>, section 3.1
 . <<ref_ieee_11073_10207_2017>>, §C.57, R0121
@@ -64,15 +75,128 @@ When the vol1_spec_sdpi_p_option_discovery_proxy is enabled for a vol1_spec_sdpi
 ****
 
 [NORMATIVE]
-When the vol1_spec_sdpi_p_option_discovery_proxy is enabled for a vol1_spec_sdpi_p_actor_somds_provider Actor, then it should use the vol2_clause_dev_46, DEV-46 transaction to update the vol1_spec_sdpi_p_actor_discovery_proxy Actor on its network presence and departure.
+====
+The term_manufacturer of a vol1_spec_sdpi_p_actor_somds_participant should include all of the following information in the accompanying documentation:
+
+ * The responsible organization needs to provide a acronym_ts_service with 50 millisecond accuracy.
+ * The responsible organization needs to provide a redundant acronym_ts_service configuration with at least one backup server.
+ * The responsible organization needs to configure the same  acronym_ts_service for vol1_spec_sdpi_p_actor_somds_participants that execute term_system_function_contributions together.
+
+====
 
 [NOTE]
+====
 Let's start at the very beginning; a very good place to start!
+====
 
-.Related
-[%collapsible]
+[RELATED]
 ====
 . <<ref_w3c_ws_eventing_2006>>, section 3.1
+====
+
+****
+
+
+.R0005
+[sdpi_requirement,sdpi_req_level=should,sdpi_req_type=tech_feature,sdpi_req_group="consumer,discovery",sdpi_req_specification=sdpi]
+****
+
+[NORMATIVE]
+In its role as an HTTP client, a vol1_spec_sdpi_p_actor_somds_participant should request gzip compression by using Accept-Encoding with "gzip".
+
+[EXAMPLE]
+====
+.HTTP request header to request compression
+----
+GET /path/to/resource HTTP/1.1
+Host: www.example.com
+Accept-Encoding: gzip
+----
+
+The client indicates gzip compression to be an accepted response encoding. Note that the server is nevertheless free to send the response without compression.
+
+.HTTP response header indicating compressed content
+----
+HTTP/1.1 200 OK
+Date: sun, 26 June 2016 22:38:34 GMT
+Server: Apache/1.3.3.7 (Unix)  (Red-Hat/Linux)
+Last-Modified: Wed, 08 Jan 2020 23:11:55 GMT
+Accept-Ranges: bytes
+Content-Length: 438
+Connection: close
+Content-Type: text/xml; charset=UTF-8
+Content-Encoding: gzip
+----
+
+The HTTP server decided to encode the response with the gzip compression. Note that servers are not required to actually compress (e.g., due to load conditions or unknown algorithms they are entitled to answer with identity encoding).
+====
+
+[RELATED]
+====
+ref_rfc_7231, section 5.3.4
+====
+
+****
+
+.R0015
+[sdpi_requirement,sdpi_req_level=should,sdpi_req_type=tech_feature,sdpi_req_group="consumer,discovery",sdpi_req_specification=sdpi]
+****
+
+[NORMATIVE]
+In its role as an HTTP client, a vol1_spec_sdpi_p_actor_somds_participant should request gzip compression by using Accept-Encoding with "gzip".
+
+****
+
+.R0016
+[sdpi_requirement,sdpi_req_level=should,sdpi_req_type=ref_ics,sdpi_req_group="consumer,discovery",sdpi_req_specification=sdpi,sdpi_ref_id=ref_ieee_11073_10700_2022,sdpi_ref_section=5.2.4,sdpi_ref_req=RR1067]
+****
+
+[NORMATIVE]
+In its role as an HTTP client, a vol1_spec_sdpi_p_actor_somds_participant should request gzip compression by using Accept-Encoding with "gzip".
+
+****
+
+.R0017
+[sdpi_requirement,sdpi_req_level=should,sdpi_req_type=risk_mitigation,sdpi_req_group="consumer,discovery",sdpi_req_specification=sdpi,sdpi_ses_type=safety,sdpi_ses_test=wire]
+****
+
+[NORMATIVE]
+In its role as an HTTP client, a vol1_spec_sdpi_p_actor_somds_participant should request gzip compression by using Accept-Encoding with "gzip".
+
+****
+
+
+
+
+[#vol1_clause_appendix_c_use_case_stad,sdpi_offset=2]
+[role="use-case",sdpi_use_case_id=stad]
+=== <<label_use_case_name_stad>> (<<acronym_stad>>)
+
+// NOTE:  See use case labels in document-declarations.adoc
+
+==== Narrative
+Nurse Jean attaches a ventilator to the medical device network in the ICU.  It automatically obtains the correct time.
+
+==== Benefits
+Automatically acquiring the time saves the user from spending time entering the time into the device.  It also guarantees that the correct time will be entered.
+It is also important for all devices to have a consistent time since the data being exported to consuming devices and systems will use the time stamps from the device to mark the time that the clinical data was acquired.  Since this is part of the clinical record, accuracy is very important.
+
+.R1520
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=use_case_feature,sdpi_req_group="consumer,time",sdpi_req_specification=dpi]
+****
+
+[NORMATIVE]
+====
+The term_manufacturer of a vol1_spec_sdpi_p_actor_somds_participant shall include all of the following information in the accompanying documentation:
+
+ * The responsible organization needs to provide a acronym_ts_service with 50 millisecond accuracy.
+ * The responsible organization needs to provide a redundant acronym_ts_service configuration with at least one backup server.
+ * The responsible organization needs to configure the same  acronym_ts_service for vol1_spec_sdpi_p_actor_somds_participants that execute term_system_function_contributions together.
+====
+
+[NOTE]
+====
+The 50ms target accuracy is suitable for highly demanding use cases like real time waveform comparison.
 ====
 
 ****
