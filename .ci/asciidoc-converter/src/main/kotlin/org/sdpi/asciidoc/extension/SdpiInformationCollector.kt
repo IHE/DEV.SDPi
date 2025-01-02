@@ -4,11 +4,57 @@ import org.apache.logging.log4j.kotlin.Logging
 import org.asciidoctor.ast.ContentNode
 import org.asciidoctor.ast.Document
 import org.asciidoctor.ast.StructuralNode
+import org.asciidoctor.extension.DocinfoProcessor
+import org.asciidoctor.extension.Postprocessor
 import org.asciidoctor.extension.Treeprocessor
 import org.sdpi.asciidoc.*
 import org.sdpi.asciidoc.model.*
+import kotlin.math.log
 
-class SdpiInformationCollector : Treeprocessor()
+class TreeInfoCollector(val bibliography : BibliographyCollector) : Treeprocessor()
+{
+    private val collector = SdpiInformationCollector(bibliography)
+
+    public  fun info() : SdpiInformationCollector = collector
+
+    override fun process(document: Document): Document
+    {
+        collector.process(document)
+
+        return  document
+    }
+
+}
+
+class DocInfoCollector(val bibliography : BibliographyCollector) : DocinfoProcessor()
+{
+    private val collector = SdpiInformationCollector(bibliography)
+
+    public  fun info() : SdpiInformationCollector = collector
+
+    override fun process(document: Document): String
+    {
+        collector.process(document)
+
+        return  ""
+    }
+}
+
+class DocInfoPostCollector(val bibliography : BibliographyCollector) : Postprocessor()
+{
+    private val collector = SdpiInformationCollector(bibliography)
+
+    public  fun info() : SdpiInformationCollector = collector
+
+    override fun process(document: Document, strOutput : String): String
+    {
+        collector.process(document)
+
+        return  ""
+    }
+}
+
+class SdpiInformationCollector(private val bibliography : BibliographyCollector)
 {
     private companion object : Logging
 
@@ -20,12 +66,12 @@ class SdpiInformationCollector : Treeprocessor()
 
     fun useCases(): Map<String, SdpiUseCase> = useCases
 
-    override fun process(document: Document): Document
+    fun process(document: Document)
     {
+        logger.info("Collecting sdpi information")
         processBlock(document as StructuralNode)
-
-        return document
     }
+
 
     private fun processBlock(block : StructuralNode)
     {
@@ -44,6 +90,7 @@ class SdpiInformationCollector : Treeprocessor()
             processBlock(child)
         }
     }
+
 
     //region Requirements
     private fun processRequirement(block: StructuralNode)
@@ -141,6 +188,11 @@ class SdpiInformationCollector : Treeprocessor()
 
         logger.info("Check requirement level for #$nRequirementNumber ($expectedLevel)")
 
+        check(normativeStatement.isNotEmpty())
+        {
+           "${getLocation(block)} requirement #$nRequirementNumber is missing the required normative statement".also { logger.error{it} }
+        }
+
         when (expectedLevel)
         {
             RequirementLevel.MAY ->
@@ -208,8 +260,8 @@ class SdpiInformationCollector : Treeprocessor()
                                         requirementLevel: RequirementLevel, aGroups : List<String>,
                                         specification : RequirementSpecification) : SdpiRequirement2
     {
-        val standardId = block.attributes[RequirementAttributes.RefIcs.ID.key]
-        checkNotNull(standardId){
+        val strStandardId = block.attributes[RequirementAttributes.RefIcs.ID.key]?.toString()
+        checkNotNull(strStandardId){
             "Missing standard id for requirement #${nRequirementNumber}".also { logger.error(it) }
         }
 
@@ -219,11 +271,18 @@ class SdpiInformationCollector : Treeprocessor()
             "At least one of ${RequirementAttributes.RefIcs.SECTION.key} or ${RequirementAttributes.RefIcs.REQUIREMENT.key} is required for requirement #${nRequirementNumber}".also { logger.error(it) }
         }
 
+        val bibEntry = bibliography.bibliography()[strStandardId]
+        checkNotNull(bibEntry)
+        {
+            "${getLocation(block)} bibliography entry for $strStandardId is missing".also { logger.error{it} }
+        }
+        val strRefSource = bibEntry.source
+
         val strSection = section?.toString() ?: ""
         val strRequirement = requirement?.toString() ?: ""
         return SdpiRequirement2.ReferencedImplementationConformanceStatement(nRequirementNumber,
             strLocalId, strGlobalId,  requirementLevel, aGroups, specification,
-            standardId.toString(), strSection, strRequirement )
+            strStandardId, strRefSource, strSection, strRequirement )
 
     }
 
@@ -369,8 +428,6 @@ class SdpiInformationCollector : Treeprocessor()
 
     private fun getBlockContent_Obj(contents: MutableList<Content>, block : StructuralNode, nLevel : Int)
     {
-        val strIndent = "  ".repeat(nLevel)
-
         when (block)
         {
             is org.asciidoctor.ast.List ->
@@ -397,7 +454,6 @@ class SdpiInformationCollector : Treeprocessor()
 
             is org.asciidoctor.ast.Block ->
             {
-                logger.info("${strIndent}Block: (${block.context})")
                 val lines : MutableList<String> = mutableListOf()
                 for(strLine in block.lines)
                 {
@@ -417,7 +473,7 @@ class SdpiInformationCollector : Treeprocessor()
 
             else ->
             {
-                logger.info("$strIndent}Unknown: ${block.javaClass}")
+                logger.info("${getLocation(block)} unknown: ${block.javaClass}")
             }
         }
     }
@@ -456,13 +512,13 @@ class SdpiInformationCollector : Treeprocessor()
     {
         val strType = block.attributes[RequirementAttributes.Common.TYPE.key]
         checkNotNull(strType) {
-            ("Missing ${RequirementAttributes.Common.TYPE.key} attribute for SDPi requirement #$requirementNumber").also {
+            ("Missing ${RequirementAttributes.Common.TYPE.key} attribute for SDPi requirement #$requirementNumber [${getLocation(block)}]").also {
                 logger.error { it }
             }
         }
         val reqType = RequirementType.entries.firstOrNull { it.keyword == strType }
         checkNotNull(reqType) {
-            ("Invalid requirement type '${strType}' for SDPi requirement #$requirementNumber").also {
+            ("Invalid requirement type '${strType}' for SDPi requirement #$requirementNumber [${getLocation(block)}]").also {
                 logger.error { it }
             }
         }
@@ -503,7 +559,108 @@ class SdpiInformationCollector : Treeprocessor()
         val strTitle = block.title
         val strAnchor = block.id
 
-        useCases[strUseCaseId] = SdpiUseCase(strUseCaseId, strTitle, strAnchor)
+        val specBlocks : MutableList<StructuralNode> = mutableListOf()
+        gatherUseCaseBlocks(block, specBlocks)
+
+        val backgroundContent: MutableList<GherkinStep> = mutableListOf()
+        val scenarios : MutableList<UseCaseScenario> = mutableListOf()
+        var iBlock = 0
+        while(iBlock < specBlocks.count())
+        {
+            val useCaseBlock = specBlocks[iBlock]
+            if (useCaseBlock.hasRole("use-case-background"))
+            {
+                backgroundContent.addAll(getSteps(useCaseBlock))
+            }
+
+            if (useCaseBlock.hasRole("use-case-scenario"))
+            {
+                val oTitle = useCaseBlock.attributes["sdpi_scenario"]
+                checkNotNull(oTitle)
+                {
+                    "${getLocation(useCaseBlock)} missing required scenario title".also { logger.error{it} }
+                }
+
+                val iStepBlock = iBlock + 1
+                check(iStepBlock < specBlocks.count() && specBlocks[iStepBlock].hasRole("use-case-steps"))
+                {
+                    "${getLocation(useCaseBlock)} missing steps for scenario ${oTitle.toString()}".also { logger.error{it} }
+                }
+                val stepBlock = specBlocks[iStepBlock]
+                val scenarioSteps = getSteps(stepBlock)
+                scenarios.add(UseCaseScenario(oTitle.toString(), scenarioSteps))
+            }
+
+
+            ++iBlock
+        }
+
+        val spec = UseCaseSpecification(backgroundContent, scenarios)
+        useCases[strUseCaseId] = SdpiUseCase(strUseCaseId, strTitle, strAnchor, spec)
+    }
+
+    private fun gatherUseCaseBlocks(block: StructuralNode, specBlocks: MutableList<StructuralNode>)
+    {
+        for(child in block.blocks)
+        {
+            val strRole = child.role
+            when (strRole)
+            {
+                "use-case-background" -> specBlocks.add(child)
+                "use-case-scenario" ->
+                {
+                    specBlocks.add(child)
+                    gatherUseCaseBlocks(child, specBlocks)
+                }
+                "use-case-steps"-> specBlocks.add(child)
+                else -> gatherUseCaseBlocks(child, specBlocks)
+            }
+        }
+    }
+
+    private fun getSteps(block: StructuralNode) : List<GherkinStep>
+    {
+        val steps : MutableList<GherkinStep> = mutableListOf()
+
+        val reType = Regex("[*](?<type>[a-zA-Z]+)[*]\\s+(?<description>.*)")
+        for (child in block.blocks)
+        {
+            check(child is org.asciidoctor.ast.Block)
+            {
+                "${getLocation(child)} steps must be paragraphs".also { logger.error{it} }
+            }
+            val lines: MutableList<String> = mutableListOf()
+            for (strLine in child.lines)
+            {
+                val mType = reType.find(strLine)
+                checkNotNull(mType)
+                {
+                    "${getLocation(child)} step invalid format".also { logger.error{it} }
+                }
+
+                val oType = mType.groups["type"]?.value
+                checkNotNull(oType)
+                {
+                    "${getLocation(child)} step missing type".also { logger.error{it} }
+                }
+
+                val oDescription = mType.groups["description"]?.value
+                checkNotNull(oDescription)
+                {
+                    "${getLocation(child)} step missing description".also { logger.error{it} }
+                }
+
+                val stepType = resolveStepType(oType.toString())
+                checkNotNull(stepType)
+                {
+                    "${getLocation(child)} invalid step type".also { logger.error{it} }
+                }
+
+                steps.add(GherkinStep(stepType, oDescription.toString()))
+            }
+        }
+
+        return steps
     }
 
     //endregion

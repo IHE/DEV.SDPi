@@ -8,10 +8,7 @@ import org.asciidoctor.extension.BlockProcessor
 import org.asciidoctor.extension.Contexts
 import org.asciidoctor.extension.Name
 import org.asciidoctor.extension.Reader
-import org.sdpi.asciidoc.BlockAttribute
-import org.sdpi.asciidoc.RequirementAttributes
-import org.sdpi.asciidoc.parseRequirementNumber
-import org.sdpi.asciidoc.plainContext
+import org.sdpi.asciidoc.*
 
 /**
  * Block processor for sdpi_requirement blocks.
@@ -126,7 +123,7 @@ class RequirementBlockProcessor2() : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT)
     private fun getRequirementOid(parent: StructuralNode, requirementNumber: Int, mutableAttributes: MutableMap<String, Any>) : String {
         val strSourceSpecification = mutableAttributes[RequirementAttributes.Common.SPECIFICATION.key]
         checkNotNull(strSourceSpecification) {
-            ("Missing requirement source id for SDPi requirement #$requirementNumber"). also {
+            ("Missing requirement source id for SDPi requirement #$requirementNumber [${getLocation(parent)}]"). also {
                 logger.error(it)
             }
         }
@@ -148,7 +145,7 @@ class RequirementBlockProcessor2() : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT)
         val strAttribute : String = "sdpi_oid${strOidId}"
         val strOid = document.attributes[strAttribute]
         checkNotNull(strOid) {
-            ("The oid id ('${strOidId}') for SDPi requirement #'${requirementNumber}' cannot be found."). also {
+            ("The oid id ('${strOidId}') for SDPi requirement #'${requirementNumber}' cannot be found  [${getLocation(parent)}]."). also {
                 logger.error(it)
             }
         }

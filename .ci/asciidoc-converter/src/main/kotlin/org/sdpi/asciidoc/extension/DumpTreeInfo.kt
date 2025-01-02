@@ -5,6 +5,7 @@ import org.apache.logging.log4j.kotlin.Logging
 import org.asciidoctor.ast.Document
 import org.asciidoctor.ast.StructuralNode
 import org.asciidoctor.extension.Treeprocessor
+import org.sdpi.asciidoc.getLocation
 
 /**
  * Writes information about the tree to stdio to aid understanding
@@ -24,13 +25,14 @@ class DumpTreeInfo : Treeprocessor()
     {
         val sbBlockInfo = StringBuilder()
         val strIndent = "  ".repeat(nLevel)
+        sbBlockInfo.append("${getLocation(block)} > ")
         sbBlockInfo.append(strIndent)
         sbBlockInfo.append("${block.context}/${block.style}")
         sbBlockInfo.append(" [${getRoles(block)}]")
         sbBlockInfo.append(" '${shortTitle(block)}'")
         sbBlockInfo.append(" #${block.id}")
         //sbBlockInfo.append(" %${block.javaClass}%")
-        //sbBlockInfo.append(" {${getAttributes(block)}}")
+        sbBlockInfo.append(" {${getAttributes(block)}}")
         logger.debug { sbBlockInfo.toString() }
 
         block.blocks.forEach { dumpBlock(it, nLevel + 1) }

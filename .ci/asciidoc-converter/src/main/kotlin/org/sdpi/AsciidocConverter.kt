@@ -50,33 +50,42 @@ class AsciidocConverter(
             )
         )
 
+        // Gather bibliography entries.
+        val bibliographyCollector = BibliographyCollector()
+        asciidoctor.javaExtensionRegistry().treeprocessor(bibliographyCollector)
+
         // Gather SDPI specific information from the document such as
         // requirements and use-cases.
-        val infoCollector = SdpiInformationCollector()
+        val infoCollector = TreeInfoCollector(bibliographyCollector)
         asciidoctor.javaExtensionRegistry().treeprocessor(infoCollector)
 
         // Support to insert tables of requirements etc. sdpi_requirement_table macros.
         // Block macro processors insert placeholders that are populated when the tree is ready.
         // Tree processors fill in the placeholders.
         asciidoctor.javaExtensionRegistry().blockMacro(RequirementQuery_InsertPlaceholder())
-        asciidoctor.javaExtensionRegistry().treeprocessor(RequirementQuery_Populater(infoCollector))
+        asciidoctor.javaExtensionRegistry().treeprocessor(RequirementQuery_Populater(infoCollector.info()))
 
         // Check requirement keywords (e.g., shall requirements include only shall).
         // Obsolete: now handled by SdpiInformationCollector.
         // asciidoctor.javaExtensionRegistry().treeprocessor(RequirementLevelProcessor())
 
         // Handle inline macros to cross-reference information from the document tree.
-        asciidoctor.javaExtensionRegistry().inlineMacro(RequirementReferenceMacroProcessor(infoCollector))
-        asciidoctor.javaExtensionRegistry().inlineMacro(UseCaseReferenceMacroProcessor(infoCollector))
+        asciidoctor.javaExtensionRegistry().inlineMacro(RequirementReferenceMacroProcessor(infoCollector.info()))
+        asciidoctor.javaExtensionRegistry().inlineMacro(UseCaseReferenceMacroProcessor(infoCollector.info()))
 
         asciidoctor.javaExtensionRegistry().preprocessor(IssuesSectionPreprocessor(githubToken))
         asciidoctor.javaExtensionRegistry().preprocessor(DisableSectNumsProcessor())
         asciidoctor.javaExtensionRegistry().preprocessor(ReferenceSanitizerPreprocessor(anchorReplacements))
         asciidoctor.javaExtensionRegistry().postprocessor(ReferenceSanitizerPostprocessor(anchorReplacements))
 
-
         // Dumps tree of document structure to stdio.
         asciidoctor.javaExtensionRegistry().treeprocessor(DumpTreeInfo())
+
+        //val processedInfoCollector = DocInfoCollector(bibliographyCollector)
+        //asciidoctor.javaExtensionRegistry().docinfoProcessor(processedInfoCollector)
+
+        //val postInfoCollector = DocInfoPostCollector(bibliographyCollector)
+        //asciidoctor.javaExtensionRegistry().postprocessor(postInfoCollector)
 
         asciidoctor.requireLibrary("asciidoctor-diagram") // enables plantuml
         when (inputType) {
@@ -88,8 +97,8 @@ class AsciidocConverter(
 
         val jsonFormatter = Json { prettyPrint = true }
 
-        writeArtifact("sdpi-requirements", jsonFormatter.encodeToString(infoCollector.requirements()))
-        writeArtifact("sdpi-use-cases", jsonFormatter.encodeToString(infoCollector.useCases()))
+        writeArtifact("sdpi-requirements", jsonFormatter.encodeToString(infoCollector.info().requirements()))
+        writeArtifact("sdpi-use-cases", jsonFormatter.encodeToString(infoCollector.info().useCases()))
     }
 
     private fun writeArtifact(strArtifactName : String, strArtifact : String)

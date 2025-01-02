@@ -918,8 +918,12 @@ div.global-id p {
        <div class="title">
         R1021 <span class="global-id"><code>(1.3.6.1.4.1.19376.1.6.2.11.2.1021)</code></span>
        </div>
-       <div class="paragraph">
-        <p>When the vol1_spec_sdpi_p_option_discovery_proxy is enabled for a vol1_spec_sdpi_p_actor_somds_provider Actor, then it shall use the vol2_clause_dev_46, DEV-46 transaction to update the vol1_spec_sdpi_p_actor_discovery_proxy Actor on its network presence and departure.</p>
+       <div class="exampleblock">
+        <div class="content">
+         <div class="paragraph">
+          <p>When the vol1_spec_sdpi_p_option_discovery_proxy is enabled for a vol1_spec_sdpi_p_actor_somds_provider Actor, then it shall use the vol2_clause_dev_46, DEV-46 transaction to update the vol1_spec_sdpi_p_actor_discovery_proxy Actor on its network presence and departure.</p>
+         </div>
+        </div>
        </div>
        <div class="admonitionblock note">
         <table>
@@ -998,8 +1002,12 @@ div.global-id p {
        <div class="title">
         R0005 <span class="global-id"><code>(1.3.6.1.4.1.19376.1.6.2.10.1.1.1.2.5)</code></span>
        </div>
-       <div class="paragraph">
-        <p>In its role as an HTTP client, a vol1_spec_sdpi_p_actor_somds_participant should request gzip compression by using Accept-Encoding with "gzip".</p>
+       <div class="exampleblock">
+        <div class="content">
+         <div class="paragraph">
+          <p>In its role as an HTTP client, a vol1_spec_sdpi_p_actor_somds_participant should request gzip compression by using Accept-Encoding with "gzip".</p>
+         </div>
+        </div>
        </div>
        <details><summary class="title">Example</summary>
         <div class="content">
@@ -1051,8 +1059,12 @@ Content-Encoding: gzip</pre>
        <div class="title">
         R0015 <span class="global-id"><code>(1.3.6.1.4.1.19376.1.6.2.10.1.1.1.2.15)</code></span>
        </div>
-       <div class="paragraph">
-        <p>In its role as an HTTP client, a vol1_spec_sdpi_p_actor_somds_participant should request gzip compression by using Accept-Encoding with "gzip".</p>
+       <div class="exampleblock">
+        <div class="content">
+         <div class="paragraph">
+          <p>In its role as an HTTP client, a vol1_spec_sdpi_p_actor_somds_participant should request gzip compression by using Accept-Encoding with "gzip".</p>
+         </div>
+        </div>
        </div>
       </div>
      </div>
@@ -1061,8 +1073,12 @@ Content-Encoding: gzip</pre>
        <div class="title">
         R0016 <span class="global-id"><code>(1.3.6.1.4.1.19376.1.6.2.10.1.1.1.2.16)</code></span>
        </div>
-       <div class="paragraph">
-        <p>In its role as an HTTP client, a vol1_spec_sdpi_p_actor_somds_participant should request gzip compression by using Accept-Encoding with "gzip".</p>
+       <div class="exampleblock">
+        <div class="content">
+         <div class="paragraph">
+          <p>In its role as an HTTP client, a vol1_spec_sdpi_p_actor_somds_participant should request gzip compression by using Accept-Encoding with "gzip".</p>
+         </div>
+        </div>
        </div>
       </div>
      </div>
@@ -1071,13 +1087,17 @@ Content-Encoding: gzip</pre>
        <div class="title">
         R0017 <span class="global-id"><code>(1.3.6.1.4.1.19376.1.6.2.10.1.1.1.2.17)</code></span>
        </div>
-       <div class="paragraph">
-        <p>In its role as an HTTP client, a vol1_spec_sdpi_p_actor_somds_participant should request gzip compression by using Accept-Encoding with "gzip".</p>
+       <div class="exampleblock">
+        <div class="content">
+         <div class="paragraph">
+          <p>In its role as an HTTP client, a vol1_spec_sdpi_p_actor_somds_participant should request gzip compression by using Accept-Encoding with "gzip".</p>
+         </div>
+        </div>
        </div>
       </div>
      </div>
      <div class="sect2 use-case">
-      <h3 id="vol1_clause_appendix_c_use_case_stad">4.2 Synchronized Time Across Devices (STAD)</h3>
+      <h3 id="vol1_clause_appendix_c_use_case_stad">4.2 Use Case Feature {var_use_case_id}: Synchronized Time Across Devices (STAD)</h3>
       <div class="sect3">
        <h4 id="_narrative">4.2.1 Narrative</h4>
        <div class="paragraph">
@@ -1089,37 +1109,125 @@ Content-Encoding: gzip</pre>
        <div class="paragraph">
         <p>Automatically acquiring the time saves the user from spending time entering the time into the device. It also guarantees that the correct time will be entered. It is also important for all devices to have a consistent time since the data being exported to consuming devices and systems will use the time stamps from the device to mark the time that the clinical data was acquired. Since this is part of the clinical record, accuracy is very important.</p>
        </div>
-       <div id="1.3.6.1.4.1.19376.1.6.2.x.2.1520" class="sidebarblock requirement">
+      </div>
+      <div class="sect3">
+       <h4 id="vol1_clause_appendix_c_use_case_stad_technical_precondition">4.2.3 Technical Pre-Conditions</h4>
+       <div class="exampleblock use-case-background">
         <div class="content">
-         <div class="title">
-          R1520 <span class="global-id"><code>(1.3.6.1.4.1.19376.1.6.2.x.2.1520)</code></span>
+         <div class="paragraph">
+          <p><strong>Given</strong> All devices communicate using a common acronym_md_lan protocol</p>
          </div>
-         <div class="exampleblock">
+         <div class="paragraph">
+          <p><strong>And</strong> A Time Source (TS) Service is on the acronym_md_lan network</p>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="sect3">
+       <h4 id="vol1_clause_appendix_c_use_case_stad_scenarios">4.2.4 Scenarios</h4>
+       <div class="sect4 use-case-scenario">
+        <h5 id="_scenario_stad_var_use_case_id_1_device_is_connected_to_the_md_lan_network_with_a_time_source_service">4.2.4.1 Scenario: STAD {var_use_case_id}.1 - Device is connected to the MD LAN network with a Time Source service</h5>
+        <div class="exampleblock use-case-steps">
+         <div class="content">
+          <div class="paragraph">
+           <p><strong>Given</strong> Device has detected at least one acronym_ts_service</p>
+          </div>
+          <div class="paragraph">
+           <p><strong>When</strong> The acronym_ts_service is operational</p>
+          </div>
+          <div class="paragraph">
+           <p><strong>Then</strong> The device will synchronize its time with the acronym_ts_service</p>
+          </div>
+         </div>
+        </div>
+        <div class="sect5">
+         <h6 id="_safety_effectiveness_and_security_requirements_and_considerations">4.2.4.1.1 Safety, Effectiveness and Security - Requirements and Considerations</h6>
+         <div id="1.3.6.1.4.1.19376.1.6.2.x.2.1520" class="sidebarblock requirement">
           <div class="content">
-           <div class="paragraph">
-            <p>The term_manufacturer of a vol1_spec_sdpi_p_actor_somds_participant shall include all of the following information in the accompanying documentation:</p>
+           <div class="title">
+            R1520 <span class="global-id"><code>(1.3.6.1.4.1.19376.1.6.2.x.2.1520)</code></span>
            </div>
-           <div class="ulist">
-            <ul>
-             <li><p>The responsible organization needs to provide a acronym_ts_service with 50 millisecond accuracy.</p></li>
-             <li><p>The responsible organization needs to provide a redundant acronym_ts_service configuration with at least one backup server.</p></li>
-             <li><p>The responsible organization needs to configure the same acronym_ts_service for vol1_spec_sdpi_p_actor_somds_participants that execute term_system_function_contributions together.</p></li>
-            </ul>
+           <div class="exampleblock">
+            <div class="content">
+             <div class="paragraph">
+              <p>The term_manufacturer of a vol1_spec_sdpi_p_actor_somds_participant shall include all of the following information in the accompanying documentation:</p>
+             </div>
+             <div class="ulist">
+              <ul>
+               <li><p>The responsible organization needs to provide a acronym_ts_service with 50 millisecond accuracy.</p></li>
+               <li><p>The responsible organization needs to provide a redundant acronym_ts_service configuration with at least one backup server.</p></li>
+               <li><p>The responsible organization needs to configure the same acronym_ts_service for vol1_spec_sdpi_p_actor_somds_participants that execute term_system_function_contributions together.</p></li>
+              </ul>
+             </div>
+            </div>
+           </div>
+           <div class="admonitionblock note">
+            <table>
+             <tbody>
+              <tr>
+               <td class="icon"><i class="fa icon-note" title="Note"></i></td>
+               <td class="content">
+                <div class="paragraph">
+                 <p>The 50ms target accuracy is suitable for highly demanding use cases like real time waveform comparison.</p>
+                </div></td>
+              </tr>
+             </tbody>
+            </table>
            </div>
           </div>
          </div>
-         <div class="admonitionblock note">
-          <table>
-           <tbody>
-            <tr>
-             <td class="icon"><i class="fa icon-note" title="Note"></i></td>
-             <td class="content">
-              <div class="paragraph">
-               <p>The 50ms target accuracy is suitable for highly demanding use cases like real time waveform comparison.</p>
-              </div></td>
-            </tr>
-           </tbody>
-          </table>
+        </div>
+       </div>
+       <div class="sect4 use-case-scenario">
+        <h5 id="_scenario_stad_var_use_case_id_2_device_is_connected_to_the_md_lan_network_and_a_user_wants_to_change_the_devices_time">4.2.4.2 Scenario: STAD {var_use_case_id}.2 - Device is connected to the MD LAN network and a user wants to change the device’s time</h5>
+        <div class="exampleblock use-case-steps">
+         <div class="content">
+          <div class="paragraph">
+           <p><strong>Given</strong> Device is operational in acronym_md_lan network</p>
+          </div>
+          <div class="paragraph">
+           <p><strong>When</strong> The user attempts to change the time on the device manually</p>
+          </div>
+          <div class="paragraph">
+           <p><strong>Then</strong> The device will disable the ability to change its time manually</p>
+          </div>
+         </div>
+        </div>
+        <div class="sect5">
+         <h6 id="_safety_effectiveness_and_security_requirements_and_considerations_2">4.2.4.2.1 Safety, Effectiveness and Security - Requirements and Considerations</h6>
+         <div id="1.3.6.1.4.1.19376.1.6.2.x.2.1510" class="sidebarblock requirement">
+          <div class="content">
+           <div class="title">
+            R1510 <span class="global-id"><code>(1.3.6.1.4.1.19376.1.6.2.x.2.1510)</code></span>
+           </div>
+           <div class="exampleblock">
+            <div class="content">
+             <div class="paragraph">
+              <p>A vol1_spec_sdpi_p_actor_somds_participant shall not allow manual configuration of its internal clock while the device is operational in an acronym_md_lan network.</p>
+             </div>
+            </div>
+           </div>
+           <div class="admonitionblock note">
+            <table>
+             <tbody>
+              <tr>
+               <td class="icon"><i class="fa icon-note" title="Note"></i></td>
+               <td class="content">
+                <div class="admonitionblock note">
+                 <table>
+                  <tbody>
+                   <tr>
+                    <td class="icon"><i class="fa icon-note" title="Note"></i></td>
+                    <td class="content">Since manual time adjustments of the device’s internal clock would lead to plausible but still inaccurate timestamps, this requirement also prohibits manual adjustments when the acronym_ts_service is not available.</td>
+                   </tr>
+                  </tbody>
+                 </table>
+                </div></td>
+              </tr>
+             </tbody>
+            </table>
+           </div>
+          </div>
          </div>
         </div>
        </div>
@@ -1149,7 +1257,7 @@ Content-Encoding: gzip</pre>
   </div>
   <div id="footer">
    <div id="footer-text">
-    Last updated 2025-01-01 11:36:32 +1300
+    Last updated 2025-01-02 10:41:22 +1300
    </div>
   </div>
  </body>

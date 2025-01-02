@@ -176,6 +176,7 @@ sealed class SdpiRequirement2
         override val groups : List<String>,
         override val specification: RequirementSpecification,
         val referenceId : String,
+        val referenceSource : String,
         val referenceSection : String,
         val referenceRequirement : String) : SdpiRequirement2()
     {
@@ -205,12 +206,6 @@ sealed class SdpiRequirement2
 
 }
 
-@Serializable
-data class SdpiUseCase(
-    val id : String,
-    val title : String,
-    val anchor : String,
-)
 
 /**
  * Storage for content elements (e.g., requirement normative statements,

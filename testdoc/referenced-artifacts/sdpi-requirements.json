@@ -237,6 +237,7 @@
             "relatedContent": []
         },
         "referenceId": "ref_ieee_11073_10700_2022",
+        "referenceSource": "IEEE P11073-10700™/D7 Draft Standard for Health Informatics – Device Interoperability – Part 10700: Point-of-Care Medical Device Communication – Standard for Base Requirements for Participants in a Service-Oriented Device Connectivity (SDC) System.",
         "referenceSection": "5.2.4",
         "referenceRequirement": "RR1067"
     },
@@ -310,6 +311,35 @@
                     "type": "block",
                     "lines": [
                         "The 50ms target accuracy is suitable for highly demanding use cases like real time waveform comparison."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        },
+        "useCaseId": "stad"
+    },
+    "1510": {
+        "type": "use-case",
+        "requirementNumber": 1510,
+        "localId": "R1510",
+        "globalId": "1.3.6.1.4.1.19376.1.6.2.x.2.1510",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A vol1_spec_sdpi_p_actor_somds_participant shall not allow manual configuration of its internal clock while the device is operational in an acronym_md_lan network."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Since manual time adjustments of the device's internal clock would lead to plausible but still inaccurate timestamps, this requirement also prohibits manual adjustments when the acronym_ts_service is not available."
                     ]
                 }
             ],

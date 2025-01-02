@@ -53,7 +53,9 @@ sdpi_requirement_table::[sdpi_req_group="consumer,discovery-proxy"]
 ****
 
 [NORMATIVE]
+====
 When the vol1_spec_sdpi_p_option_discovery_proxy is enabled for a vol1_spec_sdpi_p_actor_somds_provider Actor, then it shall use the vol2_clause_dev_46, DEV-46 transaction to update the vol1_spec_sdpi_p_actor_discovery_proxy Actor on its network presence and departure.
+====
 
 [NOTE]
 ====
@@ -102,7 +104,9 @@ Let's start at the very beginning; a very good place to start!
 ****
 
 [NORMATIVE]
+====
 In its role as an HTTP client, a vol1_spec_sdpi_p_actor_somds_participant should request gzip compression by using Accept-Encoding with "gzip".
+====
 
 [EXAMPLE]
 ====
@@ -143,7 +147,9 @@ ref_rfc_7231, section 5.3.4
 ****
 
 [NORMATIVE]
+====
 In its role as an HTTP client, a vol1_spec_sdpi_p_actor_somds_participant should request gzip compression by using Accept-Encoding with "gzip".
+====
 
 ****
 
@@ -152,7 +158,9 @@ In its role as an HTTP client, a vol1_spec_sdpi_p_actor_somds_participant should
 ****
 
 [NORMATIVE]
+====
 In its role as an HTTP client, a vol1_spec_sdpi_p_actor_somds_participant should request gzip compression by using Accept-Encoding with "gzip".
+====
 
 ****
 
@@ -161,7 +169,9 @@ In its role as an HTTP client, a vol1_spec_sdpi_p_actor_somds_participant should
 ****
 
 [NORMATIVE]
+====
 In its role as an HTTP client, a vol1_spec_sdpi_p_actor_somds_participant should request gzip compression by using Accept-Encoding with "gzip".
+====
 
 ****
 
@@ -170,7 +180,8 @@ In its role as an HTTP client, a vol1_spec_sdpi_p_actor_somds_participant should
 
 [#vol1_clause_appendix_c_use_case_stad,sdpi_offset=2]
 [role="use-case",sdpi_use_case_id=stad]
-=== <<label_use_case_name_stad>> (<<acronym_stad>>)
+[sdpi_feature="Synchronized Time Across Devices"]
+=== Use Case Feature {var_use_case_id}: <<label_use_case_name_stad>> (<<acronym_stad>>)
 
 // NOTE:  See use case labels in document-declarations.adoc
 
@@ -180,6 +191,34 @@ Nurse Jean attaches a ventilator to the medical device network in the ICU.  It a
 ==== Benefits
 Automatically acquiring the time saves the user from spending time entering the time into the device.  It also guarantees that the correct time will be entered.
 It is also important for all devices to have a consistent time since the data being exported to consuming devices and systems will use the time stamps from the device to mark the time that the clinical data was acquired.  Since this is part of the clinical record, accuracy is very important.
+
+[#vol1_clause_appendix_c_use_case_stad_technical_precondition]
+==== Technical Pre-Conditions
+
+[role=use-case-background]
+====
+*Given* All devices communicate using a common acronym_md_lan protocol
+
+*And* A Time Source (TS) Service is on the acronym_md_lan network
+====
+
+[#vol1_clause_appendix_c_use_case_stad_scenarios]
+==== Scenarios
+
+[role=use-case-scenario,sdpi_scenario="Device is connected to the MD LAN network with a Time Source service"]
+===== Scenario: <<acronym_stad>> {var_use_case_id}.1 - Device is connected to the MD LAN network with a Time Source service
+
+[role=use-case-steps]
+====
+*Given* Device has detected at least one acronym_ts_service
+
+*When* The acronym_ts_service is operational
+
+*Then* The device will synchronize its time with the acronym_ts_service
+====
+
+====== Safety, Effectiveness and Security - Requirements and Considerations
+
 
 .R1520
 [sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=use_case_feature,sdpi_req_group="consumer,time",sdpi_req_specification=dpi]
@@ -200,6 +239,35 @@ The 50ms target accuracy is suitable for highly demanding use cases like real ti
 ====
 
 ****
+
+[role=use-case-scenario,sdpi_scenario="Device is connected to the MD LAN network and a user wants to change the device's time"]
+===== Scenario: <<acronym_stad>> {var_use_case_id}.2 - Device is connected to the MD LAN network and a user wants to change the device's time
+
+[role=use-case-steps]
+====
+*Given* Device is operational in acronym_md_lan network
+
+*When*  The user attempts to change the time on the device manually
+
+*Then* The device will disable the ability to change its time manually
+====
+
+====== Safety, Effectiveness and Security - Requirements and Considerations
+
+.R1510
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=use_case_feature,sdpi_req_specification=dpi]
+****
+[NORMATIVE]
+====
+A vol1_spec_sdpi_p_actor_somds_participant shall not allow manual configuration of its internal clock while the device is operational in an acronym_md_lan network.
+====
+
+[NOTE]
+====
+NOTE: Since manual time adjustments of the device's internal clock would lead to plausible but still inaccurate timestamps, this requirement also prohibits manual adjustments when the acronym_ts_service is not available.
+====
+****
+
 
 [bibliography]
 === Referenced Standards
