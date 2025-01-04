@@ -3,7 +3,7 @@
         "type": "tech-feature",
         "requirementNumber": 1021,
         "localId": "R1021",
-        "globalId": "1.3.6.1.4.1.19376.1.6.2.11.2.1021",
+        "globalId": "r1021",
         "level": "SHALL",
         "groups": [
             "provider",
@@ -60,11 +60,72 @@
             ]
         }
     },
+    "1022": {
+        "type": "tech-feature",
+        "requirementNumber": 1022,
+        "localId": "R1022",
+        "globalId": "r1022",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If a vol1_spec_sdpi_p_actor_somds_provider Actor is configured or provisioned for the vol1_spec_sdpi_p_option_discovery_proxy, but the proxy system is not available, then the vol1_spec_sdpi_p_actor_somds_provider shall revert back to \"ad hoc\" discovery mode."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "500": {
+        "type": "tech-feature",
+        "requirementNumber": 500,
+        "localId": "R0500",
+        "globalId": "r0500",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A vol1_spec_sdpi_p_actor_somds_provider shall at least provide the port types as specified in vol2_table_appendix_mdpws_service_mapping_port_types."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "According to acronym_biceps, the GET SERVICE is the only mandatory service to be implemented. This specification extends the list of mandatory services to increase interoperability between vol1_spec_sdpi_p_actor_somds_participants."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "All port types of SDC are {uri_sdc_wsdl}[available for download]."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "Other port types are currently out of scope of this specification and  be added in a future revision."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
     "1001": {
         "type": "tech-feature",
         "requirementNumber": 1001,
         "localId": "R1001",
-        "globalId": "1.3.6.1.4.1.19376.1.6.2.x.2.1001",
+        "globalId": "r1001",
         "level": "SHOULD",
         "groups": [
             "consumer"
@@ -125,7 +186,7 @@
         "type": "tech-feature",
         "requirementNumber": 5,
         "localId": "R0005",
-        "globalId": "1.3.6.1.4.1.19376.1.6.2.10.1.1.1.2.5",
+        "globalId": "r0005",
         "level": "SHOULD",
         "groups": [
             "consumer",
@@ -193,7 +254,7 @@
         "type": "tech-feature",
         "requirementNumber": 15,
         "localId": "R0015",
-        "globalId": "1.3.6.1.4.1.19376.1.6.2.10.1.1.1.2.15",
+        "globalId": "r0015",
         "level": "SHOULD",
         "groups": [
             "consumer",
@@ -217,7 +278,7 @@
         "type": "ref-ics",
         "requirementNumber": 16,
         "localId": "R0016",
-        "globalId": "1.3.6.1.4.1.19376.1.6.2.10.1.1.1.2.16",
+        "globalId": "r0016",
         "level": "SHOULD",
         "groups": [
             "consumer",
@@ -245,7 +306,7 @@
         "type": "risk-mitigation",
         "requirementNumber": 17,
         "localId": "R0017",
-        "globalId": "1.3.6.1.4.1.19376.1.6.2.10.1.1.1.2.17",
+        "globalId": "r0017",
         "level": "SHOULD",
         "groups": [
             "consumer",
@@ -271,7 +332,7 @@
         "type": "use-case",
         "requirementNumber": 1520,
         "localId": "R1520",
-        "globalId": "1.3.6.1.4.1.19376.1.6.2.x.2.1520",
+        "globalId": "r1520",
         "level": "SHALL",
         "groups": [
             "consumer",
@@ -323,7 +384,7 @@
         "type": "use-case",
         "requirementNumber": 1510,
         "localId": "R1510",
-        "globalId": "1.3.6.1.4.1.19376.1.6.2.x.2.1510",
+        "globalId": "r1510",
         "level": "SHALL",
         "groups": [],
         "specification": {

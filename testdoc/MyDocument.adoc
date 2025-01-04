@@ -5,12 +5,25 @@
 :url-wolpertinger: https://en.wikipedia.org/wiki/Wolpertinger
 :icons: font
 
+////
+Define oids for standards referenced in requirements. 
+////
+
+// The SDPI profile described in this documentation
 :sdpi_oid.sdpi: 1.3.6.1.4.1.19376.1.6.2.10.1.1.1
+
+// The SDPi plug-and-trust profile described in this documentation
 :sdpi_oid.sdpi-p: 1.3.6.1.4.1.19376.1.6.2.11
+
+// The SDPi alerting profile described in this documentation
 :sdpi_oid.sdpi-a: 1.3.6.1.4.1.19376.1.6.2.x
+
+// The SDPi reporting profile described in this documentation
 :sdpi_oid.sdpi-r: 1.3.6.1.4.1.19376.1.6.2.x
+
+// The SDPi external control profile described in this documentation
 :sdpi_oid.sdpi-xC: 1.3.6.1.4.1.19376.1.6.2.x
-:sdpi_oid.dpi: 1.3.6.1.4.1.19376.1.6.2.x
+
 
 
 Don't worry about gumberoos or splintercats.
@@ -30,6 +43,7 @@ And don't forget to look at RefUseCase:stad[], it is a good one.
 
 == Origins
 
+[[an, an label]]
 Wolpertingers are {url-wolpertinger}[ravenous beasts].
 
 == Requirements list
@@ -70,6 +84,29 @@ When the vol1_spec_sdpi_p_option_discovery_proxy is enabled for a vol1_spec_sdpi
 . <<ref_ieee_11073_10207_2017>>, §C.57, R0121
 ====
 
+****
+
+.R1022
+[sdpi_requirement#r1022,sdpi_req_level=shall]
+****
+
+If a vol1_spec_sdpi_p_actor_somds_provider Actor is configured or provisioned for the vol1_spec_sdpi_p_option_discovery_proxy, but the proxy system is not available, then the vol1_spec_sdpi_p_actor_somds_provider shall revert back to "ad hoc" discovery mode.
+****
+
+.R0500
+[sdpi_requirement#r0500,sdpi_req_level=shall]
+****
+A vol1_spec_sdpi_p_actor_somds_provider shall at least provide the port types as specified in vol2_table_appendix_mdpws_service_mapping_port_types.
+
+.Notes
+[%collapsible]
+====
+NOTE: According to acronym_biceps, the GET SERVICE is the only mandatory service to be implemented. This specification extends the list of mandatory services to increase interoperability between vol1_spec_sdpi_p_actor_somds_participants.
+
+NOTE: All port types of SDC are {uri_sdc_wsdl}[available for download].
+
+NOTE: Other port types are currently out of scope of this specification and  be added in a future revision.
+====
 ****
 
 .R1001
@@ -221,7 +258,7 @@ It is also important for all devices to have a consistent time since the data be
 
 
 .R1520
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=use_case_feature,sdpi_req_group="consumer,time",sdpi_req_specification=dpi]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=use_case_feature,sdpi_req_group="consumer,time",sdpi_req_specification=sdpi]
 ****
 
 [NORMATIVE]
@@ -255,7 +292,7 @@ The 50ms target accuracy is suitable for highly demanding use cases like real ti
 ====== Safety, Effectiveness and Security - Requirements and Considerations
 
 .R1510
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=use_case_feature,sdpi_req_specification=dpi]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=use_case_feature,sdpi_req_specification=sdpi]
 ****
 [NORMATIVE]
 ====

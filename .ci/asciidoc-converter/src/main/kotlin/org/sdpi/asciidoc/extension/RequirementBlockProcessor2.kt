@@ -9,6 +9,7 @@ import org.asciidoctor.extension.Contexts
 import org.asciidoctor.extension.Name
 import org.asciidoctor.extension.Reader
 import org.sdpi.asciidoc.*
+import java.util.*
 
 /**
  * Block processor for sdpi_requirement blocks.
@@ -77,13 +78,20 @@ class RequirementBlockProcessor2() : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT)
     {
         val requirementNumber : Int = getRequirementNumber(attributes)
         val strGlobalId = getRequirementOid(parent, requirementNumber, attributes )
+        val strLinkId = String.format("r%04d", requirementNumber)
 
-        attributes["id"] = strGlobalId
+
+        attributes["id"] = strLinkId
+        attributes["reftext"] = String.format("R%04d", requirementNumber)
         attributes["requirement-number"] = requirementNumber
         attributes["title"] = formatRequirementTitle(requirementNumber, strGlobalId)
 
         attributes["role"] = REQUIREMENT_ROLE
 
+        // Include an empty block with an id in the global format.
+        val anchorBlock =createBlock(parent, plainContext(Contexts.OPEN), Collections.emptyList(), mapOf())
+        anchorBlock.id = strGlobalId
+        parent.append(anchorBlock)
 
         return createBlock(
             parent, plainContext(Contexts.SIDEBAR), mapOf(
@@ -121,7 +129,15 @@ class RequirementBlockProcessor2() : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT)
      *
      */
     private fun getRequirementOid(parent: StructuralNode, requirementNumber: Int, mutableAttributes: MutableMap<String, Any>) : String {
-        val strSourceSpecification = mutableAttributes[RequirementAttributes.Common.SPECIFICATION.key]
+        var strSourceSpecification = mutableAttributes[RequirementAttributes.Common.SPECIFICATION.key]
+
+        // To simplify transition, we'll print a warning and set a default for the source spec.
+        if (strSourceSpecification == null)
+        {
+            logger.warn("${getLocation((parent))} missing source specification for requirement #${requirementNumber}. In the future this will be an error.")
+            strSourceSpecification = "sdpi"
+        }
+
         checkNotNull(strSourceSpecification) {
             ("Missing requirement source id for SDPi requirement #$requirementNumber [${getLocation(parent)}]"). also {
                 logger.error(it)

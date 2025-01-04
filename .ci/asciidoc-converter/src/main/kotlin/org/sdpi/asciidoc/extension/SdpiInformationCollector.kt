@@ -113,7 +113,7 @@ class SdpiInformationCollector(private val bibliography : BibliographyCollector)
         logger.info("Requirement: $nRequirementNumber")
 
 
-        val specification = getSpecification(block)
+        val specification = getSpecification(block, nRequirementNumber)
         checkSpecificationLevel(nRequirementNumber, requirementLevel, specification, block)
 
         when (requirementType)
@@ -139,12 +139,13 @@ class SdpiInformationCollector(private val bibliography : BibliographyCollector)
         }
     }
 
-    private fun getSpecification(block: StructuralNode) : RequirementSpecification
+    private fun getSpecification(block: StructuralNode, nRequirementNumber: Int) : RequirementSpecification
     {
         val normativeContent: MutableList<Content> = mutableListOf()
         val noteContent: MutableList<Content> = mutableListOf()
         val exampleContent: MutableList<Content> = mutableListOf()
         val relatedContent: MutableList<Content> = mutableListOf()
+        val unstyledContent: MutableList<Content> = mutableListOf()
 
         for (child in block.blocks)
         {
@@ -158,22 +159,38 @@ class SdpiInformationCollector(private val bibliography : BibliographyCollector)
 
                 "NOTE" ->
                 {
-                    logger.info("  Note:")
                     noteContent.addAll(getContent_Obj(child))
                 }
 
                 "RELATED" ->
                 {
-                    logger.info("  Related:")
                     relatedContent.addAll(getContent_Obj(child))
                 }
 
                 "EXAMPLE" ->
                 {
-                    logger.info("  Example:")
                     exampleContent.addAll(getContent_Obj(child))
                 }
+                "example" ->
+                {
+                    logger.warn("Notes should be an example block in requirement #${nRequirementNumber}. In the future this will be an error")
+                    noteContent.addAll(getContent_Obj(child))
+                }
+                else ->
+                {
+                    logger.warn("Unstyled content in requirement #${nRequirementNumber}. In the future this will be an error")
+
+                    unstyledContent.addAll(getContent_Obj(child))
+                }
             }
+        }
+
+        // treat plain paragraphs as the normative content for
+        // backwards compatibility.
+        if (normativeContent.isEmpty())
+        {
+            logger.warn("${block.sourceLocation} is missing normative content section; using unstyled paragraphs. This will be an error in the future")
+            normativeContent.addAll(unstyledContent)
         }
 
         return RequirementSpecification(normativeContent, noteContent, exampleContent, relatedContent)
@@ -190,7 +207,7 @@ class SdpiInformationCollector(private val bibliography : BibliographyCollector)
 
         check(normativeStatement.isNotEmpty())
         {
-           "${getLocation(block)} requirement #$nRequirementNumber is missing the required normative statement".also { logger.error{it} }
+           "${block.sourceLocation} requirement #$nRequirementNumber is missing the required normative statement".also { logger.error{it} }
         }
 
         when (expectedLevel)
@@ -510,7 +527,15 @@ class SdpiInformationCollector(private val bibliography : BibliographyCollector)
      */
     private fun getRequirementType(requirementNumber: Int, block: StructuralNode) : RequirementType
     {
-        val strType = block.attributes[RequirementAttributes.Common.TYPE.key]
+        var strType = block.attributes[RequirementAttributes.Common.TYPE.key]
+
+        // For now, assume tech feature by default for backwards compatibility.
+        if (strType == null)
+        {
+            strType = "tech_feature"
+            logger.warn("${getLocation(block)}, requirement type missing for #$requirementNumber, assuming $strType. In the future this will be an error.")
+        }
+
         checkNotNull(strType) {
             ("Missing ${RequirementAttributes.Common.TYPE.key} attribute for SDPi requirement #$requirementNumber [${getLocation(block)}]").also {
                 logger.error { it }
