@@ -105,7 +105,7 @@ class SdpiInformationCollector(private val bibliography : BibliographyCollector)
         }
 
         val strLocalId = String.format("R%04d", nRequirementNumber)
-        val strGlobalId = block.attributes["id"].toString()
+        val strGlobalId = block.attributes["global-id"].toString()
         val aGroups: List<String> = getRequirementGroupMembership(block)
         val requirementLevel: RequirementLevel = getRequirementLevel(nRequirementNumber, block)
         val requirementType: RequirementType = getRequirementType(nRequirementNumber, block)

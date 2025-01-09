@@ -3,7 +3,7 @@
         "type": "tech-feature",
         "requirementNumber": 1021,
         "localId": "R1021",
-        "globalId": "r1021",
+        "globalId": "1.3.6.1.4.1.19376.1.6.2.11.2.1021",
         "level": "SHALL",
         "groups": [
             "provider",
@@ -64,7 +64,7 @@
         "type": "tech-feature",
         "requirementNumber": 1022,
         "localId": "R1022",
-        "globalId": "r1022",
+        "globalId": "1.3.6.1.4.1.19376.1.6.2.10.1.1.1.2.1022",
         "level": "SHALL",
         "groups": [],
         "specification": {
@@ -85,7 +85,7 @@
         "type": "tech-feature",
         "requirementNumber": 500,
         "localId": "R0500",
-        "globalId": "r0500",
+        "globalId": "1.3.6.1.4.1.19376.1.6.2.10.1.1.1.2.500",
         "level": "SHALL",
         "groups": [],
         "specification": {
@@ -125,7 +125,7 @@
         "type": "tech-feature",
         "requirementNumber": 1001,
         "localId": "R1001",
-        "globalId": "r1001",
+        "globalId": "1.3.6.1.4.1.19376.1.6.2.x.2.1001",
         "level": "SHOULD",
         "groups": [
             "consumer"
@@ -186,7 +186,7 @@
         "type": "tech-feature",
         "requirementNumber": 5,
         "localId": "R0005",
-        "globalId": "r0005",
+        "globalId": "1.3.6.1.4.1.19376.1.6.2.10.1.1.1.2.5",
         "level": "SHOULD",
         "groups": [
             "consumer",
@@ -254,7 +254,7 @@
         "type": "tech-feature",
         "requirementNumber": 15,
         "localId": "R0015",
-        "globalId": "r0015",
+        "globalId": "1.3.6.1.4.1.19376.1.6.2.10.1.1.1.2.15",
         "level": "SHOULD",
         "groups": [
             "consumer",
@@ -278,7 +278,7 @@
         "type": "ref-ics",
         "requirementNumber": 16,
         "localId": "R0016",
-        "globalId": "r0016",
+        "globalId": "1.3.6.1.4.1.19376.1.6.2.10.1.1.1.2.16",
         "level": "SHOULD",
         "groups": [
             "consumer",
@@ -306,7 +306,7 @@
         "type": "risk-mitigation",
         "requirementNumber": 17,
         "localId": "R0017",
-        "globalId": "r0017",
+        "globalId": "1.3.6.1.4.1.19376.1.6.2.10.1.1.1.2.17",
         "level": "SHOULD",
         "groups": [
             "consumer",
@@ -332,7 +332,7 @@
         "type": "use-case",
         "requirementNumber": 1520,
         "localId": "R1520",
-        "globalId": "r1520",
+        "globalId": "1.3.6.1.4.1.19376.1.6.2.10.1.1.1.2.1520",
         "level": "SHALL",
         "groups": [
             "consumer",
@@ -384,7 +384,7 @@
         "type": "use-case",
         "requirementNumber": 1510,
         "localId": "R1510",
-        "globalId": "r1510",
+        "globalId": "1.3.6.1.4.1.19376.1.6.2.10.1.1.1.2.1510",
         "level": "SHALL",
         "groups": [],
         "specification": {

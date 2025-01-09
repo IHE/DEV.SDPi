@@ -6,19 +6,19 @@ import org.asciidoctor.extension.Name;
 import org.apache.logging.log4j.kotlin.Logging
 import org.sdpi.asciidoc.BlockAttribute
 
-const val BLOCK_MACRO_NAME_SDPI_REQUIREMENT_TABLE = "sdpi_requirement_table"
+const val BLOCK_MACRO_NAME_SDPI_ICS_TABLE = "sdpi_ics_table"
 
 /**
- * The role applied to requirement list placeholder tables. This role
- * enables the RequirementListProcessor to figure out which tables it
+ * The role applied to implementation conformance statement tables
+ * This role enables the ICS_Populater to figure out which tables it
  * needs to populate.
  */
-const val REQUIREMENT_TABLE_ROLE = "requirement-table"
+const val ICS_TABLE_ROLE = "ics-table"
 
 /**
- * Processor for requirement table block macro.
- * The requirement table block macro provides a mechanism to insert a table
- * summarizing requirements that match a filter included in the macro. For
+ * Processor for ics table block macro.
+ * The ics table block macro provides a mechanism to insert a table
+ * summarizing requirements for conformance to the profile. For
  * example, all requirement in a group.
  *
  * Filter parameters are included as macro attributes. Available filters are:
@@ -27,23 +27,23 @@ const val REQUIREMENT_TABLE_ROLE = "requirement-table"
  *
  * Example: to include a table of all requirements in the consumer or
  * discovery-proxy groups insert:
- * sdpi_requirement_table::[sdpi_req_group="consumer,discovery-proxy"]
+ * sdpi_ics_table::[sdpi_req_group="consumer,discovery-proxy"]
  *
  * Not all requirements may be defined when the block macro is processed so
- * this processor prepares the document for the QueryTable_Populater
+ * this processor prepares the document for the ICS_Populater
  * to actually populate the table; it simply inserts a table placeholder.
  */
-@Name(BLOCK_MACRO_NAME_SDPI_REQUIREMENT_TABLE)
-class RequirementQuery_InsertPlaceholder : BlockMacroProcessor(BLOCK_MACRO_NAME_SDPI_REQUIREMENT_TABLE)
+@Name(BLOCK_MACRO_NAME_SDPI_ICS_TABLE)
+class ICS_InsertPlaceholder : BlockMacroProcessor(BLOCK_MACRO_NAME_SDPI_ICS_TABLE)
 {
     private companion object : Logging {
     }
 
     override fun process(parent: StructuralNode, target: String, attributes: MutableMap<String, Any>): Any
     {
-        attributes["role"] = REQUIREMENT_TABLE_ROLE
+        attributes["role"] = ICS_TABLE_ROLE
         val placeholderTable = createTable(parent)
-        placeholderTable.attributes["role"] = REQUIREMENT_TABLE_ROLE
+        placeholderTable.attributes["role"] = ICS_TABLE_ROLE
 
         // Add filter attributes to the table for the tree processor to consume.
         val strGroup = attributes[BlockAttribute.REQUIREMENT_GROUPS.key]

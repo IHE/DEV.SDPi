@@ -63,7 +63,8 @@ class AsciidocConverter(
         // Block macro processors insert placeholders that are populated when the tree is ready.
         // Tree processors fill in the placeholders.
         asciidoctor.javaExtensionRegistry().blockMacro(RequirementQuery_InsertPlaceholder())
-        asciidoctor.javaExtensionRegistry().treeprocessor(RequirementQuery_Populater(infoCollector.info()))
+        asciidoctor.javaExtensionRegistry().blockMacro(ICS_InsertPlaceholder())
+        asciidoctor.javaExtensionRegistry().treeprocessor(QueryTable_Populater(infoCollector.info()))
 
         // Check requirement keywords (e.g., shall requirements include only shall).
         // Obsolete: now handled by SdpiInformationCollector.
@@ -80,7 +81,7 @@ class AsciidocConverter(
 
         // Dumps tree of document structure to stdio.
         // Best not to use for very large documents!
-        //asciidoctor.javaExtensionRegistry().treeprocessor(DumpTreeInfo())
+        asciidoctor.javaExtensionRegistry().treeprocessor(DumpTreeInfo())
 
         //val processedInfoCollector = DocInfoCollector(bibliographyCollector)
         //asciidoctor.javaExtensionRegistry().docinfoProcessor(processedInfoCollector)

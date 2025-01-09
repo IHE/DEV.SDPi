@@ -25,7 +25,7 @@ class DumpTreeInfo : Treeprocessor()
     {
         val sbBlockInfo = StringBuilder()
         val strIndent = "  ".repeat(nLevel)
-        sbBlockInfo.append("${getLocation(block)} > ")
+        sbBlockInfo.append("${block.sourceLocation} > ")
         sbBlockInfo.append(strIndent)
         sbBlockInfo.append("${block.context}/${block.style}")
         sbBlockInfo.append(" [${getRoles(block)}]")

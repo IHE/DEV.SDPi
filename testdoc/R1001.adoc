@@ -1,0 +1,26 @@
+.R1001
+[sdpi_requirement,sdpi_req_level=should,sdpi_req_type=tech_feature,sdpi_req_group=consumer,sdpi_req_specification=sdpi-a]
+****
+
+[NORMATIVE]
+====
+The term_manufacturer of a vol1_spec_sdpi_p_actor_somds_participant should include all of the following information in the accompanying documentation:
+
+ * The responsible organization needs to provide a acronym_ts_service with 50 millisecond accuracy.
+ * The responsible organization needs to provide a redundant acronym_ts_service configuration with at least one backup server.
+ * The responsible organization needs to configure the same  acronym_ts_service for vol1_spec_sdpi_p_actor_somds_participants that execute term_system_function_contributions together.
+
+====
+
+[NOTE]
+====
+Let's start at the very beginning; a very good place to start!
+====
+
+[RELATED]
+====
+. <<ref_w3c_ws_eventing_2006>>, section 3.1
+====
+
+****
+

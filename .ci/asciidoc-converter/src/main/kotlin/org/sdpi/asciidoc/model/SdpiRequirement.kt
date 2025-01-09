@@ -13,10 +13,10 @@ import org.sdpi.asciidoc.*
  *
  * @property keyword The keyword as it is supposed to appear as a value to the attribute key.
  */
-enum class RequirementLevel(val keyword: String) {
-    MAY("may"),
-    SHOULD("should"),
-    SHALL("shall")
+enum class RequirementLevel(val keyword: String, val icsStatus:String) {
+    MAY("may", "p"),
+    SHOULD("should","r"),
+    SHALL("shall","m")
 }
 
 /**
@@ -124,6 +124,11 @@ sealed class SdpiRequirement2
     fun makeLink(): String
     {
         return "link:#${getBlockId()}[${localId}]"
+    }
+
+    fun makeLinkGlobal():String
+    {
+        return "link:#${getBlockId()}[${globalId}]"
     }
 
     fun getBlockId(): String

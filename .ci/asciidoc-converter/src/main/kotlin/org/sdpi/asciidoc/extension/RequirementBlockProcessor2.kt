@@ -80,8 +80,10 @@ class RequirementBlockProcessor2() : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT)
         val strGlobalId = getRequirementOid(parent, requirementNumber, attributes )
         val strLinkId = String.format("r%04d", requirementNumber)
 
+        logger.info("Found requirement #$requirementNumber at ${parent.sourceLocation}")
 
         attributes["id"] = strLinkId
+        attributes["global-id"] = strGlobalId
         attributes["reftext"] = String.format("R%04d", requirementNumber)
         attributes["requirement-number"] = requirementNumber
         attributes["title"] = formatRequirementTitle(requirementNumber, strGlobalId)

@@ -8,17 +8,14 @@ import org.asciidoctor.extension.Contexts
 import org.asciidoctor.extension.Treeprocessor
 import org.sdpi.asciidoc.BlockAttribute
 import org.sdpi.asciidoc.getRequirementGroups
-import org.sdpi.asciidoc.model.SdpiRequirement
 import org.sdpi.asciidoc.model.SdpiRequirement2
-import org.sdpi.asciidoc.model.StructuralNodeWrapper
-import org.sdpi.asciidoc.model.toSealed
 import org.sdpi.asciidoc.plainContext
 
 /**
  * Tree processor to populate requirement table placeholders, which are inserted
- * by the RequirementTableMacroProcessor.
+ * by *_InsertPlaceholder block macros.
  */
-class RequirementQuery_Populater(private val docInfo : SdpiInformationCollector): Treeprocessor()
+class QueryTable_Populater(private val docInfo : SdpiInformationCollector): Treeprocessor()
 {
     private companion object : Logging {
     }
@@ -33,7 +30,11 @@ class RequirementQuery_Populater(private val docInfo : SdpiInformationCollector)
     {
         if (block.hasRole(REQUIREMENT_TABLE_ROLE))
         {
-            populateTable(block as Table)
+            populateQueryTable(block as Table, getSelectedRequirements(block))
+        }
+        if (block.hasRole(ICS_TABLE_ROLE))
+        {
+            populateICSTable(block as Table, getSelectedRequirements(block))
         }
         else
         {
@@ -45,24 +46,22 @@ class RequirementQuery_Populater(private val docInfo : SdpiInformationCollector)
     }
 
     /**
-     * Processes a requirements list placeholder table by determining
-     * which requirements should be included in the table and adding them.
+     * Determine which requirements should be included in the table.
      */
-    private fun populateTable(block : Table)
+    private fun getSelectedRequirements(block: Table) : Collection<SdpiRequirement2>
     {
-        logger.info {"Processing requirements list '${block.context}', attributes=${block.attributes}, role=${block.roles.size}"}
-
         val requirementsInDocument = docInfo.requirements()
 
         val aGroups = getRequirementGroups(block.attributes[BlockAttribute.REQUIREMENT_GROUPS.key])
         val selectedRequirements = requirementsInDocument.values.filter { it -> it.groups.any{ it in aGroups} }
-        populateTable(block, selectedRequirements)
+
+        return  selectedRequirements
     }
 
     /**
      * Populates the table with the supplied requirements
      */
-    private fun populateTable(table : Table, requirements : Collection<SdpiRequirement2>)
+    private fun populateQueryTable(table : Table, requirements : Collection<SdpiRequirement2>)
     {
         val colId = createTableColumn(table, 0)
         val colLocalId = createTableColumn(table, 1)
@@ -97,4 +96,40 @@ class RequirementQuery_Populater(private val docInfo : SdpiInformationCollector)
             table.body.add(row)
         }
     }
+
+
+    private fun populateICSTable(table: Table, requirements: Collection<SdpiRequirement2>)
+    {
+        val colId = createTableColumn(table, 0)
+        val colReference = createTableColumn(table, 1)
+        val colStatus = createTableColumn(table, 2)
+        val colSupport = createTableColumn(table, 3)
+        val colComment = createTableColumn(table, 4)
+
+        val header = createTableRow(table)
+        table.header.add(header)
+
+        header.cells.add(createTableCell(colId, "Index"))
+        header.cells.add(createTableCell(colReference, "Reference"))
+        header.cells.add(createTableCell(colStatus, "Status"))
+        header.cells.add(createTableCell(colSupport, "Support"))
+        header.cells.add(createTableCell(colComment, "Comment"))
+
+        for (req in requirements)
+        {
+            val strIcsId = String.format("ICS-%04d", req.requirementNumber)
+            val strReference = req.makeLinkGlobal()
+            val level = req.level
+
+            val row = createTableRow(table)
+            row.cells.add(createTableCell(colId, strIcsId))
+            row.cells.add(createTableCell(colReference, strReference))
+            row.cells.add(createTableCell(colStatus, level.icsStatus))
+            row.cells.add(createTableCell(colSupport, ""))
+            row.cells.add(createTableCell(colComment, ""))
+
+            table.body.add(row)
+        }
+    }
+
 }
