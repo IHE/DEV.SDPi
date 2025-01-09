@@ -81,7 +81,8 @@ class AsciidocConverter(
 
         // Dumps tree of document structure to stdio.
         // Best not to use for very large documents!
-        asciidoctor.javaExtensionRegistry().treeprocessor(DumpTreeInfo())
+        // Note: enabling this breaks variable replacement for {var_transaction_id}. Unclear why.
+        // asciidoctor.javaExtensionRegistry().treeprocessor(DumpTreeInfo())
 
         //val processedInfoCollector = DocInfoCollector(bibliographyCollector)
         //asciidoctor.javaExtensionRegistry().docinfoProcessor(processedInfoCollector)
