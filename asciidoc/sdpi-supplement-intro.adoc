@@ -7,13 +7,13 @@
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi 1.4 Supplement -- _STU / TI Version_ -- Note*:
+a| *SDPi 2.0.0 Supplement -- _STU / TI Version_ -- Note*:
 
-This version of the SDPi 1.4 Standard for Trial Use (HL7 STU) / Trial Implementation (IHE TI) supplement is the 3rd release in 2024, continuing the objective to provide three to four releases each year that include both _incremental_ updates (e.g., editorial "fixes"), ballot comment resolutions (e.g., from HL7 ballot cycles), and additional capability enhancements.
+This version of the SDPi 2.0 Standard for Trial Use (HL7 STU) / Trial Implementation (IHE TI) supplement is the 4th release in 2024, continuing the objective to provide three to four releases each year that include both _incremental_ updates (e.g., editorial "fixes"), ballot comment resolutions (e.g., from HL7 ballot cycles), and additional capability enhancements.
 For this release, key additions include:
 
-1. SDPi-P Managed Discovery Option
-2. TF-1A enhanced description of requirements modeling and metadata
+1. HL7 2024 January & May ballot comment resolutions applied
+2. HL7 FHIR Gateway content added to TF-2B
 
 All changes incorporated in a release are managed through Github Issues and reviewed Pull Requests.
 For a list of those related to this release, see <<sdpi_issue_management>> below.
@@ -21,14 +21,14 @@ For HL7 ballot comment resolution, links are made from HL7 ballot Jira tickets t
 
 
 NOTE: This supplement also includes both normative and informative references to other specifications (see <<vol1_appendix_b_references>>), some of which are finalized and published and others that are either being developed or in revision.
-For example, the IEEE 11073-10702 PKP standard is in development with balloting expected late 2024 and publication mid-2025; however, some requirements from that pre-standard may be included in this SDPi specification, providing a pathway to early experience and validation.
+For example, the IEEE 11073-10702 PKP standard is in mature development stage; however, some requirements from that pre-standard may be included in this SDPi specification, providing a pathway to early experience and validation.
 When a referenced specification is used that is in development or revision, a note will be provided in the <<vol1_appendix_b_referenced_standards>> clearly indicating its status.
 
 It is recognized that this release is a work-in-progress that will continue to subsequent versions.
 These known limitations and forward-looking content include:
 
 . Releases along with the planned capability additions are managed in the project's https://github.com/orgs/IHE/projects/6[DEV.SDPi "Gemini SDPi Releases" Github project]
-. This supplement includes (4) SDPi Profiles, though the typical IHE supplement is organized for a single profile; as a result, some adjustments have been made, especially in the supplement overview section where there is a general SDPi overview and then basic overviews for each of the Profiles; challenging areas include profile "options" where there are FOUR sections vs. one; it is a work in progress and feedback is appreciated, especially to enhance clarity
+. This supplement includes four SDPi Profiles, though the typical IHE supplement is organized for a single profile; as a result, some adjustments have been made, especially in the supplement overview section where there is a general SDPi overview and then basic overviews for each of the Profiles; challenging areas include profile "options" where there are FOUR sections vs. one; it is a work in progress and feedback is appreciated, especially to enhance clarity
 . *Open / Closed Issues tables* -- starting with SDPi 1.1 and subsequent, the approach for the IHE open / closed issues section has been transitioned to utilize https://github.com/IHE/DEV.SDPi/issues[Github Issues] that are related to this release; each release will update the changelog file, detailing what is Added, Changed or Removed
 . *Requirements boxes* (e.g., "R1234") have been added especially in TF-2, with some also part of TF-1 and TF-3; this is an initial approach that *_will be significantly expanded in future versions of the supplement_*; documentation is provided in <<vol1_clause_sdpi_requirements_modeling_integration>>, including discussion related to how it will be expanded in future versions of the supplement;
 . *_<<term_safe_effective_secure>> Sections_* (see <<vol1_clause_appendix_a_ses_considerations_section_template>>) are included in the specification; however, their use and content will be significantly extended in future versions;
@@ -49,14 +49,14 @@ include::std-oid-definitions.adoc[]
 [#supplement_clause_sdpi_supplement_organization]
 === SDPi Supplement Organization
 
-This IHE Devices Technical Framework supplement introduces a new _family of interoperability profiles_, Service-oriented Device Point-of-care Interoperability (SDPi), that comprise (4) separate profiles:
+This IHE Devices Technical Framework supplement introduces a new _family of interoperability profiles_, Service-oriented Device Point-of-care Interoperability (SDPi), that comprise four separate profiles:
 
 * SDPi-Plug-and-trust (*SDPi-P*) Profile
 * SDPi-Reporting (*SDPi-R*) Profile
 * SDPi-Alerting (*SDPi-A*) Profile
 * SDPi-external Control (*SDPi-xC*) Profile
 
-To that end, the supplement includes updates to all (3) IHE DEV TF volumes, including:
+To that end, the supplement includes updates to all three IHE DEV TF volumes, including:
 
 *TF-1  Profiles*
 
@@ -72,6 +72,18 @@ To that end, the supplement includes updates to all (3) IHE DEV TF volumes, incl
 *TF-3  Content Modules*
 
 * New content covering the application of ISO/IEEE 11073 SDC semantic standards to device content modules, with a primary focus on specifications related to the ISO/IEEE 11073-10207 BICEPS standard.
+
+[#supplement_clause_mapping_clinical_scenarios_to_profile_requirements]
+=== Use Cases:  Mapping Clinical Scenarios to Profile Requirements
+IHE technical framework integration profile specifications include use case sections to ensure that the technical solutions are rooted in real-world application requirements.
+These sections typically include a basic description of use case scenarios, identify the key systems that exchange information, application-level detail of the information exchanged, and perhaps even some sequence diagrams.
+This information may also be used to drive the test cases that are used for conformity assessment, ensuring that the resulting specification implementation meets the intended needs.
+
+This supplement includes this same organization; however, it also defines a set of general, non-profile-specific clinical use cases that provide requirements, which may be mapped to multiple SDPi integration profiles.
+Section <<vol1_appendix_c_dpi_use_cases>> provides a collection of these high-level clinical use cases.
+
+FOR READERS OF THIS SUPPLEMENT, a good strategy might be to first review the use cases in the Volume 1 appendix (e.g., <<vol1_clause_appendix_c_use_case_sicdmp>> ), and then review the specific profiles to which the clinical scenario requiremets have been mapped.
+Reviewing the use case specifications in this order will provide the needed context to understand what is presented in each profile.
 
 [#supplement_clause_joint_ihe_hl7_gemini_ses_mdi_project_development]
 === Joint IHE-HL7 Gemini SES+MDI Project Development

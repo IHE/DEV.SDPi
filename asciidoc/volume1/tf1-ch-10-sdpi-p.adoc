@@ -455,8 +455,10 @@ See related discussion at <<vol3_clause_biceps_mapping_using_somds_connector_con
 a| *{supplement_note}*: The TF-3 SDC/BICEPS Mapping of SOMDS Connector Content Modules section is out-of-scope., but included above for completeness of this actor overview.
 |===
 
-Although the SDPi-P Profile _<<vol1_spec_sdpi_p_actor_somds_connector>>_ provides for non-SOMDS _protocol-specific_ adaptors, they establish the foundation for specifying system and application-specific interfaces such as for EHR or decision support systems (e.g., sepsis determination). See <<vol1_clause_sdpi_p_ensuring_time_synchronization>>, and <<vol1_clause_sdpi_p_aggregators_proxies_sensors>> for additional perspectives and concepts on how SOMDS Connectors may be implemented.
-
+Although the SDPi-P Profile _<<vol1_spec_sdpi_p_actor_somds_connector>>_ provides for non-SOMDS _protocol-specific_ adaptors, they establish the foundation for specifying system and application-specific interfaces such as for EHR or decision support systems (e.g., sepsis determination).
+////
+See <<vol1_clause_sdpi_p_ensuring_time_synchronization>>, and <<vol1_clause_sdpi_p_aggregators_proxies_sensors>> for additional perspectives and concepts on how SOMDS Connectors may be implemented.
+////
 _<<vol1_spec_sdpi_p_actor_somds_connector>>_ system implementations may support multiple protocols where there is one SOMDS-facing participant model or API but with multiple protocols for non-SOMDS system integration.
 For example, a SOMDS “Alert” Gateway would interact with other _<<vol1_spec_sdpi_p_actor_somds_participant>>s_ in a single consistent way but may support both <<ref_hl7_fhir>> and <<ref_hl7_v2>> protocols for interacting with healthcare enterprise systems.
 
@@ -474,12 +476,13 @@ They shall implement either a <<vol1_spec_sdpi_p_actor_somds_provider>> and / or
 
 The <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>> actor identifies and specifies the logic necessary for connecting a SOMDS network environment with Non-SOMDS Systems that utilize <<ref_hl7_fhir>> for their interoperability protocol.  Generally, this logic is defined in the HL7 <<ref_hl7_fhir_pocd_ig>>.
 
-Gateways implementing this actor can support any of the FHIR architectural approaches:  RESTful, messaging, documents, and SOA.
-For example, a <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>> can utilize a <<vol1_spec_sdpi_p_actor_somds_consumer>> to retrieve information from other _<<vol1_spec_sdpi_p_actor_somds_participant>>_ systems, map it into FHIR Bundle resources and forward it on to non-SOMDS systems in a FHIR message.
+Gateways implementing this actor can generally support any of the FHIR architectural approaches:  RESTful, messaging, documents, and SOA - although the primary approaches are RESTful and messaging. A specific <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>> specification in <<vol2_appendix_b_gateways>> will constrain to (a) specific approach(es). To facilitate interoperability, named options may be added to specialized actors to clearly indicate what a given implementation supports.
+
+For example, a <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>> could utilize a <<vol1_spec_sdpi_p_actor_somds_consumer>> to retrieve information from other _<<vol1_spec_sdpi_p_actor_somds_participant>>_ systems, map it into FHIR Bundle resources and forward it on to non-SOMDS systems in a FHIR message.
 
 Alternatively, the <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>> could implement a FHIR server and provide support for systems to discover and retrieve information asynchronously, including the use of FHIR publication / subscription (“pub/sub”) services.
 
-The <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>> can also support SOMDS services invoked by FHIR-based systems, such as requesting a snapshot of the latest vital signs measurements for a specific patient and triggering a blood-pressure cuff reading.
+The <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>> could also support SOMDS services invoked by FHIR-based systems, such as requesting a snapshot of the latest vital signs measurements for a specific patient and triggering a blood-pressure cuff reading.
 
 [#vol1_clause_sdpi_p_somds_v2_gateway]
 ===== SOMDS V2 Gateway
@@ -541,9 +544,9 @@ For example, an application may only need to identify and consume a few paramete
 Since a single platform actor can support multiple Smart Apps, network traffic may be significantly reduced, as well as processing overhead for <<vol1_spec_sdpi_p_actor_somds_provider>> systems that have multiple <<vol1_spec_sdpi_p_actor_somds_consumer>>s simultaneously invoking their services.
 
 The platform must support both non-smart app critical functions (such as network topology discovery and maintenance) but also aggregate app requirements (e.g., quality of service necessary to support an application’s algorithms).
-
+////
 See <<vol1_clause_smart_app_platforms>> for additional discussion.
-
+////
 ===== BICEPS Content Creator
 [#vol1_spec_sdpi_p_actor_biceps_content_creator, reftext='BICEPS Content Creator']
 Actor Summary Definition:
@@ -776,7 +779,7 @@ From a conceptual perspective, <<acronym_sdc>> implements a <<acronym_soa>> arch
 [#figure_general_soa_model]
 image::../images/vol1-diagram-sdc-soa-conceptual-model.svg[align=center]
 
-This generalized model includes (3) system roles:
+This generalized model includes three system roles:
 
 . *Service Providers* -- indicate the capabilities or services that they support, often published to a centralized registry that all participating systems recognize;
 
@@ -794,9 +797,14 @@ This generalized model includes (3) system roles:
 * #same system can support both roles; all systems mush support participant#
 ////
 
-NOTE:  A detailed overview of <<acronym_soa>> concepts is beyond the scope of this specification.  See <<vol1_appendix_b_references>> for additional background materials.
+As SOA concepts and implementations have evolved, many different approaches have been defined, building upon some of the basic principles (as listed above) and adding detail appropriate for their specific application use.
+A detailed overview of <<acronym_soa>> concepts is beyond the scope of this specification; however, a number of foundational references related to how SOA has been leveraged for medical device interoperability have been provided in <<vol1_appendix_b_references>>, including:
 
-The <<acronym_sdc>> <<acronym_biceps>> standard, which SDPi-P profiles, consists of (3) core components, as illustrated in <<figure_sdc_biceps_components_model>>:
+. <<ref_paper_connecting_clinical_it_to_soa_arch_of_medical_devices>>
+. <<ref_ornet_soa_for_safe_dynamic_medical_device_interoperability>>
+. <<ref_paper_design_pattern_for_soa_integration_of_medical_devices>>
+
+The <<acronym_sdc>> <<acronym_biceps>> standard, which SDPi-P profiles, consists of three core components, as illustrated in <<figure_sdc_biceps_components_model>>:
 
 .SDC/BICEPS Components Model
 [#figure_sdc_biceps_components_model]
@@ -821,6 +829,7 @@ To support the <<acronym_soa>>-based connectivity described above, the *_default
 Additional "glue" constraints for this <<acronym_mdpws>> specification are provided in the companion standard: <<ref_ieee_11073_20701_2018>>.
 Specific <<vol1_clause_sdpi_p_profile_reftext>> transaction message bindings and examples are provided in <<vol2_appendix_a_mdpws_messages>>.
 
+////
 ===== General Healthcare vs. Medical Interoperability Purposes
 
 [%noheader]
@@ -829,11 +838,11 @@ Specific <<vol1_clause_sdpi_p_profile_reftext>> transaction message bindings and
 |===
 a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
-
+////
 ////
 #TODO: All the transactions here are focused on healthcare information exchange with out any intended medical purpose; relationship to the other SDPi Profiles#
 ////
-
+////
 [#vol1_clause_sdpi_p_ensuring_time_synchronization]
 ===== Ensuring Time Synchronization
 
@@ -843,14 +852,14 @@ a| *{supplement_note}*:  This section intentionally left blank for the current v
 |===
 a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
-
+////
 ////
 #TODO: This is a key topic for all health information exchange, and especially that of medical data.  A consuming system has to know, for example, that the time stamps provided in the BICEPS content or in the messages is accurate (and to what degree).  Requirements will be included HERE for SOMDS Participant & all other actors including BICEPS Content <xyz>.  Additional requirements may be added to the TF-3 BICEPS Content Module section as well.
 Integration of CT and ATNA (TBD) below in required groupings is assumed but should be detailed here.#
 
 #TODO: No time sync service identified in 11073 SDC core; include only in the SDPi-P section ... as a requirement to use NTP?; reference resolution of *TS Service*, *MD LAN*, in glossary entries#
 ////
-
+////
 ===== Waveform Communication
 
 [%noheader]
@@ -859,11 +868,11 @@ Integration of CT and ATNA (TBD) below in required groupings is assumed but shou
 |===
 a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
-
+////
 ////
 #TODO:  Explain how waveforms are communicated, both snippets and especially "streaming"; include references to appropriate TF-2 & TF-3 Sections; this is part of the "DO WE NEED A WAVEFORM OPTION?" question to help end users? NO!!!  Could drop a note in TF-2 Appendix A for DEV-xyz and how RTSA/Waves would be transmitted / conveyed over the network#
 ////
-
+////
 [#vol1_clause_sdpi_p_aggregators_proxies_sensors]
 ===== Aggregators, Proxies, Sensors
 
@@ -873,7 +882,7 @@ a| *{supplement_note}*:  This section intentionally left blank for the current v
 |===
 a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
-
+////
 ////
 ##TODO: :  Include single / multiple patient variations.  See Topic on confluence; ultimately probably in TF-1 & -2 & -3.  NOTE added a section in TF-3 as well.
 Mention SENSORS and WSN referencing SOMDS Sensor Gateways w/ rationale.
@@ -882,7 +891,7 @@ NOTE:  This is not defined in 11073-20701 beyond clause 3. Definitions
 See Gateways in the actors discussion above … and below?
 ##
 ////
-
+////
 ===== Protocol-Specific Gateways
 
 [%noheader]
@@ -891,12 +900,12 @@ See Gateways in the actors discussion above … and below?
 |===
 a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
-
+////
 ////
 #TODO: :  External interfaces “gateways” defined in the abstract and in the protocol-specific.  These actors are leveraged in other profiles such as SDPi-Reporting for a DEC Gateway or in SDPi-Alerting for an ACM gateway.  Include proprietary protocols as well.
 Given the discussion in Actors above, is this necessary here?  Or should some of that content be moved here?  YES … show examples for how the Actors might be grouped into a real-world gateway to … for example … an EHR etc.]#
 ////
-
+////
 [#vol1_clause_smart_app_platforms]
 ===== Smart App Platforms
 
@@ -906,11 +915,11 @@ Given the discussion in Actors above, is this necessary here?  Or should some of
 |===
 a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
-
+////
 ////
 #TODO: 1.	This section enhances the short actor description above to describe in more detail the various aspects of an application “platform”; see Word draft Section 10.4.1.5 for additional content#
 ////
-
+////
 ===== Workflow vs. Transport Actors and Interactions
 
 [%noheader]
@@ -919,7 +928,7 @@ a| *{supplement_note}*:  This section intentionally left blank for the current v
 |===
 a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
-
+////
 ////
 #TODO: discuss the challenges of drawing a line between transport profile actors in SDPi and applications of those actors in more care context / workflow applications, such as Smart Alarming or MDIRA/ICE or ICU Integration etc.  Reference General Introduction profile "types" - workflow vs. transport vs. content (???) ]#
 ////
@@ -952,7 +961,11 @@ This use case fully addresses the requirements from  <<vol1_clause_appendix_c_us
 Specific capabilities supporting the <<acronym_stad>> use case include:
 
 * *System Type*:  <<acronym_md_lan>> supported by SDPi-P <<acronym_pnt>> capabilities (see <<vol1_figure_sdpi_p_example_sequence_diagram>>)
-* *Service Type*:  <<acronym_ts_service>> supported by *Consistent Time* Profile binding (see <<vol1_clause_sdpi_p_ensuring_time_synchronization>>)
+* *Service Type*:  <<acronym_ts_service>> supported by *Consistent Time* Profile binding
+
+////
+(see <<vol1_clause_sdpi_p_ensuring_time_synchronization>>)
+////
 * *Technical Pre-Conditions*:  <<acronym_stad>> <<vol1_clause_appendix_c_use_case_stad_technical_precondition>> are fully supported by SDPi-P
 * *Scenarios*:  <<acronym_stad>> <<vol1_clause_appendix_c_use_case_stad_scenarios>> are fully supported by SDPi-P
 
