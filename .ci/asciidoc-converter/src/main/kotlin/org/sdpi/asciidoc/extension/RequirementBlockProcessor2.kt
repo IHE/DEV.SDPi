@@ -83,17 +83,25 @@ class RequirementBlockProcessor2() : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT)
         logger.info("Found requirement #$requirementNumber at ${parent.sourceLocation}")
 
         attributes["id"] = strLinkId
-        attributes["global-id"] = strGlobalId
+        if (strGlobalId != null)
+        {
+            attributes["global-id"] = strGlobalId
+        }
         attributes["reftext"] = String.format("R%04d", requirementNumber)
         attributes["requirement-number"] = requirementNumber
-        attributes["title"] = formatRequirementTitle(requirementNumber, strGlobalId)
-
-        attributes["role"] = REQUIREMENT_ROLE
+        if (strGlobalId != null)
+        {
+            attributes["title"] = formatRequirementTitle(requirementNumber, strGlobalId)
+            attributes["role"] = REQUIREMENT_ROLE
+        }
 
         // Include an empty block with an id in the global format.
-        val anchorBlock =createBlock(parent, plainContext(Contexts.OPEN), Collections.emptyList(), mapOf())
-        anchorBlock.id = strGlobalId
-        parent.append(anchorBlock)
+        if (strGlobalId != null)
+        {
+            val anchorBlock = createBlock(parent, plainContext(Contexts.OPEN), Collections.emptyList(), mapOf())
+            anchorBlock.id = strGlobalId
+            parent.append(anchorBlock)
+        }
 
         return createBlock(
             parent, plainContext(Contexts.SIDEBAR), mapOf(
@@ -130,14 +138,14 @@ class RequirementBlockProcessor2() : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT)
      * See Assigning Unique Identifiers [[SDPi:§1:A.4.2.1]]
      *
      */
-    private fun getRequirementOid(parent: StructuralNode, requirementNumber: Int, mutableAttributes: MutableMap<String, Any>) : String {
+    private fun getRequirementOid(parent: StructuralNode, requirementNumber: Int, mutableAttributes: MutableMap<String, Any>) : String? {
         var strSourceSpecification = mutableAttributes[RequirementAttributes.Common.SPECIFICATION.key]
 
-        // To simplify transition, we'll print a warning and set a default for the source spec.
+        // To simplify transition, we'll print a warning and allow the oid to be missing. .
         if (strSourceSpecification == null)
         {
             logger.warn("${getLocation((parent))} missing source specification for requirement #${requirementNumber}. In the future this will be an error.")
-            strSourceSpecification = "sdpi"
+            return null
         }
 
         checkNotNull(strSourceSpecification) {
