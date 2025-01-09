@@ -326,7 +326,7 @@ elements, from requirements to system components to Verification & Validation te
 | SDC
 
 | [[term_service_oriented_device_poc_interoperability,Service-oriented Device Point of Care Interoperability (SDPi)]] Service-oriented Device Point of Care Interoperability
-| A set of (4) IHE specifications that profile the <<acronym_sdc>> standards for device-to-device plug-and-play interoperability.
+| A set of four IHE specifications that profile the <<acronym_sdc>> standards for device-to-device plug-and-play interoperability.
 |
 | [[acronym_sdpi,SDPi]] SDPi
 |
