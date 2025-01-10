@@ -53,8 +53,13 @@ class QueryTable_Populater(private val docInfo : SdpiInformationCollector): Tree
         val requirementsInDocument = docInfo.requirements()
 
         val aGroups = getRequirementGroups(block.attributes[BlockAttribute.REQUIREMENT_GROUPS.key])
-        val selectedRequirements = requirementsInDocument.values.filter { it -> it.groups.any{ it in aGroups} }
+        if (aGroups.isEmpty())
+        {
+            // unfiltered
+            return requirementsInDocument.values
+        }
 
+        val selectedRequirements = requirementsInDocument.values.filter { it -> it.groups.any{ it in aGroups} }
         return  selectedRequirements
     }
 

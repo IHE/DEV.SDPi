@@ -64,7 +64,7 @@
         "type": "tech-feature",
         "requirementNumber": 1022,
         "localId": "R1022",
-        "globalId": "1.3.6.1.4.1.19376.1.6.2.10.1.1.1.2.1022",
+        "globalId": "",
         "level": "SHALL",
         "groups": [],
         "specification": {
@@ -85,7 +85,7 @@
         "type": "tech-feature",
         "requirementNumber": 500,
         "localId": "R0500",
-        "globalId": "1.3.6.1.4.1.19376.1.6.2.10.1.1.1.2.500",
+        "globalId": "",
         "level": "SHALL",
         "groups": [],
         "specification": {
