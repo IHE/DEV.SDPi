@@ -128,12 +128,21 @@ sealed class SdpiRequirement2
 
     fun makeLinkGlobal():String
     {
-        return "link:#${getBlockId()}[${globalId}]"
+        if (globalId.isNotEmpty())
+        {
+            return "link:#${getBlockId()}[${globalId}]"
+        }
+        return makeLink()
     }
 
     fun getBlockId(): String
     {
-        return globalId
+        if (globalId.isNotEmpty())
+        {
+            return globalId
+        }
+
+        return String.format("r%04d", requirementNumber)
     }
 
     @Serializable

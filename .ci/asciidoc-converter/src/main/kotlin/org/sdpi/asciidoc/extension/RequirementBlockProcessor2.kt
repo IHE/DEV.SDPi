@@ -92,8 +92,8 @@ class RequirementBlockProcessor2() : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT)
         if (strGlobalId != null)
         {
             attributes["title"] = formatRequirementTitle(requirementNumber, strGlobalId)
-            attributes["role"] = REQUIREMENT_ROLE
         }
+        attributes["role"] = REQUIREMENT_ROLE
 
         // Include an empty block with an id in the global format.
         if (strGlobalId != null)

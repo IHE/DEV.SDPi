@@ -301,6 +301,13 @@ Requirements applicable to all SDPi discovery proxies.
 sdpi_ics_table::[sdpi_req_group=discovery-proxy]
 
 
+==== Unfiltered
+
+Unfiltered requirements
+
+sdpi_ics_table::[]
+
+
 [bibliography]
 === Referenced Standards
 
