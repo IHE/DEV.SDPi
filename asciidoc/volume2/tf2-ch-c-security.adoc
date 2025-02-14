@@ -1,0 +1,32 @@
+[appendix#vol2_appendix_b_security_management,sdpi_offset=C]
+== Security Management (Normative)
+
+//NOTE: This file integrates all the Volume 2 / Appendix C Secrity Management background discussions, profiling and examples. +
+//{empty} +
+//__This file is currently in the volume2 folder and may integrate content contained in related subfolders. __
+
+[sdpi_offset=1]
+=== Overview
+
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+
+a| *{supplement_note}*:  This Security Management appendix provides a single location within the SDPi technical specifications to describe and discuss topics related to SDC and related security needs, risks and controls.  Anticipated content will include:
+
+* *Terminology*:  Clarification of terms such as "security" vs. "cybersecurity";
+* *Approaches*: Use of the security provisions in the current ISO/IEEE 11073 SDC core standards (esp. 11073-20702), as well as next generation SDC security approaches under development, rationale behind each, and how the various approaches can co-exist ... or not;
+* *Extensions*:  Additional specifications may be included, such as the formatting for an Allow/Deny list and when it might be used.
+
+But significantly more may be added as well to support the evolving global medical device security ecosystem.
+
+|===
+
+=== Security-related Terminology Usage
+
+=== Extension:  Allow / Deny Lists
+
+=== Extension:  PKI Certificate Management
+
