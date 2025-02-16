@@ -55,16 +55,16 @@ NOTE: The 50ms target accuracy is suitable for highly demanding use cases like r
 .R1521
 [sdpi_requirement#r1521,sdpi_req_level=should]
 ****
-The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_participant>> should configure its <<acronym_ts_service>> client to prioritize smooth, monotonic, changes to the system clock. 
+The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_participant>> should configure its <<acronym_ts_service>> client to prioritize <<term_smooth_time_adjustments>> to the <<term_system_clock>>. 
 
 .Notes
 [%collapsible]
 ====
-NOTE: <<vol1_spec_sdpi_p_actor_somds_participant>>s using, for example, <<ref_rfc_5905, NTP>> to syncronize their device clock with the <<acronym_ts_service>> could satisfy this requirement by following the cold and warm startup algoriths and clock discipline algorithms with tuning parameters described in <<ref_rfc_5905>>.
+NOTE: <<vol1_spec_sdpi_p_actor_somds_participant>>s could use, for example, <<ref_rfc_5905, NTPv4>> to satisfy this requirement. That is, employing cold and warm startup and <<term_clock_discipline_algorithm>>s to synchronize the <<term_system_clock>> with a <<acronym_ts_service>> <<term_reference_clock>>.
 
 NOTE: <<vol1_spec_sdpi_p_actor_somds_participant>>s using other synchronization standards
-should similarly strongly favour slewing (adjusting clock frequency) over non-slewing (large changes forward 
-or backward in time) adjustments, and supress non-slewing adjustments for a period during initialization. 
+should strongly favour methods such as adjusting clock frequency over large changes (forward 
+or backward in time) to maintain an accurate <<term_system_clock>>. 
 
 ====
 ****
@@ -223,7 +223,7 @@ The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_participant>> shal
 [%collapsible]
 ====
 
-NOTE: Clocks of <<vol1_spec_sdpi_p_actor_somds_participant>>s run apart due to lack of synchronization with NTP servers, different clock drifts or cyberattacks.
+NOTE: Clocks of <<vol1_spec_sdpi_p_actor_somds_participant>>s run apart due to lack of synchronization with NTP servers, different clock drifts or cyber-attacks.
 
 NOTE: This requirement supplements RR1162 in <<ref_ieee_11073_10700_2022>>: _The MANUFACTURER of an SDC BASE CONSUMER SHALL consider the RISKs resulting from erroneous timestamps._
 
@@ -235,21 +235,21 @@ NOTE: This requirement supplements RR1162 in <<ref_ieee_11073_10700_2022>>: _The
 
 *Given* The device is operational on the <<acronym_md_lan>> network,
 
-*When* The device's clock-discipline algorithm determines a non-slewing time adjustment is required,
+*When* The device's <<term_clock_discipline_algorithm>> determines an <<term_abrupt_time_adjustment>> is required,
 
-*Then* The device will create a log entry that includes at least a time-stamp for the adjustment in both the time-reference frame before and after the non-slewing adjustment was made,
+*Then* The device will create a log entry that includes at least a <<term_timestamp>> for the adjustment in both the <<term_time_reference_frame>> before and after the <<term_abrupt_time_adjustment>> was made,
 
-*And* The <<vol1_spec_sdpi_p_actor_somds_provider>> will notify <<vol1_spec_sdpi_p_actor_somds_consumer>>s, using its system function contributions (<<acronym_sfc>>), of the change to the provider's time-reference frame,  
+*And* The <<vol1_spec_sdpi_p_actor_somds_provider>> will notify <<vol1_spec_sdpi_p_actor_somds_consumer>>s, using its system function contributions (<<acronym_sfc>>), of the change to the provider's <<term_time_reference_frame>>,  
 
 *Or* The <<vol1_spec_sdpi_p_actor_somds_provider>> will initiate a new MDIB sequence.
 
-NOTE: a device's time-reference frame may jump forward or backward in time in a single, large, step (from the perspective of an external observer) following a non-slewing time adjustment. 
+NOTE: a device's <<term_time_reference_frame>> may jump forward or backward in time in a single large (e.g., more than 5 minutes), step (from the perspective of an external observer) following an <<term_abrupt_time_adjustment>>. 
 
-NOTE: two distinct epochs are created by a non-slewing time adjustment, each with a distinct time-reference frame. Both the rate of the passage of time and the determination time assigned to a single event may differ significantly between epochs (from the perspective of an external observer). 
+NOTE: two distinct <<term_epoch>>s are created by an <<term_abrupt_time_adjustment>>: one prior to the abrupt adjustment and one after. Each epoch has a distinct <<term_time_reference_frame>>. Both the rate which time passes and the determination time assigned to a single event may differ significantly between epochs (from the perspective of an external observer). 
 
-NOTE: non-slewing time adjustments may occur, for example, when a device rejoins a network, an absent <<acronym_ts_service>> returns to operation or be caused by hardware failure or operator error (e.g., making non-slewing adjustments to the <<acronym_ts_service>> time-reference frame while it is being used by one or more <<vol1_spec_sdpi_p_actor_somds_participant>>s). 
+NOTE: <<term_abrupt_time_adjustment>>s may occur, for example, when a device rejoins a network, an absent <<acronym_ts_service>> returns to operation, following hardware failure or operator error (e.g., making <<term_abrupt_time_adjustment>>s to the <<acronym_ts_service>> <<term_time_reference_frame>> while it is being used by one or more <<vol1_spec_sdpi_p_actor_somds_participant>>s). 
 
-NOTE: non-slewing time adjustments may result in a constant or variable offset between epochs. For constant offsets, the difference (to an unbiased observer) between any two timestamps obtained in different epochs is constant. For variable offsets, the difference (to an unbiased observer) between any two timestamps obtained in different epochs depends on when, within each epoch, the timestamp was obtained. 
+NOTE: although an <<term_abrupt_time_adjustment>> starts with a constant offset between two <<term_epoch>>s at a single point in time, it may introduce constant or variable (linear and/or non-linear) offsets between timestamps obtained within the <<term_epoch>>s. That is, the difference (to an unbiased observer) between any two timestamps from different epochs may depend (linearly or non-linearly) on when, within each epoch, the timestamp was obtained. It is typically not possible to establish a common <<term_time_reference_frame>> following an <<term_abrupt_time_adjustment>> without additional information not available to the <<vol1_spec_sdpi_p_actor_somds_participant>>.
 
 ====== Terms
 // figure out where to put this. 
@@ -259,29 +259,38 @@ NOTE: non-slewing time adjustments may result in a constant or variable offset b
 |===
 |Term |Definition 
 
-| time-reference frame
-| A device-specific context for measuring and assigning timestamps to events defined by its rate of passage of time (which may vary over time) and alignment to some external temporal standard (e.g., provided by a <<acronym_ts_service>>). Changes to the time-reference frame, such as non-slewing adjustments, can create distinct epochs with different temporal properties.
+| [[term_abrupt_time_adjustment,abrupt time adjustment]] Abrupt time adjustment
+| A large change (typically more than 5 minutes) to a <<term_system_clock>>'s <<term_time_reference_frame>> to reconcile differences between the time reported by a <<term_system_clock>> and a <<acronym_ts_service>>, within the statistical uncertainty of the synchronization algorithm, as quickly as possible. Abrupt time-adjustments are also known as step-changes and <<term_non_slewing_time_adjustment>>s, particularly when using <<ref_rfc_5905, NTP>> to synchronize a <<term_system_clock>>.
 
-| epoch
-| A disctinct period of time characterized by a consistent temporal properties; a single time-reference frame.
+| [[term_clock_discipline_algorithm,clock-discipline algorithm]] Clock-discipline algorithm
+| The algorithm employed by a <<acronym_ts_service>> client to minimize the error between the <<term_reference_clock>> and the <<term_system_clock>>. It my include include startup calibration steps, smooth (e.g., slewing) and, rarely, abrupt (e.g., non-slewing) corrections. 
 
-| timestamp
-| A point in time obtained from a system clock; while a timestamp is obtained within the context of a time-reference frame, timestamps do not have an intrinsic reference to time-reference frame. 
+| [[term_epoch,epoch]] Epoch
+| A distinct period of time characterized by a consistent temporal properties described by a <<term_time_reference_frame>>.
 
-| timestamp version
-| A unique identifier, within the scope of a MDIB sequence, of a time-reference frame epoc.
+| [[term_non_slewing_time_adjustment,non-slewing time adjustment]] Non-slewing time adjustment
+| The <<term_abrupt_time_adjustment>> to a system clock's <<term_time_reference_frame>> described by <<ref_rfc_5905>>.
 
-| slewing time adjustment
-| Adjustments made to a system clock's frequency. Generally so that the time reported by a system clock matches that of a <<acronym_ts_service>> at some point in the future, within the statistical uncertaintity of the synchronization algorithm.
+| [[term_reference_clock,reference clock]] Reference clock
+| The source of time obtained from a <<term_time_synchronization_service>> and shared between <<vol1_spec_sdpi_p_actor_somds_participant>>s. 
 
-| non-slewing time adjustment, abrupt time adjustment
-| An abrubt change to a system clock's time-reference frame to match the time reported by a system clock with that from a <<acronym_ts_service>>, within the statistical uncertaintity of the synchronization algorithm, as quickly as possible.
+| [[term_slewing_adjustments,slewing time adjustments]] Slewing time adjustments
+| Adjustments, typically small, made to a <<term_system_clock>>'s frequency described by <<ref_rfc_5905>>. Generally so the time reported by the <<term_system_clock>> matches that of a <<acronym_ts_service>> at some point in the not too distant future, within the statistical uncertainty of the synchronization algorithm.
 
-| smooth time adjustments
-| A gradual adjustment to the temporal properites of a time-refernece frame, characterised by a continuous and monotonically increasing progression of timestamps without abrupt jumps or disruptions to the passage of time. Generally so that the time reported by a system clock matches that of a <<acronym_ts_service>> at some point in the future, within the statistical uncertaintity of the synchronization algorithm.
+| [[term_smooth_time_adjustments,smooth time adjustments]] Smooth time adjustments
+| A gradual adjustment within a <<term_time_reference_frame>>, characterised by a continuous and monotonically increasing progression of timestamps without abrupt jumps or disruptions to the passage of time. Generally so that the time reported by a system clock matches that of a <<acronym_ts_service>> at some point in the future, within the statistical uncertainty of the synchronization algorithm. Typically involves running the <<term_system_clock>> faster or slower for some period. 
 
-| clock-discipline algorithm
-| The algorithm employed by a <<acronym_ts_service>> client to minimize the error between a reference time source. It main include smooth (e.g., slewing) and, in some cases, abrupt (e.g., non-slewing) corrections. 
+| [[term_system_clock,system clock]] System clock
+| A source of <<term_timestamp>>s used in a <<vol1_spec_sdpi_p_actor_somds_participant>>s system function contributions (<<acronym_sfc>>). 
+
+| [[term_time_reference_frame,time-reference frame]] Time-reference frame
+| A device-specific context for measuring and assigning timestamps to events. The reference frame is defined by its rate of passage of time and alignment to some external temporal standard (e.g., provided by a <<acronym_ts_service>>). The reference frame's time-rate may vary with time (e.g., a <<term_smooth_time_adjustments>> to synchronize with an external temporal standard). Abrupt changes to the time-reference frame alignment to an external standard (e.g., <<term_abrupt_time_adjustment>>), create distinct time-reference frames with different temporal characteristics.
+
+| [[term_timestamp,timestamp]] Timestamp
+| A point in time obtained from a <<term_system_clock>>. Timestamps are obtained within the context of a <<term_time_reference_frame>>. 
+
+| [[term_timestamp_version,timestamp version]] Timestamp version
+| A unique identifier, within the scope of a MDIB sequence, of a <<term_time_reference_frame>> epoch.
 
 |===
 
@@ -292,13 +301,13 @@ NOTE: non-slewing time adjustments may result in a constant or variable offset b
 .R1560
 [sdpi_requirement#r1560,sdpi_req_level=shall]
 ****
-The <<vol1_spec_sdpi_p_actor_somds_participant>> shall log each non-slewing adjustment of the local system clock with an entry that includes the determination time of the log entry in both the time-reference frame before, and after, each non-slewing clock adjustment. 
+The <<vol1_spec_sdpi_p_actor_somds_participant>> shall log each <<term_abrupt_time_adjustment>> of the <<term_system_clock>> with an entry that includes the determination time of the log entry in both the <<term_time_reference_frame>> before, and after, each <<term_abrupt_time_adjustment>>. 
 
 .Notes
 [%collapsible]
 ====
 
-NOTE: This requirement supplements TR1340 in <<ref_ieee_11073_10700_2022>>&mdash;_An SDC BASE PARTICIPANT SHOULD log each non-slewing adjustment of the local clock._&mdash; requiring specific information in the log to support post incident analysis
+NOTE: This requirement supplements TR1340 in <<ref_ieee_11073_10700_2022>>&mdash; _An SDC BASE PARTICIPANT SHOULD log each <<term_non_slewing_time_adjustment>> of the device clock_ &mdash; requiring specific information in the log to support post incident analysis.
 
 ====
 ****
@@ -312,35 +321,38 @@ NOTE: This requirement supplements TR1340 in <<ref_ieee_11073_10700_2022>>&mdash
 .R1522
 [sdpi_requirement#r1522,sdpi_req_level=shall]
 ****
-When the <<vol1_spec_sdpi_p_actor_somds_provider>> detects an abrupt time adjustment of a system clock, used in making its System Function Contribution (<<acronym_sfc>>), the <<vol1_spec_sdpi_p_actor_somds_provider>> shall either:
+When the <<vol1_spec_sdpi_p_actor_somds_provider>> detects an <<term_abrupt_time_adjustment>> of a <<term_system_clock>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall either:
 
-* initiate a new MDIB sequence by assigning a new MDIB sequence identifier, or
+* initiate a new MDIB sequence by assigning a new <<acronym_mdib>> sequence identifier, or
 * set `pm:ClockState/@ActivationState` to `StndBy` when any timestamp in a <<acronym_mdib>> version was not obtained from the time-reference frame of the active clock in the same version, or 
-* set `pm:ClockState/@LastSet` to the earliest time that is unambiguously in the current epoch and increment `sdpi:Epochs/@Version` and set `pm:ClockState/@ActivationState` to `StndBy` while any timestamp in a <<acronym_mdib>> version is less than `pm:ClockState/@LastSet`.
+* set `pm:ClockState/@LastSet` to the earliest time that is unambiguously in the current <<term_epoch>> and increment `sdpi:Epochs/@Version` and set `pm:ClockState/@ActivationState` to `StndBy` while any timestamp in a <<acronym_mdib>> version is less than `pm:ClockState/@LastSet`.
 
 .Notes
 [%collapsible]
 ====
-NOTE: The <<term_manufacturer>> of the <<vol1_spec_sdpi_p_actor_somds_consumer>> considers the risks arising from timestamps spanning time-reference frames from a non-slewing clock adjustment having occurred at the <<vol1_spec_sdpi_p_actor_somds_provider>> when the <<vol1_spec_sdpi_p_actor_somds_consumer>> receives a changed value in the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDIB sequence identifier or when the `pm:ClockState/@ActivationState` is `StndBy`.
+NOTE: The <<term_manufacturer>> of the <<vol1_spec_sdpi_p_actor_somds_consumer>> considers the risks arising from <<term_timestamp>>s spanning <<term_time_reference_frame>>s from an <<term_abrupt_time_adjustment>> having occurred at the <<vol1_spec_sdpi_p_actor_somds_provider>> when the <<vol1_spec_sdpi_p_actor_somds_consumer>> receives a changed value in the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDIB sequence identifier or when the `pm:ClockState/@ActivationState` is `StndBy`.
 
-NOTE: This clarifies the ambiguity in <<ref_ieee_11073_10207_2017>>, section B.182 and <<ref_ieee_11073_20701_2018>>, R0014 when slewing is used to smoothly adjust the time-reference frame (using, for example, the <<ref_rfc_5905, NTPv4>> clock-discipline algorithm) where information from one or more <<acronym_ts_service>>s is used to maintain clock-discipline and does not (generally) "set" the clock.
+NOTE: This clarifies the ambiguity in <<ref_ieee_11073_10207_2017>>, section B.182 and <<ref_ieee_11073_20701_2018>>, R0014 when a participant uses slewing to make <<term_smooth_time_adjustments>> (using, for example, the <<ref_rfc_5905, NTPv4>> <<term_clock_discipline_algorithm>>) where information from one or more <<acronym_ts_service>>s is used to maintain clock-discipline and does not (generally) "set" the clock.
 
-NOTE: Any timestamps strictly-less than `pm:ClockState/@LastSet` in the MDIB when `pm:ClockState/@ActivationState` is set to `StndBy` may be untrustworthy. 
+NOTE: Any <<term_timestamp>> strictly-less than `pm:ClockState/@LastSet` in the MDIB when `pm:ClockState/@ActivationState` is set to `StndBy` may be untrustworthy. 
 
 ====
 ****
 
-Timestamps obtained in an ealier epoch may be treated with greater suspicion than those obtained in the current epoch by a <<vol1_spec_sdpi_p_actor_somds_participant>>. `pm:ClockState/@LastSet` provides the unambiguous begining of the current epoch in the time-reference frame of the current epoch. For example, when a non-slewing adjustment moves the device's time-reference frame forward, any timestamps in the MDIB greater than start of the new epoch are unambiguously in the new epoch. In contrast, when the device's time-reference frame moves backward, only timestamps greater than the latest timestamp obtained from the epoch before the time-reference frame moved backward are unambiguously in the current epoch. That is, the timestamps obtained from the new time-reference frame may overlap timestamps obtained from the prior time-reference frame. These examples are illustrated below:
+Timestamps obtained in an earlier <<term_epoch>> may be treated with greater suspicion than those obtained in the current epoch by a <<vol1_spec_sdpi_p_actor_somds_participant>>. `pm:ClockState/@LastSet` provides the unambiguous beginning of the current epoch using a <<term_timestamp>> from the current epoch. For example (and illustrated below):
 
-There is no overlap in timestamps when a non-slewing adjustment shifts the device clock forward in time. 
+* when an <<term_abrupt_time_adjustment>> moves the device's <<term_time_reference_frame>> forward, any <<term_timestamp>> in the MDIB greater than start of the new epoch are unambiguously in the new epoch. 
+* when the device's <<term_time_reference_frame>> moves backward, only <<term_timestamp>>s greater than the latest timestamp obtained from the prior epoch are unambiguously in the current epoch. That is, timestamps obtained from the new <<term_time_reference_frame>> may overlap timestamps obtained from the prior <<term_time_reference_frame>>. 
+
+There is no overlap in timestamps when an <<term_abrupt_time_adjustment>> shifts the device clock forward in time. 
 
 image::vol1-diagram-use-case-stad-ns-forward.svg[align=center]
 
-When a non-slewing adjustment shifts the device's time-reference frame back in time, only timestamps before the last timestamp recorded in the MDIB from epoch 0 belong unambiguously to the new time-reference frame.
+When an <<term_abrupt_time_adjustment>> shifts the device's <<term_time_reference_frame>> back in time, only timestamps before the last timestamp recorded in the MDIB from epoch 0 belong unambiguously to the new <<term_time_reference_frame>>.
 
 image::vol1-diagram-use-case-stad-ns-back.svg[align=center]
 
-When a device experiences multiple non-slewing adjustments in a short period of time, the earliest timestamp unambiguously in the current time-reference frame may be from an earlier epoch. 
+When a device experiences several <<term_abrupt_time_adjustment>>s in a short period of time, the earliest timestamp unambiguously in the current <<term_time_reference_frame>> may be from an earlier <<term_epoch>>. 
 
 image::vol1-diagram-use-case-stad-ns-back-forth.svg[align=center]
 
@@ -348,13 +360,13 @@ image::vol1-diagram-use-case-stad-ns-back-forth.svg[align=center]
 .R1561
 [sdpi_requirement#r1561,sdpi_req_level=may]
 ****
-The <<vol1_spec_sdpi_p_actor_somds_provider>> may indicate a timestamp belongs to a specific epoch using the SDPi epoch extension. 
+The <<vol1_spec_sdpi_p_actor_somds_provider>> may indicate a <<term_timestamp>> belongs to a specific <<term_epoch>> using the SDPi epoch extension. 
 
 .Notes
 [NOTE]
 [%collapsible]
 ====
-Binding timestamps in the <<acronym_mdib>> to a specific epoch may be useful for states that are not updated frequently. 
+Binding timestamps in the <<acronym_mdib>> to a specific <<term_epoch>> may be useful for states that are not updated frequently. 
 
 ====
 ****
@@ -362,13 +374,13 @@ Binding timestamps in the <<acronym_mdib>> to a specific epoch may be useful for
 .R1562
 [sdpi_requirement#r1562,sdpi_req_level=shall]
 ****
-The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_consumer>> shall consider the risks arising from relying on timestamps obtained from different epochs.  
+The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_consumer>> shall consider the risks arising from relying on <<term_timestamp>>s obtained from different <<term_epoch>>s.  
 
 .Notes
 [NOTE]
 [%collapsible]
 ====
-It may not be possible to reliably determine the relationship between timestamps obtained from different time-reference frames without addition information regarding the cause of the non-slewing adjustment. For example, if a non-slewing adjustment arises because the device clock was running faster (or slower) than the reference clock then the arithmetic difference between two events spanning the adjustment (even when combined with the step adjustment duration) may not match the elapsed time experienced by an unbiased observer.  
+It may not be possible to reliably determine the relationship between <<term_timestamp>> obtained from different <<term_epoch>>s without addition information regarding the cause of an <<term_abrupt_time_adjustment>>. Consider, for example, an <<term_abrupt_time_adjustment>> that arises when the <<term_system_clock>> was running significantly faster (or slower) than the <<term_reference_clock>>. The arithmetic difference in time between two events spanning the adjustment (even when combined with the size of the step adjustment) may not match the elapsed time experienced by an unbiased observer because time passed at different rates in the different epochs.  
 
 ====
 ****
@@ -380,7 +392,7 @@ It may not be possible to reliably determine the relationship between timestamps
 .R1566
 [sdpi_requirement#r1566,sdpi_req_level=shall]
 ****
-The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_provider>> that changes the MDIB sequence identifier when it can no longer make smooth adjustments to its time-reference frame shall consider the risks arising from gaps in continuous data. 
+The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_provider>> that changes the MDIB sequence identifier when it can no longer make <<term_smooth_time_adjustments>> to its <<term_time_reference_frame>> shall consider the risks arising from gaps in continuous data. 
 
 .Notes
 [NOTE]
@@ -391,43 +403,24 @@ An abrupt time adjustment may indicate a serious error that impacts data that ha
  * displayed on a chart to the user,
  * exported to other systems.
 
-Abrupt time-adjustments are also known as step-changes and non-slewing time adjustments, particularly when using <<ref_rfc_5905, NTP>> to syncronize a device clock.
 
 ====
 ****
-
-// This is also encouragement not to just reset the sequence id when a time step occurs. However, PKP's put the
-// responsibility of dealing with broken timestamps on the consumer, so we don't need this. 
-// Remove during cleanup. 
-ifeval::[1 < 0]
-.R1568
-[sdpi_requirement#r1568,sdpi_req_level=shall]
-****
-The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_provider>> that chooses to omit epoch versions from any timestamp shall consider the risks arising from erroneous timestamps. 
-
-[NOTE]
-[%collapsible]
-====
-Epoch versions may not be required for timestamps on items that update frequently. 
-
-====
-****
-endif::[]
 
 // This may be unnecessary as the device could fault at any time. However, perhaps it is useful as a way
-// to surface behaviours as part of conformity statements. And it emphasises the myriad of problems with
+// to surface behaviours as part of conformity statements. And it emphasizes the myriad of problems with
 // time steps. 
 .R1569
 [sdpi_requirement#r1569,sdpi_req_level=may]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_participant>> may enter a fault state by, for example, setting the `MdsState/@ActivationState` to `Fail` upon detecting a non-slewing time adjustment that it otherwise cannot recover from. 
+A <<vol1_spec_sdpi_p_actor_somds_participant>> may enter a fault state by, for example, setting the `MdsState/@ActivationState` to `Fail` following an <<term_abrupt_time_adjustment>> that it otherwise cannot recover from. 
 
 [NOTE]
 [%collapsible]
 ====
 
 * A sudden change in a participant's time-reference frame may require intervention by the OPERATOR or RESPONSIBLE ORGANIZATION.  
-* A <<vol1_spec_sdpi_p_actor_somds_participant>> may continue delivery with a subset one or more of its nominal System Function Contribution (<<acronym_sfc>>) following a non-slewing adjustment reporting the activation state of components using `AbstractDeviceComponentState/@ActivationState`.
+* A <<vol1_spec_sdpi_p_actor_somds_participant>> may continue delivery with a subset one or more of its nominal System Function Contribution (<<acronym_sfc>>) following an <<term_abrupt_time_adjustment>> reporting the activation state of components using `AbstractDeviceComponentState/@ActivationState`.
 
 ====
 ****
