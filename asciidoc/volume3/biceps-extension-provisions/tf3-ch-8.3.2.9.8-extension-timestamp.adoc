@@ -17,7 +17,7 @@ In <<ref_rfc_5905>> this is referred to as a step-adjustment or a non-slewing ti
 * have a well defined relationship to timestamps within the same <<term_epoch>>, and
 * have well defined relationships to peer <<term_system_clock>>s and <<term_reference_clock>>s.
 
-The presence of <<term_abrupt_time_adjustment>> creates <<term_epoch>>s of consistency: periods where the <<vol1_spec_sdpi_p_actor_somds_participant>>'s timestamps are well-behaved, separated by step-changes. At best, epochs are separated by a constant temporal offset; at worst <<vol1_spec_sdpi_p_actor_somds_participant>>s may have insufficient information to determine the relationship between epochs (e.g., changes at the <<acronym_ts_service>> that do not represent a change in elapsed time to unbiased observers). 
+The presence of <<term_abrupt_time_adjustment>> creates <<term_epoch>>s of consistency: periods where the <<vol1_spec_sdpi_p_actor_somds_participant>>'s timestamps are well-behaved, separated by step-changes. At best, <<term_epoch>> are separated by a constant temporal offset; at worst <<vol1_spec_sdpi_p_actor_somds_participant>>s may have insufficient information to determine the relationship between <<term_epoch>> (e.g., changes at the <<acronym_ts_service>> that do not represent a change in elapsed time to unbiased observers). 
 
 [NOTE]
 ====
