@@ -16,6 +16,14 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ## [Unreleased]
 
+
+### Changes
+
+### Editorial Fixes
+
+### Added
+- Add TF-2C for Security Management Appendix (basic, with little initial content)  ([#250](https://github.com/IHE/DEV.SDPi/issues/250))
+
 ## [2.0.0] - 2024-12-13
 
 ### Changes
