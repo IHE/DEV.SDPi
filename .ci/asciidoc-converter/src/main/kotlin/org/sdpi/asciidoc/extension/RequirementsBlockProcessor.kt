@@ -3,7 +3,6 @@ package org.sdpi.asciidoc.extension
 import org.apache.logging.log4j.kotlin.Logging
 import org.asciidoctor.Options
 import org.asciidoctor.ast.ContentModel
-import org.asciidoctor.ast.ContentNode
 import org.asciidoctor.ast.StructuralNode
 import org.asciidoctor.extension.BlockProcessor
 import org.asciidoctor.extension.Contexts
@@ -74,7 +73,7 @@ private typealias Occurrence = Int
 @Name(BLOCK_NAME_SDPI_REQUIREMENT)
 @Contexts(Contexts.SIDEBAR)
 @ContentModel(ContentModel.COMPOUND)
-class RequirementsBlockProcessor() : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
+class RequirementsBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
     private val intendedDuplicates = mutableMapOf<RequirementNumber, Occurrence>()
 
     private companion object : Logging {
@@ -100,7 +99,7 @@ class RequirementsBlockProcessor() : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT)
         reader,
         attributes
     ).let { requirement ->
-        logger.info { "Found SDPi requirement #${requirement.number}"}//: $requirement" }
+        logger.info { "Found SDPi requirement #${requirement.number}" }//: $requirement" }
         requirement.asciiDocAttributes[BlockAttribute.ROLE] = REQUIREMENT_ROLE
         attributes["role"] = REQUIREMENT_ROLE
         storeRequirement(requirement)
@@ -117,12 +116,16 @@ class RequirementsBlockProcessor() : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT)
         }
     }
 
-    private fun retrieveRequirement(parent: StructuralNode, reader: Reader, mutableAttributes: MutableMap<String, Any>): SdpiRequirement {
-        val requirementNumber : Int = getRequirementNumber(mutableAttributes)
-        val strGlobalId = getRequirementOid(parent, requirementNumber, mutableAttributes )
-        val aGroups : List<String> = getRequirementGroupMembership(mutableAttributes)
-        val requirementLevel : RequirementLevel = getRequirementLevel(requirementNumber, mutableAttributes)
-        val requirementType : RequirementType = getRequirementType(requirementNumber, mutableAttributes)
+    private fun retrieveRequirement(
+        parent: StructuralNode,
+        reader: Reader,
+        mutableAttributes: MutableMap<String, Any>
+    ): SdpiRequirement {
+        val requirementNumber: Int = getRequirementNumber(mutableAttributes)
+        val strGlobalId = getRequirementOid(parent, requirementNumber, mutableAttributes)
+        val aGroups: List<String> = getRequirementGroupMembership(mutableAttributes)
+        val requirementLevel: RequirementLevel = getRequirementLevel(requirementNumber, mutableAttributes)
+        val requirementType: RequirementType = getRequirementType(requirementNumber, mutableAttributes)
 
         mutableAttributes["id"] = strGlobalId
         mutableAttributes["requirement-number"] = requirementNumber
@@ -180,8 +183,7 @@ class RequirementsBlockProcessor() : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT)
     /**
      * Retrieve the requirement type
      */
-    private fun getRequirementType(requirementNumber: Int, attributes: MutableMap<String, Any>) : RequirementType
-    {
+    private fun getRequirementType(requirementNumber: Int, attributes: MutableMap<String, Any>): RequirementType {
         val strType = attributes[BlockAttribute.REQUIREMENT_TYPE.key]
         checkNotNull(strType) {
             ("Missing ${BlockAttribute.REQUIREMENT_TYPE.key} attribute for SDPi requirement #$requirementNumber").also {
@@ -220,7 +222,7 @@ class RequirementsBlockProcessor() : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT)
      * Retrieves the list of groups the requirement belongs to (if any).
      */
     private fun getRequirementGroupMembership(mutableAttributes: MutableMap<String, Any>): List<String> {
-        return  getRequirementGroups( mutableAttributes[BlockAttribute.REQUIREMENT_GROUPS.key])
+        return getRequirementGroups(mutableAttributes[BlockAttribute.REQUIREMENT_GROUPS.key])
     }
 
     /**
@@ -259,12 +261,12 @@ class RequirementsBlockProcessor() : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT)
      * example:
      * :sdpi_oid.sdpi: 1.3.6.1.4.1.19376.1.6.2.10.1.1.1
      */
-    private fun getOidFor(parent: StructuralNode, requirementNumber: Int, strOidId : String) : String {
+    private fun getOidFor(parent: StructuralNode, requirementNumber: Int, strOidId: String): String {
         val document = parent.document
-        val strAttribute : String = "sdpi_oid${strOidId}"
+        val strAttribute = "sdpi_oid${strOidId}"
         val strOid = document.attributes[strAttribute]
         checkNotNull(strOid) {
-            ("The oid id ('${strOidId}') for SDPi requirement #'${requirementNumber}' cannot be found."). also {
+            ("The oid id ('${strOidId}') for SDPi requirement #'${requirementNumber}' cannot be found.").also {
                 logger.error(it)
             }
         }
@@ -276,10 +278,14 @@ class RequirementsBlockProcessor() : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT)
      * See Assigning Unique Identifiers [[SDPi:§1:A.4.2.1]]
      *
      */
-    private fun getRequirementOid(parent: StructuralNode, requirementNumber: Int, mutableAttributes: MutableMap<String, Any>) : String {
+    private fun getRequirementOid(
+        parent: StructuralNode,
+        requirementNumber: Int,
+        mutableAttributes: MutableMap<String, Any>
+    ): String {
         val strSourceSpecification = mutableAttributes[BlockAttribute.REQUIREMENT_SPECIFICATION.key]
         checkNotNull(strSourceSpecification) {
-            ("Missing requirement source id for SDPi requirement #$requirementNumber"). also {
+            ("Missing requirement source id for SDPi requirement #$requirementNumber").also {
                 logger.error(it)
             }
         }

@@ -20,23 +20,9 @@ fun StructuralNode.toSealed(): StructuralNodeWrapper {
         }?.let {
             StructuralNodeWrapper.SdpiRequirement(this as Block)
         } ?: StructuralNodeWrapper.Sidebar(this as Block)
+
         else -> StructuralNodeWrapper.Unknown
     }
-}
-
-fun createParagraphWrapper(n : StructuralNode): StructuralNodeWrapper
-{
-    return StructuralNodeWrapper.Paragraph(n as Block)
-}
-
-fun createTableWrapper(n:StructuralNode) : StructuralNodeWrapper
-{
-    if (n.hasRole("requirement-list"))
-    {
-        return StructuralNodeWrapper.SdpiRequirementList(n as Table)
-    }
-
-    return StructuralNodeWrapper.Table(n as Table)
 }
 
 /**
@@ -47,11 +33,10 @@ sealed class StructuralNodeWrapper {
     data class Document(val wrapped: org.asciidoctor.ast.Document) : StructuralNodeWrapper()
     data class Sidebar(val wrapped: Block) : StructuralNodeWrapper()
     data class SdpiRequirement(val wrapped: Block) : StructuralNodeWrapper()
-    data class SdpiRequirementList(val wrapped: org.asciidoctor.ast.Table) : StructuralNodeWrapper()
-    data class Paragraph(val wrapped: Block): StructuralNodeWrapper()
-    data class Image(val wrapped: Block): StructuralNodeWrapper()
-    data class Table(val wrapped: org.asciidoctor.ast.Table): StructuralNodeWrapper()
-    data class Listing(val wrapped: Block): StructuralNodeWrapper()
+    data class Paragraph(val wrapped: Block) : StructuralNodeWrapper()
+    data class Image(val wrapped: Block) : StructuralNodeWrapper()
+    data class Table(val wrapped: org.asciidoctor.ast.Table) : StructuralNodeWrapper()
+    data class Listing(val wrapped: Block) : StructuralNodeWrapper()
     object Unknown : StructuralNodeWrapper()
 }
 

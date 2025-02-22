@@ -62,9 +62,9 @@ class AsciidocConverter(
         // Support to insert tables of requirements etc. sdpi_requirement_table macros.
         // Block macro processors insert placeholders that are populated when the tree is ready.
         // Tree processors fill in the placeholders.
-        asciidoctor.javaExtensionRegistry().blockMacro(RequirementQuery_InsertPlaceholder())
-        asciidoctor.javaExtensionRegistry().blockMacro(ICS_InsertPlaceholder())
-        asciidoctor.javaExtensionRegistry().treeprocessor(QueryTable_Populater(infoCollector.info()))
+        asciidoctor.javaExtensionRegistry().blockMacro(AddRequirementQueryPlaceholder())
+        asciidoctor.javaExtensionRegistry().blockMacro(AddICSPlaceholder())
+        asciidoctor.javaExtensionRegistry().treeprocessor(PopulateTables(infoCollector.info()))
 
         // Check requirement keywords (e.g., shall requirements include only shall).
         // Obsolete: now handled by SdpiInformationCollector.
@@ -82,7 +82,7 @@ class AsciidocConverter(
         // Dumps tree of document structure to stdio.
         // Best not to use for very large documents!
         // Note: enabling this breaks variable replacement for {var_transaction_id}. Unclear why.
-        // asciidoctor.javaExtensionRegistry().treeprocessor(DumpTreeInfo())
+        asciidoctor.javaExtensionRegistry().treeprocessor(DumpTreeInfo())
 
         //val processedInfoCollector = DocInfoCollector(bibliographyCollector)
         //asciidoctor.javaExtensionRegistry().docinfoProcessor(processedInfoCollector)
@@ -104,8 +104,7 @@ class AsciidocConverter(
         writeArtifact("sdpi-use-cases", jsonFormatter.encodeToString(infoCollector.info().useCases()))
     }
 
-    private fun writeArtifact(strArtifactName : String, strArtifact : String)
-    {
+    private fun writeArtifact(strArtifactName: String, strArtifact: String) {
         val referencedArtifactsFolder = "referenced-artifacts"
         val path = Path.of(outputFile.parentFile.absolutePath, referencedArtifactsFolder)
         Files.createDirectories(path)
