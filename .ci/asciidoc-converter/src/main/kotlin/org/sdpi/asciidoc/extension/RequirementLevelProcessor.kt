@@ -34,6 +34,7 @@ class RequirementLevelProcessor : Treeprocessor() {
                 is StructuralNodeWrapper.SdpiRequirement -> {
                     processRequirement(node.wrapped)
                 }
+
                 else -> {
                     //logger.debug { "Ignore block of type '${block.context}'" }
                 }
@@ -69,7 +70,7 @@ class RequirementLevelProcessor : Treeprocessor() {
                             .map { it.trim() }
                             .count { it == level.keyword }
 
-                        RequirementLevel.values().filter { it != level }.forEach { notLevel ->
+                        RequirementLevel.entries.filter { it != level }.forEach { notLevel ->
                             val notLevelCount = childNode.wrapped.source
                                 .split(" ")
                                 .map { it.trim() }
@@ -81,7 +82,10 @@ class RequirementLevelProcessor : Treeprocessor() {
                             }
                         }
                     }
-                    else -> Unit
+
+                    else -> {
+                        Unit
+                    }
                 }
             }
         }

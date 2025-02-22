@@ -16,10 +16,8 @@ enum class BlockAttribute(val key: String) {
 
 }
 
-sealed class RequirementAttributes
-{
-    enum class Common(val key: String)
-    {
+sealed class RequirementAttributes {
+    enum class Common(val key: String) {
         // Type of requirement.
         TYPE("sdpi_req_type"),
 
@@ -36,15 +34,13 @@ sealed class RequirementAttributes
 
     }
 
-    enum class UseCase(val key: String)
-    {
+    enum class UseCase(val key: String) {
         // Attribute that identifies the use case associated with a
         // USE_CASE requirement
         ID("sdpi_use_case_id")
     }
 
-    enum class RefIcs(val key: String)
-    {
+    enum class RefIcs(val key: String) {
         // The id of the reference to the standard containing the requirement
         ID("sdpi_ref_id"),
 
@@ -55,8 +51,7 @@ sealed class RequirementAttributes
         REQUIREMENT("sdpi_ref_req")
     }
 
-    enum class RiskMitigation(val key: String)
-    {
+    enum class RiskMitigation(val key: String) {
         // Type of risk (e.g., general, safety, effectiveness, etc)
         SES_TYPE("sdpi_ses_type"),
 
@@ -65,8 +60,7 @@ sealed class RequirementAttributes
     }
 }
 
-enum class UseCaseAttributes(val key: String)
-{
+enum class UseCaseAttributes(val key: String) {
     // Attribute to define an id for a use case section.
     ID("sdpi_use_case_id"),
 

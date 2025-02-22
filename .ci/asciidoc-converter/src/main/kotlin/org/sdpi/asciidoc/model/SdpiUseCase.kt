@@ -2,8 +2,7 @@ package org.sdpi.asciidoc.model
 
 import kotlinx.serialization.Serializable
 
-enum class GherkinStepType(val keyword: String)
-{
+enum class GherkinStepType(val keyword: String) {
     GIVEN("given"),
     WHEN("when"),
     THEN("then"),
@@ -22,24 +21,24 @@ fun resolveStepType(raw: String) = GherkinStepType.entries.firstOrNull { it.keyw
 
 
 @Serializable
-data class GherkinStep(val step: GherkinStepType, val description:String)
+data class GherkinStep(val step: GherkinStepType, val description: String)
 
 @Serializable
-data class  UseCaseScenario(
+data class UseCaseScenario(
     val title: String,
-    val specification : List<GherkinStep>,
+    val specification: List<GherkinStep>,
 )
 
 @Serializable
 data class UseCaseSpecification(
-    val background : List<GherkinStep>,
+    val background: List<GherkinStep>,
     val scenarios: List<UseCaseScenario>,
 )
 
 @Serializable
 data class SdpiUseCase(
-    val id : String,
-    val title : String,
-    val anchor : String,
+    val id: String,
+    val title: String,
+    val anchor: String,
     val specification: UseCaseSpecification,
 )

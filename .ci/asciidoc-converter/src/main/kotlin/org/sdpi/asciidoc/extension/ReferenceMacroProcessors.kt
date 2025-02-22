@@ -18,28 +18,26 @@ import org.sdpi.asciidoc.parseRequirementNumber
  *
  */
 @Name("RefRequirement")
-class RequirementReferenceMacroProcessor(private val documentInfo : SdpiInformationCollector) : InlineMacroProcessor()
-{
+class RequirementReferenceMacroProcessor(private val documentInfo: SdpiInformationCollector) : InlineMacroProcessor() {
     private companion object : Logging
 
-    override fun process(parent: ContentNode, strTarget: String, attributes: MutableMap<String, Any>): PhraseNode
-    {
+    override fun process(parent: ContentNode, strTarget: String, attributes: MutableMap<String, Any>): PhraseNode {
         val id = parseRequirementNumber(strTarget)
         checkNotNull(id)
         {
-            "$strTarget is not a valid requirement number for a requirement reference".also { logger.error{it} }
+            "$strTarget is not a valid requirement number for a requirement reference".also { logger.error { it } }
         }
 
         val req = documentInfo.requirements()[id]
         checkNotNull(req)
         {
-            "Requirement '$strTarget' doesn't exist".also { logger.error{it} }
+            "Requirement '$strTarget' doesn't exist".also { logger.error { it } }
         }
 
         val strHref = "#${req.getBlockId()}"
-        val options : Map<String,String> = mapOf( "type" to ":link", "target" to strHref )
+        val options: Map<String, String> = mapOf("type" to ":link", "target" to strHref)
 
-        return createPhraseNode(parent, "anchor", req.localId, attributes, options )
+        return createPhraseNode(parent, "anchor", req.localId, attributes, options)
     }
 }
 
@@ -54,24 +52,22 @@ class RequirementReferenceMacroProcessor(private val documentInfo : SdpiInformat
  *
  */
 @Name("RefUseCase")
-class UseCaseReferenceMacroProcessor(private val documentInfo: SdpiInformationCollector) : InlineMacroProcessor()
-{
+class UseCaseReferenceMacroProcessor(private val documentInfo: SdpiInformationCollector) : InlineMacroProcessor() {
     private companion object : Logging
 
-    override fun process(parent: ContentNode, strTarget: String, attributes: MutableMap<String, Any>): PhraseNode
-    {
+    override fun process(parent: ContentNode, strTarget: String, attributes: MutableMap<String, Any>): PhraseNode {
         val useCase = documentInfo.useCases()[strTarget]
         checkNotNull(useCase)
         {
-            "Use case '$strTarget' doesn't exist".also { logger.error{it} }
+            "Use case '$strTarget' doesn't exist".also { logger.error { it } }
         }
 
         val strHref = "#${useCase.anchor}"
-        val options : Map<String,String> = mapOf( "type" to ":link", "target" to strHref )
+        val options: Map<String, String> = mapOf("type" to ":link", "target" to strHref)
 
         logger.info("Found use case: $strHref, ${useCase.title}")
 
-        return createPhraseNode(parent, "anchor", useCase.title, attributes, options )
+        return createPhraseNode(parent, "anchor", useCase.title, attributes, options)
     }
 
 }

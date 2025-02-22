@@ -17,14 +17,10 @@ const val BLOCK_NAME_SDPI_REQUIREMENT_EXAMPLE = "EXAMPLE"
  */
 @Name(BLOCK_NAME_SDPI_REQUIREMENT_EXAMPLE)
 @Contexts(Contexts.EXAMPLE)
-class RequirementExampleBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT_EXAMPLE)
-{
-    private companion object : Logging
-    {
-    }
+class RequirementExampleBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT_EXAMPLE) {
+    private companion object : Logging;
 
-    override fun process(parent: StructuralNode, reader: Reader, attributes: MutableMap<String, Any>): Any
-    {
+    override fun process(parent: StructuralNode, reader: Reader, attributes: MutableMap<String, Any>): Any {
         //logger.info("**** Found example block with parent: ${parent.attributes["title"]}")
 
         // Make this block collapsible and collapsed by default.
@@ -34,11 +30,13 @@ class RequirementExampleBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREM
         attributes["style"] = "EXAMPLE"
 
 
-        val block = createBlock(parent, "example",
+        val block = createBlock(
+            parent, "example",
             mapOf(
                 Options.ATTRIBUTES to attributes,
                 ContentModel.KEY to ContentModel.COMPOUND
-            ))
+            )
+        )
         block.title = "Example"
 
         return block

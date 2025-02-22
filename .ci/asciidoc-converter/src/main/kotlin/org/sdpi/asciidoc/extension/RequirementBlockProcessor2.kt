@@ -66,38 +66,32 @@ import java.util.*
 @Name(BLOCK_NAME_SDPI_REQUIREMENT)
 @Contexts(Contexts.SIDEBAR)
 @ContentModel(ContentModel.COMPOUND)
-class RequirementBlockProcessor2() : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT)
-{
-    private companion object : Logging
-    {
+class RequirementBlockProcessor2 : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
+    private companion object : Logging {
         val REQUIREMENT_TITLE_FORMAT = "^([A-Z])*?R(\\d+)$".toRegex()
         const val REQUIREMENT_ROLE = "requirement"
     }
 
-    override fun process(parent: StructuralNode, reader: Reader, attributes: MutableMap<String, Any>): Any
-    {
-        val requirementNumber : Int = getRequirementNumber(attributes)
-        val strGlobalId = getRequirementOid(parent, requirementNumber, attributes )
+    override fun process(parent: StructuralNode, reader: Reader, attributes: MutableMap<String, Any>): Any {
+        val requirementNumber: Int = getRequirementNumber(attributes)
+        val strGlobalId = getRequirementOid(parent, requirementNumber, attributes)
         val strLinkId = String.format("r%04d", requirementNumber)
 
         logger.info("Found requirement #$requirementNumber at ${parent.sourceLocation}")
 
         attributes["id"] = strLinkId
-        if (strGlobalId != null)
-        {
+        if (strGlobalId != null) {
             attributes["global-id"] = strGlobalId
         }
         attributes["reftext"] = String.format("R%04d", requirementNumber)
         attributes["requirement-number"] = requirementNumber
-        if (strGlobalId != null)
-        {
+        if (strGlobalId != null) {
             attributes["title"] = formatRequirementTitle(requirementNumber, strGlobalId)
         }
         attributes["role"] = REQUIREMENT_ROLE
 
         // Include an empty block with an id in the global format.
-        if (strGlobalId != null)
-        {
+        if (strGlobalId != null) {
             val anchorBlock = createBlock(parent, plainContext(Contexts.OPEN), Collections.emptyList(), mapOf())
             anchorBlock.id = strGlobalId
             parent.append(anchorBlock)
@@ -107,7 +101,8 @@ class RequirementBlockProcessor2() : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT)
             parent, plainContext(Contexts.SIDEBAR), mapOf(
                 Options.ATTRIBUTES to attributes, // copy attributes for further processing
                 ContentModel.KEY to ContentModel.COMPOUND, // signify construction of a compound object
-            ))
+            )
+        )
     }
 
 
@@ -123,7 +118,7 @@ class RequirementBlockProcessor2() : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT)
             val id = parseRequirementNumber(strId.toString())
             checkNotNull(id)
             {
-                "id '$strId' is not a valid requirement number".also { logger.error{it} }
+                "id '$strId' is not a valid requirement number".also { logger.error { it } }
             }
             return id
         }
@@ -138,18 +133,21 @@ class RequirementBlockProcessor2() : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT)
      * See Assigning Unique Identifiers [[SDPi:§1:A.4.2.1]]
      *
      */
-    private fun getRequirementOid(parent: StructuralNode, requirementNumber: Int, mutableAttributes: MutableMap<String, Any>) : String? {
-        var strSourceSpecification = mutableAttributes[RequirementAttributes.Common.SPECIFICATION.key]
+    private fun getRequirementOid(
+        parent: StructuralNode,
+        requirementNumber: Int,
+        mutableAttributes: MutableMap<String, Any>
+    ): String? {
+        val strSourceSpecification = mutableAttributes[RequirementAttributes.Common.SPECIFICATION.key]
 
         // To simplify transition, we'll print a warning and allow the oid to be missing. .
-        if (strSourceSpecification == null)
-        {
+        if (strSourceSpecification == null) {
             logger.warn("${getLocation((parent))} missing source specification for requirement #${requirementNumber}. In the future this will be an error.")
             return null
         }
 
         checkNotNull(strSourceSpecification) {
-            ("Missing requirement source id for SDPi requirement #$requirementNumber [${getLocation(parent)}]"). also {
+            ("Missing requirement source id for SDPi requirement #$requirementNumber [${getLocation(parent)}]").also {
                 logger.error(it)
             }
         }
@@ -166,12 +164,16 @@ class RequirementBlockProcessor2() : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT)
      * example:
      * :sdpi_oid.sdpi: 1.3.6.1.4.1.19376.1.6.2.10.1.1.1
      */
-    private fun getOidFor(parent: StructuralNode, requirementNumber: Int, strOidId : String) : String {
+    private fun getOidFor(parent: StructuralNode, requirementNumber: Int, strOidId: String): String {
         val document = parent.document
-        val strAttribute : String = "sdpi_oid${strOidId}"
+        val strAttribute = "sdpi_oid${strOidId}"
         val strOid = document.attributes[strAttribute]
         checkNotNull(strOid) {
-            ("The oid id ('${strOidId}') for SDPi requirement #'${requirementNumber}' cannot be found  [${getLocation(parent)}]."). also {
+            ("The oid id ('${strOidId}') for SDPi requirement #'${requirementNumber}' cannot be found  [${
+                getLocation(
+                    parent
+                )
+            }].").also {
                 logger.error(it)
             }
         }

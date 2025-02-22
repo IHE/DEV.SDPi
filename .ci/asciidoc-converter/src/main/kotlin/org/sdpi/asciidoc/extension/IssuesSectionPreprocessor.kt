@@ -5,8 +5,6 @@ import org.asciidoctor.extension.Preprocessor
 import org.asciidoctor.extension.PreprocessorReader
 import org.kohsuke.github.GHIssue
 import org.sdpi.asciidoc.github.IssueImport
-import org.sdpi.asciidoc.github.Issues
-
 
 class IssuesSectionPreprocessor(
     private val githubToken: String?

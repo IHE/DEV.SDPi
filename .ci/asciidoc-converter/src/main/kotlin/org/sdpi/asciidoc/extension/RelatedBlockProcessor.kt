@@ -20,14 +20,10 @@ const val BLOCK_NAME_SDPI_REQUIREMENT_RELATED = "RELATED"
  */
 @Name(BLOCK_NAME_SDPI_REQUIREMENT_RELATED)
 @Contexts(Contexts.EXAMPLE)
-class RelatedBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT_RELATED)
-{
-    private companion object : Logging
-    {
-    }
+class RelatedBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT_RELATED) {
+    private companion object : Logging;
 
-    override fun process(parent: StructuralNode, reader: Reader, attributes: MutableMap<String, Any>): Any
-    {
+    override fun process(parent: StructuralNode, reader: Reader, attributes: MutableMap<String, Any>): Any {
         //logger.info("**** Found related block with parent: ${parent.attributes["title"]}")
 
         // Make this block collapsible and collapsed by default.
@@ -35,11 +31,13 @@ class RelatedBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT_RELATED
 
         attributes["name"] = BLOCK_NAME_SDPI_REQUIREMENT_RELATED
         attributes["style"] = "RELATED"
-        val block = createBlock(parent, "example",
+        val block = createBlock(
+            parent, "example",
             mapOf(
                 Options.ATTRIBUTES to attributes,
                 ContentModel.KEY to ContentModel.COMPOUND
-            ))
+            )
+        )
         block.title = "Related"
 
         return block
