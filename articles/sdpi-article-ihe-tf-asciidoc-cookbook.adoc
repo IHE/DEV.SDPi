@@ -224,23 +224,19 @@ Check the AsciiDoc source where the graphic is included to ensure that it is pro
 
 In general, AsciiDoc automatically handles other image formats based on the file name extension (e.g., myGraphic.png).
 
-[none]
-. Note:  __The following path to the AsciiDoc images folder is due to the fact that this document is in the SDPi_Supplement articles folder. __
-
 [source]
 ----
-image::../asciidoc/images/ihe-logo.png[]
+image::../../asciidoc/images/ihe-logo.svg[]
 ----
 
 Which should render as:
 
-WARNING:  #WHY DOESN'T THIS RENDER CORRECTLY EITHER HERE OR ON THE SUPPLEMENT'S TITLE PAGE?!#
+image::../../asciidoc/images/ihe-logo.svg[]
 
-[none]
-. image:../asciidoc/images/ihe-logo.png[]
+NOTE: __You may need to experiment with paths to locate the image file. Use `..` for the parent folder; this one is in the `<project-root>/asciidoc/images` folder. __
 
-[none]
-. Note: __ Two colons "::" are needed if the graphic is on a line by itself; if it is in-line with other text, then a single colon ":" should be used.__
+NOTE: __ Two colons "::" are needed if the graphic is on a line by itself; if it is in-line with other text, then a single colon ":" should be used.__
+
 
 Additional information is provided on the https://docs.asciidoctor.org/asciidoc/latest/macros/image-format/[AsciiDoc Specify Image Format] page.  For general file types and formats information, consult the https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types[Mozilla Image File Type and Format Guide].
 
