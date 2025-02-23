@@ -5,6 +5,7 @@ import org.asciidoctor.extension.BlockMacroProcessor
 import org.asciidoctor.extension.Name
 import org.apache.logging.log4j.kotlin.Logging
 import org.sdpi.asciidoc.BlockAttribute
+import org.sdpi.asciidoc.RequirementAttributes
 
 const val BLOCK_MACRO_NAME_SDPI_REQUIREMENT_TABLE = "sdpi_requirement_table"
 
@@ -43,9 +44,9 @@ class AddRequirementQueryPlaceholder : BlockMacroProcessor(BLOCK_MACRO_NAME_SDPI
         placeholderTable.attributes["role"] = REQUIREMENT_TABLE_ROLE
 
         // Add filter attributes to the table for the tree processor to consume.
-        val strGroup = attributes[BlockAttribute.REQUIREMENT_GROUPS.key]
+        val strGroup = attributes[RequirementAttributes.Common.GROUPS.key]
         if (strGroup != null) {
-            placeholderTable.attributes[BlockAttribute.REQUIREMENT_GROUPS.key] = strGroup
+            placeholderTable.attributes[RequirementAttributes.Common.GROUPS.key] = strGroup
         }
 
         return placeholderTable

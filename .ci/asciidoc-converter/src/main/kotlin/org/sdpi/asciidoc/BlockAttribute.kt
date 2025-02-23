@@ -7,15 +7,14 @@ enum class BlockAttribute(val key: String) {
     ID("id"),
     TITLE("title"),
     ROLE("role"),
-    REQUIREMENT_LEVEL("sdpi_req_level"),
-    REQUIREMENT_TYPE("sdpi_req_type"),
-    REQUIREMENT_GROUPS("sdpi_req_group"),
-    REQUIREMENT_SPECIFICATION("sdpi_req_specification"),
     MAX_OCCURRENCE("sdpi_max_occurrence"),
     VOLUME_CAPTION("sdpi_volume_caption"),
 
 }
 
+/**
+ * Defines attribute keywords for sdpi_requirement blocks
+ */
 sealed class RequirementAttributes {
     enum class Common(val key: String) {
         // Type of requirement.

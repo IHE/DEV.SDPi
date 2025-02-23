@@ -337,6 +337,231 @@ For a bulleted list of items, the final "full stop" character of each non-final 
 . Second bullet;
 . Final Bullet.
 
+
+== Semantic content
+https://docs.asciidoctor.org/asciidoctorj/latest/[Asciidoctor], which converts these files into other formats (e.g., html, pdf), has been https://docs.asciidoctor.org/asciidoctorj/latest/extensions/extensions-introduction/[extended] to process domain specific content for the supplement. These extensions provide semantic markup of content that is used to automatically generate, for example, implementation conformance statement tables and export requirements and use cases in JSON format for external tooling (see https://profiles.ihe.net/DEV/SDPi/index.html#vol1_appendix_a_requirements_management_for_p_n_t_interperability[requirements management for plug-and-trust interoperability]). 
+
+Content encoded and exported, to `sdpi-supplement/referenced-artifacts/` in JSON format includes:
+
+* `sdpi-requirements.json`: all requirements defined, as described below, in the source. 
+* `sdpi-use-cases.json`: all use cases defined, as described below, in the source.
+
+
+NOTE: the extensions are written in Kotlin and may be found, along with the document processing tools, in `.ci/asciidoc-converter`. In Windows, run `build_document.bat` to process the Asciidoc source files. 
+
+=== Defining requirements
+
+The example below illustrates the AsciiDoc source to define a simple requirement. 
+
+[source,asciidoc]
+----
+.R1021
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature,sdpi_req_group="provider,discovery-proxy",sdpi_req_specification=sdpi-p]
+****
+
+[NORMATIVE]
+====
+When the managed discovery option is enabled for a SOMDS provider, then it SHALL use the DEV-46 transaction to update the discovery proxy actor of its network presence and departure.
+====
+
+****
+----
+
+The block name, `sdpi_requirement`, triggers semantic processing for the requirement content while the https://docs.asciidoctor.org/asciidoc/latest/blocks/add-title/[block title] defines the requirement number. Various <<requirement-attributes,attributes>> define properties for the requirement. The requirement content is delimited by exactly four *'s. The only required content for a block is the normative statement, tagged with the block name `[NORMATIVE]` and delimited by exactly four ='s. With this information we can:
+
+* perform basic requirement validation, such as checking level keywords in the normative text,
+* generate a unique <<requirement-oids,ISO object identifier>> for each requirement,
+* generate implementation conformance statement <<generate-table,tables>> with a list of requirements for selected groups,
+* ensure all requirement numbers are unique,
+* &hellip;
+
+Although the normative statement is the only block needed to define a requirement, many requirements include explanatory notes, examples and related information. This additional information is captured in tagged content blocks as the example below illustrates. This semantic content is retained when the requirements are exported in JSON format. 
+
+[source,asciidoc]
+----
+.R1023
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature,sdpi_req_group="consumer,discovery-proxy",sdpi_req_specification=sdpi-p]
+****
+
+[NORMATIVE]
+====
+When the managed discovery option is enabled for a SOMDS consumer, then it shall use the DEV-47 transaction to retrieve SOMDS provider network presence metadata from the Discovery Proxy actor.
+====
+
+[NOTE]
+====
+. When retrieving network presence metadata from a discovery proxy actor, a discovery scope may be specified as a filter to identify a specific subset of SOMDS provider systems.
+. A SOMDS consumer may optionally use the DEV-47 transaction to subscribe to all metadata updates from a set of SOMDS consumer systems, essentially using the discovery proxy as a pass-through for SOMDS provider DEV-23 and DEV-24 transactions. 
+====
+
+[EXAMPLE]
+====
+This is an example of an example block. 
+====
+
+[RELATED]
+====
+<<ref_oasis_ws_discovery_2009>>, section 2.2.2 Managed mode.
+====
+
+****
+----
+
+==== Requirement numbering and referencing
+
+Requirement numbers are parsed from the title of the `sdpi_requirement` block. They must match the regular expression `^([A-Z])*?R(\\d+)$`. That is, a sequence of upper-case characters followed by `R` then a numeric value. Examples of valid requirement titles include: `.R1002`, `.TR1002`, `.ABCDEFR1002`. Invalid requirement titles include `.r1234` (an upper-case `R` is required), `.ABC R1234` (spaces are not permitted), `.tR1234` (lower-case letters are not permitted).
+
+NOTE: The `.` character marks the line as an AsciiDoc https://docs.asciidoctor.org/asciidoc/latest/blocks/add-title/[title]; it is required to begin in the first column of the source file. 
+
+NOTE: Requirements are identified by number only. They are preserved but do not form part of the requirement identifier. 
+
+Requirements may be referenced using the `RefRequirement` in-line macro. For example: `RefRequirement:r1002[]`. Requirements are matched numerically only and must be prefixed by a lower-case `r`. References can be used in paragraph text. For example:
+
+====
+Check out RefRequirement:r1001[], it is super important!
+====
+
+NOTE: Previously anchors were needed, for cross-referencing, when defining a requirement (e.g., `[sdpi_requirement#r1022,sdpi_req_level=shall]`). These are now generated automatically. 
+
+IMPORTANT: Using the `RefRequirement` in-line macro helps ensure future compatibility if, for example, <<requirement-oids,ISO object identifiers>> are used to reference requirements. 
+
+[[requirement-attributes]]
+==== Block attributes
+
+Block attributes supply metadata for the requirement. Attributes are tabulated below; additional information may be found in https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_requirement_type_requirement_definition[SDPi requirement type definitions].
+
+|===
+|Attribute | Applies to | Type | Required |Description
+
+|`sdpi_req_type` | all | {`use_case_feature` \| `tech_feature` \| `ihe_profile` \| `ref_ics` \| `use_case_feature` \| `risk_mitigation` } | yes | Defines the type of requirement, from the https://profiles.ihe.net/DEV/SDPi/index.|`sdpi_req_level` | {`shall` \| `should` \| `may` } |yes | Defines the behaviour expected for compatible implementations. html#vol1_clause_sdpi_requirements_core_model[SDPi requirements core model]
+|`sdpi_req_group` |  all | comma separated list | no | Defines membership of ad-hoc groups. Groups may be used to select related requirements when generating ICS tables. 
+|`sdpi_req_specification` |  all | defined _specification id_| yes| Defines the root for the requirements <<requirement-oids,ISO object identifier>>. 
+|`sdpi_use_case_id` | `use_case_feature` | defined _use-case id_ | yes | Defines the use-case that the requirement applies to. Automatically populated from the enclosing <<use-case>> section. 
+|`sdpi_ref_id` | `ref_ics` | defined _reference id_ | yes | The bibliography anchor for the entry to the referenced requirement.
+|`sdpi_ref_section` | `ref_ics` | section identifier | yes | The identifier for the section containing the referenced requirement.
+|`sdpi_ref_req` | `ref_ics` | requirement identifier | yes | The identifier for the requirement in the referenced standard. 
+|`sdpi_ses_type` | `risk_mitigation` | {`general` | `safety` | `effectiveness` | `security` | `audit` } | yes | https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_requirement_type_ses[Type of risk] the requirement mitigates. 
+|`sdpi_ses_test` | `risk_mitigation` | {`inspect` | `wire` } | yes | Mechanism for testing the requirement. 
+|===
+
+[[requirement-oids]]
+==== ISO object identifiers
+
+ISO object identifiers (OIDs) are assigned and rendered with each requirement in the output file generated. They are used as the primary requirement id in implementation conformance statement tables. ISO object identifiers combine a profile- or standard-specific root identifier with requirement number, that is: `profile_oid.2.requirement_number`. The profile/standard is identified, by name, using the `sdpi_req_specification` attribute. Relationships between profile/standard names and their ISO object identifier is established using document level `sdpi_oid` scoped attributes, typically in `asciidoc/std-oid-definitions.adoc`. 
+
+Named profile and standards include:
+
+|===
+| `sdpi_req_specification` value | Profile/standard
+
+| `sdpi` | The https://profiles.ihe.net/DEV/SDPi/index.html[SDPi] profile
+| `sdpi-p` | The https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_p_profile[SDPi plug-and-trust] profile
+| `sdpi-a` | The https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_a_profile[SDPi alerting] profile
+| `sdpi-r` | The https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_r_profile[SDPi reporting] profile
+| `sdpi-xC` | The https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_xc_profile[SDPi external control] profile
+|===
+
+Refer to the document source for corresponding ISO object identifiers for each profile. 
+
+NOTE: specification names are case-sensitive. 
+
+==== Groups
+
+There is currently (February 2025) no constraint on groups that may be assigned to requirements. However, to promote consistency and utility, the following groups are recommended.
+
+|===
+| Group id | Description
+
+| consumer | Applies to https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_p_somds_consumer[SOMDS consumer] implementations. 
+| provider | Applies to https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_p_somds_provider[SOMDS provider] implementations.
+| discovery-proxy | Applies to https://profiles.ihe.net/DEV/SDPi/index.html#_discovery_proxy[managed discovery proxy] implementations.
+|===
+
+NOTE: Group names are case sensitive.
+
+[[use-case]]
+=== Defining use cases
+
+Use case blocks, and their parts, are identified in the source by AsciiDoc https://docs.asciidoctor.org/asciidoc/latest/attributes/role/[roles], with metadata provided in block attributes. The following example AsciiDoc source defines a use-case and one scenario. 
+
+[source,asciidoc]
+----
+[role="use-case",sdpi_use_case_id=stad]
+[sdpi_feature="Synchronized Time Across Devices"]
+=== Use Case Feature 1: Synchronized time across devices (STAD)
+
+==== Narrative
+Nurse Jean attaches a ventilator to the medical device network in the ICU.  It automatically obtains the correct time.
+
+==== Benefits
+Automatically acquiring the time saves the user from spending time entering the time into the device.  It also guarantees that the correct time will be entered.
+It is also important for all devices to have a consistent time since the data being exported to consuming devices and systems will use the time stamps from the device to mark the time that the clinical data was acquired.  Since this is part of the clinical record, accuracy is very important.
+
+==== Technical Pre-Conditions
+
+[role=use-case-background]
+====
+*Given* All devices communicate using a common acronym_md_lan protocol
+
+*And* A Time Source (TS) Service is on the acronym_md_lan network
+====
+
+==== Scenarios
+
+[role=use-case-scenario,sdpi_scenario="Device is connected to the MD LAN network with a Time Source service"]
+===== Scenario: STAD 1.1 --- Device is connected to the MD LAN network with a Time Source service
+
+[role=use-case-steps]
+====
+*Given* Device has detected at least one TS Service
+
+*When* The TS Service is operational
+
+*Then* The device will synchronize its time with the TS Service
+====
+
+----
+
+[[use-case-roles]]
+==== Block roles
+
+AsciiDoc https://docs.asciidoctor.org/asciidoc/latest/attributes/role/[roles] assigned to content blocks provide semantic structure to use-case definitions. The roles available for use-cases are shown in the table below. 
+
+Along with roles, use-case blocks should be logically structured in document sections. That is, background and scenarios must be sub-sections of a use-case section; steps must be within a scenario section. This structure is used to associate each content block with the appropriate use-case/scenario. 
+
+Each use-case must have at most one background section and zero or more scenarios. Each scenario section must have at most one steps content block (which may contain several <<use-case-steps,steps>>).
+
+|===
+|Role | Parent | Content block
+
+| `use-case` | &mdash; | Defines a use-case feature. 
+| `use-case-background` | `use-case` | Defines technical pre-requisites for a use-case. 
+| `use-case-scenario` | `use-case` | Defines one scenario in the use-case. 
+| `use-case-steps` | `use-case-scenario` | Defines steps for a use-case scenario. 
+|===
+
+[[use-case-attributes]]
+==== Block attributes
+
+[[use-case-steps]]
+==== Defining steps
+
+Steps, in background and steps content blocks, are defined in paragraphs prefixed by https://cucumber.io/docs/gherkin/reference/[Gherkin] keywords. Keywords are parsed (e.g., for exporting rich JSON data). Supported steps are shown in the table below. Steps are not case-sensitive. 
+
+|===
+|Keyword | Description
+
+| *given* | Initial context of the system, typically something that happened in the past. 
+| *when* | An action or event that triggers the scenario.
+| *then* | Expected outcome from the scenario.
+| *and* | Conjunction, used with *when* or *then* for an additional trigger/outcome that is also expected.
+| *or* | Conjunction, used with *when* or *then* for an alternate trigger/outcome. 
+|===
+
+[[generate-table]]
+=== Inserting summary tables
+
+
 == Topics Parking Lot
 
 Include:

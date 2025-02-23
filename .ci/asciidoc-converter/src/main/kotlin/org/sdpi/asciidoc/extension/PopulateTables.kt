@@ -7,6 +7,7 @@ import org.asciidoctor.ast.Table
 import org.asciidoctor.extension.Contexts
 import org.asciidoctor.extension.Treeprocessor
 import org.sdpi.asciidoc.BlockAttribute
+import org.sdpi.asciidoc.RequirementAttributes
 import org.sdpi.asciidoc.getRequirementGroups
 import org.sdpi.asciidoc.model.SdpiRequirement2
 import org.sdpi.asciidoc.plainContext
@@ -42,7 +43,7 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
     private fun getSelectedRequirements(block: Table): Collection<SdpiRequirement2> {
         val requirementsInDocument = docInfo.requirements()
 
-        val aGroups = getRequirementGroups(block.attributes[BlockAttribute.REQUIREMENT_GROUPS.key])
+        val aGroups = getRequirementGroups(block.attributes[RequirementAttributes.Common.GROUPS.key])
         if (aGroups.isEmpty()) {
             // unfiltered
             return requirementsInDocument.values

@@ -164,9 +164,9 @@ class RequirementsBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
      * Retrieve the requirement level
      */
     private fun getRequirementLevel(requirementNumber: Int, attributes: MutableMap<String, Any>): RequirementLevel {
-        val strLevel = attributes[BlockAttribute.REQUIREMENT_LEVEL.key]
+        val strLevel = attributes[RequirementAttributes.Common.LEVEL.key]
         checkNotNull(strLevel) {
-            ("Missing ${BlockAttribute.REQUIREMENT_LEVEL.key} attribute for SDPi requirement #$requirementNumber").also {
+            ("Missing ${RequirementAttributes.Common.LEVEL.key} attribute for SDPi requirement #$requirementNumber").also {
                 logger.error { it }
             }
         }
@@ -184,9 +184,9 @@ class RequirementsBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
      * Retrieve the requirement type
      */
     private fun getRequirementType(requirementNumber: Int, attributes: MutableMap<String, Any>): RequirementType {
-        val strType = attributes[BlockAttribute.REQUIREMENT_TYPE.key]
+        val strType = attributes[RequirementAttributes.Common.TYPE.key]
         checkNotNull(strType) {
-            ("Missing ${BlockAttribute.REQUIREMENT_TYPE.key} attribute for SDPi requirement #$requirementNumber").also {
+            ("Missing ${RequirementAttributes.Common.TYPE.key} attribute for SDPi requirement #$requirementNumber").also {
                 logger.error { it }
             }
         }
@@ -222,7 +222,7 @@ class RequirementsBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
      * Retrieves the list of groups the requirement belongs to (if any).
      */
     private fun getRequirementGroupMembership(mutableAttributes: MutableMap<String, Any>): List<String> {
-        return getRequirementGroups(mutableAttributes[BlockAttribute.REQUIREMENT_GROUPS.key])
+        return getRequirementGroups(mutableAttributes[RequirementAttributes.Common.GROUPS.key])
     }
 
     /**
@@ -283,7 +283,7 @@ class RequirementsBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
         requirementNumber: Int,
         mutableAttributes: MutableMap<String, Any>
     ): String {
-        val strSourceSpecification = mutableAttributes[BlockAttribute.REQUIREMENT_SPECIFICATION.key]
+        val strSourceSpecification = mutableAttributes[RequirementAttributes.Common.SPECIFICATION.key]
         checkNotNull(strSourceSpecification) {
             ("Missing requirement source id for SDPi requirement #$requirementNumber").also {
                 logger.error(it)
