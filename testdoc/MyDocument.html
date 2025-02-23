@@ -750,6 +750,17 @@ div.global-id p {
         <td class="tableblock halign-left valign-top">
          <div class="content">
           <div class="paragraph global-id">
+           <p>1.3.6.1.4.1.19376.1.6.2.11.2.1023</p>
+          </div>
+         </div></td>
+        <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#1.3.6.1.4.1.19376.1.6.2.11.2.1023">R1023</a></p></td>
+        <td class="tableblock halign-left valign-top"><p class="tableblock">shall</p></td>
+        <td class="tableblock halign-left valign-top"><p class="tableblock">Technical feature</p></td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph global-id">
            <p>1.3.6.1.4.1.19376.1.6.2.x.2.1001</p>
           </div>
          </div></td>
@@ -844,6 +855,17 @@ div.global-id p {
         <td class="tableblock halign-left valign-top">
          <div class="content">
           <div class="paragraph global-id">
+           <p>1.3.6.1.4.1.19376.1.6.2.11.2.1023</p>
+          </div>
+         </div></td>
+        <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#1.3.6.1.4.1.19376.1.6.2.11.2.1023">R1023</a></p></td>
+        <td class="tableblock halign-left valign-top"><p class="tableblock">shall</p></td>
+        <td class="tableblock halign-left valign-top"><p class="tableblock">Technical feature</p></td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph global-id">
            <p>1.3.6.1.4.1.19376.1.6.2.x.2.1001</p>
           </div>
          </div></td>
@@ -924,8 +946,10 @@ div.global-id p {
        </div>
        <div class="exampleblock">
         <div class="content">
-         <div class="paragraph">
-          <p>When the vol1_spec_sdpi_p_option_discovery_proxy is enabled for a vol1_spec_sdpi_p_actor_somds_provider Actor, then it shall use the vol2_clause_dev_46, DEV-46 transaction to update the vol1_spec_sdpi_p_actor_discovery_proxy Actor on its network presence and departure.</p>
+         <div class="literalblock">
+          <div class="content">
+           <pre>When the vol1_spec_sdpi_p_option_discovery_proxy is enabled for a vol1_spec_sdpi_p_actor_somds_provider Actor, then it shall use the vol2_clause_dev_46, DEV-46 transaction to update the vol1_spec_sdpi_p_actor_discovery_proxy Actor on its network presence and departure.</pre>
+          </div>
          </div>
         </div>
        </div>
@@ -966,6 +990,54 @@ div.global-id p {
        <div class="paragraph">
         <p>If a vol1_spec_sdpi_p_actor_somds_provider Actor is configured or provisioned for the vol1_spec_sdpi_p_option_discovery_proxy, but the proxy system is not available, then the vol1_spec_sdpi_p_actor_somds_provider shall revert back to "ad hoc" discovery mode.</p>
        </div>
+      </div>
+     </div>
+     <div id="1.3.6.1.4.1.19376.1.6.2.11.2.1023" class="openblock">
+      <div class="content">
+      </div>
+     </div>
+     <div id="r1023" class="sidebarblock requirement">
+      <div class="content">
+       <div class="title">
+        R1023 <span class="global-id"><code>(1.3.6.1.4.1.19376.1.6.2.11.2.1023)</code></span>
+       </div>
+       <div class="exampleblock">
+        <div class="content">
+         <div class="paragraph">
+          <p>When the managed discovery option is enabled for a SOMDS consumer, then it shall use the DEV-47 transaction to retrieve SOMDS provider network presence metadata from the Discovery Proxy actor.</p>
+         </div>
+        </div>
+       </div>
+       <div class="admonitionblock note">
+        <table>
+         <tbody>
+          <tr>
+           <td class="icon"><i class="fa icon-note" title="Note"></i></td>
+           <td class="content">
+            <div class="olist arabic">
+             <ol class="arabic">
+              <li><p>When retrieving network presence metadata from a discovery proxy actor, a discovery scope may be specified as a filter to identify a specific subset of SOMDS provider systems.</p></li>
+              <li><p>A SOMDS consumer may optionally use the DEV-47 transaction to subscribe to all metadata updates from a set of SOMDS consumer systems, essentially using the discovery proxy as a pass-through for SOMDS provider DEV-23 and DEV-24 transactions.</p></li>
+             </ol>
+            </div></td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <details><summary class="title">Example</summary>
+        <div class="content">
+         <div class="paragraph">
+          <p>This is an example of an example block.</p>
+         </div>
+        </div>
+       </details>
+       <details><summary class="title">Related</summary>
+        <div class="content">
+         <div class="paragraph">
+          <p><a href="#ref_oasis_ws_discovery_2009">[OASIS WS-Discovery:2009]</a>, section 2.2.2 Managed mode.</p>
+         </div>
+        </div>
+       </details>
       </div>
      </div>
      <div id="r0500" class="sidebarblock requirement">
@@ -1368,6 +1440,13 @@ Content-Encoding: gzip</pre>
         </thead>
         <tbody>
          <tr>
+          <td class="tableblock halign-left valign-top"><p class="tableblock">ICS-1023</p></td>
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#1.3.6.1.4.1.19376.1.6.2.11.2.1023">1.3.6.1.4.1.19376.1.6.2.11.2.1023</a></p></td>
+          <td class="tableblock halign-left valign-top"><p class="tableblock">m</p></td>
+          <td class="tableblock halign-left valign-top"></td>
+          <td class="tableblock halign-left valign-top"></td>
+         </tr>
+         <tr>
           <td class="tableblock halign-left valign-top"><p class="tableblock">ICS-1001</p></td>
           <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#1.3.6.1.4.1.19376.1.6.2.x.2.1001">1.3.6.1.4.1.19376.1.6.2.x.2.1001</a></p></td>
           <td class="tableblock halign-left valign-top"><p class="tableblock">r</p></td>
@@ -1437,6 +1516,13 @@ Content-Encoding: gzip</pre>
           <td class="tableblock halign-left valign-top"></td>
           <td class="tableblock halign-left valign-top"></td>
          </tr>
+         <tr>
+          <td class="tableblock halign-left valign-top"><p class="tableblock">ICS-1023</p></td>
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#1.3.6.1.4.1.19376.1.6.2.11.2.1023">1.3.6.1.4.1.19376.1.6.2.11.2.1023</a></p></td>
+          <td class="tableblock halign-left valign-top"><p class="tableblock">m</p></td>
+          <td class="tableblock halign-left valign-top"></td>
+          <td class="tableblock halign-left valign-top"></td>
+         </tr>
         </tbody>
        </table>
       </div>
@@ -1468,6 +1554,13 @@ Content-Encoding: gzip</pre>
          <tr>
           <td class="tableblock halign-left valign-top"><p class="tableblock">ICS-1022</p></td>
           <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#r1022">R1022</a></p></td>
+          <td class="tableblock halign-left valign-top"><p class="tableblock">m</p></td>
+          <td class="tableblock halign-left valign-top"></td>
+          <td class="tableblock halign-left valign-top"></td>
+         </tr>
+         <tr>
+          <td class="tableblock halign-left valign-top"><p class="tableblock">ICS-1023</p></td>
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#1.3.6.1.4.1.19376.1.6.2.11.2.1023">1.3.6.1.4.1.19376.1.6.2.11.2.1023</a></p></td>
           <td class="tableblock halign-left valign-top"><p class="tableblock">m</p></td>
           <td class="tableblock halign-left valign-top"></td>
           <td class="tableblock halign-left valign-top"></td>
@@ -1556,7 +1649,7 @@ Content-Encoding: gzip</pre>
   </div>
   <div id="footer">
    <div id="footer-text">
-    Last updated 2025-01-10 17:35:58 +1300
+    Last updated 2025-02-23 12:12:13 +1300
    </div>
   </div>
  </body>

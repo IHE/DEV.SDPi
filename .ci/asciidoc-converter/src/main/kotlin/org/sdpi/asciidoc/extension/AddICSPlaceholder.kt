@@ -4,6 +4,7 @@ import org.asciidoctor.ast.StructuralNode
 import org.asciidoctor.extension.BlockMacroProcessor
 import org.asciidoctor.extension.Name
 import org.sdpi.asciidoc.BlockAttribute
+import org.sdpi.asciidoc.RequirementAttributes
 
 const val BLOCK_MACRO_NAME_SDPI_ICS_TABLE = "sdpi_ics_table"
 
@@ -41,9 +42,9 @@ class AddICSPlaceholder : BlockMacroProcessor(BLOCK_MACRO_NAME_SDPI_ICS_TABLE) {
         placeholderTable.attributes["role"] = ICS_TABLE_ROLE
 
         // Add filter attributes to the table for the tree processor to consume.
-        val strGroup = attributes[BlockAttribute.REQUIREMENT_GROUPS.key]
+        val strGroup = attributes[RequirementAttributes.Common.GROUPS.key]
         if (strGroup != null) {
-            placeholderTable.attributes[BlockAttribute.REQUIREMENT_GROUPS.key] = strGroup
+            placeholderTable.attributes[RequirementAttributes.Common.GROUPS.key] = strGroup
         }
 
         return placeholderTable

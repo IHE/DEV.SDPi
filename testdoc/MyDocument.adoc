@@ -68,7 +68,7 @@ sdpi_requirement_table::[sdpi_req_group="consumer,discovery-proxy"]
 
 [NORMATIVE]
 ====
-When the vol1_spec_sdpi_p_option_discovery_proxy is enabled for a vol1_spec_sdpi_p_actor_somds_provider Actor, then it shall use the vol2_clause_dev_46, DEV-46 transaction to update the vol1_spec_sdpi_p_actor_discovery_proxy Actor on its network presence and departure.
+  When the vol1_spec_sdpi_p_option_discovery_proxy is enabled for a vol1_spec_sdpi_p_actor_somds_provider Actor, then it shall use the vol2_clause_dev_46, DEV-46 transaction to update the vol1_spec_sdpi_p_actor_discovery_proxy Actor on its network presence and departure.
 ====
 
 [NOTE]
@@ -91,6 +91,33 @@ When the vol1_spec_sdpi_p_option_discovery_proxy is enabled for a vol1_spec_sdpi
 ****
 
 If a vol1_spec_sdpi_p_actor_somds_provider Actor is configured or provisioned for the vol1_spec_sdpi_p_option_discovery_proxy, but the proxy system is not available, then the vol1_spec_sdpi_p_actor_somds_provider shall revert back to "ad hoc" discovery mode.
+****
+
+.R1023
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature,sdpi_req_group="consumer,discovery-proxy",sdpi_req_specification=sdpi-p]
+****
+
+[NORMATIVE]
+====
+When the managed discovery option is enabled for a SOMDS consumer, then it shall use the DEV-47 transaction to retrieve SOMDS provider network presence metadata from the Discovery Proxy actor.
+====
+
+[NOTE]
+====
+. When retrieving network presence metadata from a discovery proxy actor, a discovery scope may be specified as a filter to identify a specific subset of SOMDS provider systems.
+. A SOMDS consumer may optionally use the DEV-47 transaction to subscribe to all metadata updates from a set of SOMDS consumer systems, essentially using the discovery proxy as a pass-through for SOMDS provider DEV-23 and DEV-24 transactions. 
+====
+
+[EXAMPLE]
+====
+This is an example of an example block. 
+====
+
+[RELATED]
+====
+<<ref_oasis_ws_discovery_2009>>, section 2.2.2 Managed mode.
+====
+
 ****
 
 .R0500

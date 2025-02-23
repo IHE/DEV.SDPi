@@ -69,7 +69,7 @@ class SdpiInformationCollector(private val bibliography: BibliographyCollector) 
             processRequirement(block)
         }
 
-        if (block.hasRole("use-case")) {
+        if (block.hasRole(RoleNames.UseCase.FEATURE.key)) {
             processUseCase(block)
         }
 
@@ -563,11 +563,11 @@ class SdpiInformationCollector(private val bibliography: BibliographyCollector) 
         var iBlock = 0
         while (iBlock < specBlocks.count()) {
             val useCaseBlock = specBlocks[iBlock]
-            if (useCaseBlock.hasRole("use-case-background")) {
+            if (useCaseBlock.hasRole(RoleNames.UseCase.BACKGROUND.key)) {
                 backgroundContent.addAll(getSteps(useCaseBlock))
             }
 
-            if (useCaseBlock.hasRole("use-case-scenario")) {
+            if (useCaseBlock.hasRole(RoleNames.UseCase.SCENARIO.key)) {
                 val oTitle = useCaseBlock.attributes["sdpi_scenario"]
                 checkNotNull(oTitle)
                 {
@@ -575,7 +575,7 @@ class SdpiInformationCollector(private val bibliography: BibliographyCollector) 
                 }
 
                 val iStepBlock = iBlock + 1
-                check(iStepBlock < specBlocks.count() && specBlocks[iStepBlock].hasRole("use-case-steps"))
+                check(iStepBlock < specBlocks.count() && specBlocks[iStepBlock].hasRole(RoleNames.UseCase.STEPS.key))
                 {
                     "${getLocation(useCaseBlock)} missing steps for scenario $oTitle".also { logger.error { it } }
                 }
@@ -596,13 +596,13 @@ class SdpiInformationCollector(private val bibliography: BibliographyCollector) 
         for (child in block.blocks) {
             val strRole = child.role
             when (strRole) {
-                "use-case-background" -> specBlocks.add(child)
-                "use-case-scenario" -> {
+                RoleNames.UseCase.BACKGROUND.key -> specBlocks.add(child)
+                RoleNames.UseCase.SCENARIO.key -> {
                     specBlocks.add(child)
                     gatherUseCaseBlocks(child, specBlocks)
                 }
 
-                "use-case-steps" -> specBlocks.add(child)
+                RoleNames.UseCase.STEPS.key-> specBlocks.add(child)
                 else -> gatherUseCaseBlocks(child, specBlocks)
             }
         }
