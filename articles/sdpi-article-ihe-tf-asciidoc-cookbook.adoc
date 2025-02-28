@@ -407,23 +407,15 @@ This is an example of an example block.
 ****
 ----
 
-==== Requirement numbering and referencing
+==== Requirement numbering
 
-Requirement numbers are parsed from the title of the `sdpi_requirement` block. They must match the regular expression `^([A-Z])*?R(\\d+)$`. That is, a sequence of upper-case characters followed by `R` then a numeric value. Examples of valid requirement titles include: `.R1002`, `.TR1002`, `.ABCDEFR1002`. Invalid requirement titles include `.r1234` (an upper-case `R` is required), `.ABC R1234` (spaces are not permitted), `.tR1234` (lower-case letters are not permitted).
+Requirement numbers are parsed from the title of the `sdpi_requirement` block. They must match the regular expression `^([A-Z])*?R(\\d+)$`. That is, a sequence of upper-case characters followed by `R` then a numeric value. Examples of valid requirement titles include: `.R1002`, `.TR1002`, `.ABCDEFR1002`. Invalid requirement titles include `.r1234` (an upper-case `R` is required), `.ABC R1234` (spaces are not permitted), `.tR1234` (lower-case letters are not permitted). <<cross-referencing,Cross-references>> (links) to a requirement may be inserted with in-line macros. 
 
 NOTE: The `.` character marks the line as an AsciiDoc https://docs.asciidoctor.org/asciidoc/latest/blocks/add-title/[title]; it is required to begin in the first column of the source file. 
 
 NOTE: Requirements are identified by number only. They are preserved but do not form part of the requirement identifier. 
 
-Requirements may be referenced using the `RefRequirement` in-line macro. For example: `RefRequirement:r1002[]`. Requirements are matched numerically only and must be prefixed by a lower-case `r`. References can be used in paragraph text. For example:
-
-====
-Check out RefRequirement:r1001[], it is super important!
-====
-
 NOTE: Previously anchors were needed, for cross-referencing, when defining a requirement (e.g., `[sdpi_requirement#r1022,sdpi_req_level=shall]`). These are now generated automatically. 
-
-IMPORTANT: Using the `RefRequirement` in-line macro helps ensure future compatibility if, for example, <<requirement-oids,ISO object identifiers>> are used to reference requirements. 
 
 [[requirement-attributes]]
 ==== Block attributes
@@ -433,15 +425,16 @@ Block attributes supply metadata for the requirement. Attributes are tabulated b
 |===
 |Attribute | Applies to | Type | Required |Description
 
-|`sdpi_req_type` | all | {`use_case_feature` \| `tech_feature` \| `ihe_profile` \| `ref_ics` \| `use_case_feature` \| `risk_mitigation` } | yes | Defines the type of requirement, from the https://profiles.ihe.net/DEV/SDPi/index.|`sdpi_req_level` | {`shall` \| `should` \| `may` } |yes | Defines the behaviour expected for compatible implementations. html#vol1_clause_sdpi_requirements_core_model[SDPi requirements core model]
+|`sdpi_req_type` | all | {`use_case_feature` \| `tech_feature` \| `ihe_profile` \| `ref_ics` \| `use_case_feature` \| `risk_mitigation` } | yes | Defines the type of requirement, from the https://profiles.ihe.net/DEV/SDPi/index.
+|`sdpi_req_level` | all | {`shall` \| `should` \| `may` } |yes | Defines the behaviour expected for compatible implementations. html#vol1_clause_sdpi_requirements_core_model[SDPi requirements core model]
 |`sdpi_req_group` |  all | comma separated list | no | Defines membership of ad-hoc groups. Groups may be used to select related requirements when generating ICS tables. 
 |`sdpi_req_specification` |  all | defined _specification id_| yes| Defines the root for the requirements <<requirement-oids,ISO object identifier>>. 
 |`sdpi_use_case_id` | `use_case_feature` | defined _use-case id_ | yes | Defines the use-case that the requirement applies to. Automatically populated from the enclosing <<use-case>> section. 
 |`sdpi_ref_id` | `ref_ics` | defined _reference id_ | yes | The bibliography anchor for the entry to the referenced requirement.
 |`sdpi_ref_section` | `ref_ics` | section identifier | yes | The identifier for the section containing the referenced requirement.
 |`sdpi_ref_req` | `ref_ics` | requirement identifier | yes | The identifier for the requirement in the referenced standard. 
-|`sdpi_ses_type` | `risk_mitigation` | {`general` | `safety` | `effectiveness` | `security` | `audit` } | yes | https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_requirement_type_ses[Type of risk] the requirement mitigates. 
-|`sdpi_ses_test` | `risk_mitigation` | {`inspect` | `wire` } | yes | Mechanism for testing the requirement. 
+|`sdpi_ses_type` | `risk_mitigation` | {`general` \| `safety` \| `effectiveness` \| `security` \| `audit` } | yes | https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_requirement_type_ses[Type of risk] the requirement mitigates. 
+|`sdpi_ses_test` | `risk_mitigation` | {`inspect` \| `wire` } | yes | Mechanism for testing the requirement. 
 |===
 
 [[requirement-oids]]
@@ -452,7 +445,7 @@ ISO object identifiers (OIDs) are assigned and rendered with each requirement in
 Named profile and standards include:
 
 |===
-| `sdpi_req_specification` value | Profile/standard
+| Specification (`sdpi_req_specification`) | Profile/standard
 
 | `sdpi` | The https://profiles.ihe.net/DEV/SDPi/index.html[SDPi] profile
 | `sdpi-p` | The https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_p_profile[SDPi plug-and-trust] profile
@@ -543,6 +536,17 @@ Each use-case must have at most one background section and zero or more scenario
 [[use-case-attributes]]
 ==== Block attributes
 
+Block attributes supply metadata for the use-case. Attributes are tabulated below; additional information may be found in https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_requirement_type_requirement_definition[SDPi requirement type definitions].
+
+|===
+|Attribute | Applies to role | Type | Required |Description
+
+|`sdpi_use_case_id` | `use-case` | _unique id_ | yes | Defines an id for referencing the use case in requirements and cross-referencing. Must be globally unique.
+|`sdpi_use_case_scenario` |  `use-case-scenario` | _unique id_ | yes | Defines an id for one sequence in a use case. Must be unique within the use-case. 
+|===
+
+NOTE: Ids are case-sensitive. 
+
 [[use-case-steps]]
 ==== Defining steps
 
@@ -558,8 +562,54 @@ Steps, in background and steps content blocks, are defined in paragraphs prefixe
 | *or* | Conjunction, used with *when* or *then* for an alternate trigger/outcome. 
 |===
 
+[[cross-referencing]]
+=== Cross-referencing
+
+It is common to refer to requirements and use-cases from elsewhere in the source. Semantic https://docs.asciidoctor.org/asciidoctorj/latest/extensions/inline-macro-processor/[in-line macros] are provided to cross-reference requirements and use-cases by their requirement number and use-case id, respectively. 
+
+|===
+|Macro name | Target | Optional attributes | Example | Description
+
+|RefRequirement | Requirement number | _none_ | `RefRequirement:r1002[]` | Inserts a link to the requirement target. 
+|RefUseCase | Use-case id | _none_ | `RefUseCase:stad[]` | Inserts a link to the use-case target. 
+|===
+
+NOTE: use case ids are case-sensitive.
+
+IMPORTANT: Using the in-line macro helps ensure future compatibility if, for example, <<requirement-oids,ISO object identifiers>> are used to reference requirements. 
+
 [[generate-table]]
-=== Inserting summary tables
+=== Summary tables
+
+Summary tables are automatically generated during document processing and inserted in place of https://docs.asciidoctor.org/asciidoctorj/latest/extensions/block-macro-processor/[block macros]. The tables available are:
+
+|===
+|Table | Macro | Columns
+
+|Implementation conformance statement table | `sdpi_ics_table` | index, reference, status, support, comment
+|Requirement list | `sdpi_requirement_table` | <<requirement-oids,ISO object identifiers>>, local requirement id, level, type
+|===
+
+
+NOTE: Requirement tables may be included at any point in the source (where block-macros are allowed). They will gather requirements from the entire document. It is not necessary to define requirements before they can be included in a table. 
+
+The example below includes an ICS table in the generated document with all requirements in the `provider` group. 
+
+[source,asciidoc]
+----
+sdpi_ics_table::[sdpi_req_group=provider]
+----
+
+==== Filter
+
+Filter parameters, included as named attributes, select the content included in the table. Available filters are tabulated below. 
+
+|===
+|Attribute name | Value | Description
+
+|`sdpi_req_group` | comma separated list | Includes requirements with any of the groups supplied in their `sdpi_req_group` <<requirement-attributes,attribute>>. 
+|===
+
 
 
 == Topics Parking Lot

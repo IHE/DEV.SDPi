@@ -1,10 +1,9 @@
 package org.sdpi.asciidoc.extension
 
+import org.apache.logging.log4j.kotlin.Logging
 import org.asciidoctor.ast.StructuralNode
 import org.asciidoctor.extension.BlockMacroProcessor
 import org.asciidoctor.extension.Name
-import org.apache.logging.log4j.kotlin.Logging
-import org.sdpi.asciidoc.BlockAttribute
 import org.sdpi.asciidoc.RequirementAttributes
 
 const val BLOCK_MACRO_NAME_SDPI_REQUIREMENT_TABLE = "sdpi_requirement_table"
