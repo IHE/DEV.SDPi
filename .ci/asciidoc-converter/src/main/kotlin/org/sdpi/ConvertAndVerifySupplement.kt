@@ -1,13 +1,11 @@
 package org.sdpi
 
 import com.github.ajalt.clikt.core.CliktCommand
-import com.github.ajalt.clikt.parameters.options.default
-import com.github.ajalt.clikt.parameters.options.option
-import com.github.ajalt.clikt.parameters.options.required
-import com.github.ajalt.clikt.parameters.options.validate
+import com.github.ajalt.clikt.parameters.options.*
 import com.github.ajalt.clikt.parameters.types.choice
 import com.github.ajalt.clikt.parameters.types.file
 import org.apache.logging.log4j.kotlin.Logging
+import org.sdpi.AsciidocConverter.Mode
 import org.sdpi.asciidoc.AsciidocErrorChecker
 import java.io.File
 import kotlin.system.exitProcess
@@ -47,6 +45,9 @@ class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {
 
     private val githubToken by option("--github-token", help = "Github token to request issues")
 
+    private val dumpStructure by option("--dump-structure", help="Writes document tree to std-out during processing")
+        .flag(default = false)
+
     override fun run() {
         runCatching {
             val asciidocErrorChecker = AsciidocErrorChecker()
@@ -59,7 +60,13 @@ class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {
 
             logger.info { "Write output to '${outFile.canonicalPath}'" }
 
-            AsciidocConverter(AsciidocConverter.Input.FileInput(adocInputFile), outFile, githubToken).run()
+            AsciidocConverter(
+                AsciidocConverter.Input.FileInput(adocInputFile),
+                outFile,
+                githubToken,
+                Mode.Productive,
+                dumpStructure
+            ).run()
 
             asciidocErrorChecker.run()
 
