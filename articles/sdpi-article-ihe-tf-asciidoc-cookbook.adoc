@@ -610,6 +610,14 @@ Filter parameters, included as named attributes, select the content included in 
 |`sdpi_req_group` | comma separated list | Includes requirements with any of the groups supplied in their `sdpi_req_group` <<requirement-attributes,attribute>>. 
 |===
 
+=== Backwards compatibility
+
+Some changes to the supplement source text are required to take advantage of the new features including additional attributes on requirements and tagging use cases. To ease adoption, the new extensions fallback to the original behaviour. This means, the
+
+. processor works with the original supplement source without any modifications, and
+. output from the original supplement is largely identical following addition of new processor features as it was before the new features were added. The generated html is the same (at the byte level) except:
+.. the `Build Date` entry will be different on the title page and in the footer,
+.. requirement `div` blocks get an extra `requirement` style class. That is, for example, `<div id="r1021" class="sidebarblock requirement">` instead of `<div id="r1021" class="sidebarblock">`.
 
 
 == Topics Parking Lot

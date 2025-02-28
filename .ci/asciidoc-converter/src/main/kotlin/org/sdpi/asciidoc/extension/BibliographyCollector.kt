@@ -22,9 +22,9 @@ class BibliographyCollector : Treeprocessor() {
     private fun collectBibliography(document: Document): Boolean {
         logger.info("Searching for bibliography")
         val bib = findBibliography(document as StructuralNode)
-        checkNotNull(bib)
-        {
-            "Can't find bibliography".also { logger.error { it } }
+        if (bib == null) {
+            logger.warn("Can't find bibliography")
+            return false
         }
 
         val reBibParser = Regex("id=\"(?<ref>.+)\".*\\[(?<reftxt>.+)]\\s+(?<entry>.+)")

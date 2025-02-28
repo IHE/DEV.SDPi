@@ -45,7 +45,7 @@ class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {
 
     private val githubToken by option("--github-token", help = "Github token to request issues")
 
-    private val dumpStructure by option("--dump-structure", help="Writes document tree to std-out during processing")
+    private val dumpStructure by option("--dump-structure", help = "Writes document tree to std-out during processing")
         .flag(default = false)
 
     override fun run() {

@@ -39,6 +39,10 @@ internal class ConvertAndVerifySupplementTest {
             it.delete()
         }
 
-        assertEquals(expectedOutput, actualOutput.toString(Charsets.UTF_8))
+        // Windows and Linux use different line endings but the output uses
+        // \r line endings on Windows. Resolve this by normalizing both strings. 
+        val normalizedExpected = expectedOutput.lines().joinToString(System.lineSeparator())
+        val normalizedOutput = actualOutput.toString(Charsets.UTF_8).lines().joinToString(System.lineSeparator())
+        assertEquals(normalizedExpected, normalizedOutput)
     }
 }
