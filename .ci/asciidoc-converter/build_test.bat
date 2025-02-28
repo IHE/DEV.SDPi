@@ -1,1 +1,1 @@
-gradlew.bat run --args="--input-file ..\..\testdoc\MyDocument.adoc --output-folder ..\..\testdoc\ --backend html"
+gradlew.bat run --args="--input-file ..\..\testdoc\MyDocument.adoc --output-folder ..\..\testdoc\ --backend html --dump-structure"

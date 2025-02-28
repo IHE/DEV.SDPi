@@ -16,6 +16,7 @@ class AsciidocConverter(
     private val outputFile: File,
     private val githubToken: String?,
     private val mode: Mode = Mode.Productive,
+    private val dumpStructure: Boolean = false,
 ) : Runnable {
     override fun run() {
         val options = Options.builder()
@@ -35,10 +36,6 @@ class AsciidocConverter(
         asciidoctor.javaExtensionRegistry().block(RequirementBlockProcessor2())
         asciidoctor.javaExtensionRegistry().block(RelatedBlockProcessor())
         asciidoctor.javaExtensionRegistry().block(RequirementExampleBlockProcessor())
-
-        // Handle sdpi_requirement blocks.
-        // Obsolete: now handled by RequirementBlockProcessor2
-        //val requirementsListProcessor = RequirementListProcessor(requirementsBlockProcessor)
 
         asciidoctor.javaExtensionRegistry().treeprocessor(
             NumberingProcessor(
@@ -66,10 +63,6 @@ class AsciidocConverter(
         asciidoctor.javaExtensionRegistry().blockMacro(AddICSPlaceholder())
         asciidoctor.javaExtensionRegistry().treeprocessor(PopulateTables(infoCollector.info()))
 
-        // Check requirement keywords (e.g., shall requirements include only shall).
-        // Obsolete: now handled by SdpiInformationCollector.
-        // asciidoctor.javaExtensionRegistry().treeprocessor(RequirementLevelProcessor())
-
         // Handle inline macros to cross-reference information from the document tree.
         asciidoctor.javaExtensionRegistry().inlineMacro(RequirementReferenceMacroProcessor(infoCollector.info()))
         asciidoctor.javaExtensionRegistry().inlineMacro(UseCaseReferenceMacroProcessor(infoCollector.info()))
@@ -82,7 +75,9 @@ class AsciidocConverter(
         // Dumps tree of document structure to stdio.
         // Best not to use for very large documents!
         // Note: enabling this breaks variable replacement for {var_transaction_id}. Unclear why.
-        asciidoctor.javaExtensionRegistry().treeprocessor(DumpTreeInfo())
+        if (dumpStructure) {
+            asciidoctor.javaExtensionRegistry().treeprocessor(DumpTreeInfo())
+        }
 
         //val processedInfoCollector = DocInfoCollector(bibliographyCollector)
         //asciidoctor.javaExtensionRegistry().docinfoProcessor(processedInfoCollector)
