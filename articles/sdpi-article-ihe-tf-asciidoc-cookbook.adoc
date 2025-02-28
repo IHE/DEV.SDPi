@@ -411,7 +411,7 @@ This is an example of an example block.
 
 Requirement numbers are parsed from the title of the `sdpi_requirement` block. They must match the regular expression `^([A-Z])*?R(\\d+)$`. That is, a sequence of upper-case characters followed by `R` then a numeric value. Examples of valid requirement titles include: `.R1002`, `.TR1002`, `.ABCDEFR1002`. Invalid requirement titles include `.r1234` (an upper-case `R` is required), `.ABC R1234` (spaces are not permitted), `.tR1234` (lower-case letters are not permitted). <<cross-referencing,Cross-references>> (links) to a requirement may be inserted with in-line macros. 
 
-NOTE: The `.` character marks the line as an AsciiDoc https://docs.asciidoctor.org/asciidoc/latest/blocks/add-title/[title]; it is required to begin in the first column of the source file. 
+NOTE: The `.` character marks the line as an AsciiDoc https://docs.asciidoctor.org/asciidoc/latest/blocks/add-title/[title]; it must begin in the first column of the source file. 
 
 NOTE: Requirements are identified by number only. They are preserved but do not form part of the requirement identifier. 
 

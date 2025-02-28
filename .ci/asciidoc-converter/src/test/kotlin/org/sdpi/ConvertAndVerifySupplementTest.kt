@@ -32,7 +32,7 @@ internal class ConvertAndVerifySupplementTest {
                     javaClass.classLoader.getResourceAsStream(testInputResourceName)?.reader()?.readText()
                         ?: throw Exception("Read failed")
                 ),
-                it,
+                it, null,
                 AsciidocConverter.Mode.Test(actualOutput)
             ).run()
         }.also {
