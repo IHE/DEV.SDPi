@@ -14,15 +14,17 @@ import java.nio.file.Path
 class AsciidocConverter(
     private val inputType: Input,
     private val outputFile: File,
-    private val githubToken: String?,
+    private val githubToken: String? = null,
     private val mode: Mode = Mode.Productive,
     private val dumpStructure: Boolean = false,
+    private val generateTestOutput: Boolean = false, // skips some output when generating for tests.
 ) : Runnable {
     override fun run() {
         val options = Options.builder()
             .safe(SafeMode.UNSAFE)
             .backend(BACKEND)
             .sourcemap(true)
+            .headerFooter(!generateTestOutput)
             .toFile(outputFile).build()
 
         val asciidoctor = Asciidoctor.Factory.create()
@@ -79,12 +81,6 @@ class AsciidocConverter(
             asciidoctor.javaExtensionRegistry().treeprocessor(DumpTreeInfo())
         }
 
-        //val processedInfoCollector = DocInfoCollector(bibliographyCollector)
-        //asciidoctor.javaExtensionRegistry().docinfoProcessor(processedInfoCollector)
-
-        //val postInfoCollector = DocInfoPostCollector(bibliographyCollector)
-        //asciidoctor.javaExtensionRegistry().postprocessor(postInfoCollector)
-
         asciidoctor.requireLibrary("asciidoctor-diagram") // enables plantuml
         when (inputType) {
             is Input.FileInput -> asciidoctor.convertFile(inputType.file, options)
@@ -95,8 +91,10 @@ class AsciidocConverter(
 
         val jsonFormatter = Json { prettyPrint = true }
 
-        writeArtifact("sdpi-requirements", jsonFormatter.encodeToString(infoCollector.info().requirements()))
-        writeArtifact("sdpi-use-cases", jsonFormatter.encodeToString(infoCollector.info().useCases()))
+        if (!generateTestOutput) {
+            writeArtifact("sdpi-requirements", jsonFormatter.encodeToString(infoCollector.info().requirements()))
+            writeArtifact("sdpi-use-cases", jsonFormatter.encodeToString(infoCollector.info().useCases()))
+        }
     }
 
     private fun writeArtifact(strArtifactName: String, strArtifact: String) {

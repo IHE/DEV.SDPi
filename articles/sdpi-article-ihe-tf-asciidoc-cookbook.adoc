@@ -425,7 +425,7 @@ Block attributes supply metadata for the requirement. Attributes are tabulated b
 |===
 |Attribute | Applies to | Type | Required |Description
 
-|`sdpi_req_type` | all | {`use_case_feature` \| `tech_feature` \| `ihe_profile` \| `ref_ics` \| `use_case_feature` \| `risk_mitigation` } | yes | Defines the type of requirement, from the https://profiles.ihe.net/DEV/SDPi/index.
+|`sdpi_req_type` | all | { `tech_feature` \| `ref_ics` \| `use_case_feature` \| `risk_mitigation` \| `ihe_profile` } | yes | Defines the type of requirement, from the https://profiles.ihe.net/DEV/SDPi/index.
 |`sdpi_req_level` | all | {`shall` \| `should` \| `may` } |yes | Defines the behaviour expected for compatible implementations. html#vol1_clause_sdpi_requirements_core_model[SDPi requirements core model]
 |`sdpi_req_group` |  all | comma separated list | no | Defines membership of ad-hoc groups. Groups may be used to select related requirements when generating ICS tables. 
 |`sdpi_req_specification` |  all | defined _specification id_| yes| Defines the root for the requirements <<requirement-oids,ISO object identifier>>. 
@@ -576,7 +576,7 @@ It is common to refer to requirements and use-cases from elsewhere in the source
 
 NOTE: use case ids are case-sensitive.
 
-IMPORTANT: Using the in-line macro helps ensure future compatibility if, for example, <<requirement-oids,ISO object identifiers>> are used to reference requirements. 
+IMPORTANT: Using the in-line macro reduces the risk of broken links and helps ensure future compatibility if, for example, <<requirement-oids,ISO object identifiers>> are used to reference requirements. 
 
 [[generate-table]]
 === Summary tables
