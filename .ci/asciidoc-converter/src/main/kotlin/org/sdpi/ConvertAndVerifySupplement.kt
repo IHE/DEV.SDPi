@@ -65,7 +65,7 @@ class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {
 
             AsciidocConverter(
                 AsciidocConverter.Input.FileInput(adocInputFile),
-                outFile,
+                outFile.outputStream(),
                 githubToken,
                 Mode.Productive,
                 dumpStructure,

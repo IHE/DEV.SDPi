@@ -3,9 +3,9 @@ package org.sdpi
 import org.junit.jupiter.api.Assertions.assertEquals
 import java.nio.file.Files
 
-internal class TestRunner(val strTestFile: String) {
+internal class TestRunner(private val strTestFile: String) {
 
-    public fun performTest() {
+    fun performTest() {
 
         val strSourceResource = "$strTestFile.adoc"
         val strExpectedOutputResource = "$strTestFile.html"
@@ -15,11 +15,11 @@ internal class TestRunner(val strTestFile: String) {
 
         val tempOutputFile = Files.createTempFile("asciidoc-converter-test", ".tmp").toFile()
         val converter =
-            AsciidocConverter(AsciidocConverter.Input.StringInput(strInput), tempOutputFile, generateTestOutput = true)
+            AsciidocConverter(AsciidocConverter.Input.StringInput(strInput), tempOutputFile.outputStream(), generateTestOutput = true)
 
         converter.run()
 
-        val strActualOutput = tempOutputFile.reader().readText()
+        val strActualOutput = tempOutputFile.reader().readText().trim()
 
         // Windows and Linux use different line endings but the output uses
         // \r line endings on Windows. Resolve this by normalizing both strings.
@@ -31,7 +31,7 @@ internal class TestRunner(val strTestFile: String) {
     }
 
     private fun readFileContents(strPath: String): String {
-        return javaClass.classLoader.getResourceAsStream(strPath)?.reader()?.readText()
+        return javaClass.classLoader.getResourceAsStream(strPath)?.reader()?.readText()?.trim()
             ?: throw Exception("Read failed")
     }
 }
