@@ -15,7 +15,10 @@ internal class TestRunner(private val strTestFile: String) {
 
         val tempOutputFile = Files.createTempFile("asciidoc-converter-test", ".tmp").toFile()
         val converter =
-            AsciidocConverter(AsciidocConverter.Input.StringInput(strInput), tempOutputFile.outputStream(), generateTestOutput = true)
+            AsciidocConverter(
+                AsciidocConverter.Input.StringInput(strInput), tempOutputFile.outputStream(),
+                ConverterOptions(generateTestOutput = true),
+            )
 
         converter.run()
 

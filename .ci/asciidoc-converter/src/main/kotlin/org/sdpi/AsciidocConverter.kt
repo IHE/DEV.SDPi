@@ -10,23 +10,65 @@ import java.io.File
 import java.io.OutputStream
 import java.nio.file.Files
 import java.nio.file.Path
+import kotlin.io.path.absolutePathString
+
+/**
+ * Options to configure AsciidocConverter.
+ */
+class ConverterOptions(
+    /**
+     * Token to access the GitHub api. For including issues
+     * in the document output, for example.
+     */
+    val githubToken: String? = null,
+
+    /**
+     * Defines the target format for the document output. See
+     * https://docs.asciidoctor.org/asciidoctorj/latest/asciidoctor-api-options/#backend
+     * Typically "html" or "pdf"
+     */
+    val outputFormat: String = "html",
+
+    /**
+     * When true, document structure is written to the log stream
+     * for diagnostics.
+     */
+    val dumpStructure: Boolean = false,
+
+    /**
+     * When true, the document output is simplified for unit
+     * tests. For example, the style sheet is not included.
+     */
+    val generateTestOutput: Boolean = false,
+
+    /**
+     * Folder where extracts (requirements, use-cases, etc.) should
+     * be placed. If null, the extracts won't be written.
+     */
+    val extractsFolder: Path? = null,
+) {
+    companion object {
+        private const val DEFAULT_EXTRACTS_FOLDER: String = "referenced-artifacts"
+
+        fun makeDefaultPath(strOutputFolder: String): Path {
+            return Path.of(strOutputFolder, DEFAULT_EXTRACTS_FOLDER)
+        }
+    }
+}
+
 
 class AsciidocConverter(
     private val inputType: Input,
     private val outputFile: OutputStream,
-    private val githubToken: String? = null,
-    private val mode: Mode = Mode.Productive,
-    private val dumpStructure: Boolean = false,
-    private val generateTestOutput: Boolean = false, // skips some output when generating for tests.
+    private val conversionOptions: ConverterOptions,
 ) : Runnable {
     override fun run() {
         val options = Options.builder()
             .safe(SafeMode.UNSAFE)
-            .backend(BACKEND)
+            .backend(conversionOptions.outputFormat)
             .sourcemap(true)
-            .headerFooter(!generateTestOutput)
+            .headerFooter(!conversionOptions.generateTestOutput)
             .toStream(outputFile).build()
-            //.toFile(outputFile).build()
 
         val asciidoctor = Asciidoctor.Factory.create()
 
@@ -40,15 +82,7 @@ class AsciidocConverter(
         asciidoctor.javaExtensionRegistry().block(RelatedBlockProcessor())
         asciidoctor.javaExtensionRegistry().block(RequirementExampleBlockProcessor())
 
-        asciidoctor.javaExtensionRegistry().treeprocessor(
-            NumberingProcessor(
-                when (mode) {
-                    is Mode.Test -> mode.structureDump
-                    else -> null
-                },
-                anchorReplacements
-            )
-        )
+        asciidoctor.javaExtensionRegistry().treeprocessor(NumberingProcessor(null, anchorReplacements))
 
         // Gather bibliography entries.
         val bibliographyCollector = BibliographyCollector()
@@ -70,7 +104,7 @@ class AsciidocConverter(
         asciidoctor.javaExtensionRegistry().inlineMacro(RequirementReferenceMacroProcessor(infoCollector.info()))
         asciidoctor.javaExtensionRegistry().inlineMacro(UseCaseReferenceMacroProcessor(infoCollector.info()))
 
-        asciidoctor.javaExtensionRegistry().preprocessor(IssuesSectionPreprocessor(githubToken))
+        asciidoctor.javaExtensionRegistry().preprocessor(IssuesSectionPreprocessor(conversionOptions.githubToken))
         asciidoctor.javaExtensionRegistry().preprocessor(DisableSectNumsProcessor())
         asciidoctor.javaExtensionRegistry().preprocessor(ReferenceSanitizerPreprocessor(anchorReplacements))
         asciidoctor.javaExtensionRegistry().postprocessor(ReferenceSanitizerPostprocessor(anchorReplacements))
@@ -78,7 +112,7 @@ class AsciidocConverter(
         // Dumps tree of document structure to stdio.
         // Best not to use for very large documents!
         // Note: enabling this breaks variable replacement for {var_transaction_id}. Unclear why.
-        if (dumpStructure) {
+        if (conversionOptions.dumpStructure) {
             asciidoctor.javaExtensionRegistry().treeprocessor(DumpTreeInfo())
         }
 
@@ -88,34 +122,26 @@ class AsciidocConverter(
             is Input.StringInput -> asciidoctor.convert(inputType.string, options)
         }
 
-        asciidoctor.shutdown()
+        if (conversionOptions.extractsFolder != null) {
+            val jsonFormatter = Json { prettyPrint = true }
 
-        val jsonFormatter = Json { prettyPrint = true }
-
-        if (!generateTestOutput) {
             writeArtifact("sdpi-requirements", jsonFormatter.encodeToString(infoCollector.info().requirements()))
             writeArtifact("sdpi-use-cases", jsonFormatter.encodeToString(infoCollector.info().useCases()))
         }
+
+        asciidoctor.shutdown()
     }
 
     private fun writeArtifact(strArtifactName: String, strArtifact: String) {
-        val referencedArtifactsFolder = "referenced-artifacts"
-    /*    val path = Path.of(outputFile.parentFile.absolutePath, referencedArtifactsFolder)
-        Files.createDirectories(path)
-        Path.of(path.toFile().absolutePath, "${strArtifactName}.json").toFile().writeText(strArtifact)*/
-    }
-
-    private companion object {
-        const val BACKEND = "html"
+        if (conversionOptions.extractsFolder != null) {
+            Files.createDirectories(conversionOptions.extractsFolder)
+            Path.of(conversionOptions.extractsFolder.absolutePathString(), "${strArtifactName}.json").toFile()
+                .writeText(strArtifact)
+        }
     }
 
     sealed interface Input {
         data class FileInput(val file: File) : Input
         data class StringInput(val string: String) : Input
-    }
-
-    sealed interface Mode {
-        object Productive : Mode
-        data class Test(val structureDump: OutputStream) : Mode
     }
 }
