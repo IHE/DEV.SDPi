@@ -13,7 +13,7 @@ import java.nio.file.Path
 
 class AsciidocConverter(
     private val inputType: Input,
-    private val outputFile: File,
+    private val outputFile: OutputStream,
     private val githubToken: String? = null,
     private val mode: Mode = Mode.Productive,
     private val dumpStructure: Boolean = false,
@@ -25,7 +25,8 @@ class AsciidocConverter(
             .backend(BACKEND)
             .sourcemap(true)
             .headerFooter(!generateTestOutput)
-            .toFile(outputFile).build()
+            .toStream(outputFile).build()
+            //.toFile(outputFile).build()
 
         val asciidoctor = Asciidoctor.Factory.create()
 
@@ -99,9 +100,9 @@ class AsciidocConverter(
 
     private fun writeArtifact(strArtifactName: String, strArtifact: String) {
         val referencedArtifactsFolder = "referenced-artifacts"
-        val path = Path.of(outputFile.parentFile.absolutePath, referencedArtifactsFolder)
+    /*    val path = Path.of(outputFile.parentFile.absolutePath, referencedArtifactsFolder)
         Files.createDirectories(path)
-        Path.of(path.toFile().absolutePath, "${strArtifactName}.json").toFile().writeText(strArtifact)
+        Path.of(path.toFile().absolutePath, "${strArtifactName}.json").toFile().writeText(strArtifact)*/
     }
 
     private companion object {
