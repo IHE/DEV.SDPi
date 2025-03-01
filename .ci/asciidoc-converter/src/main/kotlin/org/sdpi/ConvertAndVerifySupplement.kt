@@ -5,7 +5,6 @@ import com.github.ajalt.clikt.parameters.options.*
 import com.github.ajalt.clikt.parameters.types.choice
 import com.github.ajalt.clikt.parameters.types.file
 import org.apache.logging.log4j.kotlin.Logging
-import org.sdpi.AsciidocConverter.Mode
 import org.sdpi.asciidoc.AsciidocErrorChecker
 import java.io.File
 import kotlin.system.exitProcess
@@ -66,10 +65,13 @@ class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {
             AsciidocConverter(
                 AsciidocConverter.Input.FileInput(adocInputFile),
                 outFile.outputStream(),
-                githubToken,
-                Mode.Productive,
-                dumpStructure,
-                testGenerator
+                ConverterOptions(
+                    githubToken = githubToken,
+                    extractsFolder = ConverterOptions.makeDefaultPath(outputFolder.absolutePath),
+                    outputFormat = backend,
+                    dumpStructure = dumpStructure,
+                    generateTestOutput = testGenerator,
+                )
             ).run()
 
             asciidocErrorChecker.run()
