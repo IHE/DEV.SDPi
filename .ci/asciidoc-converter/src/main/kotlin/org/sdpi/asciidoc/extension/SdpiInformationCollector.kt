@@ -205,7 +205,7 @@ class SdpiInformationCollector(private val bibliography: BibliographyCollector) 
             RequirementLevel.MAY -> {
                 check(nMayCount == 1)
                 {
-                    "${getLocation(block)} requirement #$nRequirementNumber should have exactly one may keyword, not $nMayCount".also { logger.error { it } }
+                    "${getLocation(block)} requirement #$nRequirementNumber should have exactly one lower-case may keyword, not $nMayCount".also { logger.error { it } }
                 }
 
                 check(nShallCount == 0 && nShouldCount == 0)
@@ -217,7 +217,7 @@ class SdpiInformationCollector(private val bibliography: BibliographyCollector) 
             RequirementLevel.SHOULD -> {
                 check(nShouldCount == 1)
                 {
-                    "${getLocation(block)} requirement #$nRequirementNumber should have exactly one should keyword, not $nShouldCount".also { logger.error { it } }
+                    "${getLocation(block)} requirement #$nRequirementNumber should have exactly one lower-case should keyword, not $nShouldCount".also { logger.error { it } }
                 }
 
                 check(nShallCount == 0 && nMayCount == 0)
@@ -229,7 +229,7 @@ class SdpiInformationCollector(private val bibliography: BibliographyCollector) 
             RequirementLevel.SHALL -> {
                 check(nShallCount == 1)
                 {
-                    "${getLocation(block)} requirement #$nRequirementNumber should have exactly one shall keyword, not $nShallCount".also { logger.error { it } }
+                    "${getLocation(block)} requirement #$nRequirementNumber should have exactly one lower-case shall keyword, not $nShallCount".also { logger.error { it } }
                 }
 
                 check(nShouldCount == 0 && nMayCount == 0)

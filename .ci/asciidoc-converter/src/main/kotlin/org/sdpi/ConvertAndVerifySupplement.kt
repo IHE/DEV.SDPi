@@ -48,6 +48,9 @@ class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {
     private val dumpStructure by option("--dump-structure", help = "Writes document tree to std-out during processing")
         .flag(default = false)
 
+    private val testGenerator by option("--test", help = "Writes document without headers for test output")
+        .flag(default = false)
+
     override fun run() {
         runCatching {
             val asciidocErrorChecker = AsciidocErrorChecker()
@@ -65,7 +68,8 @@ class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {
                 outFile,
                 githubToken,
                 Mode.Productive,
-                dumpStructure
+                dumpStructure,
+                testGenerator
             ).run()
 
             asciidocErrorChecker.run()

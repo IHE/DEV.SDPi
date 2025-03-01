@@ -87,5 +87,9 @@ fun getRequirementGroups(oGroups: Any?): List<String> {
 }
 
 fun getLocation(block: StructuralNode): String {
-    return "${block.sourceLocation.path}:${block.sourceLocation.lineNumber}"
+    return if (block.sourceLocation != null) {
+        "${block.sourceLocation.path}:${block.sourceLocation.lineNumber}"
+    } else {
+        "";
+    }
 }
