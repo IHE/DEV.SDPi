@@ -20,7 +20,7 @@ Each section shall contain a list of action items of the following format: `<bri
 ### Changes
 
 ### Editorial Fixes
-
+- Corrected typos and grammar ([#363](https://github.com/IHE/DEV.SDPi/issues/363))
 ### Added
 - Add TF-2C for Security Management Appendix (basic, with little initial content)  ([#250](https://github.com/IHE/DEV.SDPi/issues/250))
 
