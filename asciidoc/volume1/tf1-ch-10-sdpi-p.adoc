@@ -276,13 +276,13 @@ Note 4: *_SDPi Version Note:_*  -- Full detailing of the transactions related to
 
 <<vol1_figure_sdpi_p_biceps_content_actor_diagram>> shows the content-related actors defined in the SDPi-P Profile and the direction that the content is exchanged.
 
-In general, the <<vol1_spec_sdpi_p_actor_somds_provider>> will create content for consumption by a <<vol1_spec_sdpi_p_actor_somds_consumer>> , but the communication cloud between the two actors indicates that the technical method of exchange is a separate concern for the semantic content.
+In general, the <<vol1_spec_sdpi_p_actor_somds_provider>> will create content for consumption by a <<vol1_spec_sdpi_p_actor_somds_consumer>> , but the communication cloud between the two actors indicates that the technical method of exchange is a separate concern from the semantic content.
 Within the SDPi-P Profile, the general "default" communication methods would be using the <<acronym_somds>> capabilities illustrated above in <<vol1_figure_sdpi_p_actor_diagram>> with the <<vol1_spec_sdpi_p_actor_biceps_content_creator>> communicating content via the <<vol1_spec_sdpi_p_actor_somds_provider>> , and the <<vol1_spec_sdpi_p_actor_biceps_content_consumer>> receiving it via the <<vol1_spec_sdpi_p_actor_somds_consumer>>.
 However, the content might also be formalized in a document as opposed to a message, and a different method of exchange and persistence utilized.
 
 Note that in the case of external control, where a <<vol1_spec_sdpi_p_actor_somds_consumer>> is creating and sending content (e.g., patient demographics information) to a <<vol1_spec_sdpi_p_actor_somds_provider>> , the content module creator / consumer roles will be reversed.
 
-A product implementation using this specification may group from this profile with actors from a workflow or transport profile to be functional.
+A product implementation using this specification may group actors from this profile with actors from a workflow or transport profile to be functional.
 The grouping of the content module described in this profile to specific actors is described in more detail in <<vol1_clause_sdpi_p_required_actor_groupings>> or in <<vol1_clause_sdpi_p_cross_profile_considerations>>.
 
 [#vol1_figure_sdpi_p_biceps_content_actor_diagram]
