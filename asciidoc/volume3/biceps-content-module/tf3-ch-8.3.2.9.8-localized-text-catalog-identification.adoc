@@ -1,33 +1,34 @@
 [#vol3_clause_localized_text_catalog_identification]
 ====== Unique Localized Text Catalog Identification
 
-In <<acronym_biceps>>, localized texts for parameter labels, alert strings, enumerations, etc. can be retrieved with the provided *LocalizedText/@Ref* (text id) and language code from the <<acronym_biceps>> Localization Service.
+In <<acronym_biceps>>, localized texts for parameter labels, alert strings, enumerations, etc. can be retrieved with the provided *LocalizedText/@Ref* (text id) and language code from the <<acronym_biceps>> *Localization Service*.
 
 
-Text ids are unique within a device scope. However, <<acronym_pocd>> vendors usually use the same text catalog for several of their products.
+Text ids are unique within a device scope. However, <<acronym_pocd>> vendors typically use the same text catalog for several of their products.
 
 In order to reduce the effort for a <<actor_somds_consumer>> for managing individual lookup tables per <<actor_somds_provider>>, a lookup table that resolves the text ids for multiple <<actor_somds_provider>> from the same <<acronym_pocd>> vendor is desirable for a <<actor_somds_consumer>>.
 
-.R0709
-[sdpi_requirement#r0709,sdpi_req_level=should]
+The following best practices are highly recommended when using text catalogs:
+
+.Recommentation A
 ****
-A <<actor_somds_provider>> that has implemented the *<<acronym_biceps>> LOCALIZATION SERVICE* should provide a unique text catalog identifier in the *pm:MdsDescriptor+++<wbr/>+++/pm:ProductionSpecification* list with *pm:ProductionSpecification+++<wbr/>+++/pm:SpecType+++<wbr/>+++/@Code = 68008 (MDC_ATTR_VMS_MDS_TEXT_CAT)*.
+A <<actor_somds_provider>> that has implemented the *<<acronym_biceps>> LOCALIZATION SERVICE* is supposed to provide a unique text catalog identifier in the *pm:MdsDescriptor+++<wbr/>+++/pm:ProductionSpecification* list with *pm:ProductionSpecification+++<wbr/>+++/pm:SpecType+++<wbr/>+++/@Code = 68008 (MDC_ATTR_VMS_MDS_TEXT_CAT)*.
 
 NOTE: The unique text catalog identifier defined in the corresponding *pm:ProductionSpecification+++<wbr/>+++/pm:ProductionSpec* can be an *urn* of type *uuid* or *oid*, e. g. *"urn:oid:1.3.6.1.4.1.1234.4.1.2.1"*.
 ****
 
-.R0710
-[sdpi_requirement#r0710,sdpi_req_level=should]
+.Recommendation B
 ****
-A <<actor_somds_provider>> that has implemented the *<<acronym_biceps>> LOCALIZATION SERVICE* and supports versioning of the text catalog should provide a unique version number concatenated with the unique text catalog identifier and separated from the unique text catalog identifier by two colons (*"::"*) in the *pm:MdsDescriptor+++<wbr/>+++/ProductionSpecification+++<wbr/>+++/pm:ProductionSpec*.
+A <<actor_somds_provider>> that has implemented the *<<acronym_biceps>> LOCALIZATION SERVICE* and supports explicit versioning of the text catalog is supposed to provide a unique version number concatenated with the unique text catalog identifier and separated from the unique text catalog identifier by two colons (*"::"*) in the *pm:MdsDescriptor+++<wbr/>+++/ProductionSpecification+++<wbr/>+++/pm:ProductionSpec*.
 
 NOTE: *"urn:oid:1.3.6.1.4.1.1234.4.1.2.1::v1.2.2*" is an example of a unique text catalog id with a concatenated text catalog version.
 
-NOTE: The version number can be part of unique text catalog identifier, e. g. the last sub-node of the *OID*. In this case, the requirement does not apply.
+NOTE: If the version number is already part of the unique text catalog identifier, e. g. the last sub-node of the *OID*, this recommenation does not apply.
 ****
 
-.R0711
-[sdpi_requirement#r0711,sdpi_req_level=shall]
+.Recommendation C
 ****
-A <<actor_somds_provider>> that provides a unique text catalog identifier in the *pm:MdsDescriptor+++<wbr/>+++/pm:ProductionSpecification* list but does not support versioning of the text catalog shall provide a new unique text catalog identifier for each new version of the text catalog.
+A <<actor_somds_provider>> that provides a unique text catalog identifier in the *pm:MdsDescriptor+++<wbr/>+++/pm:ProductionSpecification* needs to ensure that the unique text catalog identifier is updated when the text catalog has changed (e. g. due to a firmware update of device).
+
+NOTE: It is also important to ensure that the unique text catalog identifier is not the same as a text catalog identifier from a previous version of the text catalog.
 ****
