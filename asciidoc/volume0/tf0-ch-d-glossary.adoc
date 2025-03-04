@@ -362,7 +362,7 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 |
 
 | [[term_somds_provider_uid, SOMDS Provider UID]] SOMDS Provider UID
-| A globally unique identifier <<acronym_uid>> for a <<vol1_spec_sdpi_p_actor_somds_provider>> that is stable across re-initializations.
+| A globally unique identifier <<acronym_uid>> for a <<vol1_spec_sdpi_p_actor_somds_provider>> that is stable across re-initializations (i.e., resets / reboots).
 | [[acronym_uid,UID]] UID
 |
 |
