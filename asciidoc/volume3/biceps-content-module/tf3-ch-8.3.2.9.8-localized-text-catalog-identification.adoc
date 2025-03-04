@@ -1,7 +1,8 @@
 [#vol3_clause_localized_text_catalog_identification]
 ====== Unique Localized Text Catalog Identification
 
-In <<acronym_biceps>>, localized texts for parameter labels, alert strings, enumerations, etc. can be retrieved with the provided *LocalizedText/@ref* (text id) and language code from the <<acronym_biceps>> Localization Service.
+In <<acronym_biceps>>, localized texts for parameter labels, alert strings, enumerations, etc. can be retrieved with the provided *LocalizedText/@Ref* (text id) and language code from the <<acronym_biceps>> Localization Service.
+
 
 Text ids are unique within a device scope. However, <<acronym_pocd>> vendors usually use the same text catalog for several of their products.
 
