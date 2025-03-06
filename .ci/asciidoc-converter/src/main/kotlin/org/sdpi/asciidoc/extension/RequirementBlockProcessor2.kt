@@ -11,6 +11,8 @@ import org.asciidoctor.extension.Reader
 import org.sdpi.asciidoc.*
 import java.util.*
 
+const val BLOCK_NAME_SDPI_REQUIREMENT = "sdpi_requirement"
+
 /**
  * Block processor for sdpi_requirement blocks.
  * Requirement blocks provide metadata for profile requirements. Metadata is

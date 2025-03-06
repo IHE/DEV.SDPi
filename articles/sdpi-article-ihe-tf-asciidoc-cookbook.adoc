@@ -617,7 +617,8 @@ Some changes to the supplement source text are required to take advantage of the
 . processor works with the original supplement source without any modifications, and
 . output from the original supplement is largely identical following addition of new processor features as it was before the new features were added. The generated html is the same (at the byte level) except:
 .. the `Build Date` entry will be different on the title page and in the footer,
-.. requirement `div` blocks get an extra `requirement` style class. That is, for example, `<div id="r1021" class="sidebarblock requirement">` instead of `<div id="r1021" class="sidebarblock">`.
+.. requirement `div` blocks get an extra `requirement` style class. That is, for example, `<div id="r1021" class="sidebarblock requirement">` instead of `<div id="r1021" class="sidebarblock">`,
+.. added https://gitlab.com/antora/antora-ui-default/-/blob/master/src/js/06-copy-to-clipboard.js[copy2clipboard.js] to support copying links to requirement anchors for easy cross-referencing.
 
 == Document generation
 
