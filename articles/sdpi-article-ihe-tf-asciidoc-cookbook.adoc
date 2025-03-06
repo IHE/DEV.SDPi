@@ -619,6 +619,18 @@ Some changes to the supplement source text are required to take advantage of the
 .. the `Build Date` entry will be different on the title page and in the footer,
 .. requirement `div` blocks get an extra `requirement` style class. That is, for example, `<div id="r1021" class="sidebarblock requirement">` instead of `<div id="r1021" class="sidebarblock">`.
 
+== Document generation
+
+The AsciiDoc source is automatically processed using GitHub actions. 
+
+For testing, documents can be generated using Windows command line tools (probably for other operating systems too, but I don't know about that; please expand on this when you figure out how). To create output from the AsciiDoc source open a command prompt in the `.ci\asciidoc-converter` folder and use:
+
+* `build_document.bat` to create an html document (`sdpi-supplement.html`),
+* `build_document_pdf.bat` to create an Acrobat PDF document (`sdpi-supplement.pdf`).
+
+The output files are written to `sdpi-supplement` folder. Extracts (requirements and use-cases in JSON format) are written to the `sdpi-supplement\referenced-artifacts` folder. Extracts are generated along with the document output. 
+
+IMPORTANT: Don't commit files in the `sdpi-supplement` folder to the repository. 
 
 == Topics Parking Lot
 
