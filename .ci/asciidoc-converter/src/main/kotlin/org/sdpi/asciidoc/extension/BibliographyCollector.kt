@@ -12,11 +12,13 @@ class BibliographyCollector : Treeprocessor() {
 
     private val bibliographyEntries = mutableMapOf<String, BibliographyEntry>()
 
-    fun bibliography() = bibliographyEntries
-
     override fun process(document: Document): Document {
         collectBibliography(document)
         return document
+    }
+
+    fun findEntry(strRef: String): BibliographyEntry? {
+        return bibliographyEntries[strRef]
     }
 
     private fun collectBibliography(document: Document): Boolean {
@@ -27,14 +29,15 @@ class BibliographyCollector : Treeprocessor() {
             return false
         }
 
-        val reBibParser = Regex("id=\"(?<ref>.+)\".*\\[(?<reftxt>.+)]\\s+(?<entry>.+)")
+        val reBibParser = Regex("\\[{3}(?<ref>\\w+)(,(?<reftxt>.+))?]{3}\\s+(?<entry>.+)")
 
         // Expecting first child to be a list of bibliography entries.
         when (val bibList = bib.blocks[0]) {
+
             is org.asciidoctor.ast.List -> {
                 for (bibEntry in bibList.items) {
                     if (bibEntry is org.asciidoctor.ast.ListItem) {
-                        val strItem = bibEntry.text
+                        val strItem = bibEntry.source
                         val mParsed = reBibParser.find(strItem)
                         checkNotNull(mParsed)
                         {

@@ -31,7 +31,7 @@ class RequirementReferenceMacroProcessor(private val documentInfo: SdpiInformati
         val req = documentInfo.requirements()[id]
         checkNotNull(req)
         {
-            "Requirement '$strTarget' doesn't exist".also { logger.error { it } }
+            "Requirement '$strTarget' ($id) doesn't exist".also { logger.error { it } }
         }
 
         val strHref = "#${req.getBlockId()}"

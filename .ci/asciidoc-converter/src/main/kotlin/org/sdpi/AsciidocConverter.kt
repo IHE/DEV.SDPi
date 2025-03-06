@@ -107,7 +107,11 @@ class AsciidocConverter(
         asciidoctor.javaExtensionRegistry().preprocessor(IssuesSectionPreprocessor(conversionOptions.githubToken))
         asciidoctor.javaExtensionRegistry().preprocessor(DisableSectNumsProcessor())
         asciidoctor.javaExtensionRegistry().preprocessor(ReferenceSanitizerPreprocessor(anchorReplacements))
-        asciidoctor.javaExtensionRegistry().postprocessor(ReferenceSanitizerPostprocessor(anchorReplacements))
+        if (conversionOptions.outputFormat == "html") {
+            // Post processor not supported for PDFs
+            // https://docs.asciidoctor.org/asciidoctorj/latest/extensions/postprocessor/
+            asciidoctor.javaExtensionRegistry().postprocessor(ReferenceSanitizerPostprocessor(anchorReplacements))
+        }
 
         // Dumps tree of document structure to stdio.
         // Best not to use for very large documents!
@@ -117,6 +121,7 @@ class AsciidocConverter(
         }
 
         asciidoctor.requireLibrary("asciidoctor-diagram") // enables plantuml
+
         when (inputType) {
             is Input.FileInput -> asciidoctor.convertFile(inputType.file, options)
             is Input.StringInput -> asciidoctor.convert(inputType.string, options)

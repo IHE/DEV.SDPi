@@ -283,7 +283,7 @@ class SdpiInformationCollector(private val bibliography: BibliographyCollector) 
             }
         }
 
-        val bibEntry = bibliography.bibliography()[strStandardId]
+        val bibEntry = bibliography.findEntry(strStandardId)
         checkNotNull(bibEntry)
         {
             "${getLocation(block)} bibliography entry for $strStandardId is missing".also { logger.error { it } }
@@ -352,61 +352,6 @@ class SdpiInformationCollector(private val bibliography: BibliographyCollector) 
         )
     }
 
-    private fun getContent(block: StructuralNode): Collection<String> {
-        val contents: MutableList<String> = mutableListOf()
-
-        val strContext = block.context
-        when (strContext) {
-            "paragraph" -> {
-                getBlockContent(contents, block, 0)
-            }
-
-            "admonition", "example" -> {
-                for (child in block.blocks) {
-                    getBlockContent(contents, child, 0)
-                }
-            }
-
-            else -> {
-                logger.error("Unknown content type ${block.javaClass}")
-            }
-        }
-
-        return contents
-    }
-
-    private fun getBlockContent(contents: MutableList<String>, block: StructuralNode, nLevel: Int) {
-        val strIndent = "  ".repeat(nLevel)
-
-        when (block) {
-            is org.asciidoctor.ast.List -> {
-                logger.info("${strIndent}List:")
-                contents.add("<list>")
-                for (item: StructuralNode in block.items) {
-                    getBlockContent(contents, item, nLevel)
-                }
-                contents.add("</list>")
-            }
-
-            is org.asciidoctor.ast.ListItem -> {
-                logger.info("${strIndent}Item: ${block.marker} ${block.text}")
-                contents.add("${strIndent}${block.marker} ${block.text}")
-            }
-
-            is org.asciidoctor.ast.Block -> {
-                logger.info("${strIndent}Block:")
-                for (strLine in block.lines) {
-                    logger.info("$strIndent  Line: $strLine")
-                    contents.add(strLine)
-                }
-            }
-
-            else -> {
-                logger.info("$strIndent}Unknown: ${block.javaClass}")
-            }
-        }
-    }
-
     private fun getContent_Obj(block: StructuralNode): Collection<Content> {
         val contents: MutableList<Content> = mutableListOf()
 
@@ -445,7 +390,7 @@ class SdpiInformationCollector(private val bibliography: BibliographyCollector) 
             }
 
             is org.asciidoctor.ast.ListItem -> {
-                contents.add(Content.ListItem(block.marker, block.text))
+                contents.add(Content.ListItem(block.marker, block.source))
             }
 
             is org.asciidoctor.ast.Block -> {

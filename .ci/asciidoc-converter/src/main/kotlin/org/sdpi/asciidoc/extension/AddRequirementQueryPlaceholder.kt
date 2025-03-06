@@ -37,7 +37,7 @@ const val REQUIREMENT_TABLE_ROLE = "requirement-table"
 class AddRequirementQueryPlaceholder : BlockMacroProcessor(BLOCK_MACRO_NAME_SDPI_REQUIREMENT_TABLE) {
     private companion object : Logging;
 
-    override fun process(parent: StructuralNode, target: String, attributes: MutableMap<String, Any>): Any {
+    override fun process(parent: StructuralNode, target: String, attributes: MutableMap<String, Any>): StructuralNode {
         attributes["role"] = REQUIREMENT_TABLE_ROLE
         val placeholderTable = createTable(parent)
         placeholderTable.attributes["role"] = REQUIREMENT_TABLE_ROLE

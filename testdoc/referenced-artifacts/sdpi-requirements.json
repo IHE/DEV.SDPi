@@ -48,12 +48,12 @@
                         {
                             "type": "item",
                             "strMarker": ".",
-                            "strText": "<a href=\"#ref_w3c_ws_eventing_2006\">[W3C Submission, WS-Eventing:2006]</a>, section 3.1"
+                            "strText": "<<ref_w3c_ws_eventing_2006>>, section 3.1"
                         },
                         {
                             "type": "item",
                             "strMarker": ".",
-                            "strText": "<a href=\"#ref_ieee_11073_10207_2017\">[ISO/IEEE 11073-10207:2017]</a>, §C.57, R0121"
+                            "strText": "<<ref_ieee_11073_10207_2017>>, §C.57, R0121"
                         }
                     ]
                 }
@@ -229,7 +229,7 @@
                         {
                             "type": "item",
                             "strMarker": ".",
-                            "strText": "<a href=\"#ref_w3c_ws_eventing_2006\">[W3C Submission, WS-Eventing:2006]</a>, section 3.1"
+                            "strText": "<<ref_w3c_ws_eventing_2006>>, section 3.1"
                         }
                     ]
                 }

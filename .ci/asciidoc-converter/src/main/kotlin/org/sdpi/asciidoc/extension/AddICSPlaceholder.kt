@@ -36,7 +36,7 @@ const val ICS_TABLE_ROLE = "ics-table"
 @Name(BLOCK_MACRO_NAME_SDPI_ICS_TABLE)
 class AddICSPlaceholder : BlockMacroProcessor(BLOCK_MACRO_NAME_SDPI_ICS_TABLE) {
 
-    override fun process(parent: StructuralNode, target: String, attributes: MutableMap<String, Any>): Any {
+    override fun process(parent: StructuralNode, target: String, attributes: MutableMap<String, Any>): StructuralNode {
         attributes["role"] = ICS_TABLE_ROLE
         val placeholderTable = createTable(parent)
         placeholderTable.attributes["role"] = ICS_TABLE_ROLE
