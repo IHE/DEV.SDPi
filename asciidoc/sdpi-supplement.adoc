@@ -11,6 +11,7 @@
 :multipage-level: 2
 :sectnums:
 :icons: font
+:icon-set: fas
 :imagesoutdir: images/
 :imagesdir: images/
 :docinfo: shared
@@ -28,6 +29,7 @@
 :ihe_supplement_sdpi_public_comment_submission_deadline: N/A
 
 {empty} +
+ifeval::["{backend}" == "html5"]
 ++++
 <script>
     $('body').prepend('<div id="load-screen"><div style="margin-top: -64px">Menu is loading</div></div>');
@@ -54,7 +56,7 @@
 
 <p style="text-align: center">Revision {ihe_supplement_sdpi_revision} &mdash; {ihe_supplement_sdpi_revision_label}</p>
 ++++
-
+endif::[]
 {empty} +
 
 [%noheader]
