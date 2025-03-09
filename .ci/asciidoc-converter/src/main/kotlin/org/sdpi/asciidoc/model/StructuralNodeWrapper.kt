@@ -20,6 +20,7 @@ fun StructuralNode.toSealed(): StructuralNodeWrapper {
         }?.let {
             StructuralNodeWrapper.SdpiRequirement(this as Block)
         } ?: StructuralNodeWrapper.Sidebar(this as Block)
+
         else -> StructuralNodeWrapper.Unknown
     }
 }
@@ -32,10 +33,10 @@ sealed class StructuralNodeWrapper {
     data class Document(val wrapped: org.asciidoctor.ast.Document) : StructuralNodeWrapper()
     data class Sidebar(val wrapped: Block) : StructuralNodeWrapper()
     data class SdpiRequirement(val wrapped: Block) : StructuralNodeWrapper()
-    data class Paragraph(val wrapped: Block): StructuralNodeWrapper()
-    data class Image(val wrapped: Block): StructuralNodeWrapper()
-    data class Table(val wrapped: org.asciidoctor.ast.Table): StructuralNodeWrapper()
-    data class Listing(val wrapped: Block): StructuralNodeWrapper()
+    data class Paragraph(val wrapped: Block) : StructuralNodeWrapper()
+    data class Image(val wrapped: Block) : StructuralNodeWrapper()
+    data class Table(val wrapped: org.asciidoctor.ast.Table) : StructuralNodeWrapper()
+    data class Listing(val wrapped: Block) : StructuralNodeWrapper()
     object Unknown : StructuralNodeWrapper()
 }
 
