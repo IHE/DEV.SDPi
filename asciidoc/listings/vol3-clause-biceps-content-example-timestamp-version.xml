@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<msg:GetMdibResponse
+        SequenceId="urn:uuid:09578906-7efd-43a7-8344-8bf37b674524"
+        xmlns:ext="http://standards.ieee.org/downloads/11073/11073-10207-2017/extension"
+        xmlns:pm="http://standards.ieee.org/downloads/11073/11073-10207-2017/participant"
+        xmlns:msg="http://standards.ieee.org/downloads/11073/11073-10207-2017/message"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:sdpi="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1">
+    <msg:Mdib SequenceId="urn:uuid:09578906-7efd-43a7-8344-8bf37b674524">
+        <pm:MdDescription>
+            <pm:Mds Handle="mds0">
+              <pm:Clock Handle="clk"/>
+              <pm:Vmd Handle="vmd">
+                <pm:Channel Handle="ch">
+                  <pm:Metric Handle="m1" MetricAvailability="Intr" MetricCategory="Msrmt">
+                    <pm:Type Code="67108871"/>
+                    <pm:Unit Code="262656" />
+                  </pm:Metric>
+                  <pm:Metric Handle="m2" MetricAvailability="Intr" MetricCategory="Msrmt">
+                    <pm:Type Code="67108871"/>
+                    <pm:Unit Code="262656" />
+                  </pm:Metric>
+                </pm:Channel>
+              </pm:Vmd>
+            </pm:Mds>
+        </pm:MdDescription>
+        <pm:MdState>
+          <pm:State LastSet="1733270400" DateAndTime="1733268600" DescriptorHandle="clk" StateVersion="15" RemoteSync="1" xsi:type="pm:ClockState">
+            <ext:Extension>
+              <sdpi:Epochs Version="5">
+                <!-- non-slewing adjustment at 11 am -->
+                <sdpi:Epoch Version="4" Timestamp="1733270400" Offset="-PT3H" />
+                <!-- non-slewing adjustment at 7 am -->
+                <sdpi:Epoch Version="3" Timestamp="1733248800" Offset="PT4H" />
+              </sdpi:Epochs>
+            </ext:Extension>
+          </pm:State>
+        
+          <pm:State DescriptorHandle="m1" xsi:type="pm:NumericMetricState" StateVersion="123">
+            <!-- determination time = 3 am, epoch 3 clock -->
+            <pm:MetricValue Value="0" DeterminationTime="1733238000" StartTime="1733237090" StopTime="1733237097">
+              <ext:Extension>
+                <sdpi:MetricEpoch Clock="clk" DeterminationTime="3" StartTime="3" StopTime="3" />
+              </ext:Extension>
+              <pm:MetricQuality Validity="Vld" Qi="1.00"/>
+            </pm:MetricValue>
+          </pm:State>
+
+          <pm:State DescriptorHandle="m2" xsi:type="pm:NumericMetricState" StateVersion="321">
+            <!-- determination time = 12 am, epoch 4 clock -->
+            <pm:MetricValue Value="0" DeterminationTime="1733266800" >
+              <pm:MetricQuality Validity="Vld" Qi="1.00"/>
+            </pm:MetricValue>
+          </pm:State>
+
+        </pm:MdState>
+    </msg:Mdib>
+</msg:GetMdibResponse>

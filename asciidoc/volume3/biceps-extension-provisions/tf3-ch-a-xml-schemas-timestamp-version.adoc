@@ -1,0 +1,7 @@
+[#vol3_appendix_a_xml_schemas_timestamp_version]
+=== Timestamp epoch version XML Schema
+
+[source,xml]
+----
+include::../../../sources/extension-models/timestamp/TimestampVersion.xsd[]
+----

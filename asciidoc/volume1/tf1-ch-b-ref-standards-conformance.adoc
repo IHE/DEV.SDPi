@@ -66,6 +66,8 @@ No content from those three standards - including their requirements -  is norma
 
 * [[[ref_rfc_3986, RFC 3986]]] T. Berners-Lee et al., RFC 3986, Uniform Resource Identifier (URI): Generic Syntax, January 2005, available at https://www.rfc-editor.org/rfc/rfc3986
 
+* [[[ref_rfc_5905, RFC 5905]]] D. Mills et al., RFC 5905, Network Time Protocol Version 4: Protocol And Algorithms Specification, June 2010, available at https://www.rfc-editor.org/rfc/rfc5905
+
 * [[[ref_oasis_dpws_2009,OASIS DPWS:2009]]] OASIS Standard, Devices Profile for Web Services Version 1.1, OASIS Standard, 1 July 2009, available at http://docs.oasis-open.org/ws-dd/dpws/wsdd-dpws-1.1-spec.html
 
 * [[[ref_oasis_soap_over_udp_v1_1, OASIS SOAP-over-UDP Version 1.1]]] OASIS Standard, SOAP-over-UDP Version 1.1, July 2009, available at http://docs.oasis-open.org/ws-dd/soapoverudp/1.1/os/wsdd-soapoverudp-1.1-spec-os.docx.
