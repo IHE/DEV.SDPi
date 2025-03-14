@@ -12,7 +12,10 @@ class IssuesSectionPreprocessor(
 
     override fun process(document: org.asciidoctor.ast.Document, reader: PreprocessorReader) {
         val lines = reader.readLines()
-        if (githubToken == null) {
+        // Recognize a special value for the token. Forks can use this for actions to skip adding issues
+        // by adding the token SDPI_API_ACCESS_TOKEN_SECRET in (Fork)->Settings->Secrets and variables->
+        // Actions->Repository secrets. 
+        if (githubToken.isNullOrEmpty() || githubToken == "skip") {
             logger.info { "Skip requesting issues, no Github token available" }
             reader.restoreLines(lines)
             return
