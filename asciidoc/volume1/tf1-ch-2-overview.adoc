@@ -68,7 +68,7 @@ Notes:
 
 1. High-acuity points of care include operating rooms (OR), intensive care units (ICU), step-down units, and emergency care.
 2. Clinical system function example:  Physiological monitoring of a patient's condition as they are being weaned off of a ventilator.
-3. "SaMD" is Software as a Medical Device, including "clinical apps"; they are a class of Health Software.
+3. "SaMD" is Software as a Medical Device, including "clinical apps"; they are a class of health software.
 4. ISO/IEEE 11073 Service-oriented Device Connectivity (SDC) standards provide a Services Oriented Architecture (SOA) specification for safe, effective and secure medical device interoperability (SES MDI).
 
 
@@ -99,7 +99,7 @@ The above figure illustrates how this balance was achieved, including:
 .. By separating SDPi into four separate but integrated profiles, the complexity of the <<term_plug_and_trust>> system-to-system interactions + the optionality of real-world systems is better managed.
 . *Gateway Actors*
 [none]
-.. The Profiles are built upon a solid foundation of existing standards from various <<acronym_sdo>>s and that are currently implemented for device information exchange, albeit in different use contexts such as healthcare enterprise / <<acronym_ehr>> integration.
+.. The Profiles are built upon a solid foundation of existing standards from various <<acronym_sdo>>s. Such standards are currently implemented for device information exchange, albeit in different use contexts such as healthcare enterprise / <<acronym_ehr>> integration.
 .. The actors provide defined mappings from SDPi transactions and semantics to those of other standards and standards profiles (e.g., IHE DEC or ACM).
 .. Gateways can be bi-directional, receiving information from non-SDPi enabled systems, such as patient demographics information from an <<acronym_ehr>>.
 .. For a more complete "Big Picture" perspective, see the discussion in <<vol1_clause_appendix_a_requirements_from_narratives_to_pnt_interfaces>>.

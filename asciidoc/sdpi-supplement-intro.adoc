@@ -7,13 +7,13 @@
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi 1.4 Supplement -- _STU / TI Version_ -- Note*:
+a| *SDPi 2.0.0 Supplement -- _STU / TI Version_ -- Note*:
 
-This version of the SDPi 1.4 Standard for Trial Use (HL7 STU) / Trial Implementation (IHE TI) supplement is the 3rd release in 2024, continuing the objective to provide three to four releases each year that include both _incremental_ updates (e.g., editorial "fixes"), ballot comment resolutions (e.g., from HL7 ballot cycles), and additional capability enhancements.
+This version of the SDPi 2.0 Standard for Trial Use (HL7 STU) / Trial Implementation (IHE TI) supplement is the 4th release in 2024, continuing the objective to provide three to four releases each year that include both _incremental_ updates (e.g., editorial "fixes"), ballot comment resolutions (e.g., from HL7 ballot cycles), and additional capability enhancements.
 For this release, key additions include:
 
-1. SDPi-P Managed Discovery Option
-2. TF-1A enhanced description of requirements modeling and metadata
+1. HL7 2024 January & May ballot comment resolutions applied
+2. HL7 FHIR Gateway content added to TF-2B
 
 All changes incorporated in a release are managed through Github Issues and reviewed Pull Requests.
 For a list of those related to this release, see <<sdpi_issue_management>> below.

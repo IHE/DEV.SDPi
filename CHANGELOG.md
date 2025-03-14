@@ -8,12 +8,24 @@ and this project adheres to the following versioning scheme describe in the [SDP
 ## Modifications to the Keep a Changelog format
 
 The SDPi changelog shall not contain the following sections
-   - Deprecated
-   - Security
+ 
+- Deprecated
+- Security
 
 Each section shall contain a list of action items of the following format: `<brief one-sentence description of what has been done> (#<issue number & URL>).`
 
 ## [Unreleased]
+
+
+### Changes
+- Removed "and ignore" from BICEPS Content Consumer requirement ([#380](https://github.com/IHE/DEV.SDPi/issues/380))
+### Editorial Fixes
+- Corrected typos and grammar ([#363](https://github.com/IHE/DEV.SDPi/issues/363))
+### Added
+- Add TF-2C for Security Management Appendix (basic, with little initial content)  ([#250](https://github.com/IHE/DEV.SDPi/issues/250))
+- Clarification in definition of SOMDS Provider UID ([#378](https://github.com/IHE/DEV.SDPi/issues/378))
+
+## [2.0.0] - 2024-12-13
 
 ### Changes
 - Fixed action URN in waveform stream example ([#292](https://github.com/IHE/DEV.SDPi/issues/292))
