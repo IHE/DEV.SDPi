@@ -122,14 +122,20 @@ include::conformance-statements/tf1-ch-c-conformance-statement-ieee-11073-10207-
 
 In addition to Referenced Standards, which include normative requirements and capabilities that this technical framework utilizes, there are other standards, specifications, publications, presentations, materials, etc. that have proven valuable in both developing and understanding the framework's content.  This list identifies those items, including many of which are referenced throughout the specifications.
 
+NOTE: The subcategories for the following sections are solely intended to provide organization to the list of entries, facilitating the use of this section.
+
 [bibliography]
 ==== Media (non-standards) References
+
+The following bibliographic references include graphics, "infographic", and similar media.
 
 * [[[ref_iso_81001_temple,ISO 81001-1 "The Temple"]]], ISO/IEC 81001-1 Figure 1 "The Temple" Diagram, Copyright &#169; 2019 NHS Digital, licensed via Wikimedia Commons, http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3[Greg Wye, NHS Digital, OGL 3], available at https://81001.org/page/Framework[81001.org Framework].
 
 
 [bibliography]
 ==== Standards & Publications
+
+The following bibliographic references include standards that are related to this specification but do not contain normative requirements, as well as papers that are useful in understanding related concepts.
 
 * [[[ref_ihe_pcd_sdpi_use_cases_compendium_2019,IHE PCD SDPi Use Cases Compendium:2019]]] IHE Patient Care Devices (PCD) Compendium of Medical Device Oriented Use Cases, Companion to the "Service-oriented Device Point-of-Care Interoperability (SDPi)" White Paper, Revision 1.1, November 1, 2019.  Available at https://profiles.ihe.net/DEV/[profiles.ihe.net/DEV/].
 
@@ -141,11 +147,19 @@ metalanguage - Extended BNF, 15 December 1996, available at https://standards.is
 * [[[ref_omg_sysml_2_0_intro_graphical_model,OMG SysML ^&#174;^ Intro-Graphical Notation 2.0]]]  OMG Systems Modeling Language&#8482;  (SysML^&#174;^), Version 2.0, Introduction to the Graphical Model, Object Management Group (OMG) standard.  Available at https://github.com/Systems-Modeling/SysML-v2-Release/tree/master/doc[github.com/Systems-Modeling/SysML-v2-Release/doc/]
 
 * [[[ref_omg_sysml_2_0_spec,OMG SysML ^&#174;^ 2.0]]]  OMG Systems Modeling Language &#8482; (SysML^&#174;^), Version 2.0, Object Management Group (OMG) specification.  Available at https://github.com/Systems-Modeling/SysML-v2-Release/tree/master/doc[github.com/Systems-Modeling/SysML-v2-Release/doc/]
+
 * [[[ref_gender_harmony_project, HL7-GENDER]]] HL7 gender harmony project, available at https://confluence.hl7.org/display/VOC/The+Gender+Harmony+Project
 
+* [[[ref_paper_connecting_clinical_it_to_soa_arch_of_medical_devices, Connecting the clinical IT infrastructure to a service-oriented architecture of medical devices]]] Paper reviewing use of SOA architecture to integrate medical devices into clinical IT infrastructure, available at https://pubmed.ncbi.nlm.nih.gov/29272252/
+
+* [[[ref_ornet_soa_for_safe_dynamic_medical_device_interoperability, OR.NET: a service-oriented architecture for safe and dynamic medical device intoperability]]] Paper reviewing use of SOA architecture to enable an interoperable and safe ecosystem of medical devices, available at https://pubmed.ncbi.nlm.nih.gov/29346114/
+
+* [[[ref_paper_design_pattern_for_soa_integration_of_medical_devices,Standardized Device Services - A Design Pattern for Service Oriented Integration of Medical Devices]]]  C. Mauro, A. Sunyaev, J. M. Leimeister, and H. Krcmar, 2010 43rd Hawaii International Conference on System Sciences, Honolulu, HI, USA: IEEE, Jan. 2010, pp. 1–10. doi: 10.1109/HICSS.2010.347.
 
 [bibliography]
 ==== Presentations
+
+The following bibliographic references include slide decks and recordings that are helpful in understanding these specifications.
 
 * [[[ref_ihe_eu_experience_2021_presentation_cooper_schlichting,IHE EU Experience-2021 IHE CA for MedTech Solutions]]], "IHE & IHE Catalyst: Advancing Interoperable MedTec Solutions with "Regulatory Submission Ready" Conformity Assessment", presentation by Todd Cooper and Dr. Stefan Schlichting, available at https://connectathon.ihe-europe.net/experience-sessions-2021-presentations[IHE Europe Experience 2021 Presentations web page].
 

@@ -17,14 +17,14 @@
 :source-highlighter: highlight.js
 :highlightjsdir: js/highlight
 
-:sdpi_milestone_publication: SDPi 1.4 Publication
-:sdpi_milestone_review: SDPi 1.4 Review
+:sdpi_milestone_publication: SDPi 2.0 Publication
+:sdpi_milestone_review: SDPi 2.0 Review
 
-:ihe_supplement_sdpi_revision: 1.4.1
-:ihe_supplement_sdpi_revision_short: 1.4
+:ihe_supplement_sdpi_revision: 2.0.0
+:ihe_supplement_sdpi_revision_short: 2.0
 :ihe_supplement_sdpi_revision_date: {localdatetime}
 :ihe_supplement_sdpi_revision_label: Standard for Trial Use / Implementation
-:ihe_supplement_sdpi_publication_month: October 7, 2024
+:ihe_supplement_sdpi_publication_month: December 13, 2024
 :ihe_supplement_sdpi_public_comment_submission_deadline: N/A
 
 {empty} +

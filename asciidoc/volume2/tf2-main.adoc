@@ -118,4 +118,6 @@ include::tf2-ch-a-mdpws.adoc[]
 
 include::tf2-ch-b-gateways.adoc[]
 
+include::tf2-ch-c-security.adoc[]
+
 
