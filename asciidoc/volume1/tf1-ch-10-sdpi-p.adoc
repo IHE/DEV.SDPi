@@ -1068,7 +1068,7 @@ Additional effectiveness requirements or considerations are identified for this 
 
 ==== Security Requirements & Considerations
 Security is foundational for all interactions between <<vol1_spec_sdpi_p_actor_somds_participant>> Actors, with a clear distinction being made between information that may be exchanged outside of a secure connection (e.g., during network discovery transactions).
-Specific security technologies may vary based on the implementation technology being used, and will be detailed in the appropriate TF-2 technology specifications.
+Specific security technologies may vary based on jurisdictional requirements, regulations and the implementation technology, and will be detailed in the appropriate TF-2 technology specifications.
 All transactions indicate whether they require secure or unsecured connections.
 
 For the default <<acronym_sdpi_p>> connectivity technology, namely ISO/IEEE 11073 <<term_service_oriented_device_connectivity>>, TLS 1.2 (or later versions) support is required (See <<ref_ieee_11073_20701_2018>> and <<ref_ieee_11073_20702_2016>>).
