@@ -91,7 +91,7 @@ A <<vol1_spec_sdpi_p_actor_somds_consumer>> shall ignore all epoch version infor
 [NOTE]
 [%collapsible]
 ====
-* The `spdi:EpochSupport` extension is intended to immutable. 
+* The `spdi:EpochSupport` extension is intended to be immutable. 
 * A <<vol1_spec_sdpi_p_actor_somds_consumer>> may rely on future versions of the extension being backwards compatible. 
 
 ====
