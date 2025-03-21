@@ -45,11 +45,89 @@ NOTE: This allows for a <<vol1_spec_sdpi_p_actor_somds_consumer>> to apply repor
 ====
 ****
 
+
+
+// ==================================================
+// Supporting detection of lost reports by consumers.
+//
+
+
 .R1005
 [sdpi_requirement#r1005,sdpi_req_level=should]
 ****
 A <<vol1_spec_sdpi_p_actor_somds_consumer>> should reconnect or go into a fail-safe mode when it receives a report with an <<acronym_mdib>> version that is either lower than the last received version or more than one version higher than the last received version.
 ****
+
+.R1006
+[sdpi_requirement#r1006,sdpi_req_level=shall]
+****
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall include an `sdpi:ReportSequence` element in every report header.
+
+.Notes
+[%collapsible]
+====
+NOTE: The `sdpi:ReportSequence` element enables detection of lost reports by a <<vol1_spec_sdpi_p_actor_somds_consumer>>.
+====
+****
+
+.R1007
+[sdpi_requirement#r1007,sdpi_req_level=should]
+****
+A <<vol1_spec_sdpi_p_actor_somds_consumer>> should reconnect or go into a fail-safe mode when it receives a report in a single publish-subscribe session with a `sdpi:ReportSequence/@MessageNumber` that is either:
+
+* not 1 for the first message received in a new session, or
+* lower than the last `sdpi:ReportSequence/@MessageNumber` number received in an on-going session, or
+* more than 1 greater than the last `sdpi:ReportSequence/@MessageNumber` number received in an on-going session.
+
+.Notes
+[%collapsible]
+====
+* A publish-subscribe session is established between a <<vol1_spec_sdpi_p_actor_somds_provider>> and <<vol1_spec_sdpi_p_actor_somds_consumer>> using Transaction [DEV-27] (<<vol2_clause_dev_27>>). 
+* Renewing an established publish-subscribe session does not establish a new session and does not cause `sdpi:ReportSequence/@MessageNumber` to restart from 1.
+====
+****
+
+.R100x
+[sdpi_requirement#r100x,sdpi_req_level=shall]
+****
+A <<vol1_spec_sdpi_p_actor_somds_consumer>> shall treat subsequent reports with the same `sdpi:ReportSequence/@MessageNumber` as functionally identical following confirmation of successful delivery. 
+
+.Notes
+[%collapsible]
+====
+* A <<vol1_spec_sdpi_p_actor_somds_consumer>> may receive multiple reports with the same `sdpi:ReportSequence/@MessageNumber` when the <<vol1_spec_sdpi_p_actor_somds_provider>> does not receive confirmation of successful delivery from the <<vol1_spec_sdpi_p_actor_somds_consumer>>. 
+* A <<vol1_spec_sdpi_p_actor_somds_consumer>> is not required to process the content of multiple reports with the same `sdpi:ReportSequence/@MessageNumber`.
+* A <<vol1_spec_sdpi_p_actor_somds_provider>> will not increment the `sdpi:ReportSequence/@MessageNumber` until it receives confirmation of successful delivery from the <<vol1_spec_sdpi_p_actor_somds_consumer>>. 
+* A <<vol1_spec_sdpi_p_actor_somds_provider>> that receives a fault response from a <<vol1_spec_sdpi_p_actor_somds_consumer>> may change or delay the message to address the fault. 
+====
+****
+
+
+.R100x
+[sdpi_requirement#r100x,sdpi_req_level=shall]
+****
+A <<vol1_spec_sdpi_p_actor_somds_consumer>> that receives multiple reports with the same `sdpi:ReportSequence/@MessageNumber` shall either:
+
+* acknowledge receipt with an HTTP response code, or
+* terminate the publish-subscribe session using the mechanisms described in Transaction [DEV-27] (<<vol2_clause_dev_27>>).
+
+.Notes
+[%collapsible]
+====
+* A <<vol1_spec_sdpi_p_actor_somds_provider>> may send multiple reports with the same `sdpi:ReportSequence/@MessageNumber` when it receives a fault code from the <<vol1_spec_sdpi_p_actor_somds_consumer>> (e.g., the consumer is busy processing other messages) or no response (time-out following a network interruption).
+* A <<vol1_spec_sdpi_p_actor_somds_consumer>> may receive multiple reports with the same `sdpi:ReportSequence/@MessageNumber` when it responds with a fault code 
+====
+****
+
+
+
+//
+// Supporting detection of lost reports by consumers.
+// ==================================================
+
+
+
+
 
 .R1014
 [sdpi_requirement#r1014,sdpi_req_level=shall]
