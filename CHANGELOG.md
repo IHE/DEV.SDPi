@@ -22,9 +22,10 @@ Each section shall contain a list of action items of the following format: `<bri
 ### Editorial Fixes
 - Corrected typos and grammar ([#363](https://github.com/IHE/DEV.SDPi/issues/363))
 ### Added
-- Add TF-2C for Security Management Appendix (basic, with little initial content)  ([#250](https://github.com/IHE/DEV.SDPi/issues/250))
+- TF-2C for Security Management Appendix (basic, with little initial content)  ([#250](https://github.com/IHE/DEV.SDPi/issues/250))
 - Clarification in definition of SOMDS Provider UID ([#378](https://github.com/IHE/DEV.SDPi/issues/378))
-- Added further reasons for security technology variation ([#381](https://github.com/IHE/DEV.SDPi/issues/381))
+- Further reasons for security technology variation ([#381](https://github.com/IHE/DEV.SDPi/issues/381))
+- Clarification of rationale for discontinuous section numbering ([#364](https://github.com/IHE/DEV.SDPi/issues/364))
 
 ## [2.0.0] - 2024-12-13
 
