@@ -222,7 +222,7 @@ elements, from requirements to system components to Verification & Validation te
 | A networking protocol for clock synchronization between computer systems over packet-switched, variable-latency data networks.
 |
 | [[acronym_ntp,NTP]] NTP
-| https://en.wikipedia.org/wiki/Network_Time_Protocol[NTP wikipedia article]
+| https://en.wikipedia.org/wiki/Network_Time_Protocol[NTP wikipedia article], <<ref_rfc_5905>>
 |
 
 | [[term_object_management_group, Object Management Group (OMG)]] Object Management Group
