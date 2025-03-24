@@ -52,16 +52,10 @@ NOTE: This allows for a <<vol1_spec_sdpi_p_actor_somds_consumer>> to apply repor
 //
 
 
-.R1005
-[sdpi_requirement#r1005,sdpi_req_level=should]
+.R1030
+[sdpi_requirement#r1030,sdpi_req_level=shall]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_consumer>> should reconnect or go into a fail-safe mode when it receives a report with an <<acronym_mdib>> version that is either lower than the last received version or more than one version higher than the last received version.
-****
-
-.R1006
-[sdpi_requirement#r1006,sdpi_req_level=shall]
-****
-A <<vol1_spec_sdpi_p_actor_somds_provider>> shall include an `sdpi:ReportSequence` element in every report header.
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall include an `sdpi:ReportSequence` element in every message notification header.
 
 .Notes
 [%collapsible]
@@ -70,10 +64,10 @@ NOTE: The `sdpi:ReportSequence` element enables detection of lost reports by a <
 ====
 ****
 
-.R1007
-[sdpi_requirement#r1007,sdpi_req_level=should]
+.R1031
+[sdpi_requirement#r1031,sdpi_req_level=should]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_consumer>> should reconnect or go into a fail-safe mode when it receives a report in a single publish-subscribe session with a `sdpi:ReportSequence/@MessageNumber` that is either:
+A <<vol1_spec_sdpi_p_actor_somds_consumer>> should reconnect or go into a fail-safe mode when it receives a message notification in a single publish-subscribe session with a `sdpi:ReportSequence/@MessageNumber` that is either:
 
 * not 1 for the first message received in a new session, or
 * lower than the last `sdpi:ReportSequence/@MessageNumber` number received in an on-going session, or
@@ -87,8 +81,8 @@ A <<vol1_spec_sdpi_p_actor_somds_consumer>> should reconnect or go into a fail-s
 ====
 ****
 
-.R100x
-[sdpi_requirement#r100x,sdpi_req_level=shall]
+.R1032
+[sdpi_requirement#r1032,sdpi_req_level=shall]
 ****
 A <<vol1_spec_sdpi_p_actor_somds_consumer>> shall treat subsequent reports with the same `sdpi:ReportSequence/@MessageNumber` as functionally identical following confirmation of successful delivery. 
 
@@ -103,8 +97,8 @@ A <<vol1_spec_sdpi_p_actor_somds_consumer>> shall treat subsequent reports with 
 ****
 
 
-.R100x
-[sdpi_requirement#r100x,sdpi_req_level=shall]
+.R1033
+[sdpi_requirement#r1033,sdpi_req_level=shall]
 ****
 A <<vol1_spec_sdpi_p_actor_somds_consumer>> that receives multiple reports with the same `sdpi:ReportSequence/@MessageNumber` shall either:
 
@@ -114,8 +108,8 @@ A <<vol1_spec_sdpi_p_actor_somds_consumer>> that receives multiple reports with 
 .Notes
 [%collapsible]
 ====
-* A <<vol1_spec_sdpi_p_actor_somds_provider>> may send multiple reports with the same `sdpi:ReportSequence/@MessageNumber` when it receives a fault code from the <<vol1_spec_sdpi_p_actor_somds_consumer>> (e.g., the consumer is busy processing other messages) or no response (time-out following a network interruption).
-* A <<vol1_spec_sdpi_p_actor_somds_consumer>> may receive multiple reports with the same `sdpi:ReportSequence/@MessageNumber` when it responds with a fault code 
+* A <<vol1_spec_sdpi_p_actor_somds_provider>> may send multiple message notifications with the same `sdpi:ReportSequence/@MessageNumber` when it receives a fault code from the <<vol1_spec_sdpi_p_actor_somds_consumer>> (e.g., the consumer is busy processing other messages) or no response (time-out following a network interruption).
+* A <<vol1_spec_sdpi_p_actor_somds_consumer>> may receive multiple message notifications with the same `sdpi:ReportSequence/@MessageNumber` when it responds with a fault code 
 ====
 ****
 
