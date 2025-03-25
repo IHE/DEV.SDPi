@@ -194,7 +194,7 @@ If a <<vol1_spec_sdpi_p_actor_somds_participant>> cannot reach the <<acronym_ts_
 
 ===== Scenario: <<acronym_stad>> {var_use_case_id}.5 - Devices are operational in the MD LAN network but cannot access the TS Service and clock drift is unacceptable
 
-*Given* The <<vol1_spec_sdpi_p_actor_somds_consumer>> is operational on the <<acronym_md_lan>> network
+*Given* The <<vol1_spec_sdpi_p_actor_somds_participant>> is operational on the <<acronym_md_lan>> network
 
 *And* The <<acronym_ts_service>> is no longer operational or otherwise inaccessible
 
