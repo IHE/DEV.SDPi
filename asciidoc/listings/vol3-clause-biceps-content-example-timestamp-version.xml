@@ -9,7 +9,11 @@
     <msg:Mdib SequenceId="urn:uuid:09578906-7efd-43a7-8344-8bf37b674524">
         <pm:MdDescription>
             <pm:Mds Handle="mds0">
-              <pm:Clock Handle="clk"/>
+              <pm:Clock Handle="clk">
+                <ext:Extension>
+                   <sdpi:EpochSupport Version="1"/>
+                </ext:Extension>
+              </pm:Clock>
               <pm:Vmd Handle="vmd">
                 <pm:Channel Handle="ch">
                   <pm:Metric Handle="m1" MetricAvailability="Intr" MetricCategory="Msrmt">
