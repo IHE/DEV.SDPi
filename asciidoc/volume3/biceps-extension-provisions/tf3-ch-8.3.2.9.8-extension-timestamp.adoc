@@ -3,7 +3,7 @@
 
 BICEPS does not provide any means to convey step-changes in a <<vol1_spec_sdpi_p_actor_somds_participant>>'s <<term_time_reference_frame>> (see <<vol1_clause_appendix_c_use_case_stad_non_slew, use case for non-slewing time adjustments>>). 
 
-A <<vol1_spec_sdpi_p_actor_somds_provider>> includes <<term_timestamp>>s in many state updates including `pm:AlertConditionState/@DeterminationTime`, `pm:AbstractMetricValue/@DeterminationTime` and `pm:AbstractContextState/@BindingStartTime`. From time-to-time, though rarely in normal operation, a 
+A <<vol1_spec_sdpi_p_actor_somds_provider>> includes <<term_timestamp>>s in many state updates. For example: `pm:AlertConditionState/@DeterminationTime`, `pm:AbstractMetricValue/@DeterminationTime` and `pm:AbstractContextState/@BindingStartTime`. From time-to-time, though rarely in normal operation, a 
 <<vol1_spec_sdpi_p_actor_somds_participant>> may determine that the difference between its <<term_time_reference_frame>> and that of the <<acronym_ts_service>> is greater than can be accommodated by <<term_smooth_time_adjustments>> to the <<term_system_clock>>. This may occur, for example:
 
 * when the <<acronym_ts_service>> is unreachable for prolonged periods, or
@@ -29,14 +29,34 @@ The diagram below illustrates a sequence of state updates incorporating <<term_t
 
 image::vol3-diagram-biceps-ext-non-slewing_time.svg[align=center]
 
+A <<vol1_spec_sdpi_p_actor_somds_provider>> may start a new MDIB versioning sequence when it encounters an <<term_abrupt_time_adjustment>>. However, this may disrupt one or more System Function Contributions (<<acronym_sfc>>) by the <<vol1_spec_sdpi_p_actor_somds_provider>> or its <<acronym_somds>> peers. 
 
-A <<vol1_spec_sdpi_p_actor_somds_provider>> may start a new MDIB versioning sequence when it requires an <<term_abrupt_time_adjustment>>. However, this may disrupt one or more System Function Contributions (<<acronym_sfc>>) by the <<vol1_spec_sdpi_p_actor_somds_provider>> or its <<acronym_somds>> peers. 
+NOTE: A <<vol1_spec_sdpi_p_actor_somds_provider>> is not required to create a new MDIB versioning sequence when it encounters an <<term_abrupt_time_adjustment>> (see <<r1522>>).
 
 This specification adds an extension to the BICEPS Participant Model enabling richer communication of changes to the <<vol1_spec_sdpi_p_actor_somds_participant>>'s local time-reference frame using:
 
 * epoch versioning,
 * optional epoch time-step offsets,
 * optional versioning of `pm:CalibrationInfo/@Time`, `pm:AlertSystemState/@LastSelfCheck`, `pm:AlertConditionState/@DeterminationTime`, `pm:AbstractMetricValue/@StartTime`, `pm:AbstractMetricValue/@StopTime`, `pm:AbstractMetricValue/@DeterminationTime`, `pm:AbstractContextState/@BindingStartTime` and `pm:AbstractContextState/@BindingEndTime`. 
+
+Other Biceps extensions may provide similar mechanisms to version appropriate timestamps. Refer to the extension documentation and schema for details. 
+
+.R0615
+[sdpi_requirement#r0615,sdpi_req_level=should]
+****
+Biceps extensions, with timestamps who's interpretation by a <<vol1_spec_sdpi_p_actor_somds_participant>> would be affected by unexpected abrupt time adjustments, should support timestamp versioning using this extension. 
+
+.Notes
+[NOTE]
+[%collapsible]
+====
+* Extension authors can add types that inherit from `sdpi:TimestampEpochVersionType` to support versioning their timestamps. 
+====
+
+****
+
+
+
 
 [sdpi_level=+1]
 ====== Model
@@ -106,15 +126,15 @@ The <<vol1_spec_sdpi_p_actor_somds_provider>> shall increment `sdpi:Epochs/@Vers
 ****
 
 .R0606
-[sdpi_requirement#r0606,sdpi_req_level=shall]
+[sdpi_requirement#r0606,sdpi_req_level=should]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_provider>> shall set the version of all versioned timestamps to 0 when it assigns a new MDIB sequence identifier (`pm:MdibVersionGroup/@SequenceId`). 
+A <<vol1_spec_sdpi_p_actor_somds_provider>> should set the version of all versioned timestamps to 0 when it assigns a new MDIB sequence identifier (`pm:MdibVersionGroup/@SequenceId`). 
 
 .Notes
 [NOTE]
 [%collapsible]
 ====
-* Epoch versions are scoped to the `pm:MdibVersionGroup/@SequenceId`.
+* Epoch versions are generally scoped to the `pm:MdibVersionGroup/@SequenceId`. Some providers may carry versioned timestamps across new sequences, particularly if the new sequence is created for reasons other than an abrupt time adjustment. 
 
 ====
 ****
