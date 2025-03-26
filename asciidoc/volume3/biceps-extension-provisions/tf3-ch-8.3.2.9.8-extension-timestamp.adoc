@@ -6,6 +6,7 @@ BICEPS does not provide any means to convey step-changes in a <<vol1_spec_sdpi_p
 A <<vol1_spec_sdpi_p_actor_somds_provider>> includes <<term_timestamp>>s in many state updates. For example: `pm:AlertConditionState/@DeterminationTime`, `pm:AbstractMetricValue/@DeterminationTime` and `pm:AbstractContextState/@BindingStartTime`. From time-to-time, though rarely in normal operation, a 
 <<vol1_spec_sdpi_p_actor_somds_participant>> may determine that the difference between its <<term_time_reference_frame>> and that of the <<acronym_ts_service>> is greater than can be accommodated by <<term_smooth_time_adjustments>> to the <<term_system_clock>>. This may occur, for example:
 
+* when a device is used in an emergency or wireless situation, collecting data before joining a network and updating its clock,
 * when the <<acronym_ts_service>> is unreachable for prolonged periods, or
 * following hardware failures and/or operator errors in the <<vol1_spec_sdpi_p_actor_somds_provider>> and/or <<acronym_ts_service>>, or
 * after switching to a different and/or backup <<acronym_ts_service>> when the primary <<acronym_ts_service>> becomes unavailable, or
