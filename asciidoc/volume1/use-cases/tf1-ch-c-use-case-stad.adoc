@@ -52,6 +52,22 @@ NOTE: The 50ms target accuracy is suitable for highly demanding use cases like r
 ====
 ****
 
+.R1521
+[sdpi_requirement#r1521,sdpi_req_level=should]
+****
+The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_participant>> should configure its <<acronym_ts_service>> client to prioritize <<term_smooth_time_adjustments>> to the <<term_system_clock>>. 
+
+.Notes
+[%collapsible]
+====
+NOTE: <<vol1_spec_sdpi_p_actor_somds_participant>>s could use, for example, <<ref_rfc_5905, NTPv4>> to satisfy this requirement. That is, employing cold and warm startup and <<term_clock_discipline_algorithm>>s to synchronize the <<term_system_clock>> with a <<acronym_ts_service>> <<term_reference_clock>>.
+
+NOTE: <<vol1_spec_sdpi_p_actor_somds_participant>>s using other synchronization standards
+should strongly favour methods such as adjusting clock frequency over large changes (forward 
+or backward in time) to maintain an accurate <<term_system_clock>>. 
+
+====
+****
 
 
 ===== Scenario: <<acronym_stad>> {var_use_case_id}.2 - Device is connected to the MD LAN network and a user wants to change the device's time
@@ -178,7 +194,7 @@ If a <<vol1_spec_sdpi_p_actor_somds_participant>> cannot reach the <<acronym_ts_
 
 ===== Scenario: <<acronym_stad>> {var_use_case_id}.5 - Devices are operational in the MD LAN network but cannot access the TS Service and clock drift is unacceptable
 
-*Given* The <<vol1_spec_sdpi_p_actor_somds_consumer>> is operational on the <<acronym_md_lan>> network
+*Given* The <<vol1_spec_sdpi_p_actor_somds_participant>> is operational on the <<acronym_md_lan>> network
 
 *And* The <<acronym_ts_service>> is no longer operational or otherwise inaccessible
 
@@ -207,13 +223,204 @@ The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_participant>> shal
 [%collapsible]
 ====
 
-NOTE: Clocks of <<vol1_spec_sdpi_p_actor_somds_participant>>s run apart due to lack of synchronization with NTP servers, different clock drifts or cyberattacks.
+NOTE: Clocks of <<vol1_spec_sdpi_p_actor_somds_participant>>s run apart due to lack of synchronization with NTP servers, different clock drifts or cyber-attacks.
 
 NOTE: This requirement supplements RR1162 in <<ref_ieee_11073_10700_2022>>: _The MANUFACTURER of an SDC BASE CONSUMER SHALL consider the RISKs resulting from erroneous timestamps._
 
 ====
 ****
 
+[#vol1_clause_appendix_c_use_case_stad_non_slew]
+===== Scenario: <<acronym_stad>> {var_use_case_id}.6 - A device, operational in the MD LAN network, determines a non-slewing time adjustment is required
+
+*Given* The device is operational on the <<acronym_md_lan>> network,
+
+*When* The device's <<term_clock_discipline_algorithm>> determines an <<term_abrupt_time_adjustment>> is required,
+
+*Then* The device will create a log entry that includes at least a <<term_timestamp>> for the adjustment in both the <<term_time_reference_frame>> before and after the <<term_abrupt_time_adjustment>> was made,
+
+*And* The <<vol1_spec_sdpi_p_actor_somds_provider>> will notify <<vol1_spec_sdpi_p_actor_somds_consumer>>s, using its system function contributions (<<acronym_sfc>>), of the change to the provider's <<term_time_reference_frame>>,  
+
+*Or* The <<vol1_spec_sdpi_p_actor_somds_provider>> will initiate a new MDIB sequence.
+
+NOTE: a device's <<term_time_reference_frame>> may jump forward or backward in time in a single large (e.g., more than 5 minutes), step (from the perspective of an external observer) following an <<term_abrupt_time_adjustment>>. 
+
+NOTE: two distinct <<term_epoch>>s are created by an <<term_abrupt_time_adjustment>>: one prior to the abrupt adjustment and one after. Each epoch has a distinct <<term_time_reference_frame>>. Both the rate which time passes and the determination time assigned to a single event may differ significantly between epochs (from the perspective of an external observer). 
+
+NOTE: <<term_abrupt_time_adjustment>>s may occur, for example, when a device is used in an emergency or wireless situation and collects data before joining a network and updating its clock, an absent <<acronym_ts_service>> returns to operation, following hardware failure or operator error (e.g., making <<term_abrupt_time_adjustment>>s to the <<acronym_ts_service>> <<term_time_reference_frame>> while it is being used by one or more <<vol1_spec_sdpi_p_actor_somds_participant>>s). 
+
+NOTE: although an <<term_abrupt_time_adjustment>> starts with a constant offset between two <<term_epoch>>s at a single point in time, it may introduce constant or variable (linear and/or non-linear) offsets between timestamps obtained within the <<term_epoch>>s. That is, the difference (to an unbiased observer) between any two timestamps from different epochs may depend (linearly or non-linearly) on when, within each epoch, the timestamp was obtained. It is typically not possible to establish a common <<term_time_reference_frame>> following an <<term_abrupt_time_adjustment>> without additional information not available to the <<vol1_spec_sdpi_p_actor_somds_participant>>.
+
+====== Terms
+// figure out where to put this. 
+
+[%autowidth]
+[cols="^1,<3"]
+|===
+|Term |Definition 
+
+| [[term_abrupt_time_adjustment,abrupt time adjustment]] Abrupt time adjustment
+| A large change (typically more than 5 minutes) to a <<term_system_clock>>'s <<term_time_reference_frame>> to reconcile differences between the time reported by a <<term_system_clock>> and a <<acronym_ts_service>>, within the statistical uncertainty of the synchronization algorithm, as quickly as possible. Abrupt time-adjustments are also known as step-changes and <<term_non_slewing_time_adjustment>>s, particularly when using <<ref_rfc_5905, NTP>> to synchronize a <<term_system_clock>>.
+
+| [[term_clock_discipline_algorithm,clock-discipline algorithm]] Clock-discipline algorithm
+| The algorithm employed by a <<acronym_ts_service>> client to minimize the error between the <<term_reference_clock>> and the <<term_system_clock>>. It my include include startup calibration steps, smooth (e.g., slewing) and, rarely, abrupt (e.g., non-slewing) corrections. 
+
+| [[term_epoch,epoch]] Epoch
+| A distinct period of time characterized by a consistent temporal properties described by a <<term_time_reference_frame>>.
+
+| [[term_non_slewing_time_adjustment,non-slewing time adjustment]] Non-slewing time adjustment
+| The <<term_abrupt_time_adjustment>> to a system clock's <<term_time_reference_frame>> described by <<ref_rfc_5905>>.
+
+| [[term_reference_clock,reference clock]] Reference clock
+| The source of time obtained from a <<term_time_synchronization_service>> and shared between <<vol1_spec_sdpi_p_actor_somds_participant>>s. 
+
+| [[term_slewing_adjustments,slewing time adjustments]] Slewing time adjustments
+| Adjustments, typically small, made to a <<term_system_clock>>'s frequency described by <<ref_rfc_5905>>. Generally so the time reported by the <<term_system_clock>> matches that of a <<acronym_ts_service>> at some point in the not too distant future, within the statistical uncertainty of the synchronization algorithm.
+
+| [[term_smooth_time_adjustments,smooth time adjustments]] Smooth time adjustments
+| A gradual adjustment within a <<term_time_reference_frame>>, characterised by a continuous and monotonically increasing progression of timestamps without abrupt jumps or disruptions to the passage of time. Generally so that the time reported by a system clock matches that of a <<acronym_ts_service>> at some point in the future, within the statistical uncertainty of the synchronization algorithm. Typically involves running the <<term_system_clock>> faster or slower for some period. 
+
+| [[term_system_clock,system clock]] System clock
+| A source of <<term_timestamp>>s used in a <<vol1_spec_sdpi_p_actor_somds_participant>>s system function contributions (<<acronym_sfc>>). 
+
+| [[term_time_reference_frame,time-reference frame]] Time-reference frame
+| A device-specific context for measuring and assigning timestamps to events. The reference frame is defined by its rate of passage of time and alignment to some external temporal standard (e.g., provided by a <<acronym_ts_service>>). The reference frame's time-rate may vary with time (e.g., a <<term_smooth_time_adjustments>> to synchronize with an external temporal standard). Abrupt changes to the time-reference frame alignment to an external standard (e.g., <<term_abrupt_time_adjustment>>), create distinct time-reference frames with different temporal characteristics.
+
+| [[term_timestamp,timestamp]] Timestamp
+| A point in time obtained from a <<term_system_clock>>. Timestamps are obtained within the context of a <<term_time_reference_frame>>. 
+
+| [[term_timestamp_version,timestamp version]] Timestamp version
+| A unique identifier, within the scope of a MDIB sequence, of a <<term_time_reference_frame>> epoch.
+
+|===
 
 
+====== Safety, Effectiveness & Security Considerations and Requirements
 
+// This provides information for auditing. 
+.R1560
+[sdpi_requirement#r1560,sdpi_req_level=shall]
+****
+The <<vol1_spec_sdpi_p_actor_somds_participant>> shall log each <<term_abrupt_time_adjustment>> of the <<term_system_clock>> with an entry that includes the determination time of the log entry in both the <<term_time_reference_frame>> before, and after, each <<term_abrupt_time_adjustment>>. 
+
+.Notes
+[%collapsible]
+====
+
+NOTE: This requirement supplements TR1340 in <<ref_ieee_11073_10700_2022>>&mdash; _An SDC BASE PARTICIPANT SHOULD log each <<term_non_slewing_time_adjustment>> of the device clock_ &mdash; requiring specific information in the log to support post incident analysis.
+
+====
+****
+
+// This is for providers to inform consumers of the non-slewing adjustment.
+// It is necessary to have a version here for providers that don't use NTP clock-discipline to smoothly adjust clocks and just set the clock (hopefully not going back in time).
+// Using `ClockState/@LastSet` like this avoids having to extend everything that needs a timestamp to support versioning (because any timestamp in the MDIB before the LastSet
+// is questionable following a transition to a new epoch). Epoch versioning is then an extension that lets the consumer determine how questionable a timestamp is. 
+// If we have a `Epochs/@Current` and update `ClockState/@LastSet` I don't think we need to also include a "Questionable" flag or change `ClockState/@ActiviationState` as proposed
+// during the workshop. Using `ClockState/@LastSet` seems better than just changing the @Activation state because the consumer could determine which timestamps are questionable.
+.R1522
+[sdpi_requirement#r1522,sdpi_req_level=shall]
+****
+When the <<vol1_spec_sdpi_p_actor_somds_provider>> detects an <<term_abrupt_time_adjustment>> of a <<term_system_clock>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall either:
+
+* initiate a new MDIB sequence by assigning a new <<acronym_mdib>> sequence identifier, or
+* set `pm:ClockState/@ActivationState` to `StndBy` when any timestamp in a <<acronym_mdib>> version was not obtained from the time-reference frame of the active clock in the same version, or 
+* set `pm:ClockState/@LastSet` to the earliest time that is unambiguously in the current <<term_epoch>> and increment `sdpi:Epochs/@Version` and set `pm:ClockState/@ActivationState` to `StndBy` while any timestamp in a <<acronym_mdib>> version is less than `pm:ClockState/@LastSet`.
+
+.Notes
+[%collapsible]
+====
+NOTE: The <<term_manufacturer>> of the <<vol1_spec_sdpi_p_actor_somds_consumer>> considers the risks arising from <<term_timestamp>>s spanning <<term_time_reference_frame>>s from an <<term_abrupt_time_adjustment>> having occurred at the <<vol1_spec_sdpi_p_actor_somds_provider>> when the <<vol1_spec_sdpi_p_actor_somds_consumer>> receives a changed value in the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDIB sequence identifier or when the `pm:ClockState/@ActivationState` is `StndBy`.
+
+NOTE: This clarifies the ambiguity in <<ref_ieee_11073_10207_2017>>, section B.182 and <<ref_ieee_11073_20701_2018>>, R0014 when a participant uses slewing to make <<term_smooth_time_adjustments>> (using, for example, the <<ref_rfc_5905, NTPv4>> <<term_clock_discipline_algorithm>>) where information from one or more <<acronym_ts_service>>s is used to maintain clock-discipline and does not (generally) "set" the clock.
+
+NOTE: Any <<term_timestamp>> strictly-less than `pm:ClockState/@LastSet` in the MDIB when `pm:ClockState/@ActivationState` is set to `StndBy` may be untrustworthy. 
+
+====
+****
+
+Timestamps obtained in an earlier <<term_epoch>> may be treated with greater suspicion than those obtained in the current epoch by a <<vol1_spec_sdpi_p_actor_somds_participant>>. `pm:ClockState/@LastSet` provides the unambiguous beginning of the current epoch using a <<term_timestamp>> from the current epoch. For example (and illustrated below):
+
+* when an <<term_abrupt_time_adjustment>> moves the device's <<term_time_reference_frame>> forward, any <<term_timestamp>> in the MDIB greater than start of the new epoch are unambiguously in the new epoch. 
+* when the device's <<term_time_reference_frame>> moves backward, only <<term_timestamp>>s greater than the latest timestamp obtained from the prior epoch are unambiguously in the current epoch. That is, timestamps obtained from the new <<term_time_reference_frame>> may overlap timestamps obtained from the prior <<term_time_reference_frame>>. 
+
+There is no overlap in timestamps when an <<term_abrupt_time_adjustment>> shifts the device clock forward in time. 
+
+image::vol1-diagram-use-case-stad-ns-forward.svg[align=center]
+
+When an <<term_abrupt_time_adjustment>> shifts the device's <<term_time_reference_frame>> back in time, only timestamps before the last timestamp recorded in the MDIB from epoch 0 belong unambiguously to the new <<term_time_reference_frame>>.
+
+image::vol1-diagram-use-case-stad-ns-back.svg[align=center]
+
+When a device experiences several <<term_abrupt_time_adjustment>>s in a short period of time, the earliest timestamp unambiguously in the current <<term_time_reference_frame>> may be from an earlier <<term_epoch>>. 
+
+image::vol1-diagram-use-case-stad-ns-back-forth.svg[align=center]
+
+// This is to introduce versioning epochs. 
+.R1561
+[sdpi_requirement#r1561,sdpi_req_level=may]
+****
+The <<vol1_spec_sdpi_p_actor_somds_provider>> may indicate a <<term_timestamp>> belongs to a specific <<term_epoch>> using the SDPi epoch extension. 
+
+.Notes
+[NOTE]
+[%collapsible]
+====
+Binding timestamps in the <<acronym_mdib>> to a specific <<term_epoch>> may be useful for states that are not updated frequently. 
+
+====
+****
+
+.R1562
+[sdpi_requirement#r1562,sdpi_req_level=shall]
+****
+The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_consumer>> shall consider the risks arising from relying on <<term_timestamp>>s obtained from different <<term_epoch>>s.  
+
+.Notes
+[NOTE]
+[%collapsible]
+====
+It may not be possible to reliably determine the relationship between <<term_timestamp>> obtained from different <<term_epoch>>s without addition information regarding the cause of an <<term_abrupt_time_adjustment>>. Consider, for example, an <<term_abrupt_time_adjustment>> that arises when the <<term_system_clock>> was running significantly faster (or slower) than the <<term_reference_clock>>. The arithmetic difference in time between two events spanning the adjustment (even when combined with the size of the step adjustment) may not match the elapsed time experienced by an unbiased observer because time passed at different rates in the different epochs.  
+
+====
+****
+
+
+// This is for the sledge hammer approach. I can't figure out what a universal rule could be or how to communicate epoch changes
+// across MdibVersionGroup/@SequenceId since it seems that any information inside the MDS implicitly is scoped to the 
+// sequence id. 
+.R1566
+[sdpi_requirement#r1566,sdpi_req_level=shall]
+****
+The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_provider>> that changes the MDIB sequence identifier when it can no longer make <<term_smooth_time_adjustments>> to its <<term_time_reference_frame>> shall consider the risks arising from gaps in continuous data. 
+
+.Notes
+[NOTE]
+[%collapsible]
+====
+An abrupt time adjustment may indicate a serious error that impacts data that has already been:
+ 
+ * displayed on a chart to the user,
+ * exported to other systems.
+
+
+====
+****
+
+// This may be unnecessary as the device could fault at any time. However, perhaps it is useful as a way
+// to surface behaviours as part of conformity statements. And it emphasizes the myriad of problems with
+// time steps. 
+.R1569
+[sdpi_requirement#r1569,sdpi_req_level=may]
+****
+A <<vol1_spec_sdpi_p_actor_somds_participant>> may enter a fault state by, for example, setting the `MdsState/@ActivationState` to `Fail` following an <<term_abrupt_time_adjustment>> that it otherwise cannot recover from. 
+
+[NOTE]
+[%collapsible]
+====
+
+* A sudden change in a participant's time-reference frame may require intervention by the OPERATOR or RESPONSIBLE ORGANIZATION.  
+* A <<vol1_spec_sdpi_p_actor_somds_participant>> may continue delivery with a subset one or more of its nominal System Function Contribution (<<acronym_sfc>>) following an <<term_abrupt_time_adjustment>> reporting the activation state of components using `AbstractDeviceComponentState/@ActivationState`.
+
+====
+****
