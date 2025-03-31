@@ -12,7 +12,7 @@ The set of all localized text strings with their unique text reference and langu
 
 The following best practices are highly recommended when using *TEXT CATALOGS*:
 
-.Recommentation A
+.Recommendation A
 ****
 A <<actor_somds_provider>> that has implemented the *<<acronym_biceps>> LOCALIZATION SERVICE* is supposed to provide a unique *TEXT CATALOG* identifier in the *pm:MdsDescriptor+++<wbr/>+++/pm:ProductionSpecification* list with *pm:ProductionSpecification+++<wbr/>+++/pm:SpecType+++<wbr/>+++/@Code = 68008 (MDC_ATTR_VMS_MDS_TEXT_CAT)*.
 
