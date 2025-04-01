@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <msg:GetMdibResponse
         SequenceId="urn:uuid:09578906-7efd-43a7-8344-8bf37b674524"
+        MdibVersion="206" InstanceId="3044009875"
         xmlns:ext="http://standards.ieee.org/downloads/11073/11073-10207-2017/extension"
         xmlns:pm="http://standards.ieee.org/downloads/11073/11073-10207-2017/participant"
         xmlns:msg="http://standards.ieee.org/downloads/11073/11073-10207-2017/message"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns:sdpi="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1">
-    <msg:Mdib SequenceId="urn:uuid:09578906-7efd-43a7-8344-8bf37b674524">
+    <msg:Mdib SequenceId="urn:uuid:09578906-7efd-43a7-8344-8bf37b674524"
+              MdibVersion="206" InstanceId="3044009875">
         <pm:MdDescription>
             <pm:Mds Handle="mds0">
               <pm:Clock Handle="clk">
@@ -24,25 +26,37 @@
                     <pm:Type Code="67108871"/>
                     <pm:Unit Code="262656" />
                   </pm:Metric>
+                  <pm:Metric Handle="m3" MetricAvailability="Intr" MetricCategory="Msrmt">
+                    <pm:Type Code="67108871"/>
+                    <pm:Unit Code="262656" />
+                  </pm:Metric>
+                  <pm:Metric Handle="m4" MetricAvailability="Intr" MetricCategory="Msrmt">
+                    <pm:Type Code="67108871"/>
+                    <pm:Unit Code="262656" />
+                  </pm:Metric>
                 </pm:Channel>
               </pm:Vmd>
             </pm:Mds>
         </pm:MdDescription>
         <pm:MdState>
-          <pm:State LastSet="1733270400" DateAndTime="1733268600" DescriptorHandle="clk" StateVersion="15" RemoteSync="1" xsi:type="pm:ClockState">
+          <pm:State ActivationState="StndBy" LastSet="1733317200000" DateAndTime="1733328000000"
+                    DescriptorHandle="clk" StateVersion="15" RemoteSync="1" 
+                    xsi:type="pm:ClockState">
             <ext:Extension>
               <sdpi:Epochs Version="5">
-                <!-- non-slewing adjustment at 11 am -->
-                <sdpi:Epoch Version="4" Timestamp="1733270400" Offset="-PT3H" />
-                <!-- non-slewing adjustment at 7 am -->
-                <sdpi:Epoch Version="3" Timestamp="1733248800" Offset="PT4H" />
+                <!-- non-slewing adjustment at 1 pm (1733317200000) in Epoch 4 shifted time back 
+                     to 10 am starting epoch 5 (1733306400000) -->
+                <sdpi:Epoch Version="4" Timestamp="1733317200000" Offset="-PT3H"/>
+                <!-- non-slewing adjustment at 7 am (1733295600000) in epoch 3 shifted time 
+                     forward to 11 am starting epoch 4 (1733310000000) -->
+                <sdpi:Epoch Version="3" Timestamp="1733295600000" Offset="PT4H"/>
               </sdpi:Epochs>
             </ext:Extension>
           </pm:State>
         
           <pm:State DescriptorHandle="m1" xsi:type="pm:NumericMetricState" StateVersion="123">
-            <!-- determination time = 3 am, epoch 3 clock -->
-            <pm:MetricValue Value="0" DeterminationTime="1733238000" StartTime="1733237090" StopTime="1733237097">
+            <!-- determination time = 4 am, epoch 3 clock -->
+            <pm:MetricValue Value="0" DeterminationTime="1733284800000" StartTime="1733284799850" StopTime="1733284799950">
               <ext:Extension>
                 <sdpi:MetricEpoch Clock="clk" DeterminationTime="3" StartTime="3" StopTime="3" />
               </ext:Extension>
@@ -51,8 +65,28 @@
           </pm:State>
 
           <pm:State DescriptorHandle="m2" xsi:type="pm:NumericMetricState" StateVersion="321">
-            <!-- determination time = 12 am, epoch 4 clock -->
-            <pm:MetricValue Value="0" DeterminationTime="1733266800" >
+            <!-- determination time = 12 pm however, there is no sdpi:MetricEpoch version attached. 
+                 pm:MetricValue/@DeterminationTime is less than pm:State[xsi:type='pm:ClockState']/@LastSet
+                 so all we know is that this time may be from a different epoch. -->
+            <pm:MetricValue Value="0" DeterminationTime="1733270400000" >
+              <pm:MetricQuality Validity="Vld" Qi="1.00"/>
+            </pm:MetricValue>
+          </pm:State>
+
+          <pm:State DescriptorHandle="m3" xsi:type="pm:NumericMetricState" StateVersion="132">
+            <!-- determination time = 12 pm however, there is no sdpi:MetricEpoch version attached. 
+                 pm:MetricValue/@DeterminationTime is less than pm:State[xsi:type='pm:ClockState']/@LastSet
+                 so all we know is that this time may be from a different epoch. -->
+            <pm:MetricValue Value="0" DeterminationTime="1733270400000" >
+              <pm:MetricQuality Validity="Vld" Qi="1.00"/>
+            </pm:MetricValue>
+          </pm:State>
+
+          <pm:State DescriptorHandle="m4" xsi:type="pm:NumericMetricState" StateVersion="456">
+            <!-- determination time = 2 pm. Although there is no sdpi:MetricEpoch version attached,
+                 pm:MetricValue/@DeterminationTime is greater than pm:State[xsi:type='pm:ClockState']/@LastSet
+                 so we know is that this time is definitely in the current epoch. -->
+            <pm:MetricValue Value="0" DeterminationTime="1733320800000" >
               <pm:MetricQuality Validity="Vld" Qi="1.00"/>
             </pm:MetricValue>
           </pm:State>

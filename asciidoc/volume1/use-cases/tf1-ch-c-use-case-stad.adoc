@@ -316,8 +316,7 @@ NOTE: This requirement supplements TR1340 in <<ref_ieee_11073_10700_2022>>&mdash
 // It is necessary to have a version here for providers that don't use NTP clock-discipline to smoothly adjust clocks and just set the clock (hopefully not going back in time).
 // Using `ClockState/@LastSet` like this avoids having to extend everything that needs a timestamp to support versioning (because any timestamp in the MDIB before the LastSet
 // is questionable following a transition to a new epoch). Epoch versioning is then an extension that lets the consumer determine how questionable a timestamp is. 
-// If we have a `Epochs/@Current` and update `ClockState/@LastSet` I don't think we need to also include a "Questionable" flag or change `ClockState/@ActiviationState` as proposed
-// during the workshop. Using `ClockState/@LastSet` seems better than just changing the @Activation state because the consumer could determine which timestamps are questionable.
+
 .R1522
 [sdpi_requirement#r1522,sdpi_req_level=shall]
 ****
@@ -424,3 +423,13 @@ A <<vol1_spec_sdpi_p_actor_somds_participant>> may enter a fault state by, for e
 
 ====
 ****
+
+
+[#vol1_clause_appendix_c_use_case_stad_non_slew_received]
+===== Scenario: <<acronym_stad>> {var_use_case_id}.7 - A <<vol1_spec_sdpi_p_actor_somds_consumer>>, operational in the MD LAN network, receives data affected by a non-slewing time adjustment
+
+*Given* The <<vol1_spec_sdpi_p_actor_somds_consumer>> is operational on the <<acronym_md_lan>> network,
+
+*When* The <<vol1_spec_sdpi_p_actor_somds_consumer>> receives notifications and/or <<acronym_mdib>> state indicating a <<vol1_spec_sdpi_p_actor_somds_provider>> has made abrupt time adjustment to its device clock,
+
+*Then* The <<vol1_spec_sdpi_p_actor_somds_consumer>> will create a log entry...  

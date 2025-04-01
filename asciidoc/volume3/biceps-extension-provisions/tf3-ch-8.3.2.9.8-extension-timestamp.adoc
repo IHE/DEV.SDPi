@@ -26,15 +26,17 @@ R1520 excludes non-slewing adjustments (<<term_abrupt_time_adjustment>>s) to the
 
 ====
 
-The diagram below illustrates a sequence of state updates incorporating <<term_timestamp>>s from two different epochs. In the illustration, an <<term_abrupt_time_adjustment>> has shifted the device's <<term_time_reference_frame>> forward, creating (from the device's perspective) a gap in time. Timestamps obtained in epoch 0, before the required <<term_abrupt_time_adjustment>> was detected, may not be accurate (from the perspective of an unbiased observer). 
+The diagram below illustrates a sequence of state updates (`m1`, `m2`, `m3`, `m4`) using <<term_timestamp>>s from three different epochs (3, 4, 5). In the illustration, an <<term_abrupt_time_adjustment>> shifted the device's <<term_time_reference_frame>> forward by four hours from 7 am to 11 am, creating (from the device's perspective) a gap in time. A second <<term_abrupt_time_adjustment>> shifted the device's <<term_time_reference_frame>> backward three hours from 1 pm to 10 am. The device experienced three <<term_abrupt_time_adjustment>>s in the past (because the first epoch version is 0).
 
 image::vol3-diagram-biceps-ext-non-slewing_time.svg[align=center]
+
+NOTE: The <<term_abrupt_time_adjustment>>s serve to illustrate the extension only; it would be very unusual for a device to experience the time adjustments shown. 
 
 A <<vol1_spec_sdpi_p_actor_somds_provider>> may start a new MDIB versioning sequence when it encounters an <<term_abrupt_time_adjustment>>. However, this may disrupt one or more System Function Contributions (<<acronym_sfc>>) by the <<vol1_spec_sdpi_p_actor_somds_provider>> or its <<acronym_somds>> peers. 
 
 NOTE: A <<vol1_spec_sdpi_p_actor_somds_provider>> is not required to create a new MDIB versioning sequence when it encounters an <<term_abrupt_time_adjustment>> (see <<r1522>>).
 
-This specification adds an extension to the BICEPS Participant Model enabling richer communication of changes to the <<vol1_spec_sdpi_p_actor_somds_participant>>'s local time-reference frame using:
+This specification adds an extension to the BICEPS Participant Model enabling richer communication of changes to the <<vol1_spec_sdpi_p_actor_somds_participant>>'s local time-reference frame using a combination of:
 
 * epoch versioning,
 * optional epoch time-step offsets,
@@ -56,22 +58,32 @@ Biceps extensions, with timestamps who's interpretation by a <<vol1_spec_sdpi_p_
 
 ****
 
-
-
-
 [sdpi_level=+1]
 ====== Model
 
-The clock epoch schema is available in <<vol3_appendix_a_xml_schemas_timestamp_version>>. <<vol3_example_extension_clock_discontinuities>> shows an exemplary XML instance of a <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> from a device that has experienced two recent <<term_abrupt_time_adjustment>>s following three adjustments some time in the past. Of particular note:
+The clock epoch schema is available in <<vol3_appendix_a_xml_schemas_timestamp_version>>. There are three parts to the extension:
 
-* the clock state includes epoch time-step offsets for epochs 3 and 4; earlier versions are not referenced and therefore not required,
-* the state for metric `m1` references epoch version 3; all timestamps in this state are versioned,
-* the timestamp for metric `m2` is not versioned; its timestamp is less than `pm:ClockState/@LastSet` and its value should be treated with greater suspicion than later timestamps, 
-* although the current time (`pm:ClockState/@DateAndTime`) is also less than `pm:ClockState/@LastSet`, the current time is always reported using with <<term_timestamp>> from the current <<term_epoch>>; its value need not be treated with any more suspicion than normal,
-* each `sdpi:Epoch` includes a `@Version`, `@Timestamp` and `@Offset`; the <<term_timestamp>> is from the versioned <<term_epoch>>, adding the `@Timestamp` and `@Offset` provides a timestamp for an equivalent point in time for the next epoch version (see illustration below),
-* the default value of any timestamp not specifically versioned is the current <<term_epoch>> version. 
+. `sdpi:EpochSupport`, an extension for `pm:ClockDescriptor` so that <<vol1_spec_sdpi_p_actor_somds_consumer>>s are aware that a <<vol1_spec_sdpi_p_actor_somds_provider>> implements this extension and may prepare to receive versioned timestamps. 
+. `sdpi:Epochs`, an extension for `pm:ClockState`, which contains a list of the <<term_epoch>>s referenced in the <<acronym_mdib>>.
+. extensions to (optionally) attach epoch versions to `pm:AbstractState` timestamps found in `pm:CalibrationInfo`, `pm:AlertSystemState`, `pm:AlertConditionState`, `pm:AbstractMetricValue`, `pm:AbstractContextState`. 
 
-`sdpi:Epoch/@Offset` gives the change in time from the `sdpi:Epoch/@Timestamp` in the previous <<term_epoch>> to an equivalent point in time in the new epoch: 
+In addition, this extension defines specific interpretation for `pm:ClockState/@ActivationState` and `pm:ClockState/@LastSet`. The `pm:ClockState/@ActivationState` is set to `StndBy` when any timestamp in a <<acronym_mdib>> version was not obtained from the current <<term_epoch>> regardless of whether that timestamp is versioned or not. This lets consumers know they may not be able to trust some or all of the timestamps in a <<acronym_mdib>> even if they don't understand this extension. To identify which timestamps are unreliable, `pm:ClockState/@LastSet` is set to the earliest reliable timestamp. That is, the earliest timestamp in a <<acronym_mdib>> version that is guaranteed to be in the current <<term_epoch>> considering the entire history of <<term_abrupt_time_adjustment>>s. It may be used to determine if a timestamp is reliable, even if it is not versioned. 
+
+<<vol3_example_extension_clock_discontinuities>> shows an exemplary XML instance of a <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> from a device that has experienced two recent <<term_abrupt_time_adjustment>>s following three adjustments some time in the past. It corresponds to the sequence of events in the diagram above. Of particular note:
+
+* the provider supports this version of the timestamp versioning extension because the `pm:Clock` descriptor includes `sdpi:EpochSupport/[@Version='1']`. 
+* in `pm:State[@xsi:type='pm:ClockState']`:
+** `@ActivationState` is `StndBy` because the mdib contains timestamps that were not obtained from the current epoch (that is, `@DeterminationTime` for `m1` and `m2`),
+** `@LastSet` shows any timestamp less than "1733317200000" (1 p.m.) may not be from the current epoch,
+** `@DateAndTime` shows this mdib snapshot was created at "1733324400000" (3 p.m.),
+** `sdpi:Epochs[@Version='5']` indicates the current epoch is 5,
+** `sdpi:Epochs/Epoch` shows timestamps from epochs 4 and 3 may be used in the mdib; earlier versions are not included because they are not referenced in the mdib. The `@Timestamp` on, for example, epoch 4 records the time (in the epoch 4 <<term_time_reference_frame>> when the abrupt time adjustment was made; the equivalent time in epoch 5, the next <<term_time_reference_frame>>, can be determined by adding the `@Offset` to the `@Timestamp`).
+* `pm:State[@DescriptorHandle='m1']` includes three timestamps (`DeterminationTime`, `StartTime` and `StopTime`); all were created in epoch 3.
+* `pm:State[@DescriptorHandle='m2']` includes a single timestamp (`DeterminationTime`); it doesn't contain a specific epoch version however, the `DeterminationTime` is less than `pm:State[xsi:type='pm:ClockState']/@LastSet` so the timestamp _may_ be from an earlier epoch (and, as the diagram shows, `m2` was determined in epoch 4. However, the provider has decided not to provide that information, perhaps because this metric is regularly updated and a new value will be reported soon). 
+* `pm:State[@DescriptorHandle='m3']` also includes a single timestamp (`DeterminationTime`); it doesn't contain a specific epoch version however, the `DeterminationTime` is less than `pm:State[xsi:type='pm:ClockState']/@LastSet` so the timestamp _may_ be from an earlier epoch (in this case, as the diagram shows, `m3` was determined in the current epoch. However, the provider has decided not to provide that information, perhaps because this metric is regularly updated and a new value will be reported soon). 
+* `pm:State[@DescriptorHandle='m4']` also includes a single timestamp (`DeterminationTime`); again without an epoch version. However, the `DeterminationTime` is greater than `pm:State[xsi:type='pm:ClockState']/@LastSet` so the timestamp is from the current epoch.  
+
+`sdpi:Epoch/@Offset` gives the change in time from the `sdpi:Epoch/@Timestamp` in the previous <<term_epoch>> to an equivalent point in time in the new epoch as shown in the diagram below.
 
 image::vol3-diagram-biceps-ext-non-slewing_adj.svg[align=center]
 
@@ -151,6 +163,20 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> that versions timestamps in any `pm:
 ====
 * Epoch offsets provide a mechanism for consumers to (approximately) reconstruct time between epochs. Reconstruction can only be approximate because there is no mechanism to determine the source and timing of any external discrepancies that led to the abrupt change in a <<term_time_reference_frame>>. 
 * This allows a <<vol1_spec_sdpi_p_actor_somds_provider>> to choose which timestamps it versions. For example context binding timestamps (which may remain out of date significantly longer than other metrics) could be versioned but regularly updated metrics may not require timestamp versions. 
+
+====
+****
+
+.R0611
+[sdpi_requirement#r0611,sdpi_req_level=shall]
+****
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall not change the epoch version assigned to a timestamp without creating a new timestamp. 
+
+.Notes
+[NOTE]
+[%collapsible]
+====
+* Epoch versions and timestamps are immutable and may not change independently. 
 
 ====
 ****
