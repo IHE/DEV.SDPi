@@ -27,6 +27,7 @@ Each section shall contain a list of action items of the following format: `<bri
 - Clarification in definition of SOMDS Provider UID ([#378](https://github.com/IHE/DEV.SDPi/issues/378))
 - Further reasons for security technology variation ([#381](https://github.com/IHE/DEV.SDPi/issues/381))
 - Clarification of rationale for discontinuous section numbering ([#364](https://github.com/IHE/DEV.SDPi/issues/364))
+- Clarification of status of open Issues and Topics of Interest ([#374](https://github.com/IHE/DEV.SDPi/issues/374))
 
 ## [2.0.0] - 2024-12-13
 
