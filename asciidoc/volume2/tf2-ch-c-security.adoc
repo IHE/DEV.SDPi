@@ -1,4 +1,4 @@
-[appendix#vol2_appendix_b_security_management,sdpi_offset=C]
+[appendix#vol2_appendix_c_security_management,sdpi_offset=C]
 == Security Management (Normative)
 
 //NOTE: This file integrates all the Volume 2 / Appendix C Secrity Management background discussions, profiling and examples. +
