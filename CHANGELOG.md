@@ -19,6 +19,7 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Changes
 - Removed "and ignore" from BICEPS Content Consumer requirement ([#380](https://github.com/IHE/DEV.SDPi/issues/380))
+- Added new section "Unique Localized Text Catalog Identification" to volume 3 ([#256](https://github.com/IHE/DEV.SDPi/issues/256))
 ### Editorial Fixes
 - Corrected typos and grammar ([#363](https://github.com/IHE/DEV.SDPi/issues/363))
 ### Added
