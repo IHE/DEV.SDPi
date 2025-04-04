@@ -19,6 +19,7 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Changes
 - Removed "and ignore" from BICEPS Content Consumer requirement ([#380](https://github.com/IHE/DEV.SDPi/issues/380))
+- Rephrased notes, mostly to correct and maintain references to SDPi versions ([#366](https://github.com/IHE/DEV.SDPi/issues/366))
 ### Editorial Fixes
 - Corrected typos and grammar ([#363](https://github.com/IHE/DEV.SDPi/issues/363))
 - Changed order of subsections in 1:11.1, 1:12.1 and 1:13.1 ([365](https://github.com/IHE/DEV.SDPi/issues/365))

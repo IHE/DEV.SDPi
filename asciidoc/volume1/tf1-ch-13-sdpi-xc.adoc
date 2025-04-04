@@ -48,26 +48,26 @@ image::../images/vol1-diagram-sdpi-xc-actor.svg[]
 .^| <<transaction_name_manage_medical_external_control>> (_deferred_)
 .^| Responder
 .^| R
-| [DEV-44] Deferred to SDPi 3.0 or later
+| [DEV-44] Deferred to a future version of SDPi
 // <<vol2_clause_dev_44>>
 
 | <<transaction_name_invoke_medical_control_services>> (_deferred_)
 | Responder
 | R
-| [DEV-45] Deferred to SDPi 3.0 or later
+| [DEV-45] Deferred to a future version of SDPi
 // <<vol2_clause_dev_45>>
 
 .2+| <<vol1_spec_sdpi_xc_actor_somds_medical_control_consumer>>
 .^| <<transaction_name_manage_medical_external_control>> (_deferred_)
 .^| Initiator
 .^| R
-| [DEV-44] Deferred to SDPi 3.0 or later
+| [DEV-44] Deferred to a future version of SDPi
 // <<vol2_clause_dev_44>>
 
 | <<transaction_name_invoke_medical_control_services>> (_deferred_)
 | Initiator
 | R
-| [DEV-45] Deferred to SDPi 3.0 or later
+| [DEV-45] Deferred to a future version of SDPi
 // <<vol2_clause_dev_45>>
 
 |===
