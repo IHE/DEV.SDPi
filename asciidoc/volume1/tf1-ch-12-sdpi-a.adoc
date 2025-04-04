@@ -93,19 +93,19 @@ image::../images/vol1-diagram-sdpi-a-actor.svg[]
 | <<transaction_name_manage_medical_alert_delegation>> (_deferred_)
 | Responder
 | R ^(See^ ^Note^ ^1)^
-| [DEV-41] Deferred to SDPi 2.0
+| [DEV-41] Deferred to a future version of SDPi
 // <<vol2_clause_dev_41>>
 
 | <<transaction_name_delegate_medical_alert>> (_deferred_)
 | Initiator
 | R ^(See^ ^Note^ ^1)^
-| [DEV-42] Deferred to SDPi 2.0
+| [DEV-42] Deferred to a future version of SDPi
 // <<vol2_clause_dev_42>>
 
 | <<transaction_name_update_alert_acknowledgement_status>> (_deferred_)
 | Responder
 | R
-| [DEV-43] Deferred to SDPi 2.0
+| [DEV-43] Deferred to a future version of SDPi
 // <<vol2_clause_dev_43>>
 
 .6+| <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>
@@ -127,19 +127,19 @@ image::../images/vol1-diagram-sdpi-a-actor.svg[]
 | <<transaction_name_manage_medical_alert_delegation>> (_deferred_)
 | Initiator
 | R ^(See^ ^Note^ ^1)^
-| [DEV-41] Deferred to SDPi 2.0
+| [DEV-41] Deferred to a future version of SDPi
 // <<vol2_clause_dev_41>>
 
 | <<transaction_name_delegate_medical_alert>> (_deferred_)
 | Responder
 | R ^(See^ ^Note^ ^1)^
-| [DEV-42] Deferred to SDPi 2.0
+| [DEV-42] Deferred to a future version of SDPi
 // <<vol2_clause_dev_42>>
 
 | <<transaction_name_update_alert_acknowledgement_status>> (_deferred_)
 | Initiator
 | R
-| [DEV-43] Deferred to SDPi 2.0
+| [DEV-43] Deferred to a future version of SDPi
 // <<vol2_clause_dev_43>>
 
 .4+| <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> ^(See^ ^Note^ ^2)^
@@ -161,7 +161,7 @@ image::../images/vol1-diagram-sdpi-a-actor.svg[]
 | <<transaction_name_update_alert_acknowledgement_status>> (_deferred_)
 | Initiator
 | O
-| [DEV-43] Deferred to SDPi 2.0
+| [DEV-43] Deferred to a future version of SDPi
 // <<vol2_clause_dev_43>>
 
 5+<|
