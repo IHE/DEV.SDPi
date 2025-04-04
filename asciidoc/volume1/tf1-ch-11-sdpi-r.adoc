@@ -135,21 +135,6 @@ TODO:
 include::../plantuml/vol1-figure-sdpi-r-example-sequence-diagram.puml[]
 ....
 
-[#vol1_clause_sdpi_r_somds_medical_data_consumer]
-===== SOMDS Medical Data Consumer
-[#vol1_spec_sdpi_r_actor_somds_medical_data_consumer, reftext='SOMDS Medical Data Consumer']
-Actor Summary Definition:
-[none]
-. A <<vol1_spec_sdpi_p_actor_somds_consumer>> grouped actor that receives medical data from a <<vol1_spec_sdpi_p_actor_somds_provider>>.
-
-This actor is designed to process information with an _intended medical purpose_, and thus will fully address applicable requirements from the core <<acronym_sdc>> standards (<<ref_ieee_11073_10207_2017>> and <<ref_ieee_11073_20701_2018>>), as well as the <<acronym_pkp>> standards (<<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>>).
-
-Every <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_consumer>> to enable <<acronym_somds>>-based connectivity.
-This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_consumer>>.
-Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_r_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_clause_sdpi_p_profile_reftext>>.
-
-A system that participates in a <<acronym_somds>> network instance can integrate both <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> and <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> capabilities.
-
 [#vol1_clause_sdpi_r_somds_medical_data_provider]
 ===== SOMDS Medical Data Provider
 [#vol1_spec_sdpi_r_actor_somds_medical_data_provider, reftext='SOMDS Medical Data Provider']
@@ -164,6 +149,21 @@ This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_
 Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_r_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_provider>> and <<vol1_clause_sdpi_p_profile_reftext>>.
 
 A system that participates in a <<acronym_somds>> network instance can integrate both <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> and <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> capabilities.
+
+[#vol1_clause_sdpi_r_somds_medical_data_consumer]
+===== SOMDS Medical Data Consumer
+[#vol1_spec_sdpi_r_actor_somds_medical_data_consumer, reftext='SOMDS Medical Data Consumer']
+Actor Summary Definition:
+[none]
+. A <<vol1_spec_sdpi_p_actor_somds_consumer>> grouped actor that receives medical data from a <<vol1_spec_sdpi_p_actor_somds_provider>>.
+
+This actor is designed to process information with an _intended medical purpose_, and thus will fully address applicable requirements from the core <<acronym_sdc>> standards (<<ref_ieee_11073_10207_2017>> and <<ref_ieee_11073_20701_2018>>), as well as the <<acronym_pkp>> standards (<<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>>).
+
+Every <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_consumer>> to enable <<acronym_somds>>-based connectivity.
+This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_consumer>>.
+Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_r_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_clause_sdpi_p_profile_reftext>>.
+
+A system that participates in a <<acronym_somds>> network instance can integrate both <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> and <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> capabilities.
 
 [#vol1_clause_sdpi_r_somds_dec_gateway]
 ===== SOMDS DEC Gateway

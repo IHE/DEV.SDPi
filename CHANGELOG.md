@@ -20,11 +20,17 @@ Each section shall contain a list of action items of the following format: `<bri
 ### Changes
 - Removed "and ignore" from BICEPS Content Consumer requirement ([#380](https://github.com/IHE/DEV.SDPi/issues/380))
 - Added new section "Unique Localized Text Catalog Identification" to volume 3 ([#256](https://github.com/IHE/DEV.SDPi/issues/256))
+- Rephrased notes, mostly to correct and maintain references to SDPi versions ([#366](https://github.com/IHE/DEV.SDPi/issues/366))
 ### Editorial Fixes
 - Corrected typos and grammar ([#363](https://github.com/IHE/DEV.SDPi/issues/363))
+- Changed order of subsections in 1:11.1, 1:12.1 and 1:13.1 ([365](https://github.com/IHE/DEV.SDPi/issues/365))
 ### Added
-- Add TF-2C for Security Management Appendix (basic, with little initial content)  ([#250](https://github.com/IHE/DEV.SDPi/issues/250))
+- TF-2C for Security Management Appendix (basic, with little initial content)  ([#250](https://github.com/IHE/DEV.SDPi/issues/250))
 - Clarification in definition of SOMDS Provider UID ([#378](https://github.com/IHE/DEV.SDPi/issues/378))
+- Further reasons for security technology variation ([#381](https://github.com/IHE/DEV.SDPi/issues/381))
+- Clarification of rationale for discontinuous section numbering ([#364](https://github.com/IHE/DEV.SDPi/issues/364))
+- Clarification of status of open Issues and Topics of Interest ([#374](https://github.com/IHE/DEV.SDPi/issues/374))
+- Clarification of TLS 1.2 versus TLS 1.3 usage ([#377](https://github.com/IHE/DEV.SDPi/issues/377))
 
 ## [2.0.0] - 2024-12-13
 

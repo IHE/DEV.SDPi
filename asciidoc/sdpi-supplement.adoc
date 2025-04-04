@@ -93,6 +93,8 @@ This is a supplement to the IHE Devices Technical Framework. Each supplement und
 
 This supplement is published on {ihe_supplement_sdpi_publication_month} for Trial Implementation and may be available for testing at subsequent IHE Connectathons. The supplement may be amended based on the results of testing. Following successful testing it will be incorporated into the Devices Technical Framework. Comments are invited and can be submitted at https://www.ihe.net/DEV_Public_Comments/[Devices Public Comments] or by submitting a https://github.com/IHE/DEV.SDPi/issues/new/choose[GitHub Issue].
 
+Some section numbers are skipped in this supplement because it is designed for later incorporation into the Devices Technical Framework. Skipped section numbers are present in the Devices Technical Framework, and will not require changes due to the incorporation of this supplement.
+
 This supplement describes changes to the existing technical framework documents.
 
 “Boxed” instructions like the sample below indicate to the Volume Editor how to integrate the relevant section(s) into the relevant Technical Framework volume.

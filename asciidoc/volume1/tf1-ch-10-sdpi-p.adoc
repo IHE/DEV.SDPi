@@ -88,7 +88,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | <<transaction_name_discover_system_context_and_capabilities>> (_deferred_)
 | Responder
 | R
-| Deferred to SDPi 1.x
+| Deferred to a future version of SDPi
 // <<vol2_clause_dev_26>>
 
 | <<transaction_name_manage_biceps_subscription>>
@@ -114,21 +114,21 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | <<transaction_name_set_provider_state>> (_deferred_)
 | Responder
 | O
-| Deferred to SDPi-xC
+| Deferred to a future version of SDPi
 // <<vol2_clause_dev_31>>
 
 
 | <<transaction_name_retrieve_archive_data>>  (_deferred_)
 | Responder
 | O
-| Deferred to SDPi 1.x
+| Deferred to a future version of SDPi
 // <<vol2_clause_dev_32>>
 
 
 | <<transaction_name_retrieve_localization_information>>
 | Responder
 | O
-| Deferred to SDPi 1.x
+| Deferred to a future version of SDPi
 // <<vol2_clause_dev_33>>
 
 
@@ -161,7 +161,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | <<transaction_name_discover_system_context_and_capabilities>> (_deferred_)
 | Initiator
 | R
-| Deferred to SDPi 1.x
+| Deferred to a future version of SDPi
 // <<vol2_clause_dev_26>>
 
 
@@ -188,21 +188,21 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | <<transaction_name_set_provider_state>> (_deferred_)
 | Initiator
 | O
-| Deferred to SDPi-xC
+| Deferred to a future version of SDPi
 // <<vol2_clause_dev_31>>
 
 
 | <<transaction_name_retrieve_archive_data>>  (_deferred_)
 | Initiator
 | O
-| Deferred to SDPi 1.x
+| Deferred to a future version of SDPi
 // <<vol2_clause_dev_32>>
 
 
 | <<transaction_name_retrieve_localization_information>>
 | Initiator
 | O
-| Deferred to SDPi 1.x
+| Deferred to a future version of SDPi
 // <<vol2_clause_dev_33>>
 
 
@@ -1068,11 +1068,13 @@ Additional effectiveness requirements or considerations are identified for this 
 
 ==== Security Requirements & Considerations
 Security is foundational for all interactions between <<vol1_spec_sdpi_p_actor_somds_participant>> Actors, with a clear distinction being made between information that may be exchanged outside of a secure connection (e.g., during network discovery transactions).
-Specific security technologies may vary based on the implementation technology being used, and will be detailed in the appropriate TF-2 technology specifications.
+Specific security technologies may vary based on jurisdictional requirements, regulations and the implementation technology, and will be detailed in the appropriate TF-2 technology specifications.
 All transactions indicate whether they require secure or unsecured connections.
 
 For the default <<acronym_sdpi_p>> connectivity technology, namely ISO/IEEE 11073 <<term_service_oriented_device_connectivity>>, TLS 1.2 (or later versions) support is required (See <<ref_ieee_11073_20701_2018>> and <<ref_ieee_11073_20702_2016>>).
-Additional information and requirements may be provided in <<vol2_appendix_a_mdpws_messages>>.
+Additional information and requirements may be provided in <<vol2_appendix_c_security_management>> or <<vol2_appendix_a_mdpws_messages>>.
+
+NOTE: TLS 1.2 is not sufficient for all types of connectivity (e.g., cloud, remote programming, etc.), and it has reported cypher-suite weaknesses. TLS 1.3 may be hence required depending on the risk associated with the device.
 
 
 [#vol1_clause_sdpi_p_cross_profile_considerations]
