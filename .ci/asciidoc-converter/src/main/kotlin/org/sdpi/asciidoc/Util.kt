@@ -56,6 +56,16 @@ fun StructuralNode.isAppendix() = when (val section = this.toSealed()) {
     else -> false
 }
 
+fun parseRequirementNumber(strRequirement: String): Int? {
+    val requirementParser = "^r(\\d+)$".toRegex()
+    val matchResults = requirementParser.findAll(strRequirement)
+    if (matchResults.any()) {
+        return matchResults.map { it.groupValues[1] }.toList().first().toInt()
+    }
+
+    return null
+}
+
 /**
  * Takes a string and converts it to a [RequirementLevel] enum.
  *
@@ -63,4 +73,23 @@ fun StructuralNode.isAppendix() = when (val section = this.toSealed()) {
  *
  * @return the [RequirementLevel] enum or null if the conversion failed (raw was not shall, should or may).
  */
-fun resolveRequirementLevel(raw: String) = RequirementLevel.values().firstOrNull { it.keyword == raw }
+fun resolveRequirementLevel(raw: String) = RequirementLevel.entries.firstOrNull { it.keyword == raw }
+
+/**
+ * Converts an object, typically from an attribute map, into
+ * a list of groups.
+ */
+fun getRequirementGroups(oGroups: Any?): List<String> {
+    if (oGroups == null) {
+        return listOf()
+    }
+    return oGroups.toString().split(",")
+}
+
+fun getLocation(block: StructuralNode): String {
+    return if (block.sourceLocation != null) {
+        "${block.sourceLocation.path}:${block.sourceLocation.lineNumber}"
+    } else {
+        "";
+    }
+}
