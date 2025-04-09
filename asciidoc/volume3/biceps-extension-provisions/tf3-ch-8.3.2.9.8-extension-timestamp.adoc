@@ -22,7 +22,7 @@ The presence of <<term_abrupt_time_adjustment>> creates <<term_epoch>>s of consi
 
 [NOTE]
 ====
-R1520 excludes non-slewing adjustments (<<term_abrupt_time_adjustment>>s) to the <<acronym_ts_service>> by the RESPONSIBLE ORGANIZATION during normal operation. 
+<<r1520,R1520>> excludes non-slewing adjustments (<<term_abrupt_time_adjustment>>s) to the <<acronym_ts_service>> by the RESPONSIBLE ORGANIZATION during normal operation. 
 
 ====
 
@@ -42,21 +42,9 @@ This specification adds an extension to the BICEPS Participant Model enabling ri
 * optional epoch time-step offsets,
 * optional versioning of `pm:CalibrationInfo/@Time`, `pm:AlertSystemState/@LastSelfCheck`, `pm:AlertConditionState/@DeterminationTime`, `pm:AbstractMetricValue/@StartTime`, `pm:AbstractMetricValue/@StopTime`, `pm:AbstractMetricValue/@DeterminationTime`, `pm:AbstractContextState/@BindingStartTime` and `pm:AbstractContextState/@BindingEndTime`. 
 
-Other Biceps extensions may provide similar mechanisms to version appropriate timestamps. Refer to the extension documentation and schema for details. 
+Other Biceps extensions should provide similar mechanisms to version appropriate timestamps (<<r0021,R0021>>). Refer to the extension documentation and schema for details. 
 
-.R0615
-[sdpi_requirement#r0615,sdpi_req_level=should]
-****
-Biceps extensions, with timestamps who's interpretation by a <<vol1_spec_sdpi_p_actor_somds_participant>> would be affected by unexpected abrupt time adjustments, should support timestamp versioning using this extension. 
 
-.Notes
-[NOTE]
-[%collapsible]
-====
-* Extension authors can add types that inherit from `sdpi:TimestampEpochVersionType` to support versioning their timestamps. 
-====
-
-****
 
 [sdpi_level=+1]
 ====== Model

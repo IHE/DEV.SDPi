@@ -50,3 +50,22 @@ In order to strengthen interoperability and avoid leaky abstraction, <<r0020>> p
 ****
 A <<vol1_spec_sdpi_p_actor_somds_participant>> shall not provide BICEPS extensions that are based on or use the XML Schema QName type.
 ****
+
+[#vol3_clause_extension_timestamp_versioning, sdpi_level=+1]
+====== Timestamp versioning
+
+The <<vol3_clause_timestamp_versioning, timestamp versioning>> extension provides mechanisms to relate `pm:Timestamp` to <<term_epoch>>s created by <<term_abrupt_time_adjustment>>s. 
+
+.R0021
+[sdpi_requirement#r0021,sdpi_req_level=should]
+****
+Biceps extensions, with timestamps who's interpretation by a <<vol1_spec_sdpi_p_actor_somds_participant>> would be affected by unexpected abrupt time adjustments, should support timestamp versioning using the <<vol3_clause_timestamp_versioning, timestamp versioning>> extension. 
+
+.Notes
+[NOTE]
+[%collapsible]
+====
+* Extension authors can add types that inherit from `sdpi:TimestampEpochVersionType` to support versioning their timestamps. 
+====
+
+****
