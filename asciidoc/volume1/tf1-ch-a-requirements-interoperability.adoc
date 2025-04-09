@@ -123,8 +123,10 @@ NOTE: This section includes guidance and requirements that are focused on unique
 No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 ==== Security Requirements & Considerations
-NOTE: This section includes guidance and requirements that are focused on unique *_Security_* requirements associated with associated technical framework element.
+NOTE: This section includes guidance and requirements that are focused on unique *_Security_* requirements related to the associated technical framework element.
 In the context of risk management key properties, security is a state where information and systems are protected from unauthorized activities to a degree that the related risks to confidentiality, integrity, and availability are maintained at an acceptable level throughout the lifecycle (see https://81001.org/concept/security[81001.org/security])
+
+General security guidance is provided in  <<vol2_appendix_c_security_management>> Security Management.
 
 No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P profile, and those specified in the _<<acronym_ses>> General Considerations_ Section above.
 

@@ -17,14 +17,14 @@
 :source-highlighter: highlight.js
 :highlightjsdir: js/highlight
 
-:sdpi_milestone_publication: SDPi 1.4 Publication
-:sdpi_milestone_review: SDPi 1.4 Review
+:sdpi_milestone_publication: SDPi 2.0 Publication
+:sdpi_milestone_review: SDPi 2.0 Review
 
-:ihe_supplement_sdpi_revision: 1.4.1
-:ihe_supplement_sdpi_revision_short: 1.4
+:ihe_supplement_sdpi_revision: 2.0.0
+:ihe_supplement_sdpi_revision_short: 2.0
 :ihe_supplement_sdpi_revision_date: {localdatetime}
 :ihe_supplement_sdpi_revision_label: Standard for Trial Use / Implementation
-:ihe_supplement_sdpi_publication_month: October 7, 2024
+:ihe_supplement_sdpi_publication_month: December 13, 2024
 :ihe_supplement_sdpi_public_comment_submission_deadline: N/A
 
 {empty} +
@@ -92,6 +92,8 @@ Product developers are encouraged to use the standard, recognizing the potential
 This is a supplement to the IHE Devices Technical Framework. Each supplement undergoes a process of public comment and trial implementation before being incorporated into the volumes of the Technical Frameworks.
 
 This supplement is published on {ihe_supplement_sdpi_publication_month} for Trial Implementation and may be available for testing at subsequent IHE Connectathons. The supplement may be amended based on the results of testing. Following successful testing it will be incorporated into the Devices Technical Framework. Comments are invited and can be submitted at https://www.ihe.net/DEV_Public_Comments/[Devices Public Comments] or by submitting a https://github.com/IHE/DEV.SDPi/issues/new/choose[GitHub Issue].
+
+Some section numbers are skipped in this supplement because it is designed for later incorporation into the Devices Technical Framework. Skipped section numbers are present in the Devices Technical Framework, and will not require changes due to the incorporation of this supplement.
 
 This supplement describes changes to the existing technical framework documents.
 

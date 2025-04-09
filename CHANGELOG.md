@@ -8,18 +8,41 @@ and this project adheres to the following versioning scheme describe in the [SDP
 ## Modifications to the Keep a Changelog format
 
 The SDPi changelog shall not contain the following sections
-   - Deprecated
-   - Security
+ 
+- Deprecated
+- Security
 
 Each section shall contain a list of action items of the following format: `<brief one-sentence description of what has been done> (#<issue number & URL>).`
 
 ## [Unreleased]
+
+
+### Changes
+- Removed "and ignore" from BICEPS Content Consumer requirement ([#380](https://github.com/IHE/DEV.SDPi/issues/380))
+- Added new section "Unique Localized Text Catalog Identification" to volume 3 ([#256](https://github.com/IHE/DEV.SDPi/issues/256))
+- Rephrased notes, mostly to correct and maintain references to SDPi versions ([#366](https://github.com/IHE/DEV.SDPi/issues/366))
+### Editorial Fixes
+- Corrected typos and grammar ([#363](https://github.com/IHE/DEV.SDPi/issues/363))
+- Changed order of subsections in 1:11.1, 1:12.1 and 1:13.1 ([365](https://github.com/IHE/DEV.SDPi/issues/365))
+### Added
+- TF-2C for Security Management Appendix (basic, with little initial content)  ([#250](https://github.com/IHE/DEV.SDPi/issues/250))
+- Clarification in definition of SOMDS Provider UID ([#378](https://github.com/IHE/DEV.SDPi/issues/378))
+- Further reasons for security technology variation ([#381](https://github.com/IHE/DEV.SDPi/issues/381))
+- Clarification of rationale for discontinuous section numbering ([#364](https://github.com/IHE/DEV.SDPi/issues/364))
+- Clarification of status of open Issues and Topics of Interest ([#374](https://github.com/IHE/DEV.SDPi/issues/374))
+- Clarification of TLS 1.2 versus TLS 1.3 usage ([#377](https://github.com/IHE/DEV.SDPi/issues/377))
+
+## [2.0.0] - 2024-12-13
 
 ### Changes
 - Fixed action URN in waveform stream example ([#292](https://github.com/IHE/DEV.SDPi/issues/292))
 - Clarified intentionality of difference between ad-hoc and managed discovery ([#317](https://github.com/IHE/DEV.SDPi/issues/317))
 - Clarified FHIR Gateway support for multiple paradigms ([#264](https://github.com/IHE/DEV.SDPi/issues/264))
 - Clarified that the SES sections are not comprehensive for risk management ([#271](https://github.com/IHE/DEV.SDPi/issues/271))
+- Bibliography note added indicating the rationale for the subcategories ([#266](https://github.com/IHE/DEV.SDPi/issues/266))
+- SDPi Use Case Approach explanatory text added to start of supplement ([#263](https://github.com/IHE/DEV.SDPi/issues/263))
+
+- Enhanced explanation of SOA aspects of the SDC/SDPi specification (HL7 Ballot) ([#276](https://github.com/IHE/DEV.SDPi/issues/276))
 
 ### Editorial Fixes
 - Added deprecation notice for three requirements due to expected impact of BICEPS standard corrigendum ([#334](https://github.com/IHE/DEV.SDPi/issues/334))
@@ -28,7 +51,10 @@ Each section shall contain a list of action items of the following format: `<bri
 - Corrected some entries in "1:B.1 Referenced Standards" for consistency ([#267](https://github.com/IHE/DEV.SDPi/issues/267))
 - Commented out concept sections 1:10.4.1.3 thru 1:10.4.1.10 and minimized referencing to years for improving readability ([#268](https://github.com/IHE/DEV.SDPi/issues/268))
 - Removed TBD statements from Table A-1 ([#273](https://github.com/IHE/DEV.SDPi/issues/273))
+- Updated per IHE Style Conventions for numbers-in-text, em dashes, punctuation marks, etc. ([#269](https://github.com/IHE/DEV.SDPi/issues/269))
 
+### Added
+- Added SDPi FHIR Gateway ([#252](https://github.com/IHE/DEV.SDPi/issues/252))
 
 ## [1.4.1] - 2024-10-04
 

@@ -326,7 +326,7 @@ elements, from requirements to system components to Verification & Validation te
 | SDC
 
 | [[term_service_oriented_device_poc_interoperability,Service-oriented Device Point of Care Interoperability (SDPi)]] Service-oriented Device Point of Care Interoperability
-| A set of (4) IHE specifications that profile the <<acronym_sdc>> standards for device-to-device plug-and-play interoperability.
+| A set of four IHE specifications that profile the <<acronym_sdc>> standards for device-to-device plug-and-play interoperability.
 |
 | [[acronym_sdpi,SDPi]] SDPi
 |
@@ -351,7 +351,7 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 | A system that provides consolidated alarm and alert events (actionable alerts), and advisories (e.g., patient deterioration alerts).
 |
 | [[acronym_sas,SAS]] SAS
-| Note:  This is based on the initial description in <<vol1_table_system_type_nomenclature_extensions>>.  SDPi 2.0 will more fully define the term.
+|
 |
 
 | [[term_software_as_a_medical_device,Software as a Medical Device (SaMD)]] Software as a Medical Device
@@ -362,7 +362,7 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 |
 
 | [[term_somds_provider_uid, SOMDS Provider UID]] SOMDS Provider UID
-| A globally unique identifier <<acronym_uid>> for a <<vol1_spec_sdpi_p_actor_somds_provider>> that is stable across re-initializations.
+| A globally unique identifier <<acronym_uid>> for a <<vol1_spec_sdpi_p_actor_somds_provider>> that is stable across re-initializations (i.e., resets / reboots).
 | [[acronym_uid,UID]] UID
 |
 |

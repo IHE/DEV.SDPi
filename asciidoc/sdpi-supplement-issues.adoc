@@ -17,6 +17,8 @@ For more detailed information on how the Gemini SES+MDI program manages issues f
 [sdpi_offset=clear]
 === Open Issues and Topic of Interests
 
+The open issues and topics of interest listed in this section are open, and hence not yet ready for inclusion in the IHE DEV Technical Framework and not subject to comment / review.
+
 ==== Open Issues
 
 // open issues are inserted here
