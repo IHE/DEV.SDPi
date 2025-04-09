@@ -345,15 +345,15 @@ Timestamps obtained in an earlier <<term_epoch>> may be treated with greater sus
 
 There is no overlap in timestamps when an <<term_abrupt_time_adjustment>> shifts the device clock forward in time. 
 
-image::vol1-diagram-use-case-stad-ns-forward.svg[align=center]
+image::../images/vol1-diagram-use-case-stad-ns-forward.svg[align=center]
 
 When an <<term_abrupt_time_adjustment>> shifts the device's <<term_time_reference_frame>> back in time, only timestamps before the last timestamp recorded in the MDIB from epoch 0 belong unambiguously to the new <<term_time_reference_frame>>.
 
-image::vol1-diagram-use-case-stad-ns-back.svg[align=center]
+image::../images/vol1-diagram-use-case-stad-ns-back.svg[align=center]
 
 When a device experiences several <<term_abrupt_time_adjustment>>s in a short period of time, the earliest timestamp unambiguously in the current <<term_time_reference_frame>> may be from an earlier <<term_epoch>>. 
 
-image::vol1-diagram-use-case-stad-ns-back-forth.svg[align=center]
+image::../images/vol1-diagram-use-case-stad-ns-back-forth.svg[align=center]
 
 // This is to introduce versioning epochs. 
 .R1561

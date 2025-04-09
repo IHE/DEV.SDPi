@@ -28,7 +28,7 @@ R1520 excludes non-slewing adjustments (<<term_abrupt_time_adjustment>>s) to the
 
 The diagram below illustrates a sequence of state updates (`m1`, `m2`, `m3`, `m4`) using <<term_timestamp>>s from three different epochs (3, 4, 5). In the illustration, an <<term_abrupt_time_adjustment>> shifted the device's <<term_time_reference_frame>> forward by four hours from 7 am to 11 am, creating (from the device's perspective) a gap in time. A second <<term_abrupt_time_adjustment>> shifted the device's <<term_time_reference_frame>> backward three hours from 1 pm to 10 am. The device experienced three <<term_abrupt_time_adjustment>>s in the past (because the first epoch version is 0).
 
-image::vol3-diagram-biceps-ext-non-slewing_time.svg[align=center]
+image::../images/vol3-diagram-biceps-ext-non-slewing_time.svg[align=center]
 
 NOTE: The <<term_abrupt_time_adjustment>>s serve to illustrate the extension only; it would be very unusual for a device to experience the time adjustments shown. 
 
@@ -85,7 +85,7 @@ In addition, this extension defines specific interpretation for `pm:ClockState/@
 
 `sdpi:Epoch/@Offset` gives the change in time from the `sdpi:Epoch/@Timestamp` in the previous <<term_epoch>> to an equivalent point in time in the new epoch as shown in the diagram below.
 
-image::vol3-diagram-biceps-ext-non-slewing_adj.svg[align=center]
+image::../images/vol3-diagram-biceps-ext-non-slewing_adj.svg[align=center]
 
 .Example MDIB state following two recent <<term_abrupt_time_adjustment>>s
 [#vol3_example_extension_clock_discontinuities]
