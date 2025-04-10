@@ -66,7 +66,7 @@ In addition, this extension defines specific interpretation for `pm:ClockState/@
 ** `@DateAndTime` shows this mdib snapshot was created at "1733324400000" (3 p.m.),
 ** `sdpi:Epochs[@Version='5']` indicates the current epoch is 5,
 ** `sdpi:Epochs/Epoch` shows timestamps from epochs 4 and 3 may be used in the mdib; earlier versions are not included because they are not referenced in the mdib. The `@Timestamp` on, for example, epoch 4 records the time (in the epoch 4 <<term_time_reference_frame>> when the abrupt time adjustment was made; the equivalent time in epoch 5, the next <<term_time_reference_frame>>, can be determined by adding the `@Offset` to the `@Timestamp`).
-* `pm:State[@DescriptorHandle='m1']` includes three timestamps (`DeterminationTime`, `StartTime` and `StopTime`); all were created in epoch 3.
+* `pm:State[@DescriptorHandle='m1']` includes three timestamps (`DeterminationTime`, `StartTime` and `StopTime`); all were created in epoch 3 using a clock with the descriptor handle `clk`. It was not necessary to include the `@Clock` attribute because there is only one clock in the <<acronym_mdib>>. 
 * `pm:State[@DescriptorHandle='m2']` includes a single timestamp (`DeterminationTime`); it doesn't contain a specific epoch version however, the `DeterminationTime` is less than `pm:State[xsi:type='pm:ClockState']/@LastSet` so the timestamp _may_ be from an earlier epoch (and, as the diagram shows, `m2` was determined in epoch 4. However, the provider has decided not to provide that information, perhaps because this metric is regularly updated and a new value will be reported soon). 
 * `pm:State[@DescriptorHandle='m3']` also includes a single timestamp (`DeterminationTime`); it doesn't contain a specific epoch version however, the `DeterminationTime` is less than `pm:State[xsi:type='pm:ClockState']/@LastSet` so the timestamp _may_ be from an earlier epoch (in this case, as the diagram shows, `m3` was determined in the current epoch. However, the provider has decided not to provide that information, perhaps because this metric is regularly updated and a new value will be reported soon). 
 * `pm:State[@DescriptorHandle='m4']` also includes a single timestamp (`DeterminationTime`); again without an epoch version. However, the `DeterminationTime` is greater than `pm:State[xsi:type='pm:ClockState']/@LastSet` so the timestamp is from the current epoch.  
@@ -169,4 +169,17 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall not change the epoch version a
 ====
 ****
 
+.R0612
+[sdpi_requirement#r0612,sdpi_req_level=shall]
+****
+When the source clock of a versioned timestamp is ambiguous, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall include a reference to the `pm:ClockDescriptor/@Handle` in `sdpi:TimestampEpochVersionType/@Clock`.
 
+.Notes
+[NOTE]
+[%collapsible]
+====
+* The clock source is not ambiguous when there is only one clock in the whole <<acronym_mdib>>, or there is only one clock in the `pm:Mds` containing the `pm:AbstractState` that includes the versioned timestamp and the version timestamp does not use a clock from a different `pm:Mds`.
+* The `sdpi:TimestampEpochVersionType/@Clock` may be omitted when the source clock is not ambiguous to reduce message size.
+* This extension does not support timestamps in a single `pm:AbstractState` to be versioned from more than one source clock.
+====
+****
