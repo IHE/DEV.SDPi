@@ -82,11 +82,13 @@ include::../volume2/dev-30/tf2-dev-30-summary.adoc[]
 | Deferred to a future version of SDPi
 // include::../volume2/dev-33/tf2-dev-33-summary.adoc[]
 
-.^| [[vol0_transaction_summary_dev_34,DEV-34 Announce Network Departure]]
-[[transaction_number_dev_34,DEV-34]] DEV-34
-| [[transaction_name_announce_network_departure,Announce Network Departure]] Announce Network Departure
-|
-include::../volume2/dev-34/tf2-dev-34-summary.adoc[]
+//.^| [[vol0_transaction_summary_dev_34,DEV-34 Announce Network Departure]]
+//[[transaction_number_dev_34,DEV-34]] DEV-34
+//| [[transaction_name_announce_network_departure,Announce Network Departure]] Announce Network Departure
+//|
+//include::../volume2/dev-34/tf2-dev-34-summary.adoc[]
+.^| DEV-34 | _Reserved_ |
+//include::../volume2/dev-34/tf2-dev-34-summary.adoc[]
 .^| [[vol0_transaction_summary_dev_35,DEV-35 Establish Medical Data Exchange]]
 [[transaction_number_dev_35,DEV-35]] DEV-35
 | [[transaction_name_establish_medical_data_exchange,Establish Medical Data Exchange]] Establish Medical Data Exchange
