@@ -251,50 +251,6 @@ NOTE: <<term_abrupt_time_adjustment>>s may occur, for example, when a device is 
 
 NOTE: although an <<term_abrupt_time_adjustment>> starts with a constant offset between two <<term_epoch>>s at a single point in time, it may introduce constant or variable (linear and/or non-linear) offsets between timestamps obtained within the <<term_epoch>>s. That is, the difference (to an unbiased observer) between any two timestamps from different epochs may depend (linearly or non-linearly) on when, within each epoch, the timestamp was obtained. It is typically not possible to establish a common <<term_time_reference_frame>> following an <<term_abrupt_time_adjustment>> without additional information not available to the <<vol1_spec_sdpi_p_actor_somds_participant>>.
 
-====== Terms
-// figure out where to put this. 
-
-[%autowidth]
-[cols="^1,<3"]
-|===
-|Term |Definition 
-
-| [[term_abrupt_time_adjustment,abrupt time adjustment]] Abrupt time adjustment
-| A large change (typically more than 5 minutes) to a <<term_system_clock>>'s <<term_time_reference_frame>> to reconcile differences between the time reported by a <<term_system_clock>> and a <<acronym_ts_service>>, within the statistical uncertainty of the synchronization algorithm, as quickly as possible. Abrupt time-adjustments are also known as step-changes and <<term_non_slewing_time_adjustment>>s, particularly when using <<ref_rfc_5905, NTP>> to synchronize a <<term_system_clock>>.
-
-| [[term_clock_discipline_algorithm,clock-discipline algorithm]] Clock-discipline algorithm
-| The algorithm employed by a <<acronym_ts_service>> client to minimize the error between the <<term_reference_clock>> and the <<term_system_clock>>. It my include include startup calibration steps, smooth (e.g., slewing) and, rarely, abrupt (e.g., non-slewing) corrections. 
-
-| [[term_epoch,epoch]] Epoch
-| A distinct period of time characterized by a consistent temporal properties described by a <<term_time_reference_frame>>.
-
-| [[term_non_slewing_time_adjustment,non-slewing time adjustment]] Non-slewing time adjustment
-| The <<term_abrupt_time_adjustment>> to a system clock's <<term_time_reference_frame>> described by <<ref_rfc_5905>>.
-
-| [[term_reference_clock,reference clock]] Reference clock
-| The source of time obtained from a <<term_time_synchronization_service>> and shared between <<vol1_spec_sdpi_p_actor_somds_participant>>s. 
-
-| [[term_slewing_adjustments,slewing time adjustments]] Slewing time adjustments
-| Adjustments, typically small, made to a <<term_system_clock>>'s frequency described by <<ref_rfc_5905>>. Generally so the time reported by the <<term_system_clock>> matches that of a <<acronym_ts_service>> at some point in the not too distant future, within the statistical uncertainty of the synchronization algorithm.
-
-| [[term_smooth_time_adjustments,smooth time adjustments]] Smooth time adjustments
-| A gradual adjustment within a <<term_time_reference_frame>>, characterised by a continuous and monotonically increasing progression of timestamps without abrupt jumps or disruptions to the passage of time. Generally so that the time reported by a system clock matches that of a <<acronym_ts_service>> at some point in the future, within the statistical uncertainty of the synchronization algorithm. Typically involves running the <<term_system_clock>> faster or slower for some period. 
-
-| [[term_system_clock,system clock]] System clock
-| A source of <<term_timestamp>>s used in a <<vol1_spec_sdpi_p_actor_somds_participant>>s system function contributions (<<acronym_sfc>>). 
-
-| [[term_time_reference_frame,time-reference frame]] Time-reference frame
-| A device-specific context for measuring and assigning timestamps to events. The reference frame is defined by its rate of passage of time and alignment to some external temporal standard (e.g., provided by a <<acronym_ts_service>>). The reference frame's time-rate may vary with time (e.g., a <<term_smooth_time_adjustments>> to synchronize with an external temporal standard). Abrupt changes to the time-reference frame alignment to an external standard (e.g., <<term_abrupt_time_adjustment>>), create distinct time-reference frames with different temporal characteristics.
-
-| [[term_timestamp,timestamp]] Timestamp
-| A point in time obtained from a <<term_system_clock>>. Timestamps are obtained within the context of a <<term_time_reference_frame>>. 
-
-| [[term_timestamp_version,timestamp version]] Timestamp version
-| A unique identifier, within the scope of a MDIB sequence, of a <<term_time_reference_frame>> epoch.
-
-|===
-
-
 ====== Safety, Effectiveness & Security Considerations and Requirements
 
 // This provides information for auditing. 
