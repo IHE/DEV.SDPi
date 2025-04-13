@@ -430,7 +430,10 @@ A <<vol1_spec_sdpi_p_actor_somds_consumer>> should use the mandatory, low-precis
 [%collapsible]
 ====
 * This requirement supports a <<vol1_spec_sdpi_p_actor_somds_consumer>> considering the risk resulting from erroneous timestamps <<ref_ieee_11073_10700_2022>>, RR1162. 
-* By monitoring timestamp on message responses (such as subscription renew requests), a <<vol1_spec_sdpi_p_actor_somds_consumer>> may be able to take appropriate action, such as alerting the operator, before using data with suspicious timestamps.
+* The maximum discrepancy between participant clocks may depend on the protocol being used to synchronize time (`pm:ClockState/pm:ActiveSyncProtocol`). The time reported by two devices employing <<ref_rfc_5905, NTPv4>>, for example, may differ by more than 8 1/2 minutes, in a worst case scenario, without triggering an <<term_abrupt_time_adjustment>>. 
+* A <<vol1_spec_sdpi_p_actor_somds_consumer>> could detect discrepancies exceeding a few seconds, which may affect its <<term_system_function_contribution>>, using timestamps in HTTP headers, for example. 
+* By monitoring timestamp on message responses (such as subscription renew requests), a <<vol1_spec_sdpi_p_actor_somds_consumer>> may be able to take an appropriate action, such as alerting the operator, before using data with suspicious timestamps.
+
 ====
 ****
 
