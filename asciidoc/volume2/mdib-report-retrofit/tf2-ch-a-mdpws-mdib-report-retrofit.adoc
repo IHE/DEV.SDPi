@@ -60,7 +60,9 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall include an `sdpi:ReportSequenc
 .Notes
 [%collapsible]
 ====
-NOTE: The `sdpi:ReportSequence` element enables detection of lost reports by a <<vol1_spec_sdpi_p_actor_somds_consumer>>.
+NOTE: The `sdpi:ReportSequence` element supports detection of lost reports by a <<vol1_spec_sdpi_p_actor_somds_consumer>>.
+
+NOTE: The <<vol3_clause_report-sequence, report sequence>> extension defines the `sdpi:ReportSequence` element.
 ====
 ****
 
@@ -89,6 +91,7 @@ A <<vol1_spec_sdpi_p_actor_somds_consumer>> shall treat subsequent reports with 
 .Notes
 [%collapsible]
 ====
+* Successful delivery on an HTTP transport means the <<vol1_spec_sdpi_p_actor_somds_consumer>> replies to the notification message with a success code (200 &ndash; 299). 
 * A <<vol1_spec_sdpi_p_actor_somds_consumer>> may receive multiple reports with the same `sdpi:ReportSequence/@MessageNumber` when the <<vol1_spec_sdpi_p_actor_somds_provider>> does not receive confirmation of successful delivery from the <<vol1_spec_sdpi_p_actor_somds_consumer>>. 
 * A <<vol1_spec_sdpi_p_actor_somds_consumer>> is not required to process the content of multiple reports with the same `sdpi:ReportSequence/@MessageNumber`.
 * A <<vol1_spec_sdpi_p_actor_somds_provider>> will not increment the `sdpi:ReportSequence/@MessageNumber` until it receives confirmation of successful delivery from the <<vol1_spec_sdpi_p_actor_somds_consumer>>. 
@@ -109,7 +112,7 @@ A <<vol1_spec_sdpi_p_actor_somds_consumer>> that receives multiple reports with 
 [%collapsible]
 ====
 * A <<vol1_spec_sdpi_p_actor_somds_provider>> may send multiple message notifications with the same `sdpi:ReportSequence/@MessageNumber` when it receives a fault code from the <<vol1_spec_sdpi_p_actor_somds_consumer>> (e.g., the consumer is busy processing other messages) or no response (time-out following a network interruption).
-* A <<vol1_spec_sdpi_p_actor_somds_consumer>> may receive multiple message notifications with the same `sdpi:ReportSequence/@MessageNumber` when it responds with a fault code 
+* A <<vol1_spec_sdpi_p_actor_somds_consumer>> may receive more than one message notifications with the same `sdpi:ReportSequence/@MessageNumber` when it responds with a fault code. The message notifications may not be the same (e.g., the <<vol1_spec_sdpi_p_actor_somds_provider>> alters the message to address the fault).
 ====
 ****
 

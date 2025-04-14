@@ -8,3 +8,5 @@ include::biceps-extension-provisions/tf3-ch-a-xml-schemas-coded-attribute.adoc[]
 include::biceps-extension-provisions/tf3-ch-a-xml-schemas-gender.adoc[]
 
 include::biceps-extension-provisions/tf3-ch-a-xml-schemas-equipment-identifier.adoc[]
+
+include::biceps-extension-provisions/tf3-ch-a-xml-schemas-report-sequence.adoc[]
