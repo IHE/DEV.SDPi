@@ -351,7 +351,7 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 | A system that provides consolidated alarm and alert events (actionable alerts), and advisories (e.g., patient deterioration alerts).
 |
 | [[acronym_sas,SAS]] SAS
-| Note:  This is based on the initial description in <<vol1_table_system_type_nomenclature_extensions>>.  SDPi 2.0 will more fully define the term.
+|
 |
 
 | [[term_software_as_a_medical_device,Software as a Medical Device (SaMD)]] Software as a Medical Device
