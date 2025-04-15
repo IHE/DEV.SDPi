@@ -4,31 +4,33 @@
 == SDPi Issue Management
 
 [sdpi_offset=clear]
-=== SDPi "Topic of Interest" Issue Management
+=== SDPi Issue Management
 
 All SDPi supplement issues are tracked in the https://github.com/IHE/DEV.SDPi/issues[IHE Github DEV.SDPi repository Issues section].
-Filter the issues on "Topic of Interest" to see a full list related to any "Topic of Interest".  +
+Filter the issues on their "state" to see them.  +
 
-* To see the full list of OPEN issues, go to https://github.com/IHE/DEV.SDPi/issues?q=is%3Aissue+is%3Aopen+label%3A%22Topic+of+Interest%22
-* To see the full list of CLOSED issues, go to https://github.com/IHE/DEV.SDPi/issues?q=is%3Aissue+is%3Aclosed+label%3A%22Topic+of+Interest%22
+* To see the full list of OPEN issues, go to https://github.com/IHE/DEV.SDPi/issues?q=is%3Aissue+is%3Aopen
+* To see the full list of CLOSED issues, go to https://github.com/IHE/DEV.SDPi/issues?q=is%3Aissue+is%3Aclosed
 
-For more detailed information on how the Gemini SES+MDI program manages issues from identification to resolution to incorporation into this supplement, see the wiki article https://github.com/IHE/DEV.SDPi/wiki/Program-Coordination-Co-Working-Spaces#overview-from-discussion-to-planning-to-development[_Overview: From Discussion to Planning to Development_] and the Confluence article https://confluence.hl7.org/pages/viewpage.action?pageId=82912211#TopicsofInterest-TopicResolutionWorkflow[_Topics of Interest -- Topic Resolution Workflow_].
+For more detailed information on how the Gemini SES+MDI program manages issues from identification to resolution to incorporation into this supplement, see the wiki article https://github.com/IHE/DEV.SDPi/wiki/Program-Coordination-Co-Working-Spaces#overview-from-discussion-to-planning-to-development[_Overview: From Discussion to Planning to Development_].
 
 [sdpi_offset=clear]
-=== Open Issues and Topic of Interests
+=== Open Issues
 
-The open issues and topics of interest listed in this section are open, and hence not yet ready for inclusion in the IHE DEV Technical Framework and not subject to comment / review.
+The issues listed in this section or in https://github.com/IHE/DEV.SDPi/issues?q=is%3Aissue+is%3Aopen are open, and hence not yet ready for inclusion in the IHE DEV Technical Framework and not subject to comment or review.
 
-==== Open Issues
+//==== Open Issues
 
 // open issues are inserted here
 
-==== Topic of Interests
+//==== Topic of Interests
 
 // toi issues are inserted here
 
 [sdpi_offset=clear]
 === Closed Issues
+
+The issues listed in this section or in https://github.com/IHE/DEV.SDPi/issues?q=is%3Aissue+is%3Aclosed are closed.
 
 // closed issues are inserted here
 
