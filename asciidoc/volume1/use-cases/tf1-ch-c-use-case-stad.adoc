@@ -380,6 +380,7 @@ A <<vol1_spec_sdpi_p_actor_somds_participant>> may enter a fault state by, for e
 ====
 ****
 
+ifndef::not-defined[]
 
 [#vol1_clause_appendix_c_use_case_stad_non_slew_received]
 ===== Scenario: <<acronym_stad>> {var_use_case_id}.7 - A <<vol1_spec_sdpi_p_actor_somds_consumer>>, operational in the MD LAN network, receives data affected by an abrupt time adjustment
@@ -423,7 +424,7 @@ A consumer relying on the temporal accuracy of historic data for its <<term_syst
 .R1601
 [sdpi_requirement#r1601,sdpi_req_level=should]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_consumer>> should use the mandatory, low-precision, `Date` field included in HTTP response messages (<<ref_rfc_9110>>, §6.6.1) to determine if discrepancies between <<vol1_spec_sdpi_p_actor_somds_participant>> clocks exceed requirements for its <<term_system_function_contribution>>. 
+A <<vol1_spec_sdpi_p_actor_somds_consumer>> should use the low-precision `Date` field included in HTTP response messages (<<ref_rfc_9110>>, §6.6.1) to determine if discrepancies between <<vol1_spec_sdpi_p_actor_somds_participant>> clocks exceed requirements for its <<term_system_function_contribution>>. 
 
 .Notes
 [NOTE]
@@ -441,14 +442,14 @@ A <<vol1_spec_sdpi_p_actor_somds_consumer>> should use the mandatory, low-precis
 .R1602
 [sdpi_requirement#r1602,sdpi_req_level=shall]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_provider>> shall include the `Date` field in all HTTP response messages and  notification messages sent to a <<vol1_spec_sdpi_p_actor_somds_consumer>> as the best available approximation of the date and time of message generation, using the "preferred format" defined in <<ref_rfc_9110>>, §5.6.7. 
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall used the "preferred format", defined in  <<ref_rfc_9110, RFC9110 §5.6.7>>, for the `Date` field included in all HTTP response messages. 
 
 .Notes
 [NOTE]
 [%collapsible]
 ====
-* The `Date` field in HTTP response messages is mandatory for an origin server with a clock (<<ref_rfc_9110>>, §6.6.1). This requirement extends the presence of the date field to reports and clarifies the format to use. 
-* The <<vol1_spec_sdpi_p_actor_somds_consumer>> may respond with the 409 (conflict) HTTP status code if it finds the time supplied by the <<vol1_spec_sdpi_p_actor_somds_provider>> conflicts with its current perception of time. 
+* The `Date` field in HTTP response messages, as the best available approximation of the date and time of message generation, is mandatory for an origin server with a clock (<<ref_rfc_9110>>, §6.6.1) though several formats are supported. This clarifies obsolete formats are not be be used. 
+
 ====
 ****
 
@@ -481,3 +482,6 @@ A <<vol1_spec_sdpi_p_actor_somds_consumer>> adjusting invalid and/or suspicious 
 * A <<vol1_spec_sdpi_p_actor_somds_consumer>> may use information provided, for example, by the <<vol1_spec_sdpi_p_actor_somds_provider>> using, for example, the <<vol3_clause_timestamp_versioning, timestamp versioning>> extension to improve the accuracy of a suspicious timestamp, however it should still notify next users. 
 ====
 ****
+
+endif::[]
+
