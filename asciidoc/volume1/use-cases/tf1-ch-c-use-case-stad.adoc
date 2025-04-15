@@ -438,17 +438,18 @@ A <<vol1_spec_sdpi_p_actor_somds_consumer>> should use the low-precision `Date` 
 ====
 ****
 
-// Include message timestamp in reports too, and use the preferred format (not the obsolete ones)
+// Use the preferred format (not the obsolete ones) for date time
+// This could become a "shall" following wider discussion. 
 .R1602
-[sdpi_requirement#r1602,sdpi_req_level=shall]
+[sdpi_requirement#r1602,sdpi_req_level=should]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_provider>> shall used the "preferred format", defined in  <<ref_rfc_9110, RFC9110 §5.6.7>>, for the `Date` field included in all HTTP response messages. 
+A <<vol1_spec_sdpi_p_actor_somds_provider>> should used the "preferred format", defined in  <<ref_rfc_9110, RFC9110 §5.6.7>>, for the `Date` field included in all HTTP response messages. 
 
 .Notes
 [NOTE]
 [%collapsible]
 ====
-* The `Date` field in HTTP response messages, as the best available approximation of the date and time of message generation, is mandatory for an origin server with a clock (<<ref_rfc_9110>>, §6.6.1) though several formats are supported. This clarifies obsolete formats are not be be used. 
+* The `Date` field in HTTP response messages, as the best available approximation of the date and time of message generation, is mandatory for an origin server with a clock (<<ref_rfc_9110>>, §6.6.1) though several formats are supported. This clarifies obsolete formats shouldn't be be used. 
 
 ====
 ****
