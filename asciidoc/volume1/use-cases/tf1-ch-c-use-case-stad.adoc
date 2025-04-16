@@ -472,15 +472,15 @@ A <<vol1_spec_sdpi_p_actor_somds_consumer>> shall notify next users of invalid a
 
 // Adjust timestamps.
 .R1604
-[sdpi_requirement#r1604,sdpi_req_level=shall]
+[sdpi_requirement#r1604,sdpi_req_level=should]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_consumer>> adjusting invalid and/or suspicious timestamps arising from <<term_abrupt_time_adjustment>> shall continue to treat the adjusted timestamp as invalid and/or suspicious. 
+A <<vol1_spec_sdpi_p_actor_somds_consumer>>, adjusting invalid and/or suspicious timestamps arising from <<term_abrupt_time_adjustment>>, should continue to treat the adjusted timestamp as invalid and/or suspicious. 
 
 .Notes
 [NOTE]
 [%collapsible]
 ====
-* A <<vol1_spec_sdpi_p_actor_somds_consumer>> may use information provided, for example, by the <<vol1_spec_sdpi_p_actor_somds_provider>> using, for example, the <<vol3_clause_timestamp_versioning, timestamp versioning>> extension to improve the accuracy of a suspicious timestamp, however it should still notify next users. 
+* A <<vol1_spec_sdpi_p_actor_somds_consumer>> may use information provided, for example, by the <<vol1_spec_sdpi_p_actor_somds_provider>> using, for example, the <<vol3_clause_timestamp_versioning, timestamp versioning>> extension to improve the accuracy of a suspicious timestamp. However timestamps may remain less accurate than had the <<term_abrupt_time_adjustment>> not occurred and it may still be appropriate to notify next users of this.
 ====
 ****
 
