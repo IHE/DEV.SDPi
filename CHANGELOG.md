@@ -32,6 +32,7 @@ Each section shall contain a list of action items of the following format: `<bri
 - Clarification of rationale for discontinuous section numbering ([#364](https://github.com/IHE/DEV.SDPi/issues/364))
 - Clarification of status of open Issues and Topics of Interest ([#374](https://github.com/IHE/DEV.SDPi/issues/374))
 - Clarification of TLS 1.2 versus TLS 1.3 usage ([#377](https://github.com/IHE/DEV.SDPi/issues/377))
+- Clarification of TF-X acronym meaning ([#376](https://github.com/IHE/DEV.SDPi/issues/376))
 
 ## [2.0.0] - 2024-12-13
 
