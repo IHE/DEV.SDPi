@@ -12,7 +12,7 @@ Filter the issues on their "state" to see them.  +
 * To see the full list of OPEN issues, go to https://github.com/IHE/DEV.SDPi/issues?q=is%3Aissue+is%3Aopen
 * To see the full list of CLOSED issues, go to https://github.com/IHE/DEV.SDPi/issues?q=is%3Aissue+is%3Aclosed
 
-For more detailed information on how the Gemini SES+MDI program manages issues from identification to resolution to incorporation into this supplement, see the wiki article https://github.com/IHE/DEV.SDPi/wiki/Program-Coordination-Co-Working-Spaces#overview-from-discussion-to-planning-to-development[_Overview: From Discussion to Planning to Development_].
+For more detailed information on how the Gemini SES+MDI program manages issues from identification to resolution to incorporation into this supplement, see the https://github.com/IHE/DEV.SDPi/wiki[_IHE SDPi wiki_].
 
 [sdpi_offset=clear]
 === Open Issues
