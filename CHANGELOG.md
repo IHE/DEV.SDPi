@@ -23,6 +23,7 @@ Each section shall contain a list of action items of the following format: `<bri
 - Rephrased notes, mostly to correct and maintain references to SDPi versions ([#366](https://github.com/IHE/DEV.SDPi/issues/366))
 - Corrected normative standard reference in transactions DEV-27, DEV-35 and DEV-38 ([#400](https://github.com/IHE/DEV.SDPi/issues/400))
 - Updated SDPi Issue Management section ([#408](https://github.com/IHE/DEV.SDPi/issues/408))
+- Rephrased paragraph describing the SOMDS Smart App Platform Actor for clarity ([#379](https://github.com/IHE/DEV.SDPi/issues/379))
 ### Editorial Fixes
 - Corrected typos and grammar ([#363](https://github.com/IHE/DEV.SDPi/issues/363))
 - Changed order of subsections in 1:11.1, 1:12.1 and 1:13.1 ([365](https://github.com/IHE/DEV.SDPi/issues/365))
@@ -33,6 +34,8 @@ Each section shall contain a list of action items of the following format: `<bri
 - Clarification of rationale for discontinuous section numbering ([#364](https://github.com/IHE/DEV.SDPi/issues/364))
 - Clarification of status of open Issues and Topics of Interest ([#374](https://github.com/IHE/DEV.SDPi/issues/374))
 - Clarification of TLS 1.2 versus TLS 1.3 usage ([#377](https://github.com/IHE/DEV.SDPi/issues/377))
+- Clarification of TF-X acronym meaning ([#376](https://github.com/IHE/DEV.SDPi/issues/376))
+- Descriptive overview of SDC gateways ([#382](https://github.com/IHE/DEV.SDPi/issues/382))
 
 ## [2.0.0] - 2024-12-13
 
