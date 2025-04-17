@@ -191,7 +191,7 @@ The {var_label_dev_33_message_getlocalizedtextresponse} message is sent whenever
 [#vol2_clause_dev_33_message_getlocalizedtextresponse_semantics]
 ====== Message Semantics
 
-[[payload_dev_33_getlocalizedtextresponse_text]]Text:: The sequence of available languages the <<vol1_spec_sdpi_p_actor_somds_provider>> is able to translate to, based on <<r0504>>.
+[[payload_dev_33_getlocalizedtextresponse_text]]Text:: The sequence of available languages the <<vol1_spec_sdpi_p_actor_somds_provider>> is able to translate to, based on <<r0503>>.
 
 [#vol2_clause_dev_33_message_getlocalizedtextresponse_expected_actions]
 ====== Expected Actions
