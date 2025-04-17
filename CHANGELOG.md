@@ -22,6 +22,7 @@ Each section shall contain a list of action items of the following format: `<bri
 - Added new section "Unique Localized Text Catalog Identification" to volume 3 ([#256](https://github.com/IHE/DEV.SDPi/issues/256))
 - Rephrased notes, mostly to correct and maintain references to SDPi versions ([#366](https://github.com/IHE/DEV.SDPi/issues/366))
 - Corrected normative standard reference in transactions DEV-27, DEV-35 and DEV-38 ([#400](https://github.com/IHE/DEV.SDPi/issues/400))
+- Rephrased paragraph describing the SOMDS Smart App Platform Actor for clarity ([#379](https://github.com/IHE/DEV.SDPi/issues/379))
 ### Editorial Fixes
 - Corrected typos and grammar ([#363](https://github.com/IHE/DEV.SDPi/issues/363))
 - Changed order of subsections in 1:11.1, 1:12.1 and 1:13.1 ([365](https://github.com/IHE/DEV.SDPi/issues/365))
