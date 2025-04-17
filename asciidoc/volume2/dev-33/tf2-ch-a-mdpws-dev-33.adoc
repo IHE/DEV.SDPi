@@ -1,99 +1,149 @@
 
 
-[#vol2_clause_appendix_mdpws_dev_30]
-==== MDPWS: Retrieve BICEPS Content [DEV-30]
+[#vol2_clause_appendix_mdpws_dev_33]
+==== MDPWS: Retrieve Localization Information [DEV-33]
 
-This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_30>>.
-
-// ---------- Get Mdib ---------
+This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_33>>.
 
 
-===== {var_label_dev_30_message_getmdib} Message
+// ---------- GetSupportedLanguages ---------
 
-The <<vol2_clause_dev_30_message_getmdib, {var_label_dev_30_message_getmdib}>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
+
+===== {var_label_dev_33_message_getsupportedlanguages} Message
+
+The <<vol2_clause_dev_33_message_getsupportedlanguages, {var_label_dev_33_message_getsupportedlanguages}>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
 
 ====== Referenced Standards
 
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
-* <<ref_ieee_11073_10207_2017>> msg:GetMdib
+* <<ref_ieee_11073_10207_2017>> msg:GetSupportedLanguages
 
 ====== Message Outline
 
-.GetMdib message
-[source#vol2_clause_appendix_a_mdpws_dev_30_getmdib,xml]
+.GetSupportedLanguages message
+[source#vol2_clause_appendix_a_mdpws_dev_33_getsupportedlanguages,xml]
 ----
-include::../../listings/vol2-clause-appendix-a-mdpws-dev-30-getmdib.xml[]
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-33-getsupportedlanguages.xml[]
 ----
 
-:var_trigger_events_ref: <<vol2_clause_dev_30_message_getmdib>>
+:var_trigger_events_ref: <<vol2_clause_dev_33_message_getsupportedlanguages_trigger_events>>
 include::../dev-a-default-trigger-events.adoc[]
 
 ====== Message Semantics
 
-The <<vol2_clause_dev_30_message_getmdib, {var_label_dev_30_message_getmdib}>> message does not contain any further semantics.
+The <<vol2_clause_dev_33_message_getsupportedlanguages, {var_label_dev_33_message_getsupportedlanguages}>> message does not contain any further semantics.
 
-:var_expected_actions_ref: <<vol2_clause_dev_30_message_getmdib>>
+:var_expected_actions_ref: <<vol2_clause_dev_33_message_getsupportedlanguages_expected_actions>>
 include::../dev-a-default-expected-actions.adoc[]
 
-// ---------- Get Mdib Response ---------
 
-===== {var_label_dev_30_message_getmdibresponse} Message
+// ---------- GetSupportedLanguagesResponse ---------
 
-The <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
+
+===== {var_label_dev_33_message_getsupportedlanguagesresponse} Message
+
+The <<vol2_clause_dev_33_message_getsupportedlanguagesresponse, {var_label_dev_33_message_getsupportedlanguagesresponse}>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
 
 ====== Referenced Standards
 
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
-* <<ref_ieee_11073_10207_2017>> msg:GetMdibResponse
+* <<ref_ieee_11073_10207_2017>> msg:GetSupportedLanguagesResponse
 
 ====== Message Outline
 
-.GetMdibResponse message
-[source#vol2_clause_appendix_a_mdpws_dev_30_getmdibresponse,xml]
+.GetSupportedLanguagesResponse message
+[source#vol2_clause_appendix_a_mdpws_dev_33_getsupportedlanguagesresponse,xml]
 ----
-include::../../listings/vol2-clause-appendix-a-mdpws-dev-30-getmdibresponse.xml[]
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-33-getsupportedlanguagesresponse.xml[]
 ----
 
-:var_trigger_events_ref: <<vol2_clause_dev_30_message_getmdibresponse>>
+:var_trigger_events_ref: <<vol2_clause_dev_33_message_getsupportedlanguagesresponse_trigger_events>>
 include::../dev-a-default-trigger-events.adoc[]
 
 ====== Message Semantics
 
-`s12:Envelope/s12:Body/msg:GetMdibResponse/msg:Mdib/pm:MdDescription`:: The <<vol1_spec_sdpi_p_actor_somds_provider>>'s descriptive part of the MDIB.
+`s12:Envelope/s12:Body/msg:GetSupportedLanguagesResponse/msg:Lang`:: The available sequence of languages the <<vol1_spec_sdpi_p_actor_somds_provider>> can translate to.
 
-`s12:Envelope/s12:Body/msg:GetMdibResponse/msg:Mdib/pm:MdState`:: The <<vol1_spec_sdpi_p_actor_somds_provider>>'s state part of the MDIB.
+:var_expected_actions_ref: <<vol2_clause_dev_33_message_getsupportedlanguagesresponse_expected_actions>>
+include::../dev-a-default-expected-actions.adoc[]
 
-:var_expected_actions_ref: <<vol2_clause_dev_30_message_getmdibresponse>>
+
+// ---------- GetLocalizedText ---------
+
+
+===== {var_label_dev_33_message_getlocalizedtext} Message
+
+The <<vol2_clause_dev_33_message_getlocalizedtext, {var_label_dev_33_message_getlocalizedtext}>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
+
+====== Referenced Standards
+
+* <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
+* <<ref_ieee_11073_10207_2017>> msg:GetLocalizedText
+
+====== Message Outline
+
+.GetLocalizedText message
+[source#vol2_clause_appendix_a_mdpws_dev_33_getlocalizedtext,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-33-getlocalizedtext.xml[]
+----
+
+:var_trigger_events_ref: <<vol2_clause_dev_33_message_getlocalizedtext_trigger_events>>
+include::../dev-a-default-trigger-events.adoc[]
+
+====== Message Semantics
+
+`s12:Envelope/s12:Body/msg:GetLocalizedText/msg:Ref`:: Localized text references to filter for, as exhibited in the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDIB.
+`s12:Envelope/s12:Body/msg:GetLocalizedText/msg:Version`:: Localized text versions to filter for, as exhibited in the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDIB.
+`s12:Envelope/s12:Body/msg:GetLocalizedText/msg:Lang`:: Languages to filter for, as exhibited in the <<vol2_clause_dev_33_message_getsupportedlanguagesresponse, {var_label_dev_33_message_getsupportedlanguagesresponse}>> message.
+`s12:Envelope/s12:Body/msg:GetLocalizedText/msg:TextWidth`:: Localized text widths to filter for.
+`s12:Envelope/s12:Body/msg:GetLocalizedText/msg:NumberOfLines`:: Number of lines to filter for.
+
+:var_expected_actions_ref: <<vol2_clause_dev_33_message_getlocalizedtext_expected_actions>>
+include::../dev-a-default-expected-actions.adoc[]
+
+
+// ---------- GetLocalizedTextResponse ---------
+
+
+===== {var_label_dev_33_message_getlocalizedtextresponse} Message
+
+The <<vol2_clause_dev_33_message_getlocalizedtextresponse, {var_label_dev_33_message_getlocalizedtextresponse}>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
+
+====== Referenced Standards
+
+* <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
+* <<ref_ieee_11073_10207_2017>> msg:GetLocalizedTextResponse
+
+====== Message Outline
+
+.GetLocalizedTextResponse message
+[source#vol2_clause_appendix_a_mdpws_dev_33_getlocalizedtextresponse,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-33-getlocalizedtextresponse.xml[]
+----
+
+:var_trigger_events_ref: <<vol2_clause_dev_33_message_getlocalizedtextresponse_trigger_events>>
+include::../dev-a-default-trigger-events.adoc[]
+
+====== Message Semantics
+
+`s12:Envelope/s12:Body/msg:GetLocalizedTextResponse/msg:Text`:: The filtered list of localized texts, see also <<r0503>>.
+
+:var_expected_actions_ref: <<vol2_clause_dev_33_message_getlocalizedtextresponse_expected_actions>>
 include::../dev-a-default-expected-actions.adoc[]
 
 ====== Additional Consideration
 
-[sdpi_level=+1]
-====== Context States
-
-.R7002
-[sdpi_requirement#r7002,sdpi_req_level=shall]
-****
-A <<vol1_spec_sdpi_p_actor_somds_provider>> shall enclose all context states in pm:GetMdibResponse messages.
-
-.Notes
-[%collapsible]
-====
-[NOTE]
+[WARNING]
 --
-This requirement restricts optionality in including context states in GetMdibResponse messages as specified in <<ref_ieee_11073_10207_2017>>, C.57 GetMdibResponse:
-
-[quote]
-____
-Since contexts might include privacy-related information, a SERVICE PROVIDER MAY decide to leave
-the MDS contexts empty.
-____
-
-Since transmission of GetMdibResponse messages is required to be secured, there is no need for omitting context states to meet confidentiality; R0121 in <<ref_ieee_11073_10207_2017>> is still met.
-
+Depending on the resulting message size, a <<vol1_spec_sdpi_p_actor_somds_provider>> may fail to satisfy the <<vol2_clause_dev_33_message_getlocalizedtext, {var_label_dev_33_message_getlocalizedtext}>> request.
+In such cases, it is recommended that the requesting <<vol1_spec_sdpi_p_actor_somds_consumer>> reduces the expected amount of response data by tweaking the filter criteria and resends the <<vol2_clause_dev_33_message_getlocalizedtext, {var_label_dev_33_message_getlocalizedtext}>> message.
+It is good practice to
 --
-====
 
-****
-
+[TIP]
+--
+It is good practice to request available languages and request languages one by one to avoid large response messages.
+--
 
