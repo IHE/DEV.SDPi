@@ -59,7 +59,7 @@ The {var_label_dev_33_message_getsupportedlanguages} message is sent whenever a 
 [#vol2_clause_dev_33_message_getsupportedlanguages_semantics]
 ====== Message Semantics
 
-The {var_label_dev_33_message_getlocalizedtext} message does not contain any further semantics.
+The {var_label_dev_33_message_getsupportedlanguages} message does not contain any further semantics.
 
 [#vol2_clause_dev_33_message_getsupportedlanguages_expected_actions]
 ====== Expected Actions
@@ -79,7 +79,7 @@ The {var_label_dev_33_message_getsupportedlanguagesresponse} message is sent as 
 [#vol2_clause_dev_33_message_getsupportedlanguagesresponse_trigger_events]
 ====== Trigger Events
 
-The {var_label_dev_30_message_getmdibresponse} message is sent whenever a <<vol1_spec_sdpi_p_actor_somds_provider>> receives a <<vol2_clause_dev_33_message_getsupportedlanguages, {var_label_dev_33_message_getsupportedlanguages}>> message.
+The {var_label_dev_33_message_getsupportedlanguagesresponse} message is sent whenever a <<vol1_spec_sdpi_p_actor_somds_provider>> receives a <<vol2_clause_dev_33_message_getsupportedlanguages, {var_label_dev_33_message_getsupportedlanguages}>> message.
 
 [#vol2_clause_dev_33_message_getsupportedlanguagesresponse_semantics]
 ====== Message Semantics
@@ -191,12 +191,12 @@ The {var_label_dev_33_message_getlocalizedtextresponse} message is sent whenever
 [#vol2_clause_dev_33_message_getlocalizedtextresponse_semantics]
 ====== Message Semantics
 
-[[payload_dev_33_getlocalizedtextresponse_text]]Text:: The sequence of available languages the <<vol1_spec_sdpi_p_actor_somds_provider>> is able to translate to, based on <<r0503>>.
+[[payload_dev_33_getlocalizedtextresponse_text]]Text:: The sequence of filtered localized texts, based on <<r0503>>.
 
 [#vol2_clause_dev_33_message_getlocalizedtextresponse_expected_actions]
 ====== Expected Actions
 
-A <<vol1_spec_sdpi_p_actor_somds_consumer>> may cache requested localized texts and make them available as substitutes to corresponding localized texts references in the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDIB.
+A <<vol1_spec_sdpi_p_actor_somds_consumer>> may cache requested localized texts and make them available as substitutes to corresponding localized text references in the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDIB.
 
 
 [#vol2_clause_dev_33_retrieve_biceps_content_ses]
