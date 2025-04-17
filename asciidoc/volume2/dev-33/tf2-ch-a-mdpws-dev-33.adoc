@@ -137,11 +137,10 @@ include::../dev-a-default-expected-actions.adoc[]
 --
 Depending on the resulting message size, a <<vol1_spec_sdpi_p_actor_somds_provider>> may fail to satisfy the <<vol2_clause_dev_33_message_getlocalizedtext, {var_label_dev_33_message_getlocalizedtext}>> request.
 In such cases, it is recommended that the requesting <<vol1_spec_sdpi_p_actor_somds_consumer>> reduces the expected amount of response data by tweaking the filter criteria and resends the <<vol2_clause_dev_33_message_getlocalizedtext, {var_label_dev_33_message_getlocalizedtext}>> message.
-It is good practice to
 --
 
 [TIP]
 --
-It is good practice to request available languages and request languages one by one to avoid large response messages.
+It is good practice to first request available languages and then use the resulting languages one by one to request localized texts, which widely avoids response messages too large to process.
 --
 
