@@ -765,6 +765,7 @@ ALSO what about abstract actors ... Participant and Connector ... do we indicate
 === SDPi-P Overview
 
 // 10.4.1
+[#vol1_clause_sdpi_p_concepts]
 ==== Concepts
 
 [#vol1_clause_sdpi_p_soa_somds_architecture_alignment]
