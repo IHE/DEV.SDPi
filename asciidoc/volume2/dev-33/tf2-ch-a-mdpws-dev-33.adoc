@@ -1,5 +1,3 @@
-
-
 [#vol2_clause_appendix_mdpws_dev_33]
 ==== MDPWS: Retrieve Localization Information [DEV-33]
 
