@@ -11,8 +11,8 @@ participant "$str_somds_provider" as provider
 
 ==Retrieve Localization Information[DEV-33]==
 
-consumer -> provider: SDC: GetSupportedLanguages()
-consumer <-- provider: SDC: GetSupportedLanguagesResponse(SupportedLanguages)
+consumer -> provider: GetSupportedLanguages()
+consumer <-- provider: GetSupportedLanguagesResponse(SupportedLanguages)
 |||
 loop SupportedLanguage in SupportedLanguages
     opt if SupportedLanguage is required
