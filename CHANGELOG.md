@@ -37,6 +37,7 @@ Each section shall contain a list of action items of the following format: `<bri
 - Clarification of TF-X acronym meaning ([#376](https://github.com/IHE/DEV.SDPi/issues/376))
 - Descriptive overview of SDC gateways ([#382](https://github.com/IHE/DEV.SDPi/issues/382))
 - Clarification of external control meaning ([#383](https://github.com/IHE/DEV.SDPi/issues/383))
+- Clarification of technical confirmation versus operator confirmation ([#371](https://github.com/IHE/DEV.SDPi/issues/371))
 
 ## [2.0.0] - 2024-12-13
 
