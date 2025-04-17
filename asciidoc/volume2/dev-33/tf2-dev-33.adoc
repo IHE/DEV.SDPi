@@ -21,10 +21,12 @@ include::tf2-dev-33-summary.adoc[]
 |Actor |Roles
 
 |<<vol1_spec_sdpi_p_actor_somds_consumer>>
-|Initiates communication by sending a <<vol2_clause_dev_30_message_getmdib, {var_label_dev_30_message_getmdib}>> message to a <<vol1_spec_sdpi_p_actor_somds_provider>>. Then listens for a <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> message to retrieve the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDIB.
+|Initiates communication by sending a <<vol2_clause_dev_33_message_getsupportedlanguages, {var_label_dev_33_message_getsupportedlanguages}>> message to a <<vol1_spec_sdpi_p_actor_somds_provider>>. Then listens for a <<vol2_clause_dev_33_message_getsupportedlanguagesresponse, {var_label_dev_33_message_getsupportedlanguagesresponse}>> message to retrieve the <<vol1_spec_sdpi_p_actor_somds_provider>>'s sequence of available languages.
+
+The sequence of available languages can be used by the <<vol1_spec_sdpi_p_actor_somds_consumer>> to send a <<vol2_clause_dev_33_message_getlocalizedtext, {var_label_dev_33_message_getlocalizedtext}>> message, which is answered by the <<vol1_spec_sdpi_p_actor_somds_provider>> with <<vol2_clause_dev_33_message_getlocalizedtextresponse, {var_label_dev_33_message_getlocalizedtextresponse}>> message that contains a filtered set of localized texts.
 
 |<<vol1_spec_sdpi_p_actor_somds_provider>>
-|Listens for <<vol2_clause_dev_30_message_getmdib, {var_label_dev_30_message_getmdib}>> messages, which it responds to with <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> messages respectively.
+|Listens for <<vol2_clause_dev_33_message_getsupportedlanguages, {var_label_dev_33_message_getsupportedlanguages}>> messages, which it responds to with <<vol2_clause_dev_33_message_getsupportedlanguagesresponse, {var_label_dev_33_message_getsupportedlanguagesresponse}>> messages respectively. Also listens for <<vol2_clause_dev_33_message_getlocalizedtext, {var_label_dev_33_message_getlocalizedtext}>> messages, which it responds to with <<vol2_clause_dev_33_message_getlocalizedtextresponse, {var_label_dev_33_message_getlocalizedtextresponse}>> messages respectively.
 
 |===
 
