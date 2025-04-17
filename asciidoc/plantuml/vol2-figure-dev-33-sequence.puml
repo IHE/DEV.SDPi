@@ -1,0 +1,26 @@
+@startuml
+
+!include common_style.inc.puml
+autonumber
+
+!global $str_somds_consumer = "SOMDS Consumer"
+!global $str_somds_provider = "SOMDS Provider"
+
+participant "$str_somds_consumer" as consumer
+participant "$str_somds_provider" as provider
+
+==Retrieve Localization Information[DEV-33]==
+
+consumer -> provider: SDC: GetSupportedLanguages()
+consumer <-- provider: SDC: GetSupportedLanguagesResponse(SupportedLanguages)
+|||
+loop SupportedLanguage in SupportedLanguages
+    opt if SupportedLanguage is required
+        consumer -> provider: GetLocalizedText(SupportedLanguage, [Filter])
+        consumer <-- provider: GetLocalizedTextResponse(LocalizedTexts)
+        consumer -> consumer: cache LocalizedTexts
+    end
+end
+
+
+@enduml
