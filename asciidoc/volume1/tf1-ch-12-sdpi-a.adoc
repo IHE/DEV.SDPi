@@ -427,7 +427,7 @@ The above standards include processes for determining what potential alert annun
 Many specific implementation details such as the use of wireless technology, has to include a full assessment of the environment of use (e.g., to understand the potential impact of "noise" and coexistence challenges).
 
 Additional device-specific standards may specify latency or delay thresholds.
-For example, the <<ref_iec_60601_2_27_2011>> standard specifies a delay for "brady" alerts (i.e., 10 seconds); however, the realization of this requirement must be understood in the care environment and the systems and network configuration that is utilized for communication of that alert condition.  In other words, even when there is a particular standard that defines a specific time constraint, risk management based on that implementation environemtn must be fully performed and maintained during operation in order to ensure the clinical needs are met.
+For example, the <<ref_iec_60601_2_27_2011>> standard specifies a delay for "brady" alerts (i.e., 10 seconds); however, the realization of this requirement must be understood in the care environment and the systems and network configuration that is utilized for communication of that alert condition.  In other words, even when there is a particular standard that defines a specific time constraint, risk management based on that implementation environment must be fully performed and maintained during operation in order to ensure the clinical needs are met.
 
 For additional general guidance, see Section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
 
