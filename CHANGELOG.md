@@ -40,6 +40,7 @@ Each section shall contain a list of action items of the following format: `<bri
 - Clarification of external control meaning ([#383](https://github.com/IHE/DEV.SDPi/issues/383))
 - Clarification of technical confirmation versus operator confirmation ([#371](https://github.com/IHE/DEV.SDPi/issues/371))
 - Clarification of security versus cybersecurity ([#370](https://github.com/IHE/DEV.SDPi/issues/370))
+- Clarification on ACNS 5.1 - Added SES discussion for SDPi-A risk management section ([#368](https://github.com/IHE/DEV.SDPi/issues/368))
 
 ## [2.0.0] - 2024-12-13
 
