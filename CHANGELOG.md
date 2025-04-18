@@ -24,6 +24,7 @@ Each section shall contain a list of action items of the following format: `<bri
 - Corrected normative standard reference in transactions DEV-27, DEV-35 and DEV-38 ([#400](https://github.com/IHE/DEV.SDPi/issues/400))
 - Updated SDPi Issue Management section ([#408](https://github.com/IHE/DEV.SDPi/issues/408))
 - Rephrased paragraph describing the SOMDS Smart App Platform Actor for clarity ([#379](https://github.com/IHE/DEV.SDPi/issues/379))
+- Modified transaction DEV-29 to add DescriptionModification and EpisodicOperationalState reports ([#403](https://github.com/IHE/DEV.SDPi/issues/403))
 ### Editorial Fixes
 - Corrected typos and grammar ([#363](https://github.com/IHE/DEV.SDPi/issues/363))
 - Changed order of subsections in 1:11.1, 1:12.1 and 1:13.1 ([365](https://github.com/IHE/DEV.SDPi/issues/365))
