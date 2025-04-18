@@ -1,6 +1,6 @@
 @startuml
 
-!include plantuml/common_style.inc.puml
+!include common_style.inc.puml
 autonumber
 
 !global $str_somds_consumer = "SOMDS Consumer"
@@ -18,6 +18,12 @@ consumer <<- provider: Notification(EpisodicMetricReport)
 end
 opt
 consumer <<- provider: Notification(EpisodicComponentReport)
+end
+opt
+consumer <<- provider: Notification(DescriptionModificationReport)
+end
+opt
+consumer <<- provider: Notification(EpisodicOperationalStateReport)
 end
 opt
 consumer <<- provider: Notification(WaveformStream)
