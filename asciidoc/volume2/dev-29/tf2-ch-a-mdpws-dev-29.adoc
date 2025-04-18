@@ -2,6 +2,8 @@
 :var_label_dev_29_message_alertreport: EpisodicAlertReport
 :var_label_dev_29_message_metricreport: EpisodicMetricReport
 :var_label_dev_29_message_componentreport: EpisodicComponentReport
+:var_label_dev_29_message_descriptionmodificationreport: DescriptionModificationReport
+:var_label_dev_29_message_operationalstatereport:EpisodicOperationalStateReport
 :var_label_dev_29_message_waveformstream: WaveformStream
 :var_uri_dpws_messaging: http://docs.oasis-open.org/ws-dd/dpws/1.1/os/wsdd-dpws-1.1-spec-os.html#_Toc228672084
 
@@ -95,6 +97,64 @@ include::../dev-a-default-trigger-events.adoc[]
 ====== Message Semantics
 
 `s12:Envelope/s12:Body/msg:EpisodicComponentReport`:: Updated component information of a <<vol1_spec_sdpi_p_actor_somds_provider>>.
+
+:var_expected_actions_ref: <<vol2_clause_dev_29_message_notification>>
+include::../dev-a-default-expected-actions.adoc[]
+
+// ---------- DescriptionModificationReport ---------
+
+===== {var_label_dev_29_message_descriptionmodificationreport} Message
+
+The <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_descriptionmodificationreport}>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
+
+====== Referenced Standards
+
+* <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
+* <<ref_ieee_11073_10207_2017>> msg:DescriptionModificationReport
+
+====== Message Outline
+
+.DescriptionModificationReport message
+[source#vol2_clause_appendix_a_mdpws_dev_29_descriptionmodificationreport,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-29-descriptionmodificationreport.xml[]
+----
+
+:var_trigger_events_ref: <<vol2_clause_dev_29_message_notification>>
+include::../dev-a-default-trigger-events.adoc[]
+
+====== Message Semantics
+
+`s12:Envelope/s12:Body/msg:DescriptionModificationReport`:: Updated description modification information of a <<vol1_spec_sdpi_p_actor_somds_provider>>.
+
+:var_expected_actions_ref: <<vol2_clause_dev_29_message_notification>>
+include::../dev-a-default-expected-actions.adoc[]
+
+// ---------- EpisodicOperationalStateReport ---------
+
+===== {var_label_dev_29_message_operationalstatereport} Message
+
+The <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_operationalstatereport}>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
+
+====== Referenced Standards
+
+* <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
+* <<ref_ieee_11073_10207_2017>> msg:EpisodicOperationalStateReport
+
+====== Message Outline
+
+.EpisodicOperationalStateReport message
+[source#vol2_clause_appendix_a_mdpws_dev_29_operationalstatereport,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-29-operationalstatereport.xml[]
+----
+
+:var_trigger_events_ref: <<vol2_clause_dev_29_message_notification>>
+include::../dev-a-default-trigger-events.adoc[]
+
+====== Message Semantics
+
+`s12:Envelope/s12:Body/msg:EpisodicOperationalStateReport`:: Updated operational state information of a <<vol1_spec_sdpi_p_actor_somds_provider>>.
 
 :var_expected_actions_ref: <<vol2_clause_dev_29_message_notification>>
 include::../dev-a-default-expected-actions.adoc[]
