@@ -6,10 +6,10 @@ import org.asciidoctor.ast.StructuralNode
 import org.asciidoctor.ast.Table
 import org.asciidoctor.extension.Contexts
 import org.asciidoctor.extension.Treeprocessor
-import org.sdpi.asciidoc.BlockAttribute
 import org.sdpi.asciidoc.RequirementAttributes
+import org.sdpi.asciidoc.factories.TransactionTableBuilder
 import org.sdpi.asciidoc.getRequirementGroups
-import org.sdpi.asciidoc.model.SdpiRequirement2
+import org.sdpi.asciidoc.model.*
 import org.sdpi.asciidoc.plainContext
 
 /**
@@ -25,11 +25,12 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
     }
 
     private fun processBlock(block: StructuralNode) {
-        if (block.hasRole(REQUIREMENT_TABLE_ROLE)) {
+        if (block.hasRole(RoleNames.QueryTable.REQUIREMENT.key)) {
             populateQueryTable(block as Table, getSelectedRequirements(block))
-        }
-        if (block.hasRole(ICS_TABLE_ROLE)) {
+        } else if (block.hasRole(ICS_TABLE_ROLE)) {
             populateICSTable(block as Table, getSelectedRequirements(block))
+        } else if (block.hasRole(RoleNames.QueryTable.TRANSACTIONS.key)) {
+            populateTransactionTable(block as Table)
         } else {
             for (child in block.blocks) {
                 processBlock(child)
@@ -130,4 +131,70 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
         }
     }
 
+    private fun populateTransactionTable(table: Table) {
+
+        val strProfile = table.attributes[RoleNames.Profile.ID.key]?.toString()
+        checkNotNull(strProfile) {
+            logger.error("Table missing required attribute '${RoleNames.Profile.ID.key}'")
+        }
+
+        val strActorId = table.attributes[RoleNames.Transaction.ACTOR_ID.key]?.toString()
+        checkNotNull(strActorId) {
+            logger.error("Table missing required attribute '${RoleNames.Transaction.ACTOR_ID.key}")
+        }
+
+        val profile: SdpiProfile? = docInfo.profiles()[strProfile]
+        checkNotNull(profile) {
+            logger.error("Unknown profile $strProfile")
+        }
+
+        val tableBuilder = TransactionTableBuilder(this, table)
+        tableBuilder.setupHeadings()
+
+        for (transactionReference: SdpiTransactionReference in profile.referencedTransactions()) {
+            val strTransactionId = transactionReference.transactionId
+            val transaction: SdpiTransaction? = docInfo.transactions()[strTransactionId]
+            checkNotNull(transaction) {
+                logger.error("Unknown transaction id $strTransactionId")
+            }
+
+            val strTransactionLink = makeLink(transaction.anchor, transaction.label)
+            val strTransactionIdLink = transaction.createTransactionListLink()
+            val strTransactionCell = "$strTransactionLink ($strTransactionIdLink)"
+
+            if (transaction.actorRoles != null) {
+                for (actorRole in transaction.actorRoles) {
+                    if (actorRole.actorId == strActorId) {
+                        for (obligation in transactionReference.obligations) {
+                            if (actorRole.contribution == obligation.contribution) {
+
+                                tableBuilder.addRow(
+                                    strTransactionCell,
+                                    obligation.contribution,
+                                    obligation.obligation,
+                                    null
+                                )
+
+                                if (obligation.optionalObligations != null) {
+                                    for (optObligation in obligation.optionalObligations) {
+                                        tableBuilder.addRow(
+                                            "",
+                                            null,
+                                            optObligation.obligation,
+                                            "<<${optObligation.optionId}>>"
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    fun makeLink(strAnchor: String, strText: String): String {
+        return "link:#$strAnchor[$strText]"
+    }
 }

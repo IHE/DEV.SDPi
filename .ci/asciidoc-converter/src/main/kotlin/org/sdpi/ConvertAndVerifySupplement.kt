@@ -79,7 +79,7 @@ class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {
             logger.info { "File successfully written" }
         }.onFailure {
             logger.error { it.message }
-            logger.trace(it) { it.message }
+            //logger.trace(it) { it.message }
             exitProcess(1)
         }
     }

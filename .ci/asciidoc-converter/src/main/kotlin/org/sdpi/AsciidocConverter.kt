@@ -74,6 +74,8 @@ class AsciidocConverter(
 
         val anchorReplacements = AnchorReplacementsMap()
 
+        val transactionActorsProcessor = TransactionActorsProcessor()
+
         // Formats sdpi_requirement blocks & their content.
         //   * RequirementBlockProcessor2 handles the containing sdpi_requirement block
         //   * RelatedBlockProcessor handles [RELATED] blocks within requirement blocks.
@@ -81,6 +83,7 @@ class AsciidocConverter(
         asciidoctor.javaExtensionRegistry().block(RequirementBlockProcessor2())
         asciidoctor.javaExtensionRegistry().block(RelatedBlockProcessor())
         asciidoctor.javaExtensionRegistry().block(RequirementExampleBlockProcessor())
+        asciidoctor.javaExtensionRegistry().block(transactionActorsProcessor)
 
         asciidoctor.javaExtensionRegistry().treeprocessor(NumberingProcessor(null, anchorReplacements))
 
@@ -88,9 +91,13 @@ class AsciidocConverter(
         val bibliographyCollector = BibliographyCollector()
         asciidoctor.javaExtensionRegistry().treeprocessor(bibliographyCollector)
 
+        // Gather profiles and the transactions they include.
+        val profileTransactionCollector = TransactionIncludeProcessor()
+        asciidoctor.javaExtensionRegistry().blockMacro(profileTransactionCollector)
+
         // Gather SDPI specific information from the document such as
         // requirements and use-cases.
-        val infoCollector = TreeInfoCollector(bibliographyCollector)
+        val infoCollector = TreeInfoCollector(bibliographyCollector, transactionActorsProcessor, profileTransactionCollector)
         asciidoctor.javaExtensionRegistry().treeprocessor(infoCollector)
 
         // Support to insert tables of requirements etc. sdpi_requirement_table macros.
@@ -98,6 +105,7 @@ class AsciidocConverter(
         // Tree processors fill in the placeholders.
         asciidoctor.javaExtensionRegistry().blockMacro(AddRequirementQueryPlaceholder())
         asciidoctor.javaExtensionRegistry().blockMacro(AddICSPlaceholder())
+        asciidoctor.javaExtensionRegistry().blockMacro(AddTransactionQueryPlaceholder())
         asciidoctor.javaExtensionRegistry().treeprocessor(PopulateTables(infoCollector.info()))
 
         // Handle inline macros to cross-reference information from the document tree.
@@ -127,11 +135,20 @@ class AsciidocConverter(
             is Input.StringInput -> asciidoctor.convert(inputType.string, options)
         }
 
+        profileTransactionCollector.dump()
+        anchorReplacements.dump()
+
         if (conversionOptions.extractsFolder != null) {
-            val jsonFormatter = Json { prettyPrint = true }
+            val jsonFormatter = Json {
+                prettyPrint = true
+                explicitNulls = false
+            }
 
             writeArtifact("sdpi-requirements", jsonFormatter.encodeToString(infoCollector.info().requirements()))
             writeArtifact("sdpi-use-cases", jsonFormatter.encodeToString(infoCollector.info().useCases()))
+            writeArtifact("sdpi-actors", jsonFormatter.encodeToString(infoCollector.info().actors()))
+            writeArtifact("sdpi-transactions", jsonFormatter.encodeToString(infoCollector.info().transactions()))
+            writeArtifact("sdpi-profiles", jsonFormatter.encodeToString(profileTransactionCollector.profiles()))
         }
 
         asciidoctor.shutdown()

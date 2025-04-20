@@ -4,6 +4,29 @@ package org.sdpi.asciidoc.extension
  * Defines keywords for block roles.
  */
 sealed class RoleNames {
+
+    enum class Profile(val key: String) {
+        // Profile section.
+        PROFILE("profile"),
+
+        // Identifier for the profile
+        ID("profile-id"),
+    }
+
+    enum class Transaction(val key: String) {
+        TRANSACTION("transaction"),
+
+        TRANSACTION_ID("transaction-id"),
+
+        ACTOR_ID("actor-id"),
+
+        CONTRIBUTION("contribution"),
+
+        ACTOR_ROLE_TABLE("actor_roles"),
+
+        OPTION("option"),
+    }
+
     enum class UseCase(val key: String) {
         // Use case section
         FEATURE("use-case"),
@@ -18,5 +41,15 @@ sealed class RoleNames {
 
         // Steps for the scenario. Must be inside a scenario section.
         STEPS("use-case-steps"),
+    }
+
+    // Roles applied to the tables where query results will get populated
+    // that are created as placeholders by block macro processors.
+    enum class QueryTable(val key: String) {
+        // The role applied to requirement list placeholder tables.
+        REQUIREMENT("requirement-table"),
+
+        // The role applied to transaction list tables.
+        TRANSACTIONS("transactions-table")
     }
 }

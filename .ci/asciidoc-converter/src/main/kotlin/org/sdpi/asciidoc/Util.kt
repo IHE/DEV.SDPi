@@ -1,6 +1,7 @@
 package org.sdpi.asciidoc
 
 import org.apache.logging.log4j.kotlin.loggerOf
+import org.asciidoctor.ast.ContentNode
 import org.asciidoctor.ast.StructuralNode
 import org.sdpi.asciidoc.model.RequirementLevel
 import org.sdpi.asciidoc.model.StructuralNodeWrapper
@@ -84,6 +85,16 @@ fun getRequirementGroups(oGroups: Any?): List<String> {
         return listOf()
     }
     return oGroups.toString().split(",")
+}
+
+fun findIdFromParent(parent: ContentNode, strRole: String, strIdAttribute: String): String? {
+    return if (parent.hasRole(strRole)) {
+        parent.attributes[strIdAttribute]?.toString()
+    } else if (parent.parent != parent.document) {
+        findIdFromParent(parent.parent, strRole, strIdAttribute)
+    } else {
+        null
+    }
 }
 
 fun getLocation(block: StructuralNode): String {

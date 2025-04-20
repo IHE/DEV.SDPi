@@ -3,7 +3,6 @@ package org.sdpi.asciidoc.extension
 import org.asciidoctor.ast.StructuralNode
 import org.asciidoctor.extension.BlockMacroProcessor
 import org.asciidoctor.extension.Name
-import org.sdpi.asciidoc.BlockAttribute
 import org.sdpi.asciidoc.RequirementAttributes
 
 const val BLOCK_MACRO_NAME_SDPI_ICS_TABLE = "sdpi_ics_table"
