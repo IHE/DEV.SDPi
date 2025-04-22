@@ -14,12 +14,12 @@ The SDPi changelog shall not contain the following sections
 
 Each section shall contain a list of action items of the following format: `<brief one-sentence description of what has been done> (#<issue number & URL>).`
 
-## [Unreleased]
+## [2.1.0] - 2025-04-22
 
 
 ### Changes
-- Removed "and ignore" from BICEPS Content Consumer requirement ([#380](https://github.com/IHE/DEV.SDPi/issues/380))
 - Added new section "Unique Localized Text Catalog Identification" to volume 3 ([#256](https://github.com/IHE/DEV.SDPi/issues/256))
+- Removed "and ignore" from BICEPS Content Consumer requirement ([#380](https://github.com/IHE/DEV.SDPi/issues/380))
 - Rephrased notes, mostly to correct and maintain references to SDPi versions ([#366](https://github.com/IHE/DEV.SDPi/issues/366))
 - Corrected normative standard reference in transactions DEV-27, DEV-35 and DEV-38 ([#400](https://github.com/IHE/DEV.SDPi/issues/400))
 - Updated SDPi Issue Management section ([#408](https://github.com/IHE/DEV.SDPi/issues/408))
@@ -29,13 +29,13 @@ Each section shall contain a list of action items of the following format: `<bri
 - Corrected typos and grammar ([#363](https://github.com/IHE/DEV.SDPi/issues/363))
 - Changed order of subsections in 1:11.1, 1:12.1 and 1:13.1 ([365](https://github.com/IHE/DEV.SDPi/issues/365))
 ### Added
+- Content on how to deal with non-slewing time adjustments ([#203](https://github.com/IHE/DEV.SDPi/issues/203))
 - TF-2C for Security Management Appendix (basic, with little initial content)  ([#250](https://github.com/IHE/DEV.SDPi/issues/250))
 - Clarification in definition of SOMDS Provider UID ([#378](https://github.com/IHE/DEV.SDPi/issues/378))
 - Further reasons for security technology variation ([#381](https://github.com/IHE/DEV.SDPi/issues/381))
 - Clarification of rationale for discontinuous section numbering ([#364](https://github.com/IHE/DEV.SDPi/issues/364))
 - Clarification of status of open Issues and Topics of Interest ([#374](https://github.com/IHE/DEV.SDPi/issues/374))
 - Clarification of TLS 1.2 versus TLS 1.3 usage ([#377](https://github.com/IHE/DEV.SDPi/issues/377) and [#423](https://github.com/IHE/DEV.SDPi/issues/423))
-- Content on how to deal with non-slewing time adjustments ([#203](https://github.com/IHE/DEV.SDPi/issues/203))
 - Clarification of TF-X acronym meaning ([#376](https://github.com/IHE/DEV.SDPi/issues/376))
 - Descriptive overview of SDC gateways ([#382](https://github.com/IHE/DEV.SDPi/issues/382))
 - Clarification of external control meaning ([#383](https://github.com/IHE/DEV.SDPi/issues/383))
