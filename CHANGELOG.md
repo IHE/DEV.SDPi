@@ -20,7 +20,7 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Editorial Fixes
 
-- Malformed PlantUML rendering and titles in section 2:A.2.6 ([#441](https://github.com/IHE/DEV.SDPi/issues/441)
+- Malformed PlantUML rendering and titles in section 2:A.2.6 ([#441](https://github.com/IHE/DEV.SDPi/issues/441))
 
 ## [2.1.0] - 2025-04-22
 
