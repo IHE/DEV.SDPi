@@ -3,7 +3,7 @@
 :var_label_dev_29_message_metricreport: EpisodicMetricReport
 :var_label_dev_29_message_componentreport: EpisodicComponentReport
 :var_label_dev_29_message_descriptionmodificationreport: DescriptionModificationReport
-:var_label_dev_29_message_operationalstatereport:EpisodicOperationalStateReport
+:var_label_dev_29_message_operationalstatereport: EpisodicOperationalStateReport
 :var_label_dev_29_message_waveformstream: WaveformStream
 :var_uri_dpws_messaging: http://docs.oasis-open.org/ws-dd/dpws/1.1/os/wsdd-dpws-1.1-spec-os.html#_Toc228672084
 
