@@ -14,8 +14,15 @@ The SDPi changelog shall not contain the following sections
 
 Each section shall contain a list of action items of the following format: `<brief one-sentence description of what has been done> (#<issue number & URL>).`
 
-## [2.1.0] - 2025-04-22
+## Unreleased
 
+## [2.1.1] - 2025-04-22
+
+### Editorial Fixes
+
+- Malformed PlantUML rendering and titles in section 2:A.2.6 ([#441](https://github.com/IHE/DEV.SDPi/issues/441)
+
+## [2.1.0] - 2025-04-22
 
 ### Changes
 - Added new section "Unique Localized Text Catalog Identification" to volume 3 ([#256](https://github.com/IHE/DEV.SDPi/issues/256))
@@ -25,9 +32,11 @@ Each section shall contain a list of action items of the following format: `<bri
 - Updated SDPi Issue Management section ([#408](https://github.com/IHE/DEV.SDPi/issues/408))
 - Rephrased paragraph describing the SOMDS Smart App Platform Actor for clarity ([#379](https://github.com/IHE/DEV.SDPi/issues/379))
 - Modified transaction DEV-29 to add DescriptionModification and EpisodicOperationalState reports ([#403](https://github.com/IHE/DEV.SDPi/issues/403))
+- 
 ### Editorial Fixes
 - Corrected typos and grammar ([#363](https://github.com/IHE/DEV.SDPi/issues/363))
 - Changed order of subsections in 1:11.1, 1:12.1 and 1:13.1 ([365](https://github.com/IHE/DEV.SDPi/issues/365))
+- 
 ### Added
 - Content on how to deal with non-slewing time adjustments ([#203](https://github.com/IHE/DEV.SDPi/issues/203))
 - TF-2C for Security Management Appendix (basic, with little initial content)  ([#250](https://github.com/IHE/DEV.SDPi/issues/250))
