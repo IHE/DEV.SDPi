@@ -36,6 +36,8 @@ No content from those three standards - including their requirements -  is norma
 
 * [[[ref_iec_60601_1_8_2020,IEC 60601-1-8:2020]]], IEC 60601-1-8:2006/AMD2:2020, Medical electrical equipment — Part 1-8: General requirements for basic safety and essential performance — Collateral standard: General requirements, tests and guidance for alarm systems in medical electrical equipment and medical electrical systems; Amendment 1:2020, and Amendment 2:2020, available at https://webstore.iec.ch/publication/59648 and https://www.iso.org/standard/41986.html.
 
+* [[[ref_iec_60601_2_27_2011,IEC 60601-2-27:2011]]], IEC 60601-2-27:2011, Medical electrical equipment — Part 2-27: Particular requirements for the basic safety and essential performance of electrocardiographic monitoring equipment, available at https://webstore.iec.ch/en/publication/2638.
+
 * [[[ref_ieee_11073_10101_2020,IEEE 11073-10101:2020]]] IEEE 11073-10101™ International Standard - Health informatics--Device interoperability--Part 10101:Point-of-care medical device communication--Nomenclature, available at https://standards.ieee.org/ieee/11073-10101/10343/.
 
 * [[[ref_ieee_11073_10201_2004,IEEE 11073-10201:2004]]] IEEE 11073-10201™ International Standard - Health informatics--Device interoperability--Part 10201:Point-of-care medical device communication--Domain information model.  Note this was updated in 2020.  Available at https://standards.ieee.org/ieee/11073-10201/10263/.
@@ -65,6 +67,10 @@ No content from those three standards - including their requirements -  is norma
 * [[[ref_ihe_pcd_tf_3_2019,IHE PCD TF-3:2019]]] IHE Patient Care Device Technical Framework, Vol. 3, available at https://www.ihe.net/uploadedFiles/Documents/PCD/IHE_PCD_TF_Vol3.pdf.
 
 * [[[ref_rfc_3986, RFC 3986]]] T. Berners-Lee et al., RFC 3986, Uniform Resource Identifier (URI): Generic Syntax, January 2005, available at https://www.rfc-editor.org/rfc/rfc3986
+
+* [[[ref_rfc_5905, RFC 5905]]] D. Mills et al., RFC 5905, Network Time Protocol Version 4: Protocol And Algorithms Specification, June 2010, available at https://www.rfc-editor.org/rfc/rfc5905
+
+* [[[ref_rfc_9110, RFC 9110]]] R. Fielding, M. Nottingham, J. Reschke, RFC 9110, HTTP Semantics, June 2022, available at https://www.rfc-editor.org/rfc/rfc9110
 
 * [[[ref_oasis_dpws_2009,OASIS DPWS:2009]]] OASIS Standard, Devices Profile for Web Services Version 1.1, OASIS Standard, 1 July 2009, available at http://docs.oasis-open.org/ws-dd/dpws/wsdd-dpws-1.1-spec.html
 

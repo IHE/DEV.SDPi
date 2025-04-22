@@ -12,7 +12,7 @@ a| *{supplement_note}*: This SDPi-xC (External Control) Profile Section is gener
 |===
 
 [#vol1_clause_sdpi_xc_profile_reftext,reftext="SDPi-xC Profile"]
-The SDPi-External Control ([[acronym_sdpi_xc,SDPi-xC]] SDPi-xC) Profile enables external or "remote" control of one device by another.
+The SDPi-External Control ([[acronym_sdpi_xc,SDPi-xC]] SDPi-xC) Profile enables external or "remote" control of one device by another, both being in the same secure environment (<<term_medical_device_lan>>).
 This may be as simple as adjust an alarm limit or triggering a blood pressure cuff reading, to adjusting a respiration rate on a ventilator or titrating a drug dose rate on an infusion pump.
 Specializes services and semantics are provided to enable safe and secure control invocation.
 
@@ -48,26 +48,26 @@ image::../images/vol1-diagram-sdpi-xc-actor.svg[]
 .^| <<transaction_name_manage_medical_external_control>> (_deferred_)
 .^| Responder
 .^| R
-| [DEV-44] Deferred to SDPi 3.0 or later
+| [DEV-44] Deferred to a future version of SDPi
 // <<vol2_clause_dev_44>>
 
 | <<transaction_name_invoke_medical_control_services>> (_deferred_)
 | Responder
 | R
-| [DEV-45] Deferred to SDPi 3.0 or later
+| [DEV-45] Deferred to a future version of SDPi
 // <<vol2_clause_dev_45>>
 
 .2+| <<vol1_spec_sdpi_xc_actor_somds_medical_control_consumer>>
 .^| <<transaction_name_manage_medical_external_control>> (_deferred_)
 .^| Initiator
 .^| R
-| [DEV-44] Deferred to SDPi 3.0 or later
+| [DEV-44] Deferred to a future version of SDPi
 // <<vol2_clause_dev_44>>
 
 | <<transaction_name_invoke_medical_control_services>> (_deferred_)
 | Initiator
 | R
-| [DEV-45] Deferred to SDPi 3.0 or later
+| [DEV-45] Deferred to a future version of SDPi
 // <<vol2_clause_dev_45>>
 
 |===
@@ -96,6 +96,21 @@ TODO:
 include::../plantuml/vol1-figure-sdpi-xc-example-sequence-diagram.puml[]
 ....
 
+[#vol1_clause_sdpi_xc_somds_medical_control_provider]
+===== SOMDS Medical Control Provider
+[#vol1_spec_sdpi_xc_actor_somds_medical_control_provider, reftext='SOMDS Medical Control Provider']
+Actor Summary Definition:
+[none]
+. A <<vol1_spec_sdpi_p_actor_somds_provider>> grouped actor that provides operational control services to a <<vol1_spec_sdpi_xc_actor_somds_medical_control_consumer>>.
+
+This actor is designed to publish medical device operational control services to a <<vol1_spec_sdpi_xc_actor_somds_medical_control_consumer>>, which in turn can invoke the services and remotely manage the device, safely and securely.
+Transactions enabled for this actor are identified in <<vol1_table_sdpi_xc_actors_transactions>> above.
+
+Given this _intended medical purpose_, the actor will fully address applicable requirements from the core <<acronym_sdc>> standards (<<ref_ieee_11073_10207_2017>> and <<ref_ieee_11073_20701_2018>>), as well as the <<acronym_pkp>> standards <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10703_202x>> (Control <<acronym_pkp>>).
+
+Every <<vol1_spec_sdpi_xc_actor_somds_medical_control_provider>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_provider>> to enable <<acronym_somds>>-based connectivity.
+This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_consumer>>.
+Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_a_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_clause_sdpi_p_profile_reftext>>.
 
 [#vol1_clause_sdpi_xc_somds_medical_control_consumer]
 ===== SOMDS Medical Control Consumer
@@ -110,22 +125,6 @@ Transactions enabled for this actor are identified in <<vol1_table_sdpi_xc_actor
 Given this _intended medical purpose_, the actor will fully address applicable requirements from the core <<acronym_sdc>> standards (<<ref_ieee_11073_10207_2017>> and <<ref_ieee_11073_20701_2018>>), as well as the <<acronym_pkp>> standards <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10703_202x>> (Control <<acronym_pkp>>).
 
 Every <<vol1_spec_sdpi_xc_actor_somds_medical_control_consumer>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_consumer>> to enable <<acronym_somds>>-based connectivity.
-This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_consumer>>.
-Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_a_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_clause_sdpi_p_profile_reftext>>.
-
-[#vol1_clause_sdpi_xc_somds_medical_control_provider]
-===== SOMDS Medical Control Provider
-[#vol1_spec_sdpi_xc_actor_somds_medical_control_provider, reftext='SOMDS Medical Control Provider']
-Actor Summary Definition:
-[none]
-. A <<vol1_spec_sdpi_p_actor_somds_provider>> grouped actor that provides operational control services to a <<vol1_spec_sdpi_xc_actor_somds_medical_control_consumer>>.
-
-This actor is designed to publish medical device operational control services to a <<vol1_spec_sdpi_xc_actor_somds_medical_control_consumer>>, which in turn can invoke the services and remotely manage the device, safely and securely.
-Transactions enabled for this actor are identified in <<vol1_table_sdpi_xc_actors_transactions>> above.
-
-Given this _intended medical purpose_, the actor will fully address applicable requirements from the core <<acronym_sdc>> standards (<<ref_ieee_11073_10207_2017>> and <<ref_ieee_11073_20701_2018>>), as well as the <<acronym_pkp>> standards <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10703_202x>> (Control <<acronym_pkp>>).
-
-Every <<vol1_spec_sdpi_xc_actor_somds_medical_control_provider>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_provider>> to enable <<acronym_somds>>-based connectivity.
 This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_consumer>>.
 Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_a_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_clause_sdpi_p_profile_reftext>>.
 
@@ -192,6 +191,8 @@ No additional effectiveness requirements or considerations are identified for th
 
 ==== Security Requirements & Considerations
 No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P Profile (see <<vol1_clause_appendix_a_ses_considerations_section_template>>), and those specified in the _<<acronym_ses>> General Considerations_ Section above.
+
+Note that capability '_external or "remote" control of one device by another_' enabled by this SDPi-xC Profile refers to "external" to the device that is controlled, while both devices are in the same secure environment (<<term_medical_device_lan>>).
 
 === SDPi-xC Cross Profile Considerations
 No additional cross profile considerations have been identified.

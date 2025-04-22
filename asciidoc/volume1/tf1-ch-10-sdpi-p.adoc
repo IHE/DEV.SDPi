@@ -88,7 +88,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | <<transaction_name_discover_system_context_and_capabilities>> (_deferred_)
 | Responder
 | R
-| Deferred to SDPi 1.x
+| Deferred to a future version of SDPi
 // <<vol2_clause_dev_26>>
 
 | <<transaction_name_manage_biceps_subscription>>
@@ -114,21 +114,21 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | <<transaction_name_set_provider_state>> (_deferred_)
 | Responder
 | O
-| Deferred to SDPi-xC
+| Deferred to a future version of SDPi
 // <<vol2_clause_dev_31>>
 
 
 | <<transaction_name_retrieve_archive_data>>  (_deferred_)
 | Responder
 | O
-| Deferred to SDPi 1.x
+| Deferred to a future version of SDPi
 // <<vol2_clause_dev_32>>
 
 
 | <<transaction_name_retrieve_localization_information>>
 | Responder
 | O
-| Deferred to SDPi 1.x
+| Deferred to a future version of SDPi
 // <<vol2_clause_dev_33>>
 
 
@@ -161,7 +161,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | <<transaction_name_discover_system_context_and_capabilities>> (_deferred_)
 | Initiator
 | R
-| Deferred to SDPi 1.x
+| Deferred to a future version of SDPi
 // <<vol2_clause_dev_26>>
 
 
@@ -188,21 +188,21 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | <<transaction_name_set_provider_state>> (_deferred_)
 | Initiator
 | O
-| Deferred to SDPi-xC
+| Deferred to a future version of SDPi
 // <<vol2_clause_dev_31>>
 
 
 | <<transaction_name_retrieve_archive_data>>  (_deferred_)
 | Initiator
 | O
-| Deferred to SDPi 1.x
+| Deferred to a future version of SDPi
 // <<vol2_clause_dev_32>>
 
 
 | <<transaction_name_retrieve_localization_information>>
 | Initiator
 | O
-| Deferred to SDPi 1.x
+| Deferred to a future version of SDPi
 // <<vol2_clause_dev_33>>
 
 
@@ -541,7 +541,7 @@ This actor leverages the consistent integration of a _<<vol1_spec_sdpi_p_actor_s
 For example, an application may only need to identify and consume a few parameters from one or more _<<vol1_spec_sdpi_p_actor_somds_participant>>_ systems and not be required to implement a complete SOMDS interface including security, discovery, subscription management, filtering of unneeded <<acronym_mdib>> information, etc.
 
 <<vol1_spec_sdpi_p_actor_somds_smart_app_platform>> Actors provide an abstraction layer between application software and the requirements for interoperating in a SOMDS network backbone.
-Since a single platform actor can support multiple Smart Apps, network traffic may be significantly reduced, as well as processing overhead for <<vol1_spec_sdpi_p_actor_somds_provider>> systems that have multiple <<vol1_spec_sdpi_p_actor_somds_consumer>>s simultaneously invoking their services.
+As a _<<vol1_spec_sdpi_p_actor_somds_connector>>_, the <<vol1_spec_sdpi_p_actor_somds_smart_app_platform>> Actor maintains a 1:1 connection with other <<vol1_spec_sdpi_p_actor_somds_provider>> and <<vol1_spec_sdpi_p_actor_somds_consumer>> systems, but can simultaneously support multiple (1:* multiplicity) apps that utilize its services. Without the <<vol1_spec_sdpi_p_actor_somds_smart_app_platform>> Actor, each app would have to implement separate connections to each _<<vol1_spec_sdpi_p_actor_somds_participant>>_, resulting in increased network traffic and communication processing overhead.
 
 The platform must support both non-smart app critical functions (such as network topology discovery and maintenance) but also aggregate app requirements (e.g., quality of service necessary to support an application’s algorithms).
 ////
@@ -765,6 +765,7 @@ ALSO what about abstract actors ... Participant and Connector ... do we indicate
 === SDPi-P Overview
 
 // 10.4.1
+[#vol1_clause_sdpi_p_concepts]
 ==== Concepts
 
 [#vol1_clause_sdpi_p_soa_somds_architecture_alignment]
@@ -1068,12 +1069,22 @@ Additional effectiveness requirements or considerations are identified for this 
 
 ==== Security Requirements & Considerations
 Security is foundational for all interactions between <<vol1_spec_sdpi_p_actor_somds_participant>> Actors, with a clear distinction being made between information that may be exchanged outside of a secure connection (e.g., during network discovery transactions).
-Specific security technologies may vary based on the implementation technology being used, and will be detailed in the appropriate TF-2 technology specifications.
+Specific security technologies may vary based on jurisdictional requirements, regulations and the implementation technology, and will be detailed in the appropriate TF-2 technology specifications.
 All transactions indicate whether they require secure or unsecured connections.
 
-For the default <<acronym_sdpi_p>> connectivity technology, namely ISO/IEEE 11073 <<term_service_oriented_device_connectivity>>, TLS 1.2 (or later versions) support is required (See <<ref_ieee_11073_20701_2018>> and <<ref_ieee_11073_20702_2016>>).
-Additional information and requirements may be provided in <<vol2_appendix_a_mdpws_messages>>.
+For the default <<acronym_sdpi_p>> connectivity technology, namely ISO/IEEE 11073 <<term_service_oriented_device_connectivity>>, TLS 1.2 (or higher versions) support is required (See <<ref_ieee_11073_20701_2018>> and <<ref_ieee_11073_20702_2016>>).
 
+NOTE: The SDC standard <<ref_ieee_11073_20701_2018>> includes requirement R0064 stating that an SDC PARTICIPANT SHOULD utilize the highest TLS version. Herewith "the highest" is interpreted as the highest TLS version available, and not as the highest version negotiated between two SDC PARTICIPANTS.
+
+NOTE: TLS 1.2 is not sufficient for all types of connectivity (e.g., cloud, remote programming, etc.), and it has reported cipher suite weaknesses. TLS 1.3 (or higher, in the future) may be hence required depending on the risk associated with the device.
+
+.R1544
+[sdpi_requirement#r1544,sdpi_req_level=should]
+****
+A <<vol1_spec_sdpi_p_actor_somds_participant>> should use TLS 1.3, or a higher version.
+****
+
+Additional information and requirements may be provided in <<vol2_appendix_c_security_management>> or <<vol2_appendix_a_mdpws_messages>>.
 
 [#vol1_clause_sdpi_p_cross_profile_considerations]
 === SDPi-P Cross Profile Considerations

@@ -93,19 +93,19 @@ image::../images/vol1-diagram-sdpi-a-actor.svg[]
 | <<transaction_name_manage_medical_alert_delegation>> (_deferred_)
 | Responder
 | R ^(See^ ^Note^ ^1)^
-| [DEV-41] Deferred to SDPi 2.0
+| [DEV-41] Deferred to a future version of SDPi
 // <<vol2_clause_dev_41>>
 
 | <<transaction_name_delegate_medical_alert>> (_deferred_)
 | Initiator
 | R ^(See^ ^Note^ ^1)^
-| [DEV-42] Deferred to SDPi 2.0
+| [DEV-42] Deferred to a future version of SDPi
 // <<vol2_clause_dev_42>>
 
 | <<transaction_name_update_alert_acknowledgement_status>> (_deferred_)
 | Responder
 | R
-| [DEV-43] Deferred to SDPi 2.0
+| [DEV-43] Deferred to a future version of SDPi
 // <<vol2_clause_dev_43>>
 
 .6+| <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>
@@ -127,19 +127,19 @@ image::../images/vol1-diagram-sdpi-a-actor.svg[]
 | <<transaction_name_manage_medical_alert_delegation>> (_deferred_)
 | Initiator
 | R ^(See^ ^Note^ ^1)^
-| [DEV-41] Deferred to SDPi 2.0
+| [DEV-41] Deferred to a future version of SDPi
 // <<vol2_clause_dev_41>>
 
 | <<transaction_name_delegate_medical_alert>> (_deferred_)
 | Responder
 | R ^(See^ ^Note^ ^1)^
-| [DEV-42] Deferred to SDPi 2.0
+| [DEV-42] Deferred to a future version of SDPi
 // <<vol2_clause_dev_42>>
 
 | <<transaction_name_update_alert_acknowledgement_status>> (_deferred_)
 | Initiator
 | R
-| [DEV-43] Deferred to SDPi 2.0
+| [DEV-43] Deferred to a future version of SDPi
 // <<vol2_clause_dev_43>>
 
 .4+| <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> ^(See^ ^Note^ ^2)^
@@ -161,7 +161,7 @@ image::../images/vol1-diagram-sdpi-a-actor.svg[]
 | <<transaction_name_update_alert_acknowledgement_status>> (_deferred_)
 | Initiator
 | O
-| [DEV-43] Deferred to SDPi 2.0
+| [DEV-43] Deferred to a future version of SDPi
 // <<vol2_clause_dev_43>>
 
 5+<|
@@ -197,24 +197,6 @@ TODO:
 include::../plantuml/vol1-figure-sdpi-a-reporting-example-sequence-diagram.puml[]
 ....
 
-[#vol1_clause_sdpi_a_somds_medical_alert_consumer]
-===== SOMDS Medical Alert Consumer
-[#vol1_spec_sdpi_a_actor_somds_medical_alert_consumer, reftext='SOMDS Medical Alert Consumer']
-Actor Summary Definition:
-[none]
-. A <<vol1_spec_sdpi_p_actor_somds_consumer>> grouped actor that receives medical alert information from a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>.
-
-This actor is designed to receive and manage medical device alert information to communicate it safely and reliably to a clinician.
-Transactions enabled for this actor are identified in <<vol1_table_sdpi_a_actors_transactions>> above.
-
-Given this _intended medical purpose_, the actor will fully address applicable requirements from the core <<acronym_sdc>> standards (<<ref_ieee_11073_10207_2017>> and <<ref_ieee_11073_20701_2018>>), as well as the <<acronym_pkp>> standards <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10702_202x>> (Alert <<acronym_pkp>>).
-
-Every <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_consumer>> to enable <<acronym_somds>>-based connectivity.
-This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_consumer>>.
-Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_a_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_clause_sdpi_p_profile_reftext>>.
-
-Note that if a <<label_system_type_name_sas>> is being created, it may incorporate both <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> and <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> Actors, both receiving and publishing alerts.
-
 [#vol1_clause_sdpi_a_somds_medical_alert_provider]
 ===== SOMDS Medical Alert Provider
 [#vol1_spec_sdpi_a_actor_somds_medical_alert_provider, reftext='SOMDS Medical Alert Provider']
@@ -228,6 +210,24 @@ Transactions enabled for this actor are identified in <<vol1_table_sdpi_a_actors
 Given this _intended medical purpose_, the actor will fully address applicable requirements from the core <<acronym_sdc>> standards (<<ref_ieee_11073_10207_2017>> and <<ref_ieee_11073_20701_2018>>), as well as the <<acronym_pkp>> standards <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10702_202x>> (Alert <<acronym_pkp>>).
 
 Every <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_provider>> to enable <<acronym_somds>>-based connectivity.
+This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_consumer>>.
+Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_a_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_clause_sdpi_p_profile_reftext>>.
+
+Note that if a <<label_system_type_name_sas>> is being created, it may incorporate both <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> and <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> Actors, both receiving and publishing alerts.
+
+[#vol1_clause_sdpi_a_somds_medical_alert_consumer]
+===== SOMDS Medical Alert Consumer
+[#vol1_spec_sdpi_a_actor_somds_medical_alert_consumer, reftext='SOMDS Medical Alert Consumer']
+Actor Summary Definition:
+[none]
+. A <<vol1_spec_sdpi_p_actor_somds_consumer>> grouped actor that receives medical alert information from a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>.
+
+This actor is designed to receive and manage medical device alert information to communicate it safely and reliably to a clinician.
+Transactions enabled for this actor are identified in <<vol1_table_sdpi_a_actors_transactions>> above.
+
+Given this _intended medical purpose_, the actor will fully address applicable requirements from the core <<acronym_sdc>> standards (<<ref_ieee_11073_10207_2017>> and <<ref_ieee_11073_20701_2018>>), as well as the <<acronym_pkp>> standards <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10702_202x>> (Alert <<acronym_pkp>>).
+
+Every <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_consumer>> to enable <<acronym_somds>>-based connectivity.
 This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_consumer>>.
 Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_a_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_clause_sdpi_p_profile_reftext>>.
 
@@ -417,9 +417,19 @@ Specific capabilities supporting the <<acronym_aars>> use case include:
 === SDPi-A Safety, Effectiveness and Security - Requirements and Considerations
 
 ==== SES General Considerations
-Requirements from the <<ref_iso_81001_1_2021>>, <<ref_iec_80001_1_2021>>, and related standards should be fully applied to this technical framework element.
 
-For additional guidance, see Section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
+Of all the SDPi Profiles, the Alerting profile is the most challenging regarding ensuring implementations are safe, effective & secure (<acronym_ses>>).
+This is due in part to the unique and dynamic care environments into which these systems are deployed, requiring significant risk management efforts throughout the entire technology lifecycle.
+To that end, requirements from the <<ref_iso_81001_1_2021>>, <<ref_iec_80001_1_2021>>, and related standards should be fully applied to this technical framework element.
+Additionally, requirements from the <<ref_ieee_11073_10702_202x>> should be fully implemented in any implementation of the SDPi Profiles.  For example, a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> may indicate a maximum delay time, which if not met by a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> could result in stopping an active "silent mode" state.
+
+The above standards include processes for determining what potential alert annunciation latency or delay periods are clinically acceptable, as well as the specification of specific risk control measures that facilitate the establishment of a robust and resilient interoperable infrastructure for communicating alert conditions.
+Many specific implementation details such as the use of wireless technology, has to include a full assessment of the environment of use (e.g., to understand the potential impact of "noise" and coexistence challenges).
+
+Additional device-specific standards may specify latency or delay thresholds.
+For example, the <<ref_iec_60601_2_27_2011>> standard specifies a delay for "brady" alerts (i.e., 10 seconds); however, the realization of this requirement must be understood in the care environment and the systems and network configuration that is utilized for communication of that alert condition.  In other words, even when there is a particular standard that defines a specific time constraint, risk management based on that implementation environment must be fully performed and maintained during operation in order to ensure the clinical needs are met.
+
+For additional general guidance, see Section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
 
 ==== Safety Requirements & Considerations
 No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ Section above.
