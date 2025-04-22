@@ -7,13 +7,15 @@
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi 2.0.0 Supplement -- _STU / TI Version_ -- Note*:
+a| *SDPi 2.1 Supplement -- _STU / TI Version_ -- Note*:
 
-This version of the SDPi 2.0 Standard for Trial Use (HL7 STU) / Trial Implementation (IHE TI) supplement is the 4th release in 2024, continuing the objective to provide three to four releases each year that include both _incremental_ updates (e.g., editorial "fixes"), ballot comment resolutions (e.g., from HL7 ballot cycles), and additional capability enhancements.
+This version of the SDPi 2.1 Standard for Trial Use (HL7 STU) / Trial Implementation (IHE TI) supplement is the 1st release in 2025, continuing the objective to provide three to four releases each year that include both _incremental_ updates (e.g., editorial "fixes"), ballot comment resolutions (e.g., from HL7 ballot cycles), and additional capability enhancements.
 For this release, key additions include:
 
-1. HL7 2024 January & May ballot comment resolutions applied
-2. HL7 FHIR Gateway content added to TF-2B
+1. HL7 2025 January ballot comment resolutions applied
+2. Significantly expanded content on non-slewing (abrupt) time adjustments
+3. New section "Unique Localized Text Catalog Identification"
+4. New appendix TF-2C for Security Management
 
 All changes incorporated in a release are managed through Github Issues and reviewed Pull Requests.
 For a list of those related to this release, see <<sdpi_issue_management>> below.
@@ -27,9 +29,9 @@ When a referenced specification is used that is in development or revision, a no
 It is recognized that this release is a work-in-progress that will continue to subsequent versions.
 These known limitations and forward-looking content include:
 
-. Releases along with the planned capability additions are managed in the project's https://github.com/orgs/IHE/projects/6[DEV.SDPi "Gemini SDPi Releases" Github project]
-. This supplement includes four SDPi Profiles, though the typical IHE supplement is organized for a single profile; as a result, some adjustments have been made, especially in the supplement overview section where there is a general SDPi overview and then basic overviews for each of the Profiles; challenging areas include profile "options" where there are FOUR sections vs. one; it is a work in progress and feedback is appreciated, especially to enhance clarity
-. *Open / Closed Issues tables* -- starting with SDPi 1.1 and subsequent, the approach for the IHE open / closed issues section has been transitioned to utilize https://github.com/IHE/DEV.SDPi/issues[Github Issues] that are related to this release; each release will update the changelog file, detailing what is Added, Changed or Removed
+. Releases along with the planned capability additions are managed in the project's https://github.com/IHE/DEV.SDPi/milestones[DEV.SDPi milestones];
+. This supplement includes four SDPi Profiles, though the typical IHE supplement is organized for a single profile; as a result, some adjustments have been made, especially in the supplement overview section where there is a general SDPi overview and then basic overviews for each of the Profiles; challenging areas include profile "options" where there are FOUR sections vs. one; it is a work in progress and feedback is appreciated, especially to enhance clarity;
+. *Open / Closed Issues tables* -- starting with SDPi 1.1 and subsequent, the approach for the IHE open / closed issues section has been transitioned to utilize https://github.com/IHE/DEV.SDPi/issues[Github Issues] that are related to this release; each release updates the changelog file, detailing what is Added, Changed or Removed;
 . *Requirements boxes* (e.g., "R1234") have been added especially in TF-2, with some also part of TF-1 and TF-3; this is an initial approach that *_will be significantly expanded in future versions of the supplement_*; documentation is provided in <<vol1_clause_sdpi_requirements_modeling_integration>>, including discussion related to how it will be expanded in future versions of the supplement;
 . *_<<term_safe_effective_secure>> Sections_* (see <<vol1_clause_appendix_a_ses_considerations_section_template>>) are included in the specification; however, their use and content will be significantly extended in future versions;
 . This supplement is currently rendered as a *"long form"* document -- one single HTML file; however, in subsequent versions the intent is to consider a multi-page / file HTML rendering + addition of a tabbed menu for navigating the sections of the supplement;
