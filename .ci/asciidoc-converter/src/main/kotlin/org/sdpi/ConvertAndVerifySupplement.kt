@@ -62,7 +62,7 @@ class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {
 
             logger.info { "Write output to '${outFile.canonicalPath}'" }
 
-            AsciidocConverter(
+            val converter = AsciidocConverter(
                 AsciidocConverter.Input.FileInput(adocInputFile),
                 outFile.outputStream(),
                 ConverterOptions(
@@ -72,9 +72,10 @@ class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {
                     dumpStructure = dumpStructure,
                     generateTestOutput = testGenerator,
                 )
-            ).run()
+            )
+            converter.run()
 
-            asciidocErrorChecker.run()
+            asciidocErrorChecker.run(converter.documentAnchors())
 
             logger.info { "File successfully written" }
         }.onFailure {

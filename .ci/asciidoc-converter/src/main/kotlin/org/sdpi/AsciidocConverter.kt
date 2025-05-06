@@ -2,6 +2,7 @@ package org.sdpi
 
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
+import org.apache.logging.log4j.kotlin.logger
 import org.asciidoctor.Asciidoctor
 import org.asciidoctor.Options
 import org.asciidoctor.SafeMode
@@ -62,6 +63,11 @@ class AsciidocConverter(
     private val outputFile: OutputStream,
     private val conversionOptions: ConverterOptions,
 ) : Runnable {
+
+    val anchorCollector = DocumentAnchorCollector()
+
+    fun documentAnchors() = anchorCollector.getKnownAnchors()
+
     override fun run() {
         val options = Options.builder()
             .safe(SafeMode.UNSAFE)
@@ -80,6 +86,8 @@ class AsciidocConverter(
         //   * RequirementBlockProcessor2 handles the containing sdpi_requirement block
         //   * RelatedBlockProcessor handles [RELATED] blocks within requirement blocks.
         //   * RequirementExampleBlockProcessor handles [EXAMPLE] blocks within requirement blocks.
+        //   * TransactionActorsProcessor handles definitions of actor contributions within
+        //     transaction sections.
         asciidoctor.javaExtensionRegistry().block(RequirementBlockProcessor2())
         asciidoctor.javaExtensionRegistry().block(RelatedBlockProcessor())
         asciidoctor.javaExtensionRegistry().block(RequirementExampleBlockProcessor())
@@ -100,6 +108,9 @@ class AsciidocConverter(
         val infoCollector = TreeInfoCollector(bibliographyCollector, transactionActorsProcessor, profileTransactionCollector)
         asciidoctor.javaExtensionRegistry().treeprocessor(infoCollector)
 
+        // Gather anchors in the document so we can verify there aren't any invalid links.
+        asciidoctor.javaExtensionRegistry().treeprocessor(anchorCollector)
+
         // Support to insert tables of requirements etc. sdpi_requirement_table macros.
         // Block macro processors insert placeholders that are populated when the tree is ready.
         // Tree processors fill in the placeholders.
@@ -114,7 +125,9 @@ class AsciidocConverter(
 
         asciidoctor.javaExtensionRegistry().preprocessor(IssuesSectionPreprocessor(conversionOptions.githubToken))
         asciidoctor.javaExtensionRegistry().preprocessor(DisableSectNumsProcessor())
-        asciidoctor.javaExtensionRegistry().preprocessor(ReferenceSanitizerPreprocessor(anchorReplacements))
+
+        val referenceSanitizerPre = ReferenceSanitizerPreprocessor(anchorReplacements)
+        asciidoctor.javaExtensionRegistry().preprocessor(referenceSanitizerPre)
         if (conversionOptions.outputFormat == "html") {
             // Post processor not supported for PDFs
             // https://docs.asciidoctor.org/asciidoctorj/latest/extensions/postprocessor/
@@ -135,8 +148,15 @@ class AsciidocConverter(
             is Input.StringInput -> asciidoctor.convert(inputType.string, options)
         }
 
-        profileTransactionCollector.dump()
+        //profileTransactionCollector.dump()
         anchorReplacements.dump()
+        anchorCollector.dumpKnownAnchors()
+
+        for(reqOwner in infoCollector.info().requirementOwners()) {
+            print("R${reqOwner.key}")
+            reqOwner.value?.dump()
+            println()
+        }
 
         if (conversionOptions.extractsFolder != null) {
             val jsonFormatter = Json {
@@ -152,6 +172,7 @@ class AsciidocConverter(
         }
 
         asciidoctor.shutdown()
+
     }
 
     private fun writeArtifact(strArtifactName: String, strArtifact: String) {

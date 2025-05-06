@@ -1,14 +1,21 @@
 package org.sdpi.asciidoc.model
 
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-class SdpiProfile(val profileId: String) {
-    private val referencedTransactions = mutableListOf<SdpiTransactionReference>()
+class SdpiProfile(
+    val profileId: String,
+    val transactionReferences: List<SdpiTransactionReference>?
+) {
 
-    fun addTransactionReference(transaction: SdpiTransactionReference) {
-        referencedTransactions.add(transaction)
+    @Serializable
+    @SerialName("actors")
+    private val actorsDefined = mutableListOf<SdpiActor>()
+
+    fun addActor(actor: SdpiActor) {
+        actorsDefined.add(actor)
     }
 
-    fun referencedTransactions() = referencedTransactions
+    fun actorReferences() = actorsDefined
 }

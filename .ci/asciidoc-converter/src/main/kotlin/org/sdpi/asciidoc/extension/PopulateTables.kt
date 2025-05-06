@@ -143,15 +143,15 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
             logger.error("Table missing required attribute '${RoleNames.Transaction.ACTOR_ID.key}")
         }
 
-        val profile: SdpiProfile? = docInfo.profiles()[strProfile]
-        checkNotNull(profile) {
+        val transactions: List<SdpiTransactionReference>? = docInfo.profileTransactions()[strProfile]
+        checkNotNull(transactions) {
             logger.error("Unknown profile $strProfile")
         }
 
         val tableBuilder = TransactionTableBuilder(this, table)
         tableBuilder.setupHeadings()
 
-        for (transactionReference: SdpiTransactionReference in profile.referencedTransactions()) {
+        for (transactionReference: SdpiTransactionReference in transactions) {
             val strTransactionId = transactionReference.transactionId
             val transaction: SdpiTransaction? = docInfo.transactions()[strTransactionId]
             checkNotNull(transaction) {

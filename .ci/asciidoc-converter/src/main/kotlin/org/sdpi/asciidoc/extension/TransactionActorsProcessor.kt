@@ -15,6 +15,11 @@ import org.sdpi.asciidoc.model.parseContribution
 
 const val BLOCK_NAME_TRANSACTION_ACTORS = "sdpi_transaction_actors"
 
+/**
+ * Collects actor roles for transaction.
+ * Each transaction in the document should contain a transaction actors block
+ * which lists each of the actors and their roles in that transaction.
+ */
 @Name(BLOCK_NAME_TRANSACTION_ACTORS)
 @Contexts(Contexts.OPEN)
 @ContentModel(ContentModel.COMPOUND)
@@ -23,7 +28,9 @@ class TransactionActorsProcessor : BlockProcessor(BLOCK_NAME_TRANSACTION_ACTORS)
         val RE_ATTRIBUTES = """([a-zA-Z_-]+)\s*=\s*"([^"]*)"""".toRegex()
     }
 
-    val transactionActors = mutableMapOf<String, List<SdpiActorRole>>()
+    // Indexed by transaction id (e.g., DEV-23), this maps contains the roles
+    // actors play in transactions.
+    private val transactionActors = mutableMapOf<String, List<SdpiActorRole>>()
 
     fun transactionActors() = transactionActors
 

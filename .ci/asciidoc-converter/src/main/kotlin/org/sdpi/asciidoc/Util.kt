@@ -3,6 +3,7 @@ package org.sdpi.asciidoc
 import org.apache.logging.log4j.kotlin.loggerOf
 import org.asciidoctor.ast.ContentNode
 import org.asciidoctor.ast.StructuralNode
+import org.sdpi.asciidoc.model.BlockOwner
 import org.sdpi.asciidoc.model.RequirementLevel
 import org.sdpi.asciidoc.model.StructuralNodeWrapper
 import org.sdpi.asciidoc.model.toSealed
@@ -94,6 +95,14 @@ fun findIdFromParent(parent: ContentNode, strRole: String, strIdAttribute: Strin
         findIdFromParent(parent.parent, strRole, strIdAttribute)
     } else {
         null
+    }
+}
+
+fun gatherOwners(parent: StructuralNode): BlockOwner? {
+    if (parent != parent.document) {
+        return BlockOwner(parent.title, parent.role, gatherOwners(parent.parent as StructuralNode))
+    } else {
+        return null
     }
 }
 

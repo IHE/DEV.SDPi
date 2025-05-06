@@ -1,3 +1,9 @@
 package org.sdpi.asciidoc.model
+import kotlinx.serialization.Serializable
 
-data class BibliographyEntry(val reference : String, val referenceText : String, val source : String)
+@Serializable
+data class BibliographyEntry(
+    val reference: String,
+    val referenceText: String,
+    val source: String
+)

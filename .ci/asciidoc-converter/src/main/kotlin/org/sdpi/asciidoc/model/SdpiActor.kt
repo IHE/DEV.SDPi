@@ -17,3 +17,4 @@ data class SdpiActorRole(
     val optionId: String?,
     val description: List<String>,
 )
+

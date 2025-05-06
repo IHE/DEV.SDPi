@@ -29,11 +29,13 @@ class TreeInfoCollector(
 class SdpiInformationCollector(
     private val bibliography: BibliographyCollector,
     private val transactionActors: TransactionActorsProcessor,
-    private val profiles: TransactionIncludeProcessor
+    private val profileTransactions: TransactionIncludeProcessor
 ) {
     private companion object : Logging
 
     private val requirements = mutableMapOf<Int, SdpiRequirement2>()
+
+    private val requirementOwners = mutableMapOf<Int, BlockOwner?>()
 
     private val useCases = mutableMapOf<String, SdpiUseCase>()
 
@@ -41,10 +43,11 @@ class SdpiInformationCollector(
 
     private val transactions = mutableMapOf<String, SdpiTransaction>()
 
-
-    private var currentProfile: String? = null
+    private val profiles = mutableMapOf<String, SdpiProfile>()
 
     fun requirements(): Map<Int, SdpiRequirement2> = requirements
+
+    fun requirementOwners(): Map<Int, BlockOwner?> = requirementOwners
 
     fun useCases(): Map<String, SdpiUseCase> = useCases
 
@@ -52,7 +55,7 @@ class SdpiInformationCollector(
 
     fun transactions(): Map<String, SdpiTransaction> = transactions
 
-    fun profiles(): Map<String, SdpiProfile> = profiles.profiles()
+    fun profileTransactions(): Map<String, List<SdpiTransactionReference>> = profileTransactions.profiles()
 
     fun process(document: Document) {
         logger.info("Collecting sdpi information")
@@ -70,22 +73,54 @@ class SdpiInformationCollector(
         }
 
         if (block.hasRole(RoleNames.Profile.PROFILE.key)) {
-            currentProfile = block.attributes[RoleNames.Profile.ID.key]?.toString()
-            logger.info("Found profile")
-        }
-
-        if (block.hasRole("actor")) {
-            processActor(block)
+            processProfile(block)
         }
 
         if (block.hasRole("transaction")) {
             processTransaction(block)
         }
+
         for (child in block.blocks) {
             processBlock(child)
         }
     }
 
+    // region Collect anchors
+    private fun collectAnchors(block: StructuralNode) {
+
+    }
+    // endregion
+
+    // region Profiles
+    private fun processProfile(block: StructuralNode) {
+        val strProfileId = block.attributes[RoleNames.Profile.ID.key]?.toString()
+        checkNotNull(strProfileId) {
+            logger.error("Profile block missing '${RoleNames.Profile.ID.key}'")
+        }
+
+        check(!profiles.containsKey(strProfileId)) {
+            logger.error("Duplicate profile id found: $strProfileId")
+        }
+
+        val transactionRefs = profileTransactions.transactionReferences(strProfileId)
+        val currentProfile = SdpiProfile(strProfileId, transactionRefs)
+        profiles[strProfileId] = currentProfile
+
+        for (child in block.blocks) {
+            processProfileBlock(child, currentProfile)
+        }
+    }
+
+    private fun processProfileBlock(block: StructuralNode, profile: SdpiProfile) {
+        if (block.hasRole("actor")) {
+            processActor(block, profile)
+        }
+
+        for (child in block.blocks) {
+            processProfileBlock(child, profile)
+        }
+    }
+    // endregion
 
     //region Requirements
     private fun processRequirement(block: StructuralNode) {
@@ -140,6 +175,8 @@ class SdpiInformationCollector(
                 strLocalId, strGlobalId, requirementLevel, aGroups, specification
             )
         }
+
+        requirementOwners[nRequirementNumber] = gatherOwners(block.parent as StructuralNode)
     }
 
     private fun getSpecification(block: StructuralNode, nRequirementNumber: Int): RequirementSpecification {
@@ -605,7 +642,7 @@ class SdpiInformationCollector(
     //endregion
 
     //region actors
-    private fun processActor(block: StructuralNode) {
+    private fun processActor(block: StructuralNode, profile: SdpiProfile) {
         val strId = block.id
         val strRefText = block.reftext
 
@@ -616,13 +653,9 @@ class SdpiInformationCollector(
             }
         }
 
-        checkNotNull(currentProfile) {
-            "Actor $strId ($strRefText) defined outside profile".also {
-                logger.error { it }
-            }
-        }
-
-        actors[strId] = SdpiActor(strId, strRefText, currentProfile!!)
+        val newActor = SdpiActor(strId, strRefText, profile.profileId)
+        actors[strId] = newActor
+        profile.addActor(newActor)
     }
     //endregion
 
@@ -635,13 +668,13 @@ class SdpiInformationCollector(
         val mrTitleElements = reExtractTitleElements.find(strLabel)
 
         checkNotNull(mrTitleElements) {
-            "Can't title and transaction id from $strLabel".also {
+            "Can't get title and transaction id from $strLabel".also {
                 logger.error { it }
             }
         }
         val (strTitle, strTransactionId) = mrTitleElements.destructured
 
-        check(!actors.contains(strTransactionId)) // check for duplicate.
+        check(!transactions.contains(strTransactionId)) // check for duplicate.
         {
             "Duplicate transaction #${strTransactionId} ($strLabel)".also {
                 logger.error { it }

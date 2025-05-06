@@ -14,62 +14,87 @@ class TransactionIncludeProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_INCLUDE
 
     private companion object : Logging
 
-    private val profiles = mutableMapOf<String, SdpiProfile>()
+    // Keyed by profile id (e.g., "SDPi-P"), this maps profiles to transactions.
+    private val profiles = mutableMapOf<String, MutableList<SdpiTransactionReference>>()
+
+    private val reMatchObligation = Regex("""(\w+)(?:\(([^)]+)\))?""")
 
     fun profiles() = profiles
 
+    fun transactionReferences(strProfile: String): List<SdpiTransactionReference>? {
+        return profiles[strProfile]
+    }
+
     override fun process(parent: StructuralNode, target: String, attributes: MutableMap<String, Any>): Any? {
-        val obligations: MutableList<TransactionContribution> = mutableListOf()
-        val reMatchObligation = Regex("""(\w+)(?:\(([^)]+)\))?""")
-
-        for (attr in attributes) {
-            val contribution = parseContribution(attr.key)
-            checkNotNull(contribution) {
-                logger.error("Unknown contribution ${attr.key}")
-            }
-            val optionalObligations = mutableListOf<TransactionContributionOption>()
-            val strObligationSet = attr.value.toString()
-            var defaultObligation = Obligation.REQUIRED
-            for (strObligationTerm in strObligationSet.split('|')) {
-                val matchedObligation = reMatchObligation.matchEntire(strObligationTerm)
-                if (matchedObligation != null) {
-                    val (strObligation, strOptionId) = matchedObligation.destructured
-                    val newObligation = parseObligation(strObligation)
-                    checkNotNull(newObligation) {
-                        logger.error("Unknown obligation $strObligation")
-                    }
-                    if (strOptionId.isEmpty()) {
-                        defaultObligation = newObligation
-                    } else {
-                        optionalObligations.add(TransactionContributionOption(strOptionId, newObligation))
-                    }
-
-                }
-            }
-
-            val optOb = if (optionalObligations.isEmpty()) null else optionalObligations
-            val transactionContribution = TransactionContribution(contribution, defaultObligation, optOb)
-            obligations.add(transactionContribution)
-        }
-
-        val reference = SdpiTransactionReference(target, obligations)
         val strProfileId = findProfileId(parent)
-        checkNotNull(strProfileId){
+        checkNotNull(strProfileId) {
             logger.error("$BLOCK_MACRO_NAME_INCLUDE_TRANSACTION requires a ancestor block within the 'profile' role")
         }
 
-        if (!profiles.containsKey(strProfileId)) {
-            profiles[strProfileId] = SdpiProfile(strProfileId)
+        val obligations: MutableList<TransactionContribution> = mutableListOf()
+        for (attr in attributes) {
+            val transactionContribution = parseContribution(attr.key, attr.value.toString())
+            obligations.add(transactionContribution)
         }
-        profiles[strProfileId]?.addTransactionReference(reference)
+
+        val transactionReference = createTransactionReference(target, attributes)
+
+        if (!profiles.containsKey(strProfileId)) {
+            profiles[strProfileId] = mutableListOf()
+        }
+        profiles[strProfileId]?.add(transactionReference)
         return null
+    }
+
+    private fun createTransactionReference(strTransactionId: String, attributes: MutableMap<String, Any>): SdpiTransactionReference {
+        val obligations: MutableList<TransactionContribution> = mutableListOf()
+        for (attr in attributes) {
+            val transactionContribution = parseContribution(attr.key, attr.value.toString())
+            obligations.add(transactionContribution)
+        }
+
+        return SdpiTransactionReference(strTransactionId, obligations)
+    }
+
+    private fun parseContribution(strContribution: String, strObligationSet: String): TransactionContribution {
+        val contribution = parseContribution(strContribution)
+        checkNotNull(contribution) {
+            logger.error("Unknown contribution $strContribution")
+        }
+
+        val (defaultObligation, obligationOptions) = parseObligations(strObligationSet)
+        return TransactionContribution(contribution, defaultObligation, obligationOptions)
+    }
+
+    private fun parseObligations(strObligationSet: String): Pair<Obligation, List<TransactionContributionOption>?> {
+        val optionalObligations = mutableListOf<TransactionContributionOption>()
+
+        var defaultObligation = Obligation.REQUIRED
+        for (strObligationTerm in strObligationSet.split('|')) {
+            val matchedObligation = reMatchObligation.matchEntire(strObligationTerm)
+            if (matchedObligation != null) {
+                val (strObligation, strOptionId) = matchedObligation.destructured
+                val newObligation = parseObligation(strObligation)
+                checkNotNull(newObligation) {
+                    logger.error("Unknown obligation $strObligation")
+                }
+                if (strOptionId.isEmpty()) {
+                    defaultObligation = newObligation
+                } else {
+                    optionalObligations.add(TransactionContributionOption(strOptionId, newObligation))
+                }
+            }
+        }
+
+        val optOb = if (optionalObligations.isEmpty()) null else optionalObligations
+        return Pair(defaultObligation, optOb)
     }
 
     fun dump() {
         for (profile in profiles) {
             logger.info("Profile: ${profile.key}")
 
-            for (ref in profile.value.referencedTransactions()) {
+            for (ref in profile.value) {
                 logger.info("  * ${ref.transactionId}")
             }
         }
