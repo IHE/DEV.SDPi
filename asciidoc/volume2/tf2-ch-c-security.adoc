@@ -1,7 +1,7 @@
 [appendix#vol2_appendix_c_security_management,sdpi_offset=C]
 == Security Management (Normative)
 
-//NOTE: This file integrates all the Volume 2 / Appendix C Secrity Management background discussions, profiling and examples. +
+//NOTE: This file integrates all the Volume 2 / Appendix C Security Management background discussions, profiling and examples. +
 //{empty} +
 //__This file is currently in the volume2 folder and may integrate content contained in related subfolders. __
 
