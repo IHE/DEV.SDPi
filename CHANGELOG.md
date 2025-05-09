@@ -16,6 +16,12 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ## Unreleased
 
+## [2.1.2] - 2025-05-09
+
+### Editorial Fixes
+
+- Minor typos and malformed references caused by erroneous Asciidoc conversion.
+
 ## [2.1.1] - 2025-04-22
 
 ### Editorial Fixes
