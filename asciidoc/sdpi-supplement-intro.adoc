@@ -84,7 +84,7 @@ This information may also be used to drive the test cases that are used for conf
 This supplement includes this same organization; however, it also defines a set of general, non-profile-specific clinical use cases that provide requirements, which may be mapped to multiple SDPi integration profiles.
 Section <<vol1_appendix_c_dpi_use_cases>> provides a collection of these high-level clinical use cases.
 
-FOR READERS OF THIS SUPPLEMENT, a good strategy might be to first review the use cases in the Volume 1 appendix (e.g., <<vol1_clause_appendix_c_use_case_sicdmp>> ), and then review the specific profiles to which the clinical scenario requiremets have been mapped.
+FOR READERS OF THIS SUPPLEMENT, a good strategy might be to first review the use cases in the Volume 1 appendix (e.g., <<vol1_clause_appendix_c_use_case_sicdmp>> ), and then review the specific profiles to which the clinical scenario requirements have been mapped.
 Reviewing the use case specifications in this order will provide the needed context to understand what is presented in each profile.
 
 [#supplement_clause_joint_ihe_hl7_gemini_ses_mdi_project_development]

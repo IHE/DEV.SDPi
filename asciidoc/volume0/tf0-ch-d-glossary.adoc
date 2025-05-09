@@ -63,7 +63,7 @@
 | SDC
 
 | [[term_clock_discipline_algorithm,clock-discipline algorithm]] Clock-discipline algorithm
-| The algorithm employed by a <<acronym_ts_service>> client to minimize the error between the <<term_reference_clock>> and the <<term_system_clock>>. It my include include startup calibration steps, smooth (e.g., slewing) and, rarely, abrupt (e.g., non-slewing) corrections. 
+| The algorithm employed by a <<acronym_ts_service>> client to minimize the error between the <<term_reference_clock>> and the <<term_system_clock>>. It may include startup calibration steps, smooth (e.g., slewing) and, rarely, abrupt (e.g., non-slewing) corrections. 
 | 
 |
 | <<ref_rfc_5905, NTPv4>>
