@@ -47,6 +47,10 @@ class SdpiInformationCollector(
 
     fun requirements(): Map<Int, SdpiRequirement2> = requirements
 
+    fun profiles(): List<SdpiProfile> {
+        return profiles.values.toList()
+    }
+
     fun requirementOwners(): Map<Int, BlockOwner?> = requirementOwners
 
     fun useCases(): Map<String, SdpiUseCase> = useCases
@@ -60,6 +64,8 @@ class SdpiInformationCollector(
     fun process(document: Document) {
         logger.info("Collecting sdpi information")
         processBlock(document as StructuralNode)
+
+        collectActorRequirements()
     }
 
 
@@ -656,6 +662,20 @@ class SdpiInformationCollector(
         val newActor = SdpiActor(strId, strRefText, profile.profileId)
         actors[strId] = newActor
         profile.addActor(newActor)
+    }
+
+    private fun collectActorRequirements() {
+        for (req in requirements) {
+            val nRequirementId = req.key
+            val actorIds = req.value.specification.getActorIds()
+            for (strActorId in actorIds) {
+                val actor = actors[strActorId]
+                checkNotNull(actor) {
+                    logger.error("Requirement ${req.value.localId} contains unknown actor $strActorId")
+                }
+                actor.requirements.add(nRequirementId)
+            }
+        }
     }
     //endregion
 

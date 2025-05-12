@@ -168,7 +168,7 @@ class AsciidocConverter(
             writeArtifact("sdpi-use-cases", jsonFormatter.encodeToString(infoCollector.info().useCases()))
             writeArtifact("sdpi-actors", jsonFormatter.encodeToString(infoCollector.info().actors()))
             writeArtifact("sdpi-transactions", jsonFormatter.encodeToString(infoCollector.info().transactions()))
-            writeArtifact("sdpi-profiles", jsonFormatter.encodeToString(profileTransactionCollector.profiles()))
+            writeArtifact("sdpi-profiles", jsonFormatter.encodeToString(infoCollector.info().profiles()))
         }
 
         asciidoctor.shutdown()

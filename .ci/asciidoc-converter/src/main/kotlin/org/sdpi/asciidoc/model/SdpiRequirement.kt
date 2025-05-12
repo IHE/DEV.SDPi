@@ -96,7 +96,15 @@ data class RequirementSpecification(
     val noteContent: List<Content>,
     val exampleContent: List<Content>,
     val relatedContent: List<Content>
-)
+) {
+    fun getActorIds(): List<String> {
+        val ids = mutableListOf<String>()
+        for (content in normativeContent) {
+            ids.addAll(content.getIdMatches(SdpiActor.ACTOR_ID_REGEX, 1))
+        }
+        return ids.distinct()
+    }
+}
 
 @Serializable
 sealed class SdpiRequirement2 {
@@ -211,6 +219,8 @@ sealed class SdpiRequirement2 {
 sealed class Content {
     abstract fun countKeyword(strKeyword: String): Int
 
+    abstract fun getIdMatches(reActor: Regex, nMatchIndex: Int): List<String>
+
     @Serializable
     @SerialName("block")
     data class Block(val lines: List<String>) : Content() {
@@ -222,6 +232,14 @@ sealed class Content {
             }
 
             return nCount
+        }
+
+        override fun getIdMatches(reActor: Regex, nMatchIndex: Int): List<String> {
+            val actorIds = mutableListOf<String>()
+            for (strLine in lines) {
+                actorIds.addAll(reActor.findAll(strLine).map{it -> it.groupValues[nMatchIndex]})
+            }
+            return actorIds
         }
     }
 
@@ -237,6 +255,10 @@ sealed class Content {
 
             return nCount
         }
+
+        override fun getIdMatches(reActor: Regex, nMatchIndex: Int): List<String> {
+            return emptyList()
+        }
     }
 
     @Serializable
@@ -248,6 +270,14 @@ sealed class Content {
                 nCount += item.countKeyword(strKeyword)
             }
             return nCount
+        }
+
+        override fun getIdMatches(reActor: Regex, nMatchIndex: Int): List<String> {
+            val actorIds = mutableListOf<String>()
+            for (item in items) {
+                actorIds.addAll(item.getIdMatches(reActor, nMatchIndex))
+            }
+            return actorIds
         }
     }
 
@@ -261,6 +291,14 @@ sealed class Content {
             }
             return nCount
         }
+
+        override fun getIdMatches(reActor: Regex, nMatchIndex: Int): List<String> {
+            val actorIds = mutableListOf<String>()
+            for (item in items) {
+                actorIds.addAll(item.getIdMatches(reActor, nMatchIndex))
+            }
+            return actorIds
+        }
     }
 
     @Serializable
@@ -269,6 +307,10 @@ sealed class Content {
         override fun countKeyword(strKeyword: String): Int {
             val searcher = Regex(strKeyword)
             return searcher.findAll(strText).count()
+        }
+
+        override fun getIdMatches(reActor: Regex, nMatchIndex: Int): List<String> {
+            return reActor.findAll(strText).map{ it-> it.groupValues[nMatchIndex] }.toList()
         }
     }
 }
