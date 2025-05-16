@@ -2,9 +2,7 @@ package org.sdpi.asciidoc.model
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import org.sdpi.asciidoc.Attributes
-import org.sdpi.asciidoc.BlockAttribute
-import org.sdpi.asciidoc.title
+import org.sdpi.asciidoc.extension.RoleNames
 
 /**
  * Definition of requirement levels.
@@ -16,6 +14,36 @@ enum class RequirementLevel(val keyword: String, val icsStatus: String) {
     SHOULD("should", "r"),
     SHALL("shall", "m")
 }
+
+enum class OwningContext(val roleKeyword: String, val label: String) {
+    @SerialName("profile")
+    PROFILE(RoleNames.Profile.PROFILE.key, "Sdpi Profile"),
+
+    @SerialName("profile-option")
+    PROFILE_OPTION(RoleNames.Profile.PROFILE_OPTION.key, "Sdpi Profile Option"),
+
+    @SerialName("content-module")
+    CONTENT_MODULE(RoleNames.ContentModule.SECTION_ROLE.key, "Content module"),
+
+    @SerialName("gateway")
+    GATEWAY(RoleNames.Gateway.SECTION_ROLE.key, "Gateway"),
+
+    @SerialName("protocol")
+    PROTOCOL(RoleNames.Protocol.SECTION_ROLE.key, "Protocol"),
+
+    @SerialName("use-case")
+    USE_CASE(RoleNames.UseCase.FEATURE.key, "Use case"),
+}
+
+/**
+ * Takes a string and converts it to a [OwningContext] enum.
+ *
+ * @param strRole Raw text being shall, should or may.
+ *
+ * @return the [OwningContext] enum or null if the conversion failed (raw was not shall, should or may).
+ */
+fun parseOwnerFromRole(strRole: String) = OwningContext.entries.firstOrNull { it.roleKeyword == strRole }
+
 
 /**
  * Define requirement types. See SDPi Requirements Core Model [[SDPi:§1:A.4.1]]
@@ -56,40 +84,6 @@ enum class RiskMitigationTestability(val keyword: String, val description: Strin
     INTEROPERABILITY("wire", "Verification can be done by a test tool")
 }
 
-/**
- * Structure that represents an SDPi requirement.
- *
- * @property number The requirement number as an integer (no leading R or zero-padding).
- * @property globalId The requirement id as a globally unique oid.
- * @property type The type of requirement.
- * @property level The requirement level as specified by the attribute [BlockAttribute.REQUIREMENT_LEVEL].
- * @property maxOccurrence The number of occurrences in the document (some requirements are copy-pasted for sake of readability)
- * @property asciiDocAttributes All attributes captured by the block that represents this requirement.
- * @property asciiDocLines The actual ASCIIdoc source.
- * @property blockId Identifier for the block, e.g., for linking
- * @property localId The local requirement id (e.g., R1010)
- * @property blockTitle The title used for the block defining the requirement.
- */
-@Serializable
-data class SdpiRequirement(
-    val number: Int,
-    val globalId: String,
-    val type: RequirementType,
-    val level: RequirementLevel,
-    val groups: List<String>,
-    val maxOccurrence: Int,
-    val asciiDocAttributes: Attributes,
-    val asciiDocLines: List<String>
-) {
-    val blockId = globalId
-    val localId = String.format("R%04d", number)
-    val blockTitle = asciiDocAttributes.title()
-
-    fun makeLink(): String {
-        return "link:#$blockId[$localId]"
-    }
-}
-
 @Serializable
 data class RequirementSpecification(
     val normativeContent: List<Content>,
@@ -107,11 +101,28 @@ data class RequirementSpecification(
 }
 
 @Serializable
+data class RequirementContext(
+    val type: OwningContext,
+    val id: String,
+)
+
+/**
+ * Structure that represents an SDPi requirement.
+ *
+ * @property requirementNumber The requirement number as an integer (no leading R or zero-padding).
+ * @property globalId The requirement id as a globally unique oid.
+ * @property level The requirement level as specified by the attribute [RequirementAttributes.Common.LEVEL].
+ * @property localId The local requirement id (e.g., R1010)
+ * @property groups Arbitrary groups that the requirement belongs to
+ * @property specification Formal specification for the requirement
+ */
+@Serializable
 sealed class SdpiRequirement2 {
     abstract val requirementNumber: Int
     abstract val localId: String
     abstract val globalId: String
     abstract val level: RequirementLevel
+    abstract val owner: RequirementContext?
     abstract val groups: List<String>
     abstract val specification: RequirementSpecification
 
@@ -146,6 +157,7 @@ sealed class SdpiRequirement2 {
         override val localId: String,
         override val globalId: String,
         override val level: RequirementLevel,
+        override val owner: RequirementContext?,
         override val groups: List<String>,
         override val specification: RequirementSpecification
     ) : SdpiRequirement2() {
@@ -162,6 +174,7 @@ sealed class SdpiRequirement2 {
         override val localId: String,
         override val globalId: String,
         override val level: RequirementLevel,
+        override val owner: RequirementContext?,
         override val groups: List<String>,
         override val specification: RequirementSpecification,
         val useCaseId: String
@@ -179,6 +192,7 @@ sealed class SdpiRequirement2 {
         override val localId: String,
         override val globalId: String,
         override val level: RequirementLevel,
+        override val owner: RequirementContext?,
         override val groups: List<String>,
         override val specification: RequirementSpecification,
         val referenceId: String,
@@ -198,6 +212,7 @@ sealed class SdpiRequirement2 {
         override val localId: String,
         override val globalId: String,
         override val level: RequirementLevel,
+        override val owner: RequirementContext?,
         override val groups: List<String>,
         override val specification: RequirementSpecification,
         val mitigating: RiskMitigationType,
@@ -237,7 +252,7 @@ sealed class Content {
         override fun getIdMatches(reActor: Regex, nMatchIndex: Int): List<String> {
             val actorIds = mutableListOf<String>()
             for (strLine in lines) {
-                actorIds.addAll(reActor.findAll(strLine).map{it -> it.groupValues[nMatchIndex]})
+                actorIds.addAll(reActor.findAll(strLine).map { it -> it.groupValues[nMatchIndex] })
             }
             return actorIds
         }
@@ -310,7 +325,7 @@ sealed class Content {
         }
 
         override fun getIdMatches(reActor: Regex, nMatchIndex: Int): List<String> {
-            return reActor.findAll(strText).map{ it-> it.groupValues[nMatchIndex] }.toList()
+            return reActor.findAll(strText).map { it -> it.groupValues[nMatchIndex] }.toList()
         }
     }
 }

@@ -14,9 +14,9 @@ class DocumentAnchorCollector : Treeprocessor() {
 
     // Collection of all the known anchors we find in the document to resolve
     // possible missing anchors reported by Ascii Doctor.
-    private val knownAnchors = mutableListOf<String>()
+    private val knownAnchors = mutableMapOf<String, String>()
 
-    fun getKnownAnchors(): List<String> = knownAnchors
+    fun getKnownAnchors(): Map<String, String> = knownAnchors
 
     override fun process(document: Document): Document {
 
@@ -27,20 +27,22 @@ class DocumentAnchorCollector : Treeprocessor() {
 
     fun dumpKnownAnchors() {
         println("Anchors found in the document:")
-        for(strId in knownAnchors) {
-            println("  #$strId")
+        for(anchor in knownAnchors) {
+            println("  #${anchor.key} => '${anchor.value}'")
         }
         println("Found ${knownAnchors.count()} unique anchors")
     }
 
     private fun processBlock(block: StructuralNode) {
         val strId = block.id
+        val strRefText = block.attributes["reftext"] ?: block.title ?: strId
         if (strId != null) {
             if (knownAnchors.contains(strId)) {
                 logger.error("Found duplicate id $strId; ids should be unique.")
             }
-            knownAnchors.add(strId)
+            knownAnchors[strId] = strRefText.toString()
         }
+
 
         for (child in block.blocks) {
             processBlock(child)

@@ -1,6 +1,7 @@
 package org.sdpi.asciidoc.model
 
 import kotlinx.serialization.Serializable
+import kotlin.coroutines.Continuation
 
 @Serializable
 data class SdpiTransaction(
@@ -14,6 +15,20 @@ data class SdpiTransaction(
         // a hack because we make assumptions about how transaction ids are named.
         val strAnchor = "transaction_number_${id.lowercase().replace('-', '_')}"
         return "link:#$strAnchor[$id]"
+    }
+
+    fun getContributionForActor(strActorId: String): Contribution? {
+        if (actorRoles == null) {
+            return null
+        }
+
+        for(actor in actorRoles) {
+            if (actor.actorId == strActorId) {
+                return actor.contribution
+            }
+        }
+
+        return null
     }
 }
 
@@ -35,20 +50,27 @@ fun parseContribution(strKeyword: String) =
     Contribution.entries.firstOrNull { it.keyword.lowercase() == strKeyword.lowercase() }
 
 @Serializable
-data class TransactionContributionOption(
-    val optionId: String,
-    val obligation: Obligation,
-)
-
-@Serializable
 data class TransactionContribution(
     val contribution: Contribution,
     val obligation: Obligation,
-    val optionalObligations: List<TransactionContributionOption>?
 )
 
 @Serializable
 data class SdpiTransactionReference(
     val transactionId: String,
     val obligations: List<TransactionContribution>
+) {
+    fun makesContribution(contribution: Contribution): Boolean {
+        return obligations.any{ it.contribution == contribution}
+    }
+
+    fun getObligation(contribution: Contribution): Obligation? {
+        return obligations.firstOrNull{it.contribution == contribution}?.obligation
+    }
+}
+
+data class SdpiProfileTransactionReference(
+    val profileId: String,
+    val profileOptionId: String?,
+    val transactionReference: SdpiTransactionReference
 )

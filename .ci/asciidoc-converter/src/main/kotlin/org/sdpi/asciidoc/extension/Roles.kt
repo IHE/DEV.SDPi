@@ -11,6 +11,10 @@ sealed class RoleNames {
 
         // Identifier for the profile
         ID("profile-id"),
+
+        PROFILE_OPTION("profile-option"),
+
+        ID_PROFILE_OPTION("profile-option-id"),
     }
 
     enum class Transaction(val key: String) {
@@ -51,5 +55,17 @@ sealed class RoleNames {
 
         // The role applied to transaction list tables.
         TRANSACTIONS("transactions-table")
+    }
+
+    enum class ContentModule(val key: String) {
+        SECTION_ROLE("content-module"),
+    }
+
+    enum class Gateway(val key: String) {
+        SECTION_ROLE("gateway"),
+    }
+
+    enum class Protocol(val key: String) {
+        SECTION_ROLE("protocol"),
     }
 }

@@ -149,8 +149,8 @@ class AsciidocConverter(
         }
 
         //profileTransactionCollector.dump()
-        anchorReplacements.dump()
-        anchorCollector.dumpKnownAnchors()
+        //anchorReplacements.dump()
+        //anchorCollector.dumpKnownAnchors()
 
         for(reqOwner in infoCollector.info().requirementOwners()) {
             print("R${reqOwner.key}")
@@ -164,10 +164,10 @@ class AsciidocConverter(
                 explicitNulls = false
             }
 
-            writeArtifact("sdpi-requirements", jsonFormatter.encodeToString(infoCollector.info().requirements()))
+            writeArtifact("sdpi-requirements", jsonFormatter.encodeToString(infoCollector.info().requirements().values))
             writeArtifact("sdpi-use-cases", jsonFormatter.encodeToString(infoCollector.info().useCases()))
-            writeArtifact("sdpi-actors", jsonFormatter.encodeToString(infoCollector.info().actors()))
-            writeArtifact("sdpi-transactions", jsonFormatter.encodeToString(infoCollector.info().transactions()))
+            writeArtifact("sdpi-actors", jsonFormatter.encodeToString(infoCollector.info().actors().values))
+            writeArtifact("sdpi-transactions", jsonFormatter.encodeToString(infoCollector.info().transactions().values))
             writeArtifact("sdpi-profiles", jsonFormatter.encodeToString(infoCollector.info().profiles()))
         }
 

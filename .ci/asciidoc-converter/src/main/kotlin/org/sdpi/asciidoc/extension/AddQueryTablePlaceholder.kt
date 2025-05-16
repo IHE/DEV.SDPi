@@ -61,11 +61,15 @@ class AddTransactionQueryPlaceholder : BlockMacroProcessor(BLOCK_MACRO_NAME_TRAN
         }
         placeholderTable.attributes[RoleNames.Profile.ID.key] = strProfile
 
-        val strActorId = attributes[RoleNames.Transaction.ACTOR_ID.key]
-        checkNotNull(strActorId) {
-            logger.error("$BLOCK_MACRO_NAME_TRANSACTION_TABLE missing required attribute '${RoleNames.Transaction.ACTOR_ID.key}'")
+        val strProfileOption = attributes[RoleNames.Profile.ID_PROFILE_OPTION.key]
+        if (strProfileOption != null) {
+            placeholderTable.attributes[RoleNames.Profile.ID_PROFILE_OPTION.key] = strProfileOption
         }
-        placeholderTable.attributes[RoleNames.Transaction.ACTOR_ID.key] = strActorId
+
+        val strActorId = attributes[RoleNames.Transaction.ACTOR_ID.key]
+        if (strActorId != null) {
+            placeholderTable.attributes[RoleNames.Transaction.ACTOR_ID.key] = strActorId
+        }
 
         return placeholderTable
     }

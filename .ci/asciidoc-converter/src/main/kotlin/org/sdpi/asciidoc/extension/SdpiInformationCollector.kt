@@ -51,6 +51,10 @@ class SdpiInformationCollector(
         return profiles.values.toList()
     }
 
+    fun getProfile(strProfileId: String): SdpiProfile? {
+        return profiles[strProfileId]
+    }
+
     fun requirementOwners(): Map<Int, BlockOwner?> = requirementOwners
 
     fun useCases(): Map<String, SdpiUseCase> = useCases
@@ -59,7 +63,7 @@ class SdpiInformationCollector(
 
     fun transactions(): Map<String, SdpiTransaction> = transactions
 
-    fun profileTransactions(): Map<String, List<SdpiTransactionReference>> = profileTransactions.profiles()
+    //fun profileTransactions(): Map<String, List<SdpiTransactionReference>> = profileTransactions.profiles()
 
     fun process(document: Document) {
         logger.info("Collecting sdpi information")
@@ -109,22 +113,65 @@ class SdpiInformationCollector(
         }
 
         val transactionRefs = profileTransactions.transactionReferences(strProfileId)
-        val currentProfile = SdpiProfile(strProfileId, transactionRefs)
+        val profileRefs = transactionRefs?.filter { it.profileOptionId == null }
+            ?.map { it.transactionReference }
+        val currentProfile = SdpiProfile(strProfileId, profileRefs)
         profiles[strProfileId] = currentProfile
+        gatherProfileOptionTransactions(transactionRefs, currentProfile)
 
         for (child in block.blocks) {
-            processProfileBlock(child, currentProfile)
+            processProfileBlock(child, currentProfile, null)
         }
     }
 
-    private fun processProfileBlock(block: StructuralNode, profile: SdpiProfile) {
+    private fun gatherProfileOptionTransactions(
+        transactionRefs: List<SdpiProfileTransactionReference>?,
+        currentProfile: SdpiProfile
+    ) {
+        if (transactionRefs != null) {
+            val groupedOption = transactionRefs.filter { it.profileOptionId != null }.groupBy { it.profileOptionId }
+            for (go in groupedOption) {
+                val strOptionId = go.key
+                if (strOptionId != null) {
+                    val optionTransactions = mutableListOf<SdpiTransactionReference>()
+                    for (tr in go.value) {
+                        optionTransactions.add(tr.transactionReference)
+                    }
+                    currentProfile.addOption(SdpiProfileOption(strOptionId, optionTransactions))
+                }
+            }
+        }
+    }
+
+    private fun processProfileBlock(block: StructuralNode, profile: SdpiProfile, profileOption: SdpiProfileOption?) {
         if (block.hasRole("actor")) {
             processActor(block, profile)
         }
+        val currentOption: SdpiProfileOption? = if (block.hasRole("profile-option")) {
+            processProfileOption(block, profile)
+        } else {
+            profileOption
+        }
 
         for (child in block.blocks) {
-            processProfileBlock(child, profile)
+            processProfileBlock(child, profile, currentOption)
         }
+    }
+
+    private fun processProfileOption(block: StructuralNode, currentProfile: SdpiProfile): SdpiProfileOption {
+        val strId = block.attributes["profile-option-id"]?.toString()
+        checkNotNull(strId) {
+            logger.error("Block with role 'profile-option' requires a 'profile-option-id")
+        }
+
+        val existingOption = currentProfile.options.firstOrNull{ it.id == strId}
+        if (null != existingOption) {
+            return existingOption
+        }
+
+        val newOption = SdpiProfileOption(strId, null)
+        currentProfile.addOption(newOption)
+        return newOption
     }
     // endregion
 
@@ -144,6 +191,7 @@ class SdpiInformationCollector(
         val aGroups: List<String> = getRequirementGroupMembership(block)
         val requirementLevel: RequirementLevel = getRequirementLevel(nRequirementNumber, block)
         val requirementType: RequirementType = getRequirementType(nRequirementNumber, block)
+        val owner: RequirementContext? = getRequirementOwner(block)
 
         logger.info("Requirement: $nRequirementNumber")
 
@@ -155,34 +203,50 @@ class SdpiInformationCollector(
             RequirementType.TECH ->
                 requirements[nRequirementNumber] = SdpiRequirement2.TechFeature(
                     nRequirementNumber,
-                    strLocalId, strGlobalId, requirementLevel, aGroups, specification
+                    strLocalId, strGlobalId, requirementLevel, owner, aGroups, specification
                 )
 
             RequirementType.USE_CASE ->
                 requirements[nRequirementNumber] = buildUseCaseRequirement(
                     block, nRequirementNumber,
-                    strLocalId, strGlobalId, requirementLevel, aGroups, specification
+                    strLocalId, strGlobalId, requirementLevel, owner, aGroups, specification
                 )
 
             RequirementType.REF_ICS ->
                 requirements[nRequirementNumber] = buildRefIcsRequirement(
                     block, nRequirementNumber,
-                    strLocalId, strGlobalId, requirementLevel, aGroups, specification
+                    strLocalId, strGlobalId, requirementLevel, owner, aGroups, specification
                 )
 
             RequirementType.RISK_MITIGATION ->
                 requirements[nRequirementNumber] = buildRiskMitigationRequirement(
                     block, nRequirementNumber,
-                    strLocalId, strGlobalId, requirementLevel, aGroups, specification
+                    strLocalId, strGlobalId, requirementLevel, owner, aGroups, specification
                 )
 
             RequirementType.IHE_PROFILE -> buildIheProfileRequirement(
                 block, nRequirementNumber,
-                strLocalId, strGlobalId, requirementLevel, aGroups, specification
+                strLocalId, strGlobalId, requirementLevel, owner, aGroups, specification
             )
         }
 
         requirementOwners[nRequirementNumber] = gatherOwners(block.parent as StructuralNode)
+    }
+
+    private fun getRequirementOwner(block: ContentNode): RequirementContext? {
+        if (block == block.document) {
+            return null
+        }
+
+        for (strRole in block.roles) {
+            val ownerType = parseOwnerFromRole(strRole)
+            if (ownerType != null) {
+                logger.info("Found owner of requirement: $ownerType")
+                return RequirementContext(ownerType, block.id)
+            }
+        }
+
+        return getRequirementOwner(block.parent)
     }
 
     private fun getSpecification(block: StructuralNode, nRequirementNumber: Int): RequirementSpecification {
@@ -295,7 +359,7 @@ class SdpiInformationCollector(
     private fun buildUseCaseRequirement(
         block: StructuralNode, nRequirementNumber: Int,
         strLocalId: String, strGlobalId: String,
-        requirementLevel: RequirementLevel, aGroups: List<String>,
+        requirementLevel: RequirementLevel, owner: RequirementContext?, aGroups: List<String>,
         specification: RequirementSpecification
     ): SdpiRequirement2 {
         val useCaseHeader: ContentNode = getUseCaseNode(nRequirementNumber, block.parent)
@@ -309,14 +373,14 @@ class SdpiInformationCollector(
         block.attributes[RequirementAttributes.UseCase.ID.key] = useCaseId.toString()
         return SdpiRequirement2.UseCase(
             nRequirementNumber,
-            strLocalId, strGlobalId, requirementLevel, aGroups, specification, useCaseId.toString()
+            strLocalId, strGlobalId, requirementLevel, owner, aGroups, specification, useCaseId.toString()
         )
     }
 
     private fun buildRefIcsRequirement(
         block: StructuralNode, nRequirementNumber: Int,
         strLocalId: String, strGlobalId: String,
-        requirementLevel: RequirementLevel, aGroups: List<String>,
+        requirementLevel: RequirementLevel, owner: RequirementContext?, aGroups: List<String>,
         specification: RequirementSpecification
     ): SdpiRequirement2 {
         val strStandardId = block.attributes[RequirementAttributes.RefIcs.ID.key]?.toString()
@@ -345,7 +409,7 @@ class SdpiInformationCollector(
         val strRequirement = requirement?.toString() ?: ""
         return SdpiRequirement2.ReferencedImplementationConformanceStatement(
             nRequirementNumber,
-            strLocalId, strGlobalId, requirementLevel, aGroups, specification,
+            strLocalId, strGlobalId, requirementLevel, owner, aGroups, specification,
             strStandardId, strRefSource, strSection, strRequirement
         )
 
@@ -354,7 +418,7 @@ class SdpiInformationCollector(
     private fun buildRiskMitigationRequirement(
         block: StructuralNode, nRequirementNumber: Int,
         strLocalId: String, strGlobalId: String,
-        requirementLevel: RequirementLevel, aGroups: List<String>,
+        requirementLevel: RequirementLevel, owner: RequirementContext?, aGroups: List<String>,
         specification: RequirementSpecification
     ): SdpiRequirement2 {
         val sesType = block.attributes[RequirementAttributes.RiskMitigation.SES_TYPE.key]
@@ -381,7 +445,7 @@ class SdpiInformationCollector(
 
         return SdpiRequirement2.RiskMitigation(
             nRequirementNumber,
-            strLocalId, strGlobalId, requirementLevel, aGroups, specification,
+            strLocalId, strGlobalId, requirementLevel, owner, aGroups, specification,
             parsedSesType, parsedTestability
         )
 
@@ -390,7 +454,7 @@ class SdpiInformationCollector(
     private fun buildIheProfileRequirement(
         block: StructuralNode, nRequirementNumber: Int,
         strLocalId: String, strGlobalId: String,
-        requirementLevel: RequirementLevel, aGroups: List<String>,
+        requirementLevel: RequirementLevel, owner: RequirementContext?, aGroups: List<String>,
         specification: RequirementSpecification
     ): SdpiRequirement2 {
         check(false) {
@@ -399,7 +463,7 @@ class SdpiInformationCollector(
 
         return SdpiRequirement2.TechFeature(
             nRequirementNumber,
-            strLocalId, strGlobalId, requirementLevel, aGroups, specification
+            strLocalId, strGlobalId, requirementLevel, owner, aGroups, specification
         )
     }
 

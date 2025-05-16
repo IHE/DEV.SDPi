@@ -75,7 +75,7 @@ class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {
             )
             converter.run()
 
-            asciidocErrorChecker.run(converter.documentAnchors())
+            asciidocErrorChecker.run(converter.documentAnchors().keys.toList())
 
             logger.info { "File successfully written" }
         }.onFailure {

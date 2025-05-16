@@ -138,63 +138,71 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
             logger.error("Table missing required attribute '${RoleNames.Profile.ID.key}'")
         }
 
-        val strActorId = table.attributes[RoleNames.Transaction.ACTOR_ID.key]?.toString()
-        checkNotNull(strActorId) {
-            logger.error("Table missing required attribute '${RoleNames.Transaction.ACTOR_ID.key}")
-        }
+        val strProfileOption = table.attributes[RoleNames.Profile.ID_PROFILE_OPTION.key]?.toString()
+        logger.info("Table profile option = $strProfileOption")
 
-        val transactions: List<SdpiTransactionReference>? = docInfo.profileTransactions()[strProfile]
-        checkNotNull(transactions) {
+        val strActorId = table.attributes[RoleNames.Transaction.ACTOR_ID.key]?.toString()
+
+        val profile: SdpiProfile? = docInfo.getProfile(strProfile)
+        checkNotNull(profile) {
             logger.error("Unknown profile $strProfile")
         }
 
-        val tableBuilder = TransactionTableBuilder(this, table)
+        val tableBuilder = TransactionTableBuilder(this, table, strActorId == null)
         tableBuilder.setupHeadings()
 
-        for (transactionReference: SdpiTransactionReference in transactions) {
-            val strTransactionId = transactionReference.transactionId
-            val transaction: SdpiTransaction? = docInfo.transactions()[strTransactionId]
-            checkNotNull(transaction) {
-                logger.error("Unknown transaction id $strTransactionId")
+        if (strActorId != null) {
+            val actor = profile.getActor(strActorId)
+            checkNotNull(actor) {
+                logger.error("Actor $strActorId is not defined in profile $strProfile")
             }
-
-            val strTransactionLink = makeLink(transaction.anchor, transaction.label)
-            val strTransactionIdLink = transaction.createTransactionListLink()
-            val strTransactionCell = "$strTransactionLink ($strTransactionIdLink)"
-
-            if (transaction.actorRoles != null) {
-                for (actorRole in transaction.actorRoles) {
-                    if (actorRole.actorId == strActorId) {
-                        for (obligation in transactionReference.obligations) {
-                            if (actorRole.contribution == obligation.contribution) {
-
-                                tableBuilder.addRow(
-                                    strTransactionCell,
-                                    obligation.contribution,
-                                    obligation.obligation,
-                                    null
-                                )
-
-                                if (obligation.optionalObligations != null) {
-                                    for (optObligation in obligation.optionalObligations) {
-                                        tableBuilder.addRow(
-                                            "",
-                                            null,
-                                            optObligation.obligation,
-                                            "<<${optObligation.optionId}>>"
-                                        )
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+            addActorTransactions(tableBuilder, profile, actor, strProfileOption)
+        } else {
+            for (actorRef in profile.actorReferences()) {
+                addActorTransactions(tableBuilder, profile, actorRef, strProfileOption)
             }
-
         }
     }
 
-    fun makeLink(strAnchor: String, strText: String): String {
-        return "link:#$strAnchor[$strText]"
+    private fun addActorTransactions(
+        tableBuilder: TransactionTableBuilder,
+        profile: SdpiProfile,
+        actor: SdpiActor,
+        strProfileOptionFilter: String?,
+    ) {
+        var bFirstActor = true
+        val transactionReferences = profile.transactionReferences
+        if (transactionReferences != null) {
+            for (transactionReference: SdpiTransactionReference in transactionReferences) {
+                val strTransactionId = transactionReference.transactionId
+                val transaction: SdpiTransaction? = docInfo.transactions()[strTransactionId]
+                checkNotNull(transaction) {
+                    logger.error("Unknown transaction id $strTransactionId")
+                }
+
+                val actorsContribution = transaction.getContributionForActor(actor.id)
+                if (actorsContribution == null) {
+                    continue
+                }
+
+
+                var bFirstTransaction = true
+                val obligationsForTransaction =
+                    profile.getTransactionObligations(strTransactionId, actorsContribution, strProfileOptionFilter)
+                for (ref in obligationsForTransaction) {
+                    tableBuilder.addRow(
+                        if (bFirstActor) actor else null,
+                        if (bFirstTransaction) transaction else null,
+                        if (bFirstTransaction) ref.contribution else null,
+                        ref.obligation,
+                        ref.profileOptionId
+                    )
+                    bFirstTransaction = false
+                    bFirstActor = false
+                }
+            }
+        }
     }
+
 }
+
