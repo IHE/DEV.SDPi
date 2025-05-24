@@ -35,9 +35,9 @@ class TransactionActorsProcessor : BlockProcessor(BLOCK_NAME_TRANSACTION_ACTORS)
     fun transactionActors() = transactionActors
 
     override fun process(parent: StructuralNode, reader: Reader, attributes: MutableMap<String, Any>): Any? {
-        val strTransactionId = findIdFromParent(parent, RoleNames.Transaction.TRANSACTION.key, RoleNames.Transaction.TRANSACTION_ID.key)
+        val strTransactionId = findIdFromParent(parent, Roles.Transaction.TRANSACTION.key, Roles.Transaction.TRANSACTION_ID.key)
         checkNotNull(strTransactionId) {
-            logger.error("Missing ${RoleNames.Transaction.TRANSACTION_ID.key} on section with role of ${RoleNames.Transaction.TRANSACTION.key}")
+            logger.error("Missing ${Roles.Transaction.TRANSACTION_ID.key} on section with role of ${Roles.Transaction.TRANSACTION.key}")
         }
         if (transactionActors.containsKey(strTransactionId)) {
             logger.error("Actors for transaction $strTransactionId have already been defined.")
@@ -56,13 +56,12 @@ class TransactionActorsProcessor : BlockProcessor(BLOCK_NAME_TRANSACTION_ACTORS)
 
         var strActor: String? = null
         var contribution: Contribution? = null
-        var strOptionId: String? = null
         val description = mutableListOf<String>()
 
         for (strLine in blockLines) {
             if (strLine.isEmpty()) {
                 if (strActor != null && contribution != null && description.isNotEmpty()) {
-                    roles.add(SdpiActorRole(strActor, contribution, strOptionId, description.toList()))
+                    roles.add(SdpiActorRole(strActor, contribution, description.toList()))
                 }
 
                 description.clear()
@@ -70,14 +69,13 @@ class TransactionActorsProcessor : BlockProcessor(BLOCK_NAME_TRANSACTION_ACTORS)
                 val result = parseContributorAttributes(strLine)
                 strActor = result.first
                 contribution = result.second
-                strOptionId = result.third
             } else {
                 description.add(strLine)
             }
         }
 
         if (strActor != null && contribution != null && description.isNotEmpty()) {
-            roles.add(SdpiActorRole(strActor, contribution, strOptionId, description.toList()))
+            roles.add(SdpiActorRole(strActor, contribution, description.toList()))
         }
 
         return roles
@@ -88,15 +86,13 @@ class TransactionActorsProcessor : BlockProcessor(BLOCK_NAME_TRANSACTION_ACTORS)
         roles: MutableList<SdpiActorRole>
     ): Table? {
         val roleTable = createTable(parent)
-        roleTable.attributes["role"] = RoleNames.Transaction.ACTOR_ROLE_TABLE.key
+        roleTable.attributes["role"] = Roles.Transaction.ACTOR_ROLE_TABLE.key
         roleTable.title = "Actor Roles [{var_transaction_id}]"
 
-        val bAnyOptions = roles.any { it.optionId != null }
-        val nDescriptionColumnIndex = if (bAnyOptions) 3 else 2
+        val nDescriptionColumnIndex = 2
 
         val colActor = createTableColumn(roleTable, 0)
         val colContribution = createTableColumn(roleTable, 1)
-        val colOption = if (bAnyOptions) createTableColumn(roleTable, nDescriptionColumnIndex - 1) else null
         val colDescription = createTableColumn(roleTable, nDescriptionColumnIndex)
 
         val header = createTableRow(roleTable)
@@ -104,25 +100,17 @@ class TransactionActorsProcessor : BlockProcessor(BLOCK_NAME_TRANSACTION_ACTORS)
 
         header.cells.add(createTableCell(colActor, "Actor"))
         header.cells.add(createTableCell(colContribution, "Contribution"))
-        if (bAnyOptions) {
-            header.cells.add(createTableCell(colOption, "Option"))
-        }
         header.cells.add(createTableCell(colDescription, "Description"))
 
 
         for (actorRole in roles) {
-            val strActorId = "<<${actorRole.actorId}>>"
+            val strActorId = "RefActor:${actorRole.actorId}[]"
             val contribution = actorRole.contribution
             val strDescription = actorRole.description.joinToString("\r\n")
 
             val row = createTableRow(roleTable)
             row.cells.add(createTableCell(colActor, strActorId))
             row.cells.add(createTableCell(colContribution, contribution.keyword))
-
-            if (bAnyOptions) {
-                val strOption = if (actorRole.optionId != null) "<<${actorRole.optionId}>>" else "&mdash;"
-                row.cells.add(createTableCell(colOption, strOption))
-            }
 
             row.cells.add(createTableCell(colDescription, strDescription))
 
@@ -132,14 +120,14 @@ class TransactionActorsProcessor : BlockProcessor(BLOCK_NAME_TRANSACTION_ACTORS)
         return roleTable
     }
 
-    private fun parseContributorAttributes(strLine: String): Triple<String, Contribution, String?> {
+    private fun parseContributorAttributes(strLine: String): Pair<String, Contribution> {
         val attributes = parseAttributes(strLine)
 
-        val strActorId = attributes[RoleNames.Transaction.ACTOR_ID.key]
+        val strActorId = attributes[Roles.Transaction.ACTOR_ID.key]
         checkNotNull(strActorId) {
             logger.error("Actor in transaction is missing an actor id")
         }
-        val strContribution = attributes[RoleNames.Transaction.CONTRIBUTION.key]
+        val strContribution = attributes[Roles.Transaction.CONTRIBUTION.key]
         checkNotNull(strContribution) {
             logger.error("Actor $strActorId in transaction is missing a contribution")
         }
@@ -148,9 +136,7 @@ class TransactionActorsProcessor : BlockProcessor(BLOCK_NAME_TRANSACTION_ACTORS)
             logger.error("Actor $strActorId's contribution '$strContribution' is not recognized")
         }
 
-        val strOptionId: String? = attributes[RoleNames.Transaction.OPTION.key]
-
-        return Triple(strActorId, contribution, strOptionId)
+        return Pair(strActorId, contribution)
     }
 
     private fun parseAttributes(strValue: String): Map<String, String> {

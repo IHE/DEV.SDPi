@@ -4,10 +4,13 @@ import org.apache.logging.log4j.kotlin.Logging
 import org.asciidoctor.ast.StructuralNode
 import org.asciidoctor.extension.BlockMacroProcessor
 import org.asciidoctor.extension.Name
+import org.sdpi.asciidoc.ContentModuleAttributes
 import org.sdpi.asciidoc.RequirementAttributes
 
 const val BLOCK_MACRO_NAME_REQUIREMENT_TABLE = "sdpi_requirement_table"
 const val BLOCK_MACRO_NAME_TRANSACTION_TABLE = "sdpi_transaction_table"
+const val BLOCK_MACRO_NAME_CONTENT_MODULE_TABLE = "sdpi_content_module_table"
+
 
 /**
  * Processor for requirement table block macro.
@@ -31,9 +34,9 @@ const val BLOCK_MACRO_NAME_TRANSACTION_TABLE = "sdpi_transaction_table"
 class AddRequirementQueryPlaceholder : BlockMacroProcessor(BLOCK_MACRO_NAME_REQUIREMENT_TABLE) {
 
     override fun process(parent: StructuralNode, target: String, attributes: MutableMap<String, Any>): StructuralNode {
-        attributes["role"] = RoleNames.QueryTable.REQUIREMENT.key
+        attributes["role"] = Roles.QueryTable.REQUIREMENT.key
         val placeholderTable = createTable(parent)
-        placeholderTable.attributes["role"] = RoleNames.QueryTable.REQUIREMENT.key
+        placeholderTable.attributes["role"] = Roles.QueryTable.REQUIREMENT.key
 
         // Add filter attributes to the table for the tree processor to consume.
         val strGroup = attributes[RequirementAttributes.Common.GROUPS.key]
@@ -50,25 +53,50 @@ class AddTransactionQueryPlaceholder : BlockMacroProcessor(BLOCK_MACRO_NAME_TRAN
     private companion object : Logging
 
     override fun process(parent: StructuralNode, target: String, attributes: MutableMap<String, Any>): StructuralNode {
-        attributes["role"] = RoleNames.QueryTable.TRANSACTIONS.key
+        attributes["role"] = Roles.QueryTable.TRANSACTIONS.key
         val placeholderTable = createTable(parent)
-        placeholderTable.attributes["role"] = RoleNames.QueryTable.TRANSACTIONS.key
+        placeholderTable.attributes["role"] = Roles.QueryTable.TRANSACTIONS.key
 
         // Add filter attributes to the table for the tree processor to consume.
-        val strProfile = attributes[RoleNames.Profile.ID.key]
+        val strProfile = attributes[Roles.Profile.ID.key]
         checkNotNull(strProfile) {
-            logger.error("$BLOCK_MACRO_NAME_TRANSACTION_TABLE missing required attribute '${RoleNames.Profile.ID.key}'")
+            logger.error("$BLOCK_MACRO_NAME_TRANSACTION_TABLE missing required attribute '${Roles.Profile.ID.key}'")
         }
-        placeholderTable.attributes[RoleNames.Profile.ID.key] = strProfile
+        placeholderTable.attributes[Roles.Profile.ID.key] = strProfile
 
-        val strProfileOption = attributes[RoleNames.Profile.ID_PROFILE_OPTION.key]
+        val strProfileOption = attributes[Roles.Profile.ID_PROFILE_OPTION.key]
         if (strProfileOption != null) {
-            placeholderTable.attributes[RoleNames.Profile.ID_PROFILE_OPTION.key] = strProfileOption
+            placeholderTable.attributes[Roles.Profile.ID_PROFILE_OPTION.key] = strProfileOption
         }
 
-        val strActorId = attributes[RoleNames.Transaction.ACTOR_ID.key]
+        val strActorId = attributes[Roles.Transaction.ACTOR_ID.key]
         if (strActorId != null) {
-            placeholderTable.attributes[RoleNames.Transaction.ACTOR_ID.key] = strActorId
+            placeholderTable.attributes[Roles.Transaction.ACTOR_ID.key] = strActorId
+        }
+
+        return placeholderTable
+    }
+}
+
+@Name(BLOCK_MACRO_NAME_CONTENT_MODULE_TABLE)
+class AddContentModuleQueryPlaceholder : BlockMacroProcessor(BLOCK_MACRO_NAME_CONTENT_MODULE_TABLE) {
+    private companion object : Logging
+
+    override fun process(parent: StructuralNode, target: String, attributes: MutableMap<String, Any>): StructuralNode {
+        attributes["role"] = Roles.QueryTable.CONTENT_MODULE.key
+        val placeholderTable = createTable(parent)
+        placeholderTable.attributes["role"] = Roles.QueryTable.CONTENT_MODULE.key
+
+        // Add filter attributes to the table for the tree processor to consume.
+        val strProfile = attributes[Roles.Profile.ID.key]
+        checkNotNull(strProfile) {
+            logger.error("$BLOCK_MACRO_NAME_CONTENT_MODULE_TABLE missing required attribute '${Roles.Profile.ID.key}'")
+        }
+        placeholderTable.attributes[Roles.Profile.ID.key] = strProfile
+
+        val strProfileOption = attributes[Roles.Profile.ID_PROFILE_OPTION.key]
+        if (strProfileOption != null) {
+            placeholderTable.attributes[Roles.Profile.ID_PROFILE_OPTION.key] = strProfileOption
         }
 
         return placeholderTable

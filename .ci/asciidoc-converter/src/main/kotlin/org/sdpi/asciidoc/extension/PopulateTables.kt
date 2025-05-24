@@ -7,6 +7,7 @@ import org.asciidoctor.ast.Table
 import org.asciidoctor.extension.Contexts
 import org.asciidoctor.extension.Treeprocessor
 import org.sdpi.asciidoc.RequirementAttributes
+import org.sdpi.asciidoc.factories.ContentModuleTableBuilder
 import org.sdpi.asciidoc.factories.TransactionTableBuilder
 import org.sdpi.asciidoc.getRequirementGroups
 import org.sdpi.asciidoc.model.*
@@ -25,12 +26,14 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
     }
 
     private fun processBlock(block: StructuralNode) {
-        if (block.hasRole(RoleNames.QueryTable.REQUIREMENT.key)) {
+        if (block.hasRole(Roles.QueryTable.REQUIREMENT.key)) {
             populateQueryTable(block as Table, getSelectedRequirements(block))
         } else if (block.hasRole(ICS_TABLE_ROLE)) {
             populateICSTable(block as Table, getSelectedRequirements(block))
-        } else if (block.hasRole(RoleNames.QueryTable.TRANSACTIONS.key)) {
+        } else if (block.hasRole(Roles.QueryTable.TRANSACTIONS.key)) {
             populateTransactionTable(block as Table)
+        } else if (block.hasRole(Roles.QueryTable.CONTENT_MODULE.key)) {
+            populateContentModuleTable(block as Table)
         } else {
             for (child in block.blocks) {
                 processBlock(child)
@@ -133,15 +136,15 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
 
     private fun populateTransactionTable(table: Table) {
 
-        val strProfile = table.attributes[RoleNames.Profile.ID.key]?.toString()
+        val strProfile = table.attributes[Roles.Profile.ID.key]?.toString()
         checkNotNull(strProfile) {
-            logger.error("Table missing required attribute '${RoleNames.Profile.ID.key}'")
+            logger.error("Table missing required attribute '${Roles.Profile.ID.key}'")
         }
 
-        val strProfileOption = table.attributes[RoleNames.Profile.ID_PROFILE_OPTION.key]?.toString()
+        val strProfileOption = table.attributes[Roles.Profile.ID_PROFILE_OPTION.key]?.toString()
         logger.info("Table profile option = $strProfileOption")
 
-        val strActorId = table.attributes[RoleNames.Transaction.ACTOR_ID.key]?.toString()
+        val strActorId = table.attributes[Roles.Transaction.ACTOR_ID.key]?.toString()
 
         val profile: SdpiProfile? = docInfo.getProfile(strProfile)
         checkNotNull(profile) {
@@ -204,5 +207,70 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
         }
     }
 
+    private fun populateContentModuleTable(table: Table) {
+
+        val strProfile = table.attributes[Roles.Profile.ID.key]?.toString()
+        checkNotNull(strProfile) {
+            logger.error("Table missing required attribute '${Roles.Profile.ID.key}'")
+        }
+        val strProfileOption = table.attributes[Roles.Profile.ID_PROFILE_OPTION.key]?.toString()
+
+        val profile: SdpiProfile? = docInfo.getProfile(strProfile)
+        checkNotNull(profile) {
+            logger.error("Unknown profile $strProfile")
+        }
+
+        val tableBuilder = ContentModuleTableBuilder(this, table)
+        tableBuilder.setupHeadings()
+
+        for (actorRef in profile.actorReferences()) {
+            addActorContentModule(tableBuilder, profile, actorRef, strProfileOption)
+        }
+    }
+
+    private fun addActorContentModule(
+        tableBuilder: ContentModuleTableBuilder,
+        profile: SdpiProfile,
+        actor: SdpiActor,
+        strProfileOptionFilter: String?,
+    ) {
+        var bFirstActor = true
+        val references = profile.contentModuleReferences
+        if (references != null) {
+            for (ref: SdpiContentModuleRef in references.filter { it.actorId == actor.id }) {
+                val strRefId = ref.contentModuleId
+                val module: SdpiContentModule? = docInfo.contentModules()[strRefId]
+                checkNotNull(module) {
+                    logger.error("Unknown content-module id $strRefId")
+                }
+
+                tableBuilder.addRow(
+                    if (bFirstActor) actor else null,
+                    module,
+                    ref.obligation,
+                    null
+                )
+                bFirstActor = false
+            }
+        }
+
+        for (option in profile.options) {
+            for (ref: SdpiContentModuleRef in option.contentModuleReferences.filter { it.actorId == actor.id }) {
+                val strRefId = ref.contentModuleId
+                val module: SdpiContentModule? = docInfo.contentModules()[strRefId]
+                checkNotNull(module) {
+                    logger.error("Unknown content-module id $strRefId")
+                }
+
+                tableBuilder.addRow(
+                    if (bFirstActor) actor else null,
+                    module,
+                    ref.obligation,
+                    option.label
+                )
+            }
+        }
+
+    }
 }
 

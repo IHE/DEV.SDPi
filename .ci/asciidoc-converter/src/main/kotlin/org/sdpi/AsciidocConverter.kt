@@ -75,6 +75,7 @@ class AsciidocConverter(
             .sourcemap(true)
             .headerFooter(!conversionOptions.generateTestOutput)
             .toStream(outputFile).build()
+        val bEnablePrePostProcessing = true
 
         val asciidoctor = Asciidoctor.Factory.create()
 
@@ -99,13 +100,25 @@ class AsciidocConverter(
         val bibliographyCollector = BibliographyCollector()
         asciidoctor.javaExtensionRegistry().treeprocessor(bibliographyCollector)
 
-        // Gather profiles and the transactions they include.
+        // Gather profiles, the transactions, use cases they include.
         val profileTransactionCollector = TransactionIncludeProcessor()
         asciidoctor.javaExtensionRegistry().blockMacro(profileTransactionCollector)
 
+        val profileUseCaseCollector = UseCaseIncludeProcessor()
+        asciidoctor.javaExtensionRegistry().blockMacro(profileUseCaseCollector)
+
+        val profileContentModuleCollector = ContentModuleIncludeProcessor()
+        asciidoctor.javaExtensionRegistry().blockMacro(profileContentModuleCollector)
+
         // Gather SDPI specific information from the document such as
         // requirements and use-cases.
-        val infoCollector = TreeInfoCollector(bibliographyCollector, transactionActorsProcessor, profileTransactionCollector)
+        val infoCollector = SdpiInformationCollector(
+            bibliographyCollector,
+            transactionActorsProcessor,
+            profileTransactionCollector,
+            profileUseCaseCollector,
+            profileContentModuleCollector
+        )
         asciidoctor.javaExtensionRegistry().treeprocessor(infoCollector)
 
         // Gather anchors in the document so we can verify there aren't any invalid links.
@@ -117,21 +130,32 @@ class AsciidocConverter(
         asciidoctor.javaExtensionRegistry().blockMacro(AddRequirementQueryPlaceholder())
         asciidoctor.javaExtensionRegistry().blockMacro(AddICSPlaceholder())
         asciidoctor.javaExtensionRegistry().blockMacro(AddTransactionQueryPlaceholder())
-        asciidoctor.javaExtensionRegistry().treeprocessor(PopulateTables(infoCollector.info()))
+        asciidoctor.javaExtensionRegistry().blockMacro(AddContentModuleQueryPlaceholder())
+
+        asciidoctor.javaExtensionRegistry().treeprocessor(PopulateTables(infoCollector))
 
         // Handle inline macros to cross-reference information from the document tree.
-        asciidoctor.javaExtensionRegistry().inlineMacro(RequirementReferenceMacroProcessor(infoCollector.info()))
-        asciidoctor.javaExtensionRegistry().inlineMacro(UseCaseReferenceMacroProcessor(infoCollector.info()))
+        asciidoctor.javaExtensionRegistry().inlineMacro(RequirementReferenceMacroProcessor(infoCollector))
+        asciidoctor.javaExtensionRegistry().inlineMacro(UseCaseReferenceMacroProcessor(infoCollector))
+        asciidoctor.javaExtensionRegistry().inlineMacro(ActorReferenceMacroProcessor(infoCollector))
+        asciidoctor.javaExtensionRegistry().inlineMacro(ContentModuleReferenceMacroProcessor(infoCollector))
+        asciidoctor.javaExtensionRegistry().inlineMacro(TransactionReferenceMacroProcessor(infoCollector))
+        asciidoctor.javaExtensionRegistry().inlineMacro(ProfileReferenceMacroProcessor(infoCollector))
 
-        asciidoctor.javaExtensionRegistry().preprocessor(IssuesSectionPreprocessor(conversionOptions.githubToken))
-        asciidoctor.javaExtensionRegistry().preprocessor(DisableSectNumsProcessor())
+        if (bEnablePrePostProcessing) {
+            asciidoctor.javaExtensionRegistry().preprocessor(IssuesSectionPreprocessor(conversionOptions.githubToken))
+            asciidoctor.javaExtensionRegistry().preprocessor(DisableSectNumsProcessor())
+        }
 
-        val referenceSanitizerPre = ReferenceSanitizerPreprocessor(anchorReplacements)
-        asciidoctor.javaExtensionRegistry().preprocessor(referenceSanitizerPre)
-        if (conversionOptions.outputFormat == "html") {
-            // Post processor not supported for PDFs
-            // https://docs.asciidoctor.org/asciidoctorj/latest/extensions/postprocessor/
-            asciidoctor.javaExtensionRegistry().postprocessor(ReferenceSanitizerPostprocessor(anchorReplacements))
+        if (bEnablePrePostProcessing) {
+            println("Enable pre post processing.")
+            val referenceSanitizerPre = ReferenceSanitizerPreprocessor(anchorReplacements)
+            asciidoctor.javaExtensionRegistry().preprocessor(referenceSanitizerPre)
+            if (conversionOptions.outputFormat == "html") {
+                // Post processor not supported for PDFs
+                // https://docs.asciidoctor.org/asciidoctorj/latest/extensions/postprocessor/
+                asciidoctor.javaExtensionRegistry().postprocessor(ReferenceSanitizerPostprocessor(anchorReplacements))
+            }
         }
 
         // Dumps tree of document structure to stdio.
@@ -152,7 +176,7 @@ class AsciidocConverter(
         //anchorReplacements.dump()
         //anchorCollector.dumpKnownAnchors()
 
-        for(reqOwner in infoCollector.info().requirementOwners()) {
+        for (reqOwner in infoCollector.requirementOwners()) {
             print("R${reqOwner.key}")
             reqOwner.value?.dump()
             println()
@@ -164,11 +188,26 @@ class AsciidocConverter(
                 explicitNulls = false
             }
 
-            writeArtifact("sdpi-requirements", jsonFormatter.encodeToString(infoCollector.info().requirements().values))
-            writeArtifact("sdpi-use-cases", jsonFormatter.encodeToString(infoCollector.info().useCases()))
-            writeArtifact("sdpi-actors", jsonFormatter.encodeToString(infoCollector.info().actors().values))
-            writeArtifact("sdpi-transactions", jsonFormatter.encodeToString(infoCollector.info().transactions().values))
-            writeArtifact("sdpi-profiles", jsonFormatter.encodeToString(infoCollector.info().profiles()))
+            writeArtifact(
+                "sdpi-profiles",
+                jsonFormatter.encodeToString(infoCollector.profiles())
+            )
+            writeArtifact(
+                "sdpi-use-cases",
+                jsonFormatter.encodeToString(infoCollector.useCases())
+            )
+            writeArtifact(
+                "sdpi-content-modules",
+                jsonFormatter.encodeToString(infoCollector.contentModules().values)
+            )
+            writeArtifact(
+                "sdpi-transactions",
+                jsonFormatter.encodeToString(infoCollector.transactions().values)
+            )
+            writeArtifact(
+                "sdpi-requirements",
+                jsonFormatter.encodeToString(infoCollector.requirements().values)
+            )
         }
 
         asciidoctor.shutdown()

@@ -64,5 +64,14 @@ enum class UseCaseAttributes(val key: String) {
     ID("sdpi_use_case_id"),
 
     // Attribute to define an id for a use case scenario.
-    SCENARIO("sdpi_use_case_scenario")
+    SCENARIO("sdpi_use_case_scenario"),
+
+    ACTOR("actor"),
+
+    OBLIGATION("support")
+}
+
+enum class ContentModuleAttributes(val key: String) {
+    ACTOR("actor"),
+    OBLIGATION("support")
 }

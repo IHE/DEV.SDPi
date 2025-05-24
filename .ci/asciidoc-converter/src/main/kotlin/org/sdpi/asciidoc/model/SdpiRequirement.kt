@@ -2,7 +2,7 @@ package org.sdpi.asciidoc.model
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import org.sdpi.asciidoc.extension.RoleNames
+import org.sdpi.asciidoc.extension.Roles
 
 /**
  * Definition of requirement levels.
@@ -17,22 +17,22 @@ enum class RequirementLevel(val keyword: String, val icsStatus: String) {
 
 enum class OwningContext(val roleKeyword: String, val label: String) {
     @SerialName("profile")
-    PROFILE(RoleNames.Profile.PROFILE.key, "Sdpi Profile"),
+    PROFILE(Roles.Profile.PROFILE.key, "Sdpi Profile"),
 
     @SerialName("profile-option")
-    PROFILE_OPTION(RoleNames.Profile.PROFILE_OPTION.key, "Sdpi Profile Option"),
+    PROFILE_OPTION(Roles.Profile.PROFILE_OPTION.key, "Sdpi Profile Option"),
 
     @SerialName("content-module")
-    CONTENT_MODULE(RoleNames.ContentModule.SECTION_ROLE.key, "Content module"),
+    CONTENT_MODULE(Roles.ContentModule.SECTION_ROLE.key, "Content module"),
 
     @SerialName("gateway")
-    GATEWAY(RoleNames.Gateway.SECTION_ROLE.key, "Gateway"),
+    GATEWAY(Roles.Gateway.SECTION_ROLE.key, "Gateway"),
 
     @SerialName("protocol")
-    PROTOCOL(RoleNames.Protocol.SECTION_ROLE.key, "Protocol"),
+    PROTOCOL(Roles.Protocol.SECTION_ROLE.key, "Protocol"),
 
     @SerialName("use-case")
-    USE_CASE(RoleNames.UseCase.FEATURE.key, "Use case"),
+    USE_CASE(Roles.UseCase.FEATURE.key, "Use case"),
 }
 
 /**
@@ -95,6 +95,7 @@ data class RequirementSpecification(
         val ids = mutableListOf<String>()
         for (content in normativeContent) {
             ids.addAll(content.getIdMatches(SdpiActor.ACTOR_ID_REGEX, 1))
+            ids.addAll(content.getIdMatches(SdpiActor.ACTOR_REF_REGEX, 1))
         }
         return ids.distinct()
     }
@@ -148,6 +149,17 @@ sealed class SdpiRequirement2 {
         }
 
         return String.format("r%04d", requirementNumber)
+    }
+
+    @Serializable
+    @SerialName("actors")
+    private val actorsReferenced = mutableListOf<String>()
+
+    fun actors(): List<String> = actorsReferenced
+
+    fun gatherActors(actorAliases: Map<String, String>) {
+        val actors = specification.getActorIds().distinct().map { actorAliases[it] ?: it }
+        actorsReferenced.addAll(actors)
     }
 
     @Serializable

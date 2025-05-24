@@ -1,18 +1,50 @@
 package org.sdpi.asciidoc.model
 
+import kotlinx.serialization.EncodeDefault
+import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-class SdpiProfileOption(
+class SdpiProfileOption @OptIn(ExperimentalSerializationApi::class) constructor(
     val id: String,
-    val transactionReferences: List<SdpiTransactionReference>?
-)
+    val anchor: String,
+    val label: String,
+
+    @SerialName("transactionReferences")
+    @EncodeDefault(EncodeDefault.Mode.NEVER)
+    val transactionReferences: MutableList<SdpiTransactionReference> = mutableListOf(),
+
+    @SerialName("useCaseReferences")
+    @EncodeDefault(EncodeDefault.Mode.NEVER)
+    val useCaseReferences: MutableList<SdpiUseCaseReference> = mutableListOf(),
+
+    @SerialName("contentModuleReferences")
+    @EncodeDefault(EncodeDefault.Mode.NEVER)
+    val contentModuleReferences: MutableList<SdpiContentModuleRef> = mutableListOf(),
+
+) {
+    fun add(ref: SdpiTransactionReference) {
+        transactionReferences.add(ref)
+    }
+
+    fun add(ref: SdpiUseCaseReference) {
+        useCaseReferences.add(ref)
+    }
+
+    fun add(ref: SdpiContentModuleRef) {
+        contentModuleReferences.add(ref)
+    }
+}
 
 @Serializable
 class SdpiProfile(
     val profileId: String,
-    val transactionReferences: List<SdpiTransactionReference>?
+    val anchor: String,
+    val label: String,
+    val transactionReferences: List<SdpiTransactionReference>?,
+    val useCaseReferences: List<SdpiUseCaseReference>?,
+    val contentModuleReferences: List<SdpiContentModuleRef>?
 ) {
 
     @Serializable
@@ -33,6 +65,21 @@ class SdpiProfile(
 
     fun addOption(option: SdpiProfileOption) {
         options.add(option)
+    }
+
+    /*
+    fun getOption(strOptionId: String) : SdpiProfileOption {
+        val existing = options.find{ it.id == strOptionId}
+        if (existing != null) {
+            return existing
+        }
+        val newOption = SdpiProfileOption(strOptionId)
+        options.add(newOption)
+        return newOption
+    }*/
+
+    fun findOption(strOptionId: String): SdpiProfileOption? {
+        return options.find{ it.id == strOptionId}
     }
 
     fun actorReferences() = actorsDefined
@@ -80,3 +127,4 @@ data class ProfileContribution(
     val contribution: Contribution,
     val obligation: Obligation
 )
+

@@ -71,3 +71,100 @@ class UseCaseReferenceMacroProcessor(private val documentInfo: SdpiInformationCo
     }
 
 }
+
+@Name("RefActor")
+class ActorReferenceMacroProcessor(private val documentInfo: SdpiInformationCollector) : InlineMacroProcessor() {
+    private companion object : Logging
+
+    override fun process(parent: ContentNode, strTarget: String, attributes: MutableMap<String, Any>): PhraseNode {
+        val actor = documentInfo.findActor(strTarget)
+        checkNotNull(actor)
+        {
+            "Actor '$strTarget' doesn't exist".also { logger.error { it } }
+        }
+
+        val strHref = "#${actor.anchor}"
+        val options: Map<String, String> = mapOf("type" to ":link", "target" to strHref)
+
+        logger.info("Found actor: $strHref, ${actor.label}")
+
+        return createPhraseNode(parent, "anchor", actor.label, attributes, options)
+    }
+}
+
+@Name("RefContentModule")
+class ContentModuleReferenceMacroProcessor(private val documentInfo: SdpiInformationCollector) :
+    InlineMacroProcessor() {
+    private companion object : Logging
+
+    override fun process(parent: ContentNode, strTarget: String, attributes: MutableMap<String, Any>): PhraseNode {
+        val contentModule = documentInfo.contentModules()[strTarget]
+        checkNotNull(contentModule)
+        {
+            "Content module '$strTarget' doesn't exist".also { logger.error { it } }
+        }
+
+        val strHref = "#${contentModule.anchor}"
+        val options: Map<String, String> = mapOf("type" to ":link", "target" to strHref)
+
+        logger.info("Found content-module: $strHref, ${contentModule.label}")
+
+        return createPhraseNode(parent, "anchor", contentModule.label, attributes, options)
+    }
+}
+
+@Name("RefTransaction")
+class TransactionReferenceMacroProcessor(private val documentInfo: SdpiInformationCollector) : InlineMacroProcessor() {
+    private companion object : Logging
+
+    override fun process(parent: ContentNode, strTarget: String, attributes: MutableMap<String, Any>): PhraseNode {
+        val transaction = documentInfo.transactions()[strTarget]
+        checkNotNull(transaction)
+        {
+            "Transaction '$strTarget' doesn't exist".also { logger.error { it } }
+        }
+
+        val strHref = "#${transaction.anchor}"
+        val options: Map<String, String> = mapOf("type" to ":link", "target" to strHref)
+
+        logger.info("Found transaction: $strHref, ${transaction.label}")
+
+        return createPhraseNode(parent, "anchor", transaction.label, attributes, options)
+    }
+}
+
+@Name("RefProfile")
+class ProfileReferenceMacroProcessor(private val documentInfo: SdpiInformationCollector) : InlineMacroProcessor() {
+    private companion object : Logging
+
+    override fun process(parent: ContentNode, strTarget: String, attributes: MutableMap<String, Any>): PhraseNode {
+        val profile = documentInfo.getProfile(strTarget)
+        checkNotNull(profile)
+        {
+            "Profile '$strTarget' doesn't exist".also { logger.error { it } }
+        }
+
+        val strOption = attributes[Roles.Profile.ID_PROFILE_OPTION.key]?.toString()
+        if (strOption == null) {
+
+            val strHref = "#${profile.anchor}"
+            val options: Map<String, String> = mapOf("type" to ":link", "target" to strHref)
+
+            logger.info("Found profile: $strHref, ${profile.label}")
+
+            return createPhraseNode(parent, "anchor", profile.label, attributes, options)
+        } else {
+            val profileOption = profile.findOption(strOption)
+            checkNotNull(profileOption) {
+                "Profile $strTarget does not have a $strOption option"
+            }
+
+            val strHref = "#${profileOption.anchor}"
+            val options: Map<String, String> = mapOf("type" to ":link", "target" to strHref)
+
+            logger.info("Found profile option: $strHref, ${profileOption.label}")
+
+            return createPhraseNode(parent, "anchor", profileOption.label, attributes, options)
+        }
+    }
+}

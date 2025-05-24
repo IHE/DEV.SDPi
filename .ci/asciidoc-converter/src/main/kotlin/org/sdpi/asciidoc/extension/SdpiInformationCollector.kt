@@ -8,29 +8,13 @@ import org.asciidoctor.extension.Treeprocessor
 import org.sdpi.asciidoc.*
 import org.sdpi.asciidoc.model.*
 
-class TreeInfoCollector(
-    bibliography: BibliographyCollector,
-    transactionActors: TransactionActorsProcessor,
-    profiles: TransactionIncludeProcessor
-) :
-    Treeprocessor() {
-    private val collector = SdpiInformationCollector(bibliography, transactionActors, profiles)
-
-    fun info(): SdpiInformationCollector = collector
-
-    override fun process(document: Document): Document {
-        collector.process(document)
-
-        return document
-    }
-
-}
-
 class SdpiInformationCollector(
     private val bibliography: BibliographyCollector,
     private val transactionActors: TransactionActorsProcessor,
-    private val profileTransactions: TransactionIncludeProcessor
-) {
+    private val profileTransactions: TransactionIncludeProcessor,
+    private val profileUseCases: UseCaseIncludeProcessor,
+    private val profileContentModuleReferences: ContentModuleIncludeProcessor
+) : Treeprocessor() {
     private companion object : Logging
 
     private val requirements = mutableMapOf<Int, SdpiRequirement2>()
@@ -41,7 +25,14 @@ class SdpiInformationCollector(
 
     private val actors = mutableMapOf<String, SdpiActor>()
 
+    // Actors can be referenced by id as well as their actor-id. This maps
+    // ids to actor-ids.
+    private val actorAliases = mutableMapOf<String, String>()
+
     private val transactions = mutableMapOf<String, SdpiTransaction>()
+
+    // Content modules discovered in the document, keyed by the content module id.
+    private val contentModules = mutableMapOf<String, SdpiContentModule>()
 
     private val profiles = mutableMapOf<String, SdpiProfile>()
 
@@ -59,17 +50,42 @@ class SdpiInformationCollector(
 
     fun useCases(): Map<String, SdpiUseCase> = useCases
 
-    fun actors(): Map<String, SdpiActor> = actors
-
     fun transactions(): Map<String, SdpiTransaction> = transactions
 
-    //fun profileTransactions(): Map<String, List<SdpiTransactionReference>> = profileTransactions.profiles()
+    fun contentModules(): Map<String, SdpiContentModule> = contentModules
 
-    fun process(document: Document) {
+    fun findActor(strActor: String): SdpiActor? {
+        val strPrimaryId = actorAliases[strActor]
+        if (strPrimaryId == null) {
+            logger.info("Can't find primary id for actor $strActor. Known aliases are:")
+            for (strAlias in actorAliases.keys) {
+                logger.info("  $strAlias => ${actorAliases[strAlias]}")
+            }
+            return null
+        }
+        logger.info("Primary id for actor $strActor is $strPrimaryId")
+
+        return actors[strPrimaryId]
+    }
+
+    override fun process(document: Document): Document {
         logger.info("Collecting sdpi information")
         processBlock(document as StructuralNode)
 
-        collectActorRequirements()
+        gatherRequirementMetadata()
+        linkActorsToTransactionReferences()
+
+        validateTransactionRefs()
+        validateUseCaseRefs()
+        validateContentModuleRefs()
+        validateTransactions()
+        validateRequirements()
+
+        // This is more proof-of-concept rather than information
+        // we want to include in the export.
+        // collectActorRequirements()
+
+        return document
     }
 
 
@@ -78,12 +94,16 @@ class SdpiInformationCollector(
             processRequirement(block)
         }
 
-        if (block.hasRole(RoleNames.UseCase.FEATURE.key)) {
+        if (block.hasRole(Roles.UseCase.FEATURE.key)) {
             processUseCase(block)
         }
 
-        if (block.hasRole(RoleNames.Profile.PROFILE.key)) {
+        if (block.hasRole(Roles.Profile.PROFILE.key)) {
             processProfile(block)
+        }
+
+        if (block.hasRole(Roles.ContentModule.SECTION_ROLE.key)) {
+            processContentModule(block)
         }
 
         if (block.hasRole("transaction")) {
@@ -95,17 +115,11 @@ class SdpiInformationCollector(
         }
     }
 
-    // region Collect anchors
-    private fun collectAnchors(block: StructuralNode) {
-
-    }
-    // endregion
-
     // region Profiles
     private fun processProfile(block: StructuralNode) {
-        val strProfileId = block.attributes[RoleNames.Profile.ID.key]?.toString()
+        val strProfileId = block.attributes[Roles.Profile.ID.key]?.toString()
         checkNotNull(strProfileId) {
-            logger.error("Profile block missing '${RoleNames.Profile.ID.key}'")
+            logger.error("Profile block missing '${Roles.Profile.ID.key}'")
         }
 
         check(!profiles.containsKey(strProfileId)) {
@@ -113,39 +127,44 @@ class SdpiInformationCollector(
         }
 
         val transactionRefs = profileTransactions.transactionReferences(strProfileId)
-        val profileRefs = transactionRefs?.filter { it.profileOptionId == null }
+        val profileTransactionRefs = transactionRefs?.filter { it.profileOptionId == null }
             ?.map { it.transactionReference }
-        val currentProfile = SdpiProfile(strProfileId, profileRefs)
-        profiles[strProfileId] = currentProfile
-        gatherProfileOptionTransactions(transactionRefs, currentProfile)
 
+        val useCaseRefs = profileUseCases.useCaseReferences(strProfileId)
+        val profileUseCaseRefs = useCaseRefs?.filter { it.profileOptionId == null }
+            ?.map { it.useCaseReference }
+
+        val contentModuleRefs = profileContentModuleReferences.contentModuleReferences(strProfileId)
+        val profileContentModuleRefs = contentModuleRefs?.filter { it.profileOptionId == null }?.map { it.ref }
+
+        val strAnchor = block.id
+        val strLabel = block.reftext ?: block.title
+
+        val currentProfile =
+            SdpiProfile(
+                strProfileId,
+                strAnchor,
+                strLabel,
+                profileTransactionRefs,
+                profileUseCaseRefs,
+                profileContentModuleRefs
+            )
+        profiles[strProfileId] = currentProfile
         for (child in block.blocks) {
             processProfileBlock(child, currentProfile, null)
         }
-    }
 
-    private fun gatherProfileOptionTransactions(
-        transactionRefs: List<SdpiProfileTransactionReference>?,
-        currentProfile: SdpiProfile
-    ) {
-        if (transactionRefs != null) {
-            val groupedOption = transactionRefs.filter { it.profileOptionId != null }.groupBy { it.profileOptionId }
-            for (go in groupedOption) {
-                val strOptionId = go.key
-                if (strOptionId != null) {
-                    val optionTransactions = mutableListOf<SdpiTransactionReference>()
-                    for (tr in go.value) {
-                        optionTransactions.add(tr.transactionReference)
-                    }
-                    currentProfile.addOption(SdpiProfileOption(strOptionId, optionTransactions))
-                }
-            }
-        }
+        gatherProfileOptionTransactions(transactionRefs, currentProfile)
+        gatherProfileOptionUseCases(useCaseRefs, currentProfile)
+        gatherProfileOptionContentModules(contentModuleRefs, currentProfile)
     }
 
     private fun processProfileBlock(block: StructuralNode, profile: SdpiProfile, profileOption: SdpiProfileOption?) {
-        if (block.hasRole("actor")) {
+        if (block.hasRole(Roles.Actor.SECTION_ROLE.key)) {
             processActor(block, profile)
+        }
+        if (block.hasRole(Roles.Actor.ALIAS.key)) {
+            processActorAlias(block)
         }
         val currentOption: SdpiProfileOption? = if (block.hasRole("profile-option")) {
             processProfileOption(block, profile)
@@ -158,20 +177,165 @@ class SdpiInformationCollector(
         }
     }
 
+    private fun processActor(block: StructuralNode, profile: SdpiProfile) {
+        val strAnchor = block.id
+        val strId = block.attributes[Roles.Actor.ID.key]?.toString()
+        checkNotNull(strId) {
+            logger.error("Block with ${Roles.Actor.SECTION_ROLE.key} role requires an ${Roles.Actor.ID.key}")
+        }
+        val strRefText = block.reftext
+        logger.info("Found actor $strId => $strRefText")
+
+        check(!actors.contains(strId)) // check for duplicate.
+        {
+            "Duplicate actor #${strId} ($strRefText)".also {
+                logger.error { it }
+            }
+        }
+
+        actorAliases[strId] = strId // Self alias for easy lookup
+        val newActor = SdpiActor(strId, strRefText, profile.profileId, strAnchor)
+        actors[strId] = newActor
+        profile.addActor(newActor)
+    }
+
+    private fun processActorAlias(block: StructuralNode) {
+        val strId = block.attributes[Roles.Actor.ID.key]?.toString()
+        checkNotNull(strId) {
+            logger.error("Block with ${Roles.Actor.ALIAS.key} role requires an ${Roles.Actor.ID.key}")
+        }
+
+        val strAlias = block.id
+        checkNotNull(strAlias) {
+            logger.error("block with ${Roles.Actor.ALIAS.key} role requires an id")
+        }
+
+        check(!actorAliases.containsKey(strAlias)) {
+            logger.error("Alias $strAlias already exists")
+        }
+
+        logger.info("Found actor alias: $strAlias ==> $strId")
+
+        actorAliases[strAlias] = strId
+    }
+
+    private fun collectActorRequirements() {
+        logger.info("Collecting actor requirements...")
+        for (req in requirements) {
+            val nRequirementId = req.key
+            val actorIds = req.value.specification.getActorIds()
+            for (strActorId in actorIds) {
+                val actor = findActor(strActorId)
+                checkNotNull(actor) {
+                    logger.error("Requirement ${req.value.localId} contains unknown actor $strActorId")
+                }
+                actor.requirements.add(nRequirementId)
+            }
+        }
+    }
+
+    private fun gatherProfileOptionTransactions(
+        transactionRefs: List<SdpiProfileTransactionReference>?,
+        currentProfile: SdpiProfile
+    ) {
+        if (transactionRefs != null) {
+            val groupedOption = transactionRefs.filter { it.profileOptionId != null }.groupBy { it.profileOptionId }
+            for (go in groupedOption) {
+                val strOptionId = go.key
+                if (strOptionId != null) {
+                    val profileOption = currentProfile.findOption(strOptionId)
+                    checkNotNull(profileOption) {
+                        logger.error("Profile ${currentProfile.profileId} does not have an option $strOptionId for transactions")
+                    }
+                    go.value.forEach { profileOption.add(it.transactionReference) }
+                }
+            }
+        }
+    }
+
+    private fun gatherProfileOptionUseCases(
+        useCaseRefs: List<SdpiProfileUseCaseReference>?,
+        currentProfile: SdpiProfile
+    ) {
+        if (useCaseRefs != null) {
+            val groupedOption = useCaseRefs.filter { it.profileOptionId != null }.groupBy { it.profileOptionId }
+            for (go in groupedOption) {
+                val strOptionId = go.key
+                if (strOptionId != null) {
+                    val profileOption = currentProfile.findOption(strOptionId)
+                    checkNotNull(profileOption) {
+                        logger.error("Profile ${currentProfile.profileId} does not have an option $strOptionId for use cases")
+                    }
+                    go.value.forEach { profileOption.add(it.useCaseReference) }
+                }
+            }
+        }
+    }
+
+    private fun gatherProfileOptionContentModules(
+        contentModuleRefs: List<SdpiProfileContentModuleRef>?,
+        currentProfile: SdpiProfile
+    ) {
+        if (contentModuleRefs != null) {
+            val groupedOption = contentModuleRefs.filter { it.profileOptionId != null }.groupBy { it.profileOptionId }
+            for (go in groupedOption) {
+                val strOptionId = go.key
+                if (strOptionId != null) {
+                    val profileOption = currentProfile.findOption(strOptionId)
+                    checkNotNull(profileOption) {
+                        logger.error("Profile ${currentProfile.profileId} does not have an option $strOptionId for content modules")
+                    }
+                    go.value.forEach { profileOption.add(it.ref) }
+                }
+            }
+        }
+    }
+
     private fun processProfileOption(block: StructuralNode, currentProfile: SdpiProfile): SdpiProfileOption {
         val strId = block.attributes["profile-option-id"]?.toString()
         checkNotNull(strId) {
             logger.error("Block with role 'profile-option' requires a 'profile-option-id")
         }
 
-        val existingOption = currentProfile.options.firstOrNull{ it.id == strId}
+        val existingOption = currentProfile.options.firstOrNull { it.id == strId }
         if (null != existingOption) {
             return existingOption
         }
 
-        val newOption = SdpiProfileOption(strId, null)
+        val strAnchor = block.id
+        val strLabel = block.reftext
+
+        val newOption = SdpiProfileOption(strId, strAnchor, strLabel)
         currentProfile.addOption(newOption)
         return newOption
+    }
+    // endregion
+
+    // region Content modules
+    private fun processContentModule(block: StructuralNode) {
+        val strContentModuleId = block.attributes[Roles.ContentModule.ID.key]?.toString()
+        checkNotNull(strContentModuleId) {
+            logger.error("Content module block (id=${block.id} missing '${Roles.ContentModule.ID.key}'")
+        }
+
+        check(!contentModules.containsKey(strContentModuleId)) {
+            logger.error("Duplicate content module id found: $strContentModuleId")
+        }
+
+        val strLabel = parseContentModuleTitle(block.title)
+        val strAnchor = block.id
+
+        contentModules[strContentModuleId] = SdpiContentModule(strContentModuleId, strLabel, strAnchor)
+    }
+
+    private fun parseContentModuleTitle(strDocText: String): String {
+        val reTitle = Regex("""^\d+(\.\d+)*\s+(.*)$""")
+        val match = reTitle.find(strDocText)
+        val strTitle = match?.groups?.get(2)?.value
+        checkNotNull(strTitle) {
+            logger.error("Content module title '$strDocText' is not formatted correctly")
+        }
+        return strTitle
     }
     // endregion
 
@@ -242,7 +406,18 @@ class SdpiInformationCollector(
             val ownerType = parseOwnerFromRole(strRole)
             if (ownerType != null) {
                 logger.info("Found owner of requirement: $ownerType")
-                return RequirementContext(ownerType, block.id)
+                val strId = when (ownerType) {
+                    OwningContext.PROFILE -> block.attributes[Roles.Profile.ID.key]?.toString()
+                    OwningContext.PROFILE_OPTION -> block.attributes[Roles.Profile.ID_PROFILE_OPTION.key]?.toString()
+                    OwningContext.CONTENT_MODULE -> block.attributes[Roles.ContentModule.ID.key]?.toString()
+                    OwningContext.GATEWAY -> block.attributes[Roles.Gateway.ID.key]?.toString()
+                    OwningContext.PROTOCOL -> block.attributes[Roles.Protocol.ID.key]?.toString()
+                    OwningContext.USE_CASE -> block.attributes[UseCaseAttributes.ID.key]?.toString()
+                }
+                checkNotNull(strId) {
+                    logger.error("Owner missing id")
+                }
+                return RequirementContext(ownerType, strId)
             }
         }
 
@@ -623,11 +798,11 @@ class SdpiInformationCollector(
         var iBlock = 0
         while (iBlock < specBlocks.count()) {
             val useCaseBlock = specBlocks[iBlock]
-            if (useCaseBlock.hasRole(RoleNames.UseCase.BACKGROUND.key)) {
+            if (useCaseBlock.hasRole(Roles.UseCase.BACKGROUND.key)) {
                 backgroundContent.addAll(getSteps(useCaseBlock))
             }
 
-            if (useCaseBlock.hasRole(RoleNames.UseCase.SCENARIO.key)) {
+            if (useCaseBlock.hasRole(Roles.UseCase.SCENARIO.key)) {
                 val oTitle = useCaseBlock.attributes["sdpi_scenario"]
                 checkNotNull(oTitle)
                 {
@@ -635,7 +810,7 @@ class SdpiInformationCollector(
                 }
 
                 val iStepBlock = iBlock + 1
-                check(iStepBlock < specBlocks.count() && specBlocks[iStepBlock].hasRole(RoleNames.UseCase.STEPS.key))
+                check(iStepBlock < specBlocks.count() && specBlocks[iStepBlock].hasRole(Roles.UseCase.STEPS.key))
                 {
                     "${getLocation(useCaseBlock)} missing steps for scenario $oTitle".also { logger.error { it } }
                 }
@@ -656,13 +831,13 @@ class SdpiInformationCollector(
         for (child in block.blocks) {
             val strRole = child.role
             when (strRole) {
-                RoleNames.UseCase.BACKGROUND.key -> specBlocks.add(child)
-                RoleNames.UseCase.SCENARIO.key -> {
+                Roles.UseCase.BACKGROUND.key -> specBlocks.add(child)
+                Roles.UseCase.SCENARIO.key -> {
                     specBlocks.add(child)
                     gatherUseCaseBlocks(child, specBlocks)
                 }
 
-                RoleNames.UseCase.STEPS.key -> specBlocks.add(child)
+                Roles.UseCase.STEPS.key -> specBlocks.add(child)
                 else -> gatherUseCaseBlocks(child, specBlocks)
             }
         }
@@ -711,38 +886,6 @@ class SdpiInformationCollector(
 
     //endregion
 
-    //region actors
-    private fun processActor(block: StructuralNode, profile: SdpiProfile) {
-        val strId = block.id
-        val strRefText = block.reftext
-
-        check(!actors.contains(strId)) // check for duplicate.
-        {
-            "Duplicate actor #${strId} ($strRefText)".also {
-                logger.error { it }
-            }
-        }
-
-        val newActor = SdpiActor(strId, strRefText, profile.profileId)
-        actors[strId] = newActor
-        profile.addActor(newActor)
-    }
-
-    private fun collectActorRequirements() {
-        for (req in requirements) {
-            val nRequirementId = req.key
-            val actorIds = req.value.specification.getActorIds()
-            for (strActorId in actorIds) {
-                val actor = actors[strActorId]
-                checkNotNull(actor) {
-                    logger.error("Requirement ${req.value.localId} contains unknown actor $strActorId")
-                }
-                actor.requirements.add(nRequirementId)
-            }
-        }
-    }
-    //endregion
-
     //region transactions
 
     private fun processTransaction(block: StructuralNode) {
@@ -770,4 +913,135 @@ class SdpiInformationCollector(
     }
     //endregion
 
+    //region Populate metadata
+
+    private fun gatherRequirementMetadata() {
+        for (req in requirements.values) {
+            req.gatherActors(actorAliases)
+        }
+    }
+
+    private fun linkActorsToTransactionReferences() {
+        for (profile in profiles.values) {
+            linkActorsToTransactionReferences(profile.transactionReferences)
+
+            for (option in profile.options) {
+                linkActorsToTransactionReferences(option.transactionReferences)
+            }
+        }
+    }
+
+    private fun linkActorsToTransactionReferences(transactionReferences: List<SdpiTransactionReference>?) {
+        if (transactionReferences != null) {
+            for (ref in transactionReferences) {
+                val transaction = transactions[ref.transactionId]
+                if (transaction != null) {
+                    for (obl in ref.obligations) {
+                        val contrib = obl.contribution
+                        val role = transaction.actorRoles?.firstOrNull { it.contribution == contrib }
+                        if (role != null) {
+                            val strActorId = role.actorId
+                            obl.actorId = strActorId
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //endregion
+
+    //region Validation
+
+    private fun validateTransactionRefs() {
+        for (profile in profiles.values) {
+            if (null != profile.transactionReferences) {
+                validateTransactionRefs(profile.profileId, profile.transactionReferences)
+            }
+            for (profileOption in profile.options) {
+                validateTransactionRefs(profileOption.id, profileOption.transactionReferences)
+            }
+        }
+    }
+
+    private fun validateUseCaseRefs() {
+        for (profile in profiles.values) {
+            if (null != profile.useCaseReferences) {
+                validateUseCaseRefs(profile.profileId, profile.useCaseReferences)
+            }
+            for (profileOption in profile.options) {
+                validateUseCaseRefs(profileOption.id, profileOption.useCaseReferences)
+            }
+        }
+    }
+
+    private fun validateContentModuleRefs() {
+        for (profile in profiles.values) {
+            if (null != profile.contentModuleReferences) {
+                validateContentModuleRefs(profile.profileId, profile.contentModuleReferences)
+            }
+        }
+    }
+
+    private fun validateTransactions() {
+        for (trans in transactions.values) {
+            if (trans.actorRoles != null) {
+                for (role in trans.actorRoles) {
+                    val actor = actors[role.actorId]
+                    checkNotNull(actor) {
+                        logger.error("The actor ${role.actorId} in transaction ${trans.id} can't be found")
+                    }
+                }
+            }
+        }
+    }
+
+    private fun validateRequirements() {
+        for (req in requirements.values) {
+            for (strActorId in req.actors()) {
+                val actor = actors[strActorId]
+                checkNotNull(actor) {
+                    logger.error("Requirement ${req.localId} references unknown actor $strActorId")
+                }
+            }
+        }
+    }
+
+    private fun validateTransactionRefs(strProfileId: String, transactionRefs: List<SdpiTransactionReference>) {
+        for (ref in transactionRefs) {
+            val transaction = transactions[ref.transactionId]
+            checkNotNull(transaction) {
+                logger.error("Profile '${strProfileId} references an unknown transaction ${ref.transactionId}")
+            }
+        }
+    }
+
+    private fun validateUseCaseRefs(strProfileId: String, refs: List<SdpiUseCaseReference>) {
+        for (ref in refs) {
+            val useCase = useCases[ref.useCaseId]
+            checkNotNull(useCase) {
+                logger.error("Profile '${strProfileId} references an unknown use case ${ref.useCaseId}")
+            }
+
+            val actor = actors[ref.actorId]
+            checkNotNull(actor) {
+                logger.error("The actor '${ref.actorId} in a ${ref.useCaseId} use-case reference in profile $strProfileId can't be found")
+            }
+        }
+    }
+
+    private fun validateContentModuleRefs(strProfileId: String, refs: List<SdpiContentModuleRef>) {
+        for (ref in refs) {
+            val contentModule = contentModules[ref.contentModuleId]
+            checkNotNull(contentModule) {
+                logger.error("Profile '${strProfileId} references an unknown content module ${ref.contentModuleId}")
+            }
+
+            val actor = actors[ref.actorId]
+            checkNotNull(actor) {
+                logger.error("The actor '${ref.actorId} in a ${ref.contentModuleId} content module reference in profile $strProfileId can't be found")
+            }
+        }
+    }
+    //endregion
 }

@@ -53,6 +53,7 @@ fun parseContribution(strKeyword: String) =
 data class TransactionContribution(
     val contribution: Contribution,
     val obligation: Obligation,
+    var actorId: String? = null,
 )
 
 @Serializable

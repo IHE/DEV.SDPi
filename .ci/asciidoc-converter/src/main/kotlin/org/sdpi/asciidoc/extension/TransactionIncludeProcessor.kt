@@ -5,6 +5,7 @@ import org.asciidoctor.ast.ContentNode
 import org.asciidoctor.ast.StructuralNode
 import org.asciidoctor.extension.BlockMacroProcessor
 import org.asciidoctor.extension.Name
+import org.sdpi.asciidoc.findProfileId
 import org.sdpi.asciidoc.model.*
 
 const val BLOCK_MACRO_NAME_INCLUDE_TRANSACTION = "sdpi_include_transaction"
@@ -159,22 +160,5 @@ class TransactionIncludeProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_INCLUDE
         }
     }
 
-    private fun findProfileId(parent: ContentNode): Pair<String?, String?> {
-        logger.info("Find profile id, parent = ${parent.id}")
-        if (parent.hasRole(RoleNames.Profile.PROFILE.key)) {
-            val strProfileId = parent.attributes[RoleNames.Profile.ID.key]?.toString()
-            checkNotNull(strProfileId) {
-                logger.error("Profile has no id")
-            }
-            return Pair(strProfileId, null)
-        } else if (parent.hasRole(RoleNames.Profile.PROFILE_OPTION.key)) {
-            val strOptionId = parent.attributes[RoleNames.Profile.ID_PROFILE_OPTION.key]?.toString()
-            val parentId = findProfileId(parent.parent)
-            return Pair(parentId.first, strOptionId)
-        } else if (parent.parent != parent.document) {
-            return findProfileId(parent.parent)
-        } else {
-            return Pair(null, null)
-        }
-    }
+
 }

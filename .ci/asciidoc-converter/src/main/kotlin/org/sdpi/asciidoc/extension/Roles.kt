@@ -3,7 +3,7 @@ package org.sdpi.asciidoc.extension
 /**
  * Defines keywords for block roles.
  */
-sealed class RoleNames {
+sealed class Roles {
 
     enum class Profile(val key: String) {
         // Profile section.
@@ -17,6 +17,16 @@ sealed class RoleNames {
         ID_PROFILE_OPTION("profile-option-id"),
     }
 
+    enum class Actor(val key: String) {
+        SECTION_ROLE("actor"),
+
+        // A role that registers the section anchor (id) as an
+        // alias for an actor-id.
+        ALIAS("actor-alias"),
+
+        ID("actor-id")
+    }
+
     enum class Transaction(val key: String) {
         TRANSACTION("transaction"),
 
@@ -28,7 +38,6 @@ sealed class RoleNames {
 
         ACTOR_ROLE_TABLE("actor_roles"),
 
-        OPTION("option"),
     }
 
     enum class UseCase(val key: String) {
@@ -54,18 +63,26 @@ sealed class RoleNames {
         REQUIREMENT("requirement-table"),
 
         // The role applied to transaction list tables.
-        TRANSACTIONS("transactions-table")
+        TRANSACTIONS("transactions-table"),
+
+        // The role applied to content module tables
+        CONTENT_MODULE("content-module-table"),
     }
 
     enum class ContentModule(val key: String) {
         SECTION_ROLE("content-module"),
+
+        // Identifier for the content module
+        ID("content-module-id"),
     }
 
     enum class Gateway(val key: String) {
         SECTION_ROLE("gateway"),
+        ID("gateway-id"),
     }
 
     enum class Protocol(val key: String) {
         SECTION_ROLE("protocol"),
+        ID("protocol-id"),
     }
 }

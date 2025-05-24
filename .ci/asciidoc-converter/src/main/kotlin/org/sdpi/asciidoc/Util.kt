@@ -3,6 +3,7 @@ package org.sdpi.asciidoc
 import org.apache.logging.log4j.kotlin.loggerOf
 import org.asciidoctor.ast.ContentNode
 import org.asciidoctor.ast.StructuralNode
+import org.sdpi.asciidoc.extension.Roles
 import org.sdpi.asciidoc.model.BlockOwner
 import org.sdpi.asciidoc.model.RequirementLevel
 import org.sdpi.asciidoc.model.StructuralNodeWrapper
@@ -59,7 +60,7 @@ fun StructuralNode.isAppendix() = when (val section = this.toSealed()) {
 }
 
 fun parseRequirementNumber(strRequirement: String): Int? {
-    val requirementParser = "^r(\\d+)$".toRegex()
+    val requirementParser = "^r(\\d+)$".toRegex(RegexOption.IGNORE_CASE)
     val matchResults = requirementParser.findAll(strRequirement)
     if (matchResults.any()) {
         return matchResults.map { it.groupValues[1] }.toList().first().toInt()
@@ -95,6 +96,24 @@ fun findIdFromParent(parent: ContentNode, strRole: String, strIdAttribute: Strin
         findIdFromParent(parent.parent, strRole, strIdAttribute)
     } else {
         null
+    }
+}
+
+fun findProfileId(parent: ContentNode): Pair<String?, String?> {
+    if (parent.hasRole(Roles.Profile.PROFILE.key)) {
+        val strProfileId = parent.attributes[Roles.Profile.ID.key]?.toString()
+        checkNotNull(strProfileId) {
+            throw IllegalStateException("Profile has no id")
+        }
+        return Pair(strProfileId, null)
+    } else if (parent.hasRole(Roles.Profile.PROFILE_OPTION.key)) {
+        val strOptionId = parent.attributes[Roles.Profile.ID_PROFILE_OPTION.key]?.toString()
+        val parentId = findProfileId(parent.parent)
+        return Pair(parentId.first, strOptionId)
+    } else if (parent.parent != parent.document) {
+        return findProfileId(parent.parent)
+    } else {
+        return Pair(null, null)
     }
 }
 
