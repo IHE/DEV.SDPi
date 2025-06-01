@@ -3,7 +3,7 @@
 :sdpi_oid.sdpi-p: 1.3.6.1.4.1.19376.1.6.2.11
 :sdpi_oid.sdpi: 1.3.6.1.4.1.19376.1.6.2.10.1.1.1
 
-[role="use-case",sdpi_use_case_id=stad]
+[role="use-case",use-case-id=stad]
 [sdpi_feature="Synchronized Time Across Devices"]
 === Use Case Feature 1: Synchronized Time Across Devices (STAD)
 

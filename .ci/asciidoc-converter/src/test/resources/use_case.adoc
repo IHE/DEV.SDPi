@@ -2,7 +2,7 @@
 
 Pellentesque pellentesque ligula vitae neque RefUseCase:stad[] porttitor sollicitudin. Nullam at nisi nunc. 
 
-[role="use-case",sdpi_use_case_id=stad]
+[role="use-case",use-case-id=stad]
 [sdpi_feature="Synchronized Time Across Devices"]
 === Use Case Feature 1: Synchronized time across devices (STAD)
 

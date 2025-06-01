@@ -338,17 +338,182 @@ For a bulleted list of items, the final "full stop" character of each non-final 
 . Final Bullet.
 
 
-== Semantic content
+== Semantic markup
 https://docs.asciidoctor.org/asciidoctorj/latest/[Asciidoctor], which converts these files into other formats (e.g., html, pdf), has been https://docs.asciidoctor.org/asciidoctorj/latest/extensions/extensions-introduction/[extended] to process domain specific content for the supplement. These extensions provide semantic markup of content that is used to automatically generate, for example, implementation conformance statement tables and export requirements and use cases in JSON format for external tooling (see https://profiles.ihe.net/DEV/SDPi/index.html#vol1_appendix_a_requirements_management_for_p_n_t_interperability[requirements management for plug-and-trust interoperability]). 
 
-Content encoded and exported, to `sdpi-supplement/referenced-artifacts/` in JSON format includes:
+Content extracted, using markup in the source described below, and exported, to `sdpi-supplement/referenced-artifacts/` in JSON format includes:
 
-* `sdpi-requirements.json`: all requirements defined, as described below, in the source. 
-* `sdpi-use-cases.json`: all use cases defined, as described below, in the source.
-
+* `sdpi-profiles.json`: all profiles (e.g., SDPi), including actors and options defined, and the transactions, content modules and use-cases referenced,
+* `sdpi-content-modules.json`: content modules (e.g., SDC/BICEPS, etc),
+* `sdpi-transactions.json`: collects transactions and the roles of actors in the transactions,
+* `sdpi-requirements.json`: all requirements, 
+* `sdpi-use-cases.json`: all use cases.
 
 NOTE: the extensions are written in Kotlin and may be found, along with the document processing tools, in `.ci/asciidoc-converter`. In Windows, run `build_document.bat` to process the Asciidoc source files. 
 
+Most content is defined by roles attached to an appropriate section. For example, a section that includes the `content-module` role will define a _content module_. The table below summarizes the roles available to mark up content. 
+
+|===
+| Content | Role | Identifier attribute | Parent scope
+
+| <<semantic-content-modules,Content module>> | `content-module` | `content-module-id` | global
+| <<semantic-transactions,Transaction>> | `transaction` | `transaction-id` | global
+| <<semantic-profiles,Profile>> | `profile` | `profile-id` | global
+| Profile option | `profile-option` | `profile-option-id` | Profile
+| Actor | `actor` | `actor-id` | Profile, Profile option
+| <<use-case,Use case>> | `use-case` | `use-case-id` | global
+| Use case background | `use-case-background` | &mdash; | Use case
+| Use case scenario | `use-case-scenario` | &mdash; | Use case
+| Use case steps | `use-case-steps` | &mdash; | Use case scenario
+|===
+
+NOTE: <<semantic-requirements>> are defined in a custom block. 
+
+[#semantic-profiles]
+=== Defining profiles
+
+Profiles define <<semantic-actors,actors>> and compose a set of transactions, use cases and content modules. They are defined within a single AsciiDoc section that includes definitions for all the profile's actors and references to relevant transactions, use-cases and content modules. Profiles may also define optional parts, such as support for a discovery proxy. Each option may define its own actors and reference a set of transactions, use cases and content modules. 
+
+The `profile` and `profile-option` roles mark sections defining profiles and options within profiles, respectively. A document-unique id is required for each profile and profile option, set using the `profile-id` and `profile-option-id` attributes, respectively. The fragment below illustrates the definition of a profile and two profile options. 
+
+NOTE: The document structure is used to associate information, such as actors and references to transactions or use cases, with a profile so these must be defined in sub-sections to the document section defining the profile. 
+
+[source,asciidoc]
+----
+[role="profile",profile-id="SDPi-P"]
+== Plug-and-trust (SDPi-P) Profile
+
+The SDPi-Plug-and-trust SDPi-P) Profile supports foundational seamless connectivity&hellip;
+
+[role="profile-option",profile-option-id="discovery proxy"]
+=== Managed discovery proxy option
+
+The managed discovery proxy supports discovery of SOMDS participants through a well-known proxy service&hellip;
+
+[role="profile-option",profile-option-id="ad-hoc-discovery"]
+=== Ad-hoc discovery option
+
+Ad-hoc discovery supports discovery of SOMDS participants through multi-cast broadcast messages&hellip;
+
+----
+
+[#semantic-actors]
+==== Defining actors
+
+The (abbreviated) example below illustrates the AsciiDoc source defining an actor. 
+
+[source,asciidoc]
+----
+[#vol1_clause_sdpi_p_somds_participant, role="actor",actor-id="somds-participant"]
+==== SOMDS Participant
+
+Actor Summary Definition:
+[none]
+. A foundational abstract actor that provides the&hellip;
+
+[#vol1_clause_sdpi_p_somds_provider, role="actor",actor-id="somds-provider"]
+==== SOMDS Provider
+
+Actor Summary Definition:
+[none]
+. A participant that provides at least one&hellip;
+
+[#vol1_clause_sdpi_p_somds_consumer, role="actor",actor-id="somds-consumer"]
+==== SOMDS Consumer
+
+Actor Summary Definition:
+[none]
+. A participant that discovers and&hellip;
+
+----
+
+Attaching the `actor` role to a section marks it as an actor. A (document-unique) identifier must be defined in the `actor-id` attribute. The `reftext` attribute or, if `reftext` is missing, the section title is used for the actor label. 
+
+[#semantic-profile-ref-transactions]
+==== Referencing transactions
+
+[#semantic-profile-ref-content-modules]
+==== Referencing content-modules
+
+[#semantic-profile-ref-use-case]
+==== Referencing use-cases
+
+[#semantic-profile-actor-alias]
+==== Actor aliases
+
+[#semantic-content-modules]
+=== Defining content modules
+
+The example below illustrates the AsciiDoc source required to define a content module for the document processor. 
+
+[source,asciidoc]
+----
+[#vol3_clause_sdc_biceps_semantic_content_module,role="content-module", content-module-id="biceps"]
+===== SDC/BICEPS Content Module
+
+The biceps standard, <<ref_ieee_11073_10207_2017>>, provides an extensive semantic&hellip;
+----
+
+Attaching the `content-module` role to a section marks it as a [content module](https://profiles.ihe.net/DEV/SDPi/index.html#vol3). A (document-unique) identifier must be defined in the `content-module-id` attribute. The section title is used for the content module label. 
+
+NOTE: `RefContentModule:<content-module-id>[]` may be used to <<cross-referencing,cross-reference>> transactions by id (e.g., `RefContentModule:biceps[]`). 
+
+[#semantic-transactions]
+=== Defining transactions
+
+The example below illustrates the AsciiDoc source required to define a transaction with two actors. 
+
+[source,asciidoc]
+----
+[#vol2_clause_dev_23, role="transaction", transaction-id="DEV-23", reftext="Announce network presence"]
+=== Announce Network Presence [{var_transaction_id}]
+
+==== Scope
+
+Notify all SOMDS Consumers that a SOMDS Provider is &hellip;
+
+==== Actor Roles
+
+[sdpi_transaction_actors]
+--
+
+[actor-id="somds-provider", contribution="Initiator"]
+Announces its presence by multicasting vol2_clause_dev_23_message_hello messages to all listening systems.
+
+[actor-id="somds-consumer", contribution="Receiver"]
+Listens for vol2_clause_dev_23_message_hello messages to identify any <<vol1_spec_sdpi_p_actor_somds_provider>>s that it may exchange messages with and further retrieve a <<vol1_spec_sdpi_p_actor_somds_provider>>'s service capabilities.
+
+--
+----
+
+Attaching the `transaction` role to a section marks it as a [transaction](https://profiles.ihe.net/DEV/SDPi/index.html#vol2). A (document-unique) identifier must be defined in the `DEV-23` attribute. The `reftext` attribute is used for the transaction label in tables, etc. 
+
+Transaction sections must define roles actors contribute within a `sdpi_transaction_actors` block:
+
+[source,asciidoc]
+----
+[sdpi_transaction_actors]
+--
+   :
+   :
+--
+----
+
+The contribution actors make to the transaction are defined by a paragraph with `actor-id` and `contribution` attributes. The paragraph describes the contribution and/or role the actor will make to the transaction. The `actor-id` attribute provides the <<semantic-actors,actor's identifier>> while the `contribution` attribute provides the contribution the actor will make to the transaction. Available contributions are listed in the table below. 
+
+|===
+| Contribution | Actor's responsibility
+
+| `initiator` | Steps that start the transaction (e.g., send a message to request information such as a provider's capabilities)
+| `responder` | Provide a response to complete the transaction (e.g., provide the information requested in the message)
+| `receiver`  | Consume the information provided to support the actor's core-functions; no response is required. 
+|===
+
+NOTE: actor's obligations and transactions used by profiles are included in the <<semantic-profile,Profile definition>>.
+
+NOTE: `RefTransaction:<transaction-id>[]` may be used to <<cross-referencing,cross-reference>> transactions by id  (e.g., `RefTransaction:DEV-23[]`).  
+
+[#semantic-requirements]
 === Defining requirements
 
 The example below illustrates the AsciiDoc source to define a simple requirement. 
@@ -570,8 +735,12 @@ It is common to refer to requirements and use-cases from elsewhere in the source
 |===
 |Macro name | Target | Optional attributes | Example | Description
 
-|RefRequirement | Requirement number | _none_ | `RefRequirement:r1002[]` | Inserts a link to the requirement target. 
-|RefUseCase | Use-case id | _none_ | `RefUseCase:stad[]` | Inserts a link to the use-case target. 
+|`RefRequirement` | requirement | _none_ | `RefRequirement:r1002[]` | Inserts a link to the requirement target. 
+|`RefUseCase` | use-case | _none_ | `RefUseCase:stad[]` | Inserts a link to the use-case target. 
+|`RefActor` | actor | _none_ | `RefActor:discovery-proxy[]` | Inserts a link to the actor definition in a profile. 
+|`RefProfile` | profile or profile option | _none_ | `RefProfile:SDPi-P[]`, `RefProfile:SDPi-P[profile-option-id="discovery proxy"]` | Inserts a link to the profile or profile option. 
+|`RefContentModule` | content module | _none_ | `RefContentModule:biceps[]` | Inserts a link to the content module. 
+|`RefTransaction` | transaction | _none_ | `RefTransaction:DEV-23[]` | Inserts a link to the transaction definition.
 |===
 
 NOTE: use case ids are case-sensitive.

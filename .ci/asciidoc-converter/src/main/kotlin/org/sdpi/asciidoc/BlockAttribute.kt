@@ -36,7 +36,7 @@ sealed class RequirementAttributes {
     enum class UseCase(val key: String) {
         // Attribute that identifies the use case associated with a
         // USE_CASE requirement
-        ID("sdpi_use_case_id")
+        ID("use-case-id")
     }
 
     enum class RefIcs(val key: String) {
@@ -61,7 +61,7 @@ sealed class RequirementAttributes {
 
 enum class UseCaseAttributes(val key: String) {
     // Attribute to define an id for a use case section.
-    ID("sdpi_use_case_id"),
+    ID("use-case-id"),
 
     // Attribute to define an id for a use case scenario.
     SCENARIO("sdpi_use_case_scenario"),

@@ -183,18 +183,25 @@ class SdpiInformationCollector(
         checkNotNull(strId) {
             logger.error("Block with ${Roles.Actor.SECTION_ROLE.key} role requires an ${Roles.Actor.ID.key}")
         }
-        val strRefText = block.reftext
-        logger.info("Found actor $strId => $strRefText")
+        val strLabel = block.reftext ?: block.title
+        logger.info("Found actor $strId => $strLabel")
+
+        val reExtractTitleElements = Regex("""^\d+(\.\d+)*\s+(.*)""")
+        val mrTitleElements = reExtractTitleElements.find(strLabel)
+        val strTitle = mrTitleElements?.groups?.get(2)?.value ?: strLabel
+        checkNotNull(strTitle) {
+            logger.error("No label for actor $strId")
+        }
 
         check(!actors.contains(strId)) // check for duplicate.
         {
-            "Duplicate actor #${strId} ($strRefText)".also {
+            "Duplicate actor #${strId} ($strTitle)".also {
                 logger.error { it }
             }
         }
 
         actorAliases[strId] = strId // Self alias for easy lookup
-        val newActor = SdpiActor(strId, strRefText, profile.profileId, strAnchor)
+        val newActor = SdpiActor(strId, strTitle, profile.profileId, strAnchor)
         actors[strId] = newActor
         profile.addActor(newActor)
     }
