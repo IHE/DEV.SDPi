@@ -138,7 +138,7 @@ class SdpiInformationCollector(
         val profileContentModuleRefs = contentModuleRefs?.filter { it.profileOptionId == null }?.map { it.ref }
 
         val strAnchor = block.id
-        val strLabel = block.reftext ?: block.title
+        val strLabel = parseProfileTitle(block)
 
         val currentProfile =
             SdpiProfile(
@@ -159,6 +159,22 @@ class SdpiInformationCollector(
         gatherProfileOptionContentModules(contentModuleRefs, currentProfile)
     }
 
+    private fun parseProfileTitle(block: StructuralNode): String {
+
+        if (block.reftext != null) {
+            return block.reftext
+        }
+
+        val strDocTitle = block.title
+        val reTitle = Regex("""^\d+(\.\d+)*\s+(.*)$""")
+        val match = reTitle.find(strDocTitle)
+        val strTitle = match?.groups?.get(2)?.value
+        checkNotNull(strTitle) {
+            logger.error("Profile title '$strDocTitle' is not formatted correctly")
+        }
+        return strTitle
+    }
+
     private fun processProfileBlock(block: StructuralNode, profile: SdpiProfile, profileOption: SdpiProfileOption?) {
         if (block.hasRole(Roles.Actor.SECTION_ROLE.key)) {
             processActor(block, profile)
@@ -166,7 +182,7 @@ class SdpiInformationCollector(
         if (block.hasRole(Roles.Actor.ALIAS.key)) {
             processActorAlias(block)
         }
-        val currentOption: SdpiProfileOption? = if (block.hasRole("profile-option")) {
+        val currentOption: SdpiProfileOption? = if (block.hasRole(Roles.Profile.PROFILE_OPTION.key)) {
             processProfileOption(block, profile)
         } else {
             profileOption
@@ -794,7 +810,7 @@ class SdpiInformationCollector(
 
     private fun processUseCase(block: StructuralNode) {
         val strUseCaseId = block.attributes[UseCaseAttributes.ID.key].toString()
-        val strTitle = block.title
+        val strTitle = parseUseCaseTitle(block)
         val strAnchor = block.id
 
         val specBlocks: MutableList<StructuralNode> = mutableListOf()
@@ -832,6 +848,22 @@ class SdpiInformationCollector(
 
         val spec = UseCaseSpecification(backgroundContent, scenarios)
         useCases[strUseCaseId] = SdpiUseCase(strUseCaseId, strTitle, strAnchor, spec)
+    }
+
+    private fun parseUseCaseTitle(block: StructuralNode): String {
+        if (block.reftext != null) {
+            return block.reftext
+        }
+
+        val strDocTitle = block.title
+        val reTitle = Regex(""":\s+(.*) +\(""")
+        val match = reTitle.find(strDocTitle)
+        val strTitle = match?.groups?.get(1)?.value
+        checkNotNull(strTitle) {
+            logger.error("Use case title '$strDocTitle' is not formatted correctly")
+        }
+
+        return strTitle
     }
 
     private fun gatherUseCaseBlocks(block: StructuralNode, specBlocks: MutableList<StructuralNode>) {
