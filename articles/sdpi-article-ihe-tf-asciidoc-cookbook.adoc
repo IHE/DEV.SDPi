@@ -337,7 +337,7 @@ For a bulleted list of items, the final "full stop" character of each non-final 
 . Second bullet;
 . Final Bullet.
 
-
+[#semantic-markup]
 == Semantic markup
 https://docs.asciidoctor.org/asciidoctorj/latest/[Asciidoctor], which converts these files into other formats (e.g., html, pdf), has been https://docs.asciidoctor.org/asciidoctorj/latest/extensions/extensions-introduction/[extended] to process domain specific content for the supplement. These extensions provide semantic markup of content that is used to automatically generate, for example, implementation conformance statement tables and export requirements and use cases in JSON format for external tooling (see https://profiles.ihe.net/DEV/SDPi/index.html#vol1_appendix_a_requirements_management_for_p_n_t_interperability[requirements management for plug-and-trust interoperability]). 
 
@@ -365,6 +365,8 @@ Most content is defined by roles attached to an appropriate section. For example
 | Use case background | `use-case-background` | &mdash; | Use case
 | Use case scenario | `use-case-scenario` | &mdash; | Use case
 | Use case steps | `use-case-steps` | &mdash; | Use case scenario
+| Gateway | `gateway` | `gateway-id` | global
+| Protocol | `protocol` | `protocol-id` | global
 |===
 
 NOTE: <<semantic-requirements>> are defined in a custom block. 
@@ -383,17 +385,17 @@ NOTE: The document structure is used to associate information, such as actors an
 [role="profile",profile-id="SDPi-P"]
 == Plug-and-trust (SDPi-P) Profile
 
-The SDPi-Plug-and-trust SDPi-P) Profile supports foundational seamless connectivity&hellip;
+The SDPi-Plug-and-trust SDPi-P) Profile supports foundational seamless connectivity...
 
 [role="profile-option",profile-option-id="discovery proxy"]
 === Managed discovery proxy option
 
-The managed discovery proxy supports discovery of SOMDS participants through a well-known proxy service&hellip;
+The managed discovery proxy supports discovery of SOMDS participants through a well-known proxy service...
 
 [role="profile-option",profile-option-id="ad-hoc-discovery"]
 === Ad-hoc discovery option
 
-Ad-hoc discovery supports discovery of SOMDS participants through multi-cast broadcast messages&hellip;
+Ad-hoc discovery supports discovery of SOMDS participants through multi-cast broadcast messages...
 
 ----
 
@@ -409,21 +411,21 @@ The (abbreviated) example below illustrates the AsciiDoc source defining an acto
 
 Actor Summary Definition:
 [none]
-. A foundational abstract actor that provides the&hellip;
+. A foundational abstract actor that provides the...
 
 [#vol1_clause_sdpi_p_somds_provider, role="actor",actor-id="somds-provider"]
 ==== SOMDS Provider
 
 Actor Summary Definition:
 [none]
-. A participant that provides at least one&hellip;
+. A participant that provides at least one...
 
 [#vol1_clause_sdpi_p_somds_consumer, role="actor",actor-id="somds-consumer"]
 ==== SOMDS Consumer
 
 Actor Summary Definition:
 [none]
-. A participant that discovers and&hellip;
+. A participant that discovers and...
 
 ----
 
@@ -432,14 +434,89 @@ Attaching the `actor` role to a section marks it as an actor. A (document-unique
 [#semantic-profile-ref-transactions]
 ==== Referencing transactions
 
+A profile, or profile option, references a <<semantic-transactions,transaction>> using the `sdpi_include_transaction` [include processor](https://docs.asciidoctor.org/asciidoctorj/latest/extensions/include-processor/) and declares the obligations of contributors. For example:
+
+[source, asciidoc]
+----
+sdpi_include_transaction::DEV-23[initiator="required", receiver="optional"]
+sdpi_include_transaction::DEV-47[initiator="optional", responder="required"]
+----
+
+Note, specify the:
+
+* <<semantic-transactions,transaction>> id as the directive target (e.g., `DEV-23`, `DEV-47`),
+* obligation (that is, `required` or `optional`) for each contribution (that is, `initiator`, `receiver` or `responder`) in attributes; the contributions for included transactions must match those defined in the <<semantic-transaction,transaction>>.
+
+NOTE: Transactions included in a sub-section of a profile-option apply to the option. Transactions included a sub-section of a profile apply to the profile.
+
 [#semantic-profile-ref-content-modules]
 ==== Referencing content-modules
+
+A profile, or profile-option, references a <<semantic-content-module,content module>> using the `sdpi_include_content_module` [include processor](https://docs.asciidoctor.org/asciidoctorj/latest/extensions/include-processor/) and declares the actor and obligation of the actor for the profile. Include the content module for each actor with an obligation in the profile. For example:
+
+[source,asciidoc]
+----
+===== BICEPS Content Creator
+sdpi_include_content_module::biceps[actor-id="biceps-content-creator", support="required"]
+sdpi_include_content_module::pump[actor-id="biceps-content-creator",support="optional"]
+   :
+   :
+
+===== BICEPS Content Consumer
+sdpi_include_content_module::biceps[actor-id="biceps-content-consumer", support="required"]
+sdpi_include_content_module::pump[actor-id="biceps-content-consumer",support="optional"]
+   :
+   :
+----
+
+Note, specify the:
+
+* <<semantic-content-module,content module>> id as the directive target (e.g., `biceps`, `pump`),
+* <<semantic-actors,actor's>> id using the `actor-id` attribute,
+* obligation of the actor in the `support` attribute (that is, `required` or `optional`). 
+
+NOTE: Content modules included in a sub-section of a profile-option apply to the option. Content modules included a sub-section of a profile apply to the profile.
 
 [#semantic-profile-ref-use-case]
 ==== Referencing use-cases
 
+A profile, or profile-option, references a <<semantic-use-case,use-case>> with the `sdpi_include_use_case` [include processor](https://docs.asciidoctor.org/asciidoctorj/latest/extensions/include-processor/) and declares the actor and obligation of the actor for the profile. Include the use-case for each actor with an obligation in the profile. For example:
+
+[source,asciidoc]
+----
+sdpi_include_use_case::stad[actor-id="discovery-proxy", support=required]
+sdpi_include_use_case::stad[actor-id="somds-consumer", support=required]
+sdpi_include_use_case::stad[actor-id="somds-provider", support=required]
+----
+
+Note, specify the:
+
+* <<semantic-use-case,use case>> id as the directive target (e.g., `stad`),
+* <<semantic-actors,actor's>> id using the `actor-id` attribute,
+* obligation of the actor in the `support` attribute (that is, `required` or `optional`). 
+
+NOTE: Use-cases included in a sub-section of a profile-option apply to the option. Use-cases included a sub-section of a profile apply to the profile.
+
 [#semantic-profile-actor-alias]
 ==== Actor aliases
+
+The document processor generally discovers actors referenced in <<semantic-requirements,requirements>> using <<cross-referencing,semantic cross-references>>. 
+
+For backwards compatibility, a relationship between document ids (e.g., `vol1_spec_sdpi_p_actor_biceps_content_creator`) and actor-ids can be established by including the `actor-alias` role on sections defining ids that should be considered aliases for actors. 
+
+This example, defines an <<semantic-actor,actor>> with the id `somds-participant` on the section with a role of `actor` and creates two alias for this actor (`vol1_clause_sdpi_p_somds_participant` and `vol1_spec_sdpi_p_actor_somds_participant`) by including the `actor-alias` role on the sections where these document ids are defined:
+
+[source,asciidoc]
+----
+[#vol1_clause_sdpi_p_somds_participant, role="actor actor-alias",actor-id="somds-participant"]
+==== SOMDS Participant
+
+[#vol1_spec_sdpi_p_actor_somds_participant]
+[reftext='SOMDS Participant',role="actor-alias",actor-id="somds-participant"]
+Actor Summary...
+----
+
+NOTE: specify the <<semantic-actors,actor's>> id using the `actor-id` attribute.
 
 [#semantic-content-modules]
 === Defining content modules
@@ -451,7 +528,7 @@ The example below illustrates the AsciiDoc source required to define a content m
 [#vol3_clause_sdc_biceps_semantic_content_module,role="content-module", content-module-id="biceps"]
 ===== SDC/BICEPS Content Module
 
-The biceps standard, <<ref_ieee_11073_10207_2017>>, provides an extensive semantic&hellip;
+The biceps standard, <<ref_ieee_11073_10207_2017>>, provides an extensive semantic...
 ----
 
 Attaching the `content-module` role to a section marks it as a [content module](https://profiles.ihe.net/DEV/SDPi/index.html#vol3). A (document-unique) identifier must be defined in the `content-module-id` attribute. The section title is used for the content module label. 
@@ -470,7 +547,7 @@ The example below illustrates the AsciiDoc source required to define a transacti
 
 ==== Scope
 
-Notify all SOMDS Consumers that a SOMDS Provider is &hellip;
+Notify all SOMDS Consumers that a SOMDS Provider is ...
 
 ==== Actor Roles
 
@@ -538,7 +615,7 @@ The block name, `sdpi_requirement`, triggers semantic processing for the require
 * generate a unique <<requirement-oids,ISO object identifier>> for each requirement,
 * generate implementation conformance statement <<generate-table,tables>> with a list of requirements for selected groups,
 * ensure all requirement numbers are unique,
-* &hellip;
+* ...
 
 Although the normative statement is the only block needed to define a requirement, many requirements include explanatory notes, examples and related information. This additional information is captured in tagged content blocks as the example below illustrates. This semantic content is retained when the requirements are exported in JSON format. 
 
@@ -636,6 +713,10 @@ There is currently (February 2025) no constraint on groups that may be assigned 
 |===
 
 NOTE: Group names are case sensitive.
+
+==== Ownership
+
+Requirement ownership is included in the `sdpi-requirements.json` artefact to requirement discovery (e.g., all requirements an actor must support). Requirements may be owned by a <<semantic-profile,profile>>, profile-option, <<semantic-content-module,content-module>>, gateway, protocol or <<semantic-use-case,use-case>>. Requirement ownership is automatically determined from the parent section (that is, a parent section with one of the <<semantic-markup,roles>> supported for ownership). 
 
 [[use-case]]
 === Defining use cases
@@ -757,6 +838,8 @@ Summary tables are automatically generated during document processing and insert
 
 |Implementation conformance statement table | `sdpi_ics_table` | index, reference, status, support, comment
 |Requirement list | `sdpi_requirement_table` | <<requirement-oids,ISO object identifiers>>, local requirement id, level, type
+|Profile actors and transactions | `sdpi_transaction_table` | Actor, Transaction, Contribution, Obligation, Option
+|Profile actors and content modules | `sdpi_content_module_table` | Actor, Content module, Obligation, Option
 |===
 
 
@@ -774,9 +857,13 @@ sdpi_ics_table::[sdpi_req_group=provider]
 Filter parameters, included as named attributes, select the content included in the table. Available filters are tabulated below. 
 
 |===
-|Attribute name | Value | Description
+|Attribute name | Applies to | Value | Obligation | Description
 
-|`sdpi_req_group` | comma separated list | Includes requirements with any of the groups supplied in their `sdpi_req_group` <<requirement-attributes,attribute>>. 
+|`sdpi_req_group` | `sdpi_requirement_table` | comma separated list | optional | Includes requirements with any of the groups supplied in their `sdpi_req_group` <<requirement-attributes,attribute>>. 
+|`profile-id` | `sdpi_transaction_table`, `sdpi_content_module_table` | _profile id_ | required | Table includes details for the selected profile.
+|`profile-option-id` | `sdpi_transaction_table`, `sdpi_content_module_table` | _profile option id_ | required | Table includes details for the selected profile option only. If not specified all options are included.
+|`actor-id` | `sdpi_transaction_table` | _actor id_ | required | Table includes only transactions for the selected actor. 
+
 |===
 
 === Backwards compatibility
