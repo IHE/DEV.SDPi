@@ -6,7 +6,7 @@ This section specifies general <<acronym_hl7>> V2 requirements and mappings, whi
 Timestamps can be specified in HL7 v2 in both UTC and local time.
 
 ====
-NOTE: As stated in <<ref_ihe_pcd_tf_2_2024>> all observation times reported SHOULD be UTC, as indicated by including a time zone offset of +0000.
+NOTE: As stated in <<ref_ihe_dev_tf_2_2024>> all observation times reported SHOULD be UTC, as indicated by including a time zone offset of +0000.
 
 NOTE: If the timestamps are to be specified in local time, it is important that the time zone is set correctly at the <<term_point_of_care_device>>.
 
@@ -17,7 +17,7 @@ NOTE: It is not always guaranteed that the timezone configured at the <<actor_so
 include::tf2-ch-b-gateway-private-mdc-mapping.adoc[]
 
 ==== HL7 Segment Descriptions
-The following sections specify the general <<acronym_hl7>> V2 segment mappings. Please refer to the *Appendix B Common Segment Descriptions* of the <<ref_ihe_pcd_tf_2_2024>> for further information.
+The following sections specify the general <<acronym_hl7>> V2 segment mappings. Please refer to the *Appendix B Common Segment Descriptions* of the <<ref_ihe_dev_tf_2_2024>> for further information.
 
 include::tf2-ch-b-gateway-msh-mapping.adoc[]
 
@@ -26,7 +26,7 @@ include::tf2-ch-b-gateway-pid-mapping.adoc[]
 include::tf2-ch-b-gateway-pv1-mapping.adoc[]
 
 ==== HL7 Field Descriptions
-The following sections specify the general <<acronym_hl7>> V2 field mappings. Please refer to the *Appendix B Common Segment Descriptions* of the <<ref_ihe_pcd_tf_2_2024>> for further information.
+The following sections specify the general <<acronym_hl7>> V2 field mappings. Please refer to the *Appendix B Common Segment Descriptions* of the <<ref_ihe_dev_tf_2_2024>> for further information.
 
 include::tf2-ch-b-gateway-obx3-mapping.adoc[]
 
