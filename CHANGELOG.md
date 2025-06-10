@@ -17,7 +17,7 @@ Each section shall contain a list of action items of the following format: `<bri
 ## Unreleased
 
 ### Changes
-- Changed all references to IHE PCD TF 2019 to the newer 2024 version. Updated sections in document which were affected by the TF version change ([#340](.https://github.com/IHE/DEV.SDPi/issues/340))
+- Changed all references to IHE PCD TF 2019 to the newer 2024 version. Updated sections in document which were affected by the TF version change ([#340](https://github.com/IHE/DEV.SDPi/issues/340))
 
 ## [2.1.2] - 2025-05-09
 
