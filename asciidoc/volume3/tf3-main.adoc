@@ -19,7 +19,7 @@ a| *{supplement_note}*: The organization of this Volume 3 supplement factors in 
 
 . Addition of <<acronym_biceps>> content to a volume that is organized according to the "classic" <<ref_ieee_11073_10201_2004>> domain information model (DIM).
 
-For this version of the supplement, content from the 2019 version that was in sections 3 and 7 has now been collected into a single Section 8.
+For this version of the supplement, content from the 2024 version that was in sections 3 and 7 has now been collected into a single Section 8.
 
 In order to clearly identify the supplement content that is related to <<acronym_biceps>>, specific sections with <<acronym_biceps>> in the title have been added.
 Although this results in a fairly clean supplement document, the flow of the outline is at times non sequitur.
