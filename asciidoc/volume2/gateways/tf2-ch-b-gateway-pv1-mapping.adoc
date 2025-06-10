@@ -14,7 +14,7 @@ The SDC patient and location context information shall only be mapped to the cor
 ====
 NOTE: For a valid *pm:PatientContextState* or *pm:LocationContextSate*, the *pm:AbstractContextState/@ContextAssociation* attribute is set to *"Assoc"* and the *pm:AbstractContextState/pm:Validator* is set to a valid validator. A corresponding inferred patient or location ensemble context is not required for the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>>.
 
-NOTE: If the SDC patient and/or location context information is not be used for the mapping, please refer to the <<ref_ihe_pcd_tf_2_2024>> on how to populate the fields of the PV1 segment in this case.
+NOTE: If the SDC patient and/or location context information is not be used for the mapping, please refer to the <<ref_ihe_dev_tf_2_2024>> on how to populate the fields of the PV1 segment in this case.
 ====
 ****
 
