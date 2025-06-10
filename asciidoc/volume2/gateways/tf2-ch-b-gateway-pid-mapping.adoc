@@ -13,7 +13,7 @@ The SDC patient context information shall only be mapped to the corresponding fi
 ====
 NOTE: For a valid *pm:PatientContextState*, the *pm:AbstractContextState/@ContextAssociation* attribute is set to *"Assoc"* and the *pm:AbstractContextState/pm:Validator* is set to a valid validator. A corresponding inferred patient ensemble context is not required for the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>>.
 
-NOTE: If the SDC patient context information is not intended to be used for the mapping, please refer to the <<ref_ihe_pcd_tf_2_2019>> on how to populate the fields of the PID segment in this case.
+NOTE: If the SDC patient context information is not intended to be used for the mapping, please refer to the <<ref_ihe_pcd_tf_2_2024>> on how to populate the fields of the PID segment in this case.
 ====
 ****
 
@@ -137,7 +137,7 @@ NOTE: <<ref_tbl_pid5_mapping>> defines the mapping of the SDC patient name infor
 |pm:PatientContextState+++<wbr/>+++/pm:CoreData
 |This field is set to "L" when a patient name is available, or "U" when the patient name is not set.
 
-Please refer also to the corresponding section in the <<ref_ihe_pcd_tf_2_2019>>.
+Please refer also to the corresponding section in the <<ref_ihe_pcd_tf_2_2024>>.
 
 |===
 
@@ -262,7 +262,7 @@ If the <<actor_somds_v2_gateway>> provides the Healthcare Delivery Organization 
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ref_ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information.
+|Please refer to the <<ref_ihe_pcd_tf_2_2024>> *OBX-1 Set ID - OBX* for further information.
 
 |OBX-2
 |Value Type

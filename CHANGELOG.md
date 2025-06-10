@@ -16,6 +16,11 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ## Unreleased
 
+## [2.2.0] - 2025-09-05
+
+### Changes
+- Changed all reference to IHE PCD TF 2019 to new 2024 version. Updated sections in document which were affected by the IHE PCD TF changes.
+
 ## [2.1.2] - 2025-05-09
 
 ### Editorial Fixes

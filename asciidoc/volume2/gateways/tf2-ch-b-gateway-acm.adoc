@@ -2,16 +2,16 @@
 === SDPi ACM Gateway -- Mapping
 
 ==== Scope
-This chapter defines the mapping from the <<acronym_mdib>> content as defined in this document and its underlying standards, to IHE Alert Communication Management (ACM) Profile messages as defined in the <<ref_ihe_pcd_tf_2_2019>>.
+This chapter defines the mapping from the <<acronym_mdib>> content as defined in this document and its underlying standards, to IHE Alert Communication Management (ACM) Profile messages as defined in the <<ref_ihe_pcd_tf_2_2024>>.
 
 The <<actor_somds_acm_gateway>> represents the Alarm Reporter (AR) role of the IHE ACM profile.
 
-The following sections supplement the IHE ACM Profile as appropriate. If there are no supplementing definitions, the definitions as described in the <<ref_ihe_pcd_tf_2_2019>> apply.
+The following sections supplement the IHE ACM Profile as appropriate. If there are no supplementing definitions, the definitions as described in the <<ref_ihe_pcd_tf_2_2024>> apply.
 
 ==== Referenced Standards & Profiles
 This section provides an overview about the referenced standards and profiles used in this chapter:
 
-* <<ref_ihe_pcd_tf_2_2019>>
+* <<ref_ihe_pcd_tf_2_2024>>
 * <<ref_ieee_11073_10702_202x>>
 * <<ref_ieee_11073_10701_2022>>
 * <<ref_ieee_11073_10700_2022>>
@@ -21,7 +21,7 @@ This section provides an overview about the referenced standards and profiles us
 Please refer to general Section <<ref_private_coding_system_note>>.
 
 ==== HL7 Segment Descriptions
-The following sections refer to the *Appendix B Common Segment Descriptions* of the <<ref_ihe_pcd_tf_2_2019>>.
+The following sections refer to the *Appendix B Common Segment Descriptions* of the <<ref_ihe_pcd_tf_2_2024>>.
 
 ===== MSH - Message Header Segment
 Please refer to general Section <<ref_gateway_msh_mapping>>.
@@ -44,7 +44,7 @@ For the IHE ACM profile, the <<actor_somds_acm_gateway>> shall set the OBR-2 fie
 .Notes
 [%collapsible]
 ====
-NOTE: For further information, please refer to the <<ref_ihe_pcd_tf_2_2019>>.
+NOTE: For further information, please refer to the <<ref_ihe_pcd_tf_2_2024>>.
 ====
 ****
 
@@ -58,7 +58,7 @@ A <<actor_somds_acm_gateway>> shall set the OBR-3 field to a unique identifier f
 .Notes
 [%collapsible]
 ====
-NOTE: For further information, please refer to the <<ref_ihe_pcd_tf_2_2019>>.
+NOTE: For further information, please refer to the <<ref_ihe_pcd_tf_2_2024>>.
 ====
 ****
 
@@ -155,7 +155,7 @@ A <<actor_somds_acm_gateway>> shall set the OBR-7 field to the date and time at 
 .Notes
 [%collapsible]
 ====
-NOTE: Please refer to the *Appendix B  B.7.1 OBR Observation Request Segment in ACM Transaction [PCD-04]* of the <<ref_ihe_pcd_tf_2_2019>> for further information.
+NOTE: Please refer to the *Appendix B  B.7.1 OBR Observation Request Segment in ACM Transaction [PCD-04]* of the <<ref_ihe_pcd_tf_2_2024>> for further information.
 ====
 
 ****
@@ -213,7 +213,7 @@ NOTE: The table <<ref_tbl_acm_obr29_mapping>> defines the mapping of the Alert E
 |===
 
 ===== OBX - Observation/Result Segment
-The OBX segment is utilized to export seven alert event attributes in the following order as defined in the <<ref_ihe_pcd_tf_2_2019>>:
+The OBX segment is utilized to export seven alert event attributes in the following order as defined in the <<ref_ihe_pcd_tf_2_2024>>:
 
 * Event identification
 * Source identification
@@ -261,7 +261,7 @@ If a private *<<acronym_mdc>>* code is used for the coding of the SDC device-rel
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ref_ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_pcd_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
@@ -418,7 +418,7 @@ If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded elem
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ref_ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_pcd_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
@@ -503,7 +503,7 @@ If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded elem
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ref_ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_pcd_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
@@ -670,7 +670,7 @@ If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded elem
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ref_ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_pcd_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
@@ -782,7 +782,7 @@ A <<actor_somds_acm_gateway>> shall report the Alert Event Phase as "update" whe
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ref_ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_pcd_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
@@ -896,7 +896,7 @@ A <<actor_somds_acm_gateway>> shall only report an inactive alert condition when
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ref_ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_pcd_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
@@ -987,7 +987,7 @@ OBX|8|ST|68483\^MDC_ATTR_ALARM_INACTIVATION_STATE^MDC|1.1.1.1.5|enabled||||||R
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ref_ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_pcd_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
@@ -1060,7 +1060,7 @@ all *pm:AlertSignalState* elements have their *@ActivationState* set to *"Off"* 
 .R8074
 [sdpi_requirement#r8074,sdpi_req_level=shall]
 ****
-A <<actor_somds_acm_gateway>> shall map the SDC *pm:AlertConditionDescriptor/@Priority* attribute to an IHE ACM Alert Priority OBX segment as defined in the <<ref_ihe_pcd_tf_2_2019>>.
+A <<actor_somds_acm_gateway>> shall map the SDC *pm:AlertConditionDescriptor/@Priority* attribute to an IHE ACM Alert Priority OBX segment as defined in the <<ref_ihe_pcd_tf_2_2024>>.
 
 .Notes
 [%collapsible]
@@ -1091,7 +1091,7 @@ In this case, the gateway shall send a new alert event message with the updated 
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ref_ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_pcd_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
@@ -1174,7 +1174,7 @@ If a <<acronym_sdc>> ALERT CONDITION represents an advisory signal, the alert pr
 .R8076
 [sdpi_requirement#r8076,sdpi_req_level=shall]
 ****
-A <<actor_somds_acm_gateway>> shall map the SDC *pm:AlertConditionDescriptor/@Kind* to an IHE ACM Alert Type OBX segment as defined in the <<ref_ihe_pcd_tf_2_2019>>.
+A <<actor_somds_acm_gateway>> shall map the SDC *pm:AlertConditionDescriptor/@Kind* to an IHE ACM Alert Type OBX segment as defined in the <<ref_ihe_pcd_tf_2_2024>>.
 
 .Notes
 [%collapsible]
@@ -1210,7 +1210,7 @@ OBX|10|ST|68485\^MDC_ATTR_ALERT_TYPE^MDC|1.1.1.1.7|SA||||||R
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ref_ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_pcd_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
