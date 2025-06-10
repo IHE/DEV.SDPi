@@ -2,16 +2,16 @@
 === SDPi ACM Gateway -- Mapping
 
 ==== Scope
-This chapter defines the mapping from the <<acronym_mdib>> content as defined in this document and its underlying standards, to IHE Alert Communication Management (ACM) Profile messages as defined in the <<ref_ihe_pcd_tf_2_2024>>.
+This chapter defines the mapping from the <<acronym_mdib>> content as defined in this document and its underlying standards, to IHE Alert Communication Management (ACM) Profile messages as defined in the <<ref_ihe_dev_tf_2_2024>>.
 
 The <<actor_somds_acm_gateway>> represents the Alarm Reporter (AR) role of the IHE ACM profile.
 
-The following sections supplement the IHE ACM Profile as appropriate. If there are no supplementing definitions, the definitions as described in the <<ref_ihe_pcd_tf_2_2024>> apply.
+The following sections supplement the IHE ACM Profile as appropriate. If there are no supplementing definitions, the definitions as described in the <<ref_ihe_dev_tf_2_2024>> apply.
 
 ==== Referenced Standards & Profiles
 This section provides an overview about the referenced standards and profiles used in this chapter:
 
-* <<ref_ihe_pcd_tf_2_2024>>
+* <<ref_ihe_dev_tf_2_2024>>
 * <<ref_ieee_11073_10702_202x>>
 * <<ref_ieee_11073_10701_2022>>
 * <<ref_ieee_11073_10700_2022>>
@@ -21,7 +21,7 @@ This section provides an overview about the referenced standards and profiles us
 Please refer to general Section <<ref_private_coding_system_note>>.
 
 ==== HL7 Segment Descriptions
-The following sections refer to the *Appendix B Common Segment Descriptions* of the <<ref_ihe_pcd_tf_2_2024>>.
+The following sections refer to the *Appendix B Common Segment Descriptions* of the <<ref_ihe_dev_tf_2_2024>>.
 
 ===== MSH - Message Header Segment
 Please refer to general Section <<ref_gateway_msh_mapping>>.
@@ -44,7 +44,7 @@ For the IHE ACM profile, the <<actor_somds_acm_gateway>> shall set the OBR-2 fie
 .Notes
 [%collapsible]
 ====
-NOTE: For further information, please refer to the <<ref_ihe_pcd_tf_2_2024>>.
+NOTE: For further information, please refer to the <<ref_ihe_dev_tf_2_2024>>.
 ====
 ****
 
@@ -58,7 +58,7 @@ A <<actor_somds_acm_gateway>> shall set the OBR-3 field to a unique identifier f
 .Notes
 [%collapsible]
 ====
-NOTE: For further information, please refer to the <<ref_ihe_pcd_tf_2_2024>>.
+NOTE: For further information, please refer to the <<ref_ihe_dev_tf_2_2024>>.
 ====
 ****
 
@@ -1174,7 +1174,7 @@ If a <<acronym_sdc>> ALERT CONDITION represents an advisory signal, the alert pr
 .R8076
 [sdpi_requirement#r8076,sdpi_req_level=shall]
 ****
-A <<actor_somds_acm_gateway>> shall map the SDC *pm:AlertConditionDescriptor/@Kind* to an IHE ACM Alert Type OBX segment as defined in the <<ref_ihe_pcd_tf_2_2024>>.
+A <<actor_somds_acm_gateway>> shall map the SDC *pm:AlertConditionDescriptor/@Kind* to an IHE ACM Alert Type OBX segment as defined in the <<ref_ihe_dev_tf_2_2024>>.
 
 .Notes
 [%collapsible]
@@ -1210,7 +1210,7 @@ OBX|10|ST|68485\^MDC_ATTR_ALERT_TYPE^MDC|1.1.1.1.7|SA||||||R
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ref_ihe_pcd_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_dev_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
