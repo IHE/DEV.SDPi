@@ -155,7 +155,7 @@ A <<actor_somds_acm_gateway>> shall set the OBR-7 field to the date and time at 
 .Notes
 [%collapsible]
 ====
-NOTE: Please refer to the *Appendix B  B.7.1 OBR Observation Request Segment in ACM Transaction [PCD-04]* of the <<ref_ihe_pcd_tf_2_2024>> for further information.
+NOTE: Please refer to the *Appendix B  B.7.1 OBR Observation Request Segment in ACM Transaction [PCD-04]* of the <<ref_ihe_dev_tf_2_2024>> for further information.
 ====
 
 ****
@@ -213,7 +213,7 @@ NOTE: The table <<ref_tbl_acm_obr29_mapping>> defines the mapping of the Alert E
 |===
 
 ===== OBX - Observation/Result Segment
-The OBX segment is utilized to export seven alert event attributes in the following order as defined in the <<ref_ihe_pcd_tf_2_2024>>:
+The OBX segment is utilized to export seven alert event attributes in the following order as defined in the <<ref_ihe_dev_tf_2_2024>>:
 
 * Event identification
 * Source identification
@@ -261,7 +261,7 @@ If a private *<<acronym_mdc>>* code is used for the coding of the SDC device-rel
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ref_ihe_pcd_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_dev_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
@@ -418,7 +418,7 @@ If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded elem
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ref_ihe_pcd_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_dev_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
@@ -503,7 +503,7 @@ If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded elem
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ref_ihe_pcd_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_dev_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
@@ -670,7 +670,7 @@ If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded elem
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ref_ihe_pcd_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_dev_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
@@ -782,7 +782,7 @@ A <<actor_somds_acm_gateway>> shall report the Alert Event Phase as "update" whe
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ref_ihe_pcd_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_dev_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
@@ -896,7 +896,7 @@ A <<actor_somds_acm_gateway>> shall only report an inactive alert condition when
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ref_ihe_pcd_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_dev_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
@@ -987,7 +987,7 @@ OBX|8|ST|68483\^MDC_ATTR_ALARM_INACTIVATION_STATE^MDC|1.1.1.1.5|enabled||||||R
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ref_ihe_pcd_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_dev_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
@@ -1060,7 +1060,7 @@ all *pm:AlertSignalState* elements have their *@ActivationState* set to *"Off"* 
 .R8074
 [sdpi_requirement#r8074,sdpi_req_level=shall]
 ****
-A <<actor_somds_acm_gateway>> shall map the SDC *pm:AlertConditionDescriptor/@Priority* attribute to an IHE ACM Alert Priority OBX segment as defined in the <<ref_ihe_pcd_tf_2_2024>>.
+A <<actor_somds_acm_gateway>> shall map the SDC *pm:AlertConditionDescriptor/@Priority* attribute to an IHE ACM Alert Priority OBX segment as defined in the <<ref_ihe_dev_tf_2_2024>>.
 
 .Notes
 [%collapsible]
@@ -1091,7 +1091,7 @@ In this case, the gateway shall send a new alert event message with the updated 
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ref_ihe_pcd_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_dev_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
