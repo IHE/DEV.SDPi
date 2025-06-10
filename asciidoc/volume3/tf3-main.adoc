@@ -15,7 +15,7 @@
 |===
 a| *{supplement_note}*: The organization of this Volume 3 supplement factors in two major changes:
 
-. IHE Supplement template (2020), with content mapped from the <<ref_ihe_pcd_tf_3_2024>> specification;
+. IHE Supplement template (2020), with content mapped from the <<ref_ihe_dev_tf_3_2024>> specification;
 
 . Addition of <<acronym_biceps>> content to a volume that is organized according to the "classic" <<ref_ieee_11073_10201_2004>> domain information model (DIM).
 
@@ -26,7 +26,7 @@ Although this results in a fairly clean supplement document, the flow of the out
 To address that problem -- again arising from the original volume organization never contemplating additional semantic content standards alignment beyond the Classic DIM -- subsections that are aligned with the Classic DIM have been organized in a subsection with that scope.
 That new content which is based on <<acronym_biceps>> is also contained within a similarly labeled set of subsections -- both at the same outline level.
 
-For the existing TF-3 content in the <<ref_ihe_pcd_tf_3_2024>>, especially Section 3, though this supplement includes editor guidance for which sections are mapped where in the updated outline, the actual content is a mix of general device informatics topics and details that are based on the "classic" <<ref_ieee_11073_10201_2004>> DIM.
+For the existing TF-3 content in the <<ref_ihe_dev_tf_3_2024>>, especially Section 3, though this supplement includes editor guidance for which sections are mapped where in the updated outline, the actual content is a mix of general device informatics topics and details that are based on the "classic" <<ref_ieee_11073_10201_2004>> DIM.
 
 *_Updating the existing IHE DEV Technical Framework content will be either deferred to a later version of this SDPi supplement or will be accomplished through a specific Change Proposal (CP) to the published IHE DEV TF-3._*
 
