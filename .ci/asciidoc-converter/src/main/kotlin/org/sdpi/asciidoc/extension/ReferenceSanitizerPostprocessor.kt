@@ -74,7 +74,7 @@ class ReferenceSanitizerPostprocessor(
                 }
             } else {
                 logger.info { "Found regular reference: $rawFragment" }
-                Pair(rawFragment, null)
+                continue
             }
 
             anchor.attr("href", "#$id")

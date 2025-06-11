@@ -5,7 +5,7 @@ The HL7 Message Header (MSH) segment requires a mapping between the <<acronym_md
 .R8100
 [sdpi_requirement#r8100,sdpi_req_level=shall,sdpi_max_occurrence=1]
 ****
-If not differently specified in this section, the MSH segment fields shall be in compliance with the [PCD-01] or [PCD-04] transaction, retrospectively, as described in the <<ref_ihe_pcd_tf_2_2019>>.
+If not differently specified in this section, the MSH segment fields shall be in compliance with the [PCD-01] or [PCD-04] transaction, retrospectively, as described in the <<ref_ihe_dev_tf_2_2024>>.
 ****
 
 .R8101

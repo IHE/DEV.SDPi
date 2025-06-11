@@ -20,6 +20,13 @@
 |===
 |New Glossary Term |Definition |Synonyms |Acronyms / Abbreviation |References |Type
 
+| [[term_abrupt_time_adjustment,abrupt time adjustment]] Abrupt time adjustment
+| A large change (typically more than 5 minutes) to a <<term_system_clock>>'s <<term_time_reference_frame>> to reconcile differences between the time reported by a <<term_system_clock>> and a <<acronym_ts_service>>, within the statistical uncertainty of the synchronization algorithm, as quickly as possible. Abrupt time-adjustments are also known as step-changes and <<term_non_slewing_time_adjustment>>s, particularly when using <<ref_rfc_5905, NTP>> to synchronize a <<term_system_clock>>.
+| <<term_non_slewing_time_adjustment>>
+|
+| <<ref_rfc_5905, NTPv4>>
+| Time
+
 | [[term_american_national_standards_institute,American National Standards Institute (ANSI)]] American National Standards Institute
 | The primary United States <<acronym_sdo>> recognition and facilitation organization.
 |
@@ -55,6 +62,13 @@
 | <<ref_ieee_11073_10700_2022>>
 | SDC
 
+| [[term_clock_discipline_algorithm,clock-discipline algorithm]] Clock-discipline algorithm
+| The algorithm employed by a <<acronym_ts_service>> client to minimize the error between the <<term_reference_clock>> and the <<term_system_clock>>. It may include startup calibration steps, smooth (e.g., slewing) and, rarely, abrupt (e.g., non-slewing) corrections. 
+| 
+|
+| <<ref_rfc_5905, NTPv4>>
+| Time
+
 | [[term_coded_attribute, Coded Attribute]] Coded Attribute
 | A BICEPS Participant Model extension that allows for a <<vol1_spec_sdpi_p_actor_somds_provider>> to provide attributes from the first partition of the IEEE 11073-10101 nomenclature. Specified in <<vol3_clause_coded_attribute>>.
 |
@@ -89,6 +103,14 @@
 | [[acronym_ehr,EHR]] EHR
 | https://profiles.ihe.net/GeneralIntro/ch-D.html[IHE General Introduction Appendix D Glossary]
 | IHE
+
+| [[term_epoch,epoch]] Epoch
+| A distinct period of time characterized by a consistent temporal properties described by a <<term_time_reference_frame>>.
+|
+|
+|
+| Time
+
 
 | [[term_fast_healthcare_interoperability_resources,Fast Healthcare Interoperability Resources (FHIR)]] Fast Healthcare Interoperability Resources
 | An <<acronym_hl7>> standard for health care data exchange, built on RESTful technology that utilizes _resources_ to enable rapid creation of interoperable healthcare applications.
@@ -222,8 +244,15 @@ elements, from requirements to system components to Verification & Validation te
 | A networking protocol for clock synchronization between computer systems over packet-switched, variable-latency data networks.
 |
 | [[acronym_ntp,NTP]] NTP
-| https://en.wikipedia.org/wiki/Network_Time_Protocol[NTP wikipedia article]
+| https://en.wikipedia.org/wiki/Network_Time_Protocol[NTP wikipedia article], <<ref_rfc_5905>>
 |
+
+| [[term_non_slewing_time_adjustment,non-slewing time adjustment]] Non-slewing time adjustment
+| The <<term_abrupt_time_adjustment>> to a system clock's <<term_time_reference_frame>> described by <<ref_rfc_5905>>.
+| <<term_abrupt_time_adjustment>>
+|
+| <<ref_rfc_5905, NTPv4>>
+| Time
 
 | [[term_object_management_group, Object Management Group (OMG)]] Object Management Group
 | An international, membership-driven, not-for-profit consortium <<acronym_sdo>>.
@@ -290,6 +319,13 @@ elements, from requirements to system components to Verification & Validation te
 |
 |
 
+| [[term_reference_clock,reference clock]] Reference clock
+| The source of time obtained from a <<term_time_synchronization_service>> and shared between <<vol1_spec_sdpi_p_actor_somds_participant>>s. 
+|
+|
+|
+| Time
+
 | [[term_regulatory_ready,Regulatory Ready (RR)]] Regulatory Ready
 | For regulated medical device technology, integrating <<acronym_ses>> and <<acronym_ri>> content such that conformity assessment test reports may be directly included as supporting evidence in pre-market submissions to regulatory agencies.  It is part of the Requirements Interoperability + Model Centric + Regulatory Ready (<<acronym_ri_mc_rr>>) focus of the IHE Devices Technical Framework.
 | <<acronym_ri_mc_rr>>
@@ -347,12 +383,26 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 | <<ref_ieee_11073_10207_2017>>
 | SDC
 
+| [[term_slewing_adjustments,slewing time adjustments]] Slewing time adjustments
+| Adjustments, typically small, made to a <<term_system_clock>>'s frequency described by <<ref_rfc_5905>>. Generally so the time reported by the <<term_system_clock>> matches that of a <<acronym_ts_service>> at some point in the not too distant future, within the statistical uncertainty of the synchronization algorithm.
+| <<term_smooth_time_adjustments>>
+|
+| <<ref_rfc_5905, NTPv4>>
+| Time
+
 | [[term_smart_alarm_system,Smart Alarm System (SAS)]] Smart Alarm System
 | A system that provides consolidated alarm and alert events (actionable alerts), and advisories (e.g., patient deterioration alerts).
 |
 | [[acronym_sas,SAS]] SAS
 |
 |
+
+| [[term_smooth_time_adjustments,smooth time adjustments]] Smooth time adjustments
+| A gradual adjustment within a <<term_time_reference_frame>>, characterised by a continuous and monotonically increasing progression of timestamps without abrupt jumps or disruptions to the passage of time. Generally so that the time reported by a system clock matches that of a <<acronym_ts_service>> at some point in the future, within the statistical uncertainty of the synchronization algorithm. Typically involves running the <<term_system_clock>> faster or slower for some period. 
+| <<term_slewing_adjustments>>
+|
+| <<ref_rfc_5905, NTPv4>>
+| Time
 
 | [[term_software_as_a_medical_device,Software as a Medical Device (SaMD)]] Software as a Medical Device
 | Software intended to be used for one or more medical purposes that perform these purposes without being part of a hardware medical device.
@@ -375,12 +425,40 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 | https://en.wikipedia.org/wiki/Standards_organization["Standards organization" wikipedia article]
 | Organization
 
+| [[term_system_clock,system clock]] System clock
+| A source of <<term_timestamp>>s used in a <<vol1_spec_sdpi_p_actor_somds_participant>>s system function contributions (<<acronym_sfc>>). 
+|
+|
+|
+| Time
+
 | [[term_system_function_contribution,System Function Contribution (SFC)]] System Function Contribution
 | Function of a <<vol1_spec_sdpi_p_actor_somds_participant>> that contributes to a <<term_clinical_function>> provided by a <<term_service_oriented_medical_device_system>>.
 |
 | [[acronym_sfc,SFC]] SFC
 | Adapted from <<ref_ieee_11073_10700_2022>>.
 | SDC
+
+| [[term_time_reference_frame,time-reference frame]] Time-reference frame
+| A device-specific context for measuring and assigning timestamps to events. The reference frame is defined by its rate of passage of time and alignment to some external temporal standard (e.g., provided by a <<acronym_ts_service>>). The reference frame's time-rate may vary with time (e.g., a <<term_smooth_time_adjustments>> to synchronize with an external temporal standard). Abrupt changes to the time-reference frame alignment to an external standard (e.g., <<term_abrupt_time_adjustment>>), create distinct time-reference frames with different temporal characteristics.
+|
+|
+|
+| Time
+
+| [[term_timestamp,timestamp]] Timestamp
+| A point in time obtained from a <<term_system_clock>>. Timestamps are obtained within the context of a <<term_time_reference_frame>>. 
+|
+|
+|
+| Time
+
+| [[term_timestamp_version,timestamp version]] Timestamp version
+| A unique identifier, within the scope of a MDIB sequence, of a <<term_time_reference_frame>> epoch.
+|
+|
+|
+| Time
 
 | [[term_time_synchronization_service,Time Synchronization Service (TS Service)]] Time Synchronization Service
 | A general network service capability that enables systems to obtain and synchronize to a common and accurate time source.  For example, <<term_network_time_protocol>>.

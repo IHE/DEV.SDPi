@@ -60,6 +60,8 @@ The {var_label_dev_29_message_notification} message is sent whenever a report of
 [[payload_dev_29_notification_alert]]EpisodicAlertReport:: A change report that contains updated alert information.
 [[payload_dev_29_notification_metric]]EpisodicMetricReport:: A change report that contains updated metric information.
 [[payload_dev_29_notification_component]]EpisodicComponentReport:: A change report that contains updated component information.
+[[payload_dev_29_notification_description_modification]]DescriptionModificationReport:: A change report that contains updated description modification information.
+[[payload_dev_29_notification_operational_state]]EpisodicOperationalStateReport:: A change report that contains updated operational state information.
 [[payload_dev_29_notification_waveform]]WaveformStream:: A message to transmit a set of samples of one or more waveforms.
 
 [#vol2_clause_dev_29_message_contextreport_expected_actions]
