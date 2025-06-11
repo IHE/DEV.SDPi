@@ -9,7 +9,7 @@ A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the OBX-4 
 .Notes
 [%collapsible]
 ====
-NOTE: Please refer to the IHE technical framework <<ref_ihe_pcd_tf_2_2019>> for further information.
+NOTE: Please refer to the IHE technical framework <<ref_ihe_dev_tf_2_2024>> for further information.
 ====
 ****
 

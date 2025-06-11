@@ -60,11 +60,11 @@ No content from those three standards - including their requirements -  is norma
 
 * [[[ref_iso_81001_1_2021,ISO/IEC 81001-1:2021]]], ISO 81001-1:2021  Health software and health IT systems safety, effectiveness and security — Part 1: Principles and concepts, available at https://www.iso.org/standard/71538.html and https://webstore.iec.ch/publication/34286.
 
-* [[[ref_ihe_pcd_tf_1_2019,IHE PCD TF-1:2019]]] IHE Patient Care Device Technical Framework, Vol. 1, available at https://www.ihe.net/uploadedFiles/Documents/PCD/IHE_PCD_TF_Vol1.pdf.
+* [[[ref_ihe_dev_tf_1_2024,IHE DEV TF-1:2024]]] IHE Devices Technical Framework, Vol. 1, available at https://www.ihe.net/uploadedFiles/Documents/PCD/IHE_DEV_TF_Vol1.pdf.
 
-* [[[ref_ihe_pcd_tf_2_2019,IHE PCD TF-2:2019]]] IHE Patient Care Device Technical Framework, Vol. 2, available at https://www.ihe.net/uploadedFiles/Documents/PCD/IHE_PCD_TF_Vol2.pdf.
+* [[[ref_ihe_dev_tf_2_2024,IHE DEV TF-2:2024]]] IHE Devices Technical Framework, Vol. 2, available at https://www.ihe.net/uploadedFiles/Documents/PCD/IHE_DEV_TF_Vol2.pdf.
 
-* [[[ref_ihe_pcd_tf_3_2019,IHE PCD TF-3:2019]]] IHE Patient Care Device Technical Framework, Vol. 3, available at https://www.ihe.net/uploadedFiles/Documents/PCD/IHE_PCD_TF_Vol3.pdf.
+* [[[ref_ihe_dev_tf_3_2024,IHE DEV TF-3:2024]]] IHE Devices Technical Framework, Vol. 3, available at https://www.ihe.net/uploadedFiles/Documents/PCD/IHE_DEV_TF_Vol3.pdf.
 
 * [[[ref_rfc_3986, RFC 3986]]] T. Berners-Lee et al., RFC 3986, Uniform Resource Identifier (URI): Generic Syntax, January 2005, available at https://www.rfc-editor.org/rfc/rfc3986
 
