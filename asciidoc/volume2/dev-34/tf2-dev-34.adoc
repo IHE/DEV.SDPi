@@ -12,7 +12,7 @@
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*: The former transaction Announce Network Departure [{var_transaction_id}] was withdrawn in SDPi 2.1. Therefore it is marked as _Reserved_.
+a| *{supplement_note}*: The former transaction Announce Network Departure [{var_transaction_id}] was withdrawn in SDPi 2.2. Therefore, it is marked as _Reserved_.
 |===
 ////
 ==== Scope
