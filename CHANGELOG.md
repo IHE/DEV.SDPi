@@ -18,6 +18,7 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Changes
 - Changed all references to IHE PCD TF 2019 to the newer 2024 version. Updated sections in document which were affected by the TF version change ([#340](https://github.com/IHE/DEV.SDPi/issues/340))
+- Added section "Numeric Metric Display Precision" to volume 3 ([#392](https://github.com/IHE/DEV.SDPi/issues/392))
 
 ## [2.1.2] - 2025-05-09
 
