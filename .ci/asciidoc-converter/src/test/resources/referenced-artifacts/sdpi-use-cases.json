@@ -1,0 +1,11 @@
+{
+    "stad": {
+        "id": "stad",
+        "title": "Synchronized time across devices",
+        "anchor": "_use_case_feature_1_synchronized_time_across_devices_stad",
+        "specification": {
+            "background": [],
+            "scenarios": []
+        }
+    }
+}

@@ -5,7 +5,7 @@ import java.nio.file.Files
 
 internal class TestRunner(private val strTestFile: String) {
 
-    fun performTest() {
+    fun performTest(): AsciidocConverter {
 
         val strSourceResource = "$strTestFile.adoc"
         val strExpectedOutputResource = "$strTestFile.html"
@@ -31,6 +31,8 @@ internal class TestRunner(private val strTestFile: String) {
         assertEquals(normalizedExpected, normalizedOutput)
 
         tempOutputFile.delete()
+
+        return converter
     }
 
     private fun readFileContents(strPath: String): String {

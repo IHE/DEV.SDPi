@@ -1,0 +1,152 @@
+[
+    {
+        "type": "tech-feature",
+        "requirementNumber": 100,
+        "localId": "R0100",
+        "globalId": "",
+        "level": "SHALL",
+        "owner": {
+            "type": "profile",
+            "id": "Profile-A"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Duis ac pretium arcu. Suspendisse vitae shall arcu vulputate mauris commodo varius vitae in nulla."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "requirementNumber": 200,
+        "localId": "R0200",
+        "globalId": "",
+        "level": "SHALL",
+        "owner": {
+            "type": "profile-option",
+            "id": "OptionA"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Duis ac pretium arcu. Suspendisse vitae shall arcu vulputate mauris commodo varius vitae in nulla."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "requirementNumber": 300,
+        "localId": "R0300",
+        "globalId": "",
+        "level": "SHALL",
+        "owner": {
+            "type": "use-case",
+            "id": "stad"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Duis id tortor shall quis felis commodo facilisis sed a eros."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "requirementNumber": 400,
+        "localId": "R0400",
+        "globalId": "",
+        "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Shall duis id tortor shall quis felis commodo facilisis sed a eros."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "requirementNumber": 500,
+        "localId": "R0500",
+        "globalId": "",
+        "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "stargate"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Curabitur leo augue, tempor ac shall vehicula porta, pretium vitae ante. Morbi condimentum, nulla a feugiat elementum, elit ante consequat metus, ut aliquet dolor ipsum id sem."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "requirementNumber": 600,
+        "localId": "R0600",
+        "globalId": "",
+        "level": "SHALL",
+        "owner": {
+            "type": "protocol",
+            "id": "pigeon"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Quisque tristique purus shall nec ipsum cursus, sed consectetur sem volutpat."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    }
+]

@@ -19,8 +19,6 @@ class SdpiInformationCollector(
 
     private val requirements = mutableMapOf<Int, SdpiRequirement2>()
 
-    private val requirementOwners = mutableMapOf<Int, BlockOwner?>()
-
     private val useCases = mutableMapOf<String, SdpiUseCase>()
 
     private val actors = mutableMapOf<String, SdpiActor>()
@@ -45,8 +43,6 @@ class SdpiInformationCollector(
     fun getProfile(strProfileId: String): SdpiProfile? {
         return profiles[strProfileId]
     }
-
-    fun requirementOwners(): Map<Int, BlockOwner?> = requirementOwners
 
     fun useCases(): Map<String, SdpiUseCase> = useCases
 
@@ -416,8 +412,6 @@ class SdpiInformationCollector(
                 strLocalId, strGlobalId, requirementLevel, owner, aGroups, specification
             )
         }
-
-        requirementOwners[nRequirementNumber] = gatherOwners(block.parent as StructuralNode)
     }
 
     private fun getRequirementOwner(block: ContentNode): RequirementContext? {
@@ -428,7 +422,6 @@ class SdpiInformationCollector(
         for (strRole in block.roles) {
             val ownerType = parseOwnerFromRole(strRole)
             if (ownerType != null) {
-                logger.info("Found owner of requirement: $ownerType")
                 val strId = when (ownerType) {
                     OwningContext.PROFILE -> block.attributes[Roles.Profile.ID.key]?.toString()
                     OwningContext.PROFILE_OPTION -> block.attributes[Roles.Profile.ID_PROFILE_OPTION.key]?.toString()
@@ -440,6 +433,7 @@ class SdpiInformationCollector(
                 checkNotNull(strId) {
                     logger.error("Owner missing id")
                 }
+                logger.info("Found owner of requirement: $ownerType = $strId")
                 return RequirementContext(ownerType, strId)
             }
         }
@@ -930,7 +924,7 @@ class SdpiInformationCollector(
     private fun processTransaction(block: StructuralNode) {
         val strAnchor = block.id
         val strLabel = block.title
-        val reExtractTitleElements = Regex("""\S+\s+(.*?)\s+\[(.+?)]""")
+        val reExtractTitleElements = Regex("""\S+\s+(.*?)\s+\[?""")
         val mrTitleElements = reExtractTitleElements.find(strLabel)
 
         checkNotNull(mrTitleElements) {
@@ -938,7 +932,12 @@ class SdpiInformationCollector(
                 logger.error { it }
             }
         }
-        val (strTitle, strTransactionId) = mrTitleElements.destructured
+        val strTitle = mrTitleElements.groupValues[1]
+
+        val strTransactionId = block.attributes[Roles.Transaction.TRANSACTION_ID.key]?.toString()
+        checkNotNull(strTransactionId) {
+            logger.error("Transaction id on block $strTitle is required")
+        }
 
         check(!transactions.contains(strTransactionId)) // check for duplicate.
         {

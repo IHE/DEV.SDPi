@@ -9,9 +9,6 @@ Suspendisse nec vehicula dui, vitae auctor sem.
 
 === Use cases
 
-sdpi_include_use_case::stad[actor-id="somds-consumer", support=optional]
-sdpi_include_use_case::stad[actor-id="somds-provider", support=required]
-
 
 === Actor definitions
 
@@ -24,6 +21,16 @@ A somds participant that provides at least one service to the other participant 
 ==== SOMDS Consumer
 
 A somds participant that discovers and utilizes at least one service, functional capability, exposed to a network communications backbone by a somds provider. 
+
+
+[reftext="A Profile Option", role="profile-option",profile-option-id="OptionA"]
+=== A Profile Option
+
+Vivamus vitae sem sed dolor posuere efficitur vel ut mi. 
+
+sdpi_include_use_case::stad[actor-id="somds-consumer", support=optional]
+sdpi_include_use_case::stad[actor-id="somds-provider", support=required]
+
 
 
 [role="use-case",use-case-id=stad]

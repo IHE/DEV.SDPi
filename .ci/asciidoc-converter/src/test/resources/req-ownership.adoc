@@ -1,0 +1,106 @@
+:doctype: book
+
+// Check ownership of requirements. 
+
+Pellentesque pellentesque ligula vitae neque porttitor sollicitudin. Nullam at nisi nunc. 
+
+[role="profile",profile-id="Profile-A"]
+== A Profile
+
+Suspendisse nec vehicula dui, vitae auctor sem. 
+
+.R0100
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
+
+[NORMATIVE]
+====
+Duis ac pretium arcu. Suspendisse vitae shall arcu vulputate mauris commodo varius vitae in nulla. 
+====
+
+****
+
+
+[reftext="A Profile Option", role="profile-option",profile-option-id="OptionA"]
+=== A Profile Option
+
+Vivamus vitae sem sed dolor posuere efficitur vel ut mi. 
+
+.R0200
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
+
+[NORMATIVE]
+====
+Duis ac pretium arcu. Suspendisse vitae shall arcu vulputate mauris commodo varius vitae in nulla. 
+====
+
+****
+
+[role="use-case",use-case-id=stad]
+== Use Case Feature 1: Synchronized time across devices (STAD)
+
+.R0300
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
+
+[NORMATIVE]
+====
+Duis id tortor shall quis felis commodo facilisis sed a eros. 
+====
+
+****
+
+
+
+=== Narrative
+Nurse Jean attaches a ventilator to the medical device network in the ICU.  It automatically obtains the correct time.
+
+[role="content-module",content-module-id=biceps,reftext="Biceps content module"]
+== Biceps content module
+
+Cras vestibulum volutpat tortor sit amet hendrerit. Sed efficitur tempus molestie. 
+
+.R0400
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
+
+[NORMATIVE]
+====
+Shall duis id tortor shall quis felis commodo facilisis sed a eros. 
+====
+
+****
+
+[role="gateway",gateway-id=stargate,reftext="Stargate 1"]
+== Stargate SG1
+
+Nullam et tellus eu metus vehicula sodales. 
+
+.R0500
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
+
+[NORMATIVE]
+====
+Curabitur leo augue, tempor ac shall vehicula porta, pretium vitae ante. Morbi condimentum, nulla a feugiat elementum, elit ante consequat metus, ut aliquet dolor ipsum id sem. 
+====
+
+****
+
+[role="protocol",protocol-id=pigeon,reftext="Carrier Pigeon"]
+== Carrier Pigeon
+
+In volutpat iaculis malesuada. Quisque commodo, justo ac molestie convallis, ante lacus lacinia metus, quis sagittis nisl libero at lacus. 
+
+.R0600
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
+
+[NORMATIVE]
+====
+Quisque tristique purus shall nec ipsum cursus, sed consectetur sem volutpat.
+====
+
+****
+

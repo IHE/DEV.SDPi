@@ -68,6 +68,20 @@ class AsciidocConverter(
 
     fun documentAnchors() = anchorCollector.getKnownAnchors()
 
+    val bibliographyCollector = BibliographyCollector()
+    val transactionActorsProcessor = TransactionActorsProcessor()
+    val profileTransactionCollector = TransactionIncludeProcessor()
+    val profileUseCaseCollector = UseCaseIncludeProcessor()
+    val profileContentModuleCollector = ContentModuleIncludeProcessor()
+
+    val infoCollector = SdpiInformationCollector(
+        bibliographyCollector,
+        transactionActorsProcessor,
+        profileTransactionCollector,
+        profileUseCaseCollector,
+        profileContentModuleCollector
+    )
+
     override fun run() {
         val options = Options.builder()
             .safe(SafeMode.UNSAFE)
@@ -80,8 +94,6 @@ class AsciidocConverter(
         val asciidoctor = Asciidoctor.Factory.create()
 
         val anchorReplacements = AnchorReplacementsMap()
-
-        val transactionActorsProcessor = TransactionActorsProcessor()
 
         // Formats sdpi_requirement blocks & their content.
         //   * RequirementBlockProcessor2 handles the containing sdpi_requirement block
@@ -97,28 +109,19 @@ class AsciidocConverter(
         asciidoctor.javaExtensionRegistry().treeprocessor(NumberingProcessor(null, anchorReplacements))
 
         // Gather bibliography entries.
-        val bibliographyCollector = BibliographyCollector()
+
         asciidoctor.javaExtensionRegistry().treeprocessor(bibliographyCollector)
 
         // Gather profiles, the transactions, use cases they include.
-        val profileTransactionCollector = TransactionIncludeProcessor()
         asciidoctor.javaExtensionRegistry().blockMacro(profileTransactionCollector)
 
-        val profileUseCaseCollector = UseCaseIncludeProcessor()
         asciidoctor.javaExtensionRegistry().blockMacro(profileUseCaseCollector)
 
-        val profileContentModuleCollector = ContentModuleIncludeProcessor()
         asciidoctor.javaExtensionRegistry().blockMacro(profileContentModuleCollector)
 
         // Gather SDPI specific information from the document such as
         // requirements and use-cases.
-        val infoCollector = SdpiInformationCollector(
-            bibliographyCollector,
-            transactionActorsProcessor,
-            profileTransactionCollector,
-            profileUseCaseCollector,
-            profileContentModuleCollector
-        )
+
         asciidoctor.javaExtensionRegistry().treeprocessor(infoCollector)
 
         // Gather anchors in the document so we can verify there aren't any invalid links.
@@ -175,12 +178,6 @@ class AsciidocConverter(
         //profileTransactionCollector.dump()
         //anchorReplacements.dump()
         //anchorCollector.dumpKnownAnchors()
-
-        for (reqOwner in infoCollector.requirementOwners()) {
-            print("R${reqOwner.key}")
-            reqOwner.value?.dump()
-            println()
-        }
 
         if (conversionOptions.extractsFolder != null) {
             val jsonFormatter = Json {
