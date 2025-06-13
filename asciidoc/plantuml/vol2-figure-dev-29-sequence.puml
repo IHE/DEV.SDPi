@@ -20,6 +20,12 @@ opt
 consumer <<- provider: Notification(EpisodicComponentReport)
 end
 opt
+consumer <<- provider: Notification(DescriptionModificationReport)
+end
+opt
+consumer <<- provider: Notification(EpisodicOperationalStateReport)
+end
+opt
 consumer <<- provider: Notification(WaveformStream)
 end
 @enduml

@@ -1,0 +1,36 @@
+[#vol3_clause_localized_text_catalog_identification]
+====== Unique Localized Text Catalog Identification
+
+In <<acronym_biceps>>, localized texts for parameter labels, alert strings, enumerations, etc. can be retrieved with the provided *LocalizedText/@Ref* (text reference) and language code from the <<acronym_biceps>> *LOCALIZATION SERVICE*.
+
+
+Text references are unique within a device scope. However, <<acronym_pocd>> vendors typically use the same text strings and text references for several of their products.
+
+In order to reduce the effort for a <<actor_somds_consumer>> for managing individual lookup tables per <<actor_somds_provider>>, a lookup table that resolves the text references for multiple <<actor_somds_provider>> from the same <<acronym_pocd>> vendor is desirable for a <<actor_somds_consumer>>.
+
+The set of all localized text strings with their unique text reference and language code is referred to as "*TEXT CATALOG*" in the following paragraphs. When localized text strings have been added, changed, or deleted in the *TEXT CATALOG*, this is considered as a new version of the *TEXT CATALOG*.
+
+The following best practices are highly recommended when using *TEXT CATALOGS*:
+
+.Recommendation A
+****
+A <<actor_somds_provider>> that has implemented the *<<acronym_biceps>> LOCALIZATION SERVICE* is supposed to provide a unique *TEXT CATALOG* identifier in the *pm:MdsDescriptor+++<wbr/>+++/pm:ProductionSpecification* list with *pm:ProductionSpecification+++<wbr/>+++/pm:SpecType+++<wbr/>+++/@Code = 68008 (MDC_ATTR_VMS_MDS_TEXT_CAT)*.
+
+NOTE: The unique *TEXT CATALOG* identifier defined in the corresponding *pm:ProductionSpecification+++<wbr/>+++/pm:ProductionSpec* can be a URN of type *uuid* or *oid*, e. g. *"urn:oid:1.3.6.1.4.1.1234.4.1.2.1"*.
+****
+
+.Recommendation B
+****
+A <<actor_somds_provider>> that has implemented the *<<acronym_biceps>> LOCALIZATION SERVICE* and supports explicit versioning of the *TEXT CATALOG* is supposed to provide a URN that includes the unique version number as part of the unique *TEXT CATALOG* identifier in the *pm:MdsDescriptor+++<wbr/>+++/ProductionSpecification+++<wbr/>+++/pm:ProductionSpec*.
+
+NOTE: "_urn:oid:1.3.6.1.4.1.1234.4.1.2_.*1.2.2*" is an example of a unique *TEXT CATALOG* id with the *TEXT CATALOG* version "*1.2.2*" added as additional nodes to the OID.
+
+NOTE: If the version number is already part of the unique *TEXT CATALOG* identifier, e. g. the last sub-node of the *OID*, this recommendation does not apply.
+****
+
+.Recommendation C
+****
+A <<actor_somds_provider>> that provides a unique *TEXT CATALOG* identifier in the *pm:MdsDescriptor+++<wbr/>+++/pm:ProductionSpecification* needs to ensure that the unique *TEXT CATALOG* identifier is updated when the *TEXT CATALOG* has changed (e. g. due to a firmware update of device with modified localized text strings).
+
+NOTE: It is also important to ensure that the unique *TEXT CATALOG* identifier is not the same as a *TEXT CATALOG* identifier from a previous version of the *TEXT CATALOG*.
+****

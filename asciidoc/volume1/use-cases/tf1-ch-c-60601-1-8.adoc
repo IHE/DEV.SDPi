@@ -35,6 +35,8 @@ NOTE: CDIS is not recognized in 60601-1-8, however it is implemented in practice
 
 • Example –- two-way pager (open loop)
 
+NOTE:  In the CDIS definition above, "with operator confirmation (accept/reject)"  is synonymous with having "operator alarm management response remotely". That means that an operator can manage alarms remotely by accepting or rejecting them. "Remotely" means from a device or system beyond the device that originally sourced the alarm.
+
 ====== DAS – Distributed Alarm System
 
 *DAS* is a system for reporting alarm signals with technical confirmation (of receipt).
@@ -46,6 +48,8 @@ NOTE: CDIS is not recognized in 60601-1-8, however it is implemented in practice
 • A communications failure or failure in any remote component of the DAS must initiate a technical alarm.
 
 • Example -- Central Station
+
+NOTE: In the DAS definition above, "technical confirmation (of receipt)" means that in each communication step within the system, the receiving device provides a technical response to the sending device that it received and is taking responsibility for the alarm.
 
 ====== CDAS - Distributed Alarm System with Confirmation
 

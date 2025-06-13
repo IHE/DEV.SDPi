@@ -1,7 +1,7 @@
-[appendix#vol2_appendix_b_security_management,sdpi_offset=C]
+[appendix#vol2_appendix_c_security_management,sdpi_offset=C]
 == Security Management (Normative)
 
-//NOTE: This file integrates all the Volume 2 / Appendix C Secrity Management background discussions, profiling and examples. +
+//NOTE: This file integrates all the Volume 2 / Appendix C Security Management background discussions, profiling and examples. +
 //{empty} +
 //__This file is currently in the volume2 folder and may integrate content contained in related subfolders. __
 
@@ -14,9 +14,8 @@
 [cols="1"]
 |===
 
-a| *{supplement_note}*:  This Security Management appendix provides a single location within the SDPi technical specifications to describe and discuss topics related to SDC and related security needs, risks and controls.  Anticipated content will include:
+a| *{supplement_note}*:  This Security Management appendix provides a single location within the SDPi technical specifications to describe and discuss topics related to SDC and related security needs, risks and controls.  Anticipated content in future SDPi versions will include:
 
-* *Terminology*:  Clarification of terms such as "security" vs. "cybersecurity";
 * *Approaches*: Use of the security provisions in the current ISO/IEEE 11073 SDC core standards (esp. 11073-20702), as well as next generation SDC security approaches under development, rationale behind each, and how the various approaches can co-exist ... or not;
 * *Extensions*:  Additional specifications may be included, such as the formatting for an Allow/Deny list and when it might be used.
 
@@ -25,6 +24,19 @@ But significantly more may be added as well to support the evolving global medic
 |===
 
 === Security-related Terminology Usage
+NOTE: Language used in discussing security-related topics is often used informally, assuming that readers understand what is being referenced, and other times formally, where the terms are defined in standards. Of course, the challenge of standardized term usage is that there are so many definitions to choose from!
+
+For the purposes of this specification, the following definitions are used:
+
+==== Security and Cybersecurity
+
+Unless otherwise specified, these two terms are used interchangeably in this specification, and according to the following definition from the <<ref_iso_81001_1_2021>> standard, section 3.2.13:
+
+* State where information and _systems_ are protected from unauthorized activities, such as access, use, disclosure, disruption, modification, or destruction to a degree that the _risks_ related to violation of confidentiality, integrity, and availability are maintained at an acceptable level throughout the _life cycle_.
+
+NOTE: Italicized terms are also formally defined in the <<ref_iso_81001_1_2021>> standard.
+
+NOTE: Strictly speaking, security includes cybersecurity, which is the sub-category of security in which the threats or unauthorized activities are of digital nature. Nevertheless, the semantic overlap is often so big that the terms are used interchangeably. Mostly the broader term is used. This interchangeability is not only present in this specification but also, for example, in the referenced <<ref_iso_81001_1_2021>> standard.
 
 === Extension:  Allow / Deny Lists
 
