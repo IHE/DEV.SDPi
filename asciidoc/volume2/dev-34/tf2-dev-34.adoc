@@ -5,8 +5,16 @@
 
 //reset|+1|off
 [#vol2_clause_dev_34,sdpi_offset=34]
-=== Announce Network Departure [{var_transaction_id}]
+//=== Announce Network Departure [{var_transaction_id}]
+=== _Reserved_ [{var_transaction_id}]
 
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *{supplement_note}*: The former transaction Announce Network Departure [{var_transaction_id}] was withdrawn in SDPi 2.2. Therefore, it is marked as _Reserved_.
+|===
+////
 ==== Scope
 
 include::tf2-dev-34-summary.adoc[]
@@ -64,3 +72,4 @@ When a <<vol1_spec_sdpi_p_actor_somds_provider>> sends this message, there is no
 
 [#vol2_clause_dev_34_message_announce_network_departure_ses]
 include::../dev-x-default-ses-unsecured-mode.adoc[]
+////
