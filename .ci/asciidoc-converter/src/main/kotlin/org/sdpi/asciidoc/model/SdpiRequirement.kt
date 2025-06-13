@@ -111,7 +111,7 @@ data class RequirementContext(
  * Structure that represents an SDPi requirement.
  *
  * @property requirementNumber The requirement number as an integer (no leading R or zero-padding).
- * @property globalId The requirement id as a globally unique oid.
+ * @property globalId The requirement id as a globally unique oid, or empty string if we don't have one yet.
  * @property level The requirement level as specified by the attribute [RequirementAttributes.Common.LEVEL].
  * @property localId The local requirement id (e.g., R1010)
  * @property groups Arbitrary groups that the requirement belongs to

@@ -76,7 +76,7 @@ class RequirementBlockProcessor2 : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
 
     override fun process(parent: StructuralNode, reader: Reader, attributes: MutableMap<String, Any>): Any {
         val requirementNumber: Int = getRequirementNumber(attributes)
-        val strGlobalId = getRequirementOid(parent, requirementNumber, attributes)
+        val strGlobalId = "" //getRequirementOid(parent, requirementNumber, attributes)
         val strLinkId = String.format("r%04d", requirementNumber)
 
         logger.info("Found requirement #$requirementNumber at ${parent.sourceLocation}")
@@ -186,6 +186,10 @@ class RequirementBlockProcessor2 : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
      * Creates text for the requirement title in the document
      */
     private fun formatRequirementTitle(requirementNumber: Int, strGlobalId: String): String {
-        return "R${String.format("%04d", requirementNumber)} [.global-id]#`(${strGlobalId})`#"
+        if (strGlobalId.isEmpty()) {
+            return String.format("R%04d", requirementNumber)
+        } else {
+            return "R${String.format("%04d", requirementNumber)} [.global-id]#`(${strGlobalId})`#"
+        }
     }
 }
