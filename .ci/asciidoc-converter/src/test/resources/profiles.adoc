@@ -1,0 +1,29 @@
+[#vol1_clause_sdpi_p_profile,role="profile",profile-id="Profile-A"]
+== A Profile
+
+Suspendisse nec vehicula dui, vitae auctor sem. 
+
+=== Profile transactions
+
+sdpi_include_transaction::T-1[initiator="required", receiver="optional"]
+sdpi_include_transaction::T-2[initiator="optional", responder="required"]
+
+=== Actor definitions
+
+[#vol1_clause_sdpi_p_somds_provider]
+[role=actor,actor-id=somds-provider]
+==== SOMDS Provider
+
+A somds participant that provides at least one service to the other participant systems.  
+
+[#vol1_clause_sdpi_p_somds_consumer]
+[role=actor,actor-id=somds-consumer]
+==== SOMDS Consumer
+
+A somds participant that discovers and utilizes at least one service, functional capability, exposed to a network communications backbone by a somds provider. 
+
+===== Transactions
+
+sdpi_include_transaction::DEV-46[initiator="required", responder="required"]
+sdpi_include_transaction::DEV-47[initiator="required", responder="required"]
+
