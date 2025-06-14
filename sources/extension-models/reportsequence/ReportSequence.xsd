@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xsd:schema xmlns:sdpi="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1"
+            attributeFormDefault="unqualified"
+            elementFormDefault="qualified"
+            targetNamespace="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1"
+            xml:lang="en"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="ReportSequence"
+               type="sdpi:ReportSequenceType">
+    <xsd:annotation>
+      <xsd:documentation>
+An element to sequence report messages sent within a publish-subscribe session sent from a provider to a consumer. 
+
+This element shall be included in the s:Header of every report sent by a provider.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="ReportSequenceType">
+    <xsd:annotation>
+      <xsd:documentation>
+Identifies the order of a report within a single publish-subscribe session.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="MessageNumber"
+                   use="required">
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:positiveInteger" />
+      </xsd:simpleType>
+    </xsd:attribute>
+  </xsd:complexType>
+</xsd:schema>
