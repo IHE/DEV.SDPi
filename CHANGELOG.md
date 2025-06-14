@@ -18,6 +18,7 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Changes
 - Changed all references to IHE PCD TF 2019 to the newer 2024 version. Updated sections in document which were affected by the TF version change ([#340](https://github.com/IHE/DEV.SDPi/issues/340))
+- Removed transaction DEV-34 (Announce Network Departure) and updated references to future SDPi versions for maintainability ([#406](https://github.com/IHE/DEV.SDPi/issues/406))
 
 ## [2.1.2] - 2025-05-09
 
@@ -41,11 +42,11 @@ Each section shall contain a list of action items of the following format: `<bri
 - Updated SDPi Issue Management section ([#408](https://github.com/IHE/DEV.SDPi/issues/408))
 - Rephrased paragraph describing the SOMDS Smart App Platform Actor for clarity ([#379](https://github.com/IHE/DEV.SDPi/issues/379))
 - Modified transaction DEV-29 to add DescriptionModification and EpisodicOperationalState reports ([#403](https://github.com/IHE/DEV.SDPi/issues/403))
-- 
+
 ### Editorial Fixes
 - Corrected typos and grammar ([#363](https://github.com/IHE/DEV.SDPi/issues/363))
 - Changed order of subsections in 1:11.1, 1:12.1 and 1:13.1 ([365](https://github.com/IHE/DEV.SDPi/issues/365))
-- 
+
 ### Added
 - Content on how to deal with non-slewing time adjustments ([#203](https://github.com/IHE/DEV.SDPi/issues/203))
 - TF-2C for Security Management Appendix (basic, with little initial content)  ([#250](https://github.com/IHE/DEV.SDPi/issues/250))
