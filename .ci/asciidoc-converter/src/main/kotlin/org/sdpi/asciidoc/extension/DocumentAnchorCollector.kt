@@ -3,6 +3,7 @@ package org.sdpi.asciidoc.extension
 import org.apache.logging.log4j.kotlin.Logging
 import org.asciidoctor.ast.Document
 import org.asciidoctor.ast.StructuralNode
+import org.asciidoctor.ast.Table
 import org.asciidoctor.extension.Treeprocessor
 
 /**
@@ -35,7 +36,16 @@ class DocumentAnchorCollector : Treeprocessor() {
 
     private fun processBlock(block: StructuralNode) {
         val strId = block.id
-        val strRefText = block.attributes["reftext"] ?: block.title ?: strId
+
+        val strRefText = if (block is Table) {
+            // Note: retrieving block title at this point breaks references to
+            // local variables in titles (e.g., {var_transaction_id} ) when the
+            // source document is included from another file.
+            block.attributes["reftext"] ?: block.caption ?: strId //?: ""//
+        } else {
+            block.attributes["reftext"] ?: block.title ?: strId //?: ""//
+        }
+
         if (strId != null) {
             if (knownAnchors.contains(strId)) {
                 logger.error("Found duplicate id $strId; ids should be unique.")
