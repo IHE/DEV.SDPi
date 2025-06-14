@@ -93,7 +93,7 @@ class RequirementBlockProcessor2 : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
         attributes["role"] = REQUIREMENT_ROLE
 
         // Include an empty block with an id in the global format.
-        if (strGlobalId != null) {
+        if (strGlobalId != null && strGlobalId.isNotEmpty()) {
             val anchorBlock = createBlock(parent, plainContext(Contexts.OPEN), Collections.emptyList(), mapOf())
             anchorBlock.id = strGlobalId
             parent.append(anchorBlock)
