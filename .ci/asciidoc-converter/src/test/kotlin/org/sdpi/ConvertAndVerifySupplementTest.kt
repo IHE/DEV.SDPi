@@ -33,6 +33,7 @@ internal class ConvertAndVerifySupplementTest {
                         ?: throw Exception("Read failed")
                 ),
                 it,
+                "",
                 AsciidocConverter.Mode.Test(actualOutput)
             ).run()
         }.also {

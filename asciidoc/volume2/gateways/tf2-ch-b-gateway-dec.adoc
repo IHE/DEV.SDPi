@@ -2,16 +2,16 @@
 === SDPi DEC Gateway -- Mapping
 
 ==== Scope
-This chapter defines the mapping from the <<acronym_mdib>> content as defined in this document and its underlying standards, to IHE Device Enterprise Communication (DEC) Profile messages as defined in the <<ref_ihe_pcd_tf_2_2019>>.
+This chapter defines the mapping from the <<acronym_mdib>> content as defined in this document and its underlying standards, to IHE Device Enterprise Communication (DEC) Profile messages as defined in the <<ref_ihe_dev_tf_2_2024>>.
 
 The <<actor_somds_dec_gateway>> represents the Device Observation Reporter (DOR) role of the IHE DEC profile.
 
-The following sections supplement the IHE DEC Profile as appropriate. If there are no supplementing definitions, the definitions as described in the <<ref_ihe_pcd_tf_2_2019>> will apply.
+The following sections supplement the IHE DEC Profile as appropriate. If there are no supplementing definitions, the definitions as described in the <<ref_ihe_dev_tf_2_2024>> will apply.
 
 ==== Referenced Standards & Profiles
 This section provides an overview about the referenced standards and profiles used in this chapter:
 
-* <<ref_ihe_pcd_tf_2_2019>>
+* <<ref_ihe_dev_tf_2_2024>>
 * <<ref_ieee_11073_10701_2022>>
 * <<ref_ieee_11073_10700_2022>>
 * <<ref_ieee_11073_10207_2017>>
@@ -20,7 +20,7 @@ This section provides an overview about the referenced standards and profiles us
 Please refer to general Section <<ref_private_coding_system_note>>.
 
 ==== HL7 Segment Descriptions
-The following sections refer to the *Appendix B Common Segment Descriptions* of the <<ref_ihe_pcd_tf_2_2019>>.
+The following sections refer to the *Appendix B Common Segment Descriptions* of the <<ref_ihe_dev_tf_2_2024>>.
 
 ===== MSH - Message Header Segment
 Please refer to general Section <<ref_gateway_msh_mapping>>.
@@ -71,7 +71,7 @@ A <<actor_somds_dec_gateway>> shall use the *pm:PatientContextState/@BindingStar
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ref_ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_dev_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
@@ -157,7 +157,7 @@ When there are further updates of the height value after the association of the 
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ref_ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_dev_tf_2_2024>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
@@ -253,7 +253,7 @@ For the IHE DEC profile, the <<actor_somds_dec_gateway>> shall set the OBR-2 fie
 .Notes
 [%collapsible]
 ====
-NOTE: For further information, please refer to the <<ref_ihe_pcd_tf_2_2019>>.
+NOTE: For further information, please refer to the <<ref_ihe_dev_tf_2_2024>>.
 ====
 ****
 
@@ -268,7 +268,7 @@ For the IHE DEC profile, the <<actor_somds_dec_gateway>> shall set the OBR-3 fie
 .Notes
 [%collapsible]
 ====
-NOTE: For further information, please refer to the <<ref_ihe_pcd_tf_2_2019>>.
+NOTE: For further information, please refer to the <<ref_ihe_dev_tf_2_2024>>.
 ====
 ****
 
@@ -283,7 +283,7 @@ For the IHE DEC profile, the <<actor_somds_dec_gateway>> shall set the OBR-4 fie
 .Notes
 [%collapsible]
 ====
-NOTE: For further information, please refer to the <<ref_ihe_pcd_tf_2_2019>>.
+NOTE: For further information, please refer to the <<ref_ihe_dev_tf_2_2024>>.
 ====
 ****
 
@@ -291,12 +291,11 @@ NOTE: For further information, please refer to the <<ref_ihe_pcd_tf_2_2019>>.
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  In this version of the SDPi Supplement, this section needs to be updated in order to be compliant with the <<ref_ihe_pcd_tf_2_2019>>.
+a| *{supplement_note}*:  In this version of the SDPi Supplement, this section needs to be updated in order to be compliant with the <<ref_ihe_dev_tf_2_2024>>.
 The following issues need more investigations and discussions:
 
-* Mapping of the <<acronym_mdib>>-provided device types to SNOMED codes
-* Licensing requirements for utilizing SNOMED codes
-* Utilizing MDC codes instead of SNOMED which requires a change in the <<ref_ihe_pcd_tf_2_2019>>
+// Note that with IHE PCD TF2 2024 MDC codes are allowed in OBR-4 field.
+
 * Defining the special requirements for infusion pumps
 * Finalization of service ids
 
@@ -463,10 +462,10 @@ NOTE: The SDC operator context is only valid when the *pm:OperatorContextState/@
 [#ref_dec_obx_mapping]
 ===== OBX - Observation/Result Segment
 The HL7 Observation/Result (OBX) segment requires a mapping from the SDC containment tree and metric items to the OBX segment fields.
-More information about the containment tree mapping can be found in *Appendix A Mapping ISO/IEEE 11073 Domain Information Model to HL7* in <<ref_ihe_pcd_tf_2_2019>>.
+More information about the containment tree mapping can be found in *Appendix A Mapping ISO/IEEE 11073 Domain Information Model to HL7* in <<ref_ihe_dev_tf_2_2024>>.
 
 ====== OBX-1 Set ID - OBX
-Please refer to the <<ref_ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information.
+Please refer to the <<ref_ihe_dev_tf_2_2024>> *OBX-1 Set ID - OBX* for further information.
 
 ====== OBX-2 Value Type
 
@@ -722,7 +721,7 @@ A <<actor_somds_dec_gateway>> shall not set this field to the device measurement
 .Notes
 [%collapsible]
 ====
-NOTE: As stated in <<ref_ihe_pcd_tf_2_2019>> the reference range can only be set for device related segments (e.g., Channel). Within SDC the device measurement range refers to each metric and cannot be populated on higher levels in the containment tree.
+NOTE: As stated in <<ref_ihe_dev_tf_2_2024>> the reference range can only be set for device related segments (e.g., Channel). Within SDC the device measurement range refers to each metric and cannot be populated on higher levels in the containment tree.
 ====
 ****
 
@@ -733,7 +732,7 @@ The OBX-8 field is not required to be set since the gateway exports valid and va
 .R8027
 [sdpi_requirement#r8027,sdpi_req_level=shall]
 ****
-A <<actor_somds_dec_gateway>> shall leave the OBX-8 field empty as specified in the <<ref_ihe_pcd_tf_2_2019>> for valid and validated metric values.
+A <<actor_somds_dec_gateway>> shall leave the OBX-8 field empty as specified in the <<ref_ihe_dev_tf_2_2024>> for valid and validated metric values.
 ****
 
 ====== OBX-11 Observation Result Status
@@ -800,7 +799,7 @@ If available, a <<actor_somds_dec_gateway>> shall set the OBX-16 field to the op
 ====
 NOTE: Please refer to <<ref_dec_obr10>> for further information.
 
-NOTE: The <<ref_ihe_pcd_tf_2_2019>> requires only the map the "ID Number", and optionally the "Family Name" and "Given Name" in this field, whereas the OBR-10 field may contain additional information about the operator.
+NOTE: The <<ref_ihe_dev_tf_2_2024>> requires only the map the "ID Number", and optionally the "Family Name" and "Given Name" in this field, whereas the OBR-10 field may contain additional information about the operator.
 ====
 ****
 

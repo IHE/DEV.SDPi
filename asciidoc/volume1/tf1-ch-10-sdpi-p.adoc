@@ -69,7 +69,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | ...
 | ...
 
-.13+| <<vol1_spec_sdpi_p_actor_somds_provider>>
+.12+| <<vol1_spec_sdpi_p_actor_somds_provider>>
 .^| <<transaction_name_announce_network_presence>>
 .^| Initiator
 .^| R
@@ -132,17 +132,17 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 // <<vol2_clause_dev_33>>
 
 
-| <<transaction_name_announce_network_departure>>
-| Initiator
-| R
-| <<vol2_clause_dev_34>>
+//| <<transaction_name_announce_network_departure>>
+//| Initiator
+//| R
+//| <<vol2_clause_dev_34>>
 
 .^| <<transaction_name_update_network_presence>>
 .^| Initiator
 .^| O   ^(See^ ^Note^ ^2)^
 | <<vol2_clause_dev_46>>
 
-.13+| <<vol1_spec_sdpi_p_actor_somds_consumer>>
+.12+| <<vol1_spec_sdpi_p_actor_somds_consumer>>
 .^| <<transaction_name_announce_network_presence>>
 .^| _Receiver_  ^(See^ ^Note^ ^3)^
 .^| O
@@ -206,10 +206,10 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 // <<vol2_clause_dev_33>>
 
 
-| <<transaction_name_announce_network_departure>>
-| _Receiver_  ^(See^ ^Note^ ^3)^
-| O
-| <<vol2_clause_dev_34>>
+//| <<transaction_name_announce_network_departure>>
+//| _Receiver_  ^(See^ ^Note^ ^3)^
+//| O
+//| <<vol2_clause_dev_34>>
 
 | <<transaction_name_retrieve_network_presence>>
 | Initiator
@@ -462,7 +462,7 @@ See <<vol1_clause_sdpi_p_ensuring_time_synchronization>>, and <<vol1_clause_sdpi
 _<<vol1_spec_sdpi_p_actor_somds_connector>>_ system implementations may support multiple protocols where there is one SOMDS-facing participant model or API but with multiple protocols for non-SOMDS system integration.
 For example, a SOMDS “Alert” Gateway would interact with other _<<vol1_spec_sdpi_p_actor_somds_participant>>s_ in a single consistent way but may support both <<ref_hl7_fhir>> and <<ref_hl7_v2>> protocols for interacting with healthcare enterprise systems.
 
-_<<vol1_spec_sdpi_p_actor_somds_connector>>_ may also be utilized in other SDPi Profiles for medical device information reporting (<<acronym_sdpi_r>>), alerting (<<acronym_sdpi_a>>) and external control (<<acronym_sdpi_xc>>). See those profile specifications for detailed usage.  In some cases, https://profiles.ihe.net/[IHE profiles] have been defined for supporting integration with Non-SOMDS Systems, such as the V2-based IHE Devices Device to Enterprise Communication (DEC) profile (See <<ref_ihe_pcd_tf_1_2019>>), or the IHE ITI XDS-I for locating and retrieving images for a specific patient using the XDS.b profile.  In these cases, *_profile-specific_* _<<vol1_spec_sdpi_p_actor_somds_connector>>_ adaptors may be specified as well.
+_<<vol1_spec_sdpi_p_actor_somds_connector>>_ may also be utilized in other SDPi Profiles for medical device information reporting (<<acronym_sdpi_r>>), alerting (<<acronym_sdpi_a>>) and external control (<<acronym_sdpi_xc>>). See those profile specifications for detailed usage.  In some cases, https://profiles.ihe.net/[IHE profiles] have been defined for supporting integration with Non-SOMDS Systems, such as the V2-based IHE Devices Device to Enterprise Communication (DEC) profile (See <<ref_ihe_dev_tf_1_2024>>), or the IHE ITI XDS-I for locating and retrieving images for a specific patient using the XDS.b profile.  In these cases, *_profile-specific_* _<<vol1_spec_sdpi_p_actor_somds_connector>>_ adaptors may be specified as well.
 
 [#vol1_clause_sdpi_p_somds_fhir_gateway]
 ===== SOMDS FHIR Gateway
@@ -541,7 +541,7 @@ This actor leverages the consistent integration of a _<<vol1_spec_sdpi_p_actor_s
 For example, an application may only need to identify and consume a few parameters from one or more _<<vol1_spec_sdpi_p_actor_somds_participant>>_ systems and not be required to implement a complete SOMDS interface including security, discovery, subscription management, filtering of unneeded <<acronym_mdib>> information, etc.
 
 <<vol1_spec_sdpi_p_actor_somds_smart_app_platform>> Actors provide an abstraction layer between application software and the requirements for interoperating in a SOMDS network backbone.
-Since a single platform actor can support multiple Smart Apps, network traffic may be significantly reduced, as well as processing overhead for <<vol1_spec_sdpi_p_actor_somds_provider>> systems that have multiple <<vol1_spec_sdpi_p_actor_somds_consumer>>s simultaneously invoking their services.
+As a _<<vol1_spec_sdpi_p_actor_somds_connector>>_, the <<vol1_spec_sdpi_p_actor_somds_smart_app_platform>> Actor maintains a 1:1 connection with other <<vol1_spec_sdpi_p_actor_somds_provider>> and <<vol1_spec_sdpi_p_actor_somds_consumer>> systems, but can simultaneously support multiple (1:* multiplicity) apps that utilize its services. Without the <<vol1_spec_sdpi_p_actor_somds_smart_app_platform>> Actor, each app would have to implement separate connections to each _<<vol1_spec_sdpi_p_actor_somds_participant>>_, resulting in increased network traffic and communication processing overhead.
 
 The platform must support both non-smart app critical functions (such as network topology discovery and maintenance) but also aggregate app requirements (e.g., quality of service necessary to support an application’s algorithms).
 ////
@@ -642,7 +642,7 @@ notes.
 ==== Managed Discovery Option
 [#vol1_spec_sdpi_p_option_discovery_proxy, reftext='Managed Discovery Option']
 
-The Discovery Proxy profile option provides an alternative means for <<vol1_spec_sdpi_p_actor_somds_consumer>> Actors to discover the <<vol1_spec_sdpi_p_actor_somds_provider>> Actors that are present on the network.  The default "ad hoc" approach using the <<vol2_clause_dev_23>>, <<vol2_clause_dev_24>> and <<vol2_clause_dev_34>> transactions, requires use of unsecured multicast messaging; however, some deployments do not support or allow this mode of discovery.
+The Discovery Proxy profile option provides an alternative means for <<vol1_spec_sdpi_p_actor_somds_consumer>> Actors to discover the <<vol1_spec_sdpi_p_actor_somds_provider>> Actors that are present on the network.  The default "ad hoc" approach using the <<vol2_clause_dev_23>> and <<vol2_clause_dev_24>> transactions, requires use of unsecured multicast messaging; however, some deployments do not support or allow this mode of discovery.
 The addition of a <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor enables a secure and non-multicast means for managing system discovery across the network.
 The <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor acts as a man-in-the-middle system, with <<vol1_spec_sdpi_p_actor_somds_provider>> Actors using the <<vol2_clause_dev_46>> transaction to provide endpoint metatdata and update their network presence or absence status.
 <<vol1_spec_sdpi_p_actor_somds_consumer>> Actors may then use the <<vol2_clause_dev_47>> transaction to determine available <<vol1_spec_sdpi_p_actor_somds_consumer>> systems and their endpoint metadata.
@@ -681,7 +681,7 @@ When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spe
 
 NOTE:  When retrieving network presence metadata from a <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor, a <<term_discovery_scope>> may be specified as a filter to identify a specific subset of <<vol1_spec_sdpi_p_actor_somds_provider>> systems.
 
-NOTE:  A <<vol1_spec_sdpi_p_actor_somds_consumer>> may optionally use the <<vol2_clause_dev_47>> transaction to subscribe to all metadata updates from a set of <<vol1_spec_sdpi_p_actor_somds_consumer>> systems, essentially using the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor as a pass through for <<vol1_spec_sdpi_p_actor_somds_provider>> <<vol2_clause_dev_23>> and <<vol2_clause_dev_34>> transactions.
+NOTE:  A <<vol1_spec_sdpi_p_actor_somds_consumer>> may optionally use the <<vol2_clause_dev_47>> transaction to subscribe to all metadata updates from a set of <<vol1_spec_sdpi_p_actor_somds_consumer>> systems, essentially using the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor as a pass through for <<vol1_spec_sdpi_p_actor_somds_provider>> <<vol2_clause_dev_23>> transactions.
 ****
 
 .R1024
@@ -765,6 +765,7 @@ ALSO what about abstract actors ... Participant and Connector ... do we indicate
 === SDPi-P Overview
 
 // 10.4.1
+[#vol1_clause_sdpi_p_concepts]
 ==== Concepts
 
 [#vol1_clause_sdpi_p_soa_somds_architecture_alignment]
@@ -1071,11 +1072,19 @@ Security is foundational for all interactions between <<vol1_spec_sdpi_p_actor_s
 Specific security technologies may vary based on jurisdictional requirements, regulations and the implementation technology, and will be detailed in the appropriate TF-2 technology specifications.
 All transactions indicate whether they require secure or unsecured connections.
 
-For the default <<acronym_sdpi_p>> connectivity technology, namely ISO/IEEE 11073 <<term_service_oriented_device_connectivity>>, TLS 1.2 (or later versions) support is required (See <<ref_ieee_11073_20701_2018>> and <<ref_ieee_11073_20702_2016>>).
+For the default <<acronym_sdpi_p>> connectivity technology, namely ISO/IEEE 11073 <<term_service_oriented_device_connectivity>>, TLS 1.2 (or higher versions) support is required (See <<ref_ieee_11073_20701_2018>> and <<ref_ieee_11073_20702_2016>>).
+
+NOTE: The SDC standard <<ref_ieee_11073_20701_2018>> includes requirement R0064 stating that an SDC PARTICIPANT SHOULD utilize the highest TLS version. Herewith "the highest" is interpreted as the highest TLS version available, and not as the highest version negotiated between two SDC PARTICIPANTS.
+
+NOTE: TLS 1.2 is not sufficient for all types of connectivity (e.g., cloud, remote programming, etc.), and it has reported cipher suite weaknesses. TLS 1.3 (or higher, in the future) may be hence required depending on the risk associated with the device.
+
+.R1544
+[sdpi_requirement#r1544,sdpi_req_level=should]
+****
+A <<vol1_spec_sdpi_p_actor_somds_participant>> should use TLS 1.3, or a higher version.
+****
+
 Additional information and requirements may be provided in <<vol2_appendix_c_security_management>> or <<vol2_appendix_a_mdpws_messages>>.
-
-NOTE: TLS 1.2 is not sufficient for all types of connectivity (e.g., cloud, remote programming, etc.), and it has reported cypher-suite weaknesses. TLS 1.3 may be hence required depending on the risk associated with the device.
-
 
 [#vol1_clause_sdpi_p_cross_profile_considerations]
 === SDPi-P Cross Profile Considerations

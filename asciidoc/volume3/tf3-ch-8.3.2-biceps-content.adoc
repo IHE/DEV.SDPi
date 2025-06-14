@@ -278,5 +278,7 @@ include::biceps-content-module/tf3-ch-8.3.2.9.7-compound-metric-modelling.adoc[]
 
 include::biceps-content-module/tf3-ch-8.3.2.9.8-localized-text-catalog-identification.adoc[]
 
+include::biceps-extension-provisions/tf3-ch-8.3.2.9.8-extension-timestamp.adoc[]
+
 // 8.3.2.10
 include::mdib-efficiency/tf3-ch-8.3.2.10-mdib-efficiency-considerations.adoc[]

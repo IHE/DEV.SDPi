@@ -7,6 +7,14 @@
 
 [sdpi_offset=1]
 === Overview SDC Gateways
+Although the primary focus of the SDPi profiles is to enable device-to-device, plug-and-trust interoperability between provider and consumer systems on an SDC network, many potential applications also require integration with external systems that utilize protocols other than SDC. These applications include healthcare enterprise integration using other widely deployed specifications, such as the IHE DEV PCD profiles that leverage HL7 V2 messaging with ISO/IEEE 11073 semantic content, or access to lab and patient demographic information. The gateways defined in this appendix establish a consistent means for integrating SDC-enabled systems with systems that utilize other protocols and profile specifications.
+
+It should be noted that gateways always have an SDC connector side and define service roles and directionality. For example, a gateway may act as a <<vol1_spec_sdpi_p_actor_somds_consumer>>
+and / or <<vol1_spec_sdpi_p_actor_somds_provider>>. They can consume SDC information and provide it to external non-SDC systems, or they can also provide services to SDC consumers (e.g., retrieving patient lab results) and retrieve that content from external systems.
+
+In this regard, the gateways specified in this appendix may have the future potential to provide bidirectional capabilities; however, due to implementer priorities, a more limited role and directionality may be initially supported. For example, a gateway could consume metric information from SDC provider systems and generate IHE DEC PCD-01 messages to enterprise applications. Alternatively, the gateway could receive PCD-01 messages and make that information available to SDC consumer systems. Or both. This versatility in gateway architecture and configuration ensures support for initial priority configurations, while leaving the flexibility for future expansion as needed.
+
+For a broader conceptual overview, see the SDPi-P overview concepts in <<vol1_clause_sdpi_p_concepts>>.
 
 // Gateway:  HL7 V2 General Mappings
 include::gateways/tf2-ch-b-gateway-v2.adoc[]
