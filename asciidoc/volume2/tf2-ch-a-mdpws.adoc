@@ -38,6 +38,9 @@ include::dev-29/tf2-ch-a-mdpws-dev-29.adoc[]
 //=== Retrieve BICEPS Content [DEV-30]
 include::dev-30/tf2-ch-a-mdpws-dev-30.adoc[]
 
+include::dev-32/tf2-ch-a-mdpws-dev-32.adoc[]
+
+
 //=== Retrieve Localization Information [DEV-33]
 //
 //=== Announce Network Departure [DEV-34]

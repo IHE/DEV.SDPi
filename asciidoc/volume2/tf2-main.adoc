@@ -27,6 +27,9 @@ include::dev-29/tf2-dev-29.adoc[]
 //=== Retrieve BICEPS Content [DEV-30]
 include::dev-30/tf2-dev-30.adoc[]
 
+//=== Retrieve BICEPS Content [DEV-30]
+include::dev-32/tf2-dev-32.adoc[]
+
 //=== Announce Network Departure [DEV-34]
 include::dev-34/tf2-dev-34.adoc[]
 
