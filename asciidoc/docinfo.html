@@ -164,7 +164,7 @@ table.tableblock {
         }
     }
 
-    // enable collapsible toc
+    // enable collapsible toc - function is called once the DOM is ready
     $(function () {
         // Add a new container for the tocify toc into the existing toc so we can re-use its
         // styling
@@ -207,6 +207,14 @@ table.tableblock {
 
         $(window).resize(handleTocOnResize);
         handleTocOnResize();
+
+        // Perform minimal scrolling to let the toc collapse
+        // Alternative available?
+        const thisPage = new URL(window.location.href);
+        if (thisPage.hash === "") {
+            window.scrollTo(0, 1);
+            window.scrollTo(0, 0);
+        }
     });
 
     // Set up before/after handlers
