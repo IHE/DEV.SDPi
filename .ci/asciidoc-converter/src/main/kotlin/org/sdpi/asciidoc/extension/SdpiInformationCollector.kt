@@ -162,7 +162,23 @@ class SdpiInformationCollector(
         }
 
         val strDocTitle = block.title
-        val reTitle = Regex("""^\d+(\.\d+)*\s+(.*)$""")
+        val reTitle = Regex("""^\d+([.:]\d+)*\s+(.*\s–\s)(.*)$""")
+        val match = reTitle.find(strDocTitle)
+        val strTitle = match?.groups?.get(3)?.value
+        checkNotNull(strTitle) {
+            logger.error("Profile title '$strDocTitle' is not formatted correctly")
+        }
+        return strTitle
+    }
+
+    private fun parseProfileOptionTitle(block: StructuralNode): String {
+
+        if (block.reftext != null) {
+            return block.reftext
+        }
+
+        val strDocTitle = block.title
+        val reTitle = Regex("""^\d+([.:]\d+)*\s+(.*)$""")
         val match = reTitle.find(strDocTitle)
         val strTitle = match?.groups?.get(2)?.value
         checkNotNull(strTitle) {
@@ -198,7 +214,7 @@ class SdpiInformationCollector(
         val strLabel = block.reftext ?: block.title
         logger.info("Found actor $strId => $strLabel")
 
-        val reExtractTitleElements = Regex("""^\d+(\.\d+)*\s+(.*)""")
+        val reExtractTitleElements = Regex("""^\d+([.:]\d+)*\s+(.*)""")
         val mrTitleElements = reExtractTitleElements.find(strLabel)
         val strTitle = mrTitleElements?.groups?.get(2)?.value ?: strLabel
         checkNotNull(strTitle) {
@@ -322,7 +338,7 @@ class SdpiInformationCollector(
         }
 
         val strAnchor = block.id
-        val strLabel = block.reftext
+        val strLabel = parseProfileOptionTitle(block)
 
         val newOption = SdpiProfileOption(strId, strAnchor, strLabel)
         currentProfile.addOption(newOption)
@@ -348,7 +364,7 @@ class SdpiInformationCollector(
     }
 
     private fun parseContentModuleTitle(strDocText: String): String {
-        val reTitle = Regex("""^\d+(\.\d+)*\s+(.*)$""")
+        val reTitle = Regex("""^\d+([.:]\d+)*\s+(.*)$""")
         val match = reTitle.find(strDocText)
         val strTitle = match?.groups?.get(2)?.value
         checkNotNull(strTitle) {
@@ -924,7 +940,7 @@ class SdpiInformationCollector(
     private fun processTransaction(block: StructuralNode) {
         val strAnchor = block.id
         val strLabel = block.title
-        val reExtractTitleElements = Regex("""\S+\s+(.*?)\s+\[?""")
+        val reExtractTitleElements = Regex("""[\d:.]+\s+(.*?)\s+\[.*?]""")
         val mrTitleElements = reExtractTitleElements.find(strLabel)
 
         checkNotNull(mrTitleElements) {
