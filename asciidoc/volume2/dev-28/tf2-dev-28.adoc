@@ -59,7 +59,7 @@ The {var_label_dev_28_message_contextreport} message is sent whenever a context 
 
 [[payload_dev_28_notification_cotext]]EpisodicContextReport:: A change report that contains context information.
 
-[#vol2_clause_dev_28_message_contextreport_expected_actions]
+[#vol2_clause_dev_28_message_notification_expected_actions]
 ====== Expected Actions
 
 When a <<vol1_spec_sdpi_p_actor_somds_provider>> sends this message, there is no expected action or required responses.
