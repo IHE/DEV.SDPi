@@ -1,4 +1,5 @@
 [#vol1_clause_appendix_c_use_case_acns,sdpi_offset=6]
+[role=use-case,use-case-id=acns,sdpi_feature="Alerts to Clinician Notification Systems"]
 === Use Case Feature {var_use_case_id}: <<label_use_case_name_acns>> (<<acronym_acns>>)
 
 // NOTE:  See use case labels in document-declarations.adoc

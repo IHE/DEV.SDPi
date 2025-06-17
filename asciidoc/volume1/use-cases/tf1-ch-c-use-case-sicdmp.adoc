@@ -1,4 +1,5 @@
 [#vol1_clause_appendix_c_use_case_sicdmp,sdpi_offset=4]
+[role=use-case,use-case-id=sicdmp,sdpi_feature="Multiple Patient Standalone ICU Dashboard"]
 === Use Case Feature {var_use_case_id}: <<label_use_case_name_sicdmp>> (<<acronym_sicdmp>>)
 
 // NOTE:  See use case labels in document-declarations.adoc

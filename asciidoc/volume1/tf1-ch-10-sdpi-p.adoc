@@ -1,6 +1,6 @@
 // = Service-oriented Device Point-of-care Interoperability – Plug-and-trust (SDPi-P) Profile
 
-[#vol1_clause_sdpi_p_profile,sdpi_offset=10]
+[#vol1_clause_sdpi_p_profile,sdpi_offset=10,role=profile,profile-id=sdpi-p,reftext="Plug-and-trust Profile"]
 == Service-oriented Device Point-of-care Interoperability – Plug-and-trust (SDPi-P) Profile
 [#vol1_clause_sdpi_p_profile_reftext,reftext="SDPi-P Profile"]
 The SDPi-Plug-and-trust ([[acronym_sdpi_p,SDPi-P]] SDPi-P) Profile supports foundational seamless connectivity, information exchange and service invocation as defined in the SDPi architecture detailed in <<vol1_clause_sdpi_overview_framework>>.
@@ -50,7 +50,34 @@ image::../images/vol1-diagram-sdpi-p-actor.svg[]
 
 <<vol1_table_sdpi_p_actors_transactions>> lists the transactions for each actor directly involved in the SDPi-P Profile.
 To claim conformity with this specification, an actor shall support all required transactions (labeled “R”) and may support the optional transactions (labeled “O”).
-Note that “Consumer” is indicated for actors that receive but do not directly respond to a specific transaction.
+
+
+NOTE: “Receiver” is indicated for actors that receive but do not directly respond to a specific transaction.
+
+sdpi_include_transaction::DEV-23[initiator="required", receiver="optional"]
+sdpi_include_transaction::DEV-24[initiator="required", responder="required"]
+sdpi_include_transaction::DEV-25[initiator="required", responder="required"]
+sdpi_include_transaction::DEV-27[initiator="required", responder="required"]
+sdpi_include_transaction::DEV-28[initiator="optional", receiver="optional"]
+sdpi_include_transaction::DEV-29[initiator="required", receiver="required"]
+sdpi_include_transaction::DEV-30[initiator="optional", responder="optional"]
+sdpi_include_transaction::DEV-34[initiator="optional", receiver="optional"]
+sdpi_include_transaction::DEV-46[initiator="optional", responder="required"]
+sdpi_include_transaction::DEV-47[initiator="optional", responder="required"]
+
+sdpi_transaction_table::[profile-id="sdpi-p"]
+
+[NOTE]
+====
+* _“Notify Change in System Context and Capabilities”_ is required if there are 
+dynamic changes that may need to be sent to subscribing systems
+
+* _“Receiver”_ indicates that though a <<vol1_spec_sdpi_p_actor_somds_participant>> 
+may "receive" the transaction, there is no response communicated to the message initiator.
+
+====
+
+ifndef::not-defined[]
 
 [#vol1_table_sdpi_p_actors_transactions]
 .SDPi-P Profile - Actors and Transactions
@@ -274,6 +301,8 @@ Note 4: *_SDPi Version Note:_*  -- Full detailing of the transactions related to
 
 |===
 
+endif::[]
+
 <<vol1_figure_sdpi_p_biceps_content_actor_diagram>> shows the content-related actors defined in the SDPi-P Profile and the direction that the content is exchanged.
 
 In general, the <<vol1_spec_sdpi_p_actor_somds_provider>> will create content for consumption by a <<vol1_spec_sdpi_p_actor_somds_consumer>> , but the communication cloud between the two actors indicates that the technical method of exchange is a separate concern from the semantic content.
@@ -384,9 +413,9 @@ This section documents any additional requirements on the profile’s content ac
 include::../plantuml/vol1-figure-sdpi-p-example-sequence-diagram.puml[]
 ....
 
-[#vol1_clause_sdpi_p_somds_participant]
+[#vol1_clause_sdpi_p_somds_participant,role="actor actor-alias",actor-id="somds_participant"]
 ===== SOMDS Participant
-[#vol1_spec_sdpi_p_actor_somds_participant, reftext='SOMDS Participant']
+[#vol1_spec_sdpi_p_actor_somds_participant, reftext='SOMDS Participant',role="actor-alias",actor-id="somds_participant"]
 Actor Summary Definition:
 [none]
 . A foundational abstract actor that provides the SOA architectural constructs for interoperating in a Service-Oriented Medical Device System (SOMDS) network instance, including information, messaging and dynamic behavior models.   (See <<ref_ieee_11073_10207_2017>>  “PARTICIPANT” definition)
@@ -403,9 +432,9 @@ See <<vol1_clause_appendix_a_requirements_from_narratives_to_pnt_interfaces>> fo
 
 ////
 
-[#vol1_clause_sdpi_p_somds_provider]
+[#vol1_clause_sdpi_p_somds_provider,role="actor actor-alias",actor-id="somds_provider"]
 ===== SOMDS Provider
-[#vol1_spec_sdpi_p_actor_somds_provider, reftext='SOMDS Provider']
+[#vol1_spec_sdpi_p_actor_somds_provider, reftext='SOMDS Provider',role="actor-alias",actor-id="somds_provider"]
 Actor Summary Definition:
 [none]
 . A <<vol1_spec_sdpi_p_actor_somds_participant>> that provides at least one service to the other participant systems.  (See <<ref_ieee_11073_10207_2017>>  “SERVICE PROVIDER” definition.)
@@ -414,9 +443,9 @@ Every <<vol1_spec_sdpi_p_actor_somds_provider>> is paired with (inherits from) t
 
 A system that participates in a SOMDS network instance can include both <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_spec_sdpi_p_actor_somds_provider>> Actors.
 
-[#vol1_clause_sdpi_p_somds_consumer]
+[#vol1_clause_sdpi_p_somds_consumer,role="actor actor-alias",actor-id="somds_consumer"]
 ===== SOMDS Consumer
-[#vol1_spec_sdpi_p_actor_somds_consumer, reftext='SOMDS Consumer']
+[#vol1_spec_sdpi_p_actor_somds_consumer, reftext='SOMDS Consumer',role=actor-alias,actor-id="somds_consumer"]
 Actor Summary Definition:
 [none]
 . A <<vol1_spec_sdpi_p_actor_somds_participant>> that discovers and utilizes at least one service, functional capability, exposed to a network communications backbone by a <<vol1_spec_sdpi_p_actor_somds_provider>>. (See <<ref_ieee_11073_10207_2017>>  “SERVICE CONSUMER” and “SERVICE” definitions.)
@@ -425,9 +454,9 @@ Every <<vol1_spec_sdpi_p_actor_somds_consumer>> is paired with (inherits from) t
 
 A system that participates in a SOMDS network instance can include both <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_spec_sdpi_p_actor_somds_provider>>.
 
-[#vol1_clause_sdpi_p_somds_connector]
+[#vol1_clause_sdpi_p_somds_connector,role="actor actor-alias",actor-id="somds_connector"]
 ===== SOMDS Connector
-[#vol1_spec_sdpi_p_actor_somds_connector, reftext='SOMDS Connector']
+[#vol1_spec_sdpi_p_actor_somds_connector, reftext='SOMDS Connector',role=actor-alias,actor-id="somds_connector"]
 Actor Summary Definition:
 [none]
 . A _<<vol1_spec_sdpi_p_actor_somds_participant>>_ that enables seamless interaction with systems and software applications that are outside the scope of the SOMDS network instance.  This abstract actor provides a consistent method for interacting, as a <<vol1_spec_sdpi_p_actor_somds_consumer>> and / or <<vol1_spec_sdpi_p_actor_somds_provider>>, with a specific SOMDS instance, as the foundation for protocol-specific gateway and platform actors.
@@ -464,9 +493,9 @@ For example, a SOMDS “Alert” Gateway would interact with other _<<vol1_spec_
 
 _<<vol1_spec_sdpi_p_actor_somds_connector>>_ may also be utilized in other SDPi Profiles for medical device information reporting (<<acronym_sdpi_r>>), alerting (<<acronym_sdpi_a>>) and external control (<<acronym_sdpi_xc>>). See those profile specifications for detailed usage.  In some cases, https://profiles.ihe.net/[IHE profiles] have been defined for supporting integration with Non-SOMDS Systems, such as the V2-based IHE Devices Device to Enterprise Communication (DEC) profile (See <<ref_ihe_dev_tf_1_2024>>), or the IHE ITI XDS-I for locating and retrieving images for a specific patient using the XDS.b profile.  In these cases, *_profile-specific_* _<<vol1_spec_sdpi_p_actor_somds_connector>>_ adaptors may be specified as well.
 
-[#vol1_clause_sdpi_p_somds_fhir_gateway]
+[#vol1_clause_sdpi_p_somds_fhir_gateway,role="actor actor-alias",actor-id="somds_fhir_gateway"]
 ===== SOMDS FHIR Gateway
-[#vol1_spec_sdpi_p_actor_somds_fhir_gateway, reftext='SOMDS FHIR Gateway']
+[#vol1_spec_sdpi_p_actor_somds_fhir_gateway, reftext='SOMDS FHIR Gateway',role=actor-alias,actor-id="somds_fhir_gateway"]
 Actor Summary Definition:
 [none]
 . A _<<vol1_spec_sdpi_p_actor_somds_connector>>_ that supports use of <<ref_hl7_fhir>> for interoperating with Non-SOMDS Systems.
@@ -484,9 +513,9 @@ Alternatively, the <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>> could implement
 
 The <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>> could also support SOMDS services invoked by FHIR-based systems, such as requesting a snapshot of the latest vital signs measurements for a specific patient and triggering a blood-pressure cuff reading.
 
-[#vol1_clause_sdpi_p_somds_v2_gateway]
+[#vol1_clause_sdpi_p_somds_v2_gateway,role="actor actor-alias",actor-id="somds_v2_gateway"]
 ===== SOMDS V2 Gateway
-[#vol1_spec_sdpi_p_actor_somds_v2_gateway, reftext='SOMDS V2 Gateway']
+[#vol1_spec_sdpi_p_actor_somds_v2_gateway, reftext='SOMDS V2 Gateway',role=actor-alias,actor-id="somds_v2_gateway"]
 Actor Summary Definition:
 [none]
 . A <<vol1_spec_sdpi_p_actor_somds_connector>> that supports use of <<ref_hl7_v2>> for interoperating with Non-SOMDS Systems.
@@ -500,7 +529,7 @@ Additional specifications for semantic content modules is detailed in <<vol3_cla
 
 Generally, the <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> supports messaging from a SOMDS environment to V2-enabled systems, utilizing a <<vol1_spec_sdpi_p_actor_somds_consumer>> to collect information from <<vol1_spec_sdpi_p_actor_somds_provider>> systems and translate them to V2 messages sent to other Non-SOMDS Systems.  There are cases, though, where information may be sent to a SOMDS-based system such as an alert conformation utilizing a [DEV-05] (i.e., [PCD-05]) transaction (see <<vol1_clause_sdpi_a_profile>> below).
 
-[#vol1_clause_sdpi_p_somds_sensor_gateway]
+[#vol1_clause_sdpi_p_somds_sensor_gateway,role="actor actor-alias",actor-id="somds_sensor_gateway"]]
 ===== SOMDS Sensor Gateway
 [%noheader]
 [%autowidth]
@@ -509,7 +538,7 @@ Generally, the <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> supports messaging fr
 | *{supplement_note}*: Detailed specifications for this actor are deferred to a later version of the SDPi Supplement.
 |===
 
-[#vol1_spec_sdpi_p_actor_somds_sensor_gateway, reftext='SOMDS Sensor Gateway']
+[#vol1_spec_sdpi_p_actor_somds_sensor_gateway, reftext='SOMDS Sensor Gateway',role=actor-alias,actor-id="somds_sensor_gateway"]
 Actor Summary Definition:
 [none]
 . A _<<vol1_spec_sdpi_p_actor_somds_connector>>_  that supports integration of sensors external to a SOMDS network.
@@ -520,7 +549,7 @@ The <<vol1_spec_sdpi_p_actor_somds_sensor_gateway>> identifies and specifies the
 This includes integration of both wired and wireless sensor networks (“WSN”).
 This also includes SOMDS integration of IoT (“Internet of Things”) architectures / networks.
 
-[#vol1_clause_sdpi_p_somds_smart_app_platform]
+[#vol1_clause_sdpi_p_somds_smart_app_platform,role="actor actor-alias",actor-id="somds_smart_app"]
 ===== SOMDS Smart App Platform
 [%noheader]
 [%autowidth]
@@ -529,7 +558,7 @@ This also includes SOMDS integration of IoT (“Internet of Things”) architect
 | *{supplement_note}*: Detailed specifications for this actor are deferred to a later version of the SDPi Supplement.
 |===
 
-[#vol1_spec_sdpi_p_actor_somds_smart_app_platform, reftext='SOMDS Smart App Platform']
+[#vol1_spec_sdpi_p_actor_somds_smart_app_platform, reftext='SOMDS Smart App Platform',role=actor-alias,actor-id="somds_smart_app"]
 Actor Summary Definition:
 [none]
 . A _<<vol1_spec_sdpi_p_actor_somds_connector>>_  that supports connection to a SOMDS network that is optimized for applications, including <<term_software_as_a_medical_device>>.
@@ -547,8 +576,11 @@ The platform must support both non-smart app critical functions (such as network
 ////
 See <<vol1_clause_smart_app_platforms>> for additional discussion.
 ////
+
+[#vol1_clause_sdpi_p_biceps_content_creator,role="actor actor-alias",actor-id="biceps_content_creator"]
 ===== BICEPS Content Creator
-[#vol1_spec_sdpi_p_actor_biceps_content_creator, reftext='BICEPS Content Creator']
+
+[#vol1_spec_sdpi_p_actor_biceps_content_creator, reftext='BICEPS Content Creator',role=actor-alias,actor-id="biceps_content_creator"]
 Actor Summary Definition:
 [none]
 . Provides <<acronym_mdib>> content conformant to <<ref_ieee_11073_10207_2017>> BICEPS specification and for consumption by other <<vol1_spec_sdpi_p_actor_biceps_content_consumer>> systems.
@@ -560,8 +592,9 @@ Note that although this SDPi-P content actor primarily supports information exch
 Content is provided by one _<<vol1_spec_sdpi_p_actor_somds_participant>>_ to another.
 Typically, this will be a <<vol1_spec_sdpi_p_actor_somds_provider>> system to a <<vol1_spec_sdpi_p_actor_somds_consumer>> system; however, as noted previously, in some cases such as changing configuration settings within a <<vol1_spec_sdpi_p_actor_somds_provider>> (e.g., Patient Context), content creation and provision is from a <<vol1_spec_sdpi_p_actor_somds_consumer>> (initiating the configuration change request) to a <<vol1_spec_sdpi_p_actor_somds_provider>> system.
 
+[#vol1_clause_sdpi_p_biceps_content_consumer,role="actor actor-alias",actor-id="biceps_content_consumer"]
 ===== BICEPS Content Consumer
-[#vol1_spec_sdpi_p_actor_biceps_content_consumer, reftext='BICEPS Content Consumer']
+[#vol1_spec_sdpi_p_actor_biceps_content_consumer, reftext='BICEPS Content Consumer',role=actor-alias,actor-id="biceps_content_consumer"]
 Actor Summary Definition:
 [none]
 . Processes <<acronym_mdib>> information conformant to <<ref_ieee_11073_10207_2017>> BICEPS specifications provided by <<vol1_spec_sdpi_p_actor_biceps_content_creator>> systems.
@@ -580,9 +613,10 @@ For robustness, a <<actor_biceps_content_consumer>> need only process the conten
 
 Note that although this SDPi-P content actor primarily supports information exchange between systems participating in a SOMDS network environment, they may be referenced by other non-SDPi profiles that utilize other non-SOMDS exchange architectures, transactions and technologies.
 
+[#vol1_clause_sdpi_p_discovery_proxy,role="actor actor-alias",actor-id="discovery_proxy"]
 ===== Discovery Proxy
 
-[#vol1_spec_sdpi_p_actor_discovery_proxy, reftext='Discovery Proxy']
+[#vol1_spec_sdpi_p_actor_discovery_proxy, reftext='Discovery Proxy',role=actor-alias,actor-id="discovery_proxy"]
 Actor Summary Definition:
 [none]
 . A centralized registry of system network presence and absence metadata.
@@ -638,7 +672,7 @@ notes.
 
 |===
 
-[#vol1_clause_sdpi_p_option_discovery_proxy]
+[#vol1_clause_sdpi_p_option_discovery_proxy,role=profile-option,profile-option-id="sdpi-p-managed-discovery"]
 ==== Managed Discovery Option
 [#vol1_spec_sdpi_p_option_discovery_proxy, reftext='Managed Discovery Option']
 
@@ -659,46 +693,79 @@ include::../plantuml/vol1-figure-sdpi-p-managed-discovery-option-sequence-diagra
 Once the discovery process is complete, actor interactions continue as normal.
 See <<vol1_figure_sdpi_p_example_sequence_diagram>> for additional detail.
 
+sdpi_include_transaction::DEV-46[initiator="required", responder="required"]
+sdpi_include_transaction::DEV-47[initiator="required", responder="required"]
+
+
 .R1021
-[sdpi_requirement#r1021,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
 
+[NORMATIVE]
+====
 When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor, then it shall use the <<vol2_clause_dev_46, DEV-46>> transaction to update the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor on its network presence and departure.
+====
+
+[RELATED]
+====
+* <<ref_oasis_ws_discovery_2009>>, §2.2.2, Managed mode.
+====
+
+
 ****
 
 .R1022
-[sdpi_requirement#r1022,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
 
+[NORMATIVE]
+====
 If a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor is configured or provisioned for the <<vol1_spec_sdpi_p_option_discovery_proxy>>, but the proxy system is not available, then the <<vol1_spec_sdpi_p_actor_somds_provider>> shall revert back to "ad hoc" discovery mode.
+====
 ****
 
 .R1023
-[sdpi_requirement#r1023,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
 
+[NORMATIVE]
+====
 When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor, then it shall use the <<vol2_clause_dev_47, DEV-47>> transaction to retrieve <<vol1_spec_sdpi_p_actor_somds_provider>> network presence metadata from the  <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor.
+====
 
-NOTE:  When retrieving network presence metadata from a <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor, a <<term_discovery_scope>> may be specified as a filter to identify a specific subset of <<vol1_spec_sdpi_p_actor_somds_provider>> systems.
+[NOTE]
+====
+* When retrieving network presence metadata from a <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor, a <<term_discovery_scope>> may be specified as a filter to identify a specific subset of <<vol1_spec_sdpi_p_actor_somds_provider>> systems.
 
-NOTE:  A <<vol1_spec_sdpi_p_actor_somds_consumer>> may optionally use the <<vol2_clause_dev_47>> transaction to subscribe to all metadata updates from a set of <<vol1_spec_sdpi_p_actor_somds_consumer>> systems, essentially using the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor as a pass through for <<vol1_spec_sdpi_p_actor_somds_provider>> <<vol2_clause_dev_23>> transactions.
+* A <<vol1_spec_sdpi_p_actor_somds_consumer>> may optionally use the <<vol2_clause_dev_47>> transaction to subscribe to all metadata updates from a set of <<vol1_spec_sdpi_p_actor_somds_consumer>> systems, essentially using the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor as a pass through for <<vol1_spec_sdpi_p_actor_somds_provider>> <<vol2_clause_dev_23>> transactions.
+====
 ****
 
 .R1024
-[sdpi_requirement#r1024,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
 
+[NORMATIVE]
+====
 If a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor is configured or provisioned for the <<vol1_spec_sdpi_p_option_discovery_proxy>>, but the proxy system is not available, then the <<vol1_spec_sdpi_p_actor_somds_consumer>> shall revert back to "ad hoc" discovery mode.
+====
 ****
 
 .R1025
-[sdpi_requirement#r1025,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
 
+[NORMATIVE]
+====
 In order to ensure that a system's network presence information is up-to-date and valid, during the period when the <<vol1_spec_sdpi_p_actor_discovery_proxy>> indicates that a system is present, it shall provide some means to determine that this state is still true.
+====
 
-NOTE:  For example, issuing a periodic "heartbeat" check message or cable-connected check.
+[NOTE]
+====
+For example, issuing a periodic "heartbeat" check message or cable-connected check.
 Specification of these means will be provided for in the transport-specific implementation specification for the <<vol2_clause_dev_46, DEV-46>> transaction.
+====
 ****
 
 Though it is not recommended, deployments may allow simultaneous use of both the default "ad hoc" discovery mode and the managed proxy-based discovery mode utilizing a <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor.
@@ -1052,15 +1119,23 @@ No additional safety requirements or considerations are identified for this tech
 ===== Specific Risk Control Measures for <<vol1_spec_sdpi_p_actor_somds_consumer>>s
 
 .R1542
-[sdpi_requirement#r1542,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
+[NORMATIVE]
+====
 When a <<vol1_spec_sdpi_p_actor_somds_consumer>> disables one or more <<term_system_function_contribution>>s, the <<vol1_spec_sdpi_p_actor_somds_consumer>> shall inform the affected users.
+====
 ****
 
 .R1543
-[sdpi_requirement#r1543,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=audit,sdpi_ses_test=wire]
 ****
+[NORMATIVE]
+====
 If a <<vol1_spec_sdpi_p_actor_somds_consumer>> disables one or more <<term_system_function_contribution>>s, the <<vol1_spec_sdpi_p_actor_somds_consumer>> shall create a log entry, noting the disabled <<term_system_function_contribution>>s as well as the cause for disabling them.
+====
 ****
 
 ===== General Risk Controls
@@ -1079,9 +1154,12 @@ NOTE: The SDC standard <<ref_ieee_11073_20701_2018>> includes requirement R0064 
 NOTE: TLS 1.2 is not sufficient for all types of connectivity (e.g., cloud, remote programming, etc.), and it has reported cipher suite weaknesses. TLS 1.3 (or higher, in the future) may be hence required depending on the risk associated with the device.
 
 .R1544
-[sdpi_requirement#r1544,sdpi_req_level=should]
+[sdpi_requirement,sdpi_req_level=should]
 ****
+[NORMATIVE]
+====
 A <<vol1_spec_sdpi_p_actor_somds_participant>> should use TLS 1.3, or a higher version.
+====
 ****
 
 Additional information and requirements may be provided in <<vol2_appendix_c_security_management>> or <<vol2_appendix_a_mdpws_messages>>.

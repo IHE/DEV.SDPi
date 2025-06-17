@@ -6,6 +6,7 @@
 //reset|+1|off
 [#vol2_clause_dev_34,sdpi_offset=34]
 //=== Announce Network Departure [{var_transaction_id}]
+[role=transaction,transaction-id=DEV-34]
 === _Reserved_ [{var_transaction_id}]
 
 [%noheader]
@@ -21,18 +22,16 @@ include::tf2-dev-34-summary.adoc[]
 
 ==== Actor Roles
 
-.Actor Roles [{var_transaction_id}]
-[cols="1,2"]
-|===
-|Actor |Roles
+[sdpi_transaction_actors]
+--
 
-|<<vol1_spec_sdpi_p_actor_somds_provider>>
-|Announces its departure by multicasting <<vol2_clause_dev_34_message_bye, {var_label_dev_34_message_bye}>> messages to all listening systems.
+[actor-id="somds_provider",contribution=Initiator]
+Announces its departure by multicasting <<vol2_clause_dev_34_message_bye, {var_label_dev_34_message_bye}>> messages to all listening systems.
 
-|<<vol1_spec_sdpi_p_actor_somds_consumer>>
-|Listens for <<vol2_clause_dev_34_message_bye, {var_label_dev_34_message_bye}>> messages to identify any <<vol1_spec_sdpi_p_actor_somds_provider>>s that will leave the <<term_medical_device_lan>>.
+[actor-id="somds_consumer",contribution=Receiver]
+Listens for <<vol2_clause_dev_34_message_bye, {var_label_dev_34_message_bye}>> messages to identify any <<vol1_spec_sdpi_p_actor_somds_provider>>s that will leave the <<term_medical_device_lan>>.
 
-|===
+--
 
 ==== Referenced Standards
 

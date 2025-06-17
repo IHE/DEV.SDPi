@@ -8,6 +8,7 @@
 
 //reset|+1|off
 [#vol2_clause_dev_24,sdpi_offset=24]
+[role=transaction,transaction-id=DEV-24]
 === Discover Network Topology [{var_transaction_id}]
 
 ==== Scope
@@ -18,18 +19,17 @@ include::tf2-dev-24-summary.adoc[]
 
 ==== Actor Roles
 
-.Actor Roles [{var_transaction_id}]
-[cols="1,2"]
-|===
-|Actor |Roles
+[sdpi_transaction_actors]
+--
 
-|<<vol1_spec_sdpi_p_actor_somds_consumer>>
-|Initiates communication by sending <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_probe}>> or <<vol2_clause_dev_24_message_resolve, {var_label_dev_24_message_resolve}>> messages to <<vol1_spec_sdpi_p_actor_somds_provider>>s. Then listens for <<vol2_clause_dev_24_message_probe_match, {var_label_dev_24_message_probe_match}>> and <<vol2_clause_dev_24_message_resolve_match, {var_label_dev_24_message_resolve_match}>> messages to discover those <<vol1_spec_sdpi_p_actor_somds_provider>>s that it intends to exchange messages with and further retrieves the <<vol1_spec_sdpi_p_actor_somds_provider>>'s service capabilities.
+[actor-id="somds_consumer",contribution=Initiator]
+Initiates communication by sending <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_probe}>> or <<vol2_clause_dev_24_message_resolve, {var_label_dev_24_message_resolve}>> messages to <<vol1_spec_sdpi_p_actor_somds_provider>>s. Then listens for <<vol2_clause_dev_24_message_probe_match, {var_label_dev_24_message_probe_match}>> and <<vol2_clause_dev_24_message_resolve_match, {var_label_dev_24_message_resolve_match}>> messages to discover those <<vol1_spec_sdpi_p_actor_somds_provider>>s that it intends to exchange messages with and further retrieves the <<vol1_spec_sdpi_p_actor_somds_provider>>'s service capabilities.
 
-|<<vol1_spec_sdpi_p_actor_somds_provider>>
-|Listens for <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_probe}>> and <<vol2_clause_dev_24_message_resolve, {var_label_dev_24_message_resolve}>> messages, which it responds to with <<vol2_clause_dev_24_message_probe_match, {var_label_dev_24_message_probe_match}>> or <<vol2_clause_dev_24_message_resolve_match, {var_label_dev_24_message_resolve_match}>> messages, respectively.
+[actor-id="somds_provider",contribution=Responder]
+Listens for <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_probe}>> and <<vol2_clause_dev_24_message_resolve, {var_label_dev_24_message_resolve}>> messages, which it responds to with <<vol2_clause_dev_24_message_probe_match, {var_label_dev_24_message_probe_match}>> or <<vol2_clause_dev_24_message_resolve_match, {var_label_dev_24_message_resolve_match}>> messages, respectively.
 
-|===
+--
+
 
 ==== Referenced Standards
 

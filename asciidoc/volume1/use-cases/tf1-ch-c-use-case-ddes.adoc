@@ -1,4 +1,5 @@
 [#vol1_clause_appendix_c_use_case_ddes,sdpi_offset=5]
+[role=use-case,use-case-id=ddes,sdpi_feature="Device Data to Enterprise Systems"]
 === Use Case Feature {var_use_case_id}: <<label_use_case_name_ddes>> (<<acronym_ddes>>)
 
 // NOTE:  See use case labels in document-declarations.adoc

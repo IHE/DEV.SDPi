@@ -6,6 +6,7 @@
 
 //reset|+1|off
 [#vol2_clause_dev_30,sdpi_offset=30]
+[role=transaction,transaction-id=DEV-30]
 === Retrieve BICEPS Content [{var_transaction_id}]
 
 ==== Scope
@@ -14,18 +15,16 @@ include::tf2-dev-30-summary.adoc[]
 
 ==== Actor Roles
 
-.Actor Roles [{var_transaction_id}]
-[cols="1,2"]
-|===
-|Actor |Roles
+[sdpi_transaction_actors]
+--
 
-|<<vol1_spec_sdpi_p_actor_somds_consumer>>
-|Initiates communication by sending a <<vol2_clause_dev_30_message_getmdib, {var_label_dev_30_message_getmdib}>> message to a <<vol1_spec_sdpi_p_actor_somds_provider>>. Then listens for a <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> message to retrieve the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDIB.
+[actor-id="somds_consumer",contribution=Initiator]
+Initiates communication by sending a <<vol2_clause_dev_30_message_getmdib, {var_label_dev_30_message_getmdib}>> message to a <<vol1_spec_sdpi_p_actor_somds_provider>>. Then listens for a <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> message to retrieve the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDIB.
 
-|<<vol1_spec_sdpi_p_actor_somds_provider>>
-|Listens for <<vol2_clause_dev_30_message_getmdib, {var_label_dev_30_message_getmdib}>> messages, which it responds to with <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> messages respectively.
+[actor-id="somds_provider",contribution=Responder]
+Listens for <<vol2_clause_dev_30_message_getmdib, {var_label_dev_30_message_getmdib}>> messages, which it responds to with <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> messages respectively.
 
-|===
+--
 
 ==== Referenced Standards
 

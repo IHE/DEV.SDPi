@@ -5,6 +5,7 @@
 
 //reset|+1|off
 [#vol2_clause_dev_28,sdpi_offset=28]
+[role=transaction,transaction-id=DEV-28]
 === Notify Change in System Context and Capabilities [{var_transaction_id}]
 
 ==== Scope
@@ -14,18 +15,16 @@ include::tf2-dev-28-summary.adoc[]
 
 ==== Actor Roles
 
-.Actor Roles [{var_transaction_id}]
-[cols="1,2"]
-|===
-|Actor |Roles
+[sdpi_transaction_actors]
+--
 
-|<<vol1_spec_sdpi_p_actor_somds_consumer>>
-|Listens for a <<vol2_clause_dev_28_message_notification, {var_label_dev_28_message_contextreport}>> message to retrieve context updates.
+[actor-id="somds_consumer",contribution=Receiver]
+Listens for a <<vol2_clause_dev_28_message_notification, {var_label_dev_28_message_contextreport}>> message to retrieve context updates.
 
-|<<vol1_spec_sdpi_p_actor_somds_provider>>
-|While a subscription is running, the <<vol1_spec_sdpi_p_actor_somds_provider>> delivers <<vol2_clause_dev_28_message_notification, {var_label_dev_28_message_contextreport}>> messages.
+[actor-id="somds_provider",contribution=Initiator]
+While a subscription is running, the <<vol1_spec_sdpi_p_actor_somds_provider>> delivers <<vol2_clause_dev_28_message_notification, {var_label_dev_28_message_contextreport}>> messages.
+--
 
-|===
 
 ==== Referenced Standards
 

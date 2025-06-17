@@ -1,5 +1,5 @@
 [#vol1_clause_appendix_c_use_case_aars,sdpi_offset=7]
-
+[role=use-case,use-case-id=aars,sdpi_feature="Alerts to Alert Recording Systems"]
 === Use Case Feature {var_use_case_id}: <<label_use_case_name_aars>> (<<acronym_aars>>)
 
 // NOTE:  See use case labels in document-declarations.adoc

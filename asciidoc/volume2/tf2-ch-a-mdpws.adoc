@@ -1,4 +1,4 @@
-[appendix#vol2_appendix_a_mdpws_messages,sdpi_offset=A]
+[appendix#vol2_appendix_a_mdpws_messages,sdpi_offset=A,role="protocol",protocol-id=mdpws]
 == ISO/IEEE 11073 SDC / MDPWS Message Specifications (Normative)
 
 [CAUTION]

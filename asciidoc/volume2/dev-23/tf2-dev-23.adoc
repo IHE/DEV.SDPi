@@ -6,6 +6,7 @@
 :val_label_dev_23_payload_discovery_scope: Discovery Scope
 
 [#vol2_clause_dev_23,sdpi_offset=23]
+[role=transaction,transaction-id=DEV-23]
 === Announce Network Presence [{var_transaction_id}]
 
 ==== Scope
@@ -16,18 +17,16 @@ include::tf2-dev-23-summary.adoc[]
 
 ==== Actor Roles
 
-.Actor Roles [{var_transaction_id}]
-[cols="1,2"]
-|===
-|Actor |Roles
+[sdpi_transaction_actors]
+--
 
-|<<vol1_spec_sdpi_p_actor_somds_provider>>
-|Announces its presence by multicasting <<vol2_clause_dev_23_message_hello, {var_label_dev_23_message_hello}>> messages to all listening systems.
+[actor-id="somds_provider",contribution=Initiator]
+Announces its presence by multicasting <<vol2_clause_dev_23_message_hello, {var_label_dev_23_message_hello}>> messages to all listening systems.
 
-|<<vol1_spec_sdpi_p_actor_somds_consumer>>
-|Listens for <<vol2_clause_dev_23_message_hello, {var_label_dev_23_message_hello}>> messages to identify any <<vol1_spec_sdpi_p_actor_somds_provider>>s that it may exchange messages with and further retrieve a <<vol1_spec_sdpi_p_actor_somds_provider>>'s service capabilities.
+[actor-id="somds_consumer",contribution=Receiver]
+Listens for <<vol2_clause_dev_23_message_hello, {var_label_dev_23_message_hello}>> messages to identify any <<vol1_spec_sdpi_p_actor_somds_provider>>s that it may exchange messages with and further retrieve a <<vol1_spec_sdpi_p_actor_somds_provider>>'s service capabilities.
 
-|===
+--
 
 ==== Referenced Standards
 
