@@ -20,7 +20,7 @@
 
 // Set the document attribute to automatically generate
 // actor transactions table from semantic markup. Unset
-// to use manual tables. 
+// to use manual tables.
 // https://docs.asciidoctor.org/asciidoc/latest/attributes/unset-attributes/
 :markup-actor-transactions-table:
 
