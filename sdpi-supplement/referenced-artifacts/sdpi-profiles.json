@@ -1,0 +1,277 @@
+[
+    {
+        "profileId": "sdpi-p",
+        "anchor": "vol1_clause_sdpi_p_profile",
+        "label": "Plug-and-trust Profile",
+        "transactionReferences": [
+            {
+                "transactionId": "DEV-23",
+                "obligations": [
+                    {
+                        "contribution": "RECEIVER",
+                        "obligation": "OPTIONAL",
+                        "actorId": "somds_consumer"
+                    },
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_provider"
+                    }
+                ]
+            },
+            {
+                "transactionId": "DEV-24",
+                "obligations": [
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_consumer"
+                    },
+                    {
+                        "contribution": "RESPONDER",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_provider"
+                    }
+                ]
+            },
+            {
+                "transactionId": "DEV-25",
+                "obligations": [
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_consumer"
+                    },
+                    {
+                        "contribution": "RESPONDER",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_provider"
+                    }
+                ]
+            },
+            {
+                "transactionId": "DEV-27",
+                "obligations": [
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_consumer"
+                    },
+                    {
+                        "contribution": "RESPONDER",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_provider"
+                    }
+                ]
+            },
+            {
+                "transactionId": "DEV-28",
+                "obligations": [
+                    {
+                        "contribution": "RECEIVER",
+                        "obligation": "OPTIONAL",
+                        "actorId": "somds_consumer"
+                    },
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "OPTIONAL",
+                        "actorId": "somds_provider"
+                    }
+                ]
+            },
+            {
+                "transactionId": "DEV-29",
+                "obligations": [
+                    {
+                        "contribution": "RECEIVER",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_consumer"
+                    },
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_provider"
+                    }
+                ]
+            },
+            {
+                "transactionId": "DEV-30",
+                "obligations": [
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "OPTIONAL",
+                        "actorId": "somds_consumer"
+                    },
+                    {
+                        "contribution": "RESPONDER",
+                        "obligation": "OPTIONAL",
+                        "actorId": "somds_provider"
+                    }
+                ]
+            },
+            {
+                "transactionId": "DEV-34",
+                "obligations": [
+                    {
+                        "contribution": "RECEIVER",
+                        "obligation": "OPTIONAL"
+                    },
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "OPTIONAL"
+                    }
+                ]
+            },
+            {
+                "transactionId": "DEV-46",
+                "obligations": [
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "OPTIONAL",
+                        "actorId": "somds_provider"
+                    },
+                    {
+                        "contribution": "RESPONDER",
+                        "obligation": "REQUIRED"
+                    }
+                ]
+            },
+            {
+                "transactionId": "DEV-47",
+                "obligations": [
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "OPTIONAL",
+                        "actorId": "somds_consumer"
+                    },
+                    {
+                        "contribution": "RESPONDER",
+                        "obligation": "REQUIRED",
+                        "actorId": "discovery_proxy"
+                    }
+                ]
+            }
+        ],
+        "actors": [
+            {
+                "id": "somds_participant",
+                "label": "SOMDS Participant",
+                "profile": "sdpi-p",
+                "anchor": "vol1_clause_sdpi_p_somds_participant"
+            },
+            {
+                "id": "somds_provider",
+                "label": "SOMDS Provider",
+                "profile": "sdpi-p",
+                "anchor": "vol1_clause_sdpi_p_somds_provider"
+            },
+            {
+                "id": "somds_consumer",
+                "label": "SOMDS Consumer",
+                "profile": "sdpi-p",
+                "anchor": "vol1_clause_sdpi_p_somds_consumer"
+            },
+            {
+                "id": "somds_connector",
+                "label": "SOMDS Connector",
+                "profile": "sdpi-p",
+                "anchor": "vol1_clause_sdpi_p_somds_connector"
+            },
+            {
+                "id": "somds_fhir_gateway",
+                "label": "SOMDS FHIR Gateway",
+                "profile": "sdpi-p",
+                "anchor": "vol1_clause_sdpi_p_somds_fhir_gateway"
+            },
+            {
+                "id": "somds_v2_gateway",
+                "label": "SOMDS V2 Gateway",
+                "profile": "sdpi-p",
+                "anchor": "vol1_clause_sdpi_p_somds_v2_gateway"
+            },
+            {
+                "id": "somds_sensor_gateway",
+                "label": "SOMDS Sensor Gateway",
+                "profile": "sdpi-p",
+                "anchor": "vol1_clause_sdpi_p_somds_sensor_gateway"
+            },
+            {
+                "id": "somds_smart_app",
+                "label": "SOMDS Smart App Platform",
+                "profile": "sdpi-p",
+                "anchor": "vol1_clause_sdpi_p_somds_smart_app_platform"
+            },
+            {
+                "id": "biceps_content_creator",
+                "label": "BICEPS Content Creator",
+                "profile": "sdpi-p",
+                "anchor": "vol1_clause_sdpi_p_biceps_content_creator"
+            },
+            {
+                "id": "biceps_content_consumer",
+                "label": "BICEPS Content Consumer",
+                "profile": "sdpi-p",
+                "anchor": "vol1_clause_sdpi_p_biceps_content_consumer"
+            },
+            {
+                "id": "discovery_proxy",
+                "label": "Discovery Proxy",
+                "profile": "sdpi-p",
+                "anchor": "vol1_clause_sdpi_p_discovery_proxy"
+            }
+        ],
+        "options": [
+            {
+                "id": "sdpi-p-managed-discovery",
+                "anchor": "vol1_clause_sdpi_p_option_discovery_proxy",
+                "label": "Managed Discovery Option",
+                "transactionReferences": [
+                    {
+                        "transactionId": "DEV-46",
+                        "obligations": [
+                            {
+                                "contribution": "INITIATOR",
+                                "obligation": "REQUIRED",
+                                "actorId": "somds_provider"
+                            },
+                            {
+                                "contribution": "RESPONDER",
+                                "obligation": "REQUIRED"
+                            }
+                        ]
+                    },
+                    {
+                        "transactionId": "DEV-47",
+                        "obligations": [
+                            {
+                                "contribution": "INITIATOR",
+                                "obligation": "REQUIRED",
+                                "actorId": "somds_consumer"
+                            },
+                            {
+                                "contribution": "RESPONDER",
+                                "obligation": "REQUIRED",
+                                "actorId": "discovery_proxy"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "profileId": "sdpi-r",
+        "anchor": "vol1_clause_sdpi_r_profile",
+        "label": "Reporting Profile"
+    },
+    {
+        "profileId": "sdpi-a",
+        "anchor": "vol1_clause_sdpi_a_profile",
+        "label": "Alerting Profile"
+    },
+    {
+        "profileId": "sdpi-xc",
+        "anchor": "vol1_clause_sdpi_xc_profile",
+        "label": "External Control Profile"
+    }
+]

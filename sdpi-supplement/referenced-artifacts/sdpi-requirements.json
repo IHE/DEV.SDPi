@@ -1,31 +1,57 @@
-{
-    "1021": {
+[
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider",
+            "discovery_proxy"
+        ],
         "requirementNumber": 1021,
         "localId": "R1021",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "profile-option",
+            "id": "sdpi-p-managed-discovery"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
                 {
                     "type": "block",
                     "lines": [
-                        "When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor, then it shall use the <<vol2_clause_dev_4602109ea5-a5ad-4926-9ef2-fb0354fafff0DEV-46>> transaction to update the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor on its network presence and departure."
+                        "When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor, then it shall use the <<vol2_clause_dev_46ab491a58-caf0-4c64-a06b-9427930f7113DEV-46>> transaction to update the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor on its network presence and departure."
                     ]
                 }
             ],
             "noteContent": [],
             "exampleContent": [],
-            "relatedContent": []
+            "relatedContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "<<ref_oasis_ws_discovery_2009>>, §2.2.2, Managed mode."
+                        }
+                    ]
+                }
+            ]
         }
     },
-    "1022": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 1022,
         "localId": "R1022",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "profile-option",
+            "id": "sdpi-p-managed-discovery"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -41,33 +67,65 @@
             "relatedContent": []
         }
     },
-    "1023": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_consumer",
+            "somds_provider",
+            "discovery_proxy"
+        ],
         "requirementNumber": 1023,
         "localId": "R1023",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "profile-option",
+            "id": "sdpi-p-managed-discovery"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
                 {
                     "type": "block",
                     "lines": [
-                        "When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor, then it shall use the <<vol2_clause_dev_4702109ea5-a5ad-4926-9ef2-fb0354fafff0DEV-47>> transaction to retrieve <<vol1_spec_sdpi_p_actor_somds_provider>> network presence metadata from the  <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor."
+                        "When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor, then it shall use the <<vol2_clause_dev_47ab491a58-caf0-4c64-a06b-9427930f7113DEV-47>> transaction to retrieve <<vol1_spec_sdpi_p_actor_somds_provider>> network presence metadata from the  <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor."
                     ]
                 }
             ],
-            "noteContent": [],
+            "noteContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "When retrieving network presence metadata from a <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor, a <<term_discovery_scope>> may be specified as a filter to identify a specific subset of <<vol1_spec_sdpi_p_actor_somds_provider>> systems."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "A <<vol1_spec_sdpi_p_actor_somds_consumer>> may optionally use the <<vol2_clause_dev_47>> transaction to subscribe to all metadata updates from a set of <<vol1_spec_sdpi_p_actor_somds_consumer>> systems, essentially using the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor as a pass through for <<vol1_spec_sdpi_p_actor_somds_provider>> <<vol2_clause_dev_23>> transactions."
+                        }
+                    ]
+                }
+            ],
             "exampleContent": [],
             "relatedContent": []
         }
     },
-    "1024": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_consumer"
+        ],
         "requirementNumber": 1024,
         "localId": "R1024",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "profile-option",
+            "id": "sdpi-p-managed-discovery"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -83,12 +141,19 @@
             "relatedContent": []
         }
     },
-    "1025": {
-        "type": "tech-feature",
+    {
+        "type": "risk-mitigation",
+        "actors": [
+            "discovery_proxy"
+        ],
         "requirementNumber": 1025,
         "localId": "R1025",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "profile-option",
+            "id": "sdpi-p-managed-discovery"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -99,17 +164,34 @@
                     ]
                 }
             ],
-            "noteContent": [],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For example, issuing a periodic \"heartbeat\" check message or cable-connected check.",
+                        "Specification of these means will be provided for in the transport-specific implementation specification for the <<vol2_clause_dev_46ab491a58-caf0-4c64-a06b-9427930f7113DEV-46>> transaction."
+                    ]
+                }
+            ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "EFFECTIVENESS",
+        "test": "INTEROPERABILITY"
     },
-    "1542": {
-        "type": "tech-feature",
+    {
+        "type": "risk-mitigation",
+        "actors": [
+            "somds_consumer"
+        ],
         "requirementNumber": 1542,
         "localId": "R1542",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "profile",
+            "id": "sdpi-p"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -123,14 +205,23 @@
             "noteContent": [],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "EFFECTIVENESS",
+        "test": "INTEROPERABILITY"
     },
-    "1543": {
-        "type": "tech-feature",
+    {
+        "type": "risk-mitigation",
+        "actors": [
+            "somds_consumer"
+        ],
         "requirementNumber": 1543,
         "localId": "R1543",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "profile",
+            "id": "sdpi-p"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -144,14 +235,51 @@
             "noteContent": [],
             "exampleContent": [],
             "relatedContent": []
+        },
+        "mitigating": "AUDIT",
+        "test": "INTEROPERABILITY"
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_participant"
+        ],
+        "requirementNumber": 1544,
+        "localId": "R1544",
+        "globalId": "",
+        "level": "SHOULD",
+        "owner": {
+            "type": "profile",
+            "id": "sdpi-p"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_participant>> should use TLS 1.3, or a higher version."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
         }
     },
-    "1520": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_participant"
+        ],
         "requirementNumber": 1520,
         "localId": "R1520",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "use-case",
+            "id": "stad"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -159,6 +287,26 @@
                     "type": "block",
                     "lines": [
                         "The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_participant>> shall include all of the following information in the accompanying documentation:"
+                    ]
+                },
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The responsible organization needs to provide a <<acronym_ts_service>> with 50 millisecond accuracy."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The responsible organization needs to provide a redundant <<acronym_ts_service>> configuration with at least one backup server."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The responsible organization needs to configure the same  <<acronym_ts_service>> for <<vol1_spec_sdpi_p_actor_somds_participant>>s that execute <<term_system_function_contribution>>s together."
+                        }
                     ]
                 }
             ],
@@ -174,12 +322,63 @@
             "relatedContent": []
         }
     },
-    "1510": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_participant"
+        ],
+        "requirementNumber": 1521,
+        "localId": "R1521",
+        "globalId": "",
+        "level": "SHOULD",
+        "owner": {
+            "type": "use-case",
+            "id": "stad"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_participant>> should configure its <<acronym_ts_service>> client to prioritize <<term_smooth_time_adjustments>> to the <<term_system_clock>>."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "<<vol1_spec_sdpi_p_actor_somds_participant>>s could use, for example, <<ref_rfc_5905ab491a58-caf0-4c64-a06b-9427930f7113NTPv4>> to satisfy this requirement. That is, employing cold and warm startup and <<term_clock_discipline_algorithm>>s to synchronize the <<term_system_clock>> with a <<acronym_ts_service>> <<term_reference_clock>>."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "<<vol1_spec_sdpi_p_actor_somds_participant>>s using other synchronization standards\nshould strongly favour methods such as adjusting clock frequency over large changes (forward\nor backward in time) to maintain an accurate <<term_system_clock>>."
+                        }
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_participant"
+        ],
         "requirementNumber": 1510,
         "localId": "R1510",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "use-case",
+            "id": "stad"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -194,7 +393,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "Since manual time adjustments of the device's internal clock would lead to plausible but still inaccurate timestamps, this requirement also prohibits manual adjustments when the <<acronym_ts_service>> is not available."
+                        "Since manual time adjustments of the device's internal clock would lead to plausible, but still inaccurate timestamps, this requirement also prohibits manual adjustments when the <<acronym_ts_service>> is not available."
                     ]
                 }
             ],
@@ -202,12 +401,19 @@
             "relatedContent": []
         }
     },
-    "1540": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_participant"
+        ],
         "requirementNumber": 1540,
         "localId": "R1540",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "use-case",
+            "id": "stad"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -230,12 +436,19 @@
             "relatedContent": []
         }
     },
-    "1530": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_participant"
+        ],
         "requirementNumber": 1530,
         "localId": "R1530",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "use-case",
+            "id": "stad"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -258,12 +471,19 @@
             "relatedContent": []
         }
     },
-    "1531": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 1531,
         "localId": "R1531",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "use-case",
+            "id": "stad"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -279,12 +499,19 @@
             "relatedContent": []
         }
     },
-    "1532": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_consumer"
+        ],
         "requirementNumber": 1532,
         "localId": "R1532",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "use-case",
+            "id": "stad"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -300,12 +527,20 @@
             "relatedContent": []
         }
     },
-    "1533": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_consumer",
+            "somds_provider"
+        ],
         "requirementNumber": 1533,
         "localId": "R1533",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "use-case",
+            "id": "stad"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -328,12 +563,19 @@
             "relatedContent": []
         }
     },
-    "1534": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_participant"
+        ],
         "requirementNumber": 1534,
         "localId": "R1534",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "use-case",
+            "id": "stad"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -349,12 +591,19 @@
             "relatedContent": []
         }
     },
-    "1500": {
-        "type": "tech-feature",
+    {
+        "type": "use-case",
+        "actors": [
+            "somds_participant"
+        ],
         "requirementNumber": 1500,
         "localId": "R1500",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "use-case",
+            "id": "stad"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -367,15 +616,65 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "Clocks of <<vol1_spec_sdpi_p_actor_somds_participant>>s run apart due to lack of synchronization with NTP servers, different clock drifts or cyberattacks."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Clocks of <<vol1_spec_sdpi_p_actor_somds_participant>>s run apart due to lack of synchronization with NTP servers, different clock drifts or cyber-attacks."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "This requirement supplements RR1162 in <<ref_ieee_11073_10700_2022>>: _The MANUFACTURER of an SDC BASE CONSUMER SHALL consider the RISKs resulting from erroneous timestamps._"
+                        }
                     ]
-                },
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "<<ref_ieee_11073_10700_2022>>, RR1162."
+                        }
+                    ]
+                }
+            ]
+        },
+        "useCaseId": "stad"
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_participant"
+        ],
+        "requirementNumber": 1560,
+        "localId": "R1560",
+        "globalId": "",
+        "level": "SHALL",
+        "owner": {
+            "type": "use-case",
+            "id": "stad"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
                 {
                     "type": "block",
                     "lines": [
-                        "This requirement supplements RR1162 in <<ref_ieee_11073_10700_2022>>: _The MANUFACTURER of an SDC BASE CONSUMER SHALL consider the RISKs resulting from erroneous timestamps._"
+                        "The <<vol1_spec_sdpi_p_actor_somds_participant>> shall log each <<term_abrupt_time_adjustment>> of the <<term_system_clock>> with an entry that includes the determination time of the log entry in both the <<term_time_reference_frame>> before, and after, each <<term_abrupt_time_adjustment>>."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "This requirement supplements TR1340 in <<ref_ieee_11073_10700_2022>>&mdash; _An SDC BASE PARTICIPANT SHOULD log each <<term_non_slewing_time_adjustment>> of the device clock_ &mdash; requiring specific information in the log to support post incident analysis."
                     ]
                 }
             ],
@@ -383,12 +682,462 @@
             "relatedContent": []
         }
     },
-    "500": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
+        "requirementNumber": 1522,
+        "localId": "R1522",
+        "globalId": "",
+        "level": "SHALL",
+        "owner": {
+            "type": "use-case",
+            "id": "stad"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "When the <<vol1_spec_sdpi_p_actor_somds_provider>> detects an <<term_abrupt_time_adjustment>> of a <<term_system_clock>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall either:"
+                    ]
+                },
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "initiate a new MDIB sequence by assigning a new <<acronym_mdib>> sequence identifier, or"
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "set `pm:ClockState/@ActivationState` to `StndBy` when any timestamp in a <<acronym_mdib>> version was not obtained from the time-reference frame of the active clock in the same version, or"
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "set `pm:ClockState/@LastSet` to the earliest time that is unambiguously in the current <<term_epoch>> and increment `sdpi:Epochs/@Version` and set `pm:ClockState/@ActivationState` to `StndBy` while any timestamp in a <<acronym_mdib>> version is less than `pm:ClockState/@LastSet`."
+                        }
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The <<term_manufacturer>> of the <<vol1_spec_sdpi_p_actor_somds_consumer>> considers the risks arising from <<term_timestamp>>s spanning <<term_time_reference_frame>>s from an <<term_abrupt_time_adjustment>> having occurred at the <<vol1_spec_sdpi_p_actor_somds_provider>> when the <<vol1_spec_sdpi_p_actor_somds_consumer>> receives a changed value in the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDIB sequence identifier or when the `pm:ClockState/@ActivationState` is `StndBy`."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "This clarifies the ambiguity in <<ref_ieee_11073_10207_2017>>, section B.182 and <<ref_ieee_11073_20701_2018>>, R0014 when a participant uses slewing to make <<term_smooth_time_adjustments>> (using, for example, the <<ref_rfc_5905ab491a58-caf0-4c64-a06b-9427930f7113NTPv4>> <<term_clock_discipline_algorithm>>) where information from one or more <<acronym_ts_service>>s is used to maintain clock-discipline and does not (generally) \"set\" the clock."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Any <<term_timestamp>> strictly-less than `pm:ClockState/@LastSet` in the MDIB when `pm:ClockState/@ActivationState` is set to `StndBy` may be untrustworthy."
+                        }
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
+        "requirementNumber": 1561,
+        "localId": "R1561",
+        "globalId": "",
+        "level": "MAY",
+        "owner": {
+            "type": "use-case",
+            "id": "stad"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The <<vol1_spec_sdpi_p_actor_somds_provider>> may indicate a <<term_timestamp>> belongs to a specific <<term_epoch>> using the SDPi epoch extension."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Binding timestamps in the <<acronym_mdib>> to a specific <<term_epoch>> may be useful for states that are not updated frequently."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_consumer"
+        ],
+        "requirementNumber": 1562,
+        "localId": "R1562",
+        "globalId": "",
+        "level": "SHALL",
+        "owner": {
+            "type": "use-case",
+            "id": "stad"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_consumer>> shall consider the risks arising from relying on <<term_timestamp>>s obtained from different <<term_epoch>>s."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "It may not be possible to reliably determine the relationship between <<term_timestamp>> obtained from different <<term_epoch>>s without addition information regarding the cause of an <<term_abrupt_time_adjustment>>. Consider, for example, an <<term_abrupt_time_adjustment>> that arises when the <<term_system_clock>> was running significantly faster (or slower) than the <<term_reference_clock>>. The arithmetic difference in time between two events spanning the adjustment (even when combined with the size of the step adjustment) may not match the elapsed time experienced by an unbiased observer because time passed at different rates in the different epochs."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
+        "requirementNumber": 1566,
+        "localId": "R1566",
+        "globalId": "",
+        "level": "SHALL",
+        "owner": {
+            "type": "use-case",
+            "id": "stad"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_provider>> that changes the MDIB sequence identifier when it can no longer make <<term_smooth_time_adjustments>> to its <<term_time_reference_frame>> shall consider the risks arising from gaps in continuous data."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "An abrupt time adjustment may indicate a serious error that impacts data that has already been:"
+                    ]
+                },
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "displayed on a chart to the user,"
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "exported to other systems."
+                        }
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_participant"
+        ],
+        "requirementNumber": 1569,
+        "localId": "R1569",
+        "globalId": "",
+        "level": "MAY",
+        "owner": {
+            "type": "use-case",
+            "id": "stad"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_participant>> may enter a fault state by, for example, setting the `MdsState/@ActivationState` to `Fail` following an <<term_abrupt_time_adjustment>> that it otherwise cannot recover from."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "A sudden change in a participant's time-reference frame may require intervention by the OPERATOR or RESPONSIBLE ORGANIZATION."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "A <<vol1_spec_sdpi_p_actor_somds_participant>> may continue delivery with a subset one or more of its nominal System Function Contribution (<<acronym_sfc>>) following an <<term_abrupt_time_adjustment>> reporting the activation state of components using `AbstractDeviceComponentState/@ActivationState`."
+                        }
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_consumer",
+            "somds_provider"
+        ],
+        "requirementNumber": 1600,
+        "localId": "R1600",
+        "globalId": "",
+        "level": "MAY",
+        "owner": {
+            "type": "use-case",
+            "id": "stad"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> may disconnect or go into a fail-safe mode when it determines an <<term_abrupt_time_adjustment>> has occurred in a <<vol1_spec_sdpi_p_actor_somds_provider>> required to continue its <<term_system_function_contribution>>."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A consumer relying on the temporal accuracy of historic data for its <<term_system_function_contribution>> may require operator input to continue safe operation following an <<term_abrupt_time_adjustment>> to one or more of its data sources."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_consumer",
+            "somds_participant"
+        ],
+        "requirementNumber": 1601,
+        "localId": "R1601",
+        "globalId": "",
+        "level": "SHOULD",
+        "owner": {
+            "type": "use-case",
+            "id": "stad"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> should use the low-precision `Date` field included in HTTP response messages (<<ref_rfc_9110>>, §6.6.1) to determine if discrepancies between <<vol1_spec_sdpi_p_actor_somds_participant>> clocks exceed requirements for its <<term_system_function_contribution>>."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "This requirement supports a <<vol1_spec_sdpi_p_actor_somds_consumer>> considering the risk resulting from erroneous timestamps <<ref_ieee_11073_10700_2022>>, RR1162."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The maximum discrepancy between participant clocks may depend on the protocol being used to synchronize time (`pm:ClockState/pm:ActiveSyncProtocol`). The time reported by two devices employing <<ref_rfc_5905ab491a58-caf0-4c64-a06b-9427930f7113NTPv4>>, for example, may differ by more than 8 1/2 minutes, in a worst case scenario, without triggering an <<term_abrupt_time_adjustment>>."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "A <<vol1_spec_sdpi_p_actor_somds_consumer>> could detect discrepancies exceeding a few seconds, which may affect its <<term_system_function_contribution>>, using timestamps in HTTP headers, for example."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "By monitoring timestamp on message responses (such as subscription renew requests), a <<vol1_spec_sdpi_p_actor_somds_consumer>> may be able to take an appropriate action, such as alerting the operator, before using data with suspicious timestamps."
+                        }
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
+        "requirementNumber": 1602,
+        "localId": "R1602",
+        "globalId": "",
+        "level": "SHOULD",
+        "owner": {
+            "type": "use-case",
+            "id": "stad"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> should use the \"preferred format\", defined in  <<ref_rfc_9110ab491a58-caf0-4c64-a06b-9427930f7113RFC9110+%C2%A75.6.7>>, for the `Date` field included in all HTTP response messages."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The `Date` field in HTTP response messages, as the best available approximation of the date and time of message generation, is mandatory for an origin server with a clock (<<ref_rfc_9110>>, §6.6.1) though several formats are supported. This clarifies obsolete formats shouldn't be be used."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_consumer"
+        ],
+        "requirementNumber": 1603,
+        "localId": "R1603",
+        "globalId": "",
+        "level": "SHALL",
+        "owner": {
+            "type": "use-case",
+            "id": "stad"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> shall notify next users of invalid and/or suspicious timestamps arising from <<term_abrupt_time_adjustment>> that affect its <<term_system_function_contribution>>."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Operators and downstream systems (e.g., central record keeping systems) may be impacted beyond the <<vol1_spec_sdpi_p_actor_somds_participant>>'s immediate <<term_system_function_contribution>> by inconsistencies in temporal data."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Notifying next users could include writing an entry in a log accessible to next users."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Notifying next users could visual and/or audible indication to operators through colour, iconography or visual styling on timestamps affected by the <<term_abrupt_time_adjustment>>."
+                        }
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_consumer"
+        ],
+        "requirementNumber": 1604,
+        "localId": "R1604",
+        "globalId": "",
+        "level": "SHOULD",
+        "owner": {
+            "type": "use-case",
+            "id": "stad"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>>, adjusting invalid and/or suspicious timestamps arising from <<term_abrupt_time_adjustment>>, should continue to treat the adjusted timestamp as invalid and/or suspicious."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> may use information provided, for example, by the <<vol1_spec_sdpi_p_actor_somds_provider>> using, for example, the <<vol3_clause_timestamp_versioningab491a58-caf0-4c64-a06b-9427930f7113timestamp+versioning>> extension to improve the accuracy of a suspicious timestamp. However timestamps may remain less accurate than had the <<term_abrupt_time_adjustment>> not occurred and it may still be appropriate to notify next users of this."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 500,
         "localId": "R0500",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -423,12 +1172,19 @@
             "relatedContent": []
         }
     },
-    "501": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_consumer"
+        ],
         "requirementNumber": 501,
         "localId": "R0501",
         "globalId": "",
         "level": "SHOULD",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -457,12 +1213,19 @@
             "relatedContent": []
         }
     },
-    "2000": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_participant"
+        ],
         "requirementNumber": 2000,
         "localId": "R2000",
         "globalId": "",
         "level": "SHOULD",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -478,12 +1241,19 @@
             "relatedContent": []
         }
     },
-    "2001": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 2001,
         "localId": "R2001",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -506,12 +1276,19 @@
             "relatedContent": []
         }
     },
-    "2002": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_participant"
+        ],
         "requirementNumber": 2002,
         "localId": "R2002",
         "globalId": "",
         "level": "SHOULD",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -527,12 +1304,19 @@
             "relatedContent": []
         }
     },
-    "3001": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_consumer"
+        ],
         "requirementNumber": 3001,
         "localId": "R3001",
         "globalId": "",
         "level": "SHOULD",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -555,12 +1339,19 @@
             "relatedContent": []
         }
     },
-    "3002": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_consumer"
+        ],
         "requirementNumber": 3002,
         "localId": "R3002",
         "globalId": "",
         "level": "MAY",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -583,12 +1374,19 @@
             "relatedContent": []
         }
     },
-    "7000": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 7000,
         "localId": "R7000",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -617,12 +1415,20 @@
             "relatedContent": []
         }
     },
-    "7001": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_consumer",
+            "somds_provider"
+        ],
         "requirementNumber": 7001,
         "localId": "R7001",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -646,12 +1452,19 @@
             "relatedContent": []
         }
     },
-    "7003": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_participant"
+        ],
         "requirementNumber": 7003,
         "localId": "R7003",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -674,12 +1487,19 @@
             "relatedContent": []
         }
     },
-    "7004": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 7004,
         "localId": "R7004",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -702,12 +1522,19 @@
             "relatedContent": []
         }
     },
-    "7005": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 7005,
         "localId": "R7005",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -730,12 +1557,19 @@
             "relatedContent": []
         }
     },
-    "7002": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 7002,
         "localId": "R7002",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -756,12 +1590,21 @@
             "relatedContent": []
         }
     },
-    "7006": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "discovery_proxy",
+            "somds_provider",
+            "somds_consumer"
+        ],
         "requirementNumber": 7006,
         "localId": "R7006",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -777,12 +1620,19 @@
             "relatedContent": []
         }
     },
-    "7007": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "discovery_proxy"
+        ],
         "requirementNumber": 7007,
         "localId": "R7007",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -799,12 +1649,19 @@
             "relatedContent": []
         }
     },
-    "7008": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "discovery_proxy"
+        ],
         "requirementNumber": 7008,
         "localId": "R7008",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -821,12 +1678,20 @@
             "relatedContent": []
         }
     },
-    "7009": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_consumer",
+            "discovery_proxy"
+        ],
         "requirementNumber": 7009,
         "localId": "R7009",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -843,12 +1708,19 @@
             "relatedContent": []
         }
     },
-    "502": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_participant"
+        ],
         "requirementNumber": 502,
         "localId": "R0502",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -877,12 +1749,19 @@
             "relatedContent": []
         }
     },
-    "1": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 1,
         "localId": "R0001",
         "globalId": "",
         "level": "MAY",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -905,12 +1784,19 @@
             "relatedContent": []
         }
     },
-    "2": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_consumer"
+        ],
         "requirementNumber": 2,
         "localId": "R0002",
         "globalId": "",
         "level": "SHOULD",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -933,12 +1819,19 @@
             "relatedContent": []
         }
     },
-    "3": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_consumer"
+        ],
         "requirementNumber": 3,
         "localId": "R0003",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -967,12 +1860,19 @@
             "relatedContent": []
         }
     },
-    "4": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_consumer"
+        ],
         "requirementNumber": 4,
         "localId": "R0004",
         "globalId": "",
         "level": "MAY",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1001,12 +1901,20 @@
             "relatedContent": []
         }
     },
-    "1001": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider",
+            "somds_consumer"
+        ],
         "requirementNumber": 1001,
         "localId": "R1001",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1022,12 +1930,19 @@
             "relatedContent": []
         }
     },
-    "1002": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_participant"
+        ],
         "requirementNumber": 1002,
         "localId": "R1002",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1050,12 +1965,19 @@
             "relatedContent": []
         }
     },
-    "1003": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_participant"
+        ],
         "requirementNumber": 1003,
         "localId": "R1003",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1078,12 +2000,19 @@
             "relatedContent": []
         }
     },
-    "1004": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 1004,
         "localId": "R1004",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1106,12 +2035,19 @@
             "relatedContent": []
         }
     },
-    "1005": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_consumer"
+        ],
         "requirementNumber": 1005,
         "localId": "R1005",
         "globalId": "",
         "level": "SHOULD",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1127,12 +2063,16 @@
             "relatedContent": []
         }
     },
-    "1014": {
+    {
         "type": "tech-feature",
         "requirementNumber": 1014,
         "localId": "R1014",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1148,12 +2088,19 @@
             "relatedContent": []
         }
     },
-    "5": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_participant"
+        ],
         "requirementNumber": 5,
         "localId": "R0005",
         "globalId": "",
         "level": "SHOULD",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1206,12 +2153,20 @@
             "relatedContent": []
         }
     },
-    "6": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_consumer",
+            "somds_provider"
+        ],
         "requirementNumber": 6,
         "localId": "R0006",
         "globalId": "",
         "level": "MAY",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1227,12 +2182,19 @@
             "relatedContent": []
         }
     },
-    "10": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 10,
         "localId": "R0010",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1268,12 +2230,12 @@
                         {
                             "type": "item",
                             "strMarker": "-",
-                            "strText": "<code>sdc.mds.prodspec:MediHealth:531970</code>"
+                            "strText": "`sdc.mds.prodspec:MediHealth:531970`"
                         },
                         {
                             "type": "item",
                             "strMarker": "-",
-                            "strText": "<code>sdc.mds.prodspec:DE12345678:531972,urn%3Aoid%3A1.3.111.2.11073.10101.3</code>"
+                            "strText": "`sdc.mds.prodspec:DE12345678:531972,urn%3Aoid%3A1.3.111.2.11073.10101.3`"
                         }
                     ]
                 }
@@ -1282,12 +2244,19 @@
             "relatedContent": []
         }
     },
-    "11": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 11,
         "localId": "R0011",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1316,12 +2285,19 @@
             "relatedContent": []
         }
     },
-    "13": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_participant"
+        ],
         "requirementNumber": 13,
         "localId": "R0013",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1344,12 +2320,19 @@
             "relatedContent": []
         }
     },
-    "1012": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_participant"
+        ],
         "requirementNumber": 1012,
         "localId": "R1012",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1365,12 +2348,19 @@
             "relatedContent": []
         }
     },
-    "1013": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_participant"
+        ],
         "requirementNumber": 1013,
         "localId": "R1013",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1386,12 +2376,19 @@
             "relatedContent": []
         }
     },
-    "8119": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 8119,
         "localId": "R8119",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "hl7v2"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1414,19 +2411,23 @@
             "relatedContent": []
         }
     },
-    "8100": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8100,
         "localId": "R8100",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "hl7v2"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
                 {
                     "type": "block",
                     "lines": [
-                        "If not differently specified in this section, the MSH segment fields shall be in compliance with the [PCD-01] or [PCD-04] transaction, retrospectively, as described in the <<ref_ihe_pcd_tf_2_2019>>."
+                        "If not differently specified in this section, the MSH segment fields shall be in compliance with the [PCD-01] or [PCD-04] transaction, retrospectively, as described in the <<ref_ihe_dev_tf_2_2024>>."
                     ]
                 }
             ],
@@ -1435,12 +2436,16 @@
             "relatedContent": []
         }
     },
-    "8101": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8101,
         "localId": "R8101",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "hl7v2"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1463,12 +2468,16 @@
             "relatedContent": []
         }
     },
-    "8118": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8118,
         "localId": "R8118",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "hl7v2"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1491,12 +2500,16 @@
             "relatedContent": []
         }
     },
-    "8102": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8102,
         "localId": "R8102",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "hl7v2"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1517,7 +2530,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "If the SDC patient context information is not intended to be used for the mapping, please refer to the <<ref_ihe_pcd_tf_2_2019>> on how to populate the fields of the PID segment in this case."
+                        "If the SDC patient context information is not intended to be used for the mapping, please refer to the <<ref_ihe_dev_tf_2_2024>> on how to populate the fields of the PID segment in this case."
                     ]
                 }
             ],
@@ -1525,12 +2538,16 @@
             "relatedContent": []
         }
     },
-    "8103": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8103,
         "localId": "R8103",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "hl7v2"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1565,12 +2582,16 @@
             "relatedContent": []
         }
     },
-    "8104": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8104,
         "localId": "R8104",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "hl7v2"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1593,12 +2614,16 @@
             "relatedContent": []
         }
     },
-    "8105": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8105,
         "localId": "R8105",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "hl7v2"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1621,12 +2646,16 @@
             "relatedContent": []
         }
     },
-    "8106": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8106,
         "localId": "R8106",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "hl7v2"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1649,12 +2678,16 @@
             "relatedContent": []
         }
     },
-    "8120": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8120,
         "localId": "R8120",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "hl7v2"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1677,12 +2710,16 @@
             "relatedContent": []
         }
     },
-    "8121": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8121,
         "localId": "R8121",
         "globalId": "",
         "level": "MAY",
+        "owner": {
+            "type": "gateway",
+            "id": "hl7v2"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1705,12 +2742,16 @@
             "relatedContent": []
         }
     },
-    "8107": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8107,
         "localId": "R8107",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "hl7v2"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1733,12 +2774,16 @@
             "relatedContent": []
         }
     },
-    "8122": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8122,
         "localId": "R8122",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "hl7v2"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1754,12 +2799,16 @@
             "relatedContent": []
         }
     },
-    "8108": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8108,
         "localId": "R8108",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "hl7v2"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1782,12 +2831,16 @@
             "relatedContent": []
         }
     },
-    "8109": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8109,
         "localId": "R8109",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "hl7v2"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1822,12 +2875,16 @@
             "relatedContent": []
         }
     },
-    "8111": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8111,
         "localId": "R8111",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "hl7v2"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1848,7 +2905,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "If the SDC patient and/or location context information is not be used for the mapping, please refer to the <<ref_ihe_pcd_tf_2_2019>> on how to populate the fields of the PV1 segment in this case."
+                        "If the SDC patient and/or location context information is not be used for the mapping, please refer to the <<ref_ihe_dev_tf_2_2024>> on how to populate the fields of the PV1 segment in this case."
                     ]
                 }
             ],
@@ -1856,12 +2913,16 @@
             "relatedContent": []
         }
     },
-    "8112": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8112,
         "localId": "R8112",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "hl7v2"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1884,12 +2945,16 @@
             "relatedContent": []
         }
     },
-    "8113": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8113,
         "localId": "R8113",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "hl7v2"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1912,12 +2977,16 @@
             "relatedContent": []
         }
     },
-    "8114": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8114,
         "localId": "R8114",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "hl7v2"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1958,12 +3027,16 @@
             "relatedContent": []
         }
     },
-    "8115": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8115,
         "localId": "R8115",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "hl7v2"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -1991,12 +3064,16 @@
             "relatedContent": []
         }
     },
-    "8116": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8116,
         "localId": "R8116",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "hl7v2"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2031,12 +3108,16 @@
             "relatedContent": []
         }
     },
-    "8012": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8012,
         "localId": "R8012",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "hl7v2"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2059,12 +3140,16 @@
             "relatedContent": []
         }
     },
-    "8013": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8013,
         "localId": "R8013",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "hl7v2"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2080,12 +3165,16 @@
             "relatedContent": []
         }
     },
-    "8014": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8014,
         "localId": "R8014",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "hl7v2"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2100,7 +3189,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "Please refer to the IHE technical framework <<ref_ihe_pcd_tf_2_2019>> for further information."
+                        "Please refer to the IHE technical framework <<ref_ihe_dev_tf_2_2024>> for further information."
                     ]
                 }
             ],
@@ -2108,12 +3197,16 @@
             "relatedContent": []
         }
     },
-    "8015": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8015,
         "localId": "R8015",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "hl7v2"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2155,22 +3248,22 @@
                         {
                             "type": "item",
                             "strMarker": "*",
-                            "strText": "<code>3</code> for pm:MdsDescriptor/@Handle = \"My1Mds\","
+                            "strText": "`3` for pm:MdsDescriptor/@Handle = \"My1Mds\","
                         },
                         {
                             "type": "item",
                             "strMarker": "*",
-                            "strText": "<code>1</code> for pm:VmdDescriptor/@Handle = \"Vmd.1\","
+                            "strText": "`1` for pm:VmdDescriptor/@Handle = \"Vmd.1\","
                         },
                         {
                             "type": "item",
                             "strMarker": "*",
-                            "strText": "<code>2</code> for pm:ChannelDescriptor/@Handle = \"Chan.4 and"
+                            "strText": "`2` for pm:ChannelDescriptor/@Handle = \"Chan.4 and"
                         },
                         {
                             "type": "item",
                             "strMarker": "*",
-                            "strText": "<code>1</code> for pm:AbstractMetricDescriptor/@Handle = \"Metric.Spo2\"."
+                            "strText": "`1` for pm:AbstractMetricDescriptor/@Handle = \"Metric.Spo2\"."
                         }
                     ]
                 },
@@ -2186,22 +3279,22 @@
                         {
                             "type": "item",
                             "strMarker": "*",
-                            "strText": "<code>3.0.0.0</code> for the MDS OBX segment,"
+                            "strText": "`3.0.0.0` for the MDS OBX segment,"
                         },
                         {
                             "type": "item",
                             "strMarker": "*",
-                            "strText": "<code>3.1.0.0</code> for the VMD OBX segment,"
+                            "strText": "`3.1.0.0` for the VMD OBX segment,"
                         },
                         {
                             "type": "item",
                             "strMarker": "*",
-                            "strText": "<code>3.1.2.0</code> for the CHAN OBX segment and"
+                            "strText": "`3.1.2.0` for the CHAN OBX segment and"
                         },
                         {
                             "type": "item",
                             "strMarker": "*",
-                            "strText": "<code>3.1.2.1</code> for the Metric OBX segment."
+                            "strText": "`3.1.2.1` for the Metric OBX segment."
                         }
                     ]
                 }
@@ -2210,12 +3303,16 @@
             "relatedContent": []
         }
     },
-    "8117": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8117,
         "localId": "R8117",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "hl7v2"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2244,12 +3341,16 @@
             "relatedContent": []
         }
     },
-    "8001": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8001,
         "localId": "R8001",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2272,12 +3373,16 @@
             "relatedContent": []
         }
     },
-    "8002": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8002,
         "localId": "R8002",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2293,12 +3398,16 @@
             "relatedContent": []
         }
     },
-    "8003": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8003,
         "localId": "R8003",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2313,7 +3422,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "For further information, please refer to the <<ref_ihe_pcd_tf_2_2019>>."
+                        "For further information, please refer to the <<ref_ihe_dev_tf_2_2024>>."
                     ]
                 }
             ],
@@ -2321,12 +3430,16 @@
             "relatedContent": []
         }
     },
-    "8004": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8004,
         "localId": "R8004",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2341,7 +3454,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "For further information, please refer to the <<ref_ihe_pcd_tf_2_2019>>."
+                        "For further information, please refer to the <<ref_ihe_dev_tf_2_2024>>."
                     ]
                 }
             ],
@@ -2349,12 +3462,19 @@
             "relatedContent": []
         }
     },
-    "8005": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 8005,
         "localId": "R8005",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2369,7 +3489,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "For further information, please refer to the <<ref_ihe_pcd_tf_2_2019>>."
+                        "For further information, please refer to the <<ref_ihe_dev_tf_2_2024>>."
                     ]
                 }
             ],
@@ -2377,12 +3497,16 @@
             "relatedContent": []
         }
     },
-    "8037": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8037,
         "localId": "R8037",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2405,12 +3529,16 @@
             "relatedContent": []
         }
     },
-    "8038": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8038,
         "localId": "R8038",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2433,12 +3561,16 @@
             "relatedContent": []
         }
     },
-    "8006": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8006,
         "localId": "R8006",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2461,12 +3593,16 @@
             "relatedContent": []
         }
     },
-    "8007": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8007,
         "localId": "R8007",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2495,12 +3631,16 @@
             "relatedContent": []
         }
     },
-    "8008": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8008,
         "localId": "R8008",
         "globalId": "",
         "level": "MAY",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2529,12 +3669,16 @@
             "relatedContent": []
         }
     },
-    "8009": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8009,
         "localId": "R8009",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2569,12 +3713,16 @@
             "relatedContent": []
         }
     },
-    "8010": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8010,
         "localId": "R8010",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2597,12 +3745,19 @@
             "relatedContent": []
         }
     },
-    "8011": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 8011,
         "localId": "R8011",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2618,12 +3773,16 @@
             "relatedContent": []
         }
     },
-    "8016": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8016,
         "localId": "R8016",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2646,12 +3805,16 @@
             "relatedContent": []
         }
     },
-    "8036": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8036,
         "localId": "R8036",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2667,12 +3830,16 @@
             "relatedContent": []
         }
     },
-    "8017": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8017,
         "localId": "R8017",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2695,12 +3862,16 @@
             "relatedContent": []
         }
     },
-    "8018": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8018,
         "localId": "R8018",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2723,12 +3894,16 @@
             "relatedContent": []
         }
     },
-    "8019": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8019,
         "localId": "R8019",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2757,12 +3932,16 @@
             "relatedContent": []
         }
     },
-    "8020": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8020,
         "localId": "R8020",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2778,12 +3957,16 @@
             "relatedContent": []
         }
     },
-    "8021": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8021,
         "localId": "R8021",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2826,12 +4009,16 @@
             "relatedContent": []
         }
     },
-    "8022": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8022,
         "localId": "R8022",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2847,12 +4034,16 @@
             "relatedContent": []
         }
     },
-    "8023": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8023,
         "localId": "R8023",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2881,12 +4072,16 @@
             "relatedContent": []
         }
     },
-    "8024": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8024,
         "localId": "R8024",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2902,12 +4097,16 @@
             "relatedContent": []
         }
     },
-    "8026": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8026,
         "localId": "R8026",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2930,12 +4129,16 @@
             "relatedContent": []
         }
     },
-    "8025": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8025,
         "localId": "R8025",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -2950,7 +4153,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "As stated in <<ref_ihe_pcd_tf_2_2019>> the reference range can only be set for device related segments (e.g., Channel). Within SDC the device measurement range refers to each metric and cannot be populated on higher levels in the containment tree."
+                        "As stated in <<ref_ihe_dev_tf_2_2024>> the reference range can only be set for device related segments (e.g., Channel). Within SDC the device measurement range refers to each metric and cannot be populated on higher levels in the containment tree."
                     ]
                 }
             ],
@@ -2958,19 +4161,23 @@
             "relatedContent": []
         }
     },
-    "8027": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8027,
         "localId": "R8027",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
                 {
                     "type": "block",
                     "lines": [
-                        "A <<actor_somds_dec_gateway>> shall leave the OBX-8 field empty as specified in the <<ref_ihe_pcd_tf_2_2019>> for valid and validated metric values."
+                        "A <<actor_somds_dec_gateway>> shall leave the OBX-8 field empty as specified in the <<ref_ihe_dev_tf_2_2024>> for valid and validated metric values."
                     ]
                 }
             ],
@@ -2979,12 +4186,16 @@
             "relatedContent": []
         }
     },
-    "8028": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8028,
         "localId": "R8028",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3000,12 +4211,16 @@
             "relatedContent": []
         }
     },
-    "8029": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8029,
         "localId": "R8029",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3021,12 +4236,16 @@
             "relatedContent": []
         }
     },
-    "8030": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8030,
         "localId": "R8030",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3042,12 +4261,16 @@
             "relatedContent": []
         }
     },
-    "8031": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8031,
         "localId": "R8031",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3076,12 +4299,16 @@
             "relatedContent": []
         }
     },
-    "8032": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8032,
         "localId": "R8032",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3102,7 +4329,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "The <<ref_ihe_pcd_tf_2_2019>> requires only the map the \"ID Number\", and optionally the \"Family Name\" and \"Given Name\" in this field, whereas the OBR-10 field may contain additional information about the operator."
+                        "The <<ref_ihe_dev_tf_2_2024>> requires only the map the \"ID Number\", and optionally the \"Family Name\" and \"Given Name\" in this field, whereas the OBR-10 field may contain additional information about the operator."
                     ]
                 }
             ],
@@ -3110,12 +4337,16 @@
             "relatedContent": []
         }
     },
-    "8033": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8033,
         "localId": "R8033",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3131,12 +4362,16 @@
             "relatedContent": []
         }
     },
-    "8039": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8039,
         "localId": "R8039",
         "globalId": "",
         "level": "SHOULD",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3152,12 +4387,16 @@
             "relatedContent": []
         }
     },
-    "8034": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8034,
         "localId": "R8034",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3198,12 +4437,16 @@
             "relatedContent": []
         }
     },
-    "8035": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8035,
         "localId": "R8035",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "dec"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3219,12 +4462,16 @@
             "relatedContent": []
         }
     },
-    "8050": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8050,
         "localId": "R8050",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3239,7 +4486,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "For further information, please refer to the <<ref_ihe_pcd_tf_2_2019>>."
+                        "For further information, please refer to the <<ref_ihe_dev_tf_2_2024>>."
                     ]
                 }
             ],
@@ -3247,12 +4494,16 @@
             "relatedContent": []
         }
     },
-    "8051": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8051,
         "localId": "R8051",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3267,7 +4518,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "For further information, please refer to the <<ref_ihe_pcd_tf_2_2019>>."
+                        "For further information, please refer to the <<ref_ihe_dev_tf_2_2024>>."
                     ]
                 }
             ],
@@ -3275,12 +4526,16 @@
             "relatedContent": []
         }
     },
-    "8052": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8052,
         "localId": "R8052",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3315,12 +4570,16 @@
             "relatedContent": []
         }
     },
-    "8053": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8053,
         "localId": "R8053",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3355,12 +4614,16 @@
             "relatedContent": []
         }
     },
-    "8054": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8054,
         "localId": "R8054",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3376,12 +4639,16 @@
             "relatedContent": []
         }
     },
-    "8055": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8055,
         "localId": "R8055",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3396,7 +4663,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "Please refer to the *Appendix B  B.7.1 OBR Observation Request Segment in ACM Transaction [PCD-04]* of the <<ref_ihe_pcd_tf_2_2019>> for further information."
+                        "Please refer to the *Appendix B  B.7.1 OBR Observation Request Segment in ACM Transaction [PCD-04]* of the <<ref_ihe_dev_tf_2_2024>> for further information."
                     ]
                 }
             ],
@@ -3404,12 +4671,16 @@
             "relatedContent": []
         }
     },
-    "8056": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8056,
         "localId": "R8056",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3450,12 +4721,16 @@
             "relatedContent": []
         }
     },
-    "8057": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8057,
         "localId": "R8057",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3478,12 +4753,16 @@
             "relatedContent": []
         }
     },
-    "8058": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8058,
         "localId": "R8058",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3499,12 +4778,16 @@
             "relatedContent": []
         }
     },
-    "8061": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8061,
         "localId": "R8061",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3527,12 +4810,16 @@
             "relatedContent": []
         }
     },
-    "8077": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8077,
         "localId": "R8077",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3548,12 +4835,16 @@
             "relatedContent": []
         }
     },
-    "8062": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8062,
         "localId": "R8062",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3588,12 +4879,16 @@
             "relatedContent": []
         }
     },
-    "8063": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8063,
         "localId": "R8063",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3609,12 +4904,16 @@
             "relatedContent": []
         }
     },
-    "8064": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8064,
         "localId": "R8064",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3630,12 +4929,16 @@
             "relatedContent": []
         }
     },
-    "8065": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8065,
         "localId": "R8065",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3670,12 +4973,16 @@
             "relatedContent": []
         }
     },
-    "8059": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8059,
         "localId": "R8059",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3691,12 +4998,16 @@
             "relatedContent": []
         }
     },
-    "8060": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8060,
         "localId": "R8060",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3712,12 +5023,16 @@
             "relatedContent": []
         }
     },
-    "8066": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8066,
         "localId": "R8066",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3740,12 +5055,16 @@
             "relatedContent": []
         }
     },
-    "8067": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8067,
         "localId": "R8067",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3761,12 +5080,16 @@
             "relatedContent": []
         }
     },
-    "8068": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8068,
         "localId": "R8068",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3782,12 +5105,16 @@
             "relatedContent": []
         }
     },
-    "8069": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8069,
         "localId": "R8069",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3803,12 +5130,16 @@
             "relatedContent": []
         }
     },
-    "8070": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8070,
         "localId": "R8070",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3849,12 +5180,16 @@
             "relatedContent": []
         }
     },
-    "8078": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8078,
         "localId": "R8078",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3870,12 +5205,16 @@
             "relatedContent": []
         }
     },
-    "8071": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8071,
         "localId": "R8071",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3916,12 +5255,16 @@
             "relatedContent": []
         }
     },
-    "8072": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8072,
         "localId": "R8072",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3937,12 +5280,16 @@
             "relatedContent": []
         }
     },
-    "8073": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8073,
         "localId": "R8073",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -3989,19 +5336,23 @@
             "relatedContent": []
         }
     },
-    "8074": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8074,
         "localId": "R8074",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
                 {
                     "type": "block",
                     "lines": [
-                        "A <<actor_somds_acm_gateway>> shall map the SDC *pm:AlertConditionDescriptor/@Priority* attribute to an IHE ACM Alert Priority OBX segment as defined in the <<ref_ihe_pcd_tf_2_2019>>."
+                        "A <<actor_somds_acm_gateway>> shall map the SDC *pm:AlertConditionDescriptor/@Priority* attribute to an IHE ACM Alert Priority OBX segment as defined in the <<ref_ihe_dev_tf_2_2024>>."
                     ]
                 }
             ],
@@ -4023,12 +5374,16 @@
             "relatedContent": []
         }
     },
-    "8075": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8075,
         "localId": "R8075",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -4050,19 +5405,23 @@
             "relatedContent": []
         }
     },
-    "8076": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8076,
         "localId": "R8076",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
                 {
                     "type": "block",
                     "lines": [
-                        "A <<actor_somds_acm_gateway>> shall map the SDC *pm:AlertConditionDescriptor/@Kind* to an IHE ACM Alert Type OBX segment as defined in the <<ref_ihe_pcd_tf_2_2019>>."
+                        "A <<actor_somds_acm_gateway>> shall map the SDC *pm:AlertConditionDescriptor/@Kind* to an IHE ACM Alert Type OBX segment as defined in the <<ref_ihe_dev_tf_2_2024>>."
                     ]
                 }
             ],
@@ -4084,12 +5443,16 @@
             "relatedContent": []
         }
     },
-    "8079": {
+    {
         "type": "tech-feature",
         "requirementNumber": 8079,
         "localId": "R8079",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "gateway",
+            "id": "acm"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -4112,12 +5475,19 @@
             "relatedContent": []
         }
     },
-    "701": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_participant"
+        ],
         "requirementNumber": 701,
         "localId": "R0701",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -4140,12 +5510,16 @@
             "relatedContent": []
         }
     },
-    "702": {
+    {
         "type": "tech-feature",
         "requirementNumber": 702,
         "localId": "R0702",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -4168,12 +5542,19 @@
             "relatedContent": []
         }
     },
-    "19": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_participant"
+        ],
         "requirementNumber": 19,
         "localId": "R0019",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -4189,12 +5570,19 @@
             "relatedContent": []
         }
     },
-    "20": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_participant"
+        ],
         "requirementNumber": 20,
         "localId": "R0020",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -4210,12 +5598,58 @@
             "relatedContent": []
         }
     },
-    "8": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_participant"
+        ],
+        "requirementNumber": 21,
+        "localId": "R0021",
+        "globalId": "",
+        "level": "SHOULD",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Biceps extensions, with timestamps who's interpretation by a <<vol1_spec_sdpi_p_actor_somds_participant>> would be affected by unexpected abrupt time adjustments, should support timestamp versioning using the <<vol3_clause_timestamp_versioningab491a58-caf0-4c64-a06b-9427930f7113timestamp+versioning>> extension."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Extension authors can add types that inherit from `sdpi:TimestampEpochVersionType` to support versioning their timestamps."
+                        }
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 8,
         "localId": "R0008",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -4244,12 +5678,19 @@
             "relatedContent": []
         }
     },
-    "9": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 9,
         "localId": "R0009",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -4272,12 +5713,19 @@
             "relatedContent": []
         }
     },
-    "7": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 7,
         "localId": "R0007",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -4300,12 +5748,19 @@
             "relatedContent": []
         }
     },
-    "12": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_participant"
+        ],
         "requirementNumber": 12,
         "localId": "R0012",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -4321,12 +5776,19 @@
             "relatedContent": []
         }
     },
-    "14": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 14,
         "localId": "R0014",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -4342,12 +5804,19 @@
             "relatedContent": []
         }
     },
-    "15": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 15,
         "localId": "R0015",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -4363,12 +5832,19 @@
             "relatedContent": []
         }
     },
-    "16": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_participant"
+        ],
         "requirementNumber": 16,
         "localId": "R0016",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -4384,12 +5860,19 @@
             "relatedContent": []
         }
     },
-    "17": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 17,
         "localId": "R0017",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -4405,12 +5888,19 @@
             "relatedContent": []
         }
     },
-    "18": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 18,
         "localId": "R0018",
         "globalId": "",
         "level": "SHOULD",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -4426,12 +5916,16 @@
             "relatedContent": []
         }
     },
-    "703": {
+    {
         "type": "tech-feature",
         "requirementNumber": 703,
         "localId": "R0703",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -4447,12 +5941,16 @@
             "relatedContent": []
         }
     },
-    "704": {
+    {
         "type": "tech-feature",
         "requirementNumber": 704,
         "localId": "R0704",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -4468,12 +5966,16 @@
             "relatedContent": []
         }
     },
-    "705": {
+    {
         "type": "tech-feature",
         "requirementNumber": 705,
         "localId": "R0705",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -4489,12 +5991,16 @@
             "relatedContent": []
         }
     },
-    "706": {
+    {
         "type": "tech-feature",
         "requirementNumber": 706,
         "localId": "R0706",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -4510,12 +6016,16 @@
             "relatedContent": []
         }
     },
-    "707": {
+    {
         "type": "tech-feature",
         "requirementNumber": 707,
         "localId": "R0707",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -4531,12 +6041,16 @@
             "relatedContent": []
         }
     },
-    "708": {
+    {
         "type": "tech-feature",
         "requirementNumber": 708,
         "localId": "R0708",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -4552,12 +6066,307 @@
             "relatedContent": []
         }
     },
-    "1006": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
+        "requirementNumber": 600,
+        "localId": "R0600",
+        "globalId": "",
+        "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> shall include the `sdpi:EpochSupport` extension and set `sdpi:EpochSupport/@Version=1` in every <<term_system_clock>> `pm:ClockDescriptor`, used as part of its System Function Contribution (<<acronym_sfc>>), that uses epoch versioning for <<term_abrupt_time_adjustment>>s."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The presence of `sdpi:EpochSupport` indicates support for this extension and related requirements."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "A <<vol1_spec_sdpi_p_actor_somds_provider>> may set `ext:MustUnderstand=\"true\"` to prevent consumers that do not understand this extension from processing the <<acronym_mdib>>."
+                        }
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_consumer"
+        ],
+        "requirementNumber": 601,
+        "localId": "R0601",
+        "globalId": "",
+        "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> shall ignore all epoch version information on any system clocks that do not include the `sdpi:EpochSupport` extension in any MDIB version or if the `sdpi:EpochSupport/@Version` changes within a single sequence id."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The `spdi:EpochSupport` extension is intended to be immutable."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "A <<vol1_spec_sdpi_p_actor_somds_consumer>> may rely on future versions of the extension being backwards compatible."
+                        }
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
+        "requirementNumber": 605,
+        "localId": "R0605",
+        "globalId": "",
+        "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The <<vol1_spec_sdpi_p_actor_somds_provider>> shall increment `sdpi:Epochs/@Version` by exactly one, beginning from 0, for every non-slewing time adjustment to any system clock used as part of its System Function Contribution (<<acronym_sfc>>)."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
+        "requirementNumber": 606,
+        "localId": "R0606",
+        "globalId": "",
+        "level": "SHOULD",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> should set the version of all versioned timestamps to 0 when it assigns a new MDIB sequence identifier (`pm:MdibVersionGroup/@SequenceId`)."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Epoch versions are generally scoped to the `pm:MdibVersionGroup/@SequenceId`. Some providers may carry versioned timestamps across new sequences, particularly if the new sequence is created for reasons other than an abrupt time adjustment."
+                        }
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
+        "requirementNumber": 610,
+        "localId": "R0610",
+        "globalId": "",
+        "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> that versions timestamps in any `pm:AbstractMetricValue`, `pm:AbstractContextState`, `pm:AlertSystemState`, `pm:CalibrationInfo` and/or `pm:AlertConditionState` shall include, in every clock state update, the complete history of epoch offsets from the earliest version referenced in the MDIB to the current epoch."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Epoch offsets provide a mechanism for consumers to (approximately) reconstruct time between epochs. Reconstruction can only be approximate because there is no mechanism to determine the source and timing of any external discrepancies that led to the abrupt change in a <<term_time_reference_frame>>."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "This allows a <<vol1_spec_sdpi_p_actor_somds_provider>> to choose which timestamps it versions. For example context binding timestamps (which may remain out of date significantly longer than other metrics) could be versioned but regularly updated metrics may not require timestamp versions."
+                        }
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
+        "requirementNumber": 611,
+        "localId": "R0611",
+        "globalId": "",
+        "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> shall not change the epoch version assigned to a timestamp without creating a new timestamp."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Epoch versions and timestamps are immutable and may not change independently."
+                        }
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
+        "requirementNumber": 612,
+        "localId": "R0612",
+        "globalId": "",
+        "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "When the source clock of a versioned timestamp is ambiguous, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall include a reference to the `pm:ClockDescriptor/@Handle` in `sdpi:TimestampEpochVersionType/@Clock`."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The clock source is not ambiguous when there is only one clock in the whole <<acronym_mdib>>, or there is only one clock in the `pm:Mds` containing the `pm:AbstractState` that includes the versioned timestamp and the version timestamp does not use a clock from a different `pm:Mds`."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The `sdpi:TimestampEpochVersionType/@Clock` may be omitted when the source clock is not ambiguous to reduce message size."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "This extension does not support timestamps in a single `pm:AbstractState` to be versioned from more than one source clock."
+                        }
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_provider",
+            "somds_consumer"
+        ],
         "requirementNumber": 1006,
         "localId": "R1006",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -4580,12 +6389,19 @@
             "relatedContent": []
         }
     },
-    "1007": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 1007,
         "localId": "R1007",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -4608,12 +6424,19 @@
             "relatedContent": []
         }
     },
-    "1008": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 1008,
         "localId": "R1008",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -4642,12 +6465,19 @@
             "relatedContent": []
         }
     },
-    "1009": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 1009,
         "localId": "R1009",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -4676,12 +6506,19 @@
             "relatedContent": []
         }
     },
-    "1010": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 1010,
         "localId": "R1010",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -4704,12 +6541,19 @@
             "relatedContent": []
         }
     },
-    "1011": {
+    {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 1011,
         "localId": "R1011",
         "globalId": "",
         "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
         "groups": [],
         "specification": {
             "normativeContent": [
@@ -4738,4 +6582,4 @@
             "relatedContent": []
         }
     }
-}
+]
