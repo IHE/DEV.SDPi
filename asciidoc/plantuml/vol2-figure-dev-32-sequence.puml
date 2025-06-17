@@ -1,0 +1,22 @@
+@startuml
+
+!include plantuml/common_style.inc.puml
+autonumber
+
+!global $str_somds_consumer = "SOMDS Consumer"
+!global $str_somds_provider = "SOMDS Provider"
+
+participant "$str_somds_consumer" as consumer
+participant "$str_somds_provider" as provider
+
+==Retrieve Archive Data [DEV-32]==
+
+consumer -> provider: Subscribe(Filter)
+
+loop
+consumer <<-- provider: ChangeSequenceReport([LocalizedTexts], [InitialMdib], [Reports])
+end
+
+consumer <-- provider: SubscriptionEnd
+
+@enduml
