@@ -54,8 +54,7 @@ include::../volume2/dev-27/tf2-dev-27-summary.adoc[]
 | [[transaction_name_notify_change_in_system_context_and_capabilities,Notify Change in System Context and Capabilities]] Notify Change in System Context and Capabilities
 |
 include::../volume2/dev-28/tf2-dev-28-summary.adoc[]
-.^| [[vol0_transaction_summary_dev_29,DEV-29 Publish BICEPS Update Reports]]
-[[transaction_number_dev_29,DEV-29]] DEV-29
+.^| [[vol0_transaction_summary_dev_29,DEV-29 Publish BICEPS Update Reports]] DEV-29
 | [[transaction_name_publish_biceps_update_reports,Publish BICEPS Update Reports]] Publish BICEPS Update Reports
 |
 include::../volume2/dev-29/tf2-dev-29-summary.adoc[]
@@ -72,10 +71,10 @@ include::../volume2/dev-30/tf2-dev-30-summary.adoc[]
 // include::../volume2/dev-31/tf2-dev-31-summary.adoc[]
 
 .^| [[vol0_transaction_summary_dev_32,DEV-32 Retrieve Archive Data]]
-[[transaction_number_dev_30,DEV-32]] DEV-32
+[[transaction_number_dev_32,DEV-32]] DEV-32
 | [[transaction_name_retrieve_archive_data,Retrieve Archive Data]] Retrieve Archive Data
-| Deferred to a future version of SDPi
-// include::../volume2/dev-32/tf2-dev-32-summary.adoc[]
+|
+include::../volume2/dev-32/tf2-dev-32-summary.adoc[]
 .^| [[vol0_transaction_summary_dev_33,DEV-33 Retrieve Localization Information]]
 [[transaction_number_dev_33,DEV-33]] DEV-33
 | [[transaction_name_retrieve_localization_information,Retrieve Localization Information]] Retrieve Localization Information
