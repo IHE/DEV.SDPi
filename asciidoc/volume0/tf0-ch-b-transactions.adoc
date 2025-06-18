@@ -81,8 +81,7 @@ include::../volume2/dev-32/tf2-dev-32-summary.adoc[]
 |
 include::../volume2/dev-33/tf2-dev-33-summary.adoc[]
 
-//.^| [[vol0_transaction_summary_dev_34,DEV-34 Announce Network Departure]]
-//[[transaction_number_dev_34,DEV-34]] DEV-34
+//| [[vol0_transaction_summary_dev_34,DEV-34 Announce Network Departure]] DEV-34
 //| [[transaction_name_announce_network_departure,Announce Network Departure]] Announce Network Departure
 //|
 //include::../volume2/dev-34/tf2-dev-34-summary.adoc[]
