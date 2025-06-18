@@ -134,7 +134,7 @@
 | SDC
 
 | [[term_history_service, History Service]] History Service
-| A service to access historical <<acronym_mdib>> data by means of an initial <<term_mdib_configuration>> and subsequent change reports. The History Service replaces the ARCHIVE SERVICE specified in <<acronym_biceps>> and is used to implement <<transaction_number_dev_30>>.
+| A service to access historical <<acronym_mdib>> data by means of an initial <<term_mdib_configuration>> and subsequent change reports. The History Service replaces the ARCHIVE SERVICE specified in <<acronym_biceps>> and is used to implement <<vol0_transaction_summary_dev_30>>.
 |
 |
 |
