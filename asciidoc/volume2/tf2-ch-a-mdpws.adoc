@@ -64,6 +64,8 @@ include::dev-47/tf2-ch-a-mdpws-dev-47.adoc[]
 
 include::discovery-proxy/tf2-ch-a-mdpws-discovery-proxy.adoc[]
 
+include::history-service/tf2-ch-a-mdpws-history-service.adoc[]
+
 === Security Considerations
 
 In TR1164, <<ref_ieee_11073_10700_2022, IEEE 11073-10700>> requires a <<vol1_spec_sdpi_p_actor_somds_provider>> to protect <<acronym_biceps>> services against unauthenticated access.
