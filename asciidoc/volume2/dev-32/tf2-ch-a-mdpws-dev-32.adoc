@@ -1,189 +1,144 @@
 :var_uri_ws_eventing_notification: https://www.w3.org/Submission/2006/SUBM-WS-Eventing-20060315/#Notifications
-:var_label_dev_29_message_alertreport: EpisodicAlertReport
-:var_label_dev_29_message_metricreport: EpisodicMetricReport
-:var_label_dev_29_message_componentreport: EpisodicComponentReport
-:var_label_dev_29_message_descriptionmodificationreport: DescriptionModificationReport
-:var_label_dev_29_message_operationalstatereport: EpisodicOperationalStateReport
-:var_label_dev_29_message_waveformstream: WaveformStream
+
+:var_label_dev_32_message_subscribe: Subscribe
+:var_label_dev_32_message_change_sequence_report: ChangeSequenceReport
 :var_uri_dpws_messaging: http://docs.oasis-open.org/ws-dd/dpws/1.1/os/wsdd-dpws-1.1-spec-os.html#_Toc228672084
 
-[#vol2_clause_appendix_mdpws_dev_29]
-==== MDPWS: Publish BICEPS Update Reports  [DEV-29]
+[#vol2_clause_appendix_mdpws_dev_32]
+==== MDPWS: Retrieve Archive Data  [DEV-32]
 
-This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_29>>.
+This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_32>>.
 
 // ---------- EpisodicAlertReport ---------
 
 
-===== {var_label_dev_29_message_alertreport} Message
+===== {var_label_dev_32_message_subscribe} Message
 
-The <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_alertreport}>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
+<<vol0_transaction_summary_dev_32>> leverages <<vol0_transaction_summary_dev_27>> to initiate a subscription, which is used to deliver historic <<acronym_mdib>> data to a <<vol1_clause_sdpi_p_somds_consumer>>.
+
+The {var_label_dev_32_message_subscribe} message contains filter criteria to the <<term_history_service>>, which is defined in this section. Further message outlines are shown in <<vol2_clause_appendix_mdpws_dev_27>>.
+
+The {<<vol2_clause_appendix_mdpws_dev_27>>} message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
 
 ====== Referenced Standards
 
-* <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
-* <<ref_ieee_11073_10207_2017>> msg:EpisodicAlertReport
+* <<ref_w3c_ws_eventing_2006>> {var_uri_ws_eventing_subscribe}[Section 3.1 Subscribe]
+* <<ref_oasis_dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
 
 ====== Message Outline
 
-.EpisodicAlertReport message
-[source#vol2_clause_appendix_a_mdpws_dev_29_alertreport,xml]
+.WS-Eventing Subscribe message
+[source#vol2_clause_appendix_a_mdpws_dev_32_subscribe,xml]
 ----
-include::../../listings/vol2-clause-appendix-a-mdpws-dev-29-alertreport.xml[]
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-32-subscribe.xml[]
 ----
 
-:var_trigger_events_ref: <<vol2_clause_dev_29_message_notification>>
+:var_trigger_events_ref: <<vol2_clause_dev_32_message_notification>>
 include::../dev-a-default-trigger-events.adoc[]
 
 ====== Message Semantics
 
-`s12:Envelope/s12:Body/msg:EpisodicAlertReport`:: Updated alert information of a <<vol1_spec_sdpi_p_actor_somds_provider>>.
+`s12:Envelope/s12:Body/wse:Subscribe/wse:Filter/@Dialect`:: To be set to `urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.3.1.1`, which is the default one defined in this specification. Other dialects may be supported but are not in the scope herein.
+`s12:Envelope/s12:Body/wse:Subscribe/wse:Filter/hm:ProvideInitialMdib`:: Set to `true` if an initial <<acronym_mdib>> is requested or `false` otherwise.
+`s12:Envelope/s12:Body/wse:Subscribe/wse:Filter/hm:LanguageFilter`:: A list of languages for localized texts to be requested (see data type description in <<vol2_clause_appendix_a_mdpws_history_service_xmlschema>> for more details).
+`s12:Envelope/s12:Body/wse:Subscribe/wse:Filter/hm:Range`:: A range that selects the historic <<acronym_mdib>> data, either based on time frames or <<acronym_mdib>> versions (see data type description in <<vol2_clause_appendix_a_mdpws_history_service_xmlschema>> for more details).
 
-:var_expected_actions_ref: <<vol2_clause_dev_29_message_notification>>
+:var_expected_actions_ref: <<vol2_clause_dev_32_message_notification>>
 include::../dev-a-default-expected-actions.adoc[]
 
-// ---------- EpisodicMetricReport ---------
+// ---------- ChangeSequenceReport ---------
 
-===== {var_label_dev_29_message_metricreport} Message
+===== {var_label_dev_32_message_change_sequence_report} Message
 
-The <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_metricreport}>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
+The <<vol2_clause_dev_32_message_notification, {var_label_dev_32_message_change_sequence_report}>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
 
 ====== Referenced Standards
 
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
-* <<ref_ieee_11073_10207_2017>> msg:EpisodicMetricReport
 
 ====== Message Outline
 
-.EpisodicMetricReport message
-[source#vol2_clause_appendix_a_mdpws_dev_29_metricreport,xml]
+.{var_label_dev_32_message_change_sequence_report} message
+[source#vol2_clause_appendix_a_mdpws_dev_32_changesequencereport,xml]
 ----
-include::../../listings/vol2-clause-appendix-a-mdpws-dev-29-metricreport.xml[]
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-32-changesequencereport.xml[]
 ----
 
-:var_trigger_events_ref: <<vol2_clause_dev_29_message_notification>>
+:var_trigger_events_ref: <<vol2_clause_dev_32_message_notification>>
 include::../dev-a-default-trigger-events.adoc[]
 
 ====== Message Semantics
 
-`s12:Envelope/s12:Body/msg:EpisodicMetricReport`:: Updated metric information of a <<vol1_spec_sdpi_p_actor_somds_provider>>.
+`s12:Envelope/s12:Body/hm:ChangeSequenceReport/hm:ChangeSequence`:: One sequence of changes in the scope of <<acronym_mdib>> sequence and instance id.
+`s12:Envelope/s12:Body/hm:ChangeSequenceReport/hm:HistoricLocalizedTexts`:: Sequence of localized texts referenced from within the historic <<acronym_mdib>>. Element is omitted if not requested in the Subscribe request.
+`s12:Envelope/s12:Body/hm:ChangeSequenceReport/hm:HistoricMdib`:: A <<acronym_mdib>> used as a baseline for subsequent historic reports. Element is omitted if not requested in the Subscribe request.
+`s12:Envelope/s12:Body/hm:ChangeSequenceReport/hm:HistoricReport`:: A sequence of historic reports.
 
-:var_expected_actions_ref: <<vol2_clause_dev_29_message_notification>>
+:var_expected_actions_ref: <<vol2_clause_dev_32_message_notification>>
 include::../dev-a-default-expected-actions.adoc[]
 
+===== Use-cases
 
-// ---------- EpisodicComponentReport ---------
+This section provides sequence diagrams depicting different <<term_history_service>> use-cases, namely
 
-===== {var_label_dev_29_message_componentreport} Message
+- xref:vol2_figure_dev_32_usecase_version_range[Requesting a specific range of versions]
+- xref:vol2_figure_dev_32_usecase_one_sequence_id[Requesting a time range spanning one <<acronym_mdib>> sequence]
+- xref:vol2_figure_dev_32_usecase_two_sequence_ids[Requesting a time range spanning multiple <<acronym_mdib>> sequences]
 
-The <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_componentreport}>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
+.<<term_history_service>>: Requesting a specific range of versions
+[plantuml#vol2_figure_dev_32_usecase_version_range, target=puml-dev-32-usecase-version-range, format=svg]
+....
+include::../../plantuml/vol2-figure-dev-32-usecase-version-range.puml[]
+....
 
-====== Referenced Standards
+.<<term_history_service>>: Requesting a time range spanning one <<acronym_mdib>> sequence
+[plantuml#vol2_figure_dev_32_usecase_one_sequence_id, target=puml-dev-32-usecase-one-sequence-id, format=svg]
+....
+include::../../plantuml/vol2-figure-dev-32-usecase-one-sequence-id.puml[]
+....
 
-* <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
-* <<ref_ieee_11073_10207_2017>> msg:EpisodicComponentReport
+.<<term_history_service>>: Requesting a time range spanning one <<acronym_mdib>> sequence
+[plantuml#vol2_figure_dev_32_usecase_two_sequence_ids, target=puml-dev-32-usecase-two-sequence-ids, format=svg]
+....
+include::../../plantuml/vol2-figure-dev-32-usecase-two-sequence-ids.puml[]
+....
 
-====== Message Outline
+===== Example message exchange
 
-.EpisodicComponentReport message
-[source#vol2_clause_appendix_a_mdpws_dev_29_componentreport,xml]
+This section shows an exemplary sequence of messages when requesting the <<term_history_service>>.
+
+.Subscribe message targeted at the <<vol1_clause_sdpi_p_somds_provider>>
+[source#vol2_clause_appendix_a_mdpws_dev_32_example_00,xml]
 ----
-include::../../listings/vol2-clause-appendix-a-mdpws-dev-29-componentreport.xml[]
-----
-
-:var_trigger_events_ref: <<vol2_clause_dev_29_message_notification>>
-include::../dev-a-default-trigger-events.adoc[]
-
-====== Message Semantics
-
-`s12:Envelope/s12:Body/msg:EpisodicComponentReport`:: Updated component information of a <<vol1_spec_sdpi_p_actor_somds_provider>>.
-
-:var_expected_actions_ref: <<vol2_clause_dev_29_message_notification>>
-include::../dev-a-default-expected-actions.adoc[]
-
-// ---------- DescriptionModificationReport ---------
-
-===== {var_label_dev_29_message_descriptionmodificationreport} Message
-
-The <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_descriptionmodificationreport}>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
-
-====== Referenced Standards
-
-* <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
-* <<ref_ieee_11073_10207_2017>> msg:DescriptionModificationReport
-
-====== Message Outline
-
-.DescriptionModificationReport message
-[source#vol2_clause_appendix_a_mdpws_dev_29_descriptionmodificationreport,xml]
-----
-include::../../listings/vol2-clause-appendix-a-mdpws-dev-29-descriptionmodificationreport.xml[]
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-32-example-00.xml[]
 ----
 
-:var_trigger_events_ref: <<vol2_clause_dev_29_message_notification>>
-include::../dev-a-default-trigger-events.adoc[]
-
-====== Message Semantics
-
-`s12:Envelope/s12:Body/msg:DescriptionModificationReport`:: Updated description modification information of a <<vol1_spec_sdpi_p_actor_somds_provider>>.
-
-:var_expected_actions_ref: <<vol2_clause_dev_29_message_notification>>
-include::../dev-a-default-expected-actions.adoc[]
-
-// ---------- EpisodicOperationalStateReport ---------
-
-===== {var_label_dev_29_message_operationalstatereport} Message
-
-The <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_operationalstatereport}>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
-
-====== Referenced Standards
-
-* <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
-* <<ref_ieee_11073_10207_2017>> msg:EpisodicOperationalStateReport
-
-====== Message Outline
-
-.EpisodicOperationalStateReport message
-[source#vol2_clause_appendix_a_mdpws_dev_29_operationalstatereport,xml]
+.SubscribeResponse message targeted at the <<vol1_clause_sdpi_p_somds_consumer>>
+[source#vol2_clause_appendix_a_mdpws_dev_32_example_01,xml]
 ----
-include::../../listings/vol2-clause-appendix-a-mdpws-dev-29-operationalstatereport.xml[]
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-32-example-01.xml[]
 ----
 
-:var_trigger_events_ref: <<vol2_clause_dev_29_message_notification>>
-include::../dev-a-default-trigger-events.adoc[]
-
-====== Message Semantics
-
-`s12:Envelope/s12:Body/msg:EpisodicOperationalStateReport`:: Updated operational state information of a <<vol1_spec_sdpi_p_actor_somds_provider>>.
-
-:var_expected_actions_ref: <<vol2_clause_dev_29_message_notification>>
-include::../dev-a-default-expected-actions.adoc[]
-
-// ---------- WaveformStream ---------
-
-===== {var_label_dev_29_message_waveformstream} Message
-
-The <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_waveformstream}>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
-
-====== Referenced Standards
-
-* <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
-* <<ref_ieee_11073_10207_2017>> msg:WaveformStream
-
-====== Message Outline
-
-.WaveformStream message
-[source#vol2_clause_appendix_a_mdpws_dev_29_waveformstream,xml]
+.ChangeSequenceReport message targeted at the <<vol1_clause_sdpi_p_somds_consumer>>
+[source#vol2_clause_appendix_a_mdpws_dev_32_example_02,xml]
 ----
-include::../../listings/vol2-clause-appendix-a-mdpws-dev-29-waveformstream.xml[]
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-32-example-02.xml[]
 ----
 
-:var_trigger_events_ref: <<vol2_clause_dev_29_message_notification>>
-include::../dev-a-default-trigger-events.adoc[]
+.ChangeSequenceReport message targeted at the <<vol1_clause_sdpi_p_somds_consumer>>
+[source#vol2_clause_appendix_a_mdpws_dev_32_example_03,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-32-example-03.xml[]
+----
 
-====== Message Semantics
+.ChangeSequenceReport message targeted at the <<vol1_clause_sdpi_p_somds_consumer>>
+[source#vol2_clause_appendix_a_mdpws_dev_32_example_04,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-32-example-04.xml[]
+----
 
-`s12:Envelope/s12:Body/msg:WaveformStream`:: Waveform stream of a <<vol1_spec_sdpi_p_actor_somds_provider>>.
-
-:var_expected_actions_ref: <<vol2_clause_dev_29_message_notification>>
-include::../dev-a-default-expected-actions.adoc[]
+.SubscriptionEnd message targeted at the <<vol1_clause_sdpi_p_somds_consumer>>
+[source#vol2_clause_appendix_a_mdpws_dev_32_example_05,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-32-example-05.xml[]
+----

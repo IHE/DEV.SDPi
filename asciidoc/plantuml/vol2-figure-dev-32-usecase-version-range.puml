@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+!include plantuml/common_style.inc.puml
+autonumber
+
+!global $str_somds_consumer = "SOMDS Consumer"
+!global $str_somds_provider = "SOMDS Provider"
+
+participant "$str_somds_consumer" as Consumer
+participant "$str_somds_provider" as Provider
+
+Consumer -> Provider: Subscribe(Filter=HistoryQuery(@StartVersion=vStart, @EndVersion=vEnd), ...)
+Consumer <- Provider: SubscribeResponse(...)
+
+Consumer <-- Provider:  ChangeSequenceReport(ChangeSequence(@SequenceId=X, Mdib, Report*))
+loop until no more reports exist for @SequenceId=X
+    Consumer <-- Provider:  ChangeSequenceReport(ChangeSequence(@SequenceId=X, Report*))
+end
+
+Consumer <-- Provider: SubscriptionEnd(SourceCancelling)
+
+@enduml
