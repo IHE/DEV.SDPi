@@ -132,27 +132,37 @@
 				<xsd:annotation>
 					<xsd:documentation>A language filter to opt-in for requesting localized texts.
 
-- If the LanguageFilter element does not exist, no pm:LocalizedText elements are to be selected
-- If the LanguageFilter element exists and the list is empty, all pm:LocalizedText elements are to be selected
-- If the LanguageFilter element exists and the list is not empty, all pm:LocalizedText elements are to be selected where pm:LocalizedText@Lang is element of LanguageFilter</xsd:documentation>
+						- If the LanguageFilter element does not exist, no pm:LocalizedText elements are to be selected
+						- If the LanguageFilter element exists and the list is empty, all pm:LocalizedText elements are to be selected
+						- If the LanguageFilter element exists and the list is not empty, all pm:LocalizedText elements are to be selected where pm:LocalizedText@Lang is element of LanguageFilter</xsd:documentation>
 				</xsd:annotation>
 				<xsd:simpleType>
 					<xsd:list itemType="xsd:language"/>
 				</xsd:simpleType>
 			</xsd:element>
-			<xsd:choice>
-				<xsd:element name="TimeRange" type="hm:TimeRangeType">
-					<xsd:annotation>
-						<xsd:documentation>Time range that is requested from a history service. Timestamps refer to the clock of the requested SDC SERVICE PROVIDER and do not necessarily correspond to a specific determination time in the MDIB. Results from time range-based querying are typically imprecise and depend on a synchronized clock between SDC SERVICE PROVIDER and SDC SERVICE CONSUMER. Hence, version range-based querying is always preferred over time range-based querying.</xsd:documentation>
-					</xsd:annotation>
-				</xsd:element>
-				<xsd:element name="VersionRange" type="hm:VersionRangeType">
-					<xsd:annotation>
-						<xsd:documentation>Version range that is requested from a history service.</xsd:documentation>
-					</xsd:annotation>
-				</xsd:element>
-			</xsd:choice>
+			<xsd:element name="Range" type="hm:RangeType">
+				<xsd:annotation>
+					<xsd:documentation>The time or MDIB version range to select.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
 		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="RangeType">
+		<xsd:annotation>
+			<xsd:documentation>A range based on either time frames or MDIB versions.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:choice>
+			<xsd:element name="Time" type="hm:TimeRangeType">
+				<xsd:annotation>
+					<xsd:documentation>Time range that is requested from a history service. Timestamps refer to the clock of the requested SDC SERVICE PROVIDER and do not necessarily correspond to a specific determination time in the MDIB. Results from time range-based querying are typically imprecise and depend on a synchronized clock between SDC SERVICE PROVIDER and SDC SERVICE CONSUMER. Hence, version range-based querying is always preferred over time range-based querying.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Version" type="hm:VersionRangeType">
+				<xsd:annotation>
+					<xsd:documentation>Version range that is requested from a history service.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:choice>
 	</xsd:complexType>
 	<xsd:complexType name="TimeRangeType">
 		<xsd:annotation>
