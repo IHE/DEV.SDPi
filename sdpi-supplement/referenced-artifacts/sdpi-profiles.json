@@ -342,7 +342,7 @@
         ],
         "actor-options": [
             {
-                "id": "rrd",
+                "id": "retrieve_remote_data",
                 "label": "Retrieve Remote Data",
                 "anchor": "vol1_clause_sdpi_r_actor_option_retrieve_remote_data",
                 "transactionReferences": [

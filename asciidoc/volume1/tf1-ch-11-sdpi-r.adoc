@@ -224,7 +224,7 @@ See <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>> for additional information.
 [#vol1_clause_sdpi_r_actor_options]
 === SDPi-R Actor Options
 
-[#vol1_clause_sdpi_r_actor_option_retrieve_remote_data,role=actor-option,actor-option-id=rrd]
+[#vol1_clause_sdpi_r_actor_option_retrieve_remote_data,role=actor-option,actor-option-id=retrieve_remote_data]
 ==== Retrieve Remote Data
 
 
