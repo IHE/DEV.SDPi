@@ -110,29 +110,17 @@
                 ]
             },
             {
-                "transactionId": "DEV-34",
+                "transactionId": "DEV-46",
                 "obligations": [
                     {
                         "contribution": "RECEIVER",
-                        "obligation": "OPTIONAL"
+                        "obligation": "REQUIRED",
+                        "actorId": "discovery_proxy"
                     },
-                    {
-                        "contribution": "INITIATOR",
-                        "obligation": "OPTIONAL"
-                    }
-                ]
-            },
-            {
-                "transactionId": "DEV-46",
-                "obligations": [
                     {
                         "contribution": "INITIATOR",
                         "obligation": "OPTIONAL",
                         "actorId": "somds_provider"
-                    },
-                    {
-                        "contribution": "RESPONDER",
-                        "obligation": "REQUIRED"
                     }
                 ]
             },
@@ -162,13 +150,14 @@
                         "transactionId": "DEV-46",
                         "obligations": [
                             {
+                                "contribution": "RECEIVER",
+                                "obligation": "REQUIRED",
+                                "actorId": "discovery_proxy"
+                            },
+                            {
                                 "contribution": "INITIATOR",
                                 "obligation": "REQUIRED",
                                 "actorId": "somds_provider"
-                            },
-                            {
-                                "contribution": "RESPONDER",
-                                "obligation": "REQUIRED"
                             }
                         ]
                     },
@@ -395,6 +384,68 @@
         "profileId": "sdpi-a",
         "anchor": "vol1_clause_sdpi_a_profile",
         "label": "Alerting Profile",
+        "transactionReferences": [
+            {
+                "transactionId": "DEV-38",
+                "obligations": [
+                    {
+                        "contribution": "RESPONDER",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_medical_alert_provider"
+                    },
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_medical_alert_consumer"
+                    },
+                    {
+                        "contribution": "RESPONDER",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_acm_gateway"
+                    }
+                ]
+            },
+            {
+                "transactionId": "DEV-39",
+                "obligations": [
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_medical_alert_provider"
+                    },
+                    {
+                        "contribution": "RESPONDER",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_medical_alert_consumer"
+                    },
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_acm_gateway"
+                    }
+                ]
+            },
+            {
+                "transactionId": "DEV-40",
+                "obligations": [
+                    {
+                        "contribution": "RESPONDER",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_medical_alert_provider"
+                    },
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "OPTIONAL",
+                        "actorId": "somds_medical_alert_consumer"
+                    },
+                    {
+                        "contribution": "RESPONDER",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_acm_gateway"
+                    }
+                ]
+            }
+        ],
         "actors": [
             {
                 "id": "somds_medical_alert_provider",
@@ -413,6 +464,57 @@
                 "label": "SOMDS ACM Gateway",
                 "profile": "sdpi-a",
                 "anchor": "vol1_clause_sdpi_a_somds_acm_gateway"
+            }
+        ],
+        "actor-options": [
+            {
+                "id": "alert_delegation",
+                "label": "Alert Delegation Option",
+                "anchor": "vol1_clause_sdpi_a_actor_option_alert_delegation",
+                "transactionReferences": []
+            },
+            {
+                "id": "alert_user_acknowledgement",
+                "label": "Alert User Acknowledgement Option",
+                "anchor": "vol1_clause_sdpi_a_actor_option_alert_user_acknowledgement",
+                "transactionReferences": []
+            },
+            {
+                "id": "remote_alert_signaling",
+                "label": "Remote Alert Signaling",
+                "anchor": "vol1_clause_sdpi_a_actor_option_remote_alert_signaling",
+                "transactionReferences": [
+                    {
+                        "transactionId": "DEV-38",
+                        "obligations": [
+                            {
+                                "contribution": "INITIATOR",
+                                "obligation": "REQUIRED",
+                                "actorId": "somds_acm_gateway"
+                            }
+                        ]
+                    },
+                    {
+                        "transactionId": "DEV-39",
+                        "obligations": [
+                            {
+                                "contribution": "RESPONDER",
+                                "obligation": "REQUIRED",
+                                "actorId": "somds_acm_gateway"
+                            }
+                        ]
+                    },
+                    {
+                        "transactionId": "DEV-40",
+                        "obligations": [
+                            {
+                                "contribution": "INITIATOR",
+                                "obligation": "OPTIONAL",
+                                "actorId": "somds_acm_gateway"
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     },

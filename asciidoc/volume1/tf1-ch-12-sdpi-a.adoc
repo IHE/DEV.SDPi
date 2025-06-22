@@ -63,6 +63,19 @@ image::../images/vol1-diagram-sdpi-a-actor.svg[]
 
 ////
 
+sdpi_include_transaction::DEV-38[actor-id="somds_medical_alert_provider",responder="required"]
+sdpi_include_transaction::DEV-39[actor-id="somds_medical_alert_provider",initiator="required"]
+sdpi_include_transaction::DEV-40[actor-id="somds_medical_alert_provider",responder="required"]
+
+sdpi_include_transaction::DEV-38[actor-id="somds_medical_alert_consumer",initiator="required"]
+sdpi_include_transaction::DEV-39[actor-id="somds_medical_alert_consumer",responder="required"]
+sdpi_include_transaction::DEV-40[actor-id="somds_medical_alert_consumer",initiator="optional"]
+
+sdpi_include_transaction::DEV-38[actor-id="somds_acm_gateway",responder="required"]
+sdpi_include_transaction::DEV-39[actor-id="somds_acm_gateway",initiator="required"]
+sdpi_include_transaction::DEV-40[actor-id="somds_acm_gateway",responder="required"]
+
+
 [#vol1_table_sdpi_a_actors_transactions]
 .SDPi-A Profile - Actors and Transactions
 [%autowidth]
@@ -264,7 +277,7 @@ If a <<label_system_type_name_sas>> is being created, it may incorporate both <<
 [#vol1_clause_sdpi_a_actor_options]
 === SDPi-A Actor Options
 
-[#vol1_clause_sdpi_a_actor_option_alert_delegation]
+[#vol1_clause_sdpi_a_actor_option_alert_delegation,role=actor-option,actor-option-id=alert_delegation]
 ==== Alert Delegation Option
 
 [#vol1_clause_sdpi_a_actor_option_alert_delegation_reftext, reftext='SDPi-A Option:  Alert Delegation']
@@ -299,7 +312,7 @@ include::../plantuml/vol1-figure-sdpi-a-delegation-example-sequence-diagram.puml
 ....
 
 
-[#vol1_clause_sdpi_a_actor_option_alert_user_acknowledgement]
+[#vol1_clause_sdpi_a_actor_option_alert_user_acknowledgement,role=actor-option,actor-option-id=alert_user_acknowledgement]
 ==== Alert User Acknowledgement Option
 
 [#vol1_clause_sdpi_a_actor_option_alert_user_acknowledgement_reftext, reftext='SDPi-A Option:  Alert User Acknowledgement']
@@ -314,8 +327,12 @@ This option will enable the <<transaction_name_update_alert_acknowledgement_stat
 
 |===
 
-[#vol1_clause_sdpi_a_actor_option_remote_alert_signaling]
+[#vol1_clause_sdpi_a_actor_option_remote_alert_signaling,role=actor-option,actor-option-id=remote_alert_signaling]
 ==== Remote Alert Signaling
+
+sdpi_include_transaction::DEV-38[actor-id="somds_acm_gateway",initiator="required"]
+sdpi_include_transaction::DEV-39[actor-id="somds_acm_gateway",responder="required"]
+sdpi_include_transaction::DEV-40[actor-id="somds_acm_gateway",initiator="optional"]
 
 [#vol1_clause_sdpi_a_actor_option_remote_alert_signaling_reftext, reftext='SDPi-A Option:  Remote Alert Signaling']
 [%noheader]

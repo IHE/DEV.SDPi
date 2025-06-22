@@ -61,8 +61,7 @@ sdpi_include_transaction::DEV-27[initiator="required", responder="required"]
 sdpi_include_transaction::DEV-28[initiator="optional", receiver="optional"]
 sdpi_include_transaction::DEV-29[initiator="required", receiver="required"]
 sdpi_include_transaction::DEV-30[initiator="optional", responder="optional"]
-sdpi_include_transaction::DEV-34[initiator="optional", receiver="optional"]
-sdpi_include_transaction::DEV-46[initiator="optional", responder="required"]
+sdpi_include_transaction::DEV-46[initiator="optional", receiver="required"]
 sdpi_include_transaction::DEV-47[initiator="optional", responder="required"]
 
 sdpi_transaction_table::[profile-id="sdpi-p"]
@@ -693,7 +692,7 @@ include::../plantuml/vol1-figure-sdpi-p-managed-discovery-option-sequence-diagra
 Once the discovery process is complete, actor interactions continue as normal.
 See <<vol1_figure_sdpi_p_example_sequence_diagram>> for additional detail.
 
-sdpi_include_transaction::DEV-46[initiator="required", responder="required"]
+sdpi_include_transaction::DEV-46[initiator="required", receiver="required"]
 sdpi_include_transaction::DEV-47[initiator="required", responder="required"]
 
 
