@@ -19,7 +19,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor, then it shall use the <<vol2_clause_dev_46ab491a58-caf0-4c64-a06b-9427930f7113DEV-46>> transaction to update the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor on its network presence and departure."
+                        "When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor, then it shall use the <<vol2_clause_dev_463c0f7d60-2594-480b-8f54-e8f36277f520DEV-46>> transaction to update the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor on its network presence and departure."
                     ]
                 }
             ],
@@ -88,7 +88,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor, then it shall use the <<vol2_clause_dev_47ab491a58-caf0-4c64-a06b-9427930f7113DEV-47>> transaction to retrieve <<vol1_spec_sdpi_p_actor_somds_provider>> network presence metadata from the  <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor."
+                        "When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor, then it shall use the <<vol2_clause_dev_473c0f7d60-2594-480b-8f54-e8f36277f520DEV-47>> transaction to retrieve <<vol1_spec_sdpi_p_actor_somds_provider>> network presence metadata from the  <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor."
                     ]
                 }
             ],
@@ -169,7 +169,7 @@
                     "type": "block",
                     "lines": [
                         "For example, issuing a periodic \"heartbeat\" check message or cable-connected check.",
-                        "Specification of these means will be provided for in the transport-specific implementation specification for the <<vol2_clause_dev_46ab491a58-caf0-4c64-a06b-9427930f7113DEV-46>> transaction."
+                        "Specification of these means will be provided for in the transport-specific implementation specification for the <<vol2_clause_dev_463c0f7d60-2594-480b-8f54-e8f36277f520DEV-46>> transaction."
                     ]
                 }
             ],
@@ -268,8 +268,9 @@
         }
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
+            "somds_participant",
             "somds_participant"
         ],
         "requirementNumber": 1520,
@@ -286,7 +287,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_participant>> shall include all of the following information in the accompanying documentation:"
+                        "The <<term_manufacturer>> of a RefActor:somds_participant[] shall include all of the following information in the accompanying documentation:"
                     ]
                 },
                 {
@@ -320,7 +321,9 @@
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "EFFECTIVENESS",
+        "test": "INSPECTION"
     },
     {
         "type": "tech-feature",
@@ -352,7 +355,7 @@
                         {
                             "type": "item",
                             "strMarker": "*",
-                            "strText": "<<vol1_spec_sdpi_p_actor_somds_participant>>s could use, for example, <<ref_rfc_5905ab491a58-caf0-4c64-a06b-9427930f7113NTPv4>> to satisfy this requirement. That is, employing cold and warm startup and <<term_clock_discipline_algorithm>>s to synchronize the <<term_system_clock>> with a <<acronym_ts_service>> <<term_reference_clock>>."
+                            "strText": "<<vol1_spec_sdpi_p_actor_somds_participant>>s could use, for example, <<ref_rfc_59053c0f7d60-2594-480b-8f54-e8f36277f520NTPv4>> to satisfy this requirement. That is, employing cold and warm startup and <<term_clock_discipline_algorithm>>s to synchronize the <<term_system_clock>> with a <<acronym_ts_service>> <<term_reference_clock>>."
                         },
                         {
                             "type": "item",
@@ -737,7 +740,7 @@
                         {
                             "type": "item",
                             "strMarker": "*",
-                            "strText": "This clarifies the ambiguity in <<ref_ieee_11073_10207_2017>>, section B.182 and <<ref_ieee_11073_20701_2018>>, R0014 when a participant uses slewing to make <<term_smooth_time_adjustments>> (using, for example, the <<ref_rfc_5905ab491a58-caf0-4c64-a06b-9427930f7113NTPv4>> <<term_clock_discipline_algorithm>>) where information from one or more <<acronym_ts_service>>s is used to maintain clock-discipline and does not (generally) \"set\" the clock."
+                            "strText": "This clarifies the ambiguity in <<ref_ieee_11073_10207_2017>>, section B.182 and <<ref_ieee_11073_20701_2018>>, R0014 when a participant uses slewing to make <<term_smooth_time_adjustments>> (using, for example, the <<ref_rfc_59053c0f7d60-2594-480b-8f54-e8f36277f520NTPv4>> <<term_clock_discipline_algorithm>>) where information from one or more <<acronym_ts_service>>s is used to maintain clock-discipline and does not (generally) \"set\" the clock."
                         },
                         {
                             "type": "item",
@@ -987,7 +990,7 @@
                         {
                             "type": "item",
                             "strMarker": "*",
-                            "strText": "The maximum discrepancy between participant clocks may depend on the protocol being used to synchronize time (`pm:ClockState/pm:ActiveSyncProtocol`). The time reported by two devices employing <<ref_rfc_5905ab491a58-caf0-4c64-a06b-9427930f7113NTPv4>>, for example, may differ by more than 8 1/2 minutes, in a worst case scenario, without triggering an <<term_abrupt_time_adjustment>>."
+                            "strText": "The maximum discrepancy between participant clocks may depend on the protocol being used to synchronize time (`pm:ClockState/pm:ActiveSyncProtocol`). The time reported by two devices employing <<ref_rfc_59053c0f7d60-2594-480b-8f54-e8f36277f520NTPv4>>, for example, may differ by more than 8 1/2 minutes, in a worst case scenario, without triggering an <<term_abrupt_time_adjustment>>."
                         },
                         {
                             "type": "item",
@@ -1025,7 +1028,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> should use the \"preferred format\", defined in  <<ref_rfc_9110ab491a58-caf0-4c64-a06b-9427930f7113RFC9110+%C2%A75.6.7>>, for the `Date` field included in all HTTP response messages."
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> should use the \"preferred format\", defined in  <<ref_rfc_91103c0f7d60-2594-480b-8f54-e8f36277f520RFC9110+%C2%A75.6.7>>, for the `Date` field included in all HTTP response messages."
                     ]
                 }
             ],
@@ -1117,7 +1120,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> may use information provided, for example, by the <<vol1_spec_sdpi_p_actor_somds_provider>> using, for example, the <<vol3_clause_timestamp_versioningab491a58-caf0-4c64-a06b-9427930f7113timestamp+versioning>> extension to improve the accuracy of a suspicious timestamp. However timestamps may remain less accurate than had the <<term_abrupt_time_adjustment>> not occurred and it may still be appropriate to notify next users of this."
+                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> may use information provided, for example, by the <<vol1_spec_sdpi_p_actor_somds_provider>> using, for example, the <<vol3_clause_timestamp_versioning3c0f7d60-2594-480b-8f54-e8f36277f520timestamp+versioning>> extension to improve the accuracy of a suspicious timestamp. However timestamps may remain less accurate than had the <<term_abrupt_time_adjustment>> not occurred and it may still be appropriate to notify next users of this."
                     ]
                 }
             ],
@@ -1329,9 +1332,13 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "If Probe messages are sent periodically, a rationale needs to be provided, since <<vol1_spec_sdpi_p_actor_somds_provider>>s send Hello messages periodically."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "If Probe messages are sent periodically, a rationale needs to be provided, since <<vol1_spec_sdpi_p_actor_somds_provider>>s send Hello messages periodically."
+                        }
                     ]
                 }
             ],
@@ -1399,15 +1406,18 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "This requirement erases disambiguation since there are multiple definitions of the term _prefix_."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "From this it follows that a prefix can be empty as otherwise the term _proper prefix_ would have to be used."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "This requirement erases disambiguation since there are multiple definitions of the term _prefix_."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "From this it follows that a prefix can be empty as otherwise the term _proper prefix_ would have to be used."
+                        }
                     ]
                 }
             ],
@@ -1512,9 +1522,13 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "The WS-Eventing specification that is normatively included in <<ref_oasis_dpws_2009>> explains the absence of _Expires_ in a SubscribeResponse message (see <<ref_w3c_ws_eventing_2006>>, Section 3.1), which is actually prohibited according to the XML Schema. This specification underlines the need to provide an _Expires_ element in SubscribeResponse messages."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The WS-Eventing specification that is normatively included in <<ref_oasis_dpws_2009>> explains the absence of _Expires_ in a SubscribeResponse message (see <<ref_w3c_ws_eventing_2006>>, Section 3.1), which is actually prohibited according to the XML Schema. This specification underlines the need to provide an _Expires_ element in SubscribeResponse messages."
+                        }
                     ]
                 }
             ],
@@ -1583,7 +1597,19 @@
             "noteContent": [
                 {
                     "type": "block",
+                    "lines": [
+                        "This requirement restricts optionality in including context states in GetMdibResponse messages as specified in <<ref_ieee_11073_10207_2017>>, C.57 GetMdibResponse:"
+                    ]
+                },
+                {
+                    "type": "block",
                     "lines": []
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "Since transmission of GetMdibResponse messages is required to be secured, there is no need for omitting context states to meet confidentiality; R0121 in <<ref_ieee_11073_10207_2017>> is still met."
+                    ]
                 }
             ],
             "exampleContent": [],
@@ -1615,7 +1641,14 @@
                     ]
                 }
             ],
-            "noteContent": [],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Absence of <<vol1_spec_sdpi_p_actor_somds_provider>>s is notified to <<vol1_spec_sdpi_p_actor_somds_consumer>>s by using the Bye message as specified in <<vol2_clause_appendix_a_mdpws_dev_47_message_bye>>."
+                    ]
+                }
+            ],
             "exampleContent": [],
             "relatedContent": []
         }
@@ -1644,7 +1677,23 @@
                     ]
                 }
             ],
-            "noteContent": [],
+            "noteContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The <<vol1_spec_sdpi_p_actor_discovery_proxy>> port type is defined in <<vol2_clause_appendix_a_mdpws_wsdl>>."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The OID used for the target namespace of the <<vol1_spec_sdpi_p_actor_discovery_proxy>> WSDL file is listed in <<vol2_table_appendix_mdpws_discovery_proxy_oids>>."
+                        }
+                    ]
+                }
+            ],
             "exampleContent": [],
             "relatedContent": []
         }
@@ -1673,7 +1722,14 @@
                     ]
                 }
             ],
-            "noteContent": [],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The OID used for the filter dialect is listed in <<vol2_table_appendix_mdpws_discovery_proxy_oids>>."
+                    ]
+                }
+            ],
             "exampleContent": [],
             "relatedContent": []
         }
@@ -1703,7 +1759,14 @@
                     ]
                 }
             ],
-            "noteContent": [],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The OID used for the filter dialect is listed in <<vol2_table_appendix_mdpws_discovery_proxy_oids>>."
+                    ]
+                }
+            ],
             "exampleContent": [],
             "relatedContent": []
         }
@@ -1733,15 +1796,18 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "Each section that specifies a transaction indicates security requirements in the __Security Requirements & Considerations__ subsection beneath the __Safety, Effectiveness and Security - Requirements and Considerations__ of each transaction."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "Essentially, this specification asks for secured transmission of data except when ad-hoc discovery is performed."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Each section that specifies a transaction indicates security requirements in the __Security Requirements & Considerations__ subsection beneath the __Safety, Effectiveness and Security - Requirements and Considerations__ of each transaction."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Essentially, this specification asks for secured transmission of data except when ad-hoc discovery is performed."
+                        }
                     ]
                 }
             ],
@@ -1844,15 +1910,18 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "This does not necessarily prevent the user from changing the priority group after the installation process is finished."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "Guidelines for reasonable default values are shown in <<vol2_clause_appendix_a_mdpws_connect_time_algorithm_priority_groups>>."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "This does not necessarily prevent the user from changing the priority group after the installation process is finished."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Guidelines for reasonable default values are shown in <<vol2_clause_appendix_a_mdpws_connect_time_algorithm_priority_groups>>."
+                        }
                     ]
                 }
             ],
@@ -1885,15 +1954,18 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "In order to dynamically determine the priority group within a certain range, a <<vol1_spec_sdpi_p_actor_somds_consumer>> can use, for example, a random number generator function or a real-time clock."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "Guidelines for reasonable priority group ranges are shown in <<vol2_clause_appendix_a_mdpws_connect_time_algorithm_priority_groups>>."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "In order to dynamically determine the priority group within a certain range, a <<vol1_spec_sdpi_p_actor_somds_consumer>> can use, for example, a random number generator function or a real-time clock."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Guidelines for reasonable priority group ranges are shown in <<vol2_clause_appendix_a_mdpws_connect_time_algorithm_priority_groups>>."
+                        }
                     ]
                 }
             ],
@@ -2207,17 +2279,22 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "The URI encoding of production specifications is defined in <<vol2_listing_encoding_production_specification>>."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The URI encoding of production specifications is defined in <<vol2_listing_encoding_production_specification>>."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "<<term_manufacturer>>s can also encode metadata information as production specification, according to the mapping in <<vol3_table_production_specifications_mapping>>."
+                        }
                     ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "<<term_manufacturer>>s can also encode metadata information as production specification, according to the mapping in <<vol3_table_production_specifications_mapping>>."
-                    ]
-                },
+                }
+            ],
+            "exampleContent": [
                 {
                     "type": "block",
                     "lines": [
@@ -2240,7 +2317,6 @@
                     ]
                 }
             ],
-            "exampleContent": [],
             "relatedContent": []
         }
     },
@@ -2273,7 +2349,9 @@
                     "lines": [
                         "The URI encoding of attributes is defined by the Extended Backus-Naur Form <<ref_iso_iec_14977_1996>> in <<vol2_listing_encoding_attribute>>."
                     ]
-                },
+                }
+            ],
+            "exampleContent": [
                 {
                     "type": "block",
                     "lines": [
@@ -2281,7 +2359,6 @@
                     ]
                 }
             ],
-            "exampleContent": [],
             "relatedContent": []
         }
     },
@@ -3325,15 +3402,18 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "<<ref_tbl_dec_obx18_mds_mapping>> defines the mapping of the <<acronym_mdib>> MDS meta data to the data fields of the HL7 data type *EI* used in the OBX-18 field."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "<<ref_tbl_dec_obx18_vmd_mapping>> defines the mapping of the <<acronym_mdib>> VMD information to the data fields of the HL7 data type *EI* used in the OBX-18 field."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "<<ref_tbl_dec_obx18_mds_mapping>> defines the mapping of the <<acronym_mdib>> MDS meta data to the data fields of the HL7 data type *EI* used in the OBX-18 field."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "<<ref_tbl_dec_obx18_vmd_mapping>> defines the mapping of the <<acronym_mdib>> VMD information to the data fields of the HL7 data type *EI* used in the OBX-18 field."
+                        }
                     ]
                 }
             ],
@@ -3615,15 +3695,18 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "Episodic metric values are usually exported along with the periodic metric values in the same export intervals. However, if a device does not provide periodic metric values in the current export interval, episodic metric values are exported in current export interval without periodic metric values."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "The *pm:AbstractMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@DeterminationTime* of an episodic metric value is set in the OBX-14 field and will override the timestamp defined in the OBR-7 field."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Episodic metric values are usually exported along with the periodic metric values in the same export intervals. However, if a device does not provide periodic metric values in the current export interval, episodic metric values are exported in current export interval without periodic metric values."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The *pm:AbstractMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@DeterminationTime* of an episodic metric value is set in the OBX-14 field and will override the timestamp defined in the OBR-7 field."
+                        }
                     ]
                 }
             ],
@@ -3653,15 +3736,18 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "This requirement relates to the OBR-7 field mapping. Please refer to <<ref_dec_OBR7_mapping>> for further information."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "If, for example, the export interval is set to 30 seconds, the <<actor_somds_dec_gateway>> will export HL7 messages every 30 seconds with the OBR-7 field set to start date and time of the current interval and the OBR-8 field set to the start date and time of the next interval e.g.,  *20231030155930*|*20231030160000*, *20231030160000*|*20231030160030*, and so on."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "This requirement relates to the OBR-7 field mapping. Please refer to <<ref_dec_OBR7_mapping>> for further information."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "If, for example, the export interval is set to 30 seconds, the <<actor_somds_dec_gateway>> will export HL7 messages every 30 seconds with the OBR-7 field set to start date and time of the current interval and the OBR-8 field set to the start date and time of the next interval e.g.,  *20231030155930*|*20231030160000*, *20231030160000*|*20231030160030*, and so on."
+                        }
                     ]
                 }
             ],
@@ -3697,15 +3783,18 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "<<ref_tbl_OBR10_mapping>> defines the mapping of the SDC operator context information to the data fields of the HL7 data type *XCN* used in the OBR-10 field."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "The SDC operator context is only valid when the *pm:OperatorContextState/@ContextAssociation* is set to *\"Assoc\"* and a *pm:OperatorContextState/@BindingStartTime* is set."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "<<ref_tbl_OBR10_mapping>> defines the mapping of the SDC operator context information to the data fields of the HL7 data type *XCN* used in the OBR-10 field."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The SDC operator context is only valid when the *pm:OperatorContextState/@ContextAssociation* is set to *\"Assoc\"* and a *pm:OperatorContextState/@BindingStartTime* is set."
+                        }
                     ]
                 }
             ],
@@ -3916,15 +4005,18 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "Note that the decimal number needs to be formatted according to the HL7 numeric value formatting rules."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "Note that sample array metrics are not supported by the <<actor_somds_dec_gateway>>."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Note that the decimal number needs to be formatted according to the HL7 numeric value formatting rules."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Note that sample array metrics are not supported by the <<actor_somds_dec_gateway>>."
+                        }
                     ]
                 }
             ],
@@ -3979,29 +4071,28 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "<<ref_tbl_dec_obx5_enum_mapping>> defines the mapping of the SDC coded element value to the data fields of the HL7 data type *CWE* used in the OBX-5 field."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "The *pm:EnumStringMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@Value* contains the string of the selected enumerated element.",
-                        "The actual coded element value can be retrieved from the *pm:EnumStringMetricDescriptor+++<wbr/>+++/pm:AllowedValue* list by comparing the *pm:EnumStringMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@Value* with the *pm:EnumStringMetricDescriptor+++<wbr/>+++/pm:AllowedValue+++<wbr/>+++/pm:Value*."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "If a match has been found, the *pm:EnumStringMetricDescriptor+++<wbr/>+++/pm:AllowedValue+++<wbr/>+++/pm:Type* is required to be mapped as defined in <<ref_tbl_dec_obx5_enum_mapping>>."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "If no matching value has been found, the enumeration is treated as a string metric and the *pm:EnumStringMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@Value* is required to be set in the OBX-5 field, and",
-                        "the OBX-2 is required to be set to *\"ST\"* (see also <<ref_tbl_dec_obx2_mapping>> and <<r8020>>)."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "<<ref_tbl_dec_obx5_enum_mapping>> defines the mapping of the SDC coded element value to the data fields of the HL7 data type *CWE* used in the OBX-5 field."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The *pm:EnumStringMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@Value* contains the string of the selected enumerated element.\nThe actual coded element value can be retrieved from the *pm:EnumStringMetricDescriptor+++<wbr/>+++/pm:AllowedValue* list by comparing the *pm:EnumStringMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@Value* with the *pm:EnumStringMetricDescriptor+++<wbr/>+++/pm:AllowedValue+++<wbr/>+++/pm:Value*."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "If a match has been found, the *pm:EnumStringMetricDescriptor+++<wbr/>+++/pm:AllowedValue+++<wbr/>+++/pm:Type* is required to be mapped as defined in <<ref_tbl_dec_obx5_enum_mapping>>."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "If no matching value has been found, the enumeration is treated as a string metric and the *pm:EnumStringMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@Value* is required to be set in the OBX-5 field, and\nthe OBX-2 is required to be set to *\"ST\"* (see also <<ref_tbl_dec_obx2_mapping>> and <<r8020>>)."
+                        }
                     ]
                 }
             ],
@@ -4056,15 +4147,18 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "<<ref_tbl_dec_obx6_mapping>> defines the mapping of the SDC measurement unit to the data fields of the HL7 data type *CWE* used in the OBX-6 field."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "For a device-related element such as MDS, VMD, CHANNEL, or other metric types, the OBX-6 field is left empty."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "<<ref_tbl_dec_obx6_mapping>> defines the mapping of the SDC measurement unit to the data fields of the HL7 data type *CWE* used in the OBX-6 field."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "For a device-related element such as MDS, VMD, CHANNEL, or other metric types, the OBX-6 field is left empty."
+                        }
                     ]
                 }
             ],
@@ -4114,6 +4208,21 @@
                     "type": "block",
                     "lines": [
                         "A <<actor_somds_dec_gateway>> shall define the range of the alert limits on the metric level, if the *@Handle* of the metric is referenced by a *pm:LimitAlertConditionDescriptor* in the *pm:LimitAlertConditionDescriptor/pm:Source* list, by the format `<Lower Limit> - <Upper Limit>` where"
+                    ]
+                },
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "`<Lower Limit>` is set to *pm:LimitAlertConditionState/pm:Limits/@Lower* and"
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "`<Upper Limit>` is set to *pm:LimitAlertConditionState/pm:Limits/@Upper*."
+                        }
                     ]
                 }
             ],
@@ -4283,15 +4392,18 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "Intermittently measured metrics have the *pm:AbstractMetricDescriptor/@MetricAvailability* set to \"*Intr*\"."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "<<ref_tbl_dec_obx14_mapping>> defines the mapping of the SDC metric measurement timestamp to the data fields of the HL7 data type *DTM* used in the OBX-14 field."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Intermittently measured metrics have the *pm:AbstractMetricDescriptor/@MetricAvailability* set to \"*Intr*\"."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "<<ref_tbl_dec_obx14_mapping>> defines the mapping of the SDC metric measurement timestamp to the data fields of the HL7 data type *DTM* used in the OBX-14 field."
+                        }
                     ]
                 }
             ],
@@ -4321,15 +4433,18 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "Please refer to <<ref_dec_obr10>> for further information."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "The <<ref_ihe_dev_tf_2_2024>> requires only the map the \"ID Number\", and optionally the \"Family Name\" and \"Given Name\" in this field, whereas the OBR-10 field may contain additional information about the operator."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Please refer to <<ref_dec_obr10>> for further information."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The <<ref_ihe_dev_tf_2_2024>> requires only the map the \"ID Number\", and optionally the \"Family Name\" and \"Given Name\" in this field, whereas the OBR-10 field may contain additional information about the operator."
+                        }
                     ]
                 }
             ],
@@ -4409,27 +4524,28 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "If the *pm:AbstractMetricState/pm:BodySite* element and the *pm:AbstractMetricDescriptor/pm:BodySite* element are available, the body site defined in the *pm:AbstractMetricState* is the preferred *pm:BodySite* element to be mapped."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "If *pm:BodySite* element list contains more than one *pm:BodySite* element, only the first entry of the list is used for the mapping."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "<<ref_tbl_dec_obx20_mapping>> defines the mapping of the SDC body site element to the data fields of the HL7 data type *CWE* used in the OBX-20 field."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "For a device-related element such as MDS, VMD, or CHANNEL, the OBX-20 field is left empty."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "If the *pm:AbstractMetricState/pm:BodySite* element and the *pm:AbstractMetricDescriptor/pm:BodySite* element are available, the body site defined in the *pm:AbstractMetricState* is the preferred *pm:BodySite* element to be mapped."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "If *pm:BodySite* element list contains more than one *pm:BodySite* element, only the first entry of the list is used for the mapping."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "<<ref_tbl_dec_obx20_mapping>> defines the mapping of the SDC body site element to the data fields of the HL7 data type *CWE* used in the OBX-20 field."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "For a device-related element such as MDS, VMD, or CHANNEL, the OBX-20 field is left empty."
+                        }
                     ]
                 }
             ],
@@ -4552,7 +4668,9 @@
                     "lines": [
                         "This identifier consists of the *pm:AlertConditionState/@DescriptorHandle*  plus the *SequenceId* plus the *pm:AlertConditionState/@StateVersion* of the state report."
                     ]
-                },
+                }
+            ],
+            "exampleContent": [
                 {
                     "type": "block",
                     "lines": [
@@ -4566,7 +4684,6 @@
                     ]
                 }
             ],
-            "exampleContent": [],
             "relatedContent": []
         }
     },
@@ -4596,7 +4713,9 @@
                     "lines": [
                         "This identifier is usually defined by the gateway."
                     ]
-                },
+                }
+            ],
+            "exampleContent": [
                 {
                     "type": "block",
                     "lines": [
@@ -4610,7 +4729,6 @@
                     ]
                 }
             ],
-            "exampleContent": [],
             "relatedContent": []
         }
     },
@@ -4693,27 +4811,28 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "Please refer to <<ref_tbl_acm_obr3_mapping>> for further information."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "The field is left empty for the initial alert event announcement message which contains the unique alert event identifier in the OBR-3 field."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "In all subsequent alert event messages, the OBR-29 field is set to the initial unique alert event identifier from the OBR-3 field."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "The table <<ref_tbl_acm_obr29_mapping>> defines the mapping of the Alert Event Identifier to the data fields of the HL7 data type *EIP* used in the OBR-29 field."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Please refer to <<ref_tbl_acm_obr3_mapping>> for further information."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The field is left empty for the initial alert event announcement message which contains the unique alert event identifier in the OBR-3 field."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "In all subsequent alert event messages, the OBR-29 field is set to the initial unique alert event identifier from the OBR-3 field."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The table <<ref_tbl_acm_obr29_mapping>> defines the mapping of the Alert Event Identifier to the data fields of the HL7 data type *EIP* used in the OBR-29 field."
+                        }
                     ]
                 }
             ],
@@ -4857,21 +4976,23 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "This either applies to a change of the *pm:AlertConditionState* or the *pm:AlertSignalState* of the signals related to the alert condition."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "The date/time to be set in the OBX-14 field relates to the alert event phase. <<ref_tbl_acm_obx14_alert_phase_mapping>> defines the date/time mapping per alert event phase."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "The HL7 date and time format differs from the xsd date/time formats and requires a mapping accordingly (please refer to <<ref_expl_dt_mapping>> for further information)."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "This either applies to a change of the *pm:AlertConditionState* or the *pm:AlertSignalState* of the signals related to the alert condition."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The date/time to be set in the OBX-14 field relates to the alert event phase. <<ref_tbl_acm_obx14_alert_phase_mapping>> defines the date/time mapping per alert event phase."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The HL7 date and time format differs from the xsd date/time formats and requires a mapping accordingly (please refer to <<ref_expl_dt_mapping>> for further information)."
+                        }
                     ]
                 }
             ],
@@ -4951,21 +5072,23 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "The mapping differs for physiological alert events and technical/advisory alert events (refer to <<ref_tbl_acm_obx_alert_type_mapping>> for further information)."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "For physiological alert conditions, the alert event usually relates to a metric and its corresponding value that triggered the alert event. The *pm:AlertConditionDescriptor/pm:Source* element contains the handle to the related metric for the alert condition."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "For technical alert conditions, the alert event usually relates to a device-related element such as the MDS, a VMD, a CHANNEL, or METRIC. The *pm:AlertConditionDescriptor/pm:Source* element usually contains the handle to the device-related element. If *pm:Source* is empty, the alert condition relates to the device-related element which is the parent of the alert system to which the alert condition is assigned to."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The mapping differs for physiological alert events and technical/advisory alert events (refer to <<ref_tbl_acm_obx_alert_type_mapping>> for further information)."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "For physiological alert conditions, the alert event usually relates to a metric and its corresponding value that triggered the alert event. The *pm:AlertConditionDescriptor/pm:Source* element contains the handle to the related metric for the alert condition."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "For technical alert conditions, the alert event usually relates to a device-related element such as the MDS, a VMD, a CHANNEL, or METRIC. The *pm:AlertConditionDescriptor/pm:Source* element usually contains the handle to the device-related element. If *pm:Source* is empty, the alert condition relates to the device-related element which is the parent of the alert system to which the alert condition is assigned to."
+                        }
                     ]
                 }
             ],
@@ -5152,23 +5275,27 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "The actual value of the IHE ACM Alert Event Phase attribute depends on a combination of SDC alert condition/signal states. The mapping is defined in table <<ref_tbl_acm_obx_alert_phase_mapping>>."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The actual value of the IHE ACM Alert Event Phase attribute depends on a combination of SDC alert condition/signal states. The mapping is defined in table <<ref_tbl_acm_obx_alert_phase_mapping>>."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "All *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_phase_mapping>> and needed to determine the actual alert phase, relate to *pm:AlertSignalState* elements with the *@Location* set to *\"Loc\"*."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Unless the *pm:AlertConditionState/@ActivationState* is set to *\"On\"*, the *pm:AlertConditionState/@Presence* is always set to *\"false\"*; that is, the gateway will not export any IHE ACM alert event messages."
+                        }
                     ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "All *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_phase_mapping>> and needed to determine the actual alert phase, relate to *pm:AlertSignalState* elements with the *@Location* set to *\"Loc\"*."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "Unless the *pm:AlertConditionState/@ActivationState* is set to *\"On\"*, the *pm:AlertConditionState/@Presence* is always set to *\"false\"*; that is, the gateway will not export any IHE ACM alert event messages."
-                    ]
-                },
+                }
+            ],
+            "exampleContent": [
                 {
                     "type": "block",
                     "lines": [
@@ -5176,7 +5303,6 @@
                     ]
                 }
             ],
-            "exampleContent": [],
             "relatedContent": []
         }
     },
@@ -5227,23 +5353,27 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "The actual value of the IHE ACM Alert State attribute depends on a combination of SDC alert condition/signal states. The mapping is defined in table <<ref_tbl_acm_obx_alert_state_mapping>>."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The actual value of the IHE ACM Alert State attribute depends on a combination of SDC alert condition/signal states. The mapping is defined in table <<ref_tbl_acm_obx_alert_state_mapping>>."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "All *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_state_mapping>> and needed to determine the actual alert phase, relate to *pm:AlertSignalState* elements with the *@Location* set to *\"Loc\"*."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Unless the *pm:AlertConditionState/@ActivationState* is set to *\"On\"*, the *pm:AlertConditionState/@Presence* is always set to *\"false\"*; that is, the gateway will not export any IHE ACM alert event messages."
+                        }
                     ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "All *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_state_mapping>> and needed to determine the actual alert phase, relate to *pm:AlertSignalState* elements with the *@Location* set to *\"Loc\"*."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "Unless the *pm:AlertConditionState/@ActivationState* is set to *\"On\"*, the *pm:AlertConditionState/@Presence* is always set to *\"false\"*; that is, the gateway will not export any IHE ACM alert event messages."
-                    ]
-                },
+                }
+            ],
+            "exampleContent": [
                 {
                     "type": "block",
                     "lines": [
@@ -5251,7 +5381,6 @@
                     ]
                 }
             ],
-            "exampleContent": [],
             "relatedContent": []
         }
     },
@@ -5302,29 +5431,32 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "The actual value of the IHE ACM Alert Inactivation State attribute depends on a combination of SDC alert condition/signal states. The mapping is defined in table <<ref_tbl_acm_obx_inactivation_state_mapping>>."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The actual value of the IHE ACM Alert Inactivation State attribute depends on a combination of SDC alert condition/signal states. The mapping is defined in table <<ref_tbl_acm_obx_inactivation_state_mapping>>."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The OBX-5 field can contain multiple inactivation states separated by the HL7 message 'repeating field' character (usually '~'). Example: *\"audio-off~alert-acknowledged\"*"
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "All *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_inactivation_state_mapping>> and needed to determine the actual alert phase, relate to *pm:AlertSignalState* elements with the *@Location* set to *\"Loc\"*."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Unless the *pm:AlertConditionState/@ActivationState* is set to *\"On\"*, the *pm:AlertConditionState/@Presence* is always set to *\"false\"*; that is, the gateway will not export any IHE ACM alert event messages."
+                        }
                     ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "The OBX-5 field can contain multiple inactivation states separated by the HL7 message 'repeating field' character (usually '~'). Example: *\"audio-off~alert-acknowledged\"*"
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "All *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_inactivation_state_mapping>> and needed to determine the actual alert phase, relate to *pm:AlertSignalState* elements with the *@Location* set to *\"Loc\"*."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "Unless the *pm:AlertConditionState/@ActivationState* is set to *\"On\"*, the *pm:AlertConditionState/@Presence* is always set to *\"false\"*; that is, the gateway will not export any IHE ACM alert event messages."
-                    ]
-                },
+                }
+            ],
+            "exampleContent": [
                 {
                     "type": "block",
                     "lines": [
@@ -5332,7 +5464,6 @@
                     ]
                 }
             ],
-            "exampleContent": [],
             "relatedContent": []
         }
     },
@@ -5362,7 +5493,9 @@
                     "lines": [
                         "The mapping is defined in table <<ref_tbl_acm_obx_alert_priority_mapping>>."
                     ]
-                },
+                }
+            ],
+            "exampleContent": [
                 {
                     "type": "block",
                     "lines": [
@@ -5370,7 +5503,6 @@
                     ]
                 }
             ],
-            "exampleContent": [],
             "relatedContent": []
         }
     },
@@ -5431,7 +5563,9 @@
                     "lines": [
                         "The mapping is defined in table <<ref_tbl_acm_obx_alert_type_mapping>>."
                     ]
-                },
+                }
+            ],
+            "exampleContent": [
                 {
                     "type": "block",
                     "lines": [
@@ -5439,7 +5573,6 @@
                     ]
                 }
             ],
-            "exampleContent": [],
             "relatedContent": []
         }
     },
@@ -5463,7 +5596,8 @@
                     ]
                 }
             ],
-            "noteContent": [
+            "noteContent": [],
+            "exampleContent": [
                 {
                     "type": "block",
                     "lines": [
@@ -5471,7 +5605,6 @@
                     ]
                 }
             ],
-            "exampleContent": [],
             "relatedContent": []
         }
     },
@@ -5617,7 +5750,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "Biceps extensions, with timestamps who's interpretation by a <<vol1_spec_sdpi_p_actor_somds_participant>> would be affected by unexpected abrupt time adjustments, should support timestamp versioning using the <<vol3_clause_timestamp_versioningab491a58-caf0-4c64-a06b-9427930f7113timestamp+versioning>> extension."
+                        "Biceps extensions, with timestamps who's interpretation by a <<vol1_spec_sdpi_p_actor_somds_participant>> would be affected by unexpected abrupt time adjustments, should support timestamp versioning using the <<vol3_clause_timestamp_versioning3c0f7d60-2594-480b-8f54-e8f36277f520timestamp+versioning>> extension."
                     ]
                 }
             ],

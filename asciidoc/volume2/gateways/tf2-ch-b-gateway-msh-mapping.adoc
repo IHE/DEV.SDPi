@@ -3,33 +3,40 @@
 The HL7 Message Header (MSH) segment requires a mapping between the <<acronym_mdib>> content and the MSH segment fields.
 
 .R8100
-[sdpi_requirement#r8100,sdpi_req_level=shall,sdpi_max_occurrence=1]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_max_occurrence=1]
 ****
+[NORMATIVE]
+====
 If not differently specified in this section, the MSH segment fields shall be in compliance with the [PCD-01] or [PCD-04] transaction, retrospectively, as described in the <<ref_ihe_dev_tf_2_2024>>.
+====
 ****
 
 .R8101
-[sdpi_requirement#r8101,sdpi_req_level=shall,sdpi_max_occurrence=1]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_max_occurrence=1]
 ****
-For each <<acronym_mds>> element in the <<acronym_mdib>>, a separate [PCD-01] message shall be exported.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: The HL7 segments *MSH*, *PID*, and *PV1* contain information which can differ between multiple <<acronym_poc>> devices represented as <<acronym_mds>> elements in the <<acronym_mdib>> (e. g. operating mode, patient demographics, patient location, etc.). Since these segments are commonly defined for all <<acronym_mds>> elements in the HL7 [PCD-01] message, separate HL7 [PCD-01] messages per <<acronym_pocd>> are required to be exported.
+For each <<acronym_mds>> element in the <<acronym_mdib>>, a separate [PCD-01] message shall be exported.
+====
+
+[NOTE]
+====
+The HL7 segments *MSH*, *PID*, and *PV1* contain information which can differ between multiple <<acronym_poc>> devices represented as <<acronym_mds>> elements in the <<acronym_mdib>> (e. g. operating mode, patient demographics, patient location, etc.). Since these segments are commonly defined for all <<acronym_mds>> elements in the HL7 [PCD-01] message, separate HL7 [PCD-01] messages per <<acronym_pocd>> are required to be exported.
 ====
 ****
 
 ====== MSH-11 Processing ID
 .R8118
-[sdpi_requirement#r8118,sdpi_req_level=shall,sdpi_max_occurrence=1]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_max_occurrence=1]
 ****
-A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the MSH-11 field to the code for the processing ID, which is either be *"P"* (Production) or *"D"* (Debugging).
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: <<ref_tbl_msh11_mapping>> defines the mapping of the SDC MDS information to the data fields of the HL7 data type *PT* used in the MSH-11 field.
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the MSH-11 field to the code for the processing ID, which is either be *"P"* (Production) or *"D"* (Debugging).
+====
+
+[NOTE]
+====
+<<ref_tbl_msh11_mapping>> defines the mapping of the SDC MDS information to the data fields of the HL7 data type *PT* used in the MSH-11 field.
 ====
 ****
 

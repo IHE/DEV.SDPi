@@ -37,46 +37,51 @@ The HL7 Observation Request (OBR) segment requires a mapping from the SDC contai
 
 ====== OBR-2 Placer Order Number
 .R8050
-[sdpi_requirement#r8050,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
-For the IHE ACM profile, the <<actor_somds_acm_gateway>> shall set the OBR-2 field to the identifier of the Alarm Reporter (AR) of the IHE ACM gateway (not the individual device identifier).
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: For further information, please refer to the <<ref_ihe_dev_tf_2_2024>>.
+For the IHE ACM profile, the <<actor_somds_acm_gateway>> shall set the OBR-2 field to the identifier of the Alarm Reporter (AR) of the IHE ACM gateway (not the individual device identifier).
+====
+
+[NOTE]
+====
+For further information, please refer to the <<ref_ihe_dev_tf_2_2024>>.
 ====
 ****
 
 [#ref_acm_obr3_mapping]
 ====== OBR-3 Filler Order Number
 .R8051
-[sdpi_requirement#r8051,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
-A <<actor_somds_acm_gateway>> shall set the OBR-3 field to a unique identifier for the status to the alert indication.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: For further information, please refer to the <<ref_ihe_dev_tf_2_2024>>.
+A <<actor_somds_acm_gateway>> shall set the OBR-3 field to a unique identifier for the status to the alert indication.
+====
+
+[NOTE]
+====
+For further information, please refer to the <<ref_ihe_dev_tf_2_2024>>.
 ====
 ****
 
 The content depends on the state of the alert event:
 
 .R8052
-[sdpi_requirement#r8052,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
+[NORMATIVE]
+====
 For the *initial alert event announcement message*, a <<actor_somds_acm_gateway>> shall set the OBR-3/EI-1 field to the unique identifier for the alert event.
-
-.Notes
-[%collapsible]
-====
-NOTE: This identifier consists of the *pm:AlertConditionState/@DescriptorHandle*  plus the *SequenceId* plus the *pm:AlertConditionState/@StateVersion* of the state report.
 ====
 
-.Examples
-[%collapsible]
+[NOTE]
+====
+This identifier consists of the *pm:AlertConditionState/@DescriptorHandle*  plus the *SequenceId* plus the *pm:AlertConditionState/@StateVersion* of the state report.
+====
+
+[EXAMPLE]
 ====
 Unique Alert Event Identifier:
 
@@ -91,18 +96,20 @@ Unique Alert Event Identifier:
 ////
 
 .R8053
-[sdpi_requirement#r8053,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
+[NORMATIVE]
+====
 For the *subsequent alert event messages for the same alert event*, a <<actor_somds_acm_gateway>> shall set the OBR-3/EI-1 field to the unique identifier of the alert event message that relates to the same alert event as announced in the initial alert event message.
-
-.Notes
-[%collapsible]
-====
-NOTE: This identifier is usually defined by the gateway.
 ====
 
-.Examples
-[%collapsible]
+[NOTE]
+====
+This identifier is usually defined by the gateway.
+====
+
+
+[EXAMPLE]
 ====
 Unique Alert Event Message Identifier:
 
@@ -141,41 +148,48 @@ The table <<ref_tbl_acm_obr3_mapping>> defines the mapping of the Alert Event Id
 
 ====== OBR-4 Universal Service Identifier
 .R8054
-[sdpi_requirement#r8054,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
+[NORMATIVE]
+====
 A <<actor_somds_acm_gateway>> shall set the OBR-4 field to *"196616\^MDC_EVT_ALARM^MDC"*.
+====
 ****
 
 ====== OBR-7 Observation Date/Time
 .R8055
-[sdpi_requirement#r8055,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
-A <<actor_somds_acm_gateway>> shall set the OBR-7 field to the date and time at which the Alert Reporter (AR) of the IHE ACM gateway created the alert event message to be sent.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: Please refer to the *Appendix B  B.7.1 OBR Observation Request Segment in ACM Transaction [PCD-04]* of the <<ref_ihe_dev_tf_2_2024>> for further information.
+A <<actor_somds_acm_gateway>> shall set the OBR-7 field to the date and time at which the Alert Reporter (AR) of the IHE ACM gateway created the alert event message to be sent.
+====
+
+[NOTE]
+====
+Please refer to the *Appendix B  B.7.1 OBR Observation Request Segment in ACM Transaction [PCD-04]* of the <<ref_ihe_dev_tf_2_2024>> for further information.
 ====
 
 ****
 
 ====== OBR-29 Parent
 .R8056
-[sdpi_requirement#r8056,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
-A <<actor_somds_acm_gateway>> shall set the OBR-29 field to the unique alert event identifier of the initial alert event message as defined for the OBR-3 field.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: Please refer to <<ref_tbl_acm_obr3_mapping>> for further information.
+A <<actor_somds_acm_gateway>> shall set the OBR-29 field to the unique alert event identifier of the initial alert event message as defined for the OBR-3 field.
+====
 
-NOTE: The field is left empty for the initial alert event announcement message which contains the unique alert event identifier in the OBR-3 field.
+[NOTE]
+====
+* Please refer to <<ref_tbl_acm_obr3_mapping>> for further information.
 
-NOTE: In all subsequent alert event messages, the OBR-29 field is set to the initial unique alert event identifier from the OBR-3 field.
+* The field is left empty for the initial alert event announcement message which contains the unique alert event identifier in the OBR-3 field.
 
-NOTE: The table <<ref_tbl_acm_obr29_mapping>> defines the mapping of the Alert Event Identifier to the data fields of the HL7 data type *EIP* used in the OBR-29 field.
+* In all subsequent alert event messages, the OBR-29 field is set to the initial unique alert event identifier from the OBR-3 field.
+
+* The table <<ref_tbl_acm_obr29_mapping>> defines the mapping of the Alert Event Identifier to the data fields of the HL7 data type *EIP* used in the OBR-29 field.
 ====
 
 ****
@@ -236,21 +250,26 @@ Please refer to general Section <<ref_gateway_obx18_mapping>>.
 [#ref_acm_obx_device_related_mapping]
 ====== Device-related OBX Segments
 .R8057
-[sdpi_requirement#r8057,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
-A <<actor_somds_acm_gateway>> shall export device-related OBX segments, which define the hierarchical relationship of the alert event in the device's containment tree.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: There might be up to three device-related OBX segments for the MDS, VMD, and CHANNEL dependent on the specific device's containment tree. The general mapping of the device-related OBX segments is defined in table <<ref_tbl_acm_obx_device_related_mapping>>.
+A <<actor_somds_acm_gateway>> shall export device-related OBX segments, which define the hierarchical relationship of the alert event in the device's containment tree.
+====
+
+[NOTE]
+====
+There might be up to three device-related OBX segments for the MDS, VMD, and CHANNEL dependent on the specific device's containment tree. The general mapping of the device-related OBX segments is defined in table <<ref_tbl_acm_obx_device_related_mapping>>.
 ====
 ****
 
 .R8058
-[sdpi_requirement#r8058,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
+[NORMATIVE]
+====
 If a private *<<acronym_mdc>>* code is used for the coding of the SDC device-related element, the identifier shall be mapped as described in Section <<ref_private_coding_system_note>>.
+====
 ****
 
 [#ref_tbl_acm_obx_device_related_mapping]
@@ -321,41 +340,48 @@ OBX|3||69855\^MDC_DEV_METER_PRESS_BLD_CHAN^MDC|1.1.1.0|||||||X
 
 ====== Event Identification OBX Segment
 .R8061
-[sdpi_requirement#r8061,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
 
-A <<actor_somds_acm_gateway>> shall export an Event Identification OBX segment which identifies the alert event.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: The mapping differs for physiological alert events and technical/advisory alert events (please refer also to <<ref_tbl_acm_obx_alert_type_mapping>> for further information).
+A <<actor_somds_acm_gateway>> shall export an Event Identification OBX segment which identifies the alert event.
+====
+
+[NOTE]
+====
+The mapping differs for physiological alert events and technical/advisory alert events (please refer also to <<ref_tbl_acm_obx_alert_type_mapping>> for further information).
 ====
 ****
 
 .R8077
-[sdpi_requirement#r8077,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
 
+[NORMATIVE]
+====
 A <<actor_somds_acm_gateway>> shall report the Alert Event Phase as "update" when there are more updates than just the Alert Priority as specified in <<ref_tbl_acm_obx14_alert_phase_mapping>>  for the "update" Alert Event Phase.
+====
 
 ****
 
 [#ref_acm_obx14_event_id_mapping,sdpi_level=+1]
 ====== Date/Time Mapping
 .R8062
-[sdpi_requirement#r8062,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
-A <<actor_somds_acm_gateway>> shall set the OBX-14 field of the Event Identification OBX segment to the date/time of the alert event status change.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: This either applies to a change of the *pm:AlertConditionState* or the *pm:AlertSignalState* of the signals related to the alert condition.
+A <<actor_somds_acm_gateway>> shall set the OBX-14 field of the Event Identification OBX segment to the date/time of the alert event status change.
+====
 
-NOTE: The date/time to be set in the OBX-14 field relates to the alert event phase. <<ref_tbl_acm_obx14_alert_phase_mapping>> defines the date/time mapping per alert event phase.
+[NOTE]
+====
+* This either applies to a change of the *pm:AlertConditionState* or the *pm:AlertSignalState* of the signals related to the alert condition.
 
-NOTE: The HL7 date and time format differs from the xsd date/time formats and requires a mapping accordingly (please refer to <<ref_expl_dt_mapping>> for further information).
+* The date/time to be set in the OBX-14 field relates to the alert event phase. <<ref_tbl_acm_obx14_alert_phase_mapping>> defines the date/time mapping per alert event phase.
+
+* The HL7 date and time format differs from the xsd date/time formats and requires a mapping accordingly (please refer to <<ref_expl_dt_mapping>> for further information).
 ====
 ****
 
@@ -405,9 +431,12 @@ Note that the *pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* changes 
 The event identification mapping for a physiological alert (alarm or advisory) is defined in table <<ref_tbl_acm_obx_event_phy_mapping>>.
 
 .R8063
-[sdpi_requirement#r8063,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
+[NORMATIVE]
+====
 If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded element value, the identifier shall be mapped as described in Section <<ref_private_coding_system_note>>.
+====
 ****
 
 [#ref_tbl_acm_obx_event_phy_mapping]
@@ -490,9 +519,12 @@ OBX|4|ST|196648\^MDC_EVT_HI^MDC|1.1.1.1.1|**ABPs 119>110||||||R|||20191121102600
 The event identification mapping for a technical alert (alarm or advisory) is defined in table <<ref_tbl_acm_obx_event_tec_mapping>>.
 
 .R8064
-[sdpi_requirement#r8064,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
+[NORMATIVE]
+====
 If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded element value, the identifier shall be mapped as described in Section <<ref_private_coding_system_note>>.
+====
 ****
 
 [#ref_tbl_acm_obx_event_tec_mapping]
@@ -594,57 +626,73 @@ OBX|4|CWE|196616\^MDC_EVT_ALARM^MDC|1.1.1.1.1|196882\^MDC_EVT_LEADS_OFF^MDC^^^^^
 [#ref_acm_obx_source_id_mapping]
 ====== Source Identification OBX Segment
 .R8065
-[sdpi_requirement#r8065,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
-A <<actor_somds_acm_gateway>> shall export a Source Identification OBX segment, which identifies the source that led to the alert event.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: The mapping differs for physiological alert events and technical/advisory alert events (refer to <<ref_tbl_acm_obx_alert_type_mapping>> for further information).
+A <<actor_somds_acm_gateway>> shall export a Source Identification OBX segment, which identifies the source that led to the alert event.
+====
 
-NOTE: For physiological alert conditions, the alert event usually relates to a metric and its corresponding value that triggered the alert event. The *pm:AlertConditionDescriptor/pm:Source* element contains the handle to the related metric for the alert condition.
+[NOTE]
+====
+* The mapping differs for physiological alert events and technical/advisory alert events (refer to <<ref_tbl_acm_obx_alert_type_mapping>> for further information).
 
-NOTE: For technical alert conditions, the alert event usually relates to a device-related element such as the MDS, a VMD, a CHANNEL, or METRIC. The *pm:AlertConditionDescriptor/pm:Source* element usually contains the handle to the device-related element. If *pm:Source* is empty, the alert condition relates to the device-related element which is the parent of the alert system to which the alert condition is assigned to.
+* For physiological alert conditions, the alert event usually relates to a metric and its corresponding value that triggered the alert event. The *pm:AlertConditionDescriptor/pm:Source* element contains the handle to the related metric for the alert condition.
+
+* For technical alert conditions, the alert event usually relates to a device-related element such as the MDS, a VMD, a CHANNEL, or METRIC. The *pm:AlertConditionDescriptor/pm:Source* element usually contains the handle to the device-related element. If *pm:Source* is empty, the alert condition relates to the device-related element which is the parent of the alert system to which the alert condition is assigned to.
 ====
 ****
 
 .R8059
-[sdpi_requirement#r8059,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
+[NORMATIVE]
+====
 For a physiological alert event, a <<actor_somds_acm_gateway>> shall set the OBX-3 field in the <<ref_acm_obx_source_id_mapping>> to the source identifier.
+====
 ****
 
 .R8060
-[sdpi_requirement#r8060,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
+[NORMATIVE]
+====
 For a technical or advisory alert event, a <<actor_somds_acm_gateway>> shall set the OBX-5 field in the <<ref_acm_obx_source_id_mapping>> to the source identifier.
+====
 ****
 
 [sdpi_level=+1]
 ====== Physiological Alerts
 .R8066
-[sdpi_requirement#r8066,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
-A <<actor_somds_acm_gateway>> shall map the source identification for physiological alerts (alarms or advisories) to an OBX segment as defined in <<ref_dec_obx_mapping>>. The gateway captures the state of the related metric at the time the alert event occurred.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: In SDC, the metric value that led to the physiological alert event is required to be reported in a state update before the *pm:AlertConditionState* update is reported. That is, the latest state of the metric related to the alert condition contains the value that led to the alert event when the *pm:AlertConditionState/@Presence* changed from *"false"* to *"true"*.
+A <<actor_somds_acm_gateway>> shall map the source identification for physiological alerts (alarms or advisories) to an OBX segment as defined in <<ref_dec_obx_mapping>>. The gateway captures the state of the related metric at the time the alert event occurred.
+====
+
+[NOTE]
+====
+In SDC, the metric value that led to the physiological alert event is required to be reported in a state update before the *pm:AlertConditionState* update is reported. That is, the latest state of the metric related to the alert condition contains the value that led to the alert event when the *pm:AlertConditionState/@Presence* changed from *"false"* to *"true"*.
 ====
 ****
 
 .R8067
-[sdpi_requirement#r8067,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
+[NORMATIVE]
+====
 A <<actor_somds_acm_gateway>> shall set the OBX-4 Observation Sub-ID to *"<MDS>.<VMD>.<CHAN>.<METRIC>.2"* where *<MDS>*, *<VMD>*, *<CHAN>*, and *<METRIC>* are the numbers of the device’s containment tree levels assigned by the gateway.
+====
 ****
 
 .R8068
-[sdpi_requirement#r8068,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
+[NORMATIVE]
+====
 A <<actor_somds_acm_gateway>> shall set the OBX-11 Observation Result Status to *"R"*.
+====
 ****
 
 .OBX Source Identification Mapping - Physiological Alert Event
@@ -657,9 +705,12 @@ OBX|5|NM|150037\^MDC_PRESS_BLD_ART_ABP_SYS^MDC|1.1.1.1.2|119|266016\^MDC_DIM_MMH
 The source identification mapping for a technical alert (alarm or advisory) is defined in table <<ref_tbl_acm_obx_source_tec_mapping>>.
 
 .R8069
-[sdpi_requirement#r8069,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
+[NORMATIVE]
+====
 If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded element value, the identifier shall be mapped as described in Section <<ref_private_coding_system_note>>.
+====
 ****
 
 [#ref_tbl_acm_obx_source_tec_mapping]
@@ -745,32 +796,36 @@ OBX|5|CWE|68480\^MDC_ATTR_ALERT_SOURCE^MDC|1.1.1.1.2|131328\^MDC_ECG_ELEC_POTL^M
 
 ====== Event Phase OBX Segment
 .R8070
-[sdpi_requirement#r8070,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
+[NORMATIVE]
+====
 A <<actor_somds_acm_gateway>> shall export an Event Phase OBX segment, which identifies the alert event phase.
-
-.Notes
-[%collapsible]
-====
-NOTE: The actual value of the IHE ACM Alert Event Phase attribute depends on a combination of SDC alert condition/signal states. The mapping is defined in table <<ref_tbl_acm_obx_alert_phase_mapping>>.
-
-NOTE: All *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_phase_mapping>> and needed to determine the actual alert phase, relate to *pm:AlertSignalState* elements with the *@Location* set to *"Loc"*.
-
-NOTE: Unless the *pm:AlertConditionState/@ActivationState* is set to *"On"*, the *pm:AlertConditionState/@Presence* is always set to *"false"*; that is, the gateway will not export any IHE ACM alert event messages.
 ====
 
-.Examples
-[%collapsible]
+[NOTE]
+====
+* The actual value of the IHE ACM Alert Event Phase attribute depends on a combination of SDC alert condition/signal states. The mapping is defined in table <<ref_tbl_acm_obx_alert_phase_mapping>>.
+
+* All *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_phase_mapping>> and needed to determine the actual alert phase, relate to *pm:AlertSignalState* elements with the *@Location* set to *"Loc"*.
+
+* Unless the *pm:AlertConditionState/@ActivationState* is set to *"On"*, the *pm:AlertConditionState/@Presence* is always set to *"false"*; that is, the gateway will not export any IHE ACM alert event messages.
+====
+
+[EXAMPLE]
 ====
 OBX|6|ST|68481\^MDC_ATTR_EVENT_PHASE^MDC|1.1.1.1.3|start||||||R
 ====
 ****
 
 .R8078
-[sdpi_requirement#r8078,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
 
+[NORMATIVE]
+====
 A <<actor_somds_acm_gateway>> shall report the Alert Event Phase as "update" when there are more updates than just the Alert Priority as specified in <<ref_tbl_alert_phase_mapping>> for the "update" Alert Event Phase.
+====
 
 ****
 
@@ -861,31 +916,35 @@ all the *pm:AlertSignalState* elements with *@ActivationState* set to *"On"* tra
 
 ====== Alert State OBX Segment
 .R8071
-[sdpi_requirement#r8071,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
+[NORMATIVE]
+====
 A <<actor_somds_acm_gateway>> shall export an Alert State OBX segment, which defines the current state of the alert event.
-
-.Notes
-[%collapsible]
-====
-NOTE: The actual value of the IHE ACM Alert State attribute depends on a combination of SDC alert condition/signal states. The mapping is defined in table <<ref_tbl_acm_obx_alert_state_mapping>>.
-
-NOTE: All *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_state_mapping>> and needed to determine the actual alert phase, relate to *pm:AlertSignalState* elements with the *@Location* set to *"Loc"*.
-
-NOTE: Unless the *pm:AlertConditionState/@ActivationState* is set to *"On"*, the *pm:AlertConditionState/@Presence* is always set to *"false"*; that is, the gateway will not export any IHE ACM alert event messages.
 ====
 
-.Examples
-[%collapsible]
+[NOTE]
+====
+* The actual value of the IHE ACM Alert State attribute depends on a combination of SDC alert condition/signal states. The mapping is defined in table <<ref_tbl_acm_obx_alert_state_mapping>>.
+
+* All *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_state_mapping>> and needed to determine the actual alert phase, relate to *pm:AlertSignalState* elements with the *@Location* set to *"Loc"*.
+
+* Unless the *pm:AlertConditionState/@ActivationState* is set to *"On"*, the *pm:AlertConditionState/@Presence* is always set to *"false"*; that is, the gateway will not export any IHE ACM alert event messages.
+====
+
+[EXAMPLE]
 ====
 OBX|7|ST|68482\^MDC_ATTR_ALARM_STATE^MDC|1.1.1.1.4|active||||||R
 ====
 ****
 
 .R8072
-[sdpi_requirement#r8072,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
+[NORMATIVE]
+====
 A <<actor_somds_acm_gateway>> shall only report an inactive alert condition when the alarm condition transitioned from active or latched to inactive.
+====
 ****
 
 [#ref_tbl_acm_obx_alert_state_mapping]
@@ -956,24 +1015,25 @@ at least one of the *pm:AlertSignalState* elements with *@ActivationState* set t
 
 ====== Inactivation State OBX Segment
 .R8073
-[sdpi_requirement#r8073,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
+[NORMATIVE]
+====
 A <<actor_somds_acm_gateway>> shall export an Inactivation State OBX segment, which defines the current inactivation state of the alert event.
-
-.Notes
-[%collapsible]
-====
-NOTE: The actual value of the IHE ACM Alert Inactivation State attribute depends on a combination of SDC alert condition/signal states. The mapping is defined in table <<ref_tbl_acm_obx_inactivation_state_mapping>>.
-
-NOTE: The OBX-5 field can contain multiple inactivation states separated by the HL7 message 'repeating field' character (usually '~'). Example: *"audio-off~alert-acknowledged"*
-
-NOTE: All *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_inactivation_state_mapping>> and needed to determine the actual alert phase, relate to *pm:AlertSignalState* elements with the *@Location* set to *"Loc"*.
-
-NOTE: Unless the *pm:AlertConditionState/@ActivationState* is set to *"On"*, the *pm:AlertConditionState/@Presence* is always set to *"false"*; that is, the gateway will not export any IHE ACM alert event messages.
 ====
 
-.Examples
-[%collapsible]
+[NOTE]
+====
+* The actual value of the IHE ACM Alert Inactivation State attribute depends on a combination of SDC alert condition/signal states. The mapping is defined in table <<ref_tbl_acm_obx_inactivation_state_mapping>>.
+
+* The OBX-5 field can contain multiple inactivation states separated by the HL7 message 'repeating field' character (usually '~'). Example: *"audio-off~alert-acknowledged"*
+
+* All *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_inactivation_state_mapping>> and needed to determine the actual alert phase, relate to *pm:AlertSignalState* elements with the *@Location* set to *"Loc"*.
+
+* Unless the *pm:AlertConditionState/@ActivationState* is set to *"On"*, the *pm:AlertConditionState/@Presence* is always set to *"false"*; that is, the gateway will not export any IHE ACM alert event messages.
+====
+
+[EXAMPLE]
 ====
 OBX|8|ST|68483\^MDC_ATTR_ALARM_INACTIVATION_STATE^MDC|1.1.1.1.5|enabled||||||R
 ====
@@ -1058,29 +1118,33 @@ all *pm:AlertSignalState* elements have their *@ActivationState* set to *"Off"* 
 [#ref_acm_alert_priority_obx_mapping]
 ====== Alert Priority OBX Segment
 .R8074
-[sdpi_requirement#r8074,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
+[NORMATIVE]
+====
 A <<actor_somds_acm_gateway>> shall map the SDC *pm:AlertConditionDescriptor/@Priority* attribute to an IHE ACM Alert Priority OBX segment as defined in the <<ref_ihe_dev_tf_2_2024>>.
-
-.Notes
-[%collapsible]
-====
-NOTE: The mapping is defined in table <<ref_tbl_acm_obx_alert_priority_mapping>>.
 ====
 
-.Examples
-[%collapsible]
+[NOTE]
+====
+The mapping is defined in table <<ref_tbl_acm_obx_alert_priority_mapping>>.
+====
+
+[EXAMPLE]
 ====
 OBX|9|ST|68484\^MDC_ATTR_ALARM_PRIORITY^MDC|1.1.1.1.6|PM||||||R
 ====
 ****
 
 .R8075
-[sdpi_requirement#r8075,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
+[NORMATIVE]
+====
 In the case of an alert priority escalation or deescalation, the *pm:AlertConditionState/@ActualPriority* is updated with a new priority that differs from the previous *@ActualPriority* in the state or the *@Priority* in the descriptor.
 
 In this case, the gateway shall send a new alert event message with the updated priority.
+====
 ****
 
 [#ref_tbl_acm_obx_alert_priority_mapping]
@@ -1172,30 +1236,33 @@ If a <<acronym_sdc>> ALERT CONDITION represents an advisory signal, the alert pr
 
 ====== Alert Type OBX Segment
 .R8076
-[sdpi_requirement#r8076,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
+[NORMATIVE]
+====
 A <<actor_somds_acm_gateway>> shall map the SDC *pm:AlertConditionDescriptor/@Kind* to an IHE ACM Alert Type OBX segment as defined in the <<ref_ihe_dev_tf_2_2024>>.
-
-.Notes
-[%collapsible]
-====
-NOTE: The mapping is defined in table <<ref_tbl_acm_obx_alert_type_mapping>>.
 ====
 
-.Examples
-[%collapsible]
+[NOTE]
+====
+The mapping is defined in table <<ref_tbl_acm_obx_alert_type_mapping>>.
+====
+
+[EXAMPLE]
 ====
 OBX|10|ST|68485\^MDC_ATTR_ALERT_TYPE^MDC|1.1.1.1.7|ST||||||R
 ====
 ****
 
 .R8079
-[sdpi_requirement#r8079,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
+[NORMATIVE]
+====
 If *pm:AlertConditionState+++<wbr/>+++/@ActualPriority* is available and set to *"None"*, or if *pm:AlertConditionState+++<wbr/>+++/@ActualPriority* is NOT available and *pm:AlertConditionDescriptor+++<wbr/>+++/@Priority* set to *"None"*, then the <<acronym_sdc>> ALERT CONDITION is an advisory, and the alert type shall be set to *"SA"* in the IHE ACM Alert Type OBX segment.
+====
 
-.Examples
-[%collapsible]
+[EXAMPLE]
 ====
 OBX|10|ST|68485\^MDC_ATTR_ALERT_TYPE^MDC|1.1.1.1.7|SA||||||R
 ====

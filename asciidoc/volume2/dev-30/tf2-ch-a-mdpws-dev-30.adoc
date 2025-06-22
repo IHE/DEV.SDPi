@@ -74,13 +74,13 @@ include::../dev-a-default-expected-actions.adoc[]
 .R7002
 [sdpi_requirement#r7002,sdpi_req_level=shall]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_provider>> shall enclose all context states in pm:GetMdibResponse messages.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall enclose all context states in pm:GetMdibResponse messages.
+====
+
 [NOTE]
---
+====
 This requirement restricts optionality in including context states in GetMdibResponse messages as specified in <<ref_ieee_11073_10207_2017>>, C.57 GetMdibResponse:
 
 [quote]
@@ -90,8 +90,6 @@ the MDS contexts empty.
 ____
 
 Since transmission of GetMdibResponse messages is required to be secured, there is no need for omitting context states to meet confidentiality; R0121 in <<ref_ieee_11073_10207_2017>> is still met.
-
---
 ====
 
 ****

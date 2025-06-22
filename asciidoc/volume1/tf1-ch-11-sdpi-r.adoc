@@ -47,6 +47,22 @@ actor groupings, including abstract with concrete, are detailed in <<vol1_clause
 
 image::../images/vol1-diagram-sdpi-r-actor.svg[]
 
+sdpi_include_transaction::DEV-35[actor-id="somds_medical_data_consumer",initiator="required"]
+sdpi_include_transaction::DEV-35[actor-id="somds_medical_data_provider",responder="required"]
+sdpi_include_transaction::DEV-35[actor-id="somds_dec_gateway",initiator="required"]
+
+sdpi_include_transaction::DEV-36[actor-id="somds_medical_data_provider",initiator="required"]
+sdpi_include_transaction::DEV-36[actor-id="somds_medical_data_consumer",responder="required"]
+sdpi_include_transaction::DEV-36[actor-id="somds_dec_gateway",responder="required"]
+
+sdpi_include_transaction::DEV-37[actor-id="somds_medical_data_consumer",initiator="optional"]
+sdpi_include_transaction::DEV-37[actor-id="somds_medical_data_provider",responder="required"]
+sdpi_include_transaction::DEV-37[actor-id="somds_dec_gateway",initiator="optional"]
+
+
+sdpi_transaction_table::[profile-id="sdpi-r"]
+
+ifndef::not-defined[]
 [#vol1_table_sdpi_r_actors_transactions]
 .SDPi-R Profile - Actors and Transactions
 [%autowidth]
@@ -111,6 +127,8 @@ Note 1: If the <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> implements the <<vol
 
 |===
 
+endif::[]
+
 [#vol1_clause_sdpi_r_actor_descriptions_actor_profile_requirements]
 ==== Actor Descriptions and Actor Profile Requirements
 
@@ -135,9 +153,9 @@ TODO:
 include::../plantuml/vol1-figure-sdpi-r-example-sequence-diagram.puml[]
 ....
 
-[#vol1_clause_sdpi_r_somds_medical_data_provider]
+[#vol1_clause_sdpi_r_somds_medical_data_provider,role="actor actor-alias",actor-id="somds_medical_data_provider"]
 ===== SOMDS Medical Data Provider
-[#vol1_spec_sdpi_r_actor_somds_medical_data_provider, reftext='SOMDS Medical Data Provider']
+[#vol1_spec_sdpi_r_actor_somds_medical_data_provider,reftext='SOMDS Medical Data Provider',role="actor-alias",actor-id="somds_medical_data_provider"]
 Actor Summary Definition:
 [none]
 . A <<vol1_spec_sdpi_p_actor_somds_provider>> grouped actor that sends medical data to a <<vol1_spec_sdpi_p_actor_somds_consumer>>.
@@ -150,9 +168,9 @@ Note that optional capabilities for this specification, as specified in <<vol1_c
 
 A system that participates in a <<acronym_somds>> network instance can integrate both <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> and <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> capabilities.
 
-[#vol1_clause_sdpi_r_somds_medical_data_consumer]
+[#vol1_clause_sdpi_r_somds_medical_data_consumer,role="actor actor-alias",actor-id="somds_medical_data_consumer"]
 ===== SOMDS Medical Data Consumer
-[#vol1_spec_sdpi_r_actor_somds_medical_data_consumer, reftext='SOMDS Medical Data Consumer']
+[#vol1_spec_sdpi_r_actor_somds_medical_data_consumer, reftext='SOMDS Medical Data Consumer',role="actor-alias",actor-id="somds_medical_data_consumer"]
 Actor Summary Definition:
 [none]
 . A <<vol1_spec_sdpi_p_actor_somds_consumer>> grouped actor that receives medical data from a <<vol1_spec_sdpi_p_actor_somds_provider>>.
@@ -165,9 +183,9 @@ Note that optional capabilities for this specification, as specified in <<vol1_c
 
 A system that participates in a <<acronym_somds>> network instance can integrate both <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> and <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> capabilities.
 
-[#vol1_clause_sdpi_r_somds_dec_gateway]
+[#vol1_clause_sdpi_r_somds_dec_gateway, reftext='SOMDS DEC Gateway',role="actor actor-alias",actor-id="somds_dec_gateway"]
 ===== SOMDS DEC Gateway
-[#vol1_spec_sdpi_r_actor_somds_dec_gateway, reftext='SOMDS DEC Gateway']
+[#vol1_spec_sdpi_r_actor_somds_dec_gateway, reftext='SOMDS DEC Gateway',role="actor-alias",actor-id="somds_dec_gateway"]
 Actor Summary Definition:
 [none]
 . A <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> grouped actor that supports the bi-directional exchange of medical data using IHE Device Enterprise Communication (DEC) messages with non-SOMDS systems and applications.
@@ -184,9 +202,9 @@ Note:  Not supported are <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> systems th
 
 Detailed specifications for mapping from <<acronym_somds>>/<<acronym_biceps>>  to <<acronym_hl7>> V2 / DEC transactions are provided in <<vol2_clause_appendix_sdpi_dec_gateway>>.
 
-[#vol1_clause_sdpi_r_somds_fhir_medical_data_gateway]
+[#vol1_clause_sdpi_r_somds_fhir_medical_data_gateway,role="actor-alias",actor-id="somds_fhir_medical_data_gateway"]
 ===== SOMDS FHIR Medical Data Gateway
-[#vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway, reftext='SOMDS FHIR Medical Data Gateway']
+[#vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway, reftext='SOMDS FHIR Medical Data Gateway',role="actor actor-alias",actor-id="somds_fhir_medical_data_gateway"]
 Actor Summary Definition:
 [none]
 . A <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>> grouped actor that supports exchange of medical data between <<acronym_somds>>-based systems and <<acronym_hl7>> <<acronym_fhir>>-based systems.
@@ -206,8 +224,13 @@ See <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>> for additional information.
 [#vol1_clause_sdpi_r_actor_options]
 === SDPi-R Actor Options
 
-[#vol1_clause_sdpi_r_actor_option_retrieve_remote_data]
+[#vol1_clause_sdpi_r_actor_option_retrieve_remote_data,role=actor-option,actor-option-id=rrd]
 ==== Retrieve Remote Data
+
+
+sdpi_include_transaction::DEV-35[actor-id="somds_dec_gateway",responder="required"]
+sdpi_include_transaction::DEV-36[actor-id="somds_dec_gateway",initiator="optional"]
+sdpi_include_transaction::DEV-37[actor-id="somds_dec_gateway",responder="required"]
 
 [#vol1_clause_sdpi_r_actor_option_retrieve_remote_data_reftext, reftext='SDPi-R Option: Retrieve Remote Data']
 [%noheader]

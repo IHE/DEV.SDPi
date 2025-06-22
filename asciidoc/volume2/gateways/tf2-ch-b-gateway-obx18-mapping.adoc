@@ -2,18 +2,18 @@
 ===== OBX-18 Equipment Instance Identifier
 
 .R8117
-[sdpi_requirement#r8117,sdpi_req_level=shall,sdpi_max_occurrence=1]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_max_occurrence=1]
 ****
-A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the OBX-18 field to the equipment (or device) identifier on the MDS level and/or the measurement module identifier of the equipment on the VMD level as defined in section <<vol3_clause_equipment_identifier>>.
-
-
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: <<ref_tbl_dec_obx18_mds_mapping>> defines the mapping of the <<acronym_mdib>> MDS meta data to the data fields of the HL7 data type *EI* used in the OBX-18 field.
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the OBX-18 field to the equipment (or device) identifier on the MDS level and/or the measurement module identifier of the equipment on the VMD level as defined in section <<vol3_clause_equipment_identifier>>.
+====
 
-NOTE: <<ref_tbl_dec_obx18_vmd_mapping>> defines the mapping of the <<acronym_mdib>> VMD information to the data fields of the HL7 data type *EI* used in the OBX-18 field.
+[NOTE]
+====
+* <<ref_tbl_dec_obx18_mds_mapping>> defines the mapping of the <<acronym_mdib>> MDS meta data to the data fields of the HL7 data type *EI* used in the OBX-18 field.
+
+* <<ref_tbl_dec_obx18_vmd_mapping>> defines the mapping of the <<acronym_mdib>> VMD information to the data fields of the HL7 data type *EI* used in the OBX-18 field.
 ====
 ****
 

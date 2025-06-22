@@ -152,6 +152,44 @@
                 ]
             }
         ],
+        "options": [
+            {
+                "id": "sdpi-p-managed-discovery",
+                "anchor": "vol1_clause_sdpi_p_option_discovery_proxy",
+                "label": "Managed Discovery Option",
+                "transactionReferences": [
+                    {
+                        "transactionId": "DEV-46",
+                        "obligations": [
+                            {
+                                "contribution": "INITIATOR",
+                                "obligation": "REQUIRED",
+                                "actorId": "somds_provider"
+                            },
+                            {
+                                "contribution": "RESPONDER",
+                                "obligation": "REQUIRED"
+                            }
+                        ]
+                    },
+                    {
+                        "transactionId": "DEV-47",
+                        "obligations": [
+                            {
+                                "contribution": "INITIATOR",
+                                "obligation": "REQUIRED",
+                                "actorId": "somds_consumer"
+                            },
+                            {
+                                "contribution": "RESPONDER",
+                                "obligation": "REQUIRED",
+                                "actorId": "discovery_proxy"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
         "actors": [
             {
                 "id": "somds_participant",
@@ -219,39 +257,133 @@
                 "profile": "sdpi-p",
                 "anchor": "vol1_clause_sdpi_p_discovery_proxy"
             }
-        ],
-        "options": [
+        ]
+    },
+    {
+        "profileId": "sdpi-r",
+        "anchor": "vol1_clause_sdpi_r_profile",
+        "label": "Reporting Profile",
+        "transactionReferences": [
             {
-                "id": "sdpi-p-managed-discovery",
-                "anchor": "vol1_clause_sdpi_p_option_discovery_proxy",
-                "label": "Managed Discovery Option",
+                "transactionId": "DEV-35",
+                "obligations": [
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_medical_data_consumer"
+                    },
+                    {
+                        "contribution": "RESPONDER",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_medical_data_provider"
+                    },
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_dec_gateway"
+                    }
+                ]
+            },
+            {
+                "transactionId": "DEV-36",
+                "obligations": [
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_medical_data_provider"
+                    },
+                    {
+                        "contribution": "RESPONDER",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_medical_data_consumer"
+                    },
+                    {
+                        "contribution": "RESPONDER",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_dec_gateway"
+                    }
+                ]
+            },
+            {
+                "transactionId": "DEV-37",
+                "obligations": [
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "OPTIONAL",
+                        "actorId": "somds_medical_data_consumer"
+                    },
+                    {
+                        "contribution": "RESPONDER",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_medical_data_provider"
+                    },
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "OPTIONAL",
+                        "actorId": "somds_dec_gateway"
+                    }
+                ]
+            }
+        ],
+        "actors": [
+            {
+                "id": "somds_medical_data_provider",
+                "label": "SOMDS Medical Data Provider",
+                "profile": "sdpi-r",
+                "anchor": "vol1_clause_sdpi_r_somds_medical_data_provider"
+            },
+            {
+                "id": "somds_medical_data_consumer",
+                "label": "SOMDS Medical Data Consumer",
+                "profile": "sdpi-r",
+                "anchor": "vol1_clause_sdpi_r_somds_medical_data_consumer"
+            },
+            {
+                "id": "somds_dec_gateway",
+                "label": "SOMDS DEC Gateway",
+                "profile": "sdpi-r",
+                "anchor": "vol1_clause_sdpi_r_somds_dec_gateway"
+            },
+            {
+                "id": "somds_fhir_medical_data_gateway",
+                "label": "SOMDS FHIR Medical Data Gateway",
+                "profile": "sdpi-r",
+                "anchor": "vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway"
+            }
+        ],
+        "actor-options": [
+            {
+                "id": "rrd",
+                "label": "Retrieve Remote Data",
+                "anchor": "vol1_clause_sdpi_r_actor_option_retrieve_remote_data",
                 "transactionReferences": [
                     {
-                        "transactionId": "DEV-46",
+                        "transactionId": "DEV-35",
                         "obligations": [
                             {
-                                "contribution": "INITIATOR",
-                                "obligation": "REQUIRED",
-                                "actorId": "somds_provider"
-                            },
-                            {
                                 "contribution": "RESPONDER",
-                                "obligation": "REQUIRED"
+                                "obligation": "REQUIRED",
+                                "actorId": "somds_dec_gateway"
                             }
                         ]
                     },
                     {
-                        "transactionId": "DEV-47",
+                        "transactionId": "DEV-36",
                         "obligations": [
                             {
                                 "contribution": "INITIATOR",
-                                "obligation": "REQUIRED",
-                                "actorId": "somds_consumer"
-                            },
+                                "obligation": "OPTIONAL",
+                                "actorId": "somds_dec_gateway"
+                            }
+                        ]
+                    },
+                    {
+                        "transactionId": "DEV-37",
+                        "obligations": [
                             {
                                 "contribution": "RESPONDER",
                                 "obligation": "REQUIRED",
-                                "actorId": "discovery_proxy"
+                                "actorId": "somds_dec_gateway"
                             }
                         ]
                     }
@@ -260,18 +392,47 @@
         ]
     },
     {
-        "profileId": "sdpi-r",
-        "anchor": "vol1_clause_sdpi_r_profile",
-        "label": "Reporting Profile"
-    },
-    {
         "profileId": "sdpi-a",
         "anchor": "vol1_clause_sdpi_a_profile",
-        "label": "Alerting Profile"
+        "label": "Alerting Profile",
+        "actors": [
+            {
+                "id": "somds_medical_alert_provider",
+                "label": "SOMDS Medical Alert Provider",
+                "profile": "sdpi-a",
+                "anchor": "vol1_clause_sdpi_a_somds_medical_alert_provider"
+            },
+            {
+                "id": "somds_medical_alert_consumer",
+                "label": "SOMDS Medical Alert Consumer",
+                "profile": "sdpi-a",
+                "anchor": "vol1_clause_sdpi_a_somds_medical_alert_consumer"
+            },
+            {
+                "id": "somds_acm_gateway",
+                "label": "SOMDS ACM Gateway",
+                "profile": "sdpi-a",
+                "anchor": "vol1_clause_sdpi_a_somds_acm_gateway"
+            }
+        ]
     },
     {
         "profileId": "sdpi-xc",
         "anchor": "vol1_clause_sdpi_xc_profile",
-        "label": "External Control Profile"
+        "label": "External Control Profile",
+        "actors": [
+            {
+                "id": "somds_medical_control_provider",
+                "label": "SOMDS Medical Control Provider",
+                "profile": "sdpi-xc",
+                "anchor": "vol1_clause_sdpi_xc_somds_medical_control_provider"
+            },
+            {
+                "id": "somds_medical_control_consumer",
+                "label": "SOMDS Medical Control Consumer",
+                "profile": "sdpi-xc",
+                "anchor": "vol1_clause_sdpi_xc_somds_medical_control_consumer"
+            }
+        ]
     }
 ]
