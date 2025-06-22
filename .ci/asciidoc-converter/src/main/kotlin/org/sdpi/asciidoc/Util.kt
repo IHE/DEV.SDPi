@@ -3,6 +3,7 @@ package org.sdpi.asciidoc
 import org.apache.logging.log4j.kotlin.loggerOf
 import org.asciidoctor.ast.ContentNode
 import org.asciidoctor.ast.StructuralNode
+import org.jruby.util.ResourceException.InvalidArguments
 import org.sdpi.asciidoc.extension.Roles
 import org.sdpi.asciidoc.model.BlockOwner
 import org.sdpi.asciidoc.model.RequirementLevel
@@ -131,4 +132,22 @@ fun getLocation(block: StructuralNode): String {
     } else {
         "";
     }
+}
+
+fun getTitleFrom(block: StructuralNode): String {
+    if (block.reftext != null) {
+        return block.reftext
+    }
+
+    val strLabel = block.title
+    val reExtractTitleElements = Regex("""^\d+([.:]\d+)*\s+(.*)""")
+    val mrTitleElements = reExtractTitleElements.find(strLabel)
+    return mrTitleElements?.groups?.get(2)?.value ?: strLabel
+}
+
+fun makeLink(strAnchor: String, strText: String): String {
+    if (strAnchor.contains(" ")) {
+        throw  InvalidArguments("Anchor '$strAnchor' contains spaces")
+    }
+    return "link:#$strAnchor[$strText]"
 }

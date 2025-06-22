@@ -75,3 +75,7 @@ enum class ContentModuleAttributes(val key: String) {
     ACTOR("actor-id"),
     OBLIGATION("support")
 }
+
+enum class TransactionIncludeAttributes(val key: String) {
+    ACTOR("actor-id")
+}

@@ -25,3 +25,11 @@ data class SdpiActorRole(
 ) {
 }
 
+@Serializable
+data class SdpiActorOption(
+    val id: String,
+    val label: String,
+    val anchor: String,
+    val transactionReferences: List<SdpiTransactionReference>?,
+)
+

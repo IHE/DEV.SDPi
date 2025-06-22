@@ -24,7 +24,8 @@ data class LabelInfo(
 )
 
 class ReferenceSanitizerPostprocessor(
-    private val anchorLabels: AnchorReplacementsMap
+    private val anchorLabels: AnchorReplacementsMap,
+    val enableTrace: Boolean = true
 ) : Postprocessor() {
     override fun process(document: Document, output: String): String {
         // skip numbering if xref style has been changed to reduce likelihood of broken references
@@ -70,10 +71,14 @@ class ReferenceSanitizerPostprocessor(
                 val parts = rawFragment.split(ReferenceSanitizerPreprocessor.refSeparator)
                 Pair(parts[0], parts[1]).also { (id, label) ->
                     val decoded = decodeLabel(label)
-                    logger.info { "Found custom reference: $id => $label => $decoded" }
+                    if (enableTrace) {
+                        logger.info { "Found custom reference: $id => $label => $decoded" }
+                    }
                 }
             } else {
-                logger.info { "Found regular reference: $rawFragment" }
+                if (enableTrace) {
+                    logger.info { "Found regular reference: $rawFragment" }
+                }
                 continue
             }
 

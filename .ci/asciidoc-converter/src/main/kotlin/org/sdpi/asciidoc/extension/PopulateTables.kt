@@ -12,6 +12,7 @@ import org.sdpi.asciidoc.factories.TransactionTableBuilder
 import org.sdpi.asciidoc.getRequirementGroups
 import org.sdpi.asciidoc.model.*
 import org.sdpi.asciidoc.plainContext
+import javax.swing.text.html.Option
 
 /**
  * Tree processor to populate requirement table placeholders, which are inserted
@@ -79,7 +80,7 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
             val level = req.level
             val strType = req.getTypeDescription()
 
-            val strIdLink = req.makeLink()
+            val strIdLink = req.makeLinkGlobal()
 
             val cellGlobalId = createDocument(table.document)
             cellGlobalId.blocks.add(
@@ -143,6 +144,9 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
 
         val strProfileOption = table.attributes[Roles.Profile.ID_PROFILE_OPTION.key]?.toString()
         logger.info("Table profile option = $strProfileOption")
+        val profileFilter: Pair<OptionType, String>? = if (strProfileOption == null) {
+            null
+        } else Pair(OptionType.PROFILE, strProfileOption)
 
         val strActorId = table.attributes[Roles.Transaction.ACTOR_ID.key]?.toString()
 
@@ -159,10 +163,10 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
             checkNotNull(actor) {
                 logger.error("Actor $strActorId is not defined in profile $strProfile")
             }
-            addActorTransactions(tableBuilder, profile, actor, strProfileOption)
+            addActorTransactions(tableBuilder, profile, actor, profileFilter)
         } else {
-            for (actorRef in profile.actorReferences()) {
-                addActorTransactions(tableBuilder, profile, actorRef, strProfileOption)
+            for (actor in profile.actorReferences()) {
+                addActorTransactions(tableBuilder, profile, actor, profileFilter)
             }
         }
     }
@@ -171,7 +175,7 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
         tableBuilder: TransactionTableBuilder,
         profile: SdpiProfile,
         actor: SdpiActor,
-        strProfileOptionFilter: String?,
+        optionFilter: Pair<OptionType, String>?,
     ) {
         var bFirstActor = true
         val transactionReferences = profile.transactionReferences
@@ -183,25 +187,24 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
                     logger.error("Unknown transaction id $strTransactionId")
                 }
 
-                val actorsContribution = transaction.getContributionForActor(actor.id)
-                if (actorsContribution == null) {
-                    continue
-                }
+                for(obl in transactionReference.obligations) {
+                    if (obl.actorId == actor.id) {
+                        var bFirstTransaction = true
 
+                        val obligationsForTransaction = profile.getTransactionObligations(strTransactionId, actor.id, optionFilter)
+                        for (ref in obligationsForTransaction) {
+                            tableBuilder.addRow(
+                                if (bFirstActor) actor else null,
+                                if (bFirstTransaction) transaction else null,
+                                ref.contribution,
+                                ref.obligation,
+                                ref.optionId
+                            )
+                            bFirstTransaction = false
+                            bFirstActor = false
+                        }
 
-                var bFirstTransaction = true
-                val obligationsForTransaction =
-                    profile.getTransactionObligations(strTransactionId, actorsContribution, strProfileOptionFilter)
-                for (ref in obligationsForTransaction) {
-                    tableBuilder.addRow(
-                        if (bFirstActor) actor else null,
-                        if (bFirstTransaction) transaction else null,
-                        if (bFirstTransaction) ref.contribution else null,
-                        ref.obligation,
-                        ref.profileOptionId
-                    )
-                    bFirstTransaction = false
-                    bFirstActor = false
+                    }
                 }
             }
         }
