@@ -615,7 +615,7 @@ Options that may be selected for this Integration Profile are listed in the <<vo
 Dependencies between options when applicable are specified in
 notes.
 
-[#vol1_table_sdpi_p_actors_transactions]
+[#vol1_table_sdpi_p_actors_options]
 .SDPi-P Profile - Actors and Options
 [%autowidth]
 [cols="1,1,1"]
@@ -635,6 +635,14 @@ notes.
 | <<vol1_spec_sdpi_p_actor_somds_provider>>
 | <<vol1_spec_sdpi_p_option_discovery_proxy>>
 | <<vol1_clause_sdpi_p_option_discovery_proxy>>
+
+| <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>
+| <<vol1_spec_sdpi_p_option_sdc_gateway_direction>>
+| <<vol1_clause_sdpi_p_option_sdc_gateway_direction>>
+
+| <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>>
+| <<vol1_spec_sdpi_p_option_sdc_gateway_direction>>
+| <<vol1_clause_sdpi_p_option_sdc_gateway_direction>>
 
 |===
 
@@ -705,6 +713,40 @@ Though it is not recommended, deployments may allow simultaneous use of both the
 In these configurations, <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_spec_sdpi_p_actor_somds_provider>> systems should prioritize use of the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor.
 
 NOTE: Provisioning of <<vol1_spec_sdpi_p_actor_somds_participant>> systems to support use of a <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor is out-of-scope for this specification.
+
+[#vol1_clause_sdpi_p_option_sdc_gateway_direction]
+==== SDC Gateway Direction Option
+[#vol1_spec_sdpi_p_option_sdc_gateway_direction, reftext='SDC Gateway Direction Option']
+
+The SDC Gateway Direction option specifies the flow of information through the gateway actor.
+If this option is not configured, then the DEFAULT direction of any gateway actors shall be "export".
+Each gateway actor, which is an instance of the abstract <<vol1_spec_sdpi_p_actor_somds_connector>> Actor, shall be grouped with either a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor, <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor, or both.
+
+The following table details the options that shall be selected:
+
+[#vol1_table_sdpi_p_sdc_discovery_direction_options]
+.SDC Gateway Discovery Direction Option Values
+[%autowidth]
+[cols="1,1,1"]
+|===
+.^|Direction
+.^|Actor Grouping
+.^|Capability
+
+| export
+| <<vol1_spec_sdpi_p_actor_somds_consumer>>
+| Gateway retrieves information from SOMDS Provider systems, converts and sends it to other systems.
+
+| import
+| <<vol1_spec_sdpi_p_actor_somds_provider>>
+| Gateway retrieves information from external systems, and provides the content to SOMDS Consumer systems.
+
+| bidirectional
+| <<vol1_spec_sdpi_p_actor_somds_consumer>> + <<vol1_spec_sdpi_p_actor_somds_provider>>
+| Gateway supports both export and import functions to external systems.
+
+|===
+
 
 ////
 #TODO:  Add description and detail specification in a subsequent SDPi Version#

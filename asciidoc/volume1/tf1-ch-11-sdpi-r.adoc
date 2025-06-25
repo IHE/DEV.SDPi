@@ -90,14 +90,24 @@ image::../images/vol1-diagram-sdpi-r-actor.svg[]
 | O
 | <<vol2_clause_dev_37>>
 
-.3+| <<vol1_spec_sdpi_r_actor_somds_dec_gateway>>
+.6+| <<vol1_spec_sdpi_r_actor_somds_dec_gateway>>
 .^| <<transaction_name_establish_medical_data_exchange>>
 .^| Initiator ^(See^ ^Note^ ^1)^
 .^| R
 | <<vol2_clause_dev_35>>
 
+| <<transaction_name_establish_medical_data_exchange>>
+| Responder ^(See^ ^Note^ ^2)^
+| R
+| <<vol2_clause_dev_35>>
+
 | <<transaction_name_publish_medical_data>>
-| Responder ^(See^ ^Note^ ^1)^
+| Initiator ^(See^ ^Note^ ^1)^
+| R
+| <<vol2_clause_dev_36>>
+
+| <<transaction_name_publish_medical_data>>
+| Responder ^(See^ ^Note^ ^2)^
 | R
 | <<vol2_clause_dev_36>>
 
@@ -106,8 +116,48 @@ image::../images/vol1-diagram-sdpi-r-actor.svg[]
 | O
 | <<vol2_clause_dev_37>>
 
+| <<transaction_name_retrieve_medical_data>>
+| Responder ^(See^ ^Note^ ^2)^
+| R
+| <<vol2_clause_dev_37>>
+
+.6+| <<vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway>>
+.^| <<transaction_name_establish_medical_data_exchange>>
+.^| Initiator ^(See^ ^Note^ ^1)^
+.^| R
+| <<vol2_clause_dev_35>>
+
+| <<transaction_name_establish_medical_data_exchange>>
+| Responder ^(See^ ^Note^ ^2)^
+| R
+| <<vol2_clause_dev_35>>
+
+| <<transaction_name_publish_medical_data>>
+| Initiator ^(See^ ^Note^ ^1)^
+| R
+| <<vol2_clause_dev_36>>
+
+| <<transaction_name_publish_medical_data>>
+| Responder ^(See^ ^Note^ ^2)^
+| R
+| <<vol2_clause_dev_36>>
+
+| <<transaction_name_retrieve_medical_data>>
+| Initiator ^(See^ ^Note^ ^1)^
+| O
+| <<vol2_clause_dev_37>>
+
+| <<transaction_name_retrieve_medical_data>>
+| Responder ^(See^ ^Note^ ^2)^
+| R
+| <<vol2_clause_dev_37>>
+
 5+<|
-Note 1: If the <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> implements the <<vol1_clause_sdpi_r_actor_option_retrieve_remote_data_reftext>>, then bidirectional exchange is supported and the roles are expanded to "Initiator & Responder."
+Note 1: This actor initiates this transaction if the grouped actor from SDPi-P supports the *"export"* or *"bidirectional"* <<vol1_spec_sdpi_p_option_sdc_gateway_direction>>.
+In this case, the gateway is performing a "consumer" role.
+
+Note 2: This actor responds this transaction if the grouped actor from SDPi-P supports the *"import"* or *"bidirectional"* <<vol1_spec_sdpi_p_option_sdc_gateway_direction>>.
+In this case, the gateway is performing a "provider" role.
 
 |===
 
@@ -206,19 +256,21 @@ See <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>> for additional information.
 [#vol1_clause_sdpi_r_actor_options]
 === SDPi-R Actor Options
 
-[#vol1_clause_sdpi_r_actor_option_retrieve_remote_data]
-==== Retrieve Remote Data
+No options are defined for this profile.
 
-[#vol1_clause_sdpi_r_actor_option_retrieve_remote_data_reftext, reftext='SDPi-R Option: Retrieve Remote Data']
-[%noheader]
-[%autowidth]
-[cols="1"]
-|===
-a| *{supplement_note}*:  This section is left intentionally blank to indicate capabilities that will be added in a future version of the SDPi Supplement.
+// [#vol1_clause_sdpi_r_actor_option_retrieve_remote_data]
+// ==== Retrieve Remote Data
 
-This option will enable <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> systems to access information in remote systems that are not part of its <<acronym_somds>> network instance.  This access will be provided by either a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> or <<vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway>>.
-For example, retrieving the latest laboratory information for a specific patient.
-|===
+// [#vol1_clause_sdpi_r_actor_option_retrieve_remote_data_reftext, reftext='SDPi-R Option: Retrieve Remote Data']
+// [%noheader]
+// [%autowidth]
+// [cols="1"]
+// |===
+// a| *{supplement_note}*:  This section is left intentionally blank to indicate capabilities that will be added in a future version of the SDPi Supplement.
+//
+// This option will enable <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> systems to access information in remote systems that are not part of its <<acronym_somds>> network instance.  This access will be provided by either a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> or <<vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway>>.
+// For example, retrieving the latest laboratory information for a specific patient.
+// |===
 
 
 [#vol1_clause_sdpi_r_required_actor_groupings]
