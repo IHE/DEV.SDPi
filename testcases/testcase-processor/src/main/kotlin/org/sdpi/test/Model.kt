@@ -30,6 +30,7 @@ sealed interface Test {
         val version: String,
         val shortDescription: String,
         val peerType: PeerType,
+        val iheTestType: IheTestType = IheTestType.CONNECTATHON,
         val preconditions: String = "",
         val specificInstructions: String = "",
         val description: String,
@@ -46,6 +47,12 @@ enum class PeerType {
     NO_PEER,
     PEER_TO_PEER,
     GROUP;
+}
+
+@Serializable
+enum class IheTestType {
+    CONNECTATHON,
+    PREPARATORY
 }
 
 @Serializable

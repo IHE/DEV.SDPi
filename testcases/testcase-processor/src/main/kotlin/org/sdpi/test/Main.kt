@@ -1,8 +1,9 @@
 package org.sdpi.test
 
 import kotlinx.serialization.json.Json
-import org.sdpi.test.db.connectionEstablishment
+import org.sdpi.test.db.connectionEstablishmentTestFixture
 import org.sdpi.test.db.discoveryTestFixture
+import org.sdpi.test.db.preparatoryTestsTestFixture
 import java.io.File
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -11,10 +12,14 @@ fun main() {
     val json = Json {
         prettyPrint = true
     }
-    File("${discoveryTestFixture.id}.json").writeText(
-        json.encodeToString(discoveryTestFixture)
-    )
-    File("${connectionEstablishment.id}.json").writeText(
-        json.encodeToString(connectionEstablishment)
-    )
+
+    listOf(
+        preparatoryTestsTestFixture,
+        discoveryTestFixture,
+        connectionEstablishmentTestFixture,
+    ).forEach {
+        File("${it.id}.json").writeText(
+            json.encodeToString(it)
+        )
+    }
 }
