@@ -226,10 +226,36 @@ This actor is designed to process information with an _intended medical purpose_
 
 Every <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> to enable <<acronym_somds>>-based connectivity.
 This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>.
-Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_r_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> and <<vol1_clause_sdpi_p_profile_reftext>>.
+Gateway directionality (export, import, or bidirectional) is specified by the <<vol1_spec_sdpi_p_option_sdc_gateway_direction>> in the <<vol1_clause_sdpi_p_profile_reftext>>.
+For the <<vol1_spec_sdpi_r_actor_somds_dec_gateway>>, the following configurations shall apply:
 
-This actor shall implement the <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> capabilities, receiving information provided by <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> systems and publishing them as [DEV-01] / [PCD-01] Transactions to external DEC Device Observation Consumer (DOC) systems.
-If <<vol1_clause_sdpi_r_actor_option_retrieve_remote_data_reftext>> is implemented, then this actor will also support the <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> capabilities, receiving [DEV-01] / [PCD-01] Transactions from external DEC Device Observation Reporter (DOR) systems and making them available to other <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> systems.
+[#vol1_table_sdpi_r_dec_gateway_direction]
+.DEC Gateway Direction Requirements
+[%autowidth]
+[cols="1,1,1,2"]
+|===
+.^|Direction
+.^|Profile Mapping
+.^|DEC Actor
+.^|Processing
+
+| export
+| SDC-to-DEC
+| DOR
+| Gateway retrieves information from <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> systems, converts and spublishing them as [DEV-01] / [PCD-01] Transactions to external DEC Device Observation Consumer (DOC) systems.
+
+| import
+| DEC-to-SDC
+| DOC
+| Gateway receives [DEV-01] / [PCD-01] Transactions from external DEC Device Observation Reporter (DOR) systems and makes them available to other to  <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> systems.
+
+| bidirectional
+| SDC-to-DEC + DEC-to-SDC
+| DOR + DOC
+| Gateway supports both export and import functions to external systems.
+
+|===
+
 Note:  Not supported are <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> systems that only implement the <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> and not <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> capabilities.
 
 Detailed specifications for mapping from <<acronym_somds>>/<<acronym_biceps>>  to <<acronym_hl7>> V2 / DEC transactions are provided in <<vol2_clause_appendix_sdpi_dec_gateway>>.
