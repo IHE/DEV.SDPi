@@ -1,0 +1,89 @@
+<html>
+ <head></head>
+ <body>
+  <div class="sect1">
+   <h2 id="_ics_table">1 ICS Table</h2>
+   <div class="sectionbody">
+    <div class="paragraph">
+     <p>Requirements for providers:</p>
+    </div>
+    <table class="tableblock frame-all grid-all stretch ics-table">
+     <colgroup>
+     </colgroup>
+     <thead>
+      <tr>
+       <th class="tableblock halign-left valign-top">Index</th>
+       <th class="tableblock halign-left valign-top">Reference</th>
+       <th class="tableblock halign-left valign-top">Status</th>
+       <th class="tableblock halign-left valign-top">Support</th>
+       <th class="tableblock halign-left valign-top">Comment</th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td class="tableblock halign-left valign-top"><p class="tableblock">ICS-1005</p></td>
+       <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#r1005">R1005</a></p></td>
+       <td class="tableblock halign-left valign-top"><p class="tableblock">r</p></td>
+       <td class="tableblock halign-left valign-top"></td>
+       <td class="tableblock halign-left valign-top"></td>
+      </tr>
+      <tr>
+       <td class="tableblock halign-left valign-top"><p class="tableblock">ICS-1023</p></td>
+       <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#r1023">R1023</a></p></td>
+       <td class="tableblock halign-left valign-top"><p class="tableblock">m</p></td>
+       <td class="tableblock halign-left valign-top"></td>
+       <td class="tableblock halign-left valign-top"></td>
+      </tr>
+     </tbody>
+    </table>
+   </div>
+  </div>
+  <div class="sect1">
+   <h2 id="_requirements">2 Requirements</h2>
+   <div class="sectionbody">
+    <div id="r1005" class="sidebarblock requirement">
+     <div class="content">
+      <div class="title">
+       R1005
+      </div>
+      <div class="exampleblock">
+       <div class="content">
+        <div class="paragraph">
+         <p>A SOMDS Consumer should reconnect or go into a fail-safe mode when it receives a report with an MDIB version that is either lower than the last received version or more than one version higher than the last received version.</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div id="r1021" class="sidebarblock requirement">
+     <div class="content">
+      <div class="title">
+       R1021
+      </div>
+      <div class="exampleblock">
+       <div class="content">
+        <div class="paragraph">
+         <p>When the managed discovery option is enabled for a SOMDS provider, then it shall use the DEV-46 transaction to update the discovery proxy actor of its network presence and departure.</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div id="r1023" class="sidebarblock requirement">
+     <div class="content">
+      <div class="title">
+       R1023
+      </div>
+      <div class="exampleblock">
+       <div class="content">
+        <div class="paragraph">
+         <p>When the managed discovery option is enabled for a SOMDS consumer, then it shall use the DEV-47 transaction to retrieve SOMDS provider network presence metadata from the Discovery Proxy actor.</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

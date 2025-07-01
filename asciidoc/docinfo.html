@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/copy2clipboard.css">
 
 <!-- Generate a collapsible TOC -->
 <script src="js/jquery-1.11.3.min.js"></script>
@@ -143,8 +144,17 @@ table.tableblock {
     background:url("images/loading.png") no-repeat center center rgba(0,0,0,0.6)
 }
 
+/* Styling for requirement blocks. */
+span.global-id code {
+  font-size: 0.6em;
+}
+/* Styling for requirement summary tables */
+div.global-id p {
+  font-family: "Droid Sans Mono","DejaVu Sans Mono",monospace
+}
 </style>
 
+<script src="js/copy2clipboard.js" ></script>
 <script type="text/javascript">
     document.onreadystatechange = function () {
         var state = document.readyState
@@ -161,6 +171,7 @@ table.tableblock {
                 elemDiv.className = 'bottom_bar';
                 document.body.appendChild(elemDiv);
             },500);
+			AddClipboardDecoration();
         }
     }
 

@@ -1,19 +1,16 @@
 package org.sdpi
 
 import com.github.ajalt.clikt.core.CliktCommand
-import com.github.ajalt.clikt.parameters.options.default
-import com.github.ajalt.clikt.parameters.options.option
-import com.github.ajalt.clikt.parameters.options.required
-import com.github.ajalt.clikt.parameters.options.validate
+import com.github.ajalt.clikt.parameters.options.*
 import com.github.ajalt.clikt.parameters.types.choice
 import com.github.ajalt.clikt.parameters.types.file
 import org.apache.logging.log4j.kotlin.Logging
 import org.sdpi.asciidoc.AsciidocErrorChecker
-import org.sdpi.asciidoc.github.IssueImport
 import java.io.File
 import kotlin.system.exitProcess
 
-fun main(args: Array<String>) = ConvertAndVerifySupplement().main(args
+fun main(args: Array<String>) = ConvertAndVerifySupplement().main(
+    args
 //    when (System.getenv().containsKey("CI")) {
 //        true -> args.firstOrNull()?.split(" ") ?: listOf() // caution: blanks in quotes not covered here!
 //        false -> args.toList()
@@ -47,6 +44,12 @@ class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {
 
     private val githubToken by option("--github-token", help = "Github token to request issues")
 
+    private val dumpStructure by option("--dump-structure", help = "Writes document tree to std-out during processing")
+        .flag(default = false)
+
+    private val testGenerator by option("--test", help = "Writes document without headers for test output")
+        .flag(default = false)
+
     override fun run() {
         runCatching {
             val asciidocErrorChecker = AsciidocErrorChecker()
@@ -59,14 +62,25 @@ class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {
 
             logger.info { "Write output to '${outFile.canonicalPath}'" }
 
-            AsciidocConverter(AsciidocConverter.Input.FileInput(adocInputFile), outFile, githubToken).run()
+            val converter = AsciidocConverter(
+                AsciidocConverter.Input.FileInput(adocInputFile),
+                outFile.outputStream(),
+                ConverterOptions(
+                    githubToken = githubToken,
+                    extractsFolder = ConverterOptions.makeDefaultPath(outputFolder.absolutePath),
+                    outputFormat = backend,
+                    dumpStructure = dumpStructure,
+                    generateTestOutput = testGenerator,
+                )
+            )
+            converter.run()
 
-            asciidocErrorChecker.run()
+            asciidocErrorChecker.run(converter.documentAnchors().keys.toList())
 
             logger.info { "File successfully written" }
         }.onFailure {
             logger.error { it.message }
-            logger.trace(it) { it.message }
+            //logger.trace(it) { it.message }
             exitProcess(1)
         }
     }

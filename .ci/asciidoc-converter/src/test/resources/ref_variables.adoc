@@ -1,0 +1,34 @@
+= Title
+:doctype: book
+:stylesdir: css
+:docinfo: shared
+:url-wolpertinger: https://en.wikipedia.org/wiki/Wolpertinger
+:icons: font
+:asciidoctor-version: {asciidoctor-version}
+
+== Transactions
+
+:var_transaction_id: DEV-23
+
+:var_label_dev_23_message_hello: Hello
+:var_label_dev_23_payload_provider_uid: Provider UID
+:val_label_dev_23_payload_discovery_scope: Discovery Scope
+
+=== Announce Network Presence [{var_transaction_id}]
+
+==== Scope
+
+==== Actor Roles [{var_transaction_id}]!
+
+.Actor Roles [{var_transaction_id}]
+[cols="1,2"]
+|===
+|Actor |Roles
+
+| Consumer
+| Initiates communication by first subscribing to a...
+
+| Provider
+|Listens for ...
+
+|===

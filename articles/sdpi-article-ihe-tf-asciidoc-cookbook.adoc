@@ -224,23 +224,19 @@ Check the AsciiDoc source where the graphic is included to ensure that it is pro
 
 In general, AsciiDoc automatically handles other image formats based on the file name extension (e.g., myGraphic.png).
 
-[none]
-. Note:  __The following path to the AsciiDoc images folder is due to the fact that this document is in the SDPi_Supplement articles folder. __
-
 [source]
 ----
-image::../asciidoc/images/ihe-logo.png[]
+image::../../asciidoc/images/ihe-logo.svg[]
 ----
 
 Which should render as:
 
-WARNING:  #WHY DOESN'T THIS RENDER CORRECTLY EITHER HERE OR ON THE SUPPLEMENT'S TITLE PAGE?!#
+image::../../asciidoc/images/ihe-logo.svg[]
 
-[none]
-. image:../asciidoc/images/ihe-logo.png[]
+NOTE: __You may need to experiment with paths to locate the image file. Use `..` for the parent folder; this one is in the `<project-root>/asciidoc/images` folder. __
 
-[none]
-. Note: __ Two colons "::" are needed if the graphic is on a line by itself; if it is in-line with other text, then a single colon ":" should be used.__
+NOTE: __ Two colons "::" are needed if the graphic is on a line by itself; if it is in-line with other text, then a single colon ":" should be used.__
+
 
 Additional information is provided on the https://docs.asciidoctor.org/asciidoc/latest/macros/image-format/[AsciiDoc Specify Image Format] page.  For general file types and formats information, consult the https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types[Mozilla Image File Type and Format Guide].
 
@@ -340,6 +336,558 @@ For a bulleted list of items, the final "full stop" character of each non-final 
 . First bullet;
 . Second bullet;
 . Final Bullet.
+
+[#semantic-markup]
+== Semantic markup
+https://docs.asciidoctor.org/asciidoctorj/latest/[Asciidoctor], which converts these files into other formats (e.g., html, pdf), has been https://docs.asciidoctor.org/asciidoctorj/latest/extensions/extensions-introduction/[extended] to process domain specific content for the supplement. These extensions provide semantic markup of content that is used to automatically generate, for example, implementation conformance statement tables and export requirements and use cases in JSON format for external tooling (see https://profiles.ihe.net/DEV/SDPi/index.html#vol1_appendix_a_requirements_management_for_p_n_t_interperability[requirements management for plug-and-trust interoperability]). 
+
+Content extracted, using markup in the source described below, and exported, to `sdpi-supplement/referenced-artifacts/` in JSON format includes:
+
+* `sdpi-profiles.json`: all profiles (e.g., SDPi), including actors and options defined, and the transactions, content modules and use-cases referenced,
+* `sdpi-content-modules.json`: content modules (e.g., SDC/BICEPS, etc),
+* `sdpi-transactions.json`: collects transactions and the roles of actors in the transactions,
+* `sdpi-requirements.json`: all requirements, 
+* `sdpi-use-cases.json`: all use cases.
+
+NOTE: the extensions are written in Kotlin and may be found, along with the document processing tools, in `.ci/asciidoc-converter`. In Windows, run `build_document.bat` to process the Asciidoc source files. 
+
+Most content is defined by roles attached to an appropriate section. For example, a section that includes the `content-module` role will define a _content module_. The table below summarizes the roles available to mark up content. 
+
+|===
+| Content | Role | Identifier attribute | Parent scope
+
+| <<semantic-content-modules,Content module>> | `content-module` | `content-module-id` | global
+| <<semantic-transactions,Transaction>> | `transaction` | `transaction-id` | global
+| <<semantic-profiles,Profile>> | `profile` | `profile-id` | global
+| Profile option | `profile-option` | `profile-option-id` | Profile
+| Actor | `actor` | `actor-id` | Profile, Profile option
+| <<use-case,Use case>> | `use-case` | `use-case-id` | global
+| Use case background | `use-case-background` | &mdash; | Use case
+| Use case scenario | `use-case-scenario` | &mdash; | Use case
+| Use case steps | `use-case-steps` | &mdash; | Use case scenario
+| Gateway | `gateway` | `gateway-id` | global
+| Protocol | `protocol` | `protocol-id` | global
+|===
+
+NOTE: <<semantic-requirements>> are defined in a custom block. 
+
+[#semantic-profiles]
+=== Defining profiles
+
+Profiles define <<semantic-actors,actors>> and compose a set of transactions, use cases and content modules. They are defined within a single AsciiDoc section that includes definitions for all the profile's actors and references to relevant transactions, use-cases and content modules. Profiles may also define optional parts, such as support for a discovery proxy. Each option may define its own actors and reference a set of transactions, use cases and content modules. 
+
+The `profile` and `profile-option` roles mark sections defining profiles and options within profiles, respectively. A document-unique id is required for each profile and profile option, set using the `profile-id` and `profile-option-id` attributes, respectively. The fragment below illustrates the definition of a profile and two profile options. 
+
+NOTE: The document structure is used to associate information, such as actors and references to transactions or use cases, with a profile so these must be defined in sub-sections to the document section defining the profile. 
+
+[source,asciidoc]
+----
+[role="profile",profile-id="SDPi-P"]
+== Plug-and-trust (SDPi-P) Profile
+
+The SDPi-Plug-and-trust SDPi-P) Profile supports foundational seamless connectivity...
+
+[role="profile-option",profile-option-id="discovery proxy"]
+=== Managed discovery proxy option
+
+The managed discovery proxy supports discovery of SOMDS participants through a well-known proxy service...
+
+[role="profile-option",profile-option-id="ad-hoc-discovery"]
+=== Ad-hoc discovery option
+
+Ad-hoc discovery supports discovery of SOMDS participants through multi-cast broadcast messages...
+
+----
+
+[#semantic-actors]
+==== Defining actors
+
+The (abbreviated) example below illustrates the AsciiDoc source defining an actor. 
+
+[source,asciidoc]
+----
+[#vol1_clause_sdpi_p_somds_participant, role="actor",actor-id="somds-participant"]
+==== SOMDS Participant
+
+Actor Summary Definition:
+[none]
+. A foundational abstract actor that provides the...
+
+[#vol1_clause_sdpi_p_somds_provider, role="actor",actor-id="somds-provider"]
+==== SOMDS Provider
+
+Actor Summary Definition:
+[none]
+. A participant that provides at least one...
+
+[#vol1_clause_sdpi_p_somds_consumer, role="actor",actor-id="somds-consumer"]
+==== SOMDS Consumer
+
+Actor Summary Definition:
+[none]
+. A participant that discovers and...
+
+----
+
+Attaching the `actor` role to a section marks it as an actor. A (document-unique) identifier must be defined in the `actor-id` attribute. The `reftext` attribute or, if `reftext` is missing, the section title is used for the actor label. 
+
+[#semantic-profile-ref-transactions]
+==== Referencing transactions
+
+A profile, or profile option, references a <<semantic-transactions,transaction>> using the `sdpi_include_transaction` [include processor](https://docs.asciidoctor.org/asciidoctorj/latest/extensions/include-processor/) and declares the obligations of contributors. For example:
+
+[source, asciidoc]
+----
+sdpi_include_transaction::DEV-23[initiator="required", receiver="optional"]
+sdpi_include_transaction::DEV-47[initiator="optional", responder="required"]
+----
+
+Note, specify the:
+
+* <<semantic-transactions,transaction>> id as the directive target (e.g., `DEV-23`, `DEV-47`),
+* obligation (that is, `required` or `optional`) for each contribution (that is, `initiator`, `receiver` or `responder`) in attributes; the contributions for included transactions must match those defined in the <<semantic-transaction,transaction>>.
+
+NOTE: Transactions included in a sub-section of a profile-option apply to the option. Transactions included a sub-section of a profile apply to the profile.
+
+[#semantic-profile-ref-content-modules]
+==== Referencing content-modules
+
+A profile, or profile-option, references a <<semantic-content-module,content module>> using the `sdpi_include_content_module` [include processor](https://docs.asciidoctor.org/asciidoctorj/latest/extensions/include-processor/) and declares the actor and obligation of the actor for the profile. Include the content module for each actor with an obligation in the profile. For example:
+
+[source,asciidoc]
+----
+===== BICEPS Content Creator
+sdpi_include_content_module::biceps[actor-id="biceps-content-creator", support="required"]
+sdpi_include_content_module::pump[actor-id="biceps-content-creator",support="optional"]
+   :
+   :
+
+===== BICEPS Content Consumer
+sdpi_include_content_module::biceps[actor-id="biceps-content-consumer", support="required"]
+sdpi_include_content_module::pump[actor-id="biceps-content-consumer",support="optional"]
+   :
+   :
+----
+
+Note, specify the:
+
+* <<semantic-content-module,content module>> id as the directive target (e.g., `biceps`, `pump`),
+* <<semantic-actors,actor's>> id using the `actor-id` attribute,
+* obligation of the actor in the `support` attribute (that is, `required` or `optional`). 
+
+NOTE: Content modules included in a sub-section of a profile-option apply to the option. Content modules included a sub-section of a profile apply to the profile.
+
+[#semantic-profile-ref-use-case]
+==== Referencing use-cases
+
+A profile, or profile-option, references a <<semantic-use-case,use-case>> with the `sdpi_include_use_case` [include processor](https://docs.asciidoctor.org/asciidoctorj/latest/extensions/include-processor/) and declares the actor and obligation of the actor for the profile. Include the use-case for each actor with an obligation in the profile. For example:
+
+[source,asciidoc]
+----
+sdpi_include_use_case::stad[actor-id="discovery-proxy", support=required]
+sdpi_include_use_case::stad[actor-id="somds-consumer", support=required]
+sdpi_include_use_case::stad[actor-id="somds-provider", support=required]
+----
+
+Note, specify the:
+
+* <<semantic-use-case,use case>> id as the directive target (e.g., `stad`),
+* <<semantic-actors,actor's>> id using the `actor-id` attribute,
+* obligation of the actor in the `support` attribute (that is, `required` or `optional`). 
+
+NOTE: Use-cases included in a sub-section of a profile-option apply to the option. Use-cases included a sub-section of a profile apply to the profile.
+
+[#semantic-profile-actor-alias]
+==== Actor aliases
+
+The document processor generally discovers actors referenced in <<semantic-requirements,requirements>> using <<cross-referencing,semantic cross-references>>. 
+
+For backwards compatibility, a relationship between document ids (e.g., `vol1_spec_sdpi_p_actor_biceps_content_creator`) and actor-ids can be established by including the `actor-alias` role on sections defining ids that should be considered aliases for actors. 
+
+This example, defines an <<semantic-actor,actor>> with the id `somds-participant` on the section with a role of `actor` and creates two alias for this actor (`vol1_clause_sdpi_p_somds_participant` and `vol1_spec_sdpi_p_actor_somds_participant`) by including the `actor-alias` role on the sections where these document ids are defined:
+
+[source,asciidoc]
+----
+[#vol1_clause_sdpi_p_somds_participant, role="actor actor-alias",actor-id="somds-participant"]
+==== SOMDS Participant
+
+[#vol1_spec_sdpi_p_actor_somds_participant]
+[reftext='SOMDS Participant',role="actor-alias",actor-id="somds-participant"]
+Actor Summary...
+----
+
+NOTE: specify the <<semantic-actors,actor's>> id using the `actor-id` attribute.
+
+[#semantic-content-modules]
+=== Defining content modules
+
+The example below illustrates the AsciiDoc source required to define a content module for the document processor. 
+
+[source,asciidoc]
+----
+[#vol3_clause_sdc_biceps_semantic_content_module,role="content-module", content-module-id="biceps"]
+===== SDC/BICEPS Content Module
+
+The biceps standard, <<ref_ieee_11073_10207_2017>>, provides an extensive semantic...
+----
+
+Attaching the `content-module` role to a section marks it as a [content module](https://profiles.ihe.net/DEV/SDPi/index.html#vol3). A (document-unique) identifier must be defined in the `content-module-id` attribute. The section title is used for the content module label. 
+
+NOTE: `RefContentModule:<content-module-id>[]` may be used to <<cross-referencing,cross-reference>> transactions by id (e.g., `RefContentModule:biceps[]`). 
+
+[#semantic-transactions]
+=== Defining transactions
+
+The example below illustrates the AsciiDoc source required to define a transaction with two actors. 
+
+[source,asciidoc]
+----
+[#vol2_clause_dev_23, role="transaction", transaction-id="DEV-23", reftext="Announce network presence"]
+=== Announce Network Presence [{var_transaction_id}]
+
+==== Scope
+
+Notify all SOMDS Consumers that a SOMDS Provider is ...
+
+==== Actor Roles
+
+[sdpi_transaction_actors]
+--
+
+[actor-id="somds-provider", contribution="Initiator"]
+Announces its presence by multicasting vol2_clause_dev_23_message_hello messages to all listening systems.
+
+[actor-id="somds-consumer", contribution="Receiver"]
+Listens for vol2_clause_dev_23_message_hello messages to identify any <<vol1_spec_sdpi_p_actor_somds_provider>>s that it may exchange messages with and further retrieve a <<vol1_spec_sdpi_p_actor_somds_provider>>'s service capabilities.
+
+--
+----
+
+Attaching the `transaction` role to a section marks it as a [transaction](https://profiles.ihe.net/DEV/SDPi/index.html#vol2). A (document-unique) identifier must be defined in the `DEV-23` attribute. The `reftext` attribute is used for the transaction label in tables, etc. 
+
+Transaction sections must define roles actors contribute within a `sdpi_transaction_actors` block:
+
+[source,asciidoc]
+----
+[sdpi_transaction_actors]
+--
+   :
+   :
+--
+----
+
+The contribution actors make to the transaction are defined by a paragraph with `actor-id` and `contribution` attributes. The paragraph describes the contribution and/or role the actor will make to the transaction. The `actor-id` attribute provides the <<semantic-actors,actor's identifier>> while the `contribution` attribute provides the contribution the actor will make to the transaction. Available contributions are listed in the table below. 
+
+|===
+| Contribution | Actor's responsibility
+
+| `initiator` | Steps that start the transaction (e.g., send a message to request information such as a provider's capabilities)
+| `responder` | Provide a response to complete the transaction (e.g., provide the information requested in the message)
+| `receiver`  | Consume the information provided to support the actor's core-functions; no response is required. 
+|===
+
+NOTE: actor's obligations and transactions used by profiles are included in the <<semantic-profile,Profile definition>>.
+
+NOTE: `RefTransaction:<transaction-id>[]` may be used to <<cross-referencing,cross-reference>> transactions by id  (e.g., `RefTransaction:DEV-23[]`).  
+
+[#semantic-requirements]
+=== Defining requirements
+
+The example below illustrates the AsciiDoc source to define a simple requirement. 
+
+[source,asciidoc]
+----
+.R1021
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature,sdpi_req_group="provider,discovery-proxy",sdpi_req_specification=sdpi-p]
+****
+
+[NORMATIVE]
+====
+When the managed discovery option is enabled for a SOMDS provider, then it SHALL use the DEV-46 transaction to update the discovery proxy actor of its network presence and departure.
+====
+
+****
+----
+
+The block name, `sdpi_requirement`, triggers semantic processing for the requirement content while the https://docs.asciidoctor.org/asciidoc/latest/blocks/add-title/[block title] defines the requirement number. Various <<requirement-attributes,attributes>> define properties for the requirement. The requirement content is delimited by exactly four *'s. The only required content for a block is the normative statement, tagged with the block name `[NORMATIVE]` and delimited by exactly four ='s. With this information we can:
+
+* perform basic requirement validation, such as checking level keywords in the normative text,
+* generate a unique <<requirement-oids,ISO object identifier>> for each requirement,
+* generate implementation conformance statement <<generate-table,tables>> with a list of requirements for selected groups,
+* ensure all requirement numbers are unique,
+* ...
+
+Although the normative statement is the only block needed to define a requirement, many requirements include explanatory notes, examples and related information. This additional information is captured in tagged content blocks as the example below illustrates. This semantic content is retained when the requirements are exported in JSON format. 
+
+[source,asciidoc]
+----
+.R1023
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature,sdpi_req_group="consumer,discovery-proxy",sdpi_req_specification=sdpi-p]
+****
+
+[NORMATIVE]
+====
+When the managed discovery option is enabled for a SOMDS consumer, then it shall use the DEV-47 transaction to retrieve SOMDS provider network presence metadata from the Discovery Proxy actor.
+====
+
+[NOTE]
+====
+. When retrieving network presence metadata from a discovery proxy actor, a discovery scope may be specified as a filter to identify a specific subset of SOMDS provider systems.
+. A SOMDS consumer may optionally use the DEV-47 transaction to subscribe to all metadata updates from a set of SOMDS consumer systems, essentially using the discovery proxy as a pass-through for SOMDS provider DEV-23 and DEV-24 transactions. 
+====
+
+[EXAMPLE]
+====
+This is an example of an example block. 
+====
+
+[RELATED]
+====
+<<ref_oasis_ws_discovery_2009>>, section 2.2.2 Managed mode.
+====
+
+****
+----
+
+==== Requirement numbering
+
+Requirement numbers are parsed from the title of the `sdpi_requirement` block. They must match the regular expression `^([A-Z])*?R(\\d+)$`. That is, a sequence of upper-case characters followed by `R` then a numeric value. Examples of valid requirement titles include: `.R1002`, `.TR1002`, `.ABCDEFR1002`. Invalid requirement titles include `.r1234` (an upper-case `R` is required), `.ABC R1234` (spaces are not permitted), `.tR1234` (lower-case letters are not permitted). <<cross-referencing,Cross-references>> (links) to a requirement may be inserted with in-line macros. 
+
+NOTE: The `.` character marks the line as an AsciiDoc https://docs.asciidoctor.org/asciidoc/latest/blocks/add-title/[title]; it must begin in the first column of the source file. 
+
+NOTE: Requirements are identified by number only. They are preserved but do not form part of the requirement identifier. 
+
+NOTE: Previously anchors were needed, for cross-referencing, when defining a requirement (e.g., `[sdpi_requirement#r1022,sdpi_req_level=shall]`). These are now generated automatically. 
+
+[[requirement-attributes]]
+==== Block attributes
+
+Block attributes supply metadata for the requirement. Attributes are tabulated below; additional information may be found in https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_requirement_type_requirement_definition[SDPi requirement type definitions].
+
+|===
+|Attribute | Applies to | Type | Required |Description
+
+|`sdpi_req_type` | all | { `tech_feature` \| `ref_ics` \| `use_case_feature` \| `risk_mitigation` \| `ihe_profile` } | yes | Defines the type of requirement, from the https://profiles.ihe.net/DEV/SDPi/index.
+|`sdpi_req_level` | all | {`shall` \| `should` \| `may` } |yes | Defines the behaviour expected for compatible implementations. html#vol1_clause_sdpi_requirements_core_model[SDPi requirements core model]
+|`sdpi_req_group` |  all | comma separated list | no | Defines membership of ad-hoc groups. Groups may be used to select related requirements when generating ICS tables. 
+|`sdpi_req_specification` |  all | defined _specification id_| yes| Defines the root for the requirements <<requirement-oids,ISO object identifier>>. 
+|`sdpi_use_case_id` | `use_case_feature` | defined _use-case id_ | yes | Defines the use-case that the requirement applies to. Automatically populated from the enclosing <<use-case>> section. 
+|`sdpi_ref_id` | `ref_ics` | defined _reference id_ | yes | The bibliography anchor for the entry to the referenced requirement.
+|`sdpi_ref_section` | `ref_ics` | section identifier | yes | The identifier for the section containing the referenced requirement.
+|`sdpi_ref_req` | `ref_ics` | requirement identifier | yes | The identifier for the requirement in the referenced standard. 
+|`sdpi_ses_type` | `risk_mitigation` | {`general` \| `safety` \| `effectiveness` \| `security` \| `audit` } | yes | https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_requirement_type_ses[Type of risk] the requirement mitigates. 
+|`sdpi_ses_test` | `risk_mitigation` | {`inspect` \| `wire` } | yes | Mechanism for testing the requirement. 
+|===
+
+[[requirement-oids]]
+==== ISO object identifiers
+
+ISO object identifiers (OIDs) are assigned and rendered with each requirement in the output file generated. They are used as the primary requirement id in implementation conformance statement tables. ISO object identifiers combine a profile- or standard-specific root identifier with requirement number, that is: `profile_oid.2.requirement_number`. The profile/standard is identified, by name, using the `sdpi_req_specification` attribute. Relationships between profile/standard names and their ISO object identifier is established using document level `sdpi_oid` scoped attributes, typically in `asciidoc/std-oid-definitions.adoc`. 
+
+Named profile and standards include:
+
+|===
+| Specification (`sdpi_req_specification`) | Profile/standard
+
+| `sdpi` | The https://profiles.ihe.net/DEV/SDPi/index.html[SDPi] profile
+| `sdpi-p` | The https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_p_profile[SDPi plug-and-trust] profile
+| `sdpi-a` | The https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_a_profile[SDPi alerting] profile
+| `sdpi-r` | The https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_r_profile[SDPi reporting] profile
+| `sdpi-xC` | The https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_xc_profile[SDPi external control] profile
+|===
+
+Refer to the document source for corresponding ISO object identifiers for each profile. 
+
+NOTE: specification names are case-sensitive. 
+
+==== Groups
+
+There is currently (February 2025) no constraint on groups that may be assigned to requirements. However, to promote consistency and utility, the following groups are recommended.
+
+|===
+| Group id | Description
+
+| consumer | Applies to https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_p_somds_consumer[SOMDS consumer] implementations. 
+| provider | Applies to https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_p_somds_provider[SOMDS provider] implementations.
+| discovery-proxy | Applies to https://profiles.ihe.net/DEV/SDPi/index.html#_discovery_proxy[managed discovery proxy] implementations.
+|===
+
+NOTE: Group names are case sensitive.
+
+==== Ownership
+
+Requirement ownership is included in the `sdpi-requirements.json` artefact to requirement discovery (e.g., all requirements an actor must support). Requirements may be owned by a <<semantic-profile,profile>>, profile-option, <<semantic-content-module,content-module>>, gateway, protocol or <<semantic-use-case,use-case>>. Requirement ownership is automatically determined from the parent section (that is, a parent section with one of the <<semantic-markup,roles>> supported for ownership). 
+
+[[use-case]]
+=== Defining use cases
+
+Use case blocks, and their parts, are identified in the source by AsciiDoc https://docs.asciidoctor.org/asciidoc/latest/attributes/role/[roles], with metadata provided in block attributes. The following example AsciiDoc source defines a use-case and one scenario. 
+
+[source,asciidoc]
+----
+[role="use-case",sdpi_use_case_id=stad]
+[sdpi_feature="Synchronized Time Across Devices"]
+=== Use Case Feature 1: Synchronized time across devices (STAD)
+
+==== Narrative
+Nurse Jean attaches a ventilator to the medical device network in the ICU.  It automatically obtains the correct time.
+
+==== Benefits
+Automatically acquiring the time saves the user from spending time entering the time into the device.  It also guarantees that the correct time will be entered.
+It is also important for all devices to have a consistent time since the data being exported to consuming devices and systems will use the time stamps from the device to mark the time that the clinical data was acquired.  Since this is part of the clinical record, accuracy is very important.
+
+==== Technical Pre-Conditions
+
+[role=use-case-background]
+====
+*Given* All devices communicate using a common acronym_md_lan protocol
+
+*And* A Time Source (TS) Service is on the acronym_md_lan network
+====
+
+==== Scenarios
+
+[role=use-case-scenario,sdpi_scenario="Device is connected to the MD LAN network with a Time Source service"]
+===== Scenario: STAD 1.1 --- Device is connected to the MD LAN network with a Time Source service
+
+[role=use-case-steps]
+====
+*Given* Device has detected at least one TS Service
+
+*When* The TS Service is operational
+
+*Then* The device will synchronize its time with the TS Service
+====
+
+----
+
+[[use-case-roles]]
+==== Block roles
+
+AsciiDoc https://docs.asciidoctor.org/asciidoc/latest/attributes/role/[roles] assigned to content blocks provide semantic structure to use-case definitions. The roles available for use-cases are shown in the table below. 
+
+Along with roles, use-case blocks should be logically structured in document sections. That is, background and scenarios must be sub-sections of a use-case section; steps must be within a scenario section. This structure is used to associate each content block with the appropriate use-case/scenario. 
+
+Each use-case must have at most one background section and zero or more scenarios. Each scenario section must have at most one steps content block (which may contain several <<use-case-steps,steps>>).
+
+|===
+|Role | Parent | Content block
+
+| `use-case` | &mdash; | Defines a use-case feature. 
+| `use-case-background` | `use-case` | Defines technical pre-requisites for a use-case. 
+| `use-case-scenario` | `use-case` | Defines one scenario in the use-case. 
+| `use-case-steps` | `use-case-scenario` | Defines steps for a use-case scenario. 
+|===
+
+[[use-case-attributes]]
+==== Block attributes
+
+Block attributes supply metadata for the use-case. Attributes are tabulated below; additional information may be found in https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_requirement_type_requirement_definition[SDPi requirement type definitions].
+
+|===
+|Attribute | Applies to role | Type | Required |Description
+
+|`sdpi_use_case_id` | `use-case` | _unique id_ | yes | Defines an id for referencing the use case in requirements and cross-referencing. Must be globally unique.
+|`sdpi_use_case_scenario` |  `use-case-scenario` | _unique id_ | yes | Defines an id for one sequence in a use case. Must be unique within the use-case. 
+|===
+
+NOTE: Ids are case-sensitive. 
+
+[[use-case-steps]]
+==== Defining steps
+
+Steps, in background and steps content blocks, are defined in paragraphs prefixed by https://cucumber.io/docs/gherkin/reference/[Gherkin] keywords. Keywords are parsed (e.g., for exporting rich JSON data). Supported steps are shown in the table below. Steps are not case-sensitive. 
+
+|===
+|Keyword | Description
+
+| *given* | Initial context of the system, typically something that happened in the past. 
+| *when* | An action or event that triggers the scenario.
+| *then* | Expected outcome from the scenario.
+| *and* | Conjunction, used with *when* or *then* for an additional trigger/outcome that is also expected.
+| *or* | Conjunction, used with *when* or *then* for an alternate trigger/outcome. 
+|===
+
+[[cross-referencing]]
+=== Cross-referencing
+
+It is common to refer to requirements and use-cases from elsewhere in the source. Semantic https://docs.asciidoctor.org/asciidoctorj/latest/extensions/inline-macro-processor/[in-line macros] are provided to cross-reference requirements and use-cases by their requirement number and use-case id, respectively. 
+
+|===
+|Macro name | Target | Optional attributes | Example | Description
+
+|`RefRequirement` | requirement | _none_ | `RefRequirement:r1002[]` | Inserts a link to the requirement target. 
+|`RefUseCase` | use-case | _none_ | `RefUseCase:stad[]` | Inserts a link to the use-case target. 
+|`RefActor` | actor | _none_ | `RefActor:discovery-proxy[]` | Inserts a link to the actor definition in a profile. 
+|`RefProfile` | profile or profile option | _none_ | `RefProfile:SDPi-P[]`, `RefProfile:SDPi-P[profile-option-id="discovery proxy"]` | Inserts a link to the profile or profile option. 
+|`RefContentModule` | content module | _none_ | `RefContentModule:biceps[]` | Inserts a link to the content module. 
+|`RefTransaction` | transaction | _none_ | `RefTransaction:DEV-23[]` | Inserts a link to the transaction definition.
+|===
+
+NOTE: use case ids are case-sensitive.
+
+IMPORTANT: Using the in-line macro reduces the risk of broken links and helps ensure future compatibility if, for example, <<requirement-oids,ISO object identifiers>> are used to reference requirements. 
+
+[[generate-table]]
+=== Summary tables
+
+Summary tables are automatically generated during document processing and inserted in place of https://docs.asciidoctor.org/asciidoctorj/latest/extensions/block-macro-processor/[block macros]. The tables available are:
+
+|===
+|Table | Macro | Columns
+
+|Implementation conformance statement table | `sdpi_ics_table` | index, reference, status, support, comment
+|Requirement list | `sdpi_requirement_table` | <<requirement-oids,ISO object identifiers>>, local requirement id, level, type
+|Profile actors and transactions | `sdpi_transaction_table` | Actor, Transaction, Contribution, Obligation, Option
+|Profile actors and content modules | `sdpi_content_module_table` | Actor, Content module, Obligation, Option
+|===
+
+
+NOTE: Requirement tables may be included at any point in the source (where block-macros are allowed). They will gather requirements from the entire document. It is not necessary to define requirements before they can be included in a table. 
+
+The example below includes an ICS table in the generated document with all requirements in the `provider` group. 
+
+[source,asciidoc]
+----
+sdpi_ics_table::[sdpi_req_group=provider]
+----
+
+==== Filter
+
+Filter parameters, included as named attributes, select the content included in the table. Available filters are tabulated below. 
+
+|===
+|Attribute name | Applies to | Value | Obligation | Description
+
+|`sdpi_req_group` | `sdpi_requirement_table` | comma separated list | optional | Includes requirements with any of the groups supplied in their `sdpi_req_group` <<requirement-attributes,attribute>>. 
+|`profile-id` | `sdpi_transaction_table`, `sdpi_content_module_table` | _profile id_ | required | Table includes details for the selected profile.
+|`profile-option-id` | `sdpi_transaction_table`, `sdpi_content_module_table` | _profile option id_ | required | Table includes details for the selected profile option only. If not specified all options are included.
+|`actor-id` | `sdpi_transaction_table` | _actor id_ | required | Table includes only transactions for the selected actor. 
+
+|===
+
+=== Backwards compatibility
+
+Some changes to the supplement source text are required to take advantage of the new features including additional attributes on requirements and tagging use cases. To ease adoption, the new extensions fallback to the original behaviour. This means, the
+
+. processor works with the original supplement source without any modifications, and
+. output from the original supplement is largely identical following addition of new processor features as it was before the new features were added. The generated html is the same (at the byte level) except:
+.. the `Build Date` entry will be different on the title page and in the footer,
+.. requirement `div` blocks get an extra `requirement` style class. That is, for example, `<div id="r1021" class="sidebarblock requirement">` instead of `<div id="r1021" class="sidebarblock">`,
+.. added https://gitlab.com/antora/antora-ui-default/-/blob/master/src/js/06-copy-to-clipboard.js[copy2clipboard.js] to support copying links to requirement anchors for easy cross-referencing.
+
+== Document generation
+
+The AsciiDoc source is automatically processed using GitHub actions. 
+
+For testing, documents can be generated using Windows command line tools (probably for other operating systems too, but I don't know about that; please expand on this when you figure out how). To create output from the AsciiDoc source open a command prompt in the `.ci\asciidoc-converter` folder and use:
+
+* `build_document.bat` to create an html document (`sdpi-supplement.html`),
+* `build_document_pdf.bat` to create an Acrobat PDF document (`sdpi-supplement.pdf`).
+
+The output files are written to `sdpi-supplement` folder. Extracts (requirements and use-cases in JSON format) are written to the `sdpi-supplement\referenced-artifacts` folder. Extracts are generated along with the document output. 
+
+IMPORTANT: Don't commit files in the `sdpi-supplement` folder to the repository. 
 
 == Topics Parking Lot
 
