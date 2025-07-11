@@ -1,0 +1,87 @@
+:doctype: book
+
+Pellentesque pellentesque ligula vitae neque RefTransaction:DEV-1[] porttitor sollicitudin. Nullam at nisi nunc. 
+
+[role="profile",profile-id="Profile-A"]
+== A Profile
+
+Suspendisse nec vehicula dui, vitae auctor sem. 
+
+=== Profile transactions
+
+sdpi_include_transaction::DEV-1[initiator="required", receiver="optional"]
+sdpi_include_transaction::DEV-2[initiator="optional", responder="required"]
+
+=== Profile actors and transactions
+
+sdpi_transaction_table::[profile-id="Profile-A"]
+
+
+=== Actor definitions
+
+[role=actor,actor-id=somds-provider,reftext="SOMDS Provider"]
+==== SOMDS Provider
+
+A somds participant that provides at least one service to the other participant systems.  
+
+[role=actor,actor-id=somds-consumer,reftext="SOMDS Consumer"]
+==== SOMDS Consumer
+
+A somds participant that discovers and utilizes at least one service, functional capability, exposed to a network communications backbone by a somds provider. 
+
+
+[reftext="A Profile Option", role="profile-option",profile-option-id="OptionA"]
+=== A Profile Option
+
+Vivamus vitae sem sed dolor posuere efficitur vel ut mi. 
+
+==== Profile transactions
+
+// everything becomes required in the option. 
+sdpi_include_transaction::DEV-1[initiator="required", receiver="required"]
+sdpi_include_transaction::DEV-2[initiator="required", responder="required"]
+
+
+
+[role="transaction",transaction-id=DEV-1,reftext="Transaction 1"]
+=== Transaction 1
+
+Cras vestibulum volutpat tortor sit amet hendrerit. Sed efficitur tempus molestie. 
+
+==== Actor Roles
+
+[sdpi_transaction_actors]
+--
+
+[actor-id="somds-provider", contribution="Initiator"]
+In sit amet tortor eu urna aliquam malesuada. Phasellus blandit lacus vitae tellus bibendum, id lobortis eros consequat. 
+
+[actor-id="somds-consumer", contribution="Receiver"]
+Curabitur placerat risus et purus mattis, eu scelerisque ante fringilla.
+
+--
+
+
+
+[role="transaction",transaction-id=DEV-2,reftext="Transaction 2"]
+=== Transaction 2
+
+Cras vestibulum volutpat tortor sit amet hendrerit. Sed efficitur tempus molestie. 
+
+==== Actor Roles
+
+[sdpi_transaction_actors]
+--
+
+[actor-id="somds-provider", contribution="Responder"]
+In sit amet tortor eu urna aliquam malesuada. Phasellus blandit lacus vitae tellus bibendum, id lobortis eros consequat. 
+
+[actor-id="somds-consumer", contribution="Initiator"]
+Curabitur placerat risus et purus mattis, eu scelerisque ante fringilla.
+
+--
+
+
+
+
+Cras gravida mi nisl, id RefTransaction:DEV-1[] tincidunt odio sollicitudin ut. Aliquam erat volutpat. 
