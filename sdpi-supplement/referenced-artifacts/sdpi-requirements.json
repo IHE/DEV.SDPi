@@ -1,0 +1,4741 @@
+{
+    "1021": {
+        "type": "tech-feature",
+        "requirementNumber": 1021,
+        "localId": "R1021",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor, then it shall use the <<vol2_clause_dev_4602109ea5-a5ad-4926-9ef2-fb0354fafff0DEV-46>> transaction to update the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor on its network presence and departure."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1022": {
+        "type": "tech-feature",
+        "requirementNumber": 1022,
+        "localId": "R1022",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor is configured or provisioned for the <<vol1_spec_sdpi_p_option_discovery_proxy>>, but the proxy system is not available, then the <<vol1_spec_sdpi_p_actor_somds_provider>> shall revert back to \"ad hoc\" discovery mode."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1023": {
+        "type": "tech-feature",
+        "requirementNumber": 1023,
+        "localId": "R1023",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor, then it shall use the <<vol2_clause_dev_4702109ea5-a5ad-4926-9ef2-fb0354fafff0DEV-47>> transaction to retrieve <<vol1_spec_sdpi_p_actor_somds_provider>> network presence metadata from the  <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1024": {
+        "type": "tech-feature",
+        "requirementNumber": 1024,
+        "localId": "R1024",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor is configured or provisioned for the <<vol1_spec_sdpi_p_option_discovery_proxy>>, but the proxy system is not available, then the <<vol1_spec_sdpi_p_actor_somds_consumer>> shall revert back to \"ad hoc\" discovery mode."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1025": {
+        "type": "tech-feature",
+        "requirementNumber": 1025,
+        "localId": "R1025",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "In order to ensure that a system's network presence information is up-to-date and valid, during the period when the <<vol1_spec_sdpi_p_actor_discovery_proxy>> indicates that a system is present, it shall provide some means to determine that this state is still true."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1542": {
+        "type": "tech-feature",
+        "requirementNumber": 1542,
+        "localId": "R1542",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "When a <<vol1_spec_sdpi_p_actor_somds_consumer>> disables one or more <<term_system_function_contribution>>s, the <<vol1_spec_sdpi_p_actor_somds_consumer>> shall inform the affected users."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1543": {
+        "type": "tech-feature",
+        "requirementNumber": 1543,
+        "localId": "R1543",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If a <<vol1_spec_sdpi_p_actor_somds_consumer>> disables one or more <<term_system_function_contribution>>s, the <<vol1_spec_sdpi_p_actor_somds_consumer>> shall create a log entry, noting the disabled <<term_system_function_contribution>>s as well as the cause for disabling them."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1520": {
+        "type": "tech-feature",
+        "requirementNumber": 1520,
+        "localId": "R1520",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_participant>> shall include all of the following information in the accompanying documentation:"
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The 50ms target accuracy is suitable for highly demanding use cases like real time waveform comparison."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1510": {
+        "type": "tech-feature",
+        "requirementNumber": 1510,
+        "localId": "R1510",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_participant>> shall not allow manual configuration of its internal clock while the device is operational in an <<acronym_md_lan>> network."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Since manual time adjustments of the device's internal clock would lead to plausible but still inaccurate timestamps, this requirement also prohibits manual adjustments when the <<acronym_ts_service>> is not available."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1540": {
+        "type": "tech-feature",
+        "requirementNumber": 1540,
+        "localId": "R1540",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "When a <<vol1_spec_sdpi_p_actor_somds_participant>> connects to the <<acronym_md_lan>>, it shall not execute <<term_system_function_contribution>>s until it detects and connects to a <<acronym_ts_service>>."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Without a <<acronym_ts_service>>, there is no way for a <<vol1_spec_sdpi_p_actor_somds_participant>> to ensure that its communication partner has a valid certificate."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1530": {
+        "type": "tech-feature",
+        "requirementNumber": 1530,
+        "localId": "R1530",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If a <<vol1_spec_sdpi_p_actor_somds_participant>> is operational and loses connection to the <<acronym_ts_service>>, it shall use its internal clock."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "It is likely that a <<vol1_spec_sdpi_p_actor_somds_participant>> needs multiple attempts to connect to a TS service a few times during the day. The system needs to be stable against these kind of short term interruptions."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1531": {
+        "type": "tech-feature",
+        "requirementNumber": 1531,
+        "localId": "R1531",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For every MDS of a <<vol1_spec_sdpi_p_actor_somds_provider>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall provide pm:ClockState/@Accuracy."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1532": {
+        "type": "tech-feature",
+        "requirementNumber": 1532,
+        "localId": "R1532",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_consumer>> shall consider the risk of providing the <<vol1_spec_sdpi_p_actor_somds_consumer>>'s <<term_system_function_contribution>> if the accuracy of the device internal clock decreases due to an unreachable <<acronym_ts_service>>."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1533": {
+        "type": "tech-feature",
+        "requirementNumber": 1533,
+        "localId": "R1533",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_consumer>> shall consider the risk of providing the <<vol1_spec_sdpi_p_actor_somds_consumer>>'s <<term_system_function_contribution>> if the accuracy of the <<vol1_spec_sdpi_p_actor_somds_provider>>'s clock decreases."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "This goes beyond considering the risk of erroneous timestamps required by the Base <<acronym_pkp>> Standard, since it forces the <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_consumer>> to define a minimum accuracy acceptable for a <<term_system_function_contribution>>."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1534": {
+        "type": "tech-feature",
+        "requirementNumber": 1534,
+        "localId": "R1534",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If a <<vol1_spec_sdpi_p_actor_somds_participant>> cannot reach the <<acronym_ts_service>>, the <<vol1_spec_sdpi_p_actor_somds_participant>> shall create a log entry."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1500": {
+        "type": "tech-feature",
+        "requirementNumber": 1500,
+        "localId": "R1500",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_participant>> shall consider the risk of workflow interruption due to misaligned clocks."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Clocks of <<vol1_spec_sdpi_p_actor_somds_participant>>s run apart due to lack of synchronization with NTP servers, different clock drifts or cyberattacks."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "This requirement supplements RR1162 in <<ref_ieee_11073_10700_2022>>: _The MANUFACTURER of an SDC BASE CONSUMER SHALL consider the RISKs resulting from erroneous timestamps._"
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "500": {
+        "type": "tech-feature",
+        "requirementNumber": 500,
+        "localId": "R0500",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> shall at least provide the port types as specified in <<vol2_table_appendix_mdpws_service_mapping_port_types>>."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "According to <<acronym_biceps>>, the GET SERVICE is the only mandatory service to be implemented. This specification extends the list of mandatory services to increase interoperability between <<vol1_spec_sdpi_p_actor_somds_participant>>s."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "All port types of SDC are {uri_sdc_wsdl}[available for download]."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "Other port types are currently out of scope of this specification and may be added in a future revision."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "501": {
+        "type": "tech-feature",
+        "requirementNumber": 501,
+        "localId": "R0501",
+        "globalId": "",
+        "level": "SHOULD",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> should not request context states by using the `GetContextStatesByIdentification` and `GetContextStatesByFilter` operations of the {{uri_sdc_port_type}}ContextService port type."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "`GetContextStatesByIdentification` and `GetContextStatesByFilter` are insufficiently defined in <<ref_ieee_11073_10207_2017>> and are likely to be obsoleted in a future revision of the specification."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> may retrieve context states by using `GetContextStates` and perform filtering by itself."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "2000": {
+        "type": "tech-feature",
+        "requirementNumber": 2000,
+        "localId": "R2000",
+        "globalId": "",
+        "level": "SHOULD",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_participant>> should use a dynamically configured IP address."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "2001": {
+        "type": "tech-feature",
+        "requirementNumber": 2001,
+        "localId": "R2001",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> shall periodically send Hello messages at random intervals between 60 seconds and 120 seconds."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The random interval between 60 seconds and 120 seconds aims to prevent <<vol1_spec_sdpi_p_actor_somds_provider>>s from congesting the network by sending recurring Hello messages at the same time."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "2002": {
+        "type": "tech-feature",
+        "requirementNumber": 2002,
+        "localId": "R2002",
+        "globalId": "",
+        "level": "SHOULD",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_participant>> should implement the retry and back-off algorithm defined in SOAP-over-UDP, Appendix A."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "3001": {
+        "type": "tech-feature",
+        "requirementNumber": 3001,
+        "localId": "R3001",
+        "globalId": "",
+        "level": "SHOULD",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> should not periodically send Probe messages."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If Probe messages are sent periodically, a rationale needs to be provided, since <<vol1_spec_sdpi_p_actor_somds_provider>>s send Hello messages periodically."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "3002": {
+        "type": "tech-feature",
+        "requirementNumber": 3002,
+        "localId": "R3002",
+        "globalId": "",
+        "level": "MAY",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> may re-send Probe messages if demanded by a dedicated user interaction."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A dedicated user interaction can be a button press on a <<vol1_spec_sdpi_p_actor_somds_consumer>>'s display or any other manual activation."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "7000": {
+        "type": "tech-feature",
+        "requirementNumber": 7000,
+        "localId": "R7000",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> shall implement the scope matching rule `{var_uri_matching_rule}` as specified by <<ref_oasis_ws_discovery_2009>> in a way that the use of _prefix_ refers to the definition of a prefix in formal theory."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "This requirement erases disambiguation since there are multiple definitions of the term _prefix_."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "From this it follows that a prefix can be empty as otherwise the term _proper prefix_ would have to be used."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "7001": {
+        "type": "tech-feature",
+        "requirementNumber": 7001,
+        "localId": "R7001",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "When a <<vol1_spec_sdpi_p_actor_somds_consumer>> requests `{var_filter_dialect_action}` filter processing in a Subscribe message, the <<vol1_spec_sdpi_p_actor_somds_consumer>> shall assume the receiving <<vol1_spec_sdpi_p_actor_somds_provider>> to perform the `{var_uri_strcmp0}` matching rule."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The `{var_uri_rfc3986}` matching rule definition implemented by <<vol1_spec_sdpi_p_actor_somds_provider>>s ambiguously includes the term `prefix`.",
+                        "As `{var_uri_rfc3986}` subsumes `{var_uri_strcmp0}`, a fallback to case-sensitive string comparison is explicit and failsafe."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "7003": {
+        "type": "tech-feature",
+        "requirementNumber": 7003,
+        "localId": "R7003",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_participant>> shall leverage HTTP path dispatching to identify subscription managers and notification/end-to sinks."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "WS-Eventing allows for an event source or sink to make use of WS-Addressing endpoint reference parameters in order to identify endpoints, which is discouraged because of additional unnecessary complexity in processing complex XML elements."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "7004": {
+        "type": "tech-feature",
+        "requirementNumber": 7004,
+        "localId": "R7004",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "In a SubscribeResponse message, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall provide an _Expires_ element."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The WS-Eventing specification that is normatively included in <<ref_oasis_dpws_2009>> explains the absence of _Expires_ in a SubscribeResponse message (see <<ref_w3c_ws_eventing_2006>>, Section 3.1), which is actually prohibited according to the XML Schema. This specification underlines the need to provide an _Expires_ element in SubscribeResponse messages."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "7005": {
+        "type": "tech-feature",
+        "requirementNumber": 7005,
+        "localId": "R7005",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "In a RenewResponse message, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall provide an _Expires_ element."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The WS-Eventing specification that is normatively included in <<ref_oasis_dpws_2009>> does not explain the absence of _Expires_ in a RenewResponse message (see <<ref_w3c_ws_eventing_2006>>, Section 3.2). This specification prohibits the absence of _Expires_ in RenewResponse messages to avoid subscriptions that run infinitely."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "7002": {
+        "type": "tech-feature",
+        "requirementNumber": 7002,
+        "localId": "R7002",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> shall enclose all context states in pm:GetMdibResponse messages."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": []
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "7006": {
+        "type": "tech-feature",
+        "requirementNumber": 7006,
+        "localId": "R7006",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If <<vol1_spec_sdpi_p_actor_discovery_proxy>> sends {var_label_dev_46_message_directed_probe} messages to verify presence of <<vol1_spec_sdpi_p_actor_somds_provider>>s, the <<vol1_spec_sdpi_p_actor_discovery_proxy>> shall notify all <<vol1_spec_sdpi_p_actor_somds_consumer>>s subscribed to Bye messages about the <<vol1_spec_sdpi_p_actor_somds_provider>>'s absence."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "7007": {
+        "type": "tech-feature",
+        "requirementNumber": 7007,
+        "localId": "R7007",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_discovery_proxy>> shall provide the Discovery Proxy service by implementing the port type",
+                        "with the <<term_q_name>> dp:DiscoveryProxy."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "7008": {
+        "type": "tech-feature",
+        "requirementNumber": 7008,
+        "localId": "R7008",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_discovery_proxy>> shall accept the WS-Eventing wse:Filter@Dialect",
+                        "urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.2.1."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "7009": {
+        "type": "tech-feature",
+        "requirementNumber": 7009,
+        "localId": "R7009",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> shall add the filter dialect urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.2.1 to",
+                        "every Subscribe request to a <<vol1_spec_sdpi_p_actor_discovery_proxy>>."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "502": {
+        "type": "tech-feature",
+        "requirementNumber": 502,
+        "localId": "R0502",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_participant>> shall use HTTPS with mutual authentication for those transactions that are required to be secured."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Each section that specifies a transaction indicates security requirements in the __Security Requirements & Considerations__ subsection beneath the __Safety, Effectiveness and Security - Requirements and Considerations__ of each transaction."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "Essentially, this specification asks for secured transmission of data except when ad-hoc discovery is performed."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1": {
+        "type": "tech-feature",
+        "requirementNumber": 1,
+        "localId": "R0001",
+        "globalId": "",
+        "level": "MAY",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> may delay sending a Resolve Match response to a Resolve message."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "It is up to the <<term_manufacturer>> of the <<vol1_spec_sdpi_p_actor_somds_provider>> to choose a delay that fits the hardware capabilities of the <<vol1_spec_sdpi_p_actor_somds_provider>> for concurrent connection requests."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "2": {
+        "type": "tech-feature",
+        "requirementNumber": 2,
+        "localId": "R0002",
+        "globalId": "",
+        "level": "SHOULD",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> should be configurable with a priority group number in accordance with <<ref_ieee_11073_20701_2018>> R0076."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "As it is not trivial to determine the priority of a <<vol1_spec_sdpi_p_actor_somds_consumer>> in all and every circumstance, the <<term_manufacturer>> can provide configurable options that allow for flexible adaptation on environmental changes."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "3": {
+        "type": "tech-feature",
+        "requirementNumber": 3,
+        "localId": "R0003",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If a <<term_manufacturer>> does not intend to enforce configuration of priority groups during installation of its <<vol1_spec_sdpi_p_actor_somds_consumer>>, the manufacturer shall pre-configure priority groups to a reasonable default value that reflects the highest criticality of the <<vol1_spec_sdpi_p_actor_somds_consumer>>'s system function."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "This does not necessarily prevent the user from changing the priority group after the installation process is finished."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "Guidelines for reasonable default values are shown in <<vol2_clause_appendix_a_mdpws_connect_time_algorithm_priority_groups>>."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "4": {
+        "type": "tech-feature",
+        "requirementNumber": 4,
+        "localId": "R0004",
+        "globalId": "",
+        "level": "MAY",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If a <<term_manufacturer>> does not intend to allow for a user to configure a priority group after the installation process of its <<vol1_spec_sdpi_p_actor_somds_consumer>> is finished, the manufacturer may dynamically determine a reasonable priority group for its <<vol1_spec_sdpi_p_actor_somds_consumer>> according to the highest criticality of the <<vol1_spec_sdpi_p_actor_somds_consumer>>'s system function on startup."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "In order to dynamically determine the priority group within a certain range, a <<vol1_spec_sdpi_p_actor_somds_consumer>> can use, for example, a random number generator function or a real-time clock."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "Guidelines for reasonable priority group ranges are shown in <<vol2_clause_appendix_a_mdpws_connect_time_algorithm_priority_groups>>."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1001": {
+        "type": "tech-feature",
+        "requirementNumber": 1001,
+        "localId": "R1001",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> shall only establish one TCP connection at a time for every subscribed <<vol1_spec_sdpi_p_actor_somds_consumer>>."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1002": {
+        "type": "tech-feature",
+        "requirementNumber": 1002,
+        "localId": "R1002",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_participant>> shall utilize TCP to exchange messages with other <<vol1_spec_sdpi_p_actor_somds_participant>>s except for messages exchanged in the WS-Discovery Ad-hoc mode."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The WS-Discovery Ad-hoc mode utilizes UDP to exchange messages, see <<ref_oasis_ws_discovery_2009>>."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1003": {
+        "type": "tech-feature",
+        "requirementNumber": 1003,
+        "localId": "R1003",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_participant>> shall only utilize HTTP 1.1 without HTTP pipelining for any HTTP traffic."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Enforces use of HTTP 1.1 in order to limit choices by which a re-ordering of message delivery can be implemented."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1004": {
+        "type": "tech-feature",
+        "requirementNumber": 1004,
+        "localId": "R1004",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> shall transmit msg:WaveformStream, msg:AbstractMetricReport, msg:AbstractOperationalStateReport, msg:AbstractComponentReport, msg:AbstractAlertReport, msg:ObservedValueStream, msg:DescriptionModificationReport, and msg:AbstractContextReport messages sequentially."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "This allows for a <<vol1_spec_sdpi_p_actor_somds_consumer>> to apply report data on internal <<acronym_mdib>> data structures before receiving the next report without buffering."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1005": {
+        "type": "tech-feature",
+        "requirementNumber": 1005,
+        "localId": "R1005",
+        "globalId": "",
+        "level": "SHOULD",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> should reconnect or go into a fail-safe mode when it receives a report with an <<acronym_mdib>> version that is either lower than the last received version or more than one version higher than the last received version."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1014": {
+        "type": "tech-feature",
+        "requirementNumber": 1014,
+        "localId": "R1014",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_provider>> shall not send a notification of a subscription as long as there is another notification pending for that subscription."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "5": {
+        "type": "tech-feature",
+        "requirementNumber": 5,
+        "localId": "R0005",
+        "globalId": "",
+        "level": "SHOULD",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "In its role as an HTTP client, a <<vol1_spec_sdpi_p_actor_somds_participant>> should request gzip compression by using Accept-Encoding with \"gzip\"."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "listing",
+                    "title": "HTTP request header to request compression",
+                    "lines": [
+                        "GET /path/to/resource HTTP/1.1",
+                        "Host: www.example.com",
+                        "Accept-Encoding: gzip"
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "The client indicates gzip compression to be an accepted response encoding. Note that the server is nevertheless free to send the response without compression."
+                    ]
+                },
+                {
+                    "type": "listing",
+                    "title": "HTTP response header indicating compressed content",
+                    "lines": [
+                        "HTTP/1.1 200 OK",
+                        "Date: sun, 26 June 2016 22:38:34 GMT",
+                        "Server: Apache/1.3.3.7 (Unix)  (Red-Hat/Linux)",
+                        "Last-Modified: Wed, 08 Jan 2020 23:11:55 GMT",
+                        "Accept-Ranges: bytes",
+                        "Content-Length: 438",
+                        "Connection: close",
+                        "Content-Type: text/xml; charset=UTF-8",
+                        "Content-Encoding: gzip"
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "The HTTP server decided to encode the response with the gzip compression. Note that servers are not required to actually compress (e.g., due to load conditions or unknown algorithms they are entitled to answer with identity encoding)."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "6": {
+        "type": "tech-feature",
+        "requirementNumber": 6,
+        "localId": "R0006",
+        "globalId": "",
+        "level": "MAY",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If a <<vol1_spec_sdpi_p_actor_somds_consumer>> includes an Accept-Encoding header field in an HTTP header in a WS-Eventing Subscribe request, the <<vol1_spec_sdpi_p_actor_somds_provider>> may transmit Notifications related to that subscription encoded with the encoding that was defined in the Subscribe request."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "10": {
+        "type": "tech-feature",
+        "requirementNumber": 10,
+        "localId": "R0010",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If a <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_provider>> intends to include MDS production specifications in the WS-Discovery Scopes of the <<vol1_spec_sdpi_p_actor_somds_provider>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall encode the production specifications by using the rules in <<vol2_listing_encoding_production_specification_mds>>."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The URI encoding of production specifications is defined in <<vol2_listing_encoding_production_specification>>."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "<<term_manufacturer>>s can also encode metadata information as production specification, according to the mapping in <<vol3_table_production_specifications_mapping>>."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "URIs of a <<term_manufacturer>> name and serial number:"
+                    ]
+                },
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "-",
+                            "strText": "<code>sdc.mds.prodspec:MediHealth:531970</code>"
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "-",
+                            "strText": "<code>sdc.mds.prodspec:DE12345678:531972,urn%3Aoid%3A1.3.111.2.11073.10101.3</code>"
+                        }
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "11": {
+        "type": "tech-feature",
+        "requirementNumber": 11,
+        "localId": "R0011",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If a <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_provider>> intends to include MDS attributes in the WS-Discovery Scopes of the <<vol1_spec_sdpi_p_actor_somds_provider>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall encode the attributes by using the rules in <<vol2_listing_encoding_attribute_mds>>."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The URI encoding of attributes is defined by the Extended Backus-Naur Form <<ref_iso_iec_14977_1996>> in <<vol2_listing_encoding_attribute>>."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "URI of a Soft ID named _PatMon 03_: `sdc.mds.attr:PatMon%2003:67886`"
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "13": {
+        "type": "tech-feature",
+        "requirementNumber": 13,
+        "localId": "R0013",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_participant>> shall serialize XML instance documents in accordance to its applicable XML Schema definitions."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "This requirement stems from the need to avoid pretty-print output if an XML serializer does not understand or know the underlying XML Schema definitions."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1012": {
+        "type": "tech-feature",
+        "requirementNumber": 1012,
+        "localId": "R1012",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_participant>> shall resolve the namespace of a prefixed <<term_q_name>> in XML attribute values and content of elements to the namespace that is associated with its prefix and is valid for the smallest element, which encloses the <<term_q_name>>, by XML content."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1013": {
+        "type": "tech-feature",
+        "requirementNumber": 1013,
+        "localId": "R1013",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_participant>> shall resolve the namespace of an unprefixed <<term_q_name>> in XML attribute values and content of elements to the default namespace that is valid for the smallest element, which encloses the <<term_q_name>>, by XML content."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8119": {
+        "type": "tech-feature",
+        "requirementNumber": 8119,
+        "localId": "R8119",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For each private code a <<vol1_spec_sdpi_p_actor_somds_provider>> shall provide exactly one *pm:Translation* where *pm:Translation/@Code* is identical with *pm:CodedValue/@Code*."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Multiple translations are allowed, but exactly one translation is specified for a private code."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8100": {
+        "type": "tech-feature",
+        "requirementNumber": 8100,
+        "localId": "R8100",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If not differently specified in this section, the MSH segment fields shall be in compliance with the [PCD-01] or [PCD-04] transaction, retrospectively, as described in the <<ref_ihe_pcd_tf_2_2019>>."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8101": {
+        "type": "tech-feature",
+        "requirementNumber": 8101,
+        "localId": "R8101",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For each <<acronym_mds>> element in the <<acronym_mdib>>, a separate [PCD-01] message shall be exported."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The HL7 segments *MSH*, *PID*, and *PV1* contain information which can differ between multiple <<acronym_poc>> devices represented as <<acronym_mds>> elements in the <<acronym_mdib>> (e. g. operating mode, patient demographics, patient location, etc.). Since these segments are commonly defined for all <<acronym_mds>> elements in the HL7 [PCD-01] message, separate HL7 [PCD-01] messages per <<acronym_pocd>> are required to be exported."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8118": {
+        "type": "tech-feature",
+        "requirementNumber": 8118,
+        "localId": "R8118",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the MSH-11 field to the code for the processing ID, which is either be *\"P\"* (Production) or *\"D\"* (Debugging)."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "<<ref_tbl_msh11_mapping>> defines the mapping of the SDC MDS information to the data fields of the HL7 data type *PT* used in the MSH-11 field."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8102": {
+        "type": "tech-feature",
+        "requirementNumber": 8102,
+        "localId": "R8102",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The SDC patient context information shall only be mapped to the corresponding fields in the HL7 PID segment when the requirements for a valid SDC patient context as defined in <<ref_ieee_11073_10700_2022>> are fulfilled."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For a valid *pm:PatientContextState*, the *pm:AbstractContextState/@ContextAssociation* attribute is set to *\"Assoc\"* and the *pm:AbstractContextState/pm:Validator* is set to a valid validator. A corresponding inferred patient ensemble context is not required for the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>>."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "If the SDC patient context information is not intended to be used for the mapping, please refer to the <<ref_ihe_pcd_tf_2_2019>> on how to populate the fields of the PID segment in this case."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8103": {
+        "type": "tech-feature",
+        "requirementNumber": 8103,
+        "localId": "R8103",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall map the patient identifiers to the PID-3 field."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The PID-3 is a list of patient identifiers (e.g., medical record number, social security number, visit number, account number, etc.)"
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "<<ref_tbl_pid3_mapping>> defines the mapping of the <<acronym_mdib>> patient identification to the data fields of the HL7 data type *CX* used in the PID-3 field."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "If the <<acronym_mdib>> patient identification element *pm:PatientContextState/pm:Identification* contains more than one patient identifier, each SDC patient identifier is mapped according to the <<ref_tbl_pid3_mapping>> table and added to the PID-3 patient identifier list."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8104": {
+        "type": "tech-feature",
+        "requirementNumber": 8104,
+        "localId": "R8104",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-5 field to the patient name information."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "<<ref_tbl_pid5_mapping>> defines the mapping of the SDC patient name information to the data fields of the HL7 data type *XPN* used in the PID-5 field."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8105": {
+        "type": "tech-feature",
+        "requirementNumber": 8105,
+        "localId": "R8105",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-6 field to the mother's maiden name or birth name before marriage."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "<<ref_tbl_pid6_mapping>> defines the mapping of the SDC patient name information to the data fields of the HL7 data type *XPN* used in the PID-6 field."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8106": {
+        "type": "tech-feature",
+        "requirementNumber": 8106,
+        "localId": "R8106",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-7 field to the date and time of birth."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "<<ref_tbl_pid7_mapping>> defines the mapping of the SDC patient's date of birth information to the data fields of the HL7 data type *DTM* used in the PID-7 field."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8120": {
+        "type": "tech-feature",
+        "requirementNumber": 8120,
+        "localId": "R8120",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall export the patient's sex as OBX segment on the MDS level."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The mapping for the patient's sex is defined in table <<ref_tbl_dec_obx_sex_mapping>>."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8121": {
+        "type": "tech-feature",
+        "requirementNumber": 8121,
+        "localId": "R8121",
+        "globalId": "",
+        "level": "MAY",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If <<r8102>> is met and the patient's sex in the <<acronym_mdib>> is sourced from the PID-8 field in HL7 V2 ADT messages provided by the hospital ADT system, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> may set the PID-8 field to the code for the administrative sex."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "<<ref_tbl_pid8_mapping>> defines the mapping of the SDC patient's sex information to the data fields of the HL7 data type *IS* used in the PID-8 field."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8107": {
+        "type": "tech-feature",
+        "requirementNumber": 8107,
+        "localId": "R8107",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If <<r8102>> is met and the <<actor_somds_v2_gateway>> provides the Healthcare Delivery Organization (HDO) the possibility to configure the export of the patient's sex set in the <<acronym_mdib>> in the PID-8 field, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-8 field to the code for the administrative sex."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "<<ref_tbl_pid8_mapping>> defines the mapping of the SDC patient's sex information to the data fields of the HL7 data type *IS* used in the PID-8 field."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8122": {
+        "type": "tech-feature",
+        "requirementNumber": 8122,
+        "localId": "R8122",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If the <<actor_somds_v2_gateway>> provides the Healthcare Delivery Organization (HDO) the possibility to configure the export of the patient's sex in the PID-8 field, the manufacturer of the <<actor_somds_v2_gateway>> shall require in the ACCOMPANYING INFORMATION that the HDO has to consider the risk that the patient's sex set in the <<acronym_mdib>> and mapped to the PID-8 field does not lead to a misinterpretation of the sex concept on <<actor_somds_v2_gateway>> consumer side."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8108": {
+        "type": "tech-feature",
+        "requirementNumber": 8108,
+        "localId": "R8108",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-10 field to the patient's race."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "<<ref_tbl_pid10_mapping>> defines the mapping of the SDC patient's race information to the data fields of the HL7 data type *CWE* used in the PID-10 field."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8109": {
+        "type": "tech-feature",
+        "requirementNumber": 8109,
+        "localId": "R8109",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-31 field to an indicator whether the patient's identity is known."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For a valid *pm:PatientContextState*, the *pm:AbstractContextState/@ContextAssociation* attribute is set to *\"Assoc\"* and the *pm:AbstractContextState/pm:Validator* is set to a valid validator. In this case, the value is set to \"N\"."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "In all other cases, the value is set to \"Y\"."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "A corresponding inferred patient ensemble context is not required for the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> in order to determine a valid *pm:PatientContextState*."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8111": {
+        "type": "tech-feature",
+        "requirementNumber": 8111,
+        "localId": "R8111",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The SDC patient and location context information shall only be mapped to the corresponding fields in the HL7 PV1 segment when the requirements for a valid SDC patient and location context as defined in the <<ref_ieee_11073_10700_2022>> are fulfilled."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For a valid *pm:PatientContextState* or *pm:LocationContextSate*, the *pm:AbstractContextState/@ContextAssociation* attribute is set to *\"Assoc\"* and the *pm:AbstractContextState/pm:Validator* is set to a valid validator. A corresponding inferred patient or location ensemble context is not required for the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>>."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "If the SDC patient and/or location context information is not be used for the mapping, please refer to the <<ref_ihe_pcd_tf_2_2019>> on how to populate the fields of the PV1 segment in this case."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8112": {
+        "type": "tech-feature",
+        "requirementNumber": 8112,
+        "localId": "R8112",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-2 field to the code for the patient class."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The *HL7 table 0004 - Patient Class* defines a set of recommended codes to be used for the data fields of the HL7 data type *IS* used in the PV1-2 field."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8113": {
+        "type": "tech-feature",
+        "requirementNumber": 8113,
+        "localId": "R8113",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If <<r8111>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-3 field to the patient's assigned location."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "<<ref_tbl_pv13_mapping>> defines the mapping of the SDC patient location information to the data fields of the HL7 data type *PL* used in the PV1-3 field."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8114": {
+        "type": "tech-feature",
+        "requirementNumber": 8114,
+        "localId": "R8114",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If <<r8111>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-19 field to the patient's visit identifier."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "If the SDC patient identifier element *pm:PatientContextState/pm:Identification* contains more than one patient identifier, only the unique identifier assigned to the patient's visit is mapped according to the <<ref_tbl_pv119_mapping>> table."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "When there is no unique visit identifier assigned to the patient's visit, the field is left empty."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "<<ref_tbl_pv119_mapping>> defines the mapping of the SDC patient identifier to the data fields of the HL7 data type *CX* used in the PV1-19 field."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "A visit identifier could be a visit number, an account number, or any other identifier that relates to the patient's visit."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8115": {
+        "type": "tech-feature",
+        "requirementNumber": 8115,
+        "localId": "R8115",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If <<r8111>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-44 field to the patient's admission date/time."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "The SDC data model does not support the concept of an admission date/time. There are also different types of admissions; e.g., hospital admission, care unit admission, etc."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "This said, it is up to the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> to figure out the admission date/time to be set in the PV1-44 field. If the gateway is not able to determine the admission date/time, the field is left empty."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8116": {
+        "type": "tech-feature",
+        "requirementNumber": 8116,
+        "localId": "R8116",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If <<r8111>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-51 field to the code for the visit indicator."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "If *\"pm:PatientContextState/pm:Identification/pm:Type/@Code\"* is \"VN\" (Visit Number), the field is set to *\"V\"*."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "Otherwise, the field is left empty by default."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The HL7 table 0326 - Visit Indicator defines a set of recommended codes to be used for the data fields of the HL7 data type IS used in the PV1-51 field."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8012": {
+        "type": "tech-feature",
+        "requirementNumber": 8012,
+        "localId": "R8012",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the OBX-3 field to the identifier of the element in the hierarchical containment tree such as MDS, VMD, CHAN, or the actual related metric to be exported."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "<<ref_tbl_dec_obx3_mds_mapping>>, <<ref_tbl_dec_obx3_vmd_mapping>>, <<ref_tbl_dec_obx3_chan_mapping>> and <<ref_tbl_dec_obx3_metric_mapping>> define the mapping of the SDC containment tree element to the data fields of the HL7 data type *CWE* used in the OBX-3 field."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8013": {
+        "type": "tech-feature",
+        "requirementNumber": 8013,
+        "localId": "R8013",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If a private *<<acronym_mdc>>* code is used for the coding of the SDC containment tree element, the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall map an identifier of the element in the hierarchical containment tree such as MDS, VMD, CHAN, or the actual related metric as described in Section <<ref_private_coding_system_note>>."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8014": {
+        "type": "tech-feature",
+        "requirementNumber": 8014,
+        "localId": "R8014",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the OBX-4 field to a hierarchical representation of the SDC element in the hierarchical containment tree."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Please refer to the IHE technical framework <<ref_ihe_pcd_tf_2_2019>> for further information."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8015": {
+        "type": "tech-feature",
+        "requirementNumber": 8015,
+        "localId": "R8015",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall assign the handles (which are required to be unique in the same <<acronym_mdib>>) of the containment tree elements representing MDSs, VMDs, channels and metrics to unique integer numbers per child level of the same parent."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "This implies that, e.g., channel elements may use the same numbers as VMD elements but on the channel level the numbers must be unique for the channels related to the same VMD."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "There is no requirement to preserve the same assigned number for a containment tree element from message to message, but it is highly recommended since this makes it much easier for the DOC to process the HL7 V2 messages."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "Example for Containment Tree Element Handle Assignment:"
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "The gateway assigns the handles of the containment tree elements to"
+                    ]
+                },
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "<code>3</code> for pm:MdsDescriptor/@Handle = \"My1Mds\","
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "<code>1</code> for pm:VmdDescriptor/@Handle = \"Vmd.1\","
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "<code>2</code> for pm:ChannelDescriptor/@Handle = \"Chan.4 and"
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "<code>1</code> for pm:AbstractMetricDescriptor/@Handle = \"Metric.Spo2\"."
+                        }
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "The OBX-4 field for the containment tree elements is set to"
+                    ]
+                },
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "<code>3.0.0.0</code> for the MDS OBX segment,"
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "<code>3.1.0.0</code> for the VMD OBX segment,"
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "<code>3.1.2.0</code> for the CHAN OBX segment and"
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "<code>3.1.2.1</code> for the Metric OBX segment."
+                        }
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8117": {
+        "type": "tech-feature",
+        "requirementNumber": 8117,
+        "localId": "R8117",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the OBX-18 field to the equipment (or device) identifier on the MDS level and/or the measurement module identifier of the equipment on the VMD level as defined in section <<vol3_clause_equipment_identifier>>."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "<<ref_tbl_dec_obx18_mds_mapping>> defines the mapping of the <<acronym_mdib>> MDS meta data to the data fields of the HL7 data type *EI* used in the OBX-18 field."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "<<ref_tbl_dec_obx18_vmd_mapping>> defines the mapping of the <<acronym_mdib>> VMD information to the data fields of the HL7 data type *EI* used in the OBX-18 field."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8001": {
+        "type": "tech-feature",
+        "requirementNumber": 8001,
+        "localId": "R8001",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If available, the <<actor_somds_dec_gateway>> shall export height and weight as OBX segments on the MDS level."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The mapping for the height observation is defined in table <<ref_tbl_dec_obx_height_mapping>> and the weight mapping in table <<ref_tbl_dec_obx_weight_mapping>>."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8002": {
+        "type": "tech-feature",
+        "requirementNumber": 8002,
+        "localId": "R8002",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_dec_gateway>> shall use the *pm:PatientContextState/@BindingStartTime* as the timestamp for the height and weight observation and send new values as corrected results."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8003": {
+        "type": "tech-feature",
+        "requirementNumber": 8003,
+        "localId": "R8003",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For the IHE DEC profile, the <<actor_somds_dec_gateway>> shall set the OBR-2 field to the identifier of the Device Observation Reporter (DOR) of the IHE DEC gateway (not the individual device identifier)."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For further information, please refer to the <<ref_ihe_pcd_tf_2_2019>>."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8004": {
+        "type": "tech-feature",
+        "requirementNumber": 8004,
+        "localId": "R8004",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For the IHE DEC profile, the <<actor_somds_dec_gateway>> shall set the OBR-3 field to the identifier of the Device Observation Reporter (DOR) of the IHE DEC gateway (not the individual device identifier)."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For further information, please refer to the <<ref_ihe_pcd_tf_2_2019>>."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8005": {
+        "type": "tech-feature",
+        "requirementNumber": 8005,
+        "localId": "R8005",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For the IHE DEC profile, the <<actor_somds_dec_gateway>> shall set the OBR-4 field to the service identifier of the <<vol1_spec_sdpi_p_actor_somds_provider>>."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For further information, please refer to the <<ref_ihe_pcd_tf_2_2019>>."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8037": {
+        "type": "tech-feature",
+        "requirementNumber": 8037,
+        "localId": "R8037",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_dec_gateway>> shall export continuously (periodically) measured metrics periodically at a defined interval."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "It is up to the <<actor_somds_dec_gateway>> how the export interval is defined. The interval might be a fixed interval of e.g., 30 seconds, or a configurable interval ranging e.g., between 10 seconds and 2 minutes."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8038": {
+        "type": "tech-feature",
+        "requirementNumber": 8038,
+        "localId": "R8038",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_dec_gateway>> shall set the OBR-7 field to the start date and time of current export interval."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If, for example, the export interval is set to 30 seconds, the <<actor_somds_dec_gateway>> will export HL7 messages every 30 seconds with the OBR-7 field set to start date and time of the interval e.g., *20231030155930*, *20231030160000*, *20231030160030*, and so on."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8006": {
+        "type": "tech-feature",
+        "requirementNumber": 8006,
+        "localId": "R8006",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_dec_gateway>> shall export the latest metric value of all continuously (periodically) measured metrics with a *pm:AbstractMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@DeterminationTime* which is equal or greater than the start date and time of the current interval, and less than the start date and time of the next export interval."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The OBR-7 field is set to the start time of the interval. The individual periodic metric value *@DeterminationTime* is basically ignored, but has to be within the time boundaries of the current export interval."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8007": {
+        "type": "tech-feature",
+        "requirementNumber": 8007,
+        "localId": "R8007",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For exporting episodic metric values and the absence of any continuously measured metric values for the current export interval, a <<actor_somds_dec_gateway>> shall set the OBR-7 field to the start date and time of current export interval."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Episodic metric values are usually exported along with the periodic metric values in the same export intervals. However, if a device does not provide periodic metric values in the current export interval, episodic metric values are exported in current export interval without periodic metric values."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "The *pm:AbstractMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@DeterminationTime* of an episodic metric value is set in the OBX-14 field and will override the timestamp defined in the OBR-7 field."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8008": {
+        "type": "tech-feature",
+        "requirementNumber": 8008,
+        "localId": "R8008",
+        "globalId": "",
+        "level": "MAY",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_dec_gateway>> may set the OBR-8 field to the end date and time of the current export interval."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "This requirement relates to the OBR-7 field mapping. Please refer to <<ref_dec_OBR7_mapping>> for further information."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "If, for example, the export interval is set to 30 seconds, the <<actor_somds_dec_gateway>> will export HL7 messages every 30 seconds with the OBR-7 field set to start date and time of the current interval and the OBR-8 field set to the start date and time of the next interval e.g.,  *20231030155930*|*20231030160000*, *20231030160000*|*20231030160030*, and so on."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8009": {
+        "type": "tech-feature",
+        "requirementNumber": 8009,
+        "localId": "R8009",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_dec_gateway>> shall set the OBR-10 field to the operator (user) information if available."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "The field is left empty if there is no valid SDC operator context."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "<<ref_tbl_OBR10_mapping>> defines the mapping of the SDC operator context information to the data fields of the HL7 data type *XCN* used in the OBR-10 field."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "The SDC operator context is only valid when the *pm:OperatorContextState/@ContextAssociation* is set to *\"Assoc\"* and a *pm:OperatorContextState/@BindingStartTime* is set."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8010": {
+        "type": "tech-feature",
+        "requirementNumber": 8010,
+        "localId": "R8010",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_dec_gateway>> shall set the OBX-2 field to the metric value type code as defined in *HL7 table 0125*."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "<<ref_tbl_dec_obx2_mapping>> defines the mapping of the SDC metric type to the data fields of the HL7 data type *ID* used in the OBX-2 field."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8011": {
+        "type": "tech-feature",
+        "requirementNumber": 8011,
+        "localId": "R8011",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_dec_gateway>> shall leave the OBX-2 field empty for OBX segments defining the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDS, VMD, or CHAN containment tree elements."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8016": {
+        "type": "tech-feature",
+        "requirementNumber": 8016,
+        "localId": "R8016",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_dec_gateway>> shall set the OBX-5 field to the value of the SDC metric."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The formatting of the data depends on the data type."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8036": {
+        "type": "tech-feature",
+        "requirementNumber": 8036,
+        "localId": "R8036",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For a device-related element such as MDS, VMD, or channel, the OBX-5 field shall be left empty."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8017": {
+        "type": "tech-feature",
+        "requirementNumber": 8017,
+        "localId": "R8017",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_dec_gateway>> shall only export metrics with a *pm:AbstractMetricValue/pm:MetricQuality/@Validity* set to *Vld* (Valid) or *Vldated* (Validated Data)."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Metrics with a different *@Validity* are skipped/ignored."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8018": {
+        "type": "tech-feature",
+        "requirementNumber": 8018,
+        "localId": "R8018",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_dec_gateway>> shall only export metrics with the *pm:AbstractMetricDescriptor/@MetricCategory* set to *Msrmt* (Measurement), *Clc* (Calculation) or *Set* (Setting)."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Metrics with a different *@MetricCategory* are skipped/ignored."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8019": {
+        "type": "tech-feature",
+        "requirementNumber": 8019,
+        "localId": "R8019",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For each numeric metric that complies with <<r8017>> and <<r8018>>, a <<actor_somds_dec_gateway>> shall set the OBX-5 field to the *pm:NumericMetricState/pm:MetricValue/@Value*."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Note that the decimal number needs to be formatted according to the HL7 numeric value formatting rules."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "Note that sample array metrics are not supported by the <<actor_somds_dec_gateway>>."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8020": {
+        "type": "tech-feature",
+        "requirementNumber": 8020,
+        "localId": "R8020",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For each string metric that complies with R8017 and R8018, a <<actor_somds_dec_gateway>> shall set the OBX-5 field to the *pm:StringMetricState/pm:MetricValue/@Value*."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8021": {
+        "type": "tech-feature",
+        "requirementNumber": 8021,
+        "localId": "R8021",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For each enumeration string metric that complies with R8017 and R8018, a <<actor_somds_dec_gateway>> shall set the OBX-5 field to a coded element value."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "<<ref_tbl_dec_obx5_enum_mapping>> defines the mapping of the SDC coded element value to the data fields of the HL7 data type *CWE* used in the OBX-5 field."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "The *pm:EnumStringMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@Value* contains the string of the selected enumerated element.",
+                        "The actual coded element value can be retrieved from the *pm:EnumStringMetricDescriptor+++<wbr/>+++/pm:AllowedValue* list by comparing the *pm:EnumStringMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@Value* with the *pm:EnumStringMetricDescriptor+++<wbr/>+++/pm:AllowedValue+++<wbr/>+++/pm:Value*."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "If a match has been found, the *pm:EnumStringMetricDescriptor+++<wbr/>+++/pm:AllowedValue+++<wbr/>+++/pm:Type* is required to be mapped as defined in <<ref_tbl_dec_obx5_enum_mapping>>."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "If no matching value has been found, the enumeration is treated as a string metric and the *pm:EnumStringMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@Value* is required to be set in the OBX-5 field, and",
+                        "the OBX-2 is required to be set to *\"ST\"* (see also <<ref_tbl_dec_obx2_mapping>> and <<r8020>>)."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8022": {
+        "type": "tech-feature",
+        "requirementNumber": 8022,
+        "localId": "R8022",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded element value in OBX-5 mapping, a <<actor_somds_dec_gateway>> shall map the identifier as described in Section <<ref_private_coding_system_note>>."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8023": {
+        "type": "tech-feature",
+        "requirementNumber": 8023,
+        "localId": "R8023",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For each numeric metric, a <<actor_somds_dec_gateway>> shall set the OBX-6 field to a measurement unit."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "<<ref_tbl_dec_obx6_mapping>> defines the mapping of the SDC measurement unit to the data fields of the HL7 data type *CWE* used in the OBX-6 field."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "For a device-related element such as MDS, VMD, CHANNEL, or other metric types, the OBX-6 field is left empty."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8024": {
+        "type": "tech-feature",
+        "requirementNumber": 8024,
+        "localId": "R8024",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If a private *<<acronym_mdc>>* code is used for the coding of the SDC measurement unit of a metric, a <<actor_somds_dec_gateway>> shall map the identifier as described in Section <<ref_private_coding_system_note>>."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8026": {
+        "type": "tech-feature",
+        "requirementNumber": 8026,
+        "localId": "R8026",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_dec_gateway>> shall define the range of the alert limits on the metric level, if the *@Handle* of the metric is referenced by a *pm:LimitAlertConditionDescriptor* in the *pm:LimitAlertConditionDescriptor/pm:Source* list, by the format `<Lower Limit> - <Upper Limit>` where"
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Note that the decimal number needs to be formatted according to the HL7 numeric value formatting rules."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8025": {
+        "type": "tech-feature",
+        "requirementNumber": 8025,
+        "localId": "R8025",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_dec_gateway>> shall not set this field to the device measurement range capability for device related segments."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "As stated in <<ref_ihe_pcd_tf_2_2019>> the reference range can only be set for device related segments (e.g., Channel). Within SDC the device measurement range refers to each metric and cannot be populated on higher levels in the containment tree."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8027": {
+        "type": "tech-feature",
+        "requirementNumber": 8027,
+        "localId": "R8027",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_dec_gateway>> shall leave the OBX-8 field empty as specified in the <<ref_ihe_pcd_tf_2_2019>> for valid and validated metric values."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8028": {
+        "type": "tech-feature",
+        "requirementNumber": 8028,
+        "localId": "R8028",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For a device-related element such as MDS, VMD, or CHANNEL, a <<actor_somds_dec_gateway>> shall set the OBX-11 field to *\"X\"*."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8029": {
+        "type": "tech-feature",
+        "requirementNumber": 8029,
+        "localId": "R8029",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For metrics with the *pm:AbstractMetricValue/pm:MetricQuality/@Validity* set to *Vld* (Valid), a <<actor_somds_dec_gateway>> shall set the OBX-11 field to *\"R\"*."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8030": {
+        "type": "tech-feature",
+        "requirementNumber": 8030,
+        "localId": "R8030",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For metrics with the *pm:AbstractMetricValue/pm:MetricQuality/@Validity* set to *Vldated* (Validated Data), a <<actor_somds_dec_gateway>> shall set the OBX-11 field to *\"F\"*."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8031": {
+        "type": "tech-feature",
+        "requirementNumber": 8031,
+        "localId": "R8031",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_dec_gateway>> shall set the OBX-14 field to the date and time of the intermittently measured metric value."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Intermittently measured metrics have the *pm:AbstractMetricDescriptor/@MetricAvailability* set to \"*Intr*\"."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "<<ref_tbl_dec_obx14_mapping>> defines the mapping of the SDC metric measurement timestamp to the data fields of the HL7 data type *DTM* used in the OBX-14 field."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8032": {
+        "type": "tech-feature",
+        "requirementNumber": 8032,
+        "localId": "R8032",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If available, a <<actor_somds_dec_gateway>> shall set the OBX-16 field to the operator."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Please refer to <<ref_dec_obr10>> for further information."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "The <<ref_ihe_pcd_tf_2_2019>> requires only the map the \"ID Number\", and optionally the \"Family Name\" and \"Given Name\" in this field, whereas the OBR-10 field may contain additional information about the operator."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8033": {
+        "type": "tech-feature",
+        "requirementNumber": 8033,
+        "localId": "R8033",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_dec_gateway>> shall set the OBX-17 field to one of the coded terms as specified in <<ref_tbl_dec_obx17_mapping>>, depending on the *pm:AbstractMetricDescriptor/@MetricCategory* (Category) and the *pm:AbstractMetricDescriptor/@DerivationMethod* (Derivation)."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8039": {
+        "type": "tech-feature",
+        "requirementNumber": 8039,
+        "localId": "R8039",
+        "globalId": "",
+        "level": "SHOULD",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_dec_gateway>> should repeat the OBX-17 field to express the *pm:AbstractMetricDescriptor/@MetricAvailability* as specified in <<ref_tbl_dec_obx17_mapping2>>."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8034": {
+        "type": "tech-feature",
+        "requirementNumber": 8034,
+        "localId": "R8034",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If available for the metric, a <<actor_somds_dec_gateway>> shall set the OBX-20 field to body site."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If the *pm:AbstractMetricState/pm:BodySite* element and the *pm:AbstractMetricDescriptor/pm:BodySite* element are available, the body site defined in the *pm:AbstractMetricState* is the preferred *pm:BodySite* element to be mapped."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "If *pm:BodySite* element list contains more than one *pm:BodySite* element, only the first entry of the list is used for the mapping."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "<<ref_tbl_dec_obx20_mapping>> defines the mapping of the SDC body site element to the data fields of the HL7 data type *CWE* used in the OBX-20 field."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "For a device-related element such as MDS, VMD, or CHANNEL, the OBX-20 field is left empty."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8035": {
+        "type": "tech-feature",
+        "requirementNumber": 8035,
+        "localId": "R8035",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If a private *<<acronym_mdc>>* code is used for the coding of a body site, a <<actor_somds_dec_gateway>> shall map the identifier as described in Section <<ref_private_coding_system_note>>."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8050": {
+        "type": "tech-feature",
+        "requirementNumber": 8050,
+        "localId": "R8050",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For the IHE ACM profile, the <<actor_somds_acm_gateway>> shall set the OBR-2 field to the identifier of the Alarm Reporter (AR) of the IHE ACM gateway (not the individual device identifier)."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For further information, please refer to the <<ref_ihe_pcd_tf_2_2019>>."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8051": {
+        "type": "tech-feature",
+        "requirementNumber": 8051,
+        "localId": "R8051",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_acm_gateway>> shall set the OBR-3 field to a unique identifier for the status to the alert indication."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For further information, please refer to the <<ref_ihe_pcd_tf_2_2019>>."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8052": {
+        "type": "tech-feature",
+        "requirementNumber": 8052,
+        "localId": "R8052",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For the *initial alert event announcement message*, a <<actor_somds_acm_gateway>> shall set the OBR-3/EI-1 field to the unique identifier for the alert event."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "This identifier consists of the *pm:AlertConditionState/@DescriptorHandle*  plus the *SequenceId* plus the *pm:AlertConditionState/@StateVersion* of the state report."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "Unique Alert Event Identifier:"
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "\"0x5C00009D.ae3170b5-4fd7-43b5-94c6-71b933342ffe.45\""
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8053": {
+        "type": "tech-feature",
+        "requirementNumber": 8053,
+        "localId": "R8053",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For the *subsequent alert event messages for the same alert event*, a <<actor_somds_acm_gateway>> shall set the OBR-3/EI-1 field to the unique identifier of the alert event message that relates to the same alert event as announced in the initial alert event message."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "This identifier is usually defined by the gateway."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "Unique Alert Event Message Identifier:"
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "\"bd3170b6-4fd7-43b5-94c6-71b935642fac\""
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8054": {
+        "type": "tech-feature",
+        "requirementNumber": 8054,
+        "localId": "R8054",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_acm_gateway>> shall set the OBR-4 field to *\"196616\\^MDC_EVT_ALARM^MDC\"*."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8055": {
+        "type": "tech-feature",
+        "requirementNumber": 8055,
+        "localId": "R8055",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_acm_gateway>> shall set the OBR-7 field to the date and time at which the Alert Reporter (AR) of the IHE ACM gateway created the alert event message to be sent."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Please refer to the *Appendix B  B.7.1 OBR Observation Request Segment in ACM Transaction [PCD-04]* of the <<ref_ihe_pcd_tf_2_2019>> for further information."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8056": {
+        "type": "tech-feature",
+        "requirementNumber": 8056,
+        "localId": "R8056",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_acm_gateway>> shall set the OBR-29 field to the unique alert event identifier of the initial alert event message as defined for the OBR-3 field."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Please refer to <<ref_tbl_acm_obr3_mapping>> for further information."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "The field is left empty for the initial alert event announcement message which contains the unique alert event identifier in the OBR-3 field."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "In all subsequent alert event messages, the OBR-29 field is set to the initial unique alert event identifier from the OBR-3 field."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "The table <<ref_tbl_acm_obr29_mapping>> defines the mapping of the Alert Event Identifier to the data fields of the HL7 data type *EIP* used in the OBR-29 field."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8057": {
+        "type": "tech-feature",
+        "requirementNumber": 8057,
+        "localId": "R8057",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_acm_gateway>> shall export device-related OBX segments, which define the hierarchical relationship of the alert event in the device's containment tree."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "There might be up to three device-related OBX segments for the MDS, VMD, and CHANNEL dependent on the specific device's containment tree. The general mapping of the device-related OBX segments is defined in table <<ref_tbl_acm_obx_device_related_mapping>>."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8058": {
+        "type": "tech-feature",
+        "requirementNumber": 8058,
+        "localId": "R8058",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If a private *<<acronym_mdc>>* code is used for the coding of the SDC device-related element, the identifier shall be mapped as described in Section <<ref_private_coding_system_note>>."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8061": {
+        "type": "tech-feature",
+        "requirementNumber": 8061,
+        "localId": "R8061",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_acm_gateway>> shall export an Event Identification OBX segment which identifies the alert event."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The mapping differs for physiological alert events and technical/advisory alert events (please refer also to <<ref_tbl_acm_obx_alert_type_mapping>> for further information)."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8077": {
+        "type": "tech-feature",
+        "requirementNumber": 8077,
+        "localId": "R8077",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_acm_gateway>> shall report the Alert Event Phase as \"update\" when there are more updates than just the Alert Priority as specified in <<ref_tbl_acm_obx14_alert_phase_mapping>>  for the \"update\" Alert Event Phase."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8062": {
+        "type": "tech-feature",
+        "requirementNumber": 8062,
+        "localId": "R8062",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_acm_gateway>> shall set the OBX-14 field of the Event Identification OBX segment to the date/time of the alert event status change."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "This either applies to a change of the *pm:AlertConditionState* or the *pm:AlertSignalState* of the signals related to the alert condition."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "The date/time to be set in the OBX-14 field relates to the alert event phase. <<ref_tbl_acm_obx14_alert_phase_mapping>> defines the date/time mapping per alert event phase."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "The HL7 date and time format differs from the xsd date/time formats and requires a mapping accordingly (please refer to <<ref_expl_dt_mapping>> for further information)."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8063": {
+        "type": "tech-feature",
+        "requirementNumber": 8063,
+        "localId": "R8063",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded element value, the identifier shall be mapped as described in Section <<ref_private_coding_system_note>>."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8064": {
+        "type": "tech-feature",
+        "requirementNumber": 8064,
+        "localId": "R8064",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded element value, the identifier shall be mapped as described in Section <<ref_private_coding_system_note>>."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8065": {
+        "type": "tech-feature",
+        "requirementNumber": 8065,
+        "localId": "R8065",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_acm_gateway>> shall export a Source Identification OBX segment, which identifies the source that led to the alert event."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The mapping differs for physiological alert events and technical/advisory alert events (refer to <<ref_tbl_acm_obx_alert_type_mapping>> for further information)."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "For physiological alert conditions, the alert event usually relates to a metric and its corresponding value that triggered the alert event. The *pm:AlertConditionDescriptor/pm:Source* element contains the handle to the related metric for the alert condition."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "For technical alert conditions, the alert event usually relates to a device-related element such as the MDS, a VMD, a CHANNEL, or METRIC. The *pm:AlertConditionDescriptor/pm:Source* element usually contains the handle to the device-related element. If *pm:Source* is empty, the alert condition relates to the device-related element which is the parent of the alert system to which the alert condition is assigned to."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8059": {
+        "type": "tech-feature",
+        "requirementNumber": 8059,
+        "localId": "R8059",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For a physiological alert event, a <<actor_somds_acm_gateway>> shall set the OBX-3 field in the <<ref_acm_obx_source_id_mapping>> to the source identifier."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8060": {
+        "type": "tech-feature",
+        "requirementNumber": 8060,
+        "localId": "R8060",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For a technical or advisory alert event, a <<actor_somds_acm_gateway>> shall set the OBX-5 field in the <<ref_acm_obx_source_id_mapping>> to the source identifier."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8066": {
+        "type": "tech-feature",
+        "requirementNumber": 8066,
+        "localId": "R8066",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_acm_gateway>> shall map the source identification for physiological alerts (alarms or advisories) to an OBX segment as defined in <<ref_dec_obx_mapping>>. The gateway captures the state of the related metric at the time the alert event occurred."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "In SDC, the metric value that led to the physiological alert event is required to be reported in a state update before the *pm:AlertConditionState* update is reported. That is, the latest state of the metric related to the alert condition contains the value that led to the alert event when the *pm:AlertConditionState/@Presence* changed from *\"false\"* to *\"true\"*."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8067": {
+        "type": "tech-feature",
+        "requirementNumber": 8067,
+        "localId": "R8067",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_acm_gateway>> shall set the OBX-4 Observation Sub-ID to *\"<MDS>.<VMD>.<CHAN>.<METRIC>.2\"* where *<MDS>*, *<VMD>*, *<CHAN>*, and *<METRIC>* are the numbers of the device’s containment tree levels assigned by the gateway."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8068": {
+        "type": "tech-feature",
+        "requirementNumber": 8068,
+        "localId": "R8068",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_acm_gateway>> shall set the OBX-11 Observation Result Status to *\"R\"*."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8069": {
+        "type": "tech-feature",
+        "requirementNumber": 8069,
+        "localId": "R8069",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded element value, the identifier shall be mapped as described in Section <<ref_private_coding_system_note>>."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8070": {
+        "type": "tech-feature",
+        "requirementNumber": 8070,
+        "localId": "R8070",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_acm_gateway>> shall export an Event Phase OBX segment, which identifies the alert event phase."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The actual value of the IHE ACM Alert Event Phase attribute depends on a combination of SDC alert condition/signal states. The mapping is defined in table <<ref_tbl_acm_obx_alert_phase_mapping>>."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "All *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_phase_mapping>> and needed to determine the actual alert phase, relate to *pm:AlertSignalState* elements with the *@Location* set to *\"Loc\"*."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "Unless the *pm:AlertConditionState/@ActivationState* is set to *\"On\"*, the *pm:AlertConditionState/@Presence* is always set to *\"false\"*; that is, the gateway will not export any IHE ACM alert event messages."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "OBX|6|ST|68481\\^MDC_ATTR_EVENT_PHASE^MDC|1.1.1.1.3|start||||||R"
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8078": {
+        "type": "tech-feature",
+        "requirementNumber": 8078,
+        "localId": "R8078",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_acm_gateway>> shall report the Alert Event Phase as \"update\" when there are more updates than just the Alert Priority as specified in <<ref_tbl_alert_phase_mapping>> for the \"update\" Alert Event Phase."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8071": {
+        "type": "tech-feature",
+        "requirementNumber": 8071,
+        "localId": "R8071",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_acm_gateway>> shall export an Alert State OBX segment, which defines the current state of the alert event."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The actual value of the IHE ACM Alert State attribute depends on a combination of SDC alert condition/signal states. The mapping is defined in table <<ref_tbl_acm_obx_alert_state_mapping>>."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "All *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_state_mapping>> and needed to determine the actual alert phase, relate to *pm:AlertSignalState* elements with the *@Location* set to *\"Loc\"*."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "Unless the *pm:AlertConditionState/@ActivationState* is set to *\"On\"*, the *pm:AlertConditionState/@Presence* is always set to *\"false\"*; that is, the gateway will not export any IHE ACM alert event messages."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "OBX|7|ST|68482\\^MDC_ATTR_ALARM_STATE^MDC|1.1.1.1.4|active||||||R"
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8072": {
+        "type": "tech-feature",
+        "requirementNumber": 8072,
+        "localId": "R8072",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_acm_gateway>> shall only report an inactive alert condition when the alarm condition transitioned from active or latched to inactive."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8073": {
+        "type": "tech-feature",
+        "requirementNumber": 8073,
+        "localId": "R8073",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_acm_gateway>> shall export an Inactivation State OBX segment, which defines the current inactivation state of the alert event."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The actual value of the IHE ACM Alert Inactivation State attribute depends on a combination of SDC alert condition/signal states. The mapping is defined in table <<ref_tbl_acm_obx_inactivation_state_mapping>>."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "The OBX-5 field can contain multiple inactivation states separated by the HL7 message 'repeating field' character (usually '~'). Example: *\"audio-off~alert-acknowledged\"*"
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "All *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_inactivation_state_mapping>> and needed to determine the actual alert phase, relate to *pm:AlertSignalState* elements with the *@Location* set to *\"Loc\"*."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "Unless the *pm:AlertConditionState/@ActivationState* is set to *\"On\"*, the *pm:AlertConditionState/@Presence* is always set to *\"false\"*; that is, the gateway will not export any IHE ACM alert event messages."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "OBX|8|ST|68483\\^MDC_ATTR_ALARM_INACTIVATION_STATE^MDC|1.1.1.1.5|enabled||||||R"
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8074": {
+        "type": "tech-feature",
+        "requirementNumber": 8074,
+        "localId": "R8074",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_acm_gateway>> shall map the SDC *pm:AlertConditionDescriptor/@Priority* attribute to an IHE ACM Alert Priority OBX segment as defined in the <<ref_ihe_pcd_tf_2_2019>>."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The mapping is defined in table <<ref_tbl_acm_obx_alert_priority_mapping>>."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "OBX|9|ST|68484\\^MDC_ATTR_ALARM_PRIORITY^MDC|1.1.1.1.6|PM||||||R"
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8075": {
+        "type": "tech-feature",
+        "requirementNumber": 8075,
+        "localId": "R8075",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "In the case of an alert priority escalation or deescalation, the *pm:AlertConditionState/@ActualPriority* is updated with a new priority that differs from the previous *@ActualPriority* in the state or the *@Priority* in the descriptor."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "In this case, the gateway shall send a new alert event message with the updated priority."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8076": {
+        "type": "tech-feature",
+        "requirementNumber": 8076,
+        "localId": "R8076",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_acm_gateway>> shall map the SDC *pm:AlertConditionDescriptor/@Kind* to an IHE ACM Alert Type OBX segment as defined in the <<ref_ihe_pcd_tf_2_2019>>."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The mapping is defined in table <<ref_tbl_acm_obx_alert_type_mapping>>."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "OBX|10|ST|68485\\^MDC_ATTR_ALERT_TYPE^MDC|1.1.1.1.7|ST||||||R"
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8079": {
+        "type": "tech-feature",
+        "requirementNumber": 8079,
+        "localId": "R8079",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If *pm:AlertConditionState+++<wbr/>+++/@ActualPriority* is available and set to *\"None\"*, or if *pm:AlertConditionState+++<wbr/>+++/@ActualPriority* is NOT available and *pm:AlertConditionDescriptor+++<wbr/>+++/@Priority* set to *\"None\"*, then the <<acronym_sdc>> ALERT CONDITION is an advisory, and the alert type shall be set to *\"SA\"* in the IHE ACM Alert Type OBX segment."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "OBX|10|ST|68485\\^MDC_ATTR_ALERT_TYPE^MDC|1.1.1.1.7|SA||||||R"
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "701": {
+        "type": "tech-feature",
+        "requirementNumber": 701,
+        "localId": "R0701",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "All <<vol1_spec_sdpi_p_actor_somds_participant>> systems shall fully implement the semantic content requirements in the <<ref_ieee_11073_10207_2017>> <<acronym_biceps>> standard."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "This includes strict implementation of the <<acronym_biceps>> <<acronym_mdib>> specification, as well as use of the <<acronym_mdc>> nomenclature."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "702": {
+        "type": "tech-feature",
+        "requirementNumber": 702,
+        "localId": "R0702",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The <<term_manufacturer>> shall disclose the OIDs that it uses throughout SDC communication."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "This includes OIDs for private codes as detailed in <<ref_ieee_11073_10101_2020>>, for private SDC extensions and for private PKPs."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "19": {
+        "type": "tech-feature",
+        "requirementNumber": 19,
+        "localId": "R0019",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_participant>> shall not provide BICEPS extensions that use XML mixed content."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "20": {
+        "type": "tech-feature",
+        "requirementNumber": 20,
+        "localId": "R0020",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_participant>> shall not provide BICEPS extensions that are based on or use the XML Schema QName type."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "8": {
+        "type": "tech-feature",
+        "requirementNumber": 8,
+        "localId": "R0008",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If available by the <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_provider>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall include every production specification listed in <<vol3_table_production_specifications>> in its MDSs, unless a mapping to the BICEPS Participant Model exists."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "<<vol3_table_production_specifications_mapping>> shows the mapping between IEEE 11073-10101 RefIds and the BICEPS Participant Model. A dash in the column _{var_column_pm_mapping}_ signifies a non-existent mapping."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "Other production specifications may be used for types that are not listed in <<vol3_table_production_specifications>>."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "9": {
+        "type": "tech-feature",
+        "requirementNumber": 9,
+        "localId": "R0009",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If available by the <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_provider>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall include every attribute listed in <<vol3_table_attributes>> in its MDS descriptors."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Other attributes may be used for types that are not listed in <<vol3_table_attributes>>."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "7": {
+        "type": "tech-feature",
+        "requirementNumber": 7,
+        "localId": "R0007",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> shall set `sdpi:MdcAttribute/@Code` to any code from the first partition of the IEEE 11073-10101 nomenclature in the range of 67841 (1::2305) to 68609 (1::3073)."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "This prevents <<term_manufacturer>>s from using codes outside the intended range of attributes."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "12": {
+        "type": "tech-feature",
+        "requirementNumber": 12,
+        "localId": "R0012",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If the administrative gender of a patient described by a pm:PatientDemographicsCoreData element is available, a <<vol1_spec_sdpi_p_actor_somds_participant>> shall at least add the sdpi:Gender extension to the pm:PatientDemographicsCoreData/ext:Extension element."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "14": {
+        "type": "tech-feature",
+        "requirementNumber": 14,
+        "localId": "R0014",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For the `sdpi:EquipmentIdentifier` extension, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall use a stable, globally unique URI that is constant across re-initializations of the <<vol1_spec_sdpi_p_actor_somds_provider>> and uniquely refers to a physical or virtual entity."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "15": {
+        "type": "tech-feature",
+        "requirementNumber": 15,
+        "localId": "R0015",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For the `sdpi:EquipmentIdentifier` extension, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall use URI-encoded UUIDs or OIDs."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "16": {
+        "type": "tech-feature",
+        "requirementNumber": 16,
+        "localId": "R0016",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "To test if two equipment identifiers are equal, a <<vol1_spec_sdpi_p_actor_somds_participant>> shall perform case-sensitive string comparison."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "17": {
+        "type": "tech-feature",
+        "requirementNumber": 17,
+        "localId": "R0017",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> shall provide the `sdpi:EquipmentIdentifier` extension for each pm:MdsDescriptor in its <<acronym_mdib>>."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "18": {
+        "type": "tech-feature",
+        "requirementNumber": 18,
+        "localId": "R0018",
+        "globalId": "",
+        "level": "SHOULD",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For each <<term_removable_subsystem>> <<acronym_vmd>> of a <<vol1_spec_sdpi_p_actor_somds_provider>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> should provide the `sdpi:EquipmentIdentifier` extension for the pm:VmdDescriptor in its <<acronym_mdib>>."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "703": {
+        "type": "tech-feature",
+        "requirementNumber": 703,
+        "localId": "R0703",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For each compound metric, the <<actor_somds_provider>> shall provide a *pm:Relation* element to relate to all metrics belonging to the same compound metric."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "704": {
+        "type": "tech-feature",
+        "requirementNumber": 704,
+        "localId": "R0704",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For each *pm:Relation* of a <<actor_somds_provider>> that expresses membership in a compound metric, the <<actor_somds_provider>> shall set *pm:Code* to the coded term of the compound metric it belongs to."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "705": {
+        "type": "tech-feature",
+        "requirementNumber": 705,
+        "localId": "R0705",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For each *pm:Relation* of a <<actor_somds_provider>> that expresses membership in a compound metric, the <<actor_somds_provider>> shall set *@Kind* to *SST*."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "706": {
+        "type": "tech-feature",
+        "requirementNumber": 706,
+        "localId": "R0706",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For each *pm:Relation* of a <<actor_somds_provider>> that expresses membership in a compound metric, the <<actor_somds_provider>> shall include all handle references of those metrics that belong to the same compound metric in *pm:Relation/@Entries* excluding the handle of the metric that contains the *pm:Relation*."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "707": {
+        "type": "tech-feature",
+        "requirementNumber": 707,
+        "localId": "R0707",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For each compound metric of a <<actor_somds_provider>>, if *@StartTime* and *@StopTime* are available, the <<actor_somds_provider>> shall provide the same values for *@StartTime* and *@StopTime* in each metric of the compound metric to signify the same measurement cycle."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "708": {
+        "type": "tech-feature",
+        "requirementNumber": 708,
+        "localId": "R0708",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For each compound metric of a <<actor_somds_provider>>, if *@StartTime* and *@StopTime* are not available, the <<actor_somds_provider>> shall provide the same value for *@DeterminationTime* in each metric of the compound metric to signify the same measurement cycle."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1006": {
+        "type": "tech-feature",
+        "requirementNumber": 1006,
+        "localId": "R1006",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> shall send messages that convey msg:WaveformStream, msg:AbstractMetricReport, msg:AbstractOperationalStateReport, msg:AbstractComponentReport, msg:AbstractAlertReport, msg:ObservedValueStream, msg:DescriptionModificationReport, and msg:AbstractContextReport elements to a <<vol1_spec_sdpi_p_actor_somds_consumer>> in the ascending order of the <<acronym_mdib>>'s pm:MdibVersionGroup/@MdibVersion."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "BICEPS does not specify the order in which report messages are sent to <<vol1_spec_sdpi_p_actor_somds_consumer>>s. This requirement restricts messages to be transmitted in the ascending order of the <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<acronym_mdib>> version."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1007": {
+        "type": "tech-feature",
+        "requirementNumber": 1007,
+        "localId": "R1007",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Within an <<acronym_mdib>> sequence, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall send msg:WaveformStream, msg:EpisodicMetricReport, msg:EpisodicOperationalStateReport, msg:EpisodicComponentReport, msg:EpisodicAlertReport, msg:ObservedValueStream, msg:DescriptionModificationReport, and msg:EpisodicContextReport messages with a strictly increasing msg:AbstractReport/@MdibVersion."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "This requirement verifies that for a <<vol1_spec_sdpi_p_actor_somds_provider>> there will be no two reports with the same <<acronym_mdib>> version. Furthermore, it prohibits decrementing version numbers within an <<acronym_mdib>> sequence."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1008": {
+        "type": "tech-feature",
+        "requirementNumber": 1008,
+        "localId": "R1008",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> shall not send msg:DescriptionModificationReport messages in which any two descriptors have the same handle."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "This requirement simplifies processing of changes for a <<vol1_spec_sdpi_p_actor_somds_consumer>> in a way that the <<vol1_spec_sdpi_p_actor_somds_consumer>> can apply description modification changes one by one without additional consistency checks. If deletion and re-insertion of objects is needed, a <<vol1_spec_sdpi_p_actor_somds_provider>> sends out two description modification reports successively."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "DEPRECATION NOTICE - This requirement is being incorporated into the IEEE 11073-10207 BICEPS standard through a corrigendum. Once IEEE has published the IEEE 11073-10207 BICEPS Corrigenda, this SDPi requirement will be no longer needed, and will hence be removed."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1009": {
+        "type": "tech-feature",
+        "requirementNumber": 1009,
+        "localId": "R1009",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> shall order msg:DescriptionModificationReport/msg:ReportPart elements in a way that for an inserted parent descriptor, inserted child descriptors appear after that parent descriptor."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "This explicitly requires to only communicate children as inserted if the parent has been inserted already, which simplifies insertion of descriptors on the <<vol1_spec_sdpi_p_actor_somds_consumer>> side."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "DEPRECATION NOTICE - This requirement is being incorporated into the IEEE 11073-10207 BICEPS standard through a corrigendum (albeit without the clarification note immediately above). Once IEEE has published the IEEE 11073-10207 BICEPS Corrigenda, this SDPi requirement will be no longer needed, and will hence be removed."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1010": {
+        "type": "tech-feature",
+        "requirementNumber": 1010,
+        "localId": "R1010",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> shall not add pm:AbstractDescriptor elements to pm:AbstractDescriptors below msg:DescriptionModificationReport/msg:ReportPart."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Replaces biceps:R5024: \"Descriptors in this list SHALL not include nested descriptors.\""
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    "1011": {
+        "type": "tech-feature",
+        "requirementNumber": 1011,
+        "localId": "R1011",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> shall communicate a parent descriptor as deleted only if it does not include any child descriptors."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Replaces biceps:R5046: \"If a parent descriptor is deleted, then all child descriptors of that parent SHALL communicated as deleted in advance.\""
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "DEPRECATION NOTICE - This requirement is being incorporated into the IEEE 11073-10207 BICEPS standard through a corrigendum. Once IEEE has published the IEEE 11073-10207 BICEPS Corrigenda, this SDPi requirement will be no longer needed, and will hence be removed."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    }
+}

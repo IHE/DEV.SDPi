@@ -31,7 +31,18 @@ class AnchorReplacementsMap {
         return anchorReplacements[firstLevel]?.let { it[secondLevel] }
     }
 
-    private companion object {
+    fun dump() {
+        logger.info("Anchor replacement map")
+        logger.info("======================")
+        for (entry in anchorReplacements) {
+            logger.info(entry.key)
+            for(entry2 in entry.value) {
+                logger.info("  ${entry2.key} => ${entry2.value.label}/${entry2.value.source}/${entry2.value.prefix}/${entry2.value.refText}")
+            }
+        }
+    }
+
+    private companion object : Logging {
         val defaultKey = UUID.randomUUID().toString()
     }
 }
