@@ -21,6 +21,8 @@ image::../images/vol1-diagram-use-case-aars-tech-view.svg[]
 [#vol1_clause_appendix_c_use_case_aars_technical_precondition]
 ==== Technical Pre-Conditions
 
+[role=use-case-background]
+====
 *Given* All devices communicate using a common <<acronym_md_lan>> protocol
 
 *And* At least one <<label_system_type_name_agw>> (<<acronym_agw>>) Service on the <<acronym_md_lan>>
@@ -30,20 +32,28 @@ image::../images/vol1-diagram-use-case-aars-tech-view.svg[]
 *And* All devices report either a device label and/or location and/or patient ID
 
 *And* The AGW Service is associated with a specific set of device labels, and/or location(s)
+====
 
 [#vol1_clause_appendix_c_use_case_aars_scenarios]
 ==== Scenarios
 
+[role=use-case-scenario,sdpi_scenario="New device is connected to network with AGW service"]
 ===== Scenario: <<acronym_aars>> {var_use_case_id}.1 - New device is connected to network with AGW service
 
+[role=use-case-steps]
+====
 *Given* the AGW Service has detected a new device in its scope
 
 *When* the AGW Service is operational
 
 *Then* the AGW Service will connect to the device and communicate alerts to the Alert Recording System
+====
 
+[role=use-case-scenario,sdpi_scenario="The AGW service loses connectivity with the ICU devices"]
 ===== Scenario: <<acronym_aars>> {var_use_case_id}.2 - The AGW service loses connectivity with the ICU devices
 
+[role=use-case-steps]
+====
 *Given* the AGW Service no longer communicates with ICU devices in its scope
 
 *When* There is a communications failure
@@ -51,21 +61,30 @@ image::../images/vol1-diagram-use-case-aars-tech-view.svg[]
 *Then* the AGW will notify the Alert Recording System of the failure
 
 *Then* when the AGW regains communication with the devices it will resume reporting active alerts to the Alert Recording System and attempt to backfill any missing alerts
+====
 
+[role=use-case-scenario,sdpi_scenario="The AGW service fails"]
 ===== Scenario: <<acronym_aars>> {var_use_case_id}.3 - The AGW service fails
 
+[role=use-case-steps]
+====
 *Given* the AGW fails
 
 *Then* the Alert Recording System will detect a loss of communications with the AGW
 
 *Then* when the AGW Service recovers it will resume reporting active alerts to the Alert Recording System and attempt to backfill any missing alerts
+====
 
+[role=use-case-scenario,sdpi_scenario="The Alert Recording System loses connectivity with the AGW"]
 ===== Scenario: <<acronym_aars>> {var_use_case_id}.4 - The Alert Recording System loses connectivity with the AGW
 
+[role=use-case-steps]
+====
 *Given* the Alert Recording System can no longer communicate with the AGW
 
 *Then* the Alert Recording System will detect a loss of communications with the AGW Service
 
 *Then*  when the AGW Service regains communication with the Alert Recording System it will resume reporting active alerts to the Alert Recording System and backfill any missing alerts.
+====
 
 

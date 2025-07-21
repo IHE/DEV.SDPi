@@ -22,34 +22,49 @@ image::../images/vol1-diagram-use-case-sicdmp-tech-view.svg[]
 [#vol1_clause_appendix_c_use_case_sicdmp_technical_precondition]
 ==== Technical Pre-Conditions
 
+[role=use-case-background]
+====
 *Given* All devices communicate using a common <<acronym_md_lan>> protocol
 
 *And* At least one ICU Dashboard display
 
 *And* Devices from specific ICU rooms have been assigned to the Dashboard
+====
 
 
 [#vol1_clause_appendix_c_use_case_sicdmp_scenarios]
 ==== Scenarios
 
+[role=use-case-scenario,sdpi_scenario="ICU Devices are Accessible to the Dashboard"]
 ===== Scenario: <<acronym_sicdmp>> {var_use_case_id}.1 - ICU Devices are Accessible to the Dashboard
 
+[role=use-case-steps]
+====
 *Given* Dashboard has detected at least one assigned accessible ICU device
 
 *When* the ICU Devices are communicating on the <<acronym_md_lan>>
 
 *Then* the Dashboard will display parameter, waveform, setting, alarm, imaging, etc. information from those devices (based on configuration)
+====
 
+[role=use-case-scenario,sdpi_scenario="ICU Devices are Inaccessible to the Dashboard"]
 ===== Scenario: <<acronym_sicdmp>> {var_use_case_id}.2 - ICU Devices are Inaccessible to the Dashboard
 
+[role=use-case-steps]
+====
 *Given* Dashboard cannot detect any assigned accessible ICU devices
 
 *Then* the Dashboard will display an error message
+====
 
+[role=use-case-scenario,sdpi_scenario="One or more ICU Devices are Inaccessible to the Dashboard"]
 ===== Scenario: <<acronym_sicdmp>> {var_use_case_id}.3 - One or more ICU Devices are Inaccessible to the Dashboard
 
+[role=use-case-steps]
+====
 *Given* Dashboard cannot detect any previously assigned accessible ICU devices
 
 *Then* the Dashboard will display an error message
+====
 
 

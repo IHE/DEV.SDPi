@@ -20,6 +20,8 @@ image::../images/vol1-diagram-use-case-ddes-tech-view.svg[]
 [#vol1_clause_appendix_c_use_case_ddes_technical_precondition]
 ==== Technical Pre-Conditions
 
+[role=use-case-background]
+====
 *Given* All devices communicate using a common <<acronym_md_lan>> protocol
 
 *And* There is at least one Data <<system_type_device_gateway>> (<<acronym_dgw>>) Service
@@ -27,41 +29,58 @@ image::../images/vol1-diagram-use-case-ddes-tech-view.svg[]
 *And* All devices report either a device label and/or location
 
 *And* A <<acronym_dgw>> Service is associated with a specific set of device labels, and/or location(s) (i.e., devices in scope)
+====
 
 [#vol1_clause_appendix_c_use_case_ddes_scenarios]
 ==== Scenarios
 
+[role=use-case-scenario,sdpi_scenario="New in scope device is connected to network with <<acronym_dgw>> service"]
 ===== Scenario: <<acronym_ddes>> {var_use_case_id}.1 - New in scope device is connected to network with <<acronym_dgw>> service
 
+[role=use-case-steps]
+====
 *Given* The <<acronym_dgw>> Service has detected a new in scope device
 
 *When* The <<acronym_dgw>> Service is operational
 
 *Then* The <<acronym_dgw>> Service will connect to the device and export data to the EHR using the HL7 v2 based IHE DEV DOR actor of the DEV DEC Profile
+====
 
 ////
 #TODO:  REMOVE EXPLICIT PROFILE REFERENCES; let profiles link to gateway actors & profile roles#
 ////
 
+[role=use-case-scenario,sdpi_scenario="<<label_system_type_name_dgw>> Service is connected to the EHR"]
 ===== Scenario: <<acronym_ddes>> {var_use_case_id}.2 - <<label_system_type_name_dgw>> Service is connected to the EHR
 
+[role=use-case-steps]
+====
 *Given* The <<acronym_dgw>> Service is exporting data to the EHR
 
 *Then* The <<acronym_dgw>> Service will comply with all IHE DEV / PCD DEC Profile DOR actor functional and test requirements
+====
 
+[role=use-case-scenario,sdpi_scenario="<<label_system_type_name_dgw>> Service has a failure"]
 ===== Scenario: <<acronym_ddes>> {var_use_case_id}.3 - <<label_system_type_name_dgw>> Service has a failure
 
+[role=use-case-steps]
+====
 *Given* The <<acronym_dgw>> Service was connected to in scope devices and to an Enterprise system and fails
 
 *Then* The <<acronym_dgw>> Service will backfill its data store and then backfill to the EHR when it recovers from its failure
+====
 
+[role=use-case-scenario,sdpi_scenario="<<label_system_type_name_dgw>> Service connection to the Enterprise System fails"]
 ===== Scenario: <<acronym_ddes>> {var_use_case_id}.4 - <<label_system_type_name_dgw>> Service connection to the Enterprise System fails
 
+[role=use-case-steps]
+====
 *Given* The Enterprise System stops receiving data from the <<acronym_dgw>> Service
 
 *When* There is a communications failure between the <<acronym_dgw>> Service and the Enterprise System
 
 *Then* The <<acronym_dgw>> Service will backfill missed data to the Enterprise System when communications resumes
+====
 
 
 
