@@ -1,0 +1,19 @@
+////
+Define oids for standards referenced in requirements. 
+////
+
+// The SDPI profile described in this documentation
+:sdpi_oid.sdpi: 1.3.6.1.4.1.19376.1.6.2.10.1.1.1
+
+// The SDPi plug-and-trust profile described in this documentation
+:sdpi_oid.sdpi-p: 1.3.6.1.4.1.19376.1.6.2.11
+
+// The SDPi alerting profile described in this documentation
+:sdpi_oid.sdpi-a: 1.3.6.1.4.1.19376.1.6.2.x
+
+// The SDPi reporting profile described in this documentation
+:sdpi_oid.sdpi-r: 1.3.6.1.4.1.19376.1.6.2.x
+
+// The SDPi external control profile described in this documentation
+:sdpi_oid.sdpi-xC: 1.3.6.1.4.1.19376.1.6.2.x
+

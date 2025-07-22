@@ -1,0 +1,86 @@
+{
+    "id": "preparatory_test",
+    "name": "Preparatory Tests",
+    "tests": [
+        {
+            "type": "org.sdpi.test.Test.Case",
+            "id": "certificate_deployment",
+            "name": "Certificate deployment",
+            "version": "1.0.0",
+            "shortDescription": "Verify working certificate infrastructure (deployment on devices)",
+            "peerType": "UNASSIGNED",
+            "iheTestType": "PREPARATORY",
+            "description": "",
+            "evaluation": "",
+            "participants": [
+                {
+                    "actor": "SOMDS_CONSUMER"
+                },
+                {
+                    "actor": "SOMDS_PROVIDER"
+                }
+            ],
+            "steps": []
+        },
+        {
+            "type": "org.sdpi.test.Test.Case",
+            "id": "multicast_support",
+            "name": "Multicast support",
+            "version": "1.0.0",
+            "shortDescription": "Verify multicast support",
+            "peerType": "UNASSIGNED",
+            "iheTestType": "PREPARATORY",
+            "description": "",
+            "evaluation": "",
+            "participants": [
+                {
+                    "actor": "SOMDS_CONSUMER"
+                },
+                {
+                    "actor": "SOMDS_PROVIDER"
+                }
+            ],
+            "steps": []
+        },
+        {
+            "type": "org.sdpi.test.Test.Case",
+            "id": "discovery_proxy",
+            "name": "Discovery proxy",
+            "version": "1.0.0",
+            "shortDescription": "Verify the discovery proxy to be running",
+            "peerType": "UNASSIGNED",
+            "iheTestType": "PREPARATORY",
+            "description": "",
+            "evaluation": "",
+            "participants": [
+                {
+                    "actor": "DISCOVERY_PROXY"
+                }
+            ],
+            "steps": []
+        },
+        {
+            "type": "org.sdpi.test.Test.Case",
+            "id": "network_connection",
+            "name": "Network connection",
+            "version": "1.0.0",
+            "shortDescription": "Verify the involved participants to be connected to the network",
+            "peerType": "UNASSIGNED",
+            "iheTestType": "PREPARATORY",
+            "description": "",
+            "evaluation": "",
+            "participants": [
+                {
+                    "actor": "SOMDS_CONSUMER"
+                },
+                {
+                    "actor": "SOMDS_PROVIDER"
+                },
+                {
+                    "actor": "DISCOVERY_PROXY"
+                }
+            ],
+            "steps": []
+        }
+    ]
+}

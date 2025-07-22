@@ -1,0 +1,110 @@
+<html>
+ <head></head>
+ <body>
+  <div id="preamble">
+   <div class="sectionbody">
+    <div class="paragraph">
+     <p>Pellentesque pellentesque ligula vitae neque <a href="#_use_case_feature_1_synchronized_time_across_devices_stad">Synchronized time across devices</a> porttitor sollicitudin. Nullam at nisi nunc.</p>
+    </div>
+   </div>
+  </div>
+  <div class="sect1 profile">
+   <h2 id="_a_profile">1 A Profile</h2>
+   <div class="sectionbody">
+    <div class="paragraph">
+     <p>Suspendisse nec vehicula dui, vitae auctor sem.</p>
+    </div>
+    <div class="sect2">
+     <h3 id="_use_cases">1.1 Use cases</h3>
+    </div>
+    <div class="sect2">
+     <h3 id="_actor_definitions">1.2 Actor definitions</h3>
+     <div class="sect3 actor">
+      <h4 id="_somds_provider">1.2.1 SOMDS Provider</h4>
+      <div class="paragraph">
+       <p>A somds participant that provides at least one service to the other participant systems.</p>
+      </div>
+     </div>
+     <div class="sect3 actor">
+      <h4 id="_somds_consumer">1.2.2 SOMDS Consumer</h4>
+      <div class="paragraph">
+       <p>A somds participant that discovers and utilizes at least one service, functional capability, exposed to a network communications backbone by a somds provider.</p>
+      </div>
+     </div>
+    </div>
+    <div class="sect2 profile-option">
+     <h3 id="_a_profile_option">1.3 A Profile Option</h3>
+     <div class="paragraph">
+      <p>Vivamus vitae sem sed dolor posuere efficitur vel ut mi.</p>
+     </div>
+    </div>
+    <div class="sect2 use-case">
+     <h3 id="_use_case_feature_1_synchronized_time_across_devices_stad">1.4 Use Case Feature 1: Synchronized time across devices (STAD)</h3>
+     <div class="sect3">
+      <h4 id="_narrative">1.4.1 Narrative</h4>
+      <div class="paragraph">
+       <p>Nurse Jean attaches a ventilator to the medical device network in the ICU. It automatically obtains the correct time.</p>
+      </div>
+     </div>
+     <div class="sect3">
+      <h4 id="_benefits">1.4.2 Benefits</h4>
+      <div class="paragraph">
+       <p>Automatically acquiring the time saves the user from spending time entering the time into the device. It also guarantees that the correct time will be entered. It is also important for all devices to have a consistent time since the data being exported to consuming devices and systems will use the time stamps from the device to mark the time that the clinical data was acquired. Since this is part of the clinical record, accuracy is very important.</p>
+      </div>
+     </div>
+     <div class="sect3">
+      <h4 id="_technical_pre_conditions">1.4.3 Technical Pre-Conditions</h4>
+      <div class="exampleblock use-case-background">
+       <div class="content">
+        <div class="paragraph">
+         <p><strong>Given</strong> All devices communicate using a common acronym_md_lan protocol</p>
+        </div>
+        <div class="paragraph">
+         <p><strong>And</strong> A Time Source (TS) Service is on the acronym_md_lan network</p>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="sect3">
+      <h4 id="_scenarios">1.4.4 Scenarios</h4>
+      <div class="sect4 use-case-scenario">
+       <h5 id="_scenario_stad_1_1_device_is_connected_to_the_md_lan_network_with_a_time_source_service">1.4.4.1 Scenario: STAD 1.1 --- Device is connected to the MD LAN network with a Time Source service</h5>
+       <div class="exampleblock use-case-steps">
+        <div class="content">
+         <div class="paragraph">
+          <p><strong>Given</strong> Device has detected at least one TS Service</p>
+         </div>
+         <div class="paragraph">
+          <p><strong>When</strong> The TS Service is operational</p>
+         </div>
+         <div class="paragraph">
+          <p><strong>Then</strong> The device will synchronize its time with the TS Service</p>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="sect4 use-case-scenario">
+       <h5 id="_scenario_stad_1_2_device_is_connected_to_the_md_lan_network_and_a_user_wants_to_change_the_devices_time">1.4.4.2 Scenario: STAD 1.2 --- Device is connected to the MD LAN network and a user wants to change the device’s time</h5>
+       <div class="exampleblock use-case-steps">
+        <div class="content">
+         <div class="paragraph">
+          <p><strong>Given</strong> Device is operational in MD LAN network</p>
+         </div>
+         <div class="paragraph">
+          <p><strong>When</strong> The user attempts to change the time on the device manually</p>
+         </div>
+         <div class="paragraph">
+          <p><strong>Then</strong> The device will disable the ability to change its time manually</p>
+         </div>
+        </div>
+       </div>
+       <div class="paragraph">
+        <p>Cras gravida mi nisl, id <a href="#_use_case_feature_1_synchronized_time_across_devices_stad">Synchronized time across devices</a> tincidunt odio sollicitudin ut. Aliquam erat volutpat.</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
