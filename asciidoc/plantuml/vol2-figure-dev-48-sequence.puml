@@ -1,0 +1,40 @@
+@startuml
+
+!include ./common_style.inc.puml
+autonumber
+
+!global $str_somds_consumer = "SOMDS Consumer"
+!global $str_somds_provider = "SOMDS Provider"
+
+participant "$str_somds_consumer" as consumer
+participant "$str_somds_provider" as provider
+
+==Manage Distributed Alarm System [DEV-48]==
+opt
+    consumer -> provider: SetFriendlyConsumerName
+    consumer <<-- provider: SetFriendlyConsumerNameResponse
+end
+consumer -> provider: MonitoredByDAS
+consumer <<-- provider: MonitoredByDASResponse (MDIB version)
+
+par
+    loop upon alert condition change and before MaxTechnicalConfirmationDelay expires
+        consumer -> provider: ConfirmAlertsTechnicalDelivery (Alert Occurrence ID Tuple(s))
+        consumer <<-- provider: ConfirmAlertsTechnicalDeliveryResponse (MDIB version)
+    end
+else
+    loop before InvocationEffectiveTimeout expires
+        consumer -> provider: MonitoredByDAS
+        consumer <<-- provider: MonitoredByDASResponse (MDIB version)
+    end
+end
+
+opt intentional ending of the DAS
+    alt consumer intentionally ends the DAS
+        consumer -> provider: EndMonitoredByDAS
+        consumer <<-- provider: EndMonitoredByDASResponse(MDIB version)
+    else provider intentionally ends the DAS
+        consumer <- provider: Notification (OperationInvokedReport incl. disabled operations 'MonitoredByDAS' and 'EndMonitoredByDAS')
+    end
+end
+@enduml
