@@ -3,11 +3,11 @@
 !include ./common_style.inc.puml
 autonumber
 
-!global $str_somds_consumer = "SOMDS Consumer"
-!global $str_somds_provider = "SOMDS Provider"
+!global $str_somds_medical_alert_consumer = "SOMDS Medical Alert Consumer"
+!global $str_somds_medical_alert_provider = "SOMDS Medical Alert Provider"
 
-participant "$str_somds_consumer" as consumer
-participant "$str_somds_provider" as provider
+participant "$str_somds_medical_alert_consumer" as consumer
+participant "$str_somds_medical_alert_provider" as provider
 
 ==Manage Distributed Alarm System [DEV-48]==
 opt
