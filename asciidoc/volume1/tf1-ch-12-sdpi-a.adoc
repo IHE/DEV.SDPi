@@ -395,6 +395,7 @@ Specific capabilities supporting the <<acronym_sicdsp>> use case include:
 * *Technical Pre-Conditions*: N/A
 * *Scenarios*: <<acronym_sicdsp>> <<vol1_clause_appendix_c_use_case_sicdsp_scenarios>> communication of medical alert information to a <<vol1_spec_sdpi_p_actor_somds_consumer>> <<system_type_dashboard>>
 
+sdpi_include_use_case::sicdsp[actor-id="somds_medical_alert_consumer", support=optional]
 
 
 ===== <<label_use_case_name_sicdmp>> (<<acronym_sicdmp>>)
@@ -407,6 +408,7 @@ Specific capabilities supporting the <<acronym_sicdmp>> use case include:
 * *Technical Pre-Conditions*: N/A
 * *Scenarios*: <<acronym_sicdmp>> <<vol1_clause_appendix_c_use_case_sicdmp_scenarios>> communication of medical alert information to a <<vol1_spec_sdpi_p_actor_somds_consumer>> <<system_type_dashboard>>
 
+sdpi_include_use_case::sicdmp[actor-id="somds_medical_alert_consumer", support=optional]
 
 ===== <<label_use_case_name_acns>> (<<acronym_acns>>)
 This use case provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_acns>>.
@@ -418,6 +420,7 @@ Specific capabilities supporting the <<acronym_acns>> use case include:
 * *Technical Pre-Conditions*:  N/A
 * *Scenarios*:  <<acronym_acns>> <<vol1_clause_appendix_c_use_case_acns_scenarios>> communication of medical alert information to a <<vol1_spec_sdpi_p_actor_somds_consumer>> Alert <<system_type_device_gateway>>
 
+sdpi_include_use_case::acns[actor-id="somds_acm_gateway", support=optional]
 
 ===== <<label_use_case_name_aars>> (<<acronym_aars>>)
 This use case provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_aars>>.
@@ -429,6 +432,7 @@ Specific capabilities supporting the <<acronym_aars>> use case include:
 * *Technical Pre-Conditions*:  N/A
 * *Scenarios*:  <<acronym_aars>> <<vol1_clause_appendix_c_use_case_aars_scenarios>> communication of medical alert information to a <<vol1_spec_sdpi_p_actor_somds_consumer>> Alert <<system_type_device_gateway>>
 
+sdpi_include_use_case::aars[actor-id="somds_acm_gateway", support=optional]
 
 [#vol1_clause_sdpi_a_ses_considerations]
 === SDPi-A Safety, Effectiveness and Security - Requirements and Considerations

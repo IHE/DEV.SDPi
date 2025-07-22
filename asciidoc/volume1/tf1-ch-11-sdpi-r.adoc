@@ -292,6 +292,7 @@ Specific capabilities supporting the <<acronym_sicdsp>> use case include:
 * *Technical Pre-Conditions*: N/A
 * *Scenarios*: <<acronym_sicdsp>> <<vol1_clause_appendix_c_use_case_sicdsp_scenarios>> communication of medical data to a <<vol1_spec_sdpi_p_actor_somds_consumer>> <<system_type_dashboard>>
 
+sdpi_include_use_case::sicdsp[actor-id="somds_medical_data_consumer", support=optional]
 
 ===== <<label_use_case_name_sicdmp>> (<<acronym_sicdmp>>)
 This use case provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_sicdmp>>.
@@ -303,6 +304,7 @@ Specific capabilities supporting the <<acronym_sicdmp>> use case include:
 * *Technical Pre-Conditions*: N/A
 * *Scenarios*: <<acronym_sicdmp>> <<vol1_clause_appendix_c_use_case_sicdmp_scenarios>> communication of medical data to a <<vol1_spec_sdpi_p_actor_somds_consumer>> <<system_type_dashboard>>
 
+sdpi_include_use_case::sicdmp[actor-id="somds_medical_data_consumer", support=optional]
 
 ===== <<label_use_case_name_ddes>> (<<acronym_ddes>>)
 This use case provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_ddes>>.
@@ -317,6 +319,9 @@ Specific capabilities supporting the <<acronym_ddes>> use case include:
 ////
 #TODO:  Reference DEC Gateway / DOR actor from generic use case scenario reference#
 ////
+
+sdpi_include_use_case::ddes[actor-id="somds_dec_gateway", support=optional]
+sdpi_include_use_case::ddes[actor-id="somds_fhir_medical_data_gateway", support=optional]
 
 [#vol1_clause_sdpi_r_ses_considerations]
 === SDPi-R Safety, Effectiveness and Security - Requirements and Considerations
