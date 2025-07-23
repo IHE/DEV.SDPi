@@ -27,6 +27,10 @@ else
         consumer -> provider: MonitoredByDAS
         consumer <<-- provider: MonitoredByDASResponse (MDIB version)
     end
+else
+    loop at least once every SelfCheckPeriod
+        provider -> consumer: Notification (PeriodicAlertReport incl. updated 'SelfCheck' information)
+    end
 end
 
 opt intentional ending of the DAS
