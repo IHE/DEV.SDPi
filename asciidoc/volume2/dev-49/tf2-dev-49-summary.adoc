@@ -1,0 +1,3 @@
+// DEV-49 Transaction Summary
+
+Intentionally end a Distributed Alarm System between a <<vol1_spec_sdpi_p_actor_somds_provider>> and a <<vol1_spec_sdpi_p_actor_somds_consumer>>.

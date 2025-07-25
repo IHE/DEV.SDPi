@@ -9,7 +9,7 @@ autonumber
 participant "$str_somds_medical_alert_consumer" as consumer
 participant "$str_somds_medical_alert_provider" as provider
 
-==Manage Distributed Alarm System [DEV-48]==
+==Establish Distributed Alarm System [DEV-48]==
 opt
     consumer -> provider: SetFriendlyConsumerName
     consumer <<-- provider: SetFriendlyConsumerNameResponse
@@ -33,12 +33,4 @@ else
     end
 end
 
-opt intentional ending of the DAS
-    alt consumer intentionally ends the DAS
-        consumer -> provider: EndMonitoredByDAS
-        consumer <<-- provider: EndMonitoredByDASResponse(MDIB version)
-    else provider intentionally ends the DAS
-        consumer <- provider: Notification (OperationInvokedReport incl. disabled operations 'MonitoredByDAS' and 'EndMonitoredByDAS')
-    end
-end
 @enduml
