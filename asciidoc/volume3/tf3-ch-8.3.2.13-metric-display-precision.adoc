@@ -27,7 +27,7 @@ For a metric *@Value* or *@Samples* that falls in one of the *pm:TechnicalRange*
 
 If the metric *@Value* or *@Samples* falls in one of the *pm:TechnicalRange* elements and in one of *pm:PhysiologicalRange* elements at the same time, the *pm:PhysiologicalRange* element of the metric state will supersede the *pm:TechnicalRange* element of the descriptor and will become the _active range_ for this particular metric *@Value* or *@Samples*.
 
-====== When to define the *mpkp:DisplayPrecision* extension
+====== When to define the *mpkp:DisplayPrecision* extension?
 
 As already defined in *TR0242* of the <<ref_ieee_11073_10701_2022>> standard, the <<actor_somds_provider>> is required to provide a *mpkp:DisplayPrecision* extension when the metric's *@Resolution* or @StepWidth of the _active range_ differs from the metric's display precision.
 
