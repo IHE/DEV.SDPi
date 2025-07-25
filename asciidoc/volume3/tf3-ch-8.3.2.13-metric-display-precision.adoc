@@ -29,7 +29,7 @@ If the metric *@Value* or *@Samples* falls in one of the *pm:TechnicalRange* ele
 
 ====== When to define the *mpkp:DisplayPrecision* extension?
 
-As already defined in *TR0242* of the <<ref_ieee_11073_10701_2022>> standard, the <<actor_somds_provider>> is required to provide a *mpkp:DisplayPrecision* extension when the metric's *@Resolution* or @StepWidth of the _active range_ differs from the metric's display precision.
+As already defined in *TR0242* of the <<ref_ieee_11073_10701_2022>> standard, the <<actor_somds_provider>> is required to provide a *mpkp:DisplayPrecision* extension when the metric's *@Resolution* or *@StepWidth* of the _active range_ differs from the metric's display precision.
 
 While *TR0800* is a SHOULD requirement, *TR0242* mandates the <<actor_somds_provider>> to provide a *mpkp:DisplayPrecision* extension when the metric's *@Resolution* differs from the display precision.
 This forces the <<actor_somds_provider>> to provide at least one  *pm:TechnicalRange* or *pm:PhysiologicalRange* element with the appropriate *mpkp:DisplayPrecision* extension, since the extension can only be applied on *pm:Range* elements.
