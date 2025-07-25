@@ -16,7 +16,7 @@ ____
 
 This section defines clear rules how to interpret the requirements mentioned above.
 
-====== What is an active pm:Range?
+====== What is an active range?
 
 In <<acronym_biceps>>, a *pm:NumericMetricDescriptor*, *pm:RealTimeSampleArrayMetricDescriptor*, and *DistributionSampleArrayMetricDescriptor* can provide a list of *pm:TechnicalRange* elements of type *pm:Range*.
 
