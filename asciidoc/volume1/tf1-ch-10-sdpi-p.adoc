@@ -697,7 +697,7 @@ sdpi_include_transaction::DEV-47[initiator="required", responder="required"]
 
 
 .R1021
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -714,7 +714,7 @@ When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spe
 ****
 
 .R1022
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -724,7 +724,7 @@ If a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor is configured or provisione
 ****
 
 .R1023
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -741,7 +741,7 @@ When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spe
 ****
 
 .R1024
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -1188,6 +1188,7 @@ NOTE: TLS 1.2 is not sufficient for all types of connectivity (e.g., cloud, remo
 
 .R1544
 [sdpi_requirement,sdpi_req_level=should]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
 ====
