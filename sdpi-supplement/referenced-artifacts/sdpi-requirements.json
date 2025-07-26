@@ -19,7 +19,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor, then it shall use the <<vol2_clause_dev_463ec49759-81c2-49b4-9472-e72fa9d45d71DEV-46>> transaction to update the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor on its network presence and departure."
+                        "When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor, then it shall use the <<vol2_clause_dev_46c32d5907-c7e4-4b5b-9ab6-049726004134DEV-46>> transaction to update the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor on its network presence and departure."
                     ]
                 }
             ],
@@ -88,7 +88,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor, then it shall use the <<vol2_clause_dev_473ec49759-81c2-49b4-9472-e72fa9d45d71DEV-47>> transaction to retrieve <<vol1_spec_sdpi_p_actor_somds_provider>> network presence metadata from the  <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor."
+                        "When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor, then it shall use the <<vol2_clause_dev_47c32d5907-c7e4-4b5b-9ab6-049726004134DEV-47>> transaction to retrieve <<vol1_spec_sdpi_p_actor_somds_provider>> network presence metadata from the  <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor."
                     ]
                 }
             ],
@@ -169,7 +169,7 @@
                     "type": "block",
                     "lines": [
                         "For example, issuing a periodic \"heartbeat\" check message or cable-connected check.",
-                        "Specification of these means will be provided for in the transport-specific implementation specification for the <<vol2_clause_dev_463ec49759-81c2-49b4-9472-e72fa9d45d71DEV-46>> transaction."
+                        "Specification of these means will be provided for in the transport-specific implementation specification for the <<vol2_clause_dev_46c32d5907-c7e4-4b5b-9ab6-049726004134DEV-46>> transaction."
                     ]
                 }
             ],
@@ -355,7 +355,7 @@
                         {
                             "type": "item",
                             "strMarker": "*",
-                            "strText": "<<vol1_spec_sdpi_p_actor_somds_participant>>s could use, for example, <<ref_rfc_59053ec49759-81c2-49b4-9472-e72fa9d45d71NTPv4>> to satisfy this requirement. That is, employing cold and warm startup and <<term_clock_discipline_algorithm>>s to synchronize the <<term_system_clock>> with a <<acronym_ts_service>> <<term_reference_clock>>."
+                            "strText": "<<vol1_spec_sdpi_p_actor_somds_participant>>s could use, for example, <<ref_rfc_5905c32d5907-c7e4-4b5b-9ab6-049726004134NTPv4>> to satisfy this requirement. That is, employing cold and warm startup and <<term_clock_discipline_algorithm>>s to synchronize the <<term_system_clock>> with a <<acronym_ts_service>> <<term_reference_clock>>."
                         },
                         {
                             "type": "item",
@@ -740,7 +740,7 @@
                         {
                             "type": "item",
                             "strMarker": "*",
-                            "strText": "This clarifies the ambiguity in <<ref_ieee_11073_10207_2017>>, section B.182 and <<ref_ieee_11073_20701_2018>>, R0014 when a participant uses slewing to make <<term_smooth_time_adjustments>> (using, for example, the <<ref_rfc_59053ec49759-81c2-49b4-9472-e72fa9d45d71NTPv4>> <<term_clock_discipline_algorithm>>) where information from one or more <<acronym_ts_service>>s is used to maintain clock-discipline and does not (generally) \"set\" the clock."
+                            "strText": "This clarifies the ambiguity in <<ref_ieee_11073_10207_2017>>, section B.182 and <<ref_ieee_11073_20701_2018>>, R0014 when a participant uses slewing to make <<term_smooth_time_adjustments>> (using, for example, the <<ref_rfc_5905c32d5907-c7e4-4b5b-9ab6-049726004134NTPv4>> <<term_clock_discipline_algorithm>>) where information from one or more <<acronym_ts_service>>s is used to maintain clock-discipline and does not (generally) \"set\" the clock."
                         },
                         {
                             "type": "item",
@@ -990,7 +990,7 @@
                         {
                             "type": "item",
                             "strMarker": "*",
-                            "strText": "The maximum discrepancy between participant clocks may depend on the protocol being used to synchronize time (`pm:ClockState/pm:ActiveSyncProtocol`). The time reported by two devices employing <<ref_rfc_59053ec49759-81c2-49b4-9472-e72fa9d45d71NTPv4>>, for example, may differ by more than 8 1/2 minutes, in a worst case scenario, without triggering an <<term_abrupt_time_adjustment>>."
+                            "strText": "The maximum discrepancy between participant clocks may depend on the protocol being used to synchronize time (`pm:ClockState/pm:ActiveSyncProtocol`). The time reported by two devices employing <<ref_rfc_5905c32d5907-c7e4-4b5b-9ab6-049726004134NTPv4>>, for example, may differ by more than 8 1/2 minutes, in a worst case scenario, without triggering an <<term_abrupt_time_adjustment>>."
                         },
                         {
                             "type": "item",
@@ -1028,7 +1028,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> should use the \"preferred format\", defined in  <<ref_rfc_91103ec49759-81c2-49b4-9472-e72fa9d45d71RFC9110+%C2%A75.6.7>>, for the `Date` field included in all HTTP response messages."
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> should use the \"preferred format\", defined in  <<ref_rfc_9110c32d5907-c7e4-4b5b-9ab6-049726004134RFC9110+%C2%A75.6.7>>, for the `Date` field included in all HTTP response messages."
                     ]
                 }
             ],
@@ -1120,7 +1120,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> may use information provided, for example, by the <<vol1_spec_sdpi_p_actor_somds_provider>> using, for example, the <<vol3_clause_timestamp_versioning3ec49759-81c2-49b4-9472-e72fa9d45d71timestamp+versioning>> extension to improve the accuracy of a suspicious timestamp. However timestamps may remain less accurate than had the <<term_abrupt_time_adjustment>> not occurred and it may still be appropriate to notify next users of this."
+                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> may use information provided, for example, by the <<vol1_spec_sdpi_p_actor_somds_provider>> using, for example, the <<vol3_clause_timestamp_versioningc32d5907-c7e4-4b5b-9ab6-049726004134timestamp+versioning>> extension to improve the accuracy of a suspicious timestamp. However timestamps may remain less accurate than had the <<term_abrupt_time_adjustment>> not occurred and it may still be appropriate to notify next users of this."
                     ]
                 }
             ],
@@ -5769,19 +5769,15 @@
                 {
                     "type": "block",
                     "lines": [
-                        "Biceps extensions, with timestamps who's interpretation by a <<vol1_spec_sdpi_p_actor_somds_participant>> would be affected by unexpected abrupt time adjustments, should support timestamp versioning using the <<vol3_clause_timestamp_versioning3ec49759-81c2-49b4-9472-e72fa9d45d71timestamp+versioning>> extension."
+                        "Biceps extensions, with timestamps who's interpretation by a <<vol1_spec_sdpi_p_actor_somds_participant>> would be affected by unexpected abrupt time adjustments, should support timestamp versioning using the <<vol3_clause_timestamp_versioningc32d5907-c7e4-4b5b-9ab6-049726004134timestamp+versioning>> extension."
                     ]
                 }
             ],
             "noteContent": [
                 {
-                    "type": "ulist",
-                    "items": [
-                        {
-                            "type": "item",
-                            "strMarker": "*",
-                            "strText": "Extension authors can add types that inherit from `sdpi:TimestampEpochVersionType` to support versioning their timestamps."
-                        }
+                    "type": "block",
+                    "lines": [
+                        "Extension authors can add types that inherit from `sdpi:TimestampEpochVersionType` to support versioning their timestamps."
                     ]
                 }
             ],
@@ -5814,15 +5810,18 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "<<vol3_table_production_specifications_mapping>> shows the mapping between IEEE 11073-10101 RefIds and the BICEPS Participant Model. A dash in the column _{var_column_pm_mapping}_ signifies a non-existent mapping."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "Other production specifications may be used for types that are not listed in <<vol3_table_production_specifications>>."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "<<vol3_table_production_specifications_mapping>> shows the mapping between IEEE 11073-10101 RefIds and the BICEPS Participant Model. A dash in the column _{var_column_pm_mapping}_ signifies a non-existent mapping."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Other production specifications may be used for types that are not listed in <<vol3_table_production_specifications>>."
+                        }
                     ]
                 }
             ],
@@ -5866,7 +5865,7 @@
         }
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_provider"
         ],
@@ -5898,7 +5897,9 @@
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "EFFECTIVENESS",
+        "test": "INTEROPERABILITY"
     },
     {
         "type": "tech-feature",
@@ -6035,7 +6036,23 @@
                     ]
                 }
             ],
-            "noteContent": [],
+            "noteContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "This requirement allows a <<vol1_spec_sdpi_p_actor_somds_consumer>> to rely on the `sdpi:EquipmentIdentifier` to be present in each <<acronym_mds>> at any time."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "If a <<term_manufacturer>> provides a globally unique UDI, it can generate a the `sdpi:EquipmentIdentifier` UUID from that UDI. Alternatively, UUIDs can also be generated from UUIDv5 having a manufacturer specific namespace and the serial number as a name."
+                        }
+                    ]
+                }
+            ],
             "exampleContent": [],
             "relatedContent": []
         }
@@ -6188,7 +6205,14 @@
                     ]
                 }
             ],
-            "noteContent": [],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "*@DeterminationTime* may vary between individual metrics of the compound metric."
+                    ]
+                }
+            ],
             "exampleContent": [],
             "relatedContent": []
         }
@@ -6307,7 +6331,7 @@
         }
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_provider"
         ],
@@ -6332,10 +6356,12 @@
             "noteContent": [],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "SAFETY",
+        "test": "INTEROPERABILITY"
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_provider"
         ],
@@ -6359,22 +6385,20 @@
             ],
             "noteContent": [
                 {
-                    "type": "ulist",
-                    "items": [
-                        {
-                            "type": "item",
-                            "strMarker": "*",
-                            "strText": "Epoch versions are generally scoped to the `pm:MdibVersionGroup/@SequenceId`. Some providers may carry versioned timestamps across new sequences, particularly if the new sequence is created for reasons other than an abrupt time adjustment."
-                        }
+                    "type": "block",
+                    "lines": [
+                        "Epoch versions are generally scoped to the `pm:MdibVersionGroup/@SequenceId`. Some providers may carry versioned timestamps across new sequences, particularly if the new sequence is created for reasons other than an abrupt time adjustment."
                     ]
                 }
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "SAFETY",
+        "test": "INTEROPERABILITY"
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_provider"
         ],
@@ -6415,10 +6439,12 @@
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "SAFETY",
+        "test": "INTEROPERABILITY"
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_provider"
         ],
@@ -6442,22 +6468,20 @@
             ],
             "noteContent": [
                 {
-                    "type": "ulist",
-                    "items": [
-                        {
-                            "type": "item",
-                            "strMarker": "*",
-                            "strText": "Epoch versions and timestamps are immutable and may not change independently."
-                        }
+                    "type": "block",
+                    "lines": [
+                        "Epoch versions and timestamps are immutable and may not change independently."
                     ]
                 }
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "SAFETY",
+        "test": "INTEROPERABILITY"
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_provider"
         ],
@@ -6503,7 +6527,9 @@
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "SAFETY",
+        "test": "INTEROPERABILITY"
     },
     {
         "type": "tech-feature",
@@ -6601,15 +6627,18 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "This requirement simplifies processing of changes for a <<vol1_spec_sdpi_p_actor_somds_consumer>> in a way that the <<vol1_spec_sdpi_p_actor_somds_consumer>> can apply description modification changes one by one without additional consistency checks. If deletion and re-insertion of objects is needed, a <<vol1_spec_sdpi_p_actor_somds_provider>> sends out two description modification reports successively."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "DEPRECATION NOTICE - This requirement is being incorporated into the IEEE 11073-10207 BICEPS standard through a corrigendum. Once IEEE has published the IEEE 11073-10207 BICEPS Corrigenda, this SDPi requirement will be no longer needed, and will hence be removed."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "This requirement simplifies processing of changes for a <<vol1_spec_sdpi_p_actor_somds_consumer>> in a way that the <<vol1_spec_sdpi_p_actor_somds_consumer>> can apply description modification changes one by one without additional consistency checks. If deletion and re-insertion of objects is needed, a <<vol1_spec_sdpi_p_actor_somds_provider>> sends out two description modification reports successively."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "DEPRECATION NOTICE - This requirement is being incorporated into the IEEE 11073-10207 BICEPS standard through a corrigendum. Once IEEE has published the IEEE 11073-10207 BICEPS Corrigenda, this SDPi requirement will be no longer needed, and will hence be removed."
+                        }
                     ]
                 }
             ],
@@ -6642,15 +6671,18 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "This explicitly requires to only communicate children as inserted if the parent has been inserted already, which simplifies insertion of descriptors on the <<vol1_spec_sdpi_p_actor_somds_consumer>> side."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "DEPRECATION NOTICE - This requirement is being incorporated into the IEEE 11073-10207 BICEPS standard through a corrigendum (albeit without the clarification note immediately above). Once IEEE has published the IEEE 11073-10207 BICEPS Corrigenda, this SDPi requirement will be no longer needed, and will hence be removed."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "This explicitly requires to only communicate children as inserted if the parent has been inserted already, which simplifies insertion of descriptors on the <<vol1_spec_sdpi_p_actor_somds_consumer>> side."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "DEPRECATION NOTICE - This requirement is being incorporated into the IEEE 11073-10207 BICEPS standard through a corrigendum (albeit without the clarification note immediately above). Once IEEE has published the IEEE 11073-10207 BICEPS Corrigenda, this SDPi requirement will be no longer needed, and will hence be removed."
+                        }
                     ]
                 }
             ],
@@ -6718,15 +6750,18 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "Replaces biceps:R5046: \"If a parent descriptor is deleted, then all child descriptors of that parent SHALL communicated as deleted in advance.\""
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "DEPRECATION NOTICE - This requirement is being incorporated into the IEEE 11073-10207 BICEPS standard through a corrigendum. Once IEEE has published the IEEE 11073-10207 BICEPS Corrigenda, this SDPi requirement will be no longer needed, and will hence be removed."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Replaces biceps:R5046: \"If a parent descriptor is deleted, then all child descriptors of that parent SHALL communicated as deleted in advance.\""
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "DEPRECATION NOTICE - This requirement is being incorporated into the IEEE 11073-10207 BICEPS standard through a corrigendum. Once IEEE has published the IEEE 11073-10207 BICEPS Corrigenda, this SDPi requirement will be no longer needed, and will hence be removed."
+                        }
                     ]
                 }
             ],
