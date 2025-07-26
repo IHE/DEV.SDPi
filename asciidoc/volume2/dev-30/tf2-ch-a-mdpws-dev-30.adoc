@@ -72,7 +72,7 @@ include::../dev-a-default-expected-actions.adoc[]
 ====== Context States
 
 .R7002
-[sdpi_requirement#r7002,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
 [NORMATIVE]
 ====

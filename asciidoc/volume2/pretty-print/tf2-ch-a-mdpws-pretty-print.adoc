@@ -7,14 +7,16 @@ However, if the serializer is not XML-Schema-agnostic, it ignores _mixed content
 <<r0013>> requires XML serializers to be XML Schema agnostic. If, e.g., for technical reasons, a serializer cannot be XML Schema agnostic, it is not allowed to pretty-print XML data as it may generate invalid XML markup.
 
 .R0013
-[sdpi_requirement#r0013,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall]
 ****
 
-A <<vol1_spec_sdpi_p_actor_somds_participant>> shall serialize XML instance documents in accordance to its applicable XML Schema definitions.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: This requirement stems from the need to avoid pretty-print output if an XML serializer does not understand or know the underlying XML Schema definitions.
+A <<vol1_spec_sdpi_p_actor_somds_participant>> shall serialize XML instance documents in accordance to its applicable XML Schema definitions.
+====
+
+[NOTE]
+====
+This requirement stems from the need to avoid pretty-print output if an XML serializer does not understand or know the underlying XML Schema definitions.
 ====
 ****

@@ -256,8 +256,65 @@
         "title": "Standalone ICU Dashboard Multiple Patient",
         "anchor": "vol1_clause_appendix_c_use_case_sicdmp",
         "specification": {
-            "background": [],
-            "scenarios": []
+            "background": [
+                {
+                    "step": "GIVEN",
+                    "description": "All devices communicate using a common <<acronym_md_lan>> protocol"
+                },
+                {
+                    "step": "AND",
+                    "description": "At least one ICU Dashboard display"
+                },
+                {
+                    "step": "AND",
+                    "description": "Devices from specific ICU rooms have been assigned to the Dashboard"
+                }
+            ],
+            "scenarios": [
+                {
+                    "title": "ICU Devices are Accessible to the Dashboard",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "Dashboard has detected at least one assigned accessible ICU device"
+                        },
+                        {
+                            "step": "WHEN",
+                            "description": "the ICU Devices are communicating on the <<acronym_md_lan>>"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "the Dashboard will display parameter, waveform, setting, alarm, imaging, etc. information from those devices (based on configuration)"
+                        }
+                    ]
+                },
+                {
+                    "title": "ICU Devices are Inaccessible to the Dashboard",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "Dashboard cannot detect any assigned accessible ICU devices"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "the Dashboard will display an error message"
+                        }
+                    ]
+                },
+                {
+                    "title": "One or more ICU Devices are Inaccessible to the Dashboard",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "Dashboard cannot detect any previously assigned accessible ICU devices"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "the Dashboard will display an error message"
+                        }
+                    ]
+                }
+            ]
         }
     },
     "ddes": {
@@ -265,8 +322,86 @@
         "title": "Device Data to Enterprise Systems",
         "anchor": "vol1_clause_appendix_c_use_case_ddes",
         "specification": {
-            "background": [],
-            "scenarios": []
+            "background": [
+                {
+                    "step": "GIVEN",
+                    "description": "All devices communicate using a common <<acronym_md_lan>> protocol"
+                },
+                {
+                    "step": "AND",
+                    "description": "There is at least one Data <<system_type_device_gateway>> (<<acronym_dgw>>) Service"
+                },
+                {
+                    "step": "AND",
+                    "description": "All devices report either a device label and/or location"
+                },
+                {
+                    "step": "AND",
+                    "description": "A <<acronym_dgw>> Service is associated with a specific set of device labels, and/or location(s) (i.e., devices in scope)"
+                }
+            ],
+            "scenarios": [
+                {
+                    "title": "New in scope device is connected to network with <<acronym_dgw>> service",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "The <<acronym_dgw>> Service has detected a new in scope device"
+                        },
+                        {
+                            "step": "WHEN",
+                            "description": "The <<acronym_dgw>> Service is operational"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "The <<acronym_dgw>> Service will connect to the device and export data to the EHR using the HL7 v2 based IHE DEV DOR actor of the DEV DEC Profile"
+                        }
+                    ]
+                },
+                {
+                    "title": "<<label_system_type_name_dgw>> Service is connected to the EHR",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "The <<acronym_dgw>> Service is exporting data to the EHR"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "The <<acronym_dgw>> Service will comply with all IHE DEV / PCD DEC Profile DOR actor functional and test requirements"
+                        }
+                    ]
+                },
+                {
+                    "title": "<<label_system_type_name_dgw>> Service has a failure",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "The <<acronym_dgw>> Service was connected to in scope devices and to an Enterprise system and fails"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "The <<acronym_dgw>> Service will backfill its data store and then backfill to the EHR when it recovers from its failure"
+                        }
+                    ]
+                },
+                {
+                    "title": "<<label_system_type_name_dgw>> Service connection to the Enterprise System fails",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "The Enterprise System stops receiving data from the <<acronym_dgw>> Service"
+                        },
+                        {
+                            "step": "WHEN",
+                            "description": "There is a communications failure between the <<acronym_dgw>> Service and the Enterprise System"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "The <<acronym_dgw>> Service will backfill missed data to the Enterprise System when communications resumes"
+                        }
+                    ]
+                }
+            ]
         }
     },
     "acns": {
@@ -274,8 +409,102 @@
         "title": "Alerts to Clinician Notification Systems",
         "anchor": "vol1_clause_appendix_c_use_case_acns",
         "specification": {
-            "background": [],
-            "scenarios": []
+            "background": [
+                {
+                    "step": "GIVEN",
+                    "description": "All devices communicate using a common <<acronym_md_lan>> protocol"
+                },
+                {
+                    "step": "AND",
+                    "description": "At least one Alert <<system_type_device_gateway>> (AGW) Service on the <<acronym_md_lan>> network"
+                },
+                {
+                    "step": "AND",
+                    "description": "At least one <<system_type_clinical_notification_system>> is connected to the AGW Service"
+                },
+                {
+                    "step": "AND",
+                    "description": "All devices report either a device label and/or location and/or patient ID"
+                },
+                {
+                    "step": "AND",
+                    "description": "The AGW Service is associated with a specific set of device labels, and/or location(s) (Scope)"
+                }
+            ],
+            "scenarios": [
+                {
+                    "title": "New device is connected to network with AGW service",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "the AGW Service has detected a new device in its scope"
+                        },
+                        {
+                            "step": "WHEN",
+                            "description": "the AGW Service is operational"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "the AGW Service will connect to the device and communicate alerts to the Clinician Notification System"
+                        }
+                    ]
+                },
+                {
+                    "title": "The AGW service loses connectivity with the ICU devices",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "the AGW Service no longer communicates with ICU devices in its scope"
+                        },
+                        {
+                            "step": "WHEN",
+                            "description": "There is a communications failure"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "the AGW Service will notify the Clinician Notification System of the failure"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "when the AGW Service regains communication with the devices it will resume reporting active alerts to the Clinician Notification System"
+                        }
+                    ]
+                },
+                {
+                    "title": "The AGW service fails",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "the AGW Service fails"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "the Clinician Notification System will detect a loss of communications with the AGW Service"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "when the AGW Service recovers it will resume reporting active alerts to the Clinician Notification System"
+                        }
+                    ]
+                },
+                {
+                    "title": "The Clinician Notification System loses connectivity with the AGW",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "the Clinician Notification System can no longer communicate with the AGW Service"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "the Clinician Notification System will detect a loss of communications with the AGW Service"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "when connectivity recovers, the Clinician Notification System will resume reporting active alerts"
+                        }
+                    ]
+                }
+            ]
         }
     },
     "aars": {
@@ -283,8 +512,102 @@
         "title": "Alerts to Alert Recording Systems",
         "anchor": "vol1_clause_appendix_c_use_case_aars",
         "specification": {
-            "background": [],
-            "scenarios": []
+            "background": [
+                {
+                    "step": "GIVEN",
+                    "description": "All devices communicate using a common <<acronym_md_lan>> protocol"
+                },
+                {
+                    "step": "AND",
+                    "description": "At least one <<label_system_type_name_agw>> (<<acronym_agw>>) Service on the <<acronym_md_lan>>"
+                },
+                {
+                    "step": "AND",
+                    "description": "At least one Alert Recording System is connected to the <<label_system_type_name_agw>> (<<acronym_agw>>) Service"
+                },
+                {
+                    "step": "AND",
+                    "description": "All devices report either a device label and/or location and/or patient ID"
+                },
+                {
+                    "step": "AND",
+                    "description": "The AGW Service is associated with a specific set of device labels, and/or location(s)"
+                }
+            ],
+            "scenarios": [
+                {
+                    "title": "New device is connected to network with AGW service",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "the AGW Service has detected a new device in its scope"
+                        },
+                        {
+                            "step": "WHEN",
+                            "description": "the AGW Service is operational"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "the AGW Service will connect to the device and communicate alerts to the Alert Recording System"
+                        }
+                    ]
+                },
+                {
+                    "title": "The AGW service loses connectivity with the ICU devices",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "the AGW Service no longer communicates with ICU devices in its scope"
+                        },
+                        {
+                            "step": "WHEN",
+                            "description": "There is a communications failure"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "the AGW will notify the Alert Recording System of the failure"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "when the AGW regains communication with the devices it will resume reporting active alerts to the Alert Recording System and attempt to backfill any missing alerts"
+                        }
+                    ]
+                },
+                {
+                    "title": "The AGW service fails",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "the AGW fails"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "the Alert Recording System will detect a loss of communications with the AGW"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "when the AGW Service recovers it will resume reporting active alerts to the Alert Recording System and attempt to backfill any missing alerts"
+                        }
+                    ]
+                },
+                {
+                    "title": "The Alert Recording System loses connectivity with the AGW",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "the Alert Recording System can no longer communicate with the AGW"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "the Alert Recording System will detect a loss of communications with the AGW Service"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "when the AGW Service regains communication with the Alert Recording System it will resume reporting active alerts to the Alert Recording System and backfill any missing alerts."
+                        }
+                    ]
+                }
+            ]
         }
     }
 }

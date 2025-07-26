@@ -140,6 +140,163 @@
                 ]
             }
         ],
+        "useCaseReferences": [
+            {
+                "useCaseId": "stad",
+                "actorId": "somds_participant",
+                "obligation": "REQUIRED"
+            },
+            {
+                "useCaseId": "stad",
+                "actorId": "somds_provider",
+                "obligation": "REQUIRED"
+            },
+            {
+                "useCaseId": "stad",
+                "actorId": "somds_consumer",
+                "obligation": "REQUIRED"
+            },
+            {
+                "useCaseId": "stad",
+                "actorId": "somds_connector",
+                "obligation": "REQUIRED"
+            },
+            {
+                "useCaseId": "stad",
+                "actorId": "somds_fhir_gateway",
+                "obligation": "REQUIRED"
+            },
+            {
+                "useCaseId": "stad",
+                "actorId": "somds_v2_gateway",
+                "obligation": "REQUIRED"
+            },
+            {
+                "useCaseId": "stad",
+                "actorId": "somds_sensor_gateway",
+                "obligation": "REQUIRED"
+            },
+            {
+                "useCaseId": "stad",
+                "actorId": "somds_smart_app",
+                "obligation": "REQUIRED"
+            },
+            {
+                "useCaseId": "stad",
+                "actorId": "biceps_content_creator",
+                "obligation": "REQUIRED"
+            },
+            {
+                "useCaseId": "stad",
+                "actorId": "biceps_content_consumer",
+                "obligation": "REQUIRED"
+            },
+            {
+                "useCaseId": "stad",
+                "actorId": "discovery_proxy",
+                "obligation": "REQUIRED"
+            },
+            {
+                "useCaseId": "sicdsp",
+                "actorId": "somds_consumer",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "useCaseId": "sicdsp",
+                "actorId": "somds_connector",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "useCaseId": "sicdsp",
+                "actorId": "somds_smart_app",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "useCaseId": "sicdsp",
+                "actorId": "biceps_content_consumer",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "useCaseId": "sicdmp",
+                "actorId": "somds_consumer",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "useCaseId": "sicdmp",
+                "actorId": "somds_connector",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "useCaseId": "sicdmp",
+                "actorId": "somds_smart_app",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "useCaseId": "sicdmp",
+                "actorId": "biceps_content_consumer",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "useCaseId": "ddes",
+                "actorId": "somds_connector",
+                "obligation": "REQUIRED"
+            },
+            {
+                "useCaseId": "ddes",
+                "actorId": "somds_fhir_gateway",
+                "obligation": "REQUIRED"
+            },
+            {
+                "useCaseId": "ddes",
+                "actorId": "somds_v2_gateway",
+                "obligation": "REQUIRED"
+            },
+            {
+                "useCaseId": "ddes",
+                "actorId": "somds_sensor_gateway",
+                "obligation": "REQUIRED"
+            },
+            {
+                "useCaseId": "acns",
+                "actorId": "somds_connector",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "useCaseId": "acns",
+                "actorId": "somds_fhir_gateway",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "useCaseId": "acns",
+                "actorId": "somds_v2_gateway",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "useCaseId": "acns",
+                "actorId": "somds_sensor_gateway",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "useCaseId": "aars",
+                "actorId": "somds_connector",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "useCaseId": "aars",
+                "actorId": "somds_fhir_gateway",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "useCaseId": "aars",
+                "actorId": "somds_v2_gateway",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "useCaseId": "aars",
+                "actorId": "somds_sensor_gateway",
+                "obligation": "OPTIONAL"
+            }
+        ],
         "options": [
             {
                 "id": "sdpi-p-managed-discovery",
@@ -314,6 +471,28 @@
                 ]
             }
         ],
+        "useCaseReferences": [
+            {
+                "useCaseId": "sicdsp",
+                "actorId": "somds_medical_data_consumer",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "useCaseId": "sicdmp",
+                "actorId": "somds_medical_data_consumer",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "useCaseId": "ddes",
+                "actorId": "somds_dec_gateway",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "useCaseId": "ddes",
+                "actorId": "somds_fhir_medical_data_gateway",
+                "obligation": "OPTIONAL"
+            }
+        ],
         "actors": [
             {
                 "id": "somds_medical_data_provider",
@@ -444,6 +623,28 @@
                         "actorId": "somds_acm_gateway"
                     }
                 ]
+            }
+        ],
+        "useCaseReferences": [
+            {
+                "useCaseId": "sicdsp",
+                "actorId": "somds_medical_alert_consumer",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "useCaseId": "sicdmp",
+                "actorId": "somds_medical_alert_consumer",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "useCaseId": "acns",
+                "actorId": "somds_acm_gateway",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "useCaseId": "aars",
+                "actorId": "somds_acm_gateway",
+                "obligation": "OPTIONAL"
             }
         ],
         "actors": [

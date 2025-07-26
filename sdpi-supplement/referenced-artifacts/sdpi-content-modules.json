@@ -3,5 +3,25 @@
         "id": "biceps",
         "label": "IEEE 11073-10207 BICEPS Content Modules",
         "anchor": "vol3_clause_sdc_biceps_semantic_content"
+    },
+    {
+        "id": "infusion-pump",
+        "label": "Device:  Infusion Pump",
+        "anchor": "vol3_clause_device_infusion_pump"
+    },
+    {
+        "id": "ventilator",
+        "label": "Device:  Ventilator",
+        "anchor": "_device_ventilator"
+    },
+    {
+        "id": "physiological-monitor",
+        "label": "Device:  Physiologic monitor",
+        "anchor": "_device_physiologic_monitor"
+    },
+    {
+        "id": "surgical",
+        "label": "Device:  Surgical",
+        "anchor": "_device_surgical"
     }
 ]

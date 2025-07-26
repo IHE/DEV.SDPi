@@ -19,7 +19,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor, then it shall use the <<vol2_clause_dev_46209e4333-d6dc-4565-a78b-034f6c8d6beeDEV-46>> transaction to update the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor on its network presence and departure."
+                        "When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor, then it shall use the <<vol2_clause_dev_463ec49759-81c2-49b4-9472-e72fa9d45d71DEV-46>> transaction to update the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor on its network presence and departure."
                     ]
                 }
             ],
@@ -88,7 +88,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor, then it shall use the <<vol2_clause_dev_47209e4333-d6dc-4565-a78b-034f6c8d6beeDEV-47>> transaction to retrieve <<vol1_spec_sdpi_p_actor_somds_provider>> network presence metadata from the  <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor."
+                        "When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor, then it shall use the <<vol2_clause_dev_473ec49759-81c2-49b4-9472-e72fa9d45d71DEV-47>> transaction to retrieve <<vol1_spec_sdpi_p_actor_somds_provider>> network presence metadata from the  <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor."
                     ]
                 }
             ],
@@ -169,7 +169,7 @@
                     "type": "block",
                     "lines": [
                         "For example, issuing a periodic \"heartbeat\" check message or cable-connected check.",
-                        "Specification of these means will be provided for in the transport-specific implementation specification for the <<vol2_clause_dev_46209e4333-d6dc-4565-a78b-034f6c8d6beeDEV-46>> transaction."
+                        "Specification of these means will be provided for in the transport-specific implementation specification for the <<vol2_clause_dev_463ec49759-81c2-49b4-9472-e72fa9d45d71DEV-46>> transaction."
                     ]
                 }
             ],
@@ -355,7 +355,7 @@
                         {
                             "type": "item",
                             "strMarker": "*",
-                            "strText": "<<vol1_spec_sdpi_p_actor_somds_participant>>s could use, for example, <<ref_rfc_5905209e4333-d6dc-4565-a78b-034f6c8d6beeNTPv4>> to satisfy this requirement. That is, employing cold and warm startup and <<term_clock_discipline_algorithm>>s to synchronize the <<term_system_clock>> with a <<acronym_ts_service>> <<term_reference_clock>>."
+                            "strText": "<<vol1_spec_sdpi_p_actor_somds_participant>>s could use, for example, <<ref_rfc_59053ec49759-81c2-49b4-9472-e72fa9d45d71NTPv4>> to satisfy this requirement. That is, employing cold and warm startup and <<term_clock_discipline_algorithm>>s to synchronize the <<term_system_clock>> with a <<acronym_ts_service>> <<term_reference_clock>>."
                         },
                         {
                             "type": "item",
@@ -740,7 +740,7 @@
                         {
                             "type": "item",
                             "strMarker": "*",
-                            "strText": "This clarifies the ambiguity in <<ref_ieee_11073_10207_2017>>, section B.182 and <<ref_ieee_11073_20701_2018>>, R0014 when a participant uses slewing to make <<term_smooth_time_adjustments>> (using, for example, the <<ref_rfc_5905209e4333-d6dc-4565-a78b-034f6c8d6beeNTPv4>> <<term_clock_discipline_algorithm>>) where information from one or more <<acronym_ts_service>>s is used to maintain clock-discipline and does not (generally) \"set\" the clock."
+                            "strText": "This clarifies the ambiguity in <<ref_ieee_11073_10207_2017>>, section B.182 and <<ref_ieee_11073_20701_2018>>, R0014 when a participant uses slewing to make <<term_smooth_time_adjustments>> (using, for example, the <<ref_rfc_59053ec49759-81c2-49b4-9472-e72fa9d45d71NTPv4>> <<term_clock_discipline_algorithm>>) where information from one or more <<acronym_ts_service>>s is used to maintain clock-discipline and does not (generally) \"set\" the clock."
                         },
                         {
                             "type": "item",
@@ -990,7 +990,7 @@
                         {
                             "type": "item",
                             "strMarker": "*",
-                            "strText": "The maximum discrepancy between participant clocks may depend on the protocol being used to synchronize time (`pm:ClockState/pm:ActiveSyncProtocol`). The time reported by two devices employing <<ref_rfc_5905209e4333-d6dc-4565-a78b-034f6c8d6beeNTPv4>>, for example, may differ by more than 8 1/2 minutes, in a worst case scenario, without triggering an <<term_abrupt_time_adjustment>>."
+                            "strText": "The maximum discrepancy between participant clocks may depend on the protocol being used to synchronize time (`pm:ClockState/pm:ActiveSyncProtocol`). The time reported by two devices employing <<ref_rfc_59053ec49759-81c2-49b4-9472-e72fa9d45d71NTPv4>>, for example, may differ by more than 8 1/2 minutes, in a worst case scenario, without triggering an <<term_abrupt_time_adjustment>>."
                         },
                         {
                             "type": "item",
@@ -1028,7 +1028,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> should use the \"preferred format\", defined in  <<ref_rfc_9110209e4333-d6dc-4565-a78b-034f6c8d6beeRFC9110+%C2%A75.6.7>>, for the `Date` field included in all HTTP response messages."
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> should use the \"preferred format\", defined in  <<ref_rfc_91103ec49759-81c2-49b4-9472-e72fa9d45d71RFC9110+%C2%A75.6.7>>, for the `Date` field included in all HTTP response messages."
                     ]
                 }
             ],
@@ -1120,7 +1120,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> may use information provided, for example, by the <<vol1_spec_sdpi_p_actor_somds_provider>> using, for example, the <<vol3_clause_timestamp_versioning209e4333-d6dc-4565-a78b-034f6c8d6beetimestamp+versioning>> extension to improve the accuracy of a suspicious timestamp. However timestamps may remain less accurate than had the <<term_abrupt_time_adjustment>> not occurred and it may still be appropriate to notify next users of this."
+                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> may use information provided, for example, by the <<vol1_spec_sdpi_p_actor_somds_provider>> using, for example, the <<vol3_clause_timestamp_versioning3ec49759-81c2-49b4-9472-e72fa9d45d71timestamp+versioning>> extension to improve the accuracy of a suspicious timestamp. However timestamps may remain less accurate than had the <<term_abrupt_time_adjustment>> not occurred and it may still be appropriate to notify next users of this."
                     ]
                 }
             ],
@@ -1153,21 +1153,23 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "According to <<acronym_biceps>>, the GET SERVICE is the only mandatory service to be implemented. This specification extends the list of mandatory services to increase interoperability between <<vol1_spec_sdpi_p_actor_somds_participant>>s."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "All port types of SDC are {uri_sdc_wsdl}[available for download]."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "Other port types are currently out of scope of this specification and may be added in a future revision."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "According to <<acronym_biceps>>, the GET SERVICE is the only mandatory service to be implemented. This specification extends the list of mandatory services to increase interoperability between <<vol1_spec_sdpi_p_actor_somds_participant>>s."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "All port types of SDC are {uri_sdc_wsdl}[available for download]."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Other port types are currently out of scope of this specification and may be added in a future revision."
+                        }
                     ]
                 }
             ],
@@ -1200,15 +1202,18 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "`GetContextStatesByIdentification` and `GetContextStatesByFilter` are insufficiently defined in <<ref_ieee_11073_10207_2017>> and are likely to be obsoleted in a future revision of the specification."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> may retrieve context states by using `GetContextStates` and perform filtering by itself."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "`GetContextStatesByIdentification` and `GetContextStatesByFilter` are insufficiently defined in <<ref_ieee_11073_10207_2017>> and are likely to be obsoleted in a future revision of the specification."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "A <<vol1_spec_sdpi_p_actor_somds_consumer>> may retrieve context states by using `GetContextStates` and perform filtering by itself."
+                        }
                     ]
                 }
             ],
@@ -2147,7 +2152,14 @@
                     ]
                 }
             ],
-            "noteContent": [],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "This also requires <<actor_somds_provider>>s to serialize delivery of msg:OperationInvokedReport messages."
+                    ]
+                }
+            ],
             "exampleContent": [],
             "relatedContent": []
         }
@@ -2175,7 +2187,8 @@
                     ]
                 }
             ],
-            "noteContent": [
+            "noteContent": [],
+            "exampleContent": [
                 {
                     "type": "listing",
                     "title": "HTTP request header to request compression",
@@ -2213,7 +2226,6 @@
                     ]
                 }
             ],
-            "exampleContent": [],
             "relatedContent": []
         }
     },
@@ -2591,15 +2603,18 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "For a valid *pm:PatientContextState*, the *pm:AbstractContextState/@ContextAssociation* attribute is set to *\"Assoc\"* and the *pm:AbstractContextState/pm:Validator* is set to a valid validator. A corresponding inferred patient ensemble context is not required for the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>>."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "If the SDC patient context information is not intended to be used for the mapping, please refer to the <<ref_ihe_dev_tf_2_2024>> on how to populate the fields of the PID segment in this case."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "For a valid *pm:PatientContextState*, the *pm:AbstractContextState/@ContextAssociation* attribute is set to *\"Assoc\"* and the *pm:AbstractContextState/pm:Validator* is set to a valid validator. A corresponding inferred patient ensemble context is not required for the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>>."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "If the SDC patient context information is not intended to be used for the mapping, please refer to the <<ref_ihe_dev_tf_2_2024>> on how to populate the fields of the PID segment in this case."
+                        }
                     ]
                 }
             ],
@@ -2629,21 +2644,23 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "The PID-3 is a list of patient identifiers (e.g., medical record number, social security number, visit number, account number, etc.)"
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "<<ref_tbl_pid3_mapping>> defines the mapping of the <<acronym_mdib>> patient identification to the data fields of the HL7 data type *CX* used in the PID-3 field."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "If the <<acronym_mdib>> patient identification element *pm:PatientContextState/pm:Identification* contains more than one patient identifier, each SDC patient identifier is mapped according to the <<ref_tbl_pid3_mapping>> table and added to the PID-3 patient identifier list."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The PID-3 is a list of patient identifiers (e.g., medical record number, social security number, visit number, account number, etc.)"
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "<<ref_tbl_pid3_mapping>> defines the mapping of the <<acronym_mdib>> patient identification to the data fields of the HL7 data type *CX* used in the PID-3 field."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "If the <<acronym_mdib>> patient identification element *pm:PatientContextState/pm:Identification* contains more than one patient identifier, each SDC patient identifier is mapped according to the <<ref_tbl_pid3_mapping>> table and added to the PID-3 patient identifier list."
+                        }
                     ]
                 }
             ],
@@ -2922,21 +2939,23 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "For a valid *pm:PatientContextState*, the *pm:AbstractContextState/@ContextAssociation* attribute is set to *\"Assoc\"* and the *pm:AbstractContextState/pm:Validator* is set to a valid validator. In this case, the value is set to \"N\"."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "In all other cases, the value is set to \"Y\"."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "A corresponding inferred patient ensemble context is not required for the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> in order to determine a valid *pm:PatientContextState*."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "For a valid *pm:PatientContextState*, the *pm:AbstractContextState/@ContextAssociation* attribute is set to *\"Assoc\"* and the *pm:AbstractContextState/pm:Validator* is set to a valid validator. In this case, the value is set to \"N\"."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "In all other cases, the value is set to \"Y\"."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "A corresponding inferred patient ensemble context is not required for the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> in order to determine a valid *pm:PatientContextState*."
+                        }
                     ]
                 }
             ],
@@ -2966,15 +2985,18 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "For a valid *pm:PatientContextState* or *pm:LocationContextSate*, the *pm:AbstractContextState/@ContextAssociation* attribute is set to *\"Assoc\"* and the *pm:AbstractContextState/pm:Validator* is set to a valid validator. A corresponding inferred patient or location ensemble context is not required for the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>>."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "If the SDC patient and/or location context information is not be used for the mapping, please refer to the <<ref_ihe_dev_tf_2_2024>> on how to populate the fields of the PV1 segment in this case."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "For a valid *pm:PatientContextState* or *pm:LocationContextSate*, the *pm:AbstractContextState/@ContextAssociation* attribute is set to *\"Assoc\"* and the *pm:AbstractContextState/pm:Validator* is set to a valid validator. A corresponding inferred patient or location ensemble context is not required for the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>>."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "If the SDC patient and/or location context information is not be used for the mapping, please refer to the <<ref_ihe_dev_tf_2_2024>> on how to populate the fields of the PV1 segment in this case."
+                        }
                     ]
                 }
             ],
@@ -3080,15 +3102,18 @@
             ],
             "noteContent": [
                 {
-                    "type": "block",
-                    "lines": [
-                        "<<ref_tbl_pv119_mapping>> defines the mapping of the SDC patient identifier to the data fields of the HL7 data type *CX* used in the PV1-19 field."
-                    ]
-                },
-                {
-                    "type": "block",
-                    "lines": [
-                        "A visit identifier could be a visit number, an account number, or any other identifier that relates to the patient's visit."
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "<<ref_tbl_pv119_mapping>> defines the mapping of the SDC patient identifier to the data fields of the HL7 data type *CX* used in the PV1-19 field."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "A visit identifier could be a visit number, an account number, or any other identifier that relates to the patient's visit."
+                        }
                     ]
                 }
             ],
@@ -3114,7 +3139,9 @@
                     "lines": [
                         "If <<r8111>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-44 field to the patient's admission date/time."
                     ]
-                },
+                }
+            ],
+            "noteContent": [
                 {
                     "type": "block",
                     "lines": [
@@ -3128,7 +3155,6 @@
                     ]
                 }
             ],
-            "noteContent": [],
             "exampleContent": [],
             "relatedContent": []
         }
@@ -3298,7 +3324,9 @@
                     "lines": [
                         "There is no requirement to preserve the same assigned number for a containment tree element from message to message, but it is highly recommended since this makes it much easier for the DOC to process the HL7 V2 messages."
                     ]
-                },
+                }
+            ],
+            "exampleContent": [
                 {
                     "type": "block",
                     "lines": [
@@ -3368,7 +3396,6 @@
                     ]
                 }
             ],
-            "exampleContent": [],
             "relatedContent": []
         }
     },
@@ -5742,7 +5769,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "Biceps extensions, with timestamps who's interpretation by a <<vol1_spec_sdpi_p_actor_somds_participant>> would be affected by unexpected abrupt time adjustments, should support timestamp versioning using the <<vol3_clause_timestamp_versioning209e4333-d6dc-4565-a78b-034f6c8d6beetimestamp+versioning>> extension."
+                        "Biceps extensions, with timestamps who's interpretation by a <<vol1_spec_sdpi_p_actor_somds_participant>> would be affected by unexpected abrupt time adjustments, should support timestamp versioning using the <<vol3_clause_timestamp_versioning3ec49759-81c2-49b4-9472-e72fa9d45d71timestamp+versioning>> extension."
                     ]
                 }
             ],
