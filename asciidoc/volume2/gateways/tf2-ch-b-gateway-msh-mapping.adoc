@@ -3,7 +3,7 @@
 The HL7 Message Header (MSH) segment requires a mapping between the <<acronym_mdib>> content and the MSH segment fields.
 
 .R8100
-[sdpi_requirement,sdpi_req_level=shall,sdpi_max_occurrence=1]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -12,7 +12,7 @@ If not differently specified in this section, the MSH segment fields shall be in
 ****
 
 .R8101
-[sdpi_requirement,sdpi_req_level=shall,sdpi_max_occurrence=1]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -27,7 +27,7 @@ The HL7 segments *MSH*, *PID*, and *PV1* contain information which can differ be
 
 ====== MSH-11 Processing ID
 .R8118
-[sdpi_requirement,sdpi_req_level=shall,sdpi_max_occurrence=1]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====

@@ -2,7 +2,7 @@
 ===== OBX-4 Observation Sub-ID
 
 .R8014
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the OBX-4 field to a hierarchical representation of the SDC element in the hierarchical containment tree.
 
@@ -14,7 +14,7 @@ NOTE: Please refer to the IHE technical framework <<ref_ihe_dev_tf_2_2024>> for 
 ****
 
 .R8015
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====

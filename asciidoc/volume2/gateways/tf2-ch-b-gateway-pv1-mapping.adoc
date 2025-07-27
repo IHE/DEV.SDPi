@@ -5,7 +5,7 @@ The HL7 Patient Visit (PV1) segment requires a mapping from the SDC patient and 
 ====== Prerequisite of Valid Patient & Location Context
 
 .R8111
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -22,7 +22,7 @@ The SDC patient and location context information shall only be mapped to the cor
 
 ====== PV1-2 Patient Class
 .R8112
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -41,7 +41,7 @@ The SDC data model does not support the concept of a patient class. Therefore, t
 
 ====== PV1-3 Assigned Patient Location
 .R8113
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -98,7 +98,7 @@ If <<r8111>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gate
 
 ====== PV1-19 Visit Number
 .R8114
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -152,7 +152,7 @@ Valid *"Identifier Type Code"* values for a visit number are, for example, *"VN"
 
 ====== PV1-44 Admit Time / Date
 .R8115
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -169,7 +169,7 @@ This said, it is up to the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gatew
 
 ====== PV1-51 Visit Indicator
 .R8116
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====

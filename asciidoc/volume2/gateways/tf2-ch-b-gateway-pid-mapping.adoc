@@ -4,7 +4,7 @@ The HL7 Patient Identification (PID) segment requires a mapping from the <<acron
 
 ====== Prerequisite of Valid Patient Context
 .R8102
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -22,7 +22,7 @@ The SDC patient context information shall only be mapped to the corresponding fi
 
 ====== PID-3 Patient Identifier List
 .R8103
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -96,7 +96,7 @@ The following identifier type codes are proposed to be used for the patient iden
 
 ====== PID-5 Patient Name
 .R8104
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -150,7 +150,7 @@ Please refer also to the corresponding section in the <<ref_ihe_dev_tf_2_2024>>.
 
 ====== PID-6 Mother’s Maiden Name
 .R8105
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -182,7 +182,7 @@ If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gate
 
 ====== PID-7 Date/Time of Birth
 .R8106
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -224,7 +224,7 @@ In order to avoid an erroneous mapping of potentially different sex concept inte
 Mappings to the *PID-8 Administrative Sex* field are allowed in certain cases as defined in <<r8121>> and <<r8107>>.
 
 .R8120
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -238,7 +238,7 @@ The mapping for the patient's sex is defined in table <<ref_tbl_dec_obx_sex_mapp
 ****
 
 .R8121
-[sdpi_requirement,sdpi_req_level=may]
+[sdpi_requirement,sdpi_req_level=may,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -252,7 +252,7 @@ If <<r8102>> is met and the patient's sex in the <<acronym_mdib>> is sourced fro
 ****
 
 .R8107
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -266,7 +266,7 @@ If <<r8102>> is met and the <<actor_somds_v2_gateway>> provides the Healthcare D
 ****
 
 .R8122
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -373,7 +373,7 @@ When there are further updates of the sex value after the association of the pat
 
 ====== PID-10 Race
 .R8108
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -437,7 +437,7 @@ If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gate
 
 ====== PID-31 Identity Unknown Indicator
 .R8109
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====

@@ -68,6 +68,7 @@ In order to fulfill TR1164, <<ref_ieee_11073_20701_2018, IEEE 11073-20701>> spec
 
 .R0502
 [sdpi_requirement,sdpi_req_level=shall]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=security,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
 ====

@@ -19,7 +19,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor, then it shall use the <<vol2_clause_dev_46c32d5907-c7e4-4b5b-9ab6-049726004134DEV-46>> transaction to update the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor on its network presence and departure."
+                        "When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor, then it shall use the <<vol2_clause_dev_465a02d771-bfec-4e1b-94fa-a18abb173320DEV-46>> transaction to update the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor on its network presence and departure."
                     ]
                 }
             ],
@@ -88,7 +88,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor, then it shall use the <<vol2_clause_dev_47c32d5907-c7e4-4b5b-9ab6-049726004134DEV-47>> transaction to retrieve <<vol1_spec_sdpi_p_actor_somds_provider>> network presence metadata from the  <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor."
+                        "When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor, then it shall use the <<vol2_clause_dev_475a02d771-bfec-4e1b-94fa-a18abb173320DEV-47>> transaction to retrieve <<vol1_spec_sdpi_p_actor_somds_provider>> network presence metadata from the  <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor."
                     ]
                 }
             ],
@@ -169,7 +169,7 @@
                     "type": "block",
                     "lines": [
                         "For example, issuing a periodic \"heartbeat\" check message or cable-connected check.",
-                        "Specification of these means will be provided for in the transport-specific implementation specification for the <<vol2_clause_dev_46c32d5907-c7e4-4b5b-9ab6-049726004134DEV-46>> transaction."
+                        "Specification of these means will be provided for in the transport-specific implementation specification for the <<vol2_clause_dev_465a02d771-bfec-4e1b-94fa-a18abb173320DEV-46>> transaction."
                     ]
                 }
             ],
@@ -240,7 +240,7 @@
         "test": "INTEROPERABILITY"
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_participant"
         ],
@@ -265,7 +265,9 @@
             "noteContent": [],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "SAFETY",
+        "test": "INTEROPERABILITY"
     },
     {
         "type": "risk-mitigation",
@@ -326,7 +328,7 @@
         "test": "INSPECTION"
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_participant"
         ],
@@ -355,7 +357,7 @@
                         {
                             "type": "item",
                             "strMarker": "*",
-                            "strText": "<<vol1_spec_sdpi_p_actor_somds_participant>>s could use, for example, <<ref_rfc_5905c32d5907-c7e4-4b5b-9ab6-049726004134NTPv4>> to satisfy this requirement. That is, employing cold and warm startup and <<term_clock_discipline_algorithm>>s to synchronize the <<term_system_clock>> with a <<acronym_ts_service>> <<term_reference_clock>>."
+                            "strText": "<<vol1_spec_sdpi_p_actor_somds_participant>>s could use, for example, <<ref_rfc_59055a02d771-bfec-4e1b-94fa-a18abb173320NTPv4>> to satisfy this requirement. That is, employing cold and warm startup and <<term_clock_discipline_algorithm>>s to synchronize the <<term_system_clock>> with a <<acronym_ts_service>> <<term_reference_clock>>."
                         },
                         {
                             "type": "item",
@@ -367,10 +369,12 @@
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "EFFECTIVENESS",
+        "test": "INTEROPERABILITY"
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_participant"
         ],
@@ -402,10 +406,12 @@
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "EFFECTIVENESS",
+        "test": "INSPECTION"
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_participant"
         ],
@@ -437,10 +443,12 @@
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "SECURITY",
+        "test": "INTEROPERABILITY"
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_participant"
         ],
@@ -472,10 +480,12 @@
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "EFFECTIVENESS",
+        "test": "INTEROPERABILITY"
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_provider"
         ],
@@ -500,10 +510,12 @@
             "noteContent": [],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "AUDIT",
+        "test": "INTEROPERABILITY"
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_consumer"
         ],
@@ -528,10 +540,12 @@
             "noteContent": [],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "SAFETY",
+        "test": "INTEROPERABILITY"
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_consumer",
             "somds_provider"
@@ -564,10 +578,12 @@
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "SAFETY",
+        "test": "INTEROPERABILITY"
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_participant"
         ],
@@ -592,10 +608,12 @@
             "noteContent": [],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "AUDIT",
+        "test": "INTEROPERABILITY"
     },
     {
-        "type": "use-case",
+        "type": "risk-mitigation",
         "actors": [
             "somds_participant"
         ],
@@ -648,10 +666,11 @@
                 }
             ]
         },
-        "useCaseId": "stad"
+        "mitigating": "SAFETY",
+        "test": "INTEROPERABILITY"
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_participant"
         ],
@@ -683,10 +702,12 @@
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "AUDIT",
+        "test": "INTEROPERABILITY"
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_provider"
         ],
@@ -740,7 +761,7 @@
                         {
                             "type": "item",
                             "strMarker": "*",
-                            "strText": "This clarifies the ambiguity in <<ref_ieee_11073_10207_2017>>, section B.182 and <<ref_ieee_11073_20701_2018>>, R0014 when a participant uses slewing to make <<term_smooth_time_adjustments>> (using, for example, the <<ref_rfc_5905c32d5907-c7e4-4b5b-9ab6-049726004134NTPv4>> <<term_clock_discipline_algorithm>>) where information from one or more <<acronym_ts_service>>s is used to maintain clock-discipline and does not (generally) \"set\" the clock."
+                            "strText": "This clarifies the ambiguity in <<ref_ieee_11073_10207_2017>>, section B.182 and <<ref_ieee_11073_20701_2018>>, R0014 when a participant uses slewing to make <<term_smooth_time_adjustments>> (using, for example, the <<ref_rfc_59055a02d771-bfec-4e1b-94fa-a18abb173320NTPv4>> <<term_clock_discipline_algorithm>>) where information from one or more <<acronym_ts_service>>s is used to maintain clock-discipline and does not (generally) \"set\" the clock."
                         },
                         {
                             "type": "item",
@@ -752,7 +773,9 @@
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "EFFECTIVENESS",
+        "test": "INTEROPERABILITY"
     },
     {
         "type": "tech-feature",
@@ -790,7 +813,7 @@
         }
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_consumer"
         ],
@@ -822,10 +845,12 @@
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "SAFETY",
+        "test": "INTEROPERABILITY"
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_provider"
         ],
@@ -872,10 +897,12 @@
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "SAFETY",
+        "test": "INTEROPERABILITY"
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_participant"
         ],
@@ -916,10 +943,12 @@
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "SAFETY",
+        "test": "INTEROPERABILITY"
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_consumer",
             "somds_provider"
@@ -952,10 +981,12 @@
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "SAFETY",
+        "test": "INTEROPERABILITY"
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_consumer",
             "somds_participant"
@@ -990,7 +1021,7 @@
                         {
                             "type": "item",
                             "strMarker": "*",
-                            "strText": "The maximum discrepancy between participant clocks may depend on the protocol being used to synchronize time (`pm:ClockState/pm:ActiveSyncProtocol`). The time reported by two devices employing <<ref_rfc_5905c32d5907-c7e4-4b5b-9ab6-049726004134NTPv4>>, for example, may differ by more than 8 1/2 minutes, in a worst case scenario, without triggering an <<term_abrupt_time_adjustment>>."
+                            "strText": "The maximum discrepancy between participant clocks may depend on the protocol being used to synchronize time (`pm:ClockState/pm:ActiveSyncProtocol`). The time reported by two devices employing <<ref_rfc_59055a02d771-bfec-4e1b-94fa-a18abb173320NTPv4>>, for example, may differ by more than 8 1/2 minutes, in a worst case scenario, without triggering an <<term_abrupt_time_adjustment>>."
                         },
                         {
                             "type": "item",
@@ -1007,7 +1038,9 @@
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "AUDIT",
+        "test": "INTEROPERABILITY"
     },
     {
         "type": "tech-feature",
@@ -1028,7 +1061,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> should use the \"preferred format\", defined in  <<ref_rfc_9110c32d5907-c7e4-4b5b-9ab6-049726004134RFC9110+%C2%A75.6.7>>, for the `Date` field included in all HTTP response messages."
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> should use the \"preferred format\", defined in  <<ref_rfc_91105a02d771-bfec-4e1b-94fa-a18abb173320RFC9110+%C2%A75.6.7>>, for the `Date` field included in all HTTP response messages."
                     ]
                 }
             ],
@@ -1045,7 +1078,7 @@
         }
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_consumer"
         ],
@@ -1091,10 +1124,12 @@
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "SAFETY",
+        "test": "INTEROPERABILITY"
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_consumer"
         ],
@@ -1120,13 +1155,15 @@
                 {
                     "type": "block",
                     "lines": [
-                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> may use information provided, for example, by the <<vol1_spec_sdpi_p_actor_somds_provider>> using, for example, the <<vol3_clause_timestamp_versioningc32d5907-c7e4-4b5b-9ab6-049726004134timestamp+versioning>> extension to improve the accuracy of a suspicious timestamp. However timestamps may remain less accurate than had the <<term_abrupt_time_adjustment>> not occurred and it may still be appropriate to notify next users of this."
+                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> may use information provided, for example, by the <<vol1_spec_sdpi_p_actor_somds_provider>> using, for example, the <<vol3_clause_timestamp_versioning5a02d771-bfec-4e1b-94fa-a18abb173320timestamp+versioning>> extension to improve the accuracy of a suspicious timestamp. However timestamps may remain less accurate than had the <<term_abrupt_time_adjustment>> not occurred and it may still be appropriate to notify next users of this."
                     ]
                 }
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "SAFETY",
+        "test": "INTEROPERABILITY"
     },
     {
         "type": "tech-feature",
@@ -1250,7 +1287,7 @@
         }
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_provider"
         ],
@@ -1282,10 +1319,12 @@
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "EFFECTIVENESS",
+        "test": "INTEROPERABILITY"
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_participant"
         ],
@@ -1310,10 +1349,12 @@
             "noteContent": [],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "EFFECTIVENESS",
+        "test": "INTEROPERABILITY"
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_consumer"
         ],
@@ -1345,7 +1386,9 @@
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "EFFECTIVENESS",
+        "test": "INTEROPERABILITY"
     },
     {
         "type": "tech-feature",
@@ -1769,7 +1812,7 @@
         }
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_participant"
         ],
@@ -1810,10 +1853,12 @@
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "SECURITY",
+        "test": "INTEROPERABILITY"
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_provider"
         ],
@@ -1845,10 +1890,12 @@
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "EFFECTIVENESS",
+        "test": "INTEROPERABILITY"
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_consumer"
         ],
@@ -1880,10 +1927,12 @@
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "EFFECTIVENESS",
+        "test": "INTEROPERABILITY"
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_consumer"
         ],
@@ -1924,10 +1973,12 @@
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "EFFECTIVENESS",
+        "test": "INTEROPERABILITY"
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_consumer"
         ],
@@ -1968,10 +2019,12 @@
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "EFFECTIVENESS",
+        "test": "INTEROPERABILITY"
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_provider",
             "somds_consumer"
@@ -1997,7 +2050,9 @@
             "noteContent": [],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "EFFECTIVENESS",
+        "test": "INTEROPERABILITY"
     },
     {
         "type": "tech-feature",
@@ -2035,7 +2090,7 @@
         }
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_participant"
         ],
@@ -2067,7 +2122,9 @@
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "EFFECTIVENESS",
+        "test": "INTEROPERABILITY"
     },
     {
         "type": "tech-feature",
@@ -2105,7 +2162,7 @@
         }
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_consumer"
         ],
@@ -2130,10 +2187,12 @@
             "noteContent": [],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "EFFECTIVENESS",
+        "test": "INTEROPERABILITY"
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "requirementNumber": 1014,
         "localId": "R1014",
         "globalId": "",
@@ -2162,7 +2221,9 @@
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "EFFECTIVENESS",
+        "test": "INTEROPERABILITY"
     },
     {
         "type": "tech-feature",
@@ -2367,7 +2428,7 @@
         }
     },
     {
-        "type": "tech-feature",
+        "type": "risk-mitigation",
         "actors": [
             "somds_participant"
         ],
@@ -2399,7 +2460,9 @@
             ],
             "exampleContent": [],
             "relatedContent": []
-        }
+        },
+        "mitigating": "EFFECTIVENESS",
+        "test": "INTEROPERABILITY"
     },
     {
         "type": "tech-feature",
@@ -5769,7 +5832,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "Biceps extensions, with timestamps who's interpretation by a <<vol1_spec_sdpi_p_actor_somds_participant>> would be affected by unexpected abrupt time adjustments, should support timestamp versioning using the <<vol3_clause_timestamp_versioningc32d5907-c7e4-4b5b-9ab6-049726004134timestamp+versioning>> extension."
+                        "Biceps extensions, with timestamps who's interpretation by a <<vol1_spec_sdpi_p_actor_somds_participant>> would be affected by unexpected abrupt time adjustments, should support timestamp versioning using the <<vol3_clause_timestamp_versioning5a02d771-bfec-4e1b-94fa-a18abb173320timestamp+versioning>> extension."
                     ]
                 }
             ],

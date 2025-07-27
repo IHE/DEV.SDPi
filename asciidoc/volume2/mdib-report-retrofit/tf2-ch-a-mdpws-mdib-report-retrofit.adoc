@@ -5,6 +5,7 @@ In addition to <<vol3_clause_mdib_report_retrofit>>, this section specifies requ
 
 .R1001
 [sdpi_requirement,sdpi_req_level=shall]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
 ====
@@ -13,7 +14,7 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall only establish one TCP connect
 ****
 
 .R1002
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -28,6 +29,7 @@ The WS-Discovery Ad-hoc mode utilizes UDP to exchange messages, see <<ref_oasis_
 
 .R1003
 [sdpi_requirement,sdpi_req_level=shall]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
 ====
@@ -41,7 +43,7 @@ Enforces use of HTTP 1.1 in order to limit choices by which a re-ordering of mes
 ****
 
 .R1004
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -56,6 +58,7 @@ This allows for a <<vol1_spec_sdpi_p_actor_somds_consumer>> to apply report data
 
 .R1005
 [sdpi_requirement,sdpi_req_level=should]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
 ====
@@ -65,6 +68,7 @@ A <<vol1_spec_sdpi_p_actor_somds_consumer>> should reconnect or go into a fail-s
 
 .R1014
 [sdpi_requirement,sdpi_req_level=shall]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
 ====

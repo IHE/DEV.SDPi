@@ -129,7 +129,7 @@ Since manual time adjustments of the device's internal clock would lead to plaus
 
 .R1540
 [sdpi_requirement,sdpi_req_level=shall]
-[sdpi_req_type=risk_mitigation,sdpi_ses_type=securityt,sdpi_ses_test=wire]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=security,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
 ====

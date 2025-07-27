@@ -37,7 +37,7 @@ The HL7 Observation Request (OBR) segment requires a mapping from the SDC contai
 
 ====== OBR-2 Placer Order Number
 .R8050
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -53,7 +53,7 @@ For further information, please refer to the <<ref_ihe_dev_tf_2_2024>>.
 [#ref_acm_obr3_mapping]
 ====== OBR-3 Filler Order Number
 .R8051
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -69,7 +69,7 @@ For further information, please refer to the <<ref_ihe_dev_tf_2_2024>>.
 The content depends on the state of the alert event:
 
 .R8052
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -96,7 +96,7 @@ Unique Alert Event Identifier:
 ////
 
 .R8053
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -148,7 +148,7 @@ The table <<ref_tbl_acm_obr3_mapping>> defines the mapping of the Alert Event Id
 
 ====== OBR-4 Universal Service Identifier
 .R8054
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -158,7 +158,7 @@ A <<actor_somds_acm_gateway>> shall set the OBR-4 field to *"196616\^MDC_EVT_ALA
 
 ====== OBR-7 Observation Date/Time
 .R8055
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -174,7 +174,7 @@ Please refer to the *Appendix B  B.7.1 OBR Observation Request Segment in ACM Tr
 
 ====== OBR-29 Parent
 .R8056
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -250,7 +250,7 @@ Please refer to general Section <<ref_gateway_obx18_mapping>>.
 [#ref_acm_obx_device_related_mapping]
 ====== Device-related OBX Segments
 .R8057
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -264,7 +264,7 @@ There might be up to three device-related OBX segments for the MDS, VMD, and CHA
 ****
 
 .R8058
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -340,7 +340,7 @@ OBX|3||69855\^MDC_DEV_METER_PRESS_BLD_CHAN^MDC|1.1.1.0|||||||X
 
 ====== Event Identification OBX Segment
 .R8061
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -355,7 +355,7 @@ The mapping differs for physiological alert events and technical/advisory alert 
 ****
 
 .R8077
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -368,7 +368,7 @@ A <<actor_somds_acm_gateway>> shall report the Alert Event Phase as "update" whe
 [#ref_acm_obx14_event_id_mapping,sdpi_level=+1]
 ====== Date/Time Mapping
 .R8062
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -431,7 +431,7 @@ Note that the *pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* changes 
 The event identification mapping for a physiological alert (alarm or advisory) is defined in table <<ref_tbl_acm_obx_event_phy_mapping>>.
 
 .R8063
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -519,7 +519,7 @@ OBX|4|ST|196648\^MDC_EVT_HI^MDC|1.1.1.1.1|**ABPs 119>110||||||R|||20191121102600
 The event identification mapping for a technical alert (alarm or advisory) is defined in table <<ref_tbl_acm_obx_event_tec_mapping>>.
 
 .R8064
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -626,7 +626,7 @@ OBX|4|CWE|196616\^MDC_EVT_ALARM^MDC|1.1.1.1.1|196882\^MDC_EVT_LEADS_OFF^MDC^^^^^
 [#ref_acm_obx_source_id_mapping]
 ====== Source Identification OBX Segment
 .R8065
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -644,7 +644,7 @@ A <<actor_somds_acm_gateway>> shall export a Source Identification OBX segment, 
 ****
 
 .R8059
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -653,7 +653,7 @@ For a physiological alert event, a <<actor_somds_acm_gateway>> shall set the OBX
 ****
 
 .R8060
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -664,7 +664,7 @@ For a technical or advisory alert event, a <<actor_somds_acm_gateway>> shall set
 [sdpi_level=+1]
 ====== Physiological Alerts
 .R8066
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -678,7 +678,7 @@ In SDC, the metric value that led to the physiological alert event is required t
 ****
 
 .R8067
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -687,7 +687,7 @@ A <<actor_somds_acm_gateway>> shall set the OBX-4 Observation Sub-ID to *"<MDS>.
 ****
 
 .R8068
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -705,7 +705,7 @@ OBX|5|NM|150037\^MDC_PRESS_BLD_ART_ABP_SYS^MDC|1.1.1.1.2|119|266016\^MDC_DIM_MMH
 The source identification mapping for a technical alert (alarm or advisory) is defined in table <<ref_tbl_acm_obx_source_tec_mapping>>.
 
 .R8069
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -796,7 +796,7 @@ OBX|5|CWE|68480\^MDC_ATTR_ALERT_SOURCE^MDC|1.1.1.1.2|131328\^MDC_ECG_ELEC_POTL^M
 
 ====== Event Phase OBX Segment
 .R8070
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -819,7 +819,7 @@ OBX|6|ST|68481\^MDC_ATTR_EVENT_PHASE^MDC|1.1.1.1.3|start||||||R
 ****
 
 .R8078
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -916,7 +916,7 @@ all the *pm:AlertSignalState* elements with *@ActivationState* set to *"On"* tra
 
 ====== Alert State OBX Segment
 .R8071
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -939,7 +939,7 @@ OBX|7|ST|68482\^MDC_ATTR_ALARM_STATE^MDC|1.1.1.1.4|active||||||R
 ****
 
 .R8072
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -1015,7 +1015,7 @@ at least one of the *pm:AlertSignalState* elements with *@ActivationState* set t
 
 ====== Inactivation State OBX Segment
 .R8073
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -1118,7 +1118,7 @@ all *pm:AlertSignalState* elements have their *@ActivationState* set to *"Off"* 
 [#ref_acm_alert_priority_obx_mapping]
 ====== Alert Priority OBX Segment
 .R8074
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -1137,7 +1137,7 @@ OBX|9|ST|68484\^MDC_ATTR_ALARM_PRIORITY^MDC|1.1.1.1.6|PM||||||R
 ****
 
 .R8075
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -1236,7 +1236,7 @@ If a <<acronym_sdc>> ALERT CONDITION represents an advisory signal, the alert pr
 
 ====== Alert Type OBX Segment
 .R8076
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -1255,7 +1255,7 @@ OBX|10|ST|68485\^MDC_ATTR_ALERT_TYPE^MDC|1.1.1.1.7|ST||||||R
 ****
 
 .R8079
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====

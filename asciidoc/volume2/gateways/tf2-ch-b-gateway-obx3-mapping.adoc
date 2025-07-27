@@ -2,7 +2,7 @@
 ===== OBX-3 Observation Identifier
 
 .R8012
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -18,7 +18,7 @@ A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the OBX-3 
 ****
 
 .R8013
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====

@@ -15,6 +15,7 @@ In order to suppress concurrent connection attempts, in the ad-hoc mode a <<vol1
 
 .R0001
 [sdpi_requirement,sdpi_req_level=may]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
 ====
@@ -42,6 +43,7 @@ Depending on the priority groups 0 to 9, with increasing group numbers the initi
 
 .R0002
 [sdpi_requirement,sdpi_req_level=should]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
 ====
@@ -58,6 +60,7 @@ As it is not trivial to determine the priority of a <<vol1_spec_sdpi_p_actor_som
 
 .R0003
 [sdpi_requirement,sdpi_req_level=shall]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
 ====
@@ -77,6 +80,7 @@ If a <<term_manufacturer>> does not intend to enforce configuration of priority 
 
 .R0004
 [sdpi_requirement,sdpi_req_level=may]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
 ====

@@ -57,6 +57,7 @@ Therefore, in order to prevent the network congestion from Probe / ProbeMatch me
 
 .R3001
 [sdpi_requirement,sdpi_req_level=should]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
 ====
@@ -71,7 +72,7 @@ If Probe messages are sent periodically, a rationale needs to be provided, since
 ****
 
 .R3002
-[sdpi_requirement,sdpi_req_level=may]
+[sdpi_requirement,sdpi_req_level=may,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -92,7 +93,7 @@ For example, Probe messages are sent only if a <<vol1_spec_sdpi_p_actor_somds_co
 ====== Scope Matching
 
 .R7000
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
