@@ -3,6 +3,15 @@
 
 A <<actor_somds_provider>> conforming to the <<ref_ieee_11073_10701_2022>>, provides numeric metric data that fulfils the following requirements:
 
+[quote, "<<ref_ieee_11073_10701_2022>> TR0239"]
+____
+For each of its numeric and sample array METRICs, an SDC METRIC PROVIDER
+SHALL provide one or more pm:TechnicalRange elements including an @Upper and @Lower limit.
+____
+
+[NOTE]
+The above requirement implies that the sum of all *pm:TechnicalRange* elements covers the entire possible metric's *@Value* or *@Samples* range without gaps.
+
 [quote, "<<ref_ieee_11073_10701_2022>> TR0800"]
 For each METRIC of an SDC METRIC PROVIDER, for each pm:Range of the METRIC, while the minimum numerical distance between two values differs from the METRIC's @resolution, the SDC METRIC PROVIDER SHOULD provide this distance using pm:Range/@StepWidth.
 
@@ -23,18 +32,25 @@ In <<acronym_biceps>>, a *pm:NumericMetricDescriptor*, *pm:RealTimeSampleArrayMe
 The same holds true for the corresponding state elements *pm:NumericMetricState*, *pm:RealTimeSampleArrayMetricState*, and *DistributionSampleArrayMetricState*.
 In this case, the state elements can optionally define a list of *pm:PhysiologicalRange* elements of type *pm:Range*.
 
-For a metric *@Value* or *@Samples* that falls in one of the *pm:TechnicalRange* or *pmPhysiologicalRange* elements, this *pm:Range* element is considered as the _active range_ for this particular metric *@Value* or *@Samples*.
+*For Metric @Value*:
 
-If the metric *@Value* or *@Samples* falls in one of the *pm:TechnicalRange* elements and in one of *pm:PhysiologicalRange* elements at the same time, the *pm:PhysiologicalRange* element of the metric state will supersede the *pm:TechnicalRange* element of the descriptor and will become the _active range_ for this particular metric *@Value* or *@Samples*.
+For a metric *@Value* that falls in one of the *pm:TechnicalRange* or *pm:PhysiologicalRange* elements, this *pm:Range* element is considered as the _active range_ for this particular metric *@Value*.
+
+If the metric *@Value* falls in one of the *pm:TechnicalRange* elements and in one of *pm:PhysiologicalRange* elements at the same time, the *pm:PhysiologicalRange* element of the metric state will supersede the *pm:TechnicalRange* element of the descriptor and will become the _active range_ for this particular metric *@Value*.
+
+*For Metric @Samples*:
+
+For metric *@Samples*, it is possible that individual samples fall in different *pm:TechnicalRange* or *pm:PhysiologicalRange* elements. In this case the <<actor_somds_consumer>> has to decide which of the *pm:TechnicalRange* or *pm:PhysiologicalRange* element is considered as the _active range_ (*pm:Range* element) for the entire set of samples currently utilized for displaying - e.g. *Airway Pressure* wave displayed with the highest precision defined by the _active range_ at the consumer's screen.
+
+If an individual sample falls in one of the *pm:TechnicalRange* elements and in one of *pm:PhysiologicalRange* elements at the same time, the *pm:PhysiologicalRange* element of the metric state will supersede the *pm:TechnicalRange* element of the descriptor and will become the _active range_ for this particular sample.
 
 ====== When to define the *mpkp:DisplayPrecision* extension?
 
-As already defined in *TR0242* of the <<ref_ieee_11073_10701_2022>> standard, the <<actor_somds_provider>> is required to provide a *mpkp:DisplayPrecision* extension when the metric's *@Resolution* or *@StepWidth* of the _active range_ differs from the metric's display precision.
+As already defined in *TR0242* of the <<ref_ieee_11073_10701_2022>> standard, the <<actor_somds_provider>> is required to provide a *mpkp:DisplayPrecision* extension when the metric's *@Resolution* differs from the metric's display precision. The *mpkp:DisplayPrecision* extension must also be provided when the metric's *@StepWidth* of the _active range_ differs from the *@Resolution* - independently of the metric's display precision. This part of the requirement will be changed in a future version of the standard, so that the <<actor_somds_provider>> is only required to provide a *mpkp:DisplayPrecision* extension when the metric's *@StepWidth* of the _active range_ *also* differs from the metric's display precision. Otherwise, the metric's *@StepWidth* of the _active range_ defines the metric's display precision.
 
-While *TR0800* is a SHOULD requirement, *TR0242* mandates the <<actor_somds_provider>> to provide a *mpkp:DisplayPrecision* extension when the metric's *@Resolution* differs from the display precision.
-This forces the <<actor_somds_provider>> to provide at least one  *pm:TechnicalRange* or *pm:PhysiologicalRange* element with the appropriate *mpkp:DisplayPrecision* extension, since the extension can only be applied on *pm:Range* elements.
+While *TR0800* is a SHOULD requirement and the *@StepWidth* for a particular *pm:Range* element might not be defined, *TR0242* mandates the <<actor_somds_provider>> to provide a *mpkp:DisplayPrecision* extension when the metric's *@Resolution* differs from the display precision.
 
-In this case, the *@StepWidth* of the *pm:Range* element is the same as the metric's *@Resolution* in order to preserve the resolution which would be superseded by a different *pm:Range/@StepWidth* otherwise.
+
 
 .Ventilator Minute Volume Parameter Representation
 ====
@@ -54,10 +70,11 @@ The first range is defined from *10.0 L/min* to  *100.0 L/min*.
 The measurement precision stays the same (*@Resolution* and *@StepWidth* are identical).
 However, the <<actor_somds_provider>> indicates to the <<actor_somds_consumer>> that the *MV* parameter value needs to be displayed with no decimal places (*mpkp:DisplayPrecision/@StepWidth* = "1").
 
-The second range is defined from *9.9 L/min* to  *0.0 L/min*.
+The second range is defined from *0.0 L/min* to *9.9 L/min*.
 Since there is no specific display precision defined, the <<actor_somds_consumer>> knows that the *MV* parameter value needs to be displayed with one decimal places (*@StepWidth* = "0.1").
 
-It would also be correct to omit the second range element, since the implied display precision equals the metric's *@Resolution* in this case.
+Note that if the *@StepWidth* in the second range was not defined, the precision of the *@Resolution* would also define display precision.
+
 ====
 
 ====== Requirements
@@ -65,24 +82,29 @@ It would also be correct to omit the second range element, since the implied dis
 .R1015
 [sdpi_requirement#r1015,sdpi_req_level=shall]
 ****
-If the display precision differs from the metric's *@Resolution* for a specific metric's *@Value* or *@Samples* range where no *pm:TechnicalRange* or *pm:PhysiologicalRange* element is defined, the <<actor_somds_provider>> shall define a descriptor *pm:TechnicalRange* element that covers this metric's *@Value* or *@Samples* range, and where the *@StepWidth* equals the *@Resolution* and the *ext:Extension/mpkp:DisplayPrecision/@StepWidth* defines the display precision.
+If attributes defining a precision (e. g. *@StepWidth*, *@Resolution*, etc.) are set to a decimal number with trailing "0"s after the decimal point, the trailing "0"s shall not be considered for the determination of the precision.
 
 .Notes
 [%collapsible]
 ====
-NOTE: The <<actor_somds_provider>> could also define *pm:PhysiologicalRange* element in the metric state in lieu of *pm:TechnicalRange* element in the metric descriptor.
-However, it is recommended to define the appropriate *pm:Range* element in the descriptor.
+NOTE: It is allowed to set the precision, for example, to a number of "0.0100". However, the last two trailing "0"s of the number must be ignored and only the two digits after the decimal points ("0.01") are relevant for the precision. +
+However, this is not true for the "0"s *before* the decimal point. In this case, they are relevant for the determination of the precision (e.g. "10").
 ====
 ****
 
 .R1016
 [sdpi_requirement#r1016,sdpi_req_level=shall]
 ****
-A <<actor_somds_consumer>> shall determine the _active range_ for the current metric's *@Value* or *@Samples* by the following priority order:
+A <<actor_somds_consumer>> shall determine the _active range_ for the current metric's *@Value* or a set of multiple metric's *@Samples* to be displayed at the  <<actor_somds_consumer>>'s display by the following priority order:
 
-. The *pm:PhysiologicalRange* element of the metric state where the current metric's *@Value* or *@Samples* falls into.
-. The *pm:TechnicalRange* element of the metric descriptor where the current metric's *@Value* or *@Samples* falls into.
+. The *pm:PhysiologicalRange* element of the metric state where the current metric's *@Value* or a sample that represents the display precision for the entire set of metric's *@Samples* falls into.
+. The *pm:TechnicalRange* element of the metric descriptor where the current metric's *@Value* or a sample that represents the display precision for the entire set of metric's *@Samples* falls into.
 
+.Notes
+[%collapsible]
+====
+NOTE: If the <<actor_somds_consumer>> wants to display, for example, a wave on the screen which consists of samples from multiple metric's *@Samples*, the display precision of the wave must be determined from the display precision of the individual samples. It is then up to the <<actor_somds_consumer>> to select a common display precision for all samples to be displayed at the screen as a wave.
+====
 ****
 
 .R1017
@@ -92,5 +114,5 @@ A <<actor_somds_consumer>> shall determine the current display precision for a m
 
 1. *ext:Extension/mpkp:DisplayPrecision/@StepWidth* is defined for the _active range_
 2. *pm:Range/@StepWidth* is defined for the _active range_
-3. *@Resolution* if there is no _active range_ defined
+3. *@Resolution* if there is no _active range_ with a *@StepWidth* defined
 ****
