@@ -64,6 +64,18 @@ sdpi_include_transaction::DEV-30[initiator="optional", responder="optional"]
 sdpi_include_transaction::DEV-46[initiator="optional", receiver="required"]
 sdpi_include_transaction::DEV-47[initiator="optional", responder="required"]
 
+// Deferred transactions. 
+sdpi_include_transaction::DEV-26[actor-id="somds_provider",responder="required",placeholder-name="Discover system context and capabilities"]
+sdpi_include_transaction::DEV-31[actor-id="somds_provider",responder="optional",placeholder-name="Set provider state"]
+sdpi_include_transaction::DEV-32[actor-id="somds_provider",responder="optional",placeholder-name="Retrieve archive data"]
+sdpi_include_transaction::DEV-33[actor-id="somds_provider",responder="optional",placeholder-name="Retrieve localization information"]
+
+sdpi_include_transaction::DEV-26[actor-id="somds_consumer",initiator="required",placeholder-name="Discover system context and capabilities"]
+sdpi_include_transaction::DEV-31[actor-id="somds_consumer",initiator="optional",placeholder-name="Set provider state"]
+sdpi_include_transaction::DEV-32[actor-id="somds_consumer",initiator="optional",placeholder-name="Retrieve archive data"]
+sdpi_include_transaction::DEV-33[actor-id="somds_consumer",initiator="optional",placeholder-name="Retrieve localization information"]
+
+.SDPi-P Profile - Actors and Transactions
 sdpi_transaction_table::[profile-id="sdpi-p"]
 
 [NOTE]
@@ -74,6 +86,11 @@ dynamic changes that may need to be sent to subscribing systems
 * _“Receiver”_ indicates that though a <<vol1_spec_sdpi_p_actor_somds_participant>> 
 may "receive" the transaction, there is no response communicated to the message initiator.
 
+* A future SDPi version will provide transaction details for the 
+<<vol1_clause_sdpi_p_somds_connector>>, <<vol1_clause_sdpi_p_somds_fhir_gateway>>, 
+<<vol1_clause_sdpi_p_somds_v2_gateway>>, <<vol1_clause_sdpi_p_somds_sensor_gateway>>, 
+<<vol1_clause_sdpi_p_somds_smart_app_platform>>, <<vol1_clause_sdpi_p_biceps_content_creator>>, and
+<<vol1_clause_sdpi_p_biceps_content_consumer>> actors. 
 ====
 
 ifndef::not-defined[]

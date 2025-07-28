@@ -33,12 +33,22 @@ class TransactionIncludeProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_INCLUDE
             logger.error("$BLOCK_MACRO_NAME_INCLUDE_TRANSACTION requires a ancestor block within the 'profile' role")
         }
 
+        val strPlaceholderName = attributes[TransactionIncludeAttributes.PLACEHOLDER_NAME.key]?.toString()
+
+
         // logger.info("Processing transaction include for $strTransactionId in $strProfileId/$strProfileOptionId/$strActorOptionId")
-        val ref = transactionReference(strProfileId, strProfileOptionId, strActorOptionId, strTransactionId)
+        val ref = transactionReference(
+            strProfileId,
+            strProfileOptionId,
+            strActorOptionId,
+            strTransactionId,
+            strPlaceholderName
+        )
 
         val strActor = attributes[TransactionIncludeAttributes.ACTOR.key]?.toString()
         for (attr in attributes) {
-            if (attr.key != TransactionIncludeAttributes.ACTOR.key) {
+            if (attr.key != TransactionIncludeAttributes.ACTOR.key
+                && attr.key != TransactionIncludeAttributes.PLACEHOLDER_NAME.key) {
                 val transactionContribution = parseContribution(strActor, attr.key, attr.value.toString())
                 ref.transactionReference.addObligation(transactionContribution)
             }
@@ -72,7 +82,13 @@ class TransactionIncludeProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_INCLUDE
     }
 
 
-    private fun transactionReference(strProfileId: String, strProfileOptionId: String?, strActorOptionId: String?, strTransactionId: String): SdpiProfileTransactionReference {
+    private fun transactionReference(
+        strProfileId: String,
+        strProfileOptionId: String?,
+        strActorOptionId: String?,
+        strTransactionId: String,
+        strDeferredName: String?
+    ): SdpiProfileTransactionReference {
         val profileReferences = getProfileReferences(strProfileId)
         val existing = profileReferences.find {
             it.profileOptionId == strProfileOptionId
@@ -86,7 +102,7 @@ class TransactionIncludeProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_INCLUDE
             strProfileId,
             strProfileOptionId,
             strActorOptionId,
-            SdpiTransactionReference(strTransactionId)
+            SdpiTransactionReference(strTransactionId, strDeferredName)
         )
         profileReferences.add(newRef)
         return newRef

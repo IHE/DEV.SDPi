@@ -56,6 +56,8 @@ class AddTransactionQueryPlaceholder : BlockMacroProcessor(BLOCK_MACRO_NAME_TRAN
         attributes["role"] = Roles.QueryTable.TRANSACTIONS.key
         val placeholderTable = createTable(parent)
         placeholderTable.attributes["role"] = Roles.QueryTable.TRANSACTIONS.key
+        placeholderTable.attributes["title"] = attributes["title"]
+        placeholderTable.attributes["id"] = attributes["id"]
 
         // Add filter attributes to the table for the tree processor to consume.
         val strProfile = attributes[Roles.Profile.ID.key]

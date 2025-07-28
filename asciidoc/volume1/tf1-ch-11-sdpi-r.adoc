@@ -59,7 +59,7 @@ sdpi_include_transaction::DEV-37[actor-id="somds_medical_data_consumer",initiato
 sdpi_include_transaction::DEV-37[actor-id="somds_medical_data_provider",responder="required"]
 sdpi_include_transaction::DEV-37[actor-id="somds_dec_gateway",initiator="optional"]
 
-
+.SDPi-R Profile - Actors and Transactions
 sdpi_transaction_table::[profile-id="sdpi-r"]
 
 ifndef::not-defined[]

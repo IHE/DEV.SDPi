@@ -8,7 +8,7 @@
                 "actorId": "somds_provider",
                 "contribution": "INITIATOR",
                 "description": [
-                    "Announces its presence by multicasting <<vol2_clause_dev_23_message_hello5a02d771-bfec-4e1b-94fa-a18abb173320Hello>> messages to all listening systems.",
+                    "Announces its presence by multicasting <<vol2_clause_dev_23_message_helloc37abc02-4bd5-407a-a33d-76ec62a0c85eHello>> messages to all listening systems.",
                     ""
                 ]
             },
@@ -16,7 +16,7 @@
                 "actorId": "somds_consumer",
                 "contribution": "RECEIVER",
                 "description": [
-                    "Listens for <<vol2_clause_dev_23_message_hello5a02d771-bfec-4e1b-94fa-a18abb173320Hello>> messages to identify any <<vol1_spec_sdpi_p_actor_somds_provider>>s that it may exchange messages with and further retrieve a <<vol1_spec_sdpi_p_actor_somds_provider>>'s service capabilities.",
+                    "Listens for <<vol2_clause_dev_23_message_helloc37abc02-4bd5-407a-a33d-76ec62a0c85eHello>> messages to identify any <<vol1_spec_sdpi_p_actor_somds_provider>>s that it may exchange messages with and further retrieve a <<vol1_spec_sdpi_p_actor_somds_provider>>'s service capabilities.",
                     ""
                 ]
             }
@@ -31,7 +31,7 @@
                 "actorId": "somds_consumer",
                 "contribution": "INITIATOR",
                 "description": [
-                    "Initiates communication by sending <<vol2_clause_dev_24_message_probe5a02d771-bfec-4e1b-94fa-a18abb173320Probe>> or <<vol2_clause_dev_24_message_resolve5a02d771-bfec-4e1b-94fa-a18abb173320Resolve>> messages to <<vol1_spec_sdpi_p_actor_somds_provider>>s. Then listens for <<vol2_clause_dev_24_message_probe_match5a02d771-bfec-4e1b-94fa-a18abb173320ProbeMatch>> and <<vol2_clause_dev_24_message_resolve_match5a02d771-bfec-4e1b-94fa-a18abb173320ResolveMatch>> messages to discover those <<vol1_spec_sdpi_p_actor_somds_provider>>s that it intends to exchange messages with and further retrieves the <<vol1_spec_sdpi_p_actor_somds_provider>>'s service capabilities.",
+                    "Initiates communication by sending <<vol2_clause_dev_24_message_probec37abc02-4bd5-407a-a33d-76ec62a0c85eProbe>> or <<vol2_clause_dev_24_message_resolvec37abc02-4bd5-407a-a33d-76ec62a0c85eResolve>> messages to <<vol1_spec_sdpi_p_actor_somds_provider>>s. Then listens for <<vol2_clause_dev_24_message_probe_matchc37abc02-4bd5-407a-a33d-76ec62a0c85eProbeMatch>> and <<vol2_clause_dev_24_message_resolve_matchc37abc02-4bd5-407a-a33d-76ec62a0c85eResolveMatch>> messages to discover those <<vol1_spec_sdpi_p_actor_somds_provider>>s that it intends to exchange messages with and further retrieves the <<vol1_spec_sdpi_p_actor_somds_provider>>'s service capabilities.",
                     ""
                 ]
             },
@@ -39,7 +39,7 @@
                 "actorId": "somds_provider",
                 "contribution": "RESPONDER",
                 "description": [
-                    "Listens for <<vol2_clause_dev_24_message_probe5a02d771-bfec-4e1b-94fa-a18abb173320Probe>> and <<vol2_clause_dev_24_message_resolve5a02d771-bfec-4e1b-94fa-a18abb173320Resolve>> messages, which it responds to with <<vol2_clause_dev_24_message_probe_match5a02d771-bfec-4e1b-94fa-a18abb173320ProbeMatch>> or <<vol2_clause_dev_24_message_resolve_match5a02d771-bfec-4e1b-94fa-a18abb173320ResolveMatch>> messages, respectively.",
+                    "Listens for <<vol2_clause_dev_24_message_probec37abc02-4bd5-407a-a33d-76ec62a0c85eProbe>> and <<vol2_clause_dev_24_message_resolvec37abc02-4bd5-407a-a33d-76ec62a0c85eResolve>> messages, which it responds to with <<vol2_clause_dev_24_message_probe_matchc37abc02-4bd5-407a-a33d-76ec62a0c85eProbeMatch>> or <<vol2_clause_dev_24_message_resolve_matchc37abc02-4bd5-407a-a33d-76ec62a0c85eResolveMatch>> messages, respectively.",
                     ""
                 ]
             }
@@ -54,7 +54,7 @@
                 "actorId": "somds_consumer",
                 "contribution": "INITIATOR",
                 "description": [
-                    "Asks for the resource representation of the <<vol1_spec_sdpi_p_actor_somds_provider>> via the <<vol2_clause_dev_25_message_get_metadata5a02d771-bfec-4e1b-94fa-a18abb173320GetMetadata>> message.",
+                    "Asks for the resource representation of the <<vol1_spec_sdpi_p_actor_somds_provider>> via the <<vol2_clause_dev_25_message_get_metadatac37abc02-4bd5-407a-a33d-76ec62a0c85eGetMetadata>> message.",
                     ""
                 ]
             },
@@ -62,7 +62,7 @@
                 "actorId": "somds_provider",
                 "contribution": "RESPONDER",
                 "description": [
-                    "Sends its resource representation to the <<vol1_spec_sdpi_p_actor_somds_consumer>> via the <<vol2_clause_dev_25_message_get_metadata_response5a02d771-bfec-4e1b-94fa-a18abb173320GetMetadataResponse>> message.",
+                    "Sends its resource representation to the <<vol1_spec_sdpi_p_actor_somds_consumer>> via the <<vol2_clause_dev_25_message_get_metadata_responsec37abc02-4bd5-407a-a33d-76ec62a0c85eGetMetadataResponse>> message.",
                     ""
                 ]
             }
@@ -77,9 +77,9 @@
                 "actorId": "somds_consumer",
                 "contribution": "INITIATOR",
                 "description": [
-                    "Initiates communication by first subscribing to a <<vol1_spec_sdpi_p_actor_somds_provider>> by sending a <<vol2_clause_dev_27_message_subscribe5a02d771-bfec-4e1b-94fa-a18abb173320Subscribe>> message. While the subscription is running, the subscription is kept alive by sending <<vol2_clause_dev_27_message_renew5a02d771-bfec-4e1b-94fa-a18abb173320Renew>> messages and receiving <<vol2_clause_dev_27_message_notification5a02d771-bfec-4e1b-94fa-a18abb173320Notification>> messages.",
+                    "Initiates communication by first subscribing to a <<vol1_spec_sdpi_p_actor_somds_provider>> by sending a <<vol2_clause_dev_27_message_subscribec37abc02-4bd5-407a-a33d-76ec62a0c85eSubscribe>> message. While the subscription is running, the subscription is kept alive by sending <<vol2_clause_dev_27_message_renewc37abc02-4bd5-407a-a33d-76ec62a0c85eRenew>> messages and receiving <<vol2_clause_dev_27_message_notificationc37abc02-4bd5-407a-a33d-76ec62a0c85eNotification>> messages.",
                     "",
-                    "Finally, the <<vol1_spec_sdpi_p_actor_somds_consumer>> unsubscribes from a <<vol1_spec_sdpi_p_actor_somds_provider>> by sending an <<vol2_clause_dev_27_message_unsubscribe5a02d771-bfec-4e1b-94fa-a18abb173320Unsubscribe>> message.",
+                    "Finally, the <<vol1_spec_sdpi_p_actor_somds_consumer>> unsubscribes from a <<vol1_spec_sdpi_p_actor_somds_provider>> by sending an <<vol2_clause_dev_27_message_unsubscribec37abc02-4bd5-407a-a33d-76ec62a0c85eUnsubscribe>> message.",
                     ""
                 ]
             },
@@ -87,11 +87,11 @@
                 "actorId": "somds_provider",
                 "contribution": "RESPONDER",
                 "description": [
-                    "Listens for <<vol2_clause_dev_27_message_subscribe5a02d771-bfec-4e1b-94fa-a18abb173320Subscribe>>, <<vol2_clause_dev_27_message_renew5a02d771-bfec-4e1b-94fa-a18abb173320Renew>> and <<vol2_clause_dev_27_message_unsubscribe5a02d771-bfec-4e1b-94fa-a18abb173320Unsubscribe>> messages, which it responds to with <<vol2_clause_dev_27_message_subscribe_response5a02d771-bfec-4e1b-94fa-a18abb173320SubscribeResponse>>, <<vol2_clause_dev_27_message_renew_response5a02d771-bfec-4e1b-94fa-a18abb173320RenewResponse>> or <<vol2_clause_dev_27_message_unsubscribe_response5a02d771-bfec-4e1b-94fa-a18abb173320UnsubscribeResponse>> messages respectively.",
+                    "Listens for <<vol2_clause_dev_27_message_subscribec37abc02-4bd5-407a-a33d-76ec62a0c85eSubscribe>>, <<vol2_clause_dev_27_message_renewc37abc02-4bd5-407a-a33d-76ec62a0c85eRenew>> and <<vol2_clause_dev_27_message_unsubscribec37abc02-4bd5-407a-a33d-76ec62a0c85eUnsubscribe>> messages, which it responds to with <<vol2_clause_dev_27_message_subscribe_responsec37abc02-4bd5-407a-a33d-76ec62a0c85eSubscribeResponse>>, <<vol2_clause_dev_27_message_renew_responsec37abc02-4bd5-407a-a33d-76ec62a0c85eRenewResponse>> or <<vol2_clause_dev_27_message_unsubscribe_responsec37abc02-4bd5-407a-a33d-76ec62a0c85eUnsubscribeResponse>> messages respectively.",
                     "",
-                    "While a subscription is running, the <<vol1_spec_sdpi_p_actor_somds_provider>> delivers <<vol2_clause_dev_27_message_notification5a02d771-bfec-4e1b-94fa-a18abb173320Notification>> messages.",
+                    "While a subscription is running, the <<vol1_spec_sdpi_p_actor_somds_provider>> delivers <<vol2_clause_dev_27_message_notificationc37abc02-4bd5-407a-a33d-76ec62a0c85eNotification>> messages.",
                     "",
-                    "When at some point the subscription has to be ended, the <<vol1_spec_sdpi_p_actor_somds_provider>> sends a <<vol2_clause_dev_27_message_subscription_end5a02d771-bfec-4e1b-94fa-a18abb173320SubscriptionEnd>> message.",
+                    "When at some point the subscription has to be ended, the <<vol1_spec_sdpi_p_actor_somds_provider>> sends a <<vol2_clause_dev_27_message_subscription_endc37abc02-4bd5-407a-a33d-76ec62a0c85eSubscriptionEnd>> message.",
                     ""
                 ]
             }
@@ -106,7 +106,7 @@
                 "actorId": "somds_consumer",
                 "contribution": "RECEIVER",
                 "description": [
-                    "Listens for a <<vol2_clause_dev_28_message_notification5a02d771-bfec-4e1b-94fa-a18abb173320Notification>> message to retrieve context updates.",
+                    "Listens for a <<vol2_clause_dev_28_message_notificationc37abc02-4bd5-407a-a33d-76ec62a0c85eNotification>> message to retrieve context updates.",
                     ""
                 ]
             },
@@ -114,7 +114,7 @@
                 "actorId": "somds_provider",
                 "contribution": "INITIATOR",
                 "description": [
-                    "While a subscription is running, the <<vol1_spec_sdpi_p_actor_somds_provider>> delivers <<vol2_clause_dev_28_message_notification5a02d771-bfec-4e1b-94fa-a18abb173320Notification>> messages."
+                    "While a subscription is running, the <<vol1_spec_sdpi_p_actor_somds_provider>> delivers <<vol2_clause_dev_28_message_notificationc37abc02-4bd5-407a-a33d-76ec62a0c85eNotification>> messages."
                 ]
             }
         ]
@@ -128,7 +128,7 @@
                 "actorId": "somds_consumer",
                 "contribution": "RECEIVER",
                 "description": [
-                    "Listens for a <<vol2_clause_dev_29_message_notification5a02d771-bfec-4e1b-94fa-a18abb173320Notification>> message to retrieve update reports.",
+                    "Listens for a <<vol2_clause_dev_29_message_notificationc37abc02-4bd5-407a-a33d-76ec62a0c85eNotification>> message to retrieve update reports.",
                     ""
                 ]
             },
@@ -136,7 +136,7 @@
                 "actorId": "somds_provider",
                 "contribution": "INITIATOR",
                 "description": [
-                    "While a subscription is running, the <<vol1_spec_sdpi_p_actor_somds_provider>> delivers <<vol2_clause_dev_29_message_notification5a02d771-bfec-4e1b-94fa-a18abb173320Notification>> messages."
+                    "While a subscription is running, the <<vol1_spec_sdpi_p_actor_somds_provider>> delivers <<vol2_clause_dev_29_message_notificationc37abc02-4bd5-407a-a33d-76ec62a0c85eNotification>> messages."
                 ]
             }
         ]
@@ -150,7 +150,7 @@
                 "actorId": "somds_consumer",
                 "contribution": "INITIATOR",
                 "description": [
-                    "Initiates communication by sending a <<vol2_clause_dev_30_message_getmdib5a02d771-bfec-4e1b-94fa-a18abb173320GetMdib>> message to a <<vol1_spec_sdpi_p_actor_somds_provider>>. Then listens for a <<vol2_clause_dev_30_message_getmdibresponse5a02d771-bfec-4e1b-94fa-a18abb173320GetMdibResponse>> message to retrieve the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDIB.",
+                    "Initiates communication by sending a <<vol2_clause_dev_30_message_getmdibc37abc02-4bd5-407a-a33d-76ec62a0c85eGetMdib>> message to a <<vol1_spec_sdpi_p_actor_somds_provider>>. Then listens for a <<vol2_clause_dev_30_message_getmdibresponsec37abc02-4bd5-407a-a33d-76ec62a0c85eGetMdibResponse>> message to retrieve the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDIB.",
                     ""
                 ]
             },
@@ -158,7 +158,7 @@
                 "actorId": "somds_provider",
                 "contribution": "RESPONDER",
                 "description": [
-                    "Listens for <<vol2_clause_dev_30_message_getmdib5a02d771-bfec-4e1b-94fa-a18abb173320GetMdib>> messages, which it responds to with <<vol2_clause_dev_30_message_getmdibresponse5a02d771-bfec-4e1b-94fa-a18abb173320GetMdibResponse>> messages respectively.",
+                    "Listens for <<vol2_clause_dev_30_message_getmdibc37abc02-4bd5-407a-a33d-76ec62a0c85eGetMdib>> messages, which it responds to with <<vol2_clause_dev_30_message_getmdibresponsec37abc02-4bd5-407a-a33d-76ec62a0c85eGetMdibResponse>> messages respectively.",
                     ""
                 ]
             }
@@ -316,8 +316,8 @@
                 "actorId": "discovery_proxy",
                 "contribution": "RECEIVER",
                 "description": [
-                    "Listens for <<vol2_clause_dev_46_message_hello5a02d771-bfec-4e1b-94fa-a18abb173320Hello>> or",
-                    "<<vol2_clause_dev_46_message_bye5a02d771-bfec-4e1b-94fa-a18abb173320Bye>> messages to add or",
+                    "Listens for <<vol2_clause_dev_46_message_helloc37abc02-4bd5-407a-a33d-76ec62a0c85eHello>> or",
+                    "<<vol2_clause_dev_46_message_byec37abc02-4bd5-407a-a33d-76ec62a0c85eBye>> messages to add or",
                     "remove <<vol1_spec_sdpi_p_actor_somds_provider>> endpoint metadata to/from its",
                     "internal database.",
                     ""
@@ -344,12 +344,12 @@
                 "actorId": "discovery_proxy",
                 "contribution": "RESPONDER",
                 "description": [
-                    "Forwards <<vol2_clause_dev_46_message_hello5a02d771-bfec-4e1b-94fa-a18abb173320Hello>>",
-                    "and <<vol2_clause_dev_46_message_hello5a02d771-bfec-4e1b-94fa-a18abb173320Bye>>",
+                    "Forwards <<vol2_clause_dev_46_message_helloc37abc02-4bd5-407a-a33d-76ec62a0c85eHello>>",
+                    "and <<vol2_clause_dev_46_message_helloc37abc02-4bd5-407a-a33d-76ec62a0c85eBye>>",
                     "messages received from <<vol1_spec_sdpi_p_actor_somds_provider>>s.",
                     "",
-                    "Responds to incoming <<vol2_clause_dev_47_message_probe5a02d771-bfec-4e1b-94fa-a18abb173320Probe>>",
-                    "and <<vol2_clause_dev_47_message_resolve5a02d771-bfec-4e1b-94fa-a18abb173320Resolve>> messages.",
+                    "Responds to incoming <<vol2_clause_dev_47_message_probec37abc02-4bd5-407a-a33d-76ec62a0c85eProbe>>",
+                    "and <<vol2_clause_dev_47_message_resolvec37abc02-4bd5-407a-a33d-76ec62a0c85eResolve>> messages.",
                     ""
                 ]
             },
@@ -357,13 +357,13 @@
                 "actorId": "somds_consumer",
                 "contribution": "INITIATOR",
                 "description": [
-                    "Uses <<vol2_clause_dev_47_message_probe5a02d771-bfec-4e1b-94fa-a18abb173320Probe>> and",
-                    "<<vol2_clause_dev_47_message_resolve5a02d771-bfec-4e1b-94fa-a18abb173320Resolve>>",
+                    "Uses <<vol2_clause_dev_47_message_probec37abc02-4bd5-407a-a33d-76ec62a0c85eProbe>> and",
+                    "<<vol2_clause_dev_47_message_resolvec37abc02-4bd5-407a-a33d-76ec62a0c85eResolve>>",
                     "messages to seek endpoint metadata.",
                     "",
                     "Optionally subscribes to a <<vol1_spec_sdpi_p_actor_discovery_proxy>> in order",
-                    "to receive <<vol2_clause_dev_47_message_hello5a02d771-bfec-4e1b-94fa-a18abb173320Hello>>",
-                    "and <<vol2_clause_dev_47_message_hello5a02d771-bfec-4e1b-94fa-a18abb173320Bye>> messages.",
+                    "to receive <<vol2_clause_dev_47_message_helloc37abc02-4bd5-407a-a33d-76ec62a0c85eHello>>",
+                    "and <<vol2_clause_dev_47_message_helloc37abc02-4bd5-407a-a33d-76ec62a0c85eBye>> messages.",
                     ""
                 ]
             }

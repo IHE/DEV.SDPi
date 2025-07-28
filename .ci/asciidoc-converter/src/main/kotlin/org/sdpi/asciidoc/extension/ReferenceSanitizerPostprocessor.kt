@@ -5,6 +5,7 @@ import org.asciidoctor.ast.Document
 import org.asciidoctor.extension.Postprocessor
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Element
+import org.sdpi.asciidoc.LinkStyles
 import java.net.URI
 import java.net.URLDecoder
 
@@ -60,6 +61,10 @@ class ReferenceSanitizerPostprocessor(
                 continue
             }
 
+            val strRole = anchor.attr("class")
+            if (strRole == LinkStyles.TITLE_TEXT.className) {
+                continue
+            }
 
             val parsedFragment = URI.create(href).fragment
             if (parsedFragment.isNullOrEmpty()) {

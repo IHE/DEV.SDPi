@@ -138,6 +138,70 @@
                         "actorId": "discovery_proxy"
                     }
                 ]
+            },
+            {
+                "transactionId": "DEV-26",
+                "placeholderName": "Discover system context and capabilities",
+                "obligations": [
+                    {
+                        "contribution": "RESPONDER",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_provider"
+                    },
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_consumer"
+                    }
+                ]
+            },
+            {
+                "transactionId": "DEV-31",
+                "placeholderName": "Set provider state",
+                "obligations": [
+                    {
+                        "contribution": "RESPONDER",
+                        "obligation": "OPTIONAL",
+                        "actorId": "somds_provider"
+                    },
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "OPTIONAL",
+                        "actorId": "somds_consumer"
+                    }
+                ]
+            },
+            {
+                "transactionId": "DEV-32",
+                "placeholderName": "Retrieve archive data",
+                "obligations": [
+                    {
+                        "contribution": "RESPONDER",
+                        "obligation": "OPTIONAL",
+                        "actorId": "somds_provider"
+                    },
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "OPTIONAL",
+                        "actorId": "somds_consumer"
+                    }
+                ]
+            },
+            {
+                "transactionId": "DEV-33",
+                "placeholderName": "Retrieve localization information",
+                "obligations": [
+                    {
+                        "contribution": "RESPONDER",
+                        "obligation": "OPTIONAL",
+                        "actorId": "somds_provider"
+                    },
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "OPTIONAL",
+                        "actorId": "somds_consumer"
+                    }
+                ]
             }
         ],
         "useCaseReferences": [
@@ -623,6 +687,59 @@
                         "actorId": "somds_acm_gateway"
                     }
                 ]
+            },
+            {
+                "transactionId": "DEV-41",
+                "placeholderName": "Manage medical alert delegation",
+                "obligations": [
+                    {
+                        "contribution": "RESPONDER",
+                        "obligation": "OPTIONAL",
+                        "actorId": "somds_medical_alert_provider"
+                    },
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "OPTIONAL",
+                        "actorId": "somds_medical_alert_consumer"
+                    }
+                ]
+            },
+            {
+                "transactionId": "DEV-42",
+                "placeholderName": "Delegate medical alert",
+                "obligations": [
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "OPTIONAL",
+                        "actorId": "somds_medical_alert_provider"
+                    },
+                    {
+                        "contribution": "RESPONDER",
+                        "obligation": "OPTIONAL",
+                        "actorId": "somds_medical_alert_consumer"
+                    }
+                ]
+            },
+            {
+                "transactionId": "DEV-43",
+                "placeholderName": "Update alert acknowledgement status",
+                "obligations": [
+                    {
+                        "contribution": "RESPONDER",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_medical_alert_provider"
+                    },
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_medical_alert_consumer"
+                    },
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_acm_gateway"
+                    }
+                ]
             }
         ],
         "useCaseReferences": [
@@ -672,7 +789,40 @@
                 "id": "alert_delegation",
                 "label": "Alert Delegation Option",
                 "anchor": "vol1_clause_sdpi_a_actor_option_alert_delegation",
-                "transactionReferences": []
+                "transactionReferences": [
+                    {
+                        "transactionId": "DEV-41",
+                        "placeholderName": "Manage medical alert delegation",
+                        "obligations": [
+                            {
+                                "contribution": "RESPONDER",
+                                "obligation": "REQUIRED",
+                                "actorId": "somds_medical_alert_provider"
+                            },
+                            {
+                                "contribution": "INITIATOR",
+                                "obligation": "REQUIRED",
+                                "actorId": "somds_medical_alert_consumer"
+                            }
+                        ]
+                    },
+                    {
+                        "transactionId": "DEV-42",
+                        "placeholderName": "Delegate medical alert",
+                        "obligations": [
+                            {
+                                "contribution": "INITIATOR",
+                                "obligation": "REQUIRED",
+                                "actorId": "somds_medical_alert_provider"
+                            },
+                            {
+                                "contribution": "RESPONDER",
+                                "obligation": "REQUIRED",
+                                "actorId": "somds_medical_alert_consumer"
+                            }
+                        ]
+                    }
+                ]
             },
             {
                 "id": "alert_user_acknowledgement",
@@ -723,6 +873,40 @@
         "profileId": "sdpi-xc",
         "anchor": "vol1_clause_sdpi_xc_profile",
         "label": "External Control Profile",
+        "transactionReferences": [
+            {
+                "transactionId": "DEV-44",
+                "placeholderName": "Manage medical external control",
+                "obligations": [
+                    {
+                        "contribution": "RESPONDER",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_medical_control_provider"
+                    },
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_medical_control_consumer"
+                    }
+                ]
+            },
+            {
+                "transactionId": "DEV-45",
+                "placeholderName": "Invoke medical control services",
+                "obligations": [
+                    {
+                        "contribution": "RESPONDER",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_medical_control_provider"
+                    },
+                    {
+                        "contribution": "INITIATOR",
+                        "obligation": "REQUIRED",
+                        "actorId": "somds_medical_control_consumer"
+                    }
+                ]
+            }
+        ],
         "actors": [
             {
                 "id": "somds_medical_control_provider",

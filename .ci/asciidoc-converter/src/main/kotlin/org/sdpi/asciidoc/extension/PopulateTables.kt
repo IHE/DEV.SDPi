@@ -180,9 +180,9 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
         var bFirstActor = true
         val transactionReferences = profile.transactionReferences
         if (transactionReferences != null) {
-            for (transactionReference: SdpiTransactionReference in transactionReferences) {
+            for (transactionReference: SdpiTransactionReference in transactionReferences.sortedBy{it.transactionId}) {
                 val strTransactionId = transactionReference.transactionId
-                val transaction: SdpiTransaction? = docInfo.transactions()[strTransactionId]
+                val transaction: SdpiTransaction? = getTransaction(transactionReference)
                 checkNotNull(transaction) {
                     logger.error("Unknown transaction id $strTransactionId")
                 }
@@ -208,6 +208,22 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
                 }
             }
         }
+    }
+
+    private fun getTransaction(transactionReference: SdpiTransactionReference): SdpiTransaction? {
+        val strTransactionId = transactionReference.transactionId
+        val knownTransaction: SdpiTransaction? = docInfo.transactions()[strTransactionId]
+        if (null != knownTransaction) {
+            return knownTransaction
+        }
+
+        if (transactionReference.placeholderName != null) {
+            val placeholderTransaction = SdpiTransaction("", transactionReference.transactionId,
+                transactionReference.placeholderName, null)
+            return placeholderTransaction
+        }
+
+        return null
     }
 
     private fun populateContentModuleTable(table: Table) {

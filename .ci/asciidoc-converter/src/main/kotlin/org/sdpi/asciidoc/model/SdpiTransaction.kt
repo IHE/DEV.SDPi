@@ -73,7 +73,8 @@ data class TransactionContribution(
 
 @Serializable
 data class SdpiTransactionReference(
-    val transactionId: String
+    val transactionId: String,
+    val placeholderName: String? // Name of transaction iff the reference is deferred.
 ) {
     @Serializable
     val obligations = mutableListOf<TransactionContribution>()

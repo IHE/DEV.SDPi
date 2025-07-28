@@ -33,6 +33,16 @@ actor groupings, including abstract with concrete, are detailed in <<vol1_clause
 
 image::../images/vol1-diagram-sdpi-xc-actor.svg[]
 
+// Deferred transactions. 
+sdpi_include_transaction::DEV-44[actor-id="somds_medical_control_provider",responder="required",placeholder-name="Manage medical external control"]
+sdpi_include_transaction::DEV-45[actor-id="somds_medical_control_provider",responder="required",placeholder-name="Invoke medical control services"]
+
+sdpi_include_transaction::DEV-44[actor-id="somds_medical_control_consumer",initiator="required",placeholder-name="Manage medical external control"]
+sdpi_include_transaction::DEV-45[actor-id="somds_medical_control_consumer",initiator="required",placeholder-name="Invoke medical control services"]
+
+.SDPi-xC Profile - Actors and Transactions
+sdpi_transaction_table::[profile-id="sdpi-xc"]
+
 [#vol1_table_sdpi_xc_actors_transactions]
 .SDPi-xC Profile - Actors and Transactions
 [%autowidth]

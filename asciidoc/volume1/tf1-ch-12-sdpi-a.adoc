@@ -75,6 +75,27 @@ sdpi_include_transaction::DEV-38[actor-id="somds_acm_gateway",responder="require
 sdpi_include_transaction::DEV-39[actor-id="somds_acm_gateway",initiator="required"]
 sdpi_include_transaction::DEV-40[actor-id="somds_acm_gateway",responder="required"]
 
+// Deferred transactions. 
+sdpi_include_transaction::DEV-41[actor-id="somds_medical_alert_provider",responder="optional",placeholder-name="Manage medical alert delegation"]
+sdpi_include_transaction::DEV-42[actor-id="somds_medical_alert_provider",initiator="optional",placeholder-name="Delegate medical alert"]
+sdpi_include_transaction::DEV-43[actor-id="somds_medical_alert_provider",responder="required",placeholder-name="Update alert acknowledgement status"]
+
+sdpi_include_transaction::DEV-41[actor-id="somds_medical_alert_consumer",initiator="optional",placeholder-name="Manage medical alert delegation"]
+sdpi_include_transaction::DEV-42[actor-id="somds_medical_alert_consumer",responder="optional",placeholder-name="Delegate medical alert"]
+sdpi_include_transaction::DEV-43[actor-id="somds_medical_alert_consumer",initiator="required",placeholder-name="Update alert acknowledgement status"]
+
+sdpi_include_transaction::DEV-43[actor-id="somds_acm_gateway",initiator="required",placeholder-name="Update alert acknowledgement status"]
+
+.SDPi-A Profile - Actors and Transactions
+sdpi_transaction_table::[profile-id="sdpi-a"]
+
+[NOTE]
+====
+By default, the <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> acts as a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>, initiating [DEV-04] transactions when they are received from <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>s.
+If the gateway supports  <<vol1_clause_sdpi_a_actor_option_remote_alert_signaling_reftext>>, then it also acts as a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> and accepts inbound [DEV-04] transactions from ACM Alert Reporters.
+In this case, the gateway will support both "Initiator & Responder" for these transactions.
+====
+
 
 [#vol1_table_sdpi_a_actors_transactions]
 .SDPi-A Profile - Actors and Transactions
@@ -279,6 +300,13 @@ If a <<label_system_type_name_sas>> is being created, it may incorporate both <<
 
 [#vol1_clause_sdpi_a_actor_option_alert_delegation,role=actor-option,actor-option-id=alert_delegation]
 ==== Alert Delegation Option
+
+// Deferred transactions. 
+sdpi_include_transaction::DEV-41[actor-id="somds_medical_alert_provider",responder="required",placeholder-name="Manage medical alert delegation"]
+sdpi_include_transaction::DEV-42[actor-id="somds_medical_alert_provider",initiator="required",placeholder-name="Delegate medical alert"]
+
+sdpi_include_transaction::DEV-41[actor-id="somds_medical_alert_consumer",initiator="required",placeholder-name="Manage medical alert delegation"]
+sdpi_include_transaction::DEV-42[actor-id="somds_medical_alert_consumer",responder="required",placeholder-name="Delegate medical alert"]
 
 [#vol1_clause_sdpi_a_actor_option_alert_delegation_reftext, reftext='SDPi-A Option:  Alert Delegation']
 [%noheader]

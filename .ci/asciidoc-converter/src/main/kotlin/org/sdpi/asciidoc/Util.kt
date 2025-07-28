@@ -145,9 +145,13 @@ fun getTitleFrom(block: StructuralNode): String {
     return mrTitleElements?.groups?.get(2)?.value ?: strLabel
 }
 
-fun makeLink(strAnchor: String, strText: String): String {
+fun makeLink(strAnchor: String, strText: String, strClass: String? = null): String {
     if (strAnchor.contains(" ")) {
         throw  InvalidArguments("Anchor '$strAnchor' contains spaces")
     }
-    return "link:#$strAnchor[$strText]"
+    if (strClass == null) {
+        return "link:#$strAnchor[$strText]"
+    } else {
+        return "link:#$strAnchor[$strText,role=${strClass}]"
+    }
 }

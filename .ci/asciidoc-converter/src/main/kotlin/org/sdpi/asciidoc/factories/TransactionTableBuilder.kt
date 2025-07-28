@@ -2,6 +2,7 @@ package org.sdpi.asciidoc.factories
 
 import org.asciidoctor.ast.Table
 import org.asciidoctor.extension.Treeprocessor
+import org.sdpi.asciidoc.LinkStyles
 import org.sdpi.asciidoc.makeLink
 import org.sdpi.asciidoc.model.*
 
@@ -68,16 +69,23 @@ class TransactionTableBuilder(
             return ""
         }
 
-        val strTransactionLink = makeLink(transaction.anchor, transaction.label)
-        val strTransactionIdLink = transaction.createTransactionListLink()
-        return "$strTransactionLink ($strTransactionIdLink)"
+        if (transaction.anchor.isNotEmpty()) {
+            val strTransactionLink = makeLink(transaction.anchor, transaction.label, LinkStyles.TITLE_TEXT.className)
+            val strTransactionIdLink = transaction.createTransactionListLink()
+            return "$strTransactionIdLink &mdash; $strTransactionLink"
+        } else {
+            // HACK: deferred transactions don't contain an anchor by convention.
+            val strTransactionIdLink = transaction.createTransactionListLink()
+            return "$strTransactionIdLink &mdash; ${transaction.label} (deferred)"
+        }
+
     }
 
     private fun createOptionCell(option: OptionId?): String {
         if (option == null) {
             return "—"
         }
-        val strOptionLink = makeLink(option.anchor, option.label)
+        val strOptionLink = makeLink(option.anchor, option.label, LinkStyles.TITLE_TEXT.className)
         return strOptionLink
     }
 
