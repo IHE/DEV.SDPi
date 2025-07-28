@@ -54,6 +54,12 @@ include::dev-46/tf2-dev-46.adoc[]
 //=== Retrieve Network Presence [DEV-47]
 include::dev-47/tf2-dev-47.adoc[]
 
+//=== Establish Distributed Alarm System [DEV-48]
+include::dev-48/tf2-dev-48.adoc[]
+
+//=== End Distributed Alarm System [DEV-49]
+include::dev-49/tf2-dev-49.adoc[]
+
 // TODO how does this differ from DEV-30
 //
 //[appendix#clause-mdpws-constraints-corrigenda-adjuncts]

@@ -1,6 +1,6 @@
 @startuml
 
-!include plantuml/common_style.inc.puml
+!include ./common_style.inc.puml
 
 !global $str_sdc_sc = "SOMDS Medical Alert Consumer"
 !global $str_sdc_sp = "SOMDS Medical Alert Provider"

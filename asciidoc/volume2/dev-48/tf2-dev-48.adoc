@@ -1,0 +1,41 @@
+:var_transaction_id: DEV-48
+
+
+//reset|+1|off
+[#vol2_clause_dev_48,sdpi_offset=48]
+=== Establish Distributed Alarm System [{var_transaction_id}]
+
+==== Scope
+
+include::tf2-dev-48-summary.adoc[]
+
+==== Actor Roles
+
+.Actor Roles [{var_transaction_id}]
+[cols="1,2"]
+|===
+|Actor |Roles
+
+|<<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>
+|Requests a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> to establish a Distributed Alarm System. Also maintains an established Distributed Alarm System.
+
+|<<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>
+|Listens for requests from a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> to establish a Distributed Alarm System and grants such requests. Also maintains an established Distributed Alarm System.
+
+|===
+
+==== Referenced Standards
+
+* TBD
+
+==== Messages
+
+.Message Interaction Diagram [{var_transaction_id}]
+[plantuml#vol2_figure_dev_48_sequence, target=puml-dev-48-sequence, format=svg]
+....
+include::../../plantuml/vol2-figure-dev-48-sequence.puml[]
+....
+
+[#vol2_clause_dev_239_publish_medical_alert_update_ses]
+include::../dev-x-default-ses-secured-mode.adoc[]
+

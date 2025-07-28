@@ -29,10 +29,10 @@ The actors and transactions in this specification are specialized versions of th
 Additional services have been provided to specifically support the exchange and management of this medical device alert information, providing a high-level of reliability and performance, commensurate with the potential risk to the patient if they are not promptly addressed.
 
 The profile builds upon the foundational <<term_plug_and_trust>> capabilities provided by the <<vol1_clause_sdpi_p_profile_reftext>>.
-These extended capabilities for medical data exchange are achieved by various means, including:
+These extended capabilities for medical alert exchange are achieved by various means, including:
 
-. Grouping <<acronym_sdpi_r>> actors with their <<acronym_sdpi_p>> counterparts
-. Addressing requirements from the emerging <<acronym_pkp>> ISO/IEEE standards:  <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>>
+. Grouping <<acronym_sdpi_a>> actors with their <<acronym_sdpi_p>> counterparts
+. Addressing requirements from the (emerging) <<acronym_pkp>> ISO/IEEE standards:  <<ref_ieee_11073_10700_2022>>, <<ref_ieee_11073_10701_2022>> and <<ref_ieee_11073_10702_202x>>
 . Requiring capabilities that in the <<vol1_clause_sdpi_p_profile_reftext>> may be optional
 . Requiring additional <<acronym_biceps>> data elements or content modules
 
@@ -74,7 +74,7 @@ image::../images/vol1-diagram-sdpi-a-actor.svg[]
 .^|Optionality
 .^|Reference
 
-.6+| <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>
+.8+| <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>
 .^| <<transaction_name_establish_medical_alert_exchange>>
 .^| Responder
 .^| R
@@ -108,7 +108,17 @@ image::../images/vol1-diagram-sdpi-a-actor.svg[]
 | [DEV-43] Deferred to a future version of SDPi
 // <<vol2_clause_dev_43>>
 
-.6+| <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>
+| <<transaction_name_establish_distributed_alarm_system>>
+| Responder
+| R ^(See^ ^Note^ ^3)^
+| <<vol2_clause_dev_48>>
+
+| <<transaction_name_end_distributed_alarm_system>>
+| Responder and Initiator
+| R ^(See^ ^Note^ ^3)^
+| <<vol2_clause_dev_49>>
+
+.8+| <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>
 .^| <<transaction_name_establish_medical_alert_exchange>>
 .^| Initiator
 .^| R
@@ -142,6 +152,16 @@ image::../images/vol1-diagram-sdpi-a-actor.svg[]
 | [DEV-43] Deferred to a future version of SDPi
 // <<vol2_clause_dev_43>>
 
+| <<transaction_name_establish_distributed_alarm_system>>
+| Initiator
+| R ^(See^ ^Note^ ^3)^
+| <<vol2_clause_dev_48>>
+
+| <<transaction_name_end_distributed_alarm_system>>
+| Responder and Initiator
+| R ^(See^ ^Note^ ^3)^
+| <<vol2_clause_dev_49>>
+
 .4+| <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> ^(See^ ^Note^ ^2)^
 .^| <<transaction_name_establish_medical_alert_exchange>>
 .^| Initiator
@@ -171,6 +191,7 @@ Note 2: By default, the <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> acts as a <
 If the gateway supports  <<vol1_clause_sdpi_a_actor_option_remote_alert_signaling_reftext>>, then it also acts as a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> and accepts inbound [DEV-04] transactions from ACM Alert Reporters.
 In this case, the gateway will support both "Initiator & Responder" for these transactions.
 
+Note 3: Transaction is required if <<vol1_clause_sdpi_a_actor_option_distributed_alarm_system_reftext>> is supported.
 |===
 
 [#vol1_clause_sdpi_a_actor_descriptions_actor_profile_requirements]
@@ -263,6 +284,19 @@ If a <<label_system_type_name_sas>> is being created, it may incorporate both <<
 
 [#vol1_clause_sdpi_a_actor_options]
 === SDPi-A Actor Options
+[#vol1_clause_sdpi_a_actor_option_distributed_alarm_system]
+==== Distributed Alarm System Option
+
+[#vol1_clause_sdpi_a_actor_option_distributed_alarm_system_reftext, reftext='SDPi-A Option:  Distributed Alarm System']
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *{supplement_note}*:  This section is intentionally left incomplete until the completion of the <<ref_ieee_11073_10702_202x>> standard, which is required before this profile can be completed.
+
+This option enables <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> and <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> systems to safely and reliably run a Distributed Alarm System with each other.
+This option enables both the <<transaction_name_establish_distributed_alarm_system>> [DEV-48] and <<transaction_name_end_distributed_alarm_system>> [DEV-49] transactions.
+|===
 
 [#vol1_clause_sdpi_a_actor_option_alert_delegation]
 ==== Alert Delegation Option
@@ -272,13 +306,13 @@ If a <<label_system_type_name_sas>> is being created, it may incorporate both <<
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This section is intentionally left incomplete blank to indicate capabilities that will be added in a future version of the SDPi Supplement.
-As stated elsewhere, the completion of the <<ref_ieee_11073_10702_202x>> standard is required before this profile can be completed (beyond alert reporting for DIS capabilities), and that is especially the case for alert delegation.
+a| *{supplement_note}*:  This section is intentionally left incomplete to indicate capabilities that will be added in a future version of the SDPi Supplement.
+As stated elsewhere, the completion of the <<ref_ieee_11073_10702_202x>> standard is required before this profile can be completed (beyond alert reporting for DIS capabilities and DAS capabilities without delegation), and that is especially the case for alert delegation.
 
 *_The sequence diagram below for delegation is provided for informative purposes only and will be finalized when the IEEE standard and this profile option are completed._*
 
 This option will enable <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> systems to safely and reliably transfer or "delegate" audible annunciation of alert conditions to another system.
-This option will enable both the <<transaction_name_manage_medical_alert_delegation>> [DEV-41] and <<transaction_name_delegate_medical_alert>> [DEV-42] transactions.
+This option will enable both the <<transaction_name_manage_medical_alert_delegation>> [DEV-41] and <<transaction_name_delegate_medical_alert>> [DEV-42] transactions, with the pre-requisites that also the <<vol1_clause_sdpi_a_actor_option_distributed_alarm_system>> option is selected and a Distributed Alarm System is active.
 
 |===
 
@@ -336,7 +370,7 @@ This option will enable the <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> to resp
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  As indicated in <<vol1_figure_sdpi_r_actor_diagram>> above, there are four grouped actors:
+a| *{supplement_note}*:  As indicated in <<vol1_figure_sdpi_a_actor_diagram>> above, there are four grouped actors:
 
 [none]
 . <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> with <<vol1_spec_sdpi_p_actor_somds_consumer>>

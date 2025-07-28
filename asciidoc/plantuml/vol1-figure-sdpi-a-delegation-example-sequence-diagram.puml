@@ -1,6 +1,6 @@
 @startuml
 
-!include plantuml/common_style.inc.puml
+!include ./common_style.inc.puml
 
 !global $str_sdc_sc = "SOMDS Medical Alert Consumer"
 !global $str_sdc_sp = "SOMDS Medical Alert Provider"
@@ -16,6 +16,7 @@ group secured
     sdc_sp -> sdc_sp: annunciate alert
     sdc_sc <- sdc_sc: annunciate alert
 
+    ==Establish Distributed Alarm System==
     ==Delegate alert==
     loop
         sdc_sc -> sdc_sp: Delegation Heartbeat
