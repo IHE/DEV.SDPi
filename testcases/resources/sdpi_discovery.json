@@ -1,0 +1,113 @@
+{
+    "id": "sdpi_discovery",
+    "name": "SDPi discovery",
+    "tests": [
+        {
+            "type": "org.sdpi.test.Test.Case",
+            "id": "adhoc_discovery",
+            "name": "Adhoc Discovery",
+            "version": "1.0.0",
+            "shortDescription": "A SOMDS Consumer detects a SOMDS Provider based on SDPi discovery",
+            "peerType": "PEER_TO_PEER",
+            "preconditions": "- The SOMDS Consumer and the SOMDS Provider are ready to be operated.\n- The SOMDS Consumer is able to signify discovered SOMDS Providers.\n- The SDC network supports UDP multicast.",
+            "description": "Configure the SOMDS Consumer and SOMDS Provider in a way that there will be a discovery scope match.",
+            "evaluation": "Once the SOMDS Provider and SOMDS Consumer are running, wait for the SOMDS Consumer to indicate the\npresence of the SOMDS Provider. The discovery process has successfully finished.",
+            "participants": [
+                {
+                    "actor": "SOMDS_CONSUMER"
+                },
+                {
+                    "actor": "SOMDS_PROVIDER"
+                }
+            ],
+            "steps": [
+                {
+                    "id": "1",
+                    "initiator": {
+                        "actor": "SOMDS_PROVIDER"
+                    },
+                    "transaction": "DEV-23",
+                    "messageType": "SOAP",
+                    "support": "OPTIONAL",
+                    "security": "UNSECURED",
+                    "description": "The SOMDS Provider sends a hello message, which is processed by the SOMDS Consumer to take\nfurther action if a discovery types and scopes match is met."
+                },
+                {
+                    "id": "2",
+                    "initiator": {
+                        "actor": "SOMDS_CONSUMER"
+                    },
+                    "responder": {
+                        "actor": "SOMDS_PROVIDER"
+                    },
+                    "transaction": "DEV-24",
+                    "messageType": "SOAP",
+                    "support": "OPTIONAL",
+                    "security": "UNSECURED",
+                    "description": "The SOMDS Consumer sends a probe message, which is processed by the SOMDS Provider to answer\nwith a probe match message if types and scopes match."
+                }
+            ]
+        },
+        {
+            "type": "org.sdpi.test.Test.Case",
+            "id": "managed_discovery",
+            "name": "Managed Discovery",
+            "version": "1.0.0",
+            "shortDescription": "A SOMDS Consumer detects a SOMDS Provider based on implicit and/or explicit discovery by using a\nDiscovery Proxy.",
+            "peerType": "PEER_TO_PEER",
+            "preconditions": "- The Discovery Proxy is up and running.\n- The SOMDS Consumer is configured to be used with the Discovery Proxy.\n- The SOMDS Provider is configured to be used with the Discovery Proxy.",
+            "description": "Turn on the SOMDS Consumer and SOMDS Provider in any order.\n\nConfigure the SOMDS Consumer and SOMDS Provider in a way that there will be a discovery scope match.",
+            "evaluation": "Once the SOMDS Provider and SOMDS Consumer are running, wait for the SOMDS Consumer to indicate the\npresence of the SOMDS Provider. The discovery process has successfully finished.",
+            "participants": [
+                {
+                    "actor": "SOMDS_CONSUMER",
+                    "profileOptions": [
+                        "DISCOVERY_PROXY"
+                    ]
+                },
+                {
+                    "actor": "SOMDS_PROVIDER",
+                    "profileOptions": [
+                        "DISCOVERY_PROXY"
+                    ]
+                },
+                {
+                    "actor": "DISCOVERY_PROXY"
+                }
+            ],
+            "steps": [
+                {
+                    "id": "1",
+                    "initiator": {
+                        "actor": "SOMDS_PROVIDER",
+                        "profileOptions": [
+                            "DISCOVERY_PROXY"
+                        ]
+                    },
+                    "transaction": "DEV-46",
+                    "messageType": "SOAP",
+                    "support": "OPTIONAL",
+                    "security": "TLS",
+                    "description": "The SOMDS Provider sends a hello message, which is processed by the Discovery Proxy.\n\nThe Discovery Proxy forwards the hello message to the SOMDS Consumer."
+                },
+                {
+                    "id": "2",
+                    "initiator": {
+                        "actor": "SOMDS_CONSUMER",
+                        "profileOptions": [
+                            "DISCOVERY_PROXY"
+                        ]
+                    },
+                    "responder": {
+                        "actor": "DISCOVERY_PROXY"
+                    },
+                    "transaction": "DEV-47",
+                    "messageType": "SOAP",
+                    "support": "OPTIONAL",
+                    "security": "TLS",
+                    "description": "The SOMDS Consumer sends a probe message, which is answered by the Discovery Proxy with a probe\nmatch message if types and scopes match. "
+                }
+            ]
+        }
+    ]
+}

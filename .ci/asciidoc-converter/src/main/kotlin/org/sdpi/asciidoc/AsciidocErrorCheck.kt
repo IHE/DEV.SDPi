@@ -18,7 +18,7 @@ class AsciidocErrorChecker {
     /**
      * Runs the check on the latest captured error stream.
      */
-    fun run() {
+    fun run(knownAnchors: List<String>) {
         val actualIgnored = ignored.toMutableList().also {
             it.add(ReferenceSanitizerPreprocessor.refSeparator)
         }
@@ -28,12 +28,19 @@ class AsciidocErrorChecker {
                     null -> false
                     else -> if (actualIgnored.any { line.contains(it) }) {
                         logger.info {
-                            "Asciidoc issue ignored: ${line.substring(errorPrefix.length)}"
+                            "Asciidoc issue ignored (includes magic value): ${line.substring(errorPrefix.length)}"
                         }.let { false }
                     } else {
-                        logger.error {
-                            "Asciidoc issue detected: ${line.substring(errorPrefix.length)}"
-                        }.let { true }
+                        val invalidRefMatch = reInvalidReference.findAll(line).map {it.groupValues[1]}
+                        if (invalidRefMatch.any { it in knownAnchors }) {
+                            logger.info {
+                                "Asciidoc issue ignored (anchor is defined): ${line.substring(errorPrefix.length)}"
+                            }.let { false }
+                        } else {
+                            logger.error {
+                                "Asciidoc issue detected: ${line.substring(errorPrefix.length)}"
+                            }.let { true }
+                        }
                     }
                 }
             }
@@ -45,6 +52,7 @@ class AsciidocErrorChecker {
 
     private companion object : Logging {
         val errorHints = listOf("information: ", "info: ")
+        val reInvalidReference = "possible invalid reference: ([a-zA-Z0-9_]+)".toRegex()
         val ignored = listOf<String>()
     }
 }

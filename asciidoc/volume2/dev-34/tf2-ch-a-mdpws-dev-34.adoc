@@ -2,8 +2,17 @@
 :var_uri_dpws_discovery: http://docs.oasis-open.org/ws-dd/dpws/1.1/os/wsdd-dpws-1.1-spec-os.html#_Toc228672091
 
 [#vol2_clause_appendix_mdpws_dev_34]
-==== MDPWS: Announce Network Departure [DEV-34]
+//==== MDPWS: Announce Network Departure [DEV-34]
+==== MDPWS: _Reserved_ [DEV-34]
 
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *{supplement_note}*: The former transaction Announce Network Departure [{var_transaction_id}] was withdrawn in SDPi 2.2. Therefore, it is marked as _Reserved_.
+|===
+
+////
 This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_34>>.
 
 ===== {var_label_dev_34_message_bye} Message
@@ -34,3 +43,4 @@ include::../dev-a-default-trigger-events.adoc[]
 
 :var_expected_actions_ref: <<vol2_clause_dev_34_message_bye>>
 include::../dev-a-default-expected-actions.adoc[]
+////

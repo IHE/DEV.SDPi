@@ -69,7 +69,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | ...
 | ...
 
-.13+| <<vol1_spec_sdpi_p_actor_somds_provider>>
+.12+| <<vol1_spec_sdpi_p_actor_somds_provider>>
 .^| <<transaction_name_announce_network_presence>>
 .^| Initiator
 .^| R
@@ -132,17 +132,17 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 // <<vol2_clause_dev_33>>
 
 
-| <<transaction_name_announce_network_departure>>
-| Initiator
-| R
-| <<vol2_clause_dev_34>>
+//| <<transaction_name_announce_network_departure>>
+//| Initiator
+//| R
+//| <<vol2_clause_dev_34>>
 
 .^| <<transaction_name_update_network_presence>>
 .^| Initiator
 .^| O   ^(See^ ^Note^ ^2)^
 | <<vol2_clause_dev_46>>
 
-.13+| <<vol1_spec_sdpi_p_actor_somds_consumer>>
+.12+| <<vol1_spec_sdpi_p_actor_somds_consumer>>
 .^| <<transaction_name_announce_network_presence>>
 .^| _Receiver_  ^(See^ ^Note^ ^3)^
 .^| O
@@ -206,10 +206,10 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 // <<vol2_clause_dev_33>>
 
 
-| <<transaction_name_announce_network_departure>>
-| _Receiver_  ^(See^ ^Note^ ^3)^
-| O
-| <<vol2_clause_dev_34>>
+//| <<transaction_name_announce_network_departure>>
+//| _Receiver_  ^(See^ ^Note^ ^3)^
+//| O
+//| <<vol2_clause_dev_34>>
 
 | <<transaction_name_retrieve_network_presence>>
 | Initiator
@@ -642,7 +642,7 @@ notes.
 ==== Managed Discovery Option
 [#vol1_spec_sdpi_p_option_discovery_proxy, reftext='Managed Discovery Option']
 
-The Discovery Proxy profile option provides an alternative means for <<vol1_spec_sdpi_p_actor_somds_consumer>> Actors to discover the <<vol1_spec_sdpi_p_actor_somds_provider>> Actors that are present on the network.  The default "ad hoc" approach using the <<vol2_clause_dev_23>>, <<vol2_clause_dev_24>> and <<vol2_clause_dev_34>> transactions, requires use of unsecured multicast messaging; however, some deployments do not support or allow this mode of discovery.
+The Discovery Proxy profile option provides an alternative means for <<vol1_spec_sdpi_p_actor_somds_consumer>> Actors to discover the <<vol1_spec_sdpi_p_actor_somds_provider>> Actors that are present on the network.  The default "ad hoc" approach using the <<vol2_clause_dev_23>> and <<vol2_clause_dev_24>> transactions, requires use of unsecured multicast messaging; however, some deployments do not support or allow this mode of discovery.
 The addition of a <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor enables a secure and non-multicast means for managing system discovery across the network.
 The <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor acts as a man-in-the-middle system, with <<vol1_spec_sdpi_p_actor_somds_provider>> Actors using the <<vol2_clause_dev_46>> transaction to provide endpoint metatdata and update their network presence or absence status.
 <<vol1_spec_sdpi_p_actor_somds_consumer>> Actors may then use the <<vol2_clause_dev_47>> transaction to determine available <<vol1_spec_sdpi_p_actor_somds_consumer>> systems and their endpoint metadata.
@@ -681,7 +681,7 @@ When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spe
 
 NOTE:  When retrieving network presence metadata from a <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor, a <<term_discovery_scope>> may be specified as a filter to identify a specific subset of <<vol1_spec_sdpi_p_actor_somds_provider>> systems.
 
-NOTE:  A <<vol1_spec_sdpi_p_actor_somds_consumer>> may optionally use the <<vol2_clause_dev_47>> transaction to subscribe to all metadata updates from a set of <<vol1_spec_sdpi_p_actor_somds_consumer>> systems, essentially using the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor as a pass through for <<vol1_spec_sdpi_p_actor_somds_provider>> <<vol2_clause_dev_23>> and <<vol2_clause_dev_34>> transactions.
+NOTE:  A <<vol1_spec_sdpi_p_actor_somds_consumer>> may optionally use the <<vol2_clause_dev_47>> transaction to subscribe to all metadata updates from a set of <<vol1_spec_sdpi_p_actor_somds_consumer>> systems, essentially using the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor as a pass through for <<vol1_spec_sdpi_p_actor_somds_provider>> <<vol2_clause_dev_23>> transactions.
 ****
 
 .R1024
