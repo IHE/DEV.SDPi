@@ -75,7 +75,11 @@ enum class UseCaseAttributes(val key: String) {
 
 enum class ContentModuleAttributes(val key: String) {
     ACTOR("actor-id"),
-    OBLIGATION("support")
+    OBLIGATION("support"),
+
+    // Content module is not defined yet, but deferred to a future version.
+    // This attribute gives the name of the placeholder.
+    PLACEHOLDER_NAME("placeholder-name")
 }
 
 enum class TransactionIncludeAttributes(val key: String) {

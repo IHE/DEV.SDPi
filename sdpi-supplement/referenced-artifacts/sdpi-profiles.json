@@ -361,6 +361,82 @@
                 "obligation": "OPTIONAL"
             }
         ],
+        "contentModuleReferences": [
+            {
+                "contentModuleId": "biceps",
+                "actorId": "biceps_content_creator",
+                "obligation": "REQUIRED"
+            },
+            {
+                "contentModuleId": "infusion-pump",
+                "actorId": "biceps_content_creator",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "contentModuleId": "ventilator",
+                "actorId": "biceps_content_creator",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "contentModuleId": "physiological-monitor",
+                "actorId": "biceps_content_creator",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "contentModuleId": "surgical",
+                "actorId": "biceps_content_creator",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "contentModuleId": "anesthesia",
+                "actorId": "biceps_content_creator",
+                "obligation": "OPTIONAL",
+                "placeholderName": "Anesthesia devies SDC/BICEPS content module"
+            },
+            {
+                "contentModuleId": "dialysis",
+                "actorId": "biceps_content_creator",
+                "obligation": "OPTIONAL",
+                "placeholderName": "Dialysis devices SDC/BICEPS content module"
+            },
+            {
+                "contentModuleId": "biceps",
+                "actorId": "biceps_content_consumer",
+                "obligation": "REQUIRED"
+            },
+            {
+                "contentModuleId": "infusion-pump",
+                "actorId": "biceps_content_consumer",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "contentModuleId": "ventilator",
+                "actorId": "biceps_content_consumer",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "contentModuleId": "physiological-monitor",
+                "actorId": "biceps_content_consumer",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "contentModuleId": "surgical",
+                "actorId": "biceps_content_consumer",
+                "obligation": "OPTIONAL"
+            },
+            {
+                "contentModuleId": "anesthesia",
+                "actorId": "biceps_content_consumer",
+                "obligation": "OPTIONAL",
+                "placeholderName": "Anesthesia devies SDC/BICEPS content module"
+            },
+            {
+                "contentModuleId": "dialysis",
+                "actorId": "biceps_content_consumer",
+                "obligation": "OPTIONAL",
+                "placeholderName": "Dialysis devices SDC/BICEPS content module"
+            }
+        ],
         "options": [
             {
                 "id": "sdpi-p-managed-discovery",

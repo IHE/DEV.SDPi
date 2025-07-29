@@ -95,7 +95,7 @@ may "receive" the transaction, there is no response communicated to the message 
 
 ifndef::not-defined[]
 
-[#vol1_table_sdpi_p_actors_transactions]
+[#vol1_table_sdpi_p_actors_transactions2]
 .SDPi-P Profile - Actors and Transactions
 [%autowidth]
 [cols="1,2,1,1,3"]
@@ -340,6 +340,14 @@ image::../images/vol1-diagram-sdpi-p-content-actor.svg[]
 
 [#vol1_table_sdpi_p_actors_content_modules]
 .SDPi-P -- Actors and Content Modules
+
+sdpi_content_module_table::[profile-id="sdpi-p"]
+
+NOTE: _All content exchanged on a SOMDS shall conform to the general SDPi “BICEPS Content Module” 
+requirements (see <<vol3_clause_sdc_biceps_semantic_content>>). 
+<<vol1_spec_sdpi_p_actor_somds_provider>>-specific content modules (e.g., infusion pumps) may be 
+optionally supported as indicated._
+
 
 [%autowidth]
 [cols="1,1,1,1"]
@@ -608,6 +616,16 @@ Note that although this SDPi-P content actor primarily supports information exch
 Content is provided by one _<<vol1_spec_sdpi_p_actor_somds_participant>>_ to another.
 Typically, this will be a <<vol1_spec_sdpi_p_actor_somds_provider>> system to a <<vol1_spec_sdpi_p_actor_somds_consumer>> system; however, as noted previously, in some cases such as changing configuration settings within a <<vol1_spec_sdpi_p_actor_somds_provider>> (e.g., Patient Context), content creation and provision is from a <<vol1_spec_sdpi_p_actor_somds_consumer>> (initiating the configuration change request) to a <<vol1_spec_sdpi_p_actor_somds_provider>> system.
 
+sdpi_include_content_module::biceps[actor-id="biceps_content_creator",support="required"]
+sdpi_include_content_module::infusion-pump[actor-id="biceps_content_creator",support="optional"]
+sdpi_include_content_module::ventilator[actor-id="biceps_content_creator",support="optional"]
+sdpi_include_content_module::physiological-monitor[actor-id="biceps_content_creator",support="optional"]
+sdpi_include_content_module::surgical[actor-id="biceps_content_creator",support="optional"]
+sdpi_include_content_module::anesthesia[actor-id="biceps_content_creator",support="optional",placeholder-name="Anesthesia devies SDC/BICEPS content module"]
+sdpi_include_content_module::dialysis[actor-id="biceps_content_creator",support="optional",placeholder-name="Dialysis devices SDC/BICEPS content module"]
+
+
+
 [#vol1_clause_sdpi_p_biceps_content_consumer,role="actor actor-alias",actor-id="biceps_content_consumer"]
 ===== BICEPS Content Consumer
 [#vol1_spec_sdpi_p_actor_biceps_content_consumer, reftext='BICEPS Content Consumer',role=actor-alias,actor-id="biceps_content_consumer"]
@@ -628,6 +646,15 @@ The supported BICEPS content processing shall include one or more of the options
 For robustness, a <<actor_biceps_content_consumer>> need only process the content that is necessary to support its capabilities, but shall also be able to accept any additional content that may be provided but is out-of-scope for its internal requirements. footnote:[Apply Postel’s Law:  Send conservatively, Accept liberally.]
 
 Note that although this SDPi-P content actor primarily supports information exchange between systems participating in a SOMDS network environment, they may be referenced by other non-SDPi profiles that utilize other non-SOMDS exchange architectures, transactions and technologies.
+
+sdpi_include_content_module::biceps[actor-id="biceps_content_consumer",support="required"]
+sdpi_include_content_module::infusion-pump[actor-id="biceps_content_consumer",support="optional"]
+sdpi_include_content_module::ventilator[actor-id="biceps_content_consumer",support="optional"]
+sdpi_include_content_module::physiological-monitor[actor-id="biceps_content_consumer",support="optional"]
+sdpi_include_content_module::surgical[actor-id="biceps_content_consumer",support="optional"]
+sdpi_include_content_module::anesthesia[actor-id="biceps_content_consumer",support="optional",placeholder-name="Anesthesia devies SDC/BICEPS content module"]
+sdpi_include_content_module::dialysis[actor-id="biceps_content_consumer",support="optional",placeholder-name="Dialysis devices SDC/BICEPS content module"]
+
 
 [#vol1_clause_sdpi_p_discovery_proxy,role="actor actor-alias",actor-id="discovery_proxy"]
 ===== Discovery Proxy

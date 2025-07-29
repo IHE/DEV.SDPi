@@ -56,7 +56,12 @@ class ContentModuleTableBuilder(
             return ""
         }
 
-        return "${module.label} (${makeLink(module.anchor, module.label)})"
+        // HACK: deferred modules have an empty anchor (there's no content to link to)
+        if (module.anchor.isNotEmpty()) {
+            return "${module.label} (${makeLink(module.anchor, module.label)})"
+        } else {
+            return "${module.label} (deferred)"
+        }
     }
 
 }

@@ -1066,7 +1066,7 @@ class SdpiInformationCollector(
             if (trans.actorRoles != null) {
                 for (role in trans.actorRoles) {
                     val actor = actors[role.actorId]
-                    if (actor == null) {
+                    checkNotNull(actor) {
                         logger.error("The actor ${role.actorId} in transaction ${trans.id} can't be found")
                     }
                 }
@@ -1078,7 +1078,7 @@ class SdpiInformationCollector(
         for (req in requirements.values) {
             for (strActorId in req.actors()) {
                 val actor = actors[strActorId]
-                if (actor == null) {
+                checkNotNull(actor) {
                     logger.warn("Requirement ${req.localId} references unknown actor $strActorId")
                 }
             }
@@ -1086,10 +1086,10 @@ class SdpiInformationCollector(
     }
 
     private fun validateTransactionRefs(strProfileId: String, transactionRefs: List<SdpiTransactionReference>) {
-        for (ref in transactionRefs) {
+        for (ref in transactionRefs.filter { it.placeholderName == null }) {
             val transaction = transactions[ref.transactionId]
-            if (transaction == null) {
-                logger.warn("Profile '${strProfileId} references an unknown transaction ${ref.transactionId}")
+            checkNotNull(transaction) {
+                logger.error("Profile '${strProfileId} references an unknown transaction ${ref.transactionId}")
             }
         }
     }
@@ -1097,27 +1097,30 @@ class SdpiInformationCollector(
     private fun validateUseCaseRefs(strProfileId: String, refs: List<SdpiUseCaseReference>) {
         for (ref in refs) {
             val useCase = useCases[ref.useCaseId]
-            if (useCase == null) {
-                logger.warn("Profile '${strProfileId} references an unknown use case ${ref.useCaseId}")
+            checkNotNull(useCase) {
+                logger.error("Profile '${strProfileId} references an unknown use case ${ref.useCaseId}")
             }
 
             val actor = actors[ref.actorId]
-            if (actor == null) {
-                logger.warn("The actor '${ref.actorId} in a ${ref.useCaseId} use-case reference in profile $strProfileId can't be found")
+            checkNotNull(actor) {
+                logger.error("The actor '${ref.actorId} in a ${ref.useCaseId} use-case reference in profile $strProfileId can't be found")
             }
         }
     }
 
     private fun validateContentModuleRefs(strProfileId: String, refs: List<SdpiContentModuleRef>) {
         for (ref in refs) {
-            val contentModule = contentModules[ref.contentModuleId]
-            if (contentModule == null) {
-                logger.warn("Profile '${strProfileId} references an unknown content module ${ref.contentModuleId}")
+            // If the reference isn't deferred then the target content module must exist.
+            if (ref.placeholderName == null) {
+                val contentModule = contentModules[ref.contentModuleId]
+                checkNotNull(contentModule) {
+                    logger.error("Profile '${strProfileId} references an unknown content module ${ref.contentModuleId}")
+                }
             }
 
             val actor = actors[ref.actorId]
-            if (actor == null) {
-                logger.warn("The actor '${ref.actorId} in a ${ref.contentModuleId} content module reference in profile $strProfileId can't be found")
+            checkNotNull(actor) {
+                logger.error("The actor '${ref.actorId} in a ${ref.contentModuleId} content module reference in profile $strProfileId can't be found")
             }
         }
     }

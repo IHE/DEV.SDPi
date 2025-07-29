@@ -258,7 +258,7 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
         if (references != null) {
             for (ref: SdpiContentModuleRef in references.filter { it.actorId == actor.id }) {
                 val strRefId = ref.contentModuleId
-                val module: SdpiContentModule? = docInfo.contentModules()[strRefId]
+                val module: SdpiContentModule? = getContentModule(ref)
                 checkNotNull(module) {
                     logger.error("Unknown content-module id $strRefId")
                 }
@@ -276,7 +276,7 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
         for (option in profile.options) {
             for (ref: SdpiContentModuleRef in option.contentModuleReferences.filter { it.actorId == actor.id }) {
                 val strRefId = ref.contentModuleId
-                val module: SdpiContentModule? = docInfo.contentModules()[strRefId]
+                val module: SdpiContentModule? = getContentModule(ref)
                 checkNotNull(module) {
                     logger.error("Unknown content-module id $strRefId")
                 }
@@ -289,7 +289,22 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
                 )
             }
         }
+    }
 
+    private fun getContentModule(reference: SdpiContentModuleRef): SdpiContentModule? {
+        val strId = reference.contentModuleId
+        val knownContentModule: SdpiContentModule? = docInfo.contentModules()[strId]
+        if (null != knownContentModule) {
+            return knownContentModule
+        }
+
+        if (reference.placeholderName != null) {
+            val placeholder = SdpiContentModule(reference.contentModuleId,
+                reference.placeholderName, "")
+            return placeholder
+        }
+
+        return null
     }
 }
 
