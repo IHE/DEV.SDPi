@@ -70,14 +70,14 @@ The 50ms target accuracy is suitable for highly demanding use cases like real ti
 ****
 [NORMATIVE]
 ====
-The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_participant>> should configure its <<acronym_ts_service>> client to prioritize <<term_smooth_time_adjustments>> to the <<term_system_clock>>. 
+The <<term_manufacturer>> of a RefActor:somds_participant[] should configure its <<acronym_ts_service>> client to prioritize <<term_smooth_time_adjustments>> to the <<term_system_clock>>. 
 ====
 
 [NOTE]
 ====
-* <<vol1_spec_sdpi_p_actor_somds_participant>>s could use, for example, <<ref_rfc_5905, NTPv4>> to satisfy this requirement. That is, employing cold and warm startup and <<term_clock_discipline_algorithm>>s to synchronize the <<term_system_clock>> with a <<acronym_ts_service>> <<term_reference_clock>>.
+* RefActor:somds_participant[]s could use, for example, <<ref_rfc_5905, NTPv4>> to satisfy this requirement. That is, employing cold and warm startup and <<term_clock_discipline_algorithm>>s to synchronize the <<term_system_clock>> with a <<acronym_ts_service>> <<term_reference_clock>>.
 
-* <<vol1_spec_sdpi_p_actor_somds_participant>>s using other synchronization standards
+* RefActor:somds_participant[]s using other synchronization standards
 should strongly favour methods such as adjusting clock frequency over large changes (forward 
 or backward in time) to maintain an accurate <<term_system_clock>>. 
 ====

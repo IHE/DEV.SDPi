@@ -746,7 +746,7 @@ sdpi_include_transaction::DEV-47[initiator="required", responder="required"]
 
 [NORMATIVE]
 ====
-When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor, then it shall use the <<vol2_clause_dev_46, DEV-46>> transaction to update the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor on its network presence and departure.
+When the RefProfile:sdpi-p[profile-option-id="sdpi-p-managed-discovery"] is enabled for a RefActor:somds_provider[] actor, then it shall use the RefTransaction:DEV-46[] transaction to update the RefActor:discovery_proxy[] actor on its network presence and departure.
 ====
 
 [RELATED]
@@ -773,7 +773,7 @@ If a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor is configured or provisione
 
 [NORMATIVE]
 ====
-When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor, then it shall use the <<vol2_clause_dev_47, DEV-47>> transaction to retrieve <<vol1_spec_sdpi_p_actor_somds_provider>> network presence metadata from the  <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor.
+When the RefProfile:sdpi-p[profile-option-id="sdpi-p-managed-discovery"] is enabled for a RefActor:somds_consumer[] actor, then it shall use the RefTransaction:DEV-47[] transaction to retrieve RefActor:somds_provider[] network presence metadata from the  RefActor:discovery_proxy[] actor.
 ====
 
 [NOTE]
@@ -807,7 +807,7 @@ In order to ensure that a system's network presence information is up-to-date an
 [NOTE]
 ====
 For example, issuing a periodic "heartbeat" check message or cable-connected check.
-Specification of these means will be provided for in the transport-specific implementation specification for the <<vol2_clause_dev_46, DEV-46>> transaction.
+Specification of these means will be provided for in the transport-specific implementation specification for the RefTransaction:DEV-46[] transaction.
 ====
 ****
 
