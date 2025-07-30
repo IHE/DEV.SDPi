@@ -26,7 +26,7 @@ include::tf2-dev-48-summary.adoc[]
 
 ==== Referenced Standards
 
-* TBD
+* <<ref_ieee_11073_10702_202x>>
 
 ==== Messages
 
