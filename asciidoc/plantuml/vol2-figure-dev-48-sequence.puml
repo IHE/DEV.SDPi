@@ -11,7 +11,7 @@ participant "$str_somds_medical_alert_provider" as provider
 
 ==Establish Distributed Alarm System [DEV-48]==
 opt
-    consumer -> provider: SetFriendlyConsumerName
+    consumer -> provider: SetFriendlyConsumerName (Friendly Consumer Name)
     consumer <<-- provider: SetFriendlyConsumerNameResponse
 end
 consumer -> provider: MonitoredByDAS

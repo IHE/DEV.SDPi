@@ -1,5 +1,7 @@
 :var_transaction_id: DEV-48
 
+:var_label_dev_48_operation_set_friendly_consumer_name: SetFriendlyConsumerName
+:var_label_dev_48_operation_set_friendly_consumer_name_response: SetFriendlyConsumerNameResponse
 
 //reset|+1|off
 [#vol2_clause_dev_48,sdpi_offset=48]
@@ -35,6 +37,30 @@ include::tf2-dev-48-summary.adoc[]
 ....
 include::../../plantuml/vol2-figure-dev-48-sequence.puml[]
 ....
+
+[#vol2_clause_dev_48_operation_set_friendly_consumer_name]
+===== {var_label_dev_48_operation_set_friendly_consumer_name} Operation
+
+A <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> invokes the {var_label_dev_48_operation_set_friendly_consumer_name} operation on a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> as specified in <<ref_ieee_11073_10702_202x>>.
+
+[#vol2_clause_dev_48_operation_set_friendly_consumer_name_trigger_events]
+====== Trigger Events
+
+The {var_label_dev_48_operation_set_friendly_consumer_name} operation is invoked by a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> as the first step in establishing a Distributed Alarm System with the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>.
+
+[#vol2_clause_dev_48_operation_set_friendly_consumer_name_semantics]
+====== Message Semantics
+
+[[payload_dev_48_set_friendly_consumer_name_name]]Friendly Consumer Name:: The Distributed Alarm System consumer name by which a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> wishes to be referred to by the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>.
+
+[#vol2_clause_dev_48_operation_set_friendly_consumer_name_expected_actions]
+====== Expected Actions
+
+When a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> invokes this operation, the receiving <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> responds with a <<vol2_clause_dev_48_operation_set_friendly_consumer_name_response, {var_label_dev_48_operation_set_friendly_consumer_name_response}>> message.
+
+[#vol2_clause_dev_48_operation_set_friendly_consumer_name_response]
+===== {var_label_dev_48_operation_set_friendly_consumer_name_response} Message
+CONTINUE FORM HERE!!!!
 
 [#vol2_clause_dev_239_publish_medical_alert_update_ses]
 include::../dev-x-default-ses-secured-mode.adoc[]
