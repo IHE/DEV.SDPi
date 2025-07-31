@@ -72,8 +72,8 @@ class ReferenceSanitizerPostprocessor(
             }
 
             val rawFragment = href.substring(1)
-            val (id, encodedLabel) = if (rawFragment.contains(ReferenceSanitizerPreprocessor.refSeparator)) {
-                val parts = rawFragment.split(ReferenceSanitizerPreprocessor.refSeparator)
+            val (id, encodedLabel) = if (rawFragment.contains(ReferenceSanitizerPreprocessor.REF_SEPARATOR)) {
+                val parts = rawFragment.split(ReferenceSanitizerPreprocessor.REF_SEPARATOR)
                 Pair(parts[0], parts[1]).also { (id, label) ->
                     val decoded = decodeLabel(label)
                     if (enableTrace) {

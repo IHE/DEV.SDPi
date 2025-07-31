@@ -357,7 +357,7 @@
                         {
                             "type": "item",
                             "strMarker": "*",
-                            "strText": "RefActor:somds_participant[]s could use, for example, <<ref_rfc_59059d36672a-4894-4812-8bc7-73a19c4ebf53NTPv4>> to satisfy this requirement. That is, employing cold and warm startup and <<term_clock_discipline_algorithm>>s to synchronize the <<term_system_clock>> with a <<acronym_ts_service>> <<term_reference_clock>>."
+                            "strText": "RefActor:somds_participant[]s could use, for example, <<ref_rfc_5905*NTPv4>> to satisfy this requirement. That is, employing cold and warm startup and <<term_clock_discipline_algorithm>>s to synchronize the <<term_system_clock>> with a <<acronym_ts_service>> <<term_reference_clock>>."
                         },
                         {
                             "type": "item",
@@ -761,7 +761,7 @@
                         {
                             "type": "item",
                             "strMarker": "*",
-                            "strText": "This clarifies the ambiguity in <<ref_ieee_11073_10207_2017>>, section B.182 and <<ref_ieee_11073_20701_2018>>, R0014 when a participant uses slewing to make <<term_smooth_time_adjustments>> (using, for example, the <<ref_rfc_59059d36672a-4894-4812-8bc7-73a19c4ebf53NTPv4>> <<term_clock_discipline_algorithm>>) where information from one or more <<acronym_ts_service>>s is used to maintain clock-discipline and does not (generally) \"set\" the clock."
+                            "strText": "This clarifies the ambiguity in <<ref_ieee_11073_10207_2017>>, section B.182 and <<ref_ieee_11073_20701_2018>>, R0014 when a participant uses slewing to make <<term_smooth_time_adjustments>> (using, for example, the <<ref_rfc_5905*NTPv4>> <<term_clock_discipline_algorithm>>) where information from one or more <<acronym_ts_service>>s is used to maintain clock-discipline and does not (generally) \"set\" the clock."
                         },
                         {
                             "type": "item",
@@ -1021,7 +1021,7 @@
                         {
                             "type": "item",
                             "strMarker": "*",
-                            "strText": "The maximum discrepancy between participant clocks may depend on the protocol being used to synchronize time (`pm:ClockState/pm:ActiveSyncProtocol`). The time reported by two devices employing <<ref_rfc_59059d36672a-4894-4812-8bc7-73a19c4ebf53NTPv4>>, for example, may differ by more than 8 1/2 minutes, in a worst case scenario, without triggering an <<term_abrupt_time_adjustment>>."
+                            "strText": "The maximum discrepancy between participant clocks may depend on the protocol being used to synchronize time (`pm:ClockState/pm:ActiveSyncProtocol`). The time reported by two devices employing <<ref_rfc_5905*NTPv4>>, for example, may differ by more than 8 1/2 minutes, in a worst case scenario, without triggering an <<term_abrupt_time_adjustment>>."
                         },
                         {
                             "type": "item",
@@ -1061,7 +1061,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> should use the \"preferred format\", defined in  <<ref_rfc_91109d36672a-4894-4812-8bc7-73a19c4ebf53RFC9110+%C2%A75.6.7>>, for the `Date` field included in all HTTP response messages."
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> should use the \"preferred format\", defined in  <<ref_rfc_9110*RFC9110+%C2%A75.6.7>>, for the `Date` field included in all HTTP response messages."
                     ]
                 }
             ],
@@ -1155,7 +1155,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> may use information provided, for example, by the <<vol1_spec_sdpi_p_actor_somds_provider>> using, for example, the <<vol3_clause_timestamp_versioning9d36672a-4894-4812-8bc7-73a19c4ebf53timestamp+versioning>> extension to improve the accuracy of a suspicious timestamp. However timestamps may remain less accurate than had the <<term_abrupt_time_adjustment>> not occurred and it may still be appropriate to notify next users of this."
+                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> may use information provided, for example, by the <<vol1_spec_sdpi_p_actor_somds_provider>> using, for example, the <<vol3_clause_timestamp_versioning*timestamp+versioning>> extension to improve the accuracy of a suspicious timestamp. However timestamps may remain less accurate than had the <<term_abrupt_time_adjustment>> not occurred and it may still be appropriate to notify next users of this."
                     ]
                 }
             ],
@@ -5832,7 +5832,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "Biceps extensions, with timestamps who's interpretation by a <<vol1_spec_sdpi_p_actor_somds_participant>> would be affected by unexpected abrupt time adjustments, should support timestamp versioning using the <<vol3_clause_timestamp_versioning9d36672a-4894-4812-8bc7-73a19c4ebf53timestamp+versioning>> extension."
+                        "Biceps extensions, with timestamps who's interpretation by a <<vol1_spec_sdpi_p_actor_somds_participant>> would be affected by unexpected abrupt time adjustments, should support timestamp versioning using the <<vol3_clause_timestamp_versioning*timestamp+versioning>> extension."
                     ]
                 }
             ],
