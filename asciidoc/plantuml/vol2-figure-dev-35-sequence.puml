@@ -1,13 +1,13 @@
 @startuml
 
-!include plantuml/common_style.inc.puml
+!include common_style.inc.puml
 autonumber
 
-!global $str_somds_consumer = "SOMDS Consumer"
-!global $str_somds_provider = "SOMDS Provider"
+!global $str_somds_medical_data_consumer = "SOMDS Medical Data Consumer"
+!global $str_somds_medical_data_provider = "SOMDS Medical Data Provider"
 
-participant "$str_somds_consumer" as consumer
-participant "$str_somds_provider" as provider
+participant "$str_somds_medical_data_consumer" as consumer
+participant "$str_somds_medical_data_provider" as provider
 
 ==Establish Medical Data Exchange [DEV-35]==
 
