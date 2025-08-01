@@ -37,7 +37,7 @@ include::tf2-dev-37-summary.adoc[]
 include::../../plantuml/vol2-figure-dev-37-sequence.puml[]
 ....
 
-Note that there is no particular get operation for retrieving medical alert status information.
+Note that there is no particular get operation for retrieving medical data status information.
 Thus, the generic GetMdib/GetMdibResponse mechanisms are described here.
 
 :var_duplicated_transaction: {var_transaction_id}
