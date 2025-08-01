@@ -2193,6 +2193,9 @@
     },
     {
         "type": "risk-mitigation",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 1014,
         "localId": "R1014",
         "globalId": "",
@@ -2614,6 +2617,10 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway",
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8118,
         "localId": "R8118",
         "globalId": "",
@@ -2687,6 +2694,10 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway",
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8103,
         "localId": "R8103",
         "globalId": "",
@@ -2733,6 +2744,10 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway",
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8104,
         "localId": "R8104",
         "globalId": "",
@@ -2765,6 +2780,10 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway",
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8105,
         "localId": "R8105",
         "globalId": "",
@@ -2797,6 +2816,10 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway",
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8106,
         "localId": "R8106",
         "globalId": "",
@@ -2829,6 +2852,10 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway",
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8120,
         "localId": "R8120",
         "globalId": "",
@@ -2861,6 +2888,10 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway",
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8121,
         "localId": "R8121",
         "globalId": "",
@@ -2893,6 +2924,11 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_v2_gateway",
+            "somds_dec_gateway",
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8107,
         "localId": "R8107",
         "globalId": "",
@@ -2925,6 +2961,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_v2_gateway"
+        ],
         "requirementNumber": 8122,
         "localId": "R8122",
         "globalId": "",
@@ -2950,6 +2989,10 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway",
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8108,
         "localId": "R8108",
         "globalId": "",
@@ -2982,6 +3025,10 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway",
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8109,
         "localId": "R8109",
         "globalId": "",
@@ -3069,6 +3116,10 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway",
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8112,
         "localId": "R8112",
         "globalId": "",
@@ -3101,6 +3152,10 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway",
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8113,
         "localId": "R8113",
         "globalId": "",
@@ -3133,6 +3188,10 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway",
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8114,
         "localId": "R8114",
         "globalId": "",
@@ -3186,6 +3245,10 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway",
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8115,
         "localId": "R8115",
         "globalId": "",
@@ -3224,6 +3287,10 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway",
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8116,
         "localId": "R8116",
         "globalId": "",
@@ -3268,6 +3335,10 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway",
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8012,
         "localId": "R8012",
         "globalId": "",
@@ -3300,6 +3371,10 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway",
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8013,
         "localId": "R8013",
         "globalId": "",
@@ -3325,6 +3400,10 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway",
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8014,
         "localId": "R8014",
         "globalId": "",
@@ -3357,6 +3436,10 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway",
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8015,
         "localId": "R8015",
         "globalId": "",
@@ -3464,6 +3547,10 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway",
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8117,
         "localId": "R8117",
         "globalId": "",
@@ -3505,6 +3592,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8001,
         "localId": "R8001",
         "globalId": "",
@@ -3537,6 +3627,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8002,
         "localId": "R8002",
         "globalId": "",
@@ -3562,6 +3655,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8003,
         "localId": "R8003",
         "globalId": "",
@@ -3594,6 +3690,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8004,
         "localId": "R8004",
         "globalId": "",
@@ -3627,6 +3726,7 @@
     {
         "type": "tech-feature",
         "actors": [
+            "somds_dec_gateway",
             "somds_provider"
         ],
         "requirementNumber": 8005,
@@ -3661,6 +3761,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8037,
         "localId": "R8037",
         "globalId": "",
@@ -3693,6 +3796,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8038,
         "localId": "R8038",
         "globalId": "",
@@ -3725,6 +3831,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8006,
         "localId": "R8006",
         "globalId": "",
@@ -3757,6 +3866,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8007,
         "localId": "R8007",
         "globalId": "",
@@ -3798,6 +3910,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8008,
         "localId": "R8008",
         "globalId": "",
@@ -3839,6 +3954,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8009,
         "localId": "R8009",
         "globalId": "",
@@ -3886,6 +4004,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8010,
         "localId": "R8010",
         "globalId": "",
@@ -3919,6 +4040,7 @@
     {
         "type": "tech-feature",
         "actors": [
+            "somds_dec_gateway",
             "somds_provider"
         ],
         "requirementNumber": 8011,
@@ -3946,6 +4068,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8016,
         "localId": "R8016",
         "globalId": "",
@@ -4003,6 +4128,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8017,
         "localId": "R8017",
         "globalId": "",
@@ -4035,6 +4163,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8018,
         "localId": "R8018",
         "globalId": "",
@@ -4067,6 +4198,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8019,
         "localId": "R8019",
         "globalId": "",
@@ -4108,6 +4242,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8020,
         "localId": "R8020",
         "globalId": "",
@@ -4133,6 +4270,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8021,
         "localId": "R8021",
         "globalId": "",
@@ -4184,6 +4324,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8022,
         "localId": "R8022",
         "globalId": "",
@@ -4209,6 +4352,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8023,
         "localId": "R8023",
         "globalId": "",
@@ -4250,6 +4396,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8024,
         "localId": "R8024",
         "globalId": "",
@@ -4275,6 +4424,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8026,
         "localId": "R8026",
         "globalId": "",
@@ -4322,6 +4474,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8025,
         "localId": "R8025",
         "globalId": "",
@@ -4354,6 +4509,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8027,
         "localId": "R8027",
         "globalId": "",
@@ -4379,6 +4537,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8028,
         "localId": "R8028",
         "globalId": "",
@@ -4404,6 +4565,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8029,
         "localId": "R8029",
         "globalId": "",
@@ -4429,6 +4593,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8030,
         "localId": "R8030",
         "globalId": "",
@@ -4454,6 +4621,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8031,
         "localId": "R8031",
         "globalId": "",
@@ -4495,6 +4665,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8032,
         "localId": "R8032",
         "globalId": "",
@@ -4536,6 +4709,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8033,
         "localId": "R8033",
         "globalId": "",
@@ -4561,6 +4737,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8039,
         "localId": "R8039",
         "globalId": "",
@@ -4586,6 +4765,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8034,
         "localId": "R8034",
         "globalId": "",
@@ -4637,6 +4819,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_dec_gateway"
+        ],
         "requirementNumber": 8035,
         "localId": "R8035",
         "globalId": "",
@@ -4662,6 +4847,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8050,
         "localId": "R8050",
         "globalId": "",
@@ -4694,6 +4882,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8051,
         "localId": "R8051",
         "globalId": "",
@@ -4726,6 +4917,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8052,
         "localId": "R8052",
         "globalId": "",
@@ -4771,6 +4965,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8053,
         "localId": "R8053",
         "globalId": "",
@@ -4816,6 +5013,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8054,
         "localId": "R8054",
         "globalId": "",
@@ -4841,6 +5041,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8055,
         "localId": "R8055",
         "globalId": "",
@@ -4873,6 +5076,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8056,
         "localId": "R8056",
         "globalId": "",
@@ -4924,6 +5130,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8057,
         "localId": "R8057",
         "globalId": "",
@@ -4981,6 +5190,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8061,
         "localId": "R8061",
         "globalId": "",
@@ -5013,6 +5225,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8077,
         "localId": "R8077",
         "globalId": "",
@@ -5038,6 +5253,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8062,
         "localId": "R8062",
         "globalId": "",
@@ -5134,6 +5352,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8065,
         "localId": "R8065",
         "globalId": "",
@@ -5180,6 +5401,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8059,
         "localId": "R8059",
         "globalId": "",
@@ -5205,6 +5429,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8060,
         "localId": "R8060",
         "globalId": "",
@@ -5230,6 +5457,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8066,
         "localId": "R8066",
         "globalId": "",
@@ -5262,6 +5492,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8067,
         "localId": "R8067",
         "globalId": "",
@@ -5287,6 +5520,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8068,
         "localId": "R8068",
         "globalId": "",
@@ -5337,6 +5573,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8070,
         "localId": "R8070",
         "globalId": "",
@@ -5390,6 +5629,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8078,
         "localId": "R8078",
         "globalId": "",
@@ -5415,6 +5657,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8071,
         "localId": "R8071",
         "globalId": "",
@@ -5468,6 +5713,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8072,
         "localId": "R8072",
         "globalId": "",
@@ -5493,6 +5741,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8073,
         "localId": "R8073",
         "globalId": "",
@@ -5551,6 +5802,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8074,
         "localId": "R8074",
         "globalId": "",
@@ -5621,6 +5875,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_acm_gateway"
+        ],
         "requirementNumber": 8076,
         "localId": "R8076",
         "globalId": "",
@@ -6150,6 +6407,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 703,
         "localId": "R0703",
         "globalId": "",
@@ -6175,6 +6435,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 704,
         "localId": "R0704",
         "globalId": "",
@@ -6200,6 +6463,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 705,
         "localId": "R0705",
         "globalId": "",
@@ -6225,6 +6491,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 706,
         "localId": "R0706",
         "globalId": "",
@@ -6250,6 +6519,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 707,
         "localId": "R0707",
         "globalId": "",
@@ -6282,6 +6554,9 @@
     },
     {
         "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 708,
         "localId": "R0708",
         "globalId": "",

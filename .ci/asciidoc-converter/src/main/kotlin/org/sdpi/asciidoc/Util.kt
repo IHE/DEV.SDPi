@@ -90,6 +90,14 @@ fun getRequirementGroups(oGroups: Any?): List<String> {
     return oGroups.toString().split(",")
 }
 
+fun getRequirementActors(oActors: Any?): List<String> {
+    if (oActors == null) {
+        return listOf()
+    }
+
+    return oActors.toString().split(",")
+}
+
 fun findIdFromParent(parent: ContentNode, strRole: String, strIdAttribute: String): String? {
     return if (parent.hasRole(strRole)) {
         parent.attributes[strIdAttribute]?.toString()

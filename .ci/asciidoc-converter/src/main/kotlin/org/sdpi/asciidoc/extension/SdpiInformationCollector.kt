@@ -63,6 +63,14 @@ class SdpiInformationCollector(
         return actors[strPrimaryId]
     }
 
+    fun dumpActorAliases() {
+        println("Actor aliases")
+        println("=============")
+        for(alias in actorAliases) {
+            println("${alias.key} => ${alias.value}")
+        }
+    }
+
     override fun process(document: Document): Document {
         logger.info("Collecting sdpi information")
         processBlock(document as StructuralNode)
@@ -233,6 +241,7 @@ class SdpiInformationCollector(
         }
 
         actorAliases[strId] = strId // Self alias for easy lookup
+        actorAliases["actor_$strId"] = strId // common alternative name.
         val newActor = SdpiActor(strId, strTitle, profile.profileId, strAnchor)
         actors[strId] = newActor
         profile.addActor(newActor)

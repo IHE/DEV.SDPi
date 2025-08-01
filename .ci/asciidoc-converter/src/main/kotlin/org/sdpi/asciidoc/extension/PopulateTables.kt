@@ -9,6 +9,7 @@ import org.asciidoctor.extension.Treeprocessor
 import org.sdpi.asciidoc.RequirementAttributes
 import org.sdpi.asciidoc.factories.ContentModuleTableBuilder
 import org.sdpi.asciidoc.factories.TransactionTableBuilder
+import org.sdpi.asciidoc.getRequirementActors
 import org.sdpi.asciidoc.getRequirementGroups
 import org.sdpi.asciidoc.model.*
 import org.sdpi.asciidoc.plainContext
@@ -49,12 +50,22 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
         val requirementsInDocument = docInfo.requirements()
 
         val aGroups = getRequirementGroups(block.attributes[RequirementAttributes.Common.GROUPS.key])
-        if (aGroups.isEmpty()) {
+        val aActors = getRequirementActors(block.attributes[RequirementAttributes.Common.ACTOR.key])
+        if (aGroups.isEmpty() && aActors.isEmpty()) {
             // unfiltered
-            return requirementsInDocument.values
+            return requirementsInDocument.values.sortedBy { it.requirementNumber }
         }
 
-        val selectedRequirements = requirementsInDocument.values.filter { it -> it.groups.any { it in aGroups } }
+        val bAllGroups = aGroups.isEmpty()
+        val bAllActors = aActors.isEmpty()
+
+        val selectedRequirements = requirementsInDocument
+            .values
+            .filter { it ->
+                (bAllGroups || it.groups.any { it in aGroups })
+                        && (bAllActors || it.actors().any { it in aActors })
+            }
+            .sortedBy { it.requirementNumber }
         return selectedRequirements
     }
 
@@ -110,6 +121,7 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
         val colSupport = createTableColumn(table, 3)
         val colComment = createTableColumn(table, 4)
 
+        println("---- populate ICS Table ----")
         val header = createTableRow(table)
         table.header.add(header)
 
@@ -180,18 +192,19 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
         var bFirstActor = true
         val transactionReferences = profile.transactionReferences
         if (transactionReferences != null) {
-            for (transactionReference: SdpiTransactionReference in transactionReferences.sortedBy{it.transactionId}) {
+            for (transactionReference: SdpiTransactionReference in transactionReferences.sortedBy { it.transactionId }) {
                 val strTransactionId = transactionReference.transactionId
                 val transaction: SdpiTransaction? = getTransaction(transactionReference)
                 checkNotNull(transaction) {
                     logger.error("Unknown transaction id $strTransactionId")
                 }
 
-                for(obl in transactionReference.obligations) {
+                for (obl in transactionReference.obligations) {
                     if (obl.actorId == actor.id) {
                         var bFirstTransaction = true
 
-                        val obligationsForTransaction = profile.getTransactionObligations(strTransactionId, actor.id, optionFilter)
+                        val obligationsForTransaction =
+                            profile.getTransactionObligations(strTransactionId, actor.id, optionFilter)
                         for (ref in obligationsForTransaction) {
                             tableBuilder.addRow(
                                 if (bFirstActor) actor else null,
@@ -218,8 +231,10 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
         }
 
         if (transactionReference.placeholderName != null) {
-            val placeholderTransaction = SdpiTransaction("", transactionReference.transactionId,
-                transactionReference.placeholderName, null)
+            val placeholderTransaction = SdpiTransaction(
+                "", transactionReference.transactionId,
+                transactionReference.placeholderName, null
+            )
             return placeholderTransaction
         }
 
@@ -299,8 +314,10 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
         }
 
         if (reference.placeholderName != null) {
-            val placeholder = SdpiContentModule(reference.contentModuleId,
-                reference.placeholderName, "")
+            val placeholder = SdpiContentModule(
+                reference.contentModuleId,
+                reference.placeholderName, ""
+            )
             return placeholder
         }
 

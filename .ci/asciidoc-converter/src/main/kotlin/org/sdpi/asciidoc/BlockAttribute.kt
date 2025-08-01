@@ -31,6 +31,9 @@ sealed class RequirementAttributes {
         // Groups requirement belongs to. Comma separated list.
         GROUPS("sdpi_req_group"),
 
+        // Requirements referencing an actor.
+        ACTOR("sdpi_req_actor"),
+
     }
 
     enum class UseCase(val key: String) {
