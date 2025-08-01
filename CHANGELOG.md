@@ -20,6 +20,7 @@ Each section shall contain a list of action items of the following format: `<bri
 - Changed all references to IHE PCD TF 2019 to the newer 2024 version. Updated sections in document which were affected by the TF version change ([#340](https://github.com/IHE/DEV.SDPi/issues/340))
 - Removed transaction DEV-34 (Announce Network Departure) and updated references to future SDPi versions for maintainability ([#406](https://github.com/IHE/DEV.SDPi/issues/406))
 - Corrected erroneous actor names in transactions DEV-35 through DEV-40 ([#461](https://github.com/IHE/DEV.SDPi/issues/461))
+- Corrected erroneous actor name in Table 1:12.1-1 note ([#464](https://github.com/IHE/DEV.SDPi/issues/464))
 
 ### Editorial Fixes
 
