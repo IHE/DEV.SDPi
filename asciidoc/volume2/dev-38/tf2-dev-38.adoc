@@ -16,10 +16,10 @@ include::tf2-dev-38-summary.adoc[]
 [cols="1,2"]
 |===
 |Actor |Roles
-|<<vol1_spec_sdpi_p_actor_somds_consumer>>
-|Initiates communication by first subscribing to a <<vol1_spec_sdpi_p_actor_somds_provider>> by sending a {var_label_dev_38_message_subscribe} message.
+|<<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>
+|Initiates communication by first subscribing to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> by sending a {var_label_dev_38_message_subscribe} message.
 
-|<<vol1_spec_sdpi_p_actor_somds_provider>>
+|<<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>
 |Listens for {var_label_dev_38_message_subscribe} messages, which it responds to with {var_label_dev_38_message_subscribe_response}.
 
 
