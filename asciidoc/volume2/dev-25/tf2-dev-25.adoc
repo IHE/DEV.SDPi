@@ -77,7 +77,6 @@ Model Metadata:: Expresses <<vol1_spec_sdpi_p_actor_somds_provider>> characteris
 ====== Expected Actions
 When a <<vol1_spec_sdpi_p_actor_somds_provider>> sends this message, there is no expected or required response.
 
-// todo: this ID is a duplicate of the one defined in tf2-dev-23.adoc; it needs its own ID. 
-// [#vol2_clause_dev_23_message_announce_network_presence_ses]
+[#vol2_clause_dev_25_message_announce_network_presence_ses]
 include::../dev-x-default-ses-secured-mode.adoc[]
 
