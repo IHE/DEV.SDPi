@@ -2,10 +2,9 @@ package org.sdpi.asciidoc.factories
 
 import org.asciidoctor.ast.Table
 import org.asciidoctor.extension.Treeprocessor
-import org.sdpi.asciidoc.model.Contribution
-import org.sdpi.asciidoc.model.Obligation
-import org.sdpi.asciidoc.model.SdpiActor
-import org.sdpi.asciidoc.model.SdpiTransaction
+import org.sdpi.asciidoc.LinkStyles
+import org.sdpi.asciidoc.makeLink
+import org.sdpi.asciidoc.model.*
 
 class TransactionTableBuilder(
     private val processor: Treeprocessor,
@@ -39,7 +38,7 @@ class TransactionTableBuilder(
         transaction: SdpiTransaction?,
         contribution: Contribution?,
         obligation: Obligation,
-        strOption: String?
+        option: OptionId?
     ) {
         val strContribution = contribution?.keyword ?: ""
         val strDefaultObligation = obligation.keyword
@@ -53,7 +52,7 @@ class TransactionTableBuilder(
         row.cells.add(processor.createTableCell(colTransaction, createTransactionCell(transaction)))
         row.cells.add(processor.createTableCell(colContribution, strContribution, infoCellStyles))
         row.cells.add(processor.createTableCell(colObligation, strDefaultObligation, infoCellStyles))
-        row.cells.add(processor.createTableCell(colOption, strOption ?: "—", infoCellStyles))
+        row.cells.add(processor.createTableCell(colOption, createOptionCell(option), infoCellStyles))
         table.body.add(row)
     }
 
@@ -70,13 +69,24 @@ class TransactionTableBuilder(
             return ""
         }
 
-        val strTransactionLink = makeLink(transaction.anchor, transaction.label)
-        val strTransactionIdLink = transaction.createTransactionListLink()
-        return "$strTransactionLink ($strTransactionIdLink)"
+        if (transaction.anchor.isNotEmpty()) {
+            val strTransactionLink = makeLink(transaction.anchor, transaction.label, LinkStyles.TITLE_TEXT.className)
+            val strTransactionIdLink = transaction.createTransactionListLink()
+            return "$strTransactionIdLink &mdash; $strTransactionLink"
+        } else {
+            // HACK: deferred transactions don't contain an anchor by convention.
+            val strTransactionIdLink = transaction.createTransactionListLink()
+            return "$strTransactionIdLink &mdash; ${transaction.label} (deferred)"
+        }
+
     }
 
-    private fun makeLink(strAnchor: String, strText: String): String {
-        return "link:#$strAnchor[$strText]"
+    private fun createOptionCell(option: OptionId?): String {
+        if (option == null) {
+            return "—"
+        }
+        val strOptionLink = makeLink(option.anchor, option.label, LinkStyles.TITLE_TEXT.className)
+        return strOptionLink
     }
 
 }

@@ -178,6 +178,7 @@ class AsciidocConverter(
         //profileTransactionCollector.dump()
         //anchorReplacements.dump()
         //anchorCollector.dumpKnownAnchors()
+        //infoCollector.dumpActorAliases()
 
         if (conversionOptions.extractsFolder != null) {
             val jsonFormatter = Json {

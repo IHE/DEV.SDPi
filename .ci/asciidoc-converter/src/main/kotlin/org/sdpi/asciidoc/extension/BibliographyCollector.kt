@@ -31,50 +31,57 @@ class BibliographyCollector : Treeprocessor() {
 
         val reBibParser = Regex("\\[{3}(?<ref>\\w+)(,(?<reftxt>.+))?]{3}\\s+(?<entry>.+)")
 
-        // Expecting first child to be a list of bibliography entries.
-        when (val bibList = bib.blocks[0]) {
+        val bibEntries = findBibliographyEntries(bib)
+        if (bibEntries == null) {
+            logger.warn("Can't find biliography entries")
+            return false
+        }
 
-            is org.asciidoctor.ast.List -> {
-                for (bibEntry in bibList.items) {
-                    if (bibEntry is org.asciidoctor.ast.ListItem) {
-                        val strItem = bibEntry.source
-                        val mParsed = reBibParser.find(strItem)
-                        checkNotNull(mParsed)
-                        {
-                            "${getLocation(bibEntry)} invalid format '$strItem'".also { logger.error { it } }
-                        }
-                        val strRef = mParsed.groups["ref"]?.value
-                        checkNotNull(strRef)
-                        {
-                            "${getLocation(bibEntry)} missing reference".also { logger.error { it } }
-                        }
-                        val strRefText = mParsed.groups["reftxt"]?.value
-                        checkNotNull(strRefText)
-                        {
-                            "${getLocation(bibEntry)} missing reference text for $strRef".also { logger.error { it } }
-                        }
-                        val strSource = mParsed.groups["entry"]?.value
-                        checkNotNull(strSource)
-                        {
-                            "${getLocation(bibEntry)} missing reference source for $strRef".also { logger.error { it } }
-                        }
 
-                        if (bibliographyEntries.contains(strRef)) {
-                            "${getLocation(bibEntry)} duplicate reference id $strRef".also { logger.error { it } }
-                        }
-                        bibliographyEntries[strRef] = BibliographyEntry(strRef, strRefText, strSource)
-                    }
+        for (bibEntry in bibEntries.items) {
+            if (bibEntry is org.asciidoctor.ast.ListItem) {
+                val strItem = bibEntry.source
+                val mParsed = reBibParser.find(strItem)
+                checkNotNull(mParsed)
+                {
+                    "${getLocation(bibEntry)} invalid format '$strItem'".also { logger.error { it } }
                 }
-            }
+                val strRef = mParsed.groups["ref"]?.value
+                checkNotNull(strRef)
+                {
+                    "${getLocation(bibEntry)} missing reference".also { logger.error { it } }
+                }
+                val strRefText = mParsed.groups["reftxt"]?.value
+                checkNotNull(strRefText)
+                {
+                    "${getLocation(bibEntry)} missing reference text for $strRef".also { logger.error { it } }
+                }
+                val strSource = mParsed.groups["entry"]?.value
+                checkNotNull(strSource)
+                {
+                    "${getLocation(bibEntry)} missing reference source for $strRef".also { logger.error { it } }
+                }
 
-            else -> {
-                "Can't find bibliography entries".also { logger.error { it } }
+                if (bibliographyEntries.contains(strRef)) {
+                    "${getLocation(bibEntry)} duplicate reference id $strRef".also { logger.error { it } }
+                }
+                bibliographyEntries[strRef] = BibliographyEntry(strRef, strRefText, strSource)
             }
         }
 
         logger.info("Found ${bibliographyEntries.count()} bibliography entries")
 
         return true
+    }
+
+    private fun findBibliographyEntries(bib: StructuralNode): org.asciidoctor.ast.List? {
+        for (child in bib.blocks) {
+            if (child is org.asciidoctor.ast.List) {
+                return child
+            }
+        }
+
+        return null
     }
 
     private fun findBibliography(block: StructuralNode): StructuralNode? {

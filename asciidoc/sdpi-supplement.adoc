@@ -137,3 +137,7 @@ include::volume2/tf2-main.adoc[]
 // = Volume 3 -- Content Modules
 
 include::volume3/tf3-main.adoc[]
+
+// = Volume 4 -- ICS tables
+
+include::volume4/tf4-main.adoc[]

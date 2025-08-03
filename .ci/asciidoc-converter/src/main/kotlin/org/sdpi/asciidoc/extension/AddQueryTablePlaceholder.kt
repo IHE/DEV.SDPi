@@ -37,7 +37,9 @@ class AddRequirementQueryPlaceholder : BlockMacroProcessor(BLOCK_MACRO_NAME_REQU
         attributes["role"] = Roles.QueryTable.REQUIREMENT.key
         val placeholderTable = createTable(parent)
         placeholderTable.attributes["role"] = Roles.QueryTable.REQUIREMENT.key
-
+        placeholderTable.attributes["title"] = attributes["title"]
+        placeholderTable.attributes["id"] = attributes["id"]
+        
         // Add filter attributes to the table for the tree processor to consume.
         val strGroup = attributes[RequirementAttributes.Common.GROUPS.key]
         if (strGroup != null) {
@@ -56,6 +58,8 @@ class AddTransactionQueryPlaceholder : BlockMacroProcessor(BLOCK_MACRO_NAME_TRAN
         attributes["role"] = Roles.QueryTable.TRANSACTIONS.key
         val placeholderTable = createTable(parent)
         placeholderTable.attributes["role"] = Roles.QueryTable.TRANSACTIONS.key
+        placeholderTable.attributes["title"] = attributes["title"]
+        placeholderTable.attributes["id"] = attributes["id"]
 
         // Add filter attributes to the table for the tree processor to consume.
         val strProfile = attributes[Roles.Profile.ID.key]
@@ -86,6 +90,8 @@ class AddContentModuleQueryPlaceholder : BlockMacroProcessor(BLOCK_MACRO_NAME_CO
         attributes["role"] = Roles.QueryTable.CONTENT_MODULE.key
         val placeholderTable = createTable(parent)
         placeholderTable.attributes["role"] = Roles.QueryTable.CONTENT_MODULE.key
+        placeholderTable.attributes["title"] = attributes["title"]
+        placeholderTable.attributes["id"] = attributes["id"]
 
         // Add filter attributes to the table for the tree processor to consume.
         val strProfile = attributes[Roles.Profile.ID.key]

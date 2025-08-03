@@ -1,0 +1,173 @@
+[#vol4, sdpi_volume_caption=4]
+= Volume 4 -- Implementation conformity statements
+
+== General format
+
+Implementation conformity statements take the form of tables. Templates for these _ICS tables_
+are given in <<vol4_ics_tables>>. The tables are completed and provided as an overall conformity
+statement document. 
+
+Generally an implementation conformity table contains the following information:
+
+* *Index*, which is an identifier of a specific feature,
+* *Reference*, which is a reference to the requirement of the feature,
+* *Status*, which specifies the conformity level, that is whether the feature is mandatory, recommended or 
+permissible for a conforming implementation,
+* *Support*, in which the implementor specifies the characteristics of the feature in the implementation, and
+* *Comment*, in which the implementor provides additional information. 
+
+The values permitted in the *Status* column are:
+
+* *m*: mandatory, indicated with the *shall* keyword in the requirement,
+* *r*: recommended, indicated with the *should* keyword in the requirement, and
+* *p*: permissible, indicated with the *may* keyword in the requirement.
+
+The *Support* column may be a simple entry, such as one of the following, or a detailed entry:
+
+* *yes*: the requirement is met,
+* *no*: to requirement is not met,
+* *n/a*: the requirement is not applicable, with a rationale provided in the *Comment*.
+
+[#vol4_ics_tables]
+== Tables
+
+RefActor:somds_participant[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_participant>>.
+
+[#vol4_ics_actor_somds_participant]
+.Implementation conformity statements that apply to all <<vol1_clause_sdpi_p_somds_participant>>s.
+sdpi_ics_table::[sdpi_req_actor=somds_participant]
+
+
+RefActor:somds_provider[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_provider>>.
+
+[#vol4_ics_actor_somds_provider]
+.Implementation conformity statements that apply to all <<vol1_clause_sdpi_p_somds_provider>>s.
+sdpi_ics_table::[sdpi_req_actor=somds_provider]
+
+
+RefActor:somds_consumer[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_consumer>>.
+
+[#vol4_ics_actor_somds_consumer]
+.Implementation conformity statements that apply to all <<vol1_clause_sdpi_p_somds_consumer>>s.
+sdpi_ics_table::[sdpi_req_actor=somds_consumer]
+
+
+RefActor:somds_connector[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_connector>>.
+
+[#vol4_ics_actor_somds_connector]
+.Implementation conformity statements that apply to all <<vol1_clause_sdpi_p_somds_connector>>s.
+sdpi_ics_table::[sdpi_req_actor=somds_connector]
+
+
+RefActor:somds_fhir_gateway[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_fhir_gateway>>.
+
+[#vol4_ics_actor_somds_fhir_gateway]
+.Implementation conformity statements that apply to all <<vol1_clause_sdpi_p_somds_fhir_gateway>>s.
+sdpi_ics_table::[sdpi_req_actor=somds_fhir_gateway]
+
+
+RefActor:somds_v2_gateway[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_v2_gateway>>.
+
+[#vol4_ics_actor_somds_v2_gateway]
+.Implementation conformity statements that apply to all <<vol1_clause_sdpi_p_somds_v2_gateway>>s.
+sdpi_ics_table::[sdpi_req_actor=somds_v2_gateway]
+
+
+RefActor:somds_sensor_gateway[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_sensor_gateway>>.
+
+[#vol4_ics_actor_somds_sensor_gateway]
+.Implementation conformity statements that apply to all <<vol1_clause_sdpi_p_somds_sensor_gateway>>s.
+sdpi_ics_table::[sdpi_req_actor=somds_sensor_gateway]
+
+
+RefActor:somds_smart_app[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_smart_app>>.
+
+[#vol4_ics_actor_somds_smart_app]
+.Implementation conformity statements that apply to all <<vol1_clause_sdpi_p_somds_smart_app_platform>>s.
+sdpi_ics_table::[sdpi_req_actor=somds_smart_app]
+
+
+RefActor:biceps_content_creator[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_biceps_content_creator>>.
+
+[#vol4_ics_actor_biceps_content_creator]
+.Implementation conformity statements that apply to all <<vol1_clause_sdpi_p_biceps_content_creator>>s.
+sdpi_ics_table::[sdpi_req_actor=biceps_content_creator]
+
+
+RefActor:biceps_content_consumer[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_biceps_content_consumer>>.
+
+[#vol4_ics_actor_biceps_content_consumer]
+.Implementation conformity statements that apply to all <<vol1_clause_sdpi_p_biceps_content_consumer>>s.
+sdpi_ics_table::[sdpi_req_actor=biceps_content_consumer]
+
+
+RefActor:discovery_proxy[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_discovery_proxy>>.
+
+[#vol4_ics_actor_discovery_proxy]
+.Implementation conformity statements that apply to all <<vol1_clause_sdpi_p_discovery_proxy>>s.
+sdpi_ics_table::[sdpi_req_actor=discovery_proxy]
+
+
+RefActor:somds_medical_data_provider[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_medical_data_provider>>.
+
+[#vol4_ics_actor_somds_medical_data_provider]
+.Implementation conformity statements that apply to all <<vol1_clause_sdpi_r_somds_medical_data_provider>>s.
+sdpi_ics_table::[sdpi_req_actor=somds_medical_data_provider]
+
+
+RefActor:somds_medical_data_consumer[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_medical_data_consumer>>.
+
+[#vol4_ics_actor_somds_medical_data_consumer]
+.Implementation conformity statements that apply to all <<vol1_clause_sdpi_r_somds_medical_data_consumer>>s.
+sdpi_ics_table::[sdpi_req_actor=somds_medical_data_consumer]
+
+
+RefActor:somds_dec_gateway[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_dec_gateway>>.
+
+[#vol4_ics_actor_somds_dec_gateway]
+.Implementation conformity statements that apply to all <<vol1_clause_sdpi_r_somds_dec_gateway>>s.
+sdpi_ics_table::[sdpi_req_actor=somds_dec_gateway]
+
+
+RefActor:somds_fhir_medical_data_gateway[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_fhir_medical_data_gateway>>.
+
+[#vol4_ics_actor_somds_fhir_medical_data_gateway]
+.Implementation conformity statements that apply to all <<vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway>>s.
+sdpi_ics_table::[sdpi_req_actor=somds_fhir_medical_data_gateway]
+
+
+RefActor:somds_medical_alert_provider[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_medical_alert_provider>>.
+
+[#vol4_ics_actor_somds_medical_alert_provider]
+.Implementation conformity statements that apply to all <<vol1_clause_sdpi_a_somds_medical_alert_provider>>s.
+sdpi_ics_table::[sdpi_req_actor=somds_medical_alert_provider]
+
+
+RefActor:somds_medical_alert_consumer[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_medical_alert_consumer>>.
+
+[#vol4_ics_actor_somds_medical_alert_consumer]
+.Implementation conformity statements that apply to all <<vol1_clause_sdpi_a_somds_medical_alert_consumer>>s.
+sdpi_ics_table::[sdpi_req_actor=somds_medical_alert_consumer]
+
+
+RefActor:somds_acm_gateway[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_acm_gateway>>.
+
+[#vol4_ics_actor_somds_acm_gateway]
+.Implementation conformity statements that apply to all <<vol1_clause_sdpi_a_somds_acm_gateway>>s.
+sdpi_ics_table::[sdpi_req_actor=somds_acm_gateway]
+
+
+RefActor:somds_medical_control_provider[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_medical_control_provider>>.
+
+[#vol4_ics_actor_somds_medical_control_provider]
+.Implementation conformity statements that apply to all <<vol1_clause_sdpi_xc_somds_medical_control_provider>>s.
+sdpi_ics_table::[sdpi_req_actor=somds_medical_control_provider]
+
+
+RefActor:somds_medical_control_consumer[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_medical_control_consumer>>.
+
+[#vol4_ics_actor_somds_medical_control_consumer]
+.Implementation conformity statements that apply to all <<vol1_clause_sdpi_xc_somds_medical_control_consumer>>s.
+sdpi_ics_table::[sdpi_req_actor=somds_medical_control_consumer]
+
+

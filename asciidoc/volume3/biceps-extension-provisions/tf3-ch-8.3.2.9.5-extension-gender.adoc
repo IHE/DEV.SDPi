@@ -40,7 +40,10 @@ include::../../listings/vol3-clause-biceps-content-example-gender.xml[]
 ====== Requirements
 
 .R0012
-[sdpi_requirement#r0012,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
+[NORMATIVE]
+====
 If the administrative gender of a patient described by a pm:PatientDemographicsCoreData element is available, a <<vol1_spec_sdpi_p_actor_somds_participant>> shall at least add the sdpi:Gender extension to the pm:PatientDemographicsCoreData/ext:Extension element.
+====
 ****

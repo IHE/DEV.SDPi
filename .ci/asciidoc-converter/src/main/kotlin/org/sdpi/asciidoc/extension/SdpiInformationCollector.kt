@@ -59,9 +59,16 @@ class SdpiInformationCollector(
             }
             return null
         }
-        logger.info("Primary id for actor $strActor is $strPrimaryId")
 
         return actors[strPrimaryId]
+    }
+
+    fun dumpActorAliases() {
+        println("Actor aliases")
+        println("=============")
+        for(alias in actorAliases) {
+            println("${alias.key} => ${alias.value}")
+        }
     }
 
     override fun process(document: Document): Document {
@@ -123,7 +130,7 @@ class SdpiInformationCollector(
         }
 
         val transactionRefs = profileTransactions.transactionReferences(strProfileId)
-        val profileTransactionRefs = transactionRefs?.filter { it.profileOptionId == null }
+        val profileTransactionRefs = transactionRefs?.filter { !it.isOptioned() }
             ?.map { it.transactionReference }
 
         val useCaseRefs = profileUseCases.useCaseReferences(strProfileId)
@@ -162,11 +169,27 @@ class SdpiInformationCollector(
         }
 
         val strDocTitle = block.title
-        val reTitle = Regex("""^\d+(\.\d+)*\s+(.*)$""")
+        val reTitle = Regex("""^\d+([.:]\d+)*\s+(.*\s–\s)(.*)$""")
+        val match = reTitle.find(strDocTitle)
+        val strTitle = match?.groups?.get(3)?.value ?: strDocTitle
+        checkNotNull(strTitle) {
+            logger.error("Profile title '$strDocTitle' is not formatted correctly")
+        }
+        return strTitle
+    }
+
+    private fun parseProfileOptionTitle(block: StructuralNode): String {
+
+        if (block.reftext != null) {
+            return block.reftext
+        }
+
+        val strDocTitle = block.title
+        val reTitle = Regex("""^\d+([.:]\d+)*\s+(.*)$""")
         val match = reTitle.find(strDocTitle)
         val strTitle = match?.groups?.get(2)?.value
         checkNotNull(strTitle) {
-            logger.error("Profile title '$strDocTitle' is not formatted correctly")
+            logger.error("Profile option title '$strDocTitle' is not formatted correctly")
         }
         return strTitle
     }
@@ -178,6 +201,10 @@ class SdpiInformationCollector(
         if (block.hasRole(Roles.Actor.ALIAS.key)) {
             processActorAlias(block)
         }
+        if (block.hasRole(Roles.Actor.OPTION.key)) {
+            processActorOption(block, profile)
+        }
+
         val currentOption: SdpiProfileOption? = if (block.hasRole(Roles.Profile.PROFILE_OPTION.key)) {
             processProfileOption(block, profile)
         } else {
@@ -198,7 +225,7 @@ class SdpiInformationCollector(
         val strLabel = block.reftext ?: block.title
         logger.info("Found actor $strId => $strLabel")
 
-        val reExtractTitleElements = Regex("""^\d+(\.\d+)*\s+(.*)""")
+        val reExtractTitleElements = Regex("""^\d+([.:]\d+)*\s+(.*)""")
         val mrTitleElements = reExtractTitleElements.find(strLabel)
         val strTitle = mrTitleElements?.groups?.get(2)?.value ?: strLabel
         checkNotNull(strTitle) {
@@ -213,9 +240,28 @@ class SdpiInformationCollector(
         }
 
         actorAliases[strId] = strId // Self alias for easy lookup
+        actorAliases["actor_$strId"] = strId // common alternative name.
         val newActor = SdpiActor(strId, strTitle, profile.profileId, strAnchor)
         actors[strId] = newActor
         profile.addActor(newActor)
+    }
+
+
+    private fun processActorOption(block: StructuralNode, profile: SdpiProfile) {
+        val strAnchor = block.id
+        val strId = block.attributes[Roles.Actor.OPTION_ID.key]?.toString()
+        checkNotNull(strId) {
+            logger.error("Block with ${Roles.Actor.OPTION.key} role requires an ${Roles.Actor.OPTION_ID.key}")
+        }
+        val strTitle = getTitleFrom(block)
+
+        val transactionRefs = profileTransactions.transactionReferences(profile.profileId)
+        val actorOptionTransactionRefs =
+            transactionRefs?.filter { it.profileOptionId == null && it.actorOptionId == strId }
+                ?.map { it.transactionReference }
+
+        val option = SdpiActorOption(strId, strTitle, strAnchor, actorOptionTransactionRefs)
+        profile.addActorOption(option)
     }
 
     private fun processActorAlias(block: StructuralNode) {
@@ -322,7 +368,7 @@ class SdpiInformationCollector(
         }
 
         val strAnchor = block.id
-        val strLabel = block.reftext
+        val strLabel = parseProfileOptionTitle(block)
 
         val newOption = SdpiProfileOption(strId, strAnchor, strLabel)
         currentProfile.addOption(newOption)
@@ -348,7 +394,7 @@ class SdpiInformationCollector(
     }
 
     private fun parseContentModuleTitle(strDocText: String): String {
-        val reTitle = Regex("""^\d+(\.\d+)*\s+(.*)$""")
+        val reTitle = Regex("""^\d+([.:]\d+)*\s+(.*)$""")
         val match = reTitle.find(strDocText)
         val strTitle = match?.groups?.get(2)?.value
         checkNotNull(strTitle) {
@@ -376,7 +422,7 @@ class SdpiInformationCollector(
         val requirementType: RequirementType = getRequirementType(nRequirementNumber, block)
         val owner: RequirementContext? = getRequirementOwner(block)
 
-        logger.info("Requirement: $nRequirementNumber")
+        //println("Requirement: $nRequirementNumber")
 
 
         val specification = getSpecification(block, nRequirementNumber)
@@ -433,7 +479,7 @@ class SdpiInformationCollector(
                 checkNotNull(strId) {
                     logger.error("Owner missing id")
                 }
-                logger.info("Found owner of requirement: $ownerType = $strId")
+                //println("Found owner of requirement: $ownerType = $strId")
                 return RequirementContext(ownerType, strId)
             }
         }
@@ -446,7 +492,7 @@ class SdpiInformationCollector(
         val noteContent: MutableList<Content> = mutableListOf()
         val exampleContent: MutableList<Content> = mutableListOf()
         val relatedContent: MutableList<Content> = mutableListOf()
-        val unstyledContent: MutableList<Content> = mutableListOf()
+        val unStyledContent: MutableList<Content> = mutableListOf()
 
         for (child in block.blocks) {
             val strStyle = child.attributes["style"].toString()
@@ -468,23 +514,23 @@ class SdpiInformationCollector(
                 }
 
                 "example" -> {
-                    logger.warn("Notes should be an example block in requirement #${nRequirementNumber}. In the future this will be an error")
-                    noteContent.addAll(getContent_Obj(child))
+                    logger.warn("Notes should be an example block in requirement #${nRequirementNumber}. ")
+                    throw IllegalStateException()
+                    //noteContent.addAll(getContent_Obj(child))
                 }
 
                 else -> {
-                    logger.warn("Unstyled content in requirement #${nRequirementNumber}. In the future this will be an error")
-
-                    unstyledContent.addAll(getContent_Obj(child))
+                    logger.error("Un-styled content in requirement #${nRequirementNumber}.")
+                    throw IllegalStateException()
+                    //unStyledContent.addAll(getContent_Obj(child))
                 }
             }
         }
 
-        // treat plain paragraphs as the normative content for
-        // backwards compatibility.
         if (normativeContent.isEmpty()) {
-            logger.warn("${block.sourceLocation} is missing normative content section; using unstyled paragraphs. This will be an error in the future")
-            normativeContent.addAll(unstyledContent)
+            logger.warn("${block.sourceLocation} is missing normative content section; using un-styled paragraphs.")
+            //normativeContent.addAll(unStyledContent)
+            throw IllegalStateException()
         }
 
         return RequirementSpecification(normativeContent, noteContent, exampleContent, relatedContent)
@@ -756,7 +802,8 @@ class SdpiInformationCollector(
         // For now, assume tech feature by default for backwards compatibility.
         if (strType == null) {
             strType = "tech_feature"
-            logger.warn("${getLocation(block)}, requirement type missing for #$requirementNumber, assuming $strType. In the future this will be an error.")
+            logger.error("${getLocation(block)}, requirement type missing for #$requirementNumber.")
+            throw IllegalStateException()
         }
 
         checkNotNull(strType) {
@@ -924,7 +971,7 @@ class SdpiInformationCollector(
     private fun processTransaction(block: StructuralNode) {
         val strAnchor = block.id
         val strLabel = block.title
-        val reExtractTitleElements = Regex("""\S+\s+(.*?)\s+\[?""")
+        val reExtractTitleElements = Regex("""[\d:.]+\s+(.*?)\s+\[.*?]""")
         val mrTitleElements = reExtractTitleElements.find(strLabel)
 
         checkNotNull(mrTitleElements) {
@@ -975,11 +1022,13 @@ class SdpiInformationCollector(
                 val transaction = transactions[ref.transactionId]
                 if (transaction != null) {
                     for (obl in ref.obligations) {
-                        val contrib = obl.contribution
-                        val role = transaction.actorRoles?.firstOrNull { it.contribution == contrib }
-                        if (role != null) {
-                            val strActorId = role.actorId
-                            obl.actorId = strActorId
+                        if (obl.actorId == null) {
+                            val contrib = obl.contribution
+                            val role = transaction.actorRoles?.firstOrNull { it.contribution == contrib }
+                            if (role != null) {
+                                val strActorId = role.actorId
+                                obl.actorId = strActorId
+                            }
                         }
                     }
                 }
@@ -1026,7 +1075,7 @@ class SdpiInformationCollector(
             if (trans.actorRoles != null) {
                 for (role in trans.actorRoles) {
                     val actor = actors[role.actorId]
-                    if(actor == null) {
+                    checkNotNull(actor) {
                         logger.error("The actor ${role.actorId} in transaction ${trans.id} can't be found")
                     }
                 }
@@ -1038,7 +1087,7 @@ class SdpiInformationCollector(
         for (req in requirements.values) {
             for (strActorId in req.actors()) {
                 val actor = actors[strActorId]
-                if (actor == null) {
+                checkNotNull(actor) {
                     logger.warn("Requirement ${req.localId} references unknown actor $strActorId")
                 }
             }
@@ -1046,10 +1095,10 @@ class SdpiInformationCollector(
     }
 
     private fun validateTransactionRefs(strProfileId: String, transactionRefs: List<SdpiTransactionReference>) {
-        for (ref in transactionRefs) {
+        for (ref in transactionRefs.filter { it.placeholderName == null }) {
             val transaction = transactions[ref.transactionId]
-            if (transaction == null) {
-                logger.warn("Profile '${strProfileId} references an unknown transaction ${ref.transactionId}")
+            checkNotNull(transaction) {
+                logger.error("Profile '${strProfileId} references an unknown transaction ${ref.transactionId}")
             }
         }
     }
@@ -1057,27 +1106,30 @@ class SdpiInformationCollector(
     private fun validateUseCaseRefs(strProfileId: String, refs: List<SdpiUseCaseReference>) {
         for (ref in refs) {
             val useCase = useCases[ref.useCaseId]
-            if(useCase == null) {
-                logger.warn("Profile '${strProfileId} references an unknown use case ${ref.useCaseId}")
+            checkNotNull(useCase) {
+                logger.error("Profile '${strProfileId} references an unknown use case ${ref.useCaseId}")
             }
 
             val actor = actors[ref.actorId]
-            if (actor == null) {
-                logger.warn("The actor '${ref.actorId} in a ${ref.useCaseId} use-case reference in profile $strProfileId can't be found")
+            checkNotNull(actor) {
+                logger.error("The actor '${ref.actorId} in a ${ref.useCaseId} use-case reference in profile $strProfileId can't be found")
             }
         }
     }
 
     private fun validateContentModuleRefs(strProfileId: String, refs: List<SdpiContentModuleRef>) {
         for (ref in refs) {
-            val contentModule = contentModules[ref.contentModuleId]
-            if (contentModule == null) {
-                logger.warn("Profile '${strProfileId} references an unknown content module ${ref.contentModuleId}")
+            // If the reference isn't deferred then the target content module must exist.
+            if (ref.placeholderName == null) {
+                val contentModule = contentModules[ref.contentModuleId]
+                checkNotNull(contentModule) {
+                    logger.error("Profile '${strProfileId} references an unknown content module ${ref.contentModuleId}")
+                }
             }
 
             val actor = actors[ref.actorId]
-            if (actor == null) {
-                logger.warn("The actor '${ref.actorId} in a ${ref.contentModuleId} content module reference in profile $strProfileId can't be found")
+            checkNotNull(actor) {
+                logger.error("The actor '${ref.actorId} in a ${ref.contentModuleId} content module reference in profile $strProfileId can't be found")
             }
         }
     }

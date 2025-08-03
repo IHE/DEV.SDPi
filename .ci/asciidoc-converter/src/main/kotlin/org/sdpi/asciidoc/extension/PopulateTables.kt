@@ -9,9 +9,11 @@ import org.asciidoctor.extension.Treeprocessor
 import org.sdpi.asciidoc.RequirementAttributes
 import org.sdpi.asciidoc.factories.ContentModuleTableBuilder
 import org.sdpi.asciidoc.factories.TransactionTableBuilder
+import org.sdpi.asciidoc.getRequirementActors
 import org.sdpi.asciidoc.getRequirementGroups
 import org.sdpi.asciidoc.model.*
 import org.sdpi.asciidoc.plainContext
+import javax.swing.text.html.Option
 
 /**
  * Tree processor to populate requirement table placeholders, which are inserted
@@ -48,12 +50,22 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
         val requirementsInDocument = docInfo.requirements()
 
         val aGroups = getRequirementGroups(block.attributes[RequirementAttributes.Common.GROUPS.key])
-        if (aGroups.isEmpty()) {
+        val aActors = getRequirementActors(block.attributes[RequirementAttributes.Common.ACTOR.key])
+        if (aGroups.isEmpty() && aActors.isEmpty()) {
             // unfiltered
-            return requirementsInDocument.values
+            return requirementsInDocument.values.sortedBy { it.requirementNumber }
         }
 
-        val selectedRequirements = requirementsInDocument.values.filter { it -> it.groups.any { it in aGroups } }
+        val bAllGroups = aGroups.isEmpty()
+        val bAllActors = aActors.isEmpty()
+
+        val selectedRequirements = requirementsInDocument
+            .values
+            .filter { it ->
+                (bAllGroups || it.groups.any { it in aGroups })
+                        && (bAllActors || it.actors().any { it in aActors })
+            }
+            .sortedBy { it.requirementNumber }
         return selectedRequirements
     }
 
@@ -79,7 +91,7 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
             val level = req.level
             val strType = req.getTypeDescription()
 
-            val strIdLink = req.makeLink()
+            val strIdLink = req.makeLinkGlobal()
 
             val cellGlobalId = createDocument(table.document)
             cellGlobalId.blocks.add(
@@ -143,6 +155,9 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
 
         val strProfileOption = table.attributes[Roles.Profile.ID_PROFILE_OPTION.key]?.toString()
         logger.info("Table profile option = $strProfileOption")
+        val profileFilter: Pair<OptionType, String>? = if (strProfileOption == null) {
+            null
+        } else Pair(OptionType.PROFILE, strProfileOption)
 
         val strActorId = table.attributes[Roles.Transaction.ACTOR_ID.key]?.toString()
 
@@ -159,10 +174,10 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
             checkNotNull(actor) {
                 logger.error("Actor $strActorId is not defined in profile $strProfile")
             }
-            addActorTransactions(tableBuilder, profile, actor, strProfileOption)
+            addActorTransactions(tableBuilder, profile, actor, profileFilter)
         } else {
-            for (actorRef in profile.actorReferences()) {
-                addActorTransactions(tableBuilder, profile, actorRef, strProfileOption)
+            for (actor in profile.actorReferences()) {
+                addActorTransactions(tableBuilder, profile, actor, profileFilter)
             }
         }
     }
@@ -171,40 +186,58 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
         tableBuilder: TransactionTableBuilder,
         profile: SdpiProfile,
         actor: SdpiActor,
-        strProfileOptionFilter: String?,
+        optionFilter: Pair<OptionType, String>?,
     ) {
         var bFirstActor = true
         val transactionReferences = profile.transactionReferences
         if (transactionReferences != null) {
-            for (transactionReference: SdpiTransactionReference in transactionReferences) {
+            for (transactionReference: SdpiTransactionReference in transactionReferences.sortedBy { it.transactionId }) {
                 val strTransactionId = transactionReference.transactionId
-                val transaction: SdpiTransaction? = docInfo.transactions()[strTransactionId]
+                val transaction: SdpiTransaction? = getTransaction(transactionReference)
                 checkNotNull(transaction) {
                     logger.error("Unknown transaction id $strTransactionId")
                 }
 
-                val actorsContribution = transaction.getContributionForActor(actor.id)
-                if (actorsContribution == null) {
-                    continue
-                }
+                for (obl in transactionReference.obligations) {
+                    if (obl.actorId == actor.id) {
+                        var bFirstTransaction = true
 
+                        val obligationsForTransaction =
+                            profile.getTransactionObligations(strTransactionId, actor.id, optionFilter)
+                        for (ref in obligationsForTransaction) {
+                            tableBuilder.addRow(
+                                if (bFirstActor) actor else null,
+                                if (bFirstTransaction) transaction else null,
+                                ref.contribution,
+                                ref.obligation,
+                                ref.optionId
+                            )
+                            bFirstTransaction = false
+                            bFirstActor = false
+                        }
 
-                var bFirstTransaction = true
-                val obligationsForTransaction =
-                    profile.getTransactionObligations(strTransactionId, actorsContribution, strProfileOptionFilter)
-                for (ref in obligationsForTransaction) {
-                    tableBuilder.addRow(
-                        if (bFirstActor) actor else null,
-                        if (bFirstTransaction) transaction else null,
-                        if (bFirstTransaction) ref.contribution else null,
-                        ref.obligation,
-                        ref.profileOptionId
-                    )
-                    bFirstTransaction = false
-                    bFirstActor = false
+                    }
                 }
             }
         }
+    }
+
+    private fun getTransaction(transactionReference: SdpiTransactionReference): SdpiTransaction? {
+        val strTransactionId = transactionReference.transactionId
+        val knownTransaction: SdpiTransaction? = docInfo.transactions()[strTransactionId]
+        if (null != knownTransaction) {
+            return knownTransaction
+        }
+
+        if (transactionReference.placeholderName != null) {
+            val placeholderTransaction = SdpiTransaction(
+                "", transactionReference.transactionId,
+                transactionReference.placeholderName, null
+            )
+            return placeholderTransaction
+        }
+
+        return null
     }
 
     private fun populateContentModuleTable(table: Table) {
@@ -239,7 +272,7 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
         if (references != null) {
             for (ref: SdpiContentModuleRef in references.filter { it.actorId == actor.id }) {
                 val strRefId = ref.contentModuleId
-                val module: SdpiContentModule? = docInfo.contentModules()[strRefId]
+                val module: SdpiContentModule? = getContentModule(ref)
                 checkNotNull(module) {
                     logger.error("Unknown content-module id $strRefId")
                 }
@@ -257,7 +290,7 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
         for (option in profile.options) {
             for (ref: SdpiContentModuleRef in option.contentModuleReferences.filter { it.actorId == actor.id }) {
                 val strRefId = ref.contentModuleId
-                val module: SdpiContentModule? = docInfo.contentModules()[strRefId]
+                val module: SdpiContentModule? = getContentModule(ref)
                 checkNotNull(module) {
                     logger.error("Unknown content-module id $strRefId")
                 }
@@ -270,7 +303,24 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
                 )
             }
         }
+    }
 
+    private fun getContentModule(reference: SdpiContentModuleRef): SdpiContentModule? {
+        val strId = reference.contentModuleId
+        val knownContentModule: SdpiContentModule? = docInfo.contentModules()[strId]
+        if (null != knownContentModule) {
+            return knownContentModule
+        }
+
+        if (reference.placeholderName != null) {
+            val placeholder = SdpiContentModule(
+                reference.contentModuleId,
+                reference.placeholderName, ""
+            )
+            return placeholder
+        }
+
+        return null
     }
 }
 

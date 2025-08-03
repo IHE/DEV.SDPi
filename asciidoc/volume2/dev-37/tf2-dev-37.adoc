@@ -4,6 +4,7 @@
 
 //reset|+1|off
 [#vol2_clause_dev_37,sdpi_offset=37]
+[role=transaction,transaction-id=DEV-37]
 === Retrieve Medical Data [{var_transaction_id}]
 
 ==== Scope
@@ -12,18 +13,16 @@ include::tf2-dev-37-summary.adoc[]
 
 ==== Actor Roles
 
-.Actor Roles [{var_transaction_id}]
-[cols="1,2"]
-|===
-|Actor |Roles
+[sdpi_transaction_actors]
+--
 
-|<<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>>
-|Initiates communication by sending a {var_label_dev_37_message_getmdib} message to a <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>>. Then listens for a {var_label_dev_37_message_getmdibresponse} message to retrieve the <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>>'s MDIB.
+[actor-id="somds_medical_data_consumer",contribution=Initiator]
+Initiates communication by sending a {var_label_dev_37_message_getmdib} message to a RefActor:somds_medical_data_provider[]. Then listens for a {var_label_dev_37_message_getmdibresponse} message to retrieve the RefActor:somds_medical_data_provider[]'s MDIB.
 
-|<<vol1_spec_sdpi_r_actor_somds_medical_data_provider>>
-|Listens for {var_label_dev_37_message_getmdib} messages, which it responds to with {var_label_dev_37_message_getmdibresponse} messages respectively.
+[actor-id="somds_medical_data_provider",contribution=Responder]
+Listens for {var_label_dev_37_message_getmdib} messages, which it responds to with {var_label_dev_37_message_getmdibresponse} messages respectively.
 
-|===
+--
 
 ==== Referenced Standards
 

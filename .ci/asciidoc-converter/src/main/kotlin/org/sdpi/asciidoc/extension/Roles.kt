@@ -24,7 +24,13 @@ sealed class Roles {
         // alias for an actor-id.
         ALIAS("actor-alias"),
 
-        ID("actor-id")
+        ID("actor-id"),
+
+        // A role defining an option for one or more actors.
+        OPTION("actor-option"),
+
+        // Id for the actor option
+        OPTION_ID("actor-option-id"),
     }
 
     enum class Transaction(val key: String) {

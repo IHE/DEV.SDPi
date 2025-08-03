@@ -10,54 +10,62 @@ The following list of requirements enhances the processing of reports in order t
 ====== Amendments
 
 .R1006
-[sdpi_requirement#r1006,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_provider>> shall send messages that convey msg:WaveformStream, msg:AbstractMetricReport, msg:AbstractOperationalStateReport, msg:AbstractComponentReport, msg:AbstractAlertReport, msg:ObservedValueStream, msg:DescriptionModificationReport, and msg:AbstractContextReport elements to a <<vol1_spec_sdpi_p_actor_somds_consumer>> in the ascending order of the <<acronym_mdib>>'s pm:MdibVersionGroup/@MdibVersion.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: BICEPS does not specify the order in which report messages are sent to <<vol1_spec_sdpi_p_actor_somds_consumer>>s. This requirement restricts messages to be transmitted in the ascending order of the <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<acronym_mdib>> version.
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall send messages that convey msg:WaveformStream, msg:AbstractMetricReport, msg:AbstractOperationalStateReport, msg:AbstractComponentReport, msg:AbstractAlertReport, msg:ObservedValueStream, msg:DescriptionModificationReport, and msg:AbstractContextReport elements to a <<vol1_spec_sdpi_p_actor_somds_consumer>> in the ascending order of the <<acronym_mdib>>'s pm:MdibVersionGroup/@MdibVersion.
+====
+
+[NOTE]
+====
+BICEPS does not specify the order in which report messages are sent to <<vol1_spec_sdpi_p_actor_somds_consumer>>s. This requirement restricts messages to be transmitted in the ascending order of the <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<acronym_mdib>> version.
 ====
 ****
 
 .R1007
-[sdpi_requirement#r1007,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
-Within an <<acronym_mdib>> sequence, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall send msg:WaveformStream, msg:EpisodicMetricReport, msg:EpisodicOperationalStateReport, msg:EpisodicComponentReport, msg:EpisodicAlertReport, msg:ObservedValueStream, msg:DescriptionModificationReport, and msg:EpisodicContextReport messages with a strictly increasing msg:AbstractReport/@MdibVersion.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: This requirement verifies that for a <<vol1_spec_sdpi_p_actor_somds_provider>> there will be no two reports with the same <<acronym_mdib>> version. Furthermore, it prohibits decrementing version numbers within an <<acronym_mdib>> sequence.
+Within an <<acronym_mdib>> sequence, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall send msg:WaveformStream, msg:EpisodicMetricReport, msg:EpisodicOperationalStateReport, msg:EpisodicComponentReport, msg:EpisodicAlertReport, msg:ObservedValueStream, msg:DescriptionModificationReport, and msg:EpisodicContextReport messages with a strictly increasing msg:AbstractReport/@MdibVersion.
+====
+
+[NOTE]
+====
+This requirement verifies that for a <<vol1_spec_sdpi_p_actor_somds_provider>> there will be no two reports with the same <<acronym_mdib>> version. Furthermore, it prohibits decrementing version numbers within an <<acronym_mdib>> sequence.
 ====
 ****
 
 .R1008
-[sdpi_requirement#r1008,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_provider>> shall not send msg:DescriptionModificationReport messages in which any two descriptors have the same handle.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: This requirement simplifies processing of changes for a <<vol1_spec_sdpi_p_actor_somds_consumer>> in a way that the <<vol1_spec_sdpi_p_actor_somds_consumer>> can apply description modification changes one by one without additional consistency checks. If deletion and re-insertion of objects is needed, a <<vol1_spec_sdpi_p_actor_somds_provider>> sends out two description modification reports successively.
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall not send msg:DescriptionModificationReport messages in which any two descriptors have the same handle.
+====
 
-NOTE: DEPRECATION NOTICE - This requirement is being incorporated into the IEEE 11073-10207 BICEPS standard through a corrigendum. Once IEEE has published the IEEE 11073-10207 BICEPS Corrigenda, this SDPi requirement will be no longer needed, and will hence be removed.
+[NOTE]
+====
+* This requirement simplifies processing of changes for a <<vol1_spec_sdpi_p_actor_somds_consumer>> in a way that the <<vol1_spec_sdpi_p_actor_somds_consumer>> can apply description modification changes one by one without additional consistency checks. If deletion and re-insertion of objects is needed, a <<vol1_spec_sdpi_p_actor_somds_provider>> sends out two description modification reports successively.
+
+* DEPRECATION NOTICE - This requirement is being incorporated into the IEEE 11073-10207 BICEPS standard through a corrigendum. Once IEEE has published the IEEE 11073-10207 BICEPS Corrigenda, this SDPi requirement will be no longer needed, and will hence be removed.
 ====
 ****
 
 .R1009
-[sdpi_requirement#r1009,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_provider>> shall order msg:DescriptionModificationReport/msg:ReportPart elements in a way that for an inserted parent descriptor, inserted child descriptors appear after that parent descriptor.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: This explicitly requires to only communicate children as inserted if the parent has been inserted already, which simplifies insertion of descriptors on the <<vol1_spec_sdpi_p_actor_somds_consumer>> side.
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall order msg:DescriptionModificationReport/msg:ReportPart elements in a way that for an inserted parent descriptor, inserted child descriptors appear after that parent descriptor.
+====
 
-NOTE: DEPRECATION NOTICE - This requirement is being incorporated into the IEEE 11073-10207 BICEPS standard through a corrigendum (albeit without the clarification note immediately above). Once IEEE has published the IEEE 11073-10207 BICEPS Corrigenda, this SDPi requirement will be no longer needed, and will hence be removed.
+[NOTE]
+====
+* This explicitly requires to only communicate children as inserted if the parent has been inserted already, which simplifies insertion of descriptors on the <<vol1_spec_sdpi_p_actor_somds_consumer>> side.
+
+* DEPRECATION NOTICE - This requirement is being incorporated into the IEEE 11073-10207 BICEPS standard through a corrigendum (albeit without the clarification note immediately above). Once IEEE has published the IEEE 11073-10207 BICEPS Corrigenda, this SDPi requirement will be no longer needed, and will hence be removed.
 ====
 ****
 
@@ -66,29 +74,33 @@ NOTE: DEPRECATION NOTICE - This requirement is being incorporated into the IEEE 
 Requirement <<r1010>> replaces biceps:R5024.
 
 .R1010
-[sdpi_requirement#r1010,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_provider>> shall not add pm:AbstractDescriptor elements to pm:AbstractDescriptors below msg:DescriptionModificationReport/msg:ReportPart.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: Replaces biceps:R5024: "Descriptors in this list SHALL not include nested descriptors."
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall not add pm:AbstractDescriptor elements to pm:AbstractDescriptors below msg:DescriptionModificationReport/msg:ReportPart.
+====
+
+[NOTE]
+====
+Replaces biceps:R5024: "Descriptors in this list SHALL not include nested descriptors."
 ====
 ****
 
 Requirement <<r1011>> replaces biceps:R5046.
 
 .R1011
-[sdpi_requirement#r1011,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_provider>> shall communicate a parent descriptor as deleted only if it does not include any child descriptors.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: Replaces biceps:R5046: "If a parent descriptor is deleted, then all child descriptors of that parent SHALL communicated as deleted in advance."
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall communicate a parent descriptor as deleted only if it does not include any child descriptors.
+====
 
-NOTE: DEPRECATION NOTICE - This requirement is being incorporated into the IEEE 11073-10207 BICEPS standard through a corrigendum. Once IEEE has published the IEEE 11073-10207 BICEPS Corrigenda, this SDPi requirement will be no longer needed, and will hence be removed.
+[NOTE]
+====
+* Replaces biceps:R5046: "If a parent descriptor is deleted, then all child descriptors of that parent SHALL communicated as deleted in advance."
+
+* DEPRECATION NOTICE - This requirement is being incorporated into the IEEE 11073-10207 BICEPS standard through a corrigendum. Once IEEE has published the IEEE 11073-10207 BICEPS Corrigenda, this SDPi requirement will be no longer needed, and will hence be removed.
 ====
 ****

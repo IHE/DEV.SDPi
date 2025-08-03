@@ -3,6 +3,7 @@ package org.sdpi.asciidoc
 import org.apache.logging.log4j.kotlin.loggerOf
 import org.asciidoctor.ast.ContentNode
 import org.asciidoctor.ast.StructuralNode
+import org.jruby.util.ResourceException.InvalidArguments
 import org.sdpi.asciidoc.extension.Roles
 import org.sdpi.asciidoc.model.BlockOwner
 import org.sdpi.asciidoc.model.RequirementLevel
@@ -89,6 +90,14 @@ fun getRequirementGroups(oGroups: Any?): List<String> {
     return oGroups.toString().split(",")
 }
 
+fun getRequirementActors(oActors: Any?): List<String> {
+    if (oActors == null) {
+        return listOf()
+    }
+
+    return oActors.toString().split(",")
+}
+
 fun findIdFromParent(parent: ContentNode, strRole: String, strIdAttribute: String): String? {
     return if (parent.hasRole(strRole)) {
         parent.attributes[strIdAttribute]?.toString()
@@ -130,5 +139,27 @@ fun getLocation(block: StructuralNode): String {
         "${block.sourceLocation.path}:${block.sourceLocation.lineNumber}"
     } else {
         "";
+    }
+}
+
+fun getTitleFrom(block: StructuralNode): String {
+    if (block.reftext != null) {
+        return block.reftext
+    }
+
+    val strLabel = block.title
+    val reExtractTitleElements = Regex("""^\d+([.:]\d+)*\s+(.*)""")
+    val mrTitleElements = reExtractTitleElements.find(strLabel)
+    return mrTitleElements?.groups?.get(2)?.value ?: strLabel
+}
+
+fun makeLink(strAnchor: String, strText: String, strClass: String? = null): String {
+    if (strAnchor.contains(" ")) {
+        throw  InvalidArguments("Anchor '$strAnchor' contains spaces")
+    }
+    if (strClass == null) {
+        return "link:#$strAnchor[$strText]"
+    } else {
+        return "link:#$strAnchor[$strText,role=${strClass}]"
     }
 }

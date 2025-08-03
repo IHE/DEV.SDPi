@@ -37,13 +37,15 @@ include::../../listings/vol3-clause-biceps-content-example-equipment-label.xml[]
 ====== Requirements
 
 .R0007
-[sdpi_requirement#r0007,sdpi_req_level=shall]
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_provider>> shall set `sdpi:MdcAttribute/@Code` to any code from the first partition of the IEEE 11073-10101 nomenclature in the range of 67841 (1::2305) to 68609 (1::3073).
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: This prevents <<term_manufacturer>>s from using codes outside the intended range of attributes.
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall set `sdpi:MdcAttribute/@Code` to any code from the first partition of the IEEE 11073-10101 nomenclature in the range of 67841 (1::2305) to 68609 (1::3073).
+====
+
+[NOTE]
+====
+This prevents <<term_manufacturer>>s from using codes outside the intended range of attributes.
 ====
 ****

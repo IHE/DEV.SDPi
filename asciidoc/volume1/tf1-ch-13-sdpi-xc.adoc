@@ -1,6 +1,6 @@
 // = Service-oriented Device Point-of-care Interoperability – external Control (SDPi-xC) Profile
 
-[#vol1_clause_sdpi_xc_profile,sdpi_offset=13]
+[#vol1_clause_sdpi_xc_profile,sdpi_offset=13,role=profile,profile-id=sdpi-xc,reftext="External Control Profile"]
 == Service-oriented Device Point-of-care Interoperability – external Control (SDPi-xC) Profile
 
 [%noheader]
@@ -32,6 +32,16 @@ actor groupings, including abstract with concrete, are detailed in <<vol1_clause
 .SDPi-xC Actor Diagram
 
 image::../images/vol1-diagram-sdpi-xc-actor.svg[]
+
+// Deferred transactions. 
+sdpi_include_transaction::DEV-44[actor-id="somds_medical_control_provider",responder="required",placeholder-name="Manage medical external control"]
+sdpi_include_transaction::DEV-45[actor-id="somds_medical_control_provider",responder="required",placeholder-name="Invoke medical control services"]
+
+sdpi_include_transaction::DEV-44[actor-id="somds_medical_control_consumer",initiator="required",placeholder-name="Manage medical external control"]
+sdpi_include_transaction::DEV-45[actor-id="somds_medical_control_consumer",initiator="required",placeholder-name="Invoke medical control services"]
+
+.SDPi-xC Profile - Actors and Transactions
+sdpi_transaction_table::[profile-id="sdpi-xc"]
 
 [#vol1_table_sdpi_xc_actors_transactions]
 .SDPi-xC Profile - Actors and Transactions
@@ -96,9 +106,9 @@ TODO:
 include::../plantuml/vol1-figure-sdpi-xc-example-sequence-diagram.puml[]
 ....
 
-[#vol1_clause_sdpi_xc_somds_medical_control_provider]
+[#vol1_clause_sdpi_xc_somds_medical_control_provider,role="actor actor-alias",actor-id="somds_medical_control_provider"]
 ===== SOMDS Medical Control Provider
-[#vol1_spec_sdpi_xc_actor_somds_medical_control_provider, reftext='SOMDS Medical Control Provider']
+[#vol1_spec_sdpi_xc_actor_somds_medical_control_provider, reftext='SOMDS Medical Control Provider',role="actor-alias",actor-id="somds_medical_control_provider"]
 Actor Summary Definition:
 [none]
 . A <<vol1_spec_sdpi_p_actor_somds_provider>> grouped actor that provides operational control services to a <<vol1_spec_sdpi_xc_actor_somds_medical_control_consumer>>.
@@ -112,9 +122,9 @@ Every <<vol1_spec_sdpi_xc_actor_somds_medical_control_provider>> is grouped with
 This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_consumer>>.
 Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_a_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_clause_sdpi_p_profile_reftext>>.
 
-[#vol1_clause_sdpi_xc_somds_medical_control_consumer]
+[#vol1_clause_sdpi_xc_somds_medical_control_consumer,role="actor actor-alias",actor-id="somds_medical_control_consumer"]
 ===== SOMDS Medical Control Consumer
-[#vol1_spec_sdpi_xc_actor_somds_medical_control_consumer, reftext='SOMDS Medical Control Consumer']
+[#vol1_spec_sdpi_xc_actor_somds_medical_control_consumer, reftext='SOMDS Medical Control Consumer',role="actor-alias",actor-id="somds_medical_control_consumer"]
 Actor Summary Definition:
 [none]
 . A <<vol1_spec_sdpi_p_actor_somds_consumer>> grouped actor that invokes operational control services on a <<vol1_spec_sdpi_xc_actor_somds_medical_control_provider>>.

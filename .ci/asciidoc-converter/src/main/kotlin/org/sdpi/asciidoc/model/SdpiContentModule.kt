@@ -14,7 +14,8 @@ data class SdpiContentModule(
 data class SdpiContentModuleRef(
     val contentModuleId: String,
     val actorId: String,
-    val obligation: Obligation
+    val obligation: Obligation,
+    val placeholderName: String? // Name of content-module iff the reference is deferred.
 )
 
 data class SdpiProfileContentModuleRef(
