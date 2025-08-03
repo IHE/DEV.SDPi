@@ -16,10 +16,10 @@ include::tf2-dev-37-summary.adoc[]
 [sdpi_transaction_actors]
 --
 
-[actor-id="somds_consumer",contribution=Initiator]
-Initiates communication by sending a {var_label_dev_37_message_getmdib} message to a RefActor:somds_provider[]. Then listens for a {var_label_dev_37_message_getmdibresponse} message to retrieve the RefActor:somds_provider[]'s MDIB.
+[actor-id="somds_medical_data_consumer",contribution=Initiator]
+Initiates communication by sending a {var_label_dev_37_message_getmdib} message to a RefActor:somds_medical_data_provider[]. Then listens for a {var_label_dev_37_message_getmdibresponse} message to retrieve the RefActor:somds_medical_data_provider[]'s MDIB.
 
-[actor-id="somds_provider",contribution=Responder]
+[actor-id="somds_medical_data_provider",contribution=Responder]
 Listens for {var_label_dev_37_message_getmdib} messages, which it responds to with {var_label_dev_37_message_getmdibresponse} messages respectively.
 
 --
@@ -36,7 +36,7 @@ Listens for {var_label_dev_37_message_getmdib} messages, which it responds to wi
 include::../../plantuml/vol2-figure-dev-37-sequence.puml[]
 ....
 
-Note that there is no particular get operation for retrieving medical alert status information.
+Note that there is no particular get operation for retrieving medical data status information.
 Thus, the generic GetMdib/GetMdibResponse mechanisms are described here.
 
 :var_duplicated_transaction: {var_transaction_id}

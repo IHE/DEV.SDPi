@@ -17,10 +17,10 @@ include::tf2-dev-35-summary.adoc[]
 [sdpi_transaction_actors]
 --
 
-[actor-id="somds_consumer",contribution=Initiator]
-Initiates communication by first subscribing to a <<vol1_spec_sdpi_p_actor_somds_provider>> by sending a {var_label_dev_35_message_subscribe} message.
+[actor-id="somds_medical_data_consumer",contribution=Initiator]
+Initiates communication by first subscribing to a <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> by sending a {var_label_dev_35_message_subscribe} message.
 
-[actor-id="somds_provider",contribution=Responder]
+[actor-id="somds_medical_data_provider",contribution=Responder]
 Listens for {var_label_dev_35_message_subscribe} messages, which it responds to with {var_label_dev_35_message_subscribe_response}.
 
 --

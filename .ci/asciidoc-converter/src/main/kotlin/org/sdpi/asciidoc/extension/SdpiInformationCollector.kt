@@ -216,7 +216,6 @@ class SdpiInformationCollector(
         }
     }
 
-
     private fun processActor(block: StructuralNode, profile: SdpiProfile) {
         val strAnchor = block.id
         val strId = block.attributes[Roles.Actor.ID.key]?.toString()

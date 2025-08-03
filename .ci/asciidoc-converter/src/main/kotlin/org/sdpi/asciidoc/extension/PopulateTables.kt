@@ -121,7 +121,6 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
         val colSupport = createTableColumn(table, 3)
         val colComment = createTableColumn(table, 4)
 
-        println("---- populate ICS Table ----")
         val header = createTableRow(table)
         table.header.add(header)
 

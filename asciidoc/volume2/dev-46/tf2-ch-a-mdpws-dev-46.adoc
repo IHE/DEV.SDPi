@@ -117,7 +117,7 @@ If the request fails, the <<vol1_spec_sdpi_p_actor_discovery_proxy>> removes the
 ****
 [NORMATIVE]
 ====
-If <<vol1_spec_sdpi_p_actor_discovery_proxy>> sends {var_label_dev_46_message_directed_probe} messages to verify presence of <<vol1_spec_sdpi_p_actor_somds_provider>>s, the <<vol1_spec_sdpi_p_actor_discovery_proxy>> shall notify all <<vol1_spec_sdpi_p_actor_somds_consumer>>s subscribed to Bye messages about the <<vol1_spec_sdpi_p_actor_somds_provider>>'s absence.
+If a <<vol1_spec_sdpi_p_actor_discovery_proxy>> sends {var_label_dev_46_message_directed_probe} messages to verify presence of <<vol1_spec_sdpi_p_actor_somds_provider>>s, the <<vol1_spec_sdpi_p_actor_discovery_proxy>> shall notify all <<vol1_spec_sdpi_p_actor_somds_consumer>>s subscribed to Bye messages about the <<vol1_spec_sdpi_p_actor_somds_provider>>'s absence.
 ====
 
 [NOTE]

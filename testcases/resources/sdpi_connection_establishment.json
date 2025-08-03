@@ -1,0 +1,83 @@
+{
+    "id": "sdpi_connection_establishment",
+    "name": "SDPi connection establishment",
+    "tests": [
+        {
+            "type": "org.sdpi.test.Test.Case",
+            "id": "connection_establishment",
+            "name": "Connection establishment",
+            "version": "1.0.0",
+            "shortDescription": "A SOMDS Consumer connects to SOMDS Provider by retrieving the SOMDS Provider's service description\nand MDIB as well as by subscribing to the SOMDS Provider's MDIB reports.",
+            "peerType": "PEER_TO_PEER",
+            "preconditions": "- The SOMDS Consumer has discovered the SOMDS Provider and is in possession of the SOMDS Provider's\n  physical endpoint address.\n- The SOMDS Consumer can signify the connection status to the user.",
+            "description": "Instruct the SOMDS Consumer to connect to the SOMDS Provider.",
+            "evaluation": "Wait for the SOMDS Consumer to signify the connection establishment.",
+            "participants": [
+                {
+                    "actor": "SOMDS_CONSUMER"
+                },
+                {
+                    "actor": "SOMDS_PROVIDER"
+                }
+            ],
+            "steps": [
+                {
+                    "id": "1",
+                    "initiator": {
+                        "actor": "SOMDS_CONSUMER"
+                    },
+                    "responder": {
+                        "actor": "SOMDS_PROVIDER"
+                    },
+                    "transaction": "DEV-25",
+                    "messageType": "SOAP",
+                    "support": "REQUIRED",
+                    "security": "TLS",
+                    "description": "The SOMDS Consumer requests the BICEPS services that are supported by the SOMDS Provider."
+                },
+                {
+                    "id": "2",
+                    "initiator": {
+                        "actor": "SOMDS_CONSUMER"
+                    },
+                    "responder": {
+                        "actor": "SOMDS_PROVIDER"
+                    },
+                    "transaction": "DEV-27",
+                    "messageType": "SOAP",
+                    "support": "OPTIONAL",
+                    "security": "TLS",
+                    "description": "The SOMDS Consumer subscribes to MDIB reports it is interested in of the SOMDS Provider."
+                },
+                {
+                    "id": "3",
+                    "initiator": {
+                        "actor": "SOMDS_CONSUMER"
+                    },
+                    "responder": {
+                        "actor": "SOMDS_PROVIDER"
+                    },
+                    "transaction": "DEV-30",
+                    "messageType": "SOAP",
+                    "support": "REQUIRED",
+                    "security": "TLS",
+                    "description": "The SOMDS Consumer requests the MDIB of the SOMDS Provider for initial MDIB snapshot retrieval."
+                },
+                {
+                    "id": "4",
+                    "initiator": {
+                        "actor": "SOMDS_PROVIDER"
+                    },
+                    "responder": {
+                        "actor": "SOMDS_CONSUMER"
+                    },
+                    "transaction": "DEV-28",
+                    "messageType": "SOAP",
+                    "support": "OPTIONAL",
+                    "security": "TLS",
+                    "description": "If the SOMDS Consumer subscribed to the SOMDS Provider, the SOMDS Provider publishes MDIB\nreports to the SOMDS Consumer."
+                }
+            ]
+        }
+    ]
+}

@@ -17,10 +17,10 @@ include::tf2-dev-40-summary.adoc[]
 [sdpi_transaction_actors]
 --
 
-[actor-id="somds_consumer",contribution=Initiator]
-Initiates communication by sending a {var_label_dev_40_message_getmdib} message to a RefActor:somds_medical_data_provider[]. Then listens for a {var_label_dev_40_message_getmdibresponse} message to retrieve the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDIB.
+[actor-id="somds_medical_alert_consumer",contribution=Initiator]
+Initiates communication by sending a {var_label_dev_40_message_getmdib} message to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>. Then listens for a {var_label_dev_40_message_getmdibresponse} message to retrieve the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>'s MDIB.
 
-[actor-id="somds_provider",contribution=Responder]
+[actor-id="somds_medical_alert_provider",contribution=Responder]
 Listens for {var_label_dev_40_message_getmdib} messages, which it responds to with {var_label_dev_40_message_getmdibresponse} messages respectively.
 
 --

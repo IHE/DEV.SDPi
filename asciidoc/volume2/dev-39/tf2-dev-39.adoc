@@ -14,11 +14,12 @@ include::tf2-dev-39-summary.adoc[]
 
 [sdpi_transaction_actors]
 --
-[actor-id="somds_consumer",contribution=Responder]
+[actor-id="somds_medical_alert_consumer",contribution=Responder]
 Listens for a Notification message to retrieve medical alert updates.
 
-[actor-id="somds_provider",contribution=Initiator]
-While a subscription is running, the <<vol1_spec_sdpi_p_actor_somds_provider>> delivers Notification messages.
+
+[actor-id="somds_medical_alert_provider",contribution=Initiator]
+While a subscription is running, the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> delivers Notification messages.
 
 --
 
