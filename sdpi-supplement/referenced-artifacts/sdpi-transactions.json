@@ -175,15 +175,15 @@
         "label": "Establish Medical Data Exchange",
         "actorRoles": [
             {
-                "actorId": "somds_consumer",
+                "actorId": "somds_medical_data_consumer",
                 "contribution": "INITIATOR",
                 "description": [
-                    "Initiates communication by first subscribing to a <<vol1_spec_sdpi_p_actor_somds_provider>> by sending a {var_label_dev_35_message_subscribe} message.",
+                    "Initiates communication by first subscribing to a <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> by sending a {var_label_dev_35_message_subscribe} message.",
                     ""
                 ]
             },
             {
-                "actorId": "somds_provider",
+                "actorId": "somds_medical_data_provider",
                 "contribution": "RESPONDER",
                 "description": [
                     "Listens for {var_label_dev_35_message_subscribe} messages, which it responds to with {var_label_dev_35_message_subscribe_response}.",
@@ -198,18 +198,18 @@
         "label": "Publish Medical Data",
         "actorRoles": [
             {
-                "actorId": "somds_provider",
-                "contribution": "INITIATOR",
+                "actorId": "somds_medical_data_consumer",
+                "contribution": "RESPONDER",
                 "description": [
                     "Listens for a Notification message to retrieve medical data updates.",
                     ""
                 ]
             },
             {
-                "actorId": "somds_consumer",
-                "contribution": "RESPONDER",
+                "actorId": "somds_medical_data_provider",
+                "contribution": "INITIATOR",
                 "description": [
-                    "While a subscription is running, the <<vol1_spec_sdpi_p_actor_somds_provider>> delivers Notification messages.",
+                    "While a subscription is running, the <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> delivers Notification messages.",
                     ""
                 ]
             }
@@ -221,15 +221,15 @@
         "label": "Retrieve Medical Data",
         "actorRoles": [
             {
-                "actorId": "somds_consumer",
+                "actorId": "somds_medical_data_consumer",
                 "contribution": "INITIATOR",
                 "description": [
-                    "Initiates communication by sending a {var_label_dev_37_message_getmdib} message to a RefActor:somds_provider[]. Then listens for a {var_label_dev_37_message_getmdibresponse} message to retrieve the RefActor:somds_provider[]'s MDIB.",
+                    "Initiates communication by sending a {var_label_dev_37_message_getmdib} message to a RefActor:somds_medical_data_provider[]. Then listens for a {var_label_dev_37_message_getmdibresponse} message to retrieve the RefActor:somds_medical_data_provider[]'s MDIB.",
                     ""
                 ]
             },
             {
-                "actorId": "somds_provider",
+                "actorId": "somds_medical_data_provider",
                 "contribution": "RESPONDER",
                 "description": [
                     "Listens for {var_label_dev_37_message_getmdib} messages, which it responds to with {var_label_dev_37_message_getmdibresponse} messages respectively.",
@@ -244,15 +244,15 @@
         "label": "Establish Medical Alert Exchange",
         "actorRoles": [
             {
-                "actorId": "somds_consumer",
+                "actorId": "somds_medical_alert_consumer",
                 "contribution": "INITIATOR",
                 "description": [
-                    "Initiates communication by first subscribing to a RefActor:somds_consumer[] by sending a {var_label_dev_38_message_subscribe} message.",
+                    "Initiates communication by first subscribing to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> by sending a {var_label_dev_38_message_subscribe} message.",
                     ""
                 ]
             },
             {
-                "actorId": "somds_provider",
+                "actorId": "somds_medical_alert_provider",
                 "contribution": "RESPONDER",
                 "description": [
                     "Listens for {var_label_dev_38_message_subscribe} messages, which it responds to with {var_label_dev_38_message_subscribe_response}.",
@@ -267,18 +267,19 @@
         "label": "Publish Medical Alert Update",
         "actorRoles": [
             {
-                "actorId": "somds_consumer",
+                "actorId": "somds_medical_alert_consumer",
                 "contribution": "RESPONDER",
                 "description": [
                     "Listens for a Notification message to retrieve medical alert updates.",
+                    "",
                     ""
                 ]
             },
             {
-                "actorId": "somds_provider",
+                "actorId": "somds_medical_alert_provider",
                 "contribution": "INITIATOR",
                 "description": [
-                    "While a subscription is running, the <<vol1_spec_sdpi_p_actor_somds_provider>> delivers Notification messages.",
+                    "While a subscription is running, the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> delivers Notification messages.",
                     ""
                 ]
             }
@@ -290,15 +291,15 @@
         "label": "Retrieve Medical Alert Status",
         "actorRoles": [
             {
-                "actorId": "somds_consumer",
+                "actorId": "somds_medical_alert_consumer",
                 "contribution": "INITIATOR",
                 "description": [
-                    "Initiates communication by sending a {var_label_dev_40_message_getmdib} message to a RefActor:somds_medical_data_provider[]. Then listens for a {var_label_dev_40_message_getmdibresponse} message to retrieve the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDIB.",
+                    "Initiates communication by sending a {var_label_dev_40_message_getmdib} message to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>. Then listens for a {var_label_dev_40_message_getmdibresponse} message to retrieve the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>'s MDIB.",
                     ""
                 ]
             },
             {
-                "actorId": "somds_provider",
+                "actorId": "somds_medical_alert_provider",
                 "contribution": "RESPONDER",
                 "description": [
                     "Listens for {var_label_dev_40_message_getmdib} messages, which it responds to with {var_label_dev_40_message_getmdibresponse} messages respectively.",

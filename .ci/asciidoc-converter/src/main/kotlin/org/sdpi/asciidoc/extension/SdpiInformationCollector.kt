@@ -422,7 +422,7 @@ class SdpiInformationCollector(
         val requirementType: RequirementType = getRequirementType(nRequirementNumber, block)
         val owner: RequirementContext? = getRequirementOwner(block)
 
-        logger.info("Requirement: $nRequirementNumber")
+        //println("Requirement: $nRequirementNumber")
 
 
         val specification = getSpecification(block, nRequirementNumber)
@@ -479,7 +479,7 @@ class SdpiInformationCollector(
                 checkNotNull(strId) {
                     logger.error("Owner missing id")
                 }
-                logger.info("Found owner of requirement: $ownerType = $strId")
+                //println("Found owner of requirement: $ownerType = $strId")
                 return RequirementContext(ownerType, strId)
             }
         }
@@ -492,7 +492,7 @@ class SdpiInformationCollector(
         val noteContent: MutableList<Content> = mutableListOf()
         val exampleContent: MutableList<Content> = mutableListOf()
         val relatedContent: MutableList<Content> = mutableListOf()
-        val unstyledContent: MutableList<Content> = mutableListOf()
+        val unStyledContent: MutableList<Content> = mutableListOf()
 
         for (child in block.blocks) {
             val strStyle = child.attributes["style"].toString()
@@ -514,23 +514,23 @@ class SdpiInformationCollector(
                 }
 
                 "example" -> {
-                    logger.warn("Notes should be an example block in requirement #${nRequirementNumber}. In the future this will be an error")
-                    noteContent.addAll(getContent_Obj(child))
+                    logger.warn("Notes should be an example block in requirement #${nRequirementNumber}. ")
+                    throw IllegalStateException()
+                    //noteContent.addAll(getContent_Obj(child))
                 }
 
                 else -> {
-                    logger.warn("Unstyled content in requirement #${nRequirementNumber}. In the future this will be an error")
-
-                    unstyledContent.addAll(getContent_Obj(child))
+                    logger.error("Un-styled content in requirement #${nRequirementNumber}.")
+                    throw IllegalStateException()
+                    //unStyledContent.addAll(getContent_Obj(child))
                 }
             }
         }
 
-        // treat plain paragraphs as the normative content for
-        // backwards compatibility.
         if (normativeContent.isEmpty()) {
-            logger.warn("${block.sourceLocation} is missing normative content section; using unstyled paragraphs. This will be an error in the future")
-            normativeContent.addAll(unstyledContent)
+            logger.warn("${block.sourceLocation} is missing normative content section; using un-styled paragraphs.")
+            //normativeContent.addAll(unStyledContent)
+            throw IllegalStateException()
         }
 
         return RequirementSpecification(normativeContent, noteContent, exampleContent, relatedContent)
@@ -802,7 +802,8 @@ class SdpiInformationCollector(
         // For now, assume tech feature by default for backwards compatibility.
         if (strType == null) {
             strType = "tech_feature"
-            logger.warn("${getLocation(block)}, requirement type missing for #$requirementNumber, assuming $strType. In the future this will be an error.")
+            logger.error("${getLocation(block)}, requirement type missing for #$requirementNumber.")
+            throw IllegalStateException()
         }
 
         checkNotNull(strType) {

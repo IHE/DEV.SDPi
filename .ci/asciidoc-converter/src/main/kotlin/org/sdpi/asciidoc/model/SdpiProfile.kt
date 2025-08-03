@@ -92,28 +92,29 @@ class SdpiProfile(
     ): List<ProfileContribution> {
         val refs = mutableListOf<ProfileContribution>()
         if (strProfileOption == null) {
-            println("  Profile obligations:")
+            //println("  Profile obligations:")
             gatherObligations(refs, transactionReferences, strTransactionId, contribution, null)
         }
         for (po in options) {
-            println("  Profile-option obligations:")
+            //println("  Profile-option obligations:")
             val optionId = OptionId(OptionType.PROFILE, po.id, po.label, po.anchor)
             if (strProfileOption == null || po.id == strProfileOption) {
                 gatherObligations(refs, po.transactionReferences, strTransactionId, contribution, optionId)
             }
         }
         for (ao in actorOptions) {
-            println("  Profile actor-option obligations:")
+            //println("  Profile actor-option obligations:")
             val optionId = OptionId(OptionType.ACTOR, ao.id, ao.label, ao.anchor)
             if (strActorOption == null || ao.id == strActorOption) {
                 gatherObligations(refs, ao.transactionReferences, strTransactionId, contribution, optionId)
             }
         }
 
+        /*
         println("${profileId} obligations for $strTransactionId, $contribution profile-option=$strProfileOption, actor=$strActorOption")
         for (r in refs) {
             println("  ${r.profileId}, ${r.transactionId}, ${r.optionId}, ${r.obligation}")
-        }
+        }*/
         return refs
     }
 
@@ -124,7 +125,7 @@ class SdpiProfile(
     ): List<ProfileContribution> {
         val refs = mutableListOf<ProfileContribution>()
 
-        println("Get obligations for $strActorId to $strTransactionId:")
+        //println("Get obligations for $strActorId to $strTransactionId:")
 
         if (optionFilter == null) {
             gatherObligations(refs, transactionReferences, strTransactionId, strActorId, null)
@@ -132,7 +133,7 @@ class SdpiProfile(
 
         if (optionFilter == null) {
             for (po in options) {
-                println("  Profile-option obligations:")
+                //println("  Profile-option obligations:")
                 val optionId = OptionId(OptionType.PROFILE, po.id, po.label, po.anchor)
                 gatherObligations(refs, po.transactionReferences, strTransactionId, strActorId, optionId)
             }
@@ -145,7 +146,7 @@ class SdpiProfile(
         }
 
         for (ao in actorOptions) {
-            println("  Profile actor-option obligations:")
+            //println("  Profile actor-option obligations:")
             val optionId = OptionId(OptionType.ACTOR, ao.id, ao.label, ao.anchor)
             gatherObligations(refs, ao.transactionReferences, strTransactionId, strActorId, optionId)
         }
@@ -165,7 +166,7 @@ class SdpiProfile(
                 val obligation = tr.getObligation(contribution)
                 if (obligation != null) {
                     val pc = ProfileContribution(profileId, optionId, strTransactionId, contribution, obligation)
-                    println("    $profileId, $optionId, $strTransactionId, $contribution, $obligation")
+                    //println("    $profileId, $optionId, $strTransactionId, $contribution, $obligation")
                     refs.add(pc)
                 }
             }
@@ -185,7 +186,7 @@ class SdpiProfile(
                 for (obl in obligations) {
                     val pc =
                         ProfileContribution(profileId, optionId, strTransactionId, obl.contribution, obl.obligation)
-                    println("    $profileId, $strTransactionId,$strActorId,  $obl")
+                    //println("    $profileId, $strTransactionId,$strActorId,  $obl")
                     refs.add(pc)
                 }
             }
