@@ -1,7 +1,7 @@
 @startuml
 'https://plantuml.com/sequence-diagram
 
-!include ../plantuml/common_style.inc.puml
+!include plantuml/common_style.inc.puml
 autonumber
 
 !global $str_somds_consumer = "SOMDS Consumer"
