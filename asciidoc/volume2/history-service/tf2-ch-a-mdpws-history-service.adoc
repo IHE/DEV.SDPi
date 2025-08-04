@@ -62,6 +62,8 @@ NOTE: A <<vol1_spec_sdpi_p_actor_somds_provider>> may respond with data that exc
 For a version range-filtered subscription, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall respond with notifications that reflect the MDIB of the <<vol1_spec_sdpi_p_actor_somds_provider>> at the given pm:Mdib@SequenceId and pm:Mdib@InstanceId in the version interval including ++[hm:VersionRange/@StartVersion, hm:VersionRange/@EndVersion]++.
 
 NOTE: A <<vol1_spec_sdpi_p_actor_somds_provider>> may respond with data that exceed the interval of ++[hm:VersionRange/@StartVersion, hm:VersionRange/@EndVersion]++.
+
+NOTE: A <<vol1_spec_sdpi_p_actor_somds_provider>> may respond with a subset of data from the interval ++[hm:VersionRange/@StartVersion, hm:VersionRange/@EndVersion]++, e.g., if it cannot fully serve the request due to discarded historic information or filter request that point into the future.
 ****
 
 .R0509
