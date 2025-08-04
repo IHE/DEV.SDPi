@@ -82,13 +82,17 @@ Note that if the *@StepWidth* in the second range was not defined, the precision
 .R1015
 [sdpi_requirement#r1015,sdpi_req_level=shall]
 ****
-If attributes defining a precision (e. g. *@StepWidth*, *@Resolution*, etc.) are set to a decimal number with trailing "0"s after the decimal point, the trailing "0"s shall not be considered for the determination of the precision.
+For any metric's *@StepWidth* or *@Resolution*, a <<vol1_spec_sdpi_p_actor_somds_consumer>> shall ignore trailing zeros after the decimal point when determining display precision.
 
 .Notes
 [%collapsible]
 ====
-NOTE: It is allowed to set the precision, for example, to a number of "0.0100". However, the last two trailing "0"s of the number must be ignored and only the two digits after the decimal points ("0.01") are relevant for the precision. +
-However, this is not true for the "0"s *before* the decimal point. In this case, they are relevant for the determination of the precision (e.g. "10").
+[NOTE]
+=====
+XML Schema allows appending trailing zeros to decimal numbers such as in "0.0100". However, in this example, the last two trailing zeros are insignificant to the decimal's value and hence must be ignored when determining the precision.
+
+However, this does not apply for the zeros _before_ the decimal point. In this case the zeros are relevant for determining the precision, e.g., in "10".
+=====
 ====
 ****
 
