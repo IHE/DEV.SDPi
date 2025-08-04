@@ -30,9 +30,14 @@ end
 Consumer <-- Provider:  ChangeSequenceReport(ChangeSequence(@SequenceId=Y, HistoricMdib(@Time=t2>max(tn)))
 
 loop until no more reports exist for @SequenceId=X
-    Consumer <-- Provider:  ChangeSequenceReport(ChangeSequence(@SequenceId=Y, HistoricReport(@Time=tm>t2)*))
+    alt Not last iteration
+        Consumer <-- Provider:  ChangeSequenceReport(@LastReport=false, ChangeSequence(@SequenceId=Y, HistoricReport(@Time=tm>t2)*))
+    else Last iteration
+        Consumer <-- Provider:  ChangeSequenceReport(@LastReport=true, ChangeSequence(@SequenceId=Y, HistoricReport(@Time=tm>t2)*))
+    end
 end
 
-Consumer <-- Provider: SubscriptionEnd(SourceCancelling)
-
+opt
+    Consumer <-- Provider: SubscriptionEnd(SourceCancelling)
+end
 @enduml

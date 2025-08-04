@@ -17,7 +17,11 @@ Consumer <- Provider: SubscribeResponse(...)
 
 Consumer <-- Provider:  ChangeSequenceReport(ChangeSequence(@SequenceId=X, LocalizedText*, HistoricMdib(@Time=t<=tStart), HistoricReport(@Time=tn>t)*))
 loop until no more reports exist for @SequenceId=X
-    Consumer <-- Provider:  ChangeSequenceReport(ChangeSequence(@SequenceId=X, Report(@Time=tm>max(tn))*))
+    alt Not last iteration
+        Consumer <-- Provider: ChangeSequenceReport(@LastReport=false, ChangeSequence(@SequenceId=X, Report(@Time=tm>max(tn))*))
+    else Last iteration
+        Consumer <-- Provider: ChangeSequenceReport(@LastReport=true, ChangeSequence(@SequenceId=X, Report(@Time=tm>max(tn))*))
+    end
 end
 
 Consumer <-- Provider: SubscriptionEnd(SourceCancelling)
@@ -34,7 +38,11 @@ end
 Consumer <-- Provider:  ChangeSequenceReport(ChangeSequence(@SequenceId=X, HistoricMdib(@Time=t<=tStart), HistoricReport(@Time=tn>t)*))
 
 loop until no more reports exist for @SequenceId=X
-    Consumer <-- Provider:  ChangeSequenceReport(ChangeSequence(@SequenceId=X, HistoricReport(@Time=tm>max(tn))*))
+    alt Not last iteration
+        Consumer <-- Provider:  ChangeSequenceReport(@LastReport=false, ChangeSequence(@SequenceId=X, HistoricReport(@Time=tm>max(tn))*))
+    else Last iteration
+        Consumer <-- Provider:  ChangeSequenceReport(@LastReport=true, ChangeSequence(@SequenceId=X, HistoricReport(@Time=tm>max(tn))*))
+    end
 end
 
 Consumer <-- Provider: SubscriptionEnd(SourceCancelling)
@@ -51,9 +59,15 @@ end
 Consumer <-- Provider:  ChangeSequenceReport(ChangeSequence(@SequenceId=X, HistoricMdib(@Time=t<=tStart))
 
 loop until no more reports exist for @SequenceId=X
-    Consumer <-- Provider:  ChangeSequenceReport(ChangeSequence(@SequenceId=X, HistoricReport(@Time=tn>t)*))
+    alt Not last iteration
+        Consumer <-- Provider:  ChangeSequenceReport(@LastReport=false, ChangeSequence(@SequenceId=X, HistoricReport(@Time=tn>t)*))
+    else Last iteration
+        Consumer <-- Provider:  ChangeSequenceReport(@LastReport=true, ChangeSequence(@SequenceId=X, HistoricReport(@Time=tn>t)*))
+    end
 end
 
-Consumer <-- Provider: SubscriptionEnd(SourceCancelling)
+opt
+    Consumer <-- Provider: SubscriptionEnd(SourceCancelling)
+end
 
 @enduml
