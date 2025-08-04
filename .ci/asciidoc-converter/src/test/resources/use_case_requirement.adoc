@@ -1,0 +1,62 @@
+:doctype: book
+
+:sdpi_oid.sdpi-p: 1.3.6.1.4.1.19376.1.6.2.11
+:sdpi_oid.sdpi: 1.3.6.1.4.1.19376.1.6.2.10.1.1.1
+
+[role="use-case",use-case-id=stad]
+[sdpi_feature="Synchronized Time Across Devices"]
+=== Use Case Feature 1: Synchronized Time Across Devices (STAD)
+
+==== Narrative
+Nurse Jean attaches a ventilator to the medical device network in the ICU.  It automatically obtains the correct time.
+
+==== Benefits
+Automatically acquiring the time saves the user from spending time entering the time into the device.  It also guarantees that the correct time will be entered.
+It is also important for all devices to have a consistent time since the data being exported to consuming devices and systems will use the time stamps from the device to mark the time that the clinical data was acquired.  Since this is part of the clinical record, accuracy is very important.
+
+==== Technical Pre-Conditions
+
+[role=use-case-background]
+====
+*Given* All devices communicate using a common MD LAN protocol
+
+*And* A Time Source (TS) Service is on the MD LAN network
+====
+
+==== Scenarios
+
+[role=use-case-scenario]
+[sdpi_scenario="Device is connected to the MD LAN network with a Time Source service"]
+===== Scenario: STAD 1.1 - Device is connected to the MD LAN network with a Time Source service
+
+[role=use-case-steps]
+====
+*Given* Device has detected at least one TS Service
+
+*When* The TS Service is operational
+
+*Then* The device will synchronize its time with the TS Service
+====
+
+====== Safety, Effectiveness and Security - Requirements and Considerations
+
+.R1520
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=use_case_feature,sdpi_req_specification=sdpi]
+[sdpi_req_group="consumer,provider"]
+****
+
+[NORMATIVE]
+====
+The Manufacturer of a SOMDS Participant shall include all of the following information in the accompanying documentation:
+
+ * The responsible organization needs to provide a TS Service with 50 millisecond accuracy.
+ * The responsible organization needs to provide a redundant TS Service configuration with at least one backup server.
+ * The responsible organization needs to configure the same TS Service for SOMDS Participants that execute System Function Contribution (SFC)s together.
+====
+
+[NOTE]
+====
+The 50ms target accuracy is suitable for highly demanding use cases like real time waveform comparison.
+====
+
+****

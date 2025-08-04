@@ -1,0 +1,92 @@
+<html>
+ <head></head>
+ <body>
+  <div class="sect2 use-case">
+   <h3 id="_use_case_feature_1_synchronized_time_across_devices_stad">0.1 Use Case Feature 1: Synchronized Time Across Devices (STAD)</h3>
+   <div class="sect3">
+    <h4 id="_narrative">0.1.1 Narrative</h4>
+    <div class="paragraph">
+     <p>Nurse Jean attaches a ventilator to the medical device network in the ICU. It automatically obtains the correct time.</p>
+    </div>
+   </div>
+   <div class="sect3">
+    <h4 id="_benefits">0.1.2 Benefits</h4>
+    <div class="paragraph">
+     <p>Automatically acquiring the time saves the user from spending time entering the time into the device. It also guarantees that the correct time will be entered. It is also important for all devices to have a consistent time since the data being exported to consuming devices and systems will use the time stamps from the device to mark the time that the clinical data was acquired. Since this is part of the clinical record, accuracy is very important.</p>
+    </div>
+   </div>
+   <div class="sect3">
+    <h4 id="_technical_pre_conditions">0.1.3 Technical Pre-Conditions</h4>
+    <div class="exampleblock use-case-background">
+     <div class="content">
+      <div class="paragraph">
+       <p><strong>Given</strong> All devices communicate using a common MD LAN protocol</p>
+      </div>
+      <div class="paragraph">
+       <p><strong>And</strong> A Time Source (TS) Service is on the MD LAN network</p>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="sect3">
+    <h4 id="_scenarios">0.1.4 Scenarios</h4>
+    <div class="sect4 use-case-scenario">
+     <h5 id="_scenario_stad_1_1_device_is_connected_to_the_md_lan_network_with_a_time_source_service">0.1.4.1 Scenario: STAD 1.1 - Device is connected to the MD LAN network with a Time Source service</h5>
+     <div class="exampleblock use-case-steps">
+      <div class="content">
+       <div class="paragraph">
+        <p><strong>Given</strong> Device has detected at least one TS Service</p>
+       </div>
+       <div class="paragraph">
+        <p><strong>When</strong> The TS Service is operational</p>
+       </div>
+       <div class="paragraph">
+        <p><strong>Then</strong> The device will synchronize its time with the TS Service</p>
+       </div>
+      </div>
+     </div>
+     <div class="sect5">
+      <h6 id="_safety_effectiveness_and_security_requirements_and_considerations">0.1.4.1.1 Safety, Effectiveness and Security - Requirements and Considerations</h6>
+      <div id="r1520" class="sidebarblock requirement">
+       <div class="content">
+        <div class="title">
+         R1520
+        </div>
+        <div class="exampleblock">
+         <div class="content">
+          <div class="paragraph">
+           <p>The Manufacturer of a SOMDS Participant shall include all of the following information in the accompanying documentation:</p>
+          </div>
+          <div class="ulist">
+           <ul>
+            <li><p>The responsible organization needs to provide a TS Service with 50 millisecond accuracy.</p></li>
+            <li><p>The responsible organization needs to provide a redundant TS Service configuration with at least one backup server.</p></li>
+            <li><p>The responsible organization needs to configure the same TS Service for SOMDS Participants that execute System Function Contribution (SFC)s together.</p></li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        <div class="admonitionblock note">
+         <table>
+          <tbody>
+           <tr>
+            <td class="icon">
+             <div class="title">
+              Note
+             </div></td>
+            <td class="content">
+             <div class="paragraph">
+              <p>The 50ms target accuracy is suitable for highly demanding use cases like real time waveform comparison.</p>
+             </div></td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

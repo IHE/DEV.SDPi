@@ -1,0 +1,37 @@
+:doctype: book
+
+:sdpi_oid.sdpi-p: 1.3.6.1.4.1.19376.1.6.2.11
+
+.R1023
+[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature,sdpi_req_group="consumer,discovery-proxy",sdpi_req_specification=sdpi-p]
+****
+
+[NORMATIVE]
+====
+When the managed discovery option is enabled for a SOMDS consumer, then it shall use the DEV-47 transaction to retrieve SOMDS provider network presence metadata from the Discovery Proxy actor.
+====
+
+[NOTE]
+====
+. When retrieving network presence metadata from a discovery proxy actor, a discovery scope may be specified as a filter to identify a specific subset of SOMDS provider systems.
+. A SOMDS consumer may optionally use the DEV-47 transaction to subscribe to all metadata updates from a set of SOMDS consumer systems, essentially using the discovery proxy as a pass-through for SOMDS provider DEV-23 and DEV-24 transactions. 
+====
+
+[EXAMPLE]
+====
+This is an example of an example block. 
+====
+
+[RELATED]
+====
+<<ref_oasis_ws_discovery_2009>>, section 2.2.2 Managed mode.
+====
+
+****
+
+[bibliography]
+=== Referenced Standards
+
+* [[[ref_ieee_11073_10101_2020,IEEE 11073-10101:2020]]] IEEE 11073-10101™ International Standard - Health informatics--Device interoperability--Part 10101:Point-of-care medical device communication--Nomenclature.  Available at https://standards.ieee.org/ieee/11073-10101/10343/[IEEE online standards store].
+
+* [[[ref_oasis_ws_discovery_2009,OASIS WS-Discovery:2009]]] OASIS Standard, Web Services Dynamic Discovery (WS-Discovery) Version 1.1, OASIS Standard, 1 July 2009, available at http://docs.oasis-open.org/ws-dd/discovery/1.1/wsdd-discovery-1.1-spec.html
