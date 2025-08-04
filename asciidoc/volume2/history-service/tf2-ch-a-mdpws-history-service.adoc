@@ -13,8 +13,6 @@ The <<vol1_spec_sdpi_p_actor_somds_provider>> may split the response into multip
 This allows for the <<vol1_spec_sdpi_p_actor_somds_provider>> to stipulate the data rate in which it provides the information to the <<vol1_spec_sdpi_p_actor_somds_consumer>> and avoid exceeding
 data size limitations of notifications.
 
-Once the final report has been sent, the <<vol1_spec_sdpi_p_actor_somds_provider>> sends an empty report and ends the subscription to signify the end of the <<term_history_service>> request.
-
 The <<term_history_service>> allows for limited filtering:
 
 - Select historic data based on time and version ranges
