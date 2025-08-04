@@ -19,6 +19,11 @@
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
+		<xsd:attribute name="LastReport" default="false" type="xsd:boolean" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Designates a report to be the last one in a sequence of reports of a history service request; true if it is the last report, false otherwise.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
 	</xsd:complexType>
 	<xsd:element name="ChangeSequence" type="hm:ChangeSequenceType">
 		<xsd:annotation>
@@ -107,6 +112,11 @@
 			<xsd:element ref="msg:WaveformStream"/>
 		</xsd:choice>
 		<xsd:attribute name="Time" type="pm:Timestamp" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Time at which the report was persisted.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="FinalReport" type="pm:Timestamp" use="required">
 			<xsd:annotation>
 				<xsd:documentation>Time at which the report was persisted.</xsd:documentation>
 			</xsd:annotation>
