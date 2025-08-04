@@ -70,6 +70,8 @@ NOTE: A <<vol1_spec_sdpi_p_actor_somds_provider>> may respond with a subset of d
 [sdpi_requirement#r0509,sdpi_req_level=shall]
 ****
 If a hm:HistoryQuery element contains a hm:LanguageFilter element, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall transmit <<term_historic_localized_text>> according to the rule set specified in hm:HistoryQuery/hm:LanguageFilter.
+
+NOTE: If a <<vol1_spec_sdpi_p_actor_somds_provider>> cannot serve the requested languages, the <<vol1_spec_sdpi_p_actor_somds_provider>> may omit them from the notification messages.
 ****
 
 .R0510
