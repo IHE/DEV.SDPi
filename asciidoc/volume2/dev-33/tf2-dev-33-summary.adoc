@@ -1,0 +1,3 @@
+// DEV-33 Transaction Summary
+
+Retrieve localized texts of a <<vol1_spec_sdpi_p_actor_somds_provider>> a <<vol1_spec_sdpi_p_actor_somds_consumer>> is interested in.
