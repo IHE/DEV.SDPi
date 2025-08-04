@@ -113,13 +113,13 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall transmit <<term_mdib_sequence_
 .R0516
 [sdpi_requirement#r0516,sdpi_req_level=shall]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_provider>> shall signify the end of the historic MDIB data stream by sending a hm:ChangeSequenceReport notification that contains 0 pm:ChangeSequence elements.
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall signify the end of the historic MDIB data stream by sending a hm:ChangeSequenceReport notification that contains @LastReport = true.
 ****
 
 .R0517
-[sdpi_requirement#r0517,sdpi_req_level=shall]
+[sdpi_requirement#r0517,sdpi_req_level=should]
 ****
-When a <<vol1_spec_sdpi_p_actor_somds_provider>> has sent the last notification of a <<term_history_service>> subscription, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall end the subscription by sending a wse:SubscriptionEnd with wse:Status = "http://schemas.xmlsoap.org/ws/2004/08/eventing/SourceCancelling".
+When a <<vol1_spec_sdpi_p_actor_somds_provider>> has sent the last notification of a <<term_history_service>> subscription, the <<vol1_spec_sdpi_p_actor_somds_provider>> should end the subscription by sending a wse:SubscriptionEnd with wse:Status = "http://schemas.xmlsoap.org/ws/2004/08/eventing/SourceCancelling".
 ****
 
 ==== Utilized OIDs
