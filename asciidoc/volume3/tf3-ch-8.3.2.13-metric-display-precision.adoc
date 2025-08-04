@@ -3,7 +3,7 @@
 
 A <<actor_somds_provider>> conforming to the <<ref_ieee_11073_10701_2022>>, provides numeric metric data that fulfils the following requirements:
 
-[quote, "<<ref_ieee_11073_10701_2022>> TR0239"]
+[quote, "TR0239"]
 ____
 For each of its numeric and sample array METRICs, an SDC METRIC PROVIDER
 SHALL provide one or more pm:TechnicalRange elements including an @Upper and @Lower limit.
@@ -12,10 +12,10 @@ ____
 [NOTE]
 The above requirement implies that the sum of all *pm:TechnicalRange* elements covers the entire possible metric's *@Value* or *@Samples* range without gaps.
 
-[quote, "<<ref_ieee_11073_10701_2022>> TR0800"]
+[quote, "TR0800"]
 For each METRIC of an SDC METRIC PROVIDER, for each pm:Range of the METRIC, while the minimum numerical distance between two values differs from the METRIC's @resolution, the SDC METRIC PROVIDER SHOULD provide this distance using pm:Range/@StepWidth.
 
-[quote, "<<ref_ieee_11073_10701_2022>> TR0242"]
+[quote, "TR0242"]
 ____
 For each METRIC's @value or @samples that the MEDICAL DEVICE represented by an MDS of an SDC METRIC PROVIDER displays to a USER, while the precision of this display differs from the METRIC's @resolution or the active pm:Range has a @StepWidth that differs from the METRIC's @resolution, the SDC METRIC PROVIDER SHALL provide the display precision by attaching one mpkp:DisplayPrecision EXTENSION with @ext:MustUnderstand = false to the active pm:Range element.
 
