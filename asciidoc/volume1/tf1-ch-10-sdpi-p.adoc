@@ -651,7 +651,7 @@ The <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor acts as a man-in-the-middle
 
 .SDPi-P Managed Discovery Option - transaction Sequence Diagram
 [#figure_sdpi-p-managed-discovery-option-sequence-diagram]
-[plantuml, target=target=puml-sdpi-p-managed-discovery-option-sequence-diagram, format=svg, format=svg]
+[plantuml, target=puml-sdpi-p-managed-discovery-option-sequence-diagram, format=svg, format=svg]
 ....
 include::../plantuml/vol1-figure-sdpi-p-managed-discovery-option-sequence-diagram.puml[]
 ....
