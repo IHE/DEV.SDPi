@@ -1,0 +1,12 @@
+== OID identifiers
+
+See https://wiki.ihe.net/index.php/PCD_OID_Management[PCD OID Management] for canonical definitions 
+of object identifiers for the profile, its actors and transactions, etc. 
+
+=== Actors
+
+sdpi_oid_table::[arc="actors"]
+
+=== Transactions
+
+sdpi_oid_table::[arc="transactions"]

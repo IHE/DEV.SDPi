@@ -10,6 +10,13 @@ enum class BlockAttribute(val key: String) {
     MAX_OCCURRENCE("sdpi_max_occurrence"),
     VOLUME_CAPTION("sdpi_volume_caption"),
 
+    // The leaf-arc of the item's oid. The complete oid is computed
+    // by appending this to the root based on the block type when
+    // the attribute starts with a "."  (e.g.,
+    // 1.3.6.1.4.1.19376.1.6.3 for DEV actors, see
+    // https://wiki.ihe.net/index.php/PCD_OID_Management). If the
+    // value doesn't start with a '.' we use it directly.
+    LEAF_ARC("oid-arcs")
 }
 
 /**
@@ -91,4 +98,12 @@ enum class TransactionIncludeAttributes(val key: String) {
     // Transaction is not defined yet, but deferred to a future version.
     // This attribute gives the name of the placeholder.
     PLACEHOLDER_NAME("placeholder-name")
+}
+
+sealed class TableAttributes(val key: String) {
+
+    enum class OidTable(val key: String) {
+        // Define filter for the root arc for oids to include in the table.
+        ROOT_ARC("arc")
+    }
 }

@@ -6,7 +6,7 @@
 :val_label_dev_23_payload_discovery_scope: Discovery Scope
 
 [#vol2_clause_dev_23,sdpi_offset=23]
-[role=transaction,transaction-id=DEV-23]
+[role=transaction,transaction-id=DEV-23,oid-arcs=".23.1,.23"]
 === Announce Network Presence [{var_transaction_id}]
 
 ==== Scope

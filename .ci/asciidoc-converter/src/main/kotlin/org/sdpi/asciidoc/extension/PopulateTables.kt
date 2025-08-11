@@ -6,14 +6,11 @@ import org.asciidoctor.ast.StructuralNode
 import org.asciidoctor.ast.Table
 import org.asciidoctor.extension.Contexts
 import org.asciidoctor.extension.Treeprocessor
-import org.sdpi.asciidoc.RequirementAttributes
+import org.sdpi.asciidoc.*
 import org.sdpi.asciidoc.factories.ContentModuleTableBuilder
+import org.sdpi.asciidoc.factories.OidTableBuilder
 import org.sdpi.asciidoc.factories.TransactionTableBuilder
-import org.sdpi.asciidoc.getRequirementActors
-import org.sdpi.asciidoc.getRequirementGroups
 import org.sdpi.asciidoc.model.*
-import org.sdpi.asciidoc.plainContext
-import javax.swing.text.html.Option
 
 /**
  * Tree processor to populate requirement table placeholders, which are inserted
@@ -29,13 +26,15 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
 
     private fun processBlock(block: StructuralNode) {
         if (block.hasRole(Roles.QueryTable.REQUIREMENT.key)) {
-            populateQueryTable(block as Table, getSelectedRequirements(block))
+            populateRequirementTable(block as Table, getSelectedRequirements(block))
         } else if (block.hasRole(ICS_TABLE_ROLE)) {
             populateICSTable(block as Table, getSelectedRequirements(block))
         } else if (block.hasRole(Roles.QueryTable.TRANSACTIONS.key)) {
             populateTransactionTable(block as Table)
         } else if (block.hasRole(Roles.QueryTable.CONTENT_MODULE.key)) {
             populateContentModuleTable(block as Table)
+        } else if (block.hasRole(Roles.QueryTable.OID.key)) {
+            populateOidTable(block as Table)
         } else {
             for (child in block.blocks) {
                 processBlock(child)
@@ -43,6 +42,7 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
         }
     }
 
+    // region requirement table
     /**
      * Determine which requirements should be included in the table.
      */
@@ -72,7 +72,7 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
     /**
      * Populates the table with the supplied requirements
      */
-    private fun populateQueryTable(table: Table, requirements: Collection<SdpiRequirement2>) {
+    private fun populateRequirementTable(table: Table, requirements: Collection<SdpiRequirement2>) {
         val colId = createTableColumn(table, 0)
         val colLocalId = createTableColumn(table, 1)
         val colLevel = createTableColumn(table, 2)
@@ -112,8 +112,9 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
             table.body.add(row)
         }
     }
+    // endregion
 
-
+    // region ICS table
     private fun populateICSTable(table: Table, requirements: Collection<SdpiRequirement2>) {
         val colId = createTableColumn(table, 0)
         val colReference = createTableColumn(table, 1)
@@ -145,7 +146,9 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
             table.body.add(row)
         }
     }
+    // endregion
 
+    // region transaction table
     private fun populateTransactionTable(table: Table) {
 
         val strProfile = table.attributes[Roles.Profile.ID.key]?.toString()
@@ -231,15 +234,17 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
 
         if (transactionReference.placeholderName != null) {
             val placeholderTransaction = SdpiTransaction(
-                "", transactionReference.transactionId,
-                transactionReference.placeholderName, null
+                transactionReference.transactionId, emptyList<String>(),
+                transactionReference.placeholderName, "",null
             )
             return placeholderTransaction
         }
 
         return null
     }
+    // endregion
 
+    // region content module table
     private fun populateContentModuleTable(table: Table) {
 
         val strProfile = table.attributes[Roles.Profile.ID.key]?.toString()
@@ -322,5 +327,66 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
 
         return null
     }
+    // endregion
+
+    // region oid table
+    private fun populateOidTable(table: Table) {
+
+        val strRootArcs = table.attributes[TableAttributes.OidTable.ROOT_ARC.key]?.toString()
+        checkNotNull(strRootArcs) {
+            logger.error("$BLOCK_MACRO_NAME_OID_TABLE missing required attribute '${TableAttributes.OidTable.ROOT_ARC.key}'")
+        }
+
+        val oidsToTable = mutableListOf<SdpiOidReference>()
+        for (strArc in strRootArcs.split(' ')) {
+            val arcOid = parseOidId(strArc)
+            checkNotNull(arcOid) {
+                logger.error("Arc $strArc is not known")
+            }
+
+            if (arcOid == WellKnownOid.DEV_ACTOR) {
+                gatherActorOids(oidsToTable)
+            } else if (arcOid == WellKnownOid.DEV_TRANSACTION) {
+                gatherTransactionOids(oidsToTable)
+            } else {
+                logger.error("Oid tables don't support $strArc (yet?)")
+            }
+        }
+
+        val tableBuilder = OidTableBuilder(this, table)
+        tableBuilder.setupHeadings()
+
+        for (oid in oidsToTable.sortedBy{it}) {
+            tableBuilder.addRow(oid)
+        }
+    }
+
+    private fun gatherActorOids(oidsToTable: MutableList<SdpiOidReference>) {
+        for(profile in docInfo.profiles()) {
+            for(actor in profile.actorReferences()) {
+                for(strOid in actor.oids) {
+                    val oid = SdpiOidReference(WellKnownOid.DEV_ACTOR, strOid, actor.label, actor.anchor)
+                    oidsToTable.add(oid)
+                }
+            }
+        }
+    }
+
+    private fun gatherTransactionOids(oidsToTable: MutableList<SdpiOidReference>) {
+        for(transaction in docInfo.transactions().values) {
+            for(strOid in transaction.oids) {
+                val oid = SdpiOidReference(
+                    WellKnownOid.DEV_TRANSACTION,
+                    strOid,
+                    transaction.label,
+                    transaction.anchor
+                )
+                oidsToTable.add(oid)
+            }
+        }
+    }
+
+
+    // endregion
 }
 

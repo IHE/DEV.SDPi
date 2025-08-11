@@ -153,7 +153,7 @@ TODO:
 include::../plantuml/vol1-figure-sdpi-r-example-sequence-diagram.puml[]
 ....
 
-[#vol1_clause_sdpi_r_somds_medical_data_provider,role="actor actor-alias",actor-id="somds_medical_data_provider"]
+[#vol1_clause_sdpi_r_somds_medical_data_provider,role="actor actor-alias",actor-id="somds_medical_data_provider",oid-arcs=.39]
 ===== SOMDS Medical Data Provider
 [#vol1_spec_sdpi_r_actor_somds_medical_data_provider,reftext='SOMDS Medical Data Provider',role="actor-alias",actor-id="somds_medical_data_provider"]
 Actor Summary Definition:
@@ -168,7 +168,7 @@ Note that optional capabilities for this specification, as specified in <<vol1_c
 
 A system that participates in a <<acronym_somds>> network instance can integrate both <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> and <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> capabilities.
 
-[#vol1_clause_sdpi_r_somds_medical_data_consumer,role="actor actor-alias",actor-id="somds_medical_data_consumer"]
+[#vol1_clause_sdpi_r_somds_medical_data_consumer,role="actor actor-alias",actor-id="somds_medical_data_consumer",oid-arcs=.38]
 ===== SOMDS Medical Data Consumer
 [#vol1_spec_sdpi_r_actor_somds_medical_data_consumer, reftext='SOMDS Medical Data Consumer',role="actor-alias",actor-id="somds_medical_data_consumer"]
 Actor Summary Definition:
@@ -183,7 +183,7 @@ Note that optional capabilities for this specification, as specified in <<vol1_c
 
 A system that participates in a <<acronym_somds>> network instance can integrate both <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> and <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> capabilities.
 
-[#vol1_clause_sdpi_r_somds_dec_gateway, reftext='SOMDS DEC Gateway',role="actor actor-alias",actor-id="somds_dec_gateway"]
+[#vol1_clause_sdpi_r_somds_dec_gateway, reftext='SOMDS DEC Gateway',role="actor actor-alias",actor-id="somds_dec_gateway",oid-arcs=.31]
 ===== SOMDS DEC Gateway
 [#vol1_spec_sdpi_r_actor_somds_dec_gateway, reftext='SOMDS DEC Gateway',role="actor-alias",actor-id="somds_dec_gateway"]
 Actor Summary Definition:
@@ -204,7 +204,7 @@ Detailed specifications for mapping from <<acronym_somds>>/<<acronym_biceps>>  t
 
 [#vol1_clause_sdpi_r_somds_fhir_medical_data_gateway,role="actor-alias",actor-id="somds_fhir_medical_data_gateway"]
 ===== SOMDS FHIR Medical Data Gateway
-[#vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway, reftext='SOMDS FHIR Medical Data Gateway',role="actor actor-alias",actor-id="somds_fhir_medical_data_gateway"]
+[#vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway, reftext='SOMDS FHIR Medical Data Gateway',role="actor actor-alias",actor-id="somds_fhir_medical_data_gateway",oid-arcs=.33]
 Actor Summary Definition:
 [none]
 . A <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>> grouped actor that supports exchange of medical data between <<acronym_somds>>-based systems and <<acronym_hl7>> <<acronym_fhir>>-based systems.

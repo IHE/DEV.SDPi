@@ -157,9 +157,14 @@ fun makeLink(strAnchor: String, strText: String, strClass: String? = null): Stri
     if (strAnchor.contains(" ")) {
         throw  InvalidArguments("Anchor '$strAnchor' contains spaces")
     }
-    if (strClass == null) {
-        return "link:#$strAnchor[$strText]"
+
+    return if (strClass == null) {
+        "link:#$strAnchor[$strText]"
     } else {
-        return "link:#$strAnchor[$strText,role=${strClass}]"
+        "link:#$strAnchor[$strText,role=${strClass}]"
     }
+}
+
+fun makeLink(strAnchor: String, strText: String, bPreserveLinkText: Boolean): String{
+    return makeLink(strAnchor, strText, if (bPreserveLinkText) LinkStyles.TITLE_TEXT.className else null)
 }

@@ -6,9 +6,10 @@ import kotlin.coroutines.Continuation
 
 @Serializable
 data class SdpiTransaction(
-    val anchor: String,
     val id: String,
+    val oids: List<String>,
     val label: String,
+    val anchor: String,
     val actorRoles: List<SdpiActorRole>?
 ) {
     fun createTransactionListLink(): String {

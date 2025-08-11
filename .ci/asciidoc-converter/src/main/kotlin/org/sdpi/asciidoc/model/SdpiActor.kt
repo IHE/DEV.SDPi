@@ -5,6 +5,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class SdpiActor(
     val id: String,
+    val oids: List<String>,
     val label: String,
     val profile: String,
     val anchor: String,

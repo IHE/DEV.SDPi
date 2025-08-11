@@ -53,6 +53,7 @@ class TransactionTableBuilder(
         row.cells.add(processor.createTableCell(colContribution, strContribution, infoCellStyles))
         row.cells.add(processor.createTableCell(colObligation, strDefaultObligation, infoCellStyles))
         row.cells.add(processor.createTableCell(colOption, createOptionCell(option), infoCellStyles))
+
         table.body.add(row)
     }
 

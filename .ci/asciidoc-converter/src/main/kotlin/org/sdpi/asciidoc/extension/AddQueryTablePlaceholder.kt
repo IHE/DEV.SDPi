@@ -4,12 +4,14 @@ import org.apache.logging.log4j.kotlin.Logging
 import org.asciidoctor.ast.StructuralNode
 import org.asciidoctor.extension.BlockMacroProcessor
 import org.asciidoctor.extension.Name
-import org.sdpi.asciidoc.ContentModuleAttributes
-import org.sdpi.asciidoc.RequirementAttributes
+import org.sdpi.asciidoc.*
+import org.sdpi.asciidoc.model.WellKnownOid
+import org.sdpi.asciidoc.model.parseOidId
 
 const val BLOCK_MACRO_NAME_REQUIREMENT_TABLE = "sdpi_requirement_table"
 const val BLOCK_MACRO_NAME_TRANSACTION_TABLE = "sdpi_transaction_table"
 const val BLOCK_MACRO_NAME_CONTENT_MODULE_TABLE = "sdpi_content_module_table"
+const val BLOCK_MACRO_NAME_OID_TABLE = "sdpi_oid_table"
 
 
 /**
@@ -106,5 +108,40 @@ class AddContentModuleQueryPlaceholder : BlockMacroProcessor(BLOCK_MACRO_NAME_CO
         }
 
         return placeholderTable
+    }
+}
+
+@Name(BLOCK_MACRO_NAME_OID_TABLE)
+class AddOidQueryPlaceholder : BlockMacroProcessor(BLOCK_MACRO_NAME_OID_TABLE) {
+    private companion object : Logging
+
+    override fun process(parent: StructuralNode, target: String, attributes: MutableMap<String, Any>): StructuralNode {
+        attributes["role"] = Roles.QueryTable.OID.key
+        val placeholderTable = createTable(parent)
+        placeholderTable.attributes["role"] = Roles.QueryTable.OID.key
+        placeholderTable.attributes["title"] = attributes["title"]
+        placeholderTable.attributes["id"] = attributes["id"]
+
+        // Add filter attributes to the table for the tree processor to consume.
+        val strRootArcs = attributes[TableAttributes.OidTable.ROOT_ARC.key]?.toString()
+        checkNotNull(strRootArcs) {
+            logger.error("$BLOCK_MACRO_NAME_OID_TABLE missing required attribute '${TableAttributes.OidTable.ROOT_ARC.key}'")
+        }
+        placeholderTable.attributes[TableAttributes.OidTable.ROOT_ARC.key] = strRootArcs
+
+        return placeholderTable
+    }
+
+    private fun parseArcFilter(strRootArcs: String): List<WellKnownOid> {
+        val arcs = strRootArcs.split(' ')
+        val roots = mutableListOf<WellKnownOid>()
+        for (strArc in arcs) {
+            val oid = parseOidId(strArc)
+            checkNotNull(oid) {
+                logger.error("Arc $strArc is not known")
+            }
+            roots.add(oid)
+        }
+        return roots
     }
 }

@@ -73,6 +73,9 @@ sealed class Roles {
 
         // The role applied to content module tables
         CONTENT_MODULE("content-module-table"),
+
+        // The role applied to oid tables
+        OID("oid-table"),
     }
 
     enum class ContentModule(val key: String) {

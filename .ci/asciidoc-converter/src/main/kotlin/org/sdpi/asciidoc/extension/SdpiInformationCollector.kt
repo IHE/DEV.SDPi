@@ -66,7 +66,7 @@ class SdpiInformationCollector(
     fun dumpActorAliases() {
         println("Actor aliases")
         println("=============")
-        for(alias in actorAliases) {
+        for (alias in actorAliases) {
             println("${alias.key} => ${alias.value}")
         }
     }
@@ -222,6 +222,8 @@ class SdpiInformationCollector(
         checkNotNull(strId) {
             logger.error("Block with ${Roles.Actor.SECTION_ROLE.key} role requires an ${Roles.Actor.ID.key}")
         }
+
+
         val strLabel = block.reftext ?: block.title
         logger.info("Found actor $strId => $strLabel")
 
@@ -239,9 +241,11 @@ class SdpiInformationCollector(
             }
         }
 
+        val strOid = getOids(block, "Actor $strId", WellKnownOid.DEV_ACTOR)
+
         actorAliases[strId] = strId // Self alias for easy lookup
         actorAliases["actor_$strId"] = strId // common alternative name.
-        val newActor = SdpiActor(strId, strTitle, profile.profileId, strAnchor)
+        val newActor = SdpiActor(strId, strOid, strTitle, profile.profileId, strAnchor)
         actors[strId] = newActor
         profile.addActor(newActor)
     }
@@ -986,6 +990,10 @@ class SdpiInformationCollector(
             logger.error("Transaction id on block $strTitle is required")
         }
 
+        val strDefaultLeaf = getDefaultTransactionOid(strTransactionId)
+        val oids = getOids(block, "Transaction $strTransactionId", WellKnownOid.DEV_TRANSACTION, strDefaultLeaf)
+
+
         check(!transactions.contains(strTransactionId)) // check for duplicate.
         {
             "Duplicate transaction #${strTransactionId} ($strLabel)".also {
@@ -994,7 +1002,18 @@ class SdpiInformationCollector(
         }
 
         val actorRoles = transactionActors.transactionActors()[strTransactionId]
-        transactions[strTransactionId] = SdpiTransaction(strAnchor, strTransactionId, strTitle, actorRoles)
+        transactions[strTransactionId] = SdpiTransaction(strTransactionId, oids, strTitle, strAnchor, actorRoles)
+    }
+
+    private fun getDefaultTransactionOid(strTransactionId: String): String? {
+        if (strTransactionId.startsWith("DEV-")) {
+            val strDefaultLeaf = strTransactionId.substring(4)
+            if (strDefaultLeaf.toIntOrNull() != null) {
+                return ".$strDefaultLeaf,.$strDefaultLeaf.1"
+            }
+        }
+        return null
+
     }
     //endregion
 
@@ -1037,6 +1056,30 @@ class SdpiInformationCollector(
     }
 
     //endregion
+
+    // region Helpers
+    private fun getOids(
+        block: StructuralNode,
+        strContext: String,
+        root: WellKnownOid,
+        strDefaultLeaf: String? = null
+    ): List<String> {
+        val strLeafArcs = block.attributes[BlockAttribute.LEAF_ARC.key]?.toString() ?: strDefaultLeaf
+        checkNotNull(strLeafArcs) {
+            logger.error("$strContext requires an ${BlockAttribute.LEAF_ARC.key}")
+        }
+
+        val blockOids = mutableListOf<String>()
+        for (strOid in strLeafArcs.split(',')) {
+            if (strOid.startsWith('.')) {
+                blockOids.add("${root.oid}$strOid")
+            } else {
+                blockOids.add(strOid)
+            }
+        }
+        return blockOids
+    }
+    // endregion
 
     //region Validation
 

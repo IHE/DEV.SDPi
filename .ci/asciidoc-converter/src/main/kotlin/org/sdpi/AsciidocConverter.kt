@@ -134,6 +134,7 @@ class AsciidocConverter(
         asciidoctor.javaExtensionRegistry().blockMacro(AddICSPlaceholder())
         asciidoctor.javaExtensionRegistry().blockMacro(AddTransactionQueryPlaceholder())
         asciidoctor.javaExtensionRegistry().blockMacro(AddContentModuleQueryPlaceholder())
+        asciidoctor.javaExtensionRegistry().blockMacro(AddOidQueryPlaceholder())
 
         asciidoctor.javaExtensionRegistry().treeprocessor(PopulateTables(infoCollector))
 
