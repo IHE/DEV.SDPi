@@ -376,13 +376,13 @@ NOTE: <<semantic-requirements>> are defined in a custom block.
 
 Profiles define <<semantic-actors,actors>> and compose a set of transactions, use cases and content modules. They are defined within a single AsciiDoc section that includes definitions for all the profile's actors and references to relevant transactions, use-cases and content modules. Profiles may also define optional parts, such as support for a discovery proxy. Each option may define its own actors and reference a set of transactions, use cases and content modules. 
 
-The `profile` and `profile-option` roles mark sections defining profiles and options within profiles, respectively. A document-unique id is required for each profile and profile option, set using the `profile-id` and `profile-option-id` attributes, respectively. The fragment below illustrates the definition of a profile and two profile options. 
+The `profile` and `profile-option` roles mark sections defining profiles and options within profiles, respectively. A document-unique id is required for each profile and profile option, set using the `profile-id` and `profile-option-id` attributes, respectively. An <<defining-oids,object identifier (oid)>> is required for each profile but not for profile options (currently). The fragment below illustrates the definition of a profile and two profile options. 
 
 NOTE: The document structure is used to associate information, such as actors and references to transactions or use cases, with a profile so these must be defined in sub-sections to the document section defining the profile. 
 
 [source,asciidoc]
 ----
-[role="profile",profile-id="SDPi-P"]
+[role="profile",profile-id="SDPi-P",oid-arcs=.11]
 == Plug-and-trust (SDPi-P) Profile
 
 The SDPi-Plug-and-trust SDPi-P) Profile supports foundational seamless connectivity...
@@ -402,25 +402,25 @@ Ad-hoc discovery supports discovery of SOMDS participants through multi-cast bro
 [#semantic-actors]
 ==== Defining actors
 
-The (abbreviated) example below illustrates the AsciiDoc source defining an actor. 
+The (abbreviated) example below illustrates the AsciiDoc source defining three actors. 
 
 [source,asciidoc]
 ----
-[#vol1_clause_sdpi_p_somds_participant, role="actor",actor-id="somds-participant"]
+[#vol1_clause_sdpi_p_somds_participant, role="actor",actor-id="somds-participant",oid-arcs=.40]
 ==== SOMDS Participant
 
 Actor Summary Definition:
 [none]
 . A foundational abstract actor that provides the...
 
-[#vol1_clause_sdpi_p_somds_provider, role="actor",actor-id="somds-provider"]
+[#vol1_clause_sdpi_p_somds_provider, role="actor",actor-id="somds-provider",oid-arcs=.41]
 ==== SOMDS Provider
 
 Actor Summary Definition:
 [none]
 . A participant that provides at least one...
 
-[#vol1_clause_sdpi_p_somds_consumer, role="actor",actor-id="somds-consumer"]
+[#vol1_clause_sdpi_p_somds_consumer, role="actor",actor-id="somds-consumer",oid-arcs=.30]
 ==== SOMDS Consumer
 
 Actor Summary Definition:
@@ -429,12 +429,32 @@ Actor Summary Definition:
 
 ----
 
-Attaching the `actor` role to a section marks it as an actor. A (document-unique) identifier must be defined in the `actor-id` attribute. The `reftext` attribute or, if `reftext` is missing, the section title is used for the actor label. 
+Attaching the `actor` role to a section marks it as an actor. A (document-unique) identifier must be defined in the `actor-id` attribute. An <<defining-oids,object identifier (oid)>> must be set for each actor. The `reftext` attribute or, if `reftext` is missing, the section title is used for the actor label. 
+
+[#semantic-actor-options]
+==== Actor option sections
+
+Options, which may impose additional transaction obligations on actors, may be defined using the `actor-option` role. The abbreviated example below shows the AsciiDoc source to tag sections defining actor options. 
+
+[source,asciidoc]
+----
+role=actor-option,actor-option-id=remote_alert_signaling]
+==== Remote Alert Signaling
+
+This option will enable...
+----
+
+Attaching the `actor-option` role to a section marks it as an actor option. A (document-unique) identifier must be defined in the `actor-option-id` 
+attribute. <<semantic-profile-ref-transactions,Transactions included>> within the section are associated with the actor option either defining 
+or overriding obligations that apply when the actor option is selected for a participant. 
+
 
 [#semantic-profile-ref-transactions]
 ==== Referencing transactions
 
-A profile, or profile option, references a <<semantic-transactions,transaction>> using the `sdpi_include_transaction` [include processor](https://docs.asciidoctor.org/asciidoctorj/latest/extensions/include-processor/) and declares the obligations of contributors. For example:
+A profile, profile option or actor option references a <<semantic-transactions,transaction>> using the `sdpi_include_transaction` [include processor](https://docs.asciidoctor.org/asciidoctorj/latest/extensions/include-processor/) and declares the obligations of contributors. 
+
+There are two forms for `sdpi_include_transaction`. The first form defines obligations for the actor roles defined in the transaction. That is, only the contribution (`initiator`, `receiver`, `responder`) and obligation (`required`, `optional`) are required. It is not necessary to repeat the actor. For example:
 
 [source, asciidoc]
 ----
@@ -442,12 +462,21 @@ sdpi_include_transaction::DEV-23[initiator="required", receiver="optional"]
 sdpi_include_transaction::DEV-47[initiator="optional", responder="required"]
 ----
 
-Note, specify the:
+The second form defines obligations for specific profile actors. This form is used to define obligations for profile actors (grouped actors) when the transaction's actor roles are defined for base actors. For example, transaction defines roles for consumers and providers (actors in the base profile; SDPi-P). Create a separate `sdpi_include_transaction` and include the `actor-id` attribute to reference this transaction and assign obligations to actors from the reporting profile (SDPi-R). For example:
+
+[source,asciidoc]
+---
+sdpi_include_transaction::DEV-35[actor-id="somds_medical_data_consumer",initiator="required"]
+sdpi_include_transaction::DEV-35[actor-id="somds_medical_data_provider",responder="required"]
+sdpi_include_transaction::DEV-35[actor-id="somds_dec_gateway",initiator="required"]
+---
+
+In each form, specify the:
 
 * <<semantic-transactions,transaction>> id as the directive target (e.g., `DEV-23`, `DEV-47`),
-* obligation (that is, `required` or `optional`) for each contribution (that is, `initiator`, `receiver` or `responder`) in attributes; the contributions for included transactions must match those defined in the <<semantic-transaction,transaction>>.
+* obligation (that is, `required` or `optional`) for each contribution (that is, `initiator`, `receiver` or `responder`) in attributes; the contributions for included transactions must match those defined in the <<semantic-transaction,transaction>>. 
 
-NOTE: Transactions included in a sub-section of a profile-option apply to the option. Transactions included a sub-section of a profile apply to the profile.
+NOTE: Transactions included in a profile-option section apply to the option. Transactions included a actor-option section apply to the actor option. Transactions included a profile section apply to the profile. 
 
 [#semantic-profile-ref-content-modules]
 ==== Referencing content-modules
@@ -497,6 +526,27 @@ Note, specify the:
 
 NOTE: Use-cases included in a sub-section of a profile-option apply to the option. Use-cases included a sub-section of a profile apply to the profile.
 
+[#semantic-placeholder-transactions]
+==== Placeholder transactions and content modules
+
+Placeholder transactions and content modules may be created within profiles, or profile-options, to reference transactions and modules that are not yet specified. 
+
+Use the second form of the <<semantic-profile-ref-transactions,`sdpi_include_transaction`>> [include processor](https://docs.asciidoctor.org/asciidoctorj/latest/extensions/include-processor/) and add a `placeholder-name` attribute. For example:
+
+[source,asciidoc]
+----
+sdpi_include_transaction::DEV-26[actor-id="somds_consumer",initiator="required",placeholder-name="Discover system context and capabilities"]
+----
+
+Similarly, for placeholder content modules:
+
+[source,asciidoc]
+----
+sdpi_include_content_module::anaesthesia[actor-id="biceps_content_creator",support="optional",placeholder-name="Anaesthesia devices SDC/BICEPS content module"]
+----
+
+Placeholders do not require a <<semantic-transactions,transaction>> or <<semantic-content-modules,content module>> definition. The `placeholder-name` is required each time the placeholder is used—when setting obligations for different actors, for example—however. 
+
 [#semantic-profile-actor-alias]
 ==== Actor aliases
 
@@ -518,22 +568,6 @@ Actor Summary...
 
 NOTE: specify the <<semantic-actors,actor's>> id using the `actor-id` attribute.
 
-[#semantic-content-modules]
-=== Defining content modules
-
-The example below illustrates the AsciiDoc source required to define a content module for the document processor. 
-
-[source,asciidoc]
-----
-[#vol3_clause_sdc_biceps_semantic_content_module,role="content-module", content-module-id="biceps"]
-===== SDC/BICEPS Content Module
-
-The biceps standard, <<ref_ieee_11073_10207_2017>>, provides an extensive semantic...
-----
-
-Attaching the `content-module` role to a section marks it as a [content module](https://profiles.ihe.net/DEV/SDPi/index.html#vol3). A (document-unique) identifier must be defined in the `content-module-id` attribute. The section title is used for the content module label. 
-
-NOTE: `RefContentModule:<content-module-id>[]` may be used to <<cross-referencing,cross-reference>> transactions by id (e.g., `RefContentModule:biceps[]`). 
 
 [#semantic-transactions]
 === Defining transactions
@@ -542,7 +576,7 @@ The example below illustrates the AsciiDoc source required to define a transacti
 
 [source,asciidoc]
 ----
-[#vol2_clause_dev_23, role="transaction", transaction-id="DEV-23", reftext="Announce network presence"]
+[#vol2_clause_dev_23, role="transaction", transaction-id="DEV-23", reftext="Announce network presence",oid-arcs=".23.1,.23"]
 === Announce Network Presence [{var_transaction_id}]
 
 ==== Scope
@@ -565,7 +599,13 @@ Listens for vol2_clause_dev_23_message_hello messages to identify any <<vol1_spe
 
 Attaching the `transaction` role to a section marks it as a [transaction](https://profiles.ihe.net/DEV/SDPi/index.html#vol2). A (document-unique) identifier must be defined in the `DEV-23` attribute. The `reftext` attribute is used for the transaction label in tables, etc. 
 
-Transaction sections must define roles actors contribute within a `sdpi_transaction_actors` block:
+The transactions object identifier (oid) may <<defining-oids,be set>> using the `oid-arcs` attribute. If not present, object identifiers will 
+be set automatically from the transaction id. When assigned automatically, two oids will be applied to each transaction:
+
+1. `<parent oid for DEV transactions>.<transaction-id>`, and 
+2. `<parent oid for DEV transactions>.<transaction-id>.<version>`. `<version>` is (currently) 1. 
+
+Transaction sections must define roles actors contribution within a `sdpi_transaction_actors` block:
 
 [source,asciidoc]
 ----
@@ -808,6 +848,74 @@ Steps, in background and steps content blocks, are defined in paragraphs prefixe
 | *or* | Conjunction, used with *when* or *then* for an alternate trigger/outcome. 
 |===
 
+[#semantic-content-modules]
+=== Defining content modules
+
+The example below illustrates the AsciiDoc source required to define a content module for the document processor. 
+
+[source,asciidoc]
+----
+[#vol3_clause_sdc_biceps_semantic_content_module,role="content-module", content-module-id="biceps"]
+===== SDC/BICEPS Content Module
+
+The biceps standard, <<ref_ieee_11073_10207_2017>>, provides an extensive semantic...
+----
+
+Attaching the `content-module` role to a section marks it as a [content module](https://profiles.ihe.net/DEV/SDPi/index.html#vol3). A (document-unique) identifier must be defined in the `content-module-id` attribute. The section title is used for the content module label. 
+
+NOTE: `RefContentModule:<content-module-id>[]` may be used to <<cross-referencing,cross-reference>> transactions by id (e.g., `RefContentModule:biceps[]`). 
+
+[#semantic-protocols]
+=== Defining protocols
+
+The example below illustrates the AsciiDoc source required to define a protocol for the document processor. 
+
+[source,asciidoc]
+----
+[role="protocol",protocol-id=mdpws]
+== ISO/IEEE 11073 SDC / MDPWS Message Specifications (Normative)
+
+[CAUTION]
+====
+Message outlines do not contain ...
+====
+----
+
+Attaching the `protocol` role to a section marks it as a communication protocol. A communication protocol defines how SOMDS information is exchanged between participants, such as SOAP-based web services. A (document-unique) identifier must be defined in the `protocol-id` attribute. The section title is used for the protocol label. 
+
+
+[[defining-oids]]
+=== Defining object identifiers (oids)
+
+Many items require object identifiers (oids) including:
+
+* profiles,
+* actors, and
+* transactions. 
+
+There is a https://wiki.ihe.net/index.php/PCD_OID_Management[canonical defnition of object identifiers for IHE DEV domains].
+
+Use the `oid-arcs` attribute on blocks that define items. The example below illustrates setting an oid for the participant actor.
+
+[source,asciidoc]
+----
+[role="actor",actor-id="somds_participant",oid-arcs=.40]
+===== SOMDS Participant
+  etc.
+----
+
+Only the leaf arc is required when the oid value begins with a `.`. The document processor automatically combines the leaf with the correct https://wiki.ihe.net/index.php/PCD_OID_Management#General_IHE-DEV_OID_Identifiers[parent oid], which depends on the item type. Arcs that do not begin with a `.` are applied verbatium. 
+
+Multiple oids may be associated with an item by separating them with commas:
+
+[source,asciidoc]
+----
+[role=transaction,transaction-id=DEV-23,oid-arcs=".23.1,.23"]
+=== Announce Network Presence [{var_transaction_id}]
+  etc.
+----
+
+
 [[cross-referencing]]
 === Cross-referencing
 
@@ -840,6 +948,7 @@ Summary tables are automatically generated during document processing and insert
 |Requirement list | `sdpi_requirement_table` | <<requirement-oids,ISO object identifiers>>, local requirement id, level, type
 |Profile actors and transactions | `sdpi_transaction_table` | Actor, Transaction, Contribution, Obligation, Option
 |Profile actors and content modules | `sdpi_content_module_table` | Actor, Content module, Obligation, Option
+|Object identifiers | `sdpi_oid_table` | Oid, Type, Description
 |===
 
 
@@ -859,10 +968,11 @@ Filter parameters, included as named attributes, select the content included in 
 |===
 |Attribute name | Applies to | Value | Obligation | Description
 
-|`sdpi_req_group` | `sdpi_requirement_table` | comma separated list | optional | Includes requirements with any of the groups supplied in their `sdpi_req_group` <<requirement-attributes,attribute>>. 
+|`sdpi_req_group` | `sdpi_requirement_table`, `sdpi_ics_table` | comma separated list | optional | Includes requirements with any of the groups supplied in their `sdpi_req_group` <<requirement-attributes,attribute>>. 
 |`profile-id` | `sdpi_transaction_table`, `sdpi_content_module_table` | _profile id_ | required | Table includes details for the selected profile.
 |`profile-option-id` | `sdpi_transaction_table`, `sdpi_content_module_table` | _profile option id_ | required | Table includes details for the selected profile option only. If not specified all options are included.
-|`actor-id` | `sdpi_transaction_table` | _actor id_ | required | Table includes only transactions for the selected actor. 
+|`actor-id` | `sdpi_transaction_table`, `sdpi_ics_table` | _actor id_ | required | Table includes only transactions for the selected actor. 
+|`arc` | `sdpi_oid_table` | _arc id_ | `actors`, `transactions` or `profiles` | Table only includes oids for the selected arcs. 
 
 |===
 
