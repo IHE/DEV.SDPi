@@ -10,7 +10,7 @@ The following list of requirements enhances the processing of reports in order t
 ====== Amendments
 
 .R1006
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r1006,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -24,7 +24,7 @@ BICEPS does not specify the order in which report messages are sent to <<vol1_sp
 ****
 
 .R1007
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r1007,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -38,7 +38,7 @@ This requirement verifies that for a <<vol1_spec_sdpi_p_actor_somds_provider>> t
 ****
 
 .R1008
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r1008,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -54,7 +54,7 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall not send msg:DescriptionModifi
 ****
 
 .R1009
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r1009,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -74,7 +74,7 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall order msg:DescriptionModificat
 Requirement <<r1010>> replaces biceps:R5024.
 
 .R1010
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r1010,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -90,7 +90,7 @@ Replaces biceps:R5024: "Descriptors in this list SHALL not include nested descri
 Requirement <<r1011>> replaces biceps:R5046.
 
 .R1011
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r1011,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====

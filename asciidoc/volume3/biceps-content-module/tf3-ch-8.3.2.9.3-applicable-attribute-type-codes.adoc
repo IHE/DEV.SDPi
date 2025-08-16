@@ -3,7 +3,7 @@
 ====== Applicable Attribute Type Codes
 
 .R0009
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r0009,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====

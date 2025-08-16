@@ -240,7 +240,7 @@ This metadata supports the basic capabilities of each requirement including clas
 | Each requirement instance must include an identifier that is unique within the scope of the specification, and may be rendered in human-readable form
 | sdpi_requirement
 | .R7009
-| [sdpi_requirement]
+| [sdpi_requirement#r7009]
 | See <<vol1_clause_sdpi_requirement_assigning_unique_identifiers>> and https://github.com/IHE/DEV.SDPi/blob/master/articles/sdpi-article-ihe-tf-asciidoc-cookbook.adoc#semantic-requirements[defining requirements] for additional discussion; note this identifier may be used for tracking in systems such as requirement management tools
 
 | Requirement OID

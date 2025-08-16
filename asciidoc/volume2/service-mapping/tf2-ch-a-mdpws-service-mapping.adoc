@@ -4,7 +4,7 @@
 MDPWS is based on DPWS which in turn leverages a profiled SOAP-based Web Services protocol stack to establish a service-oriented system of devices (<<acronym_somds>>).
 
 .R0500
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r0500,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -44,7 +44,7 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall at least provide the port type
 |===
 
 .R0501
-[sdpi_requirement,sdpi_req_level=should,sdpi_req_type=tech_feature]
+[sdpi_requirement#r0501,sdpi_req_level=should,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====

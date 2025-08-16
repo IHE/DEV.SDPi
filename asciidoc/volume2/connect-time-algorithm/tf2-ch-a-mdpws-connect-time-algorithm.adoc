@@ -14,7 +14,7 @@ In order to suppress concurrent connection attempts, in the ad-hoc mode a <<vol1
 * icon:minus[] The deferral does not work in managed mode, i.e., when a discovery proxy is in charge to respond to {var_label_dev_24_message_resolve} messages (unless the discovery proxy implements a similar behavior).
 
 .R0001
-[sdpi_requirement,sdpi_req_level=may]
+[sdpi_requirement#r0001,sdpi_req_level=may]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
@@ -42,7 +42,7 @@ Depending on the priority groups 0 to 9, with increasing group numbers the initi
 * icon:minus[] Deferral is not controlled by the entity that is affected by concurrent connection attempts but by the entity that initiates the connection.
 
 .R0002
-[sdpi_requirement,sdpi_req_level=should]
+[sdpi_requirement#r0002,sdpi_req_level=should]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
@@ -59,7 +59,7 @@ As it is not trivial to determine the priority of a <<vol1_spec_sdpi_p_actor_som
 ====== Default Priority Group
 
 .R0003
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement#r0003,sdpi_req_level=shall]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
@@ -79,7 +79,7 @@ If a <<term_manufacturer>> does not intend to enforce configuration of priority 
 ====== Dynamic Priority Group
 
 .R0004
-[sdpi_requirement,sdpi_req_level=may]
+[sdpi_requirement#r0004,sdpi_req_level=may]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
 [NORMATIVE]

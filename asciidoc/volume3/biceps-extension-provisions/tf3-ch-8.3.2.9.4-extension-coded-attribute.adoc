@@ -37,7 +37,7 @@ include::../../listings/vol3-clause-biceps-content-example-equipment-label.xml[]
 ====== Requirements
 
 .R0007
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
+[sdpi_requirement#r0007,sdpi_req_level=shall,sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
 ====

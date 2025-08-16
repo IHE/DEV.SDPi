@@ -3,7 +3,7 @@
 ====== Applicable Production Specification Type Codes
 
 .R0008
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r0008,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====

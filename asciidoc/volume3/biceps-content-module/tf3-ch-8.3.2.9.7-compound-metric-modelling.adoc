@@ -31,7 +31,7 @@ This section defines the requirements to compound metrics provided in the MDIB d
 [sdpi_level=+2]
 ====== Descriptor Part
 .R0703
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r0703,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -40,7 +40,7 @@ For each compound metric, the <<actor_somds_provider>> shall provide a *pm:Relat
 ****
 
 .R0704
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r0704,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -49,7 +49,7 @@ For each *pm:Relation* of a <<actor_somds_provider>> that expresses membership i
 ****
 
 .R0705
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r0705,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -58,7 +58,7 @@ For each *pm:Relation* of a <<actor_somds_provider>> that expresses membership i
 ****
 
 .R0706
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r0706,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -70,7 +70,7 @@ For each *pm:Relation* of a <<actor_somds_provider>> that expresses membership i
 ====== State Part
 
 .R0707
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r0707,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -84,7 +84,7 @@ For each compound metric of a <<actor_somds_provider>>, if *@StartTime* and *@St
 ****
 
 .R0708
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r0708,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====

@@ -4,7 +4,7 @@
 This chapter describes requirements to the <<vol1_spec_sdpi_p_actor_discovery_proxy>> <<acronym_mdpws>> binding that go beyond message outlines and semantics specified in <<vol2_clause_dev_46>> and <<vol2_clause_dev_47>>.
 
 .R7007
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r7007,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -21,7 +21,7 @@ with the <<term_q_name>> dp:DiscoveryProxy.
 ****
 
 .R7008
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r7008,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -37,7 +37,7 @@ The OID used for the filter dialect is listed in <<vol2_table_appendix_mdpws_dis
 ****
 
 .R7009
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r7009,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====

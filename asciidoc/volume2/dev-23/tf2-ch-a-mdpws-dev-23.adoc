@@ -47,7 +47,7 @@ It is assumed that <<vol1_spec_sdpi_p_actor_somds_participant>> are connected to
 The use of static IP addresses is discouraged as it may lead to IP address conflicts, and hence severe communication disruption, in case of network reconfiguration during operation (e.g., by plugging of Ethernet switches).
 
 .R2000
-[sdpi_requirement,sdpi_req_level=should,sdpi_req_type=tech_feature]
+[sdpi_requirement#r2000,sdpi_req_level=should,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -65,7 +65,7 @@ include::../dev-a-default-expected-actions.adoc[]
 In addition to the Hello message trigger events defined in <<vol2_clause_appendix_mdpws_dev_23_hello_message_trigger_events>>, recurring Hello messages are needed to decrease the likelihood of missed discovery messages in case of network topology changes during operation, e.g., when operational networks are extended by plugging switches (together) at runtime.
 
 .R2001
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement#r2001,sdpi_req_level=shall]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
@@ -89,7 +89,7 @@ To mitigate this, <<vol1_spec_sdpi_p_actor_somds_provider>>s are advised to crea
 Moreover, as further mitigation measure, note that <<ref_oasis_soap_over_udp_v1_1>> already defines a non-normative retry and back-off algorithm.
 
 .R2002
-[sdpi_requirement,sdpi_req_level=should]
+[sdpi_requirement#r2002,sdpi_req_level=should]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
 [NORMATIVE]

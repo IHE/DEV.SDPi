@@ -2,7 +2,7 @@
 ===== OBX-4 Observation Sub-ID
 
 .R8014
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8014,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -16,7 +16,7 @@ Please refer to the IHE technical framework <<ref_ihe_dev_tf_2_2024>> for furthe
 ****
 
 .R8015
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8015,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====

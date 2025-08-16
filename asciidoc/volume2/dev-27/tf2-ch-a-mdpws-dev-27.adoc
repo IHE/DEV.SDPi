@@ -84,7 +84,7 @@ include::../dev-a-default-trigger-events.adoc[]
 |===
 
 .R7001
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r7001,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -138,7 +138,7 @@ include::../dev-a-default-expected-actions.adoc[]
 ====== Path dispatching
 
 .R7003
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r7003,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -155,7 +155,7 @@ WS-Eventing allows for an event source or sink to make use of WS-Addressing endp
 ====== Subscription Expiration
 
 .R7004
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r7004,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -249,7 +249,7 @@ include::../dev-a-default-expected-actions.adoc[]
 ====== Subscription Expiration
 
 .R7005
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r7005,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]

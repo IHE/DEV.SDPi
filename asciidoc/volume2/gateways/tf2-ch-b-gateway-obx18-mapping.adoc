@@ -2,7 +2,7 @@
 ===== OBX-18 Equipment Instance Identifier
 
 .R8117
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8117,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====

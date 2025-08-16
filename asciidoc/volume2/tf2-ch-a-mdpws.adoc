@@ -67,7 +67,7 @@ In TR1164, <<ref_ieee_11073_10700_2022, IEEE 11073-10700>> requires a <<vol1_spe
 In order to fulfill TR1164, <<ref_ieee_11073_20701_2018, IEEE 11073-20701>> specifies the need to establish secure channels between <<vol1_spec_sdpi_p_actor_somds_participant>> by using TLS with mutual authentication.
 
 .R0502
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement#r0502,sdpi_req_level=shall]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=security,sdpi_ses_test=wire]
 ****
 [NORMATIVE]

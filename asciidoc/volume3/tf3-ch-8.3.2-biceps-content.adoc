@@ -7,7 +7,7 @@ The <<acronym_biceps>> standard, <<ref_ieee_11073_10207_2017>>, provides an exte
 
 
 .R0701
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r0701,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -181,7 +181,7 @@ Once the enterprise OID is registered, it is up to the medical device vendor to 
 In the example above, the OID "_1.3.6.1.4.1.12345.2.1.1_" would represent a *private coding system* identifier in version *1* issued by the *ventilation* business group of the *Medical Device XYZ Ltd.* company.
 
 .R0702
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r0702,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====

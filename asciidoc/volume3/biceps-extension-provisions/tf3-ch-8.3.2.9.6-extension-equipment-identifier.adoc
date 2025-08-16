@@ -24,7 +24,7 @@ include::../../listings/vol3-clause-biceps-content-example-equipment-identifier.
 ====== Requirements
 
 .R0014
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r0014,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -33,7 +33,7 @@ For the `sdpi:EquipmentIdentifier` extension, a <<vol1_spec_sdpi_p_actor_somds_p
 ****
 
 .R0015
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r0015,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -42,7 +42,7 @@ For the `sdpi:EquipmentIdentifier` extension, a <<vol1_spec_sdpi_p_actor_somds_p
 ****
 
 .R0016
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r0016,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -51,7 +51,7 @@ To test if two equipment identifiers are equal, a <<vol1_spec_sdpi_p_actor_somds
 ****
 
 .R0017
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r0017,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -67,7 +67,7 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall provide the `sdpi:EquipmentIde
 ****
 
 .R0018
-[sdpi_requirement,sdpi_req_level=should,sdpi_req_type=tech_feature]
+[sdpi_requirement#r0018,sdpi_req_level=should,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====

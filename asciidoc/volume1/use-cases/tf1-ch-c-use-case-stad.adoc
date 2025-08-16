@@ -45,7 +45,7 @@ image::../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
 ====== Safety, Effectiveness and Security - Requirements and Considerations
 
 .R1520
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement#r1520,sdpi_req_level=shall]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=inspect]
 ****
 [NORMATIVE]
@@ -65,7 +65,7 @@ The 50ms target accuracy is suitable for highly demanding use cases like real ti
 ****
 
 .R1521
-[sdpi_requirement,sdpi_req_level=should]
+[sdpi_requirement#r1521,sdpi_req_level=should]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
@@ -99,7 +99,7 @@ or backward in time) to maintain an accurate <<term_system_clock>>.
 ====== Safety, Effectiveness and Security - Requirements and Considerations
 
 .R1510
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement#r1510,sdpi_req_level=shall]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=inspect]
 ****
 [NORMATIVE]
@@ -128,7 +128,7 @@ Since manual time adjustments of the device's internal clock would lead to plaus
 ====== Safety, Effectiveness and Security - Requirements and Considerations
 
 .R1540
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement#r1540,sdpi_req_level=shall]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=security,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
@@ -174,7 +174,7 @@ NOTE: A <<term_manufacturer>> may decide to limit user notification of technical
 ====== Safety, Effectiveness and Security - Requirements and Considerations
 
 .R1530
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement#r1530,sdpi_req_level=shall]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
@@ -189,7 +189,7 @@ It is likely that a <<vol1_spec_sdpi_p_actor_somds_participant>> needs multiple 
 ****
 
 .R1531
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement#r1531,sdpi_req_level=shall]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=audit,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
@@ -201,7 +201,7 @@ For every MDS of a <<vol1_spec_sdpi_p_actor_somds_provider>>, the <<vol1_spec_sd
 
 
 .R1532
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement#r1532,sdpi_req_level=shall]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
@@ -211,7 +211,7 @@ The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_consumer>> shall c
 ****
 
 .R1533
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement#r1533,sdpi_req_level=shall]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
@@ -228,7 +228,7 @@ NOTE: This goes beyond considering the risk of erroneous timestamps required by 
 *REVIEWER QUESTION*:Do we need a requirement, for notifying the biomed in case the <<acronym_ts_service>> is no longer reachable? Or is the following logging requirement sufficient?
 
 .R1534
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement#r1534,sdpi_req_level=shall]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=audit,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
@@ -266,7 +266,7 @@ NOTE: As a consequence of requirements <<r1532>> and <<r1533>>, it is the <<vol1
 ====== Safety, Effectiveness and Security - Requirements and Considerations
 
 .R1500
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement#r1500,sdpi_req_level=shall]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
@@ -317,7 +317,7 @@ NOTE: although an <<term_abrupt_time_adjustment>> starts with a constant offset 
 
 // This provides information for auditing. 
 .R1560
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement#r1560,sdpi_req_level=shall]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=audit,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
@@ -337,7 +337,7 @@ This requirement supplements TR1340 in <<ref_ieee_11073_10700_2022>>&mdash; _An 
 // is questionable following a transition to a new epoch). Epoch versioning is then an extension that lets the consumer determine how questionable a timestamp is. 
 
 .R1522
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement#r1522,sdpi_req_level=shall]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
@@ -378,7 +378,7 @@ image::../images/vol1-diagram-use-case-stad-ns-back-forth.svg[align=center]
 
 // This is to introduce versioning epochs. 
 .R1561
-[sdpi_requirement,sdpi_req_level=may,sdpi_req_type=tech_feature]
+[sdpi_requirement#r1561,sdpi_req_level=may,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -392,7 +392,7 @@ Binding timestamps in the <<acronym_mdib>> to a specific <<term_epoch>> may be u
 ****
 
 .R1562
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement#r1562,sdpi_req_level=shall]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
@@ -412,7 +412,7 @@ It may not be possible to reliably determine the relationship between <<term_tim
 // across MdibVersionGroup/@SequenceId since it seems that any information inside the MDS implicitly is scoped to the 
 // sequence id. 
 .R1566
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement#r1566,sdpi_req_level=shall]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
@@ -433,7 +433,7 @@ An abrupt time adjustment may indicate a serious error that impacts data that ha
 // to surface behaviours as part of conformity statements. And it emphasizes the myriad of problems with
 // time steps. 
 .R1569
-[sdpi_requirement,sdpi_req_level=may]
+[sdpi_requirement#r1569,sdpi_req_level=may]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
@@ -479,7 +479,7 @@ image::../images/vol1-diagram-use-case-stad-cns-schedule.svg[align-center]
 
 // Its okay to give up following an abrupt time step
 .R1600
-[sdpi_requirement,sdpi_req_level=may]
+[sdpi_requirement#r1600,sdpi_req_level=may]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
@@ -495,7 +495,7 @@ A consumer relying on the temporal accuracy of historic data for its <<term_syst
 
 // Use the message timestamp for early detection of temporal anomalies
 .R1601
-[sdpi_requirement,sdpi_req_level=should]
+[sdpi_requirement#r1601,sdpi_req_level=should]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=audit,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
@@ -515,7 +515,7 @@ A <<vol1_spec_sdpi_p_actor_somds_consumer>> should use the low-precision `Date` 
 // Use the preferred format (not the obsolete ones) for date time
 // This could become a "shall" following wider discussion. 
 .R1602
-[sdpi_requirement,sdpi_req_level=should,sdpi_req_type=tech_feature]
+[sdpi_requirement#r1602,sdpi_req_level=should,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -530,7 +530,7 @@ The `Date` field in HTTP response messages, as the best available approximation 
 
 // Alert next users of the problem.
 .R1603
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement#r1603,sdpi_req_level=shall]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
@@ -548,7 +548,7 @@ A <<vol1_spec_sdpi_p_actor_somds_consumer>> shall notify next users of invalid a
 
 // Adjust timestamps.
 .R1604
-[sdpi_requirement,sdpi_req_level=should]
+[sdpi_requirement#r1604,sdpi_req_level=should]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
 ****
 [NORMATIVE]

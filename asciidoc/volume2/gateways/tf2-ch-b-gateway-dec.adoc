@@ -33,7 +33,7 @@ Please refer to general Section <<ref_gateway_pid_mapping>>.
 The *pm:PatientContextState/pm:CoreData* element may also contain elements for a patient's height and/or weight.
 
 .R8001
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8001,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -58,7 +58,7 @@ That timestamp could be used for the height and/or weight observation that has b
 The problem is that when the gateway loses connection to the PoC device it can only get the latest state update with a new version number but there is no timestamp related to the new state.
 
 .R8002
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8002,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -250,7 +250,7 @@ The HL7 Observation Request (OBR) segment requires a mapping from the SDC contai
 ====== OBR-2 Placer Order Number
 
 .R8003
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8003,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -267,7 +267,7 @@ For further information, please refer to the <<ref_ihe_dev_tf_2_2024>>.
 ====== OBR-3 Filler Order Number
 
 .R8004
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8004,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -284,7 +284,7 @@ For further information, please refer to the <<ref_ihe_dev_tf_2_2024>>.
 ====== OBR-4 Universal Service ID
 
 .R8005
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8005,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -321,7 +321,7 @@ The presence of an overriding time point in OBX-14 indicates an episodic measure
 The absence of an overriding time point in the OBX-14 field implies that this is an instance of a periodically sampled observation with a time stamp given by OBR-7 field.
 
 .R8037
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8037,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -336,7 +336,7 @@ It is up to the <<actor_somds_dec_gateway>> how the export interval is defined. 
 ****
 
 .R8038
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8038,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -351,7 +351,7 @@ If, for example, the export interval is set to 30 seconds, the <<actor_somds_dec
 ****
 
 .R8006
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8006,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -366,7 +366,7 @@ The OBR-7 field is set to the start time of the interval. The individual periodi
 ****
 
 .R8007
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8007,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -390,7 +390,7 @@ Only metrics that fulfil certain criteria are exported by the <<actor_somds_dec_
 ====== OBR-8 Observation End Date/Time
 
 .R8008
-[sdpi_requirement,sdpi_req_level=may,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8008,sdpi_req_level=may,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -410,7 +410,7 @@ A <<actor_somds_dec_gateway>> may set the OBR-8 field to the end date and time o
 ====== OBR-10 Collector Identifier
 
 .R8009
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8009,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -493,7 +493,7 @@ Please refer to the <<ref_ihe_dev_tf_2_2024>> *OBX-1 Set ID - OBX* for further i
 ====== OBX-2 Value Type
 
 .R8010
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8010,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -507,7 +507,7 @@ A <<actor_somds_dec_gateway>> shall set the OBX-2 field to the metric value type
 ****
 
 .R8011
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8011,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -543,7 +543,7 @@ Please refer to general Section <<ref_gateway_obx4_mapping>>.
 ====== OBX-5 Observation Value
 
 .R8016
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8016,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -557,7 +557,7 @@ The formatting of the data depends on the data type.
 ****
 
 .R8036
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8036,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -566,7 +566,7 @@ For a device-related element such as MDS, VMD, or channel, the OBX-5 field shall
 ****
 
 .R8017
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8017,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -580,7 +580,7 @@ Metrics with a different *@Validity* are skipped/ignored.
 ****
 
 .R8018
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8018,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -597,7 +597,7 @@ Metrics with a different *@MetricCategory* are skipped/ignored.
 ====== Numeric Metric
 
 .R8019
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8019,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -615,7 +615,7 @@ For each numeric metric that complies with <<r8017>> and <<r8018>>, a <<actor_so
 [sdpi_level=+1]
 ====== String Metric
 .R8020
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8020,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -627,7 +627,7 @@ For each string metric that complies with R8017 and R8018, a <<actor_somds_dec_g
 ====== Enumeration String Metric
 
 .R8021
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8021,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -649,7 +649,7 @@ the OBX-2 is required to be set to *"ST"* (see also <<ref_tbl_dec_obx2_mapping>>
 ****
 
 .R8022
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8022,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -692,7 +692,7 @@ In all other cases, the field is set to pm:EnumStringMetricDescriptor+++<wbr/>++
 ====== OBX-6 Units
 
 .R8023
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8023,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -708,7 +708,7 @@ For each numeric metric, a <<actor_somds_dec_gateway>> shall set the OBX-6 field
 ****
 
 .R8024
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8024,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -751,7 +751,7 @@ In all other cases, the field is set to pm:NumericMetricDescriptor+++<wbr/>+++/p
 ====== OBX-7 Reference Range
 
 .R8026
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8026,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -768,7 +768,7 @@ Note that the decimal number needs to be formatted according to the HL7 numeric 
 ****
 
 .R8025
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8025,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -786,7 +786,7 @@ As stated in <<ref_ihe_dev_tf_2_2024>> the reference range can only be set for d
 The OBX-8 field is not required to be set since the gateway exports valid and validated metric data only.
 
 .R8027
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8027,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -797,7 +797,7 @@ A <<actor_somds_dec_gateway>> shall leave the OBX-8 field empty as specified in 
 ====== OBX-11 Observation Result Status
 
 .R8028
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8028,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -806,7 +806,7 @@ For a device-related element such as MDS, VMD, or CHANNEL, a <<actor_somds_dec_g
 ****
 
 .R8029
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8029,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -815,7 +815,7 @@ For metrics with the *pm:AbstractMetricValue/pm:MetricQuality/@Validity* set to 
 ****
 
 .R8030
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8030,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -826,7 +826,7 @@ For metrics with the *pm:AbstractMetricValue/pm:MetricQuality/@Validity* set to 
 ====== OBX-14 Date/Time of Observation
 
 .R8031
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8031,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -860,7 +860,7 @@ pm:StringMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@DeterminationTime
 ====== OBX-16 Responsible Observer
 
 .R8032
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8032,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -878,7 +878,7 @@ If available, a <<actor_somds_dec_gateway>> shall set the OBX-16 field to the op
 ====== OBX-17 Observation Method
 
 .R8033
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8033,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -887,7 +887,7 @@ A <<actor_somds_dec_gateway>> shall set the OBX-17 field to one of the coded ter
 ****
 
 .R8039
-[sdpi_requirement,sdpi_req_level=should,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8039,sdpi_req_level=should,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -945,7 +945,7 @@ Please refer to general Section <<ref_gateway_obx18_mapping>>.
 ====== OBX-20 Observation Site
 
 .R8034
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8034,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -965,7 +965,7 @@ If available for the metric, a <<actor_somds_dec_gateway>> shall set the OBX-20 
 ****
 
 .R8035
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r8035,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====

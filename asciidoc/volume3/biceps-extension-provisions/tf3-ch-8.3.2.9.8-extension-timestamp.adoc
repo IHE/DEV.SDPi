@@ -88,7 +88,7 @@ include::../../listings/vol3-clause-biceps-content-example-timestamp-version.xml
 ====== Requirements
 
 .R0600
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r0600,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -105,7 +105,7 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall include the `sdpi:EpochSupport
 ****
 
 .R0601
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r0601,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -122,7 +122,7 @@ A <<vol1_spec_sdpi_p_actor_somds_consumer>> shall ignore all epoch version infor
 ****
 
 .R0605
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
+[sdpi_requirement#r0605,sdpi_req_level=shall,sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
 ====
@@ -132,7 +132,7 @@ The <<vol1_spec_sdpi_p_actor_somds_provider>> shall increment `sdpi:Epochs/@Vers
 ****
 
 .R0606
-[sdpi_requirement,sdpi_req_level=should,sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
+[sdpi_requirement#r0606,sdpi_req_level=should,sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
 ====
@@ -147,7 +147,7 @@ Epoch versions are generally scoped to the `pm:MdibVersionGroup/@SequenceId`. So
 ****
 
 .R0610
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
+[sdpi_requirement#r0610,sdpi_req_level=shall,sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
 ====
@@ -163,7 +163,7 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> that versions timestamps in any `pm:
 ****
 
 .R0611
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
+[sdpi_requirement#r0611,sdpi_req_level=shall,sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
 ====
@@ -178,7 +178,7 @@ Epoch versions and timestamps are immutable and may not change independently.
 ****
 
 .R0612
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
+[sdpi_requirement#r0612,sdpi_req_level=shall,sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
 ====

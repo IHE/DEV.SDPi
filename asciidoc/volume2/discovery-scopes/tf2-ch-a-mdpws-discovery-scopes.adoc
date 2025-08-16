@@ -8,7 +8,7 @@
 ===== Encoding of Production Specifications
 
 .R0010
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r0010,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -67,7 +67,7 @@ NOTE: `ProductionSpecification` is specified in <<vol2_listing_encoding_producti
 ===== Encoding of Attributes
 
 .R0011
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r0011,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====

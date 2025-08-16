@@ -40,7 +40,7 @@ include::../../listings/vol3-clause-biceps-content-example-gender.xml[]
 ====== Requirements
 
 .R0012
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r0012,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====

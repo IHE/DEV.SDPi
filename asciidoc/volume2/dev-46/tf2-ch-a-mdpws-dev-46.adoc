@@ -113,7 +113,7 @@ If the request succeeds, there is no additional action required.
 If the request fails, the <<vol1_spec_sdpi_p_actor_discovery_proxy>> removes the <<vol1_spec_sdpi_p_actor_somds_provider>> endpoint metadata from its databases and informs <<vol1_spec_sdpi_p_actor_somds_consumer>>s about the <<vol1_spec_sdpi_p_actor_somds_provider>>'s absence.
 
 .R7006
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r7006,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====

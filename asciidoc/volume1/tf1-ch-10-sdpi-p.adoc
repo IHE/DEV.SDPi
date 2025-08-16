@@ -741,7 +741,7 @@ sdpi_include_transaction::DEV-47[initiator="required", responder="required"]
 
 
 .R1021
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r1021,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -758,7 +758,7 @@ When the RefProfile:sdpi-p[profile-option-id="sdpi-p-managed-discovery"] is enab
 ****
 
 .R1022
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r1022,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -768,7 +768,7 @@ If a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor is configured or provisione
 ****
 
 .R1023
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r1023,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -785,7 +785,7 @@ When the RefProfile:sdpi-p[profile-option-id="sdpi-p-managed-discovery"] is enab
 ****
 
 .R1024
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r1024,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -795,7 +795,7 @@ If a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor is configured or provisione
 ****
 
 .R1025
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement#r1025,sdpi_req_level=shall]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
 
@@ -1196,7 +1196,7 @@ No additional safety requirements or considerations are identified for this tech
 ===== Specific Risk Control Measures for <<vol1_spec_sdpi_p_actor_somds_consumer>>s
 
 .R1542
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement#r1542,sdpi_req_level=shall]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
@@ -1206,7 +1206,7 @@ When a <<vol1_spec_sdpi_p_actor_somds_consumer>> disables one or more <<term_sys
 ****
 
 .R1543
-[sdpi_requirement,sdpi_req_level=shall]
+[sdpi_requirement#r1543,sdpi_req_level=shall]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=audit,sdpi_ses_test=wire]
 ****
 [NORMATIVE]
@@ -1231,7 +1231,7 @@ NOTE: The SDC standard <<ref_ieee_11073_20701_2018>> includes requirement R0064 
 NOTE: TLS 1.2 is not sufficient for all types of connectivity (e.g., cloud, remote programming, etc.), and it has reported cipher suite weaknesses. TLS 1.3 (or higher, in the future) may be hence required depending on the risk associated with the device.
 
 .R1544
-[sdpi_requirement,sdpi_req_level=should]
+[sdpi_requirement#r1544,sdpi_req_level=should]
 [sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
 ****
 [NORMATIVE]

@@ -6,7 +6,7 @@ Unfortunately, the BICEPS Participant and Message Model as well some Web Service
 In order to increase interoperability between implementations of this profile, this section specifies requirements towards <<term_q_name>> handling in XML instances.
 
 .R1012
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r1012,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -17,7 +17,7 @@ A <<vol1_spec_sdpi_p_actor_somds_participant>> shall resolve the namespace of a 
 ****
 
 .R1013
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r1013,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
