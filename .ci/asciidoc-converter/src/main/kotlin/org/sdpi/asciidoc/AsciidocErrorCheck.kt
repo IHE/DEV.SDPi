@@ -20,7 +20,7 @@ class AsciidocErrorChecker {
      */
     fun run(knownAnchors: List<String>) {
         val actualIgnored = ignored.toMutableList().also {
-            it.add(ReferenceSanitizerPreprocessor.refSeparator)
+            it.add(ReferenceSanitizerPreprocessor.REF_SEPARATOR)
         }
         val errors = errorStream.toByteArray().decodeToString()
             .split("\n").count { line ->

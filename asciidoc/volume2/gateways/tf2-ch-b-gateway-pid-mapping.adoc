@@ -4,33 +4,38 @@ The HL7 Patient Identification (PID) segment requires a mapping from the <<acron
 
 ====== Prerequisite of Valid Patient Context
 .R8102
-[sdpi_requirement#r8102,sdpi_req_level=shall,sdpi_max_occurrence=1]
+[sdpi_requirement#r8102,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
-The SDC patient context information shall only be mapped to the corresponding fields in the HL7 PID segment when the requirements for a valid SDC patient context as defined in <<ref_ieee_11073_10700_2022>> are fulfilled.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: For a valid *pm:PatientContextState*, the *pm:AbstractContextState/@ContextAssociation* attribute is set to *"Assoc"* and the *pm:AbstractContextState/pm:Validator* is set to a valid validator. A corresponding inferred patient ensemble context is not required for the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>>.
+The SDC patient context information shall only be mapped to the corresponding fields in the HL7 PID segment when the requirements for a valid SDC patient context as defined in <<ref_ieee_11073_10700_2022>> are fulfilled.
+====
 
-NOTE: If the SDC patient context information is not intended to be used for the mapping, please refer to the <<ref_ihe_dev_tf_2_2024>> on how to populate the fields of the PID segment in this case.
+[NOTE]
+====
+
+* For a valid *pm:PatientContextState*, the *pm:AbstractContextState/@ContextAssociation* attribute is set to *"Assoc"* and the *pm:AbstractContextState/pm:Validator* is set to a valid validator. A corresponding inferred patient ensemble context is not required for the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>>.
+
+* If the SDC patient context information is not intended to be used for the mapping, please refer to the <<ref_ihe_dev_tf_2_2024>> on how to populate the fields of the PID segment in this case.
 ====
 ****
 
 ====== PID-3 Patient Identifier List
 .R8103
-[sdpi_requirement#r8103,sdpi_req_level=shall,sdpi_max_occurrence=1]
+[sdpi_requirement#r8103,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
-If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall map the patient identifiers to the PID-3 field.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: The PID-3 is a list of patient identifiers (e.g., medical record number, social security number, visit number, account number, etc.)
+If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall map the patient identifiers to the PID-3 field.
+====
 
-NOTE: <<ref_tbl_pid3_mapping>> defines the mapping of the <<acronym_mdib>> patient identification to the data fields of the HL7 data type *CX* used in the PID-3 field.
+[NOTE]
+====
+* The PID-3 is a list of patient identifiers (e.g., medical record number, social security number, visit number, account number, etc.)
 
-NOTE: If the <<acronym_mdib>> patient identification element *pm:PatientContextState/pm:Identification* contains more than one patient identifier, each SDC patient identifier is mapped according to the <<ref_tbl_pid3_mapping>> table and added to the PID-3 patient identifier list.
+* <<ref_tbl_pid3_mapping>> defines the mapping of the <<acronym_mdib>> patient identification to the data fields of the HL7 data type *CX* used in the PID-3 field.
+
+* If the <<acronym_mdib>> patient identification element *pm:PatientContextState/pm:Identification* contains more than one patient identifier, each SDC patient identifier is mapped according to the <<ref_tbl_pid3_mapping>> table and added to the PID-3 patient identifier list.
 ====
 ****
 
@@ -91,14 +96,16 @@ The following identifier type codes are proposed to be used for the patient iden
 
 ====== PID-5 Patient Name
 .R8104
-[sdpi_requirement#r8104,sdpi_req_level=shall,sdpi_max_occurrence=1]
+[sdpi_requirement#r8104,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
-If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-5 field to the patient name information.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: <<ref_tbl_pid5_mapping>> defines the mapping of the SDC patient name information to the data fields of the HL7 data type *XPN* used in the PID-5 field.
+If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-5 field to the patient name information.
+====
+
+[NOTE]
+====
+<<ref_tbl_pid5_mapping>> defines the mapping of the SDC patient name information to the data fields of the HL7 data type *XPN* used in the PID-5 field.
 ====
 ****
 
@@ -143,14 +150,16 @@ Please refer also to the corresponding section in the <<ref_ihe_dev_tf_2_2024>>.
 
 ====== PID-6 Mother’s Maiden Name
 .R8105
-[sdpi_requirement#r8105,sdpi_req_level=shall,sdpi_max_occurrence=1]
+[sdpi_requirement#r8105,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
-If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-6 field to the mother's maiden name or birth name before marriage.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: <<ref_tbl_pid6_mapping>> defines the mapping of the SDC patient name information to the data fields of the HL7 data type *XPN* used in the PID-6 field.
+If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-6 field to the mother's maiden name or birth name before marriage.
+====
+
+[NOTE]
+====
+<<ref_tbl_pid6_mapping>> defines the mapping of the SDC patient name information to the data fields of the HL7 data type *XPN* used in the PID-6 field.
 ====
 ****
 
@@ -173,14 +182,16 @@ NOTE: <<ref_tbl_pid6_mapping>> defines the mapping of the SDC patient name infor
 
 ====== PID-7 Date/Time of Birth
 .R8106
-[sdpi_requirement#r8106,sdpi_req_level=shall,sdpi_max_occurrence=1]
+[sdpi_requirement#r8106,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
-If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-7 field to the date and time of birth.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: <<ref_tbl_pid7_mapping>> defines the mapping of the SDC patient's date of birth information to the data fields of the HL7 data type *DTM* used in the PID-7 field.
+If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-7 field to the date and time of birth.
+====
+
+[NOTE]
+====
+<<ref_tbl_pid7_mapping>> defines the mapping of the SDC patient's date of birth information to the data fields of the HL7 data type *DTM* used in the PID-7 field.
 ====
 ****
 
@@ -213,45 +224,54 @@ In order to avoid an erroneous mapping of potentially different sex concept inte
 Mappings to the *PID-8 Administrative Sex* field are allowed in certain cases as defined in <<r8121>> and <<r8107>>.
 
 .R8120
-[sdpi_requirement#r8120,sdpi_req_level=shall,sdpi_max_occurrence=1]
+[sdpi_requirement#r8120,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
-If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall export the patient's sex as OBX segment on the MDS level.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: The mapping for the patient's sex is defined in table <<ref_tbl_dec_obx_sex_mapping>>.
+If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall export the patient's sex as OBX segment on the MDS level.
+====
+
+[NOTE]
+====
+The mapping for the patient's sex is defined in table <<ref_tbl_dec_obx_sex_mapping>>.
 ====
 ****
 
 .R8121
-[sdpi_requirement#r8121,sdpi_req_level=may,sdpi_max_occurrence=1]
+[sdpi_requirement#r8121,sdpi_req_level=may,sdpi_req_type=tech_feature]
 ****
-If <<r8102>> is met and the patient's sex in the <<acronym_mdib>> is sourced from the PID-8 field in HL7 V2 ADT messages provided by the hospital ADT system, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> may set the PID-8 field to the code for the administrative sex.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: <<ref_tbl_pid8_mapping>> defines the mapping of the SDC patient's sex information to the data fields of the HL7 data type *IS* used in the PID-8 field.
+If <<r8102>> is met and the patient's sex in the <<acronym_mdib>> is sourced from the PID-8 field in HL7 V2 ADT messages provided by the hospital ADT system, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> may set the PID-8 field to the code for the administrative sex.
+====
+
+[NOTE]
+====
+<<ref_tbl_pid8_mapping>> defines the mapping of the SDC patient's sex information to the data fields of the HL7 data type *IS* used in the PID-8 field.
 ====
 ****
 
 .R8107
-[sdpi_requirement#r8107,sdpi_req_level=shall,sdpi_max_occurrence=1]
+[sdpi_requirement#r8107,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
-If <<r8102>> is met and the <<actor_somds_v2_gateway>> provides the Healthcare Delivery Organization (HDO) the possibility to configure the export of the patient's sex set in the <<acronym_mdib>> in the PID-8 field, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-8 field to the code for the administrative sex.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: <<ref_tbl_pid8_mapping>> defines the mapping of the SDC patient's sex information to the data fields of the HL7 data type *IS* used in the PID-8 field.
+If <<r8102>> is met and the <<actor_somds_v2_gateway>> provides the Healthcare Delivery Organization (HDO) the possibility to configure the export of the patient's sex set in the <<acronym_mdib>> in the PID-8 field, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-8 field to the code for the administrative sex.
+====
+
+[NOTE]
+====
+<<ref_tbl_pid8_mapping>> defines the mapping of the SDC patient's sex information to the data fields of the HL7 data type *IS* used in the PID-8 field.
 ====
 ****
 
 .R8122
-[sdpi_requirement#r8122,sdpi_req_level=shall,sdpi_max_occurrence=1]
+[sdpi_requirement#r8122,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
+[NORMATIVE]
+====
 If the <<actor_somds_v2_gateway>> provides the Healthcare Delivery Organization (HDO) the possibility to configure the export of the patient's sex in the PID-8 field, the manufacturer of the <<actor_somds_v2_gateway>> shall require in the ACCOMPANYING INFORMATION that the HDO has to consider the risk that the patient's sex set in the <<acronym_mdib>> and mapped to the PID-8 field does not lead to a misinterpretation of the sex concept on <<actor_somds_v2_gateway>> consumer side.
+====
 ****
 
 [#ref_tbl_dec_obx_sex_mapping]
@@ -353,14 +373,16 @@ When there are further updates of the sex value after the association of the pat
 
 ====== PID-10 Race
 .R8108
-[sdpi_requirement#r8108,sdpi_req_level=shall,sdpi_max_occurrence=1]
+[sdpi_requirement#r8108,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
-If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-10 field to the patient's race.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: <<ref_tbl_pid10_mapping>> defines the mapping of the SDC patient's race information to the data fields of the HL7 data type *CWE* used in the PID-10 field.
+If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-10 field to the patient's race.
+====
+
+[NOTE]
+====
+<<ref_tbl_pid10_mapping>> defines the mapping of the SDC patient's race information to the data fields of the HL7 data type *CWE* used in the PID-10 field.
 ====
 ****
 
@@ -415,17 +437,19 @@ NOTE: <<ref_tbl_pid10_mapping>> defines the mapping of the SDC patient's race in
 
 ====== PID-31 Identity Unknown Indicator
 .R8109
-[sdpi_requirement#r8109,sdpi_req_level=shall,sdpi_max_occurrence=1]
+[sdpi_requirement#r8109,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
-If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-31 field to an indicator whether the patient's identity is known.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: For a valid *pm:PatientContextState*, the *pm:AbstractContextState/@ContextAssociation* attribute is set to *"Assoc"* and the *pm:AbstractContextState/pm:Validator* is set to a valid validator. In this case, the value is set to "N".
+If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-31 field to an indicator whether the patient's identity is known.
+====
 
-NOTE: In all other cases, the value is set to "Y".
+[NOTE]
+====
+* For a valid *pm:PatientContextState*, the *pm:AbstractContextState/@ContextAssociation* attribute is set to *"Assoc"* and the *pm:AbstractContextState/pm:Validator* is set to a valid validator. In this case, the value is set to "N".
 
-NOTE: A corresponding inferred patient ensemble context is not required for the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> in order to determine a valid *pm:PatientContextState*.
+* In all other cases, the value is set to "Y".
+
+* A corresponding inferred patient ensemble context is not required for the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> in order to determine a valid *pm:PatientContextState*.
 ====
 ****

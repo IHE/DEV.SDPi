@@ -2,6 +2,7 @@ package org.sdpi.asciidoc.factories
 
 import org.asciidoctor.ast.Table
 import org.asciidoctor.extension.Treeprocessor
+import org.sdpi.asciidoc.makeLink
 import org.sdpi.asciidoc.model.Obligation
 import org.sdpi.asciidoc.model.SdpiActor
 import org.sdpi.asciidoc.model.SdpiContentModule
@@ -55,11 +56,12 @@ class ContentModuleTableBuilder(
             return ""
         }
 
-        return "${module.label} (${makeLink(module.anchor, module.label)})"
-    }
-
-    private fun makeLink(strAnchor: String, strText: String): String {
-        return "link:#$strAnchor[$strText]"
+        // HACK: deferred modules have an empty anchor (there's no content to link to)
+        if (module.anchor.isNotEmpty()) {
+            return "${module.label} (${makeLink(module.anchor, module.label)})"
+        } else {
+            return "${module.label} (deferred)"
+        }
     }
 
 }

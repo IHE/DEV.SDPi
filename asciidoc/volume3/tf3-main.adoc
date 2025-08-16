@@ -88,6 +88,7 @@ This content would be extracted from the existing (2024) Section 3.1, where that
 
 // 8.3.2
 [#vol3_clause_sdc_biceps_semantic_content]
+[role=content-module,content-module-id=biceps]
 ==== IEEE 11073-10207 BICEPS Content Modules
 
 include::tf3-ch-8.3.2-biceps-content.adoc[]
