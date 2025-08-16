@@ -26,20 +26,13 @@ const val BLOCK_NAME_SDPI_REQUIREMENT = "sdpi_requirement"
  *          - risk_mitigation: requirement typically related to risk management
  *    - groups (sdpi_req_group): comma separated list of groups that the requirement belongs to;
  *          may be used as a filter by the RequirementListMacroProcessor
- *    - sdpi_req_specification: id of specification that owns the requirement; specifications are
- *          defined in document level attribute entries of the form "spid_oid.<owner>" and
- *          map to an oid for the specification.
  *
- *  The requirement number is determine from the block id or title.
+ *  See /articles/sdpi-article-ihe-tf-asciidoc-cookbook.adoc#semantic-markup for full details
  *
- * - Checks for requirement number duplicates
- * - Stores all requirements in [RequirementsBlockProcessor.detectedRequirements] for further processing
+ *  The requirement number is determined from the block id and or title. Both are required
+ *  and must match. 
  *
  * Example:
- * // Define object ids for referenced standards
- * :sdpi_oid.sdpi: 1.3.6.1.4.1.19376.1.6.2.10.1.1.1
- * :sdpi_oid.sdpi-p: 1.3.6.1.4.1.19376.1.6.2.11
- * :sdpi_oid.sdpi-a: 1.3.6.1.4.1.19376.1.6.2.x
  *
  * // An example requirement block
  * .R1021
@@ -56,8 +49,7 @@ const val BLOCK_NAME_SDPI_REQUIREMENT = "sdpi_requirement"
  * . me
  * ====
  *
- * .Related
- * [%collapsible]
+ * [RELATED]
  * ====
  * . <<ref_w3c_ws_eventing_2006>>, section 3.1
  * . <<ref_ieee_11073_10207_2017>>, §C.57, R0121
@@ -110,24 +102,28 @@ class RequirementBlockProcessor2 : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
 
     /**
      * Retrieve the requirement number from available attributes.
-     * The requirement number may be specified as a block id or title.
+     * The requirement number must be specified as a title and the id.
      * Requirement numbers must match the format defined by REQUIREMENT_NUMBER_FORMAT
      * or REQUIREMENT_TITLE_FORMAT for the id or title, respectively.
      */
     private fun getRequirementNumber(mutableAttributes: MutableMap<String, Any>): Int {
+        val strTitle = mutableAttributes["title"]
+        val nTitleRequirementNumber = REQUIREMENT_TITLE_FORMAT.findAll(strTitle.toString())
+            .map { it.groupValues[2] }.toList().first().toInt()
+
+        // Check the id, if present, matches.
         val strId = mutableAttributes["id"]
-        if (strId != null) {
-            val id = parseRequirementNumber(strId.toString())
-            checkNotNull(id)
-            {
-                "id '$strId' is not a valid requirement number".also { logger.error { it } }
-            }
-            return id
+        checkNotNull(strId) {
+            "Requirement '$strTitle' does not have a matching id".also { logger.error { it } }
         }
 
-        val strTitle = mutableAttributes["title"]
-        return REQUIREMENT_TITLE_FORMAT.findAll(strTitle.toString())
-            .map { it.groupValues[2] }.toList().first().toInt()
+        val nId = parseRequirementNumber(strId.toString())
+        check(nId == nTitleRequirementNumber)
+        {
+            "Requirement '$strTitle' does not have a matching id ($nId)".also { logger.error { it } }
+        }
+
+        return nTitleRequirementNumber
     }
 
     /**
