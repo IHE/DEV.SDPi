@@ -1,6 +1,6 @@
 // = Service-oriented Device Point-of-care Interoperability - Reporting (SDPi-R) Profile
 
-[#vol1_clause_sdpi_r_profile,sdpi_offset=11,role=profile,profile-id=sdpi-r,reftext="Reporting Profile"]
+[#vol1_clause_sdpi_r_profile,sdpi_offset=11,role=profile,profile-id=sdpi-r,reftext="Reporting Profile",oid-arcs=.12]
 == Service-oriented Device Point-of-care Interoperability – Reporting (SDPi-R) Profile
 
 [%noheader]

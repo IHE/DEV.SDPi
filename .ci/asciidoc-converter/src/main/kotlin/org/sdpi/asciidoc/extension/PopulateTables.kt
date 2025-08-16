@@ -348,6 +348,8 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
                 gatherActorOids(oidsToTable)
             } else if (arcOid == WellKnownOid.DEV_TRANSACTION) {
                 gatherTransactionOids(oidsToTable)
+            } else if (arcOid == WellKnownOid.DEV_PROFILE) {
+                gatherProfileOids(oidsToTable)
             } else {
                 logger.error("Oid tables don't support $strArc (yet?)")
             }
@@ -380,6 +382,20 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
                     strOid,
                     transaction.label,
                     transaction.anchor
+                )
+                oidsToTable.add(oid)
+            }
+        }
+    }
+
+    private fun gatherProfileOids(oidsToTable: MutableList<SdpiOidReference>) {
+        for(profile in docInfo.profiles()) {
+            for(strOid in profile.oids) {
+                val oid = SdpiOidReference(
+                    WellKnownOid.DEV_TRANSACTION,
+                    strOid,
+                    profile.label,
+                    profile.anchor
                 )
                 oidsToTable.add(oid)
             }

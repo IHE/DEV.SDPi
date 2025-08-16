@@ -129,6 +129,7 @@ class SdpiInformationCollector(
             logger.error("Duplicate profile id found: $strProfileId")
         }
 
+        val oids = getOids(block, "Profile $strProfileId", WellKnownOid.DEV_PROFILE)
         val transactionRefs = profileTransactions.transactionReferences(strProfileId)
         val profileTransactionRefs = transactionRefs?.filter { !it.isOptioned() }
             ?.map { it.transactionReference }
@@ -146,6 +147,7 @@ class SdpiInformationCollector(
         val currentProfile =
             SdpiProfile(
                 strProfileId,
+                oids,
                 strAnchor,
                 strLabel,
                 profileTransactionRefs,

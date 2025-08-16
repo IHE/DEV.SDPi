@@ -40,6 +40,7 @@ class SdpiProfileOption @OptIn(ExperimentalSerializationApi::class) constructor(
 @Serializable
 class SdpiProfile(
     val profileId: String,
+    val oids: List<String>,
     val anchor: String,
     val label: String,
     val transactionReferences: List<SdpiTransactionReference>?,

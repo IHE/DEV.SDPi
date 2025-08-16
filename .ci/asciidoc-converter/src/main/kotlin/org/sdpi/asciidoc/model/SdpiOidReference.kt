@@ -30,6 +30,8 @@ enum class WellKnownOid(val id: String, val oid: String, val typeLabel: String, 
 
     // Source: https://wiki.ihe.net/index.php/PCD_OID_Management
     DEV_TRANSACTION("transactions", "1.3.6.1.4.1.19376.1.6.4", "Transaction", "Parent OID for the DEV Transaction"),
+
+    DEV_PROFILE("profiles", "1.3.6.1.4.1.19376.1.6.2", "Profile", "Parent OID for the DEV integration profiles")
 }
 
 fun parseOidId(strId: String): WellKnownOid? {

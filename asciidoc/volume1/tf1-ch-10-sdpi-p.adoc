@@ -1,6 +1,6 @@
 // = Service-oriented Device Point-of-care Interoperability – Plug-and-trust (SDPi-P) Profile
 
-[#vol1_clause_sdpi_p_profile,sdpi_offset=10,role=profile,profile-id=sdpi-p,reftext="Plug-and-trust Profile"]
+[#vol1_clause_sdpi_p_profile,sdpi_offset=10,role=profile,profile-id=sdpi-p,reftext="Plug-and-trust Profile",oid-arcs=.11]
 == Service-oriented Device Point-of-care Interoperability – Plug-and-trust (SDPi-P) Profile
 [#vol1_clause_sdpi_p_profile_reftext,reftext="SDPi-P Profile"]
 The SDPi-Plug-and-trust ([[acronym_sdpi_p,SDPi-P]] SDPi-P) Profile supports foundational seamless connectivity, information exchange and service invocation as defined in the SDPi architecture detailed in <<vol1_clause_sdpi_overview_framework>>.

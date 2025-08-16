@@ -1,6 +1,6 @@
 // = Service-oriented Device Point-of-care Interoperability – external Control (SDPi-xC) Profile
 
-[#vol1_clause_sdpi_xc_profile,sdpi_offset=13,role=profile,profile-id=sdpi-xc,reftext="External Control Profile"]
+[#vol1_clause_sdpi_xc_profile,sdpi_offset=13,role=profile,profile-id=sdpi-xc,reftext="External Control Profile",oid-arcs=.14]
 == Service-oriented Device Point-of-care Interoperability – external Control (SDPi-xC) Profile
 
 [%noheader]

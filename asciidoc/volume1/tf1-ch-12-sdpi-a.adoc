@@ -1,6 +1,6 @@
 // = Service-oriented Device Point-of-care Interoperability - Alerting (SDPi-A) Profile
 
-[#vol1_clause_sdpi_a_profile,sdpi_offset=12,role=profile,profile-id=sdpi-a,reftext="Alerting Profile"]
+[#vol1_clause_sdpi_a_profile,sdpi_offset=12,role=profile,profile-id=sdpi-a,reftext="Alerting Profile",oid-arcs=.13]
 == Service-oriented Device Point-of-care Interoperability – Alerting (SDPi-A) Profile
 
 [%noheader]
