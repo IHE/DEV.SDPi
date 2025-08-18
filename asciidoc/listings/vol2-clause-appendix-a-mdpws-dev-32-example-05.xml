@@ -13,7 +13,7 @@
 			<wse:SubscriptionManager>
 				<wsa:Address>https://127.0.0.1:6464/d431eed8-1e29-41df-a99a-7f1a47638a95/SubscriptionManager</wsa:Address>
 			</wse:SubscriptionManager>
-			<wse:Code>wse:SourceCancelling</wse:Code>
+			<wse:Status>http://schemas.xmlsoap.org/ws/2004/08/eventing/SourceCancelling</wse:Status>
 			<wse:Reason xml:lang="en-US">Historic data delivery has finished.</wse:Reason>
 		</wse:SubscriptionEnd>
 	</s12:Body>
