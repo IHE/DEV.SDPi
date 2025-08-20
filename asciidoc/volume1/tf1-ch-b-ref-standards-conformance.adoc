@@ -135,7 +135,7 @@ NOTE: The subcategories for the following sections are solely intended to provid
 
 The following bibliographic references include graphics, "infographic", and similar media.
 
-* [[[ref_iso_81001_temple,ISO 81001-1 "The Temple"]]]'[[[ref_iec_60601_1_8_2020,IEC ISO/IEC 81001-1 Figure 1 "The Temple" Diagram, Copyright &#169; 2019 NHS Digital, licensed via Wikimedia Commons, http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3[Greg Wye, NHS Digital, OGL 3], available at https://81001.org/page/Framework[81001.org Framework].
+* [[[ref_iso_81001_temple,ISO 81001-1 "The Temple"]]] ISO/IEC 81001-1 Figure 1 "The Temple" Diagram, Copyright &#169; 2019 NHS Digital, licensed via Wikimedia Commons, http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3[Greg Wye, NHS Digital, OGL 3], available at https://81001.org/page/Framework[81001.org Framework].
 
 
 [bibliography]

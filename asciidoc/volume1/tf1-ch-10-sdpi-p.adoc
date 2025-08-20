@@ -74,6 +74,7 @@ sdpi_include_transaction::DEV-26[actor-id="somds_consumer",initiator="required",
 sdpi_include_transaction::DEV-31[actor-id="somds_consumer",initiator="optional",placeholder-name="Set provider state"]
 sdpi_include_transaction::DEV-32[actor-id="somds_consumer",initiator="optional",placeholder-name="Retrieve archive data"]
 
+[#vol1_table_sdpi_p_actors_transactions]
 .SDPi-P Profile - Actors and Transactions
 sdpi_transaction_table::[profile-id="sdpi-p"]
 
@@ -685,11 +686,11 @@ Future versions *_MAY_* include options such as
 |===
 ////
 
-Options that may be selected for this Integration Profile are listed in the <<vol1_table_sdpi_p_actors_transactions>> along with the actors to which they apply.
+Options that may be selected for this Integration Profile are listed in the <<vol1_table_sdpi_p_actors_options>> along with the actors to which they apply.
 Dependencies between options when applicable are specified in
 notes.
 
-[#vol1_table_sdpi_p_actors_transactions]
+[#vol1_table_sdpi_p_actors_options]
 .SDPi-P Profile - Actors and Options
 [%autowidth]
 [cols="1,1,1"]
