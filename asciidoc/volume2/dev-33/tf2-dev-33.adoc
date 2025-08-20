@@ -1,0 +1,204 @@
+:var_transaction_id: DEV-33
+
+:var_label_dev_33_message_getsupportedlanguages: GetSupportedLanguages
+:var_label_dev_33_message_getsupportedlanguagesresponse: GetSupportedLanguagesResponse
+:var_label_dev_33_message_getlocalizedtext: GetLocalizedText
+:var_label_dev_33_message_getlocalizedtextresponse: GetLocalizedTextResponse
+
+//reset|+1|off
+[#vol2_clause_dev_33,sdpi_offset=33]
+=== Retrieve Localization Information [{var_transaction_id}]
+
+==== Scope
+
+include::tf2-dev-33-summary.adoc[]
+
+==== Actor Roles
+
+.Actor Roles [{var_transaction_id}]
+[cols="1,2"]
+|===
+|Actor |Roles
+
+|<<vol1_spec_sdpi_p_actor_somds_consumer>>
+|Initiates communication by sending a <<vol2_clause_dev_33_message_getsupportedlanguages, {var_label_dev_33_message_getsupportedlanguages}>> message to a <<vol1_spec_sdpi_p_actor_somds_provider>>. Then listens for a <<vol2_clause_dev_33_message_getsupportedlanguagesresponse, {var_label_dev_33_message_getsupportedlanguagesresponse}>> message to retrieve the <<vol1_spec_sdpi_p_actor_somds_provider>>'s sequence of available languages.
+
+The sequence of available languages can be used by the <<vol1_spec_sdpi_p_actor_somds_consumer>> to send a <<vol2_clause_dev_33_message_getlocalizedtext, {var_label_dev_33_message_getlocalizedtext}>> message, which is answered by the <<vol1_spec_sdpi_p_actor_somds_provider>> with <<vol2_clause_dev_33_message_getlocalizedtextresponse, {var_label_dev_33_message_getlocalizedtextresponse}>> message that contains a filtered set of localized texts.
+
+|<<vol1_spec_sdpi_p_actor_somds_provider>>
+|Listens for <<vol2_clause_dev_33_message_getsupportedlanguages, {var_label_dev_33_message_getsupportedlanguages}>> messages, which it responds to with <<vol2_clause_dev_33_message_getsupportedlanguagesresponse, {var_label_dev_33_message_getsupportedlanguagesresponse}>> messages respectively. Also listens for <<vol2_clause_dev_33_message_getlocalizedtext, {var_label_dev_33_message_getlocalizedtext}>> messages, which it responds to with <<vol2_clause_dev_33_message_getlocalizedtextresponse, {var_label_dev_33_message_getlocalizedtextresponse}>> messages respectively.
+
+|===
+
+==== Referenced Standards
+
+* <<ref_ieee_11073_10207_2017>> Section 7.3.10 Localization Service
+
+==== Messages
+
+.Message Interaction Diagram [{var_transaction_id}]
+[plantuml#vol2_figure_dev_33_sequence, target=puml-dev-33-sequence, format=svg]
+....
+include::../../plantuml/vol2-figure-dev-33-sequence.puml[]
+....
+
+
+// ---------- GetSupportedLanguages ---------
+
+
+[#vol2_clause_dev_33_message_getsupportedlanguages]
+===== {var_label_dev_33_message_getsupportedlanguages} Message
+
+The {var_label_dev_33_message_getsupportedlanguages} message is sent as part of the BICEPS LOCALIZATION SERVICE for allowing <<vol1_spec_sdpi_p_actor_somds_consumer>>s to retrieve a sequence of available languages the BICEPS LOCALIZATION SERVICE is able to translate to.
+
+[#vol2_clause_dev_33_message_getsupportedlanguages_trigger_events]
+====== Trigger Events
+
+The {var_label_dev_33_message_getsupportedlanguages} message is sent whenever a <<vol1_spec_sdpi_p_actor_somds_consumer>> wants to retrieve the sequence of available languages, typically prior to a request of localized texts from the <<vol1_spec_sdpi_p_actor_somds_provider>>'s localization service.
+
+[#vol2_clause_dev_33_message_getsupportedlanguages_semantics]
+====== Message Semantics
+
+The {var_label_dev_33_message_getsupportedlanguages} message does not contain any further semantics.
+
+[#vol2_clause_dev_33_message_getsupportedlanguages_expected_actions]
+====== Expected Actions
+
+When a <<vol1_spec_sdpi_p_actor_somds_consumer>> sends this message, the receiving <<vol1_spec_sdpi_p_actor_somds_provider>> responds with a <<vol2_clause_dev_33_message_getsupportedlanguagesresponse, {var_label_dev_33_message_getsupportedlanguagesresponse}>> message.
+
+
+// ---------- GetSupportedLanguagesResponse ---------
+
+
+[#vol2_clause_dev_33_message_getsupportedlanguagesresponse]
+===== {var_label_dev_33_message_getsupportedlanguagesresponse} Message
+
+The {var_label_dev_33_message_getsupportedlanguagesresponse} message is sent as part of the BICEPS LOCALIZATION SERVICE in response to an incoming <<vol2_clause_dev_33_message_getsupportedlanguages, {var_label_dev_33_message_getsupportedlanguages}>> message.
+
+
+[#vol2_clause_dev_33_message_getsupportedlanguagesresponse_trigger_events]
+====== Trigger Events
+
+The {var_label_dev_33_message_getsupportedlanguagesresponse} message is sent whenever a <<vol1_spec_sdpi_p_actor_somds_provider>> receives a <<vol2_clause_dev_33_message_getsupportedlanguages, {var_label_dev_33_message_getsupportedlanguages}>> message.
+
+[#vol2_clause_dev_33_message_getsupportedlanguagesresponse_semantics]
+====== Message Semantics
+
+[[payload_dev_33_getsupportedlanguagesresponse_lang]]Lang:: The sequence of available languages the <<vol1_spec_sdpi_p_actor_somds_provider>> is able to translate to.
+
+[#vol2_clause_dev_33_message_getsupportedlanguagesresponse_expected_actions]
+====== Expected Actions
+
+Once the sequence of available languages is present, a <<vol1_spec_sdpi_p_actor_somds_consumer>> may request required translated texts by using the <<vol2_clause_dev_33_message_getlocalizedtext, {var_label_dev_33_message_getlocalizedtext}>> message.
+
+
+// ---------- GetLocalizedText ---------
+
+
+[#vol2_clause_dev_33_message_getlocalizedtext]
+===== {var_label_dev_33_message_getlocalizedtext} Message
+
+The {var_label_dev_33_message_getlocalizedtext} message is sent as part of the BICEPS LOCALIZATION SERVICE for allowing <<vol1_spec_sdpi_p_actor_somds_consumer>>s to retrieve a sequence of `pm:LocalizedText` instances based on filter criteria.
+
+[#vol2_clause_dev_33_message_getlocalizedtext_trigger_events]
+====== Trigger Events
+
+The {var_label_dev_33_message_getlocalizedtext} message is sent whenever a <<vol1_spec_sdpi_p_actor_somds_consumer>> wants to retrieve a sequence of available translated texts that are accessible from a <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDIB by means of text references (`pm:LocalizedText/@Ref`).
+
+[#vol2_clause_dev_33_message_getlocalizedtext_semantics]
+====== Message Semantics
+
+[[payload_dev_33_getlocalizedtext_ref]]Ref:: Sequence of localized text references to filter for.
+[[payload_dev_33_getlocalizedtext_version]]Version:: Sequence of localized text versions to filter for.
+[[payload_dev_33_getlocalizedtext_lang]]Lang:: Sequence of languages to filter for.
+[[payload_dev_33_getlocalizedtext_textwidth]]TextWidth:: Sequence of text widths to filter for.
+[[payload_dev_33_getlocalizedtext_numberoflines]]NumberOfLines:: Number of lines to filter for.
+
+[#vol2_clause_dev_33_message_getlocalizedtext_expected_actions]
+====== Expected Actions
+
+When a <<vol1_spec_sdpi_p_actor_somds_consumer>> sends this message, the receiving <<vol1_spec_sdpi_p_actor_somds_provider>> responds with a <<vol2_clause_dev_33_message_getlocalizedtextresponse, {var_label_dev_33_message_getlocalizedtextresponse}>> message.
+
+.R0503
+[sdpi_requirement#r0503,sdpi_req_level=shall]
+****
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall respond to a {var_label_dev_33_message_getlocalizedtext} message with a set of localized texts in <<payload_dev_33_getlocalizedtextresponse_text>> resulting from the intersection of filtered localized texts sets as selected by <<payload_dev_33_getlocalizedtext_ref>>, <<payload_dev_33_getlocalizedtext_version>>, <<payload_dev_33_getlocalizedtext_lang>>, <<payload_dev_33_getlocalizedtext_textwidth>>, and <<payload_dev_33_getlocalizedtext_numberoflines>>.
+
+NOTE: The filtering of localized texts sets is specified by <<r0504>>, <<r0505>>, <<r0506>>, <<r0507>>, and <<r0508>>.
+****
+
+.R0504
+[sdpi_requirement#r0504,sdpi_req_level=shall]
+****
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall select a set of localized texts based on <<payload_dev_33_getlocalizedtext_ref>> as follows:
+
+- For each <<payload_dev_33_getlocalizedtext_ref>> that corresponds to a localized text, the localized text is added to the set or
+- If no <<payload_dev_33_getlocalizedtext_ref>> is given, the set contains all localized texts
+****
+
+.R0505
+[sdpi_requirement#r0505,sdpi_req_level=shall]
+****
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall select a set of localized texts based on <<payload_dev_33_getlocalizedtext_version>> as follows:
+
+- If <<payload_dev_33_getlocalizedtext_version>> is specified and localized texts are available in that specified version, then the corresponding localized texts are added to the set or
+- If <<payload_dev_33_getlocalizedtext_version>> is specified and no localized texts are available in that specified version, then no localized texts are added to the set or
+- If <<payload_dev_33_getlocalizedtext_version>> is not specified, then the latest version of localized texts are added to the set
+****
+
+.R0506
+[sdpi_requirement#r0506,sdpi_req_level=shall]
+****
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall select a set of localized texts based on <<payload_dev_33_getlocalizedtext_lang>> as follows:
+
+- For each <<payload_dev_33_getlocalizedtext_lang>> for which a localized text exists, the localized text is added to the set or
+- If no <<payload_dev_33_getlocalizedtext_lang>> is given, the set contains all localized texts
+****
+
+.R0507
+[sdpi_requirement#r0507,sdpi_req_level=shall]
+****
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall select a set of localized texts based on <<payload_dev_33_getlocalizedtext_textwidth>> as follows:
+
+- The <<vol1_spec_sdpi_p_actor_somds_provider>> adds all localized texts to the set for which the text width of the localized text is less or equal to the widest <<payload_dev_33_getlocalizedtext_textwidth>> element or
+- If no <<payload_dev_33_getlocalizedtext_textwidth>> is given, the set contains all localized texts
+****
+
+.R0508
+[sdpi_requirement#r0508,sdpi_req_level=shall]
+****
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall select a set of localized texts based on <<payload_dev_33_getlocalizedtext_numberoflines>> as follows:
+
+- The <<vol1_spec_sdpi_p_actor_somds_provider>> adds all localized texts to the set for which the number of lines of the localized text is less or equal to the maximum in <<payload_dev_33_getlocalizedtext_numberoflines>>
+- If no <<payload_dev_33_getlocalizedtext_numberoflines>> is given, the set contains all localized texts
+****
+
+
+// ---------- GetLocalizedTextResponse ---------
+
+
+[#vol2_clause_dev_33_message_getlocalizedtextresponse]
+===== {var_label_dev_33_message_getlocalizedtextresponse} Message
+
+The {var_label_dev_33_message_getlocalizedtextresponse} message is sent as part of the BICEPS LOCALIZATION SERVICE in response to an incoming <<vol2_clause_dev_33_message_getlocalizedtext, {var_label_dev_33_message_getlocalizedtext}>> message.
+
+
+[#vol2_clause_dev_33_message_getlocalizedtextresponse_trigger_events]
+====== Trigger Events
+
+The {var_label_dev_33_message_getlocalizedtextresponse} message is sent whenever a <<vol1_spec_sdpi_p_actor_somds_provider>> receives a <<vol2_clause_dev_33_message_getlocalizedtextresponse, {var_label_dev_33_message_getlocalizedtextresponse}>> message.
+
+[#vol2_clause_dev_33_message_getlocalizedtextresponse_semantics]
+====== Message Semantics
+
+[[payload_dev_33_getlocalizedtextresponse_text]]Text:: The sequence of filtered localized texts, based on <<r0503>>.
+
+[#vol2_clause_dev_33_message_getlocalizedtextresponse_expected_actions]
+====== Expected Actions
+
+A <<vol1_spec_sdpi_p_actor_somds_consumer>> may cache requested localized texts and make them available as substitutes to corresponding localized text references in the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDIB.
+
+
+[#vol2_clause_dev_33_retrieve_biceps_content_ses]
+include::../dev-x-default-ses-secured-mode.adoc[]
+

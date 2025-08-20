@@ -171,8 +171,7 @@ ifndef::not-defined[]
 | <<transaction_name_retrieve_localization_information>>
 | Responder
 | O
-| Deferred to a future version of SDPi
-// <<vol2_clause_dev_33>>
+| <<vol2_clause_dev_33>>
 
 
 //| <<transaction_name_announce_network_departure>>
@@ -245,8 +244,7 @@ ifndef::not-defined[]
 | <<transaction_name_retrieve_localization_information>>
 | Initiator
 | O
-| Deferred to a future version of SDPi
-// <<vol2_clause_dev_33>>
+| <<vol2_clause_dev_33>>
 
 
 //| <<transaction_name_announce_network_departure>>

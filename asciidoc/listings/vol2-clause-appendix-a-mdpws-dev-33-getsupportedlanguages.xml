@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s12:Envelope
+        xmlns:s12="http://www.w3.org/2003/05/soap-envelope"
+        xmlns:msg="http://standards.ieee.org/downloads/11073/11073-10207-2017/message"
+        xmlns:wsa="http://www.w3.org/2005/08/addressing" >
+    <s12:Header>
+        <wsa:Action>http://standards.ieee.org/downloads/11073/11073-20701-2018/LocalizationService/GetSupportedLanguages</wsa:Action>
+        <wsa:MessageID><!-- ... --></wsa:MessageID>
+    </s12:Header>
+    <s12:Body>
+        <msg:GetSupportedLanguages/>
+    </s12:Body>
+</s12:Envelope>

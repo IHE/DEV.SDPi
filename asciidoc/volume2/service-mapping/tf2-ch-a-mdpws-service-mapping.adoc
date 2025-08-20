@@ -16,8 +16,6 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall at least provide the port type
 * According to <<acronym_biceps>>, the GET SERVICE is the only mandatory service to be implemented. This specification extends the list of mandatory services to increase interoperability between <<vol1_spec_sdpi_p_actor_somds_participant>>s.
 
 * All port types of SDC are {uri_sdc_wsdl}[available for download].
-
-* Other port types are currently out of scope of this specification and may be added in a future revision.
 ====
 ****
 
@@ -26,19 +24,19 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall at least provide the port type
 |===
 |Port Type (as <<term_q_name>>) |BICEPS service <<ref_ieee_11073_10207_2017>>
 
-|{{uri_sdc_port_type}}GetService
+|++{++{uri_sdc_port_type}++}++GetService
 |GET SERVICE
 
-|{{uri_sdc_port_type}}DescriptionEventService
+|++{++{uri_sdc_port_type}++}++DescriptionEventService
 |DESCRIPTION EVENT SERVICE
 
-|{{uri_sdc_port_type}}StateEventService
+|++{++{uri_sdc_port_type}++}++StateEventService
 |STATE EVENT SERVICE
 
-|{{uri_sdc_port_type}}ContextService
+|++{++{uri_sdc_port_type}++}++ContextService
 |CONTEXT SERVICE
 
-|{{uri_sdc_port_type}}WaveformService
+|++{++{uri_sdc_port_type}++}++WaveformService
 |WAVEFORM SERVICE
 
 |===
@@ -48,7 +46,7 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall at least provide the port type
 ****
 [NORMATIVE]
 ====
-A <<vol1_spec_sdpi_p_actor_somds_consumer>> should not request context states by using the `GetContextStatesByIdentification` and `GetContextStatesByFilter` operations of the {{uri_sdc_port_type}}ContextService port type.
+A <<vol1_spec_sdpi_p_actor_somds_consumer>> should not request context states by using the `GetContextStatesByIdentification` and `GetContextStatesByFilter` operations of the ++{++{uri_sdc_port_type}++}++ContextService port type.
 ====
 
 [NOTE]
@@ -57,4 +55,12 @@ A <<vol1_spec_sdpi_p_actor_somds_consumer>> should not request context states by
 
 * A <<vol1_spec_sdpi_p_actor_somds_consumer>> may retrieve context states by using `GetContextStates` and perform filtering by itself.
 ====
+****
+
+.R0509
+[sdpi_requirement#r0509,sdpi_req_level=shall]
+****
+If a <<vol1_clause_sdpi_p_somds_provider>> provides localized text references in its <<acronym_mdib>>, the <<vol1_clause_sdpi_p_somds_provider>> shall provide the LOCALIZATION SERVICE via port type ++{++{uri_sdc_port_type}++}++LocalizationService.
+
+NOTE: The ++{++{uri_sdc_port_type}++}++LocalizationService port type is {uri_sdc_wsdl}[available for download].
 ****
