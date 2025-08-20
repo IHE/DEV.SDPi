@@ -1170,6 +1170,237 @@
         "actors": [
             "somds_provider"
         ],
+        "requirementNumber": 503,
+        "localId": "R0503",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> shall respond to a {var_label_dev_33_message_getlocalizedtext} message with a set of localized texts in <<payload_dev_33_getlocalizedtextresponse_text>> resulting from the intersection of filtered localized texts sets as selected by <<payload_dev_33_getlocalizedtext_ref>>, <<payload_dev_33_getlocalizedtext_version>>, <<payload_dev_33_getlocalizedtext_lang>>, <<payload_dev_33_getlocalizedtext_textwidth>>, and <<payload_dev_33_getlocalizedtext_numberoflines>>."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The filtering of localized texts sets is specified by <<r0504>>, <<r0505>>, <<r0506>>, <<r0507>>, and <<r0508>>."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
+        "requirementNumber": 504,
+        "localId": "R0504",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> shall select a set of localized texts based on <<payload_dev_33_getlocalizedtext_ref>> as follows:"
+                    ]
+                },
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "-",
+                            "strText": "For each <<payload_dev_33_getlocalizedtext_ref>> that corresponds to a localized text, the localized text is added to the set or"
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "-",
+                            "strText": "If no <<payload_dev_33_getlocalizedtext_ref>> is given, the set contains all localized texts"
+                        }
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
+        "requirementNumber": 505,
+        "localId": "R0505",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> shall select a set of localized texts based on <<payload_dev_33_getlocalizedtext_version>> as follows:"
+                    ]
+                },
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "-",
+                            "strText": "If <<payload_dev_33_getlocalizedtext_version>> is specified and localized texts are available in that specified version, then the corresponding localized texts are added to the set or"
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "-",
+                            "strText": "If <<payload_dev_33_getlocalizedtext_version>> is specified and no localized texts are available in that specified version, then no localized texts are added to the set or"
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "-",
+                            "strText": "If <<payload_dev_33_getlocalizedtext_version>> is not specified, then the latest version of localized texts are added to the set"
+                        }
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
+        "requirementNumber": 506,
+        "localId": "R0506",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> shall select a set of localized texts based on <<payload_dev_33_getlocalizedtext_lang>> as follows:"
+                    ]
+                },
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "-",
+                            "strText": "For each <<payload_dev_33_getlocalizedtext_lang>> for which a localized text exists, the localized text is added to the set or"
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "-",
+                            "strText": "If no <<payload_dev_33_getlocalizedtext_lang>> is given, the set contains all localized texts"
+                        }
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
+        "requirementNumber": 507,
+        "localId": "R0507",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> shall select a set of localized texts based on <<payload_dev_33_getlocalizedtext_textwidth>> as follows:"
+                    ]
+                },
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "-",
+                            "strText": "The <<vol1_spec_sdpi_p_actor_somds_provider>> adds all localized texts to the set for which the text width of the localized text is less or equal to the widest <<payload_dev_33_getlocalizedtext_textwidth>> element or"
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "-",
+                            "strText": "If no <<payload_dev_33_getlocalizedtext_textwidth>> is given, the set contains all localized texts"
+                        }
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
+        "requirementNumber": 508,
+        "localId": "R0508",
+        "globalId": "",
+        "level": "SHALL",
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> shall select a set of localized texts based on <<payload_dev_33_getlocalizedtext_numberoflines>> as follows:"
+                    ]
+                },
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "-",
+                            "strText": "The <<vol1_spec_sdpi_p_actor_somds_provider>> adds all localized texts to the set for which the number of lines of the localized text is less or equal to the maximum in <<payload_dev_33_getlocalizedtext_numberoflines>>"
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "-",
+                            "strText": "If no <<payload_dev_33_getlocalizedtext_numberoflines>> is given, the set contains all localized texts"
+                        }
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_provider"
+        ],
         "requirementNumber": 500,
         "localId": "R0500",
         "globalId": "",
@@ -1201,11 +1432,6 @@
                             "type": "item",
                             "strMarker": "*",
                             "strText": "All port types of SDC are {uri_sdc_wsdl}[available for download]."
-                        },
-                        {
-                            "type": "item",
-                            "strMarker": "*",
-                            "strText": "Other port types are currently out of scope of this specification and may be added in a future revision."
                         }
                     ]
                 }
@@ -1233,7 +1459,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> should not request context states by using the `GetContextStatesByIdentification` and `GetContextStatesByFilter` operations of the {{uri_sdc_port_type}}ContextService port type."
+                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> should not request context states by using the `GetContextStatesByIdentification` and `GetContextStatesByFilter` operations of the ++{++{uri_sdc_port_type}++}++ContextService port type."
                     ]
                 }
             ],
@@ -1251,6 +1477,40 @@
                             "strMarker": "*",
                             "strText": "A <<vol1_spec_sdpi_p_actor_somds_consumer>> may retrieve context states by using `GetContextStates` and perform filtering by itself."
                         }
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "requirementNumber": 509,
+        "localId": "R0509",
+        "globalId": "",
+        "level": "SHALL",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If a <<vol1_clause_sdpi_p_somds_provider>> provides localized text references in its <<acronym_mdib>>,",
+                        "the <<vol1_clause_sdpi_p_somds_provider>> shall provide the LOCALIZATION SERVICE via port type",
+                        "++{++{uri_sdc_port_type}++}++LocalizationService."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The ++{++{uri_sdc_port_type}++}++LocalizationService port type is {uri_sdc_wsdl}[available for download]."
                     ]
                 }
             ],

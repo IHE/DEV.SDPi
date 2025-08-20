@@ -58,9 +58,17 @@ A <<vol1_spec_sdpi_p_actor_somds_consumer>> should not request context states by
 ****
 
 .R0509
-[sdpi_requirement#r0509,sdpi_req_level=shall]
+[sdpi_requirement#r0509,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
-If a <<vol1_clause_sdpi_p_somds_provider>> provides localized text references in its <<acronym_mdib>>, the <<vol1_clause_sdpi_p_somds_provider>> shall provide the LOCALIZATION SERVICE via port type ++{++{uri_sdc_port_type}++}++LocalizationService.
+[NORMATIVE]
+====
+If a <<vol1_clause_sdpi_p_somds_provider>> provides localized text references in its <<acronym_mdib>>, 
+the <<vol1_clause_sdpi_p_somds_provider>> shall provide the LOCALIZATION SERVICE via port type 
+++{++{uri_sdc_port_type}++}++LocalizationService.
+====
 
-NOTE: The ++{++{uri_sdc_port_type}++}++LocalizationService port type is {uri_sdc_wsdl}[available for download].
+[NOTE]
+====
+The ++{++{uri_sdc_port_type}++}++LocalizationService port type is {uri_sdc_wsdl}[available for download].
+====
 ****

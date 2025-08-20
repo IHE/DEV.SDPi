@@ -61,6 +61,7 @@ sdpi_include_transaction::DEV-27[initiator="required", responder="required"]
 sdpi_include_transaction::DEV-28[initiator="optional", receiver="optional"]
 sdpi_include_transaction::DEV-29[initiator="required", receiver="required"]
 sdpi_include_transaction::DEV-30[initiator="optional", responder="optional"]
+sdpi_include_transaction::DEV-33[initiator="optional", responder="optional"]
 sdpi_include_transaction::DEV-46[initiator="optional", receiver="required"]
 sdpi_include_transaction::DEV-47[initiator="optional", responder="required"]
 
@@ -68,12 +69,10 @@ sdpi_include_transaction::DEV-47[initiator="optional", responder="required"]
 sdpi_include_transaction::DEV-26[actor-id="somds_provider",responder="required",placeholder-name="Discover system context and capabilities"]
 sdpi_include_transaction::DEV-31[actor-id="somds_provider",responder="optional",placeholder-name="Set provider state"]
 sdpi_include_transaction::DEV-32[actor-id="somds_provider",responder="optional",placeholder-name="Retrieve archive data"]
-sdpi_include_transaction::DEV-33[actor-id="somds_provider",responder="optional",placeholder-name="Retrieve localization information"]
 
 sdpi_include_transaction::DEV-26[actor-id="somds_consumer",initiator="required",placeholder-name="Discover system context and capabilities"]
 sdpi_include_transaction::DEV-31[actor-id="somds_consumer",initiator="optional",placeholder-name="Set provider state"]
 sdpi_include_transaction::DEV-32[actor-id="somds_consumer",initiator="optional",placeholder-name="Retrieve archive data"]
-sdpi_include_transaction::DEV-33[actor-id="somds_consumer",initiator="optional",placeholder-name="Retrieve localization information"]
 
 .SDPi-P Profile - Actors and Transactions
 sdpi_transaction_table::[profile-id="sdpi-p"]

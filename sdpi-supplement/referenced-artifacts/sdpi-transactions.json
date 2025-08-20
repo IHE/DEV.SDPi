@@ -193,6 +193,35 @@
         ]
     },
     {
+        "id": "DEV-33",
+        "oids": [
+            "1.3.6.1.4.1.19376.1.6.4.23.1",
+            "1.3.6.1.4.1.19376.1.6.4.33"
+        ],
+        "label": "Retrieve Localization Information",
+        "anchor": "vol2_clause_dev_33",
+        "actorRoles": [
+            {
+                "actorId": "somds_consumer",
+                "contribution": "INITIATOR",
+                "description": [
+                    "Initiates communication by sending a <<vol2_clause_dev_33_message_getsupportedlanguages*GetSupportedLanguages>> message to a <<vol1_spec_sdpi_p_actor_somds_provider>>. Then listens for a <<vol2_clause_dev_33_message_getsupportedlanguagesresponse*GetSupportedLanguagesResponse>> message to retrieve the <<vol1_spec_sdpi_p_actor_somds_provider>>'s sequence of available languages.",
+                    "",
+                    "The sequence of available languages can be used by the <<vol1_spec_sdpi_p_actor_somds_consumer>> to send a <<vol2_clause_dev_33_message_getlocalizedtext*GetLocalizedText>> message, which is answered by the <<vol1_spec_sdpi_p_actor_somds_provider>> with <<vol2_clause_dev_33_message_getlocalizedtextresponse*GetLocalizedTextResponse>> message that contains a filtered set of localized texts.",
+                    ""
+                ]
+            },
+            {
+                "actorId": "somds_provider",
+                "contribution": "RESPONDER",
+                "description": [
+                    "Listens for <<vol2_clause_dev_33_message_getsupportedlanguages*GetSupportedLanguages>> messages, which it responds to with <<vol2_clause_dev_33_message_getsupportedlanguagesresponse*GetSupportedLanguagesResponse>> messages respectively. Also listens for <<vol2_clause_dev_33_message_getlocalizedtext*GetLocalizedText>> messages, which it responds to with <<vol2_clause_dev_33_message_getlocalizedtextresponse*GetLocalizedTextResponse>> messages respectively.",
+                    ""
+                ]
+            }
+        ]
+    },
+    {
         "id": "DEV-34",
         "oids": [
             "1.3.6.1.4.1.19376.1.6.4.34",
