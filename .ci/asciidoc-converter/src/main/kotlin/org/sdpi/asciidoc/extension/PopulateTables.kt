@@ -392,7 +392,7 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
         for(profile in docInfo.profiles()) {
             for(strOid in profile.oids) {
                 val oid = SdpiOidReference(
-                    WellKnownOid.DEV_TRANSACTION,
+                    WellKnownOid.DEV_PROFILE,
                     strOid,
                     profile.label,
                     profile.anchor
