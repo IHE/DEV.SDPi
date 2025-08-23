@@ -147,3 +147,6 @@ include::tf3-ch-8.7.4-surgical.adoc[]
 include::tf3-ch-a-xml-schemas.adoc[]
 
 include::tf3-ch-b-biceps-extension-namespace.adoc[]
+
+include::tf3-ch-c-oid-tables.adoc[]
+
