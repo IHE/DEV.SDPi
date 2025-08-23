@@ -1,3 +1,4 @@
+[appendix#vol3_appendix_d_ics,sdpi_offset=D]
 == Implementation conformity statements
 
 === General format
@@ -30,12 +31,15 @@ The *Support* column may be a simple entry, such as one of the following, or a d
 [#vol4_ics_tables]
 === Tables
 
+==== SOMDS Participant
+
 RefActor:somds_participant[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_participant>>.
 
 [#vol4_ics_actor_somds_participant]
 .Implementation conformity statements that apply to all <<vol1_clause_sdpi_p_somds_participant>>s.
 sdpi_ics_table::[sdpi_req_actor=somds_participant]
 
+==== SOMDS Provider
 
 RefActor:somds_provider[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_provider>>.
 
@@ -43,6 +47,7 @@ RefActor:somds_provider[] actors indicate conformatity with this profile by comp
 .Implementation conformity statements that apply to all <<vol1_clause_sdpi_p_somds_provider>>s.
 sdpi_ics_table::[sdpi_req_actor=somds_provider]
 
+==== SOMDS Consumer
 
 RefActor:somds_consumer[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_consumer>>.
 
@@ -50,6 +55,7 @@ RefActor:somds_consumer[] actors indicate conformatity with this profile by comp
 .Implementation conformity statements that apply to all <<vol1_clause_sdpi_p_somds_consumer>>s.
 sdpi_ics_table::[sdpi_req_actor=somds_consumer]
 
+==== SOMDS Connector
 
 RefActor:somds_connector[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_connector>>.
 
@@ -57,6 +63,7 @@ RefActor:somds_connector[] actors indicate conformatity with this profile by com
 .Implementation conformity statements that apply to all <<vol1_clause_sdpi_p_somds_connector>>s.
 sdpi_ics_table::[sdpi_req_actor=somds_connector]
 
+==== SOMDS FHIR Gateway
 
 RefActor:somds_fhir_gateway[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_fhir_gateway>>.
 
@@ -64,6 +71,7 @@ RefActor:somds_fhir_gateway[] actors indicate conformatity with this profile by 
 .Implementation conformity statements that apply to all <<vol1_clause_sdpi_p_somds_fhir_gateway>>s.
 sdpi_ics_table::[sdpi_req_actor=somds_fhir_gateway]
 
+==== SOMDS V2 Gateway
 
 RefActor:somds_v2_gateway[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_v2_gateway>>.
 
@@ -71,6 +79,7 @@ RefActor:somds_v2_gateway[] actors indicate conformatity with this profile by co
 .Implementation conformity statements that apply to all <<vol1_clause_sdpi_p_somds_v2_gateway>>s.
 sdpi_ics_table::[sdpi_req_actor=somds_v2_gateway]
 
+==== SOMDS Sensor Gateway
 
 RefActor:somds_sensor_gateway[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_sensor_gateway>>.
 
@@ -78,6 +87,7 @@ RefActor:somds_sensor_gateway[] actors indicate conformatity with this profile b
 .Implementation conformity statements that apply to all <<vol1_clause_sdpi_p_somds_sensor_gateway>>s.
 sdpi_ics_table::[sdpi_req_actor=somds_sensor_gateway]
 
+==== SOMDS Smart App
 
 RefActor:somds_smart_app[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_smart_app>>.
 
@@ -85,6 +95,7 @@ RefActor:somds_smart_app[] actors indicate conformatity with this profile by com
 .Implementation conformity statements that apply to all <<vol1_clause_sdpi_p_somds_smart_app_platform>>s.
 sdpi_ics_table::[sdpi_req_actor=somds_smart_app]
 
+==== BICEPS Content Creator
 
 RefActor:biceps_content_creator[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_biceps_content_creator>>.
 
@@ -92,6 +103,7 @@ RefActor:biceps_content_creator[] actors indicate conformatity with this profile
 .Implementation conformity statements that apply to all <<vol1_clause_sdpi_p_biceps_content_creator>>s.
 sdpi_ics_table::[sdpi_req_actor=biceps_content_creator]
 
+==== BICEPS Content Consumer
 
 RefActor:biceps_content_consumer[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_biceps_content_consumer>>.
 
@@ -99,6 +111,7 @@ RefActor:biceps_content_consumer[] actors indicate conformatity with this profil
 .Implementation conformity statements that apply to all <<vol1_clause_sdpi_p_biceps_content_consumer>>s.
 sdpi_ics_table::[sdpi_req_actor=biceps_content_consumer]
 
+==== Discovery Proxy
 
 RefActor:discovery_proxy[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_discovery_proxy>>.
 
@@ -106,6 +119,7 @@ RefActor:discovery_proxy[] actors indicate conformatity with this profile by com
 .Implementation conformity statements that apply to all <<vol1_clause_sdpi_p_discovery_proxy>>s.
 sdpi_ics_table::[sdpi_req_actor=discovery_proxy]
 
+==== SOMDS Medical Data Provider
 
 RefActor:somds_medical_data_provider[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_medical_data_provider>>.
 
@@ -113,6 +127,7 @@ RefActor:somds_medical_data_provider[] actors indicate conformatity with this pr
 .Implementation conformity statements that apply to all <<vol1_clause_sdpi_r_somds_medical_data_provider>>s.
 sdpi_ics_table::[sdpi_req_actor=somds_medical_data_provider]
 
+==== SOMDS Medical Data Consumer
 
 RefActor:somds_medical_data_consumer[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_medical_data_consumer>>.
 
@@ -120,6 +135,7 @@ RefActor:somds_medical_data_consumer[] actors indicate conformatity with this pr
 .Implementation conformity statements that apply to all <<vol1_clause_sdpi_r_somds_medical_data_consumer>>s.
 sdpi_ics_table::[sdpi_req_actor=somds_medical_data_consumer]
 
+==== SOMDS Dec Gateway
 
 RefActor:somds_dec_gateway[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_dec_gateway>>.
 
@@ -127,6 +143,7 @@ RefActor:somds_dec_gateway[] actors indicate conformatity with this profile by c
 .Implementation conformity statements that apply to all <<vol1_clause_sdpi_r_somds_dec_gateway>>s.
 sdpi_ics_table::[sdpi_req_actor=somds_dec_gateway]
 
+==== FHIR Medical Data Gateway
 
 RefActor:somds_fhir_medical_data_gateway[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_fhir_medical_data_gateway>>.
 
@@ -134,6 +151,7 @@ RefActor:somds_fhir_medical_data_gateway[] actors indicate conformatity with thi
 .Implementation conformity statements that apply to all <<vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway>>s.
 sdpi_ics_table::[sdpi_req_actor=somds_fhir_medical_data_gateway]
 
+==== SOMDS Medical Alert Provider
 
 RefActor:somds_medical_alert_provider[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_medical_alert_provider>>.
 
@@ -141,6 +159,7 @@ RefActor:somds_medical_alert_provider[] actors indicate conformatity with this p
 .Implementation conformity statements that apply to all <<vol1_clause_sdpi_a_somds_medical_alert_provider>>s.
 sdpi_ics_table::[sdpi_req_actor=somds_medical_alert_provider]
 
+==== SOMDS Medical Alert Consumer
 
 RefActor:somds_medical_alert_consumer[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_medical_alert_consumer>>.
 
@@ -148,6 +167,7 @@ RefActor:somds_medical_alert_consumer[] actors indicate conformatity with this p
 .Implementation conformity statements that apply to all <<vol1_clause_sdpi_a_somds_medical_alert_consumer>>s.
 sdpi_ics_table::[sdpi_req_actor=somds_medical_alert_consumer]
 
+==== SOMDS ACM Gateway
 
 RefActor:somds_acm_gateway[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_acm_gateway>>.
 
@@ -155,6 +175,7 @@ RefActor:somds_acm_gateway[] actors indicate conformatity with this profile by c
 .Implementation conformity statements that apply to all <<vol1_clause_sdpi_a_somds_acm_gateway>>s.
 sdpi_ics_table::[sdpi_req_actor=somds_acm_gateway]
 
+==== SOMDS Medical Control Provider
 
 RefActor:somds_medical_control_provider[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_medical_control_provider>>.
 
@@ -162,6 +183,7 @@ RefActor:somds_medical_control_provider[] actors indicate conformatity with this
 .Implementation conformity statements that apply to all <<vol1_clause_sdpi_xc_somds_medical_control_provider>>s.
 sdpi_ics_table::[sdpi_req_actor=somds_medical_control_provider]
 
+==== SOMDS Medical Control Consumer
 
 RefActor:somds_medical_control_consumer[] actors indicate conformatity with this profile by completing <<vol4_ics_actor_somds_medical_control_consumer>>.
 

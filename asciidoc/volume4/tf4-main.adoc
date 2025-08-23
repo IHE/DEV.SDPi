@@ -1,6 +1,0 @@
-[#vol4, sdpi_volume_caption=4]
-= Volume 4 -- Reference
-
-// ICS tables
-include::tf4-ics.adoc[]
-
