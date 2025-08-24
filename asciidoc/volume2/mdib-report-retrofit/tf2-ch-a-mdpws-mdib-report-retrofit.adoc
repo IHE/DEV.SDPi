@@ -53,9 +53,9 @@ NOTE: This allows for a <<vol1_spec_sdpi_p_actor_somds_consumer>> to apply repor
 
 
 .R1030
-[sdpi_requirement#r1030,sdpi_req_level=shall]
+[sdpi_requirement#r1030,sdpi_req_level=should]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_provider>> shall include an `sdpi:ReportSequence` element in every message notification header.
+A <<vol1_spec_sdpi_p_actor_somds_provider>> should include an `sdpi:ReportSequence` element in every message notification header.
 
 .Notes
 [%collapsible]
@@ -84,9 +84,9 @@ A <<vol1_spec_sdpi_p_actor_somds_consumer>> should reconnect or go into a fail-s
 ****
 
 .R1032
-[sdpi_requirement#r1032,sdpi_req_level=shall]
+[sdpi_requirement#r1032,sdpi_req_level=should]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_consumer>> shall treat subsequent reports with the same `sdpi:ReportSequence/@MessageNumber` as functionally identical following confirmation of successful delivery. 
+A <<vol1_spec_sdpi_p_actor_somds_consumer>> should treat subsequent reports with the same `sdpi:ReportSequence/@MessageNumber` as functionally identical following confirmation of successful delivery. 
 
 .Notes
 [%collapsible]
@@ -101,9 +101,9 @@ A <<vol1_spec_sdpi_p_actor_somds_consumer>> shall treat subsequent reports with 
 
 
 .R1033
-[sdpi_requirement#r1033,sdpi_req_level=shall]
+[sdpi_requirement#r1033,sdpi_req_level=should]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_consumer>> that receives multiple reports with the same `sdpi:ReportSequence/@MessageNumber` shall either:
+A <<vol1_spec_sdpi_p_actor_somds_consumer>> that receives multiple reports with the same `sdpi:ReportSequence/@MessageNumber` should either:
 
 * acknowledge receipt with an HTTP response code, or
 * terminate the publish-subscribe session using the mechanisms described in Transaction [DEV-27] (<<vol2_clause_dev_27>>).
