@@ -2,9 +2,10 @@
 sudo apt install graphviz
 gem install asciidoctor
 gem install asciidoctor-diagram
+gem install asciidoctor-diagram-plantuml
 asciidoctor -V
 cd asciidoc || exit
-asciidoctor -r asciidoctor-diagram -D ../ sdpi-supplement.adoc
+asciidoctor -r asciidoctor-diagram-plantuml -D ../ sdpi-supplement.adoc
 cd ..
 mkdir sdpi-supplement
 cp -R asciidoc/images sdpi-supplement/images
