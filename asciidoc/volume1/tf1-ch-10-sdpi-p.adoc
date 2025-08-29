@@ -128,8 +128,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | <<transaction_name_retrieve_localization_information>>
 | Responder
 | O
-| Deferred to a future version of SDPi
-// <<vol2_clause_dev_33>>
+| <<vol2_clause_dev_33>>
 
 
 //| <<transaction_name_announce_network_departure>>
@@ -202,8 +201,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | <<transaction_name_retrieve_localization_information>>
 | Initiator
 | O
-| Deferred to a future version of SDPi
-// <<vol2_clause_dev_33>>
+| <<vol2_clause_dev_33>>
 
 
 //| <<transaction_name_announce_network_departure>>

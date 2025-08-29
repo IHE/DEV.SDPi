@@ -42,7 +42,8 @@ include::dev-32/tf2-ch-a-mdpws-dev-32.adoc[]
 
 
 //=== Retrieve Localization Information [DEV-33]
-//
+include::dev-33/tf2-ch-a-mdpws-dev-33.adoc[]
+
 //=== Announce Network Departure [DEV-34]
 include::dev-34/tf2-ch-a-mdpws-dev-34.adoc[]
 
