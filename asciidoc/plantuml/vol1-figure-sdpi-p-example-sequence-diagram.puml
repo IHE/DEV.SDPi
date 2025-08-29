@@ -1,6 +1,6 @@
 @startuml
 
-!include ../plantuml/common_style.inc.puml
+!include plantuml/common_style.inc.puml
 
 !global $str_sdpi_p_somds_prov = "SOMDS Provider"
 !global $str_sdpi_p_somds_cons = "SOMDS Consumer"

@@ -38,7 +38,7 @@ jobs:
       run: ./gradlew run --args="--input-file ../../asciidoc/sdpi-supplement.adoc --output-folder ../../sdpi-supplement --github-token ${{ secrets.SDPI_API_ACCESS_TOKEN_SECRET }} --backend html"
       working-directory: .ci/asciidoc-converter
 
-    - name: Generate PlantUML diagrams and copy images
+    - name: Generate PlantUML diagrams and static files
       run: .github/prepare_artifacts.sh "x.x.x"
       
     - name: Extract branch name
