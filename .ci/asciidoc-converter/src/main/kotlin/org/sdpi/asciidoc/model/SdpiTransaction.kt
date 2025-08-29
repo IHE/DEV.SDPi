@@ -1,13 +1,15 @@
 package org.sdpi.asciidoc.model
 
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlin.coroutines.Continuation
 
 @Serializable
 data class SdpiTransaction(
-    val anchor: String,
     val id: String,
+    val oids: List<String>,
     val label: String,
+    val anchor: String,
     val actorRoles: List<SdpiActorRole>?
 ) {
     fun createTransactionListLink(): String {
@@ -15,6 +17,20 @@ data class SdpiTransaction(
         // a hack because we make assumptions about how transaction ids are named.
         val strAnchor = "transaction_number_${id.lowercase().replace('-', '_')}"
         return "link:#$strAnchor[$id]"
+    }
+
+    fun getContributionFor(contribution: Contribution): Contribution? {
+        if (actorRoles == null) {
+            return null
+        }
+
+        for(actor in actorRoles) {
+            if (actor.contribution == contribution) {
+                return actor.contribution
+            }
+        }
+
+        return null
     }
 
     fun getContributionForActor(strActorId: String): Contribution? {
@@ -59,8 +75,15 @@ data class TransactionContribution(
 @Serializable
 data class SdpiTransactionReference(
     val transactionId: String,
-    val obligations: List<TransactionContribution>
+    val placeholderName: String? // Name of transaction iff the reference is deferred.
 ) {
+    @Serializable
+    val obligations = mutableListOf<TransactionContribution>()
+
+    fun addObligation(obligation: TransactionContribution) {
+        obligations.add(obligation)
+    }
+
     fun makesContribution(contribution: Contribution): Boolean {
         return obligations.any{ it.contribution == contribution}
     }
@@ -73,5 +96,10 @@ data class SdpiTransactionReference(
 data class SdpiProfileTransactionReference(
     val profileId: String,
     val profileOptionId: String?,
+    val actorOptionId: String?,
     val transactionReference: SdpiTransactionReference
-)
+) {
+    fun isOptioned(): Boolean {
+        return profileOptionId != null || actorOptionId != null
+    }
+}

@@ -3,6 +3,7 @@ package org.sdpi.asciidoc.model
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import org.sdpi.asciidoc.extension.Roles
+import org.sdpi.asciidoc.makeLink
 
 /**
  * Definition of requirement levels.
@@ -132,15 +133,15 @@ sealed class SdpiRequirement2 {
      */
     abstract fun getTypeDescription(): String
 
-    fun makeLink(): String {
-        return "link:#${getBlockId()}[${localId}]"
+    fun makeLinkLocal(): String {
+        return makeLink(getBlockId(), localId)
     }
 
     fun makeLinkGlobal(): String {
         if (globalId.isNotEmpty()) {
-            return "link:#${getBlockId()}[${globalId}]"
+            return makeLink(getBlockId(), globalId)
         }
-        return makeLink()
+        return makeLinkLocal()
     }
 
     fun getBlockId(): String {
