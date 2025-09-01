@@ -16,7 +16,12 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ## Unreleased
 
+### Added
+
+- DEV-33 (localization service) including MDPWS binding. ([#40](https://github.com/IHE/DEV.SDPi/issues/40))
+
 ### Changes
+
 - Changed all references to IHE PCD TF 2019 to the newer 2024 version. Updated sections in document which were affected by the TF version change ([#340](https://github.com/IHE/DEV.SDPi/issues/340))
 - Removed transaction DEV-34 (Announce Network Departure) and updated references to future SDPi versions for maintainability ([#406](https://github.com/IHE/DEV.SDPi/issues/406))
 - Corrected erroneous actor names in transactions DEV-35 through DEV-40 ([#461](https://github.com/IHE/DEV.SDPi/issues/461))
@@ -25,6 +30,7 @@ Each section shall contain a list of action items of the following format: `<bri
 ### Editorial Fixes
 
 - Rephrased for clarity the first bullet of section 1:A.1 ([#316](https://github.com/IHE/DEV.SDPi/issues/316))
+- Fix broken references to PlantUML files ([#472](https://github.com/IHE/DEV.SDPi/issues/472))
 
 ## [2.1.2] - 2025-05-09
 
@@ -41,6 +47,7 @@ Each section shall contain a list of action items of the following format: `<bri
 ## [2.1.0] - 2025-04-22
 
 ### Changes
+
 - Added new section "Unique Localized Text Catalog Identification" to volume 3 ([#256](https://github.com/IHE/DEV.SDPi/issues/256))
 - Removed "and ignore" from BICEPS Content Consumer requirement ([#380](https://github.com/IHE/DEV.SDPi/issues/380))
 - Rephrased notes, mostly to correct and maintain references to SDPi versions ([#366](https://github.com/IHE/DEV.SDPi/issues/366))
@@ -50,10 +57,12 @@ Each section shall contain a list of action items of the following format: `<bri
 - Modified transaction DEV-29 to add DescriptionModification and EpisodicOperationalState reports ([#403](https://github.com/IHE/DEV.SDPi/issues/403))
 
 ### Editorial Fixes
+
 - Corrected typos and grammar ([#363](https://github.com/IHE/DEV.SDPi/issues/363))
 - Changed order of subsections in 1:11.1, 1:12.1 and 1:13.1 ([365](https://github.com/IHE/DEV.SDPi/issues/365))
 
 ### Added
+
 - Content on how to deal with non-slewing time adjustments ([#203](https://github.com/IHE/DEV.SDPi/issues/203))
 - TF-2C for Security Management Appendix (basic, with little initial content)  ([#250](https://github.com/IHE/DEV.SDPi/issues/250))
 - Clarification in definition of SOMDS Provider UID ([#378](https://github.com/IHE/DEV.SDPi/issues/378))
@@ -71,6 +80,7 @@ Each section shall contain a list of action items of the following format: `<bri
 ## [2.0.0] - 2024-12-13
 
 ### Changes
+
 - Fixed action URN in waveform stream example ([#292](https://github.com/IHE/DEV.SDPi/issues/292))
 - Clarified intentionality of difference between ad-hoc and managed discovery ([#317](https://github.com/IHE/DEV.SDPi/issues/317))
 - Clarified FHIR Gateway support for multiple paradigms ([#264](https://github.com/IHE/DEV.SDPi/issues/264))
@@ -81,6 +91,7 @@ Each section shall contain a list of action items of the following format: `<bri
 - Enhanced explanation of SOA aspects of the SDC/SDPi specification (HL7 Ballot) ([#276](https://github.com/IHE/DEV.SDPi/issues/276))
 
 ### Editorial Fixes
+
 - Added deprecation notice for three requirements due to expected impact of BICEPS standard corrigendum ([#334](https://github.com/IHE/DEV.SDPi/issues/334))
 - Updated SDPi "Topic of Interest" issue management for clarity ([#274](https://github.com/IHE/DEV.SDPi/issues/274))
 - Addressed three JIRA tickets listed in issue ([#275](https://github.com/IHE/DEV.SDPi/issues/275))
@@ -90,6 +101,7 @@ Each section shall contain a list of action items of the following format: `<bri
 - Updated per IHE Style Conventions for numbers-in-text, em dashes, punctuation marks, etc. ([#269](https://github.com/IHE/DEV.SDPi/issues/269))
 
 ### Added
+
 - Added SDPi FHIR Gateway ([#252](https://github.com/IHE/DEV.SDPi/issues/252))
 
 ## [1.4.1] - 2024-10-04
@@ -100,6 +112,7 @@ Each section shall contain a list of action items of the following format: `<bri
 - Unclarities and typos in TF-1:A.1 ([#316](https://github.com/IHE/DEV.SDPi/issues/316))
 
 ### Added
+
 - No additions
 
 ## [1.4.0] - 2024-09-17
@@ -110,6 +123,7 @@ Each section shall contain a list of action items of the following format: `<bri
 - Implement semi-automatic version referencing by adding Asciidoc variables ( ([#284](https://github.com/IHE/DEV.SDPi/issues/284)))
 - Extended Requirements Interoperability (RI) specification, mostly in TF-1A ( ([#299](https://github.com/IHE/DEV.SDPi/issues/299))); note: issue subtasks not completed in R1.4 have been pushed into ([315](https://github.com/IHE/DEV.SDPi/issues/315)).
 - HL7 2024-May: Alert Requirements still under development ( ([294](https://github.com/IHE/DEV.SDPi/issues/294)))
+
 ### Added
 
 - Add discovery proxy transactions scaffold and actor description ( ([152](https://github.com/IHE/DEV.SDPi/issues/152)))
@@ -165,7 +179,6 @@ Each section shall contain a list of action items of the following format: `<bri
 - Added safety, security and effectiveness requirements for use case _Devices are operational in the MD LAN network but cannot access the TS Service and clock drift is unacceptable_ ([#31](https://github.com/IHE/DEV.SDPi/issues/31)).
 - Labeling requirement to use case _Device is connected to the MD LAN network with a Time Source service_ to specify NTP configuration ([#151](https://github.com/IHE/DEV.SDPi/issues/151)). 
 - Added two requirements: One for the accompanying documentation to make sure that participants synchronize with the same time-server and one that explicitly forbids executing system functions without a TS service, when a device is connected to the network. ([#202](https://github.com/IHE/DEV.SDPi/issues/202))
-
 
 ### Changed
 
