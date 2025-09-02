@@ -80,6 +80,11 @@ class ReferenceSanitizerPostprocessor(
             anchor.attr("href", "#$id")
             val item = encodedLabel?.let { anchorLabels.get(id, it) } ?: anchorLabels.get(id) ?: continue
 
+            // if there is no custom label available, keep default anchor value
+            if (item.label.isEmpty()) {
+                continue
+            }
+
             val anchorText = (encodedLabel?.let { decodeLabel(it) }) ?: item.refText
             when (item.source) {
                 LabelSource.SECTION -> anchor.text(anchorText ?: "$sectionSig${item.prefix}:${item.label}")
