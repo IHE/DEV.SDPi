@@ -23,41 +23,41 @@ The <<term_history_service>> allows for limited filtering:
 
 The <<term_history_service>> is bound to <<acronym_mdpws>> by using the XML Schema as specified in <<vol2_clause_appendix_a_mdpws_history_service_xmlschema>> and service interface as specified in <<vol2_clause_appendix_a_mdpws_history_service_wsdl>>.
 
-.R0503
-[sdpi_requirement#r0503,sdpi_req_level=shall]
+.R0511
+[sdpi_requirement#r0511,sdpi_req_level=shall]
 ****
 A <<vol1_spec_sdpi_p_actor_somds_provider>> shall provide the <<term_history_service>> by implementing the port type with the QName hs:HistoryService.
 ****
 
-.R0504
-[sdpi_requirement#r0504,sdpi_req_level=shall]
+.R0512
+[sdpi_requirement#r0512,sdpi_req_level=shall]
 ****
 A <<vol1_spec_sdpi_p_actor_somds_provider>> shall accept the WS-Eventing wse:Filter@Dialect `urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.3.1.1`.
 ****
 
-.R0505
-[sdpi_requirement#r0505,sdpi_req_level=shall]
+.R0513
+[sdpi_requirement#r0513,sdpi_req_level=shall]
 ****
 A <<vol1_spec_sdpi_p_actor_somds_consumer>> shall add the filter dialect `urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.3.1.1` to every Subscribe request to a <<term_history_service>>.
 ****
 
-.R0506
-[sdpi_requirement#r0506,sdpi_req_level=shall]
+.R0514
+[sdpi_requirement#r0514,sdpi_req_level=shall]
 ****
 A <<vol1_spec_sdpi_p_actor_somds_consumer>> shall only add exactly one hm:HistoryQuery element to a wse:Subscribe/wse:Filter element with @Dialect =
 "urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.3.1.1".
 ****
 
-.R0507
-[sdpi_requirement#r0507,sdpi_req_level=shall,subs=normal]
+.R0515
+[sdpi_requirement#r0515,sdpi_req_level=shall,subs=normal]
 ****
 For a time range-filtered subscription, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall respond with notifications that reflect the MDIB of the <<vol1_spec_sdpi_p_actor_somds_provider>> and its changes in the time interval including ++[hm:TimeRange/@StartTime, hm:TimeRange/@EndTime]++.
 
 NOTE: A <<vol1_spec_sdpi_p_actor_somds_provider>> may respond with data that exceed the interval of ++[hm:TimeRange/@StartTime, hm:TimeRange/@EndTime]++.
 ****
 
-.R0508
-[sdpi_requirement#r0508,sdpi_req_level=shall]
+.R0516
+[sdpi_requirement#r0516,sdpi_req_level=shall]
 ****
 For a version range-filtered subscription, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall respond with notifications that reflect the MDIB of the <<vol1_spec_sdpi_p_actor_somds_provider>> at the given pm:Mdib@SequenceId and pm:Mdib@InstanceId in the version interval including ++[hm:VersionRange/@StartVersion, hm:VersionRange/@EndVersion]++.
 
@@ -66,60 +66,60 @@ NOTE: A <<vol1_spec_sdpi_p_actor_somds_provider>> may respond with data that exc
 NOTE: A <<vol1_spec_sdpi_p_actor_somds_provider>> may respond with a subset of data from the interval ++[hm:VersionRange/@StartVersion, hm:VersionRange/@EndVersion]++, e.g., if it cannot fully serve the request due to discarded historic information or filter request that point into the future.
 ****
 
-.R0509
-[sdpi_requirement#r0509,sdpi_req_level=shall]
+.R0517
+[sdpi_requirement#r0517,sdpi_req_level=shall]
 ****
 If a hm:HistoryQuery element contains a hm:LanguageFilter element, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall transmit <<term_historic_localized_text>> according to the rule set specified in hm:HistoryQuery/hm:LanguageFilter.
 
 NOTE: If a <<vol1_spec_sdpi_p_actor_somds_provider>> cannot serve the requested languages, the <<vol1_spec_sdpi_p_actor_somds_provider>> may omit them from the notification messages.
 ****
 
-.R0510
-[sdpi_requirement#r0510,sdpi_req_level=shall]
+.R0518
+[sdpi_requirement#r0518,sdpi_req_level=shall]
 ****
 If it is intended for a <<vol1_spec_sdpi_p_actor_somds_provider>> to include <<term_historic_localized_text>>s in hm:ChangeSequenceReport elements, for an <<term_mdib_sequence_of_changes>> that is requested from a <<vol1_spec_sdpi_p_actor_somds_provider>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall transmit filtered <<term_historic_localized_text>>s before transmitting the hm:HistoricMdib or hm:HistoricReport elements that reference the <<term_historic_localized_text>>s.
 ****
 
-.R0511
-[sdpi_requirement#r0511,sdpi_req_level=shall]
+.R0519
+[sdpi_requirement#r0519,sdpi_req_level=shall]
 ****
 If it is not intended for a <<vol1_spec_sdpi_p_actor_somds_provider>> to include <<term_historic_localized_text>>s in hm:ChangeSequenceReport elements, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall provide all <<term_historic_localized_text>>s at the LOCALIZATION SERVICE.
 
 NOTE: This implies that the LOCALIZATION SERVICE provides historic and current localized texts for which all references are consistent across all <<term_mdib_sequence_of_changes>>.
 ****
 
-.R0512
-[sdpi_requirement#r0512,sdpi_req_level=shall]
+.R0520
+[sdpi_requirement#r0520,sdpi_req_level=shall]
 ****
 For an <<term_mdib_sequence_of_changes>> that is requested from a <<vol1_spec_sdpi_p_actor_somds_provider>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall transmit hm:HistoricMdib before transmitting hm:HistoricReport elements.
 ****
 
-.R0513
-[sdpi_requirement#r0513,sdpi_req_level=shall]
+.R0521
+[sdpi_requirement#r0521,sdpi_req_level=shall]
 ****
 For an <<term_mdib_sequence_of_changes>> that is requested from a <<vol1_spec_sdpi_p_actor_somds_provider>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall send hm:ChangeSequence/hm:Report elements in ascending order by pm:Mdib@MdibVersion.
 ****
 
-.R0514
-[sdpi_requirement#r0514,sdpi_req_level=shall]
+.R0522
+[sdpi_requirement#r0522,sdpi_req_level=shall]
 ****
 For an <<term_mdib_sequence_of_changes>> that is requested from a <<vol1_spec_sdpi_p_actor_somds_provider>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall provide exactly one <<term_mdib_configuration>> in hm:ChangeSequence/hm:HistoricMdib.
 ****
 
-.R0515
-[sdpi_requirement#r0515,sdpi_req_level=shall]
+.R0523
+[sdpi_requirement#r0523,sdpi_req_level=shall]
 ****
 A <<vol1_spec_sdpi_p_actor_somds_provider>> shall transmit <<term_mdib_sequence_of_changes>> in chronological order of occurrence.
 ****
 
-.R0516
-[sdpi_requirement#r0516,sdpi_req_level=shall]
+.R0524
+[sdpi_requirement#r0524,sdpi_req_level=shall]
 ****
 A <<vol1_spec_sdpi_p_actor_somds_provider>> shall signify the end of the historic MDIB data stream by sending a hm:ChangeSequenceReport notification that contains @LastReport = true.
 ****
 
-.R0517
-[sdpi_requirement#r0517,sdpi_req_level=should]
+.R0525
+[sdpi_requirement#r0525,sdpi_req_level=should]
 ****
 When a <<vol1_spec_sdpi_p_actor_somds_provider>> has sent the last notification of a <<term_history_service>> subscription, the <<vol1_spec_sdpi_p_actor_somds_provider>> should end the subscription by sending a wse:SubscriptionEnd with wse:Status = "http://schemas.xmlsoap.org/ws/2004/08/eventing/SourceCancelling".
 ****
