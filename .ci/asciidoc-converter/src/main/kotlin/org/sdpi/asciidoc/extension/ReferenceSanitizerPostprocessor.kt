@@ -74,11 +74,16 @@ class ReferenceSanitizerPostprocessor(
                 }
             } else {
                 logger.info { "Found regular reference: $rawFragment" }
-                continue
+                Pair(rawFragment, null)
             }
 
             anchor.attr("href", "#$id")
             val item = encodedLabel?.let { anchorLabels.get(id, it) } ?: anchorLabels.get(id) ?: continue
+
+            // if there is no custom label available, keep default anchor value
+            if (item.label.isEmpty()) {
+                continue
+            }
 
             val anchorText = (encodedLabel?.let { decodeLabel(it) }) ?: item.refText
             when (item.source) {

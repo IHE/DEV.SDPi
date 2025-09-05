@@ -31,6 +31,7 @@ Each section shall contain a list of action items of the following format: `<bri
 ### Editorial Fixes
 
 - Rephrased for clarity the first bullet of section 1:A.1 ([#316](https://github.com/IHE/DEV.SDPi/issues/316))
+- Fix malformed references to appendices ([#453](https://github.com/IHE/DEV.SDPi/issues/453))
 - Fix broken references to PlantUML files ([#472](https://github.com/IHE/DEV.SDPi/issues/472))
 
 ## [2.1.2] - 2025-05-09
