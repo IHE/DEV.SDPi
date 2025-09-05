@@ -243,11 +243,11 @@ class SdpiInformationCollector(
             }
         }
 
-        val strOid = getOids(block, "Actor $strId", WellKnownOid.DEV_ACTOR)
+        val oids = getOids(block, "Actor $strId", WellKnownOid.DEV_ACTOR)
 
         actorAliases[strId] = strId // Self alias for easy lookup
         actorAliases["actor_$strId"] = strId // common alternative name.
-        val newActor = SdpiActor(strId, strOid, strTitle, profile.profileId, strAnchor)
+        val newActor = SdpiActor(strId, oids, strTitle, profile.profileId, strAnchor)
         actors[strId] = newActor
         profile.addActor(newActor)
     }
@@ -396,7 +396,9 @@ class SdpiInformationCollector(
         val strLabel = parseContentModuleTitle(block.title)
         val strAnchor = block.id
 
-        contentModules[strContentModuleId] = SdpiContentModule(strContentModuleId, strLabel, strAnchor)
+        val oids = getOids(block, "Content module $strContentModuleId", WellKnownOid.DEV_CONTENT_MODULE)
+
+        contentModules[strContentModuleId] = SdpiContentModule(strContentModuleId, oids, strLabel, strAnchor)
     }
 
     private fun parseContentModuleTitle(strDocText: String): String {
@@ -863,6 +865,8 @@ class SdpiInformationCollector(
         val specBlocks: MutableList<StructuralNode> = mutableListOf()
         gatherUseCaseBlocks(block, specBlocks)
 
+        val useCaseOids = getOids(block, "Use case $strUseCaseId", WellKnownOid.DEV_USE_CASE)
+
         val backgroundContent: MutableList<GherkinStep> = mutableListOf()
         val scenarios: MutableList<UseCaseScenario> = mutableListOf()
         var iBlock = 0
@@ -879,6 +883,8 @@ class SdpiInformationCollector(
                     "${getLocation(useCaseBlock)} missing required scenario title".also { logger.error { it } }
                 }
 
+                val scenarioOids = getOids(useCaseBlock, "Use case $strUseCaseId scenario ${oTitle.toString()}", useCaseOids)
+
                 val iStepBlock = iBlock + 1
                 check(iStepBlock < specBlocks.count() && specBlocks[iStepBlock].hasRole(Roles.UseCase.STEPS.key))
                 {
@@ -886,7 +892,7 @@ class SdpiInformationCollector(
                 }
                 val stepBlock = specBlocks[iStepBlock]
                 val scenarioSteps = getSteps(stepBlock)
-                scenarios.add(UseCaseScenario(oTitle.toString(), scenarioSteps))
+                scenarios.add(UseCaseScenario(scenarioOids, oTitle.toString(), scenarioSteps))
             }
 
 
@@ -894,7 +900,7 @@ class SdpiInformationCollector(
         }
 
         val spec = UseCaseSpecification(backgroundContent, scenarios)
-        useCases[strUseCaseId] = SdpiUseCase(strUseCaseId, strTitle, strAnchor, spec)
+        useCases[strUseCaseId] = SdpiUseCase(strUseCaseId,useCaseOids, strTitle, strAnchor, spec)
     }
 
     private fun parseUseCaseTitle(block: StructuralNode): String {
@@ -1081,6 +1087,33 @@ class SdpiInformationCollector(
         }
         return blockOids
     }
+
+    private fun getOids(
+        block: StructuralNode,
+        strContext: String,
+        parentOids: List<String>
+    ): List<String> {
+        val strLeafArcs = block.attributes[BlockAttribute.LEAF_ARC.key]?.toString()
+        checkNotNull(strLeafArcs) {
+            logger.error("$strContext requires an ${BlockAttribute.LEAF_ARC.key}")
+        }
+
+        val blockOids = mutableListOf<String>()
+        for (strOid in strLeafArcs.split(',')) {
+            if (strOid.startsWith('.')) {
+                for (strParentOid in parentOids) {
+                    val strScenarioOid = "${strParentOid}$strOid"
+                    println("**** Scenerio oid = $strScenarioOid")
+                    blockOids.add(strScenarioOid)
+                }
+            } else {
+                blockOids.add(strOid)
+            }
+        }
+        return blockOids
+    }
+
+
     // endregion
 
     //region Validation

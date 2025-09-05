@@ -30,11 +30,6 @@ sealed class RequirementAttributes {
         // Requirement level (e.g., shall, may, etc)
         LEVEL("sdpi_req_level"),
 
-        // Identifies a specification that the requirement belongs
-        // to. Used, for example, to determine the base oid for
-        // assigning globally unique object ids.
-        SPECIFICATION("sdpi_req_specification"),
-
         // Groups requirement belongs to. Comma separated list.
         GROUPS("sdpi_req_group"),
 

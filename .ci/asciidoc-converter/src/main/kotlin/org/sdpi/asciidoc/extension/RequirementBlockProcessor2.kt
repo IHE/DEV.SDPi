@@ -9,6 +9,7 @@ import org.asciidoctor.extension.Contexts
 import org.asciidoctor.extension.Name
 import org.asciidoctor.extension.Reader
 import org.sdpi.asciidoc.*
+import org.sdpi.asciidoc.model.WellKnownOid
 import java.util.*
 
 const val BLOCK_NAME_SDPI_REQUIREMENT = "sdpi_requirement"
@@ -68,7 +69,7 @@ class RequirementBlockProcessor2 : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
 
     override fun process(parent: StructuralNode, reader: Reader, attributes: MutableMap<String, Any>): Any {
         val requirementNumber: Int = getRequirementNumber(attributes)
-        val strGlobalId = "" //getRequirementOid(parent, requirementNumber, attributes)
+        val strGlobalId = getRequirementOid(parent, requirementNumber, attributes)
         val strLinkId = String.format("r%04d", requirementNumber)
 
         logger.info("Found requirement #$requirementNumber at ${parent.sourceLocation}")
@@ -135,47 +136,12 @@ class RequirementBlockProcessor2 : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
         parent: StructuralNode,
         requirementNumber: Int,
         mutableAttributes: MutableMap<String, Any>
-    ): String? {
-        val strSourceSpecification = mutableAttributes[RequirementAttributes.Common.SPECIFICATION.key]
-
-        // To simplify transition, we'll print a warning and allow the oid to be missing. .
-        if (strSourceSpecification == null) {
-            logger.warn("${getLocation((parent))} missing source specification for requirement #${requirementNumber}. In the future this will be an error.")
-            return null
-        }
-
-        checkNotNull(strSourceSpecification) {
-            ("Missing requirement source id for SDPi requirement #$requirementNumber [${getLocation(parent)}]").also {
-                logger.error(it)
-            }
-        }
-        val strSourceId = getOidFor(parent, requirementNumber, strSourceSpecification as String)
+    ): String {
+        val strParent = WellKnownOid.DEV_REQUIREMENT.oid
 
         // Global unique ids are composed of the source specification's oid,
         // ".2." + the requirement number. [[SDPi:§1:A.4.2.1]]
-        return "$strSourceId.2.$requirementNumber"
-    }
-
-    /**
-     * Retrieves the oid definition corresponding to an oid id.
-     * Oids are defined as document level attributes in the spid_oid configuration scope. For
-     * example:
-     * :sdpi_oid.sdpi: 1.3.6.1.4.1.19376.1.6.2.10.1.1.1
-     */
-    private fun getOidFor(parent: StructuralNode, requirementNumber: Int, strOidId: String): String {
-        val document = parent.document
-        val strAttribute = "sdpi_oid${strOidId}"
-        val strOid = document.attributes[strAttribute]
-        checkNotNull(strOid) {
-            ("The oid id ('${strOidId}') for SDPi requirement #'${requirementNumber}' cannot be found  [${
-                getLocation(
-                    parent
-                )
-            }].").also {
-                logger.error(it)
-            }
-        }
-        return strOid as String
+        return "$strParent.$requirementNumber"
     }
 
     /**

@@ -87,7 +87,7 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
         header.cells.add(createTableCell(colType, "Type"))
 
         for (req in requirements) {
-            val strGlobalId = req.globalId
+            val strGlobalId = req.oid
             val level = req.level
             val strType = req.getTypeDescription()
 
@@ -324,7 +324,7 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
 
         if (reference.placeholderName != null) {
             val placeholder = SdpiContentModule(
-                reference.contentModuleId,
+                reference.contentModuleId, listOf<String>(),
                 reference.placeholderName, ""
             )
             return placeholder

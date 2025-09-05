@@ -25,6 +25,7 @@ data class GherkinStep(val step: GherkinStepType, val description: String)
 
 @Serializable
 data class UseCaseScenario(
+    val oids: List<String>,
     val title: String,
     val specification: List<GherkinStep>,
 )
@@ -38,6 +39,7 @@ data class UseCaseSpecification(
 @Serializable
 data class SdpiUseCase(
     val id: String,
+    val oids: List<String>,
     val title: String,
     val anchor: String,
     val specification: UseCaseSpecification,

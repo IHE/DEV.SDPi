@@ -122,7 +122,7 @@ data class RequirementContext(
 sealed class SdpiRequirement2 {
     abstract val requirementNumber: Int
     abstract val localId: String
-    abstract val globalId: String
+    abstract val oid: String
     abstract val level: RequirementLevel
     abstract val owner: RequirementContext?
     abstract val groups: List<String>
@@ -138,15 +138,15 @@ sealed class SdpiRequirement2 {
     }
 
     fun makeLinkGlobal(): String {
-        if (globalId.isNotEmpty()) {
-            return makeLink(getBlockId(), globalId)
+        if (oid.isNotEmpty()) {
+            return makeLink(getBlockId(), oid)
         }
         return makeLinkLocal()
     }
 
     fun getBlockId(): String {
-        if (globalId.isNotEmpty()) {
-            return globalId
+        if (oid.isNotEmpty()) {
+            return oid
         }
 
         return String.format("r%04d", requirementNumber)
@@ -168,7 +168,7 @@ sealed class SdpiRequirement2 {
     data class TechFeature(
         override val requirementNumber: Int,
         override val localId: String,
-        override val globalId: String,
+        override val oid: String,
         override val level: RequirementLevel,
         override val owner: RequirementContext?,
         override val groups: List<String>,
@@ -185,7 +185,7 @@ sealed class SdpiRequirement2 {
     data class UseCase(
         override val requirementNumber: Int,
         override val localId: String,
-        override val globalId: String,
+        override val oid: String,
         override val level: RequirementLevel,
         override val owner: RequirementContext?,
         override val groups: List<String>,
@@ -203,7 +203,7 @@ sealed class SdpiRequirement2 {
     data class ReferencedImplementationConformanceStatement(
         override val requirementNumber: Int,
         override val localId: String,
-        override val globalId: String,
+        override val oid: String,
         override val level: RequirementLevel,
         override val owner: RequirementContext?,
         override val groups: List<String>,
@@ -223,7 +223,7 @@ sealed class SdpiRequirement2 {
     data class RiskMitigation(
         override val requirementNumber: Int,
         override val localId: String,
-        override val globalId: String,
+        override val oid: String,
         override val level: RequirementLevel,
         override val owner: RequirementContext?,
         override val groups: List<String>,

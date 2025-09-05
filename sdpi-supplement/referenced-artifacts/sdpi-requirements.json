@@ -7,7 +7,7 @@
         ],
         "requirementNumber": 1021,
         "localId": "R1021",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1021",
         "level": "SHALL",
         "owner": {
             "type": "profile-option",
@@ -46,7 +46,7 @@
         ],
         "requirementNumber": 1022,
         "localId": "R1022",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1022",
         "level": "SHALL",
         "owner": {
             "type": "profile-option",
@@ -76,7 +76,7 @@
         ],
         "requirementNumber": 1023,
         "localId": "R1023",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1023",
         "level": "SHALL",
         "owner": {
             "type": "profile-option",
@@ -120,7 +120,7 @@
         ],
         "requirementNumber": 1024,
         "localId": "R1024",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1024",
         "level": "SHALL",
         "owner": {
             "type": "profile-option",
@@ -148,7 +148,7 @@
         ],
         "requirementNumber": 1025,
         "localId": "R1025",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1025",
         "level": "SHALL",
         "owner": {
             "type": "profile-option",
@@ -186,7 +186,7 @@
         ],
         "requirementNumber": 1542,
         "localId": "R1542",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1542",
         "level": "SHALL",
         "owner": {
             "type": "profile",
@@ -216,7 +216,7 @@
         ],
         "requirementNumber": 1543,
         "localId": "R1543",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1543",
         "level": "SHALL",
         "owner": {
             "type": "profile",
@@ -246,7 +246,7 @@
         ],
         "requirementNumber": 1544,
         "localId": "R1544",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1544",
         "level": "SHOULD",
         "owner": {
             "type": "profile",
@@ -277,7 +277,7 @@
         ],
         "requirementNumber": 1520,
         "localId": "R1520",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1520",
         "level": "SHALL",
         "owner": {
             "type": "use-case",
@@ -334,7 +334,7 @@
         ],
         "requirementNumber": 1521,
         "localId": "R1521",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1521",
         "level": "SHOULD",
         "owner": {
             "type": "use-case",
@@ -380,7 +380,7 @@
         ],
         "requirementNumber": 1510,
         "localId": "R1510",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1510",
         "level": "SHALL",
         "owner": {
             "type": "use-case",
@@ -417,7 +417,7 @@
         ],
         "requirementNumber": 1540,
         "localId": "R1540",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1540",
         "level": "SHALL",
         "owner": {
             "type": "use-case",
@@ -454,7 +454,7 @@
         ],
         "requirementNumber": 1530,
         "localId": "R1530",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1530",
         "level": "SHALL",
         "owner": {
             "type": "use-case",
@@ -491,7 +491,7 @@
         ],
         "requirementNumber": 1531,
         "localId": "R1531",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1531",
         "level": "SHALL",
         "owner": {
             "type": "use-case",
@@ -521,7 +521,7 @@
         ],
         "requirementNumber": 1532,
         "localId": "R1532",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1532",
         "level": "SHALL",
         "owner": {
             "type": "use-case",
@@ -552,7 +552,7 @@
         ],
         "requirementNumber": 1533,
         "localId": "R1533",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1533",
         "level": "SHALL",
         "owner": {
             "type": "use-case",
@@ -589,7 +589,7 @@
         ],
         "requirementNumber": 1534,
         "localId": "R1534",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1534",
         "level": "SHALL",
         "owner": {
             "type": "use-case",
@@ -619,7 +619,7 @@
         ],
         "requirementNumber": 1500,
         "localId": "R1500",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1500",
         "level": "SHALL",
         "owner": {
             "type": "use-case",
@@ -676,7 +676,7 @@
         ],
         "requirementNumber": 1560,
         "localId": "R1560",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1560",
         "level": "SHALL",
         "owner": {
             "type": "use-case",
@@ -713,7 +713,7 @@
         ],
         "requirementNumber": 1522,
         "localId": "R1522",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1522",
         "level": "SHALL",
         "owner": {
             "type": "use-case",
@@ -784,7 +784,7 @@
         ],
         "requirementNumber": 1561,
         "localId": "R1561",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1561",
         "level": "MAY",
         "owner": {
             "type": "use-case",
@@ -819,7 +819,7 @@
         ],
         "requirementNumber": 1562,
         "localId": "R1562",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1562",
         "level": "SHALL",
         "owner": {
             "type": "use-case",
@@ -856,7 +856,7 @@
         ],
         "requirementNumber": 1566,
         "localId": "R1566",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1566",
         "level": "SHALL",
         "owner": {
             "type": "use-case",
@@ -908,7 +908,7 @@
         ],
         "requirementNumber": 1569,
         "localId": "R1569",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1569",
         "level": "MAY",
         "owner": {
             "type": "use-case",
@@ -955,7 +955,7 @@
         ],
         "requirementNumber": 1600,
         "localId": "R1600",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1600",
         "level": "MAY",
         "owner": {
             "type": "use-case",
@@ -993,7 +993,7 @@
         ],
         "requirementNumber": 1601,
         "localId": "R1601",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1601",
         "level": "SHOULD",
         "owner": {
             "type": "use-case",
@@ -1049,7 +1049,7 @@
         ],
         "requirementNumber": 1602,
         "localId": "R1602",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1602",
         "level": "SHOULD",
         "owner": {
             "type": "use-case",
@@ -1084,7 +1084,7 @@
         ],
         "requirementNumber": 1603,
         "localId": "R1603",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1603",
         "level": "SHALL",
         "owner": {
             "type": "use-case",
@@ -1135,7 +1135,7 @@
         ],
         "requirementNumber": 1604,
         "localId": "R1604",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1604",
         "level": "SHOULD",
         "owner": {
             "type": "use-case",
@@ -1172,7 +1172,7 @@
         ],
         "requirementNumber": 503,
         "localId": "R0503",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.503",
         "level": "SHALL",
         "groups": [],
         "specification": {
@@ -1203,7 +1203,7 @@
         ],
         "requirementNumber": 504,
         "localId": "R0504",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.504",
         "level": "SHALL",
         "groups": [],
         "specification": {
@@ -1242,7 +1242,7 @@
         ],
         "requirementNumber": 505,
         "localId": "R0505",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.505",
         "level": "SHALL",
         "groups": [],
         "specification": {
@@ -1286,7 +1286,7 @@
         ],
         "requirementNumber": 506,
         "localId": "R0506",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.506",
         "level": "SHALL",
         "groups": [],
         "specification": {
@@ -1325,7 +1325,7 @@
         ],
         "requirementNumber": 507,
         "localId": "R0507",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.507",
         "level": "SHALL",
         "groups": [],
         "specification": {
@@ -1364,7 +1364,7 @@
         ],
         "requirementNumber": 508,
         "localId": "R0508",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.508",
         "level": "SHALL",
         "groups": [],
         "specification": {
@@ -1403,7 +1403,7 @@
         ],
         "requirementNumber": 500,
         "localId": "R0500",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.500",
         "level": "SHALL",
         "owner": {
             "type": "protocol",
@@ -1447,7 +1447,7 @@
         ],
         "requirementNumber": 501,
         "localId": "R0501",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.501",
         "level": "SHOULD",
         "owner": {
             "type": "protocol",
@@ -1488,7 +1488,7 @@
         "type": "tech-feature",
         "requirementNumber": 509,
         "localId": "R0509",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.509",
         "level": "SHALL",
         "owner": {
             "type": "protocol",
@@ -1525,7 +1525,7 @@
         ],
         "requirementNumber": 2000,
         "localId": "R2000",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.2000",
         "level": "SHOULD",
         "owner": {
             "type": "protocol",
@@ -1553,7 +1553,7 @@
         ],
         "requirementNumber": 2001,
         "localId": "R2001",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.2001",
         "level": "SHALL",
         "owner": {
             "type": "protocol",
@@ -1590,7 +1590,7 @@
         ],
         "requirementNumber": 2002,
         "localId": "R2002",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.2002",
         "level": "SHOULD",
         "owner": {
             "type": "protocol",
@@ -1620,7 +1620,7 @@
         ],
         "requirementNumber": 3001,
         "localId": "R3001",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.3001",
         "level": "SHOULD",
         "owner": {
             "type": "protocol",
@@ -1657,7 +1657,7 @@
         ],
         "requirementNumber": 3002,
         "localId": "R3002",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.3002",
         "level": "MAY",
         "owner": {
             "type": "protocol",
@@ -1692,7 +1692,7 @@
         ],
         "requirementNumber": 7000,
         "localId": "R7000",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.7000",
         "level": "SHALL",
         "owner": {
             "type": "protocol",
@@ -1737,7 +1737,7 @@
         ],
         "requirementNumber": 7001,
         "localId": "R7001",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.7001",
         "level": "SHALL",
         "owner": {
             "type": "protocol",
@@ -1773,7 +1773,7 @@
         ],
         "requirementNumber": 7003,
         "localId": "R7003",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.7003",
         "level": "SHALL",
         "owner": {
             "type": "protocol",
@@ -1808,7 +1808,7 @@
         ],
         "requirementNumber": 7004,
         "localId": "R7004",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.7004",
         "level": "SHALL",
         "owner": {
             "type": "protocol",
@@ -1843,7 +1843,7 @@
         ],
         "requirementNumber": 7005,
         "localId": "R7005",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.7005",
         "level": "SHALL",
         "owner": {
             "type": "protocol",
@@ -1878,7 +1878,7 @@
         ],
         "requirementNumber": 7002,
         "localId": "R7002",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.7002",
         "level": "SHALL",
         "owner": {
             "type": "protocol",
@@ -1925,7 +1925,7 @@
         ],
         "requirementNumber": 7006,
         "localId": "R7006",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.7006",
         "level": "SHALL",
         "owner": {
             "type": "protocol",
@@ -1960,7 +1960,7 @@
         ],
         "requirementNumber": 7007,
         "localId": "R7007",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.7007",
         "level": "SHALL",
         "owner": {
             "type": "protocol",
@@ -2005,7 +2005,7 @@
         ],
         "requirementNumber": 7008,
         "localId": "R7008",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.7008",
         "level": "SHALL",
         "owner": {
             "type": "protocol",
@@ -2042,7 +2042,7 @@
         ],
         "requirementNumber": 7009,
         "localId": "R7009",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.7009",
         "level": "SHALL",
         "owner": {
             "type": "protocol",
@@ -2078,7 +2078,7 @@
         ],
         "requirementNumber": 502,
         "localId": "R0502",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.502",
         "level": "SHALL",
         "owner": {
             "type": "protocol",
@@ -2124,7 +2124,7 @@
         ],
         "requirementNumber": 1,
         "localId": "R0001",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1",
         "level": "MAY",
         "owner": {
             "type": "protocol",
@@ -2161,7 +2161,7 @@
         ],
         "requirementNumber": 2,
         "localId": "R0002",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.2",
         "level": "SHOULD",
         "owner": {
             "type": "protocol",
@@ -2198,7 +2198,7 @@
         ],
         "requirementNumber": 3,
         "localId": "R0003",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.3",
         "level": "SHALL",
         "owner": {
             "type": "protocol",
@@ -2244,7 +2244,7 @@
         ],
         "requirementNumber": 4,
         "localId": "R0004",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.4",
         "level": "MAY",
         "owner": {
             "type": "protocol",
@@ -2291,7 +2291,7 @@
         ],
         "requirementNumber": 1001,
         "localId": "R1001",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1001",
         "level": "SHALL",
         "owner": {
             "type": "protocol",
@@ -2321,7 +2321,7 @@
         ],
         "requirementNumber": 1002,
         "localId": "R1002",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1002",
         "level": "SHALL",
         "owner": {
             "type": "protocol",
@@ -2356,7 +2356,7 @@
         ],
         "requirementNumber": 1003,
         "localId": "R1003",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1003",
         "level": "SHALL",
         "owner": {
             "type": "protocol",
@@ -2393,7 +2393,7 @@
         ],
         "requirementNumber": 1004,
         "localId": "R1004",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1004",
         "level": "SHALL",
         "owner": {
             "type": "protocol",
@@ -2428,7 +2428,7 @@
         ],
         "requirementNumber": 1005,
         "localId": "R1005",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1005",
         "level": "SHOULD",
         "owner": {
             "type": "protocol",
@@ -2458,7 +2458,7 @@
         ],
         "requirementNumber": 1014,
         "localId": "R1014",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1014",
         "level": "SHALL",
         "owner": {
             "type": "protocol",
@@ -2495,7 +2495,7 @@
         ],
         "requirementNumber": 5,
         "localId": "R0005",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.5",
         "level": "SHOULD",
         "owner": {
             "type": "protocol",
@@ -2561,7 +2561,7 @@
         ],
         "requirementNumber": 6,
         "localId": "R0006",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.6",
         "level": "MAY",
         "owner": {
             "type": "protocol",
@@ -2589,7 +2589,7 @@
         ],
         "requirementNumber": 10,
         "localId": "R0010",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.10",
         "level": "SHALL",
         "owner": {
             "type": "protocol",
@@ -2655,7 +2655,7 @@
         ],
         "requirementNumber": 11,
         "localId": "R0011",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.11",
         "level": "SHALL",
         "owner": {
             "type": "protocol",
@@ -2697,7 +2697,7 @@
         ],
         "requirementNumber": 13,
         "localId": "R0013",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.13",
         "level": "SHALL",
         "owner": {
             "type": "protocol",
@@ -2734,7 +2734,7 @@
         ],
         "requirementNumber": 1012,
         "localId": "R1012",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1012",
         "level": "SHALL",
         "owner": {
             "type": "protocol",
@@ -2762,7 +2762,7 @@
         ],
         "requirementNumber": 1013,
         "localId": "R1013",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1013",
         "level": "SHALL",
         "owner": {
             "type": "protocol",
@@ -2790,7 +2790,7 @@
         ],
         "requirementNumber": 8119,
         "localId": "R8119",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8119",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -2822,7 +2822,7 @@
         "type": "tech-feature",
         "requirementNumber": 8100,
         "localId": "R8100",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8100",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -2847,7 +2847,7 @@
         "type": "tech-feature",
         "requirementNumber": 8101,
         "localId": "R8101",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8101",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -2883,7 +2883,7 @@
         ],
         "requirementNumber": 8118,
         "localId": "R8118",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8118",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -2915,7 +2915,7 @@
         "type": "tech-feature",
         "requirementNumber": 8102,
         "localId": "R8102",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8102",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -2960,7 +2960,7 @@
         ],
         "requirementNumber": 8103,
         "localId": "R8103",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8103",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -3010,7 +3010,7 @@
         ],
         "requirementNumber": 8104,
         "localId": "R8104",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8104",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -3046,7 +3046,7 @@
         ],
         "requirementNumber": 8105,
         "localId": "R8105",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8105",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -3082,7 +3082,7 @@
         ],
         "requirementNumber": 8106,
         "localId": "R8106",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8106",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -3118,7 +3118,7 @@
         ],
         "requirementNumber": 8120,
         "localId": "R8120",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8120",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -3154,7 +3154,7 @@
         ],
         "requirementNumber": 8121,
         "localId": "R8121",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8121",
         "level": "MAY",
         "owner": {
             "type": "gateway",
@@ -3191,7 +3191,7 @@
         ],
         "requirementNumber": 8107,
         "localId": "R8107",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8107",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -3226,7 +3226,7 @@
         ],
         "requirementNumber": 8122,
         "localId": "R8122",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8122",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -3255,7 +3255,7 @@
         ],
         "requirementNumber": 8108,
         "localId": "R8108",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8108",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -3291,7 +3291,7 @@
         ],
         "requirementNumber": 8109,
         "localId": "R8109",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8109",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -3337,7 +3337,7 @@
         "type": "tech-feature",
         "requirementNumber": 8111,
         "localId": "R8111",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8111",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -3382,7 +3382,7 @@
         ],
         "requirementNumber": 8112,
         "localId": "R8112",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8112",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -3418,7 +3418,7 @@
         ],
         "requirementNumber": 8113,
         "localId": "R8113",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8113",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -3454,7 +3454,7 @@
         ],
         "requirementNumber": 8114,
         "localId": "R8114",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8114",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -3511,7 +3511,7 @@
         ],
         "requirementNumber": 8115,
         "localId": "R8115",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8115",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -3553,7 +3553,7 @@
         ],
         "requirementNumber": 8116,
         "localId": "R8116",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8116",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -3601,7 +3601,7 @@
         ],
         "requirementNumber": 8012,
         "localId": "R8012",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8012",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -3637,7 +3637,7 @@
         ],
         "requirementNumber": 8013,
         "localId": "R8013",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8013",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -3666,7 +3666,7 @@
         ],
         "requirementNumber": 8014,
         "localId": "R8014",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8014",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -3702,7 +3702,7 @@
         ],
         "requirementNumber": 8015,
         "localId": "R8015",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8015",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -3813,7 +3813,7 @@
         ],
         "requirementNumber": 8117,
         "localId": "R8117",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8117",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -3857,7 +3857,7 @@
         ],
         "requirementNumber": 8001,
         "localId": "R8001",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8001",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -3892,7 +3892,7 @@
         ],
         "requirementNumber": 8002,
         "localId": "R8002",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8002",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -3920,7 +3920,7 @@
         ],
         "requirementNumber": 8003,
         "localId": "R8003",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8003",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -3955,7 +3955,7 @@
         ],
         "requirementNumber": 8004,
         "localId": "R8004",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8004",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -3991,7 +3991,7 @@
         ],
         "requirementNumber": 8005,
         "localId": "R8005",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8005",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -4026,7 +4026,7 @@
         ],
         "requirementNumber": 8037,
         "localId": "R8037",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8037",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -4061,7 +4061,7 @@
         ],
         "requirementNumber": 8038,
         "localId": "R8038",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8038",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -4096,7 +4096,7 @@
         ],
         "requirementNumber": 8006,
         "localId": "R8006",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8006",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -4131,7 +4131,7 @@
         ],
         "requirementNumber": 8007,
         "localId": "R8007",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8007",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -4175,7 +4175,7 @@
         ],
         "requirementNumber": 8008,
         "localId": "R8008",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8008",
         "level": "MAY",
         "owner": {
             "type": "gateway",
@@ -4219,7 +4219,7 @@
         ],
         "requirementNumber": 8009,
         "localId": "R8009",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8009",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -4269,7 +4269,7 @@
         ],
         "requirementNumber": 8010,
         "localId": "R8010",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8010",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -4305,7 +4305,7 @@
         ],
         "requirementNumber": 8011,
         "localId": "R8011",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8011",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -4333,7 +4333,7 @@
         ],
         "requirementNumber": 8016,
         "localId": "R8016",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8016",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -4365,7 +4365,7 @@
         "type": "tech-feature",
         "requirementNumber": 8036,
         "localId": "R8036",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8036",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -4393,7 +4393,7 @@
         ],
         "requirementNumber": 8017,
         "localId": "R8017",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8017",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -4428,7 +4428,7 @@
         ],
         "requirementNumber": 8018,
         "localId": "R8018",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8018",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -4463,7 +4463,7 @@
         ],
         "requirementNumber": 8019,
         "localId": "R8019",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8019",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -4507,7 +4507,7 @@
         ],
         "requirementNumber": 8020,
         "localId": "R8020",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8020",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -4535,7 +4535,7 @@
         ],
         "requirementNumber": 8021,
         "localId": "R8021",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8021",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -4589,7 +4589,7 @@
         ],
         "requirementNumber": 8022,
         "localId": "R8022",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8022",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -4617,7 +4617,7 @@
         ],
         "requirementNumber": 8023,
         "localId": "R8023",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8023",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -4661,7 +4661,7 @@
         ],
         "requirementNumber": 8024,
         "localId": "R8024",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8024",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -4689,7 +4689,7 @@
         ],
         "requirementNumber": 8026,
         "localId": "R8026",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8026",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -4739,7 +4739,7 @@
         ],
         "requirementNumber": 8025,
         "localId": "R8025",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8025",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -4774,7 +4774,7 @@
         ],
         "requirementNumber": 8027,
         "localId": "R8027",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8027",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -4802,7 +4802,7 @@
         ],
         "requirementNumber": 8028,
         "localId": "R8028",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8028",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -4830,7 +4830,7 @@
         ],
         "requirementNumber": 8029,
         "localId": "R8029",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8029",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -4858,7 +4858,7 @@
         ],
         "requirementNumber": 8030,
         "localId": "R8030",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8030",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -4886,7 +4886,7 @@
         ],
         "requirementNumber": 8031,
         "localId": "R8031",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8031",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -4930,7 +4930,7 @@
         ],
         "requirementNumber": 8032,
         "localId": "R8032",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8032",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -4974,7 +4974,7 @@
         ],
         "requirementNumber": 8033,
         "localId": "R8033",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8033",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -5002,7 +5002,7 @@
         ],
         "requirementNumber": 8039,
         "localId": "R8039",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8039",
         "level": "SHOULD",
         "owner": {
             "type": "gateway",
@@ -5030,7 +5030,7 @@
         ],
         "requirementNumber": 8034,
         "localId": "R8034",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8034",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -5084,7 +5084,7 @@
         ],
         "requirementNumber": 8035,
         "localId": "R8035",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8035",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -5112,7 +5112,7 @@
         ],
         "requirementNumber": 8050,
         "localId": "R8050",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8050",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -5147,7 +5147,7 @@
         ],
         "requirementNumber": 8051,
         "localId": "R8051",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8051",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -5182,7 +5182,7 @@
         ],
         "requirementNumber": 8052,
         "localId": "R8052",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8052",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -5230,7 +5230,7 @@
         ],
         "requirementNumber": 8053,
         "localId": "R8053",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8053",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -5278,7 +5278,7 @@
         ],
         "requirementNumber": 8054,
         "localId": "R8054",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8054",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -5306,7 +5306,7 @@
         ],
         "requirementNumber": 8055,
         "localId": "R8055",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8055",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -5341,7 +5341,7 @@
         ],
         "requirementNumber": 8056,
         "localId": "R8056",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8056",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -5395,7 +5395,7 @@
         ],
         "requirementNumber": 8057,
         "localId": "R8057",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8057",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -5427,7 +5427,7 @@
         "type": "tech-feature",
         "requirementNumber": 8058,
         "localId": "R8058",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8058",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -5455,7 +5455,7 @@
         ],
         "requirementNumber": 8061,
         "localId": "R8061",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8061",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -5490,7 +5490,7 @@
         ],
         "requirementNumber": 8077,
         "localId": "R8077",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8077",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -5518,7 +5518,7 @@
         ],
         "requirementNumber": 8062,
         "localId": "R8062",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8062",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -5564,7 +5564,7 @@
         "type": "tech-feature",
         "requirementNumber": 8063,
         "localId": "R8063",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8063",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -5589,7 +5589,7 @@
         "type": "tech-feature",
         "requirementNumber": 8064,
         "localId": "R8064",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8064",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -5617,7 +5617,7 @@
         ],
         "requirementNumber": 8065,
         "localId": "R8065",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8065",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -5666,7 +5666,7 @@
         ],
         "requirementNumber": 8059,
         "localId": "R8059",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8059",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -5694,7 +5694,7 @@
         ],
         "requirementNumber": 8060,
         "localId": "R8060",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8060",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -5722,7 +5722,7 @@
         ],
         "requirementNumber": 8066,
         "localId": "R8066",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8066",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -5757,7 +5757,7 @@
         ],
         "requirementNumber": 8067,
         "localId": "R8067",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8067",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -5785,7 +5785,7 @@
         ],
         "requirementNumber": 8068,
         "localId": "R8068",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8068",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -5810,7 +5810,7 @@
         "type": "tech-feature",
         "requirementNumber": 8069,
         "localId": "R8069",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8069",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -5838,7 +5838,7 @@
         ],
         "requirementNumber": 8070,
         "localId": "R8070",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8070",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -5894,7 +5894,7 @@
         ],
         "requirementNumber": 8078,
         "localId": "R8078",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8078",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -5922,7 +5922,7 @@
         ],
         "requirementNumber": 8071,
         "localId": "R8071",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8071",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -5978,7 +5978,7 @@
         ],
         "requirementNumber": 8072,
         "localId": "R8072",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8072",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -6006,7 +6006,7 @@
         ],
         "requirementNumber": 8073,
         "localId": "R8073",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8073",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -6067,7 +6067,7 @@
         ],
         "requirementNumber": 8074,
         "localId": "R8074",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8074",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -6106,7 +6106,7 @@
         "type": "tech-feature",
         "requirementNumber": 8075,
         "localId": "R8075",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8075",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -6140,7 +6140,7 @@
         ],
         "requirementNumber": 8076,
         "localId": "R8076",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8076",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -6179,7 +6179,7 @@
         "type": "tech-feature",
         "requirementNumber": 8079,
         "localId": "R8079",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8079",
         "level": "SHALL",
         "owner": {
             "type": "gateway",
@@ -6214,7 +6214,7 @@
         ],
         "requirementNumber": 701,
         "localId": "R0701",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.701",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -6246,7 +6246,7 @@
         "type": "tech-feature",
         "requirementNumber": 702,
         "localId": "R0702",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.702",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -6281,7 +6281,7 @@
         ],
         "requirementNumber": 19,
         "localId": "R0019",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.19",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -6309,7 +6309,7 @@
         ],
         "requirementNumber": 20,
         "localId": "R0020",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.20",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -6337,7 +6337,7 @@
         ],
         "requirementNumber": 21,
         "localId": "R0021",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.21",
         "level": "SHOULD",
         "owner": {
             "type": "content-module",
@@ -6372,7 +6372,7 @@
         ],
         "requirementNumber": 8,
         "localId": "R0008",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.8",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -6416,7 +6416,7 @@
         ],
         "requirementNumber": 9,
         "localId": "R0009",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.9",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -6451,7 +6451,7 @@
         ],
         "requirementNumber": 7,
         "localId": "R0007",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.7",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -6488,7 +6488,7 @@
         ],
         "requirementNumber": 12,
         "localId": "R0012",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.12",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -6516,7 +6516,7 @@
         ],
         "requirementNumber": 14,
         "localId": "R0014",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.14",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -6544,7 +6544,7 @@
         ],
         "requirementNumber": 15,
         "localId": "R0015",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.15",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -6572,7 +6572,7 @@
         ],
         "requirementNumber": 16,
         "localId": "R0016",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.16",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -6600,7 +6600,7 @@
         ],
         "requirementNumber": 17,
         "localId": "R0017",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.17",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -6644,7 +6644,7 @@
         ],
         "requirementNumber": 18,
         "localId": "R0018",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.18",
         "level": "SHOULD",
         "owner": {
             "type": "content-module",
@@ -6672,7 +6672,7 @@
         ],
         "requirementNumber": 703,
         "localId": "R0703",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.703",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -6700,7 +6700,7 @@
         ],
         "requirementNumber": 704,
         "localId": "R0704",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.704",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -6728,7 +6728,7 @@
         ],
         "requirementNumber": 705,
         "localId": "R0705",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.705",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -6756,7 +6756,7 @@
         ],
         "requirementNumber": 706,
         "localId": "R0706",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.706",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -6784,7 +6784,7 @@
         ],
         "requirementNumber": 707,
         "localId": "R0707",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.707",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -6819,7 +6819,7 @@
         ],
         "requirementNumber": 708,
         "localId": "R0708",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.708",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -6847,7 +6847,7 @@
         ],
         "requirementNumber": 600,
         "localId": "R0600",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.600",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -6891,7 +6891,7 @@
         ],
         "requirementNumber": 601,
         "localId": "R0601",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.601",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -6935,7 +6935,7 @@
         ],
         "requirementNumber": 605,
         "localId": "R0605",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.605",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -6965,7 +6965,7 @@
         ],
         "requirementNumber": 606,
         "localId": "R0606",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.606",
         "level": "SHOULD",
         "owner": {
             "type": "content-module",
@@ -7002,7 +7002,7 @@
         ],
         "requirementNumber": 610,
         "localId": "R0610",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.610",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -7048,7 +7048,7 @@
         ],
         "requirementNumber": 611,
         "localId": "R0611",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.611",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -7085,7 +7085,7 @@
         ],
         "requirementNumber": 612,
         "localId": "R0612",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.612",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -7137,7 +7137,7 @@
         ],
         "requirementNumber": 1006,
         "localId": "R1006",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1006",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -7172,7 +7172,7 @@
         ],
         "requirementNumber": 1007,
         "localId": "R1007",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1007",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -7207,7 +7207,7 @@
         ],
         "requirementNumber": 1008,
         "localId": "R1008",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1008",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -7251,7 +7251,7 @@
         ],
         "requirementNumber": 1009,
         "localId": "R1009",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1009",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -7295,7 +7295,7 @@
         ],
         "requirementNumber": 1010,
         "localId": "R1010",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1010",
         "level": "SHALL",
         "owner": {
             "type": "content-module",
@@ -7330,7 +7330,7 @@
         ],
         "requirementNumber": 1011,
         "localId": "R1011",
-        "globalId": "",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1011",
         "level": "SHALL",
         "owner": {
             "type": "content-module",

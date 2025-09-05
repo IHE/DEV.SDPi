@@ -23,15 +23,51 @@ data class SdpiOidReference(val root: WellKnownOid, val oid: String, val descrip
 
 }
 
+// Oids for well known things from the official OID management table.
+// Source: https://wiki.ihe.net/index.php/PCD_OID_Management
 enum class WellKnownOid(val id: String, val oid: String, val typeLabel: String, val description: String) {
 
-    // Source: https://wiki.ihe.net/index.php/PCD_OID_Management
-    DEV_ACTOR("actors", "1.3.6.1.4.1.19376.1.6.3", "Actor", "Parent OID for the DEV Actor"),
+    DEV_ACTOR(
+        "actors",
+        "1.3.6.1.4.1.19376.1.6.3",
+        "Actor",
+        "Parent OID for the DEV Actor"
+    ),
 
-    // Source: https://wiki.ihe.net/index.php/PCD_OID_Management
-    DEV_TRANSACTION("transactions", "1.3.6.1.4.1.19376.1.6.4", "Transaction", "Parent OID for the DEV Transaction"),
+    DEV_TRANSACTION(
+        "transactions",
+        "1.3.6.1.4.1.19376.1.6.4",
+        "Transaction",
+        "Parent OID for the DEV Transaction"
+    ),
 
-    DEV_PROFILE("profiles", "1.3.6.1.4.1.19376.1.6.2", "Profile", "Parent OID for the DEV integration profiles")
+    DEV_PROFILE(
+        "profiles",
+        "1.3.6.1.4.1.19376.1.6.2",
+        "Profile",
+        "Parent OID for the DEV integration profiles"
+    ),
+
+    DEV_CONTENT_MODULE(
+        "content-modules",
+        "1.3.6.1.4.1.19376.1.6.8",
+        "Content module",
+        "Parent OID for the DEV content modules"
+    ),
+
+    DEV_USE_CASE(
+        "use-cases",
+        "1.3.6.1.4.1.19376.1.6.9",
+        "Use case",
+        "Parent OID for the DEV use cases"
+    ),
+
+    DEV_REQUIREMENT(
+        "requirements",
+        "1.3.6.1.4.1.19376.1.6.10",
+        "Requirement",
+        "Parent OID for the DEV requirements"
+    )
 }
 
 fun parseOidId(strId: String): WellKnownOid? {

@@ -5,6 +5,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class SdpiContentModule(
     val id: String,
+    val oids: List<String>,
     val label: String,
     val anchor: String
 ) {
