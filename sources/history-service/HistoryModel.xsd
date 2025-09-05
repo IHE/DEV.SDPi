@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:hm="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.3.2" xmlns:msg="http://standards.ieee.org/downloads/11073/11073-10207-2017/message" xmlns:pm="http://standards.ieee.org/downloads/11073/11073-10207-2017/participant" targetNamespace="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.3.2" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:import namespace="http://standards.ieee.org/downloads/11073/11073-10207-2017/participant" schemaLocation="BICEPS_ParticipantModel.xsd"/>
+	<xsd:import namespace="http://standards.ieee.org/downloads/11073/11073-10207-2017/message" schemaLocation="BICEPS_MessageModel.xsd"/>
+	<!-- Notification payload -->
+	<xsd:element name="ChangeSequenceReport" type="hm:ChangeSequenceReportType">
+		<xsd:annotation>
+			<xsd:documentation>A report element that allows to communicate MDIBs along with sequences of changes.
+            </xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="ChangeSequenceReportType">
+		<xsd:annotation>
+			<xsd:documentation>Type definition of a report to communicate MDIBs along with sequences of changes.
+            </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="ResponseStatus" type="hm:ResponseStatusType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Zero or more response status elements indicating issues of the preceding *History
+                        Service* request.
+                    </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element ref="hm:ChangeSequence" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Zero or more ChangeSequence elements to describe changes of different MDIB
+                        sequences and/or instance numbers.
+                    </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="LastReport" type="xsd:boolean" use="optional" default="false">
+			<xsd:annotation>
+				<xsd:documentation>Designates a report to be the last one in a sequence of reports of a *History
+                    Service* request; true if it is the last report, false otherwise.
+                </xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:element name="ChangeSequence" type="hm:ChangeSequenceType">
+		<xsd:annotation>
+			<xsd:documentation>An element that contains an MDIB snapshot and subsequent MDIB changes.
+            </xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="ChangeSequenceType">
+		<xsd:annotation>
+			<xsd:documentation>Type definition of a change sequence.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="HistoricLocalizedTexts" type="hm:HistoricLocalizedTextsType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Contains *Historic Localized Text* data.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="HistoricMdib" type="hm:HistoricMdibType" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>The initial *MDIB Configuration* at the beginning of a change sequence.
+                    </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="HistoricReport" type="hm:HistoricReportType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Subsequent reports to be applied on the initial *MDIB Configuration* to recreate
+                        the change history.
+                    </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="SequenceId" type="xsd:anyURI" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The MDIB sequence identifier that is valid for this change sequence.
+                </xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="InstanceId" type="xsd:unsignedLong">
+			<xsd:annotation>
+				<xsd:documentation>MDIB instance number that is valid for this change sequence.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="HistoricLocalizedTextsType">
+		<xsd:sequence>
+			<xsd:element name="HistoricLocalizedText" type="pm:LocalizedText" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Localized texts to be used for subsequent MDIB data.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="SequenceId" type="xsd:anyURI" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>The MDIB sequence identifier the localized texts are scoped in. If absent, the
+                    localized texts are valid for any MDIB sequence identifier.
+                </xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="InstanceId" type="xsd:unsignedLong" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>The MDIB instance identifier the localized texts are scoped in. If absent, the
+                    localized texts are valid for any MDIB instance identifier.
+                </xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="HistoricMdibType">
+		<xsd:annotation>
+			<xsd:documentation>Definition of an *MDIB Configuration* at a specific time.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="msg:GetMdibResponse">
+				<xsd:annotation>
+					<xsd:documentation>A GetMdibResponse message that serves as the initial *MDIB Configuration* for an
+                        MDIB sequence on which historic reports can be applied.
+                    </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="Time" type="pm:Timestamp" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Time at which the *MDIB Configuration* was first effective for the *SDC Service
+                    Provider*.
+                </xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="HistoricReportType">
+		<xsd:annotation>
+			<xsd:documentation>Definition of a report at a specific time.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:choice>
+			<xsd:element ref="msg:DescriptionModificationReport"/>
+			<xsd:element ref="msg:EpisodicAlertReport"/>
+			<xsd:element ref="msg:EpisodicComponentReport"/>
+			<xsd:element ref="msg:EpisodicContextReport"/>
+			<xsd:element ref="msg:EpisodicMetricReport"/>
+			<xsd:element ref="msg:EpisodicOperationalStateReport"/>
+			<xsd:element ref="msg:WaveformStream"/>
+		</xsd:choice>
+		<xsd:attribute name="Time" type="pm:Timestamp" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Time at which the report was persisted.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="FinalReport" type="pm:Timestamp" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Time at which the report was persisted.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<!-- Subscription filter -->
+	<xsd:element name="HistoryQuery" type="hm:HistoryQueryType">
+		<xsd:annotation>
+			<xsd:documentation>Element to be used as request data to the *History Service*.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="HistoryQueryType">
+		<xsd:annotation>
+			<xsd:documentation>Type definition to be used as request data to the *History Service*.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="ProvideInitialMdib" type="xsd:boolean" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>If true, the query requests the transmission of an initial MDIB. If false, the
+                        MDIB is omitted from the data stream.
+                    </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="LanguageFilter" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>A language filter to opt-in for requesting localized texts.
+
+                        - If the LanguageFilter element does not exist, no pm:LocalizedText elements are to be selected
+                        - If the LanguageFilter element exists and the list is empty, all pm:LocalizedText elements are
+                        to be selected
+                        - If the LanguageFilter element exists and the list is not empty, all pm:LocalizedText elements
+                        are to be selected where pm:LocalizedText@Lang is element of LanguageFilter
+                    </xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:list itemType="xsd:language"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="Range" type="hm:RangeType">
+				<xsd:annotation>
+					<xsd:documentation>The time or MDIB version range to select.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="RangeType">
+		<xsd:annotation>
+			<xsd:documentation>A range based on either time frames or MDIB versions.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:choice>
+			<xsd:element name="Time" type="hm:TimeRangeType">
+				<xsd:annotation>
+					<xsd:documentation>Time range that is requested from a history service. Timestamps refer to the
+                        clock of the requested SDC SERVICE PROVIDER and do not necessarily correspond to a specific
+                        determination time in the MDIB. Results from time range-based querying are typically imprecise
+                        and depend on a synchronized clock between SDC SERVICE PROVIDER and SDC SERVICE CONSUMER. Hence,
+                        version range-based querying is always preferred over time range-based querying.
+                    </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Version" type="hm:VersionRangeType">
+				<xsd:annotation>
+					<xsd:documentation>Version range that is requested from a history service.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="TimeRangeType">
+		<xsd:annotation>
+			<xsd:documentation>A start and end time to designate a time span.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="StartTime" type="pm:Timestamp" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Start time from which the history is to be picked.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="EndTime" type="pm:Timestamp" use="required">
+			<xsd:annotation>
+				<xsd:documentation>End time up to which the history is to be picked.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="VersionRangeType">
+		<xsd:annotation>
+			<xsd:documentation>A start and end version to designate a range of versions.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="SequenceId" type="xsd:anyURI" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The MDIB sequence from which to pick historical data.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="InstanceId" type="xsd:unsignedLong">
+			<xsd:annotation>
+				<xsd:documentation>An MDIB instance number from which to pick historical data.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="StartVersion" type="pm:ReferencedVersion" use="required">
+			<xsd:annotation>
+				<xsd:documentation>MDIB version from which the history is to be picked including StartVersion.
+                </xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="EndVersion" type="pm:ReferencedVersion" use="required">
+			<xsd:annotation>
+				<xsd:documentation>MDIB version up to which the history is to be picked including EndVersion.
+                </xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="ResponseStatusType">
+		<xsd:choice>
+			<xsd:element name="InitialMdibNotSupported">
+				<xsd:annotation>
+					<xsd:documentation>The *History Service* does not respond with initial MDIB snapshots.
+                    </xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="0"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="LocalizedTextsAreStatic">
+				<xsd:annotation>
+					<xsd:documentation>The *History Service* does not respond with localized texts, which requires all
+                        localized texts to be static.
+                    </xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="0"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="RequestedVersionRangeNotFullyServed" type="hm:VersionRangeType">
+				<xsd:annotation>
+					<xsd:documentation>The *History Service* could not fully serve the requested version range. The
+                        version range indicates the actual range of versions being provided in the *History Service*
+                        response.
+                    </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="RequestedTimeRangeNotFullyServed" type="hm:TimeRangeType">
+				<xsd:annotation>
+					<xsd:documentation>The *History Service* could not fully serve the requested time range. The time
+                        range indicates the actual range of time being provided in the *History Service* response.
+                    </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="IncompleteRecords">
+				<xsd:annotation>
+					<xsd:documentation>The *History Service* does not send reports of the given types.
+                    </xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ReportType" type="hm:ReportTypeType" minOccurs="0" maxOccurs="unbounded">
+							<xsd:annotation>
+								<xsd:documentation>Report type that is not provided.
+                                </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="NoTimeRangeSupport">
+				<xsd:annotation>
+					<xsd:documentation>The *History Service* does not support responding to requests based on time
+                        ranges.
+                    </xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="0"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="NoVersionRangeSupport">
+				<xsd:annotation>
+					<xsd:documentation>The *History Service* does not support responding to requests based on version
+                        ranges.
+                    </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TimeRangeImperfect">
+				<xsd:annotation>
+					<xsd:documentation>Indicates that there have been issues with time synchronization, which may result
+                        in an imperfect response.
+                    </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Other">
+				<xsd:annotation>
+					<xsd:documentation>Indicates another, undocumented status.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:annotation>
+								<xsd:documentation>An optional status message, intended for debugging purposes only.
+                                </xsd:documentation>
+							</xsd:annotation>
+							<xsd:attribute name="StatusCode" type="xsd:string">
+								<xsd:annotation>
+									<xsd:documentation>Status code defined by another entity.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:attribute>
+							<xsd:attribute name="Language" type="xsd:language">
+								<xsd:annotation>
+									<xsd:documentation>Language of the status message.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:simpleType name="ReportTypeType">
+		<xsd:annotation>
+			<xsd:documentation>Enumeration of MDIB report types.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="DescriptionModificationReport">
+				<xsd:annotation>
+					<xsd:documentation>Identifies description modification reports.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="EpisodicAlertReport">
+				<xsd:annotation>
+					<xsd:documentation>Identifies alert reports.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="EpisodicComponentReport">
+				<xsd:annotation>
+					<xsd:documentation>Identifies component reports.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="EpisodicContextReport">
+				<xsd:annotation>
+					<xsd:documentation>Identifies context reports.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="EpisodicMetricReport">
+				<xsd:annotation>
+					<xsd:documentation>Identifies metric reports.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="EpisodicOperationalStateReport">
+				<xsd:annotation>
+					<xsd:documentation>Identifies operation reports.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="WaveformStream">
+				<xsd:annotation>
+					<xsd:documentation>Identifies waveform frame reports.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

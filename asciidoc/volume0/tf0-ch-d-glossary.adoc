@@ -126,6 +126,20 @@
 | https://www.hl7.org/about/index.cfm?ref=nav[About -- HL7]
 | Organization
 
+| [[term_historic_localized_text, Historic Localized Text]] Historic Localized Text
+| A pm:LocalizedText element that was referenced from within a pm:Mdib or msg:AbstractReport in an MDIB Sequence of Changes
+|
+|
+|
+| SDC
+
+| [[term_history_service, History Service]] History Service
+| A service to access historical <<acronym_mdib>> data by means of an initial <<term_mdib_configuration>> and subsequent change reports. The History Service replaces the ARCHIVE SERVICE specified in <<acronym_biceps>> and is used to implement <<vol0_transaction_summary_dev_30>>.
+|
+|
+|
+| SDC
+
 | [[term_implementation_conformance_statement,Implementation Conformance Statement (ICS)]] Implementation Conformance Statement
 | A clause in many standards that specifies how conformance claims to that standard should be formalized, including identification of any deviations, extensions and option selection.
 |
@@ -188,6 +202,20 @@
 |
 | [[acronym_mdib,MDIB]] MDIB
 | <<ref_ieee_11073_10207_2017>>
+| SDC
+
+| [[term_mdib_configuration, MDIB Configuration]] MDIB Configuration
+| <<acronym_mdib>> that describes the state of a <<vol1_clause_sdpi_p_somds_provider>> at a specific MDIB version.
+|
+|
+|
+| SDC
+
+| [[term_mdib_sequence_of_changes, MDIB Sequence of Changes]] MDIB Sequence of Changes
+| <<acronym_mdib>> changes within a particular pm:Mdib/@SequenceId and pm:Mdib/@InstanceId (if present) that is requested from a <<term_history_service>>.
+|
+|
+|
 | SDC
 
 | [[term_medical_device,Medical Device (MD)]] Medical Device
