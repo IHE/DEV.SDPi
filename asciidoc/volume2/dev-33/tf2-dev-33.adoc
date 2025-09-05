@@ -7,6 +7,7 @@
 
 //reset|+1|off
 [#vol2_clause_dev_33,sdpi_offset=33]
+[role=transaction,transaction-id=DEV-33,oid-arcs=".23.1,.33"]
 === Retrieve Localization Information [{var_transaction_id}]
 
 ==== Scope
@@ -15,20 +16,18 @@ include::tf2-dev-33-summary.adoc[]
 
 ==== Actor Roles
 
-.Actor Roles [{var_transaction_id}]
-[cols="1,2"]
-|===
-|Actor |Roles
+[sdpi_transaction_actors]
+--
 
-|<<vol1_spec_sdpi_p_actor_somds_consumer>>
-|Initiates communication by sending a <<vol2_clause_dev_33_message_getsupportedlanguages, {var_label_dev_33_message_getsupportedlanguages}>> message to a <<vol1_spec_sdpi_p_actor_somds_provider>>. Then listens for a <<vol2_clause_dev_33_message_getsupportedlanguagesresponse, {var_label_dev_33_message_getsupportedlanguagesresponse}>> message to retrieve the <<vol1_spec_sdpi_p_actor_somds_provider>>'s sequence of available languages.
+[actor-id="somds_consumer",contribution=Initiator]
+Initiates communication by sending a <<vol2_clause_dev_33_message_getsupportedlanguages, {var_label_dev_33_message_getsupportedlanguages}>> message to a <<vol1_spec_sdpi_p_actor_somds_provider>>. Then listens for a <<vol2_clause_dev_33_message_getsupportedlanguagesresponse, {var_label_dev_33_message_getsupportedlanguagesresponse}>> message to retrieve the <<vol1_spec_sdpi_p_actor_somds_provider>>'s sequence of available languages.
 
 The sequence of available languages can be used by the <<vol1_spec_sdpi_p_actor_somds_consumer>> to send a <<vol2_clause_dev_33_message_getlocalizedtext, {var_label_dev_33_message_getlocalizedtext}>> message, which is answered by the <<vol1_spec_sdpi_p_actor_somds_provider>> with <<vol2_clause_dev_33_message_getlocalizedtextresponse, {var_label_dev_33_message_getlocalizedtextresponse}>> message that contains a filtered set of localized texts.
 
-|<<vol1_spec_sdpi_p_actor_somds_provider>>
-|Listens for <<vol2_clause_dev_33_message_getsupportedlanguages, {var_label_dev_33_message_getsupportedlanguages}>> messages, which it responds to with <<vol2_clause_dev_33_message_getsupportedlanguagesresponse, {var_label_dev_33_message_getsupportedlanguagesresponse}>> messages respectively. Also listens for <<vol2_clause_dev_33_message_getlocalizedtext, {var_label_dev_33_message_getlocalizedtext}>> messages, which it responds to with <<vol2_clause_dev_33_message_getlocalizedtextresponse, {var_label_dev_33_message_getlocalizedtextresponse}>> messages respectively.
+[actor-id="somds_provider",contribution=Responder]
+Listens for <<vol2_clause_dev_33_message_getsupportedlanguages, {var_label_dev_33_message_getsupportedlanguages}>> messages, which it responds to with <<vol2_clause_dev_33_message_getsupportedlanguagesresponse, {var_label_dev_33_message_getsupportedlanguagesresponse}>> messages respectively. Also listens for <<vol2_clause_dev_33_message_getlocalizedtext, {var_label_dev_33_message_getlocalizedtext}>> messages, which it responds to with <<vol2_clause_dev_33_message_getlocalizedtextresponse, {var_label_dev_33_message_getlocalizedtextresponse}>> messages respectively.
 
-|===
+--
 
 ==== Referenced Standards
 
@@ -120,57 +119,78 @@ The {var_label_dev_33_message_getlocalizedtext} message is sent whenever a <<vol
 When a <<vol1_spec_sdpi_p_actor_somds_consumer>> sends this message, the receiving <<vol1_spec_sdpi_p_actor_somds_provider>> responds with a <<vol2_clause_dev_33_message_getlocalizedtextresponse, {var_label_dev_33_message_getlocalizedtextresponse}>> message.
 
 .R0503
-[sdpi_requirement#r0503,sdpi_req_level=shall]
+[sdpi_requirement#r0503,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
+[NORMATIVE]
+====
 A <<vol1_spec_sdpi_p_actor_somds_provider>> shall respond to a {var_label_dev_33_message_getlocalizedtext} message with a set of localized texts in <<payload_dev_33_getlocalizedtextresponse_text>> resulting from the intersection of filtered localized texts sets as selected by <<payload_dev_33_getlocalizedtext_ref>>, <<payload_dev_33_getlocalizedtext_version>>, <<payload_dev_33_getlocalizedtext_lang>>, <<payload_dev_33_getlocalizedtext_textwidth>>, and <<payload_dev_33_getlocalizedtext_numberoflines>>.
+====
 
-NOTE: The filtering of localized texts sets is specified by <<r0504>>, <<r0505>>, <<r0506>>, <<r0507>>, and <<r0508>>.
+[NOTE]
+====
+The filtering of localized texts sets is specified by <<r0504>>, <<r0505>>, <<r0506>>, <<r0507>>, and <<r0508>>.
+====
 ****
 
 .R0504
-[sdpi_requirement#r0504,sdpi_req_level=shall]
+[sdpi_requirement#r0504,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
+[NORMATIVE]
+====
 A <<vol1_spec_sdpi_p_actor_somds_provider>> shall select a set of localized texts based on <<payload_dev_33_getlocalizedtext_ref>> as follows:
 
 - For each <<payload_dev_33_getlocalizedtext_ref>> that corresponds to a localized text, the localized text is added to the set or
 - If no <<payload_dev_33_getlocalizedtext_ref>> is given, the set contains all localized texts
+====
 ****
 
 .R0505
-[sdpi_requirement#r0505,sdpi_req_level=shall]
+[sdpi_requirement#r0505,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
+[NORMATIVE]
+====
 A <<vol1_spec_sdpi_p_actor_somds_provider>> shall select a set of localized texts based on <<payload_dev_33_getlocalizedtext_version>> as follows:
 
 - If <<payload_dev_33_getlocalizedtext_version>> is specified and localized texts are available in that specified version, then the corresponding localized texts are added to the set or
 - If <<payload_dev_33_getlocalizedtext_version>> is specified and no localized texts are available in that specified version, then no localized texts are added to the set or
 - If <<payload_dev_33_getlocalizedtext_version>> is not specified, then the latest version of localized texts are added to the set
+====
 ****
 
 .R0506
-[sdpi_requirement#r0506,sdpi_req_level=shall]
+[sdpi_requirement#r0506,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
+[NORMATIVE]
+====
 A <<vol1_spec_sdpi_p_actor_somds_provider>> shall select a set of localized texts based on <<payload_dev_33_getlocalizedtext_lang>> as follows:
 
 - For each <<payload_dev_33_getlocalizedtext_lang>> for which a localized text exists, the localized text is added to the set or
 - If no <<payload_dev_33_getlocalizedtext_lang>> is given, the set contains all localized texts
+====
 ****
 
 .R0507
-[sdpi_requirement#r0507,sdpi_req_level=shall]
+[sdpi_requirement#r0507,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
+[NORMATIVE]
+====
 A <<vol1_spec_sdpi_p_actor_somds_provider>> shall select a set of localized texts based on <<payload_dev_33_getlocalizedtext_textwidth>> as follows:
 
 - The <<vol1_spec_sdpi_p_actor_somds_provider>> adds all localized texts to the set for which the text width of the localized text is less or equal to the widest <<payload_dev_33_getlocalizedtext_textwidth>> element or
 - If no <<payload_dev_33_getlocalizedtext_textwidth>> is given, the set contains all localized texts
+====
 ****
 
 .R0508
-[sdpi_requirement#r0508,sdpi_req_level=shall]
+[sdpi_requirement#r0508,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
+[NORMATIVE]
+====
 A <<vol1_spec_sdpi_p_actor_somds_provider>> shall select a set of localized texts based on <<payload_dev_33_getlocalizedtext_numberoflines>> as follows:
 
 - The <<vol1_spec_sdpi_p_actor_somds_provider>> adds all localized texts to the set for which the number of lines of the localized text is less or equal to the maximum in <<payload_dev_33_getlocalizedtext_numberoflines>>
 - If no <<payload_dev_33_getlocalizedtext_numberoflines>> is given, the set contains all localized texts
+====
 ****
 
 
