@@ -41,48 +41,13 @@ sdpi_include_transaction::DEV-44[actor-id="somds_medical_control_consumer",initi
 sdpi_include_transaction::DEV-45[actor-id="somds_medical_control_consumer",initiator="required",placeholder-name="Invoke medical control services"]
 
 .SDPi-xC Profile - Actors and Transactions
+[#vol1_table_sdpi_xc_actors_transactions]
 sdpi_transaction_table::[profile-id="sdpi-xc"]
 
 NOTE: see <<vol1_clause_sdpi_xc_required_actor_groupings>> for actor inheritance and grouping.
 
-[#vol1_table_sdpi_xc_actors_transactions]
-.SDPi-xC Profile - Actors and Transactions
-[%autowidth]
-[cols="1,2,1,1,3"]
-|===
-.^|Actors
-.^|Transactions
-.^|Initiator or Responder
-.^|Optionality
-.^|Reference
-
-.2+| <<vol1_spec_sdpi_xc_actor_somds_medical_control_provider>>
-.^| <<transaction_name_manage_medical_external_control>> (_deferred_)
-.^| Responder
-.^| R
-| [DEV-44] Deferred to a future version of SDPi
-// <<vol2_clause_dev_44>>
-
-| <<transaction_name_invoke_medical_control_services>> (_deferred_)
-| Responder
-| R
-| [DEV-45] Deferred to a future version of SDPi
-// <<vol2_clause_dev_45>>
-
-.2+| <<vol1_spec_sdpi_xc_actor_somds_medical_control_consumer>>
-.^| <<transaction_name_manage_medical_external_control>> (_deferred_)
-.^| Initiator
-.^| R
-| [DEV-44] Deferred to a future version of SDPi
-// <<vol2_clause_dev_44>>
-
-| <<transaction_name_invoke_medical_control_services>> (_deferred_)
-| Initiator
-| R
-| [DEV-45] Deferred to a future version of SDPi
-// <<vol2_clause_dev_45>>
-
-|===
+// Old (manual) version:
+// include:actor-tables/sdpi-xc-transactions.adoc[]
 
 [#vol1_clause_sdpi_xd_actor_descriptions_actor_profile_requirements]
 ==== Actor Descriptions and Actor Profile Requirements
