@@ -16,6 +16,7 @@ class TransactionTableBuilder(
     private val colContribution = processor.createTableColumn(table, 1 + if (bIncludeActorColumn) 1 else 0)
     private val colObligation = processor.createTableColumn(table, 2 + if (bIncludeActorColumn) 1 else 0)
     private val colOption = processor.createTableColumn(table, 3 + if (bIncludeActorColumn) 1 else 0)
+    private val colReference = processor.createTableColumn(table, 4 + if (bIncludeActorColumn) 1 else 0)
     private val infoCellStyles = mapOf("halign" to "center")
 
     fun setupHeadings() {
@@ -30,6 +31,7 @@ class TransactionTableBuilder(
         header.cells.add(processor.createTableCell(colContribution, "Contribution", infoCellStyles))
         header.cells.add(processor.createTableCell(colObligation, "Obligation", infoCellStyles))
         header.cells.add(processor.createTableCell(colOption, "Option", infoCellStyles))
+        header.cells.add(processor.createTableCell(colReference, "Reference", infoCellStyles))
 
     }
 
@@ -53,8 +55,23 @@ class TransactionTableBuilder(
         row.cells.add(processor.createTableCell(colContribution, strContribution, infoCellStyles))
         row.cells.add(processor.createTableCell(colObligation, strDefaultObligation, infoCellStyles))
         row.cells.add(processor.createTableCell(colOption, createOptionCell(option), infoCellStyles))
+        row.cells.add(processor.createTableCell(colReference, createReferenceCell(transaction), infoCellStyles))
 
         table.body.add(row)
+    }
+
+    fun addActorOnlyRow(actor: SdpiActor) {
+        if (bIncludeActorColumn) {
+            val row = processor.createTableRow(table)
+            row.cells.add(processor.createTableCell(colActor, createActorCell(actor)))
+
+            row.cells.add(processor.createTableCell(colTransaction, "no transactions defined"))
+            row.cells.add(processor.createTableCell(colContribution, "—", infoCellStyles))
+            row.cells.add(processor.createTableCell(colObligation, "—", infoCellStyles))
+            row.cells.add(processor.createTableCell(colOption, "—", infoCellStyles))
+            row.cells.add(processor.createTableCell(colReference, "—", infoCellStyles))
+            table.body.add(row)
+        }
     }
 
     private fun createActorCell(actor: SdpiActor?): String {
@@ -90,4 +107,14 @@ class TransactionTableBuilder(
         return strOptionLink
     }
 
+    private fun createReferenceCell(transaction: SdpiTransaction?): String {
+        if (transaction == null) {
+            return ""
+        }
+
+        if (transaction.anchor.isNotEmpty()) {
+            return makeLink(transaction.anchor, transaction.label)
+        }
+        return "deferred"
+    }
 }

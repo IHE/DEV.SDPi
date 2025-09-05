@@ -223,6 +223,11 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
                 }
             }
         }
+
+        // If no transactions were added, add an empty row.
+        if (bFirstActor) {
+            tableBuilder.addActorOnlyRow(actor)
+        }
     }
 
     private fun getTransaction(transactionReference: SdpiTransactionReference): SdpiTransaction? {

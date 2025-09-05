@@ -99,7 +99,7 @@ class TransactionActorsProcessor : BlockProcessor(BLOCK_NAME_TRANSACTION_ACTORS)
 
         header.cells.add(createTableCell(colActor, "Actor"))
         header.cells.add(createTableCell(colContribution, "Contribution"))
-        header.cells.add(createTableCell(colDescription, "Description"))
+        header.cells.add(createTableCell(colDescription, "Role"))
 
 
         for (actorRole in roles) {
