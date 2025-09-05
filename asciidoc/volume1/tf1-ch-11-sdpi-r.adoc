@@ -62,6 +62,8 @@ sdpi_include_transaction::DEV-37[actor-id="somds_dec_gateway",initiator="optiona
 .SDPi-R Profile - Actors and Transactions
 sdpi_transaction_table::[profile-id="sdpi-r"]
 
+NOTE: see <<vol1_clause_sdpi_r_required_actor_groupings>> for actor inheritance and grouping.
+
 ifndef::not-defined[]
 [#vol1_table_sdpi_r_actors_transactions]
 .SDPi-R Profile - Actors and Transactions

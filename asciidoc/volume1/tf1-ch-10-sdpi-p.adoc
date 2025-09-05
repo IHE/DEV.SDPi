@@ -80,17 +80,19 @@ sdpi_transaction_table::[profile-id="sdpi-p"]
 
 [NOTE]
 ====
-* _“Notify Change in System Context and Capabilities”_ is required if there are 
+* RefTransaction:DEV-28[]  is required if there are 
 dynamic changes that may need to be sent to subscribing systems
 
 * _“Receiver”_ indicates that though a <<vol1_spec_sdpi_p_actor_somds_participant>> 
 may "receive" the transaction, there is no response communicated to the message initiator.
 
 * A future SDPi version will provide transaction details for the 
-<<vol1_clause_sdpi_p_somds_connector>>, <<vol1_clause_sdpi_p_somds_fhir_gateway>>, 
-<<vol1_clause_sdpi_p_somds_v2_gateway>>, <<vol1_clause_sdpi_p_somds_sensor_gateway>>, 
-<<vol1_clause_sdpi_p_somds_smart_app_platform>>, <<vol1_clause_sdpi_p_biceps_content_creator>>, and
-<<vol1_clause_sdpi_p_biceps_content_consumer>> actors. 
+RefActor:somds_connector[], RefActor:somds_fhir_gateway[], 
+RefActor:somds_v2_gateway[], RefActor:somds_sensor_gateway[], 
+RefActor:somds_smart_app[], RefActor:biceps_content_creator[], and
+RefActor:biceps_content_consumer[] actors. 
+
+* See <<vol1_clause_sdpi_p_required_actor_groupings>> for actor inheritance and grouping. 
 ====
 
 ifndef::not-defined[]

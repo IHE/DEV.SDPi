@@ -43,6 +43,8 @@ sdpi_include_transaction::DEV-45[actor-id="somds_medical_control_consumer",initi
 .SDPi-xC Profile - Actors and Transactions
 sdpi_transaction_table::[profile-id="sdpi-xc"]
 
+NOTE: see <<vol1_clause_sdpi_xc_required_actor_groupings>> for actor inheritance and grouping.
+
 [#vol1_table_sdpi_xc_actors_transactions]
 .SDPi-xC Profile - Actors and Transactions
 [%autowidth]

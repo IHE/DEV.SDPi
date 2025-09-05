@@ -1,4 +1,4 @@
-[appendix#vol3_appendix_d_ics,sdpi_offset=D]
+[appendix#vol3_appendix_d_ics,sdpi_offset=Z]
 == Implementation conformity statements
 
 === General format

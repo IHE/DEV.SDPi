@@ -151,4 +151,4 @@ include::tf3-ch-b-biceps-extension-namespace.adoc[]
 include::tf3-ch-c-oid-tables.adoc[]
 
 // ICS tables
-include::tf3-ch-d-ics.adoc[]
+include::tf3-ch-z-ics.adoc[]
