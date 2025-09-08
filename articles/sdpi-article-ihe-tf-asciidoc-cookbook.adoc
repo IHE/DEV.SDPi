@@ -717,6 +717,7 @@ Block attributes supply metadata for the requirement. Attributes are tabulated b
 |`sdpi_ref_req` | `ref_ics` | requirement identifier | yes | The identifier for the requirement in the referenced standard. 
 |`sdpi_ses_type` | `risk_mitigation` | {`general` \| `safety` \| `effectiveness` \| `security` \| `audit` } | yes | https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_requirement_type_ses[Type of risk] the requirement mitigates. 
 |`sdpi_ses_test` | `risk_mitigation` | {`inspect` \| `wire` } | yes | Mechanism for testing the requirement. 
+|`sdpi_max_occurrence`| all | integer | no | Placeholder.
 |===
 
 [[requirement-oids]]
