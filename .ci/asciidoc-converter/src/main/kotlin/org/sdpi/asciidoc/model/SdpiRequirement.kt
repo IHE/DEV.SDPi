@@ -124,6 +124,7 @@ sealed class SdpiRequirement2 {
     abstract val localId: String
     abstract val oid: String
     abstract val level: RequirementLevel
+    abstract val maxOccurrence: Int?
     abstract val owner: RequirementContext?
     abstract val groups: List<String>
     abstract val specification: RequirementSpecification
@@ -170,6 +171,7 @@ sealed class SdpiRequirement2 {
         override val localId: String,
         override val oid: String,
         override val level: RequirementLevel,
+        override val maxOccurrence: Int?,
         override val owner: RequirementContext?,
         override val groups: List<String>,
         override val specification: RequirementSpecification
@@ -187,6 +189,7 @@ sealed class SdpiRequirement2 {
         override val localId: String,
         override val oid: String,
         override val level: RequirementLevel,
+        override val maxOccurrence: Int?,
         override val owner: RequirementContext?,
         override val groups: List<String>,
         override val specification: RequirementSpecification,
@@ -205,6 +208,7 @@ sealed class SdpiRequirement2 {
         override val localId: String,
         override val oid: String,
         override val level: RequirementLevel,
+        override val maxOccurrence: Int?,
         override val owner: RequirementContext?,
         override val groups: List<String>,
         override val specification: RequirementSpecification,
@@ -225,6 +229,7 @@ sealed class SdpiRequirement2 {
         override val localId: String,
         override val oid: String,
         override val level: RequirementLevel,
+        override val maxOccurrence: Int?,
         override val owner: RequirementContext?,
         override val groups: List<String>,
         override val specification: RequirementSpecification,

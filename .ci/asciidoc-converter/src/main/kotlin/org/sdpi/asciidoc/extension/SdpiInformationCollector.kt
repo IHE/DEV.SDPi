@@ -440,7 +440,7 @@ class SdpiInformationCollector(
             RequirementType.TECH ->
                 requirements[nRequirementNumber] = SdpiRequirement2.TechFeature(
                     nRequirementNumber,
-                    strLocalId, strGlobalId, requirementLevel, owner, aGroups, specification
+                    strLocalId, strGlobalId, requirementLevel, getMaxOccurrence(block), owner, aGroups, specification
                 )
 
             RequirementType.USE_CASE ->
@@ -466,6 +466,13 @@ class SdpiInformationCollector(
                 strLocalId, strGlobalId, requirementLevel, owner, aGroups, specification
             )
         }
+    }
+
+    private fun getMaxOccurrence(block: StructuralNode): Int? {
+        val strMaxOccurrence = block.attributes[BlockAttribute.MAX_OCCURRENCE.key] ?: return null
+
+        val nMaxOccurrence = strMaxOccurrence.toString().toInt()
+        return nMaxOccurrence
     }
 
     private fun getRequirementOwner(block: ContentNode): RequirementContext? {
@@ -619,7 +626,7 @@ class SdpiInformationCollector(
         block.attributes[RequirementAttributes.UseCase.ID.key] = useCaseId.toString()
         return SdpiRequirement2.UseCase(
             nRequirementNumber,
-            strLocalId, strGlobalId, requirementLevel, owner, aGroups, specification, useCaseId.toString()
+            strLocalId, strGlobalId, requirementLevel, getMaxOccurrence(block), owner, aGroups, specification, useCaseId.toString()
         )
     }
 
@@ -655,7 +662,7 @@ class SdpiInformationCollector(
         val strRequirement = requirement?.toString() ?: ""
         return SdpiRequirement2.ReferencedImplementationConformanceStatement(
             nRequirementNumber,
-            strLocalId, strGlobalId, requirementLevel, owner, aGroups, specification,
+            strLocalId, strGlobalId, requirementLevel, getMaxOccurrence(block), owner, aGroups, specification,
             strStandardId, strRefSource, strSection, strRequirement
         )
 
@@ -691,7 +698,7 @@ class SdpiInformationCollector(
 
         return SdpiRequirement2.RiskMitigation(
             nRequirementNumber,
-            strLocalId, strGlobalId, requirementLevel, owner, aGroups, specification,
+            strLocalId, strGlobalId, requirementLevel, getMaxOccurrence(block), owner, aGroups, specification,
             parsedSesType, parsedTestability
         )
 
@@ -709,7 +716,7 @@ class SdpiInformationCollector(
 
         return SdpiRequirement2.TechFeature(
             nRequirementNumber,
-            strLocalId, strGlobalId, requirementLevel, owner, aGroups, specification
+            strLocalId, strGlobalId, requirementLevel, getMaxOccurrence(block), owner, aGroups, specification
         )
     }
 

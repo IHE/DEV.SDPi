@@ -7,7 +7,10 @@ enum class BlockAttribute(val key: String) {
     ID("id"),
     TITLE("title"),
     ROLE("role"),
+
+    // Optional value that may be attached to requirements.
     MAX_OCCURRENCE("sdpi_max_occurrence"),
+
     VOLUME_CAPTION("sdpi_volume_caption"),
 
     // The leaf-arc of the item's oid. The complete oid is computed
