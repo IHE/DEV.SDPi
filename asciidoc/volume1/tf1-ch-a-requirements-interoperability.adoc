@@ -312,30 +312,45 @@ Uniqueness must be achieved within the scope of the given specification (e.g., S
 
 Two requirement identifiers are currently specified:
 
-*Unique Identifier*
+* *Unique Identifier*
+** Human-readable text that is displayed with detailed requirement content in the specification, for example `R1234`.
+** Identifiers begin with a capital `R` and have a simple four digit numeric value.
+** Identifiers are typically assigned in groups to related content for convenience (e.g., requirements for halloween may be assigned R1301, R1302 and R1303), however no ontology or taxonomy shall be inferred from requirement numbering.
 
-* Human-readable text that is displayed with detailed requirement content in the specification
-* Example:  "R1234"
-* Identifiers have a simple numeric value, with four digits sufficient for most applications
-* Identifier letters may be enhanced from a simple "R" to include a type (e.g., RSR for Referenced Standard Requirement, or UCR for Use Case Requirement, etc.)
+* *Requirement OID*
+** A machine-readable URI style identifier that ensures global uniqueness.
+** The root OID for all requirements in the IHE DEV profile is `1.3.6.1.4.1.19376.1.6.10`.
+** The numeric part of the Unique Identifier is the final arc for the OID, for example: `1.3.6.1.4.1.19376.1.6.10.1234`. 
 
+FOR THE CURRENT SPECIFICATION:
 
-*Requirement OID*
+* The _unique identifier_ is assigned manually; the asciidoc processor checks all identifiers are unique within the document and automatically assigns the _requirement OID_.
+* Requirements are *not* versioned.
+* New requirement identifiers (_unique identifier_ and _requirement oid) are assigned following material changes to a requirements normative statement and the old identifier is retired, never to be used again.
+* Assignment may evolve with experience and extended use. 
 
-* A machine-readable URI style identifier that ensures global uniqueness
-* Root OID is based on the specification scope with IHE:  1.3.6.1.4.1.19376.1.6.2.11 = IHE DEV TF SDPi-P profile
-* Addition of .2.x is for a profile-specific requirement; for example:  1.3.6.1.4.1.19376.1.6.2.11.2.1234 = an SDPi-P Requirement "R1234"
-* Version can also be added to this OID in the future; for example:  1.3.6.1.4.1.19376.1.6.2.11.2.1234.1.0 for requirement version 1.0
+Material modifications include those that may:
 
-FOR THE CURRENT SPECIFICATION, these identifiers are assigned manually, with an automated uniqueness check performed by the asciidoc-converter to HTML application.
-Assignment may evolve with experience and extended use.
+* alter the actors referenced in the normative statement,
+* affect conformant implementations,
+* affect testing testing and validation, or
+* impact interoperability (e.g., a test or implementation conforming to the old requirement text may not be conformant to the new one).
 
+Material changes do not include:
+
+* improving the grammar and/or clarity of the requirement's normative statement,
+* changing a requirement level (may &rArr; should; shall &rArr; should) because this only impacts implementation obligations but not the purpose of the requirement,
+* changes to notes, examples or related requirements, or
+* changes that may make a non-conformant implementation and/or test conformant (provided the change won't affect conformant implementations and/or tests).
+
+NOTE: changes requiring assignment of new requirement identifiers may evolve with experience and/or finalization of the profile.
 
 ===== Usage Levels
 
 Requirement Level must be valued as one of the following strings:  "shall", "should", "may".
 For example, "sdpi_req_level=should"
 
+////
 "Conditional" requirements may also need to be indicated in metadata; however, that is beyond the scope of the current specification revision.
 For example, there are some cases where the conditional logic might be included in the requirement specification:
 
@@ -346,6 +361,7 @@ For example, there are some cases where the conditional logic might be included 
 Requirement conditionality may be easily added as a Requirement Note; however, that is not computable metadata.
 Another approach, would be to add a Requirement Condition data element that included some logic, perhaps linking to the presence of some configuration (such as a profile option selection) or other requirement.
 This will be addressed in subsequent versions of this specification.
+////
 
 ===== Requirement Grouping
 
