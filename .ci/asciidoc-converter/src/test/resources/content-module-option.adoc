@@ -2,7 +2,7 @@
 
 Pellentesque pellentesque ligula vitae neque RefContentModule:biceps[] porttitor sollicitudin. Nullam at nisi nunc. 
 
-[role="profile",profile-id="Profile-A"]
+[role="profile",profile-id="Profile-A",oid-arcs=.99]
 == A Profile
 
 Suspendisse nec vehicula dui, vitae auctor sem. 
@@ -14,7 +14,7 @@ sdpi_content_module_table::[profile-id="Profile-A"]
 
 === Actor definitions
 
-[role=actor,actor-id=content-consumer,reftext="Content consumer"]
+[role=actor,actor-id=content-consumer,reftext="Content consumer",oid-arcs=.99]
 ==== Content consumer
 
 Maecenas non ullamcorper ligula, nec semper diam.  
@@ -23,7 +23,7 @@ sdpi_include_content_module::biceps[actor-id="content-consumer", support="requir
 
 
 
-[role=actor,actor-id=content-creator,reftext="Content creator"]
+[role=actor,actor-id=content-creator,reftext="Content creator",oid-arcs=.98]
 ==== Content creator
 
 Duis sagittis sapien nec scelerisque egestas.
@@ -40,12 +40,12 @@ sdpi_include_content_module::pump[actor-id="content-consumer",support="optional"
 sdpi_include_content_module::pump[actor-id="content-creator",support="optional"]
 
 
-[role="content-module",content-module-id=biceps,reftext="Biceps content module"]
+[role="content-module",content-module-id=biceps,reftext="Biceps content module",oid-arcs=.99]
 == Biceps content module
 
 Cras vestibulum volutpat tortor sit amet hendrerit. Sed efficitur tempus molestie. 
 
-[role="content-module",content-module-id=pump,reftext="Pump content module"]
+[role="content-module",content-module-id=pump,reftext="Pump content module",oid-arcs=.98]
 == Pump content module
 
 Proin eget velit pellentesque leo malesuada auctor venenatis eget urna. Nulla accumsan nisi a enim accumsan blandit. 
