@@ -638,7 +638,7 @@ The example below illustrates the AsciiDoc source to define a simple requirement
 [source,asciidoc]
 ----
 .R1021
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature,sdpi_req_group="provider,discovery-proxy",sdpi_req_specification=sdpi-p]
+[sdpi_requirement#r1021,sdpi_req_level=shall,sdpi_req_type=tech_feature,sdpi_req_group="provider,discovery-proxy"]
 ****
 
 [NORMATIVE]
@@ -649,7 +649,9 @@ When the managed discovery option is enabled for a SOMDS provider, then it SHALL
 ****
 ----
 
-The block name, `sdpi_requirement`, triggers semantic processing for the requirement content while the https://docs.asciidoctor.org/asciidoc/latest/blocks/add-title/[block title] defines the requirement number. Various <<requirement-attributes,attributes>> define properties for the requirement. The requirement content is delimited by exactly four *'s. The only required content for a block is the normative statement, tagged with the block name `[NORMATIVE]` and delimited by exactly four ='s. With this information we can:
+The block name, `sdpi_requirement`, triggers semantic processing for the requirement content while the https://docs.asciidoctor.org/asciidoc/latest/blocks/add-title/[block title] defines the requirement number. An id, equal to the requirement number prefixed by a lower-case `r`, must also be included in each requirement block to aid document navigation during editing. 
+
+Various <<requirement-attributes,attributes>> define properties for the requirement. The requirement content is delimited by exactly four *'s. The only required content for a block is the normative statement, tagged with the block name `[NORMATIVE]` and delimited by exactly four ='s. With this information we can:
 
 * perform basic requirement validation, such as checking level keywords in the normative text,
 * generate a unique <<requirement-oids,ISO object identifier>> for each requirement,
@@ -662,7 +664,7 @@ Although the normative statement is the only block needed to define a requiremen
 [source,asciidoc]
 ----
 .R1023
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature,sdpi_req_group="consumer,discovery-proxy",sdpi_req_specification=sdpi-p]
+[sdpi_requirement#r1023,sdpi_req_level=shall,sdpi_req_type=tech_feature,sdpi_req_group="consumer,discovery-proxy"]
 ****
 
 [NORMATIVE]
@@ -710,7 +712,6 @@ Block attributes supply metadata for the requirement. Attributes are tabulated b
 |`sdpi_req_type` | all | { `tech_feature` \| `ref_ics` \| `use_case_feature` \| `risk_mitigation` \| `ihe_profile` } | yes | Defines the type of requirement, from the https://profiles.ihe.net/DEV/SDPi/index.
 |`sdpi_req_level` | all | {`shall` \| `should` \| `may` } |yes | Defines the behaviour expected for compatible implementations. html#vol1_clause_sdpi_requirements_core_model[SDPi requirements core model]
 |`sdpi_req_group` |  all | comma separated list | no | Defines membership of ad-hoc groups. Groups may be used to select related requirements when generating ICS tables. 
-|`sdpi_req_specification` |  all | defined _specification id_| yes| Defines the root for the requirements <<requirement-oids,ISO object identifier>>. 
 |`sdpi_use_case_id` | `use_case_feature` | defined _use-case id_ | yes | Defines the use-case that the requirement applies to. Automatically populated from the enclosing <<use-case>> section. 
 |`sdpi_ref_id` | `ref_ics` | defined _reference id_ | yes | The bibliography anchor for the entry to the referenced requirement.
 |`sdpi_ref_section` | `ref_ics` | section identifier | yes | The identifier for the section containing the referenced requirement.
@@ -723,35 +724,11 @@ Block attributes supply metadata for the requirement. Attributes are tabulated b
 [[requirement-oids]]
 ==== ISO object identifiers
 
-ISO object identifiers (OIDs) are assigned and rendered with each requirement in the output file generated. They are used as the primary requirement id in implementation conformance statement tables. ISO object identifiers combine a profile- or standard-specific root identifier with requirement number, that is: `profile_oid.2.requirement_number`. The profile/standard is identified, by name, using the `sdpi_req_specification` attribute. Relationships between profile/standard names and their ISO object identifier is established using document level `sdpi_oid` scoped attributes, typically in `asciidoc/std-oid-definitions.adoc`. 
-
-Named profile and standards include:
-
-|===
-| Specification (`sdpi_req_specification`) | Profile/standard
-
-| `sdpi` | The https://profiles.ihe.net/DEV/SDPi/index.html[SDPi] profile
-| `sdpi-p` | The https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_p_profile[SDPi plug-and-trust] profile
-| `sdpi-a` | The https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_a_profile[SDPi alerting] profile
-| `sdpi-r` | The https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_r_profile[SDPi reporting] profile
-| `sdpi-xC` | The https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_xc_profile[SDPi external control] profile
-|===
-
-Refer to the document source for corresponding ISO object identifiers for each profile. 
-
-NOTE: specification names are case-sensitive. 
+ISO object identifiers (OIDs) are assigned and rendered with each requirement in the output file generated. They are used as the primary requirement id in implementation conformance statement tables. ISO object identifiers are generated automatically by combining the profile requirement root oid (https://wiki.ihe.net/index.php/PCD_OID_Management[`1.3.6.1.4.1.19376.1.6.10`]) with requirement number. For example, requirement R1023 would have an oid of `1.3.6.1.4.1.19376.1.6.10.1023`. Requirement oids are not versioned so a new requirement number must be assigned, and the old number retired, when making material changes to a requirement's normative statement. See https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_requirement_assigning_unique_identifiers[assigning unique identifiers] for more details.
 
 ==== Groups
 
-There is currently (February 2025) no constraint on groups that may be assigned to requirements. However, to promote consistency and utility, the following groups are recommended.
-
-|===
-| Group id | Description
-
-| consumer | Applies to https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_p_somds_consumer[SOMDS consumer] implementations. 
-| provider | Applies to https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_p_somds_provider[SOMDS provider] implementations.
-| discovery-proxy | Applies to https://profiles.ihe.net/DEV/SDPi/index.html#_discovery_proxy[managed discovery proxy] implementations.
-|===
+There is currently (February 2025) no constraint on groups that may be assigned to requirements. 
 
 NOTE: Group names are case sensitive.
 
@@ -767,7 +744,7 @@ Use case blocks, and their parts, are identified in the source by AsciiDoc https
 [source,asciidoc]
 ----
 [role="use-case",sdpi_use_case_id=stad]
-[sdpi_feature="Synchronized Time Across Devices"]
+[sdpi_feature="Synchronized Time Across Devices",oid-arcs=".1"]
 === Use Case Feature 1: Synchronized time across devices (STAD)
 
 ==== Narrative
@@ -789,6 +766,7 @@ It is also important for all devices to have a consistent time since the data be
 ==== Scenarios
 
 [role=use-case-scenario,sdpi_scenario="Device is connected to the MD LAN network with a Time Source service"]
+[oid-arcs=".1,.1.1"]
 ===== Scenario: STAD 1.1 --- Device is connected to the MD LAN network with a Time Source service
 
 [role=use-case-steps]
@@ -830,9 +808,11 @@ Block attributes supply metadata for the use-case. Attributes are tabulated belo
 
 |`sdpi_use_case_id` | `use-case` | _unique id_ | yes | Defines an id for referencing the use case in requirements and cross-referencing. Must be globally unique.
 |`sdpi_use_case_scenario` |  `use-case-scenario` | _unique id_ | yes | Defines an id for one sequence in a use case. Must be unique within the use-case. 
+|`oid-arcs` | `use-case`, `use-case-scenario` | oid leaf or full oid | yes | <<defining-oids, Defines the object id>> for the item.
+
 |===
 
-NOTE: Ids are case-sensitive. 
+NOTE: Ids are case-sensitive.
 
 [[use-case-steps]]
 ==== Defining steps
@@ -856,13 +836,13 @@ The example below illustrates the AsciiDoc source required to define a content m
 
 [source,asciidoc]
 ----
-[#vol3_clause_sdc_biceps_semantic_content_module,role="content-module", content-module-id="biceps"]
+[#vol3_clause_sdc_biceps_semantic_content_module,role="content-module", content-module-id="biceps",oid-arcs=".1,.1.1"]
 ===== SDC/BICEPS Content Module
 
 The biceps standard, <<ref_ieee_11073_10207_2017>>, provides an extensive semantic...
 ----
 
-Attaching the `content-module` role to a section marks it as a [content module](https://profiles.ihe.net/DEV/SDPi/index.html#vol3). A (document-unique) identifier must be defined in the `content-module-id` attribute. The section title is used for the content module label. 
+Attaching the `content-module` role to a section marks it as a [content module](https://profiles.ihe.net/DEV/SDPi/index.html#vol3). A (document-unique) identifier must be defined in the `content-module-id` attribute. The section title is used for the content module label. An <<defining-oids,object identifier (oid)>> is required for each content module. Typical a content module gets a version neutral oid (e.g., `.1`) and a versioned oid (e.g., `.1.1`). 
 
 NOTE: `RefContentModule:<content-module-id>[]` may be used to <<cross-referencing,cross-reference>> transactions by id (e.g., `RefContentModule:biceps[]`). 
 
@@ -885,14 +865,19 @@ Message outlines do not contain ...
 Attaching the `protocol` role to a section marks it as a communication protocol. A communication protocol defines how SOMDS information is exchanged between participants, such as SOAP-based web services. A (document-unique) identifier must be defined in the `protocol-id` attribute. The section title is used for the protocol label. 
 
 
+
 [[defining-oids]]
 === Defining object identifiers (oids)
 
 Many items require object identifiers (oids) including:
 
 * profiles,
-* actors, and
+* actors, 
+* use cases and use case scenarios, 
+* content modules, and
 * transactions. 
+
+NOTE: requirements have object identifiers too, but these are automatically created from the requirement root oid arc and the requirement number.
 
 There is a https://wiki.ihe.net/index.php/PCD_OID_Management[canonical defnition of object identifiers for IHE DEV domains].
 
@@ -916,6 +901,7 @@ Multiple oids may be associated with an item by separating them with commas:
   etc.
 ----
 
+This is commonly used to provide versioned (e.g., `.23.1`) and version neutral (e.g., `.23`) oids. 
 
 [[cross-referencing]]
 === Cross-referencing
