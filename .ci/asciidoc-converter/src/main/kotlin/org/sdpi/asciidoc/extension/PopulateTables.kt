@@ -240,7 +240,7 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
         if (transactionReference.placeholderName != null) {
             val placeholderTransaction = SdpiTransaction(
                 transactionReference.transactionId, emptyList<String>(),
-                transactionReference.placeholderName, "",null
+                transactionReference.placeholderName, "", null
             )
             return placeholderTransaction
         }
@@ -355,6 +355,12 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
                 gatherTransactionOids(oidsToTable)
             } else if (arcOid == WellKnownOid.DEV_PROFILE) {
                 gatherProfileOids(oidsToTable)
+            } else if (arcOid == WellKnownOid.DEV_CONTENT_MODULE) {
+                gatherContentModuleOids(oidsToTable)
+            } else if (arcOid == WellKnownOid.DEV_USE_CASE) {
+                gatherUseCaseOids(oidsToTable)
+            } else if (arcOid == WellKnownOid.DEV_REQUIREMENT) {
+                gatherRequirementOids(oidsToTable)
             } else {
                 logger.error("Oid tables don't support $strArc (yet?)")
             }
@@ -363,15 +369,15 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
         val tableBuilder = OidTableBuilder(this, table)
         tableBuilder.setupHeadings()
 
-        for (oid in oidsToTable.sortedBy{it}) {
+        for (oid in oidsToTable.sortedBy { it }) {
             tableBuilder.addRow(oid)
         }
     }
 
     private fun gatherActorOids(oidsToTable: MutableList<SdpiOidReference>) {
-        for(profile in docInfo.profiles()) {
-            for(actor in profile.actorReferences()) {
-                for(strOid in actor.oids) {
+        for (profile in docInfo.profiles()) {
+            for (actor in profile.actorReferences()) {
+                for (strOid in actor.oids) {
                     val oid = SdpiOidReference(WellKnownOid.DEV_ACTOR, strOid, actor.label, actor.anchor)
                     oidsToTable.add(oid)
                 }
@@ -380,8 +386,8 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
     }
 
     private fun gatherTransactionOids(oidsToTable: MutableList<SdpiOidReference>) {
-        for(transaction in docInfo.transactions().values) {
-            for(strOid in transaction.oids) {
+        for (transaction in docInfo.transactions().values) {
+            for (strOid in transaction.oids) {
                 val oid = SdpiOidReference(
                     WellKnownOid.DEV_TRANSACTION,
                     strOid,
@@ -394,8 +400,8 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
     }
 
     private fun gatherProfileOids(oidsToTable: MutableList<SdpiOidReference>) {
-        for(profile in docInfo.profiles()) {
-            for(strOid in profile.oids) {
+        for (profile in docInfo.profiles()) {
+            for (strOid in profile.oids) {
                 val oid = SdpiOidReference(
                     WellKnownOid.DEV_PROFILE,
                     strOid,
@@ -404,6 +410,57 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
                 )
                 oidsToTable.add(oid)
             }
+        }
+    }
+
+    private fun gatherContentModuleOids(oidsToTable: MutableList<SdpiOidReference>) {
+        for (module in docInfo.contentModules().values) {
+            for (strOid in module.oids) {
+                val oid = SdpiOidReference(
+                    WellKnownOid.DEV_CONTENT_MODULE,
+                    strOid,
+                    module.label,
+                    module.anchor
+                )
+                oidsToTable.add(oid)
+            }
+        }
+    }
+
+    private fun gatherUseCaseOids(oidsToTable: MutableList<SdpiOidReference>) {
+        for (useCase in docInfo.useCases().values) {
+            for (strOid in useCase.oids) {
+                val oid = SdpiOidReference(
+                    WellKnownOid.DEV_USE_CASE,
+                    strOid,
+                    useCase.title,
+                    useCase.anchor
+                )
+                oidsToTable.add(oid)
+            }
+            for (scenario in useCase.specification.scenarios) {
+                for (strOid in scenario.oids) {
+                    val oid = SdpiOidReference(
+                        WellKnownOid.DEV_USE_CASE,
+                        strOid,
+                        scenario.title,
+                        ""
+                    )
+                    oidsToTable.add(oid)
+                }
+            }
+        }
+    }
+
+    private fun gatherRequirementOids(oidsToTable: MutableList<SdpiOidReference>) {
+        for (req in docInfo.requirements().values) {
+            val oid = SdpiOidReference(
+                WellKnownOid.DEV_REQUIREMENT,
+                req.oid,
+                String.format("R%04d", req.requirementNumber),
+                req.getBlockId()
+            )
+            oidsToTable.add(oid)
         }
     }
 

@@ -15,3 +15,16 @@ sdpi_oid_table::[arc="actors"]
 === Transactions
 
 sdpi_oid_table::[arc="transactions"]
+
+=== Content modules
+
+sdpi_oid_table::[arc="content-modules"]
+
+=== Use cases
+
+sdpi_oid_table::[arc="use-cases"]
+
+=== Requirements
+
+sdpi_oid_table::[arc="requirements"]
+
