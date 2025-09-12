@@ -66,9 +66,11 @@ Two reports sent with the same `sdpi:ReportSequence/@MessageNumber` shall be fun
 .Notes
 [%collapsible]
 ====
-NOTE: A <<vol1_spec_sdpi_p_actor_somds_provider>> may change the content of a report to resolve a fault when it receives a fault response. 
+NOTE: Two reports, containing information to update the MDIB for example, are functionally identical when applying either report to update the MDIB would produce an identical result. 
 
-NOTE: A timeout (no response or partial response) should not be considered a fault response from the recipient because message may have been received by the recipient's response may not have been delivered. A <<vol1_spec_sdpi_p_actor_somds_provider>> doesn't change the message content if if receives no response. 
+NOTE: A <<vol1_spec_sdpi_p_actor_somds_provider>> may change the content of a report to resolve a fault when it receives a fault response. For example, a provider may send fewer historic reports after receiving a 413 status response (content too large) when using an HTTP transport. 
+
+NOTE: A timeout (no response or partial response) should not be considered a fault response from the recipient. A timeout on the <<vol1_spec_sdpi_p_actor_somds_provider>> may occur when the <<vol1_spec_sdpi_p_actor_somds_consumer>>'s response is not delivered. A <<vol1_spec_sdpi_p_actor_somds_provider>> doesn't change the message content if if receives no response. 
 
 NOTE: The transport channel may be closed, flushed or otherwise reset when no response or a partial response is received without affecting the `sdpi:ReportSequence/@MessageNumber`.
 ====
