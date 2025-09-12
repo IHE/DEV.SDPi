@@ -64,7 +64,7 @@ class ReferenceSanitizerPreprocessor(
                 } else {
                     val substitutedVariables = substituteVariables(refs[1].trim())
                     val encodedRefText = URLEncoder.encode(substitutedVariables, Charsets.UTF_8)
-                    val key = "${refs[0]}$refSeparator$encodedRefText"
+                    val key = "${refs[0]}$REF_SEPARATOR$encodedRefText"
                     val transformed = "<<$key>>"
 
                     anchorReplacements.put(
@@ -99,6 +99,6 @@ class ReferenceSanitizerPreprocessor(
         private val referenceMatcher = """<<(.+?)>>""".toRegex()
         private val variableDeclarationMatcher = VariableDeclarationRegex()
         private val variableReferenceMatcher = """\{(.+?)}""".toRegex()
-        val refSeparator = UUID.randomUUID().toString()
+        const val REF_SEPARATOR = "*"
     }
 }

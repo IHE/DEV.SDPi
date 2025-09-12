@@ -47,9 +47,12 @@ It is assumed that <<vol1_spec_sdpi_p_actor_somds_participant>> are connected to
 The use of static IP addresses is discouraged as it may lead to IP address conflicts, and hence severe communication disruption, in case of network reconfiguration during operation (e.g., by plugging of Ethernet switches).
 
 .R2000
-[sdpi_requirement#r2000,sdpi_req_level=should]
+[sdpi_requirement#r2000,sdpi_req_level=should,sdpi_req_type=tech_feature]
 ****
+[NORMATIVE]
+====
 A <<vol1_spec_sdpi_p_actor_somds_participant>> should use a dynamically configured IP address.
+====
 ****
 
 :var_expected_actions_ref: <<vol2_clause_dev_23_message_hello>>
@@ -63,13 +66,16 @@ In addition to the Hello message trigger events defined in <<vol2_clause_appendi
 
 .R2001
 [sdpi_requirement#r2001,sdpi_req_level=shall]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_provider>> shall periodically send Hello messages at random intervals between 60 seconds and 120 seconds.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: The random interval between 60 seconds and 120 seconds aims to prevent <<vol1_spec_sdpi_p_actor_somds_provider>>s from congesting the network by sending recurring Hello messages at the same time.
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall periodically send Hello messages at random intervals between 60 seconds and 120 seconds.
+====
+
+[NOTE]
+====
+The random interval between 60 seconds and 120 seconds aims to prevent <<vol1_spec_sdpi_p_actor_somds_provider>>s from congesting the network by sending recurring Hello messages at the same time.
 ====
 ****
 
@@ -84,6 +90,10 @@ Moreover, as further mitigation measure, note that <<ref_oasis_soap_over_udp_v1_
 
 .R2002
 [sdpi_requirement#r2002,sdpi_req_level=should]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
+[NORMATIVE]
+====
 A <<vol1_spec_sdpi_p_actor_somds_participant>> should implement the retry and back-off algorithm defined in SOAP-over-UDP, Appendix A.
+====
 ****

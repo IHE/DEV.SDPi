@@ -5,6 +5,7 @@
 
 //reset|+1|off
 [#vol2_clause_dev_35,sdpi_offset=35]
+[role=transaction,transaction-id=DEV-35]
 === Establish Medical Data Exchange [{var_transaction_id}]
 
 ==== Scope
@@ -13,18 +14,16 @@ include::tf2-dev-35-summary.adoc[]
 
 ==== Actor Roles
 
-.Actor Roles [{var_transaction_id}]
-[cols="1,2"]
-|===
-|Actor |Roles
-|<<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>>
-|Initiates communication by first subscribing to a <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> by sending a {var_label_dev_35_message_subscribe} message.
+[sdpi_transaction_actors]
+--
 
-|<<vol1_spec_sdpi_r_actor_somds_medical_data_provider>>
-|Listens for {var_label_dev_35_message_subscribe} messages, which it responds to with {var_label_dev_35_message_subscribe_response}.
+[actor-id="somds_medical_data_consumer",contribution=Initiator]
+Initiates communication by first subscribing to a <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> by sending a {var_label_dev_35_message_subscribe} message.
 
+[actor-id="somds_medical_data_provider",contribution=Responder]
+Listens for {var_label_dev_35_message_subscribe} messages, which it responds to with {var_label_dev_35_message_subscribe_response}.
 
-|===
+--
 
 ==== Referenced Standards
 

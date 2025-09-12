@@ -2,34 +2,36 @@
 ===== OBX-4 Observation Sub-ID
 
 .R8014
-[sdpi_requirement#r8014,sdpi_req_level=shall,sdpi_max_occurrence=1]
+[sdpi_requirement#r8014,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
-A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the OBX-4 field to a hierarchical representation of the SDC element in the hierarchical containment tree.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: Please refer to the IHE technical framework <<ref_ihe_dev_tf_2_2024>> for further information.
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the OBX-4 field to a hierarchical representation of the SDC element in the hierarchical containment tree.
+====
+
+[NOTE]
+====
+Please refer to the IHE technical framework <<ref_ihe_dev_tf_2_2024>> for further information.
 ====
 ****
 
 .R8015
-[sdpi_requirement#r8015,sdpi_req_level=shall,sdpi_max_occurrence=1]
+[sdpi_requirement#r8015,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
+[NORMATIVE]
+====
 A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall assign the handles (which are required to be unique in the same <<acronym_mdib>>) of the containment tree elements representing MDSs, VMDs, channels and metrics to unique integer numbers per child level of the same parent.
-
-.Notes
-[%collapsible]
-====
-NOTE: This implies that, e.g., channel elements may use the same numbers as VMD elements but on the channel level the numbers must be unique for the channels related to the same VMD.
-
-NOTE: There is no requirement to preserve the same assigned number for a containment tree element from message to message, but it is highly recommended since this makes it much easier for the DOC to process the HL7 V2 messages.
 ====
 
-.Examples
-[%collapsible]
+[NOTE]
+====
+This implies that, e.g., channel elements may use the same numbers as VMD elements but on the channel level the numbers must be unique for the channels related to the same VMD.
+
+There is no requirement to preserve the same assigned number for a containment tree element from message to message, but it is highly recommended since this makes it much easier for the DOC to process the HL7 V2 messages.
 ====
 
+[EXAMPLE]
+====
 Example for Containment Tree Element Handle Assignment:
 
 The gateway assigns the handles of the containment tree elements to

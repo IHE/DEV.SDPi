@@ -1,4 +1,4 @@
-[appendix#vol2_appendix_a_mdpws_messages,sdpi_offset=A]
+[appendix#vol2_appendix_a_mdpws_messages,sdpi_offset=A,role="protocol",protocol-id=mdpws]
 == ISO/IEEE 11073 SDC / MDPWS Message Specifications (Normative)
 
 [CAUTION]
@@ -69,16 +69,20 @@ In order to fulfill TR1164, <<ref_ieee_11073_20701_2018, IEEE 11073-20701>> spec
 
 .R0502
 [sdpi_requirement#r0502,sdpi_req_level=shall]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=security,sdpi_ses_test=wire]
 ****
+[NORMATIVE]
+====
 A <<vol1_spec_sdpi_p_actor_somds_participant>> shall use HTTPS with mutual authentication for those transactions that are required to be secured.
-
-.Notes
-[%collapsible]
 ====
-NOTE: Each section that specifies a transaction indicates security requirements in the __Security Requirements & Considerations__ subsection beneath the __Safety, Effectiveness and Security - Requirements and Considerations__ of each transaction.
 
-NOTE: Essentially, this specification asks for secured transmission of data except when ad-hoc discovery is performed.
+[NOTE]
 ====
+* Each section that specifies a transaction indicates security requirements in the __Security Requirements & Considerations__ subsection beneath the __Safety, Effectiveness and Security - Requirements and Considerations__ of each transaction.
+
+* Essentially, this specification asks for secured transmission of data except when ad-hoc discovery is performed.
+====
+
 ****
 
 CAUTION: This appendix does not specify any processes towards certificate governance. Certificate governance is a separate topic that needs to be addressed in future revisions of this specification.
