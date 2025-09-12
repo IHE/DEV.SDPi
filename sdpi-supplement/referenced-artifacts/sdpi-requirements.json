@@ -7366,5 +7366,144 @@
             "exampleContent": [],
             "relatedContent": []
         }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_consumer"
+        ],
+        "requirementNumber": 1015,
+        "localId": "R1015",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1015",
+        "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "For any metric's *@StepWidth* or *@Resolution*, a <<vol1_spec_sdpi_p_actor_somds_consumer>> shall ignore trailing zeros after the decimal point when determining display precision."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "XML Schema allows appending trailing zeros to decimal numbers such as in \"0.0100\". However, in this example, the last two trailing zeros are insignificant to the decimal's value and hence must be ignored when determining the precision."
+                    ]
+                },
+                {
+                    "type": "block",
+                    "lines": [
+                        "However, this does not apply for the zeros _before_ the decimal point. In this case the zeros are relevant for determining the precision, e.g., in \"10\"."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_consumer"
+        ],
+        "requirementNumber": 1016,
+        "localId": "R1016",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1016",
+        "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_consumer>> shall determine the _active range_ for the current metric's *@Value* or a set of multiple metric's *@Samples* to be displayed at the  <<actor_somds_consumer>>'s display by the following priority order:"
+                    ]
+                },
+                {
+                    "type": "olist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": ".",
+                            "strText": "The *pm:PhysiologicalRange* element of the metric state where the current metric's *@Value* or a sample that represents the display precision for the entire set of metric's *@Samples* falls into."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": ".",
+                            "strText": "The *pm:TechnicalRange* element of the metric descriptor where the current metric's *@Value* or a sample that represents the display precision for the entire set of metric's *@Samples* falls into."
+                        }
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "If the <<actor_somds_consumer>> wants to display, for example, a wave on the screen which consists of samples from multiple metric's *@Samples*, the display precision of the wave must be determined from the display precision of the individual samples. It is then up to the <<actor_somds_consumer>> to select a common display precision for all samples to be displayed at the screen as a wave."
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_consumer"
+        ],
+        "requirementNumber": 1017,
+        "localId": "R1017",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1017",
+        "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<actor_somds_consumer>> shall determine the current display precision for a metric's *@Value* or *@Samples* by the following priority order:"
+                    ]
+                },
+                {
+                    "type": "olist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "1.",
+                            "strText": "*ext:Extension/mpkp:DisplayPrecision/@StepWidth* is defined for the _active range_"
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "1.",
+                            "strText": "*pm:Range/@StepWidth* is defined for the _active range_"
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "1.",
+                            "strText": "*@Resolution* if there is no _active range_ with a *@StepWidth* defined"
+                        }
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
     }
 ]
