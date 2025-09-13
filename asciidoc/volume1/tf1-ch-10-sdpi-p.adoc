@@ -795,7 +795,7 @@ When this option is selected for one of these actors, the following Transactions
 | Provides waveform stream content updates
 | <<vol2_clause_dev_29>>
 
-4+<|
+5+<|
 Note 1:  For optionality of the above transactions for the provider and consumer actors, see <<vol1_table_sdpi_p_actors_transactions>>.
 
 |===
