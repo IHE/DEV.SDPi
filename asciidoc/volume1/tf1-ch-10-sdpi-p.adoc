@@ -264,7 +264,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 5+<|
 Note 1: _“Notify Change in System Context and Capabilities”_ is required if there are dynamic changes that may need to be sent to subscribing systems
 
-Note 2: Optional transaction is required if the SDPi-P <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled.  Some deployments may support a mix of systems that use the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor as well as the default "ad hoc" discovery mode.  Additional details and requirements are provided in the <<vol1_clause_sdpi_p_option_discovery_proxy>> discussion.
+Note 2: Optional transaction is required if the SDPi-P <<vol1_spec_sdpi_p_option_managed_discovery>> is enabled.  Some deployments may support a mix of systems that use the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor as well as the default "ad hoc" discovery mode.  Additional details and requirements are provided in the <<vol1_clause_sdpi_p_option_managed_discovery>> discussion.
 
 Note 3: _“Receiver”_ is included in this column, in _italics_, to indicate that though a <<vol1_spec_sdpi_p_actor_somds_consumer>> may "receive" the transaction, there is no response communicated to the message initiator.
 
@@ -623,16 +623,16 @@ notes.
 .^|Vol. & Section
 
 | <<vol1_spec_sdpi_p_actor_somds_consumer>>
-| <<vol1_spec_sdpi_p_option_discovery_proxy>>
-| <<vol1_clause_sdpi_p_option_discovery_proxy>>
+| <<vol1_spec_sdpi_p_option_managed_discovery>>
+| <<vol1_clause_sdpi_p_option_managed_discovery>>
 
 | <<vol1_spec_sdpi_p_actor_discovery_proxy>>
-| <<vol1_spec_sdpi_p_option_discovery_proxy>>
-| <<vol1_clause_sdpi_p_option_discovery_proxy>>
+| <<vol1_spec_sdpi_p_option_managed_discovery>>
+| <<vol1_clause_sdpi_p_option_managed_discovery>>
 
 | <<vol1_spec_sdpi_p_actor_somds_provider>>
-| <<vol1_spec_sdpi_p_option_discovery_proxy>>
-| <<vol1_clause_sdpi_p_option_discovery_proxy>>
+| <<vol1_spec_sdpi_p_option_managed_discovery>>
+| <<vol1_clause_sdpi_p_option_managed_discovery>>
 
 | <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>
 | <<vol1_spec_sdpi_p_option_sdc_gateway_direction>>
@@ -644,9 +644,9 @@ notes.
 
 |===
 
-[#vol1_clause_sdpi_p_option_discovery_proxy]
+[#vol1_clause_sdpi_p_option_managed_discovery]
 ==== Managed Discovery Option
-[#vol1_spec_sdpi_p_option_discovery_proxy, reftext='Managed Discovery Option']
+[#vol1_spec_sdpi_p_option_managed_discovery, reftext='Managed Discovery Option']
 
 The Discovery Proxy profile option provides an alternative means for <<vol1_spec_sdpi_p_actor_somds_consumer>> Actors to discover the <<vol1_spec_sdpi_p_actor_somds_provider>> Actors that are present on the network.  The default "ad hoc" approach using the <<vol2_clause_dev_23>> and <<vol2_clause_dev_24>> transactions, requires use of unsecured multicast messaging; however, some deployments do not support or allow this mode of discovery.
 The addition of a <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor enables a secure and non-multicast means for managing system discovery across the network.
@@ -669,21 +669,21 @@ See <<vol1_figure_sdpi_p_example_sequence_diagram>> for additional detail.
 [sdpi_requirement#r1021,sdpi_req_level=shall]
 ****
 
-When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor, then it shall use the <<vol2_clause_dev_46, DEV-46>> transaction to update the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor on its network presence and departure.
+When the <<vol1_spec_sdpi_p_option_managed_discovery>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor, then it shall use the <<vol2_clause_dev_46, DEV-46>> transaction to update the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor on its network presence and departure.
 ****
 
 .R1022
 [sdpi_requirement#r1022,sdpi_req_level=shall]
 ****
 
-If a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor is configured or provisioned for the <<vol1_spec_sdpi_p_option_discovery_proxy>>, but the proxy system is not available, then the <<vol1_spec_sdpi_p_actor_somds_provider>> shall revert back to "ad hoc" discovery mode.
+If a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor is configured or provisioned for the <<vol1_spec_sdpi_p_option_managed_discovery>>, but the proxy system is not available, then the <<vol1_spec_sdpi_p_actor_somds_provider>> shall revert back to "ad hoc" discovery mode.
 ****
 
 .R1023
 [sdpi_requirement#r1023,sdpi_req_level=shall]
 ****
 
-When the <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor, then it shall use the <<vol2_clause_dev_47, DEV-47>> transaction to retrieve <<vol1_spec_sdpi_p_actor_somds_provider>> network presence metadata from the  <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor.
+When the <<vol1_spec_sdpi_p_option_managed_discovery>> is enabled for a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor, then it shall use the <<vol2_clause_dev_47, DEV-47>> transaction to retrieve <<vol1_spec_sdpi_p_actor_somds_provider>> network presence metadata from the  <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor.
 
 NOTE:  When retrieving network presence metadata from a <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor, a <<term_discovery_scope>> may be specified as a filter to identify a specific subset of <<vol1_spec_sdpi_p_actor_somds_provider>> systems.
 
@@ -694,7 +694,7 @@ NOTE:  A <<vol1_spec_sdpi_p_actor_somds_consumer>> may optionally use the <<vol2
 [sdpi_requirement#r1024,sdpi_req_level=shall]
 ****
 
-If a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor is configured or provisioned for the <<vol1_spec_sdpi_p_option_discovery_proxy>>, but the proxy system is not available, then the <<vol1_spec_sdpi_p_actor_somds_consumer>> shall revert back to "ad hoc" discovery mode.
+If a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor is configured or provisioned for the <<vol1_spec_sdpi_p_option_managed_discovery>>, but the proxy system is not available, then the <<vol1_spec_sdpi_p_actor_somds_consumer>> shall revert back to "ad hoc" discovery mode.
 ****
 
 .R1025
@@ -783,17 +783,41 @@ The following table details the options that shall be selected:
 [#vol1_clause_sdpi_p_required_actor_groupings]
 === SDPi-P Required Actor Groupings
 
-[%noheader]
+An actor from this profile (Column 1) shall implement all required transactions for the grouped actor (Column 3) in <<vol1_table_sdpi_p_required_actor_groupings>>.
+
+
+[#vol1_table_sdpi_p_required_actor_groupings]
+.SDPi-P - Required Actor Groupings
 [%autowidth]
-[cols="1"]
+[cols="1,1,1,1"]
+|===
+.^|SDPi-P Actor
+.^|Grouping Condition
+.^|Actor(s) to be Grouped With
+.^|TF Reference
+
+| <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>>
+| <<vol1_spec_sdpi_p_option_sdc_gateway_direction>> (Direction="export")
+| <<vol1_spec_sdpi_p_actor_somds_consumer>>
+| <<vol1_clause_sdpi_p_option_sdc_gateway_direction>>
+
+| <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>>
+| <<vol1_spec_sdpi_p_option_sdc_gateway_direction>> (Direction="import")
+| <<vol1_spec_sdpi_p_actor_somds_provider>>
+| <<vol1_clause_sdpi_p_option_sdc_gateway_direction>>
+
+| <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>
+| <<vol1_spec_sdpi_p_option_sdc_gateway_direction>> (Direction="export")
+| <<vol1_spec_sdpi_p_actor_somds_consumer>>
+| <<vol1_clause_sdpi_p_option_sdc_gateway_direction>>
+
+| <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>
+| <<vol1_spec_sdpi_p_option_sdc_gateway_direction>>  (Direction="import")
+| <<vol1_spec_sdpi_p_actor_somds_provider>>
+| <<vol1_clause_sdpi_p_option_sdc_gateway_direction>>
+
 |===
 
-a| *{supplement_note}*:  As indicated in <<vol1_figure_sdpi_p_actor_diagram>> above, there are no explicit grouped actors in this specification; however, there are abstract actors (<<vol1_spec_sdpi_p_actor_somds_participant>> and <<vol1_spec_sdpi_p_actor_somds_connector>>), and the <<vol1_spec_sdpi_p_actor_somds_connector>> may implement interfaces to <<vol1_spec_sdpi_p_actor_somds_provider>> or <<vol1_spec_sdpi_p_actor_somds_consumer>> to provide bidirectional exchanges with non-<<acronym_somds>> systems.
-
-These actor relationships do not represent typical IHE grouped actors, but should be represented in more explicit detail.
-The best approach for achieving that clarity and specificity will be addressed in a future version after further review and discussion by the supplement development team.
-
-|===
 
 ////
 #TODO:  ADD CT SOMDS_PARTICIPANT GROUPING + ATNA(?) ADD CONTENT FROM WORD DOCUMENT HERE; DO WE NEED TO ALSO CONSIDER GENERAL V2 AND DEV TF-2 APPENDIX A?#
