@@ -772,25 +772,25 @@ When this option is selected for one of these actors, the following Transactions
 .^|Capability
 .^|TF Ref
 
-| <<transaction_number_dev_25>>
+| DEV-25
 | <<transaction_name_discover_biceps_services>>
 | R
 | Indicates if the WAVEFORM SERVICE is available.
 | <<vol2_clause_dev_25>>
 
-| <<transaction_number_dev_27>>
+| DEV-27
 | <<transaction_name_manage_biceps_subscription>>
 | R
 | Subscription to waveform stream(s)
 | <<vol2_clause_dev_27>>
 
-| <<transaction_number_dev_28>>
+| DEV-28
 | <<transaction_name_notify_change_in_system_context_and_capabilities>>
 | R
 | Indicates if there are changes in waveform-related stream information
 | <<vol2_clause_dev_28>>
 
-| <<transaction_number_dev_29>>
+| DEV-29
 | <<transaction_name_publish_biceps_update_reports>>
 | R
 | Provides waveform stream content updates
