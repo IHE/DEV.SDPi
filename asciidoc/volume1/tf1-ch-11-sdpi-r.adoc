@@ -302,21 +302,40 @@ No options are defined for this profile.
 [#vol1_clause_sdpi_r_required_actor_groupings]
 === SDPi-R Required Actor Groupings
 
-[%noheader]
+An actor from this profile (Column 1) shall implement all required transactions for the grouped actor (Column 3) in <<vol1_table_sdpi_r_required_actor_groupings>>.
+
+[#vol1_table_sdpi_r_required_actor_groupings]
+.SDPi-R - Required Actor Groupings
 [%autowidth]
-[cols="1"]
+[cols="1,1,1,1"]
 |===
-a| *{supplement_note}*:  As indicated in <<vol1_figure_sdpi_r_actor_diagram>> above, there are four grouped actors:
+.^|SDPi-R Actor
+.^|Grouping Condition
+.^|Actor(s) to be Grouped With
+.^|TF Reference
 
-[none]
-. <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> with <<vol1_spec_sdpi_p_actor_somds_consumer>>
-. <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> with <<vol1_spec_sdpi_p_actor_somds_provider>>
-. <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> with <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>
-. <<vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway>> with <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>>
+| <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>>
+| None
+| <<vol1_spec_sdpi_p_actor_somds_consumer>>
+| <<vol1_clause_sdpi_r_somds_medical_data_consumer>>
 
-This section will be more completely detailed in a future version of the supplement.
+| <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>>
+| None
+| <<vol1_spec_sdpi_p_actor_somds_provider>>
+| <<vol1_clause_sdpi_r_somds_medical_data_provider>>
+
+| <<vol1_spec_sdpi_r_actor_somds_dec_gateway>>
+| None
+| <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>
+| <<vol1_clause_sdpi_r_somds_dec_gateway>>
+
+| <<vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway>>
+| None
+| <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>>
+| <<vol1_clause_sdpi_r_somds_fhir_medical_data_gateway>>
 
 |===
+
 
 === SDPi-R Overview
 

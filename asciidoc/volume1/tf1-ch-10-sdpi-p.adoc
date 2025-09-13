@@ -785,7 +785,6 @@ The following table details the options that shall be selected:
 
 An actor from this profile (Column 1) shall implement all required transactions for the grouped actor (Column 3) in <<vol1_table_sdpi_p_required_actor_groupings>>.
 
-
 [#vol1_table_sdpi_p_required_actor_groupings]
 .SDPi-P - Required Actor Groupings
 [%autowidth]

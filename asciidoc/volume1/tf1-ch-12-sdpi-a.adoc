@@ -332,20 +332,36 @@ This option will enable the <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> to resp
 [#vol1_clause_sdpi_a_required_actor_groupings]
 === SDPi-A Required Actor Groupings
 
-[%noheader]
+An actor from this profile (Column 1) shall implement all required transactions for the grouped actor (Column 3) in <<vol1_table_sdpi_a_required_actor_groupings>>.
+
+[#vol1_table_sdpi_a_required_actor_groupings]
+.SDPi-A - Required Actor Groupings
 [%autowidth]
-[cols="1"]
+[cols="1,1,1,1"]
 |===
-a| *{supplement_note}*:  As indicated in <<vol1_figure_sdpi_r_actor_diagram>> above, there are four grouped actors:
+.^|SDPi-A Actor
+.^|Grouping Condition
+.^|Actor(s) to be Grouped With
+.^|TF Reference
 
-[none]
-. <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> with <<vol1_spec_sdpi_p_actor_somds_consumer>>
-. <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> with <<vol1_spec_sdpi_p_actor_somds_provider>>
-. <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> with <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>
+| <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>
+| None
+| <<vol1_spec_sdpi_p_actor_somds_consumer>>
+| <<vol1_clause_sdpi_a_somds_medical_alert_consumer>>
 
-This section will be more completely detailed in a future version of the supplement.
+| <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>
+| None
+| <<vol1_spec_sdpi_p_actor_somds_provider>>
+| <<vol1_clause_sdpi_a_somds_medical_alert_provider>>
+
+| <<vol1_spec_sdpi_a_actor_somds_acm_gateway>>
+| None
+| <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>
+| <<vol1_clause_sdpi_a_somds_acm_gateway>>
+
 
 |===
+
 
 // 12.4
 === SDPi-A Overview
