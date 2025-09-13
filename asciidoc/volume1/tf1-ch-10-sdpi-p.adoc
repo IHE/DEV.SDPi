@@ -597,7 +597,6 @@ TODO
 Future versions *_MAY_* include options such as
 
 * Retrieve Remote Data
-* Streaming / Waveforms
 * Safe Data Transmission
 * Compact Representation
 * Patient Context Management
@@ -641,6 +640,14 @@ notes.
 | <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>>
 | <<vol1_spec_sdpi_p_option_sdc_gateway_direction>>
 | <<vol1_clause_sdpi_p_option_sdc_gateway_direction>>
+
+| <<vol1_spec_sdpi_p_actor_somds_consumer>>
+| <<vol1_spec_sdpi_p_option_sdc_real_time_waveforms>>
+| <<vol1_clause_sdpi_p_option_sdc_real_time_waveforms>>
+
+| <<vol1_spec_sdpi_p_actor_somds_provider>>
+| <<vol1_spec_sdpi_p_option_sdc_real_time_waveforms>>
+| <<vol1_clause_sdpi_p_option_sdc_real_time_waveforms>>
 
 |===
 
@@ -742,6 +749,49 @@ The following table details the options that shall be selected:
 | bidirectional
 | <<vol1_spec_sdpi_p_actor_somds_consumer>> + <<vol1_spec_sdpi_p_actor_somds_provider>>
 | Gateway supports both export and import functions to external systems.
+
+|===
+
+
+[#vol1_clause_sdpi_p_option_sdc_real_time_waveforms]
+==== SDC Real Time Waveforms Option
+[#vol1_spec_sdpi_p_option_sdc_real_time_waveforms, reftext='SDC Real Time Waveforms Option']
+
+The SDC Real Time Waveforms option indicates that an <<vol1_spec_sdpi_p_actor_somds_provider>> Actor or <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor support the exchange of real time waveform information.
+When this option is selected for one of these actors, the following Transactions shall be supported:
+
+[#vol1_table_sdpi_p_option_sdc_real_time_waveform_required_transactions]
+.SDPi-P - Real Time Waveforms Transactions
+[%autowidth]
+[cols="1,2,1,2"]
+|===
+.^|Transaction
+.^|Name
+.^|Optionality
+.^|Capability
+
+| <<vol2_clause_dev_25>>
+| <<transaction_name_discover_biceps_services>>
+| R
+| Indicates if the WAVEFORM SERVICE is available.
+
+| <<vol2_clause_dev_27>>
+| <<transaction_name_manage_biceps_subscription>>
+| R
+| Subscription to waveform stream(s)
+
+| <<vol2_clause_dev_28>>
+| <<transaction_name_notify_change_in_system_context_and_capabilities>>
+| R
+| Indicates if there are changes in waveform-related stream information
+
+| <<vol2_clause_dev_29>>
+| <<transaction_name_publish_biceps_update_reports>>
+| R
+| Provides waveform stream content updates
+
+4+<|
+Note 1:  For optionality of the above transactions for the provider and consumer actors, see <<vol1_table_sdpi_p_actors_transactions>>.
 
 |===
 
