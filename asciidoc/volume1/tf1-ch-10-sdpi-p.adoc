@@ -762,17 +762,15 @@ The SDC Real Time Waveforms option indicates that an <<vol1_spec_sdpi_p_actor_so
 When this option is selected for one of these actors, the following Transactions shall be supported:
 
 [#vol1_table_sdpi_p_option_sdc_real_time_waveform_required_transactions]
-.SDPi-P - Real Time Waveforms Transactions
+.SDPi-P - SDC Real Time Waveform Transactions
 [%autowidth]
-[cols="1,2,1,2,1"]
+[cols="1,1,1,1,1"]
 |===
 .^|Transaction
 .^|Name
 .^|Optionality
 .^|Capability
 .^|TF Ref
-
-////
 
 | <<transaction_number_dev_25>>
 | <<transaction_name_discover_biceps_services>>
@@ -800,8 +798,6 @@ When this option is selected for one of these actors, the following Transactions
 
 5+<|
 Note 1:  For optionality of the above transactions for the provider and consumer actors, see <<vol1_table_sdpi_p_actors_transactions>>.
-
-////
 
 |===
 
