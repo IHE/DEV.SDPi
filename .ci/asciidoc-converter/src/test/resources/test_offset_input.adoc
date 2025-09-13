@@ -46,7 +46,7 @@
 
 = Part 2
 
-[appendix]
+[appendix,sdpi_offset=A]
 == Part 2 Appendix A
 
 === Part 2 Appendix A Section 1

@@ -20,7 +20,7 @@ Level 7
 3.1.1.1.1.5 Level 6
 3.1.1.1.1.6 Level 6
 3.1.1.1.1.6.1 Level 7
-Appendix A: Level 1
+Appendix A Level 1
 A.1 Level 2
 A.1.1 Level 3
 A.1.1.1 Level 4

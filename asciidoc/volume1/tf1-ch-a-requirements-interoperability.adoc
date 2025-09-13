@@ -37,7 +37,7 @@ image::../images/vol1-diagram-hanging-gardens.svg[]
 Though a full explanation of the framework is beyond this discussion footnote:hanging_gardens_framework_article[A more detailed explanation of this model is provided on the https://confluence.hl7.org/x/4ijxB[IHE-HL7 Gemini _Hanging Gardens Framework_ confluence page].
 Last accessed 2022.10.04.], some general observations will help understand the value and use of the framework:
 
-. Real-world Requirements are at the top -- use case-based requirements that detail clinical system function scenarios, ensuring that all requirements and capabilities in the specifications are rooted in the healthcare purposes that technology *_users_* are expecting to be supported: effectively, safely and securely;
+. Real-world Requirements are at the top -- use case-based clinical system function scenarios ensure that all requirements and capabilities in the specifications are rooted in those healthcare real-world purposes that technology users, especially clinicians, are expecting to be supported: effectively, safely and securely;
 . Each layer or "garden" and contained specification(s) define - implicitly or explicitly - how they integrate with other layers:  _*capabilities*_ that are provided (to meet the needs of other layers), and _*requirements*_ (needed capabilities) for other layers and implementations;
 . Standards are sometimes grouped into families (e.g., ISO/IEEE 11073 SDC) - this indicates that they are internally cohesive as well as able to be integrated as a group with other areas;
 . _*Vertical*_ groupings on the left indicate standards that apply to all of the _*horizontal*_ layers in the core of the model;
@@ -367,7 +367,7 @@ In that case, the general rule is:
 
 For example, in TF-2 Transactions, each transaction section is paired with a message transport section in <<vol2_appendix_a_mdpws_messages>>; however, future versions of the specification may provide options for alternative transports.
 In this case, the actual transaction definition will remain unchanged, but the bindings to transport messages and services would change.
-Given the rule above, bindings are made in the current TF-2 Appendix A MDPWS specification pointing backward (or upward!) to the transaction requirements that they satisfy.
+Given the rule above, bindings are made in the current <<vol2_appendix_a_mdpws_messages>> specification pointing backward (or upward!) to the transaction requirements that they satisfy.
 There are no bindings in the opposite direction.
 Taking this approach, a new transport appendix could be added in the future without impacting the core transaction specifications.
 
