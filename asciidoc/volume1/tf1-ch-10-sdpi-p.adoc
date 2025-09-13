@@ -757,9 +757,11 @@ The following table details the options that shall be selected:
 ==== SDC Real Time Waveforms Option
 [#vol1_spec_sdpi_p_option_sdc_real_time_waveforms, reftext='SDC Real Time Waveforms Option']
 
+
 The SDC Real Time Waveforms option indicates that an <<vol1_spec_sdpi_p_actor_somds_provider>> Actor or <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor support the exchange of real time waveform information.
 When this option is selected for one of these actors, the following Transactions shall be supported:
 
+////
 [#vol1_table_sdpi_p_option_sdc_real_time_waveform_required_transactions]
 .SDPi-P - Real Time Waveforms Transactions
 [%autowidth]
@@ -800,6 +802,7 @@ Note 1:  For optionality of the above transactions for the provider and consumer
 
 |===
 
+////
 
 ////
 #TODO:  Add description and detail specification in a subsequent SDPi Version#
