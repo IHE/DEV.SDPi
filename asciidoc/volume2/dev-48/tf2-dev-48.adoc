@@ -59,8 +59,26 @@ The {var_label_dev_48_operation_set_friendly_consumer_name} operation is invoked
 When a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> invokes this operation, the receiving <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> responds with a <<vol2_clause_dev_48_operation_set_friendly_consumer_name_response, {var_label_dev_48_operation_set_friendly_consumer_name_response}>> message.
 
 [#vol2_clause_dev_48_operation_set_friendly_consumer_name_response]
-===== {var_label_dev_48_operation_set_friendly_consumer_name_response} Message
-CONTINUE FORM HERE!!!!
+===== {var_label_dev_48_operation_set_friendly_consumer_name_response} Operation Invoked Report Message
+
+A <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> responds  with a <<vol2_clause_dev_48_operation_set_friendly_consumer_name_response>> to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>'s invocation of the {var_label_dev_48_operation_set_friendly_consumer_name}
+operation.
+
+[#vol2_clause_dev_48_operation_set_friendly_consumer_name_response_trigger_events]
+====== Trigger Events
+
+The <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> sends a <<vol2_clause_dev_48_operation_set_friendly_consumer_name_response>> back to the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> that invoked the {var_label_dev_48_operation_set_friendly_consumer_name}
+operation.
+
+[#vol2_clause_dev_48_operation_set_friendly_consumer_name_response_semantics]
+====== Message Semantics
+
+The <<vol2_clause_dev_48_operation_set_friendly_consumer_name_response>> does not contain any further semantics.
+
+[#vol2_clause_dev_48_operation_set_friendly_consumer_name_response_expected_actions]
+====== Expected Actions
+
+When a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> sends this message, there is no expected or required response. If the operation was successful, the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> uses the Friendly Consumer Name as the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>'s identifier for the clinical user.
 
 [#vol2_clause_dev_239_publish_medical_alert_update_ses]
 include::../dev-x-default-ses-secured-mode.adoc[]
