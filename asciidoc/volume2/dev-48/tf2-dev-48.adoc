@@ -2,6 +2,8 @@
 
 :var_label_dev_48_operation_set_friendly_consumer_name: SetFriendlyConsumerName
 :var_label_dev_48_operation_set_friendly_consumer_name_response: SetFriendlyConsumerNameResponse
+:var_label_dev_48_operation_monitored_by_das: MonitoredByDAS
+:var_label_dev_48_operation_monitored_by_das_response: MonitoredByDASResponse
 
 //reset|+1|off
 [#vol2_clause_dev_48,sdpi_offset=48]
@@ -61,7 +63,7 @@ When a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> invokes this oper
 [#vol2_clause_dev_48_operation_set_friendly_consumer_name_response]
 ===== {var_label_dev_48_operation_set_friendly_consumer_name_response} Operation Invoked Report Message
 
-A <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> responds  with a <<vol2_clause_dev_48_operation_set_friendly_consumer_name_response>> to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>'s invocation of the {var_label_dev_48_operation_set_friendly_consumer_name}
+A <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> responds with a <<vol2_clause_dev_48_operation_set_friendly_consumer_name_response>> to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>'s invocation of the {var_label_dev_48_operation_set_friendly_consumer_name}
 operation.
 
 [#vol2_clause_dev_48_operation_set_friendly_consumer_name_response_trigger_events]
@@ -79,6 +81,49 @@ The <<vol2_clause_dev_48_operation_set_friendly_consumer_name_response>> does no
 ====== Expected Actions
 
 When a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> sends this message, there is no expected or required response. If the operation was successful, the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> uses the Friendly Consumer Name as the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>'s identifier for the clinical user.
+
+[#vol2_clause_dev_48_operation_monitored_by_das]
+===== {var_label_dev_48_operation_monitored_by_das} Operation
+
+A <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> invokes the {var_label_dev_48_operation_monitored_by_das} operation on a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> to establish a Distributed Alarm System, as specified in <<ref_ieee_11073_10702_202x>>.
+
+[#vol2_clause_dev_48_operation_monitored_by_das_trigger_events]
+====== Trigger Events
+
+The {var_label_dev_48_operation_monitored_by_das} operation is invoked by a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> to request the establishment of a Distributed Alarm System with the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>.
+
+[#vol2_clause_dev_48_operation_monitored_by_das_semantics]
+====== Message Semantics
+
+The <<vol2_clause_dev_48_operation_monitored_by_das_semantics>> does not contain any further semantics.
+
+[#vol2_clause_dev_48_operation_monitored_by_das_expected_actions]
+====== Expected Actions
+
+When a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> invokes this operation, the receiving <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> responds with a <<vol2_clause_dev_48_operation_monitored_by_das_response, {var_label_dev_48_operation_monitored_by_das_response}>> message.
+
+[#vol2_clause_dev_48_operation_monitored_by_das_response]
+===== {var_label_dev_48_operation_monitored_by_das_response} Operation Invoked Report Message
+
+A <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> responds with a <<vol2_clause_dev_48_operation_monitored_by_das_response>> to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>'s invocation of the {var_label_dev_48_operation_monitored_by_das}
+operation.
+
+[#vol2_clause_dev_48_operation_monitored_by_das_response_trigger_events]
+====== Trigger Events
+
+The <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> sends a <<vol2_clause_dev_48_operation_monitored_by_das_response>> back to the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> that invoked the {var_label_dev_48_operation_monitored_by_das}
+operation.
+
+[#vol2_clause_dev_48_operation_monitored_by_das_response_semantics]
+====== Message Semantics
+
+[[payload_dev_48_monitored_by_das_name]]MDIB version:: The version of the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>'s MDIB from which the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> takes over the Distributed Alarm System responsibility and therefore starts confirming changes in the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>'s alert conditions.
+
+
+[#vol2_clause_dev_48_operation_monitored_by_das_response_expected_actions]
+====== Expected Actions
+
+When a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> sends this message, there is no expected or required response. The <<vol2_clause_dev_48_operation_monitored_by_das_response>> marks the establishment of the Distributed Alarm System for both the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> and the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>.
 
 [#vol2_clause_dev_239_publish_medical_alert_update_ses]
 include::../dev-x-default-ses-secured-mode.adoc[]
