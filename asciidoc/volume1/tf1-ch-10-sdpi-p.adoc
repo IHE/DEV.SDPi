@@ -280,7 +280,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 
 .^| <<transaction_name_update_network_presence>>
 .^| Initiator
-.^| O   ^(See^ ^Note^ ^2 and^ ^6)^
+.^| O   ^(See^ ^Note^ ^2^ ^and^ ^6)^
 | <<vol2_clause_dev_46>>
 
 | <<transaction_name_announce_network_presence>>
@@ -325,7 +325,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 
 | <<transaction_name_retrieve_network_presence>>
 | Initiator
-| O   ^(See^ ^Note^ ^2 and^ ^5)^
+| O   ^(See^ ^Note^ ^2^ ^and^ ^5)^
 | <<vol2_clause_dev_47>>
 
 
@@ -353,7 +353,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 
 | <<transaction_name_notify_change_in_system_context_and_capabilities>>
 | Initiator
-| O ^(See^ ^Note^ ^1 and^ ^6)^
+| O ^(See^ ^Note^ ^1^ ^and^ ^6)^
 | <<vol2_clause_dev_28>>
 
 | <<transaction_name_publish_biceps_update_reports>>
@@ -373,7 +373,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 
 .^| <<transaction_name_update_network_presence>>
 .^| Initiator
-.^| O   ^(See^ ^Note^ ^2 and^ ^6)^
+.^| O   ^(See^ ^Note^ ^2^ ^and^ ^6)^
 | <<vol2_clause_dev_46>>
 
 | <<transaction_name_announce_network_presence>>
@@ -418,7 +418,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 
 | <<transaction_name_retrieve_network_presence>>
 | Initiator
-| O   ^(See^ ^Note^ ^2 and^ ^5)^
+| O   ^(See^ ^Note^ ^2^ ^and^ ^5)^
 | <<vol2_clause_dev_47>>
 
 
