@@ -134,17 +134,28 @@ No options are specified for this specification.
 
 [#vol1_clause_sdpi_xc_required_actor_groupings]
 === SDPi-xC Required Actor Groupings
-[%noheader]
+
+An actor from this profile (Column 1) shall implement all required transactions for the grouped actor (Column 3) in <<vol1_table_sdpi_xc_required_actor_groupings>>.
+
+[#vol1_table_sdpi_xc_required_actor_groupings]
+.SDPi-xC - Required Actor Groupings
 [%autowidth]
-[cols="1"]
+[cols="1,1,1,1"]
 |===
-a| *{supplement_note}*:  As indicated in <<vol1_figure_sdpi_xc_actor_diagram>> above, there are two grouped actors:
+.^|SDPi-xC Actor
+.^|Grouping Condition
+.^|Actor(s) to be Grouped With
+.^|TF Reference
 
-[none]
-. <<vol1_spec_sdpi_xc_actor_somds_medical_control_consumer>> with <<vol1_spec_sdpi_p_actor_somds_consumer>>
-. <<vol1_spec_sdpi_xc_actor_somds_medical_control_provider>> with <<vol1_spec_sdpi_p_actor_somds_provider>>
+| <<vol1_spec_sdpi_xc_actor_somds_medical_control_consumer>>
+| None
+| <<vol1_spec_sdpi_p_actor_somds_consumer>>
+| <<vol1_clause_sdpi_xc_somds_medical_control_consumer>>
 
-This section will be more completely detailed in a future version of the supplement.
+| <<vol1_spec_sdpi_xc_actor_somds_medical_control_provider>>
+| None
+| <<vol1_spec_sdpi_p_actor_somds_provider>>
+| <<vol1_clause_sdpi_xc_somds_medical_control_provider>>
 
 |===
 
