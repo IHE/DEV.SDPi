@@ -153,10 +153,10 @@ image::../images/vol1-diagram-sdpi-r-actor.svg[]
 | <<vol2_clause_dev_37>>
 
 5+<|
-Note 1: This actor initiates this transaction if the grouped actor from SDPi-P supports the *"export"* or *"bidirectional"* <<vol1_spec_sdpi_p_option_sdc_gateway_direction>>.
+Note 1: This actor initiates this transaction if the grouped actor from SDPi-P supports the *"export"* or *"bidirectional"* <<vol1_spec_sdpi_p_option_gateway_direction>>.
 In this case, the gateway is performing a "consumer" role.
 
-Note 2: This actor responds this transaction if the grouped actor from SDPi-P supports the *"import"* or *"bidirectional"* <<vol1_spec_sdpi_p_option_sdc_gateway_direction>>.
+Note 2: This actor responds this transaction if the grouped actor from SDPi-P supports the *"import"* or *"bidirectional"* <<vol1_spec_sdpi_p_option_gateway_direction>>.
 In this case, the gateway is performing a "provider" role.
 
 |===
@@ -226,7 +226,7 @@ This actor is designed to process information with an _intended medical purpose_
 
 Every <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> to enable <<acronym_somds>>-based connectivity.
 This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>.
-Gateway directionality (export, import, or bidirectional) is specified by the <<vol1_spec_sdpi_p_option_sdc_gateway_direction>> in the <<vol1_clause_sdpi_p_profile_reftext>>.
+Gateway directionality (export, import, or bidirectional) is specified by the <<vol1_spec_sdpi_p_option_gateway_direction>> in the <<vol1_clause_sdpi_p_profile_reftext>>.
 For the <<vol1_spec_sdpi_r_actor_somds_dec_gateway>>, the following configurations shall apply:
 
 [#vol1_table_sdpi_r_dec_gateway_direction]
@@ -242,7 +242,7 @@ For the <<vol1_spec_sdpi_r_actor_somds_dec_gateway>>, the following configuratio
 | export
 | SDC-to-DEC
 | DOR
-| Gateway retrieves information from <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> systems, converts and spublishing them as [DEV-01] / [PCD-01] Transactions to external DEC Device Observation Consumer (DOC) systems.
+| Gateway retrieves information from <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> systems, converts and publishing them as [DEV-01] / [PCD-01] Transactions to external DEC Device Observation Consumer (DOC) systems.
 
 | import
 | DEC-to-SDC

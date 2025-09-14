@@ -168,11 +168,11 @@ image::../images/vol1-diagram-sdpi-a-actor.svg[]
 Note 1: Transaction is required if <<vol1_clause_sdpi_a_actor_option_alert_delegation_reftext>> is supported.
 
 Note 2: By default, the <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> acts as a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>, initiating [DEV-04] transactions when they are received from <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>s.
-This default configuration requires the grouped <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> Actor <<vol1_spec_sdpi_p_option_sdc_gateway_direction>> (Direction="export") option is enabled.
+This default configuration requires the grouped <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> Actor <<vol1_spec_sdpi_p_option_gateway_direction>> (Direction="export") option is enabled.
 
 If the gateway supports  <<vol1_clause_sdpi_a_actor_option_remote_alert_signaling_reftext>>, then it also acts as a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> and accepts inbound [DEV-04] transactions from ACM Alert Reporters.
 In this case, the gateway will support both "Initiator & Responder" for these transactions.
-In this case, the <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> Actor  <<vol1_spec_sdpi_p_option_sdc_gateway_direction>> (Direction="bidirectional") is enabled.
+In this case, the <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> Actor  <<vol1_spec_sdpi_p_option_gateway_direction>> (Direction="bidirectional") is enabled.
 
 |===
 

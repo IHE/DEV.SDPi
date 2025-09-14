@@ -444,9 +444,9 @@ Note 3: _“Receiver”_ is included in this column, in _italics_, to indicate t
 
 Note 4: *_SDPi Version Note:_*  -- Full detailing of the transactions related to this actor will be addressed in a subsequent version of this specification.
 
-Note 5: This transaction must be supported if <<vol1_spec_sdpi_p_option_sdc_gateway_direction>> (Direction="export") is enabled.
+Note 5: This transaction must be supported if <<vol1_spec_sdpi_p_option_gateway_direction>> (Direction="export") is enabled.
 
-Note 6: This transaction must be supported if <<vol1_spec_sdpi_p_option_sdc_gateway_direction>> (Direction="import") is enabled.
+Note 6: This transaction must be supported if <<vol1_spec_sdpi_p_option_gateway_direction>> (Direction="import") is enabled.
 
 |===
 
@@ -812,20 +812,20 @@ notes.
 | <<vol1_clause_sdpi_p_option_managed_discovery>>
 
 | <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>
-| <<vol1_spec_sdpi_p_option_sdc_gateway_direction>>
-| <<vol1_clause_sdpi_p_option_sdc_gateway_direction>>
+| <<vol1_spec_sdpi_p_option_gateway_direction>>
+| <<vol1_clause_sdpi_p_option_gateway_direction>>
 
 | <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>>
-| <<vol1_spec_sdpi_p_option_sdc_gateway_direction>>
-| <<vol1_clause_sdpi_p_option_sdc_gateway_direction>>
+| <<vol1_spec_sdpi_p_option_gateway_direction>>
+| <<vol1_clause_sdpi_p_option_gateway_direction>>
 
 | <<vol1_spec_sdpi_p_actor_somds_consumer>>
-| <<vol1_spec_sdpi_p_option_sdc_real_time_waveforms>>
-| <<vol1_clause_sdpi_p_option_sdc_real_time_waveforms>>
+| <<vol1_spec_sdpi_p_option_real_time_waveforms>>
+| <<vol1_clause_sdpi_p_option_real_time_waveforms>>
 
 | <<vol1_spec_sdpi_p_actor_somds_provider>>
-| <<vol1_spec_sdpi_p_option_sdc_real_time_waveforms>>
-| <<vol1_clause_sdpi_p_option_sdc_real_time_waveforms>>
+| <<vol1_spec_sdpi_p_option_real_time_waveforms>>
+| <<vol1_clause_sdpi_p_option_real_time_waveforms>>
 
 |===
 
@@ -897,18 +897,18 @@ In these configurations, <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_sp
 
 NOTE: Provisioning of <<vol1_spec_sdpi_p_actor_somds_participant>> systems to support use of a <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor is out-of-scope for this specification.
 
-[#vol1_clause_sdpi_p_option_sdc_gateway_direction]
-==== SDC Gateway Direction Option
-[#vol1_spec_sdpi_p_option_sdc_gateway_direction, reftext='SDC Gateway Direction Option']
+[#vol1_clause_sdpi_p_option_gateway_direction]
+==== Gateway Direction Option
+[#vol1_spec_sdpi_p_option_gateway_direction, reftext='Gateway Direction Option']
 
-The SDC Gateway Direction option specifies the flow of information through the gateway actor.
+The Gateway Direction option specifies the flow of information through the gateway actor.
 If this option is not configured, then the DEFAULT direction of any gateway actors shall be "export".
 Each gateway actor, which is an instance of the abstract <<vol1_spec_sdpi_p_actor_somds_connector>> Actor, shall be grouped with either a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor, <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor, or both.
 
 The following table details the options that shall be selected:
 
-[#vol1_table_sdpi_p_sdc_discovery_direction_options]
-.SDC Gateway Discovery Direction Option Values
+[#vol1_table_sdpi_p_gateway_direction_options]
+.Gateway Direction Option Values
 [%autowidth]
 [cols="1,1,1"]
 |===
@@ -931,15 +931,15 @@ The following table details the options that shall be selected:
 |===
 
 
-[#vol1_clause_sdpi_p_option_sdc_real_time_waveforms]
-==== SDC Real Time Waveforms Option
-[#vol1_spec_sdpi_p_option_sdc_real_time_waveforms, reftext='SDC Real Time Waveforms Option']
+[#vol1_clause_sdpi_p_option_real_time_waveforms]
+==== Real Time Waveforms Option
+[#vol1_spec_sdpi_p_option_real_time_waveforms, reftext='Real Time Waveforms Option']
 
 
 The SDC Real Time Waveforms option indicates that an <<vol1_spec_sdpi_p_actor_somds_provider>> Actor or <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor support the exchange of real time waveform information.
 When this option is selected for one of these actors, the following Transactions shall be supported:
 
-[#vol1_table_sdpi_p_option_sdc_real_time_waveform_required_transactions]
+[#vol1_table_sdpi_p_option_real_time_waveform_required_transactions]
 .SDPi-P - SDC Real Time Waveform Transactions
 [%autowidth]
 [cols="^1,1,1,1,^1"]
@@ -1030,24 +1030,34 @@ An actor from this profile (Column 1) shall implement all required transactions 
 .^|TF Reference
 
 | <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>>
-| <<vol1_spec_sdpi_p_option_sdc_gateway_direction>> (Direction="export")
+| <<vol1_spec_sdpi_p_option_gateway_direction>> (Direction="export")
 | <<vol1_spec_sdpi_p_actor_somds_consumer>>
-| <<vol1_clause_sdpi_p_option_sdc_gateway_direction>>
+| <<vol1_clause_sdpi_p_option_gateway_direction>>
 
 | <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>>
-| <<vol1_spec_sdpi_p_option_sdc_gateway_direction>> (Direction="import")
+| <<vol1_spec_sdpi_p_option_gateway_direction>> (Direction="import")
 | <<vol1_spec_sdpi_p_actor_somds_provider>>
-| <<vol1_clause_sdpi_p_option_sdc_gateway_direction>>
+| <<vol1_clause_sdpi_p_option_gateway_direction>>
+
+| <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>>
+| <<vol1_spec_sdpi_p_option_gateway_direction>> (Direction="bidirectional")
+| <<vol1_spec_sdpi_p_actor_somds_provider>> + <<vol1_spec_sdpi_p_actor_somds_consumer>>
+| <<vol1_clause_sdpi_p_option_gateway_direction>>
 
 | <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>
-| <<vol1_spec_sdpi_p_option_sdc_gateway_direction>> (Direction="export")
+| <<vol1_spec_sdpi_p_option_gateway_direction>> (Direction="export")
 | <<vol1_spec_sdpi_p_actor_somds_consumer>>
-| <<vol1_clause_sdpi_p_option_sdc_gateway_direction>>
+| <<vol1_clause_sdpi_p_option_gateway_direction>>
 
 | <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>
-| <<vol1_spec_sdpi_p_option_sdc_gateway_direction>>  (Direction="import")
+| <<vol1_spec_sdpi_p_option_gateway_direction>>  (Direction="import")
 | <<vol1_spec_sdpi_p_actor_somds_provider>>
-| <<vol1_clause_sdpi_p_option_sdc_gateway_direction>>
+| <<vol1_clause_sdpi_p_option_gateway_direction>>
+
+| <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>
+| <<vol1_spec_sdpi_p_option_gateway_direction>>  (Direction="bidirectional")
+| <<vol1_spec_sdpi_p_actor_somds_provider>> + <<vol1_spec_sdpi_p_actor_somds_consumer>>
+| <<vol1_clause_sdpi_p_option_gateway_direction>>
 
 |===
 
