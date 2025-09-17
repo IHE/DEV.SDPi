@@ -135,7 +135,11 @@ No options are specified for this specification.
 [#vol1_clause_sdpi_xc_required_actor_groupings]
 === SDPi-xC Required Actor Groupings
 
-An actor from this profile (Column 1) shall implement all required transactions for the grouped actor (Column 3) in <<vol1_table_sdpi_xc_required_actor_groupings>>.
+An actor from this profile (Column 1) shall implement all of the required transactions and/or content modules in this profile *_in addition to all_* of the requirements for the grouped actor (Column 3) in <<vol1_table_sdpi_xc_required_actor_groupings>>.
+
+If this is a content profile, and actors from this profile are grouped with actors from a workflow or transport profile, the Reference column references any specifications for mapping data from the content module into data elements from the workflow or transport transactions.
+
+<<vol1_clause_sdpi_xc_ses_considerations>> describes some optional groupings that may be of interest for safety, effectiveness and security considerations and <<vol1_clause_sdpi_xc_cross_profile_considerations>> describes some optional groupings in other related profiles.
 
 [#vol1_table_sdpi_xc_required_actor_groupings]
 .SDPi-xC - Required Actor Groupings
@@ -148,12 +152,12 @@ An actor from this profile (Column 1) shall implement all required transactions 
 .^|TF Reference
 
 | <<vol1_spec_sdpi_xc_actor_somds_medical_control_consumer>>
-| None
+| --
 | <<vol1_spec_sdpi_p_actor_somds_consumer>>
 | <<vol1_clause_sdpi_xc_somds_medical_control_consumer>>
 
 | <<vol1_spec_sdpi_xc_actor_somds_medical_control_provider>>
-| None
+| --
 | <<vol1_spec_sdpi_p_actor_somds_provider>>
 | <<vol1_clause_sdpi_xc_somds_medical_control_provider>>
 
