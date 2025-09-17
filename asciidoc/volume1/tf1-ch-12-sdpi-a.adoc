@@ -255,7 +255,7 @@ Given this _intended medical purpose_, the actor will fully address applicable r
 
 This actor shall implement the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> capabilities, receiving alert information provided by <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> systems and publishing them as [DEV-04] / [PCD-04] Transactions to external ACM Alert Manager (AM) systems.
 If <<vol1_clause_sdpi_a_actor_option_remote_alert_signaling_reftext>> is implemented, then this actor will also support the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> capabilities, receiving [DEV-04] / [PCD-04] Transactions from external ACM Device Observation Reporter (DOR) systems and making them available to other <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> systems.
-Note:  Not supported are <<vol1_spec_sdpi_a_actor_somds_dec_gateway>> systems that only implement the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> and not <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> capabilities.
+Note:  Not supported are <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> systems that only implement the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> and not <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> capabilities.
 
 Detailed specifications for mapping from <<acronym_somds>>/<<acronym_biceps>>  to <<acronym_hl7>> V2 / ACM [DEV-04]/[PCD-04] transactions are provided in <<vol2_clause_appendix_sdpi_acm_gateway>>.
 
