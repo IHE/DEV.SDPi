@@ -25,6 +25,9 @@ Each section shall contain a list of action items of the following format: `<bri
 - Changed all references to IHE PCD TF 2019 to the newer 2024 version. Updated sections in document which were affected by the TF version change ([#340](https://github.com/IHE/DEV.SDPi/issues/340))
 - Added section "Numeric Metric Display Precision" to volume 3 ([#392](https://github.com/IHE/DEV.SDPi/issues/392))
 - Removed transaction DEV-34 (Announce Network Departure) and updated references to future SDPi versions for maintainability ([#406](https://github.com/IHE/DEV.SDPi/issues/406))
+- Added SDPi-P SDC Gateway Direction profile option ([#396](https://github.com/IHE/DEV.SDPi/issues/396))
+- Profile Required Actor Groupings - Update with Table ([#387](https://github.com/IHE/DEV.SDPi/issues/387))
+- Add FHIR Gateway to the SDPi-R Actors table ([#388](https://github.com/IHE/DEV.SDPi/issues/388))
 - Corrected erroneous actor names in transactions DEV-35 through DEV-40 ([#461](https://github.com/IHE/DEV.SDPi/issues/461))
 - Corrected erroneous actor name in Table 1:12.1-1 note ([#464](https://github.com/IHE/DEV.SDPi/issues/464))
 
