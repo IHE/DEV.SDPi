@@ -209,6 +209,7 @@ No additional security requirements and considerations are identified for this t
 
 Note that capability '_external or "remote" control of one device by another_' enabled by this SDPi-xC Profile refers to "external" to the device that is controlled, while both devices are in the same secure environment (<<term_medical_device_lan>>).
 
+[#vol1_clause_sdpi_xc_cross_profile_considerations]
 === SDPi-xC Cross Profile Considerations
 No additional cross profile considerations have been identified.
 

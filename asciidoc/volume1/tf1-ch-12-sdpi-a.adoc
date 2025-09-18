@@ -463,7 +463,7 @@ No additional effectiveness requirements or considerations are identified for th
 ==== Security Requirements & Considerations
 No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P Profile (see <<vol1_clause_appendix_a_ses_considerations_section_template>>), and those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
-// 12.6
+[#vol1_clause_sdpi_a_cross_profile_considerations]
 === SDPi-A Cross Profile Considerations
 No additional cross profile considerations have been identified.
 
