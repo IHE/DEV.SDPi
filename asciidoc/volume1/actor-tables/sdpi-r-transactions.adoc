@@ -41,14 +41,24 @@
 | O
 | <<vol2_clause_dev_37>>
 
-.3+| <<vol1_spec_sdpi_r_actor_somds_dec_gateway>>
+.6+| <<vol1_spec_sdpi_r_actor_somds_dec_gateway>>
 .^| <<transaction_name_establish_medical_data_exchange>>
 .^| Initiator ^(See^ ^Note^ ^1)^
 .^| R
 | <<vol2_clause_dev_35>>
 
+| <<transaction_name_establish_medical_data_exchange>>
+| Responder ^(See^ ^Note^ ^2)^
+| R
+| <<vol2_clause_dev_35>>
+
 | <<transaction_name_publish_medical_data>>
-| Responder ^(See^ ^Note^ ^1)^
+| Initiator ^(See^ ^Note^ ^1)^
+| R
+| <<vol2_clause_dev_36>>
+
+| <<transaction_name_publish_medical_data>>
+| Responder ^(See^ ^Note^ ^2)^
 | R
 | <<vol2_clause_dev_36>>
 
@@ -57,7 +67,47 @@
 | O
 | <<vol2_clause_dev_37>>
 
+| <<transaction_name_retrieve_medical_data>>
+| Responder ^(See^ ^Note^ ^2)^
+| R
+| <<vol2_clause_dev_37>>
+
+.6+| <<vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway>>
+.^| <<transaction_name_establish_medical_data_exchange>>
+.^| Initiator ^(See^ ^Note^ ^1)^
+.^| R
+| <<vol2_clause_dev_35>>
+
+| <<transaction_name_establish_medical_data_exchange>>
+| Responder ^(See^ ^Note^ ^2)^
+| R
+| <<vol2_clause_dev_35>>
+
+| <<transaction_name_publish_medical_data>>
+| Initiator ^(See^ ^Note^ ^1)^
+| R
+| <<vol2_clause_dev_36>>
+
+| <<transaction_name_publish_medical_data>>
+| Responder ^(See^ ^Note^ ^2)^
+| R
+| <<vol2_clause_dev_36>>
+
+| <<transaction_name_retrieve_medical_data>>
+| Initiator ^(See^ ^Note^ ^1)^
+| O
+| <<vol2_clause_dev_37>>
+
+| <<transaction_name_retrieve_medical_data>>
+| Responder ^(See^ ^Note^ ^2)^
+| R
+| <<vol2_clause_dev_37>>
+
 5+<|
-Note 1: If the <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> implements the <<vol1_clause_sdpi_r_actor_option_retrieve_remote_data_reftext>>, then bidirectional exchange is supported and the roles are expanded to "Initiator & Responder."
+Note 1: This actor initiates this transaction if the grouped actor from SDPi-P supports the *"export"* or *"bidirectional"* <<vol1_spec_sdpi_p_option_gateway_direction>>.
+In this case, the gateway is performing a "consumer" role.
+
+Note 2: This actor responds this transaction if the grouped actor from SDPi-P supports the *"import"* or *"bidirectional"* <<vol1_spec_sdpi_p_option_gateway_direction>>.
+In this case, the gateway is performing a "provider" role.
 
 |===

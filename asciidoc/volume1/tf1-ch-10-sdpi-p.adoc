@@ -386,7 +386,6 @@ TODO
 Future versions *_MAY_* include options such as
 
 * Retrieve Remote Data
-* Streaming / Waveforms
 * Safe Data Transmission
 * Compact Representation
 * Patient Context Management
@@ -411,23 +410,37 @@ notes.
 .^|Option Name
 .^|Vol. & Section
 
-| <<vol1_spec_sdpi_p_actor_somds_consumer>>
-| <<vol1_spec_sdpi_p_option_discovery_proxy>>
-| <<vol1_clause_sdpi_p_option_discovery_proxy>>
+.2+| <<vol1_spec_sdpi_p_actor_somds_consumer>>
+| <<vol1_spec_sdpi_p_option_managed_discovery>>
+| <<vol1_clause_sdpi_p_option_managed_discovery>>
+
+| <<vol1_spec_sdpi_p_option_real_time_waveforms>>
+| <<vol1_clause_sdpi_p_option_real_time_waveforms>>
+
+.2+| <<vol1_spec_sdpi_p_actor_somds_provider>>
+| <<vol1_spec_sdpi_p_option_managed_discovery>>
+| <<vol1_clause_sdpi_p_option_managed_discovery>>
+
+| <<vol1_spec_sdpi_p_option_real_time_waveforms>>
+| <<vol1_clause_sdpi_p_option_real_time_waveforms>>
 
 | <<vol1_spec_sdpi_p_actor_discovery_proxy>>
-| <<vol1_spec_sdpi_p_option_discovery_proxy>>
-| <<vol1_clause_sdpi_p_option_discovery_proxy>>
+| <<vol1_spec_sdpi_p_option_managed_discovery>>
+| <<vol1_clause_sdpi_p_option_managed_discovery>>
 
-| <<vol1_spec_sdpi_p_actor_somds_provider>>
-| <<vol1_spec_sdpi_p_option_discovery_proxy>>
-| <<vol1_clause_sdpi_p_option_discovery_proxy>>
+| <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>
+| <<vol1_spec_sdpi_p_option_gateway_direction>>
+| <<vol1_clause_sdpi_p_option_gateway_direction>>
+
+| <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>>
+| <<vol1_spec_sdpi_p_option_gateway_direction>>
+| <<vol1_clause_sdpi_p_option_gateway_direction>>
 
 |===
 
-[#vol1_clause_sdpi_p_option_discovery_proxy,role=profile-option,profile-option-id="sdpi-p-managed-discovery"]
+[#vol1_clause_sdpi_p_option_managed_discovery,role=profile-option,profile-option-id="sdpi-p-managed-discovery"]
 ==== Managed Discovery Option
-[#vol1_spec_sdpi_p_option_discovery_proxy, reftext='Managed Discovery Option']
+[#vol1_spec_sdpi_p_option_managed_discovery, reftext='Managed Discovery Option']
 
 The Discovery Proxy profile option provides an alternative means for <<vol1_spec_sdpi_p_actor_somds_consumer>> Actors to discover the <<vol1_spec_sdpi_p_actor_somds_provider>> Actors that are present on the network.  The default "ad hoc" approach using the <<vol2_clause_dev_23>> and <<vol2_clause_dev_24>> transactions, requires use of unsecured multicast messaging; however, some deployments do not support or allow this mode of discovery.
 The addition of a <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor enables a secure and non-multicast means for managing system discovery across the network.
@@ -464,7 +477,6 @@ When the RefProfile:sdpi-p[profile-option-id="sdpi-p-managed-discovery"] is enab
 * <<ref_oasis_ws_discovery_2009>>, §2.2.2, Managed mode.
 ====
 
-
 ****
 
 .R1022
@@ -473,8 +485,9 @@ When the RefProfile:sdpi-p[profile-option-id="sdpi-p-managed-discovery"] is enab
 
 [NORMATIVE]
 ====
-If a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor is configured or provisioned for the <<vol1_spec_sdpi_p_option_discovery_proxy>>, but the proxy system is not available, then the <<vol1_spec_sdpi_p_actor_somds_provider>> shall revert back to "ad hoc" discovery mode.
+If a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor is configured or provisioned for the <<vol1_spec_sdpi_p_option_managed_discovery>>, but the proxy system is not available, then the <<vol1_spec_sdpi_p_actor_somds_provider>> shall revert back to "ad hoc" discovery mode.
 ====
+
 ****
 
 .R1023
@@ -500,7 +513,7 @@ When the RefProfile:sdpi-p[profile-option-id="sdpi-p-managed-discovery"] is enab
 
 [NORMATIVE]
 ====
-If a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor is configured or provisioned for the <<vol1_spec_sdpi_p_option_discovery_proxy>>, but the proxy system is not available, then the <<vol1_spec_sdpi_p_actor_somds_consumer>> shall revert back to "ad hoc" discovery mode.
+If a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor is configured or provisioned for the <<vol1_spec_sdpi_p_option_managed_discovery>>, but the proxy system is not available, then the <<vol1_spec_sdpi_p_actor_somds_consumer>> shall revert back to "ad hoc" discovery mode.
 ====
 ****
 
@@ -525,6 +538,89 @@ Though it is not recommended, deployments may allow simultaneous use of both the
 In these configurations, <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_spec_sdpi_p_actor_somds_provider>> systems should prioritize use of the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor.
 
 NOTE: Provisioning of <<vol1_spec_sdpi_p_actor_somds_participant>> systems to support use of a <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor is out-of-scope for this specification.
+
+[#vol1_clause_sdpi_p_option_gateway_direction]
+==== Gateway Direction Option
+[#vol1_spec_sdpi_p_option_gateway_direction, reftext='Gateway Direction Option']
+
+The Gateway Direction option specifies the flow of information through the gateway actor.
+If this option is not configured, then the DEFAULT direction of any gateway actors shall be "export".
+Each gateway actor, which is an instance of the abstract <<vol1_spec_sdpi_p_actor_somds_connector>> Actor, shall be grouped with either a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor, <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor, or both.
+
+The following table details the options that shall be selected:
+
+[#vol1_table_sdpi_p_gateway_direction_options]
+.Gateway Direction Option Values
+[%autowidth]
+[cols="1,1,1"]
+|===
+.^|Direction
+.^|Actor Grouping
+.^|Capability
+
+| export
+| <<vol1_spec_sdpi_p_actor_somds_consumer>>
+| Gateway retrieves information from SOMDS Provider systems, converts and sends it to other systems.
+
+| import
+| <<vol1_spec_sdpi_p_actor_somds_provider>>
+| Gateway retrieves information from external systems, and provides the content to SOMDS Consumer systems.
+
+| bidirectional
+| <<vol1_spec_sdpi_p_actor_somds_consumer>> + <<vol1_spec_sdpi_p_actor_somds_provider>>
+| Gateway supports both export and import functions to external systems.
+
+|===
+
+
+[#vol1_clause_sdpi_p_option_real_time_waveforms]
+==== Real Time Waveforms Option
+[#vol1_spec_sdpi_p_option_real_time_waveforms, reftext='Real Time Waveforms Option']
+
+
+The SDC Real Time Waveforms option indicates that an <<vol1_spec_sdpi_p_actor_somds_provider>> Actor or <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor support the exchange of real time waveform information.
+When this option is selected for one of these actors, the following Transactions shall be supported:
+
+[#vol1_table_sdpi_p_option_real_time_waveform_required_transactions]
+.SDPi-P - SDC Real Time Waveform Transactions
+[%autowidth]
+[cols="^1,1,1,1,^1"]
+|===
+.^|Transaction
+.^|Name
+.^|Optionality
+.^|Capability
+.^|TF Ref
+
+| DEV-25
+| <<transaction_name_discover_biceps_services>>
+| R
+| Indicates if the WAVEFORM SERVICE is available.
+| <<vol2_clause_dev_25>>
+
+| DEV-27
+| <<transaction_name_manage_biceps_subscription>>
+| R
+| Subscription to waveform stream(s)
+| <<vol2_clause_dev_27>>
+
+| DEV-28
+| <<transaction_name_notify_change_in_system_context_and_capabilities>>
+| R
+| Indicates if there are changes in waveform-related stream information
+| <<vol2_clause_dev_28>>
+
+| DEV-29
+| <<transaction_name_publish_biceps_update_reports>>
+| R
+| Provides waveform stream content updates
+| <<vol2_clause_dev_29>>
+
+5+<|
+Note 1:  For optionality of the above transactions for the provider and consumer actors, see <<vol1_table_sdpi_p_actors_transactions>>.
+
+|===
+
 
 ////
 #TODO:  Add description and detail specification in a subsequent SDPi Version#
@@ -563,17 +659,50 @@ NOTE: Provisioning of <<vol1_spec_sdpi_p_actor_somds_participant>> systems to su
 [#vol1_clause_sdpi_p_required_actor_groupings]
 === SDPi-P Required Actor Groupings
 
-[%noheader]
+An actor from this profile (Column 1) shall implement all of the required transactions and/or content modules in this profile *_in addition to all_* of the requirements for the grouped actor (Column 3) in <<vol1_table_sdpi_p_required_actor_groupings>>.
+
+If this is a content profile, and actors from this profile are grouped with actors from a workflow or transport profile, the Reference column references any specifications for mapping data from the content module into data elements from the workflow or transport transactions.
+
+<<vol1_clause_sdpi_p_ses_considerations>> describes some optional groupings that may be of interest for safety, effectiveness and security considerations and <<vol1_clause_sdpi_p_cross_profile_considerations>> describes some optional groupings in other related profiles.
+
+[#vol1_table_sdpi_p_required_actor_groupings]
+.SDPi-P - Required Actor Groupings
 [%autowidth]
-[cols="1"]
+[cols="1,1,1,1"]
+|===
+.^|SDPi-P Actor
+.^|Grouping Condition
+.^|Actor(s) to be Grouped With
+.^|TF Reference
+
+.3+| <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>>
+| <<vol1_spec_sdpi_p_option_gateway_direction>> (Direction="export")
+| <<vol1_spec_sdpi_p_actor_somds_consumer>>
+| <<vol1_clause_sdpi_p_option_gateway_direction>>
+
+| <<vol1_spec_sdpi_p_option_gateway_direction>> (Direction="import")
+| <<vol1_spec_sdpi_p_actor_somds_provider>>
+| <<vol1_clause_sdpi_p_option_gateway_direction>>
+
+| <<vol1_spec_sdpi_p_option_gateway_direction>> (Direction="bidirectional")
+| <<vol1_spec_sdpi_p_actor_somds_provider>> + <<vol1_spec_sdpi_p_actor_somds_consumer>>
+| <<vol1_clause_sdpi_p_option_gateway_direction>>
+
+.3+| <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>
+| <<vol1_spec_sdpi_p_option_gateway_direction>> (Direction="export")
+| <<vol1_spec_sdpi_p_actor_somds_consumer>>
+| <<vol1_clause_sdpi_p_option_gateway_direction>>
+
+| <<vol1_spec_sdpi_p_option_gateway_direction>>  (Direction="import")
+| <<vol1_spec_sdpi_p_actor_somds_provider>>
+| <<vol1_clause_sdpi_p_option_gateway_direction>>
+
+| <<vol1_spec_sdpi_p_option_gateway_direction>>  (Direction="bidirectional")
+| <<vol1_spec_sdpi_p_actor_somds_provider>> + <<vol1_spec_sdpi_p_actor_somds_consumer>>
+| <<vol1_clause_sdpi_p_option_gateway_direction>>
+
 |===
 
-a| *{supplement_note}*:  As indicated in <<vol1_figure_sdpi_p_actor_diagram>> above, there are no explicit grouped actors in this specification; however, there are abstract actors (<<vol1_spec_sdpi_p_actor_somds_participant>> and <<vol1_spec_sdpi_p_actor_somds_connector>>), and the <<vol1_spec_sdpi_p_actor_somds_connector>> may implement interfaces to <<vol1_spec_sdpi_p_actor_somds_provider>> or <<vol1_spec_sdpi_p_actor_somds_consumer>> to provide bidirectional exchanges with non-<<acronym_somds>> systems.
-
-These actor relationships do not represent typical IHE grouped actors, but should be represented in more explicit detail.
-The best approach for achieving that clarity and specificity will be addressed in a future version after further review and discussion by the supplement development team.
-
-|===
 
 ////
 #TODO:  ADD CT SOMDS_PARTICIPANT GROUPING + ATNA(?) ADD CONTENT FROM WORD DOCUMENT HERE; DO WE NEED TO ALSO CONSIDER GENERAL V2 AND DEV TF-2 APPENDIX A?#

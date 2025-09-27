@@ -160,6 +160,7 @@
 | O   ^(See^ ^Note^ ^2)^
 | <<vol2_clause_dev_47>>
 
+// DISCOVERY PROXY ACTOR
 
 .2+| <<vol1_spec_sdpi_p_actor_discovery_proxy>>
 .^| <<transaction_name_update_network_presence>>
@@ -176,25 +177,198 @@
 // FOR THE NEXT ROW:
 //     #TODO: TBD HOW TO REPLICATE TRANSACTIONS; ACTOR SUPPORTS ALL PROVIDER & CONSUMER TRANSACTIONS WITH SAME OPTIONALITY#
 | <<vol1_spec_sdpi_p_actor_somds_connector>>
-| See Note 4
+| NOTE:  This abstract actor does not define any specific transactions.
 | ...
 | ...
 | ...
 
-| <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>> (_deferred_)
-| ...
-| ...
-| ...
-| ...
+// SOMDS FHIR GATEWAY Actor
+.18+| <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>>
+.^| <<transaction_name_announce_network_presence>>
+.^| Initiator
+.^| R  ^(See^ ^Note^ ^5)^
+| <<vol2_clause_dev_23>>
 
-// FOR THE NEXT ROW:
-//     #TODO: TBD HOW TO REPLICATE TRANSACTIONS#
-| <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>
-| See Note 4
-| ...
-| ...
-| ...
+| <<transaction_name_announce_network_presence>>
+| _Receiver_  ^(See^ ^Note^ ^3)^
+| O ^(See^ ^Note^ ^4)^
+| <<vol2_clause_dev_23>>
 
+| <<transaction_name_discover_network_topology>>
+| Responder
+| R ^(See^ ^Note^ ^5)^
+| <<vol2_clause_dev_24>>
+
+| <<transaction_name_discover_network_topology>>
+| Initiator
+| R ^(See^ ^Note^ ^4)^
+| <<vol2_clause_dev_24>>
+
+| <<transaction_name_discover_biceps_services>>
+| Responder
+| R ^(See^ ^Note^ ^5)^
+| <<vol2_clause_dev_25>>
+
+| <<transaction_name_discover_biceps_services>>
+| Initiator
+| R ^(See^ ^Note^ ^4)^
+| <<vol2_clause_dev_25>>
+
+| <<transaction_name_manage_biceps_subscription>>
+| Responder
+| R ^(See^ ^Note^ ^5)^
+| <<vol2_clause_dev_27>>
+
+| <<transaction_name_manage_biceps_subscription>>
+| Initiator
+| R ^(See^ ^Note^ ^4)^
+| <<vol2_clause_dev_27>>
+
+| <<transaction_name_notify_change_in_system_context_and_capabilities>>
+| _Receiver_  ^(See^ ^Note^ ^3)^
+| O ^(See^ ^Note^ ^4)^
+| <<vol2_clause_dev_28>>
+
+| <<transaction_name_notify_change_in_system_context_and_capabilities>>
+| Initiator
+| O ^(See^ ^Note^ ^1^ ^and^ ^5)^
+| <<vol2_clause_dev_28>>
+
+| <<transaction_name_publish_biceps_update_reports>>
+| Initiator
+| R ^(See^ ^Note^ ^5)^
+| <<vol2_clause_dev_29>>
+
+| <<transaction_name_publish_biceps_update_reports>>
+| _Receiver_  ^(See^ ^Note^ ^3)^
+| R ^(See^ ^Note^ ^4)^
+| <<vol2_clause_dev_29>>
+
+| <<transaction_name_retrieve_biceps_content>>
+| Responder
+| O ^(See^ ^Note^ ^5)^
+| <<vol2_clause_dev_30>>
+
+| <<transaction_name_retrieve_biceps_content>>
+| Initiator
+| O ^(See^ ^Note^ ^4)^
+| <<vol2_clause_dev_30>>
+
+| <<transaction_name_retrieve_localization_information>>
+| Responder
+| O ^(See^ ^Note^ ^5)^
+| <<vol2_clause_dev_33>>
+
+| <<transaction_name_retrieve_localization_information>>
+| Initiator
+| O ^(See^ ^Note^ ^4)^
+| <<vol2_clause_dev_33>>
+
+.^| <<transaction_name_update_network_presence>>
+.^| Initiator
+.^| O   ^(See^ ^Note^ ^2^ ^and^ ^5)^
+| <<vol2_clause_dev_46>>
+
+| <<transaction_name_retrieve_network_presence>>
+| Initiator
+| O   ^(See^ ^Note^ ^2^ ^and^ ^4)^
+| <<vol2_clause_dev_47>>
+
+
+// SOMDS V2 GATEWAY Actor
+.18+| <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>
+.^| <<transaction_name_announce_network_presence>>
+.^| Initiator
+.^| R  ^(See^ ^Note^ ^5)^
+| <<vol2_clause_dev_23>>
+
+| <<transaction_name_announce_network_presence>>
+| _Receiver_  ^(See^ ^Note^ ^3)^
+| O ^(See^ ^Note^ ^4)^
+| <<vol2_clause_dev_23>>
+
+| <<transaction_name_discover_network_topology>>
+| Responder
+| R ^(See^ ^Note^ ^5)^
+| <<vol2_clause_dev_24>>
+
+| <<transaction_name_discover_network_topology>>
+| Initiator
+| R ^(See^ ^Note^ ^4)^
+| <<vol2_clause_dev_24>>
+
+| <<transaction_name_discover_biceps_services>>
+| Responder
+| R ^(See^ ^Note^ ^5)^
+| <<vol2_clause_dev_25>>
+
+| <<transaction_name_discover_biceps_services>>
+| Initiator
+| R ^(See^ ^Note^ ^4)^
+| <<vol2_clause_dev_25>>
+
+| <<transaction_name_manage_biceps_subscription>>
+| Responder
+| R ^(See^ ^Note^ ^5)^
+| <<vol2_clause_dev_27>>
+
+| <<transaction_name_manage_biceps_subscription>>
+| Initiator
+| R ^(See^ ^Note^ ^4)^
+| <<vol2_clause_dev_27>>
+
+| <<transaction_name_notify_change_in_system_context_and_capabilities>>
+| Initiator
+| O ^(See^ ^Note^ ^1^ ^and^ ^5)^
+| <<vol2_clause_dev_28>>
+
+| <<transaction_name_notify_change_in_system_context_and_capabilities>>
+| _Receiver_  ^(See^ ^Note^ ^3)^
+| O ^(See^ ^Note^ ^4)^
+| <<vol2_clause_dev_28>>
+
+| <<transaction_name_publish_biceps_update_reports>>
+| Initiator
+| R ^(See^ ^Note^ ^5)^
+| <<vol2_clause_dev_29>>
+
+| <<transaction_name_publish_biceps_update_reports>>
+| _Receiver_  ^(See^ ^Note^ ^3)^
+| R ^(See^ ^Note^ ^4)^
+| <<vol2_clause_dev_29>>
+
+| <<transaction_name_retrieve_biceps_content>>
+| Responder
+| O ^(See^ ^Note^ ^5)^
+| <<vol2_clause_dev_30>>
+
+| <<transaction_name_retrieve_biceps_content>>
+| Initiator
+| O ^(See^ ^Note^ ^4)^
+| <<vol2_clause_dev_30>>
+
+| <<transaction_name_retrieve_localization_information>>
+| Responder
+| O ^(See^ ^Note^ ^5)^
+| <<vol2_clause_dev_33>>
+
+| <<transaction_name_retrieve_localization_information>>
+| Initiator
+| O ^(See^ ^Note^ ^4)^
+| <<vol2_clause_dev_33>>
+
+.^| <<transaction_name_update_network_presence>>
+.^| Initiator
+.^| O   ^(See^ ^Note^ ^2^ ^and^ ^5)^
+| <<vol2_clause_dev_46>>
+
+| <<transaction_name_retrieve_network_presence>>
+| Initiator
+| O   ^(See^ ^Note^ ^2^ ^and^ ^4)^
+| <<vol2_clause_dev_47>>
+
+
+// SOMDS Sensor Gateway Actor
 | <<vol1_spec_sdpi_p_actor_somds_sensor_gateway>> (_deferred_)
 | ...
 | ...
@@ -210,10 +384,12 @@
 5+<|
 Note 1: _“Notify Change in System Context and Capabilities”_ is required if there are dynamic changes that may need to be sent to subscribing systems
 
-Note 2: Optional transaction is required if the SDPi-P <<vol1_spec_sdpi_p_option_discovery_proxy>> is enabled.  Some deployments may support a mix of systems that use the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor as well as the default "ad hoc" discovery mode.  Additional details and requirements are provided in the <<vol1_clause_sdpi_p_option_discovery_proxy>> discussion.
+Note 2: Optional transaction is required if the SDPi-P <<vol1_spec_sdpi_p_option_managed_discovery>> is enabled.  Some deployments may support a mix of systems that use the <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor as well as the default "ad hoc" discovery mode.  Additional details and requirements are provided in the <<vol1_clause_sdpi_p_option_managed_discovery>> discussion.
 
 Note 3: _“Receiver”_ is included in this column, in _italics_, to indicate that though a <<vol1_spec_sdpi_p_actor_somds_consumer>> may "receive" the transaction, there is no response communicated to the message initiator.
 
-Note 4: *_SDPi Version Note:_*  -- Full detailing of the transactions related to this actor will be addressed in a subsequent version of this specification.
+Note 4: This transaction must be supported if <<vol1_spec_sdpi_p_option_gateway_direction>> (Direction="export") is enabled.
+
+Note 5: This transaction must be supported if <<vol1_spec_sdpi_p_option_gateway_direction>> (Direction="import") is enabled.
 
 |===
