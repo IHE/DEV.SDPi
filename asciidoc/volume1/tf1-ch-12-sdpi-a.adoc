@@ -31,7 +31,7 @@ Additional services have been provided to specifically support the exchange and 
 The profile builds upon the foundational <<term_plug_and_trust>> capabilities provided by the <<vol1_clause_sdpi_p_profile_reftext>>.
 These extended capabilities for medical data exchange are achieved by various means, including:
 
-. Grouping <<acronym_sdpi_r>> actors with their <<acronym_sdpi_p>> counterparts
+. Grouping <<acronym_sdpi_a>> actors with their <<acronym_sdpi_p>> counterparts
 . Addressing requirements from the emerging <<acronym_pkp>> ISO/IEEE standards:  <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>>
 . Requiring capabilities that in the <<vol1_clause_sdpi_p_profile_reftext>> may be optional
 . Requiring additional <<acronym_biceps>> data elements or content modules
@@ -167,9 +167,12 @@ image::../images/vol1-diagram-sdpi-a-actor.svg[]
 5+<|
 Note 1: Transaction is required if <<vol1_clause_sdpi_a_actor_option_alert_delegation_reftext>> is supported.
 
-Note 2: By default, the <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> acts as a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>, initiating [DEV-04] transactions when they are received from <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>s.
-If the gateway supports  <<vol1_clause_sdpi_a_actor_option_remote_alert_signaling_reftext>>, then it also acts as a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> and accepts inbound [DEV-04] transactions from ACM Alert Reporters.
+Note 2: By default, the <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> acts as a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>, initiating [DEV-04] transactions when they are received from <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>s.
+This default configuration requires the grouped <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> Actor to have the <<vol1_spec_sdpi_p_option_gateway_direction>> (Direction="export") option enabled.
+
+If the gateway supports  <<vol1_clause_sdpi_a_actor_option_remote_alert_signaling_reftext>>, then it also acts as a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> and accepts inbound [DEV-04] transactions from ACM Alert Reporters.
 In this case, the gateway will support both "Initiator & Responder" for these transactions.
+In this case, the <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> Actor  <<vol1_spec_sdpi_p_option_gateway_direction>> (Direction="bidirectional") is enabled.
 
 |===
 
@@ -244,15 +247,15 @@ This is designed to exchange medical device alert information to external non-<<
 
 Every <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> to enable <<acronym_somds>>-based connectivity.
 This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>.
-Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_r_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> and <<vol1_clause_sdpi_p_profile_reftext>>.
+Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_a_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> and <<vol1_clause_sdpi_p_profile_reftext>>.
 
 Transactions enabled for this actor are identified in <<vol1_table_sdpi_a_actors_transactions>> above.
 
 Given this _intended medical purpose_, the actor will fully address applicable requirements from the core <<acronym_sdc>> standards (<<ref_ieee_11073_10207_2017>> and <<ref_ieee_11073_20701_2018>>), as well as the <<acronym_pkp>> standards <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10702_202x>> (Alert <<acronym_pkp>>).
 
 This actor shall implement the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> capabilities, receiving alert information provided by <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> systems and publishing them as [DEV-04] / [PCD-04] Transactions to external ACM Alert Manager (AM) systems.
-If <<vol1_clause_sdpi_a_actor_option_remote_alert_signaling_reftext>> is implemented, then this actor will also support the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> capabilities, receiving [DEV-04] / [PCD-04] Transactions from external ACM Device Observation Reporter (DOR) systems and making them available to other <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> systems.
-Note:  Not supported are <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> systems that only implement the <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> and not <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> capabilities.
+If <<vol1_clause_sdpi_a_actor_option_remote_alert_signaling_reftext>> is implemented, then this actor will also support the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> capabilities, receiving [DEV-04] / [PCD-04] Transactions from external ACM Device Observation Reporter (DOR) systems and making them available to other <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> systems.
+Note:  Not supported are <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> systems that only implement the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> and not <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> capabilities.
 
 Detailed specifications for mapping from <<acronym_somds>>/<<acronym_biceps>>  to <<acronym_hl7>> V2 / ACM [DEV-04]/[PCD-04] transactions are provided in <<vol2_clause_appendix_sdpi_acm_gateway>>.
 
@@ -332,20 +335,40 @@ This option will enable the <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> to resp
 [#vol1_clause_sdpi_a_required_actor_groupings]
 === SDPi-A Required Actor Groupings
 
-[%noheader]
+An actor from this profile (Column 1) shall implement all of the required transactions and/or content modules in this profile *_in addition to all_* of the requirements for the grouped actor (Column 3) in <<vol1_table_sdpi_a_required_actor_groupings>>.
+
+If this is a content profile, and actors from this profile are grouped with actors from a workflow or transport profile, the Reference column references any specifications for mapping data from the content module into data elements from the workflow or transport transactions.
+
+<<vol1_clause_sdpi_a_ses_considerations>> describes some optional groupings that may be of interest for safety, effectiveness and security considerations and <<vol1_clause_sdpi_a_cross_profile_considerations>> describes some optional groupings in other related profiles.
+
+[#vol1_table_sdpi_a_required_actor_groupings]
+.SDPi-A - Required Actor Groupings
 [%autowidth]
-[cols="1"]
+[cols="1,1,1,1"]
 |===
-a| *{supplement_note}*:  As indicated in <<vol1_figure_sdpi_r_actor_diagram>> above, there are four grouped actors:
+.^|SDPi-A Actor
+.^|Grouping Condition
+.^|Actor(s) to be Grouped With
+.^|TF Reference
 
-[none]
-. <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> with <<vol1_spec_sdpi_p_actor_somds_consumer>>
-. <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> with <<vol1_spec_sdpi_p_actor_somds_provider>>
-. <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> with <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>
+| <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>
+| --
+| <<vol1_spec_sdpi_p_actor_somds_consumer>>
+| <<vol1_clause_sdpi_a_somds_medical_alert_consumer>>
 
-This section will be more completely detailed in a future version of the supplement.
+| <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>
+| --
+| <<vol1_spec_sdpi_p_actor_somds_provider>>
+| <<vol1_clause_sdpi_a_somds_medical_alert_provider>>
+
+| <<vol1_spec_sdpi_a_actor_somds_acm_gateway>>
+| --
+| <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>
+| <<vol1_clause_sdpi_a_somds_acm_gateway>>
+
 
 |===
+
 
 // 12.4
 === SDPi-A Overview
@@ -440,7 +463,7 @@ No additional effectiveness requirements or considerations are identified for th
 ==== Security Requirements & Considerations
 No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P Profile (see <<vol1_clause_appendix_a_ses_considerations_section_template>>), and those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
-// 12.6
+[#vol1_clause_sdpi_a_cross_profile_considerations]
 === SDPi-A Cross Profile Considerations
 No additional cross profile considerations have been identified.
 

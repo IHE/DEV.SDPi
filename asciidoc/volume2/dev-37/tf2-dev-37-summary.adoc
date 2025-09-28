@@ -1,4 +1,4 @@
 // DEV-37 Transaction Summary
 
-Retrieve medical data from a <<vol1_spec_sdpi_p_actor_somds_provider>>.
+Retrieve medical data from a <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>>.
 
