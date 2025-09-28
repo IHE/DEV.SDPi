@@ -58,7 +58,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "If a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor is configured or provisioned for the <<vol1_spec_sdpi_p_option_discovery_proxy>>, but the proxy system is not available, then the <<vol1_spec_sdpi_p_actor_somds_provider>> shall revert back to \"ad hoc\" discovery mode."
+                        "If a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor is configured or provisioned for the <<vol1_spec_sdpi_p_option_managed_discovery>>, but the proxy system is not available, then the <<vol1_spec_sdpi_p_actor_somds_provider>> shall revert back to \"ad hoc\" discovery mode."
                     ]
                 }
             ],
@@ -132,7 +132,7 @@
                 {
                     "type": "block",
                     "lines": [
-                        "If a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor is configured or provisioned for the <<vol1_spec_sdpi_p_option_discovery_proxy>>, but the proxy system is not available, then the <<vol1_spec_sdpi_p_actor_somds_consumer>> shall revert back to \"ad hoc\" discovery mode."
+                        "If a <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor is configured or provisioned for the <<vol1_spec_sdpi_p_option_managed_discovery>>, but the proxy system is not available, then the <<vol1_spec_sdpi_p_actor_somds_consumer>> shall revert back to \"ad hoc\" discovery mode."
                     ]
                 }
             ],

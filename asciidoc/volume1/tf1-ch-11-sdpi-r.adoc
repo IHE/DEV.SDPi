@@ -199,12 +199,12 @@ No options are defined for this profile.
 // sdpi_include_transaction::DEV-37[actor-id="somds_dec_gateway",responder="required"]
 
 // [#vol1_clause_sdpi_r_actor_option_retrieve_remote_data_reftext, reftext='SDPi-R Option: Retrieve Remote Data']
-[%noheader]
-[%autowidth]
-[cols="1"]
-|===
-a| *{supplement_note}*:  This section is left intentionally blank to indicate capabilities that will be added in a future version of the SDPi Supplement.
-
+// [%noheader]
+// [%autowidth]
+// [cols="1"]
+// |===
+// a| *{supplement_note}*:  This section is left intentionally blank to indicate capabilities that will be added in a future version of the SDPi Supplement.
+// 
 // [#vol1_clause_sdpi_r_actor_option_retrieve_remote_data_reftext, reftext='SDPi-R Option: Retrieve Remote Data']
 // [%noheader]
 // [%autowidth]
@@ -354,4 +354,3 @@ No additional cross profile considerations have been identified.
 ////
 #TODO:  See the template instructions + PCD 2019 and other TF's to see if any content should go in this section for SDPi-R.#
 ////
-

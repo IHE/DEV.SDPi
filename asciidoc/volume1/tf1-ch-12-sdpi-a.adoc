@@ -100,7 +100,7 @@ This default configuration requires the grouped <<vol1_spec_sdpi_p_actor_somds_v
 If the gateway supports  <<vol1_clause_sdpi_a_actor_option_remote_alert_signaling_reftext>>, then it also acts as a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> and accepts inbound [DEV-04] transactions from ACM Alert Reporters.
 In this case, the gateway will support both "Initiator & Responder" for these transactions.
 In this case, the <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> Actor  <<vol1_spec_sdpi_p_option_gateway_direction>> (Direction="bidirectional") is enabled.
-
+====
 
 // Old (manual) version:
 // include:actor-tables/sdpi-a-transactions.adoc[]

@@ -442,7 +442,7 @@
         "options": [
             {
                 "id": "sdpi-p-managed-discovery",
-                "anchor": "vol1_clause_sdpi_p_option_discovery_proxy",
+                "anchor": "vol1_clause_sdpi_p_option_managed_discovery",
                 "label": "Managed Discovery Option",
                 "transactionReferences": [
                     {
@@ -707,45 +707,6 @@
                 "label": "SOMDS FHIR Medical Data Gateway",
                 "profile": "sdpi-r",
                 "anchor": "vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway"
-            }
-        ],
-        "actor-options": [
-            {
-                "id": "retrieve_remote_data",
-                "label": "Retrieve Remote Data",
-                "anchor": "vol1_clause_sdpi_r_actor_option_retrieve_remote_data",
-                "transactionReferences": [
-                    {
-                        "transactionId": "DEV-35",
-                        "obligations": [
-                            {
-                                "contribution": "RESPONDER",
-                                "obligation": "REQUIRED",
-                                "actorId": "somds_dec_gateway"
-                            }
-                        ]
-                    },
-                    {
-                        "transactionId": "DEV-36",
-                        "obligations": [
-                            {
-                                "contribution": "INITIATOR",
-                                "obligation": "OPTIONAL",
-                                "actorId": "somds_dec_gateway"
-                            }
-                        ]
-                    },
-                    {
-                        "transactionId": "DEV-37",
-                        "obligations": [
-                            {
-                                "contribution": "RESPONDER",
-                                "obligation": "REQUIRED",
-                                "actorId": "somds_dec_gateway"
-                            }
-                        ]
-                    }
-                ]
             }
         ]
     },
