@@ -82,7 +82,7 @@ endif::[]
 See https://profiles.ihe.net/DEV/[*HERE*] for STU/Trial Implementation and Final Text versions and https://profiles.ihe.net/DEV/#1.2[*HERE*] for Public Comment versions.
 
 ifeval::["{backend}" == "html5"]
-A PDF version of the specification is available upon request.
+//A PDF version of the specification is available upon request.
 endif::[]
 
 [#supplement_clause_foreword,sdpi_offset=clear]
