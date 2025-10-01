@@ -18,7 +18,7 @@ As a result, the completion of these two transactions has been deferred to a sub
 Similarly, a related transaction, [DEV-43], namely providing clinician alert acknowledgement status information back to the alerting device, is also being discussed further and will be deferred to a subsequent version of the supplement.
 
 Finally, it should be noted that  <<actor_somds_acm_gateway>> is defined below and fully specified in <<vol2_clause_appendix_sdpi_acm_gateway>>.
-Also in development is <<acronym_hl7>> <<acronym_fhir>> support for medical alerting (e.g., refinement of the <<acronym_fhir>> DeviceAlert resource).
+Also in development is <<acronym_hl7>> <<acronym_fhir>> support for medical alerting (e.g., refinement of the <<acronym_fhir>> DeviceAlert resource and future development of a <<acronym_fhir>> Device Alerting IG).
 As a result, a "SOMDS Medical Alert FHIR Gateway" is not included as an actor at this stage; however, it is expected to be added in the coming year or two.
 
 |===
@@ -275,7 +275,7 @@ If a <<label_system_type_name_sas>> is being created, it may incorporate both <<
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This section is intentionally left incomplete blank to indicate capabilities that will be added in a future version of the SDPi Supplement.
+a| *{supplement_note}*:  This section is intentionally left incomplete to indicate capabilities that will be added in a future version of the SDPi Supplement.
 As stated elsewhere, the completion of the <<ref_ieee_11073_10702_202x>> standard is required before this profile can be completed (beyond alert reporting for DIS capabilities), and that is especially the case for alert delegation.
 
 *_The sequence diagram below for delegation is provided for informative purposes only and will be finalized when the IEEE standard and this profile option are completed._*
@@ -327,7 +327,7 @@ This option will enable the <<transaction_name_update_alert_acknowledgement_stat
 |===
 a| *{supplement_note}*:  This section is left intentionally blank to indicate capabilities that will be added in a future version of the SDPi Supplement.
 
-This option will enable <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> systems to receive [DEV-04]/[PCD-04] transactions from an ACM Alert Manager and then act as a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> to communicate the signals to <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> systems
+This option will enable <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> systems to receive [DEV-04]/[PCD-04] transactions from an ACM Alert Reporter and then act as a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> to communicate the signals to <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> systems.
 This option will enable the <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> to respond to <<transaction_name_establish_medical_alert_exchange>> [DEV-38] and <<transaction_name_retrieve_medical_alert_status>> [DEV-40] transactions, and to initiate <<transaction_name_publish_medical_alert_update>> [DEV-39] transactions.
 
 |===

@@ -408,8 +408,8 @@ A primary source of safety requirements for this <<acronym_sdpi_r>> Profile come
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  The <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>> standards are currently being published by the IEEE.
-Once published, their requirements will be integrated into this supplement, with many of them being mapped to elements in this <<acronym_sdpi_r>> Profile.
+a| *{supplement_note}*:  The <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>> standards are now published by the IEEE.
+However, their requirements are yet to be integrated into this supplement, with many of them being mapped to elements in this <<acronym_sdpi_r>> Profile.
 
 |===
 

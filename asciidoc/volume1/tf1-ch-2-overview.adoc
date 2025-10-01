@@ -44,11 +44,11 @@ Implementers must ensure that all appropriate risk management processes have bee
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*: The template for this section assumes that it will be integrated with the technical framework section that is organized based on TF-1 section headings (e.g., chapter 10 for SDPi- would have a summary here as 2.10.  No provision is made, though, for general introductory sections such as the SDPi Overview & Framework discussion below.
+a| *{supplement_note}*: The template for this section assumes that it will be integrated with the technical framework section that is organized based on TF-1 section headings (e.g., chapter 1:10 for SDPi- would have a summary here as 1:2.3.10).  No provision is made, though, for general introductory sections such as the SDPi Overview & Framework discussion in 1:2.3.1 below.
 
-In this version, the content is added as 2.3.1, and then the profiles as 2.3.10 to 2.3.13.  Though the content is valid, it may be repositioned in subsequent versions to better integrate with the IHE DEV TF at a future date.
+In this version, the content is added as 1:2.3.1, and then the profiles as 1:2.3.10 to 1:2.3.13.  Though the content is valid, it may be repositioned in subsequent versions to better integrate with the IHE DEV TF at a future date.
 
-*_Omitted from this version are  profile-specific option summaries_* (e.g., 3.10.1?).  It is unclear where to best place this content, and they are listed explicitly in each profile's detailed specification.
+*_Omitted from this version are profile-specific option summaries_* (e.g., 3.10.1?).  It is unclear where to best place this content, and they are listed explicitly in each profile's detailed specification.
 
 |===
 
@@ -165,7 +165,7 @@ Profile options are provided for additional capabilities that may be required to
 [cols="1"]
 |===
 a| *{supplement_note}*:  The SDPi-xC Profile is provided for completeness and to show the general direction of the family of SDPi Profiles.
-It is *_not part of the capabilities specified for {ihe_supplement_sdpi_revision_short}_* and even basic controls will not be added until SDPi 2.0 or later.
+It is *_not part of the capabilities specified for SDPi {ihe_supplement_sdpi_revision_short}_* and even basic controls will not be added until SDPi 3.0 or later.
 |===
 
 The SDPi External Control Profile builds on the basic <<acronym_pnt>> capabilities of the <<acronym_sdpi_p>> Profile, but adds support for *_medical device external control capabilities_*.

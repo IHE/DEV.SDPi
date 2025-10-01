@@ -30,6 +30,7 @@ Each section shall contain a list of action items of the following format: `<bri
 - Add FHIR Gateway to the SDPi-R Actors table ([#388](https://github.com/IHE/DEV.SDPi/issues/388))
 - Corrected erroneous actor names in transactions DEV-35 through DEV-40 ([#461](https://github.com/IHE/DEV.SDPi/issues/461))
 - Corrected erroneous actor name in Table 1:12.1-1 note ([#464](https://github.com/IHE/DEV.SDPi/issues/464))
+- Updated Supplement Notes ([#462](https://github.com/IHE/DEV.SDPi/issues/462))
 
 ### Editorial Fixes
 
