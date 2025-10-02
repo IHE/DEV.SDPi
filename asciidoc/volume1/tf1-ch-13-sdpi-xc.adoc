@@ -7,7 +7,7 @@
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*: This SDPi-xC (External Control) Profile Section is generally out-of-scope for this version of the profile (see https://github.com/orgs/IHE/projects/6/views/1["Gemini SDPi Releases" Github project]); however, it is provided here to indicate the intended direction of the SDPi Profiles, with details being added in subsequent versions. Depending on capabilities, some very basic controls may need to be provided as part of the 2.X or 3.X versions, especially around external adjustment of settings (e.g., alert limits or to trigger a blood-pressure reading).
+a| *{supplement_note}*: This SDPi-xC (External Control) Profile Section is generally out-of-scope for this version of the profile (see https://github.com/orgs/IHE/projects/6/views/1["Gemini SDPi Releases" Github project]); however, it is provided here to indicate the intended direction of the SDPi Profiles, with details being added in subsequent versions. Depending on capabilities, some very basic controls may need to be provided as part of the 3.X or 4.X versions, especially around external adjustment of settings (e.g., alert limits or to trigger a blood-pressure reading).
 
 |===
 
@@ -134,17 +134,32 @@ No options are specified for this specification.
 
 [#vol1_clause_sdpi_xc_required_actor_groupings]
 === SDPi-xC Required Actor Groupings
-[%noheader]
+
+An actor from this profile (Column 1) shall implement all of the required transactions and/or content modules in this profile *_in addition to all_* of the requirements for the grouped actor (Column 3) in <<vol1_table_sdpi_xc_required_actor_groupings>>.
+
+If this is a content profile, and actors from this profile are grouped with actors from a workflow or transport profile, the Reference column references any specifications for mapping data from the content module into data elements from the workflow or transport transactions.
+
+<<vol1_clause_sdpi_xc_ses_considerations>> describes some optional groupings that may be of interest for safety, effectiveness and security considerations and <<vol1_clause_sdpi_xc_cross_profile_considerations>> describes some optional groupings in other related profiles.
+
+[#vol1_table_sdpi_xc_required_actor_groupings]
+.SDPi-xC - Required Actor Groupings
 [%autowidth]
-[cols="1"]
+[cols="1,1,1,1"]
 |===
-a| *{supplement_note}*:  As indicated in <<vol1_figure_sdpi_xc_actor_diagram>> above, there are two grouped actors:
+.^|SDPi-xC Actor
+.^|Grouping Condition
+.^|Actor(s) to be Grouped With
+.^|TF Reference
 
-[none]
-. <<vol1_spec_sdpi_xc_actor_somds_medical_control_consumer>> with <<vol1_spec_sdpi_p_actor_somds_consumer>>
-. <<vol1_spec_sdpi_xc_actor_somds_medical_control_provider>> with <<vol1_spec_sdpi_p_actor_somds_provider>>
+| <<vol1_spec_sdpi_xc_actor_somds_medical_control_consumer>>
+| --
+| <<vol1_spec_sdpi_p_actor_somds_consumer>>
+| <<vol1_clause_sdpi_xc_somds_medical_control_consumer>>
 
-This section will be more completely detailed in a future version of the supplement.
+| <<vol1_spec_sdpi_xc_actor_somds_medical_control_provider>>
+| --
+| <<vol1_spec_sdpi_p_actor_somds_provider>>
+| <<vol1_clause_sdpi_xc_somds_medical_control_provider>>
 
 |===
 
@@ -156,7 +171,7 @@ This section will be more completely detailed in a future version of the supplem
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  An overview of the concepts for this <<vol1_clause_sdpi_a_profile_reftext>> will be provided in a future supplement version.
+a| *{supplement_note}*:  An overview of the concepts for this <<vol1_clause_sdpi_xc_profile_reftext>> will be provided in a future supplement version.
 Note that this specification extends the concepts established in the base <<vol1_clause_sdpi_p_profile_reftext>>.
 |===
 
@@ -194,6 +209,7 @@ No additional security requirements and considerations are identified for this t
 
 Note that capability '_external or "remote" control of one device by another_' enabled by this SDPi-xC Profile refers to "external" to the device that is controlled, while both devices are in the same secure environment (<<term_medical_device_lan>>).
 
+[#vol1_clause_sdpi_xc_cross_profile_considerations]
 === SDPi-xC Cross Profile Considerations
 No additional cross profile considerations have been identified.
 

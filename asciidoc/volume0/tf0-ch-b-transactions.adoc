@@ -79,8 +79,8 @@ include::../volume2/dev-30/tf2-dev-30-summary.adoc[]
 .^| [[vol0_transaction_summary_dev_33,DEV-33 Retrieve Localization Information]]
 [[transaction_number_dev_33,DEV-33]] DEV-33
 | [[transaction_name_retrieve_localization_information,Retrieve Localization Information]] Retrieve Localization Information
-| Deferred to a future version of SDPi
-// include::../volume2/dev-33/tf2-dev-33-summary.adoc[]
+|
+include::../volume2/dev-33/tf2-dev-33-summary.adoc[]
 
 //.^| [[vol0_transaction_summary_dev_34,DEV-34 Announce Network Departure]]
 //[[transaction_number_dev_34,DEV-34]] DEV-34

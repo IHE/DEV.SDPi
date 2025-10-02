@@ -367,7 +367,7 @@ In that case, the general rule is:
 
 For example, in TF-2 Transactions, each transaction section is paired with a message transport section in <<vol2_appendix_a_mdpws_messages>>; however, future versions of the specification may provide options for alternative transports.
 In this case, the actual transaction definition will remain unchanged, but the bindings to transport messages and services would change.
-Given the rule above, bindings are made in the current TF-2 Appendix A MDPWS specification pointing backward (or upward!) to the transaction requirements that they satisfy.
+Given the rule above, bindings are made in the current <<vol2_appendix_a_mdpws_messages>> specification pointing backward (or upward!) to the transaction requirements that they satisfy.
 There are no bindings in the opposite direction.
 Taking this approach, a new transport appendix could be added in the future without impacting the core transaction specifications.
 
