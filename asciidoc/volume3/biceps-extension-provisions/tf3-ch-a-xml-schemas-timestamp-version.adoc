@@ -3,5 +3,5 @@
 
 [source,xml]
 ----
-include::../../../sources/extension-models/timestamp/TimestampVersion.xsd[]
+include::../../../sources/extension-models/timestamp/TimeStampVersion.xsd[]
 ----
