@@ -1,1 +1,56 @@
-[]
+[
+    {
+        "id": "DEV-1",
+        "oids": [
+            "1.3.6.1.4.1.19376.1.6.4.1",
+            "1.3.6.1.4.1.19376.1.6.4.1.1"
+        ],
+        "label": "Transaction 1",
+        "anchor": "_transaction_1_dev_1",
+        "actorRoles": [
+            {
+                "actorId": "somds-provider",
+                "contribution": "INITIATOR",
+                "description": [
+                    "In sit amet tortor eu urna aliquam malesuada. Phasellus blandit lacus vitae tellus bibendum, id lobortis eros consequat.",
+                    ""
+                ]
+            },
+            {
+                "actorId": "somds-consumer",
+                "contribution": "RECEIVER",
+                "description": [
+                    "Curabitur placerat risus et purus mattis, eu scelerisque ante fringilla.",
+                    ""
+                ]
+            }
+        ]
+    },
+    {
+        "id": "DEV-2",
+        "oids": [
+            "1.3.6.1.4.1.19376.1.6.4.2",
+            "1.3.6.1.4.1.19376.1.6.4.2.1"
+        ],
+        "label": "Transaction 2",
+        "anchor": "_transaction_2_dev_1",
+        "actorRoles": [
+            {
+                "actorId": "somds-provider",
+                "contribution": "RESPONDER",
+                "description": [
+                    "In sit amet tortor eu urna aliquam malesuada. Phasellus blandit lacus vitae tellus bibendum, id lobortis eros consequat.",
+                    ""
+                ]
+            },
+            {
+                "actorId": "somds-consumer",
+                "contribution": "INITIATOR",
+                "description": [
+                    "Curabitur placerat risus et purus mattis, eu scelerisque ante fringilla.",
+                    ""
+                ]
+            }
+        ]
+    }
+]

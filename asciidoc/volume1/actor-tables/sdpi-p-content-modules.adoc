@@ -1,0 +1,70 @@
+[%autowidth]
+[cols="1,1,1,1"]
+|===
+.^|Actors
+.^|Content Modules
+.^|Optionality
+.^|Reference
+
+.7+| <<vol1_spec_sdpi_p_actor_biceps_content_creator>>
+| SDC/BICEPS Content Module
+| R ^(See^ ^Note^ ^1)^
+| <<vol3_clause_sdc_biceps_semantic_content_module>>
+
+| Infusion Pump SDC/BICEPS Content Module
+| O
+| <<vol3_clause_device_infusion_pump>>
+
+| Ventilator SDC/BICEPS Content Module
+| O
+| <<vol3_clause_device_ventilator>>
+
+| Physiologic Monitor SDC/BICEPS Content Module
+| O
+| <<vol3_clause_device_physiological_monitor>>
+
+| Surgery Devices SDC/BICEPS Content Module
+| O
+| <<vol3_clause_device_surgical>>
+
+| Anesthesia Devices SDC/BICEPS Content Module (_deferred_)
+| O
+|
+
+| Dialysis Devices SDC/BICEPS Content Module (_deferred_)
+| O
+|
+
+.7+| <<vol1_spec_sdpi_p_actor_biceps_content_consumer>>
+| SDC/BICEPS Content Module
+| R ^(See^ ^Note^ ^1)^
+| <<vol3_clause_sdc_biceps_semantic_content_module>>
+
+| Infusion Pump SDC/BICEPS Content Module
+| O
+| <<vol3_clause_device_infusion_pump>>
+
+| Ventilator SDC/BICEPS Content Module
+| O
+| <<vol3_clause_device_ventilator>>
+
+| Physiologic Monitor SDC/BICEPS Content Module
+| O
+| <<vol3_clause_device_physiological_monitor>>
+
+| Surgery Devices SDC/BICEPS Content Module
+| O
+| <<vol3_clause_device_surgical>>
+
+| Anesthesia Devices SDC/BICEPS Content Module (_deferred_)
+| O
+|
+
+| Dialysis Devices SDC/BICEPS Content Module (_deferred_)
+| O
+|
+
+4+<|
+Note 1: _All content exchanged on a SOMDS shall conform to the general SDPi “BICEPS Content Module” requirements (see <<vol3_clause_sdc_biceps_semantic_content>>).  <<vol1_spec_sdpi_p_actor_somds_provider>>-specific content modules (e.g., infusion pumps) may be optionally supported as indicated._
+
+|===

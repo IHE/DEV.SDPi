@@ -5,6 +5,7 @@ import org.asciidoctor.ast.Document
 import org.asciidoctor.extension.Postprocessor
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Element
+import org.sdpi.asciidoc.LinkStyles
 import java.net.URI
 import java.net.URLDecoder
 
@@ -24,7 +25,8 @@ data class LabelInfo(
 )
 
 class ReferenceSanitizerPostprocessor(
-    private val anchorLabels: AnchorReplacementsMap
+    private val anchorLabels: AnchorReplacementsMap,
+    val enableTrace: Boolean = true
 ) : Postprocessor() {
     override fun process(document: Document, output: String): String {
         // skip numbering if xref style has been changed to reduce likelihood of broken references
@@ -59,6 +61,10 @@ class ReferenceSanitizerPostprocessor(
                 continue
             }
 
+            val strRole = anchor.attr("class")
+            if (strRole == LinkStyles.TITLE_TEXT.className) {
+                continue
+            }
 
             val parsedFragment = URI.create(href).fragment
             if (parsedFragment.isNullOrEmpty()) {
@@ -66,14 +72,18 @@ class ReferenceSanitizerPostprocessor(
             }
 
             val rawFragment = href.substring(1)
-            val (id, encodedLabel) = if (rawFragment.contains(ReferenceSanitizerPreprocessor.refSeparator)) {
-                val parts = rawFragment.split(ReferenceSanitizerPreprocessor.refSeparator)
+            val (id, encodedLabel) = if (rawFragment.contains(ReferenceSanitizerPreprocessor.REF_SEPARATOR)) {
+                val parts = rawFragment.split(ReferenceSanitizerPreprocessor.REF_SEPARATOR)
                 Pair(parts[0], parts[1]).also { (id, label) ->
                     val decoded = decodeLabel(label)
-                    logger.info { "Found custom reference: $id => $label => $decoded" }
+                    if (enableTrace) {
+                        logger.info { "Found custom reference: $id => $label => $decoded" }
+                    }
                 }
             } else {
-                logger.info { "Found regular reference: $rawFragment" }
+                if (enableTrace) {
+                    logger.info { "Found regular reference: $rawFragment" }
+                }
                 Pair(rawFragment, null)
             }
 

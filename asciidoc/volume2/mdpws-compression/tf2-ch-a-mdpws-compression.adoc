@@ -4,12 +4,14 @@
 MDPWS <<ref_ieee_11073_20702_2016>> defines EXI as the designated means to compress XML data. However, EXI is lagging in adoption. Therefore, instead of using EXI compression, it is recommended to use HTTP compression with gzip (RFC 1952) as the minimum agreement between clients and servers. One issue with that is the missing official support for HTTP compression in HTTP request messages. Request headers are allowed to include Content-Encoding, but those might not be accepted by HTTP servers.
 
 .R0005
-[sdpi_requirement#r0005,sdpi_req_level=should]
+[sdpi_requirement#r0005,sdpi_req_level=should,sdpi_req_type=tech_feature]
 ****
+[NORMATIVE]
+====
 In its role as an HTTP client, a <<vol1_spec_sdpi_p_actor_somds_participant>> should request gzip compression by using Accept-Encoding with "gzip".
+====
 
-.Examples
-[%collapsible]
+[EXAMPLE]
 ====
 .HTTP request header to request compression
 [source]
@@ -42,8 +44,11 @@ The HTTP server decided to encode the response with the gzip compression. Note t
 Unluckily, SDC makes heavy use of request payloads when delivering notifications. Hence, it is further recommended to allow for <<vol1_spec_sdpi_p_actor_somds_provider>>s to send compressed WS-Eventing Notification requests if a Subscribe request already included an accepted encoding.
 
 .R0006
-[sdpi_requirement#r0006,sdpi_req_level=may]
+[sdpi_requirement#r0006,sdpi_req_level=may,sdpi_req_type=tech_feature]
 ****
+[NORMATIVE]
+====
 If a <<vol1_spec_sdpi_p_actor_somds_consumer>> includes an Accept-Encoding header field in an HTTP header in a WS-Eventing Subscribe request, the <<vol1_spec_sdpi_p_actor_somds_provider>> may transmit Notifications related to that subscription encoded with the encoding that was defined in the Subscribe request.
+====
 ****
 
