@@ -79,7 +79,7 @@ class TransactionTableBuilder(
             return ""
         }
 
-        return makeLink(actor.id, actor.label)
+        return makeLink(actor.anchor, actor.label, LinkStyles.TITLE_TEXT.className)
     }
 
     private fun createTransactionCell(transaction: SdpiTransaction?): String {

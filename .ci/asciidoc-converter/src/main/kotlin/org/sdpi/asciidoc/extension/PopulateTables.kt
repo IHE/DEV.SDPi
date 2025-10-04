@@ -201,25 +201,19 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
                     logger.error("Unknown transaction id $strTransactionId")
                 }
 
-                for (obl in transactionReference.obligations) {
-                    if (obl.actorId == actor.id) {
-                        var bFirstTransaction = true
-
-                        val obligationsForTransaction =
-                            profile.getTransactionObligations(strTransactionId, actor.id, optionFilter)
-                        for (ref in obligationsForTransaction) {
-                            tableBuilder.addRow(
-                                if (bFirstActor) actor else null,
-                                if (bFirstTransaction) transaction else null,
-                                ref.contribution,
-                                ref.obligation,
-                                ref.optionId
-                            )
-                            bFirstTransaction = false
-                            bFirstActor = false
-                        }
-
-                    }
+                val obligationsForTransaction =
+                    profile.getTransactionObligations(strTransactionId, actor.id, optionFilter)
+                var bFirstTransaction = true
+                for (ref in obligationsForTransaction) {
+                    tableBuilder.addRow(
+                        if (bFirstActor) actor else null,
+                        if (bFirstTransaction) transaction else null,
+                        ref.contribution,
+                        ref.obligation,
+                        ref.optionId
+                    )
+                    bFirstTransaction = false
+                    bFirstActor = false
                 }
             }
         }
