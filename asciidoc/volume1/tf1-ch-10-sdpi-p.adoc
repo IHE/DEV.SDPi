@@ -62,8 +62,9 @@ sdpi_include_transaction::DEV-28[initiator="optional", receiver="optional"]
 sdpi_include_transaction::DEV-29[initiator="required", receiver="required"]
 sdpi_include_transaction::DEV-30[initiator="optional", responder="optional"]
 sdpi_include_transaction::DEV-33[initiator="optional", responder="optional"]
-sdpi_include_transaction::DEV-46[initiator="optional", receiver="required"]
-sdpi_include_transaction::DEV-47[initiator="optional", responder="required"]
+
+sdpi_include_transaction::DEV-46[actor-id=somds_provider,initiator=optional]
+sdpi_include_transaction::DEV-47[actor-id=somds_consumer,initiator=optional]
 
 // Deferred transactions. 
 sdpi_include_transaction::DEV-26[actor-id="somds_provider",responder="required",placeholder-name="Discover system context and capabilities"]
