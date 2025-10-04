@@ -96,7 +96,7 @@ RefActor:biceps_content_consumer[] actors.
 ====
 
 // Old (manual) version:
-// include:actor-tables/sdpi-p-transactions.adoc[]
+include::actor-tables/sdpi-p-transactions.adoc[]
 
 <<vol1_figure_sdpi_p_biceps_content_actor_diagram>> shows the content-related actors defined in the SDPi-P Profile and the direction that the content is exchanged.
 
@@ -540,37 +540,88 @@ In these configurations, <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_sp
 NOTE: Provisioning of <<vol1_spec_sdpi_p_actor_somds_participant>> systems to support use of a <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor is out-of-scope for this specification.
 
 [#vol1_clause_sdpi_p_option_gateway_direction]
-==== Gateway Direction Option
+==== Gateway Direction
 [#vol1_spec_sdpi_p_option_gateway_direction, reftext='Gateway Direction Option']
 
-The Gateway Direction option specifies the flow of information through the gateway actor.
-If this option is not configured, then the DEFAULT direction of any gateway actors shall be "export".
-Each gateway actor, which is an instance of the abstract <<vol1_spec_sdpi_p_actor_somds_connector>> Actor, shall be grouped with either a <<vol1_spec_sdpi_p_actor_somds_provider>> Actor, <<vol1_spec_sdpi_p_actor_somds_consumer>> Actor, or both.
+The Gateway Direction specifies the flow of information through a gateway actor.
+If one of the Gateway Direction options is not configured, then the DEFAULT 
+direction of any gateway actors shall be "export". 
 
-The following table details the options that shall be selected:
+.R1030
+[sdpi_requirement#r1030,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
 
-[#vol1_table_sdpi_p_gateway_direction_options]
-.Gateway Direction Option Values
-[%autowidth]
-[cols="1,1,1"]
-|===
-.^|Direction
-.^|Actor Grouping
-.^|Capability
+[NORMATIVE]
+====
+Each gateway actor, which is an instance of the abstract 
+<<vol1_spec_sdpi_p_actor_somds_connector>> Actor, shall be grouped with either
+a RefActor:somds_consumer[] Actor or RefActor:somds_provider[] Actor or both. 
+====
 
-| export
-| <<vol1_spec_sdpi_p_actor_somds_consumer>>
-| Gateway retrieves information from SOMDS Provider systems, converts and sends it to other systems.
+****
 
-| import
-| <<vol1_spec_sdpi_p_actor_somds_provider>>
-| Gateway retrieves information from external systems, and provides the content to SOMDS Consumer systems.
+[role=profile-option,profile-option-id="sdpi-p-gateway-direction-export"]
+===== Gateway Export Direction Option
 
-| bidirectional
-| <<vol1_spec_sdpi_p_actor_somds_consumer>> + <<vol1_spec_sdpi_p_actor_somds_provider>>
-| Gateway supports both export and import functions to external systems.
+The Gateway Export Direction Option specifies the flow of information from
+<<vol1_spec_sdpi_p_actor_somds_provider>> systems and sends it to other
+systems, including those outside the SOMDS.  
 
-|===
+.R1031
+[sdpi_requirement#r1031,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
+
+[NORMATIVE]
+====
+Each gateway actor instance of the abstract 
+<<vol1_spec_sdpi_p_actor_somds_connector>> Actor, that selects the
+Gateway Export Direction Option shall be grouped with a RefActor:somds_consumer[] Actor. 
+====
+
+****
+
+// Transaction obligations for gateway export direction option. 
+sdpi_include_transaction::DEV-23[actor-id=somds_connector,receiver=optional]
+sdpi_include_transaction::DEV-24[actor-id=somds_connector,initiator=required]
+sdpi_include_transaction::DEV-25[actor-id=somds_connector,initiator=required]
+sdpi_include_transaction::DEV-27[actor-id=somds_connector,initiator=required]
+sdpi_include_transaction::DEV-28[actor-id=somds_connector,receiver=optional]
+sdpi_include_transaction::DEV-29[actor-id=somds_connector,receiver=required]
+sdpi_include_transaction::DEV-30[actor-id=somds_connector,initiator=optional]
+sdpi_include_transaction::DEV-33[actor-id=somds_connector,initiator=optional]
+sdpi_include_transaction::DEV-47[actor-id=somds_connector,initiator=optional]
+
+
+[role=profile-option,profile-option-id="sdpi-p-gateway-direction-import"]
+===== Gateway Import Direction Option
+
+The Gateway Import Direction Option specifies the flow of information from
+external systems to <<vol1_spec_sdpi_p_actor_somds_consumer>> systems.  
+
+.R1032
+[sdpi_requirement#r1032,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
+
+[NORMATIVE]
+====
+Each gateway actor instance of the abstract 
+<<vol1_spec_sdpi_p_actor_somds_connector>> Actor, that selects the
+Gateway Import Direction Option shall be grouped with a RefActor:somds_provider[] Actor. 
+====
+
+****
+
+// Transaction obligations for gateway import direction option. 
+sdpi_include_transaction::DEV-23[actor-id=somds_connector,initiator=required]
+sdpi_include_transaction::DEV-24[actor-id=somds_connector,responder=required]
+sdpi_include_transaction::DEV-25[actor-id=somds_connector,responder=required]
+sdpi_include_transaction::DEV-27[actor-id=somds_connector,responder=required]
+sdpi_include_transaction::DEV-28[actor-id=somds_connector,initiator=optional]
+sdpi_include_transaction::DEV-29[actor-id=somds_connector,initiator=required]
+sdpi_include_transaction::DEV-30[actor-id=somds_connector,responder=optional]
+sdpi_include_transaction::DEV-33[actor-id=somds_connector,responder=optional]
+sdpi_include_transaction::DEV-46[actor-id=somds_connector,initiator=optional]
+
 
 
 [#vol1_clause_sdpi_p_option_real_time_waveforms]
