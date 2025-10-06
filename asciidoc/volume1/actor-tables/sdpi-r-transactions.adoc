@@ -104,10 +104,10 @@
 | <<vol2_clause_dev_37>>
 
 5+<|
-Note 1: This actor initiates this transaction if the grouped actor from SDPi-P supports the *"export"* or *"bidirectional"* <<vol1_spec_sdpi_p_option_gateway_direction>>.
+Note 1: This actor initiates this transaction if the grouped actor from SDPi-P supports the <<vol1_spec_sdpi_p_option_gateway_export>>.
 In this case, the gateway is performing a "consumer" role.
 
-Note 2: This actor responds this transaction if the grouped actor from SDPi-P supports the *"import"* or *"bidirectional"* <<vol1_spec_sdpi_p_option_gateway_direction>>.
+Note 2: This actor responds this transaction if the grouped actor from SDPi-P supports the <<vol1_spec_sdpi_p_option_gateway_import>>.
 In this case, the gateway is performing a "provider" role.
 
 |===

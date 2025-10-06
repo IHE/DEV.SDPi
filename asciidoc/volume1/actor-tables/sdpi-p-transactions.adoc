@@ -388,8 +388,8 @@ Note 2: Optional transaction is required if the SDPi-P <<vol1_spec_sdpi_p_option
 
 Note 3: _“Receiver”_ is included in this column, in _italics_, to indicate that though a <<vol1_spec_sdpi_p_actor_somds_consumer>> may "receive" the transaction, there is no response communicated to the message initiator.
 
-Note 4: This transaction must be supported if <<vol1_spec_sdpi_p_option_gateway_direction>> (Direction="export") is enabled.
+Note 4: This transaction must be supported if <<vol1_spec_sdpi_p_option_gateway_export>> is selected.
 
-Note 5: This transaction must be supported if <<vol1_spec_sdpi_p_option_gateway_direction>> (Direction="import") is enabled.
+Note 5: This transaction must be supported if <<vol1_spec_sdpi_p_option_gateway_import>> is selected.
 
 |===
