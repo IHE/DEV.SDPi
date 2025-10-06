@@ -27,7 +27,7 @@ For example, Operating Room / Surgery Point-of-Care Integration, ICU Point-of-Ca
 [cols="1"]
 |===
 a| *{supplement_note}*: Some actors and transactions have been deferred to a subsequent version, but are included here for completeness.
-Specifically:  SOMDS FHIR Gateway, SOMDS Sensor Gateway and SOMDS Smart App Platform, have been deferred.
+Specifically:  SOMDS Sensor Gateway and SOMDS Smart App Platform have been deferred.
 
 Deferred transactions have been so indicated in the transactions table.
 
@@ -223,7 +223,7 @@ See related discussion at <<vol3_clause_biceps_mapping_using_somds_connector_con
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*: The TF-3 SDC/BICEPS Mapping of SOMDS Connector Content Modules section is out-of-scope., but included above for completeness of this actor overview.
+a| *{supplement_note}*: The TF-3 SDC/BICEPS Mapping of SOMDS Connector Content Modules section is out-of-scope, but included above for completeness of this actor overview.
 |===
 
 Although the SDPi-P Profile _<<vol1_spec_sdpi_p_actor_somds_connector>>_ provides for non-SOMDS _protocol-specific_ adaptors, they establish the foundation for specifying system and application-specific interfaces such as for EHR or decision support systems (e.g., sepsis determination).

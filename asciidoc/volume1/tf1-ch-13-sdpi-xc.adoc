@@ -7,7 +7,7 @@
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*: This SDPi-xC (External Control) Profile Section is generally out-of-scope for this version of the profile (see https://github.com/orgs/IHE/projects/6/views/1["Gemini SDPi Releases" Github project]); however, it is provided here to indicate the intended direction of the SDPi Profiles, with details being added in subsequent versions. Depending on capabilities, some very basic controls may need to be provided as part of the 2.X or 3.X versions, especially around external adjustment of settings (e.g., alert limits or to trigger a blood-pressure reading).
+a| *{supplement_note}*: This SDPi-xC (External Control) Profile Section is generally out-of-scope for this version of the profile (see https://github.com/orgs/IHE/projects/6/views/1["Gemini SDPi Releases" Github project]); however, it is provided here to indicate the intended direction of the SDPi Profiles, with details being added in subsequent versions. Depending on capabilities, some very basic controls may need to be provided as part of the 3.X or 4.X versions, especially around external adjustment of settings (e.g., alert limits or to trigger a blood-pressure reading).
 
 |===
 
@@ -156,7 +156,7 @@ If this is a content profile, and actors from this profile are grouped with acto
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  An overview of the concepts for this <<vol1_clause_sdpi_a_profile_reftext>> will be provided in a future supplement version.
+a| *{supplement_note}*:  An overview of the concepts for this <<vol1_clause_sdpi_xc_profile_reftext>> will be provided in a future supplement version.
 Note that this specification extends the concepts established in the base <<vol1_clause_sdpi_p_profile_reftext>>.
 |===
 
