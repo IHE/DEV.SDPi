@@ -180,6 +180,100 @@
         "test": "INTEROPERABILITY"
     },
     {
+        "type": "tech-feature",
+        "actors": [
+            "somds_connector",
+            "somds_consumer",
+            "somds_provider"
+        ],
+        "requirementNumber": 1030,
+        "localId": "R1030",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1030",
+        "level": "SHALL",
+        "owner": {
+            "type": "profile",
+            "id": "sdpi-p"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Each gateway actor, which is an instance of the abstract",
+                        "<<vol1_spec_sdpi_p_actor_somds_connector>> Actor, shall be grouped with either",
+                        "a RefActor:somds_consumer[] Actor or RefActor:somds_provider[] Actor or both."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_connector",
+            "somds_consumer"
+        ],
+        "requirementNumber": 1031,
+        "localId": "R1031",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1031",
+        "level": "SHALL",
+        "owner": {
+            "type": "profile-option",
+            "id": "sdpi-p-gateway-direction-export"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Each gateway actor instance of the abstract",
+                        "<<vol1_spec_sdpi_p_actor_somds_connector>> Actor, that selects the",
+                        "Gateway Export Direction Option shall be grouped with a RefActor:somds_consumer[] Actor."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
+        "type": "tech-feature",
+        "actors": [
+            "somds_connector",
+            "somds_provider"
+        ],
+        "requirementNumber": 1032,
+        "localId": "R1032",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1032",
+        "level": "SHALL",
+        "owner": {
+            "type": "profile-option",
+            "id": "sdpi-p-gateway-direction-import"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Each gateway actor instance of the abstract",
+                        "<<vol1_spec_sdpi_p_actor_somds_connector>> Actor, that selects the",
+                        "Gateway Import Direction Option shall be grouped with a RefActor:somds_provider[] Actor."
+                    ]
+                }
+            ],
+            "noteContent": [],
+            "exampleContent": [],
+            "relatedContent": []
+        }
+    },
+    {
         "type": "risk-mitigation",
         "actors": [
             "somds_consumer"
