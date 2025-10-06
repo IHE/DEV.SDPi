@@ -11,20 +11,21 @@
 :multipage-level: 2
 :sectnums:
 :icons: font
+:icon-set: fas
 :imagesoutdir: images/
 :imagesdir: images/
 :docinfo: shared
 :source-highlighter: highlight.js
 :highlightjsdir: js/highlight
 
-:sdpi_milestone_publication: SDPi 2.1 Publication
-:sdpi_milestone_review: SDPi 2.1 Review
+:sdpi_milestone_publication: SDPi 2.2 Publication
+:sdpi_milestone_review: SDPi 2.2 Review
 
-:ihe_supplement_sdpi_revision: 2.1.2
-:ihe_supplement_sdpi_revision_short: 2.1
+:ihe_supplement_sdpi_revision: 2.2.0
+:ihe_supplement_sdpi_revision_short: 2.2
 :ihe_supplement_sdpi_revision_date: {localdatetime}
 :ihe_supplement_sdpi_revision_label: Standard for Trial Use / Implementation
-:ihe_supplement_sdpi_publication_month: May 9, 2025
+:ihe_supplement_sdpi_publication_month: October 2, 2025
 :ihe_supplement_sdpi_public_comment_submission_deadline: N/A
 
 {empty} +
@@ -80,7 +81,9 @@ endif::[]
 *Please verify you have the most recent version of this document.*
 See https://profiles.ihe.net/DEV/[*HERE*] for STU/Trial Implementation and Final Text versions and https://profiles.ihe.net/DEV/#1.2[*HERE*] for Public Comment versions.
 
+ifeval::["{backend}" == "html5"]
 A PDF version of the specification is available upon request.
+endif::[]
 
 [#supplement_clause_foreword,sdpi_offset=clear]
 = Foreword

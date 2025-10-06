@@ -18,19 +18,37 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Added
 
-- DEV-33 (localization service) including MDPWS binding. ([#40](https://github.com/IHE/DEV.SDPi/issues/40))
 
 ### Changes
 
-- Changed all references to IHE PCD TF 2019 to the newer 2024 version. Updated sections in document which were affected by the TF version change ([#340](https://github.com/IHE/DEV.SDPi/issues/340))
-- Removed transaction DEV-34 (Announce Network Departure) and updated references to future SDPi versions for maintainability ([#406](https://github.com/IHE/DEV.SDPi/issues/406))
+
+### Editorial Fixes
+
+
+## [2.2.0] - 2025-10-02
+
+### Added
+
+- DEV-33 transaction (localization service), including MDPWS binding. ([#40](https://github.com/IHE/DEV.SDPi/issues/40))
+- FHIR Gateway to the SDPi-R Actors table ([#388](https://github.com/IHE/DEV.SDPi/issues/388))
+- Section "Numeric Metric Display Precision" to volume 3 ([#392](https://github.com/IHE/DEV.SDPi/issues/392))
+- SDPi-P SDC Gateway Direction profile option ([#396](https://github.com/IHE/DEV.SDPi/issues/396))
+
+### Changes
+
+- Removed withdrawn transaction DEV-34 (Announce Network Departure) and updated references to future SDPi versions for maintainability ([#406](https://github.com/IHE/DEV.SDPi/issues/406))
+- Profile Required Actor Groupings - Update with Table ([#387](https://github.com/IHE/DEV.SDPi/issues/387))
 - Corrected erroneous actor names in transactions DEV-35 through DEV-40 ([#461](https://github.com/IHE/DEV.SDPi/issues/461))
 - Corrected erroneous actor name in Table 1:12.1-1 note ([#464](https://github.com/IHE/DEV.SDPi/issues/464))
+- Changed all references to IHE PCD TF 2019 to the newer 2024 version. Updated sections in document which were affected by the TF version change ([#340](https://github.com/IHE/DEV.SDPi/issues/340))
 
 ### Editorial Fixes
 
 - Rephrased for clarity the first bullet of section 1:A.1 ([#316](https://github.com/IHE/DEV.SDPi/issues/316))
-- Fix broken references to PlantUML files ([#472](https://github.com/IHE/DEV.SDPi/issues/472))
+- Fixed malformed references to appendices ([#453](https://github.com/IHE/DEV.SDPi/issues/453))
+- Fixed broken references to PlantUML files ([#472](https://github.com/IHE/DEV.SDPi/issues/472))
+- Removed cover page statement about PDF version availability ([#247](https://github.com/IHE/DEV.SDPi/issues/247))
+- Updated Supplement Notes ([#462](https://github.com/IHE/DEV.SDPi/issues/462))
 
 ## [2.1.2] - 2025-05-09
 

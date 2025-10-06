@@ -1,5 +1,6 @@
 :var_uri_ws_discovery_bye: http://docs.oasis-open.org/ws-dd/discovery/1.1/os/wsdd-discovery-1.1-spec-os.html#_Toc234231825
 :var_uri_dpws_discovery: http://docs.oasis-open.org/ws-dd/dpws/1.1/os/wsdd-dpws-1.1-spec-os.html#_Toc228672091
+:var_transaction_id: DEV-34
 
 [#vol2_clause_appendix_mdpws_dev_34]
 //==== MDPWS: Announce Network Departure [DEV-34]
@@ -9,7 +10,7 @@
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*: The former transaction Announce Network Departure [{var_transaction_id}] was withdrawn in SDPi 2.2. Therefore, it is marked as _Reserved_.
+a| *{supplement_note}*: The former transaction Announce Network Departure [{var_transaction_id}] was withdrawn with SDPi 2.2. Therefore, it is marked as _Reserved_.
 |===
 
 ////

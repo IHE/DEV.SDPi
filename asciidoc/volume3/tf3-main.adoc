@@ -94,6 +94,7 @@ include::tf3-ch-8.3.2-biceps-content.adoc[]
 
 include::mdib-report-retrofit/tf3-ch-8.3.2.9-mdib-report-retrofit.adoc[]
 
+include::tf3-ch-8.3.2.13-metric-display-precision.adoc[]
 
 // 8.3.3
 ==== RESERVED
