@@ -86,8 +86,10 @@ sdpi_include_transaction::DEV-43[actor-id="somds_medical_alert_consumer",initiat
 
 sdpi_include_transaction::DEV-43[actor-id="somds_acm_gateway",initiator="required",placeholder-name="Update alert acknowledgement status"]
 
-.SDPi-A Profile - Actors and Transactions
+ifdef::markup-actor-transactions-table[]
+
 [#vol1_table_sdpi_a_actors_transactions]
+.SDPi-A Profile - Actors and Transactions
 sdpi_transaction_table::[profile-id="sdpi-a"]
 
 [NOTE]
@@ -102,9 +104,15 @@ In this case, the gateway will support both "Initiator & Responder" for these tr
 In this case, the <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> Actor has both the <<vol1_spec_sdpi_p_option_gateway_import>> and <<vol1_spec_sdpi_p_option_gateway_export>> options selected.
 ====
 
-// Old (manual) version:
+endif::[]
+
+ifndef::markup-actor-transactions-table[]
+
+// Manual actors and transactions table:
 include::actor-tables/sdpi-a-transactions.adoc[]
 
+endif::[]
+ 
 [#vol1_clause_sdpi_a_actor_descriptions_actor_profile_requirements]
 ==== Actor Descriptions and Actor Profile Requirements
 

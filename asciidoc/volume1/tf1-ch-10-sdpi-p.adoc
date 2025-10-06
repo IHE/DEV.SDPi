@@ -75,6 +75,8 @@ sdpi_include_transaction::DEV-26[actor-id="somds_consumer",initiator="required",
 sdpi_include_transaction::DEV-31[actor-id="somds_consumer",initiator="optional",placeholder-name="Set provider state"]
 sdpi_include_transaction::DEV-32[actor-id="somds_consumer",initiator="optional",placeholder-name="Retrieve archive data"]
 
+ifdef::markup-actor-transactions-table[]
+
 [#vol1_table_sdpi_p_actors_transactions]
 .SDPi-P Profile - Actors and Transactions
 sdpi_transaction_table::[profile-id="sdpi-p"]
@@ -95,9 +97,14 @@ RefActor:biceps_content_consumer[] actors.
 
 * See <<vol1_clause_sdpi_p_required_actor_groupings>> for actor inheritance and grouping. 
 ====
+endif::[]
 
-// Old (manual) version:
+ifndef::markup-actor-transactions-table[]
+
+// Manual actors and transactions table:
 include::actor-tables/sdpi-p-transactions.adoc[]
+
+endif::[]
 
 <<vol1_figure_sdpi_p_biceps_content_actor_diagram>> shows the content-related actors defined in the SDPi-P Profile and the direction that the content is exchanged.
 
@@ -129,7 +136,7 @@ requirements (see <<vol3_clause_sdc_biceps_semantic_content>>).
 optionally supported as indicated._
 
 // Old (manual) version:
-// include:actor-tables/sdpi-p-content-modules.adoc[]
+// include::actor-tables/sdpi-p-content-modules.adoc[]
 
 ==== Actor Descriptions and Actor Profile Requirements
 

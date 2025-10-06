@@ -40,14 +40,22 @@ sdpi_include_transaction::DEV-45[actor-id="somds_medical_control_provider",respo
 sdpi_include_transaction::DEV-44[actor-id="somds_medical_control_consumer",initiator="required",placeholder-name="Manage medical external control"]
 sdpi_include_transaction::DEV-45[actor-id="somds_medical_control_consumer",initiator="required",placeholder-name="Invoke medical control services"]
 
-.SDPi-xC Profile - Actors and Transactions
+ifdef::markup-actor-transactions-table[]
+
 [#vol1_table_sdpi_xc_actors_transactions]
+.SDPi-xC Profile - Actors and Transactions
 sdpi_transaction_table::[profile-id="sdpi-xc"]
 
 NOTE: see <<vol1_clause_sdpi_xc_required_actor_groupings>> for actor inheritance and grouping.
 
-// Old (manual) version:
-// include:actor-tables/sdpi-xc-transactions.adoc[]
+endif::[]
+
+ifndef::markup-actor-transactions-table[]
+
+// Manual actors and transactions table:
+include::actor-tables/sdpi-xc-transactions.adoc[]
+
+endif::[]
 
 [#vol1_clause_sdpi_xd_actor_descriptions_actor_profile_requirements]
 ==== Actor Descriptions and Actor Profile Requirements

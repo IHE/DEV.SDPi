@@ -59,14 +59,22 @@ sdpi_include_transaction::DEV-37[actor-id="somds_medical_data_consumer",initiato
 sdpi_include_transaction::DEV-37[actor-id="somds_medical_data_provider",responder="required"]
 sdpi_include_transaction::DEV-37[actor-id="somds_dec_gateway",initiator="optional"]
 
+ifdef::markup-actor-transactions-table[]
+
 .SDPi-R Profile - Actors and Transactions
 [#vol1_table_sdpi_r_actors_transactions]
 sdpi_transaction_table::[profile-id="sdpi-r"]
 
 NOTE: see <<vol1_clause_sdpi_r_required_actor_groupings>> for actor inheritance and grouping.
 
+endif::[]
+
+ifndef::markup-actor-transactions-table[]
+
 // Old (manual) version:
-// include:actor-tables/sdpi-r-transactions.adoc[]
+include::actor-tables/sdpi-r-transactions.adoc[]
+
+endif::[]
 
 [#vol1_clause_sdpi_r_actor_descriptions_actor_profile_requirements]
 ==== Actor Descriptions and Actor Profile Requirements
@@ -133,7 +141,7 @@ This actor is designed to process information with an _intended medical purpose_
 
 Every <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> to enable <<acronym_somds>>-based connectivity.
 This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>.
-Gateway directionality (export, import, or bidirectional) is specified by the <<vol1_spec_sdpi_p_option_gateway_direction>> in the <<vol1_clause_sdpi_p_profile_reftext>>.
+Gateway directionality (export, import, or both/bidirectional) is specified by the <<vol1_spec_sdpi_p_option_gateway_import>> and <<vol1_spec_sdpi_p_option_gateway_export>> in the <<vol1_clause_sdpi_p_profile_reftext>>.
 For the <<vol1_spec_sdpi_r_actor_somds_dec_gateway>>, the following configurations shall apply:
 
 [#vol1_table_sdpi_r_dec_gateway_direction]
