@@ -76,6 +76,8 @@ No content from those three standards - including their requirements -  is norma
 
 * [[[ref_oasis_soap_over_udp_v1_1, OASIS SOAP-over-UDP Version 1.1]]] OASIS Standard, SOAP-over-UDP Version 1.1, July 2009, available at http://docs.oasis-open.org/ws-dd/soapoverudp/1.1/os/wsdd-soapoverudp-1.1-spec-os.docx.
 
+* [[[ref_w3c_soap_over_http_v1_2, SOAP Version 1.2 Part 0]]] SOAP Version 1.2 Part 0: Primer (second edition), W3C Recommendation 27 April 2007, available at https://www.w3.org/TR/soap12-part0/.
+
 * [[[ref_oasis_ws_addressing_2006,W3C Recommendation, WS-Addressing:2006]]] Web Services Addressing 1.0 - Core (WS-Eventing), W3C Recommendation 9 May 2006, available at https://www.w3.org/TR/2006/REC-ws-addr-core-20060509/.
 
 * [[[ref_oasis_ws_discovery_2009,OASIS WS-Discovery:2009]]] OASIS Standard, Web Services Dynamic Discovery (WS-Discovery) Version 1.1, OASIS Standard, 1 July 2009, available at http://docs.oasis-open.org/ws-dd/discovery/1.1/wsdd-discovery-1.1-spec.html.
