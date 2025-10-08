@@ -64,7 +64,7 @@ The {var_label_dev_29_message_notification} message is sent whenever a report of
 [[payload_dev_29_notification_operational_state]]EpisodicOperationalStateReport:: A change report that contains updated operational state information.
 [[payload_dev_29_notification_waveform]]WaveformStream:: A message to transmit a set of samples of one or more waveforms.
 
-[#vol2_clause_dev_29_message_contextreport_expected_actions]
+[#vol2_clause_dev_29_message_notification_actions]
 ====== Expected Actions
 
 When a <<vol1_spec_sdpi_p_actor_somds_provider>> sends this message, there is no expected action or required responses.
