@@ -556,8 +556,8 @@ The Gateway Direction specifies the flow of information through a gateway actor.
 If one of the Gateway Direction options (<<vol1_spec_sdpi_p_option_gateway_import,import>> or <<vol1_spec_sdpi_p_option_gateway_export,export>>) is not configured, then the DEFAULT 
 direction of any gateway actors shall be "<<vol1_spec_sdpi_p_option_gateway_export,export>>". 
 
-.R1030
-[sdpi_requirement#r1030,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+.R1040
+[sdpi_requirement#r1040,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -577,8 +577,8 @@ The Gateway Export Direction Option specifies the flow of information from
 <<vol1_spec_sdpi_p_actor_somds_provider>> systems and sends it to other
 systems, including those outside the SOMDS.  
 
-.R1031
-[sdpi_requirement#r1031,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+.R1041
+[sdpi_requirement#r1041,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -609,8 +609,8 @@ sdpi_include_transaction::DEV-47[actor-id=somds_connector,initiator=optional]
 The Gateway Import Direction Option specifies the flow of information from
 external systems to <<vol1_spec_sdpi_p_actor_somds_consumer>> systems.  
 
-.R1032
-[sdpi_requirement#r1032,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+.R1042
+[sdpi_requirement#r1042,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]

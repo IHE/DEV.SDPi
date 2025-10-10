@@ -186,9 +186,9 @@
             "somds_consumer",
             "somds_provider"
         ],
-        "requirementNumber": 1030,
-        "localId": "R1030",
-        "oid": "1.3.6.1.4.1.19376.1.6.10.1030",
+        "requirementNumber": 1040,
+        "localId": "R1040",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1040",
         "level": "SHALL",
         "owner": {
             "type": "profile",
@@ -217,9 +217,9 @@
             "somds_connector",
             "somds_consumer"
         ],
-        "requirementNumber": 1031,
-        "localId": "R1031",
-        "oid": "1.3.6.1.4.1.19376.1.6.10.1031",
+        "requirementNumber": 1041,
+        "localId": "R1041",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1041",
         "level": "SHALL",
         "owner": {
             "type": "profile-option",
@@ -248,9 +248,9 @@
             "somds_connector",
             "somds_provider"
         ],
-        "requirementNumber": 1032,
-        "localId": "R1032",
-        "oid": "1.3.6.1.4.1.19376.1.6.10.1032",
+        "requirementNumber": 1042,
+        "localId": "R1042",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1042",
         "level": "SHALL",
         "owner": {
             "type": "profile-option",
@@ -2518,11 +2518,11 @@
     {
         "type": "risk-mitigation",
         "actors": [
-            "somds_consumer"
+            "somds_provider"
         ],
-        "requirementNumber": 1005,
-        "localId": "R1005",
-        "oid": "1.3.6.1.4.1.19376.1.6.10.1005",
+        "requirementNumber": 1030,
+        "localId": "R1030",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1030",
         "level": "SHOULD",
         "owner": {
             "type": "protocol",
@@ -2534,15 +2534,219 @@
                 {
                     "type": "block",
                     "lines": [
-                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> should reconnect or go into a fail-safe mode when it receives a report with an <<acronym_mdib>> version that is either lower than the last received version or more than one version higher than the last received version."
+                        "A <<vol1_spec_sdpi_p_actor_somds_provider>> should include an `sdpi:ReportSequence` element in every message notification header."
                     ]
                 }
             ],
-            "noteContent": [],
+            "noteContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The `sdpi:ReportSequence` element supports detection of lost reports by a <<vol1_spec_sdpi_p_actor_somds_consumer>>."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The <<vol3_clause_report-sequence*report+sequence>> extension defines the `sdpi:ReportSequence` element."
+                        }
+                    ]
+                }
+            ],
             "exampleContent": [],
             "relatedContent": []
         },
-        "mitigating": "EFFECTIVENESS",
+        "mitigating": "SAFETY",
+        "test": "INTEROPERABILITY"
+    },
+    {
+        "type": "risk-mitigation",
+        "actors": [
+            "somds_consumer"
+        ],
+        "requirementNumber": 1031,
+        "localId": "R1031",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1031",
+        "level": "SHOULD",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> should reconnect or go into a fail-safe mode when it receives a message notification in a single publish-subscribe session with a `sdpi:ReportSequence/@MessageNumber` that is either:"
+                    ]
+                },
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "not 1 for the first message received in a new session, or"
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "lower than the last `sdpi:ReportSequence/@MessageNumber` number received in an on-going session, or"
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "more than 1 greater than the last `sdpi:ReportSequence/@MessageNumber` number received in an on-going session."
+                        }
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "A publish-subscribe session is established between a <<vol1_spec_sdpi_p_actor_somds_provider>> and <<vol1_spec_sdpi_p_actor_somds_consumer>> using Transaction [DEV-27] (<<vol2_clause_dev_27>>)."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Renewing an established publish-subscribe session does not establish a new session and does not cause `sdpi:ReportSequence/@MessageNumber` to restart from 1."
+                        }
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        },
+        "mitigating": "SAFETY",
+        "test": "INTEROPERABILITY"
+    },
+    {
+        "type": "risk-mitigation",
+        "actors": [
+            "somds_consumer"
+        ],
+        "requirementNumber": 1032,
+        "localId": "R1032",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1032",
+        "level": "SHOULD",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> should treat subsequent reports with the same `sdpi:ReportSequence/@MessageNumber` as functionally identical following confirmation of successful delivery."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Successful delivery on an HTTP transport means the <<vol1_spec_sdpi_p_actor_somds_consumer>> replies to the notification message with a success code (200 &ndash; 299)."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "A <<vol1_spec_sdpi_p_actor_somds_consumer>> may receive multiple reports with the same `sdpi:ReportSequence/@MessageNumber` when the <<vol1_spec_sdpi_p_actor_somds_provider>> does not receive confirmation of successful delivery from the <<vol1_spec_sdpi_p_actor_somds_consumer>>."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "A <<vol1_spec_sdpi_p_actor_somds_consumer>> is not required to process the content of multiple reports with the same `sdpi:ReportSequence/@MessageNumber`."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "A <<vol1_spec_sdpi_p_actor_somds_provider>> will not increment the `sdpi:ReportSequence/@MessageNumber` until it receives confirmation of successful delivery from the <<vol1_spec_sdpi_p_actor_somds_consumer>>."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "A <<vol1_spec_sdpi_p_actor_somds_provider>> that receives a fault response from a <<vol1_spec_sdpi_p_actor_somds_consumer>> may change or delay the message to address the fault."
+                        }
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        },
+        "mitigating": "SAFETY",
+        "test": "INTEROPERABILITY"
+    },
+    {
+        "type": "risk-mitigation",
+        "actors": [
+            "somds_consumer"
+        ],
+        "requirementNumber": 1033,
+        "localId": "R1033",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.1033",
+        "level": "SHOULD",
+        "owner": {
+            "type": "protocol",
+            "id": "mdpws"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "A <<vol1_spec_sdpi_p_actor_somds_consumer>> that receives multiple reports with the same `sdpi:ReportSequence/@MessageNumber` should either:"
+                    ]
+                },
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "acknowledge receipt with an HTTP response code, or"
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "terminate the publish-subscribe session using the mechanisms described in Transaction [DEV-27] (<<vol2_clause_dev_27>>)."
+                        }
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "A <<vol1_spec_sdpi_p_actor_somds_provider>> may send multiple message notifications with the same `sdpi:ReportSequence/@MessageNumber` when it receives a fault code from the <<vol1_spec_sdpi_p_actor_somds_consumer>> (e.g., the consumer is busy processing other messages) or no response (time-out following a network interruption)."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "A <<vol1_spec_sdpi_p_actor_somds_consumer>> may receive more than one message notifications with the same `sdpi:ReportSequence/@MessageNumber` when it responds with a fault code. The message notifications may not be the same (e.g., the <<vol1_spec_sdpi_p_actor_somds_provider>> alters the message to address the fault)."
+                        }
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        },
+        "mitigating": "SAFETY",
         "test": "INTEROPERABILITY"
     },
     {
@@ -6758,6 +6962,175 @@
             "exampleContent": [],
             "relatedContent": []
         }
+    },
+    {
+        "type": "risk-mitigation",
+        "actors": [
+            "somds_provider"
+        ],
+        "requirementNumber": 800,
+        "localId": "R0800",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.800",
+        "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The <<vol1_spec_sdpi_p_actor_somds_provider>> shall set the",
+                        "`sdpi:ReportSequence/@MessageNumber` to 1 for the first notification message",
+                        "sent in a new publish-subscribe session."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "A new publish-subscribe session begins when the <<vol1_spec_sdpi_p_actor_somds_provider>>\nreceives a Subscribe message."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "A <<vol1_spec_sdpi_p_actor_somds_provider>> may send the first report before sending\nthe SubscribeResponse message."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The `sdpi:ReportSequence/@MessageNumber` is scoped to the publish-subscribe\nsession. Different subscriptions may share the same `sdpi:ReportSequence/@MessageNumber`."
+                        }
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        },
+        "mitigating": "EFFECTIVENESS",
+        "test": "INTEROPERABILITY"
+    },
+    {
+        "type": "risk-mitigation",
+        "actors": [
+            "somds_provider"
+        ],
+        "requirementNumber": 801,
+        "localId": "R0801",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.801",
+        "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "The <<vol1_spec_sdpi_p_actor_somds_provider>> shall increment the",
+                        "`sdpi:ReportSequence/@MessageNumber` by exactly 1 only when it receives confirmation",
+                        "of successful delivery of the notification message."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "A <<vol1_spec_sdpi_p_actor_somds_provider>> only increments the\n`sdpi:ReportSequence/@MessageNumber` for successfully delivered notification messages."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Successful delivery for <<vol1_spec_sdpi_p_actor_somds_participant>>s using\n<<ref_w3c_soap_over_http_v1_2*SOAP+over+HTTP+transport>> is indicated by an HTTP status\ncode between 200 and 299."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "A response may be generated by a server layer before the message reaches a\n<<vol1_spec_sdpi_p_actor_somds_consumer>>. HTTP response 503 (service unavailable) is an\nexample of a status code that may be generated by a server layer. The\n<<vol1_spec_sdpi_p_actor_somds_provider>> does not change the `sdpi:ReportSequence/@MessageNumber`\nwhen it receives a fault status response."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "An absent response could mean either the notification or the notification response\nwas not delivered due to a network fault."
+                        }
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        },
+        "mitigating": "EFFECTIVENESS",
+        "test": "INTEROPERABILITY"
+    },
+    {
+        "type": "risk-mitigation",
+        "actors": [
+            "somds_provider"
+        ],
+        "requirementNumber": 802,
+        "localId": "R0802",
+        "oid": "1.3.6.1.4.1.19376.1.6.10.802",
+        "level": "SHALL",
+        "owner": {
+            "type": "content-module",
+            "id": "biceps"
+        },
+        "groups": [],
+        "specification": {
+            "normativeContent": [
+                {
+                    "type": "block",
+                    "lines": [
+                        "Two reports sent with the same `sdpi:ReportSequence/@MessageNumber` shall be functionally identical",
+                        "unless the <<vol1_spec_sdpi_p_actor_somds_provider>> receives a fault response to a notification",
+                        "message from the recipient."
+                    ]
+                }
+            ],
+            "noteContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "Two reports, containing information to update the MDIB for example, are functionally\nidentical when applying either report to update the MDIB would produce an identical result."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "A <<vol1_spec_sdpi_p_actor_somds_provider>> may change the content of a report to resolve\na fault when it receives a fault response. For example, a provider may send fewer historic\nreports after receiving a 413 status response (content too large) when using an HTTP transport."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "A timeout (no response or partial response) should not be considered a fault response from\nthe recipient. A timeout on the <<vol1_spec_sdpi_p_actor_somds_provider>> may occur when the\n<<vol1_spec_sdpi_p_actor_somds_consumer>>'s response is not delivered. A\n<<vol1_spec_sdpi_p_actor_somds_provider>> doesn't change the message content if if receives no response."
+                        },
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "The transport channel may be closed, flushed or otherwise reset when no response or a partial\nresponse is received without affecting the `sdpi:ReportSequence/@MessageNumber`."
+                        }
+                    ]
+                }
+            ],
+            "exampleContent": [],
+            "relatedContent": []
+        },
+        "mitigating": "EFFECTIVENESS",
+        "test": "INTEROPERABILITY"
     },
     {
         "type": "tech-feature",
