@@ -10,6 +10,7 @@
 
 //reset|+1|off
 [#vol2_clause_dev_47,sdpi_offset=47]
+[role=transaction,transaction-id=DEV-47]
 === Retrieve Network Presence [{var_transaction_id}]
 
 ==== Scope
@@ -18,18 +19,26 @@ include::tf2-dev-47-summary.adoc[]
 
 ==== Actor Roles
 
-.Actor Roles [{var_transaction_id}]
-[cols="1,2"]
-|===
-|Actor |Roles
+[sdpi_transaction_actors]
+--
+[actor-id="discovery_proxy",contribution=Responder]
+Forwards <<vol2_clause_dev_46_message_hello, {var_label_dev_46_message_hello}>> 
+and <<vol2_clause_dev_46_message_hello, {var_label_dev_46_message_bye}>> 
+messages received from <<vol1_spec_sdpi_p_actor_somds_provider>>s.
 
-|<<vol1_spec_sdpi_p_actor_discovery_proxy>>
-|Forwards <<vol2_clause_dev_46_message_hello, {var_label_dev_46_message_hello}>> and <<vol2_clause_dev_46_message_hello, {var_label_dev_46_message_bye}>> messages received from <<vol1_spec_sdpi_p_actor_somds_provider>>s.
-Responds to incoming <<vol2_clause_dev_47_message_probe, {var_label_dev_47_message_probe}>> and <<vol2_clause_dev_47_message_resolve, {var_label_dev_47_message_resolve}>> messages.
-|<<vol1_spec_sdpi_p_actor_somds_consumer>>
-|Uses <<vol2_clause_dev_47_message_probe, {var_label_dev_47_message_probe}>> and <<vol2_clause_dev_47_message_resolve, {var_label_dev_47_message_resolve}>> messages to seek endpoint metadata.
-Optionally subscribes to a <<vol1_spec_sdpi_p_actor_discovery_proxy>> in order to receive <<vol2_clause_dev_47_message_hello, {var_label_dev_47_message_hello}>> and <<vol2_clause_dev_47_message_hello, {var_label_dev_47_message_bye}>> messages.
-|===
+Responds to incoming <<vol2_clause_dev_47_message_probe, {var_label_dev_47_message_probe}>> 
+and <<vol2_clause_dev_47_message_resolve, {var_label_dev_47_message_resolve}>> messages.
+
+[actor-id="somds_consumer",contribution=Initiator]
+Uses <<vol2_clause_dev_47_message_probe, {var_label_dev_47_message_probe}>> and 
+<<vol2_clause_dev_47_message_resolve, {var_label_dev_47_message_resolve}>> 
+messages to seek endpoint metadata.
+
+Optionally subscribes to a <<vol1_spec_sdpi_p_actor_discovery_proxy>> in order 
+to receive <<vol2_clause_dev_47_message_hello, {var_label_dev_47_message_hello}>> 
+and <<vol2_clause_dev_47_message_hello, {var_label_dev_47_message_bye}>> messages.
+
+--
 
 ==== Referenced Standards
 

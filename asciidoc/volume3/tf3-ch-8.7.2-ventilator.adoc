@@ -2,6 +2,7 @@
 // = Device:  Ventilator
 
 // 8.3.2
+[role=content-module,content-module-id=ventilator,oid-arcs=".12,.12.1"]
 ==== Device:  Ventilator
 
 

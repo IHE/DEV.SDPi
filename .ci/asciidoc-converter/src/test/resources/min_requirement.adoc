@@ -1,9 +1,7 @@
 :doctype: book
 
-:sdpi_oid.sdpi-p: 1.3.6.1.4.1.19376.1.6.2.11
-
 .R1021
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature,sdpi_req_specification=sdpi-p]
+[sdpi_requirement#r1021,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]

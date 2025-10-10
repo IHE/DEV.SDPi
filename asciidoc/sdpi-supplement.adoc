@@ -18,6 +18,15 @@
 :source-highlighter: highlight.js
 :highlightjsdir: js/highlight
 
+// Set the document attribute to automatically generate
+// actor transactions table from semantic markup. Unset
+// to use manual tables. 
+// https://docs.asciidoctor.org/asciidoc/latest/attributes/unset-attributes/
+:markup-actor-transactions-table:
+
+
+:sdpi_milestone_publication: SDPi 2.1 Publication
+:sdpi_milestone_review: SDPi 2.1 Review
 :sdpi_milestone_publication: SDPi 2.2 Publication
 :sdpi_milestone_review: SDPi 2.2 Review
 
@@ -137,3 +146,4 @@ include::volume2/tf2-main.adoc[]
 // = Volume 3 -- Content Modules
 
 include::volume3/tf3-main.adoc[]
+
