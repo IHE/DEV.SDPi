@@ -36,6 +36,11 @@ class IssueImport(
     fun requestIssues(): IssueImport {
         logger.info { "Request open, closed and TOI issues" }
 
+        if (token.isBlank()) {
+            logger.warn("Empty Github token found, return empty result")
+            return this
+        }
+
         val github = GitHubBuilder().withOAuthToken(token).build()
 
         val iheOrganization = try {
