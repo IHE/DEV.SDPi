@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s12:Envelope
+        xmlns:s12="http://www.w3.org/2003/05/soap-envelope"
+        xmlns:wsa="http://www.w3.org/2005/08/addressing"
+        xmlns:wse="http://schemas.xmlsoap.org/ws/2004/08/eventing"
+        xmlns:hm="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.3.2"
+>
+    <s12:Header>
+        <wsa:Action>http://schemas.xmlsoap.org/ws/2004/08/eventing/Subscribe</wsa:Action>
+        <wsa:MessageID><!-- ... --></wsa:MessageID>
+    </s12:Header>
+    <s12:Body>
+        <wse:Subscribe>
+            <wse:EndTo>
+                <wsa:Address><!-- ... --></wsa:Address>
+            </wse:EndTo>
+            <wse:Delivery Mode="http://schemas.xmlsoap.org/ws/2004/08/eventing/DeliveryModes/Push">
+                <wse:NotifyTo>
+                    <wsa:Address><!-- ... --></wsa:Address>
+                </wse:NotifyTo>
+            </wse:Delivery>
+            <!--
+                'Expires' can be omitted as the subscription should be terminated by the event source when all data
+                has been transmitted.
+            -->
+            <wse:Filter Dialect="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.3.1.1">
+                <hm:ProvideInitialMdib>...</hm:ProvideInitialMdib>
+                <hm:LanguageFilter/>
+                <hm:Range>
+                    <hm:Version SequenceId="..." StartVersion="..." EndVersion="..."/>
+                </hm:Range>
+            </wse:Filter>
+        </wse:Subscribe>
+    </s12:Body>
+</s12:Envelope>
