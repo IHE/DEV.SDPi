@@ -34,9 +34,9 @@ No content from those three standards - including their requirements -  is norma
 
 * [[[ref_hl7_v2,HL7 V2]]] HL7^&#174;^ Version 2 (V2), available at https://www.hl7.org/implement/standards/product_brief.cfm?product_id=185.
 
-* [[[ref_iec_60601_1_8_2020,IEC 60601-1-8:2020]]], IEC 60601-1-8:2006/AMD2:2020, Medical electrical equipment — Part 1-8: General requirements for basic safety and essential performance — Collateral standard: General requirements, tests and guidance for alarm systems in medical electrical equipment and medical electrical systems; Amendment 1:2020, and Amendment 2:2020, available at https://webstore.iec.ch/publication/59648 and https://www.iso.org/standard/41986.html.
+* [[[ref_iec_60601_1_8_2020,IEC 60601-1-8:2020]]] IEC 60601-1-8:2006/AMD2:2020, Medical electrical equipment — Part 1-8: General requirements for basic safety and essential performance — Collateral standard: General requirements, tests and guidance for alarm systems in medical electrical equipment and medical electrical systems; Amendment 1:2020, and Amendment 2:2020, available at https://webstore.iec.ch/publication/59648 and https://www.iso.org/standard/41986.html.
 
-* [[[ref_iec_60601_2_27_2011,IEC 60601-2-27:2011]]], IEC 60601-2-27:2011, Medical electrical equipment — Part 2-27: Particular requirements for the basic safety and essential performance of electrocardiographic monitoring equipment, available at https://webstore.iec.ch/en/publication/2638.
+* [[[ref_iec_60601_2_27_2011,IEC 60601-2-27:2011]]] IEC 60601-2-27:2011, Medical electrical equipment — Part 2-27: Particular requirements for the basic safety and essential performance of electrocardiographic monitoring equipment, available at https://webstore.iec.ch/en/publication/2638.
 
 * [[[ref_ieee_11073_10101_2020,IEEE 11073-10101:2020]]] IEEE 11073-10101™ International Standard - Health informatics--Device interoperability--Part 10101:Point-of-care medical device communication--Nomenclature, available at https://standards.ieee.org/ieee/11073-10101/10343/.
 
@@ -56,9 +56,9 @@ No content from those three standards - including their requirements -  is norma
 
 * [[[ref_ieee_11073_20702_2016,ISO/IEEE 11073-20702:2016]]] ISO/IEEE 11073-20702-2016, Health informatics — Point-of-care medical device communication — Part 20702: Medical Devices Communication Profile for Web Services, 2016-09, available at https://standards.ieee.org/ieee/11073-20702/6034
 
-* [[[ref_iec_80001_1_2021,ISO/IEC 80001-1:2021]]], IEC 80001-1:2021 Application of risk management for IT-networks incorporating medical devices — Part 1: Safety, effectiveness and security in the implementation and use of connected medical devices or connected health software, available at https://webstore.iec.ch/publication/34263 and https://www.iso.org/standard/72026.html.
+* [[[ref_iec_80001_1_2021,ISO/IEC 80001-1:2021]]] IEC 80001-1:2021 Application of risk management for IT-networks incorporating medical devices — Part 1: Safety, effectiveness and security in the implementation and use of connected medical devices or connected health software, available at https://webstore.iec.ch/publication/34263 and https://www.iso.org/standard/72026.html.
 
-* [[[ref_iso_81001_1_2021,ISO/IEC 81001-1:2021]]], ISO 81001-1:2021  Health software and health IT systems safety, effectiveness and security — Part 1: Principles and concepts, available at https://www.iso.org/standard/71538.html and https://webstore.iec.ch/publication/34286.
+* [[[ref_iso_81001_1_2021,ISO/IEC 81001-1:2021]]] ISO 81001-1:2021  Health software and health IT systems safety, effectiveness and security — Part 1: Principles and concepts, available at https://www.iso.org/standard/71538.html and https://webstore.iec.ch/publication/34286.
 
 * [[[ref_ihe_dev_tf_1_2024,IHE DEV TF-1:2024]]] IHE Devices Technical Framework, Vol. 1, available at https://www.ihe.net/uploadedFiles/Documents/PCD/IHE_DEV_TF_Vol1.pdf.
 
@@ -137,7 +137,7 @@ NOTE: The subcategories for the following sections are solely intended to provid
 
 The following bibliographic references include graphics, "infographic", and similar media.
 
-* [[[ref_iso_81001_temple,ISO 81001-1 "The Temple"]]], ISO/IEC 81001-1 Figure 1 "The Temple" Diagram, Copyright &#169; 2019 NHS Digital, licensed via Wikimedia Commons, http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3[Greg Wye, NHS Digital, OGL 3], available at https://81001.org/page/Framework[81001.org Framework].
+* [[[ref_iso_81001_temple,ISO 81001-1 "The Temple"]]] ISO/IEC 81001-1 Figure 1 "The Temple" Diagram, Copyright &#169; 2019 NHS Digital, licensed via Wikimedia Commons, http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3[Greg Wye, NHS Digital, OGL 3], available at https://81001.org/page/Framework[81001.org Framework].
 
 
 [bibliography]
@@ -169,7 +169,7 @@ metalanguage - Extended BNF, 15 December 1996, available at https://standards.is
 
 The following bibliographic references include slide decks and recordings that are helpful in understanding these specifications.
 
-* [[[ref_ihe_eu_experience_2021_presentation_cooper_schlichting,IHE EU Experience-2021 IHE CA for MedTech Solutions]]], "IHE & IHE Catalyst: Advancing Interoperable MedTec Solutions with "Regulatory Submission Ready" Conformity Assessment", presentation by Todd Cooper and Dr. Stefan Schlichting, available at https://connectathon.ihe-europe.net/experience-sessions-2021-presentations[IHE Europe Experience 2021 Presentations web page].
+* [[[ref_ihe_eu_experience_2021_presentation_cooper_schlichting,IHE EU Experience-2021 IHE CA for MedTech Solutions]]] "IHE & IHE Catalyst: Advancing Interoperable MedTec Solutions with "Regulatory Submission Ready" Conformity Assessment", presentation by Todd Cooper and Dr. Stefan Schlichting, available at https://connectathon.ihe-europe.net/experience-sessions-2021-presentations[IHE Europe Experience 2021 Presentations web page].
 
 
 

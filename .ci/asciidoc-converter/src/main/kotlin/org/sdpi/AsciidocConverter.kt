@@ -134,6 +134,7 @@ class AsciidocConverter(
         asciidoctor.javaExtensionRegistry().blockMacro(AddICSPlaceholder())
         asciidoctor.javaExtensionRegistry().blockMacro(AddTransactionQueryPlaceholder())
         asciidoctor.javaExtensionRegistry().blockMacro(AddContentModuleQueryPlaceholder())
+        asciidoctor.javaExtensionRegistry().blockMacro(AddOidQueryPlaceholder())
 
         asciidoctor.javaExtensionRegistry().treeprocessor(PopulateTables(infoCollector))
 
@@ -178,6 +179,7 @@ class AsciidocConverter(
         //profileTransactionCollector.dump()
         //anchorReplacements.dump()
         //anchorCollector.dumpKnownAnchors()
+        //infoCollector.dumpActorAliases()
 
         if (conversionOptions.extractsFolder != null) {
             val jsonFormatter = Json {

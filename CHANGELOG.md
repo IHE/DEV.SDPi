@@ -18,9 +18,15 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Added
 
+- sdpi:ReportSequence extension to separate message sequencing and versioning ([#321](https://github.com/IHE/DEV.SDPi/issues/321)).
+- Semantic markup for profiles, profile-options, requirements, gateways, use-cases to support rich artefact generation ([#463, part 2](https://github.com/IHE/DEV.SDPi/issues/463))
+- OID summary table for profiles, actors, transactions, content modules, use cases, requirements ([#449](https://github.com/IHE/DEV.SDPi/issues/449))
+- Implementation conformity statement tables ([#463, part 2](https://github.com/IHE/DEV.SDPi/issues/463))
 
 ### Changes
 
+- Updated documentation for assigning unique identifiers ([#449](https://github.com/IHE/DEV.SDPi/issues/449))
+- Split Gateway Direction Option into Gateway Export Direction Option and Gateway Import Direction Option 
 
 ### Editorial Fixes
 
