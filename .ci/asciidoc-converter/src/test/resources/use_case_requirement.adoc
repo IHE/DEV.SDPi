@@ -1,9 +1,6 @@
 :doctype: book
 
-:sdpi_oid.sdpi-p: 1.3.6.1.4.1.19376.1.6.2.11
-:sdpi_oid.sdpi: 1.3.6.1.4.1.19376.1.6.2.10.1.1.1
-
-[role="use-case",use-case-id=stad]
+[role="use-case",use-case-id=stad,oid-arcs=.99]
 [sdpi_feature="Synchronized Time Across Devices"]
 === Use Case Feature 1: Synchronized Time Across Devices (STAD)
 
@@ -25,11 +22,11 @@ It is also important for all devices to have a consistent time since the data be
 
 ==== Scenarios
 
-[role=use-case-scenario]
+[role=use-case-scenario,oid-arcs=.99]
 [sdpi_scenario="Device is connected to the MD LAN network with a Time Source service"]
 ===== Scenario: STAD 1.1 - Device is connected to the MD LAN network with a Time Source service
 
-[role=use-case-steps]
+[role=use-case-steps,oid-arcs=.99]
 ====
 *Given* Device has detected at least one TS Service
 
@@ -41,7 +38,7 @@ It is also important for all devices to have a consistent time since the data be
 ====== Safety, Effectiveness and Security - Requirements and Considerations
 
 .R1520
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=use_case_feature,sdpi_req_specification=sdpi]
+[sdpi_requirement#r1520,sdpi_req_level=shall,sdpi_req_type=use_case_feature]
 [sdpi_req_group="consumer,provider"]
 ****
 

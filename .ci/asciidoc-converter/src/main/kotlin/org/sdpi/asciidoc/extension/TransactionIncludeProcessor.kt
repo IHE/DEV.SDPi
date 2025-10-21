@@ -5,6 +5,7 @@ import org.asciidoctor.ast.ContentNode
 import org.asciidoctor.ast.StructuralNode
 import org.asciidoctor.extension.BlockMacroProcessor
 import org.asciidoctor.extension.Name
+import org.sdpi.asciidoc.TransactionIncludeAttributes
 import org.sdpi.asciidoc.findProfileId
 import org.sdpi.asciidoc.model.*
 
@@ -26,27 +27,102 @@ class TransactionIncludeProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_INCLUDE
         return transactionReferences[strProfile]
     }
 
-    override fun process(parent: StructuralNode, target: String, attributes: MutableMap<String, Any>): Any? {
-        val (strProfileId, strProfileOptionId) = findProfileId(parent)
+    override fun process(parent: StructuralNode, strTransactionId: String, attributes: MutableMap<String, Any>): Any? {
+        val (strProfileId, strProfileOptionId, strActorOptionId) = findContextId(parent)
         checkNotNull(strProfileId) {
             logger.error("$BLOCK_MACRO_NAME_INCLUDE_TRANSACTION requires a ancestor block within the 'profile' role")
         }
 
-        val obligations: MutableList<TransactionContribution> = mutableListOf()
+        val strPlaceholderName = attributes[TransactionIncludeAttributes.PLACEHOLDER_NAME.key]?.toString()
+
+
+        // logger.info("Processing transaction include for $strTransactionId in $strProfileId/$strProfileOptionId/$strActorOptionId")
+        val ref = transactionReference(
+            strProfileId,
+            strProfileOptionId,
+            strActorOptionId,
+            strTransactionId,
+            strPlaceholderName
+        )
+
+        val strActor = attributes[TransactionIncludeAttributes.ACTOR.key]?.toString()
         for (attr in attributes) {
-            val transactionContribution = parseContribution(attr.key, attr.value.toString())
-            obligations.add(transactionContribution)
+            if (attr.key != TransactionIncludeAttributes.ACTOR.key
+                && attr.key != TransactionIncludeAttributes.PLACEHOLDER_NAME.key) {
+                val transactionContribution = parseContribution(strActor, attr.key, attr.value.toString())
+                ref.transactionReference.addObligation(transactionContribution)
+            }
         }
-
-        val transactionReference = SdpiTransactionReference(target, obligations)
-        val profileReference = SdpiProfileTransactionReference(strProfileId, strProfileOptionId, transactionReference)
-
-        addReference(profileReference)
 
         return null
     }
 
-    private fun parseContribution(strContribution: String, strObligation: String): TransactionContribution {
+    // Searches up the document tree to find the context for a transaction. Context could
+    // be a profile, profile-option or actor option.
+    fun findContextId(parent: ContentNode): Triple<String?, String?, String?> {
+        if (parent.hasRole(Roles.Profile.PROFILE.key)) {
+            val strProfileId = parent.attributes[Roles.Profile.ID.key]?.toString()
+            checkNotNull(strProfileId) {
+                throw IllegalStateException("Profile has no id")
+            }
+            return Triple(strProfileId, null, null)
+        } else if (parent.hasRole(Roles.Profile.PROFILE_OPTION.key)) {
+            val strOptionId = parent.attributes[Roles.Profile.ID_PROFILE_OPTION.key]?.toString()
+            val parentId = findProfileId(parent.parent)
+            return Triple(parentId.first, strOptionId, null)
+        } else if (parent.hasRole(Roles.Actor.OPTION.key)) {
+            val strOptionId = parent.attributes[Roles.Actor.OPTION_ID.key]?.toString()
+            val parentId = findProfileId(parent.parent)
+            return Triple(parentId.first, null, strOptionId)
+        } else if (parent.parent != parent.document) {
+            return findContextId(parent.parent)
+        } else {
+            return Triple(null, null, null)
+        }
+    }
+
+
+    private fun transactionReference(
+        strProfileId: String,
+        strProfileOptionId: String?,
+        strActorOptionId: String?,
+        strTransactionId: String,
+        strDeferredName: String?
+    ): SdpiProfileTransactionReference {
+        val profileReferences = getProfileReferences(strProfileId)
+        val existing = profileReferences.find {
+            it.profileOptionId == strProfileOptionId
+                    && it.actorOptionId == strActorOptionId
+                    && it.transactionReference.transactionId == strTransactionId
+        }
+        if (existing != null) {
+            return existing
+        }
+        val newRef = SdpiProfileTransactionReference(
+            strProfileId,
+            strProfileOptionId,
+            strActorOptionId,
+            SdpiTransactionReference(strTransactionId, strDeferredName)
+        )
+        profileReferences.add(newRef)
+        return newRef
+    }
+
+    private fun getProfileReferences(strProfileId: String): MutableList<SdpiProfileTransactionReference> {
+        val ref = transactionReferences[strProfileId]
+        if (ref != null) {
+            return ref
+        }
+        val newRefs = mutableListOf<SdpiProfileTransactionReference>()
+        transactionReferences[strProfileId] = newRefs
+        return newRefs
+    }
+
+    private fun parseContribution(
+        strActor: String?,
+        strContribution: String,
+        strObligation: String
+    ): TransactionContribution {
         val contribution = parseContribution(strContribution)
         checkNotNull(contribution) {
             logger.error("Unknown contribution $strContribution")
@@ -57,95 +133,11 @@ class TransactionIncludeProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_INCLUDE
             logger.error("Unknown obligation $strObligation")
         }
 
-        return TransactionContribution(contribution, obligation)
+        //logger.info("For {$strActor} $contribution => $obligation")
+
+        return TransactionContribution(contribution, obligation, strActor)
     }
 
-    private fun addReference(ref: SdpiProfileTransactionReference) {
-        var profileTransactions = transactionReferences[ref.profileId]
-        if (profileTransactions == null) {
-            profileTransactions = mutableListOf<SdpiProfileTransactionReference>()
-            transactionReferences[ref.profileId] = profileTransactions
-        } else {
-            val bDuplicate = profileTransactions.any {
-                (it.transactionReference.transactionId == ref.transactionReference.transactionId)
-                        && (it.profileOptionId == ref.profileOptionId)
-            }
-            check(!bDuplicate) {
-                logger.error("Profile ${ref.profileId} (option=${ref.profileOptionId}) already references ${ref.transactionReference.transactionId}")
-            }
-        }
-        profileTransactions.add(ref)
-
-    }
-
-    /*    override fun process(parent: StructuralNode, target: String, attributes: MutableMap<String, Any>): Any? {
-        val strProfileId = findProfileId(parent)
-        checkNotNull(strProfileId) {
-            logger.error("$BLOCK_MACRO_NAME_INCLUDE_TRANSACTION requires a ancestor block within the 'profile' role")
-        }
-
-        val obligations: MutableList<TransactionContribution> = mutableListOf()
-        for (attr in attributes) {
-            val transactionContribution = parseContribution(attr.key, attr.value.toString())
-            obligations.add(transactionContribution)
-        }
-
-        val transactionReference = createTransactionReference(target, attributes)
-
-        if (!profiles.containsKey(strProfileId)) {
-            profiles[strProfileId] = mutableListOf()
-        }
-        profiles[strProfileId]?.add(transactionReference)
-        return null
-    }
-
-
-
-    private fun createTransactionReference(strTransactionId: String, attributes: MutableMap<String, Any>): SdpiTransactionReference {
-        val obligations: MutableList<TransactionContribution> = mutableListOf()
-        for (attr in attributes) {
-            val transactionContribution = parseContribution(attr.key, attr.value.toString())
-            obligations.add(transactionContribution)
-        }
-
-        return SdpiTransactionReference(strTransactionId, obligations)
-    }
-
-    private fun parseContribution(strContribution: String, strObligationSet: String): TransactionContribution {
-        val contribution = parseContribution(strContribution)
-        checkNotNull(contribution) {
-            logger.error("Unknown contribution $strContribution")
-        }
-
-        val (defaultObligation, obligationOptions) = parseObligations(strObligationSet)
-        return TransactionContribution(contribution, defaultObligation, obligationOptions)
-    }
-
-
-    private fun parseObligations(strObligationSet: String): Pair<Obligation, List<SdpiProfileTransaction>?> {
-        val optionalObligations = mutableListOf<SdpiProfileTransaction>()
-
-        var defaultObligation = Obligation.REQUIRED
-        for (strObligationTerm in strObligationSet.split('|')) {
-            val matchedObligation = reMatchObligation.matchEntire(strObligationTerm)
-            if (matchedObligation != null) {
-                val (strObligation, strOptionId) = matchedObligation.destructured
-                val newObligation = parseObligation(strObligation)
-                checkNotNull(newObligation) {
-                    logger.error("Unknown obligation $strObligation")
-                }
-                if (strOptionId.isEmpty()) {
-                    defaultObligation = newObligation
-                } else {
-                    optionalObligations.add(TransactionContributionOption(strOptionId, newObligation))
-                }
-            }
-        }
-
-        val optOb = if (optionalObligations.isEmpty()) null else optionalObligations
-        return Pair(defaultObligation, optOb)
-    }
-*/
     fun dump() {
         for (profile in transactionReferences) {
             logger.info("Profile: ${profile.key}")

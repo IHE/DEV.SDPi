@@ -1,0 +1,30 @@
+[appendix#vol3_appendix_c_oids,sdpi_offset=C]
+== OID identifiers
+
+See https://wiki.ihe.net/index.php/PCD_OID_Management[PCD OID Management] for canonical definitions 
+of object identifiers for the profile, its actors and transactions, etc. 
+
+=== Device integration profiles
+
+sdpi_oid_table::[arc="profiles"]
+
+=== Actors
+
+sdpi_oid_table::[arc="actors"]
+
+=== Transactions
+
+sdpi_oid_table::[arc="transactions"]
+
+=== Content modules
+
+sdpi_oid_table::[arc="content-modules"]
+
+=== Use cases
+
+sdpi_oid_table::[arc="use-cases"]
+
+=== Requirements
+
+sdpi_oid_table::[arc="requirements"]
+

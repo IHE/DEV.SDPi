@@ -4,13 +4,13 @@
 
 Pellentesque pellentesque ligula vitae neque porttitor sollicitudin. Nullam at nisi nunc. 
 
-[role="profile",profile-id="Profile-A"]
+[role="profile",profile-id="Profile-A",oid-arcs=.99]
 == A Profile
 
 Suspendisse nec vehicula dui, vitae auctor sem. 
 
 .R0100
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r0100,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -27,7 +27,7 @@ Duis ac pretium arcu. Suspendisse vitae shall arcu vulputate mauris commodo vari
 Vivamus vitae sem sed dolor posuere efficitur vel ut mi. 
 
 .R0200
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r0200,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -37,11 +37,11 @@ Duis ac pretium arcu. Suspendisse vitae shall arcu vulputate mauris commodo vari
 
 ****
 
-[role="use-case",use-case-id=stad]
+[role="use-case",use-case-id=stad,oid-arcs=.99]
 == Use Case Feature 1: Synchronized time across devices (STAD)
 
 .R0300
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r0300,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -56,13 +56,13 @@ Duis id tortor shall quis felis commodo facilisis sed a eros.
 === Narrative
 Nurse Jean attaches a ventilator to the medical device network in the ICU.  It automatically obtains the correct time.
 
-[role="content-module",content-module-id=biceps,reftext="Biceps content module"]
+[role="content-module",content-module-id=biceps,reftext="Biceps content module",oid-arcs=.99]
 == Biceps content module
 
 Cras vestibulum volutpat tortor sit amet hendrerit. Sed efficitur tempus molestie. 
 
 .R0400
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r0400,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -78,7 +78,7 @@ Shall duis id tortor shall quis felis commodo facilisis sed a eros.
 Nullam et tellus eu metus vehicula sodales. 
 
 .R0500
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r0500,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]
@@ -94,7 +94,7 @@ Curabitur leo augue, tempor ac shall vehicula porta, pretium vitae ante. Morbi c
 In volutpat iaculis malesuada. Quisque commodo, justo ac molestie convallis, ante lacus lacinia metus, quis sagittis nisl libero at lacus. 
 
 .R0600
-[sdpi_requirement,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+[sdpi_requirement#r0600,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 
 [NORMATIVE]

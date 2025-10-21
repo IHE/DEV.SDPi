@@ -4,16 +4,18 @@
 MDPWS is based on DPWS which in turn leverages a profiled SOAP-based Web Services protocol stack to establish a service-oriented system of devices (<<acronym_somds>>).
 
 .R0500
-[sdpi_requirement#r0500,sdpi_req_level=shall]
+[sdpi_requirement#r0500,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_provider>> shall at least provide the port types as specified in <<vol2_table_appendix_mdpws_service_mapping_port_types>>.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: According to <<acronym_biceps>>, the GET SERVICE is the only mandatory service to be implemented. This specification extends the list of mandatory services to increase interoperability between <<vol1_spec_sdpi_p_actor_somds_participant>>s.
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall at least provide the port types as specified in <<vol2_table_appendix_mdpws_service_mapping_port_types>>.
+====
 
-NOTE: All port types of SDC are {uri_sdc_wsdl}[available for download].
+[NOTE]
+====
+* According to <<acronym_biceps>>, the GET SERVICE is the only mandatory service to be implemented. This specification extends the list of mandatory services to increase interoperability between <<vol1_spec_sdpi_p_actor_somds_participant>>s.
+
+* All port types of SDC are {uri_sdc_wsdl}[available for download].
 ====
 ****
 
@@ -40,23 +42,33 @@ NOTE: All port types of SDC are {uri_sdc_wsdl}[available for download].
 |===
 
 .R0501
-[sdpi_requirement#r0501,sdpi_req_level=should]
+[sdpi_requirement#r0501,sdpi_req_level=should,sdpi_req_type=tech_feature]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_consumer>> should not request context states by using the `GetContextStatesByIdentification` and `GetContextStatesByFilter` operations of the ++{++{uri_sdc_port_type}++}++ContextService port type.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: `GetContextStatesByIdentification` and `GetContextStatesByFilter` are insufficiently defined in <<ref_ieee_11073_10207_2017>> and are likely to be obsoleted in a future revision of the specification.
+A <<vol1_spec_sdpi_p_actor_somds_consumer>> should not request context states by using the `GetContextStatesByIdentification` and `GetContextStatesByFilter` operations of the ++{++{uri_sdc_port_type}++}++ContextService port type.
+====
 
-NOTE: A <<vol1_spec_sdpi_p_actor_somds_consumer>> may retrieve context states by using `GetContextStates` and perform filtering by itself.
+[NOTE]
+====
+* `GetContextStatesByIdentification` and `GetContextStatesByFilter` are insufficiently defined in <<ref_ieee_11073_10207_2017>> and are likely to be obsoleted in a future revision of the specification.
+
+* A <<vol1_spec_sdpi_p_actor_somds_consumer>> may retrieve context states by using `GetContextStates` and perform filtering by itself.
 ====
 ****
 
 .R0509
-[sdpi_requirement#r0509,sdpi_req_level=shall]
+[sdpi_requirement#r0509,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
-If a <<vol1_clause_sdpi_p_somds_provider>> provides localized text references in its <<acronym_mdib>>, the <<vol1_clause_sdpi_p_somds_provider>> shall provide the LOCALIZATION SERVICE via port type ++{++{uri_sdc_port_type}++}++LocalizationService.
+[NORMATIVE]
+====
+If a <<vol1_clause_sdpi_p_somds_provider>> provides localized text references in its <<acronym_mdib>>, 
+the <<vol1_clause_sdpi_p_somds_provider>> shall provide the LOCALIZATION SERVICE via port type 
+++{++{uri_sdc_port_type}++}++LocalizationService.
+====
 
-NOTE: The ++{++{uri_sdc_port_type}++}++LocalizationService port type is {uri_sdc_wsdl}[available for download].
+[NOTE]
+====
+The ++{++{uri_sdc_port_type}++}++LocalizationService port type is {uri_sdc_wsdl}[available for download].
+====
 ****

@@ -1,5 +1,6 @@
 //reset|+1|off
 [#vol2_clause_dev_25,sdpi_offset=25]
+[role=transaction,transaction-id=DEV-25]
 === Discover BICEPS Services [DEV-25]
 
 ==== Scope
@@ -9,18 +10,17 @@ include::tf2-dev-25-summary.adoc[]
 
 ==== Actor Roles
 
-.Actor Roles [DEV-25]
-[cols="1,2"]
-|===
-|Actor |Roles
+[sdpi_transaction_actors]
+--
 
-|<<vol1_spec_sdpi_p_actor_somds_consumer>>
-| Asks for the resource representation of the <<vol1_spec_sdpi_p_actor_somds_provider>> via the <<vol2_clause_dev_25_message_get_metadata, GetMetadata>> message.
+[actor-id="somds_consumer",contribution=Initiator]
+Asks for the resource representation of the <<vol1_spec_sdpi_p_actor_somds_provider>> via the <<vol2_clause_dev_25_message_get_metadata, GetMetadata>> message.
 
-|<<vol1_spec_sdpi_p_actor_somds_provider>>
-| Sends its resource representation to the <<vol1_spec_sdpi_p_actor_somds_consumer>> via the <<vol2_clause_dev_25_message_get_metadata_response, GetMetadataResponse>> message.
+[actor-id="somds_provider",contribution=Responder]
+Sends its resource representation to the <<vol1_spec_sdpi_p_actor_somds_consumer>> via the <<vol2_clause_dev_25_message_get_metadata_response, GetMetadataResponse>> message.
 
-|===
+--
+
 
 ==== Referenced Standards
 
@@ -77,6 +77,6 @@ Model Metadata:: Expresses <<vol1_spec_sdpi_p_actor_somds_provider>> characteris
 ====== Expected Actions
 When a <<vol1_spec_sdpi_p_actor_somds_provider>> sends this message, there is no expected or required response.
 
-[#vol2_clause_dev_23_message_announce_network_presence_ses]
+[#vol2_clause_dev_25_message_announce_network_presence_ses]
 include::../dev-x-default-ses-secured-mode.adoc[]
 

@@ -80,43 +80,48 @@ Note that if the *@StepWidth* in the second range was not defined, the precision
 ====== Requirements
 
 .R1015
-[sdpi_requirement#r1015,sdpi_req_level=shall]
+[sdpi_requirement#r1015,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
-For any metric's *@StepWidth* or *@Resolution*, a <<vol1_spec_sdpi_p_actor_somds_consumer>> shall ignore trailing zeros after the decimal point when determining display precision.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
+For any metric's *@StepWidth* or *@Resolution*, a <<vol1_spec_sdpi_p_actor_somds_consumer>> shall ignore trailing zeros after the decimal point when determining display precision.
+====
+
 [NOTE]
 =====
 XML Schema allows appending trailing zeros to decimal numbers such as in "0.0100". However, in this example, the last two trailing zeros are insignificant to the decimal's value and hence must be ignored when determining the precision.
 
 However, this does not apply for the zeros _before_ the decimal point. In this case the zeros are relevant for determining the precision, e.g., in "10".
 =====
-====
+
 ****
 
 .R1016
-[sdpi_requirement#r1016,sdpi_req_level=shall]
+[sdpi_requirement#r1016,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
+[NORMATIVE]
+====
 A <<actor_somds_consumer>> shall determine the _active range_ for the current metric's *@Value* or a set of multiple metric's *@Samples* to be displayed at the  <<actor_somds_consumer>>'s display by the following priority order:
 
 . The *pm:PhysiologicalRange* element of the metric state where the current metric's *@Value* or a sample that represents the display precision for the entire set of metric's *@Samples* falls into.
 . The *pm:TechnicalRange* element of the metric descriptor where the current metric's *@Value* or a sample that represents the display precision for the entire set of metric's *@Samples* falls into.
-
-.Notes
-[%collapsible]
 ====
-NOTE: If the <<actor_somds_consumer>> wants to display, for example, a wave on the screen which consists of samples from multiple metric's *@Samples*, the display precision of the wave must be determined from the display precision of the individual samples. It is then up to the <<actor_somds_consumer>> to select a common display precision for all samples to be displayed at the screen as a wave.
+
+[NOTE]
+====
+If the <<actor_somds_consumer>> wants to display, for example, a wave on the screen which consists of samples from multiple metric's *@Samples*, the display precision of the wave must be determined from the display precision of the individual samples. It is then up to the <<actor_somds_consumer>> to select a common display precision for all samples to be displayed at the screen as a wave.
 ====
 ****
 
 .R1017
-[sdpi_requirement#r1017,sdpi_req_level=shall]
+[sdpi_requirement#r1017,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
+[NORMATIVE]
+====
 A <<actor_somds_consumer>> shall determine the current display precision for a metric's *@Value* or *@Samples* by the following priority order:
 
 1. *ext:Extension/mpkp:DisplayPrecision/@StepWidth* is defined for the _active range_
 2. *pm:Range/@StepWidth* is defined for the _active range_
 3. *@Resolution* if there is no _active range_ with a *@StepWidth* defined
+====
 ****

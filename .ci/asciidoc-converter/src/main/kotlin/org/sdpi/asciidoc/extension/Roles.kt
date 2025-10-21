@@ -24,7 +24,13 @@ sealed class Roles {
         // alias for an actor-id.
         ALIAS("actor-alias"),
 
-        ID("actor-id")
+        ID("actor-id"),
+
+        // A role defining an option for one or more actors.
+        OPTION("actor-option"),
+
+        // Id for the actor option
+        OPTION_ID("actor-option-id"),
     }
 
     enum class Transaction(val key: String) {
@@ -67,6 +73,9 @@ sealed class Roles {
 
         // The role applied to content module tables
         CONTENT_MODULE("content-module-table"),
+
+        // The role applied to oid tables
+        OID("oid-table"),
     }
 
     enum class ContentModule(val key: String) {

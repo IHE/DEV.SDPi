@@ -3,6 +3,7 @@
 
 //reset|+1|off
 [#vol2_clause_dev_36,sdpi_offset=36]
+[role=transaction,transaction-id=DEV-36]
 === Publish Medical Data [{var_transaction_id}]
 
 ==== Scope
@@ -11,18 +12,18 @@ include::tf2-dev-36-summary.adoc[]
 
 ==== Actor Roles
 
-.Actor Roles [{var_transaction_id}]
-[cols="1,2"]
-|===
-|Actor |Roles
+[sdpi_transaction_actors]
+--
 
-|<<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>>
-|Listens for a Notification message to retrieve medical data updates.
 
-|<<vol1_spec_sdpi_r_actor_somds_medical_data_provider>>
-|While a subscription is running, the <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> delivers Notification messages.
+[actor-id="somds_medical_data_consumer",contribution=Responder]
+Listens for a Notification message to retrieve medical data updates.
 
-|===
+[actor-id="somds_medical_data_provider",contribution=Initiator]
+While a subscription is running, the <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> delivers Notification messages.
+
+--
+
 
 ==== Referenced Standards
 

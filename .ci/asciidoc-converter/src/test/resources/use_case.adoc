@@ -2,7 +2,7 @@
 
 Pellentesque pellentesque ligula vitae neque RefUseCase:stad[] porttitor sollicitudin. Nullam at nisi nunc. 
 
-[role="profile",profile-id="Profile-A"]
+[role="profile",profile-id="Profile-A",oid-arcs=.99]
 == A Profile
 
 Suspendisse nec vehicula dui, vitae auctor sem. 
@@ -15,18 +15,18 @@ sdpi_include_use_case::stad[actor-id="somds-provider", support=required]
 
 === Actor definitions
 
-[role=actor,actor-id=somds-provider,reftext="SOMDS Provider"]
+[role=actor,actor-id=somds-provider,reftext="SOMDS Provider",oid-arcs=.99]
 ==== SOMDS Provider
 
 A somds participant that provides at least one service to the other participant systems.  
 
-[role=actor,actor-id=somds-consumer,reftext="SOMDS Consumer"]
+[role=actor,actor-id=somds-consumer,reftext="SOMDS Consumer",oid-arcs=.98]
 ==== SOMDS Consumer
 
 A somds participant that discovers and utilizes at least one service, functional capability, exposed to a network communications backbone by a somds provider. 
 
 
-[role="use-case",use-case-id=stad]
+[role="use-case",use-case-id=stad,oid-arcs=.99]
 === Use Case Feature 1: Synchronized time across devices (STAD)
 
 ==== Narrative
@@ -47,7 +47,7 @@ It is also important for all devices to have a consistent time since the data be
 
 ==== Scenarios
 
-[role=use-case-scenario,sdpi_scenario="Device is connected to the MD LAN network with a Time Source service"]
+[role=use-case-scenario,sdpi_scenario="Device is connected to the MD LAN network with a Time Source service",oid-arcs=.99]
 ===== Scenario: STAD 1.1 --- Device is connected to the MD LAN network with a Time Source service
 
 [role=use-case-steps]
@@ -59,7 +59,7 @@ It is also important for all devices to have a consistent time since the data be
 *Then* The device will synchronize its time with the TS Service
 ====
 
-[role=use-case-scenario,sdpi_scenario="User wants to change the time of a device connected to the MD LAN network"]
+[role=use-case-scenario,sdpi_scenario="User wants to change the time of a device connected to the MD LAN network",oid-arcs=.98]
 ===== Scenario: STAD 1.2 --- Device is connected to the MD LAN network and a user wants to change the device’s time
 
 [role=use-case-steps]

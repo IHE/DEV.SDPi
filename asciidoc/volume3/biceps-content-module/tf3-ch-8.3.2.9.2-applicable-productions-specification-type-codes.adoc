@@ -3,16 +3,18 @@
 ====== Applicable Production Specification Type Codes
 
 .R0008
-[sdpi_requirement#r0008,sdpi_req_level=shall]
+[sdpi_requirement#r0008,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
-If available by the <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_provider>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall include every production specification listed in <<vol3_table_production_specifications>> in its MDSs, unless a mapping to the BICEPS Participant Model exists.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: <<vol3_table_production_specifications_mapping>> shows the mapping between IEEE 11073-10101 RefIds and the BICEPS Participant Model. A dash in the column _{var_column_pm_mapping}_ signifies a non-existent mapping.
+If available by the <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_provider>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall include every production specification listed in <<vol3_table_production_specifications>> in its MDSs, unless a mapping to the BICEPS Participant Model exists.
+====
 
-NOTE: Other production specifications may be used for types that are not listed in <<vol3_table_production_specifications>>.
+[NOTE]
+====
+* <<vol3_table_production_specifications_mapping>> shows the mapping between IEEE 11073-10101 RefIds and the BICEPS Participant Model. A dash in the column _{var_column_pm_mapping}_ signifies a non-existent mapping.
+
+* Other production specifications may be used for types that are not listed in <<vol3_table_production_specifications>>.
 ====
 ****
 

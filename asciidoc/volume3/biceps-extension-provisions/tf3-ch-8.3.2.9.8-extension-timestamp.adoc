@@ -88,13 +88,14 @@ include::../../listings/vol3-clause-biceps-content-example-timestamp-version.xml
 ====== Requirements
 
 .R0600
-[sdpi_requirement#r0600,sdpi_req_level=shall]
+[sdpi_requirement#r0600,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
+[NORMATIVE]
+====
 A <<vol1_spec_sdpi_p_actor_somds_provider>> shall include the `sdpi:EpochSupport` extension and set `sdpi:EpochSupport/@Version=1` in every <<term_system_clock>> `pm:ClockDescriptor`, used as part of its System Function Contribution (<<acronym_sfc>>), that uses epoch versioning for <<term_abrupt_time_adjustment>>s. 
+====
 
-.Notes
 [NOTE]
-[%collapsible]
 ====
 * The presence of `sdpi:EpochSupport` indicates support for this extension and related requirements. 
 * A <<vol1_spec_sdpi_p_actor_somds_provider>> may set `ext:MustUnderstand="true"` to prevent consumers that do not understand this extension from processing the <<acronym_mdib>>. 
@@ -104,13 +105,14 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall include the `sdpi:EpochSupport
 ****
 
 .R0601
-[sdpi_requirement#r0601,sdpi_req_level=shall]
+[sdpi_requirement#r0601,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
+[NORMATIVE]
+====
 A <<vol1_spec_sdpi_p_actor_somds_consumer>> shall ignore all epoch version information on any system clocks that do not include the `sdpi:EpochSupport` extension in any MDIB version or if the `sdpi:EpochSupport/@Version` changes within a single sequence id.
+====
 
-.Notes
 [NOTE]
-[%collapsible]
 ====
 * The `spdi:EpochSupport` extension is intended to be immutable. 
 * A <<vol1_spec_sdpi_p_actor_somds_consumer>> may rely on future versions of the extension being backwards compatible. 
@@ -120,34 +122,39 @@ A <<vol1_spec_sdpi_p_actor_somds_consumer>> shall ignore all epoch version infor
 ****
 
 .R0605
-[sdpi_requirement#r0605,sdpi_req_level=shall]
+[sdpi_requirement#r0605,sdpi_req_level=shall,sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
 ****
+[NORMATIVE]
+====
 The <<vol1_spec_sdpi_p_actor_somds_provider>> shall increment `sdpi:Epochs/@Version` by exactly one, beginning from 0, for every non-slewing time adjustment to any system clock used as part of its System Function Contribution (<<acronym_sfc>>). 
+====
 
 ****
 
 .R0606
-[sdpi_requirement#r0606,sdpi_req_level=should]
+[sdpi_requirement#r0606,sdpi_req_level=should,sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_provider>> should set the version of all versioned timestamps to 0 when it assigns a new MDIB sequence identifier (`pm:MdibVersionGroup/@SequenceId`). 
-
-.Notes
-[NOTE]
-[%collapsible]
+[NORMATIVE]
 ====
-* Epoch versions are generally scoped to the `pm:MdibVersionGroup/@SequenceId`. Some providers may carry versioned timestamps across new sequences, particularly if the new sequence is created for reasons other than an abrupt time adjustment. 
+A <<vol1_spec_sdpi_p_actor_somds_provider>> should set the version of all versioned timestamps to 0 when it assigns a new MDIB sequence identifier (`pm:MdibVersionGroup/@SequenceId`). 
+====
+
+[NOTE]
+====
+Epoch versions are generally scoped to the `pm:MdibVersionGroup/@SequenceId`. Some providers may carry versioned timestamps across new sequences, particularly if the new sequence is created for reasons other than an abrupt time adjustment. 
 
 ====
 ****
 
 .R0610
-[sdpi_requirement#r0610,sdpi_req_level=shall]
+[sdpi_requirement#r0610,sdpi_req_level=shall,sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
 ****
+[NORMATIVE]
+====
 A <<vol1_spec_sdpi_p_actor_somds_provider>> that versions timestamps in any `pm:AbstractMetricValue`, `pm:AbstractContextState`, `pm:AlertSystemState`, `pm:CalibrationInfo` and/or `pm:AlertConditionState` shall include, in every clock state update, the complete history of epoch offsets from the earliest version referenced in the MDIB to the current epoch.  
+====
 
-.Notes
 [NOTE]
-[%collapsible]
 ====
 * Epoch offsets provide a mechanism for consumers to (approximately) reconstruct time between epochs. Reconstruction can only be approximate because there is no mechanism to determine the source and timing of any external discrepancies that led to the abrupt change in a <<term_time_reference_frame>>. 
 * This allows a <<vol1_spec_sdpi_p_actor_somds_provider>> to choose which timestamps it versions. For example context binding timestamps (which may remain out of date significantly longer than other metrics) could be versioned but regularly updated metrics may not require timestamp versions. 
@@ -156,27 +163,29 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> that versions timestamps in any `pm:
 ****
 
 .R0611
-[sdpi_requirement#r0611,sdpi_req_level=shall]
+[sdpi_requirement#r0611,sdpi_req_level=shall,sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_provider>> shall not change the epoch version assigned to a timestamp without creating a new timestamp. 
-
-.Notes
-[NOTE]
-[%collapsible]
+[NORMATIVE]
 ====
-* Epoch versions and timestamps are immutable and may not change independently. 
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall not change the epoch version assigned to a timestamp without creating a new timestamp. 
+====
+
+[NOTE]
+====
+Epoch versions and timestamps are immutable and may not change independently. 
 
 ====
 ****
 
 .R0612
-[sdpi_requirement#r0612,sdpi_req_level=shall]
+[sdpi_requirement#r0612,sdpi_req_level=shall,sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
 ****
+[NORMATIVE]
+====
 When the source clock of a versioned timestamp is ambiguous, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall include a reference to the `pm:ClockDescriptor/@Handle` in `sdpi:TimestampEpochVersionType/@Clock`.
+====
 
-.Notes
 [NOTE]
-[%collapsible]
 ====
 * The clock source is not ambiguous when there is only one clock in the whole <<acronym_mdib>>, or there is only one clock in the `pm:Mds` containing the `pm:AbstractState` that includes the versioned timestamp and the version timestamp does not use a clock from a different `pm:Mds`.
 * The `sdpi:TimestampEpochVersionType/@Clock` may be omitted when the source clock is not ambiguous to reduce message size.

@@ -7,6 +7,7 @@
 |===
 
 // 8.3.3
+[role=content-module,content-module-id=physiological-monitor,oid-arcs=".13,.13.1"]
 ==== Device:  Physiologic monitor
 
 // 8.3.3.4

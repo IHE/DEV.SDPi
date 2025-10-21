@@ -1,4 +1,5 @@
 [#vol1_clause_appendix_c_use_case_acns,sdpi_offset=6]
+[role=use-case,use-case-id=acns,sdpi_feature="Alerts to Clinician Notification Systems",oid-arcs=".5"]
 === Use Case Feature {var_use_case_id}: <<label_use_case_name_acns>> (<<acronym_acns>>)
 
 // NOTE:  See use case labels in document-declarations.adoc
@@ -19,6 +20,8 @@ image::../images/vol1-diagram-use-case-acns-tech-view.svg[]
 [#vol1_clause_appendix_c_use_case_acns_technical_precondition]
 ==== Technical Pre-Conditions
 
+[role=use-case-background]
+====
 *Given* All devices communicate using a common <<acronym_md_lan>> protocol
 
 *And* At least one Alert <<system_type_device_gateway>> (AGW) Service on the <<acronym_md_lan>> network
@@ -28,21 +31,31 @@ image::../images/vol1-diagram-use-case-acns-tech-view.svg[]
 *And* All devices report either a device label and/or location and/or patient ID
 
 *And* The AGW Service is associated with a specific set of device labels, and/or location(s) (Scope)
+====
 
 
 [#vol1_clause_appendix_c_use_case_acns_scenarios]
 ==== Scenarios
 
+[role=use-case-scenario,sdpi_scenario="New device is connected to network with AGW service"]
+[oid-arcs=".1,.1.1"]
 ===== Scenario: <<acronym_acns>> {var_use_case_id}.1 - New device is connected to network with AGW service
 
+[role=use-case-steps]
+====
 *Given* the AGW Service has detected a new device in its scope
 
 *When* the AGW Service is operational
 
 *Then* the AGW Service will connect to the device and communicate alerts to the Clinician Notification System
+====
 
+[role=use-case-scenario,sdpi_scenario="The AGW service loses connectivity with the ICU devices"]
+[oid-arcs=".2,.2.1"]
 ===== Scenario: <<acronym_acns>> {var_use_case_id}.2 - The AGW service loses connectivity with the ICU devices
 
+[role=use-case-steps]
+====
 *Given* the AGW Service no longer communicates with ICU devices in its scope
 
 *When* There is a communications failure
@@ -50,21 +63,32 @@ image::../images/vol1-diagram-use-case-acns-tech-view.svg[]
 *Then* the AGW Service will notify the Clinician Notification System of the failure
 
 *Then* when the AGW Service regains communication with the devices it will resume reporting active alerts to the Clinician Notification System
+====
 
+[role=use-case-scenario,sdpi_scenario="The AGW service fails"]
+[oid-arcs=".3,.3.1"]
 ===== Scenario: <<acronym_acns>> {var_use_case_id}.3 - The AGW service fails
 
+[role=use-case-steps]
+====
 *Given* the AGW Service fails
 
 *Then* the Clinician Notification System will detect a loss of communications with the AGW Service
 
 *Then* when the AGW Service recovers it will resume reporting active alerts to the Clinician Notification System
+====
 
+[role=use-case-scenario,sdpi_scenario="The Clinician Notification System loses connectivity with the AGW"]
+[oid-arcs=".4,.4.1"]
 ===== Scenario: <<acronym_acns>> {var_use_case_id}.4 - The Clinician Notification System loses connectivity with the AGW
 
+[role=use-case-steps]
+====
 *Given* the Clinician Notification System can no longer communicate with the AGW Service
 
 *Then* the Clinician Notification System will detect a loss of communications with the AGW Service
 
 *Then*  when connectivity recovers, the Clinician Notification System will resume reporting active alerts
+====
 
 

@@ -25,7 +25,7 @@ const val BLOCK_NAME_TRANSACTION_ACTORS = "sdpi_transaction_actors"
 @ContentModel(ContentModel.COMPOUND)
 class TransactionActorsProcessor : BlockProcessor(BLOCK_NAME_TRANSACTION_ACTORS) {
     private companion object : Logging {
-        val RE_ATTRIBUTES = """([a-zA-Z_-]+)\s*=\s*"([^"]*)"""".toRegex()
+        val RE_ATTRIBUTES = """([a-zA-Z_-]+)\s*=\s*"?([^"\],]*)"?""".toRegex()
     }
 
     // Indexed by transaction id (e.g., DEV-23), this maps contains the roles
@@ -59,13 +59,12 @@ class TransactionActorsProcessor : BlockProcessor(BLOCK_NAME_TRANSACTION_ACTORS)
         val description = mutableListOf<String>()
 
         for (strLine in blockLines) {
-            if (strLine.isEmpty()) {
+            if (strLine.startsWith('[')) {
                 if (strActor != null && contribution != null && description.isNotEmpty()) {
                     roles.add(SdpiActorRole(strActor, contribution, description.toList()))
                 }
-
                 description.clear()
-            } else if (strLine.startsWith('[')) {
+
                 val result = parseContributorAttributes(strLine)
                 strActor = result.first
                 contribution = result.second
@@ -100,7 +99,7 @@ class TransactionActorsProcessor : BlockProcessor(BLOCK_NAME_TRANSACTION_ACTORS)
 
         header.cells.add(createTableCell(colActor, "Actor"))
         header.cells.add(createTableCell(colContribution, "Contribution"))
-        header.cells.add(createTableCell(colDescription, "Description"))
+        header.cells.add(createTableCell(colDescription, "Role"))
 
 
         for (actorRole in roles) {

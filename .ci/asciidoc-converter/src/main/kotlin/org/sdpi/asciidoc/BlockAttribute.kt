@@ -7,9 +7,19 @@ enum class BlockAttribute(val key: String) {
     ID("id"),
     TITLE("title"),
     ROLE("role"),
+
+    // Optional value that may be attached to requirements.
     MAX_OCCURRENCE("sdpi_max_occurrence"),
+
     VOLUME_CAPTION("sdpi_volume_caption"),
 
+    // The leaf-arc of the item's oid. The complete oid is computed
+    // by appending this to the root based on the block type when
+    // the attribute starts with a "."  (e.g.,
+    // 1.3.6.1.4.1.19376.1.6.3 for DEV actors, see
+    // https://wiki.ihe.net/index.php/PCD_OID_Management). If the
+    // value doesn't start with a '.' we use it directly.
+    LEAF_ARC("oid-arcs")
 }
 
 /**
@@ -23,13 +33,11 @@ sealed class RequirementAttributes {
         // Requirement level (e.g., shall, may, etc)
         LEVEL("sdpi_req_level"),
 
-        // Identifies a specification that the requirement belongs
-        // to. Used, for example, to determine the base oid for
-        // assigning globally unique object ids.
-        SPECIFICATION("sdpi_req_specification"),
-
         // Groups requirement belongs to. Comma separated list.
         GROUPS("sdpi_req_group"),
+
+        // Requirements referencing an actor.
+        ACTOR("sdpi_req_actor"),
 
     }
 
@@ -68,10 +76,32 @@ enum class UseCaseAttributes(val key: String) {
 
     ACTOR("actor-id"),
 
-    OBLIGATION("support")
+    OBLIGATION("support"),
+
+
 }
 
 enum class ContentModuleAttributes(val key: String) {
     ACTOR("actor-id"),
-    OBLIGATION("support")
+    OBLIGATION("support"),
+
+    // Content module is not defined yet, but deferred to a future version.
+    // This attribute gives the name of the placeholder.
+    PLACEHOLDER_NAME("placeholder-name")
+}
+
+enum class TransactionIncludeAttributes(val key: String) {
+    ACTOR("actor-id"),
+
+    // Transaction is not defined yet, but deferred to a future version.
+    // This attribute gives the name of the placeholder.
+    PLACEHOLDER_NAME("placeholder-name")
+}
+
+sealed class TableAttributes(val key: String) {
+
+    enum class OidTable(val key: String) {
+        // Define filter for the root arc for oids to include in the table.
+        ROOT_ARC("arc")
+    }
 }

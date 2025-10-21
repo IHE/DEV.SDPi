@@ -3,6 +3,7 @@ package org.sdpi.asciidoc.model
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import org.sdpi.asciidoc.extension.Roles
+import org.sdpi.asciidoc.makeLink
 
 /**
  * Definition of requirement levels.
@@ -121,8 +122,9 @@ data class RequirementContext(
 sealed class SdpiRequirement2 {
     abstract val requirementNumber: Int
     abstract val localId: String
-    abstract val globalId: String
+    abstract val oid: String
     abstract val level: RequirementLevel
+    abstract val maxOccurrence: Int?
     abstract val owner: RequirementContext?
     abstract val groups: List<String>
     abstract val specification: RequirementSpecification
@@ -132,20 +134,20 @@ sealed class SdpiRequirement2 {
      */
     abstract fun getTypeDescription(): String
 
-    fun makeLink(): String {
-        return "link:#${getBlockId()}[${localId}]"
+    fun makeLinkLocal(): String {
+        return makeLink(getBlockId(), localId)
     }
 
     fun makeLinkGlobal(): String {
-        if (globalId.isNotEmpty()) {
-            return "link:#${getBlockId()}[${globalId}]"
+        if (oid.isNotEmpty()) {
+            return makeLink(getBlockId(), oid)
         }
-        return makeLink()
+        return makeLinkLocal()
     }
 
     fun getBlockId(): String {
-        if (globalId.isNotEmpty()) {
-            return globalId
+        if (oid.isNotEmpty()) {
+            return oid
         }
 
         return String.format("r%04d", requirementNumber)
@@ -167,8 +169,9 @@ sealed class SdpiRequirement2 {
     data class TechFeature(
         override val requirementNumber: Int,
         override val localId: String,
-        override val globalId: String,
+        override val oid: String,
         override val level: RequirementLevel,
+        override val maxOccurrence: Int?,
         override val owner: RequirementContext?,
         override val groups: List<String>,
         override val specification: RequirementSpecification
@@ -184,8 +187,9 @@ sealed class SdpiRequirement2 {
     data class UseCase(
         override val requirementNumber: Int,
         override val localId: String,
-        override val globalId: String,
+        override val oid: String,
         override val level: RequirementLevel,
+        override val maxOccurrence: Int?,
         override val owner: RequirementContext?,
         override val groups: List<String>,
         override val specification: RequirementSpecification,
@@ -202,8 +206,9 @@ sealed class SdpiRequirement2 {
     data class ReferencedImplementationConformanceStatement(
         override val requirementNumber: Int,
         override val localId: String,
-        override val globalId: String,
+        override val oid: String,
         override val level: RequirementLevel,
+        override val maxOccurrence: Int?,
         override val owner: RequirementContext?,
         override val groups: List<String>,
         override val specification: RequirementSpecification,
@@ -222,8 +227,9 @@ sealed class SdpiRequirement2 {
     data class RiskMitigation(
         override val requirementNumber: Int,
         override val localId: String,
-        override val globalId: String,
+        override val oid: String,
         override val level: RequirementLevel,
+        override val maxOccurrence: Int?,
         override val owner: RequirementContext?,
         override val groups: List<String>,
         override val specification: RequirementSpecification,

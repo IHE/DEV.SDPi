@@ -1,4 +1,4 @@
-[#vol2_clause_appendix_sdpi_gateway_hl7_v2_general_mapping]
+[#vol2_clause_appendix_sdpi_gateway_hl7_v2_general_mapping,role=gateway,gateway-id=hl7v2]
 === SDPi Gateway -- HL7 V2 General Mapping
 This section specifies general <<acronym_hl7>> V2 requirements and mappings, which apply to the <<vol2_clause_appendix_sdpi_dec_gateway>> as well as to the <<vol2_clause_appendix_sdpi_acm_gateway>> sections below.
 

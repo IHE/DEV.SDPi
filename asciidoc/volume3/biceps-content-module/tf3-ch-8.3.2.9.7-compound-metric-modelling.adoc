@@ -31,42 +31,63 @@ This section defines the requirements to compound metrics provided in the MDIB d
 [sdpi_level=+2]
 ====== Descriptor Part
 .R0703
-[sdpi_requirement#r0703,sdpi_req_level=shall]
+[sdpi_requirement#r0703,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
+[NORMATIVE]
+====
 For each compound metric, the <<actor_somds_provider>> shall provide a *pm:Relation* element to relate to all metrics belonging to the same compound metric.
+====
 ****
 
 .R0704
-[sdpi_requirement#r0704,sdpi_req_level=shall]
+[sdpi_requirement#r0704,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
+[NORMATIVE]
+====
 For each *pm:Relation* of a <<actor_somds_provider>> that expresses membership in a compound metric, the <<actor_somds_provider>> shall set *pm:Code* to the coded term of the compound metric it belongs to.
+====
 ****
 
 .R0705
-[sdpi_requirement#r0705,sdpi_req_level=shall]
+[sdpi_requirement#r0705,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
+[NORMATIVE]
+====
 For each *pm:Relation* of a <<actor_somds_provider>> that expresses membership in a compound metric, the <<actor_somds_provider>> shall set *@Kind* to *SST*.
+====
 ****
 
 .R0706
-[sdpi_requirement#r0706,sdpi_req_level=shall]
+[sdpi_requirement#r0706,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
+[NORMATIVE]
+====
 For each *pm:Relation* of a <<actor_somds_provider>> that expresses membership in a compound metric, the <<actor_somds_provider>> shall include all handle references of those metrics that belong to the same compound metric in *pm:Relation/@Entries* excluding the handle of the metric that contains the *pm:Relation*.
+====
 ****
 
 [sdpi_level=+2]
 ====== State Part
 
 .R0707
-[sdpi_requirement#r0707,sdpi_req_level=shall]
+[sdpi_requirement#r0707,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
+[NORMATIVE]
+====
 For each compound metric of a <<actor_somds_provider>>, if *@StartTime* and *@StopTime* are available, the <<actor_somds_provider>> shall provide the same values for *@StartTime* and *@StopTime* in each metric of the compound metric to signify the same measurement cycle.
+====
 
-NOTE: *@DeterminationTime* may vary between individual metrics of the compound metric.
+[NOTE]
+====
+*@DeterminationTime* may vary between individual metrics of the compound metric.
+====
 ****
 
 .R0708
-[sdpi_requirement#r0708,sdpi_req_level=shall]
+[sdpi_requirement#r0708,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
+[NORMATIVE]
+====
 For each compound metric of a <<actor_somds_provider>>, if *@StartTime* and *@StopTime* are not available, the <<actor_somds_provider>> shall provide the same value for *@DeterminationTime* in each metric of the compound metric to signify the same measurement cycle.
+====
 ****
