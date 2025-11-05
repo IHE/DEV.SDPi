@@ -150,8 +150,8 @@ Transactions enabled for this actor are identified in <<vol1_table_sdpi_a_actors
 Given this _intended medical purpose_, the actor will fully address applicable requirements from the core <<acronym_sdc>> standards (<<ref_ieee_11073_10207_2017>> and <<ref_ieee_11073_20701_2018>>), as well as the <<acronym_pkp>> standards <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10702_202x>> (Alert <<acronym_pkp>>).
 
 Every <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_provider>> to enable <<acronym_somds>>-based connectivity.
-This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_consumer>>.
-Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_a_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_clause_sdpi_p_profile_reftext>>.
+This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_provider>>.
+Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_a_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_provider>> and <<vol1_clause_sdpi_p_profile_reftext>>.
 
 Note that if a <<label_system_type_name_sas>> is being created, it may incorporate both <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> and <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> Actors, both receiving and publishing alerts.
 
