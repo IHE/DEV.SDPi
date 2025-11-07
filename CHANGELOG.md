@@ -24,6 +24,11 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Editorial Fixes
 
+## [2.2.1] - 2025-11-07
+
+### Editorial Fixes
+
+- IHE Publications change for SDPi 2.2 publication (one footnote rephrased) ([#488](https://github.com/IHE/DEV.SDPi/issues/488))
 
 ## [2.2.0] - 2025-10-02
 

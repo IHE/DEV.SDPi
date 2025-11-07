@@ -568,7 +568,7 @@ Actor Summary Definition:
 All systems participating in a SOMDS network instance must implement this Abstract actor.
 
 All SDPi Profiles actors are grouped with (inherit from) this actor, including both transport / transaction actors and content module actors.
-This required grouping ensures that all systems connecting to a SOMDS network support the <<acronym_ses_mdi>>  requirements footnote:[See #General Introduction  Appendix A for more detail on <<acronym_ses_mdi>>] necessary for establishing a <<term_plug_and_trust>> ecosystem, including the secure and dynamic provision of an implementation’s <<term_system_function_contribution>>.
+This required grouping ensures that all systems connecting to a SOMDS network support the <<acronym_ses_mdi>>  requirements footnote:[See <<vol1_appendix_a_requirements_management_for_p_n_t_interperability>> and <<vol1_clause_ses_considerations_requirements>> for more detail on <<acronym_ses_mdi>>] necessary for establishing a <<term_plug_and_trust>> ecosystem, including the secure and dynamic provision of an implementation’s <<term_system_function_contribution>>.
 See <<vol1_clause_appendix_a_requirements_from_narratives_to_pnt_interfaces>> for additional discussion.
 
 ////
