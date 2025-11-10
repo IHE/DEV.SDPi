@@ -29,7 +29,7 @@ else
     end
 else
     loop at least once every SelfCheckPeriod
-        provider -> consumer: Notification (PeriodicAlertReport incl. updated 'SelfCheck' information)
+        provider -> consumer: Notification (EpisodicAlertReport incl. updated 'SelfCheck' information)
     end
 end
 
