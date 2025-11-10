@@ -69,13 +69,13 @@ operation.
 [#vol2_clause_dev_48_operation_set_friendly_consumer_name_response_trigger_events]
 ====== Trigger Events
 
-The <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> sends a <<vol2_clause_dev_48_operation_set_friendly_consumer_name_response>> back to the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> that invoked the {var_label_dev_48_operation_set_friendly_consumer_name}
+The <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> sends a {var_label_dev_48_operation_set_friendly_consumer_name_response} message back to the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> that invoked the {var_label_dev_48_operation_set_friendly_consumer_name}
 operation.
 
 [#vol2_clause_dev_48_operation_set_friendly_consumer_name_response_semantics]
 ====== Message Semantics
 
-The <<vol2_clause_dev_48_operation_set_friendly_consumer_name_response>> does not contain any further semantics.
+The {var_label_dev_48_operation_set_friendly_consumer_name_response} message does not contain any further semantics.
 
 [#vol2_clause_dev_48_operation_set_friendly_consumer_name_response_expected_actions]
 ====== Expected Actions
@@ -95,7 +95,7 @@ The {var_label_dev_48_operation_monitored_by_das} operation is invoked by a <<vo
 [#vol2_clause_dev_48_operation_monitored_by_das_semantics]
 ====== Message Semantics
 
-The <<vol2_clause_dev_48_operation_monitored_by_das_semantics>> does not contain any further semantics.
+The {var_label_dev_48_operation_monitored_by_das} operation invocation message does not contain any further semantics.
 
 [#vol2_clause_dev_48_operation_monitored_by_das_expected_actions]
 ====== Expected Actions
@@ -105,13 +105,13 @@ When a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> invokes this oper
 [#vol2_clause_dev_48_operation_monitored_by_das_response]
 ===== {var_label_dev_48_operation_monitored_by_das_response} Operation Invoked Report Message
 
-A <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> responds with a <<vol2_clause_dev_48_operation_monitored_by_das_response>> to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>'s invocation of the {var_label_dev_48_operation_monitored_by_das}
+A <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> responds with a {var_label_dev_48_operation_monitored_by_das_response} message to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>'s invocation of the {var_label_dev_48_operation_monitored_by_das}
 operation.
 
 [#vol2_clause_dev_48_operation_monitored_by_das_response_trigger_events]
 ====== Trigger Events
 
-The <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> sends a <<vol2_clause_dev_48_operation_monitored_by_das_response>> back to the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> that invoked the {var_label_dev_48_operation_monitored_by_das}
+The <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> sends a {var_label_dev_48_operation_monitored_by_das_response} message back to the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> that invoked the {var_label_dev_48_operation_monitored_by_das}
 operation.
 
 [#vol2_clause_dev_48_operation_monitored_by_das_response_semantics]
@@ -123,7 +123,7 @@ operation.
 [#vol2_clause_dev_48_operation_monitored_by_das_response_expected_actions]
 ====== Expected Actions
 
-When a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> sends this message, there is no expected or required response. The <<vol2_clause_dev_48_operation_monitored_by_das_response>> marks the establishment of the Distributed Alarm System for both the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> and the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>.
+When a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> sends this message, there is no expected or required response. The {var_label_dev_48_operation_monitored_by_das_response} message marks the establishment of the Distributed Alarm System for both the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> and the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>.
 
 [#vol2_clause_dev_239_publish_medical_alert_update_ses]
 include::../dev-x-default-ses-secured-mode.adoc[]
