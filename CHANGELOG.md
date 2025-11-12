@@ -26,6 +26,8 @@ Each section shall contain a list of action items of the following format: `<bri
 ### Changes
 
 - Updated documentation for assigning unique identifiers ([#449](https://github.com/IHE/DEV.SDPi/issues/449))
+- Split Gateway Direction Option into Gateway Export Direction Option and Gateway Import Direction Option 
+- Corrected actor (option) references in sections 1:12.1 and 1:13.1 ([#413](https://github.com/IHE/DEV.SDPi/issues/413))
 - Split Gateway Direction Option into Gateway Export Direction Option and Gateway Import Direction Option
 - Improved SDPi profiles diagram in Volume 1 ([#285](https://github.com/IHE/DEV.SDPi/issues/285))
 
