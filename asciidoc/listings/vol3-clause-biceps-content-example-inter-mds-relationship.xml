@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<msg:GetMdibResponse
+        SequenceId="urn:uuid:09578906-7efd-43a7-8344-8bf37b674524"
+        xmlns:ext="http://standards.ieee.org/downloads/11073/11073-10207-2017/extension"
+        xmlns:pm="http://standards.ieee.org/downloads/11073/11073-10207-2017/participant"
+        xmlns:msg="http://standards.ieee.org/downloads/11073/11073-10207-2017/message"
+        xmlns:sdpi="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1">
+    <msg:Mdib SequenceId="urn:uuid:09578906-7efd-43a7-8344-8bf37b674524">
+        <pm:MdDescription>
+            <pm:Mds Handle="mds0">
+                <!-- containment subtree elements -->
+            </pm:Mds>
+            <pm:Mds Handle="mds1">
+                <!-- containment subtree elements -->
+            </pm:Mds>
+        </pm:MdDescription>
+        <pm:MdState StateVersion="10">
+            <ext:Extension>
+                <pm:Relation Kind="ECE" Entries="mds1">
+                    <pm:Code Code="68167" SymbolicCodeName="MDC_ATTR_SOURCE_HANDLE_REF"/>
+                    <pm:Identification>mds0</pm:Identification>
+                </pm:Relation>
+                <pm:Relation Kind="DCE" Entries="mds0">
+                    <pm:Code Code="68167" SymbolicCodeName="MDC_ATTR_SOURCE_HANDLE_REF"/>
+                    <pm:Identification>mds1</pm:Identification>
+                </pm:Relation>
+            </ext:Extension>
+            <!-- states -->
+        </pm:MdState>
+    </msg:Mdib>
+</msg:GetMdibResponse>
+
+
