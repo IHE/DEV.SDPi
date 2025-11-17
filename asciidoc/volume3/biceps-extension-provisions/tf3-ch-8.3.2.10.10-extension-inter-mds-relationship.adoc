@@ -1,0 +1,54 @@
+[#vol3_clause_inter_mds_relationship]
+====== Inter MDS Relationship
+
+BICEPS does not provide means to define relationships between <<acronym_mds>>s in the same <<acronym_mdib>> since it does not support the nested <<acronym_mds>> concept.
+However, in some multi-MDS scenarios it is important to provide information about the relationship between the devices.
+
+Examples are transport patient monitoring devices which are plugged into stationary patient monitoring devices when the patients are in beds on the care unit, infusion pumps which are plugged into a rack system, and so on.
+
+In these scenarios, the hosting device usually provides services to the plugged-in devices such as power supply, context synchronization, network access, and so on.
+
+[sdpi_level=+1]
+====== Model
+
+The Inter MDS Relationship XML Schema is available in <<vol3_appendix_a_xml_schemas_inter_mds_relationship>>. <<vol3_example_extension_inter_mds_relationship>> shows an exemplary XML instance of a <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> including the Inter MDS Relationship extension in the state part of the MDIB.
+
+.<<acronym_mds>>s with Inter MDS Relationship extension
+[#vol3_example_extension_inter_mds_relationship]
+====
+[source,xml]
+----
+include::../../listings/vol3-clause-biceps-content-example-inter-mds-relationship.xml[]
+----
+====
+
+[sdpi_level=+1]
+====== Requirements
+
+.R0613
+[sdpi_requirement#r0613,sdpi_req_level=should,sdpi_req_type=tech_feature]
+****
+//[NORMATIVE]
+====
+For each device represented as an <<acronym_mds>> element in the <<acronym_mdib>> which has a parent (hosting device) relationship to one or more other devices represented as <<acronym_mds>> elements in the same <<acronym_mdib>>, a *pm:MdState/ext:Extension* of type *pm:Relation* with the following information should be added:
+
+* *pm:Relation/pm:Code/@Code* = "*68167*" (MDC_ATTR_SOURCE_HANDLE_REF)
+* *pm:Relation/pm:Identification* = _<MDS handle of parent device>_
+* *pm:Relation/@Kind* = "*ECE*"
+* *pm:Relation/@Entries* = _<List of MDS handles of child devices>_
+====
+****
+
+.R0614
+[sdpi_requirement#r0614,sdpi_req_level=should,sdpi_req_type=tech_feature]
+****
+//[NORMATIVE]
+====
+For each device represented as an <<acronym_mds>> element in the <<acronym_mdib>> which has a child (guest device) relationship to another device represented as an <<acronym_mds>> element in the same <<acronym_mdib>>, a *pm:MdState/ext:Extension* of type *pm:Relation* with the following information should be added:
+
+* *pm:Relation/pm:Code/@Code* = "*68167*" (MDC_ATTR_SOURCE_HANDLE_REF)
+* *pm:Relation/pm:Identification* = _<MDS handle of child device>_
+* *pm:Relation/@Kind* = "*DCE*"
+* *pm:Relation/@Entries* = _<MDS handle of parent device>_
+====
+****
