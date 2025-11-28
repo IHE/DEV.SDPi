@@ -1,5 +1,5 @@
 [#vol3_clause_inter_mds_relationship]
-====== Inter MDS Relationship
+====== Inter-MDS Relationship
 
 BICEPS does not provide means to define relationships between <<acronym_mds>>s in the same <<acronym_mdib>> since it does not support the nested <<acronym_mds>> concept.
 However, in some multi-MDS scenarios it is important to provide information about the relationship between the devices.
@@ -11,9 +11,9 @@ In these scenarios, the hosting device usually provides services to the plugged-
 [sdpi_level=+1]
 ====== Model
 
-The Inter MDS Relationship XML Schema is available in <<vol3_appendix_a_xml_schemas_inter_mds_relationship>>. <<vol3_example_extension_inter_mds_relationship>> shows an exemplary XML instance of a <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> including the Inter MDS Relationship extension in the state part of the MDIB.
+An XML Schema that specifies a type to model inter-MDS relationships is available in <<vol3_appendix_a_xml_schemas_relations>>. <<vol3_example_extension_inter_mds_relationship>> shows an exemplary XML instance of a <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> including the inter-MDS relationship extension in the state part of the MDIB.
 
-.<<acronym_mds>>s with Inter MDS Relationship extension
+.<<acronym_mds>>s with inter-MDS relationship extension
 [#vol3_example_extension_inter_mds_relationship]
 ====
 [source,xml]

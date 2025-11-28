@@ -1,7 +1,7 @@
-[#vol3_appendix_a_xml_schemas_inter_mds_relationship]
-=== Inter MDS Relationship XML Schema
+[#vol3_appendix_a_xml_schemas_relations]
+=== Relations XML Schema
 
 [source,xml]
 ----
-include::../../../sources/extension-models/inter-mds-relationship/InterMdsRelationship.xsd[]
+include::../../../sources/extension-models/inter-mds-relationship/Relations.xsd[]
 ----

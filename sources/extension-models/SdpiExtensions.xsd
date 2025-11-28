@@ -4,5 +4,5 @@
     <xsd:include schemaLocation="gender/Gender.xsd"/>
     <xsd:include schemaLocation="equipment-identifier/EquipmentIdentifier.xsd"/>
     <xsd:include schemaLocation="timestamp/TimeStampVersion.xsd"/>
-    <xsd:include schemaLocation="inter-mds-relationship/InterMdsRelationship.xsd"/>
+    <xsd:include schemaLocation="inter-mds-relationship/Relations.xsd"/>
 </xsd:schema>
