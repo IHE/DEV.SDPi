@@ -8,27 +8,39 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <msg:Mdib SequenceId="urn:uuid:09578906-7efd-43a7-8344-8bf37b674524">
         <pm:MdDescription>
-            <pm:Mds Handle="mds0">
+            <pm:Mds Handle="mds_parent">
                 <!-- containment subtree elements -->
             </pm:Mds>
-            <pm:Mds Handle="mds1">
+            <pm:Mds Handle="mds_child1">
+                <!-- containment subtree elements -->
+            </pm:Mds>
+            <pm:Mds Handle="mds_child2">
                 <!-- containment subtree elements -->
             </pm:Mds>
         </pm:MdDescription>
         <pm:MdState StateVersion="10">
-            <pm:State DescriptorHandle="mds0" xsi:type="pm:MdsState" Lang="en">
+            <pm:State DescriptorHandle="mds_parent" xsi:type="pm:MdsState" Lang="en">
                 <ext:Extension>
                     <sdpi:Relations>
-                        <sdpi:Relation Kind="ECE" Entries="mds1">
+                        <sdpi:Relation Kind="ECE" Entries="mds_child1 mds_child2">
                             <sdpi:Code Code="68167" SymbolicCodeName="MDC_ATTR_SOURCE_HANDLE_REF"/>
                         </sdpi:Relation>
                     </sdpi:Relations>
                 </ext:Extension>
             </pm:State>
-            <pm:State DescriptorHandle="mds1" xsi:type="pm:MdsState" Lang="en">
+            <pm:State DescriptorHandle="mds_child1" xsi:type="pm:MdsState" Lang="en">
                 <ext:Extension>
                     <sdpi:Relations>
-                        <pm:Relation Kind="DCE" Entries="mds0">
+                        <pm:Relation Kind="DCE" Entries="mds_parent">
+                            <sdpi:Code Code="68167" SymbolicCodeName="MDC_ATTR_SOURCE_HANDLE_REF"/>
+                        </pm:Relation>
+                    </sdpi:Relations>
+                </ext:Extension>
+            </pm:State>
+            <pm:State DescriptorHandle="mds_child2" xsi:type="pm:MdsState" Lang="en">
+                <ext:Extension>
+                    <sdpi:Relations>
+                        <pm:Relation Kind="DCE" Entries="mds_parent">
                             <sdpi:Code Code="68167" SymbolicCodeName="MDC_ATTR_SOURCE_HANDLE_REF"/>
                         </pm:Relation>
                     </sdpi:Relations>
