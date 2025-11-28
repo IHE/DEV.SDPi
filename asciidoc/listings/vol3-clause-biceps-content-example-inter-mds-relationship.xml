@@ -4,7 +4,8 @@
         xmlns:ext="http://standards.ieee.org/downloads/11073/11073-10207-2017/extension"
         xmlns:pm="http://standards.ieee.org/downloads/11073/11073-10207-2017/participant"
         xmlns:msg="http://standards.ieee.org/downloads/11073/11073-10207-2017/message"
-        xmlns:sdpi="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1">
+        xmlns:sdpi="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <msg:Mdib SequenceId="urn:uuid:09578906-7efd-43a7-8344-8bf37b674524">
         <pm:MdDescription>
             <pm:Mds Handle="mds0">
@@ -15,18 +16,24 @@
             </pm:Mds>
         </pm:MdDescription>
         <pm:MdState StateVersion="10">
-            <ext:Extension>
-                <sdpi:Relations>
-                    <sdpi:Relation Kind="ECE" Entries="mds1">
-                        <sdpi:Code Code="68167" SymbolicCodeName="MDC_ATTR_SOURCE_HANDLE_REF"/>
-                        <sdpi:Identification>mds0</sdpi:Identification>
-                    </sdpi:Relation>
-                    <pm:Relation Kind="DCE" Entries="mds0">
-                        <sdpi:Code Code="68167" SymbolicCodeName="MDC_ATTR_SOURCE_HANDLE_REF"/>
-                        <sdpi:Identification>mds1</sdpi:Identification>
-                    </pm:Relation>
-                </sdpi:Relations>
-            </ext:Extension>
+            <pm:State DescriptorHandle="mds0" xsi:type="pm:MdsState" Lang="en">
+                <ext:Extension>
+                    <sdpi:Relations>
+                        <sdpi:Relation Kind="ECE" Entries="mds1">
+                            <sdpi:Code Code="68167" SymbolicCodeName="MDC_ATTR_SOURCE_HANDLE_REF"/>
+                        </sdpi:Relation>
+                    </sdpi:Relations>
+                </ext:Extension>
+            </pm:State>
+            <pm:State DescriptorHandle="mds1" xsi:type="pm:MdsState" Lang="en">
+                <ext:Extension>
+                    <sdpi:Relations>
+                        <pm:Relation Kind="DCE" Entries="mds0">
+                            <sdpi:Code Code="68167" SymbolicCodeName="MDC_ATTR_SOURCE_HANDLE_REF"/>
+                        </pm:Relation>
+                    </sdpi:Relations>
+                </ext:Extension>
+            </pm:State>
             <!-- states -->
         </pm:MdState>
     </msg:Mdib>
