@@ -28,27 +28,28 @@ include::../../listings/vol3-clause-biceps-content-example-inter-mds-relationshi
 .R0613
 [sdpi_requirement#r0613,sdpi_req_level=should,sdpi_req_type=tech_feature]
 ****
-//[NORMATIVE]
-====
-For each device represented as an <<acronym_mds>> element in the <<acronym_mdib>> which has a parent (hosting device) relationship to one or more other devices represented as <<acronym_mds>> elements in the same <<acronym_mdib>>, a *pm:MdState/ext:Extension* of type *pm:Relation* with the following information should be added:
 
-* *pm:Relation/pm:Code/@Code* = "*68167*" (MDC_ATTR_SOURCE_HANDLE_REF)
-* *pm:Relation/pm:Identification* = _<MDS handle of parent device>_
-* *pm:Relation/@Kind* = "*ECE*"
-* *pm:Relation/@Entries* = _<List of MDS handles of child devices>_
+[NORMATIVE]
+====
+For each <<acronym_mds>> in the <<acronym_mdib>> of a <<vol1_spec_sdpi_p_actor_somds_provider>>, if the <<acronym_mds>> has a parent relationship to one or more other child <<acronym_mds>>s in the same <<acronym_mdib>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> should add a `sdpi:Relations` element to `pm:MdState/ext:Extension` with at least one `sdpi:Relation` including at least the following data:
+
+* `sdpi:Code/@Code = "68167"` (MDC_ATTR_SOURCE_HANDLE_REF)
+* `sdpi:Identification = _<MDS handle of parent device>_`
+* `@Kind = "ECE"`
+* `@Entries = _<List of MDS handles of child MDSs>_`
 ====
 ****
 
 .R0614
 [sdpi_requirement#r0614,sdpi_req_level=should,sdpi_req_type=tech_feature]
 ****
-//[NORMATIVE]
+[NORMATIVE]
 ====
-For each device represented as an <<acronym_mds>> element in the <<acronym_mdib>> which has a child (guest device) relationship to another device represented as an <<acronym_mds>> element in the same <<acronym_mdib>>, a *pm:MdState/ext:Extension* of type *pm:Relation* with the following information should be added:
+For each <<acronym_mds>> in the <<acronym_mdib>> of a <<vol1_spec_sdpi_p_actor_somds_provider>>, if the <<acronym_mds>> has a child relationship to one or more other parent <<acronym_mds>>s in the same <<acronym_mdib>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> should add a `sdpi:Relations` element to `pm:MdState/ext:Extension` with at least one `sdpi:Relation` including at least the following data:
 
-* *pm:Relation/pm:Code/@Code* = "*68167*" (MDC_ATTR_SOURCE_HANDLE_REF)
-* *pm:Relation/pm:Identification* = _<MDS handle of child device>_
-* *pm:Relation/@Kind* = "*DCE*"
-* *pm:Relation/@Entries* = _<MDS handle of parent device>_
+* `sdpi:Code/@Code = "68167"` (MDC_ATTR_SOURCE_HANDLE_REF)
+* `sdpi:Identification = _<MDS handle of child device>_`
+* `@Kind = "DCE"`
+* `@Entries = _<handle of parent MDS>_`
 ====
 ****
