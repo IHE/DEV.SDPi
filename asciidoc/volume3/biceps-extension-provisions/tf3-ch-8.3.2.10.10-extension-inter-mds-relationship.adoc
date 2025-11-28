@@ -34,9 +34,8 @@ include::../../listings/vol3-clause-biceps-content-example-inter-mds-relationshi
 For each <<acronym_mds>> in the <<acronym_mdib>> of a <<vol1_spec_sdpi_p_actor_somds_provider>>, if the <<acronym_mds>> has a parent relationship to one or more other child <<acronym_mds>>s in the same <<acronym_mdib>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> should add a `sdpi:Relations` element to `pm:MdState/ext:Extension` with at least one `sdpi:Relation` including at least the following data:
 
 * `sdpi:Code/@Code = "68167"` (MDC_ATTR_SOURCE_HANDLE_REF)
-* `sdpi:Identification = _<MDS handle of parent device>_`
 * `@Kind = "ECE"`
-* `@Entries = _<List of MDS handles of child MDSs>_`
+* `@Entries = _<list of handle references to child MDSs>_`
 ====
 ****
 
@@ -48,8 +47,7 @@ For each <<acronym_mds>> in the <<acronym_mdib>> of a <<vol1_spec_sdpi_p_actor_s
 For each <<acronym_mds>> in the <<acronym_mdib>> of a <<vol1_spec_sdpi_p_actor_somds_provider>>, if the <<acronym_mds>> has a child relationship to one or more other parent <<acronym_mds>>s in the same <<acronym_mdib>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> should add a `sdpi:Relations` element to `pm:MdState/ext:Extension` with at least one `sdpi:Relation` including at least the following data:
 
 * `sdpi:Code/@Code = "68167"` (MDC_ATTR_SOURCE_HANDLE_REF)
-* `sdpi:Identification = _<MDS handle of child device>_`
 * `@Kind = "DCE"`
-* `@Entries = _<handle of parent MDS>_`
+* `@Entries = _<handle reference to parent MDS>_`
 ====
 ****
