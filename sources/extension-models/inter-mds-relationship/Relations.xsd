@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:ext="http://standards.ieee.org/downloads/11073/11073-10207-2017/extension"
+        xmlns:pm="http://standards.ieee.org/downloads/11073/11073-10207-2017/participant"
+        xmlns:sdpi="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1"
+        targetNamespace="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1"
+        elementFormDefault="qualified"
+        attributeFormDefault="unqualified"
+        xml:lang="en">
+    <xsd:import namespace="http://standards.ieee.org/downloads/11073/11073-10207-2017/extension"
+                schemaLocation="../ExtensionPoint.xsd"/>
+    <xsd:import namespace="http://standards.ieee.org/downloads/11073/11073-10207-2017/participant"
+                schemaLocation="../BICEPS_ParticipantModel.xsd"/>
+    <!---->
+    <!---->
+    <!--Relation-->
+    <xsd:element name="Relations">
+        <xsd:annotation>
+            <xsd:documentation>Extension that relates a containment tree entries to zero or multiple other ones.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Relation" type="sdpi:RelationType" minOccurs="0" maxOccurs="unbounded">
+                    <xsd:annotation>
+                        <xsd:documentation>A relation to other containment tree entries.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+            </xsd:sequence>
+            <xsd:attribute ref="ext:MustUnderstand" use="optional"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="RelationType">
+        <xsd:annotation>
+            <xsd:documentation>Provides relationships between a containment tree entry and other containment tree
+                entries. Related containment tree entries are defined in @Entries. The relationship flavor can be set by
+                @Kind.
+
+                The cardinality of Relation is zero or more in order to express relations of different flavors for the
+                same METRIC.
+
+                NOTE—Example: some settings of high frequency cutting devices cause changes in measurements (e.g.,
+                current form can influences the maximum emitted power). If such a setting is controllable by external
+                means, presumably the SERVICE CONSUMER wants to be able to gain knowledge of affected measurements,
+                which might be then accessed through the Relation element.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Code" type="pm:CodedValue" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Allows to semantically describe the relationship between the containment tree
+                        entry including the relation and the list of related containment tree entries defined in
+                        ./pm:Relation/@Entries.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Identification" type="pm:InstanceIdentifier" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Allows to group relations.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="Kind" use="required">
+            <xsd:annotation>
+                <xsd:documentation>Kind specifies the relationship between the containment tree entry including the
+                    relation and referenced containment tree entries. Referenced containment tree entries are defined in
+                    sdpi:RelationType/@Entries.
+                </xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="ECE">
+                        <xsd:annotation>
+                            <xsd:documentation>ECE = Effect on containment tree entries. When changed, the containment
+                                tree entry including the relation affects the containment tree entries defined in
+                                sdpi:RelationType/@Entries. If Kind is "ECE", if set, sdpi:RelationType/sdpi:Code
+                                further classifies the effect.
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:enumeration>
+                    <xsd:enumeration value="DCE">
+                        <xsd:annotation>
+                            <xsd:documentation>DCE = Derived from containment tree entries. The containment tree entry
+                                including the relation is derived from the containment tree entries defined in
+                                sdpi:RelationType/@Entries. If Kind is "DCE", if set, sdpi:RelationType/sdpi:Code
+                                further classifies the form of derivation.
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:enumeration>
+                    <xsd:enumeration value="Oth">
+                        <xsd:annotation>
+                            <xsd:documentation>Oth = Other. Relation is specified by sdpi:RelationType/sdpi:Code.
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:enumeration>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute name="Entries" type="pm:EntryRef" use="required">
+            <xsd:annotation>
+                <xsd:documentation>List of handle references that relate to the containment tree entry including the
+                    relation. The relationship flavor is defined in sdpi:RelationType/@Kind.
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+</xsd:schema>
