@@ -16,14 +16,16 @@
         </pm:MdDescription>
         <pm:MdState StateVersion="10">
             <ext:Extension>
-                <pm:Relation Kind="ECE" Entries="mds1">
-                    <pm:Code Code="68167" SymbolicCodeName="MDC_ATTR_SOURCE_HANDLE_REF"/>
-                    <pm:Identification>mds0</pm:Identification>
-                </pm:Relation>
-                <pm:Relation Kind="DCE" Entries="mds0">
-                    <pm:Code Code="68167" SymbolicCodeName="MDC_ATTR_SOURCE_HANDLE_REF"/>
-                    <pm:Identification>mds1</pm:Identification>
-                </pm:Relation>
+                <sdpi:Relations>
+                    <sdpi:Relation Kind="ECE" Entries="mds1">
+                        <sdpi:Code Code="68167" SymbolicCodeName="MDC_ATTR_SOURCE_HANDLE_REF"/>
+                        <sdpi:Identification>mds0</sdpi:Identification>
+                    </sdpi:Relation>
+                    <pm:Relation Kind="DCE" Entries="mds0">
+                        <sdpi:Code Code="68167" SymbolicCodeName="MDC_ATTR_SOURCE_HANDLE_REF"/>
+                        <sdpi:Identification>mds1</sdpi:Identification>
+                    </pm:Relation>
+                </sdpi:Relations>
             </ext:Extension>
             <!-- states -->
         </pm:MdState>
