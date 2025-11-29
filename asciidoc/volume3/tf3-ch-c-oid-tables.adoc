@@ -1,14 +1,62 @@
 [appendix#vol3_appendix_c_oids,sdpi_offset=C]
 == OID identifiers
 
+Object identifiers, or OIDs, are globally unique numeric identifiers used to name something in a formal, unambiguous way. 
+They are typically formatted as dotted number strings (`1.3.6.1.4.1.19376.1.6`, for example). Each number (or _arc_) is a node in a
+hierarchical, tree-structured, namespace. The top of the tree, and first arc in the sequence, is managed by standards
+bodies who delegate responsibility for distinct branches in the hierarchy. 
+
+IHE DEV is responsible for managing arcs from the parent OID `1.3.6.1.4.1.19376.1.6`, the _IHE DEV parent_ OID.
 See https://wiki.ihe.net/index.php/PCD_OID_Management[PCD OID Management] for canonical definitions 
 of object identifiers for the profile, its actors and transactions, etc. 
 
+Within the _IHE DEV parent_ OID, arcs are assigned, and used by this technical framework supplement, for:
+
+* device integration profiles (`.2`),
+* actors (`.3`),
+* transactions (`.4`),
+* content modules (`.8`),
+* use cases (`.9`), and 
+* requirements (`.10`).
+
+Appending one of these arcs to the _IHE DEV parent_ creates a new OID root. Arcs within those OIDs name corresponding items within
+this technical framework supplement, as identified in the tables in subsequent sections. 
+
+Generally, the meaning of OIDs does not change once assigned. For example, `1.3.6.1.4.1.19376.1.6.3.40` will always refer to a
+SOMDS participant. This OID will never be assigned another meaning even if, for some reason, a SOMDS participant is no longer 
+relevant to the supplement. For this reason, some items in this technical framework supplement included versioned OIDs in addition
+to the base OID. This provides a mechanism to precisely reference both a specific version of, for example, a transaction, and
+the general purpose of a transaction. 
+
+=== OID management
+
+// It would be nice to link to the co-chairs here, but I can't find them anywhere. 
+
+The generation and management of top level OIDs within the DEV domain is coordinated by Technical Committee Co-chairs. Top level OIDs used in this specification and coordinated within the DEV domain are summarized in the table below. The arcs for these top level OIDs, and the majority of their descendant arcs, are assigned by IHE DEV. Child arcs for use cases and requirements are assigned in this technical supplement. 
+
+[%header]
+|===
+| Specification     | Arc   | Versioned | Child arc assignment
+| Profile           | `.2`  | no        | IHE DEV
+| Actors            | `.3`  | no        | IHE DEV
+| Transactions      | `.4`  | yes       | IHE DEV
+| Content modules   | `.8`  | yes       | IHE DEV
+| Use cases         | `.9`  | no        | SDPi
+| Requirements      | `.10` | no        | SDPi
+| Actor options     | `.?`  | no        |  ?
+|===
+
+
+
 === Device integration profiles
+
+The profile specifications defined in this supplement are assigned OIDs from the `.2` arc under the _IHE DEV parent OID_ by IHE DEV. 
 
 sdpi_oid_table::[arc="profiles"]
 
 === Actors
+
+The actor definitions in this supplement are assigned OIDs from the `.3` arc under the _IHE DEV parent OID_ by IHE DEV. 
 
 sdpi_oid_table::[arc="actors"]
 
