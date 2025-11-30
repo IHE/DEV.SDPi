@@ -104,4 +104,16 @@ sealed class TableAttributes(val key: String) {
         // Define filter for the root arc for oids to include in the table.
         ROOT_ARC("arc")
     }
+
+    enum class IcsTable(val key:String) {
+        // When defined, the ICS table is populated from an
+        // imported external standard
+        SOURCE_STANDARD("standard-id")
+    }
+}
+
+enum class ExternalStandardAttributes(val key: String) {
+    CITATION_KEY("cite"),
+
+    ID("id")
 }

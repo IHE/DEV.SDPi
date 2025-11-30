@@ -73,6 +73,7 @@ class AsciidocConverter(
     val profileTransactionCollector = TransactionIncludeProcessor()
     val profileUseCaseCollector = UseCaseIncludeProcessor()
     val profileContentModuleCollector = ContentModuleIncludeProcessor()
+    val externalStandardsProcessor = ExternalStandardProcessor()
 
     val infoCollector = SdpiInformationCollector(
         bibliographyCollector,
@@ -108,9 +109,9 @@ class AsciidocConverter(
 
         asciidoctor.javaExtensionRegistry().treeprocessor(NumberingProcessor(null, anchorReplacements))
 
-        // Gather bibliography entries.
-
+        // Gather bibliography entries and import external standards requirements
         asciidoctor.javaExtensionRegistry().treeprocessor(bibliographyCollector)
+        asciidoctor.javaExtensionRegistry().blockMacro(externalStandardsProcessor)
 
         // Gather profiles, the transactions, use cases they include.
         asciidoctor.javaExtensionRegistry().blockMacro(profileTransactionCollector)
@@ -136,7 +137,7 @@ class AsciidocConverter(
         asciidoctor.javaExtensionRegistry().blockMacro(AddContentModuleQueryPlaceholder())
         asciidoctor.javaExtensionRegistry().blockMacro(AddOidQueryPlaceholder())
 
-        asciidoctor.javaExtensionRegistry().treeprocessor(PopulateTables(infoCollector))
+        asciidoctor.javaExtensionRegistry().treeprocessor(PopulateTables(infoCollector, externalStandardsProcessor))
 
         // Handle inline macros to cross-reference information from the document tree.
         asciidoctor.javaExtensionRegistry().inlineMacro(RequirementReferenceMacroProcessor(infoCollector))

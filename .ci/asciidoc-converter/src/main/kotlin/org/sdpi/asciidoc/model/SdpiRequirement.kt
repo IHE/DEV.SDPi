@@ -13,7 +13,12 @@ import org.sdpi.asciidoc.makeLink
 enum class RequirementLevel(val keyword: String, val icsStatus: String) {
     MAY("may", "p"),
     SHOULD("should", "r"),
-    SHALL("shall", "m")
+    SHALL("shall", "m");
+
+    companion object {
+        fun fromJson(value: String): RequirementLevel =
+            valueOf(value.uppercase())
+    }
 }
 
 enum class OwningContext(val roleKeyword: String, val label: String) {
