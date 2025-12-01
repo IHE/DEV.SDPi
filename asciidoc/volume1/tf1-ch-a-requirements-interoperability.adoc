@@ -322,6 +322,8 @@ Two requirement identifiers are currently specified:
 ** The root OID for all requirements in the IHE DEV profile is `1.3.6.1.4.1.19376.1.6.10`.
 ** The numeric part of the Unique Identifier is the final arc for the OID, for example: `1.3.6.1.4.1.19376.1.6.10.1234`. 
 
+NOTE: a complete list of OIDs for requirements defined in this specification is provided in <<vol3_appendix_c_oid_requirements>>.
+
 FOR THE CURRENT SPECIFICATION:
 
 * The _unique identifier_ is assigned manually; the asciidoc processor checks all identifiers are unique within the document and automatically assigns the _requirement OID_.
