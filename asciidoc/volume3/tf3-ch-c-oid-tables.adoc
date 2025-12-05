@@ -16,8 +16,9 @@ Arcs are assigned, and used by this technical framework supplement, under the _I
 * actors (`.3`),
 * transactions (`.4`),
 * content modules (`.8`),
-* use cases (`.9`), and 
-* requirements (`.10`).
+* use cases (`.9`),
+* requirements (`.10`), and
+* options ('.11').
 
 Appending one of these arcs to the _IHE DEV parent_ creates a new OID root. Arcs beneath those OIDs name corresponding items within
 this technical framework supplement, as identified in the tables below. 
@@ -44,7 +45,7 @@ The generation and management of top level OIDs within the DEV domain is coordin
 | Content modules   | `.8`  | yes       | IHE DEV
 | Use cases         | `.9`  | no        | SDPi
 | Requirements      | `.10` | no        | SDPi
-| Actor options     | `.?`  | no        |  ?
+| Actor options     | `.11` | no        | IHE DEV
 |===
 
 
@@ -125,3 +126,15 @@ for more information on selecting requirement numbers.
 
 sdpi_oid_table::[arc="requirements"]
 
+
+
+[#vol3_appendix_c_oid_options]
+=== Options
+
+Options for profiles / actors that are defined in this supplement are assigned OIDs from the `.*11*` arc under the _IHE DEV parent OID_
+by the supplement authors. Options are not versioned. See <<vol1_clause_sdpi_requirement_assigning_unique_identifiers>>
+for more information on selecting option numbers.
+
+#QUESTION:  ADD VERSIONING INFO FOR EACH SPECIFIC OPTION AS IS DONE IN USE CASES, FOR EXAMPLE?  "Managed Discovery Option" should be versioned, but the entire set of possible options is not versioned#
+
+sdpi_oid_table::[arc="options"]
