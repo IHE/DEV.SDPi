@@ -448,7 +448,7 @@ notes.
 
 |===
 
-[#vol1_clause_sdpi_p_option_managed_discovery,role=profile-option,profile-option-id="sdpi-p-managed-discovery"]
+[#vol1_clause_sdpi_p_option_managed_discovery,role=profile-option,profile-option-id="sdpi-p-managed-discovery",oid-arcs=.1]
 ==== Managed Discovery Option
 [#vol1_spec_sdpi_p_option_managed_discovery, reftext='Managed Discovery Option']
 
