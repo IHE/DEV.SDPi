@@ -2,6 +2,7 @@ package org.sdpi.asciidoc.factories
 
 import org.asciidoctor.ast.Table
 import org.asciidoctor.extension.Treeprocessor
+import org.sdpi.asciidoc.model.ExternalRequirementSupport
 import org.sdpi.asciidoc.model.RequirementLevel
 
 class IcsTableBuilder (
@@ -34,6 +35,38 @@ class IcsTableBuilder (
         row.cells.add(processor.createTableCell(colSupport, ""))
         row.cells.add(processor.createTableCell(colComment, ""))
 
+        table.body.add(row)
+    }
+
+    fun addRow(strIcsId: String, strReference: String, level: RequirementLevel, support: ExternalRequirementSupport?) {
+        val row = processor.createTableRow(table)
+        row.cells.add(processor.createTableCell(colId, strIcsId))
+        row.cells.add(processor.createTableCell(colReference, strReference))
+        row.cells.add(processor.createTableCell(colStatus, level.icsStatus))
+        if (support == null) {
+            row.cells.add(processor.createTableCell(colSupport, ""))
+            row.cells.add(processor.createTableCell(colComment, ""))
+        } else {
+            val strLocal = support.support.makeLinkLocal()
+            row.cells.add(processor.createTableCell(colSupport, strLocal))
+            row.cells.add(processor.createTableCell(colComment, support.comment ?: ""))
+        }
+        table.body.add(row)
+    }
+
+    fun addRow(support: ExternalRequirementSupport?) {
+        val row = processor.createTableRow(table)
+        row.cells.add(processor.createTableCell(colId, ""))
+        row.cells.add(processor.createTableCell(colReference, ""))
+        row.cells.add(processor.createTableCell(colStatus, ""))
+        if (support == null) {
+            row.cells.add(processor.createTableCell(colSupport, ""))
+            row.cells.add(processor.createTableCell(colComment, ""))
+        } else {
+            val strLocal = support.support.makeLinkLocal()
+            row.cells.add(processor.createTableCell(colSupport, strLocal))
+            row.cells.add(processor.createTableCell(colComment, support.comment ?: ""))
+        }
         table.body.add(row)
     }
 }

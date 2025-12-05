@@ -11,7 +11,7 @@ import org.sdpi.asciidoc.model.loadExternalStandardRequirementsFromJson
 const val BLOCK_MACRO_EXTERNAL_STANDARD_PROCESSOR = "load-standard"
 
 @Name(BLOCK_MACRO_EXTERNAL_STANDARD_PROCESSOR)
-class ExternalStandardProcessor: BlockMacroProcessor(BLOCK_MACRO_EXTERNAL_STANDARD_PROCESSOR) {
+class ExternalStandardProcessor(): BlockMacroProcessor(BLOCK_MACRO_EXTERNAL_STANDARD_PROCESSOR) {
     private companion object : Logging
 
     val standards = mutableListOf<ExternalStandard>()
@@ -27,6 +27,7 @@ class ExternalStandardProcessor: BlockMacroProcessor(BLOCK_MACRO_EXTERNAL_STANDA
         checkNotNull(strCitation) {
             logger.error("Citation is required for standard $strStandardFilename")
         }
+
         val strId = attributes[ExternalStandardAttributes.ID.key]?.toString()
         checkNotNull(strId) {
             logger.error("Id is required for standard $strStandardFilename")

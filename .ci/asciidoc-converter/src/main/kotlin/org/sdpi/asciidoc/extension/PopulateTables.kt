@@ -153,10 +153,15 @@ class PopulateTables(private val docInfo: SdpiInformationCollector, private val 
             val requirements = getSelectedRequirements(table, standard)
             for (req in requirements) {
                 val strIcsId = String.format("ICS-%04d", req.requirementNumber)
-                val strReference = String.format("<<${standard.citation},${req.localId}>>")
+                val strReference = String.format("<<${standard.citationKey},${req.localId}>>")
                 val level = req.level
 
-                builder.addRow(strIcsId, strReference, level)
+                val support = req.localSupport()
+                val firstSupport = support.firstOrNull()
+                builder.addRow(strIcsId, strReference, level, firstSupport)
+                for (s in support.drop(1)) {
+                    builder.addRow(s)
+                }
             }
         }
     }

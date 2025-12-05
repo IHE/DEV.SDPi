@@ -5,6 +5,7 @@ import org.asciidoctor.ast.ContentNode
 import org.asciidoctor.ast.PhraseNode
 import org.asciidoctor.extension.InlineMacroProcessor
 import org.asciidoctor.extension.Name
+import org.sdpi.asciidoc.ExternalStandardAttributes
 import org.sdpi.asciidoc.LinkStyles
 import org.sdpi.asciidoc.parseRequirementNumber
 
@@ -12,31 +13,63 @@ import org.sdpi.asciidoc.parseRequirementNumber
  * Processes inline macro to reference a requirement.
  * https://docs.asciidoctor.org/asciidoctorj/latest/extensions/inline-macro-processor/
  *  Target: the local id of the requirement to reference.
- *  Attributes: none
+ *  Attributes:
+ *      - standard-id [optional]: id of standard included with load-standard
  *  Output: a local link to the requirement specification.
  * Example:
  *  RefRequirement:R1001[]
- *
+ *  RefRequirement:R0121[standard-id=10207]
  */
 @Name("RefRequirement")
-class RequirementReferenceMacroProcessor(private val documentInfo: SdpiInformationCollector) : InlineMacroProcessor() {
-    private companion object : Logging
+class RequirementReferenceMacroProcessor(private val documentInfo: SdpiInformationCollector,
+                                         private val externalStandardsProcessor : ExternalStandardProcessor,
+                                         private val bibliographyCollector : BibliographyCollector)
+    : InlineMacroProcessor() {
+
+        private companion object : Logging
 
     override fun process(parent: ContentNode, strTarget: String, attributes: MutableMap<String, Any>): PhraseNode {
-        val id = parseRequirementNumber(strTarget)
-        checkNotNull(id) {
-            "$strTarget is not a valid requirement number for a requirement reference".also { logger.error { it } }
+        val strStandardId = attributes[ExternalStandardAttributes.STANDARD_ID.key]?.toString()
+        if (null == strStandardId) {
+            // Reference to a requirement defined locally in the supplement
+            val nRequirementId = parseRequirementNumber(strTarget)
+            checkNotNull(nRequirementId) {
+                "$strTarget is not a valid requirement number for a requirement reference".also { logger.error { it } }
+            }
+
+            val req = documentInfo.requirements()[nRequirementId]
+            checkNotNull(req) {
+                "Requirement '$strTarget' ($nRequirementId) doesn't exist".also { logger.error { it } }
+            }
+
+            val strHref = "#${req.getBlockId()}"
+            val options: Map<String, String> = mapOf("type" to ":link", "target" to strHref)
+
+            return createPhraseNode(parent, "anchor", req.localId, attributes, options)
+
+        } else {
+            // Referencing a requirement defined in an included standard.
+            val standard = externalStandardsProcessor.getStandard(strStandardId)
+            checkNotNull(standard) {
+                "Standard '$strStandardId' doesn't exist".also { logger.error { it } }
+            }
+
+            val citation = bibliographyCollector.findEntry(standard.citationKey)
+            checkNotNull(citation) {
+                "Bibliography doesn't included a reference for key '${standard.citationKey}'".also { logger.error { it } }
+            }
+
+            val req = standard.getRequirement(strTarget)
+            checkNotNull(req) {
+                "Standard '$strStandardId' doesn't include requirement '$strTarget'".also { logger.error { it } }
+            }
+
+            val strLinkText = "$strTarget in [${citation.referenceText}]"
+            val strHref = "#${standard.citationKey}"
+            val options: Map<String, String> = mapOf("type" to ":link", "target" to strHref)
+
+            return createPhraseNode(parent, "anchor", strLinkText, attributes, options)
         }
-
-        val req = documentInfo.requirements()[id]
-        checkNotNull(req) {
-            "Requirement '$strTarget' ($id) doesn't exist".also { logger.error { it } }
-        }
-
-        val strHref = "#${req.getBlockId()}"
-        val options: Map<String, String> = mapOf("type" to ":link", "target" to strHref)
-
-        return createPhraseNode(parent, "anchor", req.localId, attributes, options)
     }
 }
 

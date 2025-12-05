@@ -113,7 +113,12 @@ sealed class TableAttributes(val key: String) {
 }
 
 enum class ExternalStandardAttributes(val key: String) {
+    // Attribute with bibliography entry for the standard [required]
     CITATION_KEY("cite"),
 
-    ID("id")
+    // An document-unique identifier to reference the standard in ICS tables and requirement references.
+    ID("id"),
+
+    // ID of the standard when referencing requirements with the "RefRequirement" inline macro.
+    STANDARD_ID("standard-id")
 }

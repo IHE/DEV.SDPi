@@ -8,10 +8,14 @@ import java.io.File
 class ExternalStandard(
     val sourceFile: String,
     val id: String,
-    val citation: String,
+    val citationKey: String,
     val requirements: List<ExternalRequirement>,
     val icsGroups: List<String>
-)
+) {
+    fun getRequirement(strRequirementId: String) : ExternalRequirement? {
+        return requirements.firstOrNull{ strRequirementId == it.localId }
+    }
+}
 
 @Serializable
 class ExternalRequirement (
@@ -19,7 +23,32 @@ class ExternalRequirement (
     val localId: String,
     val level: RequirementLevel,
     val groups: List<String>
+) {
+    private val sdpiSupport: MutableList<ExternalRequirementSupport> = mutableListOf()
+
+    fun addSupport(support: ExternalRequirementSupport) {
+        sdpiSupport.add(support)
+    }
+
+    fun localSupport(): List<ExternalRequirementSupport> = sdpiSupport
+}
+
+@Serializable
+class ExternalRequirementSupport(
+    val support: SdpiRequirement2,
+    val comment: String?)
+
+class ExternalRequirementReference(
+    val standard: ExternalStandard,
+    val requirement: ExternalRequirement,
 )
+{
+    companion object {
+        val REQUIREMENT_REF_REGEX = """RefRequirement:([a-zA-Z0-9_-]+)\[(.+)]""".toRegex()
+        val REQUIREMENT_REF_ARGS = ",(?=(?:[^\"']|\"[^\"]*\"|'[^']*')*$)".toRegex()
+        val REQUIREMENT_ARG_PAIRS = """([A-Za-z0-9_-]+)=(.*)""".toRegex()
+    }
+}
 
 /**
  * Internal DTO that matches the JSON file structure exactly.
@@ -37,7 +66,7 @@ private data class RequirementJson(
  *
  * @param strPath      File system path to the JSON file.
  * @param strId        Document unique id for this standard reference.
- * @param strCitation  Citation text you want to associate with this standard.
+ * @param strCitation  Citation key you want to associate with this standard.
  */
 fun loadExternalStandardRequirementsFromJson(
     strPath: String,
@@ -78,7 +107,7 @@ fun loadExternalStandardRequirementsFromJson(
     return ExternalStandard(
         sourceFile = file.name,
         id = strId,
-        citation = strCitation,
+        citationKey = strCitation,
         requirements = requirements,
         icsGroups = icsGroups
     )

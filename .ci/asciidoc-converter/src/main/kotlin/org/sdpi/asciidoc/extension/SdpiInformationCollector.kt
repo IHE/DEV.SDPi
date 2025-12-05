@@ -13,7 +13,8 @@ class SdpiInformationCollector(
     private val transactionActors: TransactionActorsProcessor,
     private val profileTransactions: TransactionIncludeProcessor,
     private val profileUseCases: UseCaseIncludeProcessor,
-    private val profileContentModuleReferences: ContentModuleIncludeProcessor
+    private val profileContentModuleReferences: ContentModuleIncludeProcessor,
+    private val externalStandardsProcessor : ExternalStandardProcessor
 ) : Treeprocessor() {
     private companion object : Logging
 
@@ -423,6 +424,13 @@ class SdpiInformationCollector(
             }
         }
 
+        val newRequirement = buildRequirement(nRequirementNumber, block)
+        linkSupportForExternalStandards(newRequirement)
+
+        requirements[nRequirementNumber] = newRequirement
+    }
+
+    private fun buildRequirement(nRequirementNumber: Int, block: StructuralNode) : SdpiRequirement2 {
         val strLocalId = String.format("R%04d", nRequirementNumber)
         val strGlobalId = block.attributes["global-id"]?.toString() ?: ""
         val aGroups: List<String> = getRequirementGroupMembership(block)
@@ -438,30 +446,31 @@ class SdpiInformationCollector(
 
         when (requirementType) {
             RequirementType.TECH ->
-                requirements[nRequirementNumber] = SdpiRequirement2.TechFeature(
+                return SdpiRequirement2.TechFeature(
                     nRequirementNumber,
                     strLocalId, strGlobalId, requirementLevel, getMaxOccurrence(block), owner, aGroups, specification
                 )
 
             RequirementType.USE_CASE ->
-                requirements[nRequirementNumber] = buildUseCaseRequirement(
+                return buildUseCaseRequirement(
                     block, nRequirementNumber,
                     strLocalId, strGlobalId, requirementLevel, owner, aGroups, specification
                 )
 
             RequirementType.REF_ICS ->
-                requirements[nRequirementNumber] = buildRefIcsRequirement(
+                return buildRefIcsRequirement(
                     block, nRequirementNumber,
                     strLocalId, strGlobalId, requirementLevel, owner, aGroups, specification
                 )
 
             RequirementType.RISK_MITIGATION ->
-                requirements[nRequirementNumber] = buildRiskMitigationRequirement(
+                return buildRiskMitigationRequirement(
                     block, nRequirementNumber,
                     strLocalId, strGlobalId, requirementLevel, owner, aGroups, specification
                 )
 
-            RequirementType.IHE_PROFILE -> buildIheProfileRequirement(
+            RequirementType.IHE_PROFILE ->
+                return buildIheProfileRequirement(
                 block, nRequirementNumber,
                 strLocalId, strGlobalId, requirementLevel, owner, aGroups, specification
             )
@@ -508,6 +517,7 @@ class SdpiInformationCollector(
         val exampleContent: MutableList<Content> = mutableListOf()
         val relatedContent: MutableList<Content> = mutableListOf()
         val unStyledContent: MutableList<Content> = mutableListOf()
+
 
         for (child in block.blocks) {
             val strStyle = child.attributes["style"].toString()
@@ -780,6 +790,52 @@ class SdpiInformationCollector(
             }
         }
     }
+
+    private fun linkSupportForExternalStandards(req: SdpiRequirement2)
+    {
+        for(c in req.specification.relatedContent) {
+            val matches = c.getIdMatches(ExternalRequirementReference.REQUIREMENT_REF_REGEX, 0)
+            for(strRef in matches) {
+                val mReference = ExternalRequirementReference.REQUIREMENT_REF_REGEX.find(strRef)
+                checkNotNull(mReference) {
+                    logger.error("Unexpected match failure in parseExternalRequirements")
+                }
+                val strRefId = mReference.groupValues[1]
+                val strArguments = mReference.groupValues[2]
+                val arguments = parseArgs(strArguments)
+                val strStandardId = arguments["standard-id"]
+                checkNotNull(strStandardId){
+                    logger.error("Missing standard argument in $strRef")
+                }
+                val strComment = arguments["comment"]
+                //println("------ $strRef: standard = $strStandardId, requirement = $strRefId, comment=$strComment")
+                val requirement = createExternalRef(strStandardId, strRefId)
+                requirement.addSupport(ExternalRequirementSupport(req, strComment))
+            }
+        }
+    }
+
+    private fun parseArgs(s: String): Map<String, String> =
+        s.split(ExternalRequirementReference.REQUIREMENT_REF_ARGS).associate { arg ->
+            val (key, rawValue) = ExternalRequirementReference.REQUIREMENT_ARG_PAIRS.matchEntire(arg.trim())!!.destructured
+            val value = rawValue.trim().removeSurrounding("\"").removeSurrounding("'")
+            key to value
+        }
+
+    private fun createExternalRef(strStandardId: String, strRequirementId: String): ExternalRequirement {
+        val standard = externalStandardsProcessor.getStandard(strStandardId)
+        checkNotNull(standard){
+            logger.error("Unknown standard id: $strStandardId")
+        }
+        val requirement = standard.getRequirement(strRequirementId)
+        checkNotNull(requirement) {
+            logger.error("Unknown requirement '$strRequirementId' for standard '$strStandardId'")
+        }
+
+        return requirement
+    }
+
+
 
     /**
      * Retrieves the list of groups the requirement belongs to (if any).
@@ -1110,7 +1166,7 @@ class SdpiInformationCollector(
             if (strOid.startsWith('.')) {
                 for (strParentOid in parentOids) {
                     val strScenarioOid = "${strParentOid}$strOid"
-                    println("**** Scenerio oid = $strScenarioOid")
+                    //println("**** Scenerio oid = $strScenarioOid")
                     blockOids.add(strScenarioOid)
                 }
             } else {
