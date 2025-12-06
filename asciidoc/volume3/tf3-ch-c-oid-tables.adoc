@@ -38,14 +38,14 @@ The generation and management of top level OIDs within the DEV domain is coordin
 
 [%header]
 |===
-| Specification     | Arc   | Versioned | Child arc assignment
-| Profile           | `.2`  | no        | IHE DEV
-| Actors            | `.3`  | no        | IHE DEV
-| Transactions      | `.4`  | yes       | IHE DEV
-| Content modules   | `.8`  | yes       | IHE DEV
-| Use cases         | `.9`  | no        | SDPi
-| Requirements      | `.10` | no        | SDPi
-| Actor options     | `.11` | no        | IHE DEV
+| Specification         | Arc   | Versioned | Child arc assignment
+| Profile               | `.2`  | no        | IHE DEV
+| Actors                | `.3`  | no        | IHE DEV
+| Transactions          | `.4`  | yes       | IHE DEV
+| Content modules       | `.8`  | yes       | IHE DEV
+| Use cases             | `.9`  | no        | SDPi
+| Requirements          | `.10` | no        | SDPi
+| Profile actor options | `.11` | no        | IHE DEV
 |===
 
 
@@ -57,6 +57,20 @@ by IHE DEV. Profile arcs are generally assigned sequentially, however the profil
 profiles defined in other supplements. 
 
 sdpi_oid_table::[arc="profiles"]
+
+
+[#vol3_appendix_c_oid_options]
+=== Profile actor options
+
+Options for profiles / actors that are defined in this supplement are assigned OIDs from the `.*11*` arc under the _IHE DEV parent OID_
+by the supplement authors. Profile arcs are generally assigned sequentially. 
+
+Each profile actor option is assigned a base and versioned OID following the patterns `1.3.6.1.4.1.19376.1.6.*11*.<transaction-number>`
+and `1.3.6.1.4.1.19376.1.6.*11*.<transaction-number>.<version-number>`. Profile actor options are assigned a new version number for
+changes that would be incompatible with the previous version. Profile actor options are not assigned a new version number for minor
+changes, such as improving clarity. 
+
+sdpi_oid_table::[arc="profile-actor-options"]
 
 [#vol3_appendix_c_oid_actors]
 === Actors
@@ -127,14 +141,3 @@ for more information on selecting requirement numbers.
 sdpi_oid_table::[arc="requirements"]
 
 
-
-[#vol3_appendix_c_oid_options]
-=== Options
-
-Options for profiles / actors that are defined in this supplement are assigned OIDs from the `.*11*` arc under the _IHE DEV parent OID_
-by the supplement authors. Options are not versioned. See <<vol1_clause_sdpi_requirement_assigning_unique_identifiers>>
-for more information on selecting option numbers.
-
-#QUESTION:  ADD VERSIONING INFO FOR EACH SPECIFIC OPTION AS IS DONE IN USE CASES, FOR EXAMPLE?  "Managed Discovery Option" should be versioned, but the entire set of possible options is not versioned#
-
-sdpi_oid_table::[arc="options"]

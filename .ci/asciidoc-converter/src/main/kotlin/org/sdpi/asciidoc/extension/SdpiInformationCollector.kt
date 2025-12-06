@@ -376,7 +376,9 @@ class SdpiInformationCollector(
         val strAnchor = block.id
         val strLabel = parseProfileOptionTitle(block)
 
-        val newOption = SdpiProfileOption(strId, strAnchor, strLabel)
+        val oids = getOids(block, "Profile option $strId", WellKnownOid.DEV_PROFILE_ACTOR_OPTIONS)
+
+        val newOption = SdpiProfileOption(strId, oids, strAnchor, strLabel)
         currentProfile.addOption(newOption)
         return newOption
     }
