@@ -18,7 +18,7 @@ Arcs are assigned, and used by this technical framework supplement, under the _I
 * content modules (`.8`),
 * use cases (`.9`),
 * requirements (`.10`), and
-* options ('.11').
+* profile actor options ('.11').
 
 Appending one of these arcs to the _IHE DEV parent_ creates a new OID root. Arcs beneath those OIDs name corresponding items within
 this technical framework supplement, as identified in the tables below. 

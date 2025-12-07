@@ -376,7 +376,7 @@ NOTE: <<semantic-requirements>> are defined in a custom block.
 
 Profiles define <<semantic-actors,actors>> and compose a set of transactions, use cases and content modules. They are defined within a single AsciiDoc section that includes definitions for all the profile's actors and references to relevant transactions, use-cases and content modules. Profiles may also define optional parts, such as support for a discovery proxy. Each option may define its own actors and reference a set of transactions, use cases and content modules. 
 
-The `profile` and `profile-option` roles mark sections defining profiles and options within profiles, respectively. A document-unique id is required for each profile and profile option, set using the `profile-id` and `profile-option-id` attributes, respectively. An <<defining-oids,object identifier (oid)>> is required for each profile but not for profile options (currently). The fragment below illustrates the definition of a profile and two profile options. 
+The `profile` and `profile-option` roles mark sections defining profiles and options within profiles, respectively. A document-unique id is required for each profile and profile option, set using the `profile-id` and `profile-option-id` attributes, respectively. An <<defining-oids,object identifier (oid)>> is required for both profiles and profile options. The fragment below illustrates the definition of a profile and two profile options. 
 
 NOTE: The document structure is used to associate information, such as actors and references to transactions or use cases, with a profile so these must be defined in sub-sections to the document section defining the profile. 
 
@@ -392,7 +392,7 @@ The SDPi-Plug-and-trust SDPi-P) Profile supports foundational seamless connectiv
 
 The managed discovery proxy supports discovery of SOMDS participants through a well-known proxy service...
 
-[role="profile-option",profile-option-id="ad-hoc-discovery"]
+[role="profile-option",profile-option-id="ad-hoc-discovery",oid-arcs=".1,.1.1"]
 === Ad-hoc discovery option
 
 Ad-hoc discovery supports discovery of SOMDS participants through multi-cast broadcast messages...
@@ -873,6 +873,7 @@ Many items require object identifiers (oids) including:
 
 * profiles,
 * actors, 
+* profile actor options,
 * use cases and use case scenarios, 
 * content modules, and
 * transactions. 
