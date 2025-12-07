@@ -48,6 +48,13 @@ enum class WellKnownOid(val id: String, val oid: String, val typeLabel: String, 
         "Parent OID for the DEV integration profiles"
     ),
 
+    DEV_PROFILE_ACTOR_OPTIONS(
+        "profile-actor-options",
+        "1.3.6.1.4.1.19376.1.6.11",
+        "Profile actor option",
+        "Parent OID for the DEV integration profile actor options"
+    ),
+
     DEV_CONTENT_MODULE(
         "content-modules",
         "1.3.6.1.4.1.19376.1.6.8",

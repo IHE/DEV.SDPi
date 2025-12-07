@@ -8,6 +8,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 class SdpiProfileOption @OptIn(ExperimentalSerializationApi::class) constructor(
     val id: String,
+    val oids: List<String>,
     val anchor: String,
     val label: String,
 

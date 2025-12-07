@@ -1,30 +1,143 @@
 [appendix#vol3_appendix_c_oids,sdpi_offset=C]
 == OID identifiers
 
+Object identifiers, or OIDs, are globally unique numeric identifiers used to name something in a formal, unambiguous way. 
+They are typically formatted as dotted number strings (`1.3.6.1.4.1.19376.1.6`, for example). Each number (or _arc_) is a node in a
+hierarchical, tree-structured, namespace. The top of the tree, and first arc in the sequence, is managed by standards
+bodies who delegate responsibility for distinct branches in the hierarchy. 
+
+IHE DEV is responsible for managing arcs from the _IHE DEV parent_ OID `1.3.6.1.4.1.19376.1.6`.
 See https://wiki.ihe.net/index.php/PCD_OID_Management[PCD OID Management] for canonical definitions 
 of object identifiers for the profile, its actors and transactions, etc. 
 
+Arcs are assigned, and used by this technical framework supplement, under the _IHE DEV parent_ OID for:
+
+* device integration profiles (`.2`),
+* actors (`.3`),
+* transactions (`.4`),
+* content modules (`.8`),
+* use cases (`.9`),
+* requirements (`.10`), and
+* profile actor options ('.11').
+
+Appending one of these arcs to the _IHE DEV parent_ creates a new OID root. Arcs beneath those OIDs name corresponding items within
+this technical framework supplement, as identified in the tables below. 
+
+Generally, the meaning of OIDs should not change once assigned. For example, `1.3.6.1.4.1.19376.1.6.3.40` will always refer to a
+SOMDS participant. This OID will never be assigned another meaning even if, for some reason, a SOMDS participant is no longer 
+relevant to the supplement. For this reason, some items in this technical framework supplement included versioned OIDs in addition
+to the base OID. This provides a mechanism to precisely reference both a specific version of, for example, a transaction, and
+the general purpose of a transaction. 
+
+[#vol3_appendix_c_oid_management]
+=== OID management
+
+// It would be nice to link to the co-chairs here, but I can't find them anywhere. 
+
+The generation and management of top level OIDs within the DEV domain is coordinated by Technical Committee Co-chairs. Top level OIDs used in this specification and coordinated within the DEV domain are summarized in the table below. The arcs for these top level OIDs, and the majority of their descendant arcs, are assigned by IHE DEV. Child arcs for use cases and requirements are assigned in this technical supplement. 
+
+[%header]
+|===
+| Specification         | Arc   | Versioned | Child arc assignment
+| Profile               | `.2`  | no        | IHE DEV
+| Actors                | `.3`  | no        | IHE DEV
+| Transactions          | `.4`  | yes       | IHE DEV
+| Content modules       | `.8`  | yes       | IHE DEV
+| Use cases             | `.9`  | no        | SDPi
+| Requirements          | `.10` | no        | SDPi
+| Profile actor options | `.11` | no        | IHE DEV
+|===
+
+
+[#vol3_appendix_c_oid_profiles]
 === Device integration profiles
+
+The profile specifications defined in this supplement are assigned OIDs from the `.*2*` arc under the _IHE DEV parent OID_ 
+by IHE DEV. Profile arcs are generally assigned sequentially, however the profile specification base OID is shared with 
+profiles defined in other supplements. 
 
 sdpi_oid_table::[arc="profiles"]
 
+
+[#vol3_appendix_c_oid_options]
+=== Profile actor options
+
+Options for profiles / actors that are defined in this supplement are assigned OIDs from the `.*11*` arc under the _IHE DEV parent OID_
+by the supplement authors. Profile arcs are generally assigned sequentially. 
+
+Each profile actor option is assigned a base and versioned OID following the patterns `1.3.6.1.4.1.19376.1.6.*11*.<transaction-number>`
+and `1.3.6.1.4.1.19376.1.6.*11*.<transaction-number>.<version-number>`. Profile actor options are assigned a new version number for
+changes that would be incompatible with the previous version. Profile actor options are not assigned a new version number for minor
+changes, such as improving clarity. 
+
+sdpi_oid_table::[arc="profile-actor-options"]
+
+[#vol3_appendix_c_oid_actors]
 === Actors
+
+The actor definitions in this supplement are assigned OIDs from the `.*3*` arc under the _IHE DEV parent OID_ by IHE DEV. 
+Actor arcs are generally assigned sequentially, however the actor base OID is shared with actors defined
+in other supplements. 
 
 sdpi_oid_table::[arc="actors"]
 
+[#vol3_appendix_c_oid_transactions]
 === Transactions
+
+The transactions defined in this supplement are assigned OIDs from the `.*4*` arc under the _IHE DEV parent OID_ by IHE DEV. 
+
+Each transaction is assigned a base and versioned OID following the patterns `1.3.6.1.4.1.19376.1.6.*4*.<transaction-number>`
+and `1.3.6.1.4.1.19376.1.6.*4*.<transaction-number>.<version-number>`. Transactions are assigned a new version number for
+changes that would be incompatible with the previous version. Transactions are not assigned a new version number for minor
+changes, such as improving clarity. 
 
 sdpi_oid_table::[arc="transactions"]
 
+[#vol3_appendix_c_oid_content_modules]
 === Content modules
+
+Content modules defined in this supplement are assigned OIDs from the `.*8*` arc under the _IHE DEV parent OID_ 
+by the supplement authors. 
+
+Each content module is assigned a base and versioned OID following the patterns `1.3.6.1.4.1.19376.1.6.*8*.<content-module-arc>`
+and `1.3.6.1.4.1.19376.1.6.*8*.<content-module-arc>.<version-number>`. A new version number is assigned for changes that are
+incompatible with the previous version. A new version number is not assigned for minor changes such as improving clarity. 
 
 sdpi_oid_table::[arc="content-modules"]
 
+[#vol3_appendix_c_oid_use_cases]
 === Use cases
+
+Use cases defined in this supplement are assigned OIDs from the `.*9*` arc under the _IHE DEV parent OID_ 
+by the supplement authors.
+
+Within the use-case OID hierarchy, each use case feature is assigned an arc sequentially as it is added to the
+specification. Use case features are not versioned but are the base of a hierarchy containing use-case scenarios.
+
+Each scenario has the corresponding use-case feature OID for a parent and its arc is assigned sequentially in the order
+that the scenario is added to the specification. 
+Each scenario is assigned a base and versioned OID following the patterns `1.3.6.1.4.1.19376.1.6.*9*.<feature-arc>.<scenario-arc>`
+and `1.3.6.1.4.1.19376.1.6.*9*.<feature-arc>.<scenario-arc>.<version-number>`. 
+A new version number is assigned sequentially for changes that are incompatible with the previous version. A new version number is 
+not assigned for minor changes such as improving clarity. Changes to requirements (adding, removing, changing) within
+a scenario that are not backwards compatible require changing the version number. For example changing a requirement:
+
+* from SHOULD to SHALL would generally break backwards compatibility,
+* from SHALL to SHOULD might not break backwards compatibility, however be sure to consider whether an
+incompatibility arises when an actor (e.g., a RefActor:somds_consumer[]) may be relying on a SHALL requirement. 
+
+NOTE: OIDs do not change when scenarios or use cases are reordered within the supplement. 
+
 
 sdpi_oid_table::[arc="use-cases"]
 
+[#vol3_appendix_c_oid_requirements]
 === Requirements
 
+Requirements defined in this supplement are assigned OIDs from the `.*10*` arc under the _IHE DEV parent OID_ 
+by the supplement authors. Requirements are not versioned. See <<vol1_clause_sdpi_requirement_assigning_unique_identifiers>>
+for more information on selecting requirement numbers. 
+
 sdpi_oid_table::[arc="requirements"]
+
 

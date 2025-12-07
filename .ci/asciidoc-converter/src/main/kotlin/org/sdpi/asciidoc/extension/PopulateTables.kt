@@ -349,6 +349,8 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
                 gatherTransactionOids(oidsToTable)
             } else if (arcOid == WellKnownOid.DEV_PROFILE) {
                 gatherProfileOids(oidsToTable)
+            } else if (arcOid == WellKnownOid.DEV_PROFILE_ACTOR_OPTIONS) {
+                gatherProfileOptionOids(oidsToTable)
             } else if (arcOid == WellKnownOid.DEV_CONTENT_MODULE) {
                 gatherContentModuleOids(oidsToTable)
             } else if (arcOid == WellKnownOid.DEV_USE_CASE) {
@@ -403,6 +405,22 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
                     profile.anchor
                 )
                 oidsToTable.add(oid)
+            }
+        }
+    }
+
+    private fun gatherProfileOptionOids(oidsToTable: MutableList<SdpiOidReference>) {
+        for (profile in docInfo.profiles()) {
+            for (option in profile.options) {
+                for (strOid in option.oids) {
+                    val oid = SdpiOidReference(
+                        WellKnownOid.DEV_PROFILE_ACTOR_OPTIONS,
+                        strOid,
+                        option.label,
+                        option.anchor
+                    )
+                    oidsToTable.add(oid)
+                }
             }
         }
     }
