@@ -909,19 +909,121 @@ This is commonly used to provide versioned (e.g., `.23.1`) and version neutral (
 It is common to refer to requirements and use-cases from elsewhere in the source. Semantic https://docs.asciidoctor.org/asciidoctorj/latest/extensions/inline-macro-processor/[in-line macros] are provided to cross-reference requirements and use-cases by their requirement number and use-case id, respectively. 
 
 |===
-|Macro name | Target | Optional attributes | Example | Description
+|Macro name         | Target                    | Attributes               | Example                  | Description
 
-|`RefRequirement` | requirement | _none_ | `RefRequirement:r1002[]` | Inserts a link to the requirement target. 
-|`RefUseCase` | use-case | _none_ | `RefUseCase:stad[]` | Inserts a link to the use-case target. 
-|`RefActor` | actor | _none_ | `RefActor:discovery-proxy[]` | Inserts a link to the actor definition in a profile. 
-|`RefProfile` | profile or profile option | _none_ | `RefProfile:SDPi-P[]`, `RefProfile:SDPi-P[profile-option-id="discovery proxy"]` | Inserts a link to the profile or profile option. 
-|`RefContentModule` | content module | _none_ | `RefContentModule:biceps[]` | Inserts a link to the content module. 
-|`RefTransaction` | transaction | _none_ | `RefTransaction:DEV-23[]` | Inserts a link to the transaction definition.
+|`RefRequirement`   | requirement               | _none_ | `RefRequirement:r1002[]`  | Inserts a link to the requirement target. 
+|`RefUseCase`       | use-case                  | _none_ | `RefUseCase:stad[]` | Inserts a link to the use-case target. 
+|`RefActor`         | actor                     | _none_ | `RefActor:discovery-proxy[]` | Inserts a link to the actor definition in a profile. 
+|`RefProfile`       | profile or profile option | `profile-option-id` | `RefProfile:SDPi-P[]`, `RefProfile:SDPi-P[profile-option-id="discovery proxy"]` | Inserts a link to the profile or profile option. 
+|`RefContentModule` | content module            | _none_ | `RefContentModule:biceps[]` | Inserts a link to the content module. 
+|`RefTransaction`   | transaction               | _none_ | `RefTransaction:DEV-23[]` | Inserts a link to the transaction definition.
 |===
 
 NOTE: use case ids are case-sensitive.
 
-IMPORTANT: Using the in-line macro reduces the risk of broken links and helps ensure future compatibility if, for example, <<requirement-oids,ISO object identifiers>> are used to reference requirements. 
+IMPORTANT: Using the in-line macro reduces the risk of broken links and helps ensure future compatibility if, for example, <<requirement-oids,ISO object identifiers>> are used to reference requirements.
+
+NOTE: `RefRequirement` <<declaring-support-for-external-requirement,may also be used>>, 
+in a requirements `[RELATED]` block, to establish support for a requirement in an 
+<<meeting-external-standards-requirements,external standard>>. 
+
+[[meeting-external-standards-requirements]]
+=== Meeting external standards requirements
+
+Support for requirements from external standards, such as 11073-10700:2024, can be demonstrated 
+in the SDPi ASCIIDoc source using cross-references to imported implementation conformance 
+statement (ICS) data from the external standard. 
+
+The key steps are:
+
+1. obtain a list of requirements that must be met to conform to the external standard in a <<ics-data-format,suitable format>>
+and place this file in the `asciidoc/standards` folder. 
+2. create an asciidoc file `volume1/conformance-statements` for the external standard. Model this
+on one of the existing standards. Notably, include a section for each group defined in the external
+standard and generate a ICS table for the group using the `<<generate-table,sdpi_ics_table>>` block macro. 
+Add this file to `asciidoc/volume1/tf1-ch-b-ref-standards-conformance.adoc`.
+3. <<declaring-support-for-external-requirement,declare support>> in SDPi requirements for requirements from external standards using the `RefRequirement` inline macro
+in `[RELATED]` blocks.
+
+[[importing-ics-data]]
+==== Importing ICS data
+
+Use the `load-standard` https://docs.asciidoctor.org/asciidoctorj/latest/extensions/block-macro-processor/[block macro processor] 
+to load ICS data for external standards. The `load-standard` macro requires:
+
+* the name of the JSON file, in the project's `asciidoc/standards` folder, containing the ICS data for the external standard, 
+* an `id` attribute providing a symbol to identify the ICS data in <<cross-referencing,cross-references>>,
+* a `cite` attribute providing the label of the bibliography entry for the external standard. 
+
+For example:
+
+`load-standard::IEEE-P11073-10700-2022.json[id=10700,cite="ref_ieee_11073_10700_2022"]`
+
+[[ics-data-format]]
+==== ICS data file format
+
+ICS data for external standards is stored in a JSON file. It consists of one or more records,
+each with the following fields:
+
+* `requirementNumber`: the number assigned to the requirement in the external standard,
+* `level`: the obligation required to meet the standard, which may be {`Shall`, `Should` or `May`},
+* `localId`: a string containing the identifier for the requirement in the external standard,
+* `icsGroup`: the ICS group that the requirement belongs to.
+
+An extract from the 11073-10700:2020 standard is shown below as an example:
+
+[source,asciidoc]
+----
+[
+  {
+    "requirementNumber": 22,
+    "level": "Shall",
+    "localId": "RR0022",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 24,
+    "level": "Shall",
+    "localId": "RR0024",
+    "icsGroup": "SDC Participant"
+  },
+   :
+   :
+]
+----
+
+[[declaring-support-for-external-requirement]]
+==== Declaring support for a requirement
+
+Declare support from an imported external standard in an SDPi requirement with a <<cross-referencing,cross-reference>>
+to the supported requirement from the imported external standard using the 
+`RefRequirement` https://docs.asciidoctor.org/asciidoctorj/latest/extensions/inline-macro-processor/[in-line macro]. 
+Place the cross reference in the SDPi requirement's `[RELATED]` block. Provide the `localId` from the
+external standard as the macro target. Use the `standard-id`, defined when the external standard was
+<<importing-ics-data,imported>>, to identify the standard. Include an, optional, `comment` attribute
+to populate the _Comment_ column in the imported standard's ICS table. 
+
+The example below illustrates requirement R1534, from SDPi, supporting requirement RR1162 from
+the 10700 standard. The _Support_ column in the ICS table generated from the requirements imported
+from the external standard will include a link to requirement R1534. 
+
+[source,asciidoc]
+----
+.R1534
+[sdpi_requirement#r1534,sdpi_req_level=shall]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=audit,sdpi_ses_test=wire]
+****
+[NORMATIVE]
+====
+If a <<vol1_spec_sdpi_p_actor_somds_participant>> cannot reach the <<acronym_ts_service>>, the 
+<<vol1_spec_sdpi_p_actor_somds_participant>> shall create a log entry.
+====
+
+[RELATED]
+====
+* RefRequirement:RR1162[standard-id=10700, comment="log time-service unreachable"]
+====
+----
 
 [[generate-table]]
 === Summary tables
@@ -948,19 +1050,30 @@ The example below includes an ICS table in the generated document with all requi
 sdpi_ics_table::[sdpi_req_group=provider]
 ----
 
+Include the id of an <<importing-ics-data,imported external standard>> to build 
+an ICS table from imported requirements. The _Support_ and _Comments_ columns 
+will be <<declaring-support-for-external-requirement,populated from cross-references>> 
+included in SDPi `[RELATED]` blocks. 
+
+[source,asciidoc]
+----
+sdpi_ics_table::[sdpi_req_group="SDC Participant",standard-id=10700]
+----
+
+
 ==== Filter
 
 Filter parameters, included as named attributes, select the content included in the table. Available filters are tabulated below. 
 
 |===
-|Attribute name | Applies to | Value | Obligation | Description
+|Attribute name      | Applies to                                             | Value                 | Obligation | Description
 
-|`sdpi_req_group` | `sdpi_requirement_table`, `sdpi_ics_table` | comma separated list | optional | Includes requirements with any of the groups supplied in their `sdpi_req_group` <<requirement-attributes,attribute>>. 
-|`profile-id` | `sdpi_transaction_table`, `sdpi_content_module_table` | _profile id_ | required | Table includes details for the selected profile.
-|`profile-option-id` | `sdpi_transaction_table`, `sdpi_content_module_table` | _profile option id_ | required | Table includes details for the selected profile option only. If not specified all options are included.
-|`actor-id` | `sdpi_transaction_table`, `sdpi_ics_table` | _actor id_ | required | Table includes only transactions for the selected actor. 
-|`arc` | `sdpi_oid_table` | _arc id_ | `actors`, `transactions` or `profiles` | Table only includes oids for the selected arcs. 
-
+|`sdpi_req_group`    | `sdpi_requirement_table`, `sdpi_ics_table`             | comma separated list  | optional | Includes requirements with any of the groups supplied in their `sdpi_req_group` <<requirement-attributes,attribute>>. 
+|`profile-id`        | `sdpi_transaction_table`, `sdpi_content_module_table`  | _profile id_          | required | Table includes details for the selected profile.
+|`profile-option-id` | `sdpi_transaction_table`, `sdpi_content_module_table`  | _profile option id_   | required | Table includes details for the selected profile option only. If not specified all options are included.
+|`actor-id`          | `sdpi_transaction_table`, `sdpi_ics_table`             | _actor id_            | required | Table includes only transactions for the selected actor. 
+|`arc`               | `sdpi_oid_table`                                       | _arc id_              | `actors`, `transactions` or `profiles` | Table only includes oids for the selected arcs. 
+|`standard-id`       | `sdpi_oid_table`                                       | _id for external standard_ | optional | Source requirements from <<importing-ics-data,imported ICS data>> for an external standard. 
 |===
 
 === Backwards compatibility
