@@ -9,6 +9,7 @@ data class SdpiActor(
     val label: String,
     val profile: String,
     val anchor: String,
+    val requiredActorGroupings: List<ActorGrouping>?
 ) {
     val requirements: MutableList<Int> = mutableListOf<Int>()
 
@@ -24,6 +25,16 @@ data class SdpiActorRole(
     val contribution: Contribution,
     val description: List<String>,
 ) {
+}
+
+@Serializable
+data class ActorGrouping(
+    val actorId: String,
+    val optionId: String?
+) {
+    companion object {
+        val GROUPING_REGEX = """^\s*([0-9a-zA-Z_-]+)\s*(?:\[\s*([0-9a-zA-Z_-]+)\s*])?\s*$""".toRegex()
+    }
 }
 
 @Serializable

@@ -406,21 +406,23 @@ The (abbreviated) example below illustrates the AsciiDoc source defining three a
 
 [source,asciidoc]
 ----
-[#vol1_clause_sdpi_p_somds_participant, role="actor",actor-id="somds-participant",oid-arcs=.40]
+[#vol1_clause_sdpi_p_somds_participant, role="actor",actor-id="somds_participant",oid-arcs=.40]
 ==== SOMDS Participant
 
 Actor Summary Definition:
 [none]
 . A foundational abstract actor that provides the...
 
-[#vol1_clause_sdpi_p_somds_provider, role="actor",actor-id="somds-provider",oid-arcs=.41]
+[#vol1_clause_sdpi_p_somds_provider, role="actor",actor-id="somds_provider",oid-arcs=.41]
+[actor-grouping="somds_participant"]
 ==== SOMDS Provider
 
 Actor Summary Definition:
 [none]
 . A participant that provides at least one...
 
-[#vol1_clause_sdpi_p_somds_consumer, role="actor",actor-id="somds-consumer",oid-arcs=.30]
+[#vol1_clause_sdpi_p_somds_consumer, role="actor",actor-id="somds_consumer",oid-arcs=.30]
+[actor-grouping="somds_participant"]
 ==== SOMDS Consumer
 
 Actor Summary Definition:
@@ -430,6 +432,24 @@ Actor Summary Definition:
 ----
 
 Attaching the `actor` role to a section marks it as an actor. A (document-unique) identifier must be defined in the `actor-id` attribute. An <<defining-oids,object identifier (oid)>> must be set for each actor. The `reftext` attribute or, if `reftext` is missing, the section title is used for the actor label. 
+
+An (optional) `actor-grouping` attribute establishes a required grouping between actors. Grouped actors "inherit" requirements from their parents. 
+For example, the _SOMDS Consumer_ is grouped with the _SOMDS participant_ so the consumer must meet any consumer-specific requirements as well
+as any requirements for the participants. 
+
+Groupings are made optional by appending the profile actor option in brackets. The fragment below defines 
+a _SOMDS FHIR gateway_ actor that is grouped with a _SOMDS consumer_ when the `sdpi-p-gateway-direction-export`
+option is selected and a _SOMDS provider_ actor when the `sdpi-p-gateway-direction-import` option is selected. 
+Inherited requirements do not apply if the option is not selected.
+
+[source,asciidoc]
+----
+[role="actor",actor-id="somds_fhir_gateway",oid-arcs=.33]
+[actor-grouping="somds_consumer[sdpi-p-gateway-direction-export],somds_provider[sdpi-p-gateway-direction-import]"]
+===== SOMDS FHIR Gateway
+  :
+  :
+----
 
 [#semantic-actor-options]
 ==== Actor option sections

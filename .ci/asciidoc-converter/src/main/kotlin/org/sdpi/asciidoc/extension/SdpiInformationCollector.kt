@@ -84,9 +84,11 @@ class SdpiInformationCollector(
         validateContentModuleRefs()
         validateTransactions()
         validateRequirements()
+        validateActors()
 
         // This is more proof-of-concept rather than information
-        // we want to include in the export.
+        // we want to include in the export. Currently, it doesn't
+        // gather requirements across actor groupings.
         // collectActorRequirements()
 
         return document
@@ -204,9 +206,13 @@ class SdpiInformationCollector(
         if (block.hasRole(Roles.Actor.ALIAS.key)) {
             processActorAlias(block)
         }
+
+        // Not currently used; part of confusion between profile-actor-options,
+        // actor options and profile options (hint: there are only profile-actor-options).
+        /*
         if (block.hasRole(Roles.Actor.OPTION.key)) {
             processActorOption(block, profile)
-        }
+        }*/
 
         val currentOption: SdpiProfileOption? = if (block.hasRole(Roles.Profile.PROFILE_OPTION.key)) {
             processProfileOption(block, profile)
@@ -245,12 +251,35 @@ class SdpiInformationCollector(
         }
 
         val oids = getOids(block, "Actor $strId", WellKnownOid.DEV_ACTOR)
+        val requiredGroupings = getRequiredGroupings(block, "Actor $strId")
 
         actorAliases[strId] = strId // Self alias for easy lookup
         actorAliases["actor_$strId"] = strId // common alternative name.
-        val newActor = SdpiActor(strId, oids, strTitle, profile.profileId, strAnchor)
+        val newActor = SdpiActor(strId, oids, strTitle, profile.profileId, strAnchor, requiredGroupings)
         actors[strId] = newActor
         profile.addActor(newActor)
+    }
+
+    private fun getRequiredGroupings(block: StructuralNode, strContext: String): List<ActorGrouping>? {
+
+        val strGrouping = block.attributes[Roles.Actor.GROUPING.key]?.toString() ?: return null
+
+        val actorGroupings = mutableListOf<ActorGrouping>()
+        val astrGroupings = strGrouping.split(",")
+        for (strGroup in astrGroupings) {
+            val match =  ActorGrouping.GROUPING_REGEX.matchEntire(strGroup)
+            checkNotNull(match) {
+                "Invalid actor grouping for $strContext".also {
+                    logger.error{it}
+                }
+            }
+
+            val strActorId = match.groupValues[1]
+            val strOptionId = match.groupValues[2].ifBlank{null}
+            actorGroupings.add(ActorGrouping(strActorId, strOptionId))
+        }
+
+        return actorGroupings
     }
 
 
@@ -1273,6 +1302,41 @@ class SdpiInformationCollector(
                 logger.error("The actor '${ref.actorId} in a ${ref.contentModuleId} content module reference in profile $strProfileId can't be found")
             }
         }
+    }
+
+    private fun validateActors() {
+        for(profile in profiles.values) {
+            for(actor in profile.actorReferences()) {
+                if (actor.requiredActorGroupings != null) {
+                    //println("***** Checking actor grouping for ${actor.id}")
+                    for(grouping in actor.requiredActorGroupings) {
+                        val strParent = grouping.actorId
+                        val strOption = grouping.optionId
+                        check(strParent != actor.id) {
+                            logger.error("The actor ${actor.id} is grouped with itself, which is not allowed")
+                        }
+                        check(actors.containsKey(strParent)) {
+                            logger.error("The actor ${actor.id} is grouped with unknown actor $strParent")
+                        }
+                        if (strOption != null) {
+                            check(optionExists(strOption)) {
+                                logger.error("The actor ${actor.id} is optionally grouped with actor $strParent using unknown option $strOption")
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private  fun optionExists(strOptionId: String): Boolean {
+        for(profile in profiles.values) {
+            if (profile.findOption(strOptionId) != null) {
+                return true;
+            }
+        }
+
+        return false;
     }
     //endregion
 }
