@@ -6,7 +6,7 @@ Nevertheless, in certain multi-<<acronym_mds>> configurations, it is important t
 
 Examples include transport patient-monitoring devices that are connected to stationary patient-monitoring devices when patients are located in beds on the care unit, infusion pumps integrated into rack systems, and similar configurations.
 
-In these scenarios, the hosting device usually provides services to the plugged-in devices such as power supply, context synchronization, network access, and so on.
+In such scenarios, the hosting <<acronym_mds>> typically offers various services to the connected <<acronym_mds>>s, including power supply, context synchronization, network access, and related support functions.
 
 [sdpi_level=+1]
 ====== Model
