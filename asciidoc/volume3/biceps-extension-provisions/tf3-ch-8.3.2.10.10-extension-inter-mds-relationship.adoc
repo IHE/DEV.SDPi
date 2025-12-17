@@ -2,7 +2,7 @@
 ====== Inter-MDS Relationship
 
 BICEPS does not provide means to define relationships between <<acronym_mds>>s in the same <<acronym_mdib>> since it does not support the nested <<acronym_mds>> concept.
-However, in some multi-MDS scenarios it is important to provide information about the relationship between the devices.
+Nevertheless, in certain multi-<<acronym_mds>> configurations, it is important to convey information regarding the relationships among <<acronym_mds>>s.
 
 Examples include transport patient-monitoring devices that are connected to stationary patient-monitoring devices when patients are located in beds on the care unit, infusion pumps integrated into rack systems, and similar configurations.
 
