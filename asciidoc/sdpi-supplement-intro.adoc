@@ -9,13 +9,12 @@
 |===
 a| *SDPi {ihe_supplement_sdpi_revision_short} Supplement -- _STU / TI Version_ -- Note*:
 
-This version of the SDPi 2.2 Standard for Trial Use (HL7 STU) / Trial Implementation (IHE TI) supplement is the 2nd release in 2025, continuing the objective to provide three to four releases each year that include both _incremental_ updates (e.g., editorial "fixes"), ballot comment resolutions (e.g., from HL7 ballot cycles), and additional capability enhancements.
+This version of the SDPi 2.3 Standard for Trial Use (HL7 STU) / Trial Implementation (IHE TI) supplement is the 3rd release in 2025, continuing the objective to provide three to four releases each year that include both _incremental_ updates (e.g., editorial "fixes"), ballot comment resolutions (e.g., from HL7 ballot cycles), and additional capability enhancements.
 For this release, key changes include:
 
-1. New transaction DEV-33 (Retrieve Localization Information)
-2. Removed withdrawn transaction DEV-34 (Announce Network Departure)
-3. Added profile options and updated tables for actor groupings and options
-4. Added new section "Numeric Metric Display Precision" to volume 3
+1. Added new extensions _ReportSequence_ and _Relations_
+2. Added conformity statement tables for SPDi-defined requirements
+3. Added semantic markup to support rich artefact generation
 
 Numerous other corrections and enhancements are included.
 
