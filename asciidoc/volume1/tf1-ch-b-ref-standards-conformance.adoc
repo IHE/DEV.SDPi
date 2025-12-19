@@ -125,6 +125,14 @@ a| *{supplement_note}*:  This section intentionally left blank for the current v
 
 include::conformance-statements/tf1-ch-c-conformance-statement-ieee-11073-10207-2017.adoc[]
 
+// ISO/IEEE 11073-10700:2022 ICS
+
+include::conformance-statements/tf1-ch-c-conformance-statement-ieee-11073-10700-2022.adoc[]
+
+// ISO/IEEE 11073-10701:2022 ICS
+
+include::conformance-statements/tf1-ch-c-conformance-statement-ieee-11073-10701-2022.adoc[]
+
 // Appendix B.x
 === Bibliography
 
