@@ -103,8 +103,8 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall implement the scope matching r
 [NOTE]
 ====
 * This requirement erases disambiguation since there are multiple definitions of the term _prefix_.
-
 * From this it follows that a prefix can be empty as otherwise the term _proper prefix_ would have to be used.
+* The requirement does not impose restrictions on the use of other matching rules.
 ====
 ****
 

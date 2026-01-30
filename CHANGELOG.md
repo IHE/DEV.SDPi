@@ -18,6 +18,8 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Added
 
+- Clarifying note to R7000 ([#501](https://github.com/IHE/DEV.SDPi/issues/501)).
+
 ### Changes
 
 ### Editorial Fixes
