@@ -204,7 +204,7 @@ If a <<label_system_type_name_sas>> is being created, it may incorporate both <<
 [#vol1_clause_sdpi_a_actor_options]
 === SDPi-A Actor Options
 
-[#vol1_clause_sdpi_a_actor_option_alert_delegation,role=profile-option,profile-option-id=alert_delegation,oid-arcs=".4,.4.1"]
+[#vol1_clause_sdpi_a_actor_option_alert_delegation,role=profile-option,profile-option-id=alert_delegation,oid-arcs=".4"]
 ==== Alert Delegation Option
 
 // Deferred transactions. 
@@ -246,7 +246,7 @@ include::../plantuml/vol1-figure-sdpi-a-delegation-example-sequence-diagram.puml
 ....
 
 
-[#vol1_clause_sdpi_a_actor_option_alert_user_acknowledgement,role=profile-option,profile-option-id=alert_user_acknowledgement,oid-arcs=".5,.5.1"]
+[#vol1_clause_sdpi_a_actor_option_alert_user_acknowledgement,role=profile-option,profile-option-id=alert_user_acknowledgement,oid-arcs=".5"]
 ==== Alert User Acknowledgement Option
 
 [#vol1_clause_sdpi_a_actor_option_alert_user_acknowledgement_reftext, reftext='SDPi-A Option:  Alert User Acknowledgement']
@@ -261,7 +261,7 @@ This option will enable the <<transaction_name_update_alert_acknowledgement_stat
 
 |===
 
-[#vol1_clause_sdpi_a_actor_option_remote_alert_signaling,role=profile-option,profile-option-id=remote_alert_signaling,oid-arcs=".6,.6.1"]
+[#vol1_clause_sdpi_a_actor_option_remote_alert_signaling,role=profile-option,profile-option-id=remote_alert_signaling,oid-arcs=".6"]
 ==== Remote Alert Signaling
 
 sdpi_include_transaction::DEV-38[actor-id="somds_acm_gateway",initiator="required"]

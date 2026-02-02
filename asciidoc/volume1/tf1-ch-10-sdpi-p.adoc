@@ -448,7 +448,7 @@ notes.
 
 |===
 
-[#vol1_clause_sdpi_p_option_managed_discovery,role=profile-option,profile-option-id="sdpi-p-managed-discovery",oid-arcs=".1,.1.1"]
+[#vol1_clause_sdpi_p_option_managed_discovery,role=profile-option,profile-option-id="sdpi-p-managed-discovery",oid-arcs=".1"]
 ==== Managed Discovery Option
 [#vol1_spec_sdpi_p_option_managed_discovery, reftext='Managed Discovery Option']
 
@@ -570,7 +570,7 @@ a RefActor:somds_consumer[] Actor or RefActor:somds_provider[] Actor or both.
 ****
 
 [#vol1_spec_sdpi_p_option_gateway_export, reftext='Gateway Export Direction Option']
-[role=profile-option,profile-option-id="sdpi-p-gateway-direction-export",oid-arcs=".2,.2.1"]
+[role=profile-option,profile-option-id="sdpi-p-gateway-direction-export",oid-arcs=".2"]
 ===== Gateway Export Direction Option
 
 The Gateway Export Direction Option specifies the flow of information from
@@ -603,7 +603,7 @@ sdpi_include_transaction::DEV-47[actor-id=somds_connector,initiator=optional]
 
 
 [#vol1_spec_sdpi_p_option_gateway_import, reftext='Gateway Import Direction Option']
-[role=profile-option,profile-option-id="sdpi-p-gateway-direction-import",oid-arcs=".3,.3.1"]
+[role=profile-option,profile-option-id="sdpi-p-gateway-direction-import",oid-arcs=".3"]
 ===== Gateway Import Direction Option
 
 The Gateway Import Direction Option specifies the flow of information from

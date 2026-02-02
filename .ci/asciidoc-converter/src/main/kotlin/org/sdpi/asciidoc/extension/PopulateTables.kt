@@ -353,7 +353,7 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
                 gatherProfileOptionOids(oidsToTable)
             } else if (arcOid == WellKnownOid.DEV_CONTENT_MODULE) {
                 gatherContentModuleOids(oidsToTable)
-            } else if (arcOid == WellKnownOid.DEV_USE_CASE) {
+            } else if (arcOid == WellKnownOid.DEV_USE_CASE_GLOBAL) {
                 gatherUseCaseOids(oidsToTable)
             } else if (arcOid == WellKnownOid.DEV_REQUIREMENT) {
                 gatherRequirementOids(oidsToTable)
@@ -443,7 +443,7 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
         for (useCase in docInfo.useCases().values) {
             for (strOid in useCase.oids) {
                 val oid = SdpiOidReference(
-                    WellKnownOid.DEV_USE_CASE,
+                    WellKnownOid.DEV_USE_CASE_GLOBAL,
                     strOid,
                     useCase.title,
                     useCase.anchor
@@ -453,7 +453,7 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
             for (scenario in useCase.specification.scenarios) {
                 for (strOid in scenario.oids) {
                     val oid = SdpiOidReference(
-                        WellKnownOid.DEV_USE_CASE,
+                        WellKnownOid.DEV_USE_CASE_GLOBAL,
                         strOid,
                         scenario.title,
                         ""

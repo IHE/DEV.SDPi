@@ -38,7 +38,7 @@ image::../images/vol1-diagram-use-case-aars-tech-view.svg[]
 ==== Scenarios
 
 [role=use-case-scenario,sdpi_scenario="New device is connected to network with AGW service"]
-[oid-arcs=".1,.1.1"]
+[oid-arcs=".1"]
 ===== Scenario: <<acronym_aars>> {var_use_case_id}.1 - New device is connected to network with AGW service
 
 [role=use-case-steps]
@@ -51,7 +51,7 @@ image::../images/vol1-diagram-use-case-aars-tech-view.svg[]
 ====
 
 [role=use-case-scenario,sdpi_scenario="The AGW service loses connectivity with the ICU devices"]
-[oid-arcs=".2,.2.1"]
+[oid-arcs=".2"]
 ===== Scenario: <<acronym_aars>> {var_use_case_id}.2 - The AGW service loses connectivity with the ICU devices
 
 [role=use-case-steps]
@@ -66,7 +66,7 @@ image::../images/vol1-diagram-use-case-aars-tech-view.svg[]
 ====
 
 [role=use-case-scenario,sdpi_scenario="The AGW service fails"]
-[oid-arcs=".3,.3.1"]
+[oid-arcs=".3"]
 ===== Scenario: <<acronym_aars>> {var_use_case_id}.3 - The AGW service fails
 
 [role=use-case-steps]
@@ -79,7 +79,7 @@ image::../images/vol1-diagram-use-case-aars-tech-view.svg[]
 ====
 
 [role=use-case-scenario,sdpi_scenario="The Alert Recording System loses connectivity with the AGW"]
-[oid-arcs=".4,.4.1"]
+[oid-arcs=".4"]
 ===== Scenario: <<acronym_aars>> {var_use_case_id}.4 - The Alert Recording System loses connectivity with the AGW
 
 [role=use-case-steps]

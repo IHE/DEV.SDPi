@@ -27,53 +27,60 @@ data class SdpiOidReference(val root: WellKnownOid, val oid: String, val descrip
 // Source: https://wiki.ihe.net/index.php/PCD_OID_Management
 enum class WellKnownOid(val id: String, val oid: String, val typeLabel: String, val description: String) {
 
+    DEV_SDPi(
+        "sdpi",
+        "1.3.6.1.4.1.19376.1.6.2.10",
+        "SDPi",
+        "Parent OID for the SDPi specification"
+    ),
+
     DEV_ACTOR(
         "actors",
-        "1.3.6.1.4.1.19376.1.6.3",
+        DEV_SDPi.oid + ".3",
         "Actor",
-        "Parent OID for the DEV Actor"
+        "Parent OID for all actors defined in SDPi profiles"
     ),
 
     DEV_TRANSACTION(
         "transactions",
-        "1.3.6.1.4.1.19376.1.6.4",
+        DEV_SDPi.oid + ".4",
         "Transaction",
-        "Parent OID for the DEV Transaction"
+        "Parent OID for all transactions defined in the SDPi specification"
     ),
 
     DEV_PROFILE(
         "profiles",
-        "1.3.6.1.4.1.19376.1.6.2",
+        DEV_SDPi.oid + ".2",
         "Profile",
-        "Parent OID for the DEV integration profiles"
+        "Parent OID for all SDPi profiles"
     ),
 
     DEV_PROFILE_ACTOR_OPTIONS(
         "profile-actor-options",
-        "1.3.6.1.4.1.19376.1.6.11",
+        DEV_SDPi.oid + ".11",
         "Profile actor option",
-        "Parent OID for the DEV integration profile actor options"
+        "Parent OID for all profile actor options defined in SDPi profiles"
     ),
 
     DEV_CONTENT_MODULE(
         "content-modules",
-        "1.3.6.1.4.1.19376.1.6.8",
+        DEV_SDPi.oid + ".8",
         "Content module",
-        "Parent OID for the DEV content modules"
+        "Parent OID for all content modules defined in the SDPi specification"
     ),
 
-    DEV_USE_CASE(
+    DEV_USE_CASE_GLOBAL(
         "use-cases",
-        "1.3.6.1.4.1.19376.1.6.9",
+        DEV_SDPi.oid + ".9",
         "Use case",
-        "Parent OID for the DEV use cases"
+        "Parent OID for general use cases defined in the SDPi specification"
     ),
 
     DEV_REQUIREMENT(
         "requirements",
-        "1.3.6.1.4.1.19376.1.6.10",
+        DEV_SDPi.oid + ".10",
         "Requirement",
-        "Parent OID for the DEV requirements"
+        "Parent OID for all requirements defined in the SDPi specification"
     )
 }
 

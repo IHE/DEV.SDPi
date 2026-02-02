@@ -874,7 +874,7 @@ class SdpiInformationCollector(
         val specBlocks: MutableList<StructuralNode> = mutableListOf()
         gatherUseCaseBlocks(block, specBlocks)
 
-        val useCaseOids = getOids(block, "Use case $strUseCaseId", WellKnownOid.DEV_USE_CASE)
+        val useCaseOids = getOids(block, "Use case $strUseCaseId", WellKnownOid.DEV_USE_CASE_GLOBAL)
 
         val backgroundContent: MutableList<GherkinStep> = mutableListOf()
         val scenarios: MutableList<UseCaseScenario> = mutableListOf()
@@ -1026,7 +1026,7 @@ class SdpiInformationCollector(
         if (strTransactionId.startsWith("DEV-")) {
             val strDefaultLeaf = strTransactionId.substring(4)
             if (strDefaultLeaf.toIntOrNull() != null) {
-                return ".$strDefaultLeaf,.$strDefaultLeaf.1"
+                return ".$strDefaultLeaf"
             }
         }
         return null
