@@ -7,147 +7,58 @@ hierarchical, tree-structured, namespace. The top of the tree, and first arc in 
 bodies who delegate responsibility for distinct branches in the hierarchy. 
 
 IHE DEV is responsible for managing arcs from the _IHE DEV parent_ OID `1.3.6.1.4.1.19376.1.6`.
-See https://wiki.ihe.net/index.php/PCD_OID_Management[PCD OID Management] for canonical definitions 
-of object identifiers for the profile, its actors and transactions, etc. It defines an arc for
-for this service-oriented device point-of-care interoperability supplement: `1.3.6.1.4.1.19376.1.6.*10*`. 
-This supplement is responsible for the hierarchy underneath the `1.3.6.1.4.1.19376.1.6.10` oid. 
+See https://wiki.ihe.net/index.php/PCD_OID_Management[PCD OID Management]. 
+They have designated `{SDPi-parent-oid}` as the parent OID for a hierarchy of object identifiers for this
+service-oriented device point-of-care interoperability (SDPi) specification. 
 
-This supplement defines the following hierarchy:
-
-// NEW Version: ////
-* `1.3.6.1.4.1.19376.1.6.2.10`: parent oid for service-oriented device point-of-care interoperability (SDPi)
-** `.0`: parent OID for SDPi *conformity versioning*
-*** `.2`: major version 2, for this version of the SDPi specification. 
-**** `.2`: minor version 2, for this version of the SDPi specification.
-***** `.1`: revision 1, for this version of the SDPi specification.
-
-** `.1`: parent OID for *namespaces* defined in this specification (see <<vol0_table_xml_namespaces>>)
-*** `.1`: extensions to the BICEPS participant and message models (see <<vol3_table_sdpi_biceps_extension_namespace>>)
-**** `.1`: major version 1 for extensions to the BICEPS participant and message models
-*** `.2`: discovery proxy objects (see <<vol2_table_appendix_mdpws_discovery_proxy_oids>>)
-**** `.1`: discovery proxy subscription filter dialect 
-**** `.2`: target WSDL namespace identifier for the discovery proxy actor.
-
-** `.2`: parent OID for *SDPi profiles*
-*** `.11`: OID for plug-and-trust profile (*SDPi-P*)
-**** `.9`: parent OID for *use cases* defined in SDPi-P profile
-***** `.1`: Synchronized Time Across Devices (STAD)
-***** `.2`: Standalone ICU Dashboard Single Patient (SICDsp)
-***** &vellip;
-*** `.12`: OID for reporting profile (*SDPi-R*)
-**** `.9`: parent OID for *use cases* defined in SDPi-R profile
-***** `.2`: Standalone ICU Dashboard Single Patient (SICDsp)
-***** `.3`: Standalone ICU Dashboard Multiple Patient (SICDmp)
-***** &vellip;
-*** `.13`: OID for alerting profile (*SDPi-A*)
-**** `.9`: parent OID for *use cases* defined in SDPi-A profile
-***** `.2`: Standalone ICU Dashboard Single Patient (SICDsp)
-***** `.3`: Standalone ICU Dashboard Multiple Patient (SICDmp)
-***** `.4`: Alerts to Clinician Notification Systems (ACNS)
-***** &vellip;
-*** `.14`: OID for external control profile (*SDPi-xC*)
-**** `.9`: parent OID for *use cases* defined in SDPi-A profile
-
-** `.3`: parent OID for all *actors* defined in SDPi
-*** `.34`: SOMDS Medical Alert Consumer
-*** `.35`: SOMDS Medical Alert Provider
-*** &vellip;
-*** `.40`: SOMDS participant
-*** `.41`: SOMDS provider
-*** &vellip;
-
-
-** `.4`: parent OID for all *transactions* defined in SDPi
-*** `.23`: Announce network presence
-*** `.24`: Discover network topology
-*** &vellip;
-
-** `.8`: parent OID for all *content modules* defined in SDPi
-*** `.1`: IEEE 11073-10207 BICEPS content modules
-*** `11`: Device: infusion pump
-*** &vellip;
-
-** `.9`: parent OID for all *use cases* defined in SDPi
-*** `.1`: Synchronized time across devices
-**** `.1`: Device is connected to the MD LAN network with a time source service
-**** `.2`: Device is connected to the MD LAN network and a user wants to change the device’s time
-**** &vellip;
-*** &vellip;
-
-** `.10`: parent OID for all *requirements* defined in SDPi and its profiles 
-*** `.1`: R0001
-*** `.2`: R0002
-*** &vellip;
-
-** `.11`: parent OID for all *profile actor options* defined in SDPi profiles.
-*** `1`: managed discovery option
-*** `2`: gateway export direction option
-*** &vellip;
-
+This supplement is responsible for the hierarchy underneath the `{SDPi-parent-oid}` SDPi top level oid. 
 
 // Fix: 1:A.4.2.1 Assigning Unique Identifiers for requirement oids (they aren't in profiles
 // and aren't versioned)
 
-// Do we need versions for profiles? Perhaps they could go in a .0.version arc so adding a version doesn't
-// require updating all actors etc?
 
-
-
-
-Arcs are assigned, and used by this technical framework supplement, under the _IHE DEV parent_ OID for:
-
-* device integration profiles (`.2`),
-* actors (`.3`),
-* transactions (`.4`),
-* content modules (`.8`),
-* use cases (`.9`),
-* requirements (`.10`), and
-* profile actor options ('.11').
-
-Appending one of these arcs to the _IHE DEV parent_ creates a new OID root. Arcs beneath those OIDs name corresponding items within
-this technical framework supplement, as identified in the tables below. 
-
-Generally, the meaning of OIDs should not change once assigned. For example, `1.3.6.1.4.1.19376.1.6.3.40` will always refer to a
-SOMDS participant. This OID will never be assigned another meaning even if, for some reason, a SOMDS participant is no longer 
-relevant to the supplement. For this reason, some items in this technical framework supplement included versioned OIDs in addition
-to the base OID. This provides a mechanism to precisely reference both a specific version of, for example, a transaction, and
-the general purpose of a transaction. 
+Generally, the meaning of OIDs should not change once assigned. For example, `{SDPi-parent-oid}.3.40` will always refer to a
+RefActor:somds_participant[]. This OID will never be assigned another meaning even if, for some reason, a SOMDS participant is no longer 
+relevant to the specification. 
 
 [#vol3_appendix_c_oid_management]
 === OID management
 
-The generation and management of the top level OID within the DEV domain is coordinated by Technical Committee Co-chairs. The top level OID is `1.3.6.1.4.1.19376.1.6.2.10`. The SDPi working group is responsible for managing and assigning OIDs under the top level OID. OIDs are assigned and managed within the SDPi ASCIIDoc source, with any changes reviewed in pull-requests. The SDPi working group has defined the following child arcs to establish a logical structure within the SDPi top-level OID: 
+The SDPi working group is responsible for managing and assigning OIDs under the <<vol3_appendix_c_oid_top,top level SDPi OID>>.
 
-[%header]
+OIDs are assigned and managed within the SDPi ASCIIDoc source, with any changes reviewed in pull-requests. The SDPi working group has defined the following child arcs to establish a logical structure under the <<vol3_appendix_c_oid_top,top level SDPi OID>>: 
+
+
+[cols="2,1,4",options="autowidth, header"]
 |===
 | Specification         | Arc   | Description
-| Conformity version    | `.0`  | Parent OID to identify a version of the SDPi specification a participant conforms to.
-| Namespaces            | `.1`  | Parent OID for namespaces defined in the SDPi specification.
-| Profiles              | `.2`  | Parent OID for all SDPi profiles.
-| Actors                | `.3`  | Parent OID for all actors defined in SDPi profiles.
-| Transactions          | `.4`  | Parent OID for all transactions defined in the SDPi specification.
-| Content modules       | `.8`  | Parent OID for all content modules defined in the SDPi specification.
-| Use cases             | `.9`  | Parent OID for general use cases defined in the SDPi specification.
-| Requirements          | `.10` | Parent OID for all requirements defined in the SDPi specification, including profiles, use cases, etc.
-| Profile actor options | `.11` | Parent OID for all profile actor options defined in SDPi profiles.
+| <<vol3_appendix_c_oid_conformity,Conformity version>>   | `.0`  | Parent OID to identify a version of the SDPi specification a participant conforms to.
+| <<vol3_appendix_c_oid_namespaces,Namespaces and URIs>>  | `.1`  | Parent OID for namespaces and URIs defined in the SDPi specification.
+| <<vol3_appendix_c_oid_profiles,Profiles>>               | `.2`  | Parent OID for all SDPi profiles.
+| <<vol3_appendix_c_oid_actors,Actors>>                   | `.3`  | Parent OID for all actors defined in SDPi profiles.
+| <<vol3_appendix_c_oid_transactions,Transactions>>       | `.4`  | Parent OID for all transactions defined in the SDPi specification.
+| <<vol3_appendix_c_oid_content_modules,Content modules>> | `.8`  | Parent OID for all content modules defined in the SDPi specification.
+| <<vol3_appendix_c_oid_use_cases,Use cases>>             | `.9`  | Parent OID for general use cases defined in the SDPi specification.
+| <<vol3_appendix_c_oid_requirements,Requirements>>       | `.10` | Parent OID for all requirements defined in the SDPi specification, including profiles, use cases, etc.
+| <<vol3_appendix_c_oid_options,Profile actor options>>   | `.11` | Parent OID for all profile actor options defined in SDPi profiles.
 |===
 
-Generally, only the conformity version and namespace OIDs may be versioned. Profiles, actors, transactions, content modules, use cases, requirements and profile actor options are not versioned. 
+Generally, only the conformity version and namespace OIDs are versioned. Profiles, actors, transactions, content modules, use cases, requirements and profile actor options are not versioned. 
 
 [#vol3_appendix_c_oid_top]
 === Top level SDPi Oid
 
-The top level OID, assigned by the DEV domain Technical Committee Co-chairs is `1.3.6.1.4.1.19376.1.6.2.10`. 
+The top level OID for the SDPi specification, assigned by the DEV domain Technical Committee Co-chairs, is `{SDPi-parent-oid}`. 
 
 [#vol3_appendix_c_oid_conformity]
 === Conformity version
 
-The conformity version identifies a version of the SDPi specification that a RefActor:somds_participant[] claims to be conformant to. A conformity version OID has the following hierarchy:
+The conformity version identifies a version of the SDPi specification that a RefActor:somds_participant[] may claim conformity to. A conformity version OID has the following hierarchy:
 
 * `1.3.6.1.4.1.19376.1.6.2.10.0`: parent OID for SDPi *conformity versioning*
-** `.<major-version>`: major version 2, for this version of the SDPi specification. 
-*** `.<minor-version>`: minor version 2, for this version of the SDPi specification.
-**** `.<revision>`: revision 1, for this version of the SDPi specification.
+** `.<major-version>`: major version, {sdpi_version_major} for this version of the SDPi specification. 
+*** `.<minor-version>`: minor version, {sdpi_version_minor} for this version of the SDPi specification.
+**** `.<revision>`: revision, {sdpi_version_revision} for this version of the SDPi specification.
 
 The version shall be interpreted by two RefActor:somds_participant[]s as:
 
@@ -155,6 +66,36 @@ The version shall be interpreted by two RefActor:somds_participant[]s as:
 * participants with a different major version may not be compatible. For example, a new major version may define new transactions, requirements or use cases that break interoperability. 
 * a participant with the same major version and higher minor version than another participant is guaranteed by SDPi conformity testing to be interoperable for the set of features defined in the lowest common minor version. 
 * changes that only affect the revision number do not affect interoperability of participants.
+
+[#vol3_appendix_c_oid_namespaces]
+=== Namespaces and URIs
+
+<<vol0_xml_namespaces,Namespaces>> and URIs defined in this specification are assigned OIDs from the `.*1*` arc under the <<vol3_appendix_c_oid_top,Top level SDPi OID>>. OIDs within the namespace parent OID `{sdpi-parent-oid}.1` are used for URIs (such as custom filter dialects), XSD schema and WSDL namespaces including:
+
+* <<vol3_appendix_b_biceps_extension_namespace,Extensions to the BICEPS participant and message model>>.
+* <<vol1_clause_sdpi_p_option_managed_discovery,Managed discovery profile actor option>>.
+
+Generally, new namespaces and URIs for profile actor options are grouped into a hierarchy sharing a parent OID. For example, 
+
+* `{sdpi-parent-oid}.1.2` is the parent oid for the <<vol1_clause_sdpi_p_option_managed_discovery,managed discovery option>>,
+** `.1`: is the URI for the subscription filter dialect
+** `.2`: is the target namespace URI for the proxy service web-service description language (WSDL).
+
+OIDs used for namespaces may be versioned. For example:
+
+* `{sdpi-parent-oid}.1.1` is the OID identifying SDPi extensions to the BICEPS participant and message model schema
+** `.1`: is version 1 of the extension schema.
+
+
+
+
+// Existing ones:
+// 1.3.6.1.4.1.19376.1.6.2.10.1.1: extensions to the participant and message model, §Appendix 3:B 
+//   * .1 Major version 1 for participant and message model extensions
+// 1.3.6.1.4.1.19376.1.6.2.10.1.2: discovery proxy, §2:A.3.1 Utilized OIDs
+//   * .1: subscription filter dialect
+//   * .2: target namespace for discovery proxy service WSDL.
+
 
 [#vol3_appendix_c_oid_profiles]
 === Device integration profiles
