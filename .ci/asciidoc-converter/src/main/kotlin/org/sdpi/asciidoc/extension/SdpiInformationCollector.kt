@@ -84,13 +84,14 @@ class SdpiInformationCollector(
         validateTransactions()
         validateRequirements()
 
+        validateObjectIds()
+
         // This is more proof-of-concept rather than information
         // we want to include in the export.
         // collectActorRequirements()
 
         return document
     }
-
 
     private fun processBlock(block: StructuralNode) {
         if (block.hasRole("requirement")) {
@@ -1220,5 +1221,56 @@ class SdpiInformationCollector(
             }
         }
     }
+
+    // Gather all object identifiers and make sure they are unique.
+    private fun validateObjectIds() {
+        val allObjectIds = mutableMapOf<String,String>()
+
+        for(profile in profiles.values) {
+            checkAndAddObjectIds(profile.oids, profile.profileId, allObjectIds)
+
+            for(profileOption in profile.options) {
+                checkAndAddObjectIds(profileOption.oids, profileOption.id, allObjectIds)
+            }
+
+            for(actor in profile.actorReferences()) {
+                checkAndAddObjectIds(actor.oids, actor.id, allObjectIds)
+            }
+        }
+
+        for(transaction in transactions.values) {
+            checkAndAddObjectIds(transaction.oids, transaction.id, allObjectIds)
+        }
+
+        for(contentModule in contentModules.values) {
+            checkAndAddObjectIds(contentModule.oids, contentModule.id, allObjectIds)
+        }
+
+        for(useCase in useCases.values) {
+            checkAndAddObjectIds(useCase.oids, useCase.id, allObjectIds)
+
+            for(scenario in useCase.specification.scenarios) {
+                checkAndAddObjectIds(scenario.oids, scenario.title, allObjectIds)
+            }
+        }
+
+        for(req in requirements.values) {
+            checkAndAddOid(req.oid, req.localId, allObjectIds)
+        }
+    }
+
+    private fun checkAndAddObjectIds(objectIds : List<String>, strContext: String, allObjectOids: MutableMap<String, String>) {
+        for(strOid in objectIds) {
+            checkAndAddOid(strOid, strContext, allObjectOids)
+        }
+    }
+    private fun checkAndAddOid(strOid: String, strContext: String, allObjectIds: MutableMap<String,String>) {
+        check(!allObjectIds.containsKey(strOid)) {
+            logger.error("$strContext has duplicate object id `$strOid`. First was ${allObjectIds[strOid]}")
+        }
+        allObjectIds[strOid] = strContext
+    }
+
     //endregion
+
 }

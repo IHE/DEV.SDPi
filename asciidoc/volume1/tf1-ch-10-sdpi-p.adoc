@@ -235,7 +235,7 @@ For example, a SOMDS “Alert” Gateway would interact with other _<<vol1_spec_
 
 _<<vol1_spec_sdpi_p_actor_somds_connector>>_ may also be utilized in other SDPi Profiles for medical device information reporting (<<acronym_sdpi_r>>), alerting (<<acronym_sdpi_a>>) and external control (<<acronym_sdpi_xc>>). See those profile specifications for detailed usage.  In some cases, https://profiles.ihe.net/[IHE profiles] have been defined for supporting integration with Non-SOMDS Systems, such as the V2-based IHE Devices Device to Enterprise Communication (DEC) profile (See <<ref_ihe_dev_tf_1_2024>>), or the IHE ITI XDS-I for locating and retrieving images for a specific patient using the XDS.b profile.  In these cases, *_profile-specific_* _<<vol1_spec_sdpi_p_actor_somds_connector>>_ adaptors may be specified as well.
 
-[#vol1_clause_sdpi_p_somds_fhir_gateway,role="actor actor-alias",actor-id="somds_fhir_gateway",oid-arcs=.33]
+[#vol1_clause_sdpi_p_somds_fhir_gateway,role="actor actor-alias",actor-id="somds_fhir_gateway",oid-arcs=.100]
 ===== SOMDS FHIR Gateway
 [#vol1_spec_sdpi_p_actor_somds_fhir_gateway, reftext='SOMDS FHIR Gateway',role=actor-alias,actor-id="somds_fhir_gateway"]
 Actor Summary Definition:

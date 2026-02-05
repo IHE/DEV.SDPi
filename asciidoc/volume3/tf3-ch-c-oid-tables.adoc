@@ -13,10 +13,6 @@ service-oriented device point-of-care interoperability (SDPi) specification.
 
 This supplement is responsible for the hierarchy underneath the `{SDPi-parent-oid}` SDPi top level oid. 
 
-// Fix: 1:A.4.2.1 Assigning Unique Identifiers for requirement oids (they aren't in profiles
-// and aren't versioned)
-
-
 Generally, the meaning of OIDs should not change once assigned. For example, `{SDPi-parent-oid}.3.40` will always refer to a
 RefActor:somds_participant[]. This OID will never be assigned another meaning even if, for some reason, a SOMDS participant is no longer 
 relevant to the specification. 
