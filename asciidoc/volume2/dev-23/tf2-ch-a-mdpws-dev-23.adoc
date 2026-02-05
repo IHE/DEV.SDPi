@@ -4,7 +4,8 @@
 [#vol2_clause_appendix_mdpws_dev_23]
 ==== MDPWS: Announce Network Presence [DEV-23]
 
-This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_23>>.
+This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_23>>, corresponding to the WS-Discovery ad-hoc mode.
+
 
 ===== {var_label_dev_23_message_hello} Message
 

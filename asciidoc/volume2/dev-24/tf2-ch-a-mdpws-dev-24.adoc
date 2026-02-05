@@ -8,7 +8,7 @@
 [#vol2_clause_appendix_mdpws_dev_24]
 ==== MDPWS: Discovery Network Topology [DEV-24]
 
-This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_24>>.
+This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_24>>, corresponding to the WS-Discovery ad-hoc mode.
 
 // ---------- PROBE ---------
 
