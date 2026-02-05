@@ -328,17 +328,17 @@ FOR THE CURRENT SPECIFICATION:
 
 * The _unique identifier_ is assigned manually; the asciidoc processor checks all identifiers are unique within the document and automatically assigns the _requirement OID_.
 * Requirements are *not* versioned.
-* New requirement identifiers (_unique identifier_ and _requirement oid) are assigned following material changes to a requirements normative statement and the old identifier is retired, never to be used again.
+* A new _unique identifier_ is assigned following material changes to a requirements normative statement and the old identifier is retired, never to be used again.
 * Assignment may evolve with experience and extended use. 
 
-Material modifications include those that may:
+Material modifications, requiring a new _unique identifier_, include those that may:
 
 * alter the actors referenced in the normative statement,
 * affect conformant implementations,
 * affect testing testing and validation, or
 * impact interoperability (e.g., a test or implementation conforming to the old requirement text may not be conformant to the new one).
 
-Material changes do not include:
+Changes that are not material and *do not* require a new _unique identifier_ include:
 
 * improving the grammar and/or clarity of the requirement's normative statement,
 * changing a requirement level (may &rArr; should; shall &rArr; should) because this only impacts implementation obligations but not the purpose of the requirement,

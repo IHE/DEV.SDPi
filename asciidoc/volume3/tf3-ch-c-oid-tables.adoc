@@ -86,9 +86,6 @@ OIDs used for namespaces may be versioned. For example:
 * `{sdpi-parent-oid}.1.1` is the OID identifying SDPi extensions to the BICEPS participant and message model schema
 ** `.1`: is version 1 of the extension schema.
 
-
-
-
 // Existing ones:
 // 1.3.6.1.4.1.19376.1.6.2.10.1.1: extensions to the participant and message model, §Appendix 3:B 
 //   * .1 Major version 1 for participant and message model extensions
