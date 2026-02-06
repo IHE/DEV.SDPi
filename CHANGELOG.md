@@ -19,9 +19,11 @@ Each section shall contain a list of action items of the following format: `<bri
 ### Added
 
 - Clarifying note to R7000 ([#501](https://github.com/IHE/DEV.SDPi/issues/501)).
-- Add clarifying statements to DEV-23, DEV-24, DEV-46, and DEV-47 w.r.t to ad-hoc and managed mode discovery([#409](https://github.com/IHE/DEV.SDPi/issues/409)).
+- Clarifying statements to DEV-23, DEV-24, DEV-46, and DEV-47 w.r.t to ad-hoc and managed mode discovery([#409](https://github.com/IHE/DEV.SDPi/issues/409)).
 
 ### Changes
+
+- Corrected three erroneous context-free codes in Table 3:8.3.2.10.2-1 ([#505](https://github.com/IHE/DEV.SDPi/issues/505))
 
 ### Editorial Fixes
 
