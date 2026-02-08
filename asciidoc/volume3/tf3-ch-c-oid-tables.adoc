@@ -37,6 +37,7 @@ OIDs are assigned and managed within the SDPi ASCIIDoc source, with any changes 
 | <<vol3_appendix_c_oid_use_cases,Use cases>>             | `.9`  | Parent OID for general use cases defined in the SDPi specification.
 | <<vol3_appendix_c_oid_requirements,Requirements>>       | `.10` | Parent OID for all requirements defined in the SDPi specification, including profiles, use cases, etc.
 | <<vol3_appendix_c_oid_options,Profile actor options>>   | `.11` | Parent OID for all profile actor options defined in SDPi profiles.
+| Profile use case support   | `.12` | Parent OID use case support defined in SDPi profiles.
 |===
 
 Generally, only the conformity version and namespace OIDs are versioned. Profiles, actors, transactions, content modules, use cases, requirements and profile actor options are not versioned. 
@@ -139,6 +140,13 @@ sdpi_oid_table::[arc="content-modules"]
 
 
 sdpi_oid_table::[arc="use-cases"]
+
+[#vol3_appendix_c_oid_profile_use_case_support]
+=== Device integration profile support for use cases
+
+Support by a profile for use cases defined in this specification or imported from other specifications are assigned OIDs from the `.*12*` arc under the corresponding <<vol3_appendix_c_oid_profiles,profile OID>>. Profile support for use case arcs are generally assigned sequentially using the `oid-arcs` attribute on the ASCIIDoc section that defines the use case support. Arcs for use case support in different profiles convey no relationship; support for the same use case in different profiles may be assigned to different arcs. 
+
+sdpi_oid_table::[arc="use-case-support"]
 
 [#vol3_appendix_c_oid_requirements]
 === Requirements

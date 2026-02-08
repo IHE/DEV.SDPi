@@ -46,6 +46,21 @@ data class SdpiUseCase(
 )
 
 @Serializable
+data class UseCaseObligations(
+    val actorId: String,
+    val obligation: Obligation,
+    val profileOptionId: String?,
+)
+
+@Serializable
+data class SdpiUseCaseSupport(
+    val useCaseId: String,
+    val oid: List<String>,
+    val anchor: String,
+    val obligations: List<UseCaseObligations>
+)
+
+@Serializable
 data class SdpiUseCaseReference(
     val useCaseId: String,
     val actorId: String,

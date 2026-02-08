@@ -62,6 +62,17 @@ sealed class Roles {
         STEPS("use-case-steps"),
     }
 
+    enum class UseCaseSupport(val key: String) {
+
+        // Role id.
+        SECTION_ROLE("support-use-case"),
+
+        USE_CASE_ID("use-case-id"),
+
+        OBLIGATION("support"),
+
+    }
+
     // Roles applied to the tables where query results will get populated
     // that are created as placeholders by block macro processors.
     enum class QueryTable(val key: String) {

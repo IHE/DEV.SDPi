@@ -71,14 +71,14 @@ class AsciidocConverter(
     val bibliographyCollector = BibliographyCollector()
     val transactionActorsProcessor = TransactionActorsProcessor()
     val profileTransactionCollector = TransactionIncludeProcessor()
-    val profileUseCaseCollector = UseCaseIncludeProcessor()
     val profileContentModuleCollector = ContentModuleIncludeProcessor()
+    val profileUseCaseSupportCollector = SupportUseCaseIncludeProcessor()
 
     val infoCollector = SdpiInformationCollector(
         bibliographyCollector,
         transactionActorsProcessor,
         profileTransactionCollector,
-        profileUseCaseCollector,
+        profileUseCaseSupportCollector,
         profileContentModuleCollector
     )
 
@@ -115,7 +115,7 @@ class AsciidocConverter(
         // Gather profiles, the transactions, use cases they include.
         asciidoctor.javaExtensionRegistry().blockMacro(profileTransactionCollector)
 
-        asciidoctor.javaExtensionRegistry().blockMacro(profileUseCaseCollector)
+        asciidoctor.javaExtensionRegistry().blockMacro(profileUseCaseSupportCollector)
 
         asciidoctor.javaExtensionRegistry().blockMacro(profileContentModuleCollector)
 

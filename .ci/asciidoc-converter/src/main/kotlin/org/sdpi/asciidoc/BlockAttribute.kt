@@ -77,8 +77,6 @@ enum class UseCaseAttributes(val key: String) {
     ACTOR("actor-id"),
 
     OBLIGATION("support"),
-
-
 }
 
 enum class ContentModuleAttributes(val key: String) {

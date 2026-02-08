@@ -338,25 +338,23 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
 
         val oidsToTable = mutableListOf<SdpiOidReference>()
         for (strArc in strRootArcs.split(' ')) {
-            val arcOid = parseOidId(strArc)
-            checkNotNull(arcOid) {
-                logger.error("Arc $strArc is not known")
-            }
 
-            if (arcOid == WellKnownOid.DEV_ACTOR) {
+            if (strArc == WellKnownOid.DEV_ACTOR.id) {
                 gatherActorOids(oidsToTable)
-            } else if (arcOid == WellKnownOid.DEV_TRANSACTION) {
+            } else if (strArc == WellKnownOid.DEV_TRANSACTION.id) {
                 gatherTransactionOids(oidsToTable)
-            } else if (arcOid == WellKnownOid.DEV_PROFILE) {
+            } else if (strArc == WellKnownOid.DEV_PROFILE.id) {
                 gatherProfileOids(oidsToTable)
-            } else if (arcOid == WellKnownOid.DEV_PROFILE_ACTOR_OPTIONS) {
+            } else if (strArc == WellKnownOid.DEV_PROFILE_ACTOR_OPTIONS.id) {
                 gatherProfileOptionOids(oidsToTable)
-            } else if (arcOid == WellKnownOid.DEV_CONTENT_MODULE) {
+            } else if (strArc == WellKnownOid.DEV_CONTENT_MODULE.id) {
                 gatherContentModuleOids(oidsToTable)
-            } else if (arcOid == WellKnownOid.DEV_USE_CASE_GLOBAL) {
+            } else if (strArc == WellKnownOid.DEV_USE_CASE_GLOBAL.id) {
                 gatherUseCaseOids(oidsToTable)
-            } else if (arcOid == WellKnownOid.DEV_REQUIREMENT) {
+            } else if (strArc == WellKnownOid.DEV_REQUIREMENT.id) {
                 gatherRequirementOids(oidsToTable)
+            } else if (strArc == "use-case-support") {
+                gatherUseCaseSupportOids(oidsToTable)
             } else {
                 logger.error("Oid tables don't support $strArc (yet?)")
             }
@@ -458,6 +456,25 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
                         scenario.title,
                         ""
                     )
+                    oidsToTable.add(oid)
+                }
+            }
+        }
+    }
+
+    private fun gatherUseCaseSupportOids(oidsToTable: MutableList<SdpiOidReference>) {
+        for (profile in docInfo.profiles()) {
+            for(support in profile.useCaseSupport) {
+                val useCase = docInfo.useCases()[support.useCaseId]
+                checkNotNull(useCase) {
+                    logger.error("Unknown use case `${support.useCaseId}` supported by profile `${profile.profileId}`")
+                }
+                for(strOid in support.oid) {
+                    val oid = SdpiOidReference(
+                        WellKnownOid.DEV_USE_CASE_SUPPORT,
+                        strOid,
+                        "Support for ${useCase.title} use case by ${profile.label}",
+                        support.anchor)
                     oidsToTable.add(oid)
                 }
             }

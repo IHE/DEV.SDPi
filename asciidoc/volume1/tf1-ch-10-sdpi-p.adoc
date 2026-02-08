@@ -967,6 +967,7 @@ The SDPi-P Profile supports requirements from use cases detailed in <<vol1_appen
 #TODO:  For each of these, add discussion to HOW and WHERE (with links) that the requirements are met.  Include a Requirements usage block?  CT DEPENDENCY IN SOMDS_PARTICIPANT MEETS THESE REQUIREMENTS#
 ////
 
+[role="support-use-case", use-case-id="stad", oid-arcs=.1]
 ===== <<label_use_case_name_stad>> (<<acronym_stad>>)
 This use case fully addresses the requirements from  <<vol1_clause_appendix_c_use_case_stad>>.
 
@@ -985,19 +986,19 @@ Specific capabilities supporting the <<acronym_stad>> use case include:
 #TODO:  Should a sequence diagram be included here?  Or in above?  For each of the STAD Scenarios a sequence diagram should be provided.  This could include transactions and actor linkages as well#
 ////
 
-sdpi_include_use_case::stad[actor-id="somds_participant", support=required]
-sdpi_include_use_case::stad[actor-id="somds_provider", support=required]
-sdpi_include_use_case::stad[actor-id="somds_consumer", support=required]
-sdpi_include_use_case::stad[actor-id="somds_connector", support=required]
-sdpi_include_use_case::stad[actor-id="somds_fhir_gateway", support=required]
-sdpi_include_use_case::stad[actor-id="somds_v2_gateway", support=required]
-sdpi_include_use_case::stad[actor-id="somds_sensor_gateway", support=required]
-sdpi_include_use_case::stad[actor-id="somds_smart_app", support=required]
-sdpi_include_use_case::stad[actor-id="biceps_content_creator", support=required]
-sdpi_include_use_case::stad[actor-id="biceps_content_consumer", support=required]
-sdpi_include_use_case::stad[actor-id="discovery_proxy", support=required]
+sdpi_support_use_case::somds_participant[support=required]
+sdpi_support_use_case::somds_provider[support=required]
+sdpi_support_use_case::somds_consumer[support=required]
+sdpi_support_use_case::somds_connector[support=required]
+sdpi_support_use_case::somds_fhir_gateway[support=required]
+sdpi_support_use_case::somds_v2_gateway[support=required]
+sdpi_support_use_case::somds_sensor_gateway[support=required]
+sdpi_support_use_case::somds_smart_app[support=required]
+sdpi_support_use_case::biceps_content_creator[support=required]
+sdpi_support_use_case::biceps_content_consumer[support=required]
+sdpi_support_use_case::discovery_proxy[support=required]
 
-
+[role="support-use-case", use-case-id="sicdsp", oid-arcs=.2]
 ===== <<label_use_case_name_sicdsp>> (<<acronym_sicdsp>>)
 This use case provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_sicdsp>>.
 
@@ -1012,11 +1013,12 @@ Specific capabilities supporting the <<acronym_sicdsp>> use case include:
 #TODO:  Do SystemContext/PatientContext/LocationContext need to be called out here to meet requirements related to "ICU" or "single patient"?#
 ////
 
-sdpi_include_use_case::sicdsp[actor-id="somds_consumer", support=optional]
-sdpi_include_use_case::sicdsp[actor-id="somds_connector", support=optional]
-sdpi_include_use_case::sicdsp[actor-id="somds_smart_app", support=optional]
-sdpi_include_use_case::sicdsp[actor-id="biceps_content_consumer", support=optional]
+sdpi_support_use_case::somds_consumer[support=optional]
+sdpi_support_use_case::somds_connector[support=optional]
+sdpi_support_use_case::somds_smart_app[support=optional]
+sdpi_support_use_case::biceps_content_consumer[support=optional]
 
+[role="support-use-case", use-case-id="sicdmp", oid-arcs=.3]
 ===== <<label_use_case_name_sicdmp>> (<<acronym_sicdmp>>)
 This use case provides capabilities for requirements from  <<vol1_clause_appendix_c_use_case_sicdmp>>.
 
@@ -1031,11 +1033,12 @@ Specific capabilities supporting the <<acronym_sicdmp>> use case include:
 #TODO:  Do SystemContext/PatientContext/LocationContext need to be called out here to meet requirements related to "ICU" or "multiple patient"?#
 ////
 
-sdpi_include_use_case::sicdmp[actor-id="somds_consumer", support=optional]
-sdpi_include_use_case::sicdmp[actor-id="somds_connector", support=optional]
-sdpi_include_use_case::sicdmp[actor-id="somds_smart_app", support=optional]
-sdpi_include_use_case::sicdmp[actor-id="biceps_content_consumer", support=optional]
+sdpi_support_use_case::somds_consumer[support=optional]
+sdpi_support_use_case::somds_connector[support=optional]
+sdpi_support_use_case::somds_smart_app[support=optional]
+sdpi_support_use_case::biceps_content_consumer[support=optional]
 
+[role="support-use-case", use-case-id="ddes", oid-arcs=.4]
 ===== <<label_use_case_name_ddes>> (<<acronym_ddes>>)
 This use case provides capabilities for requirements from  <<vol1_clause_appendix_c_use_case_ddes>>.
 
@@ -1046,11 +1049,12 @@ Specific capabilities supporting the  <<acronym_ddes>> use case include:
 * *Technical Pre-Conditions*: <<acronym_ddes>> <<vol1_clause_appendix_c_use_case_ddes_technical_precondition>> are fully supported by SDPi-P
 * *Scenarios*: <<acronym_ddes>> <<vol1_clause_appendix_c_use_case_ddes_scenarios>> basic communication requirements are supported by SDPi-P
 
-sdpi_include_use_case::ddes[actor-id="somds_connector", support=required]
-sdpi_include_use_case::ddes[actor-id="somds_fhir_gateway", support=required]
-sdpi_include_use_case::ddes[actor-id="somds_v2_gateway", support=required]
-sdpi_include_use_case::ddes[actor-id="somds_sensor_gateway", support=required]
+sdpi_support_use_case::somds_connector[support=required]
+sdpi_support_use_case::somds_fhir_gateway[support=required]
+sdpi_support_use_case::somds_v2_gateway[support=required]
+sdpi_support_use_case::somds_sensor_gateway[support=required]
 
+[role="support-use-case", use-case-id="acns", oid-arcs=.5]
 ===== <<label_use_case_name_acns>> (<<acronym_acns>>)
 This use case provides capabilities for requirements from  <<vol1_clause_appendix_c_use_case_acns>>.
 
@@ -1061,11 +1065,12 @@ Specific capabilities supporting the <<acronym_acns>> use case include:
 * *Technical Pre-Conditions*:  <<acronym_acns>> <<vol1_clause_appendix_c_use_case_acns_technical_precondition>> are fully supported by SDPi-P
 * *Scenarios*:  <<acronym_acns>> <<vol1_clause_appendix_c_use_case_acns_scenarios>> basic communication requirements are supported by SDPi-P
 
-sdpi_include_use_case::acns[actor-id="somds_connector", support=optional]
-sdpi_include_use_case::acns[actor-id="somds_fhir_gateway", support=optional]
-sdpi_include_use_case::acns[actor-id="somds_v2_gateway", support=optional]
-sdpi_include_use_case::acns[actor-id="somds_sensor_gateway", support=optional]
+sdpi_support_use_case::somds_connector[support=optional]
+sdpi_support_use_case::somds_fhir_gateway[support=optional]
+sdpi_support_use_case::somds_v2_gateway[support=optional]
+sdpi_support_use_case::somds_sensor_gateway[support=optional]
 
+[role="support-use-case", use-case-id="aars", oid-arcs=.6]
 ===== <<label_use_case_name_aars>> (<<acronym_aars>>)
 This use case provides capabilities for requirements from  <<vol1_clause_appendix_c_use_case_aars>>.
 
@@ -1076,10 +1081,10 @@ Specific capabilities supporting the <<acronym_aars>> use case include:
 * *Technical Pre-Conditions*:  <<acronym_aars>> <<vol1_clause_appendix_c_use_case_aars_technical_precondition>> are fully supported by SDPi-P
 * *Scenarios*:  <<acronym_aars>> <<vol1_clause_appendix_c_use_case_aars_scenarios>> basic communication requirements are supported by SDPi-P
 
-sdpi_include_use_case::aars[actor-id="somds_connector", support=optional]
-sdpi_include_use_case::aars[actor-id="somds_fhir_gateway", support=optional]
-sdpi_include_use_case::aars[actor-id="somds_v2_gateway", support=optional]
-sdpi_include_use_case::aars[actor-id="somds_sensor_gateway", support=optional]
+sdpi_support_use_case::somds_connector[support=optional]
+sdpi_support_use_case::somds_fhir_gateway[support=optional]
+sdpi_support_use_case::somds_v2_gateway[support=optional]
+sdpi_support_use_case::somds_sensor_gateway[support=optional]
 
 [#vol1_clause_sdpi_p_ses_considerations]
 === SDPi-P Safety, Effectiveness and Security - Requirements and Considerations

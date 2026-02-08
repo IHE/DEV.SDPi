@@ -14,7 +14,7 @@ import org.sdpi.asciidoc.model.parseObligation
 const val BLOCK_MACRO_NAME_INCLUDE_USE_CASE = "sdpi_include_use_case"
 
 @Name(BLOCK_MACRO_NAME_INCLUDE_USE_CASE)
-class UseCaseIncludeProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_INCLUDE_USE_CASE) {
+class UseCaseIncludeProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_SUPPORT_USE_CASE) {
     private companion object : Logging
 
     // Keyed by profile id, this maps profiles to use case references.
@@ -27,6 +27,7 @@ class UseCaseIncludeProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_INCLUDE_USE
     }
 
     override fun process(parent: StructuralNode, strUseCaseId: String, attributes: MutableMap<String, Any>): Any? {
+
         val (strProfileId, strProfileOptionId) = findProfileId(parent)
         checkNotNull(strProfileId) {
             logger.error("$BLOCK_MACRO_NAME_INCLUDE_USE_CASE requires a ancestor block within the 'profile' role")

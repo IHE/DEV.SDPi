@@ -12,7 +12,7 @@ class SdpiInformationCollector(
     private val bibliography: BibliographyCollector,
     private val transactionActors: TransactionActorsProcessor,
     private val profileTransactions: TransactionIncludeProcessor,
-    private val profileUseCases: UseCaseIncludeProcessor,
+    private val profileUseCases: SupportUseCaseIncludeProcessor,
     private val profileContentModuleReferences: ContentModuleIncludeProcessor
 ) : Treeprocessor() {
     private companion object : Logging
@@ -135,10 +135,6 @@ class SdpiInformationCollector(
         val profileTransactionRefs = transactionRefs?.filter { !it.isOptioned() }
             ?.map { it.transactionReference }
 
-        val useCaseRefs = profileUseCases.useCaseReferences(strProfileId)
-        val profileUseCaseRefs = useCaseRefs?.filter { it.profileOptionId == null }
-            ?.map { it.useCaseReference }
-
         val contentModuleRefs = profileContentModuleReferences.contentModuleReferences(strProfileId)
         val profileContentModuleRefs = contentModuleRefs?.filter { it.profileOptionId == null }?.map { it.ref }
 
@@ -152,7 +148,6 @@ class SdpiInformationCollector(
                 strAnchor,
                 strLabel,
                 profileTransactionRefs,
-                profileUseCaseRefs,
                 profileContentModuleRefs
             )
         profiles[strProfileId] = currentProfile
@@ -161,7 +156,6 @@ class SdpiInformationCollector(
         }
 
         gatherProfileOptionTransactions(transactionRefs, currentProfile)
-        gatherProfileOptionUseCases(useCaseRefs, currentProfile)
         gatherProfileOptionContentModules(contentModuleRefs, currentProfile)
     }
 
@@ -206,6 +200,10 @@ class SdpiInformationCollector(
         }
         if (block.hasRole(Roles.Actor.OPTION.key)) {
             processActorOption(block, profile)
+        }
+
+        if (block.hasRole(Roles.UseCaseSupport.SECTION_ROLE.key)) {
+            processUseCaseSupport(block, profile)
         }
 
         val currentOption: SdpiProfileOption? = if (block.hasRole(Roles.Profile.PROFILE_OPTION.key)) {
@@ -306,6 +304,22 @@ class SdpiInformationCollector(
         }
     }
 
+    private fun processUseCaseSupport(block: StructuralNode, profile: SdpiProfile) {
+        val strUseCaseId = block.attributes[Roles.UseCaseSupport.USE_CASE_ID.key]?.toString()
+        checkNotNull(strUseCaseId) {
+            logger.error("Use case in profile ${profile.profileId} requires ${Roles.UseCaseSupport.USE_CASE_ID.key} attribute")
+        }
+        val strAnchor = block.id
+        val parentOids = profile.oids.map{ "$it.12" }
+        val oids = getOids(block, "Profile use case support", parentOids)
+        val useCaseSupport = profileUseCases.useCaseReferences(profile.profileId, strUseCaseId)
+        if (useCaseSupport != null) {
+            val obligations = useCaseSupport.map{it -> UseCaseObligations(it.useCaseReference.actorId, it.useCaseReference.obligation, it.profileOptionId)}
+            val supports = SdpiUseCaseSupport(strUseCaseId, oids,strAnchor, obligations)
+            profile.addUseCaseSupport(supports)
+        }
+    }
+
     private fun gatherProfileOptionTransactions(
         transactionRefs: List<SdpiProfileTransactionReference>?,
         currentProfile: SdpiProfile
@@ -320,25 +334,6 @@ class SdpiInformationCollector(
                         logger.error("Profile ${currentProfile.profileId} does not have an option $strOptionId for transactions")
                     }
                     go.value.forEach { profileOption.add(it.transactionReference) }
-                }
-            }
-        }
-    }
-
-    private fun gatherProfileOptionUseCases(
-        useCaseRefs: List<SdpiProfileUseCaseReference>?,
-        currentProfile: SdpiProfile
-    ) {
-        if (useCaseRefs != null) {
-            val groupedOption = useCaseRefs.filter { it.profileOptionId != null }.groupBy { it.profileOptionId }
-            for (go in groupedOption) {
-                val strOptionId = go.key
-                if (strOptionId != null) {
-                    val profileOption = currentProfile.findOption(strOptionId)
-                    checkNotNull(profileOption) {
-                        logger.error("Profile ${currentProfile.profileId} does not have an option $strOptionId for use cases")
-                    }
-                    go.value.forEach { profileOption.add(it.useCaseReference) }
                 }
             }
         }
@@ -1112,9 +1107,8 @@ class SdpiInformationCollector(
         for (strOid in strLeafArcs.split(',')) {
             if (strOid.startsWith('.')) {
                 for (strParentOid in parentOids) {
-                    val strScenarioOid = "${strParentOid}$strOid"
-                    println("**** Scenerio oid = $strScenarioOid")
-                    blockOids.add(strScenarioOid)
+                    val strBlockOid = "${strParentOid}$strOid"
+                    blockOids.add(strBlockOid)
                 }
             } else {
                 blockOids.add(strOid)
@@ -1141,12 +1135,7 @@ class SdpiInformationCollector(
 
     private fun validateUseCaseRefs() {
         for (profile in profiles.values) {
-            if (null != profile.useCaseReferences) {
-                validateUseCaseRefs(profile.profileId, profile.useCaseReferences)
-            }
-            for (profileOption in profile.options) {
-                validateUseCaseRefs(profileOption.id, profileOption.useCaseReferences)
-            }
+            validateUseCaseRefs(profile, profile.useCasesSupported())
         }
     }
 
@@ -1191,16 +1180,28 @@ class SdpiInformationCollector(
         }
     }
 
-    private fun validateUseCaseRefs(strProfileId: String, refs: List<SdpiUseCaseReference>) {
+    private fun validateUseCaseRefs(profile: SdpiProfile, refs: List<SdpiUseCaseSupport>) {
         for (ref in refs) {
             val useCase = useCases[ref.useCaseId]
             checkNotNull(useCase) {
-                logger.error("Profile '${strProfileId} references an unknown use case ${ref.useCaseId}")
+                logger.error("Profile '${profile.profileId}' references an unknown use case ${ref.useCaseId}")
             }
 
-            val actor = actors[ref.actorId]
-            checkNotNull(actor) {
-                logger.error("The actor '${ref.actorId} in a ${ref.useCaseId} use-case reference in profile $strProfileId can't be found")
+            for(obligation in ref.obligations) {
+                val strActorId = obligation.actorId
+
+                val actor = actors[strActorId]
+                checkNotNull(actor) {
+                    logger.error("The actor '${strActorId} in a ${ref.useCaseId} use-case reference in profile '${profile.profileId}' can't be found")
+                }
+
+                val strProfileOption = obligation.profileOptionId
+                if (strProfileOption != null) {
+                    val option = profile.options.firstOrNull{it.id == strProfileOption}
+                    checkNotNull(option) {
+                        logger.error("The option '${strProfileOption} in a ${ref.useCaseId} use-case reference in profile '${profile.profileId}' can't be found")
+                    }
+                }
             }
         }
     }

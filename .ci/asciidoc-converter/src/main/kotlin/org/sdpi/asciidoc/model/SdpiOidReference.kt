@@ -76,6 +76,13 @@ enum class WellKnownOid(val id: String, val oid: String, val typeLabel: String, 
         "Parent OID for general use cases defined in the SDPi specification"
     ),
 
+    DEV_USE_CASE_SUPPORT(
+        "use-case-support",
+         ".12",
+        "Use case support",
+        "Arc for use case support oids defined in SDPi specification profiles"
+    ),
+
     DEV_REQUIREMENT(
         "requirements",
         DEV_SDPi.oid + ".10",
