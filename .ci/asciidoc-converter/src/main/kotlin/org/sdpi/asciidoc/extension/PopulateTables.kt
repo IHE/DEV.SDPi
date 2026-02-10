@@ -473,7 +473,7 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
                     val oid = SdpiOidReference(
                         WellKnownOid.DEV_USE_CASE_SUPPORT,
                         strOid,
-                        "Support for ${useCase.title} use case by ${profile.label}",
+                        "Support for ${useCase.title} use case (see <<${useCase.anchor},${useCase.title}>>) by <<${profile.anchor},${profile.label}>>",
                         support.anchor)
                     oidsToTable.add(oid)
                 }

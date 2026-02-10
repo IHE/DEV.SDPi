@@ -14,7 +14,7 @@ import org.sdpi.asciidoc.model.parseObligation
 const val BLOCK_MACRO_NAME_INCLUDE_USE_CASE = "sdpi_include_use_case"
 
 @Name(BLOCK_MACRO_NAME_INCLUDE_USE_CASE)
-class UseCaseIncludeProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_SUPPORT_USE_CASE) {
+class UseCaseIncludeProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_INCLUDE_USE_CASE) {
     private companion object : Logging
 
     // Keyed by profile id, this maps profiles to use case references.
