@@ -24,14 +24,14 @@
 // https://docs.asciidoctor.org/asciidoc/latest/attributes/unset-attributes/
 :markup-actor-transactions-table:
 
-:sdpi_milestone_publication: SDPi 2.2 Publication
-:sdpi_milestone_review: SDPi 2.2 Review
+:sdpi_milestone_publication: SDPi 2.3 Publication
+:sdpi_milestone_review: SDPi 2.3 Review
 
-:ihe_supplement_sdpi_revision: 2.2.1
-:ihe_supplement_sdpi_revision_short: 2.2
+:ihe_supplement_sdpi_revision: 2.3.0
+:ihe_supplement_sdpi_revision_short: 2.3
 :ihe_supplement_sdpi_revision_date: {localdatetime}
 :ihe_supplement_sdpi_revision_label: Standard for Trial Use / Implementation
-:ihe_supplement_sdpi_publication_month: November 7, 2025
+:ihe_supplement_sdpi_publication_month: December 19, 2025
 :ihe_supplement_sdpi_public_comment_submission_deadline: N/A
 
 {empty} +

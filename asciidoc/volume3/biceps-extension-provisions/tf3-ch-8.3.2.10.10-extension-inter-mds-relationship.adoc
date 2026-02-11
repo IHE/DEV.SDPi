@@ -1,0 +1,53 @@
+[#vol3_clause_inter_mds_relationship]
+====== Inter-MDS Relationship
+
+BICEPS does not provide means to define relationships between <<acronym_mds>>s in the same <<acronym_mdib>>, as it does not support the concept of nested <<acronym_mds>>.
+Nevertheless, in certain multi-<<acronym_mds>> configurations, it is important to convey information regarding the relationships among <<acronym_mds>>s.
+
+Examples include transport patient-monitoring devices that are connected to stationary patient-monitoring devices when patients are located in beds on the care unit, infusion pumps integrated into rack systems, and similar configurations.
+
+In such scenarios, the hosting <<acronym_mds>> typically offers various services to the connected <<acronym_mds>>s, including power supply, context synchronization, network access, and related support functions.
+
+[sdpi_level=+1]
+====== Model
+
+An XML Schema that specifies a type to model inter-MDS relationships is available in <<vol3_appendix_a_xml_schemas_relations>>. <<vol3_example_extension_inter_mds_relationship>> shows an exemplary XML instance of a <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> including the inter-MDS relationship extension in the state part of the MDIB.
+
+.<<acronym_mds>>s with inter-MDS relationship extension
+[#vol3_example_extension_inter_mds_relationship]
+====
+[source,xml]
+----
+include::../../listings/vol3-clause-biceps-content-example-inter-mds-relationship.xml[]
+----
+====
+
+[sdpi_level=+1]
+====== Requirements
+
+.R0613
+[sdpi_requirement#r0613,sdpi_req_level=should,sdpi_req_type=tech_feature]
+****
+
+[NORMATIVE]
+====
+For each <<acronym_mds>> in the <<acronym_mdib>> of a <<vol1_spec_sdpi_p_actor_somds_provider>>, if the <<acronym_mds>> has a parent relationship to one or more other child <<acronym_mds>>s in the same <<acronym_mdib>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> should add a `sdpi:Relations` element to `pm:MdState/ext:Extension` with at least one `sdpi:Relation` including at least the following data:
+
+* `sdpi:Code/@Code = "68167"` (MDC_ATTR_SOURCE_HANDLE_REF)
+* `@Kind = "ECE"`
+* `@Entries = _<list of handle references to child MDSs>_`
+====
+****
+
+.R0614
+[sdpi_requirement#r0614,sdpi_req_level=should,sdpi_req_type=tech_feature]
+****
+[NORMATIVE]
+====
+For each <<acronym_mds>> in the <<acronym_mdib>> of a <<vol1_spec_sdpi_p_actor_somds_provider>>, if the <<acronym_mds>> has a child relationship to one or more other parent <<acronym_mds>>s in the same <<acronym_mdib>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> should add a `sdpi:Relations` element to `pm:MdState/ext:Extension` with at least one `sdpi:Relation` including at least the following data:
+
+* `sdpi:Code/@Code = "68167"` (MDC_ATTR_SOURCE_HANDLE_REF)
+* `@Kind = "DCE"`
+* `@Entries = _<handle reference to parent MDS>_`
+====
+****

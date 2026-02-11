@@ -12,3 +12,5 @@ include::biceps-extension-provisions/tf3-ch-a-xml-schemas-equipment-identifier.a
 include::biceps-extension-provisions/tf3-ch-a-xml-schemas-timestamp-version.adoc[]
 
 include::biceps-extension-provisions/tf3-ch-a-xml-schemas-report-sequence.adoc[]
+
+include::biceps-extension-provisions/tf3-ch-a-xml-schemas-inter-mds-relationship.adoc[]
