@@ -1,0 +1,998 @@
+[
+  {
+    "requirementNumber": 22,
+    "level": "Shall",
+    "localId": "RR0022",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 24,
+    "level": "Shall",
+    "localId": "RR0024",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 28,
+    "level": "Shall",
+    "localId": "RR0028",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 29,
+    "level": "Shall",
+    "localId": "RR0029",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 32,
+    "level": "Shall",
+    "localId": "DR0032",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 35,
+    "level": "Shall",
+    "localId": "DR0035",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 54,
+    "level": "Shall",
+    "localId": "TR0054",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 62,
+    "level": "Shall",
+    "localId": "RR0062",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 108,
+    "level": "Should",
+    "localId": "TR0108",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 129,
+    "level": "Shall",
+    "localId": "RR0129",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 142,
+    "level": "Shall",
+    "localId": "DR0142",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 148,
+    "level": "Shall",
+    "localId": "RR0148",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 216,
+    "level": "Shall",
+    "localId": "TR0216",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 217,
+    "level": "Shall",
+    "localId": "TR0217",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 223,
+    "level": "Shall",
+    "localId": "TR0223",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 225,
+    "level": "Should",
+    "localId": "TR0225",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 229,
+    "level": "Shall",
+    "localId": "TR0229",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 251,
+    "level": "Shall",
+    "localId": "TR0251",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 252,
+    "level": "Should",
+    "localId": "TR0252",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 277,
+    "level": "Shall",
+    "localId": "TR0277",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 279,
+    "level": "Shall",
+    "localId": "TR0279",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 280,
+    "level": "Shall",
+    "localId": "TR0280",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 281,
+    "level": "Shall",
+    "localId": "TR0281",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 623,
+    "level": "Shall",
+    "localId": "RR0623",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 765,
+    "level": "Shall",
+    "localId": "TR0765",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 845,
+    "level": "Shall",
+    "localId": "RR0845",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 855,
+    "level": "Shall",
+    "localId": "TR0855",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 863,
+    "level": "Shall",
+    "localId": "TR0863",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 866,
+    "level": "Should",
+    "localId": "TR0866",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 867,
+    "level": "Should",
+    "localId": "TR0867",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 871,
+    "level": "Shall",
+    "localId": "TR0871",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 873,
+    "level": "Shall",
+    "localId": "TR0873",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 874,
+    "level": "Shall",
+    "localId": "TR0874",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 877,
+    "level": "Shall",
+    "localId": "TR0877",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 879,
+    "level": "Shall",
+    "localId": "TR0879",
+    "icsGroup": "SDC Service Consumer"
+  },
+  {
+    "requirementNumber": 886,
+    "level": "Shall",
+    "localId": "TR0886",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 912,
+    "level": "Shall",
+    "localId": "TR0912",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 916,
+    "level": "Shall",
+    "localId": "TR0916",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 917,
+    "level": "Shall",
+    "localId": "TR0917",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 973,
+    "level": "Shall",
+    "localId": "TR0973",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 974,
+    "level": "Shall",
+    "localId": "TR0974",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 990,
+    "level": "Should",
+    "localId": "TR0990",
+    "icsGroup": "SDC Service Consumer"
+  },
+  {
+    "requirementNumber": 993,
+    "level": "Should",
+    "localId": "TR0993",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 997,
+    "level": "Shall",
+    "localId": "TR0997",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 999,
+    "level": "Shall",
+    "localId": "TR0999",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1005,
+    "level": "Shall",
+    "localId": "RR1005",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1006,
+    "level": "Shall",
+    "localId": "RR1006",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1025,
+    "level": "Shall",
+    "localId": "RR1025",
+    "icsGroup": "SDC Service Consumer"
+  },
+  {
+    "requirementNumber": 1030,
+    "level": "Shall",
+    "localId": "RR1030",
+    "icsGroup": "SDC Service Consumer"
+  },
+  {
+    "requirementNumber": 1032,
+    "level": "Shall",
+    "localId": "DR1032",
+    "icsGroup": "SDC Service Consumer"
+  },
+  {
+    "requirementNumber": 1034,
+    "level": "Shall",
+    "localId": "DR1034",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1035,
+    "level": "Shall",
+    "localId": "RR1035",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1049,
+    "level": "Shall",
+    "localId": "RR1049",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1067,
+    "level": "Shall",
+    "localId": "RR1067",
+    "icsGroup": "SDC Service Consumer"
+  },
+  {
+    "requirementNumber": 1074,
+    "level": "Shall",
+    "localId": "RR1074",
+    "icsGroup": "SDC Service Consumer"
+  },
+  {
+    "requirementNumber": 1094,
+    "level": "Shall",
+    "localId": "RR1094",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1096,
+    "level": "Should",
+    "localId": "RR1096",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1098,
+    "level": "Shall",
+    "localId": "RR1098",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1105,
+    "level": "Shall",
+    "localId": "RR1105",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1106,
+    "level": "Shall",
+    "localId": "RR1106",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1108,
+    "level": "Should",
+    "localId": "RR1108",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1109,
+    "level": "Shall",
+    "localId": "DR1109",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1110,
+    "level": "Shall",
+    "localId": "DR1110",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1111,
+    "level": "Shall",
+    "localId": "DR1111",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1113,
+    "level": "Shall",
+    "localId": "DR1113",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1116,
+    "level": "Shall",
+    "localId": "DR1116",
+    "icsGroup": "SDC Service Consumer"
+  },
+  {
+    "requirementNumber": 1117,
+    "level": "Shall",
+    "localId": "DR1117",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1119,
+    "level": "Shall",
+    "localId": "DR1119",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1122,
+    "level": "Shall",
+    "localId": "DR1122",
+    "icsGroup": "SDC Service Consumer"
+  },
+  {
+    "requirementNumber": 1125,
+    "level": "Shall",
+    "localId": "RR1125",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1133,
+    "level": "Shall",
+    "localId": "RR1133",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1134,
+    "level": "Shall",
+    "localId": "TR1134",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1135,
+    "level": "Shall",
+    "localId": "RR1135",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1137,
+    "level": "Shall",
+    "localId": "RR1137",
+    "icsGroup": "SDC Service Consumer"
+  },
+  {
+    "requirementNumber": 1139,
+    "level": "Shall",
+    "localId": "RR1139",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1146,
+    "level": "Shall",
+    "localId": "RR1146",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1149,
+    "level": "Shall",
+    "localId": "DR1149",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1151,
+    "level": "Shall",
+    "localId": "TR1151",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1152,
+    "level": "Shall",
+    "localId": "DR1152",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1154,
+    "level": "Shall",
+    "localId": "RR1154",
+    "icsGroup": "SDC Service Consumer"
+  },
+  {
+    "requirementNumber": 1159,
+    "level": "Shall",
+    "localId": "RR1159",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1162,
+    "level": "Shall",
+    "localId": "RR1162",
+    "icsGroup": "SDC Service Consumer"
+  },
+  {
+    "requirementNumber": 1164,
+    "level": "Shall",
+    "localId": "TR1164",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1166,
+    "level": "Shall",
+    "localId": "DR1166",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1168,
+    "level": "Shall",
+    "localId": "DR1168",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1170,
+    "level": "Shall",
+    "localId": "RR1170",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1210,
+    "level": "Shall",
+    "localId": "RR1210",
+    "icsGroup": "SDC Service Consumer"
+  },
+  {
+    "requirementNumber": 1213,
+    "level": "Shall",
+    "localId": "RR1213",
+    "icsGroup": "SDC Service Consumer"
+  },
+  {
+    "requirementNumber": 1215,
+    "level": "Shall",
+    "localId": "RR1215",
+    "icsGroup": "SDC Service Consumer"
+  },
+  {
+    "requirementNumber": 1241,
+    "level": "Shall",
+    "localId": "DR1241",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1250,
+    "level": "Shall",
+    "localId": "RR1250",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1279,
+    "level": "Shall",
+    "localId": "TR1279",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1285,
+    "level": "Shall",
+    "localId": "RR1285",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1297,
+    "level": "Shall",
+    "localId": "RR1297",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1303,
+    "level": "Shall",
+    "localId": "TR1303",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1304,
+    "level": "Shall",
+    "localId": "TR1304",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1340,
+    "level": "Should",
+    "localId": "TR1340",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1342,
+    "level": "Shall",
+    "localId": "TR1342",
+    "icsGroup": "SDC Service Consumer"
+  },
+  {
+    "requirementNumber": 1348,
+    "level": "Shall",
+    "localId": "RR1348",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1357,
+    "level": "Should",
+    "localId": "TR1357",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1358,
+    "level": "Shall",
+    "localId": "TR1358",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1373,
+    "level": "Shall",
+    "localId": "TR1373",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1374,
+    "level": "Shall",
+    "localId": "TR1374",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1380,
+    "level": "Shall",
+    "localId": "RR1380",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1385,
+    "level": "Shall",
+    "localId": "DR1385",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1427,
+    "level": "Shall",
+    "localId": "DR1427",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1428,
+    "level": "Shall",
+    "localId": "RR1428",
+    "icsGroup": "SDC Service Consumer"
+  },
+  {
+    "requirementNumber": 1430,
+    "level": "Shall",
+    "localId": "RR1430",
+    "icsGroup": "SDC Service Consumer"
+  },
+  {
+    "requirementNumber": 1433,
+    "level": "Shall",
+    "localId": "RR1433",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1436,
+    "level": "Shall",
+    "localId": "TR1436",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1437,
+    "level": "Shall",
+    "localId": "TR1437",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1438,
+    "level": "Shall",
+    "localId": "TR1438",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1440,
+    "level": "Shall",
+    "localId": "RR1440",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1442,
+    "level": "Shall",
+    "localId": "RR1442",
+    "icsGroup": "SDC Service Consumer"
+  },
+  {
+    "requirementNumber": 1451,
+    "level": "Shall",
+    "localId": "TR1451",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1453,
+    "level": "Shall",
+    "localId": "TR1453",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1455,
+    "level": "Shall",
+    "localId": "TR1455",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1459,
+    "level": "Shall",
+    "localId": "TR1459",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1461,
+    "level": "Shall",
+    "localId": "TR1461",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1465,
+    "level": "Shall",
+    "localId": "TR1465",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1467,
+    "level": "Shall",
+    "localId": "TR1467",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1470,
+    "level": "Shall",
+    "localId": "TR1470",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1480,
+    "level": "May",
+    "localId": "TR1480",
+    "icsGroup": "SDC Service Consumer"
+  },
+  {
+    "requirementNumber": 1488,
+    "level": "Shall",
+    "localId": "RR1488",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1490,
+    "level": "Shall",
+    "localId": "TR1490",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1499,
+    "level": "Shall",
+    "localId": "TR1499",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1500,
+    "level": "Shall",
+    "localId": "TR1500",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1517,
+    "level": "Shall",
+    "localId": "TR1517",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1544,
+    "level": "Shall",
+    "localId": "TR1544",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1563,
+    "level": "Should",
+    "localId": "TR1563",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1579,
+    "level": "Shall",
+    "localId": "DR1579",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1582,
+    "level": "Should",
+    "localId": "TR1582",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1587,
+    "level": "Shall",
+    "localId": "DR1587",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1590,
+    "level": "Should",
+    "localId": "TR1590",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1593,
+    "level": "Shall",
+    "localId": "TR1593",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1594,
+    "level": "Shall",
+    "localId": "TR1594",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1595,
+    "level": "Shall",
+    "localId": "DR1595",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1601,
+    "level": "Shall",
+    "localId": "DR1601",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1633,
+    "level": "Shall",
+    "localId": "TR1633",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1634,
+    "level": "Shall",
+    "localId": "TR1634",
+    "icsGroup": "SDC Service Consumer"
+  },
+  {
+    "requirementNumber": 1636,
+    "level": "Shall",
+    "localId": "TR1636",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1637,
+    "level": "Shall",
+    "localId": "TR1637",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1638,
+    "level": "Shall",
+    "localId": "TR1638",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1639,
+    "level": "Shall",
+    "localId": "TR1639",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1655,
+    "level": "Shall",
+    "localId": "RR1655",
+    "icsGroup": "SDC Service Consumer"
+  },
+  {
+    "requirementNumber": 1662,
+    "level": "Shall",
+    "localId": "RR1662",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1732,
+    "level": "Shall",
+    "localId": "RR1732",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1733,
+    "level": "Should",
+    "localId": "TR1733",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1785,
+    "level": "Shall",
+    "localId": "DR1785",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1814,
+    "level": "Shall",
+    "localId": "TR1814",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1817,
+    "level": "Should",
+    "localId": "RR1817",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1833,
+    "level": "Shall",
+    "localId": "DR1833",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1840,
+    "level": "Shall",
+    "localId": "TR1840",
+    "icsGroup": ""
+  },
+  {
+    "requirementNumber": 1842,
+    "level": "Shall",
+    "localId": "TR1842",
+    "icsGroup": ""
+  },
+  {
+    "requirementNumber": 1912,
+    "level": "Shall",
+    "localId": "TR1912",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1914,
+    "level": "Shall",
+    "localId": "TR1914",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1919,
+    "level": "Shall",
+    "localId": "RR1919",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1920,
+    "level": "Shall",
+    "localId": "RR1920",
+    "icsGroup": "SDC Service Consumer"
+  },
+  {
+    "requirementNumber": 1922,
+    "level": "Shall",
+    "localId": "TR1922",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1930,
+    "level": "Shall",
+    "localId": "DR1930",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1932,
+    "level": "Shall",
+    "localId": "DR1932",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1949,
+    "level": "Shall",
+    "localId": "TR1949",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1959,
+    "level": "Shall",
+    "localId": "TR1959",
+    "icsGroup": "SDC Service Provider"
+  },
+  {
+    "requirementNumber": 1960,
+    "level": "Shall",
+    "localId": "RR1960",
+    "icsGroup": "SDC Service Consumer"
+  },
+  {
+    "requirementNumber": 1840,
+    "level": "Shall",
+    "localId": "TR1840",
+    "icsGroup": "SDC Participant"
+  },
+  {
+    "requirementNumber": 1842,
+    "level": "Shall",
+    "localId": "TR1842",
+    "icsGroup": "SDC Participant"
+  }
+]

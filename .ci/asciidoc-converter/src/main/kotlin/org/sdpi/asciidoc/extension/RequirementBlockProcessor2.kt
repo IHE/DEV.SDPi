@@ -53,7 +53,7 @@ const val BLOCK_NAME_SDPI_REQUIREMENT = "sdpi_requirement"
  * [RELATED]
  * ====
  * . <<ref_w3c_ws_eventing_2006>>, section 3.1
- * . <<ref_ieee_11073_10207_2017>>, §C.57, R0121
+ * . RefRequirement:R0121[standard-id=10207, comment="heed this requirement"]
  * ====
  *
  * ****

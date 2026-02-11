@@ -31,6 +31,9 @@ sealed class Roles {
 
         // Id for the actor option
         OPTION_ID("actor-option-id"),
+
+        // List of actors an actor is grouped with.
+        GROUPING("actor-grouping"),
     }
 
     enum class Transaction(val key: String) {

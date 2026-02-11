@@ -138,6 +138,7 @@ include::../plantuml/vol1-figure-sdpi-a-reporting-example-sequence-diagram.puml[
 ....
 
 [#vol1_clause_sdpi_a_somds_medical_alert_provider,role="actor actor-alias",actor-id="somds_medical_alert_provider",oid-arcs=.35]
+[actor-grouping="somds_provider"]
 ===== SOMDS Medical Alert Provider
 [#vol1_spec_sdpi_a_actor_somds_medical_alert_provider, reftext='SOMDS Medical Alert Provider',role="actor-alias",actor-id="somds_medical_alert_provider"]
 Actor Summary Definition:
@@ -156,6 +157,7 @@ Note that optional capabilities for this specification, as specified in <<vol1_c
 Note that if a <<label_system_type_name_sas>> is being created, it may incorporate both <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> and <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> Actors, both receiving and publishing alerts.
 
 [#vol1_clause_sdpi_a_somds_medical_alert_consumer,role="actor actor-alias",actor-id="somds_medical_alert_consumer",oid-arcs=.34]
+[actor-grouping="somds_consumer"]
 ===== SOMDS Medical Alert Consumer
 [#vol1_spec_sdpi_a_actor_somds_medical_alert_consumer, reftext='SOMDS Medical Alert Consumer',role="actor-alias",actor-id="somds_medical_alert_consumer"]
 Actor Summary Definition:
@@ -174,6 +176,7 @@ Note that optional capabilities for this specification, as specified in <<vol1_c
 Note that if a <<label_system_type_name_sas>> is being created, it may incorporate both <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> and <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> Actors, both receiving and publishing alerts.
 
 [#vol1_clause_sdpi_a_somds_acm_gateway,role="actor actor-alias",actor-id="somds_acm_gateway",oid-arcs=.28]
+[actor-grouping="somds_v2_gateway"]
 ===== SOMDS ACM Gateway
 [#vol1_spec_sdpi_a_actor_somds_acm_gateway, reftext='SOMDS ACM Gateway',role="actor-alias",actor-id="somds_acm_gateway"]
 Actor Summary Definition:

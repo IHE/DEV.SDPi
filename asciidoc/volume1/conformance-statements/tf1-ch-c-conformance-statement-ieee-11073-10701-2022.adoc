@@ -1,0 +1,26 @@
+// Standard Conformance Statement:  IEEE 11073-10701:2022
+
+==== ISO/IEEE 11073-10701 Metric provisioning requirements for participants ICS Tables
+
+load-standard::IEEE-P11073-10701-2022.json[id=10701,cite="ref_ieee_11073_10701_2022"]
+
+*Standard Version:*  ISO/IEEE 11073-10701:2022
+
+ISO/IEEE 11073-10701 defines the requirements for <<term_manufacturer>>s of RefActor:somds_participant[] to support safe, effective and secure exchange of 
+metrics in an <<term_service_oriented_medical_device_system>>
+
+===== SOMDS Participants
+
+.ICSs applicable to all SOMDS Participants
+sdpi_ics_table::[sdpi_req_group="SDC Metric Participant",standard-id=10701]
+
+===== SOMDS Provider
+
+.ICSs applicable to all SOMDS providers
+sdpi_ics_table::[sdpi_req_group="SDC Metric Provider",standard-id=10701]
+
+===== SOMDS Consumer
+
+.ICSs applicable to all SOMDS consumers
+sdpi_ics_table::[sdpi_req_group="SDC Metric Consumer",standard-id=10701]
+
