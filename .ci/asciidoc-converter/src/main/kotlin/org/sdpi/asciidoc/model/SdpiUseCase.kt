@@ -19,10 +19,16 @@ enum class GherkinStepType(val keyword: String) {
  */
 fun resolveStepType(raw: String) = GherkinStepType.entries.firstOrNull { it.keyword == raw.lowercase() }
 
-
+/*
+Stores the information that makes up one step in a use case scenario or
+background requirement.
+ */
 @Serializable
 data class GherkinStep(val step: GherkinStepType, val description: String)
 
+/*
+Stores the steps for a use case scenario.
+ */
 @Serializable
 data class UseCaseScenario(
     val oids: List<String>,
@@ -30,12 +36,18 @@ data class UseCaseScenario(
     val specification: List<GherkinStep>,
 )
 
+/*
+Stores the steps and background to specify a use case.
+ */
 @Serializable
 data class UseCaseSpecification(
     val background: List<GherkinStep>,
     val scenarios: List<UseCaseScenario>,
 )
 
+/*
+Stores the definition of a use case.
+ */
 @Serializable
 data class SdpiUseCase(
     val id: String,
@@ -45,6 +57,10 @@ data class SdpiUseCase(
     val specification: UseCaseSpecification,
 )
 
+/*
+Stores the obligation of one actor to a use case, optionally
+filtered by a profile option.
+ */
 @Serializable
 data class UseCaseObligations(
     val actorId: String,
@@ -52,6 +68,9 @@ data class UseCaseObligations(
     val profileOptionId: String?,
 )
 
+/*
+Stores obligations of profile actors to referenced use cases.
+ */
 @Serializable
 data class SdpiUseCaseSupport(
     val useCaseId: String,

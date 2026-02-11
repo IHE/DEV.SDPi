@@ -27,7 +27,6 @@ class UseCaseIncludeProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_INCLUDE_USE
     }
 
     override fun process(parent: StructuralNode, strUseCaseId: String, attributes: MutableMap<String, Any>): Any? {
-
         val (strProfileId, strProfileOptionId) = findProfileId(parent)
         checkNotNull(strProfileId) {
             logger.error("$BLOCK_MACRO_NAME_INCLUDE_USE_CASE requires a ancestor block within the 'profile' role")

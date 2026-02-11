@@ -13,8 +13,11 @@ import org.sdpi.asciidoc.factories.TransactionTableBuilder
 import org.sdpi.asciidoc.model.*
 
 /**
- * Tree processor to populate requirement table placeholders, which are inserted
- * by Add*Placeholder block macros.
+ * Tree processor to populate table placeholders, which are inserted
+ * by Add*Placeholder block macros. The Add*Placeholder block macros
+ * reserve an empty table and set attributes that selects the information
+ * included in the table. This class reads those attributes, gathers and
+ * fills the table with the selected data.
  */
 class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeprocessor() {
     private companion object : Logging;

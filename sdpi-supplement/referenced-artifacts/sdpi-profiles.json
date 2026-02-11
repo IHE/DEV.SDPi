@@ -2,7 +2,7 @@
     {
         "profileId": "sdpi-p",
         "oids": [
-            "1.3.6.1.4.1.19376.1.6.2.11"
+            "1.3.6.1.4.1.19376.1.6.2.10.2.11"
         ],
         "anchor": "vol1_clause_sdpi_p_profile",
         "label": "Plug-and-trust Profile",
@@ -196,163 +196,6 @@
                 ]
             }
         ],
-        "useCaseReferences": [
-            {
-                "useCaseId": "stad",
-                "actorId": "somds_participant",
-                "obligation": "REQUIRED"
-            },
-            {
-                "useCaseId": "stad",
-                "actorId": "somds_provider",
-                "obligation": "REQUIRED"
-            },
-            {
-                "useCaseId": "stad",
-                "actorId": "somds_consumer",
-                "obligation": "REQUIRED"
-            },
-            {
-                "useCaseId": "stad",
-                "actorId": "somds_connector",
-                "obligation": "REQUIRED"
-            },
-            {
-                "useCaseId": "stad",
-                "actorId": "somds_fhir_gateway",
-                "obligation": "REQUIRED"
-            },
-            {
-                "useCaseId": "stad",
-                "actorId": "somds_v2_gateway",
-                "obligation": "REQUIRED"
-            },
-            {
-                "useCaseId": "stad",
-                "actorId": "somds_sensor_gateway",
-                "obligation": "REQUIRED"
-            },
-            {
-                "useCaseId": "stad",
-                "actorId": "somds_smart_app",
-                "obligation": "REQUIRED"
-            },
-            {
-                "useCaseId": "stad",
-                "actorId": "biceps_content_creator",
-                "obligation": "REQUIRED"
-            },
-            {
-                "useCaseId": "stad",
-                "actorId": "biceps_content_consumer",
-                "obligation": "REQUIRED"
-            },
-            {
-                "useCaseId": "stad",
-                "actorId": "discovery_proxy",
-                "obligation": "REQUIRED"
-            },
-            {
-                "useCaseId": "sicdsp",
-                "actorId": "somds_consumer",
-                "obligation": "OPTIONAL"
-            },
-            {
-                "useCaseId": "sicdsp",
-                "actorId": "somds_connector",
-                "obligation": "OPTIONAL"
-            },
-            {
-                "useCaseId": "sicdsp",
-                "actorId": "somds_smart_app",
-                "obligation": "OPTIONAL"
-            },
-            {
-                "useCaseId": "sicdsp",
-                "actorId": "biceps_content_consumer",
-                "obligation": "OPTIONAL"
-            },
-            {
-                "useCaseId": "sicdmp",
-                "actorId": "somds_consumer",
-                "obligation": "OPTIONAL"
-            },
-            {
-                "useCaseId": "sicdmp",
-                "actorId": "somds_connector",
-                "obligation": "OPTIONAL"
-            },
-            {
-                "useCaseId": "sicdmp",
-                "actorId": "somds_smart_app",
-                "obligation": "OPTIONAL"
-            },
-            {
-                "useCaseId": "sicdmp",
-                "actorId": "biceps_content_consumer",
-                "obligation": "OPTIONAL"
-            },
-            {
-                "useCaseId": "ddes",
-                "actorId": "somds_connector",
-                "obligation": "REQUIRED"
-            },
-            {
-                "useCaseId": "ddes",
-                "actorId": "somds_fhir_gateway",
-                "obligation": "REQUIRED"
-            },
-            {
-                "useCaseId": "ddes",
-                "actorId": "somds_v2_gateway",
-                "obligation": "REQUIRED"
-            },
-            {
-                "useCaseId": "ddes",
-                "actorId": "somds_sensor_gateway",
-                "obligation": "REQUIRED"
-            },
-            {
-                "useCaseId": "acns",
-                "actorId": "somds_connector",
-                "obligation": "OPTIONAL"
-            },
-            {
-                "useCaseId": "acns",
-                "actorId": "somds_fhir_gateway",
-                "obligation": "OPTIONAL"
-            },
-            {
-                "useCaseId": "acns",
-                "actorId": "somds_v2_gateway",
-                "obligation": "OPTIONAL"
-            },
-            {
-                "useCaseId": "acns",
-                "actorId": "somds_sensor_gateway",
-                "obligation": "OPTIONAL"
-            },
-            {
-                "useCaseId": "aars",
-                "actorId": "somds_connector",
-                "obligation": "OPTIONAL"
-            },
-            {
-                "useCaseId": "aars",
-                "actorId": "somds_fhir_gateway",
-                "obligation": "OPTIONAL"
-            },
-            {
-                "useCaseId": "aars",
-                "actorId": "somds_v2_gateway",
-                "obligation": "OPTIONAL"
-            },
-            {
-                "useCaseId": "aars",
-                "actorId": "somds_sensor_gateway",
-                "obligation": "OPTIONAL"
-            }
-        ],
         "contentModuleReferences": [
             {
                 "contentModuleId": "biceps",
@@ -433,8 +276,7 @@
             {
                 "id": "sdpi-p-managed-discovery",
                 "oids": [
-                    "1.3.6.1.4.1.19376.1.6.11.1",
-                    "1.3.6.1.4.1.19376.1.6.11.1.1"
+                    "1.3.6.1.4.1.19376.1.6.2.10.11.1"
                 ],
                 "anchor": "vol1_clause_sdpi_p_option_managed_discovery",
                 "label": "Managed Discovery Option",
@@ -474,8 +316,7 @@
             {
                 "id": "sdpi-p-gateway-direction-export",
                 "oids": [
-                    "1.3.6.1.4.1.19376.1.6.11.2",
-                    "1.3.6.1.4.1.19376.1.6.11.2.1"
+                    "1.3.6.1.4.1.19376.1.6.2.10.11.2"
                 ],
                 "anchor": "vol1_spec_sdpi_p_option_gateway_export",
                 "label": "Gateway Export Direction Option",
@@ -575,8 +416,7 @@
             {
                 "id": "sdpi-p-gateway-direction-import",
                 "oids": [
-                    "1.3.6.1.4.1.19376.1.6.11.3",
-                    "1.3.6.1.4.1.19376.1.6.11.3.1"
+                    "1.3.6.1.4.1.19376.1.6.2.10.11.3"
                 ],
                 "anchor": "vol1_spec_sdpi_p_option_gateway_import",
                 "label": "Gateway Import Direction Option",
@@ -678,7 +518,7 @@
             {
                 "id": "somds_participant",
                 "oids": [
-                    "1.3.6.1.4.1.19376.1.6.3.40"
+                    "1.3.6.1.4.1.19376.1.6.2.10.3.40"
                 ],
                 "label": "SOMDS Participant",
                 "profile": "sdpi-p",
@@ -687,7 +527,7 @@
             {
                 "id": "somds_provider",
                 "oids": [
-                    "1.3.6.1.4.1.19376.1.6.3.41"
+                    "1.3.6.1.4.1.19376.1.6.2.10.3.41"
                 ],
                 "label": "SOMDS Provider",
                 "profile": "sdpi-p",
@@ -696,7 +536,7 @@
             {
                 "id": "somds_consumer",
                 "oids": [
-                    "1.3.6.1.4.1.19376.1.6.3.30"
+                    "1.3.6.1.4.1.19376.1.6.2.10.3.30"
                 ],
                 "label": "SOMDS Consumer",
                 "profile": "sdpi-p",
@@ -705,7 +545,7 @@
             {
                 "id": "somds_connector",
                 "oids": [
-                    "1.3.6.1.4.1.19376.1.6.3.29"
+                    "1.3.6.1.4.1.19376.1.6.2.10.3.29"
                 ],
                 "label": "SOMDS Connector",
                 "profile": "sdpi-p",
@@ -714,7 +554,7 @@
             {
                 "id": "somds_fhir_gateway",
                 "oids": [
-                    "1.3.6.1.4.1.19376.1.6.3.33"
+                    "1.3.6.1.4.1.19376.1.6.2.10.3.100"
                 ],
                 "label": "SOMDS FHIR Gateway",
                 "profile": "sdpi-p",
@@ -723,7 +563,7 @@
             {
                 "id": "somds_v2_gateway",
                 "oids": [
-                    "1.3.6.1.4.1.19376.1.6.3.44"
+                    "1.3.6.1.4.1.19376.1.6.2.10.3.44"
                 ],
                 "label": "SOMDS V2 Gateway",
                 "profile": "sdpi-p",
@@ -732,7 +572,7 @@
             {
                 "id": "somds_sensor_gateway",
                 "oids": [
-                    "1.3.6.1.4.1.19376.1.6.3.42"
+                    "1.3.6.1.4.1.19376.1.6.2.10.3.42"
                 ],
                 "label": "SOMDS Sensor Gateway",
                 "profile": "sdpi-p",
@@ -741,7 +581,7 @@
             {
                 "id": "somds_smart_app",
                 "oids": [
-                    "1.3.6.1.4.1.19376.1.6.3.43"
+                    "1.3.6.1.4.1.19376.1.6.2.10.3.43"
                 ],
                 "label": "SOMDS Smart App Platform",
                 "profile": "sdpi-p",
@@ -750,7 +590,7 @@
             {
                 "id": "biceps_content_creator",
                 "oids": [
-                    "1.3.6.1.4.1.19376.1.6.3.27"
+                    "1.3.6.1.4.1.19376.1.6.2.10.3.27"
                 ],
                 "label": "BICEPS Content Creator",
                 "profile": "sdpi-p",
@@ -759,7 +599,7 @@
             {
                 "id": "biceps_content_consumer",
                 "oids": [
-                    "1.3.6.1.4.1.19376.1.6.3.26"
+                    "1.3.6.1.4.1.19376.1.6.2.10.3.26"
                 ],
                 "label": "BICEPS Content Consumer",
                 "profile": "sdpi-p",
@@ -768,18 +608,198 @@
             {
                 "id": "discovery_proxy",
                 "oids": [
-                    "1.3.6.1.4.1.19376.1.6.3.32"
+                    "1.3.6.1.4.1.19376.1.6.2.10.3.32"
                 ],
                 "label": "Discovery Proxy",
                 "profile": "sdpi-p",
                 "anchor": "vol1_clause_sdpi_p_discovery_proxy"
+            }
+        ],
+        "use-case-support": [
+            {
+                "useCaseId": "stad",
+                "oid": [
+                    "1.3.6.1.4.1.19376.1.6.2.10.2.11.12.1"
+                ],
+                "anchor": "_synchronized_time_across_devices_stad",
+                "obligations": [
+                    {
+                        "actorId": "somds_participant",
+                        "obligation": "REQUIRED"
+                    },
+                    {
+                        "actorId": "somds_provider",
+                        "obligation": "REQUIRED"
+                    },
+                    {
+                        "actorId": "somds_consumer",
+                        "obligation": "REQUIRED"
+                    },
+                    {
+                        "actorId": "somds_connector",
+                        "obligation": "REQUIRED"
+                    },
+                    {
+                        "actorId": "somds_fhir_gateway",
+                        "obligation": "REQUIRED"
+                    },
+                    {
+                        "actorId": "somds_v2_gateway",
+                        "obligation": "REQUIRED"
+                    },
+                    {
+                        "actorId": "somds_sensor_gateway",
+                        "obligation": "REQUIRED"
+                    },
+                    {
+                        "actorId": "somds_smart_app",
+                        "obligation": "REQUIRED"
+                    },
+                    {
+                        "actorId": "biceps_content_creator",
+                        "obligation": "REQUIRED"
+                    },
+                    {
+                        "actorId": "biceps_content_consumer",
+                        "obligation": "REQUIRED"
+                    },
+                    {
+                        "actorId": "discovery_proxy",
+                        "obligation": "REQUIRED"
+                    }
+                ]
+            },
+            {
+                "useCaseId": "sicdsp",
+                "oid": [
+                    "1.3.6.1.4.1.19376.1.6.2.10.2.11.12.2"
+                ],
+                "anchor": "_standalone_icu_dashboard_single_patient_sicdsp",
+                "obligations": [
+                    {
+                        "actorId": "somds_consumer",
+                        "obligation": "OPTIONAL"
+                    },
+                    {
+                        "actorId": "somds_connector",
+                        "obligation": "OPTIONAL"
+                    },
+                    {
+                        "actorId": "somds_smart_app",
+                        "obligation": "OPTIONAL"
+                    },
+                    {
+                        "actorId": "biceps_content_consumer",
+                        "obligation": "OPTIONAL"
+                    }
+                ]
+            },
+            {
+                "useCaseId": "sicdmp",
+                "oid": [
+                    "1.3.6.1.4.1.19376.1.6.2.10.2.11.12.3"
+                ],
+                "anchor": "_standalone_icu_dashboard_multiple_patient_sicdmp",
+                "obligations": [
+                    {
+                        "actorId": "somds_consumer",
+                        "obligation": "OPTIONAL"
+                    },
+                    {
+                        "actorId": "somds_connector",
+                        "obligation": "OPTIONAL"
+                    },
+                    {
+                        "actorId": "somds_smart_app",
+                        "obligation": "OPTIONAL"
+                    },
+                    {
+                        "actorId": "biceps_content_consumer",
+                        "obligation": "OPTIONAL"
+                    }
+                ]
+            },
+            {
+                "useCaseId": "ddes",
+                "oid": [
+                    "1.3.6.1.4.1.19376.1.6.2.10.2.11.12.4"
+                ],
+                "anchor": "_device_data_to_enterprise_systems_ddes",
+                "obligations": [
+                    {
+                        "actorId": "somds_connector",
+                        "obligation": "REQUIRED"
+                    },
+                    {
+                        "actorId": "somds_fhir_gateway",
+                        "obligation": "REQUIRED"
+                    },
+                    {
+                        "actorId": "somds_v2_gateway",
+                        "obligation": "REQUIRED"
+                    },
+                    {
+                        "actorId": "somds_sensor_gateway",
+                        "obligation": "REQUIRED"
+                    }
+                ]
+            },
+            {
+                "useCaseId": "acns",
+                "oid": [
+                    "1.3.6.1.4.1.19376.1.6.2.10.2.11.12.5"
+                ],
+                "anchor": "_alerts_to_clinician_notification_systems_acns",
+                "obligations": [
+                    {
+                        "actorId": "somds_connector",
+                        "obligation": "OPTIONAL"
+                    },
+                    {
+                        "actorId": "somds_fhir_gateway",
+                        "obligation": "OPTIONAL"
+                    },
+                    {
+                        "actorId": "somds_v2_gateway",
+                        "obligation": "OPTIONAL"
+                    },
+                    {
+                        "actorId": "somds_sensor_gateway",
+                        "obligation": "OPTIONAL"
+                    }
+                ]
+            },
+            {
+                "useCaseId": "aars",
+                "oid": [
+                    "1.3.6.1.4.1.19376.1.6.2.10.2.11.12.6"
+                ],
+                "anchor": "_alerts_to_alert_recording_systems_aars",
+                "obligations": [
+                    {
+                        "actorId": "somds_connector",
+                        "obligation": "OPTIONAL"
+                    },
+                    {
+                        "actorId": "somds_fhir_gateway",
+                        "obligation": "OPTIONAL"
+                    },
+                    {
+                        "actorId": "somds_v2_gateway",
+                        "obligation": "OPTIONAL"
+                    },
+                    {
+                        "actorId": "somds_sensor_gateway",
+                        "obligation": "OPTIONAL"
+                    }
+                ]
             }
         ]
     },
     {
         "profileId": "sdpi-r",
         "oids": [
-            "1.3.6.1.4.1.19376.1.6.2.12"
+            "1.3.6.1.4.1.19376.1.6.2.10.2.12"
         ],
         "anchor": "vol1_clause_sdpi_r_profile",
         "label": "Reporting Profile",
@@ -845,33 +865,11 @@
                 ]
             }
         ],
-        "useCaseReferences": [
-            {
-                "useCaseId": "sicdsp",
-                "actorId": "somds_medical_data_consumer",
-                "obligation": "OPTIONAL"
-            },
-            {
-                "useCaseId": "sicdmp",
-                "actorId": "somds_medical_data_consumer",
-                "obligation": "OPTIONAL"
-            },
-            {
-                "useCaseId": "ddes",
-                "actorId": "somds_dec_gateway",
-                "obligation": "OPTIONAL"
-            },
-            {
-                "useCaseId": "ddes",
-                "actorId": "somds_fhir_medical_data_gateway",
-                "obligation": "OPTIONAL"
-            }
-        ],
         "actors": [
             {
                 "id": "somds_medical_data_provider",
                 "oids": [
-                    "1.3.6.1.4.1.19376.1.6.3.39"
+                    "1.3.6.1.4.1.19376.1.6.2.10.3.39"
                 ],
                 "label": "SOMDS Medical Data Provider",
                 "profile": "sdpi-r",
@@ -880,7 +878,7 @@
             {
                 "id": "somds_medical_data_consumer",
                 "oids": [
-                    "1.3.6.1.4.1.19376.1.6.3.38"
+                    "1.3.6.1.4.1.19376.1.6.2.10.3.38"
                 ],
                 "label": "SOMDS Medical Data Consumer",
                 "profile": "sdpi-r",
@@ -889,7 +887,7 @@
             {
                 "id": "somds_dec_gateway",
                 "oids": [
-                    "1.3.6.1.4.1.19376.1.6.3.31"
+                    "1.3.6.1.4.1.19376.1.6.2.10.3.31"
                 ],
                 "label": "SOMDS DEC Gateway",
                 "profile": "sdpi-r",
@@ -898,18 +896,63 @@
             {
                 "id": "somds_fhir_medical_data_gateway",
                 "oids": [
-                    "1.3.6.1.4.1.19376.1.6.3.33"
+                    "1.3.6.1.4.1.19376.1.6.2.10.3.33"
                 ],
                 "label": "SOMDS FHIR Medical Data Gateway",
                 "profile": "sdpi-r",
                 "anchor": "vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway"
+            }
+        ],
+        "use-case-support": [
+            {
+                "useCaseId": "sicdsp",
+                "oid": [
+                    "1.3.6.1.4.1.19376.1.6.2.10.2.12.12.1"
+                ],
+                "anchor": "_standalone_icu_dashboard_single_patient_sicdsp_2",
+                "obligations": [
+                    {
+                        "actorId": "somds_medical_data_consumer",
+                        "obligation": "OPTIONAL"
+                    }
+                ]
+            },
+            {
+                "useCaseId": "sicdmp",
+                "oid": [
+                    "1.3.6.1.4.1.19376.1.6.2.10.2.12.12.2"
+                ],
+                "anchor": "_standalone_icu_dashboard_multiple_patient_sicdmp_2",
+                "obligations": [
+                    {
+                        "actorId": "somds_medical_data_consumer",
+                        "obligation": "OPTIONAL"
+                    }
+                ]
+            },
+            {
+                "useCaseId": "ddes",
+                "oid": [
+                    "1.3.6.1.4.1.19376.1.6.2.10.2.12.12.3"
+                ],
+                "anchor": "_device_data_to_enterprise_systems_ddes_2",
+                "obligations": [
+                    {
+                        "actorId": "somds_dec_gateway",
+                        "obligation": "OPTIONAL"
+                    },
+                    {
+                        "actorId": "somds_fhir_medical_data_gateway",
+                        "obligation": "OPTIONAL"
+                    }
+                ]
             }
         ]
     },
     {
         "profileId": "sdpi-a",
         "oids": [
-            "1.3.6.1.4.1.19376.1.6.2.13"
+            "1.3.6.1.4.1.19376.1.6.2.10.2.13"
         ],
         "anchor": "vol1_clause_sdpi_a_profile",
         "label": "Alerting Profile",
@@ -1028,34 +1071,11 @@
                 ]
             }
         ],
-        "useCaseReferences": [
-            {
-                "useCaseId": "sicdsp",
-                "actorId": "somds_medical_alert_consumer",
-                "obligation": "OPTIONAL"
-            },
-            {
-                "useCaseId": "sicdmp",
-                "actorId": "somds_medical_alert_consumer",
-                "obligation": "OPTIONAL"
-            },
-            {
-                "useCaseId": "acns",
-                "actorId": "somds_acm_gateway",
-                "obligation": "OPTIONAL"
-            },
-            {
-                "useCaseId": "aars",
-                "actorId": "somds_acm_gateway",
-                "obligation": "OPTIONAL"
-            }
-        ],
         "options": [
             {
                 "id": "alert_delegation",
                 "oids": [
-                    "1.3.6.1.4.1.19376.1.6.11.4",
-                    "1.3.6.1.4.1.19376.1.6.11.4.1"
+                    "1.3.6.1.4.1.19376.1.6.2.10.11.4"
                 ],
                 "anchor": "vol1_clause_sdpi_a_actor_option_alert_delegation",
                 "label": "Alert Delegation Option",
@@ -1097,8 +1117,7 @@
             {
                 "id": "alert_user_acknowledgement",
                 "oids": [
-                    "1.3.6.1.4.1.19376.1.6.11.5",
-                    "1.3.6.1.4.1.19376.1.6.11.5.1"
+                    "1.3.6.1.4.1.19376.1.6.2.10.11.5"
                 ],
                 "anchor": "vol1_clause_sdpi_a_actor_option_alert_user_acknowledgement",
                 "label": "Alert User Acknowledgement Option"
@@ -1106,8 +1125,7 @@
             {
                 "id": "remote_alert_signaling",
                 "oids": [
-                    "1.3.6.1.4.1.19376.1.6.11.6",
-                    "1.3.6.1.4.1.19376.1.6.11.6.1"
+                    "1.3.6.1.4.1.19376.1.6.2.10.11.6"
                 ],
                 "anchor": "vol1_clause_sdpi_a_actor_option_remote_alert_signaling",
                 "label": "Remote Alert Signaling",
@@ -1149,7 +1167,7 @@
             {
                 "id": "somds_medical_alert_provider",
                 "oids": [
-                    "1.3.6.1.4.1.19376.1.6.3.35"
+                    "1.3.6.1.4.1.19376.1.6.2.10.3.35"
                 ],
                 "label": "SOMDS Medical Alert Provider",
                 "profile": "sdpi-a",
@@ -1158,7 +1176,7 @@
             {
                 "id": "somds_medical_alert_consumer",
                 "oids": [
-                    "1.3.6.1.4.1.19376.1.6.3.34"
+                    "1.3.6.1.4.1.19376.1.6.2.10.3.34"
                 ],
                 "label": "SOMDS Medical Alert Consumer",
                 "profile": "sdpi-a",
@@ -1167,18 +1185,72 @@
             {
                 "id": "somds_acm_gateway",
                 "oids": [
-                    "1.3.6.1.4.1.19376.1.6.3.28"
+                    "1.3.6.1.4.1.19376.1.6.2.10.3.28"
                 ],
                 "label": "SOMDS ACM Gateway",
                 "profile": "sdpi-a",
                 "anchor": "vol1_clause_sdpi_a_somds_acm_gateway"
+            }
+        ],
+        "use-case-support": [
+            {
+                "useCaseId": "sicdsp",
+                "oid": [
+                    "1.3.6.1.4.1.19376.1.6.2.10.2.13.12.1"
+                ],
+                "anchor": "_standalone_icu_dashboard_single_patient_sicdsp_3",
+                "obligations": [
+                    {
+                        "actorId": "somds_medical_alert_consumer",
+                        "obligation": "OPTIONAL"
+                    }
+                ]
+            },
+            {
+                "useCaseId": "sicdmp",
+                "oid": [
+                    "1.3.6.1.4.1.19376.1.6.2.10.2.13.12.2"
+                ],
+                "anchor": "_standalone_icu_dashboard_multiple_patient_sicdmp_3",
+                "obligations": [
+                    {
+                        "actorId": "somds_medical_alert_consumer",
+                        "obligation": "OPTIONAL"
+                    }
+                ]
+            },
+            {
+                "useCaseId": "acns",
+                "oid": [
+                    "1.3.6.1.4.1.19376.1.6.2.10.2.13.12.3"
+                ],
+                "anchor": "_alerts_to_clinician_notification_systems_acns_2",
+                "obligations": [
+                    {
+                        "actorId": "somds_acm_gateway",
+                        "obligation": "OPTIONAL"
+                    }
+                ]
+            },
+            {
+                "useCaseId": "aars",
+                "oid": [
+                    "1.3.6.1.4.1.19376.1.6.2.10.2.13.12.3"
+                ],
+                "anchor": "_alerts_to_alert_recording_systems_aars_2",
+                "obligations": [
+                    {
+                        "actorId": "somds_acm_gateway",
+                        "obligation": "OPTIONAL"
+                    }
+                ]
             }
         ]
     },
     {
         "profileId": "sdpi-xc",
         "oids": [
-            "1.3.6.1.4.1.19376.1.6.2.14"
+            "1.3.6.1.4.1.19376.1.6.2.10.2.14"
         ],
         "anchor": "vol1_clause_sdpi_xc_profile",
         "label": "External Control Profile",
@@ -1220,7 +1292,7 @@
             {
                 "id": "somds_medical_control_provider",
                 "oids": [
-                    "1.3.6.1.4.1.19376.1.6.3.37"
+                    "1.3.6.1.4.1.19376.1.6.2.10.3.37"
                 ],
                 "label": "SOMDS Medical Control Provider",
                 "profile": "sdpi-xc",
@@ -1229,7 +1301,7 @@
             {
                 "id": "somds_medical_control_consumer",
                 "oids": [
-                    "1.3.6.1.4.1.19376.1.6.3.38"
+                    "1.3.6.1.4.1.19376.1.6.2.10.3.36"
                 ],
                 "label": "SOMDS Medical Control Consumer",
                 "profile": "sdpi-xc",

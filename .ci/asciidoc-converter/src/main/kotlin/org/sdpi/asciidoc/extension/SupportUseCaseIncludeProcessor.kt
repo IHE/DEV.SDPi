@@ -12,14 +12,18 @@ import org.sdpi.asciidoc.model.parseObligation
 
 const val BLOCK_MACRO_NAME_SUPPORT_USE_CASE = "sdpi_support_use_case"
 
+/*
+Collects actor obligations to use cases identified in profiles. Must be in a
+section with the Roles.UseCaseSupport.SECTION_ROLE.key role. Target is the
+actor, parameter defines the obligation. For example:
+    sdpi_support_use_case::somds_participant[support=required]
+ */
 @Name(BLOCK_MACRO_NAME_SUPPORT_USE_CASE)
 class SupportUseCaseIncludeProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_SUPPORT_USE_CASE) {
     private companion object : Logging
 
     // Keyed by profile id, this maps profiles to use case references.
     private val useCaseReferences = mutableMapOf<String, MutableList<SdpiProfileUseCaseReference>>()
-
-    fun useCases() = useCaseReferences
 
     fun useCaseReferences(strProfile: String, strUseCaseId: String): List<SdpiProfileUseCaseReference>? {
         return useCaseReferences[strProfile]?.filter{it.useCaseReference.useCaseId == strUseCaseId}

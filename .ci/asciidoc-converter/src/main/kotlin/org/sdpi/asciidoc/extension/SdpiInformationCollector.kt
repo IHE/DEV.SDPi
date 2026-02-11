@@ -8,6 +8,12 @@ import org.asciidoctor.extension.Treeprocessor
 import org.sdpi.asciidoc.*
 import org.sdpi.asciidoc.model.*
 
+/*
+A tree processor that gathers information as the document is processed.
+For example, we identify all the profiles, the actors and options they
+define. Information gathered is validated, to ensure no two requirements
+have the same id, for example.
+ */
 class SdpiInformationCollector(
     private val bibliography: BibliographyCollector,
     private val transactionActors: TransactionActorsProcessor,
