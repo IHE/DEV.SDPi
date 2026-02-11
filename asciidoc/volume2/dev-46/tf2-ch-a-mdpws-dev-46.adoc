@@ -10,7 +10,7 @@
 [#vol2_clause_appendix_mdpws_dev_46]
 ==== MDPWS: Update Network Presence  [DEV-46]
 
-This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_46>>.
+This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_46>>, corresponding to the WS-Discovery managed mode bound to HTTP transmission.
 
 Additional implementation directions are defined in <<vol2_clause_appendix_mdpws_discovery_proxy>>.
 
