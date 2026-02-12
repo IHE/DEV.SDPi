@@ -36,7 +36,7 @@ image::../images/vol1-diagram-use-case-sicdmp-tech-view.svg[]
 ==== Scenarios
 
 [role=use-case-scenario,sdpi_scenario="ICU Devices are Accessible to the Dashboard"]
-[oid-arcs=".1,.1.1"]
+[oid-arcs=".1"]
 ===== Scenario: <<acronym_sicdmp>> {var_use_case_id}.1 - ICU Devices are Accessible to the Dashboard
 
 [role=use-case-steps]
@@ -49,7 +49,7 @@ image::../images/vol1-diagram-use-case-sicdmp-tech-view.svg[]
 ====
 
 [role=use-case-scenario,sdpi_scenario="ICU Devices are Inaccessible to the Dashboard"]
-[oid-arcs=".2,.2.1"]
+[oid-arcs=".2"]
 ===== Scenario: <<acronym_sicdmp>> {var_use_case_id}.2 - ICU Devices are Inaccessible to the Dashboard
 
 [role=use-case-steps]
@@ -60,7 +60,7 @@ image::../images/vol1-diagram-use-case-sicdmp-tech-view.svg[]
 ====
 
 [role=use-case-scenario,sdpi_scenario="One or more ICU Devices are Inaccessible to the Dashboard"]
-[oid-arcs=".3,.3.1"]
+[oid-arcs=".3"]
 ===== Scenario: <<acronym_sicdmp>> {var_use_case_id}.3 - One or more ICU Devices are Inaccessible to the Dashboard
 
 [role=use-case-steps]

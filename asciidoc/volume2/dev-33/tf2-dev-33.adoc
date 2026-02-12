@@ -7,7 +7,7 @@
 
 //reset|+1|off
 [#vol2_clause_dev_33,sdpi_offset=33]
-[role=transaction,transaction-id=DEV-33,oid-arcs=".23.1,.33"]
+[role=transaction,transaction-id=DEV-33]
 === Retrieve Localization Information [{var_transaction_id}]
 
 ==== Scope

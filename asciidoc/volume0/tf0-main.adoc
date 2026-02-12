@@ -24,6 +24,7 @@ include::tf0-ch-b-transactions.adoc[]
 
 include::tf0-ch-d-glossary.adoc[]
 
+[#vol0_xml_namespaces]
 === XML Namespaces
 
 The XML namespace URI that is used by this specification is: `urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1`.

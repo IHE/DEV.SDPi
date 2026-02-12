@@ -4,7 +4,7 @@
 
 // 8.3.1
 [#vol3_clause_device_infusion_pump,sdpi_offset=1]
-[role=content-module,content-module-id=infusion-pump,oid-arcs=".11,.11.1"]
+[role=content-module,content-module-id=infusion-pump,oid-arcs=".11"]
 ==== Device:  Infusion Pump
 
 

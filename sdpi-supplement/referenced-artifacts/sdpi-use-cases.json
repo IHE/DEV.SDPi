@@ -2,7 +2,7 @@
     "stad": {
         "id": "stad",
         "oids": [
-            "1.3.6.1.4.1.19376.1.6.9.1"
+            "1.3.6.1.4.1.19376.1.6.2.10.9.1"
         ],
         "title": "Synchronized Time Across Devices",
         "anchor": "vol1_clause_appendix_c_use_case_stad",
@@ -20,8 +20,7 @@
             "scenarios": [
                 {
                     "oids": [
-                        "1.3.6.1.4.1.19376.1.6.9.1.1",
-                        "1.3.6.1.4.1.19376.1.6.9.1.1.1"
+                        "1.3.6.1.4.1.19376.1.6.2.10.9.1.1"
                     ],
                     "title": "Device is connected to the MD LAN network with a Time Source service",
                     "specification": [
@@ -41,8 +40,7 @@
                 },
                 {
                     "oids": [
-                        "1.3.6.1.4.1.19376.1.6.9.1.2",
-                        "1.3.6.1.4.1.19376.1.6.9.1.2.1"
+                        "1.3.6.1.4.1.19376.1.6.2.10.9.1.2"
                     ],
                     "title": "Device is connected to the MD LAN network and a user wants to change the device's time",
                     "specification": [
@@ -62,8 +60,7 @@
                 },
                 {
                     "oids": [
-                        "1.3.6.1.4.1.19376.1.6.9.1.3",
-                        "1.3.6.1.4.1.19376.1.6.9.1.3.1"
+                        "1.3.6.1.4.1.19376.1.6.2.10.9.1.3"
                     ],
                     "title": "Device is connected to the MD LAN network and cannot connect to a TS Service",
                     "specification": [
@@ -83,8 +80,7 @@
                 },
                 {
                     "oids": [
-                        "1.3.6.1.4.1.19376.1.6.9.1.4",
-                        "1.3.6.1.4.1.19376.1.6.9.1.4.1"
+                        "1.3.6.1.4.1.19376.1.6.2.10.9.1.4"
                     ],
                     "title": "Devices are operational in the MD LAN network but cannot access the TS Service",
                     "specification": [
@@ -124,8 +120,7 @@
                 },
                 {
                     "oids": [
-                        "1.3.6.1.4.1.19376.1.6.9.1.5",
-                        "1.3.6.1.4.1.19376.1.6.9.1.5.1"
+                        "1.3.6.1.4.1.19376.1.6.2.10.9.1.5"
                     ],
                     "title": "Devices are operational in the MD LAN network but cannot access the TS Service and clock drift is unacceptable",
                     "specification": [
@@ -165,8 +160,7 @@
                 },
                 {
                     "oids": [
-                        "1.3.6.1.4.1.19376.1.6.9.1.6",
-                        "1.3.6.1.4.1.19376.1.6.9.1.6.1"
+                        "1.3.6.1.4.1.19376.1.6.2.10.9.1.6"
                     ],
                     "title": "A device, operational in the MD LAN network, determines a non-slewing time adjustment is required",
                     "specification": [
@@ -194,8 +188,7 @@
                 },
                 {
                     "oids": [
-                        "1.3.6.1.4.1.19376.1.6.9.1.7",
-                        "1.3.6.1.4.1.19376.1.6.9.1.7.1"
+                        "1.3.6.1.4.1.19376.1.6.2.10.9.1.7"
                     ],
                     "title": "A somds consumer, operational in the MD LAN network, receives data affected by an abrupt time adjustment",
                     "specification": [
@@ -219,7 +212,7 @@
     "sicdsp": {
         "id": "sicdsp",
         "oids": [
-            "1.3.6.1.4.1.19376.1.6.9.2"
+            "1.3.6.1.4.1.19376.1.6.2.10.9.2"
         ],
         "title": "Standalone ICU Dashboard Single Patient",
         "anchor": "vol1_clause_appendix_c_use_case_sicdsp",
@@ -241,8 +234,7 @@
             "scenarios": [
                 {
                     "oids": [
-                        "1.3.6.1.4.1.19376.1.6.9.2.1",
-                        "1.3.6.1.4.1.19376.1.6.9.2.1.1"
+                        "1.3.6.1.4.1.19376.1.6.2.10.9.2.1"
                     ],
                     "title": "Devices are Accessible to the Dashboard",
                     "specification": [
@@ -262,8 +254,7 @@
                 },
                 {
                     "oids": [
-                        "1.3.6.1.4.1.19376.1.6.9.2.2",
-                        "1.3.6.1.4.1.19376.1.6.9.2.2.1"
+                        "1.3.6.1.4.1.19376.1.6.2.10.9.2.2"
                     ],
                     "title": "ICU Devices are Inaccessible to the Dashboard",
                     "specification": [
@@ -279,8 +270,7 @@
                 },
                 {
                     "oids": [
-                        "1.3.6.1.4.1.19376.1.6.9.2.3",
-                        "1.3.6.1.4.1.19376.1.6.9.2.3.1"
+                        "1.3.6.1.4.1.19376.1.6.2.10.9.2.3"
                     ],
                     "title": "One or more ICU devices become Inaccessible to the Dashboard",
                     "specification": [
@@ -300,7 +290,7 @@
     "sicdmp": {
         "id": "sicdmp",
         "oids": [
-            "1.3.6.1.4.1.19376.1.6.9.3"
+            "1.3.6.1.4.1.19376.1.6.2.10.9.3"
         ],
         "title": "Standalone ICU Dashboard Multiple Patient",
         "anchor": "vol1_clause_appendix_c_use_case_sicdmp",
@@ -322,8 +312,7 @@
             "scenarios": [
                 {
                     "oids": [
-                        "1.3.6.1.4.1.19376.1.6.9.3.1",
-                        "1.3.6.1.4.1.19376.1.6.9.3.1.1"
+                        "1.3.6.1.4.1.19376.1.6.2.10.9.3.1"
                     ],
                     "title": "ICU Devices are Accessible to the Dashboard",
                     "specification": [
@@ -343,8 +332,7 @@
                 },
                 {
                     "oids": [
-                        "1.3.6.1.4.1.19376.1.6.9.3.2",
-                        "1.3.6.1.4.1.19376.1.6.9.3.2.1"
+                        "1.3.6.1.4.1.19376.1.6.2.10.9.3.2"
                     ],
                     "title": "ICU Devices are Inaccessible to the Dashboard",
                     "specification": [
@@ -360,8 +348,7 @@
                 },
                 {
                     "oids": [
-                        "1.3.6.1.4.1.19376.1.6.9.3.3",
-                        "1.3.6.1.4.1.19376.1.6.9.3.3.1"
+                        "1.3.6.1.4.1.19376.1.6.2.10.9.3.3"
                     ],
                     "title": "One or more ICU Devices are Inaccessible to the Dashboard",
                     "specification": [
@@ -381,7 +368,7 @@
     "ddes": {
         "id": "ddes",
         "oids": [
-            "1.3.6.1.4.1.19376.1.6.9.4"
+            "1.3.6.1.4.1.19376.1.6.2.10.9.4"
         ],
         "title": "Device Data to Enterprise Systems",
         "anchor": "vol1_clause_appendix_c_use_case_ddes",
@@ -407,8 +394,7 @@
             "scenarios": [
                 {
                     "oids": [
-                        "1.3.6.1.4.1.19376.1.6.9.4.1",
-                        "1.3.6.1.4.1.19376.1.6.9.4.1.1"
+                        "1.3.6.1.4.1.19376.1.6.2.10.9.4.1"
                     ],
                     "title": "New in scope device is connected to network with <<acronym_dgw>> service",
                     "specification": [
@@ -428,8 +414,7 @@
                 },
                 {
                     "oids": [
-                        "1.3.6.1.4.1.19376.1.6.9.4.2",
-                        "1.3.6.1.4.1.19376.1.6.9.4.2.1"
+                        "1.3.6.1.4.1.19376.1.6.2.10.9.4.2"
                     ],
                     "title": "<<label_system_type_name_dgw>> Service is connected to the EHR",
                     "specification": [
@@ -445,8 +430,7 @@
                 },
                 {
                     "oids": [
-                        "1.3.6.1.4.1.19376.1.6.9.4.3",
-                        "1.3.6.1.4.1.19376.1.6.9.4.3.1"
+                        "1.3.6.1.4.1.19376.1.6.2.10.9.4.3"
                     ],
                     "title": "<<label_system_type_name_dgw>> Service has a failure",
                     "specification": [
@@ -462,8 +446,7 @@
                 },
                 {
                     "oids": [
-                        "1.3.6.1.4.1.19376.1.6.9.4.4",
-                        "1.3.6.1.4.1.19376.1.6.9.4.4.1"
+                        "1.3.6.1.4.1.19376.1.6.2.10.9.4.4"
                     ],
                     "title": "<<label_system_type_name_dgw>> Service connection to the Enterprise System fails",
                     "specification": [
@@ -487,7 +470,7 @@
     "acns": {
         "id": "acns",
         "oids": [
-            "1.3.6.1.4.1.19376.1.6.9.5"
+            "1.3.6.1.4.1.19376.1.6.2.10.9.5"
         ],
         "title": "Alerts to Clinician Notification Systems",
         "anchor": "vol1_clause_appendix_c_use_case_acns",
@@ -517,8 +500,7 @@
             "scenarios": [
                 {
                     "oids": [
-                        "1.3.6.1.4.1.19376.1.6.9.5.1",
-                        "1.3.6.1.4.1.19376.1.6.9.5.1.1"
+                        "1.3.6.1.4.1.19376.1.6.2.10.9.5.1"
                     ],
                     "title": "New device is connected to network with AGW service",
                     "specification": [
@@ -538,8 +520,7 @@
                 },
                 {
                     "oids": [
-                        "1.3.6.1.4.1.19376.1.6.9.5.2",
-                        "1.3.6.1.4.1.19376.1.6.9.5.2.1"
+                        "1.3.6.1.4.1.19376.1.6.2.10.9.5.2"
                     ],
                     "title": "The AGW service loses connectivity with the ICU devices",
                     "specification": [
@@ -563,8 +544,7 @@
                 },
                 {
                     "oids": [
-                        "1.3.6.1.4.1.19376.1.6.9.5.3",
-                        "1.3.6.1.4.1.19376.1.6.9.5.3.1"
+                        "1.3.6.1.4.1.19376.1.6.2.10.9.5.3"
                     ],
                     "title": "The AGW service fails",
                     "specification": [
@@ -584,8 +564,7 @@
                 },
                 {
                     "oids": [
-                        "1.3.6.1.4.1.19376.1.6.9.5.4",
-                        "1.3.6.1.4.1.19376.1.6.9.5.4.1"
+                        "1.3.6.1.4.1.19376.1.6.2.10.9.5.4"
                     ],
                     "title": "The Clinician Notification System loses connectivity with the AGW",
                     "specification": [
@@ -609,7 +588,7 @@
     "aars": {
         "id": "aars",
         "oids": [
-            "1.3.6.1.4.1.19376.1.6.9.6"
+            "1.3.6.1.4.1.19376.1.6.2.10.9.6"
         ],
         "title": "Alerts to Alert Recording Systems",
         "anchor": "vol1_clause_appendix_c_use_case_aars",
@@ -639,8 +618,7 @@
             "scenarios": [
                 {
                     "oids": [
-                        "1.3.6.1.4.1.19376.1.6.9.6.1",
-                        "1.3.6.1.4.1.19376.1.6.9.6.1.1"
+                        "1.3.6.1.4.1.19376.1.6.2.10.9.6.1"
                     ],
                     "title": "New device is connected to network with AGW service",
                     "specification": [
@@ -660,8 +638,7 @@
                 },
                 {
                     "oids": [
-                        "1.3.6.1.4.1.19376.1.6.9.6.2",
-                        "1.3.6.1.4.1.19376.1.6.9.6.2.1"
+                        "1.3.6.1.4.1.19376.1.6.2.10.9.6.2"
                     ],
                     "title": "The AGW service loses connectivity with the ICU devices",
                     "specification": [
@@ -685,8 +662,7 @@
                 },
                 {
                     "oids": [
-                        "1.3.6.1.4.1.19376.1.6.9.6.3",
-                        "1.3.6.1.4.1.19376.1.6.9.6.3.1"
+                        "1.3.6.1.4.1.19376.1.6.2.10.9.6.3"
                     ],
                     "title": "The AGW service fails",
                     "specification": [
@@ -706,8 +682,7 @@
                 },
                 {
                     "oids": [
-                        "1.3.6.1.4.1.19376.1.6.9.6.4",
-                        "1.3.6.1.4.1.19376.1.6.9.6.4.1"
+                        "1.3.6.1.4.1.19376.1.6.2.10.9.6.4"
                     ],
                     "title": "The Alert Recording System loses connectivity with the AGW",
                     "specification": [

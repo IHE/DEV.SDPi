@@ -41,7 +41,7 @@ The OID used for the filter dialect is listed in <<vol2_table_appendix_mdpws_dis
 ****
 [NORMATIVE]
 ====
-A <<vol1_spec_sdpi_p_actor_somds_consumer>> shall add the filter dialect urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.2.1 to
+A <<vol1_spec_sdpi_p_actor_somds_consumer>> shall add the filter dialect `urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.2.1` to
 every Subscribe request to a <<vol1_spec_sdpi_p_actor_discovery_proxy>>.
 ====
 
@@ -63,23 +63,23 @@ All object identifiers used by the <<vol1_spec_sdpi_p_actor_discovery_proxy>> ar
 | Concept description
 | Secondary identifier
 
-| 1.3.6.1.4.1.19376.1.6.2.10
+| `{SDPi-parent-oid}`
 | Profile specific OID for SDPi
 | sdpi
 
-| 1.3.6.1.4.1.19376.1.6.2.10.1
+| `{SDPi-parent-oid}.*1*`
 | Describes namespaces for different purposes as specified by its sub-nodes
 | namespaces
 
-| 1.3.6.1.4.1.19376.1.6.2.10.1.2
+| `{SDPi-parent-oid}.*1.2*`
 | Identifies <<vol1_spec_sdpi_p_actor_discovery_proxy>> objects.
 | discovery-proxy
 
-| 1.3.6.1.4.1.19376.1.6.2.10.1.2.1
+| `{SDPi-parent-oid}.*1.2.1*`
 | Subscription filter dialect used to identify Hello/Bye subscriptions provided by a <<vol1_spec_sdpi_p_actor_discovery_proxy>>.
 | subscription-filter
 
-| 1.3.6.1.4.1.19376.1.6.2.10.1.2.2
+| `{SDPi-parent-oid}.*1.2.2*`
 | WSDL target namespace identifier for the <<vol1_spec_sdpi_p_actor_discovery_proxy>> actor.
 | wsdl
 |===

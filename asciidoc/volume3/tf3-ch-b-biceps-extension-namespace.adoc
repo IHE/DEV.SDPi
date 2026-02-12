@@ -1,10 +1,7 @@
 [appendix#vol3_appendix_b_biceps_extension_namespace,sdpi_offset=B]
 == BICEPS Extension Namespace
 
-Extensions to the BICEPS Participant and Message Model defined in this specification utilize the XML Schema target namespace URI `urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1`, of which the OID is further detailed in <<vol3_table_sdpi_biceps_extension_namespace>>.
-
-IHE Devices domain top-level OIDs are available at the https://wiki.ihe.net/index.php/OID_Registration[IHE Domain Namespaces wiki].
-A comprehensive listing of OIDs within the IHE Devices namespace is shown at the https://wiki.ihe.net/index.php/PCD_OID_Management[IHE PCD OID Management wiki page].
+Extensions to the BICEPS Participant and Message Model defined in this specification utilize the XML Schema target namespace URI `urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1`, of which the OID is further detailed in <<vol3_table_sdpi_biceps_extension_namespace>> and <<vol3_appendix_c_oids>>.
 
 [#vol3_table_sdpi_biceps_extension_namespace]
 .SDPi BICEPS Extension Namespace OID Assignment
@@ -14,24 +11,21 @@ A comprehensive listing of OIDs within the IHE Devices namespace is shown at the
 | Concept description
 | Secondary identifier
 
-| 1.3.6.1.4.1.19376.1.6.2.10
+| `{SDPi-parent-oid}`
 | Profile specific OID for SDPi
 | sdpi
 
-| 1.3.6.1.4.1.19376.1.6.2.10.1
+| `{SDPi-parent-oid}.*1*`
 | Describes namespaces for different purposes as specified by its sub-nodes
 | namespaces
 
-| 1.3.6.1.4.1.19376.1.6.2.10.1.1
+| `{SDPi-parent-oid}.*1.1*`
 | Extensions to the BICEPS Participant and Message Model
 | biceps-extensions
 
-| 1.3.6.1.4.1.19376.1.6.2.10.1.1.1
+| `{SDPi-parent-oid}.*1.1.1*`
 | Major version 1 for extensions to the BICEPS Participant and Message Model.
-  In order to avoid proliferation of OIDs below `1.3.6.1.4.1.19376.1.6.2.10.1.1`, versions are incremented only if incompatible changes are made to an extension.
+  In order to avoid proliferation of OIDs below `{SDPi-parent-oid}.1.1`, versions are incremented only if incompatible changes are made to an extension.
 | version1
 
-| 1.3.6.1.4.1.19376.1.6.2.10.1.2
-| Subscription filter dialect used to identify Hello/Bye subscriptions provided by a <<vol1_spec_sdpi_p_actor_discovery_proxy>>.
-| subscription-filter
 |===

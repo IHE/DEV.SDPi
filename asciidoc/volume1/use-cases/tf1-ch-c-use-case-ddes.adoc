@@ -35,7 +35,7 @@ image::../images/vol1-diagram-use-case-ddes-tech-view.svg[]
 ==== Scenarios
 
 [role=use-case-scenario,sdpi_scenario="New in scope device is connected to network with <<acronym_dgw>> service"]
-[oid-arcs=".1,.1.1"]
+[oid-arcs=".1"]
 ===== Scenario: <<acronym_ddes>> {var_use_case_id}.1 - New in scope device is connected to network with <<acronym_dgw>> service
 
 [role=use-case-steps]
@@ -52,7 +52,7 @@ image::../images/vol1-diagram-use-case-ddes-tech-view.svg[]
 ////
 
 [role=use-case-scenario,sdpi_scenario="<<label_system_type_name_dgw>> Service is connected to the EHR"]
-[oid-arcs=".2,.2.1"]
+[oid-arcs=".2"]
 ===== Scenario: <<acronym_ddes>> {var_use_case_id}.2 - <<label_system_type_name_dgw>> Service is connected to the EHR
 
 [role=use-case-steps]
@@ -63,7 +63,7 @@ image::../images/vol1-diagram-use-case-ddes-tech-view.svg[]
 ====
 
 [role=use-case-scenario,sdpi_scenario="<<label_system_type_name_dgw>> Service has a failure"]
-[oid-arcs=".3,.3.1"]
+[oid-arcs=".3"]
 ===== Scenario: <<acronym_ddes>> {var_use_case_id}.3 - <<label_system_type_name_dgw>> Service has a failure
 
 [role=use-case-steps]
@@ -74,7 +74,7 @@ image::../images/vol1-diagram-use-case-ddes-tech-view.svg[]
 ====
 
 [role=use-case-scenario,sdpi_scenario="<<label_system_type_name_dgw>> Service connection to the Enterprise System fails"]
-[oid-arcs=".4,.4.1"]
+[oid-arcs=".4"]
 ===== Scenario: <<acronym_ddes>> {var_use_case_id}.4 - <<label_system_type_name_dgw>> Service connection to the Enterprise System fails
 
 [role=use-case-steps]
