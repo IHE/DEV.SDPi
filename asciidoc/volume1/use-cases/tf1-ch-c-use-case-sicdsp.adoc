@@ -33,7 +33,7 @@ image::../images/vol1-diagram-use-case-sicdsp-tech-view.svg[]
 ==== Scenarios
 
 [role=use-case-scenario,sdpi_scenario="Devices are Accessible to the Dashboard"]
-[oid-arcs=".1,.1.1"]
+[oid-arcs=".1"]
 ===== Scenario: <<acronym_sicdsp>> {var_use_case_id}.1 - Devices are Accessible to the Dashboard
 
 [role=use-case-steps]
@@ -46,7 +46,7 @@ image::../images/vol1-diagram-use-case-sicdsp-tech-view.svg[]
 ====
 
 [role=use-case-scenario,sdpi_scenario="ICU Devices are Inaccessible to the Dashboard"]
-[oid-arcs=".2,.2.1"]
+[oid-arcs=".2"]
 ===== Scenario: <<acronym_sicdsp>> {var_use_case_id}.2 - ICU Devices are Inaccessible to the Dashboard
 
 [role=use-case-steps]
@@ -57,7 +57,7 @@ image::../images/vol1-diagram-use-case-sicdsp-tech-view.svg[]
 ====
 
 [role=use-case-scenario,sdpi_scenario="One or more ICU devices become Inaccessible to the Dashboard"]
-[oid-arcs=".3,.3.1"]
+[oid-arcs=".3"]
 ===== Scenario: <<acronym_sicdsp>> {var_use_case_id}.3 - 
 
 [role=use-case-steps]

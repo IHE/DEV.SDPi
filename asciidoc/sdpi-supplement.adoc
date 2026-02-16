@@ -27,12 +27,19 @@
 :sdpi_milestone_publication: SDPi 2.3 Publication
 :sdpi_milestone_review: SDPi 2.3 Review
 
-:ihe_supplement_sdpi_revision: 2.3.0
-:ihe_supplement_sdpi_revision_short: 2.3
+:sdpi_version_major: 2
+:sdpi_version_minor: 4
+:sdpi_version_revision: 0
+:ihe_supplement_sdpi_revision: {sdpi_version_major}.{sdpi_version_minor}.{sdpi_version_revision}
+:ihe_supplement_sdpi_revision_short: {sdpi_version_major}.{sdpi_version_minor}
 :ihe_supplement_sdpi_revision_date: {localdatetime}
 :ihe_supplement_sdpi_revision_label: Standard for Trial Use / Implementation
 :ihe_supplement_sdpi_publication_month: December 19, 2025
 :ihe_supplement_sdpi_public_comment_submission_deadline: N/A
+
+// Oid, assigned by IHE-DEV, for the SDPi specification
+// https://wiki.ihe.net/index.php/PCD_OID_Management
+:sdpi-parent-oid: 1.3.6.1.4.1.19376.1.6.2.10
 
 {empty} +
 ifeval::["{backend}" == "html5"]
