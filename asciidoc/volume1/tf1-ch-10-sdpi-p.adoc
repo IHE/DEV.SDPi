@@ -1125,7 +1125,7 @@ Security is foundational for all interactions between <<vol1_spec_sdpi_p_actor_s
 Specific security technologies may vary based on jurisdictional requirements, regulations and the implementation technology, and will be detailed in the appropriate TF-2 technology specifications.
 All transactions indicate whether they require secure or unsecured connections.
 
-For the default <<acronym_sdpi_p>> connectivity technology, namely ISO/IEEE 11073 <<term_service_oriented_device_connectivity>>, TLS 1.2 (or higher versions) support is required (See <<ref_ieee_11073_20701_2018>> and <<ref_ieee_11073_20702_2016>>).
+For the default <<acronym_sdpi_p>> connectivity technology, namely IEEE 11073 <<term_service_oriented_device_connectivity>>, TLS 1.2 (or higher versions) support is required (See <<ref_ieee_11073_20701_2018>> and <<ref_ieee_11073_20702_2016>>).
 
 NOTE: The SDC standard <<ref_ieee_11073_20701_2018>> includes requirement R0064 stating that an SDC PARTICIPANT SHOULD utilize the highest TLS version. Herewith "the highest" is interpreted as the highest TLS version available, and not as the highest version negotiated between two SDC PARTICIPANTS.
 

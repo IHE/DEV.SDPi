@@ -8,7 +8,7 @@
 [cols="1"]
 |===
 a| *{supplement_note}*:  This version of the <<acronym_sdpi_r>> Profile is built upon the foundational <<acronym_sdpi_p>> Profile but does not provide substantially more capabilities.
-This is due to the fact that the primary purpose of this <<acronym_sdpi_r>> Profile, namely communication of medical data to accomplish intended medical purposes, requires the full integration of two emerging ISO/IEEE standards:  <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>>.
+This is due to the fact that the primary purpose of this <<acronym_sdpi_r>> Profile, namely communication of medical data to accomplish intended medical purposes, requires the full integration of two emerging IEEE standards:  <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>>.
 Their requirements will be integrated into this supplement, with their <<term_implementation_conformance_statement>> added to <<vol1_appendix_b_referenced_standards_conformance>> below.
 Many of those requirements will be mapped to the actors and transactions and other elements in this supplement, including this <<acronym_sdpi_r>> Profile.
 
@@ -25,7 +25,7 @@ The profile builds upon the foundational <<term_plug_and_trust>> capabilities pr
 These extended capabilities for medical data exchange are achieved by various means, including:
 
 . Grouping <<acronym_sdpi_r>> actors with their <<acronym_sdpi_p>> counterparts
-. Addressing requirements from the emerging <<acronym_pkp>> ISO/IEEE standards:  <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>>
+. Addressing requirements from the emerging <<acronym_pkp>> IEEE standards:  <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>>
 . Requiring capabilities that in the <<vol1_clause_sdpi_p_profile_reftext>> may be optional
 . Requiring additional <<acronym_biceps>> data elements or content modules
 

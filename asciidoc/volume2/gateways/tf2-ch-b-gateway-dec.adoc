@@ -485,7 +485,7 @@ The field is left empty if there is no valid SDC operator context.
 [#ref_dec_obx_mapping]
 ===== OBX - Observation/Result Segment
 The HL7 Observation/Result (OBX) segment requires a mapping from the SDC containment tree and metric items to the OBX segment fields.
-More information about the containment tree mapping can be found in *Appendix A Mapping ISO/IEEE 11073 Domain Information Model to HL7* in <<ref_ihe_dev_tf_2_2024>>.
+More information about the containment tree mapping can be found in *Appendix A Mapping IEEE 11073 Domain Information Model to HL7* in <<ref_ihe_dev_tf_2_2024>>.
 
 ====== OBX-1 Set ID - OBX
 Please refer to the <<ref_ihe_dev_tf_2_2024>> *OBX-1 Set ID - OBX* for further information.
