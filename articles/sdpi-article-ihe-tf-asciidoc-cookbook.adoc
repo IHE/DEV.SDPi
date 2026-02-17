@@ -343,7 +343,7 @@ https://docs.asciidoctor.org/asciidoctorj/latest/[Asciidoctor], which converts t
 
 Content extracted, using markup in the source described below, and exported, to `sdpi-supplement/referenced-artifacts/` in JSON format includes:
 
-* `sdpi-profiles.json`: all profiles (e.g., SDPi), including actors and options defined, and the transactions, content modules and use-cases referenced,
+* `sdpi-profiles.json`: all profiles (e.g., SDPi), including actors and options defined, and the transactions, content modules and use-cases supported,
 * `sdpi-content-modules.json`: content modules (e.g., SDC/BICEPS, etc),
 * `sdpi-transactions.json`: collects transactions and the roles of actors in the transactions,
 * `sdpi-requirements.json`: all requirements, 
@@ -356,17 +356,18 @@ Most content is defined by roles attached to an appropriate section. For example
 |===
 | Content | Role | Identifier attribute | Parent scope
 
-| <<semantic-content-modules,Content module>> | `content-module` | `content-module-id` | global
-| <<semantic-transactions,Transaction>> | `transaction` | `transaction-id` | global
-| <<semantic-profiles,Profile>> | `profile` | `profile-id` | global
-| Profile option | `profile-option` | `profile-option-id` | Profile
-| Actor | `actor` | `actor-id` | Profile, Profile option
-| <<use-case,Use case>> | `use-case` | `use-case-id` | global
-| Use case background | `use-case-background` | &mdash; | Use case
-| Use case scenario | `use-case-scenario` | &mdash; | Use case
-| Use case steps | `use-case-steps` | &mdash; | Use case scenario
-| Gateway | `gateway` | `gateway-id` | global
-| Protocol | `protocol` | `protocol-id` | global
+| <<semantic-content-modules,Content module>>                | `content-module`      | `content-module-id` | global
+| <<semantic-transactions,Transaction>>                      | `transaction`         | `transaction-id`    | global
+| <<semantic-profiles,Profile>>                              | `profile`             | `profile-id`        | global
+| <<semantic-actor-options,Profile actor option>>            | `profile-option`      | `profile-option-id` | Profile
+| <<semantic-actors,Actor>>                                  | `actor`               | `actor-id`          | Profile, Profile option
+| <<semantic-profile-ref-use-case,Profile use case support>> | `support-use-case`    | `use-case-id`       | Profile
+| <<use-case,Use case>>                                      | `use-case`            | `use-case-id`       | global
+| <<use-case-roles,Use case background>>                     | `use-case-background` | &mdash;             | Use case
+| <<use-case-roles,Use case scenario>>                       | `use-case-scenario`   | &mdash;             | Use case
+| <<use-case-roles,Use case steps>>                          | `use-case-steps`      | &mdash;             | Use case scenario
+| Gateway                                                    | `gateway`             | `gateway-id`        | global
+| <<semantic-protocols,Protocol>>                            | `protocol`            | `protocol-id`       | global
 |===
 
 NOTE: <<semantic-requirements>> are defined in a custom block. 
@@ -374,9 +375,9 @@ NOTE: <<semantic-requirements>> are defined in a custom block.
 [#semantic-profiles]
 === Defining profiles
 
-Profiles define <<semantic-actors,actors>> and compose a set of transactions, use cases and content modules. They are defined within a single AsciiDoc section that includes definitions for all the profile's actors and references to relevant transactions, use-cases and content modules. Profiles may also define optional parts, such as support for a discovery proxy. Each option may define its own actors and reference a set of transactions, use cases and content modules. 
+Profiles define <<semantic-actors,actors>> and compose a set of transactions, support for use cases and content modules. They are defined within a single AsciiDoc section that includes definitions for all the profile's actors and references to relevant transactions, use-cases and content modules. Profiles may also define optional parts, such as support for a discovery proxy. Each option may define its own actors and reference a set of transactions, and content modules. 
 
-The `profile` and `profile-option` roles mark sections defining profiles and options within profiles, respectively. A document-unique id is required for each profile and profile option, set using the `profile-id` and `profile-option-id` attributes, respectively. An <<defining-oids,object identifier (oid)>> is required for each profile but not for profile options (currently). The fragment below illustrates the definition of a profile and two profile options. 
+The `profile` and `profile-option` roles mark sections defining profiles and options within profiles, respectively. A document-unique id is required for each profile and profile option, set using the `profile-id` and `profile-option-id` attributes, respectively. An <<defining-oids,object identifier (oid)>> is required for both profiles and profile options. The fragment below illustrates the definition of a profile and two profile options. 
 
 NOTE: The document structure is used to associate information, such as actors and references to transactions or use cases, with a profile so these must be defined in sub-sections to the document section defining the profile. 
 
@@ -392,7 +393,7 @@ The SDPi-Plug-and-trust SDPi-P) Profile supports foundational seamless connectiv
 
 The managed discovery proxy supports discovery of SOMDS participants through a well-known proxy service...
 
-[role="profile-option",profile-option-id="ad-hoc-discovery"]
+[role="profile-option",profile-option-id="ad-hoc-discovery",oid-arcs=".1,.1.1"]
 === Ad-hoc discovery option
 
 Ad-hoc discovery supports discovery of SOMDS participants through multi-cast broadcast messages...
@@ -452,7 +453,7 @@ Inherited requirements do not apply if the option is not selected.
 ----
 
 [#semantic-actor-options]
-==== Actor option sections
+==== Profile actor option sections
 
 Options, which may impose additional transaction obligations on actors, may be defined using the `actor-option` role. The abbreviated example below shows the AsciiDoc source to tag sections defining actor options. 
 
@@ -527,24 +528,33 @@ Note, specify the:
 NOTE: Content modules included in a sub-section of a profile-option apply to the option. Content modules included a sub-section of a profile apply to the profile.
 
 [#semantic-profile-ref-use-case]
-==== Referencing use-cases
+==== Use-case support
 
-A profile, or profile-option, references a <<semantic-use-case,use-case>> with the `sdpi_include_use_case` [include processor](https://docs.asciidoctor.org/asciidoctorj/latest/extensions/include-processor/) and declares the actor and obligation of the actor for the profile. Include the use-case for each actor with an obligation in the profile. For example:
+Profiles declare how they support <<semantic-use-case,use cases>> in sections with the role `support-use-case`, which must be a subsection of a <<semantic-profiles,profile>>. Each section declares support for one <<semantic-use-case,use case>>, which must be identified using the `use-case-id` attribute. Use case support sections require an <<defining-oids,object identifier>>.  
+
+A profile declares the obligations its actors have to support a use case, within a `support-use-case` section using the `sdpi_include_use_case` [block macro processor](https://docs.asciidoctor.org/asciidoctorj/latest/extensions/block-macro-processor/). With:
+
+* the `actor-id` for the target, and
+* a `support` parameter for the actor's obligation for the use case (`optional` or `required`).
+
+For example, this snippet provides a markup for a section declaring support for the synchronized time across devices use case feature (`stad`). Here, the markup indicates support for this use case is required for both consumers and providers. 
 
 [source,asciidoc]
 ----
-sdpi_include_use_case::stad[actor-id="discovery-proxy", support=required]
-sdpi_include_use_case::stad[actor-id="somds-consumer", support=required]
-sdpi_include_use_case::stad[actor-id="somds-provider", support=required]
+[role="support-use-case", use-case-id="stad", oid-arcs=.1]
+===== <<label_use_case_name_stad>> (<<acronym_stad>>)
+This use case fully addresses the requirements from  <<vol1_clause_appendix_c_use_case_stad>>.
+
+Specific capabilities supporting the <<acronym_stad>> use case include:
+   :
+   :
+sdpi_support_use_case::somds_consumer[support=required]
+sdpi_support_use_case::somds_provider[support=required]
+   :
+   :
 ----
 
-Note, specify the:
-
-* <<semantic-use-case,use case>> id as the directive target (e.g., `stad`),
-* <<semantic-actors,actor's>> id using the `actor-id` attribute,
-* obligation of the actor in the `support` attribute (that is, `required` or `optional`). 
-
-NOTE: Use-cases included in a sub-section of a profile-option apply to the option. Use-cases included a sub-section of a profile apply to the profile.
+NOTE: <<semantic-use-case,Use cases>> must be defined in a section with the role `use-case`.
 
 [#semantic-placeholder-transactions]
 ==== Placeholder transactions and content modules
@@ -741,10 +751,15 @@ Block attributes supply metadata for the requirement. Attributes are tabulated b
 |`sdpi_max_occurrence`| all | integer | no | Placeholder.
 |===
 
-[[requirement-oids]]
+[#requirement-oids]
 ==== ISO object identifiers
 
-ISO object identifiers (OIDs) are assigned and rendered with each requirement in the output file generated. They are used as the primary requirement id in implementation conformance statement tables. ISO object identifiers are generated automatically by combining the profile requirement root oid (https://wiki.ihe.net/index.php/PCD_OID_Management[`1.3.6.1.4.1.19376.1.6.10`]) with requirement number. For example, requirement R1023 would have an oid of `1.3.6.1.4.1.19376.1.6.10.1023`. Requirement oids are not versioned so a new requirement number must be assigned, and the old number retired, when making material changes to a requirement's normative statement. See https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_requirement_assigning_unique_identifiers[assigning unique identifiers] for more details.
+ISO object identifiers (OIDs) are assigned and rendered with each requirement in the output file generated. They are used as the primary requirement id in implementation conformance statement tables. ISO object identifiers are generated automatically by combining the profile requirement root oid with the requirement number. For example, requirement R1023 would have an oid of `1.3.6.1.4.1.19376.1.6.2.10.10.1023`. Requirement oids are not versioned so a new requirement number must be assigned, and the old number retired, when making material changes to a requirement's normative statement. 
+
+For more details, see:
+
+* https://profiles.ihe.net/DEV/SDPi/index.html#vol1_clause_sdpi_requirement_assigning_unique_identifiers[assigning unique identifiers], and
+* https://profiles.ihe.net/DEV/SDPi/index.html#vol3_appendix_c_oids[OID identifiers].
 
 ==== Groups
 
@@ -756,7 +771,7 @@ NOTE: Group names are case sensitive.
 
 Requirement ownership is included in the `sdpi-requirements.json` artefact to requirement discovery (e.g., all requirements an actor must support). Requirements may be owned by a <<semantic-profile,profile>>, profile-option, <<semantic-content-module,content-module>>, gateway, protocol or <<semantic-use-case,use-case>>. Requirement ownership is automatically determined from the parent section (that is, a parent section with one of the <<semantic-markup,roles>> supported for ownership). 
 
-[[use-case]]
+[#semantic-use-case]
 === Defining use cases
 
 Use case blocks, and their parts, are identified in the source by AsciiDoc https://docs.asciidoctor.org/asciidoc/latest/attributes/role/[roles], with metadata provided in block attributes. The following example AsciiDoc source defines a use-case and one scenario. 
@@ -800,7 +815,7 @@ It is also important for all devices to have a consistent time since the data be
 
 ----
 
-[[use-case-roles]]
+[#use-case-roles]
 ==== Block roles
 
 AsciiDoc https://docs.asciidoctor.org/asciidoc/latest/attributes/role/[roles] assigned to content blocks provide semantic structure to use-case definitions. The roles available for use-cases are shown in the table below. 
@@ -834,7 +849,7 @@ Block attributes supply metadata for the use-case. Attributes are tabulated belo
 
 NOTE: Ids are case-sensitive.
 
-[[use-case-steps]]
+[#use-case-steps]
 ==== Defining steps
 
 Steps, in background and steps content blocks, are defined in paragraphs prefixed by https://cucumber.io/docs/gherkin/reference/[Gherkin] keywords. Keywords are parsed (e.g., for exporting rich JSON data). Supported steps are shown in the table below. Steps are not case-sensitive. 
@@ -886,20 +901,24 @@ Attaching the `protocol` role to a section marks it as a communication protocol.
 
 
 
-[[defining-oids]]
+[#defining-oids]
 === Defining object identifiers (oids)
 
 Many items require object identifiers (oids) including:
 
 * profiles,
 * actors, 
-* use cases and use case scenarios, 
-* content modules, and
-* transactions. 
+* profile actor options,
+* profile use case support,
+* use cases and use case scenarios, and
+* content modules.
 
-NOTE: requirements have object identifiers too, but these are automatically created from the requirement root oid arc and the requirement number.
 
-There is a https://wiki.ihe.net/index.php/PCD_OID_Management[canonical defnition of object identifiers for IHE DEV domains].
+NOTE: requirements have object identifiers too, but these are automatically created from the requirement parent OID and the requirement number.
+
+NOTE: transactions have object identifiers too, but these are automatically created from the transaction parent OID and the transaction number. 
+
+NOTE: see https://profiles.ihe.net/DEV/SDPi/index.html#vol3_appendix_c_oids[Appendix 3:C OID identifiers] for details on OID assignments.
 
 Use the `oid-arcs` attribute on blocks that define items. The example below illustrates setting an oid for the participant actor.
 
@@ -910,18 +929,9 @@ Use the `oid-arcs` attribute on blocks that define items. The example below illu
   etc.
 ----
 
-Only the leaf arc is required when the oid value begins with a `.`. The document processor automatically combines the leaf with the correct https://wiki.ihe.net/index.php/PCD_OID_Management#General_IHE-DEV_OID_Identifiers[parent oid], which depends on the item type. Arcs that do not begin with a `.` are applied verbatium. 
+Only the leaf arc is required when the oid value begins with a `.`. The document processor automatically combines the leaf with the correct https://profiles.ihe.net/DEV/SDPi/index.html#vol3_appendix_c_oids[parent oid], which depends on the item type. Arcs that do not begin with a `.` are applied verbatium. 
 
-Multiple oids may be associated with an item by separating them with commas:
-
-[source,asciidoc]
-----
-[role=transaction,transaction-id=DEV-23,oid-arcs=".23.1,.23"]
-=== Announce Network Presence [{var_transaction_id}]
-  etc.
-----
-
-This is commonly used to provide versioned (e.g., `.23.1`) and version neutral (e.g., `.23`) oids. 
+Multiple oids may be associated with an item by separating them with commas, though generally all items have a single defining OID. 
 
 [[cross-referencing]]
 === Cross-referencing

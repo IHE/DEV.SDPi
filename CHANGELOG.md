@@ -20,6 +20,7 @@ Each section shall contain a list of action items of the following format: `<bri
 
 - Clarifying note to R7000 ([#501](https://github.com/IHE/DEV.SDPi/issues/501)).
 - Clarifying statements to DEV-23, DEV-24, DEV-46, and DEV-47 w.r.t to ad-hoc and managed mode discovery([#409](https://github.com/IHE/DEV.SDPi/issues/409)).
+- OID Framework to TF-3Z ([#474](https://github.com/IHE/DEV.SDPi/issues/474))
 
 ### Changes
 

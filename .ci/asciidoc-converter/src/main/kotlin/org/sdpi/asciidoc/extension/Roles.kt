@@ -5,6 +5,9 @@ package org.sdpi.asciidoc.extension
  */
 sealed class Roles {
 
+    /*
+    Document section defining a profile.
+     */
     enum class Profile(val key: String) {
         // Profile section.
         PROFILE("profile"),
@@ -12,11 +15,15 @@ sealed class Roles {
         // Identifier for the profile
         ID("profile-id"),
 
+        // Profile subsection defining a profile actor option
+        // e.g., discovery proxy.
         PROFILE_OPTION("profile-option"),
 
+        // Identifier for the profile actor option.
         ID_PROFILE_OPTION("profile-option-id"),
     }
 
+    // Section defining an actor.
     enum class Actor(val key: String) {
         SECTION_ROLE("actor"),
 
@@ -36,6 +43,7 @@ sealed class Roles {
         GROUPING("actor-grouping"),
     }
 
+    // Section defining a transaction.
     enum class Transaction(val key: String) {
         TRANSACTION("transaction"),
 
@@ -49,6 +57,7 @@ sealed class Roles {
 
     }
 
+    // Section defining a use case.
     enum class UseCase(val key: String) {
         // Use case section
         FEATURE("use-case"),
@@ -63,6 +72,23 @@ sealed class Roles {
 
         // Steps for the scenario. Must be inside a scenario section.
         STEPS("use-case-steps"),
+    }
+
+    /*
+    Profile section containing obligations of actors in the profile
+    to support one referenced use-case.
+     */
+    enum class UseCaseSupport(val key: String) {
+
+        // Role id.
+        SECTION_ROLE("support-use-case"),
+
+        // Id of the use case the section applies to.
+        USE_CASE_ID("use-case-id"),
+
+        // Type of support an actor is obliged to supply for the use case.
+        OBLIGATION("support"),
+
     }
 
     // Roles applied to the tables where query results will get populated
@@ -81,6 +107,7 @@ sealed class Roles {
         OID("oid-table"),
     }
 
+    // Section defining a content module.
     enum class ContentModule(val key: String) {
         SECTION_ROLE("content-module"),
 
@@ -88,11 +115,13 @@ sealed class Roles {
         ID("content-module-id"),
     }
 
+    // Section defining a gateway.
     enum class Gateway(val key: String) {
         SECTION_ROLE("gateway"),
         ID("gateway-id"),
     }
 
+    // Section defining a protocol.
     enum class Protocol(val key: String) {
         SECTION_ROLE("protocol"),
         ID("protocol-id"),

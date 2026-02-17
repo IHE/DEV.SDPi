@@ -31,7 +31,7 @@ image::../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
 ==== Scenarios
 
 [role=use-case-scenario,sdpi_scenario="Device is connected to the MD LAN network with a Time Source service"]
-[oid-arcs=".1,.1.1"]
+[oid-arcs=".1"]
 ===== Scenario: <<acronym_stad>> {var_use_case_id}.1 - Device is connected to the MD LAN network with a Time Source service
 
 [role=use-case-steps]
@@ -86,7 +86,7 @@ or backward in time) to maintain an accurate <<term_system_clock>>.
 
 
 [role=use-case-scenario,sdpi_scenario="Device is connected to the MD LAN network and a user wants to change the device's time"]
-[oid-arcs=".2,.2.1"]
+[oid-arcs=".2"]
 ===== Scenario: <<acronym_stad>> {var_use_case_id}.2 - Device is connected to the MD LAN network and a user wants to change the device's time
 
 [role=use-case-steps]
@@ -116,7 +116,7 @@ Since manual time adjustments of the device's internal clock would lead to plaus
 ****
 
 [role=use-case-scenario,sdpi_scenario="Device is connected to the MD LAN network and cannot connect to a TS Service"]
-[oid-arcs=".3,.3.1"]
+[oid-arcs=".3"]
 ===== Scenario: <<acronym_stad>> {var_use_case_id}.3 - Device is connected to the MD LAN network and cannot connect to a TS Service
 
 [role=use-case-steps]
@@ -147,7 +147,7 @@ Without a <<acronym_ts_service>>, there is no way for a <<vol1_spec_sdpi_p_actor
 
 
 [role=use-case-scenario,sdpi_scenario="Devices are operational in the MD LAN network but cannot access the TS Service"]
-[oid-arcs=".4,.4.1"]
+[oid-arcs=".4"]
 ===== Scenario: <<acronym_stad>> {var_use_case_id}.4 - Devices are operational in the MD LAN network but cannot access the TS Service
 
 [role=use-case-steps]
@@ -260,7 +260,7 @@ If a <<vol1_spec_sdpi_p_actor_somds_participant>> cannot reach the <<acronym_ts_
 *REVIEWER QUESTION*:Do we need a requirement stating this explicitly, or is BPKP TR0916 sufficient, since a <<acronym_ts_service>> not being available can be considered as a change in the <<acronym_ts_service>>.
 
 [role=use-case-scenario,sdpi_scenario="Devices are operational in the MD LAN network but cannot access the TS Service and clock drift is unacceptable"]
-[oid-arcs=".5,.5.1"]
+[oid-arcs=".5"]
 ===== Scenario: <<acronym_stad>> {var_use_case_id}.5 - Devices are operational in the MD LAN network but cannot access the TS Service and clock drift is unacceptable
 
 [role=use-case-steps]
@@ -311,7 +311,7 @@ The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_participant>> shal
 
 [#vol1_clause_appendix_c_use_case_stad_non_slew]
 [role=use-case-scenario,sdpi_scenario="A device, operational in the MD LAN network, determines a non-slewing time adjustment is required"]
-[oid-arcs=".6,.6.1"]
+[oid-arcs=".6"]
 ===== Scenario: <<acronym_stad>> {var_use_case_id}.6 - A device, operational in the MD LAN network, determines a non-slewing time adjustment is required
 
 [role=use-case-steps]
@@ -488,7 +488,7 @@ A <<vol1_spec_sdpi_p_actor_somds_participant>> may enter a fault state by, for e
 
 [#vol1_clause_appendix_c_use_case_stad_non_slew_received]
 [role=use-case-scenario,sdpi_scenario="A somds consumer, operational in the MD LAN network, receives data affected by an abrupt time adjustment"]
-[oid-arcs=".7,.7.1"]
+[oid-arcs=".7"]
 ===== Scenario: <<acronym_stad>> {var_use_case_id}.7 - A <<vol1_spec_sdpi_p_actor_somds_consumer>>, operational in the MD LAN network, receives data affected by an abrupt time adjustment
 
 [role=use-case-steps]
