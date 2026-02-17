@@ -80,7 +80,7 @@ class AsciidocConverter(
         transactionActorsProcessor,
         profileTransactionCollector,
         profileUseCaseSupportCollector,
-        profileContentModuleCollector
+        profileContentModuleCollector,
         externalStandardsProcessor
     )
 

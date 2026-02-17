@@ -19,7 +19,7 @@ class SdpiInformationCollector(
     private val transactionActors: TransactionActorsProcessor,
     private val profileTransactions: TransactionIncludeProcessor,
     private val profileUseCases: SupportUseCaseIncludeProcessor,
-    private val profileContentModuleReferences: ContentModuleIncludeProcessor
+    private val profileContentModuleReferences: ContentModuleIncludeProcessor,
     private val externalStandardsProcessor : ExternalStandardProcessor
 ) : Treeprocessor() {
     private companion object : Logging
