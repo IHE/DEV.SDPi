@@ -9,6 +9,12 @@ load-standard::IEEE-P11073-10701-2022.json[id=10701,cite="ref_ieee_11073_10701_2
 ISO/IEEE 11073-10701 defines the requirements for <<term_manufacturer>>s of RefActor:somds_participant[] to support safe, effective and secure exchange of 
 metrics in an <<term_service_oriented_medical_device_system>>
 
+The _Status_ column indicates:
+
+* *m*: mandatory, indicated by requirement keyword *shall*,
+* *r*: recommended, indicated by requirement keyword *should*,
+* *p*: permissible, indicated by requirement keyword *may*,
+
 ===== SOMDS Participants
 
 .ICSs applicable to all SOMDS Participants
