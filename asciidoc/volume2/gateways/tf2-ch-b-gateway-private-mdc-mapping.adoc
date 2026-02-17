@@ -1,6 +1,6 @@
 [#ref_private_coding_system_note]
 ==== Private MDC Codes Consideration
-The default coding system utilized in SDC is *"<<acronym_mdc>>"* (Medical Device Communications) also known as *"ISO/IEEE 11073-10101"* nomenclature.
+The default coding system utilized in SDC is *"<<acronym_mdc>>"* (Medical Device Communications) also known as *"IEEE 11073-10101"* nomenclature.
 
 In addition to the standard codes, *<<acronym_mdc>>* defines private code ranges that can be used by medical device vendors for defining their own codes, for example, for concepts for which standard codes do not exist. Private codes should be avoided whenever possible since this undermines interoperability.
 

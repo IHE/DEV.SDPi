@@ -42,7 +42,7 @@ No content from those three standards - including their requirements -  is norma
 
 * [[[ref_ieee_11073_10201_2004,IEEE 11073-10201:2004]]] IEEE 11073-10201™ International Standard - Health informatics--Device interoperability--Part 10201:Point-of-care medical device communication--Domain information model.  Note this was updated in 2020.  Available at https://standards.ieee.org/ieee/11073-10201/10263/.
 
-* [[[ref_ieee_11073_10207_2017,ISO/IEEE 11073-10207:2017]]] ISO/IEEE 11073-10207-2017, Health informatics — Point-of-care medical device communication — Part 10207: Domain Information and Service Model for Service-Oriented Point-of-Care Medical Device Communication, 2017-12, available at https://standards.ieee.org/ieee/11073-10207/6032 footnote:ieee_permission[].
+* [[[ref_ieee_11073_10207_2017,IEEE 11073-10207:2017]]] IEEE 11073-10207-2017, Health informatics — Point-of-care medical device communication — Part 10207: Domain Information and Service Model for Service-Oriented Point-of-Care Medical Device Communication, 2017-12, available at https://standards.ieee.org/ieee/11073-10207/6032 footnote:ieee_permission[].
 
 * [[[ref_ieee_11073_10700_2022,IEEE 11073-10700:2022]]] IEEE 11073-10700™ IEEE Standard -- Health Informatics--Device Interoperability Part 10700: Point‐of‐Care Medical Device Communication--Standard for Base Requirements for Participants in a Service‐Oriented Device Connectivity (SDC) System, available at https://standards.ieee.org/ieee/11073-10700/10630/.
 
@@ -52,11 +52,11 @@ No content from those three standards - including their requirements -  is norma
 
 * [[[ref_ieee_11073_10703_202x,IEEE 11073-10703:202x]]] IEEE P11073-10703™/Draft Standard for Health Informatics – Device Interoperability – Part 10703: Point-of-Care Medical Device Communication – External Control by Participants in a Service-Oriented Device Connectivity (SDC) System, in development.
 
-* [[[ref_ieee_11073_20701_2018,ISO/IEEE 11073-20701:2018]]] ISO/IEEE 11073-20701-2018, Health informatics — Point-of-care medical device communication — Part 20701: Service-Oriented Medical Device Exchange Architecture and Protocol Binding, 2018-09, available at https://standards.ieee.org/ieee/11073-20701/6059.
+* [[[ref_ieee_11073_20701_2018,IEEE 11073-20701:2018]]] IEEE 11073-20701-2018, Health informatics — Point-of-care medical device communication — Part 20701: Service-Oriented Medical Device Exchange Architecture and Protocol Binding, 2018-09, available at https://standards.ieee.org/ieee/11073-20701/6059.
 
-* [[[ref_ieee_11073_20702_2016,ISO/IEEE 11073-20702:2016]]] ISO/IEEE 11073-20702-2016, Health informatics — Point-of-care medical device communication — Part 20702: Medical Devices Communication Profile for Web Services, 2016-09, available at https://standards.ieee.org/ieee/11073-20702/6034
+* [[[ref_ieee_11073_20702_2016,IEEE 11073-20702:2016]]] IEEE 11073-20702-2016, Health informatics — Point-of-care medical device communication — Part 20702: Medical Devices Communication Profile for Web Services, 2016-09, available at https://standards.ieee.org/ieee/11073-20702/6034
 
-* [[[ref_iec_80001_1_2021,ISO/IEC 80001-1:2021]]] IEC 80001-1:2021 Application of risk management for IT-networks incorporating medical devices — Part 1: Safety, effectiveness and security in the implementation and use of connected medical devices or connected health software, available at https://webstore.iec.ch/publication/34263 and https://www.iso.org/standard/72026.html.
+* [[[ref_iec_80001_1_2021,IEC 80001-1:2021]]] IEC 80001-1:2021 Application of risk management for IT-networks incorporating medical devices — Part 1: Safety, effectiveness and security in the implementation and use of connected medical devices or connected health software, available at https://webstore.iec.ch/publication/34263 and https://www.iso.org/standard/72026.html.
 
 * [[[ref_iso_81001_1_2021,ISO/IEC 81001-1:2021]]] ISO 81001-1:2021  Health software and health IT systems safety, effectiveness and security — Part 1: Principles and concepts, available at https://www.iso.org/standard/71538.html and https://webstore.iec.ch/publication/34286.
 
@@ -121,7 +121,7 @@ a| *{supplement_note}*:  This section intentionally left blank for the current v
 #TODO:  Provide a general overview of the topic, including some standards that provide Conformity statements, ICS tables, etc., and those that are moot on the topic - and how all of this is handled in this appendix and TF specification#
 ////
 
-// ISO/IEEE 11073-10207:2017 ICS
+// IEEE 11073-10207:2017 ICS
 
 include::conformance-statements/tf1-ch-c-conformance-statement-ieee-11073-10207-2017.adoc[]
 

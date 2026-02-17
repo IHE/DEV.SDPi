@@ -25,6 +25,7 @@ Each section shall contain a list of action items of the following format: `<bri
 ### Changes
 
 - Corrected three erroneous context-free codes in Table 3:8.3.2.10.2-1 ([#505](https://github.com/IHE/DEV.SDPi/issues/505))
+- Clarified referenced standards sections in 2:A and removed ISO prefix from IEEE/ISO standards for referential consistency ([#390](https://github.com/IHE/DEV.SDPi/issues/390))
 
 ### Editorial Fixes
 

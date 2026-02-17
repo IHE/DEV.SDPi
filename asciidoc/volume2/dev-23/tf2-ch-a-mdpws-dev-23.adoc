@@ -15,8 +15,8 @@ The {var_label_dev_23_message_hello} message is encoded by using {var_uri_ws_dis
 
 * <<ref_oasis_ws_discovery_2009>> {var_uri_ws_discovery_hello}[Section 4.1 Hello]
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
-* <<ref_ieee_11073_20702_2016>> mdpws:MedicalDevice
-* <<ref_ieee_11073_20701_2018>> sdc.mds.pkp:1.2.840.10004.20701.1.1
+* <<ref_ieee_11073_20702_2016>> Section 5 Dynamic discovery (use of mdpws:MedicalDevice)
+* <<ref_ieee_11073_20701_2018>> Section 10.2.3 Trust establishment (use of sdc.mds.pkp:1.2.840.10004.20701.1.1)
 
 ====== Message Outline
 

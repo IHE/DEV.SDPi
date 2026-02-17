@@ -25,7 +25,7 @@ The following sections in this appendix provide background on the concepts and r
 === Requirements:  From Narratives to Plug-and-Trust Interfaces
 
 For every device or system interface that supports the elements specified in this technical framework, requirements and capabilities are derived from many different standards, types of standards, and standards development organizations (SDO).
-Some are technology focused, such as the ISO/IEEE 11073 standards for health device communication, and others are more focused on quality and risk management, such as the ISO/IEC 80001-1 and ISO 14971 standards.
+Some are technology focused, such as the IEEE 11073 standards for health device communication, and others are more focused on quality and risk management, such as the ISO/IEC 80001-1 and ISO 14971 standards.
 They are all profiled and implemented and tested in a single interface point, and thus need to be integrated in a coherent and cohesive manner.
 
 In order to manage this diversity and wealth of specifications and standards, the Hanging Gardens Framework graphic as specified in <<hanging_gardens_framework>> was created:
@@ -39,7 +39,7 @@ Last accessed 2022.10.04.], some general observations will help understand the v
 
 . Real-world Requirements are at the top -- use case-based clinical system function scenarios ensure that all requirements and capabilities in the specifications are rooted in those healthcare real-world purposes that technology users, especially clinicians, are expecting to be supported: effectively, safely and securely;
 . Each layer or "garden" and contained specification(s) define - implicitly or explicitly - how they integrate with other layers:  _*capabilities*_ that are provided (to meet the needs of other layers), and _*requirements*_ (needed capabilities) for other layers and implementations;
-. Standards are sometimes grouped into families (e.g., ISO/IEEE 11073 SDC) - this indicates that they are internally cohesive as well as able to be integrated as a group with other areas;
+. Standards are sometimes grouped into families (e.g., IEEE 11073 SDC) - this indicates that they are internally cohesive as well as able to be integrated as a group with other areas;
 . _*Vertical*_ groupings on the left indicate standards that apply to all of the _*horizontal*_ layers in the core of the model;
 . Profile standards, such as the SDPi+FHIR, generally integrate specifications through the layers from the top to the bottom similar, with each layer contributing to those below and converging in a single interface capability bundle;
 . Physical layers are leveraged, not re-invented, which is why there is no color in the bottom layer;
@@ -70,7 +70,7 @@ Though this reads well in the standards and the model organizes everything in a 
 
 To address this <<acronym_ses>> implementation problem, the SDPi Profiles:
 
-. Leverage the ISO/IEEE 11073-1070x <<term_participant_key_purposes>> standards, which represent a consensus standard for risk management of technologies that are implemented in that left-right gap on the Temple model;
+. Leverage the IEEE 11073-1070x <<term_participant_key_purposes>> standards, which represent a consensus standard for risk management of technologies that are implemented in that left-right gap on the Temple model;
 . <<term_implementation_conformance_statement>> tables from each of these <<acronym_pkp>> standards is included in <<vol1_appendix_b_references>> of this specification, with indication as to whether, how and where each requirement is addressed;
 . "Safety, Effectiveness and Security - Requirements and Considerations" sections are integrated throughout the profile specifications to link from the <<acronym_pkp>> <<acronym_ics>> table requirements to the satisfying capabilities.
 [none]
@@ -199,7 +199,7 @@ Each type defines a unique class of requirements that build upon a foundational 
 |
 
 | SES
-| Non-technical requirements related to Safety, Effectiveness, and Security are captured in these blocks.  These are especially relevant to mapping ISO/IEEE 11073-1070x Participant Key Purposes standard requirements to elements within the SDPi specification.
+| Non-technical requirements related to Safety, Effectiveness, and Security are captured in these blocks.  These are especially relevant to mapping IEEE 11073-1070x Participant Key Purposes standard requirements to elements within the SDPi specification.
 | sdpi_requirement_ses
 | See SES Section <<vol1_appendix_a_integrating_ses>>
 

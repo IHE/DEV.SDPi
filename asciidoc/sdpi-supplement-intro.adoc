@@ -69,12 +69,12 @@ To that end, the supplement includes updates to all three IHE DEV TF volumes, in
 
 *TF-2  Transactions*
 
-* Extensive new set of transactions based on ISO/IEEE 11073 Service-oriented Device Connectivity (SDC) medical device interoperability standards.
+* Extensive new set of transactions based on IEEE 11073 Service-oriented Device Connectivity (SDC) medical device interoperability standards.
 * Related appendices, for example the specialized use of web services messaging for device communication and gateways to other protocols or profiles
 
 *TF-3  Content Modules*
 
-* New content covering the application of ISO/IEEE 11073 SDC semantic standards to device content modules, with a primary focus on specifications related to the ISO/IEEE 11073-10207 BICEPS standard.
+* New content covering the application of IEEE 11073 SDC semantic standards to device content modules, with a primary focus on specifications related to the IEEE 11073-10207 BICEPS standard.
 
 NOTE: As explained in the https://profiles.ihe.net/GeneralIntro/ch-7.html#7.5[IHE Technical Framework Document Conventions], the acronym TF stands for Technical Framework, whereas the number immediately behind the hyphen in the "TF-X" notation stands for the volume number within a Technical Framework.
 

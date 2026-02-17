@@ -289,7 +289,7 @@ Specialized terms and acronyms should be added to the TF-0 Glossary table and re
 [source]
 ----
 | [[term_participant_key_purposes,Participant Key Purposes (PKP)]] Participant Key Purposes
-| These generally refer to the ISO/IEEE 11073-1070x standards that provide a consensus set of risk control measures aligned with the four core <<acronym_mdi>> functions:  <<term_plug_and_trust>>, reporting, alerting & external control.
+| These generally refer to the IEEE 11073-1070x standards that provide a consensus set of risk control measures aligned with the four core <<acronym_mdi>> functions:  <<term_plug_and_trust>>, reporting, alerting & external control.
 |
 | [[acronym_pkp,PKP]] PKP
 ----
@@ -869,7 +869,7 @@ The example below illustrates the AsciiDoc source required to define a protocol 
 [source,asciidoc]
 ----
 [role="protocol",protocol-id=mdpws]
-== ISO/IEEE 11073 SDC / MDPWS Message Specifications (Normative)
+== IEEE 11073 SDC / MDPWS Message Specifications (Normative)
 
 [CAUTION]
 ====

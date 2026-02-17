@@ -35,7 +35,7 @@
 | Organization
 
 |[[term_basic_ice_protocol_specification,Basic ICE Protocol Specification (BICEPS)]] Basic ICE Protocol Specification
-| General reference to the abstract, implementation technology independent SDC components defined in the ISO/IEEE 11073-10207 standard.
+| General reference to the abstract, implementation technology independent SDC components defined in the IEEE 11073-10207 standard.
 |
 | [[acronym_biceps,BICEPS]] BICEPS
 | <<ref_ieee_11073_10207_2017>>
@@ -198,7 +198,7 @@
 |
 
 | [[term_medical_device_communication,Medical Device Communication (MDC)]] Medical Device Communication
-| A general term that refers to all aspects of standards-based exchanges between medical (and health) devices, including <<acronym_pocd>> and <<acronym_phd>>; in some contexts, for example <<acronym_hl7>>, it refers to the ISO/IEEE 11073-10101 Nomenclature or "coding system".
+| A general term that refers to all aspects of standards-based exchanges between medical (and health) devices, including <<acronym_pocd>> and <<acronym_phd>>; in some contexts, for example <<acronym_hl7>>, it refers to the IEEE 11073-10101 Nomenclature or "coding system".
 |
 | [[acronym_mdc,MDC]] MDC
 | <<ref_ieee_11073_10101_2020>>
@@ -219,7 +219,7 @@
 |
 
 | [[term_medical_device_system,Medical Device System (MDS)]] Medical Device System
-| A core object type in the ISO/IEEE 11073 device communication standards.  It represents the top-level containment of the hierarchy of information objects contained in a device.
+| A core object type in the IEEE 11073 device communication standards.  It represents the top-level containment of the hierarchy of information objects contained in a device.
 |
 | [[acronym_mds,MDS]] MDS
 | <<ref_ieee_11073_10207_2017>>, <<ref_ieee_11073_10201_2004>>
@@ -262,7 +262,7 @@ elements, from requirements to system components to Verification & Validation te
 | Organization
 
 | [[term_participant_key_purposes,Participant Key Purposes (PKP)]] Participant Key Purposes
-| These generally refer to the ISO/IEEE 11073-1070x standards that provide a consensus set of risk control measures aligned with the four core <<acronym_mdi>> functions:  <<term_plug_and_trust>>, reporting, alerting and external control.
+| These generally refer to the IEEE 11073-1070x standards that provide a consensus set of risk control measures aligned with the four core <<acronym_mdi>> functions:  <<term_plug_and_trust>>, reporting, alerting and external control.
 |
 | [[acronym_pkp,PKP]] PKP
 | <<ref_ieee_11073_10700_2022>>
@@ -475,7 +475,7 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 |
 
 | [[term_medical_device_system,Virtual Medical Device (VMD)]] Virtual Medical Device
-| A core object type in the ISO/IEEE 11073 device communication standards. It represents the second-level containment of the hierarchy of information objects contained in a device.
+| A core object type in the IEEE 11073 device communication standards. It represents the second-level containment of the hierarchy of information objects contained in a device.
 |
 | [[acronym_vmd,VMD]] VMD
 | <<ref_ieee_11073_10207_2017>>, <<ref_ieee_11073_10201_2004>>
