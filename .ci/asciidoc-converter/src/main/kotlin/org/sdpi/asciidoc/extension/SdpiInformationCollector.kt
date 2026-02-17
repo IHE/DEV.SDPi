@@ -19,7 +19,8 @@ class SdpiInformationCollector(
     private val transactionActors: TransactionActorsProcessor,
     private val profileTransactions: TransactionIncludeProcessor,
     private val profileUseCases: SupportUseCaseIncludeProcessor,
-    private val profileContentModuleReferences: ContentModuleIncludeProcessor
+    private val profileContentModuleReferences: ContentModuleIncludeProcessor,
+    private val externalStandardsProcessor : ExternalStandardProcessor
 ) : Treeprocessor() {
     private companion object : Logging
 
@@ -89,11 +90,13 @@ class SdpiInformationCollector(
         validateContentModuleRefs()
         validateTransactions()
         validateRequirements()
+        validateActors()
 
         validateObjectIds()
 
         // This is more proof-of-concept rather than information
-        // we want to include in the export.
+        // we want to include in the export. Currently, it doesn't
+        // gather requirements across actor groupings.
         // collectActorRequirements()
 
         return document
@@ -204,9 +207,13 @@ class SdpiInformationCollector(
         if (block.hasRole(Roles.Actor.ALIAS.key)) {
             processActorAlias(block)
         }
+
+        // Not currently used; part of confusion between profile-actor-options,
+        // actor options and profile options (hint: there are only profile-actor-options).
+        /*
         if (block.hasRole(Roles.Actor.OPTION.key)) {
             processActorOption(block, profile)
-        }
+        }*/
 
         if (block.hasRole(Roles.UseCaseSupport.SECTION_ROLE.key)) {
             processUseCaseSupport(block, profile)
@@ -249,12 +256,35 @@ class SdpiInformationCollector(
         }
 
         val oids = getOids(block, "Actor $strId", WellKnownOid.DEV_ACTOR)
+        val requiredGroupings = getRequiredGroupings(block, "Actor $strId")
 
         actorAliases[strId] = strId // Self alias for easy lookup
         actorAliases["actor_$strId"] = strId // common alternative name.
-        val newActor = SdpiActor(strId, oids, strTitle, profile.profileId, strAnchor)
+        val newActor = SdpiActor(strId, oids, strTitle, profile.profileId, strAnchor, requiredGroupings)
         actors[strId] = newActor
         profile.addActor(newActor)
+    }
+
+    private fun getRequiredGroupings(block: StructuralNode, strContext: String): List<ActorGrouping>? {
+
+        val strGrouping = block.attributes[Roles.Actor.GROUPING.key]?.toString() ?: return null
+
+        val actorGroupings = mutableListOf<ActorGrouping>()
+        val astrGroupings = strGrouping.split(",")
+        for (strGroup in astrGroupings) {
+            val match =  ActorGrouping.GROUPING_REGEX.matchEntire(strGroup)
+            checkNotNull(match) {
+                "Invalid actor grouping for $strContext".also {
+                    logger.error{it}
+                }
+            }
+
+            val strActorId = match.groupValues[1]
+            val strOptionId = match.groupValues[2].ifBlank{null}
+            actorGroupings.add(ActorGrouping(strActorId, strOptionId))
+        }
+
+        return actorGroupings
     }
 
 
@@ -427,6 +457,13 @@ class SdpiInformationCollector(
             }
         }
 
+        val newRequirement = buildRequirement(nRequirementNumber, block)
+        linkSupportForExternalStandards(newRequirement)
+
+        requirements[nRequirementNumber] = newRequirement
+    }
+
+    private fun buildRequirement(nRequirementNumber: Int, block: StructuralNode) : SdpiRequirement2 {
         val strLocalId = String.format("R%04d", nRequirementNumber)
         val strGlobalId = block.attributes["global-id"]?.toString() ?: ""
         val aGroups: List<String> = getRequirementGroupMembership(block)
@@ -442,30 +479,31 @@ class SdpiInformationCollector(
 
         when (requirementType) {
             RequirementType.TECH ->
-                requirements[nRequirementNumber] = SdpiRequirement2.TechFeature(
+                return SdpiRequirement2.TechFeature(
                     nRequirementNumber,
                     strLocalId, strGlobalId, requirementLevel, getMaxOccurrence(block), owner, aGroups, specification
                 )
 
             RequirementType.USE_CASE ->
-                requirements[nRequirementNumber] = buildUseCaseRequirement(
+                return buildUseCaseRequirement(
                     block, nRequirementNumber,
                     strLocalId, strGlobalId, requirementLevel, owner, aGroups, specification
                 )
 
             RequirementType.REF_ICS ->
-                requirements[nRequirementNumber] = buildRefIcsRequirement(
+                return buildRefIcsRequirement(
                     block, nRequirementNumber,
                     strLocalId, strGlobalId, requirementLevel, owner, aGroups, specification
                 )
 
             RequirementType.RISK_MITIGATION ->
-                requirements[nRequirementNumber] = buildRiskMitigationRequirement(
+                return buildRiskMitigationRequirement(
                     block, nRequirementNumber,
                     strLocalId, strGlobalId, requirementLevel, owner, aGroups, specification
                 )
 
-            RequirementType.IHE_PROFILE -> buildIheProfileRequirement(
+            RequirementType.IHE_PROFILE ->
+                return buildIheProfileRequirement(
                 block, nRequirementNumber,
                 strLocalId, strGlobalId, requirementLevel, owner, aGroups, specification
             )
@@ -512,6 +550,7 @@ class SdpiInformationCollector(
         val exampleContent: MutableList<Content> = mutableListOf()
         val relatedContent: MutableList<Content> = mutableListOf()
         val unStyledContent: MutableList<Content> = mutableListOf()
+
 
         for (child in block.blocks) {
             val strStyle = child.attributes["style"].toString()
@@ -784,6 +823,52 @@ class SdpiInformationCollector(
             }
         }
     }
+
+    private fun linkSupportForExternalStandards(req: SdpiRequirement2)
+    {
+        for(c in req.specification.relatedContent) {
+            val matches = c.getIdMatches(ExternalRequirementReference.REQUIREMENT_REF_REGEX, 0)
+            for(strRef in matches) {
+                val mReference = ExternalRequirementReference.REQUIREMENT_REF_REGEX.find(strRef)
+                checkNotNull(mReference) {
+                    logger.error("Unexpected match failure in parseExternalRequirements")
+                }
+                val strRefId = mReference.groupValues[1]
+                val strArguments = mReference.groupValues[2]
+                val arguments = parseArgs(strArguments)
+                val strStandardId = arguments["standard-id"]
+                checkNotNull(strStandardId){
+                    logger.error("Missing standard argument in $strRef")
+                }
+                val strComment = arguments["comment"]
+                //println("------ $strRef: standard = $strStandardId, requirement = $strRefId, comment=$strComment")
+                val requirement = createExternalRef(strStandardId, strRefId)
+                requirement.addSupport(ExternalRequirementSupport(req, strComment))
+            }
+        }
+    }
+
+    private fun parseArgs(s: String): Map<String, String> =
+        s.split(ExternalRequirementReference.REQUIREMENT_REF_ARGS).associate { arg ->
+            val (key, rawValue) = ExternalRequirementReference.REQUIREMENT_ARG_PAIRS.matchEntire(arg.trim())!!.destructured
+            val value = rawValue.trim().removeSurrounding("\"").removeSurrounding("'")
+            key to value
+        }
+
+    private fun createExternalRef(strStandardId: String, strRequirementId: String): ExternalRequirement {
+        val standard = externalStandardsProcessor.getStandard(strStandardId)
+        checkNotNull(standard){
+            logger.error("Unknown standard id: $strStandardId")
+        }
+        val requirement = standard.getRequirement(strRequirementId)
+        checkNotNull(requirement) {
+            logger.error("Unknown requirement '$strRequirementId' for standard '$strStandardId'")
+        }
+
+        return requirement
+    }
+
+
 
     /**
      * Retrieves the list of groups the requirement belongs to (if any).
@@ -1229,6 +1314,42 @@ class SdpiInformationCollector(
         }
     }
 
+    private fun validateActors() {
+        for(profile in profiles.values) {
+            for(actor in profile.actorReferences()) {
+                if (actor.requiredActorGroupings != null) {
+                    //println("***** Checking actor grouping for ${actor.id}")
+                    for(grouping in actor.requiredActorGroupings) {
+                        val strParent = grouping.actorId
+                        val strOption = grouping.optionId
+                        check(strParent != actor.id) {
+                            logger.error("The actor ${actor.id} is grouped with itself, which is not allowed")
+                        }
+                        check(actors.containsKey(strParent)) {
+                            logger.error("The actor ${actor.id} is grouped with unknown actor $strParent")
+                        }
+                        if (strOption != null) {
+                            check(optionExists(strOption)) {
+                                logger.error("The actor ${actor.id} is optionally grouped with actor $strParent using unknown option $strOption")
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private  fun optionExists(strOptionId: String): Boolean {
+        for(profile in profiles.values) {
+            if (profile.findOption(strOptionId) != null) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
     // Gather all object identifiers and make sure they are unique.
     private fun validateObjectIds() {
         val allObjectIds = mutableMapOf<String,String>()
@@ -1277,6 +1398,7 @@ class SdpiInformationCollector(
         }
         allObjectIds[strOid] = strContext
     }
+
 
     //endregion
 

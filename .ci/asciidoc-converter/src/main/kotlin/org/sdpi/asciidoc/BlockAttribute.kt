@@ -102,4 +102,21 @@ sealed class TableAttributes(val key: String) {
         // Define filter for the root arc for oids to include in the table.
         ROOT_ARC("arc")
     }
+
+    enum class IcsTable(val key:String) {
+        // When defined, the ICS table is populated from an
+        // imported external standard
+        SOURCE_STANDARD("standard-id")
+    }
+}
+
+enum class ExternalStandardAttributes(val key: String) {
+    // Attribute with bibliography entry for the standard [required]
+    CITATION_KEY("cite"),
+
+    // An document-unique identifier to reference the standard in ICS tables and requirement references.
+    ID("id"),
+
+    // ID of the standard when referencing requirements with the "RefRequirement" inline macro.
+    STANDARD_ID("standard-id")
 }

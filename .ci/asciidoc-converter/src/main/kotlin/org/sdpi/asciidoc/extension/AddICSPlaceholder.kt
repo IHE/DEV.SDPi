@@ -4,6 +4,7 @@ import org.asciidoctor.ast.StructuralNode
 import org.asciidoctor.extension.BlockMacroProcessor
 import org.asciidoctor.extension.Name
 import org.sdpi.asciidoc.RequirementAttributes
+import org.sdpi.asciidoc.TableAttributes
 
 const val BLOCK_MACRO_NAME_SDPI_ICS_TABLE = "sdpi_ics_table"
 
@@ -53,7 +54,11 @@ class AddICSPlaceholder : BlockMacroProcessor(BLOCK_MACRO_NAME_SDPI_ICS_TABLE) {
             placeholderTable.attributes[RequirementAttributes.Common.ACTOR.key] = strActor
         }
 
+        val strStandardId = attributes[TableAttributes.IcsTable.SOURCE_STANDARD.key]
+        if (strStandardId != null) {
+            placeholderTable.attributes[TableAttributes.IcsTable.SOURCE_STANDARD.key] = strStandardId
+        }
+
         return placeholderTable
     }
-
 }

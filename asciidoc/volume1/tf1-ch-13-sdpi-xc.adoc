@@ -82,6 +82,7 @@ include::../plantuml/vol1-figure-sdpi-xc-example-sequence-diagram.puml[]
 ....
 
 [#vol1_clause_sdpi_xc_somds_medical_control_provider,role="actor actor-alias",actor-id="somds_medical_control_provider",oid-arcs=.37]
+[actor-grouping="somds_provider"]
 ===== SOMDS Medical Control Provider
 [#vol1_spec_sdpi_xc_actor_somds_medical_control_provider, reftext='SOMDS Medical Control Provider',role="actor-alias",actor-id="somds_medical_control_provider"]
 Actor Summary Definition:
@@ -98,6 +99,7 @@ This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_
 Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_xc_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_provider>> and <<vol1_clause_sdpi_p_profile_reftext>>.
 
 [#vol1_clause_sdpi_xc_somds_medical_control_consumer,role="actor actor-alias",actor-id="somds_medical_control_consumer",oid-arcs=.36]
+[actor-grouping="somds_consumer"]
 ===== SOMDS Medical Control Consumer
 [#vol1_spec_sdpi_xc_actor_somds_medical_control_consumer, reftext='SOMDS Medical Control Consumer',role="actor-alias",actor-id="somds_medical_control_consumer"]
 Actor Summary Definition:

@@ -212,6 +212,11 @@ For every MDS of a <<vol1_spec_sdpi_p_actor_somds_provider>>, the <<vol1_spec_sd
 ====
 The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_consumer>> shall consider the risk of providing the <<vol1_spec_sdpi_p_actor_somds_consumer>>'s <<term_system_function_contribution>> if the accuracy of the device internal clock decreases due to an unreachable <<acronym_ts_service>>.
 ====
+
+[RELATED]
+====
+* RefRequirement:RR1162[standard-id=10700, comment="time service unreachable"]
+====
 ****
 
 .R1533
@@ -225,8 +230,14 @@ The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_consumer>> shall c
 
 [NOTE]
 ====
-NOTE: This goes beyond considering the risk of erroneous timestamps required by the Base <<acronym_pkp>> Standard, since it forces the <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_consumer>> to define a minimum accuracy acceptable for a <<term_system_function_contribution>>.
+This goes beyond considering the risk of erroneous timestamps required by the Base <<acronym_pkp>> Standard, since it forces the <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_consumer>> to define a minimum accuracy acceptable for a <<term_system_function_contribution>>.
 ====
+
+[RELATED]
+====
+* RefRequirement:RR1162[standard-id=10700, comment="provider clock's inaccurate"]
+====
+
 ****
 
 *REVIEWER QUESTION*:Do we need a requirement, for notifying the biomed in case the <<acronym_ts_service>> is no longer reachable? Or is the following logging requirement sufficient?
@@ -238,6 +249,11 @@ NOTE: This goes beyond considering the risk of erroneous timestamps required by 
 [NORMATIVE]
 ====
 If a <<vol1_spec_sdpi_p_actor_somds_participant>> cannot reach the <<acronym_ts_service>>, the <<vol1_spec_sdpi_p_actor_somds_participant>> shall create a log entry.
+====
+
+[RELATED]
+====
+* RefRequirement:RR1162[standard-id=10700, comment="log time-service unreachable"]
 ====
 
 ****
@@ -288,7 +304,7 @@ The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_participant>> shal
 
 [RELATED]
 ====
-* <<ref_ieee_11073_10700_2022>>, RR1162.
+* RefRequirement:RR1162[standard-id=10700, comment="workflow interruption risks"]
 ====
 
 ****
@@ -334,6 +350,11 @@ The <<vol1_spec_sdpi_p_actor_somds_participant>> shall log each <<term_abrupt_ti
 [NOTE]
 ====
 This requirement supplements TR1340 in <<ref_ieee_11073_10700_2022>>&mdash; _An SDC BASE PARTICIPANT SHOULD log each <<term_non_slewing_time_adjustment>> of the device clock_ &mdash; requiring specific information in the log to support post incident analysis.
+====
+
+[RELATED]
+====
+* RefRequirement:RR1162[standard-id=10700, comment="log abrupt time adjustments"]
 ====
 ****
 
@@ -411,6 +432,11 @@ The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_consumer>> shall c
 ====
 It may not be possible to reliably determine the relationship between <<term_timestamp>> obtained from different <<term_epoch>>s without addition information regarding the cause of an <<term_abrupt_time_adjustment>>. Consider, for example, an <<term_abrupt_time_adjustment>> that arises when the <<term_system_clock>> was running significantly faster (or slower) than the <<term_reference_clock>>. The arithmetic difference in time between two events spanning the adjustment (even when combined with the size of the step adjustment) may not match the elapsed time experienced by an unbiased observer because time passed at different rates in the different epochs.  
 ====
+
+[RELATED]
+====
+* RefRequirement:RR1162[standard-id=10700, comment="multiple epoch time-stamp risks"]
+====
 ****
 
 
@@ -452,6 +478,11 @@ A <<vol1_spec_sdpi_p_actor_somds_participant>> may enter a fault state by, for e
 * A sudden change in a participant's time-reference frame may require intervention by the OPERATOR or RESPONSIBLE ORGANIZATION. 
  
 * A <<vol1_spec_sdpi_p_actor_somds_participant>> may continue delivery with a subset one or more of its nominal System Function Contribution (<<acronym_sfc>>) following an <<term_abrupt_time_adjustment>> reporting the activation state of components using `AbstractDeviceComponentState/@ActivationState`.
+====
+
+[RELATED]
+====
+* RefRequirement:RR1162[standard-id=10700, comment="unrecoverable time adjustment faults"]
 ====
 ****
 
@@ -498,6 +529,10 @@ A <<vol1_spec_sdpi_p_actor_somds_consumer>> may disconnect or go into a fail-saf
 ====
 A consumer relying on the temporal accuracy of historic data for its <<term_system_function_contribution>> may require operator input to continue safe operation following an <<term_abrupt_time_adjustment>> to one or more of its data sources. 
 ====
+[RELATED]
+====
+* RefRequirement:RR1162[standard-id=10700, comment="unrecoverable time adjustments"]
+====
 ****
 
 // Use the message timestamp for early detection of temporal anomalies
@@ -516,6 +551,11 @@ A <<vol1_spec_sdpi_p_actor_somds_consumer>> should use the low-precision `Date` 
 * The maximum discrepancy between participant clocks may depend on the protocol being used to synchronize time (`pm:ClockState/pm:ActiveSyncProtocol`). The time reported by two devices employing <<ref_rfc_5905, NTPv4>>, for example, may differ by more than 8 1/2 minutes, in a worst case scenario, without triggering an <<term_abrupt_time_adjustment>>. 
 * A <<vol1_spec_sdpi_p_actor_somds_consumer>> could detect discrepancies exceeding a few seconds, which may affect its <<term_system_function_contribution>>, using timestamps in HTTP headers, for example. 
 * By monitoring timestamp on message responses (such as subscription renew requests), a <<vol1_spec_sdpi_p_actor_somds_consumer>> may be able to take an appropriate action, such as alerting the operator, before using data with suspicious timestamps.
+====
+
+[RELATED]
+====
+* RefRequirement:RR1162[standard-id=10700, comment="monitoring provider clock"]
 ====
 ****
 
@@ -566,6 +606,11 @@ A <<vol1_spec_sdpi_p_actor_somds_consumer>>, adjusting invalid and/or suspicious
 [NOTE]
 ====
 A <<vol1_spec_sdpi_p_actor_somds_consumer>> may use information provided, for example, by the <<vol1_spec_sdpi_p_actor_somds_provider>> using, for example, the <<vol3_clause_timestamp_versioning, timestamp versioning>> extension to improve the accuracy of a suspicious timestamp. However timestamps may remain less accurate than had the <<term_abrupt_time_adjustment>> not occurred and it may still be appropriate to notify next users of this.
+====
+
+[RELATED]
+====
+* RefRequirement:RR1162[standard-id=10700, comment="propagate time faults"]
 ====
 ****
 
