@@ -296,6 +296,8 @@ If a <<label_system_type_name_sas>> is being created, it may incorporate both <<
 [cols="1"]
 |===
 a| *{supplement_note}*:  This section is intentionally left incomplete until the completion of the <<ref_ieee_11073_10702_202x>> standard, which is required before this profile can be completed.
+[#vol1_clause_sdpi_a_actor_option_alert_delegation,role=profile-option,profile-option-id=alert_delegation,oid-arcs=".4"]
+==== Alert Delegation Option
 
 This option enables <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> and <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> systems to safely and reliably run a Distributed Alarm System with each other.
 This option enables both the <<transaction_name_establish_distributed_alarm_system>> [DEV-48] and <<transaction_name_end_distributed_alarm_system>> [DEV-49] transactions.
@@ -336,7 +338,7 @@ include::../plantuml/vol1-figure-sdpi-a-delegation-example-sequence-diagram.puml
 ....
 
 
-[#vol1_clause_sdpi_a_actor_option_alert_user_acknowledgement]
+[#vol1_clause_sdpi_a_actor_option_alert_user_acknowledgement,role=profile-option,profile-option-id=alert_user_acknowledgement,oid-arcs=".5"]
 ==== Alert User Acknowledgement Option
 
 [#vol1_clause_sdpi_a_actor_option_alert_user_acknowledgement_reftext, reftext='SDPi-A Option:  Alert User Acknowledgement']
@@ -351,7 +353,7 @@ This option will enable the <<transaction_name_update_alert_acknowledgement_stat
 
 |===
 
-[#vol1_clause_sdpi_a_actor_option_remote_alert_signaling]
+[#vol1_clause_sdpi_a_actor_option_remote_alert_signaling,role=profile-option,profile-option-id=remote_alert_signaling,oid-arcs=".6"]
 ==== Remote Alert Signaling
 
 [#vol1_clause_sdpi_a_actor_option_remote_alert_signaling_reftext, reftext='SDPi-A Option:  Remote Alert Signaling']
@@ -425,6 +427,7 @@ The SDPi-A Profile supports requirements from use cases detailed in <<vol1_appen
 The following subsections identify the specific use case requirements that are fulfilled with capabilities provided by this SDPi-A Profile.
 
 
+[role="support-use-case", use-case-id="sicdsp", oid-arcs=.1]
 ===== <<label_use_case_name_sicdsp>> (<<acronym_sicdsp>>)
 This use case provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_sicdsp>>.
 
@@ -435,8 +438,10 @@ Specific capabilities supporting the <<acronym_sicdsp>> use case include:
 * *Technical Pre-Conditions*: N/A
 * *Scenarios*: <<acronym_sicdsp>> <<vol1_clause_appendix_c_use_case_sicdsp_scenarios>> communication of medical alert information to a <<vol1_spec_sdpi_p_actor_somds_consumer>> <<system_type_dashboard>>
 
+sdpi_support_use_case::somds_medical_alert_consumer[support=optional]
 
 
+[role="support-use-case", use-case-id="sicdmp", oid-arcs=.2]
 ===== <<label_use_case_name_sicdmp>> (<<acronym_sicdmp>>)
 This use case provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_sicdmp>>.
 
@@ -447,7 +452,9 @@ Specific capabilities supporting the <<acronym_sicdmp>> use case include:
 * *Technical Pre-Conditions*: N/A
 * *Scenarios*: <<acronym_sicdmp>> <<vol1_clause_appendix_c_use_case_sicdmp_scenarios>> communication of medical alert information to a <<vol1_spec_sdpi_p_actor_somds_consumer>> <<system_type_dashboard>>
 
+sdpi_support_use_case::somds_medical_alert_consumer[support=optional]
 
+[role="support-use-case", use-case-id="acns", oid-arcs=.3]
 ===== <<label_use_case_name_acns>> (<<acronym_acns>>)
 This use case provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_acns>>.
 
@@ -458,7 +465,9 @@ Specific capabilities supporting the <<acronym_acns>> use case include:
 * *Technical Pre-Conditions*:  N/A
 * *Scenarios*:  <<acronym_acns>> <<vol1_clause_appendix_c_use_case_acns_scenarios>> communication of medical alert information to a <<vol1_spec_sdpi_p_actor_somds_consumer>> Alert <<system_type_device_gateway>>
 
+sdpi_support_use_case::somds_acm_gateway[support=optional]
 
+[role="support-use-case", use-case-id="aars", oid-arcs=.3]
 ===== <<label_use_case_name_aars>> (<<acronym_aars>>)
 This use case provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_aars>>.
 
@@ -469,6 +478,7 @@ Specific capabilities supporting the <<acronym_aars>> use case include:
 * *Technical Pre-Conditions*:  N/A
 * *Scenarios*:  <<acronym_aars>> <<vol1_clause_appendix_c_use_case_aars_scenarios>> communication of medical alert information to a <<vol1_spec_sdpi_p_actor_somds_consumer>> Alert <<system_type_device_gateway>>
 
+sdpi_support_use_case::somds_acm_gateway[support=optional]
 
 [#vol1_clause_sdpi_a_ses_considerations]
 === SDPi-A Safety, Effectiveness and Security - Requirements and Considerations

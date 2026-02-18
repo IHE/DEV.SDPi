@@ -8,16 +8,13 @@ import kotlinx.serialization.Serializable
 @Serializable
 class SdpiProfileOption @OptIn(ExperimentalSerializationApi::class) constructor(
     val id: String,
+    val oids: List<String>,
     val anchor: String,
     val label: String,
 
     @SerialName("transactionReferences")
     @EncodeDefault(EncodeDefault.Mode.NEVER)
     val transactionReferences: MutableList<SdpiTransactionReference> = mutableListOf(),
-
-    @SerialName("useCaseReferences")
-    @EncodeDefault(EncodeDefault.Mode.NEVER)
-    val useCaseReferences: MutableList<SdpiUseCaseReference> = mutableListOf(),
 
     @SerialName("contentModuleReferences")
     @EncodeDefault(EncodeDefault.Mode.NEVER)
@@ -26,10 +23,6 @@ class SdpiProfileOption @OptIn(ExperimentalSerializationApi::class) constructor(
     ) {
     fun add(ref: SdpiTransactionReference) {
         transactionReferences.add(ref)
-    }
-
-    fun add(ref: SdpiUseCaseReference) {
-        useCaseReferences.add(ref)
     }
 
     fun add(ref: SdpiContentModuleRef) {
@@ -44,7 +37,6 @@ class SdpiProfile(
     val anchor: String,
     val label: String,
     val transactionReferences: List<SdpiTransactionReference>?,
-    val useCaseReferences: List<SdpiUseCaseReference>?,
     val contentModuleReferences: List<SdpiContentModuleRef>?
 ) {
     @Serializable
@@ -83,6 +75,22 @@ class SdpiProfile(
             throw IllegalStateException("Actor option ${option.id} already exists, with label ${existing.label}")
         }
         actorOptions.add(option)
+    }
+
+    @OptIn(ExperimentalSerializationApi::class)
+    @Serializable
+    @SerialName("use-case-support")
+    @EncodeDefault(EncodeDefault.Mode.NEVER)
+    val useCaseSupport = mutableListOf<SdpiUseCaseSupport>()
+
+    fun useCasesSupported() = useCaseSupport
+
+    fun addUseCaseSupport(support: SdpiUseCaseSupport) {
+        val existing = useCaseSupport.find{it.useCaseId == support.useCaseId}
+        if (existing != null) {
+            throw  IllegalStateException("Use case ${support.useCaseId} is already supported by $profileId")
+        }
+        useCaseSupport.add(support)
     }
 
     fun getTransactionObligations(
@@ -192,7 +200,6 @@ class SdpiProfile(
                 }
             }
         }
-
     }
 }
 
