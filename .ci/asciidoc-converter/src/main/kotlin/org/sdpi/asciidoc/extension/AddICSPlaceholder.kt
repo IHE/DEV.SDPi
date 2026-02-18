@@ -39,11 +39,18 @@ class AddICSPlaceholder : BlockMacroProcessor(BLOCK_MACRO_NAME_SDPI_ICS_TABLE) {
         attributes["role"] = ICS_TABLE_ROLE
         val placeholderTable = createTable(parent)
         placeholderTable.attributes["role"] = ICS_TABLE_ROLE
+        placeholderTable.attributes["title"] = attributes["title"]
+        placeholderTable.attributes["id"] = attributes["id"]
 
         // Add filter attributes to the table for the tree processor to consume.
         val strGroup = attributes[RequirementAttributes.Common.GROUPS.key]
         if (strGroup != null) {
             placeholderTable.attributes[RequirementAttributes.Common.GROUPS.key] = strGroup
+        }
+
+        val strActor = attributes[RequirementAttributes.Common.ACTOR.key]
+        if (strActor != null) {
+            placeholderTable.attributes[RequirementAttributes.Common.ACTOR.key] = strActor
         }
 
         return placeholderTable

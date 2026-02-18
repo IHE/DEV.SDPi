@@ -15,14 +15,18 @@ In order to suppress concurrent connection attempts, in the ad-hoc mode a <<vol1
 
 .R0001
 [sdpi_requirement#r0001,sdpi_req_level=may]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
+[NORMATIVE]
+====
 A <<vol1_spec_sdpi_p_actor_somds_provider>> may delay sending a Resolve Match response to a Resolve message.
+====
 
-.Notes
-[%collapsible]
+[NOTE]
 ====
-NOTE: It is up to the <<term_manufacturer>> of the <<vol1_spec_sdpi_p_actor_somds_provider>> to choose a delay that fits the hardware capabilities of the <<vol1_spec_sdpi_p_actor_somds_provider>> for concurrent connection requests.
+It is up to the <<term_manufacturer>> of the <<vol1_spec_sdpi_p_actor_somds_provider>> to choose a delay that fits the hardware capabilities of the <<vol1_spec_sdpi_p_actor_somds_provider>> for concurrent connection requests.
 ====
+
 ****
 
 ===== Consumer-controlled Delay
@@ -39,13 +43,16 @@ Depending on the priority groups 0 to 9, with increasing group numbers the initi
 
 .R0002
 [sdpi_requirement#r0002,sdpi_req_level=should]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_consumer>> should be configurable with a priority group number in accordance with <<ref_ieee_11073_20701_2018>> R0076.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: As it is not trivial to determine the priority of a <<vol1_spec_sdpi_p_actor_somds_consumer>> in all and every circumstance, the <<term_manufacturer>> can provide configurable options that allow for flexible adaptation on environmental changes.
+A <<vol1_spec_sdpi_p_actor_somds_consumer>> should be configurable with a priority group number in accordance with <<ref_ieee_11073_20701_2018>> R0076.
+====
+
+[NOTE]
+====
+As it is not trivial to determine the priority of a <<vol1_spec_sdpi_p_actor_somds_consumer>> in all and every circumstance, the <<term_manufacturer>> can provide configurable options that allow for flexible adaptation on environmental changes.
 ====
 ****
 
@@ -53,31 +60,38 @@ NOTE: As it is not trivial to determine the priority of a <<vol1_spec_sdpi_p_act
 
 .R0003
 [sdpi_requirement#r0003,sdpi_req_level=shall]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
+[NORMATIVE]
+====
 If a <<term_manufacturer>> does not intend to enforce configuration of priority groups during installation of its <<vol1_spec_sdpi_p_actor_somds_consumer>>, the manufacturer shall pre-configure priority groups to a reasonable default value that reflects the highest criticality of the <<vol1_spec_sdpi_p_actor_somds_consumer>>'s system function.
-
-.Notes
-[%collapsible]
 ====
-NOTE: This does not necessarily prevent the user from changing the priority group after the installation process is finished.
 
-NOTE: Guidelines for reasonable default values are shown in <<vol2_clause_appendix_a_mdpws_connect_time_algorithm_priority_groups>>.
+[NOTE]
 ====
+* This does not necessarily prevent the user from changing the priority group after the installation process is finished.
+
+* Guidelines for reasonable default values are shown in <<vol2_clause_appendix_a_mdpws_connect_time_algorithm_priority_groups>>.
+====
+
 ****
 
 ====== Dynamic Priority Group
 
 .R0004
 [sdpi_requirement#r0004,sdpi_req_level=may]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
-If a <<term_manufacturer>> does not intend to allow for a user to configure a priority group after the installation process of its <<vol1_spec_sdpi_p_actor_somds_consumer>> is finished, the manufacturer may dynamically determine a reasonable priority group for its <<vol1_spec_sdpi_p_actor_somds_consumer>> according to the highest criticality of the <<vol1_spec_sdpi_p_actor_somds_consumer>>'s system function on startup.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: In order to dynamically determine the priority group within a certain range, a <<vol1_spec_sdpi_p_actor_somds_consumer>> can use, for example, a random number generator function or a real-time clock.
+If a <<term_manufacturer>> does not intend to allow for a user to configure a priority group after the installation process of its <<vol1_spec_sdpi_p_actor_somds_consumer>> is finished, the manufacturer may dynamically determine a reasonable priority group for its <<vol1_spec_sdpi_p_actor_somds_consumer>> according to the highest criticality of the <<vol1_spec_sdpi_p_actor_somds_consumer>>'s system function on startup.
+====
 
-NOTE: Guidelines for reasonable priority group ranges are shown in <<vol2_clause_appendix_a_mdpws_connect_time_algorithm_priority_groups>>.
+[NOTE]
+====
+* In order to dynamically determine the priority group within a certain range, a <<vol1_spec_sdpi_p_actor_somds_consumer>> can use, for example, a random number generator function or a real-time clock.
+
+* Guidelines for reasonable priority group ranges are shown in <<vol2_clause_appendix_a_mdpws_connect_time_algorithm_priority_groups>>.
 ====
 ****
 

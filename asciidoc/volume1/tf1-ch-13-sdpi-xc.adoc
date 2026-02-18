@@ -1,6 +1,6 @@
 // = Service-oriented Device Point-of-care Interoperability – external Control (SDPi-xC) Profile
 
-[#vol1_clause_sdpi_xc_profile,sdpi_offset=13]
+[#vol1_clause_sdpi_xc_profile,sdpi_offset=13,role=profile,profile-id=sdpi-xc,reftext="External Control Profile",oid-arcs=.14]
 == Service-oriented Device Point-of-care Interoperability – external Control (SDPi-xC) Profile
 
 [%noheader]
@@ -33,44 +33,29 @@ actor groupings, including abstract with concrete, are detailed in <<vol1_clause
 
 image::../images/vol1-diagram-sdpi-xc-actor.svg[]
 
+// Deferred transactions. 
+sdpi_include_transaction::DEV-44[actor-id="somds_medical_control_provider",responder="required",placeholder-name="Manage medical external control"]
+sdpi_include_transaction::DEV-45[actor-id="somds_medical_control_provider",responder="required",placeholder-name="Invoke medical control services"]
+
+sdpi_include_transaction::DEV-44[actor-id="somds_medical_control_consumer",initiator="required",placeholder-name="Manage medical external control"]
+sdpi_include_transaction::DEV-45[actor-id="somds_medical_control_consumer",initiator="required",placeholder-name="Invoke medical control services"]
+
+ifdef::markup-actor-transactions-table[]
+
 [#vol1_table_sdpi_xc_actors_transactions]
 .SDPi-xC Profile - Actors and Transactions
-[%autowidth]
-[cols="1,2,1,1,3"]
-|===
-.^|Actors
-.^|Transactions
-.^|Initiator or Responder
-.^|Optionality
-.^|Reference
+sdpi_transaction_table::[profile-id="sdpi-xc"]
 
-.2+| <<vol1_spec_sdpi_xc_actor_somds_medical_control_provider>>
-.^| <<transaction_name_manage_medical_external_control>> (_deferred_)
-.^| Responder
-.^| R
-| [DEV-44] Deferred to a future version of SDPi
-// <<vol2_clause_dev_44>>
+NOTE: see <<vol1_clause_sdpi_xc_required_actor_groupings>> for actor inheritance and grouping.
 
-| <<transaction_name_invoke_medical_control_services>> (_deferred_)
-| Responder
-| R
-| [DEV-45] Deferred to a future version of SDPi
-// <<vol2_clause_dev_45>>
+endif::[]
 
-.2+| <<vol1_spec_sdpi_xc_actor_somds_medical_control_consumer>>
-.^| <<transaction_name_manage_medical_external_control>> (_deferred_)
-.^| Initiator
-.^| R
-| [DEV-44] Deferred to a future version of SDPi
-// <<vol2_clause_dev_44>>
+ifndef::markup-actor-transactions-table[]
 
-| <<transaction_name_invoke_medical_control_services>> (_deferred_)
-| Initiator
-| R
-| [DEV-45] Deferred to a future version of SDPi
-// <<vol2_clause_dev_45>>
+// Manual actors and transactions table:
+include::actor-tables/sdpi-xc-transactions.adoc[]
 
-|===
+endif::[]
 
 [#vol1_clause_sdpi_xd_actor_descriptions_actor_profile_requirements]
 ==== Actor Descriptions and Actor Profile Requirements
@@ -96,9 +81,9 @@ TODO:
 include::../plantuml/vol1-figure-sdpi-xc-example-sequence-diagram.puml[]
 ....
 
-[#vol1_clause_sdpi_xc_somds_medical_control_provider]
+[#vol1_clause_sdpi_xc_somds_medical_control_provider,role="actor actor-alias",actor-id="somds_medical_control_provider",oid-arcs=.37]
 ===== SOMDS Medical Control Provider
-[#vol1_spec_sdpi_xc_actor_somds_medical_control_provider, reftext='SOMDS Medical Control Provider']
+[#vol1_spec_sdpi_xc_actor_somds_medical_control_provider, reftext='SOMDS Medical Control Provider',role="actor-alias",actor-id="somds_medical_control_provider"]
 Actor Summary Definition:
 [none]
 . A <<vol1_spec_sdpi_p_actor_somds_provider>> grouped actor that provides operational control services to a <<vol1_spec_sdpi_xc_actor_somds_medical_control_consumer>>.
@@ -109,12 +94,12 @@ Transactions enabled for this actor are identified in <<vol1_table_sdpi_xc_actor
 Given this _intended medical purpose_, the actor will fully address applicable requirements from the core <<acronym_sdc>> standards (<<ref_ieee_11073_10207_2017>> and <<ref_ieee_11073_20701_2018>>), as well as the <<acronym_pkp>> standards <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10703_202x>> (Control <<acronym_pkp>>).
 
 Every <<vol1_spec_sdpi_xc_actor_somds_medical_control_provider>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_provider>> to enable <<acronym_somds>>-based connectivity.
-This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_consumer>>.
-Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_a_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_clause_sdpi_p_profile_reftext>>.
+This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_provider>>.
+Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_xc_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_provider>> and <<vol1_clause_sdpi_p_profile_reftext>>.
 
-[#vol1_clause_sdpi_xc_somds_medical_control_consumer]
+[#vol1_clause_sdpi_xc_somds_medical_control_consumer,role="actor actor-alias",actor-id="somds_medical_control_consumer",oid-arcs=.38]
 ===== SOMDS Medical Control Consumer
-[#vol1_spec_sdpi_xc_actor_somds_medical_control_consumer, reftext='SOMDS Medical Control Consumer']
+[#vol1_spec_sdpi_xc_actor_somds_medical_control_consumer, reftext='SOMDS Medical Control Consumer',role="actor-alias",actor-id="somds_medical_control_consumer"]
 Actor Summary Definition:
 [none]
 . A <<vol1_spec_sdpi_p_actor_somds_consumer>> grouped actor that invokes operational control services on a <<vol1_spec_sdpi_xc_actor_somds_medical_control_provider>>.
@@ -126,7 +111,7 @@ Given this _intended medical purpose_, the actor will fully address applicable r
 
 Every <<vol1_spec_sdpi_xc_actor_somds_medical_control_consumer>> is grouped with an <<vol1_spec_sdpi_p_actor_somds_consumer>> to enable <<acronym_somds>>-based connectivity.
 This actor inherits all the capabilities of the paired <<vol1_spec_sdpi_p_actor_somds_consumer>>.
-Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_a_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_clause_sdpi_p_profile_reftext>>.
+Note that optional capabilities for this specification, as specified in <<vol1_clause_sdpi_xc_actor_options>>, may also result in additional requirements for the underlying <<vol1_spec_sdpi_p_actor_somds_consumer>> and <<vol1_clause_sdpi_p_profile_reftext>>.
 
 [#vol1_clause_sdpi_xc_actor_options]
 === SDPi-xC Actor Options

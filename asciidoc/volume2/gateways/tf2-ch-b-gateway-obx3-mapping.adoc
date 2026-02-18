@@ -2,21 +2,28 @@
 ===== OBX-3 Observation Identifier
 
 .R8012
-[sdpi_requirement#r8012,sdpi_req_level=shall,sdpi_max_occurrence=1]
+[sdpi_requirement#r8012,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
-A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the OBX-3 field to the identifier of the element in the hierarchical containment tree such as MDS, VMD, CHAN, or the actual related metric to be exported.
 
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: <<ref_tbl_dec_obx3_mds_mapping>>, <<ref_tbl_dec_obx3_vmd_mapping>>, <<ref_tbl_dec_obx3_chan_mapping>> and <<ref_tbl_dec_obx3_metric_mapping>> define the mapping of the SDC containment tree element to the data fields of the HL7 data type *CWE* used in the OBX-3 field.
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the OBX-3 field to the identifier of the element in the hierarchical containment tree such as MDS, VMD, CHAN, or the actual related metric to be exported.
 ====
+
+[NOTE]
+====
+<<ref_tbl_dec_obx3_mds_mapping>>, <<ref_tbl_dec_obx3_vmd_mapping>>, <<ref_tbl_dec_obx3_chan_mapping>> and <<ref_tbl_dec_obx3_metric_mapping>> define the mapping of the SDC containment tree element to the data fields of the HL7 data type *CWE* used in the OBX-3 field.
+====
+
 ****
 
 .R8013
-[sdpi_requirement#r8013,sdpi_req_level=shall,sdpi_max_occurrence=1]
+[sdpi_requirement#r8013,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
+[NORMATIVE]
+====
 If a private *<<acronym_mdc>>* code is used for the coding of the SDC containment tree element, the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall map an identifier of the element in the hierarchical containment tree such as MDS, VMD, CHAN, or the actual related metric as described in Section <<ref_private_coding_system_note>>.
+====
 ****
 
 [#ref_tbl_dec_obx3_mds_mapping]

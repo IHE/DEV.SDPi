@@ -5,6 +5,7 @@
 
 //reset|+1|off
 [#vol2_clause_dev_29,sdpi_offset=29]
+[role=transaction,transaction-id=DEV-29]
 === Publish BICEPS Update Reports [{var_transaction_id}]
 
 ==== Scope
@@ -14,18 +15,16 @@ include::tf2-dev-29-summary.adoc[]
 
 ==== Actor Roles
 
-.Actor Roles [{var_transaction_id}]
-[cols="1,2"]
-|===
-|Actor |Roles
+[sdpi_transaction_actors]
+--
 
-|<<vol1_spec_sdpi_p_actor_somds_consumer>>
-|Listens for a <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_notification}>> message to retrieve update reports.
+[actor-id="somds_consumer",contribution=Receiver]
+Listens for a <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_notification}>> message to retrieve update reports.
 
-|<<vol1_spec_sdpi_p_actor_somds_provider>>
-|While a subscription is running, the <<vol1_spec_sdpi_p_actor_somds_provider>> delivers <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_notification}>> messages.
+[actor-id="somds_provider",contribution=Initiator]
+While a subscription is running, the <<vol1_spec_sdpi_p_actor_somds_provider>> delivers <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_notification}>> messages.
+--
 
-|===
 
 ==== Referenced Standards
 

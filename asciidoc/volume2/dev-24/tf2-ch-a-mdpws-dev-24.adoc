@@ -8,7 +8,7 @@
 [#vol2_clause_appendix_mdpws_dev_24]
 ==== MDPWS: Discovery Network Topology [DEV-24]
 
-This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_24>>.
+This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_24>>, corresponding to the WS-Discovery ad-hoc mode.
 
 // ---------- PROBE ---------
 
@@ -57,26 +57,33 @@ Therefore, in order to prevent the network congestion from Probe / ProbeMatch me
 
 .R3001
 [sdpi_requirement#r3001,sdpi_req_level=should]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
+[NORMATIVE]
+====
 A <<vol1_spec_sdpi_p_actor_somds_consumer>> should not periodically send Probe messages.
+====
 
-.Notes
-[%collapsible]
+[NOTE]
 ====
-NOTE: If Probe messages are sent periodically, a rationale needs to be provided, since <<vol1_spec_sdpi_p_actor_somds_provider>>s send Hello messages periodically.
+If Probe messages are sent periodically, a rationale needs to be provided, since <<vol1_spec_sdpi_p_actor_somds_provider>>s send Hello messages periodically.
 ====
+
 ****
 
 .R3002
-[sdpi_requirement#r3002,sdpi_req_level=may]
+[sdpi_requirement#r3002,sdpi_req_level=may,sdpi_req_type=tech_feature]
 ****
+[NORMATIVE]
+====
 A <<vol1_spec_sdpi_p_actor_somds_consumer>> may re-send Probe messages if demanded by a dedicated user interaction.
+====
 
-.Notes
-[%collapsible]
+[NOTE]
 ====
-NOTE: A dedicated user interaction can be a button press on a <<vol1_spec_sdpi_p_actor_somds_consumer>>'s display or any other manual activation.
+A dedicated user interaction can be a button press on a <<vol1_spec_sdpi_p_actor_somds_consumer>>'s display or any other manual activation.
 ====
+
 ****
 
 In addition, <<vol1_spec_sdpi_p_actor_somds_consumer>> may set filter criteria for Probe messages to reduce the amount of Probe Match messages.
@@ -86,16 +93,18 @@ For example, Probe messages are sent only if a <<vol1_spec_sdpi_p_actor_somds_co
 ====== Scope Matching
 
 .R7000
-[sdpi_requirement#r7000,sdpi_req_level=shall]
+[sdpi_requirement#r7000,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_provider>> shall implement the scope matching rule `{var_uri_matching_rule}` as specified by <<ref_oasis_ws_discovery_2009>> in a way that the use of _prefix_ refers to the definition of a prefix in formal theory.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: This requirement erases disambiguation since there are multiple definitions of the term _prefix_.
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall implement the scope matching rule `{var_uri_matching_rule}` as specified by <<ref_oasis_ws_discovery_2009>> in a way that the use of _prefix_ refers to the definition of a prefix in formal theory.
+====
 
-NOTE: From this it follows that a prefix can be empty as otherwise the term _proper prefix_ would have to be used.
+[NOTE]
+====
+* This requirement erases disambiguation since there are multiple definitions of the term _prefix_.
+* From this it follows that a prefix can be empty as otherwise the term _proper prefix_ would have to be used.
+* The requirement does not impose restrictions on the use of other matching rules.
 ====
 ****
 

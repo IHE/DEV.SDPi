@@ -8,7 +8,7 @@
 [#vol2_clause_appendix_mdpws_dev_47]
 ==== MDPWS: Retrieve Network Presence [DEV-47]
 
-This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_47>>.
+This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_47>>, corresponding to the WS-Discovery managed mode bound to HTTP transmission.
 
 Additional implementation directions are defined in <<vol2_clause_appendix_mdpws_discovery_proxy>>.
 

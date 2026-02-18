@@ -1,4 +1,5 @@
 [#vol1_clause_appendix_c_use_case_sicdsp,sdpi_offset=3]
+[role=use-case,use-case-id=sicdsp,sdpi_feature="Single Patient Standalone ICU Dashboard",oid-arcs=".2"]
 === Use Case Feature {var_use_case_id}: <<label_use_case_name_sicdsp>> (<<acronym_sicdsp>>)
 
 // NOTE:  See use case labels in document-declarations.adoc
@@ -19,32 +20,50 @@ image::../images/vol1-diagram-use-case-sicdsp-tech-view.svg[]
 [#vol1_clause_appendix_c_use_case_sicdsp_technical_precondition]
 ==== Technical Pre-Conditions
 
+[role=use-case-background]
+====
 *Given* All devices communicate using a common <<acronym_md_lan>> protocol
 
 *And* At least one ICU <<system_type_dashboard>> display
 
 *And* Devices in the room have already been assigned to the <<system_type_dashboard>>
+====
 
 [#vol1_clause_appendix_c_use_case_sicdsp_scenarios]
 ==== Scenarios
 
+[role=use-case-scenario,sdpi_scenario="Devices are Accessible to the Dashboard"]
+[oid-arcs=".1,.1.1"]
 ===== Scenario: <<acronym_sicdsp>> {var_use_case_id}.1 - Devices are Accessible to the Dashboard
 
+[role=use-case-steps]
+====
 *Given* Dashboard has detected at least one assigned accessible ICU device
 
 *When* the ICU devices are communicating on the <<acronym_md_lan>>
 
 *Then* the <<system_type_dashboard>> will display parameter, waveform, alarm, setting, imagine, etc. information from all assigned accessible devices
+====
 
+[role=use-case-scenario,sdpi_scenario="ICU Devices are Inaccessible to the Dashboard"]
+[oid-arcs=".2,.2.1"]
 ===== Scenario: <<acronym_sicdsp>> {var_use_case_id}.2 - ICU Devices are Inaccessible to the Dashboard
 
+[role=use-case-steps]
+====
 *Given* Dashboard cannot detect any assigned accessible ICU devices
 
 *Then* the <<system_type_dashboard>> will display an error message
+====
 
-===== Scenario: <<acronym_sicdsp>> {var_use_case_id}.3 - One or more ICU devices become Inaccessible to the Dashboard
+[role=use-case-scenario,sdpi_scenario="One or more ICU devices become Inaccessible to the Dashboard"]
+[oid-arcs=".3,.3.1"]
+===== Scenario: <<acronym_sicdsp>> {var_use_case_id}.3 - 
 
+[role=use-case-steps]
+====
 *Given* <<system_type_dashboard>> cannot detect a previously detected assigned ICU device
 
 *Then* the <<system_type_dashboard>> will display an error message
+====
 

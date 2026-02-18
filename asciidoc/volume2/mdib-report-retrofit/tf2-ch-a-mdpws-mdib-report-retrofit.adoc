@@ -5,57 +5,156 @@ In addition to <<vol3_clause_mdib_report_retrofit>>, this section specifies requ
 
 .R1001
 [sdpi_requirement#r1001,sdpi_req_level=shall]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
+[NORMATIVE]
+====
 A <<vol1_spec_sdpi_p_actor_somds_provider>> shall only establish one TCP connection at a time for every subscribed <<vol1_spec_sdpi_p_actor_somds_consumer>>.
+====
 ****
 
 .R1002
-[sdpi_requirement#r1002,sdpi_req_level=shall]
+[sdpi_requirement#r1002,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_participant>> shall utilize TCP to exchange messages with other <<vol1_spec_sdpi_p_actor_somds_participant>>s except for messages exchanged in the WS-Discovery Ad-hoc mode.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: The WS-Discovery Ad-hoc mode utilizes UDP to exchange messages, see <<ref_oasis_ws_discovery_2009>>.
+A <<vol1_spec_sdpi_p_actor_somds_participant>> shall utilize TCP to exchange messages with other <<vol1_spec_sdpi_p_actor_somds_participant>>s except for messages exchanged in the WS-Discovery Ad-hoc mode.
+====
+
+[NOTE]
+====
+The WS-Discovery Ad-hoc mode utilizes UDP to exchange messages, see <<ref_oasis_ws_discovery_2009>>.
 ====
 ****
 
 .R1003
 [sdpi_requirement#r1003,sdpi_req_level=shall]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_participant>> shall only utilize HTTP 1.1 without HTTP pipelining for any HTTP traffic.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: Enforces use of HTTP 1.1 in order to limit choices by which a re-ordering of message delivery can be implemented.
+A <<vol1_spec_sdpi_p_actor_somds_participant>> shall only utilize HTTP 1.1 without HTTP pipelining for any HTTP traffic.
+====
+
+[NOTE]
+====
+Enforces use of HTTP 1.1 in order to limit choices by which a re-ordering of message delivery can be implemented.
 ====
 ****
 
 .R1004
-[sdpi_requirement#r1004,sdpi_req_level=shall]
+[sdpi_requirement#r1004,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
+[NORMATIVE]
+====
 A <<vol1_spec_sdpi_p_actor_somds_provider>> shall transmit msg:WaveformStream, msg:AbstractMetricReport, msg:AbstractOperationalStateReport, msg:AbstractComponentReport, msg:AbstractAlertReport, msg:ObservedValueStream, msg:DescriptionModificationReport, and msg:AbstractContextReport messages sequentially.
-
-.Notes
-[%collapsible]
 ====
-NOTE: This allows for a <<vol1_spec_sdpi_p_actor_somds_consumer>> to apply report data on internal <<acronym_mdib>> data structures before receiving the next report without buffering.
+
+[NOTE]
+====
+This allows for a <<vol1_spec_sdpi_p_actor_somds_consumer>> to apply report data on internal <<acronym_mdib>> data structures before receiving the next report without buffering.
 ====
 ****
 
-.R1005
-[sdpi_requirement#r1005,sdpi_req_level=should]
+// ==================================================
+// Supporting detection of lost reports by consumers.
+//
+
+
+.R1030
+[sdpi_requirement#r1030,sdpi_req_level=should]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
 ****
-A <<vol1_spec_sdpi_p_actor_somds_consumer>> should reconnect or go into a fail-safe mode when it receives a report with an <<acronym_mdib>> version that is either lower than the last received version or more than one version higher than the last received version.
+[NORMATIVE]
+====
+A <<vol1_spec_sdpi_p_actor_somds_provider>> should include an `sdpi:ReportSequence` element in every message notification header.
+====
+
+[NOTE]
+====
+* The `sdpi:ReportSequence` element supports detection of lost reports by a <<vol1_spec_sdpi_p_actor_somds_consumer>>.
+
+* The <<vol3_clause_report-sequence, report sequence>> extension defines the `sdpi:ReportSequence` element.
+====
 ****
+
+.R1031
+[sdpi_requirement#r1031,sdpi_req_level=should]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
+****
+[NORMATIVE]
+====
+A <<vol1_spec_sdpi_p_actor_somds_consumer>> should reconnect or go into a fail-safe mode when it receives a message notification in a single publish-subscribe session with a `sdpi:ReportSequence/@MessageNumber` that is either:
+
+* not 1 for the first message received in a new session, or
+* lower than the last `sdpi:ReportSequence/@MessageNumber` number received in an on-going session, or
+* more than 1 greater than the last `sdpi:ReportSequence/@MessageNumber` number received in an on-going session.
+====
+
+[NOTE]
+====
+* A publish-subscribe session is established between a <<vol1_spec_sdpi_p_actor_somds_provider>> and <<vol1_spec_sdpi_p_actor_somds_consumer>> using Transaction [DEV-27] (<<vol2_clause_dev_27>>). 
+* Renewing an established publish-subscribe session does not establish a new session and does not cause `sdpi:ReportSequence/@MessageNumber` to restart from 1.
+====
+****
+
+.R1032
+[sdpi_requirement#r1032,sdpi_req_level=should]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
+****
+[NORMATIVE]
+====
+A <<vol1_spec_sdpi_p_actor_somds_consumer>> should treat subsequent reports with the same `sdpi:ReportSequence/@MessageNumber` as functionally identical following confirmation of successful delivery. 
+====
+
+[NOTE]
+====
+* Successful delivery on an HTTP transport means the <<vol1_spec_sdpi_p_actor_somds_consumer>> replies to the notification message with a success code (200 &ndash; 299). 
+* A <<vol1_spec_sdpi_p_actor_somds_consumer>> may receive multiple reports with the same `sdpi:ReportSequence/@MessageNumber` when the <<vol1_spec_sdpi_p_actor_somds_provider>> does not receive confirmation of successful delivery from the <<vol1_spec_sdpi_p_actor_somds_consumer>>. 
+* A <<vol1_spec_sdpi_p_actor_somds_consumer>> is not required to process the content of multiple reports with the same `sdpi:ReportSequence/@MessageNumber`.
+* A <<vol1_spec_sdpi_p_actor_somds_provider>> will not increment the `sdpi:ReportSequence/@MessageNumber` until it receives confirmation of successful delivery from the <<vol1_spec_sdpi_p_actor_somds_consumer>>. 
+* A <<vol1_spec_sdpi_p_actor_somds_provider>> that receives a fault response from a <<vol1_spec_sdpi_p_actor_somds_consumer>> may change or delay the message to address the fault. 
+====
+****
+
+
+.R1033
+[sdpi_requirement#r1033,sdpi_req_level=should]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=safety,sdpi_ses_test=wire]
+****
+[NORMATIVE]
+====
+A <<vol1_spec_sdpi_p_actor_somds_consumer>> that receives multiple reports with the same `sdpi:ReportSequence/@MessageNumber` should either:
+
+* acknowledge receipt with an HTTP response code, or
+* terminate the publish-subscribe session using the mechanisms described in Transaction [DEV-27] (<<vol2_clause_dev_27>>).
+====
+
+[NOTE]
+====
+* A <<vol1_spec_sdpi_p_actor_somds_provider>> may send multiple message notifications with the same `sdpi:ReportSequence/@MessageNumber` when it receives a fault code from the <<vol1_spec_sdpi_p_actor_somds_consumer>> (e.g., the consumer is busy processing other messages) or no response (time-out following a network interruption).
+* A <<vol1_spec_sdpi_p_actor_somds_consumer>> may receive more than one message notifications with the same `sdpi:ReportSequence/@MessageNumber` when it responds with a fault code. The message notifications may not be the same (e.g., the <<vol1_spec_sdpi_p_actor_somds_provider>> alters the message to address the fault).
+====
+****
+
+
+
+//
+// Supporting detection of lost reports by consumers.
+// ==================================================
 
 .R1014
 [sdpi_requirement#r1014,sdpi_req_level=shall]
+[sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
 ****
+[NORMATIVE]
+====
 A <<actor_somds_provider>> shall not send a notification of a subscription as long as there is another notification pending for that subscription.
+====
 
-NOTE: This also requires <<actor_somds_provider>>s to serialize delivery of msg:OperationInvokedReport messages.
+[NOTE]
+====
+This also requires <<actor_somds_provider>>s to serialize delivery of msg:OperationInvokedReport messages.
+====
 ****
 

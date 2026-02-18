@@ -9,14 +9,16 @@ Coded elements in SDC using *<<acronym_mdc>>* private codes require also to cont
 Section <<vol3_clause_globally_unique_code_system_id>> describes how a globally unique vender-specific coding system identifier can be defined.
 
 .R8119
-[sdpi_requirement#r8119,sdpi_req_level=shall,sdpi_max_occurrence=1]
+[sdpi_requirement#r8119,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
-For each private code a <<vol1_spec_sdpi_p_actor_somds_provider>> shall provide exactly one *pm:Translation* where *pm:Translation/@Code* is identical with *pm:CodedValue/@Code*.
-
-.Notes
-[%collapsible]
+[NORMATIVE]
 ====
-NOTE: Multiple translations are allowed, but exactly one translation is specified for a private code.
+For each private code a <<vol1_spec_sdpi_p_actor_somds_provider>> shall provide exactly one *pm:Translation* where *pm:Translation/@Code* is identical with *pm:CodedValue/@Code*.
+====
+
+[NOTE]
+====
+Multiple translations are allowed, but exactly one translation is specified for a private code.
 ====
 ****
 

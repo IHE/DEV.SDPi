@@ -5,6 +5,7 @@ import org.asciidoctor.ast.StructuralNode
 import org.asciidoctor.extension.BlockMacroProcessor
 import org.asciidoctor.extension.Name
 import org.sdpi.asciidoc.ContentModuleAttributes
+import org.sdpi.asciidoc.TransactionIncludeAttributes
 import org.sdpi.asciidoc.findIdFromParent
 import org.sdpi.asciidoc.findProfileId
 import org.sdpi.asciidoc.model.*
@@ -52,8 +53,9 @@ class ContentModuleIncludeProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_INCLU
             logger.error("$BLOCK_MACRO_NAME_INCLUDE_CONTENT_MODULE requires valid ${ContentModuleAttributes.OBLIGATION.key} attribute")
         }
 
+        val strPlaceholderName = attributes[ContentModuleAttributes.PLACEHOLDER_NAME.key]?.toString()
 
-        val reference = SdpiContentModuleRef(strContentModuleId, strActor, obligation)
+        val reference = SdpiContentModuleRef(strContentModuleId, strActor, obligation, strPlaceholderName)
         val profileReference = SdpiProfileContentModuleRef(strProfileId, strProfileOptionId, reference)
 
         addReference(profileReference)

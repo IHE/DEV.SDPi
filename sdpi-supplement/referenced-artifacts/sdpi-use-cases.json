@@ -1,1 +1,731 @@
-{}
+{
+    "stad": {
+        "id": "stad",
+        "oids": [
+            "1.3.6.1.4.1.19376.1.6.9.1"
+        ],
+        "title": "Synchronized Time Across Devices",
+        "anchor": "vol1_clause_appendix_c_use_case_stad",
+        "specification": {
+            "background": [
+                {
+                    "step": "GIVEN",
+                    "description": "All devices communicate using a common <<acronym_md_lan>> protocol"
+                },
+                {
+                    "step": "AND",
+                    "description": "A Time Source (TS) Service is on the <<acronym_md_lan>> network"
+                }
+            ],
+            "scenarios": [
+                {
+                    "oids": [
+                        "1.3.6.1.4.1.19376.1.6.9.1.1",
+                        "1.3.6.1.4.1.19376.1.6.9.1.1.1"
+                    ],
+                    "title": "Device is connected to the MD LAN network with a Time Source service",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "Device has detected at least one <<acronym_ts_service>>"
+                        },
+                        {
+                            "step": "WHEN",
+                            "description": "The <<acronym_ts_service>> is operational"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "The device will synchronize its time with the <<acronym_ts_service>>"
+                        }
+                    ]
+                },
+                {
+                    "oids": [
+                        "1.3.6.1.4.1.19376.1.6.9.1.2",
+                        "1.3.6.1.4.1.19376.1.6.9.1.2.1"
+                    ],
+                    "title": "Device is connected to the MD LAN network and a user wants to change the device's time",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "Device is operational in <<acronym_md_lan>> network"
+                        },
+                        {
+                            "step": "WHEN",
+                            "description": "The user attempts to change the time on the device manually"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "The device will disable the ability to change its time manually"
+                        }
+                    ]
+                },
+                {
+                    "oids": [
+                        "1.3.6.1.4.1.19376.1.6.9.1.3",
+                        "1.3.6.1.4.1.19376.1.6.9.1.3.1"
+                    ],
+                    "title": "Device is connected to the MD LAN network and cannot connect to a TS Service",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "Device has just connected to the <<acronym_md_lan>> network and has not detected any <<acronym_ts_service>>s"
+                        },
+                        {
+                            "step": "WHEN",
+                            "description": "The <<acronym_ts_service>> is not operational or inaccessible"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "The device will not participate on the <<acronym_md_lan>> network until it detects and connects to a <<acronym_ts_service>>"
+                        }
+                    ]
+                },
+                {
+                    "oids": [
+                        "1.3.6.1.4.1.19376.1.6.9.1.4",
+                        "1.3.6.1.4.1.19376.1.6.9.1.4.1"
+                    ],
+                    "title": "Devices are operational in the MD LAN network but cannot access the TS Service",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "Device is operational on the <<acronym_md_lan>> network"
+                        },
+                        {
+                            "step": "WHEN",
+                            "description": "The <<acronym_ts_service>> is no longer operational or otherwise inaccessible"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "The device will rely on its internal clock for time synchronization"
+                        },
+                        {
+                            "step": "AND",
+                            "description": "The device will provide the accuracy of its clock in its <<acronym_mdib>>"
+                        },
+                        {
+                            "step": "AND",
+                            "description": "The device will periodically attempt to reconnect to the <<acronym_ts_service>>"
+                        },
+                        {
+                            "step": "AND",
+                            "description": "The device will notify the user about the fact, that the <<acronym_ts_service>> cannot be reached"
+                        },
+                        {
+                            "step": "AND",
+                            "description": "The device will create a log entry noting the disconnection from the <<acronym_ts_service>>"
+                        },
+                        {
+                            "step": "AND",
+                            "description": "The ability to change the device time manually will remain disabled"
+                        }
+                    ]
+                },
+                {
+                    "oids": [
+                        "1.3.6.1.4.1.19376.1.6.9.1.5",
+                        "1.3.6.1.4.1.19376.1.6.9.1.5.1"
+                    ],
+                    "title": "Devices are operational in the MD LAN network but cannot access the TS Service and clock drift is unacceptable",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "The <<vol1_spec_sdpi_p_actor_somds_participant>> is operational on the <<acronym_md_lan>> network"
+                        },
+                        {
+                            "step": "AND",
+                            "description": "The <<acronym_ts_service>> is no longer operational or otherwise inaccessible"
+                        },
+                        {
+                            "step": "WHEN",
+                            "description": "The clock drift of the device internal clock exceeds an internal threshold"
+                        },
+                        {
+                            "step": "OR",
+                            "description": "The timestamps of the received data are no longer accurate enough"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "The device will notify the user that time synchronization is no longer functional, which will limit the availability of SDC System Functionality"
+                        },
+                        {
+                            "step": "AND",
+                            "description": "The device will create a log entry noting inaccurate time synchronization"
+                        },
+                        {
+                            "step": "AND",
+                            "description": "The device will periodically attempt to reconnect to the <<acronym_md_lan>> and <<acronym_ts_service>>"
+                        },
+                        {
+                            "step": "AND",
+                            "description": "Based on a <<term_manufacturer>>'s risk management, the device may be disconnected entirely from the <<acronym_md_lan>> network."
+                        }
+                    ]
+                },
+                {
+                    "oids": [
+                        "1.3.6.1.4.1.19376.1.6.9.1.6",
+                        "1.3.6.1.4.1.19376.1.6.9.1.6.1"
+                    ],
+                    "title": "A device, operational in the MD LAN network, determines a non-slewing time adjustment is required",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "The device is operational on the <<acronym_md_lan>> network,"
+                        },
+                        {
+                            "step": "WHEN",
+                            "description": "The device's <<term_clock_discipline_algorithm>> determines an <<term_abrupt_time_adjustment>> is required,"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "The device will create a log entry that includes at least a <<term_timestamp>> for the adjustment in both the <<term_time_reference_frame>> before and after the <<term_abrupt_time_adjustment>> was made,"
+                        },
+                        {
+                            "step": "AND",
+                            "description": "The <<vol1_spec_sdpi_p_actor_somds_provider>> will notify <<vol1_spec_sdpi_p_actor_somds_consumer>>s, using its system function contributions (<<acronym_sfc>>), of the change to the provider's <<term_time_reference_frame>>,"
+                        },
+                        {
+                            "step": "OR",
+                            "description": "The <<vol1_spec_sdpi_p_actor_somds_provider>> will initiate a new MDIB sequence."
+                        }
+                    ]
+                },
+                {
+                    "oids": [
+                        "1.3.6.1.4.1.19376.1.6.9.1.7",
+                        "1.3.6.1.4.1.19376.1.6.9.1.7.1"
+                    ],
+                    "title": "A somds consumer, operational in the MD LAN network, receives data affected by an abrupt time adjustment",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "The <<vol1_spec_sdpi_p_actor_somds_consumer>> is operational on the <<acronym_md_lan>> network,"
+                        },
+                        {
+                            "step": "WHEN",
+                            "description": "The <<vol1_spec_sdpi_p_actor_somds_consumer>> receives notifications and/or <<acronym_mdib>> state indicating a <<vol1_spec_sdpi_p_actor_somds_provider>> has made abrupt time adjustment to its device clock,"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "The <<vol1_spec_sdpi_p_actor_somds_consumer>> will notify next users of data of suspicious timestamps."
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "sicdsp": {
+        "id": "sicdsp",
+        "oids": [
+            "1.3.6.1.4.1.19376.1.6.9.2"
+        ],
+        "title": "Standalone ICU Dashboard Single Patient",
+        "anchor": "vol1_clause_appendix_c_use_case_sicdsp",
+        "specification": {
+            "background": [
+                {
+                    "step": "GIVEN",
+                    "description": "All devices communicate using a common <<acronym_md_lan>> protocol"
+                },
+                {
+                    "step": "AND",
+                    "description": "At least one ICU <<system_type_dashboard>> display"
+                },
+                {
+                    "step": "AND",
+                    "description": "Devices in the room have already been assigned to the <<system_type_dashboard>>"
+                }
+            ],
+            "scenarios": [
+                {
+                    "oids": [
+                        "1.3.6.1.4.1.19376.1.6.9.2.1",
+                        "1.3.6.1.4.1.19376.1.6.9.2.1.1"
+                    ],
+                    "title": "Devices are Accessible to the Dashboard",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "Dashboard has detected at least one assigned accessible ICU device"
+                        },
+                        {
+                            "step": "WHEN",
+                            "description": "the ICU devices are communicating on the <<acronym_md_lan>>"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "the <<system_type_dashboard>> will display parameter, waveform, alarm, setting, imagine, etc. information from all assigned accessible devices"
+                        }
+                    ]
+                },
+                {
+                    "oids": [
+                        "1.3.6.1.4.1.19376.1.6.9.2.2",
+                        "1.3.6.1.4.1.19376.1.6.9.2.2.1"
+                    ],
+                    "title": "ICU Devices are Inaccessible to the Dashboard",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "Dashboard cannot detect any assigned accessible ICU devices"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "the <<system_type_dashboard>> will display an error message"
+                        }
+                    ]
+                },
+                {
+                    "oids": [
+                        "1.3.6.1.4.1.19376.1.6.9.2.3",
+                        "1.3.6.1.4.1.19376.1.6.9.2.3.1"
+                    ],
+                    "title": "One or more ICU devices become Inaccessible to the Dashboard",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "<<system_type_dashboard>> cannot detect a previously detected assigned ICU device"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "the <<system_type_dashboard>> will display an error message"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "sicdmp": {
+        "id": "sicdmp",
+        "oids": [
+            "1.3.6.1.4.1.19376.1.6.9.3"
+        ],
+        "title": "Standalone ICU Dashboard Multiple Patient",
+        "anchor": "vol1_clause_appendix_c_use_case_sicdmp",
+        "specification": {
+            "background": [
+                {
+                    "step": "GIVEN",
+                    "description": "All devices communicate using a common <<acronym_md_lan>> protocol"
+                },
+                {
+                    "step": "AND",
+                    "description": "At least one ICU Dashboard display"
+                },
+                {
+                    "step": "AND",
+                    "description": "Devices from specific ICU rooms have been assigned to the Dashboard"
+                }
+            ],
+            "scenarios": [
+                {
+                    "oids": [
+                        "1.3.6.1.4.1.19376.1.6.9.3.1",
+                        "1.3.6.1.4.1.19376.1.6.9.3.1.1"
+                    ],
+                    "title": "ICU Devices are Accessible to the Dashboard",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "Dashboard has detected at least one assigned accessible ICU device"
+                        },
+                        {
+                            "step": "WHEN",
+                            "description": "the ICU Devices are communicating on the <<acronym_md_lan>>"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "the Dashboard will display parameter, waveform, setting, alarm, imaging, etc. information from those devices (based on configuration)"
+                        }
+                    ]
+                },
+                {
+                    "oids": [
+                        "1.3.6.1.4.1.19376.1.6.9.3.2",
+                        "1.3.6.1.4.1.19376.1.6.9.3.2.1"
+                    ],
+                    "title": "ICU Devices are Inaccessible to the Dashboard",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "Dashboard cannot detect any assigned accessible ICU devices"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "the Dashboard will display an error message"
+                        }
+                    ]
+                },
+                {
+                    "oids": [
+                        "1.3.6.1.4.1.19376.1.6.9.3.3",
+                        "1.3.6.1.4.1.19376.1.6.9.3.3.1"
+                    ],
+                    "title": "One or more ICU Devices are Inaccessible to the Dashboard",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "Dashboard cannot detect any previously assigned accessible ICU devices"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "the Dashboard will display an error message"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "ddes": {
+        "id": "ddes",
+        "oids": [
+            "1.3.6.1.4.1.19376.1.6.9.4"
+        ],
+        "title": "Device Data to Enterprise Systems",
+        "anchor": "vol1_clause_appendix_c_use_case_ddes",
+        "specification": {
+            "background": [
+                {
+                    "step": "GIVEN",
+                    "description": "All devices communicate using a common <<acronym_md_lan>> protocol"
+                },
+                {
+                    "step": "AND",
+                    "description": "There is at least one Data <<system_type_device_gateway>> (<<acronym_dgw>>) Service"
+                },
+                {
+                    "step": "AND",
+                    "description": "All devices report either a device label and/or location"
+                },
+                {
+                    "step": "AND",
+                    "description": "A <<acronym_dgw>> Service is associated with a specific set of device labels, and/or location(s) (i.e., devices in scope)"
+                }
+            ],
+            "scenarios": [
+                {
+                    "oids": [
+                        "1.3.6.1.4.1.19376.1.6.9.4.1",
+                        "1.3.6.1.4.1.19376.1.6.9.4.1.1"
+                    ],
+                    "title": "New in scope device is connected to network with <<acronym_dgw>> service",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "The <<acronym_dgw>> Service has detected a new in scope device"
+                        },
+                        {
+                            "step": "WHEN",
+                            "description": "The <<acronym_dgw>> Service is operational"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "The <<acronym_dgw>> Service will connect to the device and export data to the EHR using the HL7 v2 based IHE DEV DOR actor of the DEV DEC Profile"
+                        }
+                    ]
+                },
+                {
+                    "oids": [
+                        "1.3.6.1.4.1.19376.1.6.9.4.2",
+                        "1.3.6.1.4.1.19376.1.6.9.4.2.1"
+                    ],
+                    "title": "<<label_system_type_name_dgw>> Service is connected to the EHR",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "The <<acronym_dgw>> Service is exporting data to the EHR"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "The <<acronym_dgw>> Service will comply with all IHE DEV / PCD DEC Profile DOR actor functional and test requirements"
+                        }
+                    ]
+                },
+                {
+                    "oids": [
+                        "1.3.6.1.4.1.19376.1.6.9.4.3",
+                        "1.3.6.1.4.1.19376.1.6.9.4.3.1"
+                    ],
+                    "title": "<<label_system_type_name_dgw>> Service has a failure",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "The <<acronym_dgw>> Service was connected to in scope devices and to an Enterprise system and fails"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "The <<acronym_dgw>> Service will backfill its data store and then backfill to the EHR when it recovers from its failure"
+                        }
+                    ]
+                },
+                {
+                    "oids": [
+                        "1.3.6.1.4.1.19376.1.6.9.4.4",
+                        "1.3.6.1.4.1.19376.1.6.9.4.4.1"
+                    ],
+                    "title": "<<label_system_type_name_dgw>> Service connection to the Enterprise System fails",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "The Enterprise System stops receiving data from the <<acronym_dgw>> Service"
+                        },
+                        {
+                            "step": "WHEN",
+                            "description": "There is a communications failure between the <<acronym_dgw>> Service and the Enterprise System"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "The <<acronym_dgw>> Service will backfill missed data to the Enterprise System when communications resumes"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "acns": {
+        "id": "acns",
+        "oids": [
+            "1.3.6.1.4.1.19376.1.6.9.5"
+        ],
+        "title": "Alerts to Clinician Notification Systems",
+        "anchor": "vol1_clause_appendix_c_use_case_acns",
+        "specification": {
+            "background": [
+                {
+                    "step": "GIVEN",
+                    "description": "All devices communicate using a common <<acronym_md_lan>> protocol"
+                },
+                {
+                    "step": "AND",
+                    "description": "At least one Alert <<system_type_device_gateway>> (AGW) Service on the <<acronym_md_lan>> network"
+                },
+                {
+                    "step": "AND",
+                    "description": "At least one <<system_type_clinical_notification_system>> is connected to the AGW Service"
+                },
+                {
+                    "step": "AND",
+                    "description": "All devices report either a device label and/or location and/or patient ID"
+                },
+                {
+                    "step": "AND",
+                    "description": "The AGW Service is associated with a specific set of device labels, and/or location(s) (Scope)"
+                }
+            ],
+            "scenarios": [
+                {
+                    "oids": [
+                        "1.3.6.1.4.1.19376.1.6.9.5.1",
+                        "1.3.6.1.4.1.19376.1.6.9.5.1.1"
+                    ],
+                    "title": "New device is connected to network with AGW service",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "the AGW Service has detected a new device in its scope"
+                        },
+                        {
+                            "step": "WHEN",
+                            "description": "the AGW Service is operational"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "the AGW Service will connect to the device and communicate alerts to the Clinician Notification System"
+                        }
+                    ]
+                },
+                {
+                    "oids": [
+                        "1.3.6.1.4.1.19376.1.6.9.5.2",
+                        "1.3.6.1.4.1.19376.1.6.9.5.2.1"
+                    ],
+                    "title": "The AGW service loses connectivity with the ICU devices",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "the AGW Service no longer communicates with ICU devices in its scope"
+                        },
+                        {
+                            "step": "WHEN",
+                            "description": "There is a communications failure"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "the AGW Service will notify the Clinician Notification System of the failure"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "when the AGW Service regains communication with the devices it will resume reporting active alerts to the Clinician Notification System"
+                        }
+                    ]
+                },
+                {
+                    "oids": [
+                        "1.3.6.1.4.1.19376.1.6.9.5.3",
+                        "1.3.6.1.4.1.19376.1.6.9.5.3.1"
+                    ],
+                    "title": "The AGW service fails",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "the AGW Service fails"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "the Clinician Notification System will detect a loss of communications with the AGW Service"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "when the AGW Service recovers it will resume reporting active alerts to the Clinician Notification System"
+                        }
+                    ]
+                },
+                {
+                    "oids": [
+                        "1.3.6.1.4.1.19376.1.6.9.5.4",
+                        "1.3.6.1.4.1.19376.1.6.9.5.4.1"
+                    ],
+                    "title": "The Clinician Notification System loses connectivity with the AGW",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "the Clinician Notification System can no longer communicate with the AGW Service"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "the Clinician Notification System will detect a loss of communications with the AGW Service"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "when connectivity recovers, the Clinician Notification System will resume reporting active alerts"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "aars": {
+        "id": "aars",
+        "oids": [
+            "1.3.6.1.4.1.19376.1.6.9.6"
+        ],
+        "title": "Alerts to Alert Recording Systems",
+        "anchor": "vol1_clause_appendix_c_use_case_aars",
+        "specification": {
+            "background": [
+                {
+                    "step": "GIVEN",
+                    "description": "All devices communicate using a common <<acronym_md_lan>> protocol"
+                },
+                {
+                    "step": "AND",
+                    "description": "At least one <<label_system_type_name_agw>> (<<acronym_agw>>) Service on the <<acronym_md_lan>>"
+                },
+                {
+                    "step": "AND",
+                    "description": "At least one Alert Recording System is connected to the <<label_system_type_name_agw>> (<<acronym_agw>>) Service"
+                },
+                {
+                    "step": "AND",
+                    "description": "All devices report either a device label and/or location and/or patient ID"
+                },
+                {
+                    "step": "AND",
+                    "description": "The AGW Service is associated with a specific set of device labels, and/or location(s)"
+                }
+            ],
+            "scenarios": [
+                {
+                    "oids": [
+                        "1.3.6.1.4.1.19376.1.6.9.6.1",
+                        "1.3.6.1.4.1.19376.1.6.9.6.1.1"
+                    ],
+                    "title": "New device is connected to network with AGW service",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "the AGW Service has detected a new device in its scope"
+                        },
+                        {
+                            "step": "WHEN",
+                            "description": "the AGW Service is operational"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "the AGW Service will connect to the device and communicate alerts to the Alert Recording System"
+                        }
+                    ]
+                },
+                {
+                    "oids": [
+                        "1.3.6.1.4.1.19376.1.6.9.6.2",
+                        "1.3.6.1.4.1.19376.1.6.9.6.2.1"
+                    ],
+                    "title": "The AGW service loses connectivity with the ICU devices",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "the AGW Service no longer communicates with ICU devices in its scope"
+                        },
+                        {
+                            "step": "WHEN",
+                            "description": "There is a communications failure"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "the AGW will notify the Alert Recording System of the failure"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "when the AGW regains communication with the devices it will resume reporting active alerts to the Alert Recording System and attempt to backfill any missing alerts"
+                        }
+                    ]
+                },
+                {
+                    "oids": [
+                        "1.3.6.1.4.1.19376.1.6.9.6.3",
+                        "1.3.6.1.4.1.19376.1.6.9.6.3.1"
+                    ],
+                    "title": "The AGW service fails",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "the AGW fails"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "the Alert Recording System will detect a loss of communications with the AGW"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "when the AGW Service recovers it will resume reporting active alerts to the Alert Recording System and attempt to backfill any missing alerts"
+                        }
+                    ]
+                },
+                {
+                    "oids": [
+                        "1.3.6.1.4.1.19376.1.6.9.6.4",
+                        "1.3.6.1.4.1.19376.1.6.9.6.4.1"
+                    ],
+                    "title": "The Alert Recording System loses connectivity with the AGW",
+                    "specification": [
+                        {
+                            "step": "GIVEN",
+                            "description": "the Alert Recording System can no longer communicate with the AGW"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "the Alert Recording System will detect a loss of communications with the AGW Service"
+                        },
+                        {
+                            "step": "THEN",
+                            "description": "when the AGW Service regains communication with the Alert Recording System it will resume reporting active alerts to the Alert Recording System and backfill any missing alerts."
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

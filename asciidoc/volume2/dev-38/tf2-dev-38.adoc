@@ -4,6 +4,7 @@
 
 //reset|+1|off
 [#vol2_clause_dev_38,sdpi_offset=38]
+[role=transaction,transaction-id=DEV-38]
 === Establish Medical Alert Exchange [{var_transaction_id}]
 
 ==== Scope
@@ -11,19 +12,16 @@
 include::tf2-dev-38-summary.adoc[]
 
 ==== Actor Roles
+[sdpi_transaction_actors]
+--
 
-.Actor Roles [{var_transaction_id}]
-[cols="1,2"]
-|===
-|Actor |Roles
-|<<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>
-|Initiates communication by first subscribing to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> by sending a {var_label_dev_38_message_subscribe} message.
+[actor-id="somds_medical_alert_consumer",contribution=Initiator]
+Initiates communication by first subscribing to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> by sending a {var_label_dev_38_message_subscribe} message.
 
-|<<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>
-|Listens for {var_label_dev_38_message_subscribe} messages, which it responds to with {var_label_dev_38_message_subscribe_response}.
+[actor-id="somds_medical_alert_provider",contribution=Responder]
+Listens for {var_label_dev_38_message_subscribe} messages, which it responds to with {var_label_dev_38_message_subscribe_response}.
 
-
-|===
+--
 
 ==== Referenced Standards
 

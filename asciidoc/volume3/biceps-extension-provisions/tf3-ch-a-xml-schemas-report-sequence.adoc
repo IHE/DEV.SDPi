@@ -1,0 +1,7 @@
+[#vol3_appendix_a_xml_schemas_report_sequence]
+=== Report Sequence XML Schema
+
+[source,xml]
+----
+include::../../../sources/extension-models/reportsequence/ReportSequence.xsd[]
+----

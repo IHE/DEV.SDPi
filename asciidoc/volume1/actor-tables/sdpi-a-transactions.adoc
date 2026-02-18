@@ -1,0 +1,112 @@
+[#vol1_table_sdpi_a_actors_transactions]
+.SDPi-A Profile - Actors and Transactions
+[%autowidth]
+[cols="1,2,1,1,3"]
+|===
+.^|Actors
+.^|Transactions
+.^|Initiator or Responder
+.^|Optionality
+.^|Reference
+
+.6+| <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>
+.^| <<transaction_name_establish_medical_alert_exchange>>
+.^| Responder
+.^| R
+| <<vol2_clause_dev_38>>
+
+| <<transaction_name_publish_medical_alert_update>>
+| Initiator
+| R
+| <<vol2_clause_dev_39>>
+
+| <<transaction_name_retrieve_medical_alert_status>>
+| Responder
+| R
+| <<vol2_clause_dev_40>>
+
+| <<transaction_name_manage_medical_alert_delegation>> (_deferred_)
+| Responder
+| R ^(See^ ^Note^ ^1)^
+| [DEV-41] Deferred to a future version of SDPi
+// <<vol2_clause_dev_41>>
+
+| <<transaction_name_delegate_medical_alert>> (_deferred_)
+| Initiator
+| R ^(See^ ^Note^ ^1)^
+| [DEV-42] Deferred to a future version of SDPi
+// <<vol2_clause_dev_42>>
+
+| <<transaction_name_update_alert_acknowledgement_status>> (_deferred_)
+| Responder
+| R
+| [DEV-43] Deferred to a future version of SDPi
+// <<vol2_clause_dev_43>>
+
+.6+| <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>
+.^| <<transaction_name_establish_medical_alert_exchange>>
+.^| Initiator
+.^| R
+| <<vol2_clause_dev_38>>
+
+| <<transaction_name_publish_medical_alert_update>>
+| Responder
+| R
+| <<vol2_clause_dev_39>>
+
+| <<transaction_name_retrieve_medical_alert_status>>
+| Initiator
+| O
+| <<vol2_clause_dev_40>>
+
+| <<transaction_name_manage_medical_alert_delegation>> (_deferred_)
+| Initiator
+| R ^(See^ ^Note^ ^1)^
+| [DEV-41] Deferred to a future version of SDPi
+// <<vol2_clause_dev_41>>
+
+| <<transaction_name_delegate_medical_alert>> (_deferred_)
+| Responder
+| R ^(See^ ^Note^ ^1)^
+| [DEV-42] Deferred to a future version of SDPi
+// <<vol2_clause_dev_42>>
+
+| <<transaction_name_update_alert_acknowledgement_status>> (_deferred_)
+| Initiator
+| R
+| [DEV-43] Deferred to a future version of SDPi
+// <<vol2_clause_dev_43>>
+
+.4+| <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> ^(See^ ^Note^ ^2)^
+.^| <<transaction_name_establish_medical_alert_exchange>>
+.^| Initiator
+.^| R
+| <<vol2_clause_dev_38>>
+
+| <<transaction_name_publish_medical_alert_update>>
+| Responder
+| R
+| <<vol2_clause_dev_39>>
+
+| <<transaction_name_retrieve_medical_alert_status>>
+| Initiator
+| O
+| <<vol2_clause_dev_40>>
+
+| <<transaction_name_update_alert_acknowledgement_status>> (_deferred_)
+| Initiator
+| O
+| [DEV-43] Deferred to a future version of SDPi
+// <<vol2_clause_dev_43>>
+
+5+<|
+Note 1: Transaction is required if <<vol1_clause_sdpi_a_actor_option_alert_delegation_reftext>> is supported.
+
+Note 2: By default, the <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> acts as a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>, initiating [DEV-04] transactions when they are received from <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>s.
+This default configuration requires the grouped <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> Actor to have the <<vol1_spec_sdpi_p_option_gateway_export>> option selected.
+
+If the gateway supports  <<vol1_clause_sdpi_a_actor_option_remote_alert_signaling_reftext>>, then it also acts as a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> and accepts inbound [DEV-04] transactions from ACM Alert Reporters.
+In this case, the gateway will support both "Initiator & Responder" for these transactions.
+In this case, both the <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> Actor  <<vol1_spec_sdpi_p_option_gateway_export>> and <<vol1_spec_sdpi_p_option_gateway_import>> options are selected.
+
+|===

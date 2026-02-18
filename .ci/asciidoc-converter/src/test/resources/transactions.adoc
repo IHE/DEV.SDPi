@@ -2,7 +2,7 @@
 
 Pellentesque pellentesque ligula vitae neque RefTransaction:DEV-1[] porttitor sollicitudin. Nullam at nisi nunc. 
 
-[role="profile",profile-id="Profile-A"]
+[role="profile",profile-id="Profile-A",oid-arcs=.99]
 == A Profile
 
 Suspendisse nec vehicula dui, vitae auctor sem. 
@@ -19,19 +19,19 @@ sdpi_transaction_table::[profile-id="Profile-A"]
 
 === Actor definitions
 
-[role=actor,actor-id=somds-provider,reftext="SOMDS Provider"]
+[role=actor,actor-id=somds-provider,reftext="SOMDS Provider",oid-arcs=.99]
 ==== SOMDS Provider
 
 A somds participant that provides at least one service to the other participant systems.  
 
-[role=actor,actor-id=somds-consumer,reftext="SOMDS Consumer"]
+[role=actor,actor-id=somds-consumer,reftext="SOMDS Consumer",oid-arcs=.98]
 ==== SOMDS Consumer
 
 A somds participant that discovers and utilizes at least one service, functional capability, exposed to a network communications backbone by a somds provider. 
 
 
 [role="transaction",transaction-id=DEV-1,reftext="Transaction 1"]
-=== Transaction 1
+=== Transaction 1 [DEV-1]
 
 Cras vestibulum volutpat tortor sit amet hendrerit. Sed efficitur tempus molestie. 
 
@@ -51,7 +51,7 @@ Curabitur placerat risus et purus mattis, eu scelerisque ante fringilla.
 
 
 [role="transaction",transaction-id=DEV-2,reftext="Transaction 2"]
-=== Transaction 2
+=== Transaction 2 [DEV-1]
 
 Cras vestibulum volutpat tortor sit amet hendrerit. Sed efficitur tempus molestie. 
 

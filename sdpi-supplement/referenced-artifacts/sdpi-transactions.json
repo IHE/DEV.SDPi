@@ -1,0 +1,466 @@
+[
+    {
+        "id": "DEV-23",
+        "oids": [
+            "1.3.6.1.4.1.19376.1.6.4.23.1",
+            "1.3.6.1.4.1.19376.1.6.4.23"
+        ],
+        "label": "Announce Network Presence",
+        "anchor": "vol2_clause_dev_23",
+        "actorRoles": [
+            {
+                "actorId": "somds_provider",
+                "contribution": "INITIATOR",
+                "description": [
+                    "Announces its presence by multicasting <<vol2_clause_dev_23_message_hello*Hello>> messages to all listening systems.",
+                    ""
+                ]
+            },
+            {
+                "actorId": "somds_consumer",
+                "contribution": "RECEIVER",
+                "description": [
+                    "Listens for <<vol2_clause_dev_23_message_hello*Hello>> messages to identify any <<vol1_spec_sdpi_p_actor_somds_provider>>s that it may exchange messages with and further retrieve a <<vol1_spec_sdpi_p_actor_somds_provider>>'s service capabilities.",
+                    ""
+                ]
+            }
+        ]
+    },
+    {
+        "id": "DEV-24",
+        "oids": [
+            "1.3.6.1.4.1.19376.1.6.4.24",
+            "1.3.6.1.4.1.19376.1.6.4.24.1"
+        ],
+        "label": "Discover Network Topology",
+        "anchor": "vol2_clause_dev_24",
+        "actorRoles": [
+            {
+                "actorId": "somds_consumer",
+                "contribution": "INITIATOR",
+                "description": [
+                    "Initiates communication by sending <<vol2_clause_dev_24_message_probe*Probe>> or <<vol2_clause_dev_24_message_resolve*Resolve>> messages to <<vol1_spec_sdpi_p_actor_somds_provider>>s. Then listens for <<vol2_clause_dev_24_message_probe_match*ProbeMatch>> and <<vol2_clause_dev_24_message_resolve_match*ResolveMatch>> messages to discover those <<vol1_spec_sdpi_p_actor_somds_provider>>s that it intends to exchange messages with and further retrieves the <<vol1_spec_sdpi_p_actor_somds_provider>>'s service capabilities.",
+                    ""
+                ]
+            },
+            {
+                "actorId": "somds_provider",
+                "contribution": "RESPONDER",
+                "description": [
+                    "Listens for <<vol2_clause_dev_24_message_probe*Probe>> and <<vol2_clause_dev_24_message_resolve*Resolve>> messages, which it responds to with <<vol2_clause_dev_24_message_probe_match*ProbeMatch>> or <<vol2_clause_dev_24_message_resolve_match*ResolveMatch>> messages, respectively.",
+                    ""
+                ]
+            }
+        ]
+    },
+    {
+        "id": "DEV-25",
+        "oids": [
+            "1.3.6.1.4.1.19376.1.6.4.25",
+            "1.3.6.1.4.1.19376.1.6.4.25.1"
+        ],
+        "label": "Discover BICEPS Services",
+        "anchor": "vol2_clause_dev_25",
+        "actorRoles": [
+            {
+                "actorId": "somds_consumer",
+                "contribution": "INITIATOR",
+                "description": [
+                    "Asks for the resource representation of the <<vol1_spec_sdpi_p_actor_somds_provider>> via the <<vol2_clause_dev_25_message_get_metadata*GetMetadata>> message.",
+                    ""
+                ]
+            },
+            {
+                "actorId": "somds_provider",
+                "contribution": "RESPONDER",
+                "description": [
+                    "Sends its resource representation to the <<vol1_spec_sdpi_p_actor_somds_consumer>> via the <<vol2_clause_dev_25_message_get_metadata_response*GetMetadataResponse>> message.",
+                    ""
+                ]
+            }
+        ]
+    },
+    {
+        "id": "DEV-27",
+        "oids": [
+            "1.3.6.1.4.1.19376.1.6.4.27",
+            "1.3.6.1.4.1.19376.1.6.4.27.1"
+        ],
+        "label": "Manage BICEPS Subscription",
+        "anchor": "vol2_clause_dev_27",
+        "actorRoles": [
+            {
+                "actorId": "somds_consumer",
+                "contribution": "INITIATOR",
+                "description": [
+                    "Initiates communication by first subscribing to a <<vol1_spec_sdpi_p_actor_somds_provider>> by sending a <<vol2_clause_dev_27_message_subscribe*Subscribe>> message. While the subscription is running, the subscription is kept alive by sending <<vol2_clause_dev_27_message_renew*Renew>> messages and receiving <<vol2_clause_dev_27_message_notification*Notification>> messages.",
+                    "",
+                    "Finally, the <<vol1_spec_sdpi_p_actor_somds_consumer>> unsubscribes from a <<vol1_spec_sdpi_p_actor_somds_provider>> by sending an <<vol2_clause_dev_27_message_unsubscribe*Unsubscribe>> message.",
+                    ""
+                ]
+            },
+            {
+                "actorId": "somds_provider",
+                "contribution": "RESPONDER",
+                "description": [
+                    "Listens for <<vol2_clause_dev_27_message_subscribe*Subscribe>>, <<vol2_clause_dev_27_message_renew*Renew>> and <<vol2_clause_dev_27_message_unsubscribe*Unsubscribe>> messages, which it responds to with <<vol2_clause_dev_27_message_subscribe_response*SubscribeResponse>>, <<vol2_clause_dev_27_message_renew_response*RenewResponse>> or <<vol2_clause_dev_27_message_unsubscribe_response*UnsubscribeResponse>> messages respectively.",
+                    "",
+                    "While a subscription is running, the <<vol1_spec_sdpi_p_actor_somds_provider>> delivers <<vol2_clause_dev_27_message_notification*Notification>> messages.",
+                    "",
+                    "When at some point the subscription has to be ended, the <<vol1_spec_sdpi_p_actor_somds_provider>> sends a <<vol2_clause_dev_27_message_subscription_end*SubscriptionEnd>> message.",
+                    ""
+                ]
+            }
+        ]
+    },
+    {
+        "id": "DEV-28",
+        "oids": [
+            "1.3.6.1.4.1.19376.1.6.4.28",
+            "1.3.6.1.4.1.19376.1.6.4.28.1"
+        ],
+        "label": "Notify Change in System Context and Capabilities",
+        "anchor": "vol2_clause_dev_28",
+        "actorRoles": [
+            {
+                "actorId": "somds_consumer",
+                "contribution": "RECEIVER",
+                "description": [
+                    "Listens for a <<vol2_clause_dev_28_message_notification*Notification>> message to retrieve context updates.",
+                    ""
+                ]
+            },
+            {
+                "actorId": "somds_provider",
+                "contribution": "INITIATOR",
+                "description": [
+                    "While a subscription is running, the <<vol1_spec_sdpi_p_actor_somds_provider>> delivers <<vol2_clause_dev_28_message_notification*Notification>> messages."
+                ]
+            }
+        ]
+    },
+    {
+        "id": "DEV-29",
+        "oids": [
+            "1.3.6.1.4.1.19376.1.6.4.29",
+            "1.3.6.1.4.1.19376.1.6.4.29.1"
+        ],
+        "label": "Publish BICEPS Update Reports",
+        "anchor": "vol2_clause_dev_29",
+        "actorRoles": [
+            {
+                "actorId": "somds_consumer",
+                "contribution": "RECEIVER",
+                "description": [
+                    "Listens for a <<vol2_clause_dev_29_message_notification*Notification>> message to retrieve update reports.",
+                    ""
+                ]
+            },
+            {
+                "actorId": "somds_provider",
+                "contribution": "INITIATOR",
+                "description": [
+                    "While a subscription is running, the <<vol1_spec_sdpi_p_actor_somds_provider>> delivers <<vol2_clause_dev_29_message_notification*Notification>> messages."
+                ]
+            }
+        ]
+    },
+    {
+        "id": "DEV-30",
+        "oids": [
+            "1.3.6.1.4.1.19376.1.6.4.30",
+            "1.3.6.1.4.1.19376.1.6.4.30.1"
+        ],
+        "label": "Retrieve BICEPS Content",
+        "anchor": "vol2_clause_dev_30",
+        "actorRoles": [
+            {
+                "actorId": "somds_consumer",
+                "contribution": "INITIATOR",
+                "description": [
+                    "Initiates communication by sending a <<vol2_clause_dev_30_message_getmdib*GetMdib>> message to a <<vol1_spec_sdpi_p_actor_somds_provider>>. Then listens for a <<vol2_clause_dev_30_message_getmdibresponse*GetMdibResponse>> message to retrieve the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDIB.",
+                    ""
+                ]
+            },
+            {
+                "actorId": "somds_provider",
+                "contribution": "RESPONDER",
+                "description": [
+                    "Listens for <<vol2_clause_dev_30_message_getmdib*GetMdib>> messages, which it responds to with <<vol2_clause_dev_30_message_getmdibresponse*GetMdibResponse>> messages respectively.",
+                    ""
+                ]
+            }
+        ]
+    },
+    {
+        "id": "DEV-33",
+        "oids": [
+            "1.3.6.1.4.1.19376.1.6.4.23.1",
+            "1.3.6.1.4.1.19376.1.6.4.33"
+        ],
+        "label": "Retrieve Localization Information",
+        "anchor": "vol2_clause_dev_33",
+        "actorRoles": [
+            {
+                "actorId": "somds_consumer",
+                "contribution": "INITIATOR",
+                "description": [
+                    "Initiates communication by sending a <<vol2_clause_dev_33_message_getsupportedlanguages*GetSupportedLanguages>> message to a <<vol1_spec_sdpi_p_actor_somds_provider>>. Then listens for a <<vol2_clause_dev_33_message_getsupportedlanguagesresponse*GetSupportedLanguagesResponse>> message to retrieve the <<vol1_spec_sdpi_p_actor_somds_provider>>'s sequence of available languages.",
+                    "",
+                    "The sequence of available languages can be used by the <<vol1_spec_sdpi_p_actor_somds_consumer>> to send a <<vol2_clause_dev_33_message_getlocalizedtext*GetLocalizedText>> message, which is answered by the <<vol1_spec_sdpi_p_actor_somds_provider>> with <<vol2_clause_dev_33_message_getlocalizedtextresponse*GetLocalizedTextResponse>> message that contains a filtered set of localized texts.",
+                    ""
+                ]
+            },
+            {
+                "actorId": "somds_provider",
+                "contribution": "RESPONDER",
+                "description": [
+                    "Listens for <<vol2_clause_dev_33_message_getsupportedlanguages*GetSupportedLanguages>> messages, which it responds to with <<vol2_clause_dev_33_message_getsupportedlanguagesresponse*GetSupportedLanguagesResponse>> messages respectively. Also listens for <<vol2_clause_dev_33_message_getlocalizedtext*GetLocalizedText>> messages, which it responds to with <<vol2_clause_dev_33_message_getlocalizedtextresponse*GetLocalizedTextResponse>> messages respectively.",
+                    ""
+                ]
+            }
+        ]
+    },
+    {
+        "id": "DEV-34",
+        "oids": [
+            "1.3.6.1.4.1.19376.1.6.4.34",
+            "1.3.6.1.4.1.19376.1.6.4.34.1"
+        ],
+        "label": "Reserved",
+        "anchor": "vol2_clause_dev_34"
+    },
+    {
+        "id": "DEV-35",
+        "oids": [
+            "1.3.6.1.4.1.19376.1.6.4.35",
+            "1.3.6.1.4.1.19376.1.6.4.35.1"
+        ],
+        "label": "Establish Medical Data Exchange",
+        "anchor": "vol2_clause_dev_35",
+        "actorRoles": [
+            {
+                "actorId": "somds_medical_data_consumer",
+                "contribution": "INITIATOR",
+                "description": [
+                    "Initiates communication by first subscribing to a <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> by sending a {var_label_dev_35_message_subscribe} message.",
+                    ""
+                ]
+            },
+            {
+                "actorId": "somds_medical_data_provider",
+                "contribution": "RESPONDER",
+                "description": [
+                    "Listens for {var_label_dev_35_message_subscribe} messages, which it responds to with {var_label_dev_35_message_subscribe_response}.",
+                    ""
+                ]
+            }
+        ]
+    },
+    {
+        "id": "DEV-36",
+        "oids": [
+            "1.3.6.1.4.1.19376.1.6.4.36",
+            "1.3.6.1.4.1.19376.1.6.4.36.1"
+        ],
+        "label": "Publish Medical Data",
+        "anchor": "vol2_clause_dev_36",
+        "actorRoles": [
+            {
+                "actorId": "somds_medical_data_consumer",
+                "contribution": "RESPONDER",
+                "description": [
+                    "Listens for a Notification message to retrieve medical data updates.",
+                    ""
+                ]
+            },
+            {
+                "actorId": "somds_medical_data_provider",
+                "contribution": "INITIATOR",
+                "description": [
+                    "While a subscription is running, the <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>> delivers Notification messages.",
+                    ""
+                ]
+            }
+        ]
+    },
+    {
+        "id": "DEV-37",
+        "oids": [
+            "1.3.6.1.4.1.19376.1.6.4.37",
+            "1.3.6.1.4.1.19376.1.6.4.37.1"
+        ],
+        "label": "Retrieve Medical Data",
+        "anchor": "vol2_clause_dev_37",
+        "actorRoles": [
+            {
+                "actorId": "somds_medical_data_consumer",
+                "contribution": "INITIATOR",
+                "description": [
+                    "Initiates communication by sending a {var_label_dev_37_message_getmdib} message to a RefActor:somds_medical_data_provider[]. Then listens for a {var_label_dev_37_message_getmdibresponse} message to retrieve the RefActor:somds_medical_data_provider[]'s MDIB.",
+                    ""
+                ]
+            },
+            {
+                "actorId": "somds_medical_data_provider",
+                "contribution": "RESPONDER",
+                "description": [
+                    "Listens for {var_label_dev_37_message_getmdib} messages, which it responds to with {var_label_dev_37_message_getmdibresponse} messages respectively.",
+                    ""
+                ]
+            }
+        ]
+    },
+    {
+        "id": "DEV-38",
+        "oids": [
+            "1.3.6.1.4.1.19376.1.6.4.38",
+            "1.3.6.1.4.1.19376.1.6.4.38.1"
+        ],
+        "label": "Establish Medical Alert Exchange",
+        "anchor": "vol2_clause_dev_38",
+        "actorRoles": [
+            {
+                "actorId": "somds_medical_alert_consumer",
+                "contribution": "INITIATOR",
+                "description": [
+                    "Initiates communication by first subscribing to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> by sending a {var_label_dev_38_message_subscribe} message.",
+                    ""
+                ]
+            },
+            {
+                "actorId": "somds_medical_alert_provider",
+                "contribution": "RESPONDER",
+                "description": [
+                    "Listens for {var_label_dev_38_message_subscribe} messages, which it responds to with {var_label_dev_38_message_subscribe_response}.",
+                    ""
+                ]
+            }
+        ]
+    },
+    {
+        "id": "DEV-39",
+        "oids": [
+            "1.3.6.1.4.1.19376.1.6.4.39",
+            "1.3.6.1.4.1.19376.1.6.4.39.1"
+        ],
+        "label": "Publish Medical Alert Update",
+        "anchor": "vol2_clause_dev_39",
+        "actorRoles": [
+            {
+                "actorId": "somds_medical_alert_consumer",
+                "contribution": "RESPONDER",
+                "description": [
+                    "Listens for a Notification message to retrieve medical alert updates.",
+                    "",
+                    ""
+                ]
+            },
+            {
+                "actorId": "somds_medical_alert_provider",
+                "contribution": "INITIATOR",
+                "description": [
+                    "While a subscription is running, the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> delivers Notification messages.",
+                    ""
+                ]
+            }
+        ]
+    },
+    {
+        "id": "DEV-40",
+        "oids": [
+            "1.3.6.1.4.1.19376.1.6.4.40",
+            "1.3.6.1.4.1.19376.1.6.4.40.1"
+        ],
+        "label": "Retrieve Medical Alert Status",
+        "anchor": "vol2_clause_dev_40",
+        "actorRoles": [
+            {
+                "actorId": "somds_medical_alert_consumer",
+                "contribution": "INITIATOR",
+                "description": [
+                    "Initiates communication by sending a {var_label_dev_40_message_getmdib} message to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>. Then listens for a {var_label_dev_40_message_getmdibresponse} message to retrieve the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>'s MDIB.",
+                    ""
+                ]
+            },
+            {
+                "actorId": "somds_medical_alert_provider",
+                "contribution": "RESPONDER",
+                "description": [
+                    "Listens for {var_label_dev_40_message_getmdib} messages, which it responds to with {var_label_dev_40_message_getmdibresponse} messages respectively.",
+                    ""
+                ]
+            }
+        ]
+    },
+    {
+        "id": "DEV-46",
+        "oids": [
+            "1.3.6.1.4.1.19376.1.6.4.46",
+            "1.3.6.1.4.1.19376.1.6.4.46.1"
+        ],
+        "label": "Update Network Presence",
+        "anchor": "vol2_clause_dev_46",
+        "actorRoles": [
+            {
+                "actorId": "discovery_proxy",
+                "contribution": "RECEIVER",
+                "description": [
+                    "Listens for <<vol2_clause_dev_46_message_hello*Hello>> or",
+                    "<<vol2_clause_dev_46_message_bye*Bye>> messages to add or",
+                    "remove <<vol1_spec_sdpi_p_actor_somds_provider>> endpoint metadata to/from its",
+                    "internal database.",
+                    ""
+                ]
+            },
+            {
+                "actorId": "somds_provider",
+                "contribution": "INITIATOR",
+                "description": [
+                    "When joining a <<acronym_somds>>, it announces its presence to the",
+                    "<<vol1_spec_sdpi_p_actor_discovery_proxy>>. When deliberately leaving the",
+                    "<<acronym_somds>>, it announces its absence to the <<vol1_spec_sdpi_p_actor_discovery_proxy>>.",
+                    ""
+                ]
+            }
+        ]
+    },
+    {
+        "id": "DEV-47",
+        "oids": [
+            "1.3.6.1.4.1.19376.1.6.4.47",
+            "1.3.6.1.4.1.19376.1.6.4.47.1"
+        ],
+        "label": "Retrieve Network Presence",
+        "anchor": "vol2_clause_dev_47",
+        "actorRoles": [
+            {
+                "actorId": "discovery_proxy",
+                "contribution": "RESPONDER",
+                "description": [
+                    "Forwards <<vol2_clause_dev_46_message_hello*Hello>>",
+                    "and <<vol2_clause_dev_46_message_hello*Bye>>",
+                    "messages received from <<vol1_spec_sdpi_p_actor_somds_provider>>s.",
+                    "",
+                    "Responds to incoming <<vol2_clause_dev_47_message_probe*Probe>>",
+                    "and <<vol2_clause_dev_47_message_resolve*Resolve>> messages.",
+                    ""
+                ]
+            },
+            {
+                "actorId": "somds_consumer",
+                "contribution": "INITIATOR",
+                "description": [
+                    "Uses <<vol2_clause_dev_47_message_probe*Probe>> and",
+                    "<<vol2_clause_dev_47_message_resolve*Resolve>>",
+                    "messages to seek endpoint metadata.",
+                    "",
+                    "Optionally subscribes to a <<vol1_spec_sdpi_p_actor_discovery_proxy>> in order",
+                    "to receive <<vol2_clause_dev_47_message_hello*Hello>>",
+                    "and <<vol2_clause_dev_47_message_hello*Bye>> messages.",
+                    ""
+                ]
+            }
+        ]
+    }
+]
