@@ -7,6 +7,7 @@
 
 //reset|+1|off
 [#vol2_clause_dev_48,sdpi_offset=48]
+[role=transaction,transaction-id=DEV-48]
 === Establish Distributed Alarm System [{var_transaction_id}]
 
 ==== Scope
@@ -15,18 +16,16 @@ include::tf2-dev-48-summary.adoc[]
 
 ==== Actor Roles
 
-.Actor Roles [{var_transaction_id}]
-[cols="1,2"]
-|===
-|Actor |Roles
+[sdpi_transaction_actors]
+--
+[actor-id="somds_medical_alert_consumer",contribution=Initiator]
+Requests a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> to establish a Distributed Alarm System. 
+Also maintains an established Distributed Alarm System.
 
-|<<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>
-|Requests a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> to establish a Distributed Alarm System. Also maintains an established Distributed Alarm System.
-
-|<<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>
-|Listens for requests from a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> to establish a Distributed Alarm System and grants such requests. Also maintains an established Distributed Alarm System.
-
-|===
+[actor-id="somds_medical_alert_provider",contribution=Responder]
+Listens for requests from a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> to establish a 
+Distributed Alarm System and grants such requests. Also maintains an established Distributed Alarm System.
+--
 
 ==== Referenced Standards
 

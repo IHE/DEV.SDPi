@@ -3,6 +3,7 @@
 
 //reset|+1|off
 [#vol2_clause_dev_49,sdpi_offset=49]
+[role=transaction,transaction-id=DEV-49]
 === End Distributed Alarm System [{var_transaction_id}]
 
 ==== Scope
@@ -11,18 +12,18 @@ include::tf2-dev-49-summary.adoc[]
 
 ==== Actor Roles
 
-.Actor Roles [{var_transaction_id}]
-[cols="1,2"]
-|===
-|Actor |Roles
+[sdpi_transaction_actors]
+--
 
-|<<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>
-|Requests a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> to end a Distributed Alarm System.
+[actor-id="somds_medical_alert_consumer",contribution=Initiator]
+Requests a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> to end a Distributed Alarm System.
 
-|<<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>
-|Listens for requests from a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> to end a Distributed Alarm System and grants such requests. Alternatively ends a Distributed Alarm System on its own initiative and notifies the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>.
+[actor-id="somds_medical_alert_provider",contribution=Responder]
+Listens for requests from a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> to end a 
+Distributed Alarm System and grants such requests. Alternatively ends a Distributed Alarm System 
+on its own initiative and notifies the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>.
 
-|===
+--
 
 ==== Referenced Standards
 
