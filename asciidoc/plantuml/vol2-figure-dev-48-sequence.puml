@@ -1,6 +1,6 @@
 @startuml
 
-'!include plantuml/common_style.inc.puml
+!include plantuml/common_style.inc.puml
 autonumber
 
 !global $str_somds_medical_alert_consumer = "SOMDS Medical Alert Consumer"
