@@ -1,6 +1,6 @@
 @startuml
 
-!include plantuml/common_style.inc.puml
+'!include plantuml/common_style.inc.puml
 autonumber
 
 !global $str_somds_medical_alert_consumer = "SOMDS Medical Alert Consumer"
@@ -10,12 +10,8 @@ participant "$str_somds_medical_alert_consumer" as consumer
 participant "$str_somds_medical_alert_provider" as provider
 
 ==Establish Distributed Alarm System [DEV-48]==
-opt
-    consumer -> provider: SetFriendlyConsumerName (Friendly Consumer Name)
-    consumer <<-- provider: SetFriendlyConsumerNameResponse
-end
-consumer -> provider: MonitoredByDAS
-consumer <<-- provider: MonitoredByDASResponse (MDIB version)
+consumer -> provider: ActivateMonitoredByDAS  (Friendly Consumer Name)
+consumer <<-- provider: ActivateMonitoredByDASResponse (MDIB version)
 
 par
     loop upon alert condition change and before MaxTechnicalConfirmationDelay expires
@@ -24,8 +20,8 @@ par
     end
 else
     loop before InvocationEffectiveTimeout expires
-        consumer -> provider: MonitoredByDAS
-        consumer <<-- provider: MonitoredByDASResponse (MDIB version)
+        consumer -> provider: ActivateMonitoredByDAS
+        consumer <<-- provider: ActivateMonitoredByDASResponse (MDIB version)
     end
 else
     loop at least once every SelfCheckPeriod
