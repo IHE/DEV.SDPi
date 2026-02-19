@@ -130,6 +130,6 @@ When there is no active Distributed Alarm System between a <<vol1_spec_sdpi_a_ac
 
 When there is an active Distributed Alarm System between a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> and a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>, a {var_label_dev_48_operation_monitored_by_das_response} message with InvocationState = 'Fin' successfully closes a maintenance loop to keep the Distributed Alarm System active.
 
-[#vol2_clause_dev_239_publish_medical_alert_update_ses]
+[#vol2_clause_dev_48_publish_medical_alert_update_ses]
 include::../dev-x-default-ses-secured-mode.adoc[]
 

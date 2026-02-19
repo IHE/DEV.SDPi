@@ -129,5 +129,5 @@ If the gateway supports  <<vol1_clause_sdpi_a_actor_option_remote_alert_signalin
 In this case, the gateway will support both "Initiator & Responder" for these transactions.
 In this case, the <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> Actor has both the <<vol1_spec_sdpi_p_option_gateway_import>> and <<vol1_spec_sdpi_p_option_gateway_export>> options selected.
 
-Note 3: Transaction is required if <<vol1_clause_sdpi_a_actor_option_distributed_alarm_system_reftext>> is supported.
+Note 3: Transaction is required if <<vol1_clause_sdpi_a_actor_option_distributed_alarm_system>> is supported.
 |===

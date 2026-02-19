@@ -37,6 +37,6 @@ on its own initiative and notifies the <<vol1_spec_sdpi_a_actor_somds_medical_al
 include::../../plantuml/vol2-figure-dev-49-sequence.puml[]
 ....
 
-[#vol2_clause_dev_239_publish_medical_alert_update_ses]
+[#vol2_clause_dev_49_publish_medical_alert_update_ses]
 include::../dev-x-default-ses-secured-mode.adoc[]
 
