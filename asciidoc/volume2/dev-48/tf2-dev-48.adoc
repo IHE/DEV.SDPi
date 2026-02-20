@@ -1,11 +1,10 @@
 :var_transaction_id: DEV-48
 
-:var_label_dev_48_operation_set_friendly_consumer_name: SetFriendlyConsumerName
-:var_label_dev_48_operation_set_friendly_consumer_name_response: SetFriendlyConsumerNameResponse
 :var_label_dev_48_operation_act_monitored_by_das: ActivateMonitoredByDAS
 :var_label_dev_48_operation_act_monitored_by_das_response: ActivateMonitoredByDASResponse
 :var_label_dev_48_operation_confirm_alerts_technical_delivery: ConfirmAlertsTechnicalDelivery
 :var_label_dev_48_operation_confirm_alerts_technical_delivery_response: ConfirmAlertsTechnicalDeliveryResponse
+:var_label_dev_48_notification: Notification
 
 //reset|+1|off
 [#vol2_clause_dev_48,sdpi_offset=48]
@@ -113,11 +112,13 @@ When a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> invokes this oper
 [#vol2_clause_dev_48_operation_confirm_alerts_technical_delivery_response]
 ===== {var_label_dev_48_operation_confirm_alerts_technical_delivery_response} Operation Invoked Report Message
 
-A <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> responds with a <{var_label_dev_48_operation_confirm_alerts_technical_delivery_response} message to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>'s invocation of the {var_label_dev_48_operation_confirm_alerts_technical_delivery} operation.
+The <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> sends a {var_label_dev_48_operation_confirm_alerts_technical_delivery_response} message to respond to the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> that invoked the {var_label_dev_48_operation_confirm_alerts_technical_delivery} operation.
+
 
 [#vol2_clause_dev_48_operation_confirm_alerts_technical_delivery_response_trigger_events]
 ====== Trigger Events
-The <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> sends a {var_label_dev_48_operation_confirm_alerts_technical_delivery_response} message back to the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> that invoked the {var_label_dev_48_operation_confirm_alerts_technical_delivery} operation.
+
+A <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> responds with a {var_label_dev_48_operation_confirm_alerts_technical_delivery_response} message upon a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>'s invocation of the {var_label_dev_48_operation_confirm_alerts_technical_delivery} operation.
 
 [#vol2_clause_dev_48_operation_confirm_alerts_technical_delivery_response_semantics]
 ====== Message Semantics
@@ -125,6 +126,33 @@ The <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> sends a {var_label_d
 [[payload_dev_48_confirm_alerts_technical_delivery_response]]MDIB version:: *TODO: Ask the A-PKP group what the meaning and intent of the MDIB version is here!.*
 
 [#vol2_clause_dev_48_operation_confirm_alerts_technical_delivery_response_expected_actions]
+====== Expected Actions
+
+When a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> sends this message, there is no expected or required response.
+
+When there is an active Distributed Alarm System between a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> and a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>, a {var_label_dev_48_operation_confirm_alerts_technical_delivery_response} message with InvocationState = 'Fin' successfully closes a maintenance loop to keep the Distributed Alarm System active.
+
+[#vol2_clause_dev_48_notification]
+===== {var_label_dev_48_notification} Message
+
+A <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> uses the {var_label_dev_48_notification} message to keep an established Distributed Alarm System active, as specified in <<ref_ieee_11073_10702_202x>>.
+
+[#vol2_clause_dev_48_notification_trigger_events]
+====== Trigger Events
+
+The {var_label_dev_48_notification} message is sent by a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> so that the Distributed Alarm System be kept active. The sending must occur within an interval shorter than the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>'s-defined _SelfCheckPeriod_.
+
+[#vol2_clause_dev_48_notification_semantics]
+====== Message Semantics
+
+[[payload_dev_48_notification]]EpisodicAlertReport:: A change report that contains the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>'s updated 'SelfCheck' information as specified in <<ref_ieee_11073_10702_202x>>. The <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> that receives this message uses the contained information to determine <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>'s capability (and willingness) to keep the Distributed Alarm System active.
+
+[#vol2_clause_dev_48_notification_expected_actions]
+====== Expected Actions
+
+When a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> sends this message, there is no expected or required response.
+
+When there is an active Distributed Alarm System between a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> and a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>, a {var_label_dev_48_notification} message successfully closes a maintenance loop to keep the Distributed Alarm System active.
 
 [#vol2_clause_dev_48_publish_medical_alert_update_ses]
 include::../dev-x-default-ses-secured-mode.adoc[]
