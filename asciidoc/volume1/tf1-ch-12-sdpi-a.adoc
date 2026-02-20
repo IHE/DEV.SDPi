@@ -1,4 +1,4 @@
-// = Service-oriented Device Point-of-care Interoperability - Alerting (SDPi-A) Profile
+// = Service-oriented Device Point-of-care Interoperability – Alerting (SDPi-A) Profile
 
 [#vol1_clause_sdpi_a_profile,sdpi_offset=12,role=profile,profile-id=sdpi-a,reftext="Alerting Profile",oid-arcs=.13]
 == Service-oriented Device Point-of-care Interoperability – Alerting (SDPi-A) Profile
@@ -12,7 +12,7 @@ Additionally, since the primary purpose of this specification is the communicati
 When this new standard is published, its requirements will be integrated into this supplement, with its <<term_implementation_conformance_statement>> added to <<vol1_appendix_b_referenced_standards_conformance>>.
 Many of those requirements will be mapped to the actors, transactions and other specifications in this specification.
 
-Two of the transactions identified below, [DEV-41] and [DEV-42] are related to Medical Alert Delegation; however, at this stage there is considerable standards development activity to update the current <<acronym_sdc>> standards, particularly in association with completing the Alert <<acronym_pkp>> standard  <<ref_ieee_11073_10702_202x>>.
+Two of the transactions identified below, [DEV-41] and [DEV-42] are related to Medical Alert Delegation; however, at this stage there is considerable standards development activity to update the current <<acronym_sdc>> standards, particularly in association with completing the Alert <<acronym_pkp>> standard  <<ref_ieee_11073_10702_202x>> and the External Control <<acronym_pkp>> standard  <<ref_ieee_11073_10703_202x>>.
 As a result, the completion of these two transactions has been deferred to a subsequent version of the supplement.
 
 Similarly, a related transaction, [DEV-43], namely providing clinician alert acknowledgement status information back to the alerting device, is also being discussed further and will be deferred to a subsequent version of the supplement.
@@ -29,10 +29,10 @@ The actors and transactions in this specification are specialized versions of th
 Additional services have been provided to specifically support the exchange and management of this medical device alert information, providing a high-level of reliability and performance, commensurate with the potential risk to the patient if they are not promptly addressed.
 
 The profile builds upon the foundational <<term_plug_and_trust>> capabilities provided by the <<vol1_clause_sdpi_p_profile_reftext>>.
-These extended capabilities for medical data exchange are achieved by various means, including:
+These extended capabilities for medical alert exchange are achieved by various means, including:
 
 . Grouping <<acronym_sdpi_a>> actors with their <<acronym_sdpi_p>> counterparts
-. Addressing requirements from the emerging <<acronym_pkp>> ISO/IEEE standards:  <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>>
+. Addressing requirements from the (emerging) <<acronym_pkp>> ISO/IEEE standards:  <<ref_ieee_11073_10700_2022>>, <<ref_ieee_11073_10701_2022>> and <<ref_ieee_11073_10702_202x>>
 . Requiring capabilities that in the <<vol1_clause_sdpi_p_profile_reftext>> may be optional
 . Requiring additional <<acronym_biceps>> data elements or content modules
 
@@ -63,56 +63,8 @@ image::../images/vol1-diagram-sdpi-a-actor.svg[]
 
 ////
 
-sdpi_include_transaction::DEV-38[actor-id="somds_medical_alert_provider",responder="required"]
-sdpi_include_transaction::DEV-39[actor-id="somds_medical_alert_provider",initiator="required"]
-sdpi_include_transaction::DEV-40[actor-id="somds_medical_alert_provider",responder="required"]
-
-sdpi_include_transaction::DEV-38[actor-id="somds_medical_alert_consumer",initiator="required"]
-sdpi_include_transaction::DEV-39[actor-id="somds_medical_alert_consumer",responder="required"]
-sdpi_include_transaction::DEV-40[actor-id="somds_medical_alert_consumer",initiator="optional"]
-
-sdpi_include_transaction::DEV-38[actor-id="somds_acm_gateway",responder="required"]
-sdpi_include_transaction::DEV-39[actor-id="somds_acm_gateway",initiator="required"]
-sdpi_include_transaction::DEV-40[actor-id="somds_acm_gateway",responder="required"]
-
-// Deferred transactions. 
-sdpi_include_transaction::DEV-41[actor-id="somds_medical_alert_provider",responder="optional",placeholder-name="Manage medical alert delegation"]
-sdpi_include_transaction::DEV-42[actor-id="somds_medical_alert_provider",initiator="optional",placeholder-name="Delegate medical alert"]
-sdpi_include_transaction::DEV-43[actor-id="somds_medical_alert_provider",responder="required",placeholder-name="Update alert acknowledgement status"]
-
-sdpi_include_transaction::DEV-41[actor-id="somds_medical_alert_consumer",initiator="optional",placeholder-name="Manage medical alert delegation"]
-sdpi_include_transaction::DEV-42[actor-id="somds_medical_alert_consumer",responder="optional",placeholder-name="Delegate medical alert"]
-sdpi_include_transaction::DEV-43[actor-id="somds_medical_alert_consumer",initiator="required",placeholder-name="Update alert acknowledgement status"]
-
-sdpi_include_transaction::DEV-43[actor-id="somds_acm_gateway",initiator="required",placeholder-name="Update alert acknowledgement status"]
-
-ifdef::markup-actor-transactions-table[]
-
-[#vol1_table_sdpi_a_actors_transactions]
-.SDPi-A Profile - Actors and Transactions
-sdpi_transaction_table::[profile-id="sdpi-a"]
-
-[NOTE]
-====
-* Transaction is required if <<vol1_clause_sdpi_a_actor_option_alert_delegation_reftext>> is supported.
-
-* By default, the <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> acts as a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>, initiating [DEV-04] transactions when they are received from <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>s.
-This default configuration requires the grouped <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> Actor to have the <<vol1_spec_sdpi_p_option_gateway_export>> option selected.
-
-If the gateway supports  <<vol1_clause_sdpi_a_actor_option_remote_alert_signaling_reftext>>, then it also acts as a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> and accepts inbound [DEV-04] transactions from ACM Alert Reporters.
-In this case, the gateway will support both "Initiator & Responder" for these transactions.
-In this case, the <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> Actor has both the <<vol1_spec_sdpi_p_option_gateway_import>> and <<vol1_spec_sdpi_p_option_gateway_export>> options selected.
-====
-
-endif::[]
-
-ifndef::markup-actor-transactions-table[]
-
-// Manual actors and transactions table:
 include::actor-tables/sdpi-a-transactions.adoc[]
 
-endif::[]
- 
 [#vol1_clause_sdpi_a_actor_descriptions_actor_profile_requirements]
 ==== Actor Descriptions and Actor Profile Requirements
 
@@ -204,6 +156,20 @@ If a <<label_system_type_name_sas>> is being created, it may incorporate both <<
 [#vol1_clause_sdpi_a_actor_options]
 === SDPi-A Actor Options
 
+[#vol1_clause_sdpi_a_actor_option_distributed_alarm_system,role=profile-option,profile-option-id=distributed_alarm_system,oid-arcs=".7"]
+==== Distributed Alarm System Option
+
+[#vol1_clause_sdpi_a_actor_option_distributed_alarm_system_reftext, reftext='SDPi-A Option: Distributed Alarm System']
+This option enables <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> and <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> systems to safely and reliably run a Distributed Alarm System with each other.
+This option enables both the <<transaction_name_establish_distributed_alarm_system>> [DEV-48] and <<transaction_name_end_distributed_alarm_system>> [DEV-49] transactions.
+
+// Transaction obligations for distributed alarm system option. 
+sdpi_include_transaction::DEV-48[actor-id=somds_medical_alert_provider,responder=required]
+sdpi_include_transaction::DEV-49[actor-id=somds_medical_alert_provider,responder=required,initiator=required]
+
+sdpi_include_transaction::DEV-48[actor-id=somds_medical_alert_consumer,initiator=required]
+sdpi_include_transaction::DEV-49[actor-id=somds_medical_alert_consumer,responder=required,initiator=required]
+
 [#vol1_clause_sdpi_a_actor_option_alert_delegation,role=profile-option,profile-option-id=alert_delegation,oid-arcs=".4"]
 ==== Alert Delegation Option
 
@@ -220,7 +186,7 @@ sdpi_include_transaction::DEV-42[actor-id="somds_medical_alert_consumer",respond
 [cols="1"]
 |===
 a| *{supplement_note}*:  This section is intentionally left incomplete to indicate capabilities that will be added in a future version of the SDPi Supplement.
-As stated elsewhere, the completion of the <<ref_ieee_11073_10702_202x>> standard is required before this profile can be completed (beyond alert reporting for DIS capabilities), and that is especially the case for alert delegation.
+As stated elsewhere, the completion of the <<ref_ieee_11073_10702_202x>> and <<ref_ieee_11073_10703_202x>> standards is required before this profile can be fully completed (beyond alert reporting for DIS capabilities and DAS capabilities without delegation), and that is especially the case for alert delegation.
 
 *_The sequence diagram below for delegation is provided for informative purposes only and will be finalized when the IEEE standard and this profile option are completed._*
 
@@ -246,7 +212,8 @@ include::../plantuml/vol1-figure-sdpi-a-delegation-example-sequence-diagram.puml
 ....
 
 
-[#vol1_clause_sdpi_a_actor_option_alert_user_acknowledgement,role=profile-option,profile-option-id=alert_user_acknowledgement,oid-arcs=".5"]
+
+[#vol1_clause_sdpi_a_actor_option_alert_user_acknowledgement,role=profile-option,profile-option-id=alert_user_acknowledgement,oid-arcs=.5]
 ==== Alert User Acknowledgement Option
 
 [#vol1_clause_sdpi_a_actor_option_alert_user_acknowledgement_reftext, reftext='SDPi-A Option:  Alert User Acknowledgement']
@@ -261,7 +228,7 @@ This option will enable the <<transaction_name_update_alert_acknowledgement_stat
 
 |===
 
-[#vol1_clause_sdpi_a_actor_option_remote_alert_signaling,role=profile-option,profile-option-id=remote_alert_signaling,oid-arcs=".6"]
+[#vol1_clause_sdpi_a_actor_option_remote_alert_signaling,role=profile-option,profile-option-id=remote_alert_signaling,oid-arcs=.6]
 ==== Remote Alert Signaling
 
 sdpi_include_transaction::DEV-38[actor-id="somds_acm_gateway",initiator="required"]
@@ -379,7 +346,7 @@ Specific capabilities supporting the <<acronym_acns>> use case include:
 
 sdpi_support_use_case::somds_acm_gateway[support=optional]
 
-[role="support-use-case", use-case-id="aars", oid-arcs=.3]
+[role="support-use-case", use-case-id="aars", oid-arcs=.4]
 ===== <<label_use_case_name_aars>> (<<acronym_aars>>)
 This use case provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_aars>>.
 

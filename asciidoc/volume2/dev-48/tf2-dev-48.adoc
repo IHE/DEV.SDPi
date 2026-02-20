@@ -1,0 +1,163 @@
+:var_transaction_id: DEV-48
+
+:var_label_dev_48_operation_act_monitored_by_das: ActivateMonitoredByDAS
+:var_label_dev_48_operation_act_monitored_by_das_response: ActivateMonitoredByDASResponse
+:var_label_dev_48_operation_confirm_alerts_technical_delivery: ConfirmAlertsTechnicalDelivery
+:var_label_dev_48_operation_confirm_alerts_technical_delivery_response: ConfirmAlertsTechnicalDeliveryResponse
+:var_label_dev_48_notification: Notification
+
+//reset|+1|off
+[#vol2_clause_dev_48,sdpi_offset=48]
+[role=transaction,transaction-id=DEV-48]
+=== Establish Distributed Alarm System [{var_transaction_id}]
+
+==== Scope
+
+include::tf2-dev-48-summary.adoc[]
+
+==== Actor Roles
+
+[sdpi_transaction_actors]
+--
+[actor-id="somds_medical_alert_consumer",contribution=Initiator]
+Requests a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> to establish a Distributed Alarm System. 
+Also maintains an established Distributed Alarm System.
+
+[actor-id="somds_medical_alert_provider",contribution=Responder]
+Listens for requests from a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> to establish a 
+Distributed Alarm System and grants such requests. Also maintains an established Distributed Alarm System.
+--
+
+==== Referenced Standards
+
+* <<ref_ieee_11073_10702_202x>>
+
+==== Messages
+
+.Message Interaction Diagram [{var_transaction_id}]
+[plantuml#vol2_figure_dev_48_sequence, target=puml-dev-48-sequence, format=svg]
+....
+include::../../plantuml/vol2-figure-dev-48-sequence.puml[]
+....
+
+[#vol2_clause_dev_48_operation_act_monitored_by_das]
+===== {var_label_dev_48_operation_act_monitored_by_das} Operation
+
+A <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> invokes the {var_label_dev_48_operation_act_monitored_by_das} operation on a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> to either establish a Distributed Alarm System or to keep an established Distributed Alarm System active, as specified in <<ref_ieee_11073_10702_202x>>.
+
+[#vol2_clause_dev_48_operation_act_monitored_by_das_trigger_events]
+====== Trigger Events
+
+When there is no active Distributed Alarm System between a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> and a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>, the {var_label_dev_48_operation_act_monitored_by_das} operation is invoked by a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> to request the establishment of a Distributed Alarm System with the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>.
+
+When there is an active Distributed Alarm System between a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> and a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>, the {var_label_dev_48_operation_act_monitored_by_das} operation is periodically invoked by a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> with an interval shorter than the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>'s-defined _InvocationEffectiveTimeout_ to request to the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> that the Distributed Alarm System be kept active.
+
+[#vol2_clause_dev_48_operation_act_monitored_by_das_semantics]
+====== Message Semantics
+
+[[payload_dev_48_act_monitored_by_das]]Friendly Consumer Name:: The Distributed Alarm System consumer name by which a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> wishes to be referred to by the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>.
+
+[#vol2_clause_dev_48_operation_act_monitored_by_das_expected_actions]
+====== Expected Actions
+
+When a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> invokes this operation, the receiving <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> responds with a <<vol2_clause_dev_48_operation_act_monitored_by_das_response, {var_label_dev_48_operation_act_monitored_by_das_response}>> message.
+
+[#vol2_clause_dev_48_operation_act_monitored_by_das_response]
+===== {var_label_dev_48_operation_act_monitored_by_das_response} Operation Invoked Report Message
+
+A <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> responds with a {var_label_dev_48_operation_act_monitored_by_das_response} message to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>'s invocation of the {var_label_dev_48_operation_act_monitored_by_das}
+operation, as specified in <<ref_ieee_11073_10702_202x>>.
+
+[#vol2_clause_dev_48_operation_act_monitored_by_das_response_trigger_events]
+====== Trigger Events
+
+The <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> sends a {var_label_dev_48_operation_act_monitored_by_das_response} message back to the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> that invoked the {var_label_dev_48_operation_act_monitored_by_das}
+operation.
+
+[#vol2_clause_dev_48_operation_act_monitored_by_das_response_semantics]
+====== Message Semantics
+
+[[payload_dev_48_act_monitored_by_das_name]]MDIB version:: The version of the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>'s MDIB from which the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> takes over the Distributed Alarm System responsibility and therefore starts confirming changes in the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>'s alert conditions.
+
+NOTE: The described meaning of the MDIB version only applies to an {var_label_dev_48_operation_act_monitored_by_das_response} message sent in response to an (initial) invocation of the {var_label_dev_48_operation_act_monitored_by_das} operation for establishing the Distributed Alarm System. For {var_label_dev_48_operation_act_monitored_by_das_response} messages sent in response to periodic {var_label_dev_48_operation_act_monitored_by_das} operation invocation for Distributed Alarm System maintenance, the MDIB version does not have the described meaning.
+
+
+[#vol2_clause_dev_48_operation_act_monitored_by_das_response_expected_actions]
+====== Expected Actions
+
+When a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> sends this message, there is no expected or required response.
+
+When there is no active Distributed Alarm System between a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> and a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>, a {var_label_dev_48_operation_act_monitored_by_das_response} message with InvocationState = 'Fin' marks the establishment of the Distributed Alarm System for both the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> and the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>.
+
+When there is an active Distributed Alarm System between a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> and a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>, a {var_label_dev_48_operation_act_monitored_by_das_response} message with InvocationState = 'Fin' successfully closes a maintenance loop to keep the Distributed Alarm System active.
+
+[#vol2_clause_dev_48_operation_confirm_alerts_technical_delivery]
+===== {var_label_dev_48_operation_confirm_alerts_technical_delivery} Operation
+
+A <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> invokes the {var_label_dev_48_operation_confirm_alerts_technical_delivery} operation on a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> to keep an established Distributed Alarm System active, as specified in <<ref_ieee_11073_10702_202x>>.
+
+[#vol2_clause_dev_48_operation_confirm_alerts_technical_delivery_trigger_events]
+====== Trigger Events
+
+The {var_label_dev_48_operation_confirm_alerts_technical_delivery} operation is invoked by a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> to request to the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> that the Distributed Alarm System be kept active.
+
+NOTE: The invocation must occur once right after the establishment of the Distributed Alarm System. In addition, the invocation must occur upon specific changes of the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>'s alert conditions - further specified in <<ref_ieee_11073_10702_202x>> - within an interval shorter than the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>'s-defined _MaxTechnicalConfirmationDelay_.
+
+[#vol2_clause_dev_48_operation_confirm_alerts_technical_delivery_semantics]
+====== Message Semantics
+
+[[payload_dev_48_confirm_alerts_technical_delivery]]Alert Occurrence ID Tuple(s):: The set(s) of attributes describing the state of each of the alert conditions that the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> is confirming for technical delivery.
+
+[#vol2_clause_dev_48_operation_confirm_alerts_technical_delivery_expected_actions]
+====== Expected Actions
+
+When a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> invokes this operation, the receiving <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> responds with a <<vol2_clause_dev_48_operation_confirm_alerts_technical_delivery_response, {var_label_dev_48_operation_confirm_alerts_technical_delivery_response}>> message.
+
+[#vol2_clause_dev_48_operation_confirm_alerts_technical_delivery_response]
+===== {var_label_dev_48_operation_confirm_alerts_technical_delivery_response} Operation Invoked Report Message
+
+The <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> sends a {var_label_dev_48_operation_confirm_alerts_technical_delivery_response} message to respond to the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> that invoked the {var_label_dev_48_operation_confirm_alerts_technical_delivery} operation.
+
+
+[#vol2_clause_dev_48_operation_confirm_alerts_technical_delivery_response_trigger_events]
+====== Trigger Events
+
+A <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> responds with a {var_label_dev_48_operation_confirm_alerts_technical_delivery_response} message upon a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>'s invocation of the {var_label_dev_48_operation_confirm_alerts_technical_delivery} operation.
+
+[#vol2_clause_dev_48_operation_confirm_alerts_technical_delivery_response_semantics]
+====== Message Semantics
+
+The {var_label_dev_48_operation_confirm_alerts_technical_delivery_response} message does not contain any further semantics.
+
+[#vol2_clause_dev_48_operation_confirm_alerts_technical_delivery_response_expected_actions]
+====== Expected Actions
+
+When a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> sends this message, there is no expected or required response.
+
+When there is an active Distributed Alarm System between a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> and a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>, a {var_label_dev_48_operation_confirm_alerts_technical_delivery_response} message with InvocationState = 'Fin' successfully closes a maintenance loop to keep the Distributed Alarm System active.
+
+[#vol2_clause_dev_48_notification]
+===== {var_label_dev_48_notification} Message
+
+A <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> uses the {var_label_dev_48_notification} message to keep an established Distributed Alarm System active, as specified in <<ref_ieee_11073_10702_202x>>.
+
+[#vol2_clause_dev_48_notification_trigger_events]
+====== Trigger Events
+
+The {var_label_dev_48_notification} message is sent by a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> so that the Distributed Alarm System be kept active. The sending must occur within an interval shorter than the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>'s-defined _SelfCheckPeriod_.
+
+[#vol2_clause_dev_48_notification_semantics]
+====== Message Semantics
+
+[[payload_dev_48_notification]]EpisodicAlertReport:: A change report that contains the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>'s updated 'SelfCheck' information as specified in <<ref_ieee_11073_10702_202x>>. The <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> that receives this message uses the contained information to determine <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>'s capability (and willingness) to keep the Distributed Alarm System active.
+
+[#vol2_clause_dev_48_notification_expected_actions]
+====== Expected Actions
+
+When a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> sends this message, there is no expected or required response.
+
+When there is an active Distributed Alarm System between a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> and a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>, a {var_label_dev_48_notification} message successfully closes a maintenance loop to keep the Distributed Alarm System active.
+
+[#vol2_clause_dev_48_publish_medical_alert_update_ses]
+include::../dev-x-default-ses-secured-mode.adoc[]
+

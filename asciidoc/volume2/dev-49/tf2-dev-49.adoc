@@ -1,0 +1,42 @@
+:var_transaction_id: DEV-49
+
+
+//reset|+1|off
+[#vol2_clause_dev_49,sdpi_offset=49]
+[role=transaction,transaction-id=DEV-49]
+=== End Distributed Alarm System [{var_transaction_id}]
+
+==== Scope
+
+include::tf2-dev-49-summary.adoc[]
+
+==== Actor Roles
+
+[sdpi_transaction_actors]
+--
+
+[actor-id="somds_medical_alert_consumer",contribution=Initiator,contribution=Responder]
+Requests a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> to end the Distributed Alarm System. Alternatively, listens for notifications from a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> that the Distributed Alarm System has been ended on the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>'s initiative.
+
+[actor-id="somds_medical_alert_provider",contribution=Responder,contribution=Initiator]
+Listens for requests from a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> to end the 
+Distributed Alarm System and grants such requests. Alternatively, ends the Distributed Alarm System 
+on its own initiative and notifies the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>.
+
+--
+
+==== Referenced Standards
+
+* <<ref_ieee_11073_10702_202x>>
+
+==== Messages
+
+.Message Interaction Diagram [{var_transaction_id}]
+[plantuml#vol2_figure_dev_49_sequence, target=puml-dev-49-sequence, format=svg]
+....
+include::../../plantuml/vol2-figure-dev-49-sequence.puml[]
+....
+
+[#vol2_clause_dev_49_publish_medical_alert_update_ses]
+include::../dev-x-default-ses-secured-mode.adoc[]
+
