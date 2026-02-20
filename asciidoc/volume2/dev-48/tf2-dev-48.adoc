@@ -4,6 +4,8 @@
 :var_label_dev_48_operation_set_friendly_consumer_name_response: SetFriendlyConsumerNameResponse
 :var_label_dev_48_operation_act_monitored_by_das: ActivateMonitoredByDAS
 :var_label_dev_48_operation_act_monitored_by_das_response: ActivateMonitoredByDASResponse
+:var_label_dev_48_operation_confirm_alerts_technical_delivery: ConfirmAlertsTechnicalDelivery
+:var_label_dev_48_operation_confirm_alerts_technical_delivery_response: ConfirmAlertsTechnicalDeliveryResponse
 
 //reset|+1|off
 [#vol2_clause_dev_48,sdpi_offset=48]
@@ -47,7 +49,7 @@ A <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> invokes the {var_label
 [#vol2_clause_dev_48_operation_act_monitored_by_das_trigger_events]
 ====== Trigger Events
 
-When there is no active Distributed Alarm System between a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> and a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>, the {var_label_dev_48_operation_act_act_monitored_by_das} operation is invoked by a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> to request the establishment of a Distributed Alarm System with the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>.
+When there is no active Distributed Alarm System between a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> and a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>, the {var_label_dev_48_operation_act_monitored_by_das} operation is invoked by a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> to request the establishment of a Distributed Alarm System with the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>.
 
 When there is an active Distributed Alarm System between a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> and a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>, the {var_label_dev_48_operation_act_monitored_by_das} operation is periodically invoked by a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> with an interval shorter than the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>'s-defined _InvocationEffectiveTimeout_ to request to the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> that the Distributed Alarm System be kept active.
 
@@ -64,7 +66,7 @@ When a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> invokes this oper
 [#vol2_clause_dev_48_operation_act_monitored_by_das_response]
 ===== {var_label_dev_48_operation_act_monitored_by_das_response} Operation Invoked Report Message
 
-A <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> responds with a <<vol2_clause_dev_48_operation_act_monitored_by_das_response>> to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>'s invocation of the {var_label_dev_48_operation_act_monitored_by_das}
+A <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> responds with a {var_label_dev_48_operation_act_monitored_by_das_response} message to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>'s invocation of the {var_label_dev_48_operation_act_monitored_by_das}
 operation, as specified in <<ref_ieee_11073_10702_202x>>.
 
 [#vol2_clause_dev_48_operation_act_monitored_by_das_response_trigger_events]
@@ -111,7 +113,7 @@ When a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> invokes this oper
 [#vol2_clause_dev_48_operation_confirm_alerts_technical_delivery_response]
 ===== {var_label_dev_48_operation_confirm_alerts_technical_delivery_response} Operation Invoked Report Message
 
-A <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> responds with a <<vol2_clause_dev_48_operation_confirm_alerts_technical_delivery_response>> message to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>'s invocation of the {var_label_dev_48_operation_confirm_alerts_technical_delivery} operation.
+A <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> responds with a <{var_label_dev_48_operation_confirm_alerts_technical_delivery_response} message to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>'s invocation of the {var_label_dev_48_operation_confirm_alerts_technical_delivery} operation.
 
 [#vol2_clause_dev_48_operation_confirm_alerts_technical_delivery_response_trigger_events]
 ====== Trigger Events
