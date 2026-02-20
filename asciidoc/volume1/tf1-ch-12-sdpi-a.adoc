@@ -159,6 +159,7 @@ If a <<label_system_type_name_sas>> is being created, it may incorporate both <<
 [#vol1_clause_sdpi_a_actor_option_distributed_alarm_system,role=profile-option,profile-option-id=distributed_alarm_system,oid-arcs=".7"]
 ==== Distributed Alarm System Option
 
+[#vol1_clause_sdpi_a_actor_option_distributed_alarm_system_reftext, reftext='SDPi-A Option: Distributed Alarm System']
 This option enables <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> and <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> systems to safely and reliably run a Distributed Alarm System with each other.
 This option enables both the <<transaction_name_establish_distributed_alarm_system>> [DEV-48] and <<transaction_name_end_distributed_alarm_system>> [DEV-49] transactions.
 
