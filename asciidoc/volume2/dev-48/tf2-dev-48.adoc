@@ -79,6 +79,8 @@ operation.
 
 [[payload_dev_48_act_monitored_by_das_name]]MDIB version:: The version of the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>'s MDIB from which the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> takes over the Distributed Alarm System responsibility and therefore starts confirming changes in the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>'s alert conditions.
 
+NOTE: The described meaning of the MDIB version only applies to an {var_label_dev_48_operation_act_monitored_by_das_response} message sent in response to an (initial) invocation of the {var_label_dev_48_operation_act_monitored_by_das} operation for establishing the Distributed Alarm System. For {var_label_dev_48_operation_act_monitored_by_das_response} messages sent in response to periodic {var_label_dev_48_operation_act_monitored_by_das} operation invocation for Distributed Alarm System maintenance, the MDIB version does not have the described meaning.
+
 
 [#vol2_clause_dev_48_operation_act_monitored_by_das_response_expected_actions]
 ====== Expected Actions
@@ -97,7 +99,9 @@ A <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> invokes the {var_label
 [#vol2_clause_dev_48_operation_confirm_alerts_technical_delivery_trigger_events]
 ====== Trigger Events
 
-The {var_label_dev_48_operation_confirm_alerts_technical_delivery} operation is invoked by a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> to request to the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> that the Distributed Alarm System be kept active. The invocation must occur upon specific changes of the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>'s alert conditions - further specified in <<ref_ieee_11073_10702_202x>> - and within an interval shorter than the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>'s-defined _MaxTechnicalConfirmationDelay_.
+The {var_label_dev_48_operation_confirm_alerts_technical_delivery} operation is invoked by a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> to request to the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> that the Distributed Alarm System be kept active.
+
+NOTE: The invocation must occur once right after the establishment of the Distributed Alarm System. In addition, the invocation must occur upon specific changes of the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>'s alert conditions - further specified in <<ref_ieee_11073_10702_202x>> - within an interval shorter than the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>'s-defined _MaxTechnicalConfirmationDelay_.
 
 [#vol2_clause_dev_48_operation_confirm_alerts_technical_delivery_semantics]
 ====== Message Semantics
@@ -123,7 +127,7 @@ A <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> responds with a {var_l
 [#vol2_clause_dev_48_operation_confirm_alerts_technical_delivery_response_semantics]
 ====== Message Semantics
 
-[[payload_dev_48_confirm_alerts_technical_delivery_response]]MDIB version:: *TODO: Ask the A-PKP group what the meaning and intent of the MDIB version is here!.*
+The {var_label_dev_48_operation_confirm_alerts_technical_delivery_response} message does not contain any further semantics.
 
 [#vol2_clause_dev_48_operation_confirm_alerts_technical_delivery_response_expected_actions]
 ====== Expected Actions
