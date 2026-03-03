@@ -19,12 +19,12 @@ include::tf2-dev-48-summary.adoc[]
 
 [sdpi_transaction_actors]
 --
-[actor-id="somds_medical_alert_consumer",contribution=Initiator,contribution=Receiver]
+[actor-id="somds_medical_alert_consumer",contribution=Initiator]
 Requests a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> to establish a Distributed Alarm System. 
 Also maintains an established Distributed Alarm System.
 Receives notifications confirming Distributed Alarm System remains in effect. 
 
-[actor-id="somds_medical_alert_provider",contribution=Responder,contribution=Initiator]
+[actor-id="somds_medical_alert_provider",contribution=Responder]
 Listens for requests from a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> to establish a 
 Distributed Alarm System and grants such requests. 
 Also maintains an established Distributed Alarm System.
