@@ -1,0 +1,374 @@
+[
+  {
+    "requirementNumber": 81,
+    "level": "Shall",
+    "localId": "TR0081",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 128,
+    "level": "Shall",
+    "localId": "TR0128",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 129,
+    "level": "Shall",
+    "localId": "TR0129",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 136,
+    "level": "Shall",
+    "localId": "TR0136",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 187,
+    "level": "Shall",
+    "localId": "TR0187",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 199,
+    "level": "Shall",
+    "localId": "TR0199",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 204,
+    "level": "Shall",
+    "localId": "TR0204",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 208,
+    "level": "Shall",
+    "localId": "TR0208",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 210,
+    "level": "Shall",
+    "localId": "TR0210",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 214,
+    "level": "Shall",
+    "localId": "TR0214",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 216,
+    "level": "Shall",
+    "localId": "TR0216",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 219,
+    "level": "Shall",
+    "localId": "TR0219",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 231,
+    "level": "May",
+    "localId": "TR0231",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 232,
+    "level": "May",
+    "localId": "TR0232",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 239,
+    "level": "Shall",
+    "localId": "TR0239",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 242,
+    "level": "Shall",
+    "localId": "TR0242",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 246,
+    "level": "Shall",
+    "localId": "RR0246",
+    "icsGroup": "SDC Metric Consumer"
+  },
+  {
+    "requirementNumber": 252,
+    "level": "Should",
+    "localId": "TR0252",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 256,
+    "level": "Shall",
+    "localId": "TR0256",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 257,
+    "level": "May",
+    "localId": "TR0257",
+    "icsGroup": "SDC Metric Consumer"
+  },
+  {
+    "requirementNumber": 262,
+    "level": "Shall",
+    "localId": "TR0262",
+    "icsGroup": "SDC Metric Consumer"
+  },
+  {
+    "requirementNumber": 263,
+    "level": "May",
+    "localId": "TR0263",
+    "icsGroup": "SDC Metric Consumer"
+  },
+  {
+    "requirementNumber": 300,
+    "level": "Shall",
+    "localId": "RR0300",
+    "icsGroup": "SDC Metric Consumer"
+  },
+  {
+    "requirementNumber": 303,
+    "level": "Shall",
+    "localId": "RR0303",
+    "icsGroup": "SDC Metric Consumer"
+  },
+  {
+    "requirementNumber": 306,
+    "level": "Shall",
+    "localId": "RR0306",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 307,
+    "level": "Shall",
+    "localId": "RR0307",
+    "icsGroup": "SDC Metric Consumer"
+  },
+  {
+    "requirementNumber": 311,
+    "level": "Shall",
+    "localId": "RR0311",
+    "icsGroup": "SDC Metric Consumer"
+  },
+  {
+    "requirementNumber": 314,
+    "level": "Shall",
+    "localId": "RR0314",
+    "icsGroup": "SDC Metric Consumer"
+  },
+  {
+    "requirementNumber": 322,
+    "level": "Shall",
+    "localId": "RR0322",
+    "icsGroup": "SDC Metric Consumer"
+  },
+  {
+    "requirementNumber": 326,
+    "level": "Shall",
+    "localId": "RR0326",
+    "icsGroup": "SDC Metric Consumer"
+  },
+  {
+    "requirementNumber": 330,
+    "level": "Shall",
+    "localId": "RR0330",
+    "icsGroup": "SDC Metric Consumer"
+  },
+  {
+    "requirementNumber": 332,
+    "level": "Shall",
+    "localId": "RR0332",
+    "icsGroup": "SDC Metric Consumer"
+  },
+  {
+    "requirementNumber": 334,
+    "level": "Shall",
+    "localId": "RR0334",
+    "icsGroup": "SDC Metric Consumer"
+  },
+  {
+    "requirementNumber": 399,
+    "level": "Shall",
+    "localId": "TR0399",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 478,
+    "level": "Should",
+    "localId": "TR0478",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 482,
+    "level": "Shall",
+    "localId": "TR0482",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 487,
+    "level": "Shall",
+    "localId": "TR0487",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 502,
+    "level": "Shall",
+    "localId": "RR0502",
+    "icsGroup": "SDC Metric Participant"
+  },
+  {
+    "requirementNumber": 503,
+    "level": "Shall",
+    "localId": "DR0503",
+    "icsGroup": "SDC Metric Participant"
+  },
+  {
+    "requirementNumber": 505,
+    "level": "Shall",
+    "localId": "DR0505",
+    "icsGroup": "SDC Metric Participant"
+  },
+  {
+    "requirementNumber": 573,
+    "level": "Should",
+    "localId": "TR0573",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 577,
+    "level": "May",
+    "localId": "TR0577",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 578,
+    "level": "May",
+    "localId": "TR0578",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 602,
+    "level": "Shall",
+    "localId": "RR0602",
+    "icsGroup": "SDC Metric Label Provider"
+  },
+  {
+    "requirementNumber": 604,
+    "level": "Shall",
+    "localId": "RR0604",
+    "icsGroup": "SDC Metric Consumer"
+  },
+  {
+    "requirementNumber": 608,
+    "level": "Shall",
+    "localId": "RR0608",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 609,
+    "level": "Shall",
+    "localId": "RR0609",
+    "icsGroup": "SDC Metric Consumer"
+  },
+  {
+    "requirementNumber": 657,
+    "level": "Should",
+    "localId": "TR0657",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 658,
+    "level": "Shall",
+    "localId": "TR0658",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 659,
+    "level": "Shall",
+    "localId": "TR0659",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 660,
+    "level": "Shall",
+    "localId": "TR0660",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 674,
+    "level": "Shall",
+    "localId": "TR0674",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 675,
+    "level": "Shall",
+    "localId": "TR0675",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 676,
+    "level": "Shall",
+    "localId": "RR0676",
+    "icsGroup": "SDC Metric Consumer"
+  },
+  {
+    "requirementNumber": 682,
+    "level": "Shall",
+    "localId": "TR0682",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 800,
+    "level": "Should",
+    "localId": "TR0800",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 866,
+    "level": "Shall",
+    "localId": "TR0866",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 870,
+    "level": "Shall",
+    "localId": "RR0870",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 871,
+    "level": "Shall",
+    "localId": "RR0871",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 960,
+    "level": "Should",
+    "localId": "TR0960",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 1009,
+    "level": "Shall",
+    "localId": "TR1009",
+    "icsGroup": "SDC Metric Provider"
+  },
+  {
+    "requirementNumber": 1075,
+    "level": "Shall",
+    "localId": "TR1075",
+    "icsGroup": "SDC Metric Provider"
+  }
+]

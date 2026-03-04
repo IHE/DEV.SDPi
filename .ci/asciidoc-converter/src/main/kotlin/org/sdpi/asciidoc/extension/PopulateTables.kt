@@ -8,6 +8,7 @@ import org.asciidoctor.extension.Contexts
 import org.asciidoctor.extension.Treeprocessor
 import org.sdpi.asciidoc.*
 import org.sdpi.asciidoc.factories.ContentModuleTableBuilder
+import org.sdpi.asciidoc.factories.IcsTableBuilder
 import org.sdpi.asciidoc.factories.OidTableBuilder
 import org.sdpi.asciidoc.factories.TransactionTableBuilder
 import org.sdpi.asciidoc.model.*
@@ -19,7 +20,7 @@ import org.sdpi.asciidoc.model.*
  * included in the table. This class reads those attributes, gathers and
  * fills the table with the selected data.
  */
-class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeprocessor() {
+class PopulateTables(private val docInfo: SdpiInformationCollector, private val importedStandards: ExternalStandardProcessor) : Treeprocessor() {
     private companion object : Logging;
 
     override fun process(document: Document): Document {
@@ -31,7 +32,7 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
         if (block.hasRole(Roles.QueryTable.REQUIREMENT.key)) {
             populateRequirementTable(block as Table, getSelectedRequirements(block))
         } else if (block.hasRole(ICS_TABLE_ROLE)) {
-            populateICSTable(block as Table, getSelectedRequirements(block))
+            populateICSTable(block as Table)
         } else if (block.hasRole(Roles.QueryTable.TRANSACTIONS.key)) {
             populateTransactionTable(block as Table)
         } else if (block.hasRole(Roles.QueryTable.CONTENT_MODULE.key)) {
@@ -68,6 +69,19 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
                 (bAllGroups || it.groups.any { it in aGroups })
                         && (bAllActors || it.actors().any { it in aActors })
             }
+            .sortedBy { it.requirementNumber }
+        return selectedRequirements
+    }
+
+    private fun getSelectedRequirements(block: Table, standard: ExternalStandard) : Collection<ExternalRequirement> {
+        val aGroups = getRequirementGroups(block.attributes[RequirementAttributes.Common.GROUPS.key])
+        if (aGroups.isEmpty()) {
+            // unfiltered
+            return standard.requirements.sortedBy { it.requirementNumber }
+        }
+
+        val selectedRequirements = standard.requirements
+            .filter { it -> it.groups.any { it in aGroups } }
             .sortedBy { it.requirementNumber }
         return selectedRequirements
     }
@@ -118,35 +132,40 @@ class PopulateTables(private val docInfo: SdpiInformationCollector) : Treeproces
     // endregion
 
     // region ICS table
-    private fun populateICSTable(table: Table, requirements: Collection<SdpiRequirement2>) {
-        val colId = createTableColumn(table, 0)
-        val colReference = createTableColumn(table, 1)
-        val colStatus = createTableColumn(table, 2)
-        val colSupport = createTableColumn(table, 3)
-        val colComment = createTableColumn(table, 4)
+    private fun populateICSTable(table: Table) {
 
-        val header = createTableRow(table)
-        table.header.add(header)
+        val builder = IcsTableBuilder(this, table)
 
-        header.cells.add(createTableCell(colId, "Index"))
-        header.cells.add(createTableCell(colReference, "Reference"))
-        header.cells.add(createTableCell(colStatus, "Status"))
-        header.cells.add(createTableCell(colSupport, "Support"))
-        header.cells.add(createTableCell(colComment, "Comment"))
+        builder.setupHeadings()
 
-        for (req in requirements) {
-            val strIcsId = String.format("ICS-%04d", req.requirementNumber)
-            val strReference = req.makeLinkGlobal()
-            val level = req.level
+        val strStandard = table.attributes[TableAttributes.IcsTable.SOURCE_STANDARD.key]?.toString()
+        if (strStandard == null) {
+            val requirements = getSelectedRequirements(table)
+            for (req in requirements) {
+                val strIcsId = String.format("ICS-%04d", req.requirementNumber)
+                val strReference = req.makeLinkGlobal()
+                val level = req.level
 
-            val row = createTableRow(table)
-            row.cells.add(createTableCell(colId, strIcsId))
-            row.cells.add(createTableCell(colReference, strReference))
-            row.cells.add(createTableCell(colStatus, level.icsStatus))
-            row.cells.add(createTableCell(colSupport, ""))
-            row.cells.add(createTableCell(colComment, ""))
+                builder.addRow(strIcsId, strReference, level)
+            }
+        } else {
+            val standard = importedStandards.getStandard(strStandard)
+            checkNotNull(standard) {
+                logger.error("Unknown standard for ICS table: $strStandard")
+            }
+            val requirements = getSelectedRequirements(table, standard)
+            for (req in requirements) {
+                val strIcsId = String.format("ICS-%04d", req.requirementNumber)
+                val strReference = String.format("<<${standard.citationKey},${req.localId}>>")
+                val level = req.level
 
-            table.body.add(row)
+                val support = req.localSupport()
+                val firstSupport = support.firstOrNull()
+                builder.addRow(strIcsId, strReference, level, firstSupport)
+                for (s in support.drop(1)) {
+                    builder.addRow(s)
+                }
+            }
         }
     }
     // endregion

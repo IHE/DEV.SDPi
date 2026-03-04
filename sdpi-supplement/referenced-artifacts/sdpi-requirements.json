@@ -633,7 +633,18 @@
             ],
             "noteContent": [],
             "exampleContent": [],
-            "relatedContent": []
+            "relatedContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "RefRequirement:RR1162[standard-id=10700, comment=\"time service unreachable\"]"
+                        }
+                    ]
+                }
+            ]
         },
         "mitigating": "SAFETY",
         "test": "INTEROPERABILITY"
@@ -671,7 +682,18 @@
                 }
             ],
             "exampleContent": [],
-            "relatedContent": []
+            "relatedContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "RefRequirement:RR1162[standard-id=10700, comment=\"provider clock's inaccurate\"]"
+                        }
+                    ]
+                }
+            ]
         },
         "mitigating": "SAFETY",
         "test": "INTEROPERABILITY"
@@ -701,7 +723,18 @@
             ],
             "noteContent": [],
             "exampleContent": [],
-            "relatedContent": []
+            "relatedContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "RefRequirement:RR1162[standard-id=10700, comment=\"log time-service unreachable\"]"
+                        }
+                    ]
+                }
+            ]
         },
         "mitigating": "AUDIT",
         "test": "INTEROPERABILITY"
@@ -754,7 +787,7 @@
                         {
                             "type": "item",
                             "strMarker": "*",
-                            "strText": "<<ref_ieee_11073_10700_2022>>, RR1162."
+                            "strText": "RefRequirement:RR1162[standard-id=10700, comment=\"workflow interruption risks\"]"
                         }
                     ]
                 }
@@ -795,7 +828,18 @@
                 }
             ],
             "exampleContent": [],
-            "relatedContent": []
+            "relatedContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "RefRequirement:RR1162[standard-id=10700, comment=\"log abrupt time adjustments\"]"
+                        }
+                    ]
+                }
+            ]
         },
         "mitigating": "AUDIT",
         "test": "INTEROPERABILITY"
@@ -938,7 +982,18 @@
                 }
             ],
             "exampleContent": [],
-            "relatedContent": []
+            "relatedContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "RefRequirement:RR1162[standard-id=10700, comment=\"multiple epoch time-stamp risks\"]"
+                        }
+                    ]
+                }
+            ]
         },
         "mitigating": "SAFETY",
         "test": "INTEROPERABILITY"
@@ -1036,7 +1091,18 @@
                 }
             ],
             "exampleContent": [],
-            "relatedContent": []
+            "relatedContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "RefRequirement:RR1162[standard-id=10700, comment=\"unrecoverable time adjustment faults\"]"
+                        }
+                    ]
+                }
+            ]
         },
         "mitigating": "SAFETY",
         "test": "INTEROPERABILITY"
@@ -1074,7 +1140,18 @@
                 }
             ],
             "exampleContent": [],
-            "relatedContent": []
+            "relatedContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "RefRequirement:RR1162[standard-id=10700, comment=\"unrecoverable time adjustments\"]"
+                        }
+                    ]
+                }
+            ]
         },
         "mitigating": "SAFETY",
         "test": "INTEROPERABILITY"
@@ -1131,7 +1208,18 @@
                 }
             ],
             "exampleContent": [],
-            "relatedContent": []
+            "relatedContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "RefRequirement:RR1162[standard-id=10700, comment=\"monitoring provider clock\"]"
+                        }
+                    ]
+                }
+            ]
         },
         "mitigating": "AUDIT",
         "test": "INTEROPERABILITY"
@@ -1254,7 +1342,18 @@
                 }
             ],
             "exampleContent": [],
-            "relatedContent": []
+            "relatedContent": [
+                {
+                    "type": "ulist",
+                    "items": [
+                        {
+                            "type": "item",
+                            "strMarker": "*",
+                            "strText": "RefRequirement:RR1162[standard-id=10700, comment=\"propagate time faults\"]"
+                        }
+                    ]
+                }
+            ]
         },
         "mitigating": "SAFETY",
         "test": "INTEROPERABILITY"

@@ -64,22 +64,24 @@ class AsciidocConverter(
     private val conversionOptions: ConverterOptions,
 ) : Runnable {
 
-    val anchorCollector = DocumentAnchorCollector()
+    private val anchorCollector = DocumentAnchorCollector()
 
     fun documentAnchors() = anchorCollector.getKnownAnchors()
 
-    val bibliographyCollector = BibliographyCollector()
-    val transactionActorsProcessor = TransactionActorsProcessor()
-    val profileTransactionCollector = TransactionIncludeProcessor()
-    val profileContentModuleCollector = ContentModuleIncludeProcessor()
-    val profileUseCaseSupportCollector = SupportUseCaseIncludeProcessor()
+    private val bibliographyCollector = BibliographyCollector()
+    private val transactionActorsProcessor = TransactionActorsProcessor()
+    private val profileTransactionCollector = TransactionIncludeProcessor()
+    private val profileContentModuleCollector = ContentModuleIncludeProcessor()
+    private val profileUseCaseSupportCollector = SupportUseCaseIncludeProcessor()
+    private val externalStandardsProcessor = ExternalStandardProcessor()
 
     val infoCollector = SdpiInformationCollector(
         bibliographyCollector,
         transactionActorsProcessor,
         profileTransactionCollector,
         profileUseCaseSupportCollector,
-        profileContentModuleCollector
+        profileContentModuleCollector,
+        externalStandardsProcessor
     )
 
     override fun run() {
@@ -108,9 +110,9 @@ class AsciidocConverter(
 
         asciidoctor.javaExtensionRegistry().treeprocessor(NumberingProcessor(null, anchorReplacements))
 
-        // Gather bibliography entries.
-
+        // Gather bibliography entries and import external standards requirements
         asciidoctor.javaExtensionRegistry().treeprocessor(bibliographyCollector)
+        asciidoctor.javaExtensionRegistry().blockMacro(externalStandardsProcessor)
 
         // Gather profiles, the transactions, use cases they include.
         asciidoctor.javaExtensionRegistry().blockMacro(profileTransactionCollector)
@@ -136,10 +138,10 @@ class AsciidocConverter(
         asciidoctor.javaExtensionRegistry().blockMacro(AddContentModuleQueryPlaceholder())
         asciidoctor.javaExtensionRegistry().blockMacro(AddOidQueryPlaceholder())
 
-        asciidoctor.javaExtensionRegistry().treeprocessor(PopulateTables(infoCollector))
+        asciidoctor.javaExtensionRegistry().treeprocessor(PopulateTables(infoCollector, externalStandardsProcessor))
 
         // Handle inline macros to cross-reference information from the document tree.
-        asciidoctor.javaExtensionRegistry().inlineMacro(RequirementReferenceMacroProcessor(infoCollector))
+        asciidoctor.javaExtensionRegistry().inlineMacro(RequirementReferenceMacroProcessor(infoCollector, externalStandardsProcessor, bibliographyCollector))
         asciidoctor.javaExtensionRegistry().inlineMacro(UseCaseReferenceMacroProcessor(infoCollector))
         asciidoctor.javaExtensionRegistry().inlineMacro(ActorReferenceMacroProcessor(infoCollector))
         asciidoctor.javaExtensionRegistry().inlineMacro(ContentModuleReferenceMacroProcessor(infoCollector))
