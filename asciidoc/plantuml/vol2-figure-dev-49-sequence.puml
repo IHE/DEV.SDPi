@@ -11,10 +11,10 @@ participant "$str_somds_medical_alert_provider" as provider
 
 ==End Distributed Alarm System [DEV-49]==
 
-alt consumer intentionally ends the DAS
+alt consumer initiates ending of the DAS
     consumer -> provider: EndMonitoredByDAS
     consumer <<-- provider: EndMonitoredByDASResponse
-else provider intentionally ends the DAS
+else provider initiates ending of the DAS
     consumer <- provider: Notification (OperationInvokedReport incl. disabled operations 'MonitoredByDAS' and 'EndMonitoredByDAS')
 end
 

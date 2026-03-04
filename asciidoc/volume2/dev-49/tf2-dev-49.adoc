@@ -46,7 +46,7 @@ include::../../plantuml/vol2-figure-dev-49-sequence.puml[]
 [#vol2_clause_dev_49_operation_end_monitored_by_das]
 ===== {var_label_dev_49_operation_end_monitored_by_das} Operation
 
-A <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> invokes the {var_label_dev_49_operation_end_monitored_by_das} operation on a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> to gracefully end the Distributed Alarm System, as specified in <<ref_ieee_11073_10702_202x>>.
+A <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> invokes the {var_label_dev_49_operation_end_monitored_by_das} operation on a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> to initiate a graceful ending of the Distributed Alarm System, as specified in <<ref_ieee_11073_10702_202x>>.
 
 [#vol2_clause_dev_49_operation_end_monitored_by_das_trigger_events]
 ====== Trigger Events
@@ -88,7 +88,7 @@ A {var_label_dev_49_operation_end_monitored_by_das_response} message with Invoca
 [#vol2_clause_dev_49_notification]
 ===== {var_label_dev_49_notification} Message
 
-A <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> uses the {var_label_dev_49_notification} message to gracefully end the Distributed Alarm System, as specified in <<ref_ieee_11073_10702_202x>>.
+A <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> uses the {var_label_dev_49_notification} message to initiate a graceful ending of the Distributed Alarm System, as specified in <<ref_ieee_11073_10702_202x>>.
 
 [#vol2_clause_dev_49_notification_trigger_events]
 ====== Trigger Events
