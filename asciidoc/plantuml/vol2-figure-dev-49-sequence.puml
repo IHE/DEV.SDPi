@@ -13,7 +13,7 @@ participant "$str_somds_medical_alert_provider" as provider
 
 alt consumer intentionally ends the DAS
     consumer -> provider: EndMonitoredByDAS
-    consumer <<-- provider: EndMonitoredByDASResponse(MDIB version)
+    consumer <<-- provider: EndMonitoredByDASResponse
 else provider intentionally ends the DAS
     consumer <- provider: Notification (OperationInvokedReport incl. disabled operations 'MonitoredByDAS' and 'EndMonitoredByDAS')
 end
