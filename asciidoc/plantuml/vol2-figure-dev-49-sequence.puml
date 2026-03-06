@@ -15,7 +15,7 @@ alt consumer initiates ending of the DAS
     consumer -> provider: EndMonitoredByDAS
     consumer <<-- provider: EndMonitoredByDASResponse
 else provider initiates ending of the DAS
-    consumer <- provider: Notification (OperationInvokedReport incl. disabled operations 'MonitoredByDAS' and 'EndMonitoredByDAS')
+    consumer <- provider: Notification (EpisodicOperationalStateReport incl. disabled operations 'MonitoredByDAS' and 'EndMonitoredByDAS')
 end
 
 @enduml

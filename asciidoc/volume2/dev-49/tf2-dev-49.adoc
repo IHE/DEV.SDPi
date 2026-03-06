@@ -98,7 +98,14 @@ When a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> ends the Distribu
 [#vol2_clause_dev_49_notification_semantics]
 ====== Message Semantics
 
-[[payload_dev_49_notification]]OperationInokedReport:: A report that contains ... !!!! TODO: check the semantics here!!!!!
+[[payload_dev_49_notification]]EpisodicOperationalStateReport:: A change report that contains information on the disablement (OperatingMode = 'Dis') of the operations with codes MDC_ACT_MONITORED_BY_DISTRIBUTED_ALARM_SYSTEM and MDC_ACT_END_MONITORED_BY_DISTRIBUTED_ALARM_SYSTEM.
+
+[#vol2_clause_dev_49_notification_expected_actions]
+====== Expected Actions
+
+When a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> sends a {var_label_dev_49_notification} message, there is no expected or required response from the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>.
+
+A {var_label_dev_49_notification} message with the aforementioned message semantics marks the end of the Distributed Alarm System between the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> and the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>.
 
 [#vol2_clause_dev_49_publish_medical_alert_update_ses]
 include::../dev-x-default-ses-secured-mode.adoc[]
