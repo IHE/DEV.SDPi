@@ -1,0 +1,112 @@
+:var_transaction_id: DEV-49
+
+:var_label_dev_49_operation_end_monitored_by_das: EndMonitoredByDAS
+:var_label_dev_49_operation_end_monitored_by_das_response: EndMonitoredByDASResponse
+:var_label_dev_49_notification: Notification
+
+//reset|+1|off
+[#vol2_clause_dev_49,sdpi_offset=49]
+[role=transaction,transaction-id=DEV-49]
+=== End Distributed Alarm System [{var_transaction_id}]
+
+==== Scope
+
+include::tf2-dev-49-summary.adoc[]
+
+==== Actor Roles
+
+[sdpi_transaction_actors]
+--
+
+[actor-id="somds_medical_alert_consumer",contribution=Initiator,contribution=Receiver]
+Requests a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> to end a Distributed Alarm System.
+Listens for notifications that the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> has ended
+the Distributed Alarm System.
+
+
+[actor-id="somds_medical_alert_provider",contribution=Responder,contribution=Initiator]
+Listens for requests from a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> to end the 
+Distributed Alarm System and grants such requests. Alternatively ends the Distributed Alarm System 
+on its own initiative and notifies the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>.
+
+--
+
+==== Referenced Standards
+
+* <<ref_ieee_11073_10702_202x>>
+
+==== Messages
+
+.Message Interaction Diagram [{var_transaction_id}]
+[plantuml#vol2_figure_dev_49_sequence, target=puml-dev-49-sequence, format=svg]
+....
+include::../../plantuml/vol2-figure-dev-49-sequence.puml[]
+....
+
+[#vol2_clause_dev_49_operation_end_monitored_by_das]
+===== {var_label_dev_49_operation_end_monitored_by_das} Operation
+
+A <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> invokes the {var_label_dev_49_operation_end_monitored_by_das} operation on a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> to initiate a graceful ending of the Distributed Alarm System, as specified in <<ref_ieee_11073_10702_202x>>.
+
+[#vol2_clause_dev_49_operation_end_monitored_by_das_trigger_events]
+====== Trigger Events
+
+When there is an active Distributed Alarm System between a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> and a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>, the {var_label_dev_49_operation_end_monitored_by_das} operation is invoked by the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> to request the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> to end the Distributed Alarm System.
+
+[#vol2_clause_dev_49_operation_end_monitored_by_das_semantics]
+====== Message Semantics
+
+The {var_label_dev_49_operation_end_monitored_by_das} operation does not contain any further semantics.
+
+[#vol2_clause_dev_49_operation_end_monitored_by_das_expected_actions]
+====== Expected Actions
+
+When a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> invokes the {var_label_dev_49_operation_end_monitored_by_das} operation, the receiving <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> responds with a {var_label_dev_49_operation_end_monitored_by_das_response} message.
+
+[#vol2_clause_dev_49_operation_end_monitored_by_das_response]
+===== {var_label_dev_49_operation_end_monitored_by_das_response} Operation Invoked Report Message
+
+A <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> responds with a {var_label_dev_49_operation_end_monitored_by_das_response} message to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>'s invocation of the {var_label_dev_49_operation_end_monitored_by_das} operation, as specified in <<ref_ieee_11073_10702_202x>>.
+
+[#vol2_clause_dev_49_operation_end_monitored_by_das_response_trigger_events]
+====== Trigger Events
+
+The <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> sends a {var_label_dev_49_operation_end_monitored_by_das_response} message back to the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> that invoked the {var_label_dev_49_operation_end_monitored_by_das} operation.
+
+[#vol2_clause_dev_49_operation_end_monitored_by_das_response_semantics]
+====== Message Semantics
+
+The {var_label_dev_49_operation_end_monitored_by_das_response} message does not contain any further semantics.
+
+[#vol2_clause_dev_49_operation_end_monitored_by_das_response_expected_actions]
+====== Expected Actions
+
+When a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> sends this message, there is no expected or required response from the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>.
+
+A {var_label_dev_49_operation_end_monitored_by_das_response} message with InvocationState = 'Fin' marks the end of the Distributed Alarm System between the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> and the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>.
+
+[#vol2_clause_dev_49_notification]
+===== {var_label_dev_49_notification} Message
+
+A <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> uses the {var_label_dev_49_notification} message to initiate a graceful ending of the Distributed Alarm System, as specified in <<ref_ieee_11073_10702_202x>>.
+
+[#vol2_clause_dev_49_notification_trigger_events]
+====== Trigger Events
+
+When a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> ends the Distributed Alarm System with a specific <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>, it sends a {var_label_dev_49_notification} message to that <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> to inform it that the Distributed Alarm System has ended.
+
+[#vol2_clause_dev_49_notification_semantics]
+====== Message Semantics
+
+[[payload_dev_49_notification]]EpisodicOperationalStateReport:: A change report that contains information on the disablement (OperatingMode = 'Dis') of the operations with codes MDC_ACT_MONITORED_BY_DISTRIBUTED_ALARM_SYSTEM and MDC_ACT_END_MONITORED_BY_DISTRIBUTED_ALARM_SYSTEM.
+
+[#vol2_clause_dev_49_notification_expected_actions]
+====== Expected Actions
+
+When a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> sends a {var_label_dev_49_notification} message, there is no expected or required response from the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>.
+
+A {var_label_dev_49_notification} message with the aforementioned message semantics marks the end of the Distributed Alarm System between the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> and the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>.
+
+[#vol2_clause_dev_49_publish_medical_alert_update_ses]
+include::../dev-x-default-ses-secured-mode.adoc[]
+

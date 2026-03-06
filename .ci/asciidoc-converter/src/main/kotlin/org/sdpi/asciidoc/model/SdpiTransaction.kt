@@ -19,28 +19,14 @@ data class SdpiTransaction(
         return "link:#$strAnchor[$id]"
     }
 
-    fun getContributionFor(contribution: Contribution): Contribution? {
-        if (actorRoles == null) {
-            return null
-        }
-
-        for(actor in actorRoles) {
-            if (actor.contribution == contribution) {
-                return actor.contribution
-            }
-        }
-
-        return null
-    }
-
-    fun getContributionForActor(strActorId: String): Contribution? {
+    fun getContributionForActor(strActorId: String): List<Contribution>? {
         if (actorRoles == null) {
             return null
         }
 
         for(actor in actorRoles) {
             if (actor.actorId == strActorId) {
-                return actor.contribution
+                return actor.contributions
             }
         }
 

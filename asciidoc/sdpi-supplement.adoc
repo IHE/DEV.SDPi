@@ -24,8 +24,8 @@
 // https://docs.asciidoctor.org/asciidoc/latest/attributes/unset-attributes/
 :markup-actor-transactions-table:
 
-:sdpi_milestone_publication: SDPi 2.3 Publication
-:sdpi_milestone_review: SDPi 2.3 Review
+:sdpi_milestone_publication: SDPi 2.4 Publication
+:sdpi_milestone_review: SDPi 2.4 Review
 
 :sdpi_version_major: 2
 :sdpi_version_minor: 4
@@ -34,7 +34,7 @@
 :ihe_supplement_sdpi_revision_short: {sdpi_version_major}.{sdpi_version_minor}
 :ihe_supplement_sdpi_revision_date: {localdatetime}
 :ihe_supplement_sdpi_revision_label: Standard for Trial Use / Implementation
-:ihe_supplement_sdpi_publication_month: December 19, 2025
+:ihe_supplement_sdpi_publication_month: March XX, 2026
 :ihe_supplement_sdpi_public_comment_submission_deadline: N/A
 
 // Oid, assigned by IHE-DEV, for the SDPi specification

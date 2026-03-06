@@ -18,9 +18,10 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Added
 
-- Clarifying note to R7000 ([#501](https://github.com/IHE/DEV.SDPi/issues/501)).
-- Clarifying statements to DEV-23, DEV-24, DEV-46, and DEV-47 w.r.t to ad-hoc and managed mode discovery([#409](https://github.com/IHE/DEV.SDPi/issues/409)).
+- Clarifying note to R7000 ([#501](https://github.com/IHE/DEV.SDPi/issues/501))
+- Clarifying statements to DEV-23, DEV-24, DEV-46, and DEV-47 w.r.t to ad-hoc and managed mode discovery([#409](https://github.com/IHE/DEV.SDPi/issues/409))
 - OID Framework to TF-3Z ([#474](https://github.com/IHE/DEV.SDPi/issues/474))
+- Distributed Alarm System option and related transactions DEV-48 and DEV-49 (a.k.a. early "pre-published" integration of the SDC A-PKP standard) ([#457](https://github.com/IHE/DEV.SDPi/issues/457))
 
 ### Changes
 
