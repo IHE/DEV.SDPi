@@ -8,7 +8,7 @@
 :var_uri_ws_eventing_notification: https://www.w3.org/Submission/2006/SUBM-WS-Eventing-20060315/#Notifications
 :var_uri_dpws_eventing: http://docs.oasis-open.org/ws-dd/dpws/1.1/os/wsdd-dpws-1.1-spec-os.html#_Toc228672097
 :var_uri_xsd_duration: https://www.w3.org/TR/xmlschema-2/#duration
-:var_xsd_duration_regex: ^PT(\d+H)?(\d+M)?(\d+(.\d+)?S)?(?<!PT)$
+:var_xsd_duration_regex: ^PT(\d+H)?(\d+M)?(\d+(\.\d+)?S)?(?<!PT)$
 :var_filter_dialect_action: http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01/Action
 :var_status_delivery_failure: http://schemas.xmlsoap.org/ws/2004/08/eventing/DeliveryFailure
 :var_status_shutdown: http://schemas.xmlsoap.org/ws/2004/08/eventing/SourceShuttingDown
