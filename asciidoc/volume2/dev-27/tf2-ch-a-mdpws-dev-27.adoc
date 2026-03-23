@@ -8,7 +8,6 @@
 :var_uri_ws_eventing_notification: https://www.w3.org/Submission/2006/SUBM-WS-Eventing-20060315/#Notifications
 :var_uri_dpws_eventing: http://docs.oasis-open.org/ws-dd/dpws/1.1/os/wsdd-dpws-1.1-spec-os.html#_Toc228672097
 :var_uri_xsd_duration: https://www.w3.org/TR/xmlschema-2/#duration
-:var_xsd_duration_regex: ^PT(\d+H)?(\d+M)?(\d+(\.\d+)?S)?(?<!PT)$
 :var_filter_dialect_action: http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01/Action
 :var_status_delivery_failure: http://schemas.xmlsoap.org/ws/2004/08/eventing/DeliveryFailure
 :var_status_shutdown: http://schemas.xmlsoap.org/ws/2004/08/eventing/SourceShuttingDown
@@ -48,7 +47,7 @@ include::../dev-a-default-trigger-events.adoc[]
 
 `s12:Envelope/s12:Body/wse:Subscribe/wse:EndTo/wsa:Address`:: HTTPS server address at which <<vol2_clause_dev_27_message_subscription_end, {var_label_dev_27_message_subscription_end}>> messages are supposed to be delivered.
 `s12:Envelope/s12:Body/wse:Subscribe/wse:Delivery/wse:NotifyTo/wsa:Address`:: HTTPS server address at which <<vol2_clause_dev_27_message_notification, {var_label_dev_27_message_notification}>> messages are supposed to be delivered.
-`s12:Envelope/s12:Body/wse:Subscribe/wse:Expires`:: <<payload_dev_27_susbcribe_expiration_time>> as an {var_uri_xsd_duration}[XML Schema duration], constrained to hours, minutes and seconds (regular expression: `{var_xsd_duration_regex}`)
+`s12:Envelope/s12:Body/wse:Subscribe/wse:Expires`:: <<payload_dev_27_susbcribe_expiration_time>> as an {var_uri_xsd_duration}[XML Schema duration], constrained to hours, minutes and seconds according to <<r1018>>.
 `s12:Envelope/s12:Body/wse:Subscribe/wse:Filter/@Dialect`:: In accordance with DPWS, support for at least `{var_filter_dialect_action}`.
 `s12:Envelope/s12:Body/wse:Subscribe/wse:Filter`:: If `s12:Envelope/s12:Body/wse:Subscribe/wse:Filter/@Dialect` is `{var_filter_dialect_action}`, <<payload_dev_27_susbcribe_filter>> is specified by a list of action URIs as defined in
 <<vol2_table_appendix_mdpws_dev_27_subscribe_filter>> that contains at least one URI. There is no normative support for other filters at the moment.
@@ -127,7 +126,7 @@ include::../dev-a-default-trigger-events.adoc[]
 ====== Message Semantics
 
 `s12:Envelope/s12:Body/wse:SubscribeResponse/wse:SubscriptionManager/wsa:Address`:: URI that serves as an access point to manage the subscription, which satisfies <<payload_dev_27_subscribe_response_subscription_manager>>.
-`s12:Envelope/s12:Body/wse:SubscribeResponse/wse:Expires`:: <<payload_dev_27_subscribe_response_expiration_time>> as an {var_uri_xsd_duration}[XML Schema duration], constrained to hours, minutes and seconds (regular expression: `{var_xsd_duration_regex}`).
+`s12:Envelope/s12:Body/wse:SubscribeResponse/wse:Expires`:: <<payload_dev_27_subscribe_response_expiration_time>> as an {var_uri_xsd_duration}[XML Schema duration], constrained to hours, minutes and seconds according to <<r1018>>.
 
 :var_expected_actions_ref: <<vol2_clause_dev_27_message_subscribe_response>>
 include::../dev-a-default-expected-actions.adoc[]
@@ -207,7 +206,7 @@ include::../dev-a-default-trigger-events.adoc[]
 
 ====== Message Semantics
 
-`s12:Envelope/s12:Body/wse:Renew/wse:Expires`:: <<payload_dev_27_renew_expiration_time>> as an {var_uri_xsd_duration}[XML Schema duration], constrained to hours, minutes and seconds (regular expression: `{var_xsd_duration_regex}`)
+`s12:Envelope/s12:Body/wse:Renew/wse:Expires`:: <<payload_dev_27_renew_expiration_time>> as an {var_uri_xsd_duration}[XML Schema duration], constrained to hours, minutes and seconds according to <<r1018>>.
 
 :var_expected_actions_ref: <<vol2_clause_dev_27_message_renew>>
 include::../dev-a-default-expected-actions.adoc[]
@@ -238,7 +237,7 @@ include::../dev-a-default-trigger-events.adoc[]
 
 ====== Message Semantics
 
-`s12:Envelope/s12:Body/wse:RenewResponse/wse:Expires`:: <<payload_dev_27_renew_response_expiration_time>> as an {var_uri_xsd_duration}[XML Schema duration], constrained to hours, minutes and seconds (regular expression: `{var_xsd_duration_regex}`).
+`s12:Envelope/s12:Body/wse:RenewResponse/wse:Expires`:: <<payload_dev_27_renew_response_expiration_time>> as an {var_uri_xsd_duration}[XML Schema duration], constrained to hours, minutes and seconds according to <<r1018>>.
 
 :var_expected_actions_ref: <<vol2_clause_dev_27_message_renew_response>>
 include::../dev-a-default-expected-actions.adoc[]
