@@ -48,7 +48,7 @@
   <!---->
   <!---->
   <!--Epochs-->
-  <xsd:element name="Epochs">
+  <xsd:element name="Epochs" type="sdpi:EpochsType">
     <xsd:annotation>
       <xsd:documentation>
         An extension to version epochs arising from non-slewing time adjustments.
@@ -56,16 +56,6 @@
         This extension can be attached to the pm:ClockState/ext:Extension element.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element name="Epoch" type="sdpi:EpochsType" minOccurs="0" maxOccurs="unbounded" /> 
-      </xsd:sequence>
-      <xsd:attribute name="Version" type="sdpi:EpochVersion" use="required">
-        <xsd:annotation>
-          <xsd:documentation>Current epoch version. Implied value is 0.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
-    </xsd:complexType>
   </xsd:element>
   <xsd:complexType name="EpochsType">
     <xsd:annotation>
@@ -77,6 +67,13 @@
                    minOccurs="0"
                    maxOccurs="unbounded" />
     </xsd:sequence>
+    <xsd:attribute name="Version"
+                   type="sdpi:EpochVersion"
+                   use="required">
+      <xsd:annotation>
+        <xsd:documentation>Current epoch version. Implied value is 0.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
   </xsd:complexType>
   <xsd:complexType name="EpochType">
     <xsd:annotation>
