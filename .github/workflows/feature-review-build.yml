@@ -35,7 +35,7 @@ jobs:
       uses: gradle/actions/setup-gradle@v4
 
     - name: Create HTML with Gradle
-      run: ./gradlew run --args="--input-file ../../asciidoc/sdpi-supplement.adoc --output-folder ../../sdpi-supplement --github-token '${{ secrets.SDPI_API_ACCESS_TOKEN_SECRET }}' --backend html"
+      run: ./gradlew run --args="--input-file ../../asciidoc/sdpi-standard.adoc --output-folder ../../sdpi-standard --github-token '${{ secrets.SDPI_API_ACCESS_TOKEN_SECRET }}' --backend html"
       working-directory: .ci/asciidoc-converter
 
     - name: Generate PlantUML diagrams and static files
@@ -50,5 +50,5 @@ jobs:
       # if: success() && github.ref == 'refs/heads/master'
       uses: actions/upload-artifact@v4
       with:
-        name: sdpi-supplement-${{ steps.extract_branch.outputs.branch }}
-        path: sdpi-supplement
+        name: sdpi-standard-${{ steps.extract_branch.outputs.branch }}
+        path: sdpi-standard
