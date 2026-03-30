@@ -1,0 +1,149 @@
+:supplement_note: SDPi {ihe_supplement_sdpi_revision_short} Supplement Note
+
+[#supplement_clause_introduction_to_supplement,sdpi_offset=clear]
+= Introduction to this Supplement
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi {ihe_supplement_sdpi_revision_short} Supplement -- _STU / TI Version_ -- Note*:
+
+This version of the SDPi 2.3 Standard for Trial Use (HL7 STU) / Trial Implementation (IHE TI) supplement is the 3rd release in 2025, continuing the objective to provide three to four releases each year that include both _incremental_ updates (e.g., editorial "fixes"), ballot comment resolutions (e.g., from HL7 ballot cycles), and additional capability enhancements.
+For this release, key changes include:
+
+1. Added new extensions _ReportSequence_ and _Relations_
+2. Added conformity statement tables for SPDi-defined requirements
+3. Added semantic markup to support rich artefact generation
+
+Numerous other corrections and enhancements are included.
+
+All changes incorporated in a release are managed through Github Issues and reviewed Pull Requests.
+For a list of those related to this release, see <<sdpi_issue_management>> below.
+For HL7 ballot comment resolution, links are made from HL7 ballot Jira tickets to IHE DEV.SDPi Github Issues that then enable tracking of the comment resolution implementation in a specific release.
+
+
+NOTE: This supplement also includes both normative and informative references to other specifications (see <<vol1_appendix_b_references>>), some of which are finalized and published and others that are either being developed or in revision.
+For example, the IEEE 11073-10702 PKP standard is in mature development stage; however, some requirements from that pre-standard may be included (non-normatively) in this SDPi specification, providing a pathway to early experience and validation.
+When a referenced specification is used that is in development or revision, a note will be provided in the <<vol1_appendix_b_referenced_standards>> clearly indicating its status.
+
+It is recognized that this release is a work-in-progress that will continue to subsequent versions.
+These known limitations and forward-looking content include:
+
+. Releases along with the planned capability additions are managed in the project's https://github.com/IHE/DEV.SDPi/milestones[DEV.SDPi milestones];
+. This supplement includes four SDPi Profiles, though the typical IHE supplement is organized for a single profile; as a result, some adjustments have been made, especially in the supplement overview section where there is a general SDPi overview and then basic overviews for each of the Profiles; challenging areas include profile "options" where there are FOUR sections vs. one; it is a work in progress and feedback is appreciated, especially to enhance clarity;
+. *Open / Closed Issues tables* -- starting with SDPi 1.1 and subsequent, the approach for the IHE open / closed issues section was transitioned to utilize https://github.com/IHE/DEV.SDPi/issues[Github Issues] that are related to specific releases; each release updates the changelog file, detailing what is Added, Changed or Removed;
+. *Requirements boxes* (e.g., "R1234") are included especially in TF-2, with some also part of TF-1 and TF-3; this is an initial approach that *_will be significantly expanded in future versions of the supplement_*; documentation is provided in <<vol1_clause_sdpi_requirements_modeling_integration>>, including discussion related to how it will be expanded in future versions of the supplement;
+. *_<<term_safe_effective_secure>> Sections_* (see <<vol1_clause_appendix_a_ses_considerations_section_template>>) are included in the specification; however, their use and content will be significantly extended in future versions;
+. This supplement is currently rendered as a *"long form"* document -- one single HTML file; however, in subsequent versions the intent is to consider a multi-page / file HTML rendering + addition of a tabbed menu for navigating the sections of the supplement;
+. *{supplement_note}* boxes are provided throughout the document to help guide reviewers and implementers.
+
+|===
+
+// Forward declarations of common labels & acronyms & variables
+include::document-declarations.adoc[]
+
+// Define oids for referenced standards
+include::std-oid-definitions.adoc[]
+
+[#supplement_clause_sdpi_supplement_overview]
+== SDPi Supplement Overview
+
+[#supplement_clause_sdpi_supplement_organization]
+=== SDPi Supplement Organization
+
+This IHE Devices Technical Framework supplement introduces a new _family of interoperability profiles_, Service-oriented Device Point-of-care Interoperability (SDPi), that comprise four separate profiles:
+
+* SDPi-Plug-and-trust (*SDPi-P*) Profile
+* SDPi-Reporting (*SDPi-R*) Profile
+* SDPi-Alerting (*SDPi-A*) Profile
+* SDPi-external Control (*SDPi-xC*) Profile
+
+To that end, the supplement includes updates to all three IHE DEV TF volumes, including:
+
+*TF-1  Profiles*
+
+* General overview of the SDPi architectural approach and integrated set of profiles
+* Profile-specific sections
+* Related appendices, for example the integration of this family of SDPi Profiles with other sources of requirements - use cases or reference standards
+
+*TF-2  Transactions*
+
+* Extensive new set of transactions based on IEEE 11073 Service-oriented Device Connectivity (SDC) medical device interoperability standards.
+* Related appendices, for example the specialized use of web services messaging for device communication and gateways to other protocols or profiles
+
+*TF-3  Content Modules*
+
+* New content covering the application of IEEE 11073 SDC semantic standards to device content modules, with a primary focus on specifications related to the IEEE 11073-10207 BICEPS standard.
+
+NOTE: As explained in the https://profiles.ihe.net/GeneralIntro/ch-7.html#7.5[IHE Technical Framework Document Conventions], the acronym TF stands for Technical Framework, whereas the number immediately behind the hyphen in the "TF-X" notation stands for the volume number within a Technical Framework.
+
+[#supplement_clause_mapping_clinical_scenarios_to_profile_requirements]
+=== Use Cases:  Mapping Clinical Scenarios to Profile Requirements
+IHE technical framework integration profile specifications include use case sections to ensure that the technical solutions are rooted in real-world application requirements.
+These sections typically include a basic description of use case scenarios, identify the key systems that exchange information, application-level detail of the information exchanged, and perhaps even some sequence diagrams.
+This information may also be used to drive the test cases that are used for conformity assessment, ensuring that the resulting specification implementation meets the intended needs.
+
+This supplement includes this same organization; however, it also defines a set of general, non-profile-specific clinical use cases that provide requirements, which may be mapped to multiple SDPi integration profiles.
+Section <<vol1_appendix_c_dpi_use_cases>> provides a collection of these high-level clinical use cases.
+
+FOR READERS OF THIS SUPPLEMENT, a good strategy might be to first review the use cases in the Volume 1 appendix (e.g., <<vol1_clause_appendix_c_use_case_sicdmp>> ), and then review the specific profiles to which the clinical scenario requirements have been mapped.
+Reviewing the use case specifications in this order will provide the needed context to understand what is presented in each profile.
+
+[#supplement_clause_joint_ihe_hl7_gemini_ses_mdi_project_development]
+=== Joint IHE-HL7 Gemini SES+MDI Project Development
+This supplement is the result of a joint https://confluence.hl7.org/x/Xzf9Aw[IHE-HL7 Gemini Device Interoperability program] which began early 2020.
+Extensive notes and discussion materials are provided on the project's HL7 Confluence site, including a https://confluence.hl7.org/pages/viewpage.action?pageId=113674346#LibrarywithEVERYTHINGyoueverwantedtoknow...-GeneralUpdate&BriefingPresentations[Library with extensive presentations and other materials].
+This Library also includes *_briefings (slides and recordings) to provide background for those reviewing the specification_*.
+
+The joint IHE-HL7 devices team leveraged tools from both organizations, as well as participated jointly throughout the project's multi-year efforts.
+
+The methods currently employed are provided in the wiki article:  https://github.com/IHE/DEV.SDPi/wiki/Program-Coordination-Co-Working-Spaces#program-coordination--co-working-spaces[Program Coordination & Co-Working Spaces].
+
+[#supplement_clause_supplement_support_for_ri_mc_rr_using_asciidoc]
+=== Supplement Support for RI+MC+RR using AsciiDoc
+In addition to the supplement's technical specification content, a development approach has been advanced that represents added value to adopters and implementers over the traditional document oriented approach.
+These are referred to as:
+
+[none]
+. *_Requirements Interoperability + Model Centric + Regulatory Ready_*
+
+Or *RI+MC+RR* for short.
+
+These three objectives may be summarized as follows:
+
+[none]
+* *Requirements Interoperability (RI)*
+[none]
+** Ability to integrate and automate requirements and capabilities from component specifications and standards to enable traceability and coverage at <<term_conformity_assessment>> (<<acronym_ca>>) of the component product interface
+* *Model Centric (MC)*
+[none]
+** Transition from a document-centric to a _computable model-based "single source of truth"_ specification from which the Technical Framework becomes a view of the model
+* *Regulatory Ready (RR)*
+[none]
+** Enable CA test reports that are genuinely _"regulatory submission ready"_ (e.g., inclusion in a U.S. FDA 510(k) submission package)
+
+The SDPi {ihe_supplement_sdpi_revision} version of the supplement continues to make small but significant steps toward support of these objectives, especially Requirements Interoperability, as well as the use of AsciiDoc metadata to annotate the document sources for post-processing.
+Clearly, moving toward <<term_model_centric>> specifications and full integration of <<term_model_based_systems_engineering>> will take considerable effort and time; however, this supplement represents a humble start in that direction.
+Subsequent supplement versions will build upon these objectives and support a new level of rigor for connectathon and product conformity assessment testing and ultimately test reports that directly impact the challenges around medical product regulatory submissions.
+
+Additional discussion is provided in <<vol1_appendix_a_requirements_management_for_p_n_t_interperability>>, and on the https://confluence.hl7.org/pages/viewpage.action?pageId=82906664#ConformityAssessment&Tooling-RI+MC+RRforMedTechSpecificationsInitiative[Gemini project's Confluence pages].
+See also related discussions on the Gemini Project's https://confluence.hl7.org/x/XhPUB[Pathway to an Ecosystem of Plug-and-Trust Products].
+
+
+[#supplement_clause_requirements_glossary]
+=== Requirements Glossary
+
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *Editor's Note*:
+
+This "glossary" provides a defined set of requirements terminology and meta data is required in order to ensure consistency and processing / automation of requirements throughout the specification.
+
+It is differentiated from the IHE TF-0 Glossary in that it is specifically created to support the integration of formal requirements interoperability specification content; whereas, the IHE glossary provides general terminology more at the application level that is used throughout all IHE technical frameworks and profile specifications.
+
+|===
+

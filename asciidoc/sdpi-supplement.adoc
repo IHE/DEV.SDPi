@@ -30,7 +30,6 @@
 :sdpi_version_major: 2
 :sdpi_version_minor: 4
 :sdpi_version_revision: 0
-// STANDALONE SDPi:  QUESTION:  Do we rework these to gemini_standard
 :ihe_supplement_sdpi_revision: {sdpi_version_major}.{sdpi_version_minor}.{sdpi_version_revision}
 :ihe_supplement_sdpi_revision_short: {sdpi_version_major}.{sdpi_version_minor}
 :ihe_supplement_sdpi_revision_date: {localdatetime}
@@ -40,7 +39,8 @@
 
 // Oid, assigned by IHE-DEV, for the SDPi specification
 // https://wiki.ihe.net/index.php/PCD_OID_Management
-:sdpi-parent-oid: 1.3.6.1.4.1.19376.1.6.2.10
+// STANDALONE SDPi:  Disabled the following line ... we may eventually need something in this supplement for OIDs but breaking it now makes sure that this is a SLIM document to start with!
+// :sdpi-parent-oid: 1.3.6.1.4.1.19376.1.6.2.10
 
 {empty} +
 ifeval::["{backend}" == "html5"]
@@ -60,9 +60,9 @@ ifeval::["{backend}" == "html5"]
     </div>
     <div><strong>A Joint HL7-IHE Gemini Device Interoperability Project</strong></div>
 </div>
-<p style="font-size: 2.75em; text-align: center"><strong>Gemini</strong></p>
+<p style="font-size: 2.75em; text-align: center"><strong>IHE Devices</strong></p>
 
-<p style="font-size: 2.75em; text-align: center"><strong>Technical Framework Standard</strong></p>
+<p style="font-size: 2.75em; text-align: center"><strong>Technical Framework Supplement</strong></p>
 
 <p style="font-size: 2.75em; text-align: center"><strong>Service-oriented Device Point-of-care</strong></p>
 
@@ -132,23 +132,70 @@ Information about the organization of IHE Technical Frameworks and Supplements a
 
 The current version of the IHE Devices Technical Framework can be found at https://profiles.ihe.net/DEV/[DEV Technical Framework].
 
-include::sdpi-standard-intro.adoc[]
+// STANDALONE SDPi:  1st refactoring, moved copies of these files into the supplement/ directory
+include::supplement/sdpi-supplement-intro.adoc[]
 
-include::sdpi-standard-issues.adoc[]
+include::supplement/sdpi-standard-issues.adoc[]
 
 // = Volume 0 -- IHE Technical Frameworks General Introduction
 
-include::volume0/tf0-main.adoc[]
+// STANDALONE SDPi:  1st refactoring, simply COMMENTED OUT the 3 volumes
+//include::volume0/tf0-main.adoc[]
 
+//
 // = Volume 1 -- Profiles
+//
+//include::volume1/tf1-main.adoc[]
 
-include::volume1/tf1-main.adoc[]
+// Appendix A
+[appendix#vol1_appendix_a_requirements_management_for_p_n_t_interperability,sdpi_offset=A]
+== Requirements Management for Plug-and-Trust Interoperability
 
+[#vol1_clause_sdpi_requirements_modeling_integration]
+=== SDPi Requirements Modeling & Integration
+
+[#vol1_clause_appendix_a_ses_considerations_section_template]
+=== SES Considerations Section Template
+
+// Appendix B
+[appendix#vol1_appendix_b_references,sdpi_offset=B]
+== References
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+| *{supplement_note}*:
+IHE Supplement TF-1:B References Appendix content is provided in *Gemini Standard TF-1:B*.
+|===
+
+
+[bibliography#vol1_appendix_b_referenced_standards]
+=== Referenced Standards
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+| *{supplement_note}*:
+IHE Supplement TF-1:B.1 Referenced Standards  content is provided in *Gemini Standard TF-1:B.1 Referenced Standards*.
+|===
+
+// Appendix C
+
+[appendix#vol1_appendix_c_dpi_use_cases,sdpi_offset=C]
+== Device Point-of-care Interoperability (DPI) Use Cases
+
+[#vol1_clause_appendix_c_use_case_sicdmp,sdpi_offset=4]
+=== Use Case Feature {var_use_case_id}: <<label_use_case_name_sicdmp>> (<<acronym_sicdmp>>)
+
+//
 // = Volume 2 -- Transactions
-
-include::volume2/tf2-main.adoc[]
-
+//
+//include::volume2/tf2-main.adoc[]
+//
 // = Volume 3 -- Content Modules
+//
+//include::volume3/tf3-main.adoc[]
 
-include::volume3/tf3-main.adoc[]
 
