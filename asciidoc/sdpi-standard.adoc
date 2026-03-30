@@ -18,6 +18,8 @@
 :source-highlighter: highlight.js
 :highlightjsdir: js/highlight
 
+// STANDALONE SDPi:  Deferred is the refactoring of all "supplement" to "standard" language
+
 // Set the document attribute to automatically generate
 // actor transactions table from semantic markup. Unset
 // to use manual tables. 
@@ -34,7 +36,7 @@
 :ihe_supplement_sdpi_revision: {sdpi_version_major}.{sdpi_version_minor}.{sdpi_version_revision}
 :ihe_supplement_sdpi_revision_short: {sdpi_version_major}.{sdpi_version_minor}
 :ihe_supplement_sdpi_revision_date: {localdatetime}
-:ihe_supplement_sdpi_revision_label: Standard for Trial Use / Implementation
+:ihe_supplement_sdpi_revision_label: Standard for Trial Use
 :ihe_supplement_sdpi_publication_month: December 19, 2025
 :ihe_supplement_sdpi_public_comment_submission_deadline: N/A
 
@@ -69,6 +71,8 @@ ifeval::["{backend}" == "html5"]
 <p style="font-size: 2.75em; text-align: center"><strong>Interoperability (SDPi)</strong></p>
 
 <p style="text-align: center">Revision {ihe_supplement_sdpi_revision} &mdash; {ihe_supplement_sdpi_revision_label}</p>
+
+<p style="text-align: center"><strong>("Standalone" SDPi Standard -  For Review)</strong></p>
 ++++
 endif::[]
 {empty} +
@@ -84,16 +88,22 @@ endif::[]
 | {ihe_supplement_sdpi_revision_date}
 
 | *Author:*
-| HL7 Devices Working Group & IHE Devices Technical Committee
+| Gemini Medical Device Interoperability Program Team (Joint HL7 & IHE Devices Working Groups)
 
+// STANDALONE SDPi:  Should this field be included?  What address? Or one for IHE and one for HL7?
 | *Email:*
 | DEV@ihe.net
+
+*Standalone SDPi:*  _Should this email contact be included?  If so, what address(es)? One for IHE and one for HL7?_
 |===
 
 {empty} +
 
-*Please verify you have the most recent version of this document.*
-See https://profiles.ihe.net/DEV/[*HERE*] for STU/Trial Implementation and Final Text versions and https://profiles.ihe.net/DEV/#1.2[*HERE*] for Public Comment versions.
+*Published versions of this standard are available from both IHE and HL7:*
+
+* For HL7 publications:  Search for "SDPi" on the https://www.hl7.org/implement/standards/product_matrix.cfm[HL7 Standards-based Product Grid]
+
+* For IHE publications: https://profiles.ihe.net/DEV/[*HERE*] for STU/Trial Implementation and Final Text versions and https://profiles.ihe.net/DEV/#1.2[*HERE*] for Public Comment versions.
 
 ifeval::["{backend}" == "html5"]
 //A PDF version of the specification is available upon request.
@@ -104,29 +114,26 @@ endif::[]
 
 This Gemini standard is a joint development effort between Health Level Seven International (HL7) and Integrating the Healthcare Enterprise (IHE) devices working groups.
 Its development and publication adheres to the consensus standards processes of both HL7, an ANSI accredited standards development organization, and IHE.
-Publication as a Standard for Trial Use (HL7) or Trial Implementation (IHE) reflects the continuous cycle of development, balloting and publication of the specification, to address addition of new capabilities as well as identified safety, effectiveness and security issues and enhancements.
-Product developers are encouraged to use the standard, recognizing the potential impact of this continuous development cycle.
+The title of this document, "Technical Framework *_Standard_*", reflects its unique status as a Gemini specification, utilizing the IHE Technical Framework organization and elements (e.g., integration profiles, actors, transactions, content modules), but processed as an HL7 specification that will be published as a "standalone" standard and will persist even when its status transitions to normative standard (HL7) or Final Text (IHE).
 
-This is a supplement to the IHE Devices Technical Framework. Each supplement undergoes a process of public comment and trial implementation before being incorporated into the volumes of the Technical Frameworks.
+To facilitate integration with the companion IHE Devices Technical Framework (final text) specification, a companion to this standard will be created for each edition:  SDPi "Technical Framework Supplement", which will be organized according to IHE style guidelines, but it will be in major section outline only, with each section including a note indicating where the content is located in the published Gemini Technical Framework ("standalone") Standard document.
+Given its alignment with the companion IHE specification, some section numbers are skipped in this document to facilitate its intended integration into the above-mentioned "supplement".
+Skipped section numbers are already present in the Devices Technical Framework and will not require changes due to the incorporation of the supplement once it transitions to normative standard / final text status.
 
-This supplement is published on {ihe_supplement_sdpi_publication_month} for Trial Implementation and may be available for testing at subsequent IHE Connectathons. The supplement may be amended based on the results of testing. Following successful testing it will be incorporated into the Devices Technical Framework. Comments are invited and can be submitted at https://www.ihe.net/DEV_Public_Comments/[Devices Public Comments] or by submitting a https://github.com/IHE/DEV.SDPi/issues/new/choose[GitHub Issue].
+Additionally, some content that may otherwise be only referenced by a "supplement" document and defined elsewhere in the existing technical framework, will be incorporated in this specification to ensure that it is internally cohesive and does not force the reader to unnecessarily consult other documents.
 
-Some section numbers are skipped in this supplement because it is designed for later incorporation into the Devices Technical Framework. Skipped section numbers are present in the Devices Technical Framework, and will not require changes due to the incorporation of this supplement.
+Publication as a Standard for *Trial* Use (HL7) or *Trial* Implementation (IHE) reflects the continuous cycle of development, balloting and publication of the specification, to address addition of new capabilities as well as identified safety, effectiveness and security issues and enhancements.
+Product developers are encouraged to use the standard, recognizing the potential impact of this continuous development cycle and its status as a _"trial use"_ standard.
 
-This supplement describes changes to the existing technical framework documents.
 
-“Boxed” instructions like the sample below indicate to the Volume Editor how to integrate the relevant section(s) into the relevant Technical Framework volume.
-|===
-|__Amend section W.X by the following:__
-|===
+This supplement is published on {ihe_supplement_sdpi_publication_month} for Trial Implementation and may be available for testing at subsequent IHE or HL7 testing events, such as an IHE Connectathon.
+The standard may be amended based on the results of testing.
+Following successful testing and implementation maturity, it will transition to a normative standard, and the companion IHE supplement will be incorporated into the Devices Technical Framework.
+Comments are invited and can be submitted at https://www.ihe.net/DEV_Public_Comments/[Devices Public Comments] or by submitting a https://github.com/IHE/DEV.SDPi/issues/new/choose[GitHub Issue].
 
-Where the amendment adds text, make the added text +++<u><b>bold underline</b></u>+++.
-Where the amendment removes text, make the removed text +++<b><s>bold strikethrough</s></b>+++.
-When entire new sections are added, introduce with editor’s instructions to “add new text” or similar, which for readability are not bolded or underlined.
+General information about IHE can be found at http://www.ihe.net/[IHE.net], and about HL7 can be found at https://www.hl7.org/index.cfm[HL7.org].
 
-General information about IHE can be found at http://www.ihe.net/[IHE.net].
-
-Information about the IHE Devices domain can be found at https://www.ihe.net/ihe_domains/[IHE Domains].
+General information about the HL7 Devices Working Group can be found at https://www.hl7.org/Special/committees/healthcaredevices/index.cfm[HL7.org/healthcaredevices], and the IHE Devices domain can be found at https://www.ihe.net/ihe_domains/[IHE Domains].
 
 Information about the organization of IHE Technical Frameworks and Supplements and the process used to create them can be found at https://www.ihe.net/resources/profiles/[Profiles] and https://www.ihe.net/about_ihe/ihe_process/[IHE Processes].
 

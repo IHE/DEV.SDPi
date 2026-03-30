@@ -6,7 +6,9 @@
 [sdpi_offset=clear]
 === SDPi Issue Management
 
-All SDPi supplement issues are tracked in the https://github.com/IHE/DEV.SDPi/issues[IHE Github DEV.SDPi repository Issues section].
+*Standalone SDPi:*  _Consider how this might change from STU/TI to Normative/FT, and organize it accordingly._
+
+All SDPi standard issues are tracked in the https://github.com/IHE/DEV.SDPi/issues[IHE Github DEV.SDPi repository Issues section].
 Filter the issues on their "state" to see them.  +
 
 * To see the full list of OPEN issues, go to https://github.com/IHE/DEV.SDPi/issues?q=is%3Aissue+is%3Aopen
