@@ -9,7 +9,7 @@
 .^|Optionality
 .^|Reference
 
-.6+| <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>
+.8+| <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>
 .^| <<transaction_name_establish_medical_alert_exchange>>
 .^| Responder
 .^| R
@@ -43,7 +43,17 @@
 | [DEV-43] Deferred to a future version of SDPi
 // <<vol2_clause_dev_43>>
 
-.6+| <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>
+| <<transaction_name_establish_distributed_alarm_system>>
+| Responder
+| R ^(See^ ^Note^ ^3)^
+| <<vol2_clause_dev_48>>
+
+| <<transaction_name_end_distributed_alarm_system>>
+| Responder and Initiator
+| R ^(See^ ^Note^ ^3)^
+| <<vol2_clause_dev_49>>
+
+.8+| <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>
 .^| <<transaction_name_establish_medical_alert_exchange>>
 .^| Initiator
 .^| R
@@ -77,6 +87,16 @@
 | [DEV-43] Deferred to a future version of SDPi
 // <<vol2_clause_dev_43>>
 
+| <<transaction_name_establish_distributed_alarm_system>>
+| Initiator
+| R ^(See^ ^Note^ ^3)^
+| <<vol2_clause_dev_48>>
+
+| <<transaction_name_end_distributed_alarm_system>>
+| Responder and Initiator
+| R ^(See^ ^Note^ ^3)^
+| <<vol2_clause_dev_49>>
+
 .4+| <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> ^(See^ ^Note^ ^2)^
 .^| <<transaction_name_establish_medical_alert_exchange>>
 .^| Initiator
@@ -103,10 +123,11 @@
 Note 1: Transaction is required if <<vol1_clause_sdpi_a_actor_option_alert_delegation_reftext>> is supported.
 
 Note 2: By default, the <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> acts as a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>, initiating [DEV-04] transactions when they are received from <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>s.
-This default configuration requires the grouped <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> Actor to have the <<vol1_spec_sdpi_p_option_gateway_export>> option selected.
+This default configuration requires the grouped <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> Actor to have the <<vol1_spec_sdpi_p_option_gateway_export>> enabled.
 
 If the gateway supports  <<vol1_clause_sdpi_a_actor_option_remote_alert_signaling_reftext>>, then it also acts as a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> and accepts inbound [DEV-04] transactions from ACM Alert Reporters.
 In this case, the gateway will support both "Initiator & Responder" for these transactions.
-In this case, both the <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> Actor  <<vol1_spec_sdpi_p_option_gateway_export>> and <<vol1_spec_sdpi_p_option_gateway_import>> options are selected.
+In this case, the <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> Actor has both the <<vol1_spec_sdpi_p_option_gateway_import>> and <<vol1_spec_sdpi_p_option_gateway_export>> options selected.
 
+Note 3: Transaction is required if <<vol1_clause_sdpi_a_actor_option_distributed_alarm_system_reftext>> is supported.
 |===
