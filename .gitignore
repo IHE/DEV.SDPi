@@ -4,3 +4,7 @@ puml-*.svg
 *.pdf
 *.html
 .asciidoctor
+
+sdpi-documents
+sdpi-supplement
+sdpi-standard
