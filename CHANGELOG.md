@@ -21,11 +21,13 @@ Each section shall contain a list of action items of the following format: `<bri
 - Clarifying note to R7000 ([#501](https://github.com/IHE/DEV.SDPi/issues/501)).
 - Clarifying statements to DEV-23, DEV-24, DEV-46, and DEV-47 w.r.t to ad-hoc and managed mode discovery([#409](https://github.com/IHE/DEV.SDPi/issues/409)).
 - OID Framework to TF-3Z ([#474](https://github.com/IHE/DEV.SDPi/issues/474))
+- Make restriction of xsd:durations to hours, minutes, seconds, and fractional seconds mandatory for all xsd:duration values ([#517](https://github.com/IHE/DEV.SDPi/issues/517))
 
 ### Changes
 
 - Corrected three erroneous context-free codes in Table 3:8.3.2.10.2-1 ([#505](https://github.com/IHE/DEV.SDPi/issues/505))
 - Clarified referenced standards sections in 2:A and removed ISO prefix from IEEE/ISO standards for referential consistency ([#390](https://github.com/IHE/DEV.SDPi/issues/390))
+- Correction of regular expression for xsd:duration restriction ([#516](https://github.com/IHE/DEV.SDPi/issues/516))
 
 ### Editorial Fixes
 
