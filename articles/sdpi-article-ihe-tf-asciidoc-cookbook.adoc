@@ -31,7 +31,7 @@ There are a few methods to review the HTML that will be rendered from the AsciiD
 .. Note that it typically takes a minute or two to complete the workflow action -- status will be displayed on the right side of your push's row
 .. Select your branches latest upload (push remote)
 .. IF the action was successful, there will be listed in the "Artifacts" section; click on the artifact Name to download a ZIP of the rendered document.
-.. Extract the ZIP, select the "singlepage" subfolder and open the sdpi-supplement.html document
+.. Extract the ZIP, select the "singlepage" subfolder and open the sdpi-standard.html document
 
 Enjoy AsciiDoc content creation!
 
@@ -341,7 +341,7 @@ For a bulleted list of items, the final "full stop" character of each non-final 
 == Semantic markup
 https://docs.asciidoctor.org/asciidoctorj/latest/[Asciidoctor], which converts these files into other formats (e.g., html, pdf), has been https://docs.asciidoctor.org/asciidoctorj/latest/extensions/extensions-introduction/[extended] to process domain specific content for the supplement. These extensions provide semantic markup of content that is used to automatically generate, for example, implementation conformance statement tables and export requirements and use cases in JSON format for external tooling (see https://profiles.ihe.net/DEV/SDPi/index.html#vol1_appendix_a_requirements_management_for_p_n_t_interperability[requirements management for plug-and-trust interoperability]). 
 
-Content extracted, using markup in the source described below, and exported, to `sdpi-supplement/referenced-artifacts/` in JSON format includes:
+Content extracted, using markup in the source described below, and exported, to `sdpi-standard/referenced-artifacts/` in JSON format includes:
 
 * `sdpi-profiles.json`: all profiles (e.g., SDPi), including actors and options defined, and the transactions, content modules and use-cases supported,
 * `sdpi-content-modules.json`: content modules (e.g., SDC/BICEPS, etc),
@@ -1122,12 +1122,12 @@ The AsciiDoc source is automatically processed using GitHub actions.
 
 For testing, documents can be generated using Windows command line tools (probably for other operating systems too, but I don't know about that; please expand on this when you figure out how). To create output from the AsciiDoc source open a command prompt in the `.ci\asciidoc-converter` folder and use:
 
-* `build_document.bat` to create an html document (`sdpi-supplement.html`),
-* `build_document_pdf.bat` to create an Acrobat PDF document (`sdpi-supplement.pdf`).
+* `build_document.bat` to create an html document (`sdpi-standard.html`),
+* `build_document_pdf.bat` to create an Acrobat PDF document (`sdpi-standard.pdf`).
 
-The output files are written to `sdpi-supplement` folder. Extracts (requirements and use-cases in JSON format) are written to the `sdpi-supplement\referenced-artifacts` folder. Extracts are generated along with the document output. 
+The output files are written to `sdpi-standard` folder. Extracts (requirements and use-cases in JSON format) are written to the `sdpi-standard\referenced-artifacts` folder. Extracts are generated along with the document output.
 
-IMPORTANT: Don't commit files in the `sdpi-supplement` folder to the repository. 
+IMPORTANT: Don't commit files in the `sdpi-standard` folder to the repository.
 
 == Topics Parking Lot
 
