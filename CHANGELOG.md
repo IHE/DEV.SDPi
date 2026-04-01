@@ -14,7 +14,11 @@ The SDPi changelog shall not contain the following sections
 
 Each section shall contain a list of action items of the following format: `<brief one-sentence description of what has been done> (#<issue number & URL>).`
 
+<!--
 ## Unreleased
+-->
+
+## [2.4.0] - 2026-04-01
 
 ### Added
 
@@ -31,6 +35,8 @@ Each section shall contain a list of action items of the following format: `<bri
 - Correction of regular expression for xsd:duration restriction ([#516](https://github.com/IHE/DEV.SDPi/issues/516))
 
 ### Editorial Fixes
+
+- Final cleanup for release 2.4.0 ([#523](https://github.com/IHE/DEV.SDPi/issues/523))
 
 
 ## [2.3.0] - 2025-12-19

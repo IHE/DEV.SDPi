@@ -9,6 +9,16 @@
 [role=transaction,transaction-id=DEV-49]
 === End Distributed Alarm System [{var_transaction_id}]
 
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi {ihe_supplement_sdpi_revision_short} Supplement -- _STU / TI Version_ -- Note*:
+
+This transaction is INFORMATIVE, given that it is based on the mature draft, but not yet finalized, IEEE 11073-10702 (Alert PKP) standard. However, it is included to provide a pathway to early experience and validation. Once the IEEE 11073-10702 standard is finalized and published, this transaction will be updated to be normative.
+
+|===
+
 ==== Scope
 
 include::tf2-dev-49-summary.adoc[]
