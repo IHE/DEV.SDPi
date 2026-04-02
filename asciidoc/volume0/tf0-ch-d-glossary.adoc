@@ -468,7 +468,7 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 |
 
 | [[term_transport_address, Transport Address]] Transport Address
-| A physical or virtual endpoint address that can be used to communicate with a <<vol1_spec_sdpi_p_actor_somds_provider>> or <<vol1_spec_sdpi_p_actor_somds_consumer>> .
+| A physical endpoint address that can be used to communicate with a <<vol1_spec_sdpi_p_actor_somds_provider>> or <<vol1_spec_sdpi_p_actor_somds_consumer>> .
 | XAddr
 |
 |

@@ -4,7 +4,7 @@
 SDC allows a <<vol1_spec_sdpi_p_actor_somds_consumer>> to open multiple, concurrent TCP 
 connections to a <<vol1_spec_sdpi_p_actor_somds_provider>>'s hosted services.
 While this offers flexibility for implementations, <<vol1_spec_sdpi_p_actor_somds_provider>>
-may constrain the number of concurrent TCP connections to ensure availability of its 
+may constrain the number of concurrent TCP connections to help mitigate risks to the availability of its 
 <<acronym_sfc,system function contribution>>.
 
 This section describes scenarios and recommendations for managing concurrent connections
@@ -17,8 +17,7 @@ between consumers and providers.
 [NORMATIVE]
 ====
 The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_provider>> may limit the number of 
-concurrent TCP connections from an individual <<vol1_spec_sdpi_p_actor_somds_consumer>> to its hosted services to ensure availability and 
-responsiveness of its <<acronym_sfc,system function contribution>>.
+concurrent TCP connections from an individual <<vol1_spec_sdpi_p_actor_somds_consumer>> to its hosted services.
 ====
 
 [NOTE]
@@ -30,7 +29,7 @@ allow unlimited connections, based on its resource capabilities and design goals
 ** <<term_transport_address>> and/or,
 ** `[source endpoint]` message property (see <<ref_oasis_ws_addressing_2006>>) and/or,
 ** client credentials used for TLS authentication.
-* Securing the connection may be the most expensive part of an operation, so a <<vol1_spec_sdpi_p_actor_somds_provider>> may 
+* Securing the connection may be the most expensive part of an SDC service operation, so a <<vol1_spec_sdpi_p_actor_somds_provider>> may 
 drop concurrent connections from a <<vol1_spec_sdpi_p_actor_somds_consumer>> that exceed its limits, or respond with 
 HTTP status code `429 (Too Many Requests)` (after securing the connection) to signal the <<vol1_spec_sdpi_p_actor_somds_consumer>> 
 to reduce its connection count and/or frequency.
