@@ -14,21 +14,30 @@ The SDPi changelog shall not contain the following sections
 
 Each section shall contain a list of action items of the following format: `<brief one-sentence description of what has been done> (#<issue number & URL>).`
 
+<!--
 ## Unreleased
+-->
+
+## [2.4.0] - 2026-04-01
 
 ### Added
 
-- Clarifying note to R7000 ([#501](https://github.com/IHE/DEV.SDPi/issues/501)).
-- Clarifying statements to DEV-23, DEV-24, DEV-46, and DEV-47 w.r.t to ad-hoc and managed mode discovery([#409](https://github.com/IHE/DEV.SDPi/issues/409)).
+- Clarifying note to R7000 ([#501](https://github.com/IHE/DEV.SDPi/issues/501))
+- Clarifying statements to DEV-23, DEV-24, DEV-46, and DEV-47 w.r.t to ad-hoc and managed mode discovery([#409](https://github.com/IHE/DEV.SDPi/issues/409))
 - OID Framework to TF-3Z ([#474](https://github.com/IHE/DEV.SDPi/issues/474))
 - Clarify expected behaviour and requirements for consumers making multiple concurrent connections to providers ([#503](https://github.com/IHE/DEV.SDPi/issues/503)).
+- Distributed Alarm System option and related transactions DEV-48 and DEV-49 (a.k.a. early "pre-published" integration of the SDC A-PKP standard) ([#457](https://github.com/IHE/DEV.SDPi/issues/457))
+- Make restriction of xsd:durations to hours, minutes, seconds, and fractional seconds mandatory for all xsd:duration values ([#517](https://github.com/IHE/DEV.SDPi/issues/517))
 
 ### Changes
 
 - Corrected three erroneous context-free codes in Table 3:8.3.2.10.2-1 ([#505](https://github.com/IHE/DEV.SDPi/issues/505))
 - Clarified referenced standards sections in 2:A and removed ISO prefix from IEEE/ISO standards for referential consistency ([#390](https://github.com/IHE/DEV.SDPi/issues/390))
+- Correction of regular expression for xsd:duration restriction ([#516](https://github.com/IHE/DEV.SDPi/issues/516))
 
 ### Editorial Fixes
+
+- Final cleanup for release 2.4.0 ([#523](https://github.com/IHE/DEV.SDPi/issues/523))
 
 
 ## [2.3.0] - 2025-12-19

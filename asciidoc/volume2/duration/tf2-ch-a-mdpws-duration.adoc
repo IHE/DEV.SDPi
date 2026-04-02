@@ -1,0 +1,22 @@
+:var_xsd_duration_regex: ^PT(\d+H)?(\d+M)?(\d+(\.\d+)?S)?(?<!PT)$
+
+==== Functional scope of durations
+
+The original `xsd:duration` data type of XML Schema allows for picking durations of months or years.
+As months or years can describe variable times, e.g., February may be 28 or 29 days, March is 31 days, April 30 days, setting up such durations may result in ambiguous values.
+This section specifies a global constraint on `xsd:duration` values.
+
+.R1018
+[sdpi_requirement#r1018,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
+
+[NORMATIVE]
+====
+A <<vol1_spec_sdpi_p_actor_somds_participant>> shall generate `xsd:duration` values conforming to the regular expression `{var_xsd_duration_regex}`.
+====
+
+[NOTE]
+====
+The regular expression restricts durations to hours, minutes, seconds and fractions of seconds.
+====
+****
