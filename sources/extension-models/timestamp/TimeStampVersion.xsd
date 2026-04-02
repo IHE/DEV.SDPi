@@ -11,8 +11,7 @@
               namespace="http://standards.ieee.org/downloads/11073/11073-10207-2017/extension" />
   <xsd:import schemaLocation="../BICEPS_ParticipantModel.xsd"
               namespace="http://standards.ieee.org/downloads/11073/11073-10207-2017/participant" />
-  <xsd:element name="EpochSupport"
-               type="sdpi:EpochSupportType">
+  <xsd:element name="EpochSupport">
     <xsd:annotation>
       <xsd:documentation>
         An extension to indicate the MDIB may include versioned timestamps, particularly if an abrupt time adjustment occurs.
@@ -20,17 +19,23 @@
         This extension can be attached to the pm:ClockDescriptor descriptor.
       </xsd:documentation>
     </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="sdpi:EpochSupportType">
+          <xsd:attribute ref="ext:MustUnderstand"
+                         use="optional">
+            <xsd:annotation>
+              <xsd:documentation>True if consumers are not permitted to use information from the MDIB if they do not understand the version indicated. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:attribute>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
   </xsd:element>
   <xsd:complexType name="EpochSupportType">
     <xsd:annotation>
       <xsd:documentation>Advises epoch versioning support level. </xsd:documentation>
     </xsd:annotation>
-    <xsd:attribute ref="ext:MustUnderstand"
-                   use="optional">
-      <xsd:annotation>
-        <xsd:documentation>True if consumers are not permitted to use information from the MDIB if they do not understand the version indicated. </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
     <xsd:attribute name="Version"
                    default="1"
                    type="xsd:unsignedShort">
@@ -45,8 +50,6 @@
     </xsd:annotation>
     <xsd:restriction base="xsd:nonNegativeInteger" />
   </xsd:simpleType>
-  <!---->
-  <!---->
   <!--Epochs-->
   <xsd:element name="Epochs">
     <xsd:annotation>
@@ -57,14 +60,16 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element name="Epoch" type="sdpi:EpochsType" minOccurs="0" maxOccurs="unbounded" /> 
-      </xsd:sequence>
-      <xsd:attribute name="Version" type="sdpi:EpochVersion" use="required">
-        <xsd:annotation>
-          <xsd:documentation>Current epoch version. Implied value is 0.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
+      <xsd:complexContent>
+        <xsd:extension base="sdpi:EpochsType">
+          <xsd:attribute ref="ext:MustUnderstand"
+                         use="optional">
+            <xsd:annotation>
+              <xsd:documentation>True if consumers are not permitted to use information from the MDIB if they do not understand the version indicated.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:attribute>
+        </xsd:extension>
+      </xsd:complexContent>
     </xsd:complexType>
   </xsd:element>
   <xsd:complexType name="EpochsType">
@@ -77,6 +82,14 @@
                    minOccurs="0"
                    maxOccurs="unbounded" />
     </xsd:sequence>
+    <xsd:attribute name="Version"
+                   default="0"
+                   type="sdpi:EpochVersion"
+                   use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Current epoch version. Implied value is 0.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
   </xsd:complexType>
   <xsd:complexType name="EpochType">
     <xsd:annotation>
@@ -88,8 +101,6 @@
         For example, if device time advanced by 1 hour in epoch 0 at 10 am, there will be an Epoch entry for epoch version 0 with a timestamp of 10am and Offset of +1 hour. The equivalent time in epoch version 1 will be 11 am.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:attribute ref="ext:MustUnderstand"
-                   use="optional" />
     <xsd:attribute name="Version"
                    use="required">
       <xsd:annotation>
@@ -115,7 +126,9 @@
     </xsd:attribute>
   </xsd:complexType>
   <xsd:attributeGroup name="EpochVersionGroup">
-    <xsd:attribute name="Clock" type="pm:HandleRef" use="optional" >
+    <xsd:attribute name="Clock"
+                   type="pm:HandleRef"
+                   use="optional">
       <xsd:annotation>
         <xsd:documentation>The clock versioned by this element. </xsd:documentation>
       </xsd:annotation>
@@ -133,19 +146,19 @@
     </xsd:annotation>
     <xsd:attributeGroup ref="sdpi:EpochVersionGroup" />
     <xsd:attribute name="DeterminationTime"
-                    type="sdpi:EpochVersion">
+                   type="sdpi:EpochVersion">
       <xsd:annotation>
         <xsd:documentation>Epoch version for the enclosing pm:AbstractMetricValue/@DeterminationTime. Implied value is current sdpi:Epochs/@Version.</xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="StartTime"
-                    type="sdpi:EpochVersion">
+                   type="sdpi:EpochVersion">
       <xsd:annotation>
         <xsd:documentation>Epoch version for the enclosing pm:AbstractMetricValue/@StartTime. Implied value is current sdpi:Epochs/@Version.</xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="StopTime"
-                    type="sdpi:EpochVersion">
+                   type="sdpi:EpochVersion">
       <xsd:annotation>
         <xsd:documentation>Epoch version for the enclosing pm:AbstractMetricValue/@StopTime. Implied value is current sdpi:Epochs/@Version.</xsd:documentation>
       </xsd:annotation>
@@ -163,7 +176,7 @@
     </xsd:annotation>
     <xsd:attributeGroup ref="sdpi:EpochVersionGroup" />
     <xsd:attribute name="Time"
-                       type="sdpi:EpochVersion">
+                   type="sdpi:EpochVersion">
       <xsd:annotation>
         <xsd:documentation>Epoch version for the enclosing pm:CalibrationInfo/@Time. Implied value is current sdpi:Epochs/@Version.</xsd:documentation>
       </xsd:annotation>
@@ -181,7 +194,7 @@
     </xsd:annotation>
     <xsd:attributeGroup ref="sdpi:EpochVersionGroup" />
     <xsd:attribute name="LastSelfCheck"
-                       type="sdpi:EpochVersion">
+                   type="sdpi:EpochVersion">
       <xsd:annotation>
         <xsd:documentation>Epoch version for the enclosing pm:AlertSystemState/@LastSelfCheck. Implied value is current sdpi:Epochs/@Version.</xsd:documentation>
       </xsd:annotation>
@@ -217,7 +230,7 @@
     </xsd:annotation>
     <xsd:attributeGroup ref="sdpi:EpochVersionGroup" />
     <xsd:attribute name="BindingStartTime"
-                       type="sdpi:EpochVersion">
+                   type="sdpi:EpochVersion">
       <xsd:annotation>
         <xsd:documentation>Epoch version for the enclosing pm:AbstractContextState/@BindingStartTime. Implied value is current sdpi:Epochs/@Version.</xsd:documentation>
       </xsd:annotation>

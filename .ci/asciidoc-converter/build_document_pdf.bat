@@ -1,3 +1,3 @@
-gradlew.bat run --args="--input-file ../../asciidoc/sdpi-supplement.adoc --output-folder ../../sdpi-supplement --backend pdf"
+gradlew.bat run --args="--input-file ../../asciidoc/sdpi-standard.adoc --output-folder ../../sdpi-standard --backend pdf"
 
 

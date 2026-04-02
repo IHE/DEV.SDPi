@@ -1,13 +1,13 @@
 :supplement_note: SDPi {ihe_supplement_sdpi_revision_short} Supplement Note
 
 [#supplement_clause_introduction_to_supplement,sdpi_offset=clear]
-= Introduction to this Supplement
+= Introduction to this Standard
 
 [%noheader]
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi {ihe_supplement_sdpi_revision_short} Supplement -- _STU / TI Version_ -- Note*:
+a| *SDPi {ihe_supplement_sdpi_revision_short} Standard -- _STU / TI Version_ -- Note*:
 
 This version of the SDPi 2.3 Standard for Trial Use (HL7 STU) / Trial Implementation (IHE TI) supplement is the 3rd release in 2025, continuing the objective to provide three to four releases each year that include both _incremental_ updates (e.g., editorial "fixes"), ballot comment resolutions (e.g., from HL7 ballot cycles), and additional capability enhancements.
 For this release, key changes include:
@@ -47,12 +47,12 @@ include::document-declarations.adoc[]
 include::std-oid-definitions.adoc[]
 
 [#supplement_clause_sdpi_supplement_overview]
-== SDPi Supplement Overview
+== SDPi Standard Overview
 
 [#supplement_clause_sdpi_supplement_organization]
-=== SDPi Supplement Organization
+=== SDPi Organization
 
-This IHE Devices Technical Framework supplement introduces a new _family of interoperability profiles_, Service-oriented Device Point-of-care Interoperability (SDPi), that comprise four separate profiles:
+This IHE Devices Technical Framework standard introduces a new _family of interoperability profiles_, Service-oriented Device Point-of-care Interoperability (SDPi), that comprise four separate profiles:
 
 * SDPi-Plug-and-trust (*SDPi-P*) Profile
 * SDPi-Reporting (*SDPi-R*) Profile

@@ -3,7 +3,6 @@ package org.sdpi.asciidoc
 import org.apache.logging.log4j.kotlin.loggerOf
 import org.asciidoctor.ast.ContentNode
 import org.asciidoctor.ast.StructuralNode
-import org.jruby.util.ResourceException.InvalidArguments
 import org.sdpi.asciidoc.extension.Roles
 import org.sdpi.asciidoc.model.BlockOwner
 import org.sdpi.asciidoc.model.RequirementLevel
@@ -155,7 +154,7 @@ fun getTitleFrom(block: StructuralNode): String {
 
 fun makeLink(strAnchor: String, strText: String, strClass: String? = null): String {
     if (strAnchor.contains(" ")) {
-        throw  InvalidArguments("Anchor '$strAnchor' contains spaces")
+        throw IllegalArgumentException("Anchor '$strAnchor' contains spaces")
     }
 
     return if (strClass == null) {

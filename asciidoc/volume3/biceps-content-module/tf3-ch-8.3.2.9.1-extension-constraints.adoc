@@ -22,7 +22,7 @@ Some XML processor APIs do not support ordered access to XML _mixed content_, wh
 </foo>
 ----
 
-There are APIs that do not fully implement the XML Document Object Model and hence cannot individually access text nodes (e.g. as in <<vol3_clause_extension_constraints_interlaced>>: "Here", "is some", "interlaced", and "text") in between the interlaced elements but only as concatenated text.
+There are APIs that do not fully implement the XML Document Object Model and hence cannot individually access text nodes (e.g., as in <<vol3_clause_extension_constraints_interlaced>>: "Here", "is some", "interlaced", and "text") in between the interlaced elements but only as concatenated text.
 This makes verification measures unnecessarily complicated.
 As mixed content is not required to be available in device to device communication, <<r0019>> prohibits the use of mixed content types in BICEPS extensions.
 

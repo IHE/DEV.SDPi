@@ -31,7 +31,7 @@ There are a few methods to review the HTML that will be rendered from the AsciiD
 .. Note that it typically takes a minute or two to complete the workflow action -- status will be displayed on the right side of your push's row
 .. Select your branches latest upload (push remote)
 .. IF the action was successful, there will be listed in the "Artifacts" section; click on the artifact Name to download a ZIP of the rendered document.
-.. Extract the ZIP, select the "singlepage" subfolder and open the sdpi-supplement.html document
+.. Extract the ZIP, select the "singlepage" subfolder and open the sdpi-standard.html document
 
 Enjoy AsciiDoc content creation!
 
@@ -341,7 +341,7 @@ For a bulleted list of items, the final "full stop" character of each non-final 
 == Semantic markup
 https://docs.asciidoctor.org/asciidoctorj/latest/[Asciidoctor], which converts these files into other formats (e.g., html, pdf), has been https://docs.asciidoctor.org/asciidoctorj/latest/extensions/extensions-introduction/[extended] to process domain specific content for the supplement. These extensions provide semantic markup of content that is used to automatically generate, for example, implementation conformance statement tables and export requirements and use cases in JSON format for external tooling (see https://profiles.ihe.net/DEV/SDPi/index.html#vol1_appendix_a_requirements_management_for_p_n_t_interperability[requirements management for plug-and-trust interoperability]). 
 
-Content extracted, using markup in the source described below, and exported, to `sdpi-supplement/referenced-artifacts/` in JSON format includes:
+Content extracted, using markup in the source described below, and exported, to `sdpi-standard/referenced-artifacts/` in JSON format includes:
 
 * `sdpi-profiles.json`: all profiles (e.g., SDPi), including actors and options defined, and the transactions, content modules and use-cases supported,
 * `sdpi-content-modules.json`: content modules (e.g., SDC/BICEPS, etc),
@@ -475,7 +475,9 @@ or overriding obligations that apply when the actor option is selected for a par
 
 A profile, profile option or actor option references a <<semantic-transactions,transaction>> using the `sdpi_include_transaction` [include processor](https://docs.asciidoctor.org/asciidoctorj/latest/extensions/include-processor/) and declares the obligations of contributors. 
 
-There are two forms for `sdpi_include_transaction`. The first form defines obligations for the actor roles defined in the transaction. That is, only the contribution (`initiator`, `receiver`, `responder`) and obligation (`required`, `optional`) are required. It is not necessary to repeat the actor. For example:
+There are two forms for `sdpi_include_transaction`. The first form defines obligations for the actor roles defined in the transaction. That is, only the contribution (`initiator`, `receiver`, `responder`) and obligation (`required`, `optional`) are required. It is not necessary to repeat the actor provided the transaction actor obligation is not ambiguous. Transaction actor's obligations are ambiguous when more than one actor has the same obligation (e.g., two actors both initiate messages in the transaction).
+
+For example:
 
 [source, asciidoc]
 ----
@@ -628,6 +630,25 @@ Listens for vol2_clause_dev_23_message_hello messages to identify any <<vol1_spe
 ----
 
 Attaching the `transaction` role to a section marks it as a [transaction](https://profiles.ihe.net/DEV/SDPi/index.html#vol2). A (document-unique) identifier must be defined in the `DEV-23` attribute. The `reftext` attribute is used for the transaction label in tables, etc. 
+
+Actors may make multiple contributions to a transaction. For example:
+
+----
+[sdpi_transaction_actors]
+--
+
+[actor-id="somds_medical_alert_consumer",contribution=Initiator,contribution=Receiver]
+Requests a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> to end a Distributed Alarm System.
+Listens for notifications from a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> that end
+a Distributed Alarm System.
+
+[actor-id="somds_medical_alert_provider",contribution=Responder,contribution=Initiator]
+Listens for requests from a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> to end a 
+Distributed Alarm System and grants such requests. Alternatively ends a Distributed Alarm System 
+on its own initiative and notifies the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>.
+
+--
+----
 
 The transactions object identifier (oid) may <<defining-oids,be set>> using the `oid-arcs` attribute. If not present, object identifiers will 
 be set automatically from the transaction id. When assigned automatically, two oids will be applied to each transaction:
@@ -933,6 +954,35 @@ Only the leaf arc is required when the oid value begins with a `.`. The document
 
 Multiple oids may be associated with an item by separating them with commas, though generally all items have a single defining OID. 
 
+=== Deprecating object ids (oids)
+
+As the standard evolves objects, such as requirements and transactions, may become obsolete. However,
+once assigned, the meaning of OIDs should not change once assigned. 
+
+To ensure that some things that should not be forgotten are not lost, 
+`DeprecatedX` are [Asciidoc block macros](https://docs.asciidoctor.org/asciidoctorj/latest/extensions/block-macro-processor/) provide a mechanism to reserve obsolete identifiers, which have been removed
+from the source. The processor will report an error when deprecated object ids are re-used. 
+
+|===
+|Macro | Example | Description
+
+|`DeprecateRequirement` | `DeprecateRequirement::R1005[version="1.2.3"]` | Marks a requirement number, defined in the specification, as deprecated.
+
+|`DeprecateTransaction` | `DeprecateTransaction::DEV-23[version="1.2.3"]` | Marks a transaction, defined in the specification, as deprecated.
+
+|`Deprecate` | `Deprecate::1.3.6.1.4.1.19376.1.6.2.10.3.26[version="1.2.3"]` | Marks an actor, use-case, profile or content module, defined in the specification, as deprecated.
+
+|===
+
+NOTE: The `version` attribute is required. It gives the document version (see 
+[`sdpi-standard.adoc`](https://github.com/IHE/DEV.SDPi/blob/master/asciidoc/sdpi-standard.adoc))
+when the OID was first no longer available. Format is: 
+`<sdpi_version_major>.<sdpi_version_minor>.<sdpi_version_revision>`. 
+
+Deprecated requirements and transactions are exported to `sdpi-requirements-deprecated.json` and
+`sdpi-transactions-deprecated.json`, respectively. All deprecated oids (including transactions and
+requirements) are exported to `sdpi-deprecated.json` for reference. 
+
 [[cross-referencing]]
 === Cross-referencing
 
@@ -1122,12 +1172,12 @@ The AsciiDoc source is automatically processed using GitHub actions.
 
 For testing, documents can be generated using Windows command line tools (probably for other operating systems too, but I don't know about that; please expand on this when you figure out how). To create output from the AsciiDoc source open a command prompt in the `.ci\asciidoc-converter` folder and use:
 
-* `build_document.bat` to create an html document (`sdpi-supplement.html`),
-* `build_document_pdf.bat` to create an Acrobat PDF document (`sdpi-supplement.pdf`).
+* `build_document.bat` to create an html document (`sdpi-standard.html`),
+* `build_document_pdf.bat` to create an Acrobat PDF document (`sdpi-standard.pdf`).
 
-The output files are written to `sdpi-supplement` folder. Extracts (requirements and use-cases in JSON format) are written to the `sdpi-supplement\referenced-artifacts` folder. Extracts are generated along with the document output. 
+The output files are written to `sdpi-standard` folder. Extracts (requirements and use-cases in JSON format) are written to the `sdpi-standard\referenced-artifacts` folder. Extracts are generated along with the document output.
 
-IMPORTANT: Don't commit files in the `sdpi-supplement` folder to the repository. 
+IMPORTANT: Don't commit files in the `sdpi-standard` folder to the repository.
 
 == Topics Parking Lot
 

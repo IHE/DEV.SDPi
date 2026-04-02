@@ -1,0 +1,38 @@
+
+[sdpi_offset=clear]
+[#sdpi_issue_management]
+== SDPi Issue Management
+
+[sdpi_offset=clear]
+=== SDPi Issue Management
+
+*Standalone SDPi:*  _Consider how this might change from STU/TI to Normative/FT, and organize it accordingly._
+
+All SDPi standard issues are tracked in the https://github.com/IHE/DEV.SDPi/issues[IHE Github DEV.SDPi repository Issues section].
+Filter the issues on their "state" to see them.  +
+
+* To see the full list of OPEN issues, go to https://github.com/IHE/DEV.SDPi/issues?q=is%3Aissue+is%3Aopen
+* To see the full list of CLOSED issues, go to https://github.com/IHE/DEV.SDPi/issues?q=is%3Aissue+is%3Aclosed
+
+For more detailed information on how the Gemini SES+MDI program manages issues from identification to resolution to incorporation into this supplement, see the https://github.com/IHE/DEV.SDPi/wiki[_IHE SDPi wiki_].
+
+[sdpi_offset=clear]
+=== Open Issues
+
+The issues listed in this section or in https://github.com/IHE/DEV.SDPi/issues?q=is%3Aissue+is%3Aopen are open, and hence not yet ready for inclusion in the IHE DEV Technical Framework and not subject to comment or review.
+
+//==== Open Issues
+
+// open issues are inserted here
+
+//==== Topic of Interests
+
+// toi issues are inserted here
+
+[sdpi_offset=clear]
+=== Closed Issues
+
+The issues listed in this section or in https://github.com/IHE/DEV.SDPi/issues?q=is%3Aissue+is%3Aclosed are closed.
+
+// closed issues are inserted here
+

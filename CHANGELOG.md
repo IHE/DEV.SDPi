@@ -18,17 +18,56 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Added
 
-- Clarifying note to R7000 ([#501](https://github.com/IHE/DEV.SDPi/issues/501)).
-- Clarifying statements to DEV-23, DEV-24, DEV-46, and DEV-47 w.r.t to ad-hoc and managed mode discovery([#409](https://github.com/IHE/DEV.SDPi/issues/409)).
+- History Service design, MDPWS requirements and transactions ([#360](https://github.com/IHE/DEV.SDPi/issues/360))
+- Clarification on SDPi-P safety requirements and considerations to explicitly include the application of the IEEE 11073-10700 standard ([#529](https://github.com/IHE/DEV.SDPi/issues/529))
+- Clarification on the use of `wsa:To` in greeting {`Hello`, `Bye`} notifications sent by a discovery proxy to a consumer ([#534](https://github.com/IHE/DEV.SDPi/issues/534))
+- Required SDPi-P actor grouping entries for BICEPS Content Creator and BICEPS Content Consumer in TF-1:10.3 ([#476](https://github.com/IHE/DEV.SDPi/issues/476))
+- Support semantic markup for deprecating requirements, transactions, use-cases, profiles, content modules and actors ([#511](https://github.com/IHE/DEV.SDPi/issues/511)).
+
+### Changes
+
+- Standalone SDPi Refactoring ([#499](https://github.com/IHE/DEV.SDPi/issues/499))
+- Fixed TimeStampVersion.xsd to resolve double nesting of sdpi:Epoch element ([#520](https://github.com/IHE/DEV.SDPi/issues/520))
+- Removed the DESCRIPTION EVENT SERVICE from list of minimum required services so consumers can determine the providers MdDescription can not change ([PR#532](https://github.com/IHE/DEV.SDPi/pull/532))
+- Reworded R1007 to clarify that strictly increasing mdib version is scoped to a subscription ([#297](https://github.com/IHE/DEV.SDPi/issues/297))
+- Updated TLS version narrative for consistency with R1544 ([#497](https://github.com/IHE/DEV.SDPi/issues/497))
+- Updated actor grouping tables for SDPi-R, -A and -xC profiles for consistency and template compliance ([#544](https://github.com/IHE/DEV.SDPi/issues/544))
+- History Service XML Schema: remove hm:ChangeSequence element from root level; use element type over element ref ([#297](https://github.com/IHE/DEV.SDPi/issues/548))
+- History Service XML Schema: rename HistoryReportType to HistoricReportChoiceType ([#297](https://github.com/IHE/DEV.SDPi/issues/548))
+ 
+### Editorial Fixes
+
+- Corrected wording in the SES section template ([#530](https://github.com/IHE/DEV.SDPi/issues/530))
+- Removed vendor-specific EHR examples in DDES use case narrative ([#531](https://github.com/IHE/DEV.SDPi/issues/531))
+
+
+## [2.4.1] - 2026-05-07
+
+### Editorial Fixes
+
+- IHE Publications changes for SDPi 2.4 publication ("e.g., " punctuation) ([PR#526](https://github.com/IHE/DEV.SDPi/pull/526))
+- Updated cover page with correct release number and date
+
+## [2.4.0] - 2026-04-01
+
+### Added
+
+- Clarifying note to R7000 ([#501](https://github.com/IHE/DEV.SDPi/issues/501))
+- Clarifying statements to DEV-23, DEV-24, DEV-46, and DEV-47 w.r.t to ad-hoc and managed mode discovery([#409](https://github.com/IHE/DEV.SDPi/issues/409))
 - OID Framework to TF-3Z ([#474](https://github.com/IHE/DEV.SDPi/issues/474))
 - Clarify expected behaviour and requirements for consumers making multiple concurrent connections to providers ([#503](https://github.com/IHE/DEV.SDPi/issues/503)).
+- Distributed Alarm System option and related transactions DEV-48 and DEV-49 (a.k.a. early "pre-published" integration of the SDC A-PKP standard) ([#457](https://github.com/IHE/DEV.SDPi/issues/457))
+- Make restriction of xsd:durations to hours, minutes, seconds, and fractional seconds mandatory for all xsd:duration values ([#517](https://github.com/IHE/DEV.SDPi/issues/517))
 
 ### Changes
 
 - Corrected three erroneous context-free codes in Table 3:8.3.2.10.2-1 ([#505](https://github.com/IHE/DEV.SDPi/issues/505))
 - Clarified referenced standards sections in 2:A and removed ISO prefix from IEEE/ISO standards for referential consistency ([#390](https://github.com/IHE/DEV.SDPi/issues/390))
+- Correction of regular expression for xsd:duration restriction ([#516](https://github.com/IHE/DEV.SDPi/issues/516))
 
 ### Editorial Fixes
+
+- Final cleanup for release 2.4.0 ([#523](https://github.com/IHE/DEV.SDPi/issues/523))
 
 
 ## [2.3.0] - 2025-12-19
