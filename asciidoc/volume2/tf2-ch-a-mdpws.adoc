@@ -91,6 +91,8 @@ CAUTION: This appendix does not specify any processes towards certificate govern
 
 include::connect-time-algorithm/tf2-ch-a-mdpws-connect-time-algorithm.adoc[]
 
+include::concurrent-connections/tf2-ch-a-mdpws-concurrent-connections.adoc[]
+
 include::mdib-report-retrofit/tf2-ch-a-mdpws-mdib-report-retrofit.adoc[]
 
 include::mdpws-compression/tf2-ch-a-mdpws-compression.adoc[]
