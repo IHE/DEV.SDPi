@@ -68,8 +68,9 @@
                    maxOccurs="unbounded" />
     </xsd:sequence>
     <xsd:attribute name="Version"
+                   default="0"
                    type="sdpi:EpochVersion"
-                   use="required">
+                   use="optional">
       <xsd:annotation>
         <xsd:documentation>Current epoch version. Implied value is 0.</xsd:documentation>
       </xsd:annotation>
