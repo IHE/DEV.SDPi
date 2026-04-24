@@ -78,20 +78,9 @@
     </xsd:annotation>
     <xsd:sequence>
       <xsd:element name="Epoch"
+                   type="sdpi:EpochType"
                    minOccurs="0"
-                   maxOccurs="unbounded">
-        <xsd:complexType>
-          <xsd:complexContent>
-            <xsd:extension base="sdpi:EpochType">
-              <xsd:attribute name="ext:MustUnderstant">
-                <xsd:annotation>
-                  <xsd:documentation>True if consumers are not permitted to use information from the MDIB if they do not understand the version indicated.</xsd:documentation>
-                </xsd:annotation>
-              </xsd:attribute>
-            </xsd:extension>
-          </xsd:complexContent>
-        </xsd:complexType>
-      </xsd:element>
+                   maxOccurs="unbounded" />
     </xsd:sequence>
     <xsd:attribute name="Version"
                    default="0"
