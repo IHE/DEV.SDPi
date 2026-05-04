@@ -133,9 +133,9 @@ Information about the organization of IHE Technical Frameworks and Supplements a
 The current version of the IHE Devices Technical Framework can be found at https://profiles.ihe.net/DEV/[DEV Technical Framework].
 
 // STANDALONE SDPi:  1st refactoring, moved copies of these files into the supplement/ directory
-include::supplement/sdpi-supplement-intro.adoc[]
+// include::supplement/sdpi-supplement-intro.adoc[]
 
-include::supplement/sdpi-standard-issues.adoc[]
+// include::supplement/sdpi-standard-issues.adoc[]
 
 // = Volume 0 -- IHE Technical Frameworks General Introduction
 
@@ -148,6 +148,7 @@ include::supplement/sdpi-standard-issues.adoc[]
 //include::volume1/tf1-main.adoc[]
 
 // Appendix A
+////
 [appendix#vol1_appendix_a_requirements_management_for_p_n_t_interperability,sdpi_offset=A]
 == Requirements Management for Plug-and-Trust Interoperability
 
@@ -198,4 +199,4 @@ IHE Supplement TF-1:B.1 Referenced Standards  content is provided in *Gemini Sta
 //
 //include::volume3/tf3-main.adoc[]
 
-
+////
