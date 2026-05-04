@@ -28,5 +28,8 @@ cp -R asciidoc/fonts sdpi-documents/sdpi-supplement/fonts
 rm -rf sdpi-documents/sdpi-supplement/.asciidoctor
 rm -rf sdpi-documents/sdpi-supplement/readme.md
 
+rm sdpi-documents/sdpi-standard.adoc
+rm sdpi-documents/sdpi-supplement.adoc
+
 sudo apt-get install zip gzip tar
 zip -r "sdpi-documents-$1.zip" sdpi-documents
