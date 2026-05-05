@@ -1,0 +1,43 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+!include plantuml/common_style.inc.puml
+autonumber
+
+!global $str_somds_consumer = "SOMDS Consumer"
+!global $str_somds_provider = "SOMDS Provider"
+
+participant "$str_somds_consumer" as Consumer
+participant "$str_somds_provider" as Provider
+
+Consumer -> Provider: Subscribe(Filter=HistoryQuery(@StartTime=tStart, @EndTime=tEnd), ...)
+Consumer <- Provider: SubscribeResponse(...)
+
+loop until no more localized texts exist for @SequenceId=X
+    Consumer <-- Provider:  ChangeSequenceReport(ChangeSequence(@SequenceId=X, LocalizedText*))
+end
+
+Consumer <-- Provider:  ChangeSequenceReport(ChangeSequence(@SequenceId=X, HistoricMdib(@Time=t1<=tStart))
+
+loop until no more reports exist for @SequenceId=X
+    Consumer <-- Provider:  ChangeSequenceReport(ChangeSequence(@SequenceId=X, HistoricReport(@Time=tn>t1)*))
+end
+
+loop until no more localized texts exist for @SequenceId=Y
+    Consumer <-- Provider:  ChangeSequenceReport(ChangeSequence(@SequenceId=Y, LocalizedText*))
+end
+
+Consumer <-- Provider:  ChangeSequenceReport(ChangeSequence(@SequenceId=Y, HistoricMdib(@Time=t2>max(tn)))
+
+loop until no more reports exist for @SequenceId=X
+    alt Not last iteration
+        Consumer <-- Provider:  ChangeSequenceReport(@LastReport=false, ChangeSequence(@SequenceId=Y, HistoricReport(@Time=tm>t2)*))
+    else Last iteration
+        Consumer <-- Provider:  ChangeSequenceReport(@LastReport=true, ChangeSequence(@SequenceId=Y, HistoricReport(@Time=tm>t2)*))
+    end
+end
+
+opt
+    Consumer <-- Provider: SubscriptionEnd(SourceCancelling)
+end
+@enduml

@@ -15,7 +15,7 @@
 
 ////
 
-[cols="^1,^2,3"]
+[cols="1,2,3"]
 |===
 |New Transaction Number |New Transaction Name |Definition
 
