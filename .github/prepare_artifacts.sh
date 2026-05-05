@@ -28,6 +28,10 @@ cp -R asciidoc/fonts sdpi-documents/sdpi-supplement/fonts
 rm -rf sdpi-documents/sdpi-supplement/.asciidoctor
 rm -rf sdpi-documents/sdpi-supplement/readme.md
 
+cd sdpi-documents
+ls
+cd ..
+
 rm sdpi-documents/sdpi-standard.html
 rm sdpi-documents/sdpi-supplement.html
 
