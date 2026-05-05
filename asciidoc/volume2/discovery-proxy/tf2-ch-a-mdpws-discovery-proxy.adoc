@@ -14,7 +14,7 @@ with the <<term_q_name>> dp:DiscoveryProxy.
 
 [NOTE]
 ====
-* The <<vol1_spec_sdpi_p_actor_discovery_proxy>> port type is defined in <<vol2_clause_appendix_a_mdpws_wsdl>>.
+* The <<vol1_spec_sdpi_p_actor_discovery_proxy>> port type is defined in <<vol2_clause_appendix_a_mdpws_discovery_proxy_wsdl>>.
 
 * The OID used for the target namespace of the <<vol1_spec_sdpi_p_actor_discovery_proxy>> WSDL file is listed in <<vol2_table_appendix_mdpws_discovery_proxy_oids>>.
 ====
