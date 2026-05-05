@@ -23,7 +23,7 @@ It provides general background detail around how general (non-technology specifi
 
 ==== Rich History of Medical Device Interoperability (MDI) Use Cases
 
-The vision of plug-and-play medical device interoperability has been an active pursuit since the early 1980's, with the IEEE 1073 group's formation in those early years.  Over the 40+ years, many projects -- both industry and standards-based -- have contributed to an ever growing set of real-world use cases, and the ISO/IEEE 11073 SDC program is no different.
+The vision of plug-and-play medical device interoperability has been an active pursuit since the early 1980's, with the IEEE 1073 group's formation in those early years.  Over the 40+ years, many projects -- both industry and standards-based -- have contributed to an ever growing set of real-world use cases, and the IEEE 11073 SDC program is no different.
 
 Looking to leverage this wealth of use cases in considering SDPi, a "compendium of medical device oriented use cases" was created to facilitate referencing and use.  The use cases detailed in this appendix build on those that are captured in this document:  <<ref_ihe_pcd_sdpi_use_cases_compendium_2019>>
 

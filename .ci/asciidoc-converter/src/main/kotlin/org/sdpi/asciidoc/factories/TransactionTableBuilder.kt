@@ -2,10 +2,9 @@ package org.sdpi.asciidoc.factories
 
 import org.asciidoctor.ast.Table
 import org.asciidoctor.extension.Treeprocessor
-import org.sdpi.asciidoc.model.Contribution
-import org.sdpi.asciidoc.model.Obligation
-import org.sdpi.asciidoc.model.SdpiActor
-import org.sdpi.asciidoc.model.SdpiTransaction
+import org.sdpi.asciidoc.LinkStyles
+import org.sdpi.asciidoc.makeLink
+import org.sdpi.asciidoc.model.*
 
 class TransactionTableBuilder(
     private val processor: Treeprocessor,
@@ -17,6 +16,7 @@ class TransactionTableBuilder(
     private val colContribution = processor.createTableColumn(table, 1 + if (bIncludeActorColumn) 1 else 0)
     private val colObligation = processor.createTableColumn(table, 2 + if (bIncludeActorColumn) 1 else 0)
     private val colOption = processor.createTableColumn(table, 3 + if (bIncludeActorColumn) 1 else 0)
+    private val colReference = processor.createTableColumn(table, 4 + if (bIncludeActorColumn) 1 else 0)
     private val infoCellStyles = mapOf("halign" to "center")
 
     fun setupHeadings() {
@@ -31,6 +31,7 @@ class TransactionTableBuilder(
         header.cells.add(processor.createTableCell(colContribution, "Contribution", infoCellStyles))
         header.cells.add(processor.createTableCell(colObligation, "Obligation", infoCellStyles))
         header.cells.add(processor.createTableCell(colOption, "Option", infoCellStyles))
+        header.cells.add(processor.createTableCell(colReference, "Reference", infoCellStyles))
 
     }
 
@@ -39,7 +40,7 @@ class TransactionTableBuilder(
         transaction: SdpiTransaction?,
         contribution: Contribution?,
         obligation: Obligation,
-        strOption: String?
+        option: OptionId?
     ) {
         val strContribution = contribution?.keyword ?: ""
         val strDefaultObligation = obligation.keyword
@@ -53,8 +54,24 @@ class TransactionTableBuilder(
         row.cells.add(processor.createTableCell(colTransaction, createTransactionCell(transaction)))
         row.cells.add(processor.createTableCell(colContribution, strContribution, infoCellStyles))
         row.cells.add(processor.createTableCell(colObligation, strDefaultObligation, infoCellStyles))
-        row.cells.add(processor.createTableCell(colOption, strOption ?: "—", infoCellStyles))
+        row.cells.add(processor.createTableCell(colOption, createOptionCell(option), infoCellStyles))
+        row.cells.add(processor.createTableCell(colReference, createReferenceCell(transaction), infoCellStyles))
+
         table.body.add(row)
+    }
+
+    fun addActorOnlyRow(actor: SdpiActor) {
+        if (bIncludeActorColumn) {
+            val row = processor.createTableRow(table)
+            row.cells.add(processor.createTableCell(colActor, createActorCell(actor)))
+
+            row.cells.add(processor.createTableCell(colTransaction, "no transactions defined"))
+            row.cells.add(processor.createTableCell(colContribution, "—", infoCellStyles))
+            row.cells.add(processor.createTableCell(colObligation, "—", infoCellStyles))
+            row.cells.add(processor.createTableCell(colOption, "—", infoCellStyles))
+            row.cells.add(processor.createTableCell(colReference, "—", infoCellStyles))
+            table.body.add(row)
+        }
     }
 
     private fun createActorCell(actor: SdpiActor?): String {
@@ -62,7 +79,7 @@ class TransactionTableBuilder(
             return ""
         }
 
-        return makeLink(actor.id, actor.label)
+        return makeLink(actor.anchor, actor.label, LinkStyles.TITLE_TEXT.className)
     }
 
     private fun createTransactionCell(transaction: SdpiTransaction?): String {
@@ -70,13 +87,34 @@ class TransactionTableBuilder(
             return ""
         }
 
-        val strTransactionLink = makeLink(transaction.anchor, transaction.label)
-        val strTransactionIdLink = transaction.createTransactionListLink()
-        return "$strTransactionLink ($strTransactionIdLink)"
+        if (transaction.anchor.isNotEmpty()) {
+            val strTransactionLink = makeLink(transaction.anchor, transaction.label, LinkStyles.TITLE_TEXT.className)
+            val strTransactionIdLink = transaction.createTransactionListLink()
+            return "$strTransactionIdLink &mdash; $strTransactionLink"
+        } else {
+            // HACK: deferred transactions don't contain an anchor by convention.
+            val strTransactionIdLink = transaction.createTransactionListLink()
+            return "$strTransactionIdLink &mdash; ${transaction.label} (deferred)"
+        }
+
     }
 
-    private fun makeLink(strAnchor: String, strText: String): String {
-        return "link:#$strAnchor[$strText]"
+    private fun createOptionCell(option: OptionId?): String {
+        if (option == null) {
+            return "—"
+        }
+        val strOptionLink = makeLink(option.anchor, option.label, LinkStyles.TITLE_TEXT.className)
+        return strOptionLink
     }
 
+    private fun createReferenceCell(transaction: SdpiTransaction?): String {
+        if (transaction == null) {
+            return ""
+        }
+
+        if (transaction.anchor.isNotEmpty()) {
+            return makeLink(transaction.anchor, transaction.label)
+        }
+        return "deferred"
+    }
 }

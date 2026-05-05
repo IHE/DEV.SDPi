@@ -25,7 +25,7 @@ The following sections in this appendix provide background on the concepts and r
 === Requirements:  From Narratives to Plug-and-Trust Interfaces
 
 For every device or system interface that supports the elements specified in this technical framework, requirements and capabilities are derived from many different standards, types of standards, and standards development organizations (SDO).
-Some are technology focused, such as the ISO/IEEE 11073 standards for health device communication, and others are more focused on quality and risk management, such as the ISO/IEC 80001-1 and ISO 14971 standards.
+Some are technology focused, such as the IEEE 11073 standards for health device communication, and others are more focused on quality and risk management, such as the ISO/IEC 80001-1 and ISO 14971 standards.
 They are all profiled and implemented and tested in a single interface point, and thus need to be integrated in a coherent and cohesive manner.
 
 In order to manage this diversity and wealth of specifications and standards, the Hanging Gardens Framework graphic as specified in <<hanging_gardens_framework>> was created:
@@ -39,7 +39,7 @@ Last accessed 2022.10.04.], some general observations will help understand the v
 
 . Real-world Requirements are at the top -- use case-based clinical system function scenarios ensure that all requirements and capabilities in the specifications are rooted in those healthcare real-world purposes that technology users, especially clinicians, are expecting to be supported: effectively, safely and securely;
 . Each layer or "garden" and contained specification(s) define - implicitly or explicitly - how they integrate with other layers:  _*capabilities*_ that are provided (to meet the needs of other layers), and _*requirements*_ (needed capabilities) for other layers and implementations;
-. Standards are sometimes grouped into families (e.g., ISO/IEEE 11073 SDC) - this indicates that they are internally cohesive as well as able to be integrated as a group with other areas;
+. Standards are sometimes grouped into families (e.g., IEEE 11073 SDC) - this indicates that they are internally cohesive as well as able to be integrated as a group with other areas;
 . _*Vertical*_ groupings on the left indicate standards that apply to all of the _*horizontal*_ layers in the core of the model;
 . Profile standards, such as the SDPi+FHIR, generally integrate specifications through the layers from the top to the bottom similar, with each layer contributing to those below and converging in a single interface capability bundle;
 . Physical layers are leveraged, not re-invented, which is why there is no color in the bottom layer;
@@ -70,7 +70,7 @@ Though this reads well in the standards and the model organizes everything in a 
 
 To address this <<acronym_ses>> implementation problem, the SDPi Profiles:
 
-. Leverage the ISO/IEEE 11073-1070x <<term_participant_key_purposes>> standards, which represent a consensus standard for risk management of technologies that are implemented in that left-right gap on the Temple model;
+. Leverage the IEEE 11073-1070x <<term_participant_key_purposes>> standards, which represent a consensus standard for risk management of technologies that are implemented in that left-right gap on the Temple model;
 . <<term_implementation_conformance_statement>> tables from each of these <<acronym_pkp>> standards is included in <<vol1_appendix_b_references>> of this specification, with indication as to whether, how and where each requirement is addressed;
 . "Safety, Effectiveness and Security - Requirements and Considerations" sections are integrated throughout the profile specifications to link from the <<acronym_pkp>> <<acronym_ics>> table requirements to the satisfying capabilities.
 [none]
@@ -199,7 +199,7 @@ Each type defines a unique class of requirements that build upon a foundational 
 |
 
 | SES
-| Non-technical requirements related to Safety, Effectiveness, and Security are captured in these blocks.  These are especially relevant to mapping ISO/IEEE 11073-1070x Participant Key Purposes standard requirements to elements within the SDPi specification.
+| Non-technical requirements related to Safety, Effectiveness, and Security are captured in these blocks.  These are especially relevant to mapping IEEE 11073-1070x Participant Key Purposes standard requirements to elements within the SDPi specification.
 | sdpi_requirement_ses
 | See SES Section <<vol1_appendix_a_integrating_ses>>
 
@@ -238,26 +238,26 @@ This metadata supports the basic capabilities of each requirement including clas
 
 | Unique Identifier
 | Each requirement instance must include an identifier that is unique within the scope of the specification, and may be rendered in human-readable form
-| sdpi_requirement
-| [sdpi_requirement#r7009]
-| See <<vol1_clause_sdpi_requirement_assigning_unique_identifiers>> for additional discussion; note this identifier may be used for tracking in systems such as requirement management tools
+| `sdpi_requirement`
+| `[sdpi_requirement#r7009]`
+| See <<vol1_clause_sdpi_requirement_assigning_unique_identifiers>> and https://github.com/IHE/DEV.SDPi/blob/master/articles/sdpi-article-ihe-tf-asciidoc-cookbook.adoc#semantic-requirements[defining requirements] for additional discussion; note this identifier may be used for tracking in systems such as requirement management tools
 
 | Requirement OID
-| An ISO Object Identifier that is aligned with the IHE OID tree for the specific requirement.
-| sdpi_req_oid
-| [sdpi_req_oid=1.3.6.1.4.1.19376.1.6.2.11.2.123456]
+| An ISO Object Identifier that assigned from the <<vol3_appendix_c_oid_requirements,SDPi requirement OID hierarchy>> for the specific requirement.
+| not applicable; assigned automatically
+| `{SDPi-parent-oid}.10.1001`
 | This OID identifier is in addition to the Unique Identifier element, but is not considered human-readable and is not intended to be rendered in the document; this identifier is a type of URI
 
 | Requirement Type
 | Each requirement instance is identified by its subtype
-| sdpi_req_type
-| [sdpi_req_type=use_case_feature]
+| `sdpi_req_type`
+| `[sdpi_req_type=use_case_feature]`
 | See specific subtype sections below for additional enumerations
 
 | Requirement Level
 | Each requirement instance includes a conformance level:  shall, should, may
-| sdpi_req_level
-| [sdpi_req_level=shall]
+| `sdpi_req_level`
+| `[sdpi_req_level=shall]`
 | Conditional requirements may need additional specification.
 
 | Requirement Text
@@ -272,26 +272,27 @@ This metadata supports the basic capabilities of each requirement including clas
 | "NOTE: The mapping for the height observation is defined in table ..."
 a|
 * More than one note may be included in a requirement specification.
-* The AsciiDoc [%collapsable] block option may be used to simplify the rendered text
 
-| Requirement Parent
+// currently (Feb 2026) not supported
+| Requirement Parent 
 | Identifies a more general or related requirement that a requirement specializes
-| sdpi_req_parent
-| [sdpi_req_parent=r6789]
+| `sdpi_req_parent`
+| `[sdpi_req_parent=r6789]`
 | Unique identifiers may be used to link requirements
 
+// currently (Feb 2026) not supported
 | Requirement Sibling
 | Identifies one or more requirements that are related to this requirement
-| sdpi_req_sibling
-| [sdpi_req_sibling=r1234]
+| `sdpi_req_sibling`
+| `[sdpi_req_sibling=r1234]`
 a|
 * Unique identifiers may be used to link requirements
-* This is differentiated from a Requirement Fulfillment
+* This is differentiated from a Requirement Fulfilment
 
 | Requirement Group(s)
 | A label that may be used to group related requirements
-| sdpi_req_group
-| [sdpi_req_group=ws_security]
+| `sdpi_req_group`
+| `[sdpi_req_group=ws_security]`
 | Requirement groups or categories may be used independently of the parent/sibling linkages
 
 |===
@@ -311,30 +312,47 @@ Uniqueness must be achieved within the scope of the given specification (e.g., S
 
 Two requirement identifiers are currently specified:
 
-*Unique Identifier*
+* *Unique Identifier*
+** Human-readable text that is displayed with detailed requirement content in the specification, for example `R1234`.
+** Identifiers begin with a capital `R` and have a simple four digit numeric value.
+** Identifiers are typically assigned in groups to related content for convenience (e.g., requirements for halloween may be assigned R1301, R1302 and R1303), however no ontology or taxonomy shall be inferred from requirement numbering.
 
-* Human-readable text that is displayed with detailed requirement content in the specification
-* Example:  "R1234"
-* Identifiers have a simple numeric value, with four digits sufficient for most applications
-* Identifier letters may be enhanced from a simple "R" to include a type (e.g., RSR for Referenced Standard Requirement, or UCR for Use Case Requirement, etc.)
+* *Requirement OID*
+** A machine-readable URI style identifier that ensures global uniqueness.
+** The <<vol3_appendix_c_oid_requirements,root OID>> for all requirements in the SDPi specification is `{sdpi-parent-oid}.10`.
+** The numeric part of the Unique Identifier is the final arc for the OID, for example: `{sdpi-parent-oid}.10.1234`. 
 
+NOTE: A complete list of OIDs for requirements defined in this specification is provided in <<vol3_appendix_c_oid_requirements>>.
 
-*Requirement OID*
+FOR THE CURRENT SPECIFICATION:
 
-* A machine-readable URI style identifier that ensures global uniqueness
-* Root OID is based on the specification scope with IHE:  1.3.6.1.4.1.19376.1.6.2.11 = IHE DEV TF SDPi-P profile
-* Addition of .2.x is for a profile-specific requirement; for example:  1.3.6.1.4.1.19376.1.6.2.11.2.1234 = an SDPi-P Requirement "R1234"
-* Version can also be added to this OID in the future; for example:  1.3.6.1.4.1.19376.1.6.2.11.2.1234.1.0 for requirement version 1.0
+* The _unique identifier_ is assigned manually; the asciidoc processor checks all identifiers are unique within the document and automatically assigns the _requirement OID_.
+* Requirements are *not* versioned.
+* A new _unique identifier_ is assigned following material changes to a requirements normative statement and the old identifier is retired, never to be used again.
+* Assignment may evolve with experience and extended use. 
 
-FOR THE CURRENT SPECIFICATION, these identifiers are assigned manually, with an automated uniqueness check performed by the asciidoc-converter to HTML application.
-Assignment may evolve with experience and extended use.
+Material modifications, requiring a new _unique identifier_, include those that may:
 
+* alter the actors referenced in the normative statement,
+* affect conformant implementations,
+* affect testing testing and validation, or
+* impact interoperability (e.g., a test or implementation conforming to the old requirement text may not be conformant to the new one).
+
+Changes that are not material and *do not* require a new _unique identifier_ include:
+
+* improving the grammar and/or clarity of the requirement's normative statement,
+* changing a requirement level (may &rArr; should; shall &rArr; should) because this only impacts implementation obligations but not the purpose of the requirement,
+* changes to notes, examples or related requirements, or
+* changes that may make a non-conformant implementation and/or test conformant (provided the change won't affect conformant implementations and/or tests).
+
+NOTE: changes requiring assignment of new requirement identifiers may evolve with experience and/or finalization of the profile.
 
 ===== Usage Levels
 
 Requirement Level must be valued as one of the following strings:  "shall", "should", "may".
 For example, "sdpi_req_level=should"
 
+////
 "Conditional" requirements may also need to be indicated in metadata; however, that is beyond the scope of the current specification revision.
 For example, there are some cases where the conditional logic might be included in the requirement specification:
 
@@ -345,6 +363,7 @@ For example, there are some cases where the conditional logic might be included 
 Requirement conditionality may be easily added as a Requirement Note; however, that is not computable metadata.
 Another approach, would be to add a Requirement Condition data element that included some logic, perhaps linking to the presence of some configuration (such as a profile option selection) or other requirement.
 This will be addressed in subsequent versions of this specification.
+////
 
 ===== Requirement Grouping
 

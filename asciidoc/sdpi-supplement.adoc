@@ -18,15 +18,28 @@
 :source-highlighter: highlight.js
 :highlightjsdir: js/highlight
 
-:sdpi_milestone_publication: SDPi 2.2 Publication
-:sdpi_milestone_review: SDPi 2.2 Review
+// Set the document attribute to automatically generate
+// actor transactions table from semantic markup. Unset
+// to use manual tables. 
+// https://docs.asciidoctor.org/asciidoc/latest/attributes/unset-attributes/
+:markup-actor-transactions-table:
 
-:ihe_supplement_sdpi_revision: 2.2.0
-:ihe_supplement_sdpi_revision_short: 2.2
+:sdpi_milestone_publication: SDPi 2.4 Publication
+:sdpi_milestone_review: SDPi 2.4 Review
+
+:sdpi_version_major: 2
+:sdpi_version_minor: 4
+:sdpi_version_revision: 0
+:ihe_supplement_sdpi_revision: {sdpi_version_major}.{sdpi_version_minor}.{sdpi_version_revision}
+:ihe_supplement_sdpi_revision_short: {sdpi_version_major}.{sdpi_version_minor}
 :ihe_supplement_sdpi_revision_date: {localdatetime}
 :ihe_supplement_sdpi_revision_label: Standard for Trial Use / Implementation
-:ihe_supplement_sdpi_publication_month: October 2, 2025
+:ihe_supplement_sdpi_publication_month: April 1, 2026
 :ihe_supplement_sdpi_public_comment_submission_deadline: N/A
+
+// Oid, assigned by IHE-DEV, for the SDPi specification
+// https://wiki.ihe.net/index.php/PCD_OID_Management
+:sdpi-parent-oid: 1.3.6.1.4.1.19376.1.6.2.10
 
 {empty} +
 ifeval::["{backend}" == "html5"]
@@ -137,3 +150,4 @@ include::volume2/tf2-main.adoc[]
 // = Volume 3 -- Content Modules
 
 include::volume3/tf3-main.adoc[]
+

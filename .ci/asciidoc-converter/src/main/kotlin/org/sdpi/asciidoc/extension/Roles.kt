@@ -5,6 +5,9 @@ package org.sdpi.asciidoc.extension
  */
 sealed class Roles {
 
+    /*
+    Document section defining a profile.
+     */
     enum class Profile(val key: String) {
         // Profile section.
         PROFILE("profile"),
@@ -12,11 +15,15 @@ sealed class Roles {
         // Identifier for the profile
         ID("profile-id"),
 
+        // Profile subsection defining a profile actor option
+        // e.g., discovery proxy.
         PROFILE_OPTION("profile-option"),
 
+        // Identifier for the profile actor option.
         ID_PROFILE_OPTION("profile-option-id"),
     }
 
+    // Section defining an actor.
     enum class Actor(val key: String) {
         SECTION_ROLE("actor"),
 
@@ -24,9 +31,19 @@ sealed class Roles {
         // alias for an actor-id.
         ALIAS("actor-alias"),
 
-        ID("actor-id")
+        ID("actor-id"),
+
+        // A role defining an option for one or more actors.
+        OPTION("actor-option"),
+
+        // Id for the actor option
+        OPTION_ID("actor-option-id"),
+
+        // List of actors an actor is grouped with.
+        GROUPING("actor-grouping"),
     }
 
+    // Section defining a transaction.
     enum class Transaction(val key: String) {
         TRANSACTION("transaction"),
 
@@ -40,6 +57,7 @@ sealed class Roles {
 
     }
 
+    // Section defining a use case.
     enum class UseCase(val key: String) {
         // Use case section
         FEATURE("use-case"),
@@ -56,6 +74,23 @@ sealed class Roles {
         STEPS("use-case-steps"),
     }
 
+    /*
+    Profile section containing obligations of actors in the profile
+    to support one referenced use-case.
+     */
+    enum class UseCaseSupport(val key: String) {
+
+        // Role id.
+        SECTION_ROLE("support-use-case"),
+
+        // Id of the use case the section applies to.
+        USE_CASE_ID("use-case-id"),
+
+        // Type of support an actor is obliged to supply for the use case.
+        OBLIGATION("support"),
+
+    }
+
     // Roles applied to the tables where query results will get populated
     // that are created as placeholders by block macro processors.
     enum class QueryTable(val key: String) {
@@ -67,8 +102,12 @@ sealed class Roles {
 
         // The role applied to content module tables
         CONTENT_MODULE("content-module-table"),
+
+        // The role applied to oid tables
+        OID("oid-table"),
     }
 
+    // Section defining a content module.
     enum class ContentModule(val key: String) {
         SECTION_ROLE("content-module"),
 
@@ -76,11 +115,13 @@ sealed class Roles {
         ID("content-module-id"),
     }
 
+    // Section defining a gateway.
     enum class Gateway(val key: String) {
         SECTION_ROLE("gateway"),
         ID("gateway-id"),
     }
 
+    // Section defining a protocol.
     enum class Protocol(val key: String) {
         SECTION_ROLE("protocol"),
         ID("protocol-id"),

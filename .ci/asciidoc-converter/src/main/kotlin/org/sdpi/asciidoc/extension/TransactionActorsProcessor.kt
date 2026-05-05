@@ -25,7 +25,7 @@ const val BLOCK_NAME_TRANSACTION_ACTORS = "sdpi_transaction_actors"
 @ContentModel(ContentModel.COMPOUND)
 class TransactionActorsProcessor : BlockProcessor(BLOCK_NAME_TRANSACTION_ACTORS) {
     private companion object : Logging {
-        val RE_ATTRIBUTES = """([a-zA-Z_-]+)\s*=\s*"([^"]*)"""".toRegex()
+        val RE_ATTRIBUTES = """([a-zA-Z_-]+)\s*=\s*"?([^"\],]*)"?""".toRegex()
     }
 
     // Indexed by transaction id (e.g., DEV-23), this maps contains the roles
@@ -55,27 +55,32 @@ class TransactionActorsProcessor : BlockProcessor(BLOCK_NAME_TRANSACTION_ACTORS)
         val roles = mutableListOf<SdpiActorRole>()
 
         var strActor: String? = null
-        var contribution: Contribution? = null
+        var contributions = mutableListOf<Contribution>()
         val description = mutableListOf<String>()
 
         for (strLine in blockLines) {
-            if (strLine.isEmpty()) {
-                if (strActor != null && contribution != null && description.isNotEmpty()) {
-                    roles.add(SdpiActorRole(strActor, contribution, description.toList()))
+            if (strLine.startsWith('[')) {
+
+                // remove trailing blank lines.
+                while(description.isNotEmpty() && description.last().isEmpty()) {
+                    description.removeLast()
                 }
 
+                if (strActor != null && contributions.isNotEmpty() && description.isNotEmpty()) {
+                    roles.add(SdpiActorRole(strActor, contributions, description.toList()))
+                }
                 description.clear()
-            } else if (strLine.startsWith('[')) {
+
                 val result = parseContributorAttributes(strLine)
                 strActor = result.first
-                contribution = result.second
+                contributions = result.second.toMutableList()
             } else {
                 description.add(strLine)
             }
         }
 
-        if (strActor != null && contribution != null && description.isNotEmpty()) {
-            roles.add(SdpiActorRole(strActor, contribution, description.toList()))
+        if (strActor != null && contributions.isNotEmpty() && description.isNotEmpty()) {
+            roles.add(SdpiActorRole(strActor, contributions, description.toList()))
         }
 
         return roles
@@ -100,17 +105,17 @@ class TransactionActorsProcessor : BlockProcessor(BLOCK_NAME_TRANSACTION_ACTORS)
 
         header.cells.add(createTableCell(colActor, "Actor"))
         header.cells.add(createTableCell(colContribution, "Contribution"))
-        header.cells.add(createTableCell(colDescription, "Description"))
+        header.cells.add(createTableCell(colDescription, "Role"))
 
 
         for (actorRole in roles) {
             val strActorId = "RefActor:${actorRole.actorId}[]"
-            val contribution = actorRole.contribution
+            val contributions = actorRole.contributions
             val strDescription = actorRole.description.joinToString("\r\n")
 
             val row = createTableRow(roleTable)
             row.cells.add(createTableCell(colActor, strActorId))
-            row.cells.add(createTableCell(colContribution, contribution.keyword))
+            row.cells.add(createTableCell(colContribution, contributions.joinToString { it.keyword }))
 
             row.cells.add(createTableCell(colDescription, strDescription))
 
@@ -120,31 +125,37 @@ class TransactionActorsProcessor : BlockProcessor(BLOCK_NAME_TRANSACTION_ACTORS)
         return roleTable
     }
 
-    private fun parseContributorAttributes(strLine: String): Pair<String, Contribution> {
+    private fun parseContributorAttributes(strLine: String): Pair<String, List<Contribution>> {
         val attributes = parseAttributes(strLine)
 
-        val strActorId = attributes[Roles.Transaction.ACTOR_ID.key]
-        checkNotNull(strActorId) {
+        val actorId = attributes.firstOrNull{ it.first == Roles.Transaction.ACTOR_ID.key}
+        checkNotNull(actorId) {
             logger.error("Actor in transaction is missing an actor id")
         }
-        val strContribution = attributes[Roles.Transaction.CONTRIBUTION.key]
-        checkNotNull(strContribution) {
+        val strActorId = actorId.second
+        val contributions = mutableListOf<Contribution>()
+        for(contribution in attributes.filter{it.first == Roles.Transaction.CONTRIBUTION.key}) {
+            val strContribution = contribution.second
+            val cont = parseContribution(strContribution)
+            checkNotNull(cont) {
+                logger.error("Actor $strActorId's contribution '$strContribution' is not recognized")
+            }
+            contributions.add(cont)
+        }
+
+        check(contributions.isNotEmpty()) {
             logger.error("Actor $strActorId in transaction is missing a contribution")
         }
-        val contribution = parseContribution(strContribution)
-        checkNotNull(contribution) {
-            logger.error("Actor $strActorId's contribution '$strContribution' is not recognized")
-        }
 
-        return Pair(strActorId, contribution)
+        return Pair(strActorId, contributions)
     }
 
-    private fun parseAttributes(strValue: String): Map<String, String> {
-        val attributes = mutableMapOf<String, String>()
+    private fun parseAttributes(strValue: String): List<Pair<String, String>> {
+        val attributes = mutableListOf<Pair<String, String>>()
 
         for (match in RE_ATTRIBUTES.findAll(strValue)) {
             val (key, value) = match.destructured
-            attributes[key] = value
+            attributes.add(Pair<String,String>(key, value))
         }
 
         return attributes

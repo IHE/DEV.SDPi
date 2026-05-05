@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<msg:GetMdibResponse
+        SequenceId="urn:uuid:09578906-7efd-43a7-8344-8bf37b674524"
+        xmlns:ext="http://standards.ieee.org/downloads/11073/11073-10207-2017/extension"
+        xmlns:pm="http://standards.ieee.org/downloads/11073/11073-10207-2017/participant"
+        xmlns:msg="http://standards.ieee.org/downloads/11073/11073-10207-2017/message"
+        xmlns:sdpi="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <msg:Mdib SequenceId="urn:uuid:09578906-7efd-43a7-8344-8bf37b674524">
+        <pm:MdDescription>
+            <pm:Mds Handle="mds_parent">
+                <!-- containment subtree elements -->
+            </pm:Mds>
+            <pm:Mds Handle="mds_child1">
+                <!-- containment subtree elements -->
+            </pm:Mds>
+            <pm:Mds Handle="mds_child2">
+                <!-- containment subtree elements -->
+            </pm:Mds>
+        </pm:MdDescription>
+        <pm:MdState StateVersion="10">
+            <pm:State DescriptorHandle="mds_parent" xsi:type="pm:MdsState" Lang="en">
+                <ext:Extension>
+                    <sdpi:Relations>
+                        <sdpi:Relation Kind="ECE" Entries="mds_child1 mds_child2">
+                            <sdpi:Code Code="68167" SymbolicCodeName="MDC_ATTR_SOURCE_HANDLE_REF"/>
+                        </sdpi:Relation>
+                    </sdpi:Relations>
+                </ext:Extension>
+            </pm:State>
+            <pm:State DescriptorHandle="mds_child1" xsi:type="pm:MdsState" Lang="en">
+                <ext:Extension>
+                    <sdpi:Relations>
+                        <pm:Relation Kind="DCE" Entries="mds_parent">
+                            <sdpi:Code Code="68167" SymbolicCodeName="MDC_ATTR_SOURCE_HANDLE_REF"/>
+                        </pm:Relation>
+                    </sdpi:Relations>
+                </ext:Extension>
+            </pm:State>
+            <pm:State DescriptorHandle="mds_child2" xsi:type="pm:MdsState" Lang="en">
+                <ext:Extension>
+                    <sdpi:Relations>
+                        <pm:Relation Kind="DCE" Entries="mds_parent">
+                            <sdpi:Code Code="68167" SymbolicCodeName="MDC_ATTR_SOURCE_HANDLE_REF"/>
+                        </pm:Relation>
+                    </sdpi:Relations>
+                </ext:Extension>
+            </pm:State>
+            <!-- states -->
+        </pm:MdState>
+    </msg:Mdib>
+</msg:GetMdibResponse>
+
+

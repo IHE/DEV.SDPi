@@ -9,15 +9,12 @@
 |===
 a| *SDPi {ihe_supplement_sdpi_revision_short} Supplement -- _STU / TI Version_ -- Note*:
 
-This version of the SDPi 2.2 Standard for Trial Use (HL7 STU) / Trial Implementation (IHE TI) supplement is the 2nd release in 2025, continuing the objective to provide three to four releases each year that include both _incremental_ updates (e.g., editorial "fixes"), ballot comment resolutions (e.g., from HL7 ballot cycles), and additional capability enhancements.
+This version of the SDPi 2.4 Standard for Trial Use (HL7 STU) / Trial Implementation (IHE TI) supplement is the 1st release in 2026, continuing the objective to provide three to four releases each year that include both _incremental_ updates (e.g., editorial "fixes"), ballot comment resolutions (e.g., from HL7 ballot cycles), and additional capability enhancements.
 For this release, key changes include:
 
-1. New transaction DEV-33 (Retrieve Localization Information)
-2. Removed withdrawn transaction DEV-34 (Announce Network Departure)
-3. Added profile options and updated tables for actor groupings and options
-4. Added new section "Numeric Metric Display Precision" to volume 3
-
-Numerous other corrections and enhancements are included.
+1. Added new Distributed Alarm System option and related transactions DEV-48 and DEV-49 (a.k.a. early "pre-published" integration of the IEEE 11073-10702 standard)
+2. Added OID framework to Appendix 3:Z
+3. Made several corrections and clarifications
 
 All changes incorporated in a release are managed through Github Issues and reviewed Pull Requests.
 For a list of those related to this release, see <<sdpi_issue_management>> below.
@@ -25,7 +22,7 @@ For HL7 ballot comment resolution, links are made from HL7 ballot Jira tickets t
 
 
 NOTE: This supplement also includes both normative and informative references to other specifications (see <<vol1_appendix_b_references>>), some of which are finalized and published and others that are either being developed or in revision.
-For example, the IEEE 11073-10702 PKP standard is in mature development stage; however, some requirements from that pre-standard may be included (non-normatively) in this SDPi specification, providing a pathway to early experience and validation.
+For example, the IEEE 11073-10702 PKP standard is in mature development stage; however, some requirements from that pre-standard are included (non-normatively) in this SDPi specification, providing a pathway to early experience and validation.
 When a referenced specification is used that is in development or revision, a note will be provided in the <<vol1_appendix_b_referenced_standards>> clearly indicating its status.
 
 It is recognized that this release is a work-in-progress that will continue to subsequent versions.
@@ -70,12 +67,12 @@ To that end, the supplement includes updates to all three IHE DEV TF volumes, in
 
 *TF-2  Transactions*
 
-* Extensive new set of transactions based on ISO/IEEE 11073 Service-oriented Device Connectivity (SDC) medical device interoperability standards.
+* Extensive new set of transactions based on IEEE 11073 Service-oriented Device Connectivity (SDC) medical device interoperability standards.
 * Related appendices, for example the specialized use of web services messaging for device communication and gateways to other protocols or profiles
 
 *TF-3  Content Modules*
 
-* New content covering the application of ISO/IEEE 11073 SDC semantic standards to device content modules, with a primary focus on specifications related to the ISO/IEEE 11073-10207 BICEPS standard.
+* New content covering the application of IEEE 11073 SDC semantic standards to device content modules, with a primary focus on specifications related to the IEEE 11073-10207 BICEPS standard.
 
 NOTE: As explained in the https://profiles.ihe.net/GeneralIntro/ch-7.html#7.5[IHE Technical Framework Document Conventions], the acronym TF stands for Technical Framework, whereas the number immediately behind the hyphen in the "TF-X" notation stands for the volume number within a Technical Framework.
 

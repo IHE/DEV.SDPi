@@ -4,6 +4,8 @@ import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.parameters.options.*
 import com.github.ajalt.clikt.parameters.types.choice
 import com.github.ajalt.clikt.parameters.types.file
+import org.apache.logging.log4j.Level
+import org.apache.logging.log4j.core.config.Configurator
 import org.apache.logging.log4j.kotlin.Logging
 import org.sdpi.asciidoc.AsciidocErrorChecker
 import java.io.File
@@ -55,6 +57,7 @@ class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {
             val asciidocErrorChecker = AsciidocErrorChecker()
 
             logger.info { "Start conversion of '${adocInputFile.canonicalPath}'" }
+            // Configurator.setRootLevel(Level.WARN)
 
             val outFile = File(
                 outputFolder.absolutePath + File.separator + adocInputFile.nameWithoutExtension + ".$backend"

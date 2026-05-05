@@ -14,16 +14,57 @@ The SDPi changelog shall not contain the following sections
 
 Each section shall contain a list of action items of the following format: `<brief one-sentence description of what has been done> (#<issue number & URL>).`
 
+<!--
 ## Unreleased
+-->
+
+## [2.4.0] - 2026-04-01
 
 ### Added
 
+- Clarifying note to R7000 ([#501](https://github.com/IHE/DEV.SDPi/issues/501))
+- Clarifying statements to DEV-23, DEV-24, DEV-46, and DEV-47 w.r.t to ad-hoc and managed mode discovery([#409](https://github.com/IHE/DEV.SDPi/issues/409))
+- OID Framework to TF-3Z ([#474](https://github.com/IHE/DEV.SDPi/issues/474))
+- Distributed Alarm System option and related transactions DEV-48 and DEV-49 (a.k.a. early "pre-published" integration of the SDC A-PKP standard) ([#457](https://github.com/IHE/DEV.SDPi/issues/457))
+- Make restriction of xsd:durations to hours, minutes, seconds, and fractional seconds mandatory for all xsd:duration values ([#517](https://github.com/IHE/DEV.SDPi/issues/517))
 
 ### Changes
 
+- Corrected three erroneous context-free codes in Table 3:8.3.2.10.2-1 ([#505](https://github.com/IHE/DEV.SDPi/issues/505))
+- Clarified referenced standards sections in 2:A and removed ISO prefix from IEEE/ISO standards for referential consistency ([#390](https://github.com/IHE/DEV.SDPi/issues/390))
+- Correction of regular expression for xsd:duration restriction ([#516](https://github.com/IHE/DEV.SDPi/issues/516))
 
 ### Editorial Fixes
 
+- Final cleanup for release 2.4.0 ([#523](https://github.com/IHE/DEV.SDPi/issues/523))
+
+
+## [2.3.0] - 2025-12-19
+
+### Added
+
+- sdpi:ReportSequence extension to separate message sequencing and versioning ([#321](https://github.com/IHE/DEV.SDPi/issues/321)).
+- Semantic markup for profiles, profile-options, requirements, gateways, use-cases to support rich artefact generation ([#463, part 2](https://github.com/IHE/DEV.SDPi/issues/463))
+- OID summary table for profiles, actors, transactions, content modules, use cases, requirements ([#449](https://github.com/IHE/DEV.SDPi/issues/449))
+- Implementation conformity statement tables ([#463, part 2](https://github.com/IHE/DEV.SDPi/issues/463))
+- Added processing support to include and support implementation conformance statements from external standards ([#463, part 3](https://github.com/IHE/DEV.SDPi/issues/463))
+- Relations extension to model inter-MDS relationships ([#48, part1](https://github.com/IHE/DEV.SDPi/issues/48))
+
+### Changes
+
+- Updated documentation for assigning unique identifiers ([#449](https://github.com/IHE/DEV.SDPi/issues/449))
+- Split Gateway Direction Option into Gateway Export Direction Option and Gateway Import Direction Option ([#463, part 2](https://github.com/IHE/DEV.SDPi/issues/463))
+- Corrected actor (option) references in sections 1:12.1 and 1:13.1 ([#413](https://github.com/IHE/DEV.SDPi/issues/413))
+- Improved SDPi profiles diagram in Volume 1 ([#285](https://github.com/IHE/DEV.SDPi/issues/285))
+
+### Editorial Fixes
+- Ported missed changes of release 2.2.1 back into the 2.3 series ([#489](https://github.com/IHE/DEV.SDPi/issues/489))
+
+## [2.2.1] - 2025-11-07
+
+### Editorial Fixes
+
+- IHE Publications change for SDPi 2.2 publication (one footnote rephrased) ([#488](https://github.com/IHE/DEV.SDPi/issues/488))
 
 ## [2.2.0] - 2025-10-02
 
