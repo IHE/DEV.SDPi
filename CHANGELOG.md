@@ -18,6 +18,12 @@ Each section shall contain a list of action items of the following format: `<bri
 ## Unreleased
 -->
 
+## [2.4.1] - 2026-05-07
+
+### Editorial Fixes
+
+- IHE Publications changes for SDPi 2.4 publication ("e.g., " punctuation) ([PR#526](https://github.com/IHE/DEV.SDPi/pull/526))
+
 ## [2.4.0] - 2026-04-01
 
 ### Added
