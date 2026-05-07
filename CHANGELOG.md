@@ -23,6 +23,7 @@ Each section shall contain a list of action items of the following format: `<bri
 ### Editorial Fixes
 
 - IHE Publications changes for SDPi 2.4 publication ("e.g., " punctuation) ([PR#526](https://github.com/IHE/DEV.SDPi/pull/526))
+- Updated cover page with correct release number and date
 
 ## [2.4.0] - 2026-04-01
 
