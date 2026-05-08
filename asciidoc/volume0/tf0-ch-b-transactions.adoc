@@ -163,12 +163,20 @@ include::../volume2/dev-46/tf2-dev-46-summary.adoc[]
 
 .^| [[vol0_transaction_summary_dev_47,DEV-47 Retrieve Network Presence]]
 [[transaction_number_dev_47,DEV-47]] DEV-47
-| [[transaction_name_retrieve_network_presence,Retrieve Network Presence]]  Retrieve Network Presence
+| [[transaction_name_retrieve_network_presence,Retrieve Network Presence]] Retrieve Network Presence
 |
 include::../volume2/dev-47/tf2-dev-47-summary.adoc[]
 
-.^| DEV-48 | _Reserved_ |
-.^| DEV-49 | _Reserved_ |
+.^| [[vol0_transaction_summary_dev_48, DEV-48 Establish Distributed Alarm System]][[transaction_number_dev_48, DEV-48]] DEV-48
+| [[transaction_name_establish_distributed_alarm_system, Establish Distributed Alarm System]] Establish Distributed Alarm System
+|
+include::../volume2/dev-48/tf2-dev-48-summary.adoc[]
+
+.^| [[vol0_transaction_summary_dev_49, DEV-49 End Distributed Alarm System]][[transaction_number_dev_49, DEV-49]] DEV-49
+| [[transaction_name_end_distributed_alarm_system, End Distributed Alarm System]] End Distributed Alarm System
+|
+include::../volume2/dev-49/tf2-dev-49-summary.adoc[]
+
 .^| DEV-50 | _Reserved_ |
 
 |===

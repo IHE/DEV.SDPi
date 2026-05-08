@@ -1,0 +1,32 @@
+@startuml
+
+!include plantuml/common_style.inc.puml
+autonumber
+
+!global $str_somds_medical_alert_consumer = "SOMDS Medical Alert Consumer"
+!global $str_somds_medical_alert_provider = "SOMDS Medical Alert Provider"
+
+participant "$str_somds_medical_alert_consumer" as consumer
+participant "$str_somds_medical_alert_provider" as provider
+
+==Establish Distributed Alarm System [DEV-48]==
+consumer -> provider: ActivateMonitoredByDAS (Friendly Consumer Name)
+consumer <<-- provider: ActivateMonitoredByDASResponse (MDIB version)
+
+par
+    loop upon alert condition change and before MaxTechnicalConfirmationDelay expires
+        consumer -> provider: ConfirmAlertsTechnicalDelivery (Alert Occurrence ID Tuple(s))
+        consumer <<-- provider: ConfirmAlertsTechnicalDeliveryResponse
+    end
+else
+    loop before InvocationEffectiveTimeout expires
+        consumer -> provider: ActivateMonitoredByDAS (Friendly Consumer Name)
+        consumer <<-- provider: ActivateMonitoredByDASResponse
+    end
+else
+    loop at least once every SelfCheckPeriod
+        provider -> consumer: Notification (EpisodicAlertReport incl. updated 'SelfCheck' information)
+    end
+end
+
+@enduml

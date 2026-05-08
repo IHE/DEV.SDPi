@@ -1129,6 +1129,11 @@ class SdpiInformationCollector(
         }
     }
 
+    /*
+    Matches actors with contributions for transactions referenced from profiles using
+    the syntax in the form:
+    sdpi_include_transaction::DEV-23[initiator="required", receiver="optional"]
+     */
     private fun linkActorsToTransactionReferences() {
         for (profile in profiles.values) {
             linkActorsToTransactionReferences(profile.transactionReferences)
@@ -1147,10 +1152,15 @@ class SdpiInformationCollector(
                     for (obl in ref.obligations) {
                         if (obl.actorId == null) {
                             val contrib = obl.contribution
-                            val role = transaction.actorRoles?.firstOrNull { it.contribution == contrib }
-                            if (role != null) {
-                                val strActorId = role.actorId
-                                obl.actorId = strActorId
+                            if (transaction.actorRoles != null) {
+                                val matchingRoles = transaction.actorRoles.filter{it.contributions.contains(contrib)}
+                                check(matchingRoles.size <= 1) {
+                                    logger.error("More than one actor contributes $contrib. Specify actor in $BLOCK_MACRO_NAME_INCLUDE_TRANSACTION")
+                                }
+                                if (matchingRoles.size == 1) {
+                                    val strActorId = matchingRoles[0].actorId
+                                    obl.actorId = strActorId
+                                }
                             }
                         }
                     }

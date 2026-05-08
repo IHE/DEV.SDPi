@@ -40,7 +40,7 @@ If the metric *@Value* falls in one of the *pm:TechnicalRange* elements and in o
 
 *For Metric @Samples*:
 
-For metric *@Samples*, it is possible that individual samples fall in different *pm:TechnicalRange* or *pm:PhysiologicalRange* elements. In this case the <<actor_somds_consumer>> has to decide which of the *pm:TechnicalRange* or *pm:PhysiologicalRange* element is considered as the _active range_ (*pm:Range* element) for the entire set of samples currently utilized for displaying - e.g. *Airway Pressure* wave displayed with the highest precision defined by the _active range_ at the consumer's screen.
+For metric *@Samples*, it is possible that individual samples fall in different *pm:TechnicalRange* or *pm:PhysiologicalRange* elements. In this case the <<actor_somds_consumer>> has to decide which of the *pm:TechnicalRange* or *pm:PhysiologicalRange* element is considered as the _active range_ (*pm:Range* element) for the entire set of samples currently utilized for displaying - e.g., *Airway Pressure* wave displayed with the highest precision defined by the _active range_ at the consumer's screen.
 
 If an individual sample falls in one of the *pm:TechnicalRange* elements and in one of *pm:PhysiologicalRange* elements at the same time, the *pm:PhysiologicalRange* element of the metric state will supersede the *pm:TechnicalRange* element of the descriptor and will become the _active range_ for this particular sample.
 

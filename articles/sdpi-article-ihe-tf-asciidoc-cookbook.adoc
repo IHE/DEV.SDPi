@@ -475,7 +475,9 @@ or overriding obligations that apply when the actor option is selected for a par
 
 A profile, profile option or actor option references a <<semantic-transactions,transaction>> using the `sdpi_include_transaction` [include processor](https://docs.asciidoctor.org/asciidoctorj/latest/extensions/include-processor/) and declares the obligations of contributors. 
 
-There are two forms for `sdpi_include_transaction`. The first form defines obligations for the actor roles defined in the transaction. That is, only the contribution (`initiator`, `receiver`, `responder`) and obligation (`required`, `optional`) are required. It is not necessary to repeat the actor. For example:
+There are two forms for `sdpi_include_transaction`. The first form defines obligations for the actor roles defined in the transaction. That is, only the contribution (`initiator`, `receiver`, `responder`) and obligation (`required`, `optional`) are required. It is not necessary to repeat the actor provided the transaction actor obligation is not ambiguous. Transaction actor's obligations are ambiguous when more than one actor has the same obligation (e.g., two actors both initiate messages in the transaction).
+
+For example:
 
 [source, asciidoc]
 ----
@@ -628,6 +630,25 @@ Listens for vol2_clause_dev_23_message_hello messages to identify any <<vol1_spe
 ----
 
 Attaching the `transaction` role to a section marks it as a [transaction](https://profiles.ihe.net/DEV/SDPi/index.html#vol2). A (document-unique) identifier must be defined in the `DEV-23` attribute. The `reftext` attribute is used for the transaction label in tables, etc. 
+
+Actors may make multiple contributions to a transaction. For example:
+
+----
+[sdpi_transaction_actors]
+--
+
+[actor-id="somds_medical_alert_consumer",contribution=Initiator,contribution=Receiver]
+Requests a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> to end a Distributed Alarm System.
+Listens for notifications from a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> that end
+a Distributed Alarm System.
+
+[actor-id="somds_medical_alert_provider",contribution=Responder,contribution=Initiator]
+Listens for requests from a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> to end a 
+Distributed Alarm System and grants such requests. Alternatively ends a Distributed Alarm System 
+on its own initiative and notifies the <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>.
+
+--
+----
 
 The transactions object identifier (oid) may <<defining-oids,be set>> using the `oid-arcs` attribute. If not present, object identifiers will 
 be set automatically from the transaction id. When assigned automatically, two oids will be applied to each transaction:
