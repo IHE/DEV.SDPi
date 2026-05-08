@@ -38,6 +38,9 @@ include::dev-29/tf2-ch-a-mdpws-dev-29.adoc[]
 //=== Retrieve BICEPS Content [DEV-30]
 include::dev-30/tf2-ch-a-mdpws-dev-30.adoc[]
 
+include::dev-32/tf2-ch-a-mdpws-dev-32.adoc[]
+
+
 //=== Retrieve Localization Information [DEV-33]
 include::dev-33/tf2-ch-a-mdpws-dev-33.adoc[]
 
@@ -61,6 +64,8 @@ include::dev-46/tf2-ch-a-mdpws-dev-46.adoc[]
 include::dev-47/tf2-ch-a-mdpws-dev-47.adoc[]
 
 include::discovery-proxy/tf2-ch-a-mdpws-discovery-proxy.adoc[]
+
+include::history-service/tf2-ch-a-mdpws-history-service.adoc[]
 
 === Security Considerations
 

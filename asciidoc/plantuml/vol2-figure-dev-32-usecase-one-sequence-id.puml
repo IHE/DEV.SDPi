@@ -1,0 +1,73 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+!include plantuml/common_style.inc.puml
+autonumber
+
+!global $str_somds_consumer = "SOMDS Consumer"
+!global $str_somds_provider = "SOMDS Provider"
+
+participant "$str_somds_consumer" as Consumer
+participant "$str_somds_provider" as Provider
+
+== Localized texts and MDIB in first notification ==
+
+Consumer -> Provider: Subscribe(Filter=HistoryQuery(@StartTime=tStart, @EndTime=tEnd), ...)
+Consumer <- Provider: SubscribeResponse(...)
+
+Consumer <-- Provider:  ChangeSequenceReport(ChangeSequence(@SequenceId=X, LocalizedText*, HistoricMdib(@Time=t<=tStart), HistoricReport(@Time=tn>t)*))
+loop until no more reports exist for @SequenceId=X
+    alt Not last iteration
+        Consumer <-- Provider: ChangeSequenceReport(@LastReport=false, ChangeSequence(@SequenceId=X, Report(@Time=tm>max(tn))*))
+    else Last iteration
+        Consumer <-- Provider: ChangeSequenceReport(@LastReport=true, ChangeSequence(@SequenceId=X, Report(@Time=tm>max(tn))*))
+    end
+end
+
+Consumer <-- Provider: SubscriptionEnd(SourceCancelling)
+
+== Localized texts and MDIB split up ==
+
+Consumer -> Provider: Subscribe(Filter=HistoryQuery(@StartTime=tStart, @EndTime=tEnd), ...)
+Consumer <- Provider: SubscribeResponse(...)
+
+loop until no more localized texts exist for @SequenceId=X
+    Consumer <-- Provider:  ChangeSequenceReport(ChangeSequence(@SequenceId=X, LocalizedText*))
+end
+
+Consumer <-- Provider:  ChangeSequenceReport(ChangeSequence(@SequenceId=X, HistoricMdib(@Time=t<=tStart), HistoricReport(@Time=tn>t)*))
+
+loop until no more reports exist for @SequenceId=X
+    alt Not last iteration
+        Consumer <-- Provider:  ChangeSequenceReport(@LastReport=false, ChangeSequence(@SequenceId=X, HistoricReport(@Time=tm>max(tn))*))
+    else Last iteration
+        Consumer <-- Provider:  ChangeSequenceReport(@LastReport=true, ChangeSequence(@SequenceId=X, HistoricReport(@Time=tm>max(tn))*))
+    end
+end
+
+Consumer <-- Provider: SubscriptionEnd(SourceCancelling)
+
+== Localized texts, MDIB and reports split up ==
+
+Consumer -> Provider: Subscribe(Filter=HistoryQuery(@StartTime=tStart, @EndTime=tEnd), ...)
+Consumer <- Provider: SubscribeResponse(...)
+
+loop until no more localized texts exist for @SequenceId=X
+    Consumer <-- Provider:  ChangeSequenceReport(ChangeSequence(@SequenceId=X, LocalizedText*))
+end
+
+Consumer <-- Provider:  ChangeSequenceReport(ChangeSequence(@SequenceId=X, HistoricMdib(@Time=t<=tStart))
+
+loop until no more reports exist for @SequenceId=X
+    alt Not last iteration
+        Consumer <-- Provider:  ChangeSequenceReport(@LastReport=false, ChangeSequence(@SequenceId=X, HistoricReport(@Time=tn>t)*))
+    else Last iteration
+        Consumer <-- Provider:  ChangeSequenceReport(@LastReport=true, ChangeSequence(@SequenceId=X, HistoricReport(@Time=tn>t)*))
+    end
+end
+
+opt
+    Consumer <-- Provider: SubscriptionEnd(SourceCancelling)
+end
+
+@enduml
