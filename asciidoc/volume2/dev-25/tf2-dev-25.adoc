@@ -56,12 +56,11 @@ The GetMetadataResponse message is sent whenever a <<vol1_spec_sdpi_p_actor_somd
 [[payload_dev_25_get_metadata_biceps_services]]BICEPS Services:: Collection of BICEPS services the <<vol1_spec_sdpi_p_actor_somds_provider>> offers, including but not limited to one or multiple of the following BICEPS services (<<ref_ieee_11073_10207_2017>> Section 7.3 Service Model):
 * GET SERVICE (mandatory)
 * SET SERVICE
-* DESCRIPTION EVENT SERVICE
 * STATE EVENT SERVICE
 * CONTEXT SERVICE
 * WAVEFORM SERVICE
 
-NOTE: There is currently no mandatory support for provision of the LOCALIZATION SERVICE, CONTAINMENT TREE SERVICE and ARCHIVE SERVICE.
+NOTE: There is currently no mandatory support for provision of the DESCRIPTION EVENT SERVICE, LOCALIZATION SERVICE, CONTAINMENT TREE SERVICE and ARCHIVE SERVICE.
 
 [#message_semantics_discover_biceps_services_device]
 Device Metadata:: Expresses <<vol1_spec_sdpi_p_actor_somds_provider>> characteristics that typically vary from one <<vol1_spec_sdpi_p_actor_somds_provider>> to another of the same kind, for example:
