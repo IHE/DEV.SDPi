@@ -18,6 +18,8 @@ Each section shall contain a list of action items of the following format: `<bri
 ## Unreleased
 -->
 
+- Removed the DESCRIPTION EVENT SERVICE from list of minimum required services so consumers can determine the providers MdDescription can not change ([PR#](https://github.com/IHE/DEV.SDPi/pull/532)).
+
 ## [2.4.1] - 2026-05-07
 
 ### Editorial Fixes
