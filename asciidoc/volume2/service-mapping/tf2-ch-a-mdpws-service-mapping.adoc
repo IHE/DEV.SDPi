@@ -27,9 +27,6 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall at least provide the port type
 |++{++{uri_sdc_port_type}++}++GetService
 |GET SERVICE
 
-|++{++{uri_sdc_port_type}++}++DescriptionEventService
-|DESCRIPTION EVENT SERVICE
-
 |++{++{uri_sdc_port_type}++}++StateEventService
 |STATE EVENT SERVICE
 
