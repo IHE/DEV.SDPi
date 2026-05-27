@@ -22,7 +22,7 @@ concurrent TCP connections from an individual <<vol1_spec_sdpi_p_actor_somds_con
 
 [NOTE]
 ====
-* A <<vol1_spec_sdpi_p_actor_somds_consumer>> may choose to limit the number of concurrent connections 
+* A <<vol1_spec_sdpi_p_actor_somds_provider>> may choose to limit the number of concurrent connections 
 accepted from an individual <<vol1_spec_sdpi_p_actor_somds_consumer>> to one or more, or 
 allow unlimited connections, based on its resource capabilities and design goals.
 * To enforce TCP connection limits, a provider may identify a <<vol1_spec_sdpi_p_actor_somds_consumer>> by its:
