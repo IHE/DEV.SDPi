@@ -1,11 +1,12 @@
 [#vol2_ch_a_mdpws_concurrent_connections]
-==== MDPWS Concurrent Consumer Connections
+==== MDPWS Concurrent Consumer TCP Connections
 
 SDC allows a <<vol1_spec_sdpi_p_actor_somds_consumer>> to open multiple, concurrent TCP 
 connections to a <<vol1_spec_sdpi_p_actor_somds_provider>>'s hosted services.
 While this offers flexibility for implementations, <<vol1_spec_sdpi_p_actor_somds_provider>>
 may constrain the number of concurrent TCP connections to help mitigate risks to the availability of its 
 <<acronym_sfc,system function contribution>>.
+For example, securing connections may be expensive or network bandwidth may be limited. 
 
 This section describes scenarios and recommendations for managing concurrent connections
 between consumers and providers.
