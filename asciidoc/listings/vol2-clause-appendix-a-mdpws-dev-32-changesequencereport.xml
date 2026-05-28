@@ -12,7 +12,7 @@
         <wsa:To>https://127.0.0.1:6464/EventSink/NotifyTo/56db24f3-b210-40d6-9579-6dd750b1a01a</wsa:To>
     </s12:Header>
     <s12:Body>
-        <hm:ChangeSequenceReport>
+        <hm:ChangeSequenceReport Id="..." ReportNumber="..." LastReport="...">
             <hm:ChangeSequence SequenceId="..." InstanceId="...">
                 <hm:HistoricLocalizedTexts>
                     <hm:HistoricLocalizedText Lang="...">
@@ -22,7 +22,7 @@
                 </hm:HistoricLocalizedTexts>
                 <hm:HistoricMdib Time="...">
                     <msg:GetMdibResponse SequenceId="..." InstanceId="...">
-                        <msg:Mdib SequenceId="...">
+                        <msg:Mdib SequenceId="..." MdibVersion="...">
                             <pm:MdDescription>
                                 <!-- Descriptive part goes here -->
                             </pm:MdDescription>
