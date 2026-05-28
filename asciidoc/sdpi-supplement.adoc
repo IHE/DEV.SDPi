@@ -171,8 +171,7 @@ IHE Supplement TF-1:B References Appendix content is provided in *Gemini Standar
 |===
 
 
-[bibliography#vol1_appendix_b_referenced_standards]
-=== Referenced Standards
+include::volume1/tf1-main.adoc[]
 
 [%noheader]
 [%autowidth]
