@@ -9,8 +9,6 @@
 
 This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_32>>.
 
-// ---------- EpisodicAlertReport ---------
-
 
 ===== {var_label_dev_32_message_subscribe} Message
 
