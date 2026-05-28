@@ -153,7 +153,8 @@
 		</xsd:choice>
 		<xsd:attribute name="Time" type="pm:Timestamp" use="required">
 			<xsd:annotation>
-				<xsd:documentation>Time at which the report was persisted.</xsd:documentation>
+				<xsd:documentation>Time at which the *MDIB Configuration* belonging to the report was first effective for the *SDC Service
+					Provider*.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
