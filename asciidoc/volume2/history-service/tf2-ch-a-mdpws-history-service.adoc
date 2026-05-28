@@ -13,6 +13,8 @@ The <<vol1_spec_sdpi_p_actor_somds_provider>> may split the response into multip
 This allows for the <<vol1_spec_sdpi_p_actor_somds_provider>> to stipulate the data rate in which it provides the information to the <<vol1_spec_sdpi_p_actor_somds_consumer>> and avoid exceeding
 data size limitations of notifications.
 
+Similarly, the <<vol1_spec_sdpi_p_actor_somds_consumer>> may slow the data rate that it receives information from the <<vol1_spec_sdpi_p_actor_somds_provider>> by delaying acknowledgement of notifications (e.g., the HTTP response message to the provider's notification for the MDPWS protocol). Excessive delays, either by the <<vol1_spec_sdpi_p_actor_somds_provider>> or <<vol1_spec_sdpi_p_actor_somds_consumer>>, can lead to timeouts.
+
 The <<term_history_service>> allows for limited filtering:
 
 - Select historic data based on time and version ranges
