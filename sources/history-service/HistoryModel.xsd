@@ -156,11 +156,6 @@
 				<xsd:documentation>Time at which the report was persisted.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="FinalReport" type="pm:Timestamp" use="required">
-			<xsd:annotation>
-				<xsd:documentation>Time at which the report was persisted.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
 	</xsd:complexType>
 	<!-- Subscription filter -->
 	<xsd:element name="HistoryQuery" type="hm:HistoryQueryType">
