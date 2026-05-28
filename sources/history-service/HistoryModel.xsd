@@ -18,7 +18,8 @@
 			<xsd:element name="ResponseStatus" type="hm:ResponseStatusType" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>Zero or more response status elements indicating issues of the preceding *History
-                        Service* request.
+                        Service* request. The response status applies to the entire change sequence of the *History
+						Service* request.
                     </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -33,14 +34,14 @@
 		<xsd:attribute name="LastReport" type="xsd:boolean" use="optional" default="false">
 			<xsd:annotation>
 				<xsd:documentation>Designates a report to be the last one in a sequence of reports of a *History
-                    Service* request; true if it is the last report, false otherwise.
+                    Service* request and indicating successful completion; true if it is the last report, false otherwise.
                 </xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
 	<xsd:element name="ChangeSequence" type="hm:ChangeSequenceType">
 		<xsd:annotation>
-			<xsd:documentation>An element that contains an MDIB snapshot and subsequent MDIB changes.
+			<xsd:documentation>An element that contains an MDIB snapshot, localized texts and subsequent MDIB changes.
             </xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -190,7 +191,7 @@
 	</xsd:complexType>
 	<xsd:complexType name="RangeType">
 		<xsd:annotation>
-			<xsd:documentation>A range based on either time frames or MDIB versions.</xsd:documentation>
+			<xsd:documentation>A closed range based on either time frames or MDIB versions.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice>
 			<xsd:element name="Time" type="hm:TimeRangeType">
