@@ -132,20 +132,26 @@ Information about the organization of IHE Technical Frameworks and Supplements a
 
 The current version of the IHE Devices Technical Framework can be found at https://profiles.ihe.net/DEV/[DEV Technical Framework].
 
-// STANDALONE SDPi:  1st refactoring, moved copies of these files into the supplement/ directory
-// include::supplement/sdpi-supplement-intro.adoc[]
+////
+TODO: for some reason, include macros in this file are (partially?) executed such that block processing plugins
+      fail due to missing input data. In avoid that, the include directions in this file has been changed from
+      "include::" to "include:".
+////
 
-// include::supplement/sdpi-standard-issues.adoc[]
+// STANDALONE SDPi:  1st refactoring, moved copies of these files into the supplement/ directory
+// include:supplement/sdpi-supplement-intro.adoc[]
+
+// include:supplement/sdpi-standard-issues.adoc[]
 
 // = Volume 0 -- IHE Technical Frameworks General Introduction
 
 // STANDALONE SDPi:  1st refactoring, simply COMMENTED OUT the 3 volumes
-//include::volume0/tf0-main.adoc[]
+//include:volume0/tf0-main.adoc[]
 
 //
 // = Volume 1 -- Profiles
 //
-//include::volume1/tf1-main.adoc[]
+//include:volume1/tf1-main.adoc[]
 
 // Appendix A
 ////
@@ -171,7 +177,7 @@ IHE Supplement TF-1:B References Appendix content is provided in *Gemini Standar
 |===
 
 
-include::volume1/tf1-main.adoc[]
+include:volume1/tf1-main.adoc[]
 
 [%noheader]
 [%autowidth]
@@ -192,10 +198,10 @@ IHE Supplement TF-1:B.1 Referenced Standards  content is provided in *Gemini Sta
 //
 // = Volume 2 -- Transactions
 //
-//include::volume2/tf2-main.adoc[]
+//include:volume2/tf2-main.adoc[]
 //
 // = Volume 3 -- Content Modules
 //
-//include::volume3/tf3-main.adoc[]
+//include:volume3/tf3-main.adoc[]
 
 ////
