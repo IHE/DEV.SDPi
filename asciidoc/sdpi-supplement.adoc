@@ -134,7 +134,7 @@ The current version of the IHE Devices Technical Framework can be found at https
 
 ////
 TODO: for some reason, include macros in this file are (partially?) executed such that block processing plugins
-      fail due to missing input data. In avoid that, the include directions in this file has been changed from
+      fail due to missing input data. To avoid that, the include directions in this file has been changed from
       "include::" to "include:".
 ////
 
