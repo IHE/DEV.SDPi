@@ -11,7 +11,7 @@
 		<wsa:To>https://127.0.0.1:6464/EventSink/NotifyTo/56db24f3-b210-40d6-9579-6dd750b1a01a</wsa:To>
 	</s12:Header>
 	<s12:Body>
-		<hm:ChangeSequenceReport>
+		<hm:ChangeSequenceReport Id="urn:uuid:fe743447-6f7e-4122-82ed-971fbf607864" ReportNumber="0">
 			<hm:ChangeSequence SequenceId="urn:uuid:68c97947-6f7e-4122-82ed-971fbf6085af" InstanceId="0">
 				<hm:HistoricReport Time="1667464772000">
 					<msg:EpisodicMetricReport SequenceId="urn:uuid:68c97947-6f7e-4122-82ed-971fbf6085af" InstanceId="0" MdibVersion="2">
