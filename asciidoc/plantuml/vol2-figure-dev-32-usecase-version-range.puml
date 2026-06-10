@@ -16,9 +16,9 @@ Consumer <- Provider: SubscribeResponse(...)
 Consumer <-- Provider:  ChangeSequenceReport(ChangeSequence(@SequenceId=X, Mdib, Report*))
 loop until no more reports exist for @SequenceId=X
     alt Not last iteration
-        Consumer <-- Provider:  ChangeSequenceReport(@LastReport=false, ChangeSequence(@SequenceId=X, Report*))
+        Consumer <-- Provider:  ChangeSequenceReport(@Id=Y, @ReportNumber=*, @LastReport=false, ChangeSequence(@SequenceId=X, Report*))
     else Last iteration
-        Consumer <-- Provider:  ChangeSequenceReport(@LastReport=true, ChangeSequence(@SequenceId=X, Report*))
+        Consumer <-- Provider:  ChangeSequenceReport(@Id=Y, @ReportNumber=*, @LastReport=true, ChangeSequence(@SequenceId=X, Report*))
     end
 end
 
