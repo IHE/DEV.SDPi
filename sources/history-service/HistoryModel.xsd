@@ -132,8 +132,7 @@
 		</xsd:sequence>
 		<xsd:attribute name="Time" type="pm:Timestamp" use="required">
 			<xsd:annotation>
-				<xsd:documentation>Time at which the *MDIB Configuration* was first effective for the *SDC Service
-                    Provider*.
+				<xsd:documentation>Time at which the *MDIB Configuration* was first effective for the *SOMDS Provider*.
                 </xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
@@ -153,8 +152,7 @@
 		</xsd:choice>
 		<xsd:attribute name="Time" type="pm:Timestamp" use="required">
 			<xsd:annotation>
-				<xsd:documentation>Time at which the *MDIB Configuration* belonging to the report was first effective for the *SDC Service
-					Provider*.</xsd:documentation>
+				<xsd:documentation>Time at which the *MDIB Configuration* belonging to the report was first effective for the *SOMDS Provider*.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
@@ -176,15 +174,20 @@
                     </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
+			<xsd:element name="FollowMdsLang" type="xsd:boolean" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>If true, the *SOMDS Provider* selects all *Historic Localized Texts* of all MDSs in the response that match the MDS's @Lang attribute in each of the communicated *MDIB Configurations*. If false, only LanguageFilter is applicable.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
 			<xsd:element name="LanguageFilter" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation>A language filter to opt-in for requesting localized texts.
 
-                        - If the LanguageFilter element does not exist, no pm:LocalizedText elements are to be selected
+                        - If the LanguageFilter element does not exist, no pm:LocalizedText elements are to be selected, unless FollowMdsLang is true
                         - If the LanguageFilter element exists and the list is empty, all pm:LocalizedText elements are
                         to be selected
                         - If the LanguageFilter element exists and the list is not empty, all pm:LocalizedText elements
-                        are to be selected where pm:LocalizedText@Lang is element of LanguageFilter
+                        are to be selected where pm:LocalizedText@Lang is element of LanguageFilter. This is the preferred way of requesting historic texts.
                     </xsd:documentation>
 				</xsd:annotation>
 				<xsd:simpleType>
@@ -206,9 +209,9 @@
 			<xsd:element name="Time" type="hm:TimeRangeType">
 				<xsd:annotation>
 					<xsd:documentation>Time range that is requested from a history service. Timestamps refer to the
-                        clock of the requested SDC SERVICE PROVIDER and do not necessarily correspond to a specific
+                        clock of the requested *SOMDS Provider* and do not necessarily correspond to a specific
                         determination time in the MDIB. Results from time range-based querying are typically imprecise
-                        and depend on a synchronized clock between SDC SERVICE PROVIDER and SDC SERVICE CONSUMER. Hence,
+                        and depend on a synchronized clock between *SOMDS Provider* and *SOMDS Consumer*. Hence,
                         version range-based querying is always preferred over time range-based querying.
                     </xsd:documentation>
 				</xsd:annotation>
@@ -273,6 +276,26 @@
 					<xsd:restriction base="xsd:string">
 						<xsd:maxLength value="0"/>
 					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="FollowMdsLangNotSupported">
+				<xsd:annotation>
+					<xsd:documentation>The *History Service* does not support following the MDS's @Lang attribute and ignores the filter.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="0"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="LanguagesNotAvailable">
+				<xsd:annotation>
+					<xsd:documentation>The *History Service* does not provide the listed languages requested by the *SOMDS Consumer*.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:list itemType="xsd:language"/>
 				</xsd:simpleType>
 			</xsd:element>
 			<xsd:element name="LocalizedTextsAreStatic">
