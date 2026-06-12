@@ -18,7 +18,7 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Added
 
-
+- Clarification on SDPi-P safety requirements and considerations to explicitly include the application of the IEEE 11073-10700 standard ([#529](https://github.com/IHE/DEV.SDPi/issues/529))
 
 ### Changes
 
