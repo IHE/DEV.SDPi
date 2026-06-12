@@ -349,24 +349,37 @@
 					<xsd:documentation>Indicates another, undocumented status.</xsd:documentation>
 				</xsd:annotation>
 				<xsd:complexType>
-					<xsd:simpleContent>
-						<xsd:extension base="xsd:string">
-							<xsd:annotation>
-								<xsd:documentation>An optional status message, intended for debugging purposes only.
-                                </xsd:documentation>
-							</xsd:annotation>
-							<xsd:attribute name="StatusCode" type="xsd:string">
-								<xsd:annotation>
-									<xsd:documentation>Status code defined by another entity.</xsd:documentation>
-								</xsd:annotation>
-							</xsd:attribute>
-							<xsd:attribute name="Language" type="xsd:language">
-								<xsd:annotation>
-									<xsd:documentation>Language of the status message.</xsd:documentation>
-								</xsd:annotation>
-							</xsd:attribute>
-						</xsd:extension>
-					</xsd:simpleContent>
+					<xsd:sequence>
+						<xsd:element name="Status">
+							<xsd:complexType>
+								<xsd:simpleContent>
+									<xsd:extension base="xsd:string">
+										<xsd:annotation>
+											<xsd:documentation>An optional status message, intended for debugging purposes only.
+											</xsd:documentation>
+										</xsd:annotation>
+										<xsd:attribute name="StatusCode" type="xsd:string">
+											<xsd:annotation>
+												<xsd:documentation>Status code defined by another entity.</xsd:documentation>
+											</xsd:annotation>
+										</xsd:attribute>
+										<xsd:attribute name="Language" type="xsd:language">
+											<xsd:annotation>
+												<xsd:documentation>Language of the status message.</xsd:documentation>
+											</xsd:annotation>
+										</xsd:attribute>
+									</xsd:extension>
+								</xsd:simpleContent>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="Detail">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
 				</xsd:complexType>
 			</xsd:element>
 		</xsd:choice>
