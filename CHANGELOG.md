@@ -14,11 +14,23 @@ The SDPi changelog shall not contain the following sections
 
 Each section shall contain a list of action items of the following format: `<brief one-sentence description of what has been done> (#<issue number & URL>).`
 
-<!--
 ## Unreleased
--->
 
-- Removed the DESCRIPTION EVENT SERVICE from list of minimum required services so consumers can determine the providers MdDescription can not change ([PR#](https://github.com/IHE/DEV.SDPi/pull/532)).
+### Added
+
+
+
+### Changes
+
+- Standalone SDPi Refactoring ([#499](https://github.com/IHE/DEV.SDPi/issues/499))
+- Fixed TimeStampVersion.xsd to resolve double nesting of sdpi:Epoch element ([#520](https://github.com/IHE/DEV.SDPi/issues/520))
+- Removed the DESCRIPTION EVENT SERVICE from list of minimum required services so consumers can determine the providers MdDescription can not change ([PR#532](https://github.com/IHE/DEV.SDPi/pull/532))
+ 
+### Editorial Fixes
+
+- Corrected wording in the SES section template ([#530](https://github.com/IHE/DEV.SDPi/issues/530))
+- Removed vendor-specific EHR examples in DDES use case narrative ([#531](https://github.com/IHE/DEV.SDPi/issues/531))
+
 
 ## [2.4.1] - 2026-05-07
 
@@ -31,10 +43,6 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Added
 
-- Clarifying statements to DEV-23, DEV-24, DEV-46, and DEV-47 w.r.t to ad-hoc and managed mode discovery([#409](https://github.com/IHE/DEV.SDPi/issues/409)).
-- OID Framework to TF-3Z ([#474](https://github.com/IHE/DEV.SDPi/issues/474))
-- Standalone SDPi Refactoring ([#499](https://github.com/IHE/DEV.SDPi/issues/499))
-- Clarifying note to R7000 ([#501](https://github.com/IHE/DEV.SDPi/issues/501)).
 - Clarifying note to R7000 ([#501](https://github.com/IHE/DEV.SDPi/issues/501))
 - Clarifying statements to DEV-23, DEV-24, DEV-46, and DEV-47 w.r.t to ad-hoc and managed mode discovery([#409](https://github.com/IHE/DEV.SDPi/issues/409))
 - OID Framework to TF-3Z ([#474](https://github.com/IHE/DEV.SDPi/issues/474))
@@ -45,7 +53,6 @@ Each section shall contain a list of action items of the following format: `<bri
 
 - Corrected three erroneous context-free codes in Table 3:8.3.2.10.2-1 ([#505](https://github.com/IHE/DEV.SDPi/issues/505))
 - Clarified referenced standards sections in 2:A and removed ISO prefix from IEEE/ISO standards for referential consistency ([#390](https://github.com/IHE/DEV.SDPi/issues/390))
-- Fixed TimeStampVersion.xsd to resolve double nesting of sdpi:Epoch element ([#520](https://github.com/IHE/DEV.SDPi/issues/520)). 
 - Correction of regular expression for xsd:duration restriction ([#516](https://github.com/IHE/DEV.SDPi/issues/516))
 
 ### Editorial Fixes
