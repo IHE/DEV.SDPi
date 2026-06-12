@@ -14,7 +14,7 @@
 		<hm:ChangeSequenceReport>
 			<hm:ChangeSequence SequenceId="urn:uuid:68c97947-6f7e-4122-82ed-971fbf6085af" InstanceId="0">
 				<hm:HistoricMdib Time="1667464770000">
-					<msg:GetMdibResponse SequenceId="urn:uuid:68c97947-6f7e-4122-82ed-971fbf6085af" InstanceId="0">
+					<msg:GetMdibResponse SequenceId="urn:uuid:68c97947-6f7e-4122-82ed-971fbf6085af" InstanceId="0" MdibVersion="0">
 						<msg:Mdib SequenceId="urn:uuid:68c97947-6f7e-4122-82ed-971fbf6085af">
 							<pm:MdDescription>
 								<!-- Descriptive part goes here -->
