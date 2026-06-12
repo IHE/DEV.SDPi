@@ -115,10 +115,11 @@ If it is intended for a <<vol1_spec_sdpi_p_actor_somds_provider>> to include <<t
 ****
 [NORMATIVE]
 ====
-If it is not intended for a <<vol1_spec_sdpi_p_actor_somds_provider>> to include <<term_historic_localized_text>>s in hm:ChangeSequenceReport elements, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall provide all <<term_historic_localized_text>>s at the LOCALIZATION SERVICE.
-====
+If a <<vol1_spec_sdpi_p_actor_somds_provider>> has a LOCALIZATION SERVICE and is queried to respond with <<term_historic_localized_text>>s in hm:ChangeSequenceReport elements, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall either
 
-NOTE: This implies that the LOCALIZATION SERVICE provides historic and current localized texts for which all references are consistent across all <<term_mdib_sequence_of_changes>>.
+- include all <<term_historic_localized_text>>s in hm:ChangeSequenceReport elements or
+- respond with a status code _LocalizedTextsAreStatic_ and provide all <<term_historic_localized_text>>s at the LOCALIZATION SERVICE.
+====
 ****
 
 .R0520
