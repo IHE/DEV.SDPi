@@ -153,7 +153,7 @@ For an <<term_mdib_sequence_of_changes>> that is requested from a <<vol1_spec_sd
 ****
 [NORMATIVE]
 ====
-A <<vol1_spec_sdpi_p_actor_somds_provider>> shall transmit <<term_mdib_sequence_of_changes>> in chronological order of occurrence.
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall transmit <<term_mdib_sequence_of_changes>> in the order of occurrence.
 ====
 ****
 
