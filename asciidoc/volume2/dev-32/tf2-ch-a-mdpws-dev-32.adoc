@@ -108,37 +108,37 @@ include::../../plantuml/vol2-figure-dev-32-usecase-two-sequence-ids.puml[]
 
 This section shows an exemplary sequence of messages when requesting the <<term_history_service>>.
 
-.Subscribe message targeted at the <<vol1_clause_sdpi_p_somds_provider>>
+.Subscribe message targeted at the <<vol1_spec_sdpi_p_actor_somds_provider>>
 [source#vol2_clause_appendix_a_mdpws_dev_32_example_00,xml]
 ----
 include::../../listings/vol2-clause-appendix-a-mdpws-dev-32-example-00.xml[]
 ----
 
-.SubscribeResponse message targeted at the <<vol1_clause_sdpi_p_somds_consumer>>
+.SubscribeResponse message targeted at the <<vol1_spec_sdpi_p_actor_somds_consumer>>
 [source#vol2_clause_appendix_a_mdpws_dev_32_example_01,xml]
 ----
 include::../../listings/vol2-clause-appendix-a-mdpws-dev-32-example-01.xml[]
 ----
 
-.ChangeSequenceReport message targeted at the <<vol1_clause_sdpi_p_somds_consumer>>
+.ChangeSequenceReport message targeted at the <<vol1_spec_sdpi_p_actor_somds_consumer>>
 [source#vol2_clause_appendix_a_mdpws_dev_32_example_02,xml]
 ----
 include::../../listings/vol2-clause-appendix-a-mdpws-dev-32-example-02.xml[]
 ----
 
-.ChangeSequenceReport message targeted at the <<vol1_clause_sdpi_p_somds_consumer>>
+.ChangeSequenceReport message targeted at the <<vol1_spec_sdpi_p_actor_somds_consumer>>
 [source#vol2_clause_appendix_a_mdpws_dev_32_example_03,xml]
 ----
 include::../../listings/vol2-clause-appendix-a-mdpws-dev-32-example-03.xml[]
 ----
 
-.ChangeSequenceReport message targeted at the <<vol1_clause_sdpi_p_somds_consumer>>
+.ChangeSequenceReport message targeted at the <<vol1_spec_sdpi_p_actor_somds_consumer>>
 [source#vol2_clause_appendix_a_mdpws_dev_32_example_04,xml]
 ----
 include::../../listings/vol2-clause-appendix-a-mdpws-dev-32-example-04.xml[]
 ----
 
-.SubscriptionEnd message targeted at the <<vol1_clause_sdpi_p_somds_consumer>>
+.SubscriptionEnd message targeted at the <<vol1_spec_sdpi_p_actor_somds_consumer>>
 [source#vol2_clause_appendix_a_mdpws_dev_32_example_05,xml]
 ----
 include::../../listings/vol2-clause-appendix-a-mdpws-dev-32-example-05.xml[]
