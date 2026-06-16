@@ -60,10 +60,13 @@ include::../../plantuml/vol2-figure-dev-47-sequence.puml[]
 <<acronym_biceps>> specifies an implicit discovery protocol for allowing <<vol1_spec_sdpi_p_actor_somds_consumer>>s to receive a notification when a <<vol1_spec_sdpi_p_actor_somds_provider>> is ready to exchange messages with other <<vol1_spec_sdpi_p_actor_somds_consumer>>s.
 If a <<vol1_spec_sdpi_p_actor_somds_consumer>> uses a <<vol1_spec_sdpi_p_actor_discovery_proxy>>, network presence is announced to the <<vol1_spec_sdpi_p_actor_somds_consumer>> by using the _{var_label_dev_47_message_hello}_ message of this transaction.
 
+Note that the {var_label_dev_47_message_hello} message described in this clause is a generic/abstract concept that can be implemented differently.
+It should not be confused with actual transport message specifications like, for example, the Hello message as described in <<vol2_clause_appendix_a_mdpws_dev_47_hello>>.
+
 [#vol2_clause_dev_47_message_hello_trigger_events]
 ====== Trigger Events
 
-If a <<vol1_spec_sdpi_p_actor_discovery_proxy>> is known to the <<vol1_spec_sdpi_p_actor_somds_consumer>> and the <<vol1_spec_sdpi_p_actor_somds_consumer>> is interested in {var_label_dev_47_message_hello} messages, this message is sent
+If a <<vol1_spec_sdpi_p_actor_discovery_proxy>> is known to the <<vol1_spec_sdpi_p_actor_somds_consumer>> and the <<vol1_spec_sdpi_p_actor_somds_consumer>> is interested in {var_label_dev_47_message_hello} messages, this message is sent:
 
 1. whenever a <<vol1_spec_sdpi_p_actor_somds_provider>> known to the <<vol1_spec_sdpi_p_actor_discovery_proxy>> joins an <<acronym_md_lan>>,
 2. when a <<vol1_spec_sdpi_p_actor_somds_provider>> known to the <<vol1_spec_sdpi_p_actor_discovery_proxy>> returns to normal _on-line_ operation after having indicated temporary suspension of message exchanges, or

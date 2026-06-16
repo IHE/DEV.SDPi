@@ -6,7 +6,7 @@
     <s12:Header>
         <wsa:Action>http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/Bye</wsa:Action>
         <wsa:MessageID><!-- ... --></wsa:MessageID>
-        <wsa:To>urn:docs-oasis-open-org:ws-dd:ns:discovery:2009:01</wsa:To>
+        <wsa:To><!-- evt:NotifyTo from subscription (optional) --></wsa:To>
     </s12:Header>
     <s12:Body>
         <wsd:Bye>
