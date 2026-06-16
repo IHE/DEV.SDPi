@@ -1134,11 +1134,11 @@ Security is foundational for all interactions between <<vol1_spec_sdpi_p_actor_s
 Specific security technologies may vary based on jurisdictional requirements, regulations and the implementation technology, and will be detailed in the appropriate TF-2 technology specifications.
 All transactions indicate whether they require secure or unsecured connections.
 
-For the default <<acronym_sdpi_p>> connectivity technology, namely IEEE 11073 <<term_service_oriented_device_connectivity>>, TLS 1.2 (or higher versions) support is required (See <<ref_ieee_11073_20701_2018>> and <<ref_ieee_11073_20702_2016>>).
+For the default <<acronym_sdpi_p>> connectivity technology, namely IEEE 11073 <<term_service_oriented_device_connectivity>>, TLS 1.3 (or higher versions) support is required (See <<ref_ieee_11073_20701_2018>> and <<ref_ieee_11073_20702_2016>>).
 
 NOTE: The SDC standard <<ref_ieee_11073_20701_2018>> includes requirement R0064 stating that an SDC PARTICIPANT SHOULD utilize the highest TLS version. Herewith "the highest" is interpreted as the highest TLS version available, and not as the highest version negotiated between two SDC PARTICIPANTS.
 
-NOTE: TLS 1.2 is not sufficient for all types of connectivity (e.g., cloud, remote programming, etc.), and it has reported cipher suite weaknesses. TLS 1.3 (or higher, in the future) may be hence required depending on the risk associated with the device.
+NOTE: TLS 1.2 is not sufficient for all types of connectivity (e.g., cloud, remote programming, etc.), and it has reported cipher suite weaknesses. Therefore at least TLS 1.3 is required for <<acronym_sdpi_p>> connectivity. Higher versions may be required, in the future, depending on the risk associated with the device.
 
 .R1544
 [sdpi_requirement#r1544,sdpi_req_level=should]
