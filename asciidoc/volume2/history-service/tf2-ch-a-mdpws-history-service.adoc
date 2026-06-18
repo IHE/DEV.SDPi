@@ -57,9 +57,10 @@ A <<vol1_spec_sdpi_p_actor_somds_consumer>> shall add the filter dialect `urn:oi
 ****
 [NORMATIVE]
 ====
-A <<vol1_spec_sdpi_p_actor_somds_consumer>> shall only add exactly one hm:HistoryQuery element to a wse:Subscribe/wse:Filter element with @Dialect =
-"urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.3.1.1".
+A filter in the Dialect designated `urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.3.1.1` contains exactly, and only, one hm:QueryFilter of type hm:QueryFilterType.
 ====
+
+NOTE: The filter may include additional elements and attributes from any namespace.
 ****
 
 .R0515
