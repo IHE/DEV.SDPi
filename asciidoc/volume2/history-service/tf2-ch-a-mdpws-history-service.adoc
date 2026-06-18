@@ -70,7 +70,11 @@ A <<vol1_spec_sdpi_p_actor_somds_consumer>> shall only add exactly one hm:Histor
 For a time range-filtered subscription, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall respond with notifications that reflect the MDIB of the <<vol1_spec_sdpi_p_actor_somds_provider>> and its changes in the closed time interval of ++[hm:TimeRange/@StartTime, hm:TimeRange/@EndTime]++.
 ====
 
-NOTE: A <<vol1_spec_sdpi_p_actor_somds_provider>> may respond with data that exceed the interval of ++[hm:TimeRange/@StartTime, hm:TimeRange/@EndTime]++.
+[NOTE]
+====
+The time interval is a hint.
+A <<vol1_spec_sdpi_p_actor_somds_provider>> may respond with data that exceeds, or is a subset of, the interval of ++[hm:TimeRange/@StartTime, hm:TimeRange/@EndTime]++.
+====
 
 NOTE: The term _notifications that reflect the MDIB_ includes localized texts of the LOCALIZATION SERVICE as well.
 ****
