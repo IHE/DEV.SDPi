@@ -145,8 +145,15 @@ For an <<term_mdib_sequence_of_changes>> that is requested from a <<vol1_spec_sd
 ****
 [NORMATIVE]
 ====
-For an <<term_mdib_sequence_of_changes>> that is requested from a <<vol1_spec_sdpi_p_actor_somds_provider>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall provide exactly one <<term_mdib_configuration>> in hm:ChangeSequence/hm:HistoricMdib.
+For an <<term_mdib_sequence_of_changes>> that is requested from a <<vol1_spec_sdpi_p_actor_somds_provider>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall provide exactly one <<term_mdib_configuration>> in hm:ChangeSequence/hm:HistoricMdib for each contiguous sequence of changes..
 ====
+
+[NOTE]
+====
+A contiguous sequence of changes is one with no gaps in the changes reported for each of the CONTAINMENT TREE ENTRIES reported.
+Gaps may still occur when a provider chooses to completely leave out CONTAINMENT TREE ENTRIES (e.g., waveform streams).
+====
+
 ****
 
 .R0523
