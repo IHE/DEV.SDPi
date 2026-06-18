@@ -106,7 +106,12 @@ NOTE: If a <<vol1_spec_sdpi_p_actor_somds_provider>> cannot serve the requested 
 ****
 [NORMATIVE]
 ====
-If it is intended for a <<vol1_spec_sdpi_p_actor_somds_provider>> to include <<term_historic_localized_text>>s in hm:ChangeSequenceReport elements, for an <<term_mdib_sequence_of_changes>> that is requested from a <<vol1_spec_sdpi_p_actor_somds_provider>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall transmit filtered <<term_historic_localized_text>>s before transmitting the hm:HistoricMdib or hm:HistoricReport elements that reference the <<term_historic_localized_text>>s.
+The <<vol1_spec_sdpi_p_actor_somds_provider>> transmitting <<term_historic_localized_text>> shall transmit filtered <<term_historic_localized_text>>s before transmitting hm:HistoricMdib or hm:HistoricReport elements that reference the <<term_historic_localized_text>>s.
+====
+
+[NOTE]
+====
+This ensures the localized text is available to the <<vol1_spec_sdpi_p_actor_somds_consumer>> before it is used by other elements.
 ====
 ****
 
