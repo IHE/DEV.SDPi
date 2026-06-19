@@ -22,7 +22,7 @@ include::tf2-dev-32-summary.adoc[]
 |Once subscribed, listens for messages to retrieve historic <<acronym_mdib>> reports.
 
 |<<vol1_spec_sdpi_p_actor_somds_provider>>
-|While a subscription is running, the <<vol1_spec_sdpi_p_actor_somds_provider>> delivers messages that reflect historic <<acronym_mdib>> reports.
+|While a subscription is running, the <<vol1_spec_sdpi_p_actor_somds_provider>> delivers messages that reflect historic <<acronym_mdib>> data.
 
 |===
 
