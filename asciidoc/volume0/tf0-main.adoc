@@ -49,6 +49,18 @@ The choice of any namespace prefix is arbitrary and not semantically significant
 |urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.2.2
 |This specification, used by the <<vol1_spec_sdpi_p_actor_discovery_proxy>> actor.
 
+|ext
+|http://standards.ieee.org/downloads/11073/11073-10207-2017/extension
+|<<ref_ieee_11073_10207_2017>>
+
+|msg
+|http://standards.ieee.org/downloads/11073/11073-10207-2017/message
+|<<ref_ieee_11073_10207_2017>>
+
+|pm
+|http://standards.ieee.org/downloads/11073/11073-10207-2017/participant
+|<<ref_ieee_11073_10207_2017>>
+
 |wsa
 |http://www.w3.org/2005/08/addressing
 |<<ref_oasis_ws_addressing_2006>>

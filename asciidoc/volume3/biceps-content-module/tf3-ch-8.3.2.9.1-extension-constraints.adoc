@@ -57,6 +57,74 @@ A <<vol1_spec_sdpi_p_actor_somds_participant>> shall not provide BICEPS extensio
 ====
 ****
 
+[#vol3_clause_extension_unknown, sdpi_level=+1]
+====== Unknown extensions
+
+The <<ref_ieee_11073_10207_2017, BICEPS model>> offers many extension points, some of which are 
+utilized in this specification. Others may be introduced in future versions of this specification
+or other standards.
+
+This section supplements requirements TR1490, TR1922 and TR1342 in <<ref_ieee_11073_10700_2022>>
+to clarify the treatment of extensions in messages received by <<vol1_spec_sdpi_p_actor_somds_provider>>
+from <<vol1_spec_sdpi_p_actor_somds_consumer>>s.
+
+.R0022
+[sdpi_requirement#r0022,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
+[NORMATIVE]
+====
+When a <<vol1_spec_sdpi_p_actor_somds_provider>> does not understand an 
+EXTENSION marked with `@ext:MustUnderstand = true`, 
+the <<vol1_spec_sdpi_p_actor_somds_provider>> shall treat the 
+BICEPS CONTAINMENT TREE ENTRY containing that EXTENSION, and all entries below it, as 
+unavailable for its <<acronym_sfc>>.
+====
+
+[NOTE]
+====
+This requirement clarifies the expected behaviour for a <<vol1_spec_sdpi_p_actor_somds_provider>>
+that does not understand an extension.
+====
+
+
+[RELATED]
+====
+* <<ref_ieee_11073_10207_2017>>, section A.3
+* TR1922, <<ref_ieee_11073_10700_2022>>
+* TR0765, <<ref_ieee_11073_10700_2022>>
+====
+****
+
+
+.R0023
+[sdpi_requirement#r0023,sdpi_req_level=may,sdpi_req_type=tech_feature]
+****
+[NORMATIVE]
+====
+If a <<vol1_spec_sdpi_p_actor_somds_provider>> does not understand an 
+EXTENSION contained in an element derived from `pm:AbstractState`, 
+and the EXTENSION is marked with `@ext:MustUnderstand = false` (explictly or implictly), 
+then provider may copy that EXTENSION unchanged into the corresponding MDIB state element.
+
+====
+
+[NOTE]
+====
+This requirement clarifies that a provider may, but is not required to, pass along the content
+of extensions that it does not understand in its state. For example, a consumer may provide custom 
+content to a `ProposedContextState` in a `SetContextState` message. Providers may pass this
+custom content along in the context state. 
+====
+
+[RELATED]
+====
+* <<ref_ieee_11073_10207_2017>>, section A.3
+* TR1342, <<ref_ieee_11073_10700_2022>>
+* TR1922, <<ref_ieee_11073_10700_2022>>
+====
+****
+
+
 [#vol3_clause_extension_timestamp_versioning, sdpi_level=+1]
 ====== Timestamp versioning
 
