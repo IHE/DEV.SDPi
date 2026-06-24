@@ -181,6 +181,33 @@
 					<xsd:list itemType="xsd:language"/>
 				</xsd:simpleType>
 			</xsd:element>
+			<xsd:element name="ReportFilter" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>A filter providing a hint of the reports desired by the subscriber. 
+                             The provider may (optionally) drop reports from the change sequence 
+                             report, where they would otherwise be included (e.g., msg:WaveformStream), 
+                             to reduce bandwidth, for example. 
+                             
+                             If absent, all available reports are desired. 
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:list itemType="hm:ReportTypeType"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="HandleFilter" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>A filter providing a hint of the containment tree entries desired by the subscriber. 
+                             The provider may (optionally) drop reports from the change sequence report 
+                             that don't include the desired entries to, for example, reduce bandwidth. 
+                             
+                             If absent, all available containment tree entries are desired. 
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:list itemType="pm:HandleRef"/>
+				</xsd:simpleType>
+			</xsd:element>
 			<xsd:element name="Range" type="hm:RangeType">
 				<xsd:annotation>
 					<xsd:documentation>The time or MDIB version range to select.</xsd:documentation>
