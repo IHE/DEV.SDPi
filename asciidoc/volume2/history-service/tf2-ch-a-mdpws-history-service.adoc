@@ -73,11 +73,13 @@ For a time range-filtered subscription, a <<vol1_spec_sdpi_p_actor_somds_provide
 
 [NOTE]
 ====
-The time interval is a hint.
+* The time interval is a hint.
 A <<vol1_spec_sdpi_p_actor_somds_provider>> may respond with data that exceeds, or is a subset of, the interval of ++[hm:TimeRange/@StartTime, hm:TimeRange/@EndTime]++.
+
+* The term _notifications that reflect the MDIB_ includes localized texts of the LOCALIZATION SERVICE as well.
+
 ====
 
-NOTE: The term _notifications that reflect the MDIB_ includes localized texts of the LOCALIZATION SERVICE as well.
 ****
 
 .R0516
@@ -88,15 +90,13 @@ NOTE: The term _notifications that reflect the MDIB_ includes localized texts of
 For a version range-filtered subscription, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall respond with notifications that reflect the MDIB of the <<vol1_spec_sdpi_p_actor_somds_provider>> at the given pm:Mdib@SequenceId and pm:Mdib@InstanceId in the closed version interval of ++[hm:VersionRange/@StartVersion, hm:VersionRange/@EndVersion]++.
 ====
 
-NOTE: A <<vol1_spec_sdpi_p_actor_somds_provider>> may respond with data that exceed the interval of ++[hm:VersionRange/@StartVersion, hm:VersionRange/@EndVersion]++.
-
-NOTE: A <<vol1_spec_sdpi_p_actor_somds_provider>> may respond with a subset of data from the interval ++[hm:VersionRange/@StartVersion, hm:VersionRange/@EndVersion]++, e.g., if it cannot fully serve the request due to discarded historic information or the filter requests reports from the future.
-
-NOTE: The term _notifications that reflect the MDIB_ includes localized texts of the LOCALIZATION SERVICE as well.
-
 [NOTE]
 ====
-A <<vol1_spec_sdpi_p_actor_somds_provider>> can respond with a subset of data that is not contiguous.
+* A <<vol1_spec_sdpi_p_actor_somds_provider>> may respond with data that exceeds, or is a subset of, the interval of ++[hm:VersionRange/@StartVersion, hm:VersionRange/@EndVersion]++. For example, if it cannot fully serve the request due to discarded historic information or the filter requests reports from the future.
+
+* The term _notifications that reflect the MDIB_ includes localized texts of the LOCALIZATION SERVICE as well.
+
+* A <<vol1_spec_sdpi_p_actor_somds_provider>> can respond with a subset of data that is not contiguous.
 For example, a complete history of waveform streams may not be available.
 ====
 ****
