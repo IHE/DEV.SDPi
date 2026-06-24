@@ -38,19 +38,6 @@
                 </xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="Id" type="xsd:anyURI" use="required">
-			<xsd:annotation>
-				<xsd:documentation>A globally unique URI that scopes the *History
-					Service* request.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
-		<xsd:attribute name="ReportNumber" type="xsd:nonNegativeInteger" use="required">
-			<xsd:annotation>
-				<xsd:documentation>The report number within the scope expressed by @Id of the *History
-					Service*. The value "0" expresses the first report of the *History
-					Service* request.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
 	</xsd:complexType>
 	<xsd:element name="ChangeSequence" type="hm:ChangeSequenceType">
 		<xsd:annotation>

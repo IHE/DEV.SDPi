@@ -67,8 +67,6 @@ include::../dev-a-default-trigger-events.adoc[]
 
 ====== Message Semantics
 
-`s12:Envelope/s12:Body/hm:ChangeSequenceReport/@Id`:: Globally unique identification of the request, preferably a UUID URN.
-`s12:Envelope/s12:Body/hm:ChangeSequenceReport/@ReportNumber`:: Report counter starting at 0 to signify the first report of the request.
 `s12:Envelope/s12:Body/hm:ChangeSequenceReport/@LastReport`:: Indicates the final report of the request; `true` if it is the final report, `false` otherwise.
 `s12:Envelope/s12:Body/hm:ChangeSequenceReport/hm:ChangeSequence`:: One sequence of changes in the scope of <<acronym_mdib>> sequence and instance id.
 `s12:Envelope/s12:Body/hm:ChangeSequenceReport/hm:ChangeSequence/hm:HistoricLocalizedTexts`:: Sequence of localized texts referenced from within the historic <<acronym_mdib>>. Element is omitted if not requested in the Subscribe request.
