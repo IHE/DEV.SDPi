@@ -21,6 +21,17 @@ The <<term_history_service>> allows for limited filtering:
 - Select localized texts referenced by historic data based on languages
 - Choose to receive an initial <<term_mdib_configuration>> or not
 
+The <<term_history_service>> supports hints from the <<vol1_spec_sdpi_p_actor_somds_consumer>>
+to indicate the desired entries to reduce the bandwidth required to transmit history reports:
+
+- containment tree entries by `pm:HandleRef`,
+- reports types (e.g., `EpisodicAlertReport`, `EpisodicMetricReport`).
+
+NOTE: <<vol1_spec_sdpi_p_actor_somds_provider>>s may ignore hints and transmit all available,
+filtered, historic data.
+
+
+
 ==== Binding
 
 The <<term_history_service>> is bound to <<acronym_mdpws>> by using the XML Schema as specified in <<vol2_clause_appendix_a_mdpws_history_service_xmlschema>> and service interface as specified in <<vol2_clause_appendix_a_mdpws_history_service_wsdl>>.

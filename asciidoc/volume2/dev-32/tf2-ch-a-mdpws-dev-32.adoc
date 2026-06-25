@@ -37,8 +37,26 @@ include::../dev-a-default-trigger-events.adoc[]
 ====== Message Semantics
 
 `s12:Envelope/s12:Body/wse:Subscribe/wse:Filter/@Dialect`:: To be set to `urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.3.1.1`, which is the default one defined in this specification. Other dialects may be supported but are not in the scope herein.
+
 `s12:Envelope/s12:Body/wse:Subscribe/wse:Filter/hm:ProvideInitialMdib`:: Set to `true` if an initial <<acronym_mdib>> is requested or `false` otherwise.
+
 `s12:Envelope/s12:Body/wse:Subscribe/wse:Filter/hm:LanguageFilter`:: A list of languages for localized texts to be requested (see data type description in <<vol2_clause_appendix_a_mdpws_history_service_xmlschema>> for more details).
+
+`s12:Envelope/s12:Body/wse:Subscribe/wse:Filter/hm:ReportFilter`:: An optional list of reports desired by the 
+<<vol1_spec_sdpi_p_actor_somds_consumer>> (a consumer may choose not to request `WaveformStream` reports,  for example). 
+A <<vol1_spec_sdpi_p_actor_somds_provider>> _may_ choose not to send
+historic reports for `pm:AbstractReport`s that are not included in this list. The list is empty, or the element
+is missing, when all reports are desired by the <<vol1_spec_sdpi_p_actor_somds_consumer>>.
+
+`s12:Envelope/s12:Body/wse:Subscribe/wse:Filter/hm:HandleFilter`:: An optional list of `pm:HandleRef`
+containment tree entries desired by the <<vol1_spec_sdpi_p_actor_somds_consumer>>. 
+
+* A <<vol1_spec_sdpi_p_actor_somds_provider>> _may_ choose to send historic `pm:AbstractReport`s only for 
+referenced handles. 
+* When the `pm:HandleRef` references an instance of a `pm:AbstractDeviceComponentDescriptor`
+the instance and all its children are desired by the <<vol1_spec_sdpi_p_actor_somds_consumer>>.
+* The list is empty, or the element is missing, when all reports are desired by the <<vol1_spec_sdpi_p_actor_somds_consumer>>.
+
 `s12:Envelope/s12:Body/wse:Subscribe/wse:Filter/hm:Range`:: A range that selects the historic <<acronym_mdib>> data, either based on time frames or <<acronym_mdib>> versions (see data type description in <<vol2_clause_appendix_a_mdpws_history_service_xmlschema>> for more details).
 
 :var_expected_actions_ref: <<vol2_clause_dev_32_message_notification>>
