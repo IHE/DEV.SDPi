@@ -5,6 +5,7 @@
 
 //reset|+1|off
 [#vol2_clause_dev_32,sdpi_offset=32]
+[role=transaction,transaction-id=DEV-32]
 === Retrieve Archive Data [{var_transaction_id}]
 
 ==== Scope
@@ -13,18 +14,16 @@ include::tf2-dev-32-summary.adoc[]
 
 ==== Actor Roles
 
-.Actor Roles [{var_transaction_id}]
-[cols="1,2"]
-|===
-|Actor |Roles
+[sdpi_transaction_actors]
+--
 
-|<<vol1_spec_sdpi_p_actor_somds_consumer>>
-|Once subscribed, listens for messages to retrieve historic <<acronym_mdib>> data.
+[actor-id="somds_consumer",contribution=Initiator]
+Once subscribed, listens for messages to retrieve historic <<acronym_mdib>> data.
 
-|<<vol1_spec_sdpi_p_actor_somds_provider>>
-|While a subscription is running, the <<vol1_spec_sdpi_p_actor_somds_provider>> delivers messages that reflect historic <<acronym_mdib>> data.
+[actor-id="somds_provider",contribution=Responder]
+While a subscription is running, the <<vol1_spec_sdpi_p_actor_somds_provider>> delivers messages that reflect historic <<acronym_mdib>> data.
 
-|===
+--
 
 ==== Referenced Standards
 
