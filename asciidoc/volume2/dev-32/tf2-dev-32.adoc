@@ -83,3 +83,16 @@ When a <<vol1_spec_sdpi_p_actor_somds_provider>> sends this message, there is no
 [#vol2_clause_dev_32_publish_biceps_update_reports_ses]
 include::../dev-x-default-ses-secured-mode.adoc[]
 
+==== Additional Requirements
+
+.R0529
+[sdpi_requirement#r0529,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
+[NORMATIVE]
+====
+If a <<vol1_spec_sdpi_p_actor_somds_provider>> provides the <<term_history_service>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall provide message counting of <<term_history_service>> change sequence reports to <<vol1_spec_sdpi_p_actor_somds_consumer>>s.
+====
+
+NOTE: This is a binding requirement that needs to be satisfied by a particular implementation requirement.
+
+****

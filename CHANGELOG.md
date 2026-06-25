@@ -19,6 +19,8 @@ Each section shall contain a list of action items of the following format: `<bri
 ### Added
 
 - History Service design, MDPWS requirements and transactions ([#360](https://github.com/IHE/DEV.SDPi/issues/360))
+- Clarification on SDPi-P safety requirements and considerations to explicitly include the application of the IEEE 11073-10700 standard ([#529](https://github.com/IHE/DEV.SDPi/issues/529))
+- Updated TLS version narrative for consistency with R1544 ([#497](https://github.com/IHE/DEV.SDPi/issues/497)).
 
 ### Changes
 
