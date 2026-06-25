@@ -19,14 +19,14 @@ Each section shall contain a list of action items of the following format: `<bri
 ### Added
 
 - Clarification on SDPi-P safety requirements and considerations to explicitly include the application of the IEEE 11073-10700 standard ([#529](https://github.com/IHE/DEV.SDPi/issues/529))
-- Updated TLS version narrative for consistency with R1544 ([#497](https://github.com/IHE/DEV.SDPi/issues/497)).
 
 ### Changes
 
 - Standalone SDPi Refactoring ([#499](https://github.com/IHE/DEV.SDPi/issues/499))
 - Fixed TimeStampVersion.xsd to resolve double nesting of sdpi:Epoch element ([#520](https://github.com/IHE/DEV.SDPi/issues/520))
 - Removed the DESCRIPTION EVENT SERVICE from list of minimum required services so consumers can determine the providers MdDescription can not change ([PR#532](https://github.com/IHE/DEV.SDPi/pull/532))
-- Clarify strictly increasing mdib version is scoped to subscription ([#297](https://github.com/IHE/DEV.SDPi/issues/297)).
+- Reworded R1007 to clarify that strictly increasing mdib version is scoped to a subscription ([#297](https://github.com/IHE/DEV.SDPi/issues/297)).
+- Updated TLS version narrative for consistency with R1544 ([#497](https://github.com/IHE/DEV.SDPi/issues/497))
 
 ### Editorial Fixes
 
