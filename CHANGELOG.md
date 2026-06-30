@@ -28,6 +28,7 @@ Each section shall contain a list of action items of the following format: `<bri
 - Removed the DESCRIPTION EVENT SERVICE from list of minimum required services so consumers can determine the providers MdDescription can not change ([PR#532](https://github.com/IHE/DEV.SDPi/pull/532))
 - Reworded R1007 to clarify that strictly increasing mdib version is scoped to a subscription ([#297](https://github.com/IHE/DEV.SDPi/issues/297)).
 - Updated TLS version narrative for consistency with R1544 ([#497](https://github.com/IHE/DEV.SDPi/issues/497))
+- Added required SDPi-P actor grouping entries for BICEPS Content Creator and BICEPS Content Consumer in TF-1:10.3 ([#476](https://github.com/IHE/DEV.SDPi/issues/476)).
  
 ### Editorial Fixes
 
