@@ -765,6 +765,19 @@ If this is a content profile, and actors from this profile are grouped with acto
 | <<vol1_spec_sdpi_p_actor_somds_provider>> + <<vol1_spec_sdpi_p_actor_somds_consumer>>
 | <<vol1_clause_sdpi_p_gateway_direction>>
 
+| <<vol1_spec_sdpi_p_actor_biceps_content_creator>>
+| --
+| <<vol1_spec_sdpi_p_actor_somds_provider>>
+| <<vol1_clause_sdpi_p_biceps_content_creator>>
+
+| <<vol1_spec_sdpi_p_actor_biceps_content_consumer>>
+| --
+| <<vol1_spec_sdpi_p_actor_somds_consumer>>
+| <<vol1_clause_sdpi_p_biceps_content_consumer>>
+
+4+<|
+Note 1: _The <<vol1_spec_sdpi_p_actor_biceps_content_creator>> and <<vol1_spec_sdpi_p_actor_biceps_content_consumer>> groupings above apply to all content modules listed in <<vol1_table_sdpi_p_actors_content_modules>>._
+
 |===
 
 
