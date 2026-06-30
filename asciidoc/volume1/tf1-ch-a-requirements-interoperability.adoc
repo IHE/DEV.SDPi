@@ -149,7 +149,7 @@ Ultimately, the AsciiDoc and related information that is used for specification 
 
 As pointed out above, requirements interoperability (RI) based on robust model-based metadata is a core, innovative aspect of this specification.
 Given the ultimate intent for this document to be a _Model Centric (MC) single-source-of-truth, computable, simulatable, verifiable and validatable system of systems interoperability specification_, and recognizing that it will take a significant transition period from a document-centric approach to a model-centric approach, the simplified requirements model provided below represents a significant step toward realizing these objectives.
-See section <<vol1_figure_appendix_a_sdpi_requirements_core_model>> below for possible pathways for fully achieving the vision above.
+See <<vol1_figure_appendix_a_sdpi_requirements_core_model>> below for possible pathways for fully achieving the vision above.
 
 It should be further noted that though conformity testing aspects are beyond this revision of the SDPi specification, the modeling constructs used below will also be directly associated with test assertions and integrated into test / verification cases to provide for advanced V&V of interoperable system components and entire systems of products.
 

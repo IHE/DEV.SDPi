@@ -18,6 +18,7 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Added
 
+- History Service design, MDPWS requirements and transactions ([#360](https://github.com/IHE/DEV.SDPi/issues/360))
 - Clarification on SDPi-P safety requirements and considerations to explicitly include the application of the IEEE 11073-10700 standard ([#529](https://github.com/IHE/DEV.SDPi/issues/529))
 - Clarification on the use of `wsa:To` in greeting {`Hello`, `Bye`} notifications sent by a discovery proxy to a consumer ([#534](https://github.com/IHE/DEV.SDPi/issues/534)).
 

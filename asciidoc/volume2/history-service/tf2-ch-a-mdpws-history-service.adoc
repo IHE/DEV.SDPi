@@ -1,0 +1,310 @@
+[#vol2_clause_appendix_mdpws_history_service]
+=== History Service implementation requirements
+
+This chapter describes requirements to the <<term_history_service>> <<acronym_mdpws>> binding that go beyond message outlines and semantics specified in section <<vol2_clause_dev_32>>.
+
+==== General procedure
+
+As laid out in <<vol2_clause_dev_32>>, a <<vol1_spec_sdpi_p_actor_somds_consumer>> that is interested in historic <<acronym_mdib>> data, establishes a subscription to a <<vol1_spec_sdpi_p_actor_somds_provider>> in order to request <<acronym_mdib>> data of a certain time or version range.
+
+Per requested <<term_mdib_sequence_of_changes>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> responds with an initial <<term_mdib_configuration>> plus a sequence of change reports to be applied on that initial <<term_mdib_configuration>>.
+
+The <<vol1_spec_sdpi_p_actor_somds_provider>> may split the response into multiple reports by sending multiple notifications.
+This allows for the <<vol1_spec_sdpi_p_actor_somds_provider>> to stipulate the data rate in which it provides the information to the <<vol1_spec_sdpi_p_actor_somds_consumer>> and avoid exceeding
+data size limitations of notifications.
+
+Similarly, the <<vol1_spec_sdpi_p_actor_somds_consumer>> may slow the data rate that it receives information from the <<vol1_spec_sdpi_p_actor_somds_provider>> by delaying acknowledgement of notifications (e.g., the HTTP response message to the provider's notification for the MDPWS protocol). Excessive delays, either by the <<vol1_spec_sdpi_p_actor_somds_provider>> or <<vol1_spec_sdpi_p_actor_somds_consumer>>, can lead to timeouts.
+
+The <<term_history_service>> allows for limited filtering:
+
+- Select historic data based on time and version ranges
+- Select localized texts referenced by historic data based on languages
+- Choose to receive an initial <<term_mdib_configuration>> or not
+
+The <<term_history_service>> supports hints from the <<vol1_spec_sdpi_p_actor_somds_consumer>>
+to indicate the desired entries to reduce the bandwidth required to transmit history reports:
+
+- containment tree entries by `pm:HandleRef`,
+- reports types (e.g., `EpisodicAlertReport`, `EpisodicMetricReport`).
+
+NOTE: <<vol1_spec_sdpi_p_actor_somds_provider>>s may ignore hints and transmit all available,
+filtered, historic data.
+
+
+
+==== Binding
+
+The <<term_history_service>> is bound to <<acronym_mdpws>> by using the XML Schema as specified in <<vol2_clause_appendix_a_mdpws_history_service_xmlschema>> and service interface as specified in <<vol2_clause_appendix_a_mdpws_history_service_wsdl>>.
+
+.R0511
+[sdpi_requirement#r0511,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
+[NORMATIVE]
+====
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall provide the <<term_history_service>> by implementing the port type with the QName hs:HistoryService.
+====
+****
+
+.R0512
+[sdpi_requirement#r0512,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
+[NORMATIVE]
+====
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall accept the WS-Eventing wse:Filter@Dialect `urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.3.1.1`.
+====
+****
+
+.R0513
+[sdpi_requirement#r0513,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
+[NORMATIVE]
+====
+A <<vol1_spec_sdpi_p_actor_somds_consumer>> shall add the filter dialect `urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.3.1.1` to every Subscribe request to a <<term_history_service>>.
+====
+****
+
+.R0514
+[sdpi_requirement#r0514,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
+[NORMATIVE]
+====
+A filter in the Dialect designated `urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.3.1.1` shall contain exactly, and only, one hm:QueryFilter of type hm:QueryFilterType.
+====
+
+NOTE: The filter may include additional elements and attributes from any namespace.
+****
+
+.R0515
+[sdpi_requirement#r0515,sdpi_req_level=shall,sdpi_req_type=tech_feature,subs=normal]
+****
+[NORMATIVE]
+====
+For a time range-filtered subscription, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall respond with notifications that reflect the MDIB of the <<vol1_spec_sdpi_p_actor_somds_provider>> and its changes in the closed time interval of ++[hm:TimeRange/@StartTime, hm:TimeRange/@EndTime]++.
+====
+
+[NOTE]
+====
+* The time interval is a hint.
+A <<vol1_spec_sdpi_p_actor_somds_provider>> may respond with data that exceeds, or is a subset of, the interval of ++[hm:TimeRange/@StartTime, hm:TimeRange/@EndTime]++.
+
+* The term _notifications that reflect the MDIB_ includes localized texts of the LOCALIZATION SERVICE as well.
+
+====
+
+****
+
+.R0516
+[sdpi_requirement#r0516,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
+[NORMATIVE]
+====
+For a version range-filtered subscription, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall respond with notifications that reflect the MDIB of the <<vol1_spec_sdpi_p_actor_somds_provider>> at the given pm:Mdib@SequenceId and pm:Mdib@InstanceId in the closed version interval of ++[hm:VersionRange/@StartVersion, hm:VersionRange/@EndVersion]++.
+====
+
+[NOTE]
+====
+* A <<vol1_spec_sdpi_p_actor_somds_provider>> may respond with data that exceeds, or is a subset of, the interval of ++[hm:VersionRange/@StartVersion, hm:VersionRange/@EndVersion]++. For example, if it cannot fully serve the request due to discarded historic information or the filter requests reports from the future.
+
+* The term _notifications that reflect the MDIB_ includes localized texts of the LOCALIZATION SERVICE as well.
+
+* A <<vol1_spec_sdpi_p_actor_somds_provider>> can respond with a subset of data that is not contiguous.
+For example, a complete history of waveform streams may not be available.
+====
+****
+
+.R0517
+[sdpi_requirement#r0517,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
+[NORMATIVE]
+====
+If a hm:HistoryQuery element contains a hm:LanguageFilter element, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall transmit <<term_historic_localized_text>> according to the rule set specified in hm:HistoryQuery/hm:LanguageFilter.
+====
+
+NOTE: If a <<vol1_spec_sdpi_p_actor_somds_provider>> cannot serve the requested languages or the Localization Service provides (and will provide) all texts of all <<term_mdib_configuration>>s, the <<vol1_spec_sdpi_p_actor_somds_provider>> may omit them from the notification messages.
+****
+
+.R0518
+[sdpi_requirement#r0518,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
+[NORMATIVE]
+====
+The <<vol1_spec_sdpi_p_actor_somds_provider>> transmitting <<term_historic_localized_text>> shall transmit filtered <<term_historic_localized_text>>s before transmitting hm:HistoricMdib or hm:HistoricReport elements that reference the <<term_historic_localized_text>>s.
+====
+
+[NOTE]
+====
+This ensures the localized text is available to the <<vol1_spec_sdpi_p_actor_somds_consumer>> before it is used by other elements.
+====
+****
+
+.R0519
+[sdpi_requirement#r0519,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
+[NORMATIVE]
+====
+If a <<vol1_spec_sdpi_p_actor_somds_provider>> has a LOCALIZATION SERVICE and is queried to respond with <<term_historic_localized_text>>s in hm:ChangeSequenceReport elements, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall either
+
+- include all <<term_historic_localized_text>>s in hm:ChangeSequenceReport elements or
+- respond with a status code _LocalizedTextsAreStatic_ and provide all <<term_historic_localized_text>>s at the LOCALIZATION SERVICE.
+====
+****
+
+.R0520
+[sdpi_requirement#r0520,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
+[NORMATIVE]
+====
+For an <<term_mdib_sequence_of_changes>> that is requested from a <<vol1_spec_sdpi_p_actor_somds_provider>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall transmit hm:HistoricMdib before transmitting hm:HistoricReport elements.
+====
+****
+
+.R0521
+[sdpi_requirement#r0521,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
+[NORMATIVE]
+====
+For an <<term_mdib_sequence_of_changes>> that is requested from a <<vol1_spec_sdpi_p_actor_somds_provider>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall send hm:ChangeSequence/hm:Report elements in ascending order by pm:Mdib@MdibVersion.
+====
+****
+
+.R0522
+[sdpi_requirement#r0522,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
+[NORMATIVE]
+====
+For an <<term_mdib_sequence_of_changes>> that is requested from a <<vol1_spec_sdpi_p_actor_somds_provider>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall provide exactly one <<term_mdib_configuration>> in hm:ChangeSequence/hm:HistoricMdib for each contiguous sequence of changes..
+====
+
+[NOTE]
+====
+A contiguous sequence of changes is one with no gaps in the changes reported for each of the CONTAINMENT TREE ENTRIES reported.
+Gaps may still occur when a provider chooses to completely leave out CONTAINMENT TREE ENTRIES (e.g., waveform streams).
+====
+
+****
+
+.R0523
+[sdpi_requirement#r0523,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
+[NORMATIVE]
+====
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall transmit <<term_mdib_sequence_of_changes>> in the order of occurrence.
+====
+****
+
+.R0524
+[sdpi_requirement#r0524,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
+[NORMATIVE]
+====
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall signify the first report of the historic MDIB data stream by sending a hm:ChangeSequenceReport notification that contains @ReportNumber = 0.
+====
+****
+
+.R0525
+[sdpi_requirement#r0525,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
+[NORMATIVE]
+====
+In every scope of a hm:ChangeSequenceReport/@Id, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall increment hm:ChangeSequenceReport/@ReportNumber on each generated report.
+====
+
+[NOTE]
+====
+This produces a strictly increasing message counter that can be used to detect gaps.
+====
+
+****
+
+.R0526
+[sdpi_requirement#r0526,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
+[NORMATIVE]
+====
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall signify the end of the historic MDIB data stream by sending a hm:ChangeSequenceReport notification that contains @LastReport = true.
+====
+****
+
+.R0527
+[sdpi_requirement#r0527,sdpi_req_level=should,sdpi_req_type=tech_feature]
+****
+[NORMATIVE]
+====
+When a <<vol1_spec_sdpi_p_actor_somds_provider>> has sent the last notification of a <<term_history_service>> subscription, the <<vol1_spec_sdpi_p_actor_somds_provider>> should end the subscription by sending a wse:SubscriptionEnd with wse:Status = "http://schemas.xmlsoap.org/ws/2004/08/eventing/SourceCancelling".
+====
+****
+
+.R0528
+[sdpi_requirement#r0528,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
+[NORMATIVE]
+====
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall add add the `sdpi:ReportSequence` element to the SOAP header of SOAP messages conveying <<term_history_service>> change sequence reports.
+====
+
+NOTE: This requirement satisfies <<r0529>>.
+
+****
+
+==== Utilized OIDs
+
+All object identifiers used by the <<term_history_service>> are specified in <<vol2_table_appendix_mdpws_history_service_oids>>.
+
+[#vol2_table_appendix_mdpws_history_service_oids]
+.Objects identifiers used, e.g. for WS-Eventing subscription filter dialects or WSDL target namespace assignments
+[cols="2,3,1",options="autowidth, header"]
+|===
+| Primary identifier
+| Concept description
+| Secondary identifier
+
+| 1.3.6.1.4.1.19376.1.6.2.10
+| Profile specific OID for SDPi
+| sdpi
+
+| 1.3.6.1.4.1.19376.1.6.2.10.1
+| Describes namespaces for different purposes as specified by its sub-nodes
+| namespaces
+
+| 1.3.6.1.4.1.19376.1.6.2.10.1.3
+| Identifies <<term_history_service>> objects.
+| history-service
+
+| 1.3.6.1.4.1.19376.1.6.2.10.1.3.1
+| Used to address the <<term_history_service>> service interface.
+| service
+
+| 1.3.6.1.4.1.19376.1.6.2.10.1.3.1.1
+| Subscription filter dialect used to identify <<term_history_service>> subscriptions provided by the <<term_history_service>>.
+| subscription-filter
+
+| 1.3.6.1.4.1.19376.1.6.2.10.1.3.1.2
+| Addresses the output payload of the <<term_history_service>> subscription.
+| report
+
+| 1.3.6.1.4.1.19376.1.6.2.10.1.3.2
+| Used to address the <<term_history_service>> model.
+| model
+|===
+
+==== History Service XML Schema
+
+<<vol2_clause_appendix_a_mdpws_history_service_xmlschema>> shows the XML Schema file that specifies the <<term_history_service>> XML grammar.
+
+The XML Schema includes the BICEPS message, participant and extension Model files as provided as an additional resource at https://standards.ieee.org/ieee/11073-10207/6032/.
+
+.<<term_history_service>> XML Schema outline
+[source#vol2_clause_appendix_a_mdpws_history_service_xmlschema,xml]
+----
+include::../../../sources/history-service/HistoryModel.xsd[]
+----
+
+==== History Service WSDL
+
+<<vol2_clause_appendix_a_mdpws_history_service_wsdl>> shows the WSDL file that specifies the <<term_history_service>> Web Service interface.
+
+.<<term_history_service>> WSDL outline
+[source#vol2_clause_appendix_a_mdpws_history_service_wsdl,xml]
+----
+include::../../../sources/history-service/HistoryService.wsdl[]
+----

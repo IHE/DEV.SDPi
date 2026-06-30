@@ -64,11 +64,10 @@
 // <<vol2_clause_dev_31>>
 
 
-| <<transaction_name_retrieve_archive_data>>  (_deferred_)
+| <<transaction_name_retrieve_archive_data>>
 | Responder
 | O
-| Deferred to a future version of SDPi
-// <<vol2_clause_dev_32>>
+| <<vol2_clause_dev_32>>
 
 
 | <<transaction_name_retrieve_localization_information>>
@@ -137,11 +136,10 @@
 // <<vol2_clause_dev_31>>
 
 
-| <<transaction_name_retrieve_archive_data>>  (_deferred_)
+| <<transaction_name_retrieve_archive_data>>
 | Initiator
 | O
-| Deferred to a future version of SDPi
-// <<vol2_clause_dev_32>>
+| <<vol2_clause_dev_32>>
 
 
 | <<transaction_name_retrieve_localization_information>>
