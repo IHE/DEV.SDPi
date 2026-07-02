@@ -20,6 +20,7 @@ Each section shall contain a list of action items of the following format: `<bri
 
 - Clarification on SDPi-P safety requirements and considerations to explicitly include the application of the IEEE 11073-10700 standard ([#529](https://github.com/IHE/DEV.SDPi/issues/529))
 - Clarification on the use of `wsa:To` in greeting {`Hello`, `Bye`} notifications sent by a discovery proxy to a consumer ([#534](https://github.com/IHE/DEV.SDPi/issues/534)).
+- Standalone SDPi - Editorial Content Update to the Standard and Supplement documents ([#528](https://github.com/IHE/DEV.SDPi/issues/528)).
 
 ### Changes
 
