@@ -8,15 +8,16 @@
     <s12:Header>
         <wsa:Action>http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/Hello</wsa:Action>
         <wsa:MessageID><!-- ... --></wsa:MessageID>
-        <wsa:To>urn:docs-oasis-open-org:ws-dd:ns:discovery:2009:01</wsa:To>
+        <wsa:To><!-- evt:NotifyTo from subscription (optional)--></wsa:To>
     </s12:Header>
     <s12:Body>
         <wsd:Hello>
             <wsa:EndpointReference>
-                <wsa:Address><!-- ... --></wsa:Address>
+                <wsa:Address><!-- Endpoint address of the provider --></wsa:Address>
             </wsa:EndpointReference>
             <wsd:Types>dpws:Device mdpws:MedicalDevice</wsd:Types>
             <wsd:Scopes>sdc.mds.pkp:1.2.840.10004.20701.1.1 <!-- ... --></wsd:Scopes>
+            <wsd:XAddrs><!-- Transport address of the provider --></wsd:XAddrs>
             <wsd:MetadataVersion><!-- ... --></wsd:MetadataVersion>
         </wsd:Hello>
     </s12:Body>

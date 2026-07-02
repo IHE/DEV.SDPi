@@ -28,6 +28,17 @@ somds_discovery_proxy  -->> somds_consumer: Return Network Presence
 
 end
 
+group secured (optional)
+
+somds_consumer ->> somds_discovery_proxy: Subscribe to Network Presence Notifications
+somds_discovery_proxy -->> somds_consumer: Subscribe Response
+
+loop Presence Change Notifications
+    somds_discovery_proxy -->> somds_consumer: Notify Network Presence change
+end
+
+end
+
 group secured
     somds_consumer -> somds_provider: Discover BICEPS Services
     somds_provider -->> somds_consumer

@@ -1096,6 +1096,8 @@ Requirements from the <<ref_iso_81001_1_2021>>, <<ref_iec_80001_1_2021>>, and re
 
 For additional guidance, see Section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
 
+In addition, SES requirements from <<ref_ieee_11073_10700_2022>> should be fully applied to this technical framework element.
+
 ==== Safety Requirements & Considerations
 No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
@@ -1132,11 +1134,11 @@ Security is foundational for all interactions between <<vol1_spec_sdpi_p_actor_s
 Specific security technologies may vary based on jurisdictional requirements, regulations and the implementation technology, and will be detailed in the appropriate TF-2 technology specifications.
 All transactions indicate whether they require secure or unsecured connections.
 
-For the default <<acronym_sdpi_p>> connectivity technology, namely IEEE 11073 <<term_service_oriented_device_connectivity>>, TLS 1.2 (or higher versions) support is required (See <<ref_ieee_11073_20701_2018>> and <<ref_ieee_11073_20702_2016>>).
+<<ref_ieee_11073_20701_2018>> requires at least TLS version 1.2 (requirement R0063) and recommends <<vol1_spec_sdpi_p_actor_somds_participant>>s use the highest TLS version (requirement R0064).
 
-NOTE: The SDC standard <<ref_ieee_11073_20701_2018>> includes requirement R0064 stating that an SDC PARTICIPANT SHOULD utilize the highest TLS version. Herewith "the highest" is interpreted as the highest TLS version available, and not as the highest version negotiated between two SDC PARTICIPANTS.
+NOTE: This requirement clarifies that "SDC PARTICIPANT SHOULD utilize the highest TLS version" means the highest TLS version widely available, and not the highest version negotiated between two SDC PARTICIPANTS.
 
-NOTE: TLS 1.2 is not sufficient for all types of connectivity (e.g., cloud, remote programming, etc.), and it has reported cipher suite weaknesses. TLS 1.3 (or higher, in the future) may be hence required depending on the risk associated with the device.
+NOTE: TLS 1.2 is not sufficient for all types of connectivity (e.g., cloud, remote programming, etc.), and has reported cipher suite weaknesses (e.g., [CVE-2025-11419](https://nvd.nist.gov/vuln/detail/cve-2025-11419)). In the future, and in jurisdictions with additional security requirements, higher versions _may be required_, including TLS 1.3 and not only recommended. 
 
 .R1544
 [sdpi_requirement#r1544,sdpi_req_level=should]

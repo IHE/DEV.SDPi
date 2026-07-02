@@ -113,17 +113,17 @@ Requirements from the <<ref_iso_81001_1_2021>>, <<ref_iec_80001_1_2021>>, and re
 For additional guidance, see Section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
 
 ==== Safety Requirements & Considerations
-NOTE: This section includes guidance and requirements that are focused on unique *_Safety_* requirements associated with associated technical framework element.  Note: a simple definition of safety within the context of risk management is "freedom from unacceptable harm" (see https://81001.org/concept/safety[81001.org/safety])
+NOTE: This section includes guidance and requirements that are focused on unique *_Safety_* requirements associated with the relevant technical framework element.  Note: a simple definition of safety within the context of risk management is "freedom from unacceptable harm" (see https://81001.org/concept/safety[81001.org/safety])
 
 No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 ==== Effectiveness Requirements & Considerations
-NOTE: This section includes guidance and requirements that are focused on unique *_Effectiveness_* requirements associated with associated technical framework element.  Note:  in the context of risk management key properties, effectiveness is the ability to perform the intended use (see https://81001.org/concept/effectiveness[81001.org/effectiveness])
+NOTE: This section includes guidance and requirements that are focused on unique *_Effectiveness_* requirements associated with the relevant technical framework element.  Note:  in the context of risk management key properties, effectiveness is the ability to perform the intended use (see https://81001.org/concept/effectiveness[81001.org/effectiveness])
 
 No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 ==== Security Requirements & Considerations
-NOTE: This section includes guidance and requirements that are focused on unique *_Security_* requirements related to the associated technical framework element.
+NOTE: This section includes guidance and requirements that are focused on unique *_Security_* requirements associated with the relevant technical framework element.
 In the context of risk management key properties, security is a state where information and systems are protected from unauthorized activities to a degree that the related risks to confidentiality, integrity, and availability are maintained at an acceptable level throughout the lifecycle (see https://81001.org/concept/security[81001.org/security])
 
 General security guidance is provided in  <<vol2_appendix_c_security_management>> Security Management.

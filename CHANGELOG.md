@@ -14,9 +14,26 @@ The SDPi changelog shall not contain the following sections
 
 Each section shall contain a list of action items of the following format: `<brief one-sentence description of what has been done> (#<issue number & URL>).`
 
-<!--
 ## Unreleased
--->
+
+### Added
+
+- Clarification on SDPi-P safety requirements and considerations to explicitly include the application of the IEEE 11073-10700 standard ([#529](https://github.com/IHE/DEV.SDPi/issues/529))
+- Clarification on the use of `wsa:To` in greeting {`Hello`, `Bye`} notifications sent by a discovery proxy to a consumer ([#534](https://github.com/IHE/DEV.SDPi/issues/534)).
+
+### Changes
+
+- Standalone SDPi Refactoring ([#499](https://github.com/IHE/DEV.SDPi/issues/499))
+- Fixed TimeStampVersion.xsd to resolve double nesting of sdpi:Epoch element ([#520](https://github.com/IHE/DEV.SDPi/issues/520))
+- Removed the DESCRIPTION EVENT SERVICE from list of minimum required services so consumers can determine the providers MdDescription can not change ([PR#532](https://github.com/IHE/DEV.SDPi/pull/532))
+- Reworded R1007 to clarify that strictly increasing mdib version is scoped to a subscription ([#297](https://github.com/IHE/DEV.SDPi/issues/297)).
+- Updated TLS version narrative for consistency with R1544 ([#497](https://github.com/IHE/DEV.SDPi/issues/497))
+ 
+### Editorial Fixes
+
+- Corrected wording in the SES section template ([#530](https://github.com/IHE/DEV.SDPi/issues/530))
+- Removed vendor-specific EHR examples in DDES use case narrative ([#531](https://github.com/IHE/DEV.SDPi/issues/531))
+
 
 ## [2.4.1] - 2026-05-07
 
@@ -29,10 +46,6 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Added
 
-- Clarifying statements to DEV-23, DEV-24, DEV-46, and DEV-47 w.r.t to ad-hoc and managed mode discovery([#409](https://github.com/IHE/DEV.SDPi/issues/409)).
-- OID Framework to TF-3Z ([#474](https://github.com/IHE/DEV.SDPi/issues/474))
-- Standalone SDPi Refactoring ([#499](https://github.com/IHE/DEV.SDPi/issues/499))
-- Clarifying note to R7000 ([#501](https://github.com/IHE/DEV.SDPi/issues/501)).
 - Clarifying note to R7000 ([#501](https://github.com/IHE/DEV.SDPi/issues/501))
 - Clarifying statements to DEV-23, DEV-24, DEV-46, and DEV-47 w.r.t to ad-hoc and managed mode discovery([#409](https://github.com/IHE/DEV.SDPi/issues/409))
 - OID Framework to TF-3Z ([#474](https://github.com/IHE/DEV.SDPi/issues/474))

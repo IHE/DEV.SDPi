@@ -12,11 +12,12 @@ This section specifies the MDPWS data transmission for messages defined in <<vol
 
 Additional implementation directions are defined in <<vol2_clause_appendix_mdpws_discovery_proxy>>.
 
-// ---------- Hello ---------
+// ---------- Hello from discovery proxy to consumer ---------
 
 ===== {var_label_dev_47_message_hello} Message
 
 The <<vol2_clause_dev_47_message_hello, {var_label_dev_47_message_hello}>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
+The message body is encoded following the requirements for a unicast <<ref_oasis_ws_discovery_2009>> {var_label_dev_47_message_hello} message in managed mode to a <<vol1_spec_sdpi_p_actor_discovery_proxy>> (i.e., as if the <<vol1_spec_sdpi_p_actor_somds_consumer>> received the greeting information directly from the <<vol1_spec_sdpi_p_actor_somds_provider>>).
 
 ====== Referenced Standards
 
@@ -37,8 +38,12 @@ include::../dev-a-default-trigger-events.adoc[]
 
 ====== Message Semantics
 
-`s12:Envelope/s12:Body/wsd:Hello/wsa:EndpointReference/wsa:Address`:: The <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<payload_dev_47_provider_uid_hello>> as URI.
-`s12:Envelope/s12:Body/wsd:Hello/wsd:Scopes`:: The <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<payload_dev_47_discovery_scope>> as a list of URIs.
+`s12:Envelope/s12:Header/wsa:To`:: Optional. If present, this is the `wse:NotifyTo` address found in the subscription to <<vol1_spec_sdpi_p_actor_discovery_proxy>> events.
+`s12:Envelope/s12:Body/wsd:Hello/wsa:EndpointReference/wsa:Address`:: The <<vol1_spec_sdpi_p_actor_somds_provider>>'s globally unique end-point reference.
+`s12:Envelope/s12:Body/wsd:Hello/wsd:Scopes`:: The <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<payload_dev_47_discovery_scope>>s as a list of URIs.
+`s12:Envelope/s12:Body/wsd:Hello/wsd:XAddrs`:: The <<term_transport_address>>, as a list of URIs, that may be used to communicate with the <<vol1_spec_sdpi_p_actor_somds_provider>>. All transport addresses should be included (e.g., IPv4, IPv6, etc).
+`s12:Envelope/s12:Body/wsd:Hello/wsd:MetadataVersion`:: A value, incremented by a positive integer, whenever there
+is a change in the metadata of the <<vol1_spec_sdpi_p_actor_somds_provider>> while the <<vol1_spec_sdpi_p_actor_somds_provider>> is operating. Unlike the `wsd:MetadataVersion` in <<ref_oasis_ws_discovery_2009>>, the `ws:MetadataVersion` may decrease when the <<vol1_spec_sdpi_p_actor_somds_provider>> or <<vol1_spec_sdpi_p_actor_discovery_proxy>> is restarted.
 
 :var_expected_actions_ref: <<vol2_clause_dev_47_message_hello>>
 include::../dev-a-default-expected-actions.adoc[]
@@ -50,6 +55,7 @@ include::../dev-a-default-expected-actions.adoc[]
 ===== {var_label_dev_47_message_bye} Message
 
 The <<vol2_clause_dev_47_message_bye, {var_label_dev_47_message_bye}>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
+The message body sent to the consumer is encoded following the requirements for a unicast <<ref_oasis_ws_discovery_2009>> {var_label_dev_47_message_bye} message in managed mode to a <<vol1_spec_sdpi_p_actor_discovery_proxy>> (i.e., as if the <<vol1_spec_sdpi_p_actor_somds_consumer>> received the absence information directly from the <<vol1_spec_sdpi_p_actor_somds_provider>>).
 
 ====== Referenced Standards
 
@@ -69,7 +75,8 @@ include::../dev-a-default-trigger-events.adoc[]
 
 ====== Message Semantics
 
-`s12:Envelope/s12:Body/wsd:Bye/wsa:EndpointReference/wsa:Address`:: The <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<payload_dev_47_provider_uid_bye>> as URI.
+`s12:Envelope/s12:Header/wsa:To`:: If present, this address should be the `wse:NotifyTo` address found in the subscription message.
+`s12:Envelope/s12:Body/wsd:Bye/wsa:EndpointReference/wsa:Address`:: The <<vol1_spec_sdpi_p_actor_somds_provider>>'s globally unique end-point reference.
 
 :var_expected_actions_ref: <<vol2_clause_dev_47_message_bye>>
 include::../dev-a-default-expected-actions.adoc[]

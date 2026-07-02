@@ -6,7 +6,7 @@
 
 ==== Narrative
 
-Mercy Hospital is in the middle of a new <<acronym_ehr>> (Epic, Cerner, etc.) rollout.  Joe Furst is responsible for integrating data from their ICU devices (patient monitors, ventilators, infusion devices, etc.) with the new <<acronym_ehr>>.  Once they are done, the data from the devices will be reviewed/validated by the ICU clinicians and then automatically entered into the patient’s clinical record.
+A local hospital is in the middle of a new <<acronym_ehr>> rollout.  Joe Furst is responsible for integrating data from their ICU devices (patient monitors, ventilators, infusion devices, etc.) with the new <<acronym_ehr>>.  Once they are done, the data from the devices will be reviewed/validated by the ICU clinicians and then automatically entered into the patient’s clinical record.
 
 ==== Benefits
 Automatically feeding patient data from the medical devices to medical record applications reduces the documentation burden on the clinicians, improves the accuracy of the medical record and enables 'real-time' analysis of the data which can be used to generate (potentially AI based) smart alerts to the clinical staff.
