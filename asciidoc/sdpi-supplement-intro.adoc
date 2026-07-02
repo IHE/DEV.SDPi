@@ -101,7 +101,9 @@ Section
 //<<vol1_appendix_c_dpi_use_cases>>
 provides a collection of these high-level clinical use cases.
 
-FOR READERS OF THIS SUPPLEMENT, a good strategy might be to first review the use cases in the Volume 1 appendix (e.g., <<vol1_clause_appendix_c_use_case_sicdmp>> ), and then review the specific profiles to which the clinical scenario requirements have been mapped.
+FOR READERS OF THIS SUPPLEMENT, a good strategy might be to first review the use cases in the Volume 1 appendix (e.g.,
+//<<vol1_clause_appendix_c_use_case_sicdmp>>
+), and then review the specific profiles to which the clinical scenario requirements have been mapped.
 Reviewing the use case specifications in this order will provide the needed context to understand what is presented in each profile.
 
 //[#supplement_clause_joint_ihe_hl7_gemini_ses_mdi_project_development]
