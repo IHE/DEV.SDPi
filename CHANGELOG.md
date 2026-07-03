@@ -27,8 +27,9 @@ Each section shall contain a list of action items of the following format: `<bri
 - Standalone SDPi Refactoring ([#499](https://github.com/IHE/DEV.SDPi/issues/499))
 - Fixed TimeStampVersion.xsd to resolve double nesting of sdpi:Epoch element ([#520](https://github.com/IHE/DEV.SDPi/issues/520))
 - Removed the DESCRIPTION EVENT SERVICE from list of minimum required services so consumers can determine the providers MdDescription can not change ([PR#532](https://github.com/IHE/DEV.SDPi/pull/532))
-- Reworded R1007 to clarify that strictly increasing mdib version is scoped to a subscription ([#297](https://github.com/IHE/DEV.SDPi/issues/297)).
+- Reworded R1007 to clarify that strictly increasing mdib version is scoped to a subscription ([#297](https://github.com/IHE/DEV.SDPi/issues/297))
 - Updated TLS version narrative for consistency with R1544 ([#497](https://github.com/IHE/DEV.SDPi/issues/497))
+- Updated actor grouping tables for SDPi-R, -A and -xC profiles for consistency and template compliance ([#544](https://github.com/IHE/DEV.SDPi/issues/544))
  
 ### Editorial Fixes
 
