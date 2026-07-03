@@ -294,20 +294,20 @@ If this is a content profile, and actors from this profile are grouped with acto
 .^|SDPi-A Actor
 .^|Grouping Condition
 .^|Actor(s) to be Grouped With
-.^|TF Reference
+.^|Reference
 
 | <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>
-| --
+| Required
 | <<vol1_spec_sdpi_p_actor_somds_consumer>>
 | <<vol1_clause_sdpi_a_somds_medical_alert_consumer>>
 
 | <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>
-| --
+| Required
 | <<vol1_spec_sdpi_p_actor_somds_provider>>
 | <<vol1_clause_sdpi_a_somds_medical_alert_provider>>
 
 | <<vol1_spec_sdpi_a_actor_somds_acm_gateway>>
-| --
+| Required
 | <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>
 | <<vol1_clause_sdpi_a_somds_acm_gateway>>
 
@@ -423,4 +423,3 @@ No additional cross profile considerations have been identified.
 ////
 #TODO:  See the template instructions + PCD 2019 and other TF's to see if any content should go in this section for SDPi-A.#
 ////
-

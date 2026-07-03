@@ -246,25 +246,25 @@ If this is a content profile, and actors from this profile are grouped with acto
 .^|SDPi-R Actor
 .^|Grouping Condition
 .^|Actor(s) to be Grouped With
-.^|TF Reference
+.^|Reference
 
 | <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>>
-| --
+| Required
 | <<vol1_spec_sdpi_p_actor_somds_consumer>>
 | <<vol1_clause_sdpi_r_somds_medical_data_consumer>>
 
 | <<vol1_spec_sdpi_r_actor_somds_medical_data_provider>>
-| --
+| Required
 | <<vol1_spec_sdpi_p_actor_somds_provider>>
 | <<vol1_clause_sdpi_r_somds_medical_data_provider>>
 
 | <<vol1_spec_sdpi_r_actor_somds_dec_gateway>>
-| --
+| Required
 | <<vol1_spec_sdpi_p_actor_somds_v2_gateway>>
 | <<vol1_clause_sdpi_r_somds_dec_gateway>>
 
 | <<vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway>>
-| --
+| Required
 | <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>>
 | <<vol1_clause_sdpi_r_somds_fhir_medical_data_gateway>>
 
