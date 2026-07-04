@@ -970,12 +970,18 @@ from the source. The processor will report an error when deprecated object ids a
 
 |`DeprecateTransaction` | `DeprecateTransaction::DEV-23[version="1.2.3"]` | Marks a transaction, defined in the specification, as deprecated.
 
+|`Deprecate` | `Deprecate::1.3.6.1.4.1.19376.1.6.2.10.3.26[version="1.2.3"]` | Marks an actor, use-case, profile or content module, defined in the specification, as deprecated.
+
 |===
 
 NOTE: The `version` attribute is required. It gives the document version (see 
 [`sdpi-standard.adoc`](https://github.com/IHE/DEV.SDPi/blob/master/asciidoc/sdpi-standard.adoc))
 when the OID was first no longer available. Format is: 
 `<sdpi_version_major>.<sdpi_version_minor>.<sdpi_version_revision>`. 
+
+Deprecated requirements and transactions are exported to `sdpi-requirements-deprecated.json` and
+`sdpi-transactions-deprecated.json`, respectively. All deprecated oids (including transactions and
+requirements) are exported to `sdpi-deprecated.json` for reference. 
 
 [[cross-referencing]]
 === Cross-referencing

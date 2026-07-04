@@ -10,6 +10,7 @@ import org.sdpi.asciidoc.model.DeprecatedOid
 import org.sdpi.asciidoc.model.WellKnownOid
 import org.sdpi.asciidoc.model.makeConformityVersionOid
 
+const val BLOCK_MACRO_NAME_DEPRECATE = "Deprecate"
 const val BLOCK_MACRO_NAME_DEPRECATE_REQUIREMENT = "DeprecateRequirement"
 const val BLOCK_MACRO_NAME_DEPRECATE_TRANSACTION = "DeprecateTransaction"
 
@@ -48,6 +49,58 @@ class DeprecateRequirementProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_DEPRE
         return null
     }
 }
+@Name(BLOCK_MACRO_NAME_DEPRECATE)
+class DeprecateProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_DEPRECATE) {
+    private companion object : Logging
+
+    private val entries = mutableMapOf<String, DeprecatedOid>()
+
+    fun entries() : Map<String, DeprecatedOid> {
+        return entries
+    }
+
+    fun isDeprecated(strOid: String) : DeprecatedOid? {
+        return entries[strOid]
+    }
+
+    override fun process(parent: StructuralNode, strTarget: String, attributes: MutableMap<String, Any>): Any? {
+
+        val strVersion = attributes[DeprecationAttributes.VERSION.key]?.toString()
+        checkNotNull(strVersion) {
+            "$BLOCK_MACRO_NAME_DEPRECATE_REQUIREMENT missing required attribute '${DeprecationAttributes.VERSION.key}'".also {
+                logger.error{it}
+            }
+        }
+        println("**Deprecating $strTarget")
+        val strVersionOid = makeConformityVersionOid(strVersion)
+
+
+        check(strTarget.startsWith(WellKnownOid.DEV_SDPi.oid)) {
+            "Oid `$strTarget` must begin with ${WellKnownOid.DEV_SDPi.oid}".also {
+                logger.error{it}
+            }
+        }
+
+        val reOid = Regex("""^(?:(?:[01]\.(?:[0-9]|[1-3][0-9]))|(?:2\.(?:0|[1-9]\d*)))(?:\.(?:0|[1-9]\d*))*$""")
+        check(reOid.matches(strTarget)) {
+            "Oid `$strTarget` must be a valid oid".also {
+                logger.error{it}
+            }
+        }
+
+        checkNotNull(!entries.containsKey(strTarget)) {
+            "Oid $strTarget is already marked deprecated".also {
+                logger.error{it}
+            }
+        }
+
+
+        entries[strTarget] = DeprecatedOid(strTarget, strVersionOid)
+
+        return null
+    }
+}
+
 @Name(BLOCK_MACRO_NAME_DEPRECATE_TRANSACTION)
 class DeprecateTransactionProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_DEPRECATE_TRANSACTION) {
     private companion object : Logging
@@ -66,7 +119,9 @@ class DeprecateTransactionProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_DEPRE
 
         val strVersion = attributes[DeprecationAttributes.VERSION.key]?.toString()
         checkNotNull(strVersion) {
-            logger.error("$BLOCK_MACRO_NAME_DEPRECATE_TRANSACTION missing required attribute '${DeprecationAttributes.VERSION.key}'")
+            "$BLOCK_MACRO_NAME_DEPRECATE_TRANSACTION missing required attribute '${DeprecationAttributes.VERSION.key}'".also {
+                logger.error{it}
+            }
         }
 
         val strVersionOid = makeConformityVersionOid(strVersion)
@@ -74,7 +129,9 @@ class DeprecateTransactionProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_DEPRE
         val strTransactionId = getTransactionOid(strTarget)
 
         checkNotNull(!entries.containsKey(strTransactionId)) {
-            logger.error("Transaction $strTransactionId is already marked deprecated")
+            "Transaction $strTransactionId is already marked deprecated".also {
+                logger.error{it}
+            }
         }
 
         entries[strTransactionId] = DeprecatedOid(strTransactionId, strVersionOid)
