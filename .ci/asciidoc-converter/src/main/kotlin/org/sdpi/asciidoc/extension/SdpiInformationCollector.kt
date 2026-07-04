@@ -21,7 +21,8 @@ class SdpiInformationCollector(
     private val profileUseCases: SupportUseCaseIncludeProcessor,
     private val profileContentModuleReferences: ContentModuleIncludeProcessor,
     private val externalStandardsProcessor : ExternalStandardProcessor,
-    private val deprecatedRequirementsProcessor : DeprecateRequirementProcessor
+    private val deprecatedRequirementsProcessor : DeprecateRequirementProcessor,
+    private val deprecatedTransactionsProcessor : DeprecateTransactionProcessor
 ) : Treeprocessor() {
     private companion object : Logging
 
@@ -1251,6 +1252,16 @@ class SdpiInformationCollector(
 
     private fun validateTransactions() {
         for (trans in transactions.values) {
+            for(oid in trans.oids) {
+                val deprecation = deprecatedTransactionsProcessor.isDeprecated(oid)
+                check(null == deprecation) {
+
+                    "Transaction $oid was deprecated in specification version ${deprecation?.oidVersion}".also {
+                        logger.error { it }
+                    }
+                }
+            }
+
             if (trans.actorRoles != null) {
                 for (role in trans.actorRoles) {
                     val actor = actors[role.actorId]

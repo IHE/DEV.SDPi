@@ -75,6 +75,7 @@ class AsciidocConverter(
     private val profileUseCaseSupportCollector = SupportUseCaseIncludeProcessor()
     private val externalStandardsProcessor = ExternalStandardProcessor()
     private val deprecatedRequirementsProcessor = DeprecateRequirementProcessor()
+    private val deprecatedTransactionsProcessor = DeprecateTransactionProcessor()
 
 
     val infoCollector = SdpiInformationCollector(
@@ -84,7 +85,8 @@ class AsciidocConverter(
         profileUseCaseSupportCollector,
         profileContentModuleCollector,
         externalStandardsProcessor,
-        deprecatedRequirementsProcessor
+        deprecatedRequirementsProcessor,
+        deprecatedTransactionsProcessor
     )
 
     override fun run() {
@@ -125,6 +127,7 @@ class AsciidocConverter(
         asciidoctor.javaExtensionRegistry().blockMacro(profileContentModuleCollector)
 
         asciidoctor.javaExtensionRegistry().blockMacro(deprecatedRequirementsProcessor)
+        asciidoctor.javaExtensionRegistry().blockMacro(deprecatedTransactionsProcessor)
 
         // Gather SDPI specific information from the document such as
         // requirements and use-cases.
@@ -217,7 +220,12 @@ class AsciidocConverter(
 
             writeArtifact(
                 "sdpi-requirements-deprecated",
-                jsonFormatter.encodeToString(deprecatedRequirementsProcessor.requirements().values)
+                jsonFormatter.encodeToString(deprecatedRequirementsProcessor.entries().values)
+            )
+
+            writeArtifact(
+                "sdpi-transactions-deprecated",
+                jsonFormatter.encodeToString(deprecatedTransactionsProcessor.entries().values)
             )
         }
 
