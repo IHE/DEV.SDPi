@@ -20,7 +20,8 @@ class SdpiInformationCollector(
     private val profileTransactions: TransactionIncludeProcessor,
     private val profileUseCases: SupportUseCaseIncludeProcessor,
     private val profileContentModuleReferences: ContentModuleIncludeProcessor,
-    private val externalStandardsProcessor : ExternalStandardProcessor
+    private val externalStandardsProcessor : ExternalStandardProcessor,
+    private val deprecatedRequirementsProcessor : DeprecateRequirementProcessor
 ) : Treeprocessor() {
     private companion object : Logging
 
@@ -1263,6 +1264,14 @@ class SdpiInformationCollector(
 
     private fun validateRequirements() {
         for (req in requirements.values) {
+            val deprecation = deprecatedRequirementsProcessor.isDeprecated(req.oid)
+            check(null == deprecation) {
+
+                "Requirement ${req.localId} was deprecated in specification version ${deprecation?.oidVersion}".also {
+                    logger.error { it }
+                }
+            }
+
             for (strActorId in req.actors()) {
                 val actor = actors[strActorId]
                 checkNotNull(actor) {

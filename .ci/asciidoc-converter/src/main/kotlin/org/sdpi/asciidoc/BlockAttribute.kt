@@ -23,6 +23,14 @@ enum class BlockAttribute(val key: String) {
 }
 
 /**
+ * Attributes for deprecation inline block macros.
+ */
+enum class DeprecationAttributes(val key: String) {
+    // The version when a requirement, transaction, &c became deprecated.
+    VERSION("version"),
+}
+
+/**
  * Defines attribute keywords for sdpi_requirement blocks
  */
 sealed class RequirementAttributes {

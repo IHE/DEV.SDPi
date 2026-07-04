@@ -1,6 +1,7 @@
 package org.sdpi.asciidoc.model
 
 import kotlinx.serialization.Serializable
+import org.jruby.util.ResourceException.InvalidArguments
 
 @Serializable
 data class SdpiOidReference(val root: WellKnownOid, val oid: String, val description: String, val anchor: String) :
@@ -23,6 +24,9 @@ data class SdpiOidReference(val root: WellKnownOid, val oid: String, val descrip
 
 }
 
+@Serializable
+data class DeprecatedOid(val oidDeprecated: String, val oidVersion: String)
+
 // Oids for well known things defined in the specification. See
 // Appendix 3.C Oid Identifiers in the specification for parent
 // oid definitions.
@@ -35,6 +39,13 @@ enum class WellKnownOid(val id: String, val oid: String, val typeLabel: String, 
         "1.3.6.1.4.1.19376.1.6.2.10",
         "SDPi",
         "Parent OID for the SDPi specification"
+    ),
+
+    DEV_CONFORMITY_VERSION(
+      id="conformity-version",
+      oid =DEV_SDPi.oid + ".0",
+      typeLabel = "Conformity version",
+      description = "Parent oid for specification versions"
     ),
 
     // Parent oid for all actors.
@@ -105,4 +116,13 @@ enum class WellKnownOid(val id: String, val oid: String, val typeLabel: String, 
 
 fun parseOidId(strId: String): WellKnownOid? {
     return WellKnownOid.entries.firstOrNull { it.id == strId }
+}
+
+fun makeConformityVersionOid(strSpecVersion: String): String {
+    val regex = Regex("""^\d+\.\d+\.\d+$""")
+    if (!regex.matches(strSpecVersion)) {
+        throw InvalidArguments("'$strSpecVersion' is not a valid specification version")
+    }
+
+    return WellKnownOid.DEV_CONFORMITY_VERSION.oid + "." + strSpecVersion
 }
