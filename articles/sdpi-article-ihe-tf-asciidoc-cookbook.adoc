@@ -954,6 +954,29 @@ Only the leaf arc is required when the oid value begins with a `.`. The document
 
 Multiple oids may be associated with an item by separating them with commas, though generally all items have a single defining OID. 
 
+=== Deprecating object ids (oids)
+
+As the standard evolves objects, such as requirements and transactions, may become obsolete. However,
+once assigned, the meaning of OIDs should not change once assigned. 
+
+To ensure that some things that should not be forgotten are not lost, 
+`DeprecatedX` are [Asciidoc block macros](https://docs.asciidoctor.org/asciidoctorj/latest/extensions/block-macro-processor/) provide a mechanism to reserve obsolete identifiers, which have been removed
+from the source. The processor will report an error when deprecated object ids are re-used. 
+
+|===
+|Macro | Example | Description
+
+|`DeprecateRequirement` | `DeprecateRequirement::R1005[version="1.2.3"]` | Marks a requirement number, defined in the specification, as deprecated.
+
+|`DeprecateTransaction` | `DeprecateTransaction::DEV-23[version="1.2.3"]` | Marks a transaction, defined in the specification, as deprecated.
+
+|===
+
+NOTE: The `version` attribute is required. It gives the document version (see 
+[`sdpi-standard.adoc`](https://github.com/IHE/DEV.SDPi/blob/master/asciidoc/sdpi-standard.adoc))
+when the OID was first no longer available. Format is: 
+`<sdpi_version_major>.<sdpi_version_minor>.<sdpi_version_revision>`. 
+
 [[cross-referencing]]
 === Cross-referencing
 
