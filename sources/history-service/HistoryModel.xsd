@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:hm="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.3.2" xmlns:msg="http://standards.ieee.org/downloads/11073/11073-10207-2017/message" xmlns:pm="http://standards.ieee.org/downloads/11073/11073-10207-2017/participant" targetNamespace="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.3.2" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:hm="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.3.2" xmlns:msg="http://standards.ieee.org/downloads/11073/11073-10207-2017/message" xmlns:pm="http://standards.ieee.org/downloads/11073/11073-10207-2017/participant" xmlns:ext="http://standards.ieee.org/downloads/11073/11073-10207-2017/extension" targetNamespace="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.3.2" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:import namespace="http://standards.ieee.org/downloads/11073/11073-10207-2017/extension" schemaLocation="ExtensionPoint.xsd"/>
 	<xsd:import namespace="http://standards.ieee.org/downloads/11073/11073-10207-2017/participant" schemaLocation="BICEPS_ParticipantModel.xsd"/>
 	<xsd:import namespace="http://standards.ieee.org/downloads/11073/11073-10207-2017/message" schemaLocation="BICEPS_MessageModel.xsd"/>
 	<!-- Notification payload -->
@@ -15,6 +16,7 @@
             </xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
+			<xsd:element ref="ext:Extension" minOccurs="0"/>
 			<xsd:element name="ResponseStatus" type="hm:ResponseStatusType" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>Zero or more response status elements indicating issues of the preceding *History
@@ -50,6 +52,7 @@
 			<xsd:documentation>Type definition of a change sequence.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
+			<xsd:element ref="ext:Extension" minOccurs="0"/>
 			<xsd:element name="HistoricLocalizedTexts" type="hm:HistoricLocalizedTextsType" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>Contains *Historic Localized Text* data.</xsd:documentation>
@@ -83,6 +86,7 @@
 	</xsd:complexType>
 	<xsd:complexType name="HistoricLocalizedTextsType">
 		<xsd:sequence>
+			<xsd:element ref="ext:Extension" minOccurs="0"/>
 			<xsd:element name="HistoricLocalizedText" type="pm:LocalizedText" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>Localized texts to be used for subsequent MDIB data.</xsd:documentation>
@@ -109,6 +113,7 @@
 			<xsd:documentation>Definition of an *MDIB Configuration* at a specific time.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
+			<xsd:element ref="ext:Extension" minOccurs="0"/>
 			<xsd:element ref="msg:GetMdibResponse">
 				<xsd:annotation>
 					<xsd:documentation>A GetMdibResponse message that serves as the initial *MDIB Configuration* for an
@@ -128,6 +133,17 @@
 		<xsd:annotation>
 			<xsd:documentation>Definition of a report at a specific time.</xsd:documentation>
 		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="ext:Extension" minOccurs="0"/>
+			<xsd:element name="Report" type="hm:HistoryReportTypeType"/>
+		</xsd:sequence>
+		<xsd:attribute name="Time" type="pm:Timestamp" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Time at which the *MDIB Configuration* belonging to the report was first effective for the *SOMDS Provider*.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="HistoryReportTypeType">
 		<xsd:choice>
 			<xsd:element ref="msg:DescriptionModificationReport"/>
 			<xsd:element ref="msg:EpisodicAlertReport"/>
@@ -137,11 +153,6 @@
 			<xsd:element ref="msg:EpisodicOperationalStateReport"/>
 			<xsd:element ref="msg:WaveformStream"/>
 		</xsd:choice>
-		<xsd:attribute name="Time" type="pm:Timestamp" use="required">
-			<xsd:annotation>
-				<xsd:documentation>Time at which the *MDIB Configuration* belonging to the report was first effective for the *SOMDS Provider*.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
 	</xsd:complexType>
 	<!-- Subscription filter -->
 	<xsd:element name="HistoryQuery" type="hm:HistoryQueryType">
