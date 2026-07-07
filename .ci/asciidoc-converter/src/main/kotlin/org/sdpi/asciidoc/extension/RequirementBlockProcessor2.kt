@@ -8,7 +8,6 @@ import org.asciidoctor.extension.BlockProcessor
 import org.asciidoctor.extension.Contexts
 import org.asciidoctor.extension.Name
 import org.asciidoctor.extension.Reader
-import org.jruby.util.ResourceException.InvalidArguments
 import org.sdpi.asciidoc.*
 import org.sdpi.asciidoc.model.WellKnownOid
 import java.util.*

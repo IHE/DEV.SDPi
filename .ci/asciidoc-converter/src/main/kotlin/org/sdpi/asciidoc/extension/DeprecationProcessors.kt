@@ -4,7 +4,6 @@ import org.apache.logging.log4j.kotlin.Logging
 import org.asciidoctor.ast.StructuralNode
 import org.asciidoctor.extension.BlockMacroProcessor
 import org.asciidoctor.extension.Name
-import org.jruby.util.ResourceException.InvalidArguments
 import org.sdpi.asciidoc.DeprecationAttributes
 import org.sdpi.asciidoc.model.DeprecatedOid
 import org.sdpi.asciidoc.model.WellKnownOid
@@ -18,11 +17,8 @@ const val BLOCK_MACRO_NAME_DEPRECATE_TRANSACTION = "DeprecateTransaction"
 class DeprecateRequirementProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_DEPRECATE_REQUIREMENT) {
     private companion object : Logging
 
-    private val entries = mutableMapOf<String, DeprecatedOid>()
-
-    fun entries() : Map<String, DeprecatedOid> {
-        return entries
-    }
+    val entries: Map<String, DeprecatedOid>
+        field = mutableMapOf()
 
     fun isDeprecated(strRequirementOid: String) : DeprecatedOid? {
         return entries[strRequirementOid]
@@ -37,7 +33,7 @@ class DeprecateRequirementProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_DEPRE
 
         val strVersionOid = makeConformityVersionOid(strVersion)
 
-        val requirementNumber: Int = parseRequirementNumber(strTarget)
+        val requirementNumber = parseRequirementNumber(strTarget)
         val strRequirementId = getRequirementOid(requirementNumber)
 
         checkNotNull(!entries.containsKey(strRequirementId)) {
@@ -53,11 +49,8 @@ class DeprecateRequirementProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_DEPRE
 class DeprecateProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_DEPRECATE) {
     private companion object : Logging
 
-    private val entries = mutableMapOf<String, DeprecatedOid>()
-
-    fun entries() : Map<String, DeprecatedOid> {
-        return entries
-    }
+    val entries: Map<String, DeprecatedOid>
+        field = mutableMapOf()
 
     fun isDeprecated(strOid: String) : DeprecatedOid? {
         return entries[strOid]
@@ -105,11 +98,8 @@ class DeprecateProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_DEPRECATE) {
 class DeprecateTransactionProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_DEPRECATE_TRANSACTION) {
     private companion object : Logging
 
-    private val entries = mutableMapOf<String, DeprecatedOid>()
-
-    fun entries() : Map<String, DeprecatedOid> {
-        return entries
-    }
+    val entries: Map<String, DeprecatedOid>
+        field = mutableMapOf()
 
     fun isDeprecated(strTransactionOid: String) : DeprecatedOid? {
         return entries[strTransactionOid]
@@ -146,6 +136,6 @@ class DeprecateTransactionProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_DEPRE
                 return "${WellKnownOid.DEV_TRANSACTION.oid}.$strLeaf"
             }
         }
-        throw InvalidArguments("'$strTransactionId' is not a valid transaction id")
+        throw IllegalArgumentException("'$strTransactionId' is not a valid transaction id")
     }
 }

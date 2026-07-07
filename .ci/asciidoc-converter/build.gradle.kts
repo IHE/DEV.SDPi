@@ -68,6 +68,10 @@ kotlin {
     compilerOptions {
         jvmTarget = JvmTarget.JVM_17
     }
+    sourceSets.all {
+        // Must be explicitly enabled!
+        languageSettings.enableLanguageFeature("ExplicitBackingFields")
+    }
 }
 
 application {

@@ -1,7 +1,6 @@
 package org.sdpi.asciidoc.model
 
 import kotlinx.serialization.Serializable
-import org.jruby.util.ResourceException.InvalidArguments
 
 @Serializable
 data class SdpiOidReference(val root: WellKnownOid, val oid: String, val description: String, val anchor: String) :
@@ -121,7 +120,7 @@ fun parseOidId(strId: String): WellKnownOid? {
 fun makeConformityVersionOid(strSpecVersion: String): String {
     val regex = Regex("""^\d+\.\d+\.\d+$""")
     if (!regex.matches(strSpecVersion)) {
-        throw InvalidArguments("'$strSpecVersion' is not a valid specification version")
+        throw IllegalArgumentException("'$strSpecVersion' is not a valid specification version")
     }
 
     return WellKnownOid.DEV_CONFORMITY_VERSION.oid + "." + strSpecVersion

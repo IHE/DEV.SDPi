@@ -222,20 +222,20 @@ class AsciidocConverter(
 
             writeArtifact(
                 "sdpi-requirements-deprecated",
-                jsonFormatter.encodeToString(deprecatedRequirementsProcessor.entries().values)
+                jsonFormatter.encodeToString(deprecatedRequirementsProcessor.entries.values)
             )
 
             writeArtifact(
                 "sdpi-transactions-deprecated",
-                jsonFormatter.encodeToString(deprecatedTransactionsProcessor.entries().values)
+                jsonFormatter.encodeToString(deprecatedTransactionsProcessor.entries.values)
             )
 
             writeArtifact(
                 "sdpi-deprecated",
                 jsonFormatter.encodeToString(
-                    deprecatedOidProcessor.entries().values
-                + deprecatedRequirementsProcessor.entries().values
-                + deprecatedTransactionsProcessor.entries().values)
+                    deprecatedOidProcessor.entries.values
+                + deprecatedRequirementsProcessor.entries.values
+                + deprecatedTransactionsProcessor.entries.values)
             )
         }
 
