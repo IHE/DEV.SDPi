@@ -222,7 +222,7 @@ When a <<vol1_spec_sdpi_p_actor_somds_provider>> has sent the last notification 
 ****
 [NORMATIVE]
 ====
-A <<vol1_spec_sdpi_p_actor_somds_provider>> shall add add the `sdpi:ReportSequence` element to the SOAP header of SOAP messages conveying <<term_history_service>> change sequence reports.
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall add the `sdpi:ReportSequence` element to the SOAP header of SOAP messages conveying <<term_history_service>> change sequence reports.
 ====
 
 NOTE: This requirement satisfies <<r0529>>.
