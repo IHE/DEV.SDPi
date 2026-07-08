@@ -430,7 +430,7 @@
 								</xsd:simpleContent>
 							</xsd:complexType>
 						</xsd:element>
-						<xsd:element name="Detail">
+						<xsd:element name="Detail" minOccurs="0">
 							<xsd:complexType>
 								<xsd:sequence>
 									<xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
