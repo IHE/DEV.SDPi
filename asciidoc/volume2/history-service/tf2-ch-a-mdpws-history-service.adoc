@@ -163,7 +163,7 @@ For an <<term_mdib_sequence_of_changes>> that is requested from a <<vol1_spec_sd
 ****
 [NORMATIVE]
 ====
-For an <<term_mdib_sequence_of_changes>> that is requested from a <<vol1_spec_sdpi_p_actor_somds_provider>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall send hm:ChangeSequence/hm:Report elements in ascending order by pm:Mdib@MdibVersion.
+For an <<term_mdib_sequence_of_changes>> that is requested from a <<vol1_spec_sdpi_p_actor_somds_provider>>, the <<vol1_spec_sdpi_p_actor_somds_provider>> shall send hm:ChangeSequence/hm:HistoricReport elements in ascending order by pm:Mdib@MdibVersion.
 ====
 ****
 
