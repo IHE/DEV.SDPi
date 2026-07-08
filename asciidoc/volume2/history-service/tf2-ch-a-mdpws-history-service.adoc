@@ -192,8 +192,8 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall transmit <<term_mdib_sequence_
 ====
 ****
 
-.R0526
-[sdpi_requirement#r0526,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+.R0524
+[sdpi_requirement#r0524,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -201,8 +201,8 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall signify the end of the histori
 ====
 ****
 
-.R0527
-[sdpi_requirement#r0527,sdpi_req_level=should,sdpi_req_type=tech_feature]
+.R0525
+[sdpi_requirement#r0525,sdpi_req_level=should,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
@@ -210,8 +210,8 @@ When a <<vol1_spec_sdpi_p_actor_somds_provider>> has sent the last notification 
 ====
 ****
 
-.R0528
-[sdpi_requirement#r0528,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+.R0526
+[sdpi_requirement#r0526,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
 [NORMATIVE]
 ====
