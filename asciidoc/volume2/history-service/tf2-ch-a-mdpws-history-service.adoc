@@ -79,13 +79,13 @@ NOTE: The filter may include additional elements and attributes from any namespa
 ****
 [NORMATIVE]
 ====
-For a time range-filtered subscription, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall respond with notifications that reflect the MDIB of the <<vol1_spec_sdpi_p_actor_somds_provider>> and its changes in the closed time interval of ++[hm:TimeRange/@StartTime, hm:TimeRange/@EndTime]++.
+For a time range-filtered subscription, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall respond with notifications that reflect the MDIB of the <<vol1_spec_sdpi_p_actor_somds_provider>> and its changes in the closed time interval of ++[hm:HistoryQuery/hm:Range/hm:Time/@StartTime, hm:HistoryQuery/hm:Range/hm:Time/@EndTime]++.
 ====
 
 [NOTE]
 ====
 * The time interval is a hint.
-A <<vol1_spec_sdpi_p_actor_somds_provider>> may respond with data that exceeds, or is a subset of, the interval of ++[hm:TimeRange/@StartTime, hm:TimeRange/@EndTime]++.
+A <<vol1_spec_sdpi_p_actor_somds_provider>> may respond with data that exceeds, or is a subset of, the interval of ++[hm:HistoryQuery/hm:Range/hm:Time/@StartTime, hm:HistoryQuery/hm:Range/hm:Time/@EndTime]++.
 
 * The term _notifications that reflect the MDIB_ includes localized texts of the LOCALIZATION SERVICE as well.
 
@@ -98,12 +98,12 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> may respond with data that exceeds, 
 ****
 [NORMATIVE]
 ====
-For a version range-filtered subscription, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall respond with notifications that reflect the MDIB of the <<vol1_spec_sdpi_p_actor_somds_provider>> at the given pm:Mdib@SequenceId and pm:Mdib@InstanceId in the closed version interval of ++[hm:VersionRange/@StartVersion, hm:VersionRange/@EndVersion]++.
+For a version range-filtered subscription, a <<vol1_spec_sdpi_p_actor_somds_provider>> shall respond with notifications that reflect the MDIB of the <<vol1_spec_sdpi_p_actor_somds_provider>> at the given pm:Mdib@SequenceId and pm:Mdib@InstanceId in the closed version interval of ++[hm:HistoryQuery/hm:Range/hm:Version/@StartVersion, hm:HistoryQuery/hm:Range/hm:Version/@EndVersion]++.
 ====
 
 [NOTE]
 ====
-* A <<vol1_spec_sdpi_p_actor_somds_provider>> may respond with data that exceeds, or is a subset of, the interval of ++[hm:VersionRange/@StartVersion, hm:VersionRange/@EndVersion]++. For example, if it cannot fully serve the request due to discarded historic information or the filter requests reports from the future.
+* A <<vol1_spec_sdpi_p_actor_somds_provider>> may respond with data that exceeds, or is a subset of, the interval of ++[hm:HistoryQuery/hm:Range/hm:Version/@StartVersion, hm:HistoryQuery/hm:Range/hm:Version/@EndVersion]++. For example, if it cannot fully serve the request due to discarded historic information or the filter requests reports from the future.
 
 * The term _notifications that reflect the MDIB_ includes localized texts of the LOCALIZATION SERVICE as well.
 
