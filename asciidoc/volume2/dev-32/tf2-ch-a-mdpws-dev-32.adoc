@@ -12,11 +12,11 @@ This section specifies the MDPWS data transmission for messages defined in <<vol
 
 ===== {var_label_dev_32_message_subscribe} Message
 
-<<vol0_transaction_summary_dev_32>> leverages <<vol0_transaction_summary_dev_27>> to initiate a subscription, which is used to deliver historic <<acronym_mdib>> data to a <<vol1_clause_sdpi_p_somds_consumer>>.
+<<vol0_transaction_summary_dev_32>> leverages <<vol0_transaction_summary_dev_27>> to initiate a subscription, which is used to deliver historic <<acronym_mdib>> data to a <<vol1_spec_sdpi_p_actor_somds_consumer>>.
 
 The {var_label_dev_32_message_subscribe} message contains filter criteria to the <<term_history_service>>, which is defined in this section. Further message outlines are shown in <<vol2_clause_appendix_mdpws_dev_27>>.
 
-The {<<vol2_clause_appendix_mdpws_dev_27>>} message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
+The <<vol2_clause_appendix_mdpws_dev_27>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
 
 ====== Referenced Standards
 
@@ -114,7 +114,7 @@ include::../../plantuml/vol2-figure-dev-32-usecase-version-range.puml[]
 include::../../plantuml/vol2-figure-dev-32-usecase-one-sequence-id.puml[]
 ....
 
-.<<term_history_service>>: Requesting a time range spanning one <<acronym_mdib>> sequence
+.<<term_history_service>>: Requesting a time range spanning multiple <<acronym_mdib>> sequences
 [plantuml#vol2_figure_dev_32_usecase_two_sequence_ids, target=puml-dev-32-usecase-two-sequence-ids, format=svg]
 ....
 include::../../plantuml/vol2-figure-dev-32-usecase-two-sequence-ids.puml[]
