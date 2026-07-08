@@ -78,7 +78,7 @@
                 </xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="InstanceId" type="xsd:unsignedLong">
+		<xsd:attribute name="InstanceId" type="xsd:unsignedLong" use="optional">
 			<xsd:annotation>
 				<xsd:documentation>MDIB instance number that is valid for this change sequence.</xsd:documentation>
 			</xsd:annotation>
