@@ -20,7 +20,10 @@ class SdpiInformationCollector(
     private val profileTransactions: TransactionIncludeProcessor,
     private val profileUseCases: SupportUseCaseIncludeProcessor,
     private val profileContentModuleReferences: ContentModuleIncludeProcessor,
-    private val externalStandardsProcessor : ExternalStandardProcessor
+    private val externalStandardsProcessor : ExternalStandardProcessor,
+    private val deprecatedRequirementsProcessor : DeprecateRequirementProcessor,
+    private val deprecatedTransactionsProcessor : DeprecateTransactionProcessor,
+    private val decprecatedOidsProcessor: DeprecateProcessor
 ) : Treeprocessor() {
     private companion object : Logging
 
@@ -91,6 +94,10 @@ class SdpiInformationCollector(
         validateTransactions()
         validateRequirements()
         validateActors()
+
+        validateProfiles()
+        validateUseCases()
+        validateContentModules()
 
         validateObjectIds()
 
@@ -1218,7 +1225,17 @@ class SdpiInformationCollector(
         return blockOids
     }
 
+    private fun checkForDeprecatedOids(oids : List<String>, strContext : String) {
+        for(oid in oids) {
+            val deprecation = decprecatedOidsProcessor.isDeprecated(oid)
+            check(null == deprecation) {
 
+                "$strContext $oid was deprecated in specification version ${deprecation?.oidVersion}".also {
+                    logger.error { it }
+                }
+            }
+        }
+    }
     // endregion
 
     //region Validation
@@ -1250,6 +1267,17 @@ class SdpiInformationCollector(
 
     private fun validateTransactions() {
         for (trans in transactions.values) {
+            for(oid in trans.oids) {
+                val deprecation = deprecatedTransactionsProcessor.isDeprecated(oid)
+                    ?: decprecatedOidsProcessor.isDeprecated(oid)
+                check(null == deprecation) {
+
+                    "Transaction $oid was deprecated in specification version ${deprecation?.oidVersion}".also {
+                        logger.error { it }
+                    }
+                }
+            }
+
             if (trans.actorRoles != null) {
                 for (role in trans.actorRoles) {
                     val actor = actors[role.actorId]
@@ -1263,6 +1291,15 @@ class SdpiInformationCollector(
 
     private fun validateRequirements() {
         for (req in requirements.values) {
+            val deprecation = deprecatedRequirementsProcessor.isDeprecated(req.oid)
+                ?: decprecatedOidsProcessor.isDeprecated(req.oid)
+            check(null == deprecation) {
+
+                "Requirement ${req.localId} was deprecated in specification version ${deprecation?.oidVersion}".also {
+                    logger.error { it }
+                }
+            }
+
             for (strActorId in req.actors()) {
                 val actor = actors[strActorId]
                 checkNotNull(actor) {
@@ -1327,6 +1364,8 @@ class SdpiInformationCollector(
     private fun validateActors() {
         for(profile in profiles.values) {
             for(actor in profile.actorReferences()) {
+                checkForDeprecatedOids(actor.oids, "Actor")
+
                 if (actor.requiredActorGroupings != null) {
                     //println("***** Checking actor grouping for ${actor.id}")
                     for(grouping in actor.requiredActorGroupings) {
@@ -1412,4 +1451,25 @@ class SdpiInformationCollector(
 
     //endregion
 
+    //region General validation
+
+    private fun validateProfiles() {
+        for(profile in profiles.values) {
+            checkForDeprecatedOids(profile.oids, "Profile")
+        }
+    }
+
+    private fun validateUseCases() {
+        for(useCase in useCases.values) {
+            checkForDeprecatedOids(useCase.oids, "Use case")
+        }
+    }
+
+    private fun validateContentModules() {
+        for(module in contentModules.values) {
+            checkForDeprecatedOids(module.oids, "Content module")
+        }
+    }
+
+    //endregion
 }

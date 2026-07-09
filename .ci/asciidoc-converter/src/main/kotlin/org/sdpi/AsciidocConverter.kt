@@ -74,6 +74,9 @@ class AsciidocConverter(
     private val profileContentModuleCollector = ContentModuleIncludeProcessor()
     private val profileUseCaseSupportCollector = SupportUseCaseIncludeProcessor()
     private val externalStandardsProcessor = ExternalStandardProcessor()
+    private val deprecatedRequirementsProcessor = DeprecateRequirementProcessor()
+    private val deprecatedTransactionsProcessor = DeprecateTransactionProcessor()
+    private val deprecatedOidProcessor = DeprecateProcessor()
 
     val infoCollector = SdpiInformationCollector(
         bibliographyCollector,
@@ -81,7 +84,10 @@ class AsciidocConverter(
         profileTransactionCollector,
         profileUseCaseSupportCollector,
         profileContentModuleCollector,
-        externalStandardsProcessor
+        externalStandardsProcessor,
+        deprecatedRequirementsProcessor,
+        deprecatedTransactionsProcessor,
+        deprecatedOidProcessor
     )
 
     override fun run() {
@@ -120,6 +126,10 @@ class AsciidocConverter(
         asciidoctor.javaExtensionRegistry().blockMacro(profileUseCaseSupportCollector)
 
         asciidoctor.javaExtensionRegistry().blockMacro(profileContentModuleCollector)
+
+        asciidoctor.javaExtensionRegistry().blockMacro(deprecatedOidProcessor)
+        asciidoctor.javaExtensionRegistry().blockMacro(deprecatedRequirementsProcessor)
+        asciidoctor.javaExtensionRegistry().blockMacro(deprecatedTransactionsProcessor)
 
         // Gather SDPI specific information from the document such as
         // requirements and use-cases.
@@ -208,6 +218,24 @@ class AsciidocConverter(
             writeArtifact(
                 "sdpi-requirements",
                 jsonFormatter.encodeToString(infoCollector.requirements().values)
+            )
+
+            writeArtifact(
+                "sdpi-requirements-deprecated",
+                jsonFormatter.encodeToString(deprecatedRequirementsProcessor.entries.values)
+            )
+
+            writeArtifact(
+                "sdpi-transactions-deprecated",
+                jsonFormatter.encodeToString(deprecatedTransactionsProcessor.entries.values)
+            )
+
+            writeArtifact(
+                "sdpi-deprecated",
+                jsonFormatter.encodeToString(
+                    deprecatedOidProcessor.entries.values
+                + deprecatedRequirementsProcessor.entries.values
+                + deprecatedTransactionsProcessor.entries.values)
             )
         }
 

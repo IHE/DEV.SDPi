@@ -69,7 +69,7 @@ class RequirementBlockProcessor2 : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
 
     override fun process(parent: StructuralNode, reader: Reader, attributes: MutableMap<String, Any>): Any {
         val requirementNumber: Int = getRequirementNumber(attributes)
-        val strGlobalId = getRequirementOid(parent, requirementNumber, attributes)
+        val strGlobalId = getRequirementOid(requirementNumber)
         val strLinkId = String.format("r%04d", requirementNumber)
 
         logger.info("Found requirement #$requirementNumber at ${parent.sourceLocation}")
@@ -100,7 +100,6 @@ class RequirementBlockProcessor2 : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
         )
     }
 
-
     /**
      * Retrieve the requirement number from available attributes.
      * The requirement number must be specified as a title and the id.
@@ -128,23 +127,6 @@ class RequirementBlockProcessor2 : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
     }
 
     /**
-     * Retrieve the globally unique object id for the requirement.
-     * See Assigning Unique Identifiers [[SDPi:§1:A.4.2.1]]
-     *
-     */
-    private fun getRequirementOid(
-        parent: StructuralNode,
-        requirementNumber: Int,
-        mutableAttributes: MutableMap<String, Any>
-    ): String {
-        val strParent = WellKnownOid.DEV_REQUIREMENT.oid
-
-        // Global unique ids are composed of the source specification's oid,
-        // ".2." + the requirement number. [[SDPi:§1:A.4.2.1]]
-        return "$strParent.$requirementNumber"
-    }
-
-    /**
      * Creates text for the requirement title in the document
      */
     private fun formatRequirementTitle(requirementNumber: Int, strGlobalId: String): String {
@@ -154,4 +136,29 @@ class RequirementBlockProcessor2 : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
             return "R${String.format("%04d", requirementNumber)} [.global-id]#`(${strGlobalId})`#"
         }
     }
+}
+
+
+
+fun parseRequirementNumber(strRequirement: String) : Int {
+    val requirementNumberFormat = "^[rR](\\d+)$".toRegex()
+
+    val nRequirementNumber = requirementNumberFormat.findAll(strRequirement)
+        .map { it.groupValues[1] }.toList().first().toInt()
+    return nRequirementNumber
+}
+
+/**
+ * Retrieve the globally unique object id for the requirement.
+ * See Assigning Unique Identifiers [[SDPi:§1:A.4.2.1]]
+ *
+ */
+fun getRequirementOid(
+    requirementNumber: Int,
+): String {
+    val strParent = WellKnownOid.DEV_REQUIREMENT.oid
+
+    // Global unique ids are composed of the source specification's oid,
+    // ".2." + the requirement number. [[SDPi:§1:A.4.2.1]]
+    return "$strParent.$requirementNumber"
 }
