@@ -61,6 +61,7 @@ sdpi_include_transaction::DEV-27[initiator="required", responder="required"]
 sdpi_include_transaction::DEV-28[initiator="optional", receiver="optional"]
 sdpi_include_transaction::DEV-29[initiator="required", receiver="required"]
 sdpi_include_transaction::DEV-30[initiator="optional", responder="optional"]
+sdpi_include_transaction::DEV-32[initiator="optional", responder="optional"]
 sdpi_include_transaction::DEV-33[initiator="optional", responder="optional"]
 
 sdpi_include_transaction::DEV-46[actor-id=somds_provider,initiator=optional]
@@ -69,11 +70,9 @@ sdpi_include_transaction::DEV-47[actor-id=somds_consumer,initiator=optional]
 // Deferred transactions. 
 sdpi_include_transaction::DEV-26[actor-id="somds_provider",responder="required",placeholder-name="Discover system context and capabilities"]
 sdpi_include_transaction::DEV-31[actor-id="somds_provider",responder="optional",placeholder-name="Set provider state"]
-sdpi_include_transaction::DEV-32[actor-id="somds_provider",responder="optional",placeholder-name="Retrieve archive data"]
 
 sdpi_include_transaction::DEV-26[actor-id="somds_consumer",initiator="required",placeholder-name="Discover system context and capabilities"]
 sdpi_include_transaction::DEV-31[actor-id="somds_consumer",initiator="optional",placeholder-name="Set provider state"]
-sdpi_include_transaction::DEV-32[actor-id="somds_consumer",initiator="optional",placeholder-name="Retrieve archive data"]
 
 ifdef::markup-actor-transactions-table[]
 
@@ -719,6 +718,36 @@ Note 1:  For optionality of the above transactions for the provider and consumer
 
 ////
 
+[#vol1_clause_sdpi_p_option_history,role=profile-option,profile-option-id="sdpi-p-history",oid-arcs=".8"]
+==== History Service Option
+
+The <<term_history_service>> profile option provides a service for 
+<<vol1_spec_sdpi_p_actor_somds_consumer>> Actors to reconstruct
+older versions of a <<vol1_spec_sdpi_p_actor_somds_provider>>s 
+<<acronym_mdib>> than the current version available through 
+RefTransaction:DEV-30[]. This may be useful to fill in gaps in
+<<acronym_mdib>> versions arising from, for example, network
+connectivity interruptions, etc. 
+
+sdpi_include_transaction::DEV-32[initiator="required", responder="required"]
+
+
+.R1026
+[sdpi_requirement#r1026,sdpi_req_level=shall,sdpi_req_type=tech_feature]
+****
+
+[NORMATIVE]
+====
+RefActor:somds_provider[] actor shall implement RefTransaction:DEV-32[] to
+deliver historic <<acronym_mdib>> data. 
+====
+
+[NOTE]
+====
+The <<term_history_service>> replaces the <<ref_ieee_11073_20701_2018>> archive service.
+====
+
+****
 
 [#vol1_clause_sdpi_p_required_actor_groupings]
 === SDPi-P Required Actor Groupings
