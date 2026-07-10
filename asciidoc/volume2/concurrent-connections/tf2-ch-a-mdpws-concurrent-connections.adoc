@@ -50,7 +50,7 @@ to reduce its connection count and/or frequency.
 
 The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_participant>> 
 shall consider the risk that another <<vol1_spec_sdpi_p_actor_somds_participant>> 
-may reject (additional) concurrent connections when assessing the ability of the 
+could reject (additional) concurrent connections when assessing the ability of the 
 <<term_manufacturer>>'s <<vol1_spec_sdpi_p_actor_somds_participant>> to deliver 
 its <<acronym_sfc,system function contribution>>.
 
