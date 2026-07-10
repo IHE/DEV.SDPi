@@ -1,0 +1,3 @@
+// DEV-32 Transaction Summary
+
+Establishes a subscription (see <<vol0_transaction_summary_dev_27>>) and produces a stream of messages that reflect historic <<acronym_mdib>> data.
