@@ -129,7 +129,7 @@
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element ref="ext:Extension" minOccurs="0"/>
-			<xsd:element name="Report" type="hm:HistoryReportTypeType"/>
+			<xsd:element name="Report" type="hm:HistoricReportChoiceType"/>
 		</xsd:sequence>
 		<xsd:attribute name="Time" type="pm:Timestamp" use="required">
 			<xsd:annotation>
@@ -137,7 +137,7 @@
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
-	<xsd:complexType name="HistoryReportTypeType">
+	<xsd:complexType name="HistoricReportChoiceType">
 		<xsd:choice>
 			<xsd:element ref="msg:DescriptionModificationReport"/>
 			<xsd:element ref="msg:EpisodicAlertReport"/>
