@@ -20,6 +20,6 @@
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  Content for this section will be extended in a future version of SDPi.
-The initial content will reflect what is provided in SDPi {ihe_supplement_sdpi_revision_short} <<vol3_clause_device_physiological_monitor>>.
+a| *{standard_note}*:  Content for this section will be extended in a future version of SDPi.
+The initial content will reflect what is provided in SDPi {gemini_standard_sdpi_revision_short} <<vol3_clause_device_physiological_monitor>>.
 |===

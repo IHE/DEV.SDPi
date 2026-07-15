@@ -6,11 +6,11 @@
 [%autowidth]
 [cols="1"]
 |===
-| *{supplement_note}*: The inclusion of a References appendix is unique for IHE Technical Framework specifications.
+| *{standard_note}*: The inclusion of a References appendix is unique for IHE Technical Framework specifications.
 Typically, referenced standards sections are distributed throughout the specifications where appropriate; however, standards from other organizations (e.g., IEEE, ISO, IEC) typically have a "Normative References" clause and when desired a "Bibliography" clause.
 Also, integration of explicit standards' <<term_implementation_conformance_statement>> specifications (e.g., <<ref_ieee_11073_10207_2017>> <<acronym_ics>> tables) is unique, but needed to support requirements interoperability.
 
-Ultimately, the content of this appendix may be rearranged and even relocated; however, for early versions of the SDPi supplement, it has proven helpful, and even of critical importance and value.
+Ultimately, the content of this appendix may be rearranged and even relocated; however, for early versions of the SDPi standard, it has proven helpful, and even of critical importance and value.
 |===
 
 // Appendix B
@@ -21,7 +21,7 @@ Ultimately, the content of this appendix may be rearranged and even relocated; h
 [%autowidth]
 [cols="1"]
 |===
-| *{supplement_note}*: The standards listed in this section are predominantly published.
+| *{standard_note}*: The standards listed in this section are predominantly published.
 However, in the current version, three of them are unpublished drafts and are hence subject to requirement changes once they are published: <<ref_hl7_fhir_pocd_ig>>, <<ref_ieee_11073_10702_202x>> and <<ref_ieee_11073_10703_202x>>.
 No content from those three standards - including their requirements -  is normatively used in the current version.
 |===
@@ -100,7 +100,7 @@ No content from those three standards - including their requirements -  is norma
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+a| *{standard_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
 
 ////
@@ -114,7 +114,7 @@ a| *{supplement_note}*:  This section intentionally left blank for the current v
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+a| *{standard_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
 
 ////

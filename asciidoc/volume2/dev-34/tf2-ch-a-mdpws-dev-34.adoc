@@ -10,7 +10,7 @@
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*: The former transaction Announce Network Departure [{var_transaction_id}] was withdrawn with SDPi 2.2. Therefore, it is marked as _Reserved_.
+a| *{standard_note}*: The former transaction Announce Network Departure [{var_transaction_id}] was withdrawn with SDPi 2.2. Therefore, it is marked as _Reserved_.
 |===
 
 ////

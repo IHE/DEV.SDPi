@@ -5,10 +5,10 @@
 [#vol1_appendix_c_60601_1_8_concepts_for_dis_das_cdas]
 ===== ISO/IEC 60601-1-8 Concepts for DIS, DAS and CDAS
 
-The following is a quick guide to the functionality of DIS, CDIS, DAS and CDAS systems and how we have used and interpreted them for the purpose of this IHE Profile Supplement.
+The following is a quick guide to the functionality of DIS, CDIS, DAS and CDAS systems and how we have used and interpreted them for the purpose of this Gemini Profile Standard.
 Please refer to the next section on Definitions from <<ref_iec_60601_1_8_2020>> for normative definitions for these terms.
 
-NOTE: Note that the {ihe_supplement_sdpi_revision_short} version of the SDPi Profile only supports the Distributed Information System (DIS) model detailed below.
+NOTE: Note that the {ihe_standard_sdpi_revision_short} version of the SDPi Profile only supports the Distributed Information System (DIS) model detailed below.
 The other models are anticipated for subsequent versions.
 
 

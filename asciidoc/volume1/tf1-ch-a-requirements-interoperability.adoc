@@ -140,7 +140,7 @@ No additional security requirements and considerations are identified for this t
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*: The information in this section includes both general requirements modeling information that captures the metadata that is ultimately exported for document-external use.
+a| *{standard_note}*: The information in this section includes both general requirements modeling information that captures the metadata that is ultimately exported for document-external use.
 It also includes specific AsciiDoc information (e.g., element labels) to facilitate review by providing all the related information in one location.
 Ultimately, the AsciiDoc and related information that is used for specification production and requirement exportation (e.g., export JSON mapping and file format), will be moved to a separate article or paper.
 
@@ -457,7 +457,7 @@ image::../images/vol1-diagram-sdpi-req-use-case-feature.svg[align=center]
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*: Additional detail will be added in a subsequent version.  Additional metadata may include:
+a| *{standard_note}*: Additional detail will be added in a subsequent version.  Additional metadata may include:
 
 . Use Case Identifier
 . Use case element type and identifier
@@ -473,7 +473,7 @@ a| *{supplement_note}*: Additional detail will be added in a subsequent version.
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*: Additional detail will be added in a subsequent version.  Additional metadata may include:
+a| *{standard_note}*: Additional detail will be added in a subsequent version.  Additional metadata may include:
 
 . Referenced Standard (document identifier, version and date; may be a link to the referenced standard section of the specification)
 . Source requirement identifier in referenced standard
@@ -496,7 +496,7 @@ NOTE:  Requirements from SES referenced standards such as <<ref_ieee_11073_10700
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*: Additional detail will be added in a subsequent version.  Additional metadata may include:
+a| *{standard_note}*: Additional detail will be added in a subsequent version.  Additional metadata may include:
 
 . SES Type = General, Safety, Effectiveness, Security
 . Testability = Inspection, Interoperability ("on-the-wire" verification)
@@ -512,7 +512,7 @@ a| *{supplement_note}*: Additional detail will be added in a subsequent version.
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*: Additional detail will be added in a subsequent version.  Additional metadata may include:
+a| *{standard_note}*: Additional detail will be added in a subsequent version.  Additional metadata may include:
 
 . Unique Identifier (label text + OID) that may be used for external test assertion linkages
 . Fulfillment Level:  Complete, partial

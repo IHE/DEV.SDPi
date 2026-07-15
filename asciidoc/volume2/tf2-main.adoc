@@ -120,7 +120,7 @@ include::dev-49/tf2-dev-49.adoc[]
 // TODO https://confluence.hl7.org/display/GP/Topic%3A+Connect+Time+Delay+Algorithm
 //
 
-//NOTE:  This document integrates all the content that makes up the supplement volume 2 document.
+//NOTE:  This document integrates all the content that makes up the standard volume 2 document.
 //
 //IMPORTANT:  Migrate the content below from main.adoc into this document OR rename main.adoc to this ... though the content is different.  +
 //{empty} +

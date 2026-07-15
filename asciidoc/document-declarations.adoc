@@ -9,14 +9,14 @@ NOTES:
 
 ////
 
-[#supplement_clause_forward_declarations,sdpi_offset=clear]
+[#standard_clause_forward_declarations,sdpi_offset=clear]
 == Standard Forward Declarations
 
 [%noheader]
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:
+a| *{standard_note}*:
 
 *Standalone SDPi:*  _REWORK this section to make it a permanent Forward Declarations, perhaps refactoring it into something that is not labeled "Forward Declarations"!_
 
@@ -25,7 +25,7 @@ The following table is included in this version of the standard to capture *_"fo
 Since AsciiDoc is a one-pass processor, forward declarations are required.
 
 There was no clear way of defining these replacement definitions in a way that is "under the hood" and not visible to the reader.
-The following table was thus created but may be moved or otherwise implemented in subsequent supplement versions.
+The following table was thus created but may be moved or otherwise implemented in subsequent standard versions.
 
 Suggestions appreciated!
 

@@ -99,6 +99,33 @@ ifeval::["{backend}" == "html5"]
 //A PDF version of the specification is available upon request.
 endif::[]
 
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi "Standalone" Supplement -- Drafting Note*:
+
+This sdpi-supplement document is being created out of and aligned with the current sdpi-standard document.
+This document is intended to provide the necessary organization and summary content that can ultimately be integrated into the IHE DEV TF "final text" normative version.
+When that integration to the DEV TF occurs, this "supplement" will no longer be needed and will be deprecated.
+
+NOTE: This supplement will directly reference the "standard" revision to which it is aligned.
+It may be that when a DEV TF integration occurs, that is only partial to "finalized" aspects of the SDPi standard and other capabilities will be in active development, thus requiring the need for this supplement -- potentially, for a long time!"
+
+The complete detailed content will remain in the sdpi-standard document as it has evolved in recent years; however, that document will be designed so that it will always remain -- standalone -- and will not be integrated into some other document.
+
+Editorial Task List (prioritized) for this Supplement:
+
+. Add top level outline structure for supplement document
+. Change all labels to be supplement-specific & not duplicated from sdpi-standard
+. Add front matter updates per IHE TF Format but for this Supplement, explaining supplement/standalone & conceptual approach.
+NOTE:  The TF-1:2 content might be identical in this document.
+. Add overview content for each outline section
+. ...
+
+|===
+
+
 [#supplement_clause_foreword,sdpi_offset=clear]
 = Foreword
 

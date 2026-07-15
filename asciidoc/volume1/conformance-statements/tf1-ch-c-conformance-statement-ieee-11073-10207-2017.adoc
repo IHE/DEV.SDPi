@@ -6,7 +6,7 @@
 [%autowidth]
 [cols="1"]
 |===
-| *{supplement_note}*: This section is provided as a placeholder for the <<acronym_ics>> table specification that will be added in a subsequent SDPi supplement version.
+| *{standard_note}*: This section is provided as a placeholder for the <<acronym_ics>> table specification that will be added in a subsequent SDPi standard version.
 The tables will have an additional SDPi column added to the right side that indicates *if* and TBD *where* the requirement is satisfied.
 Requirement Definition (this table's rows) will be referenced where they are satisfied; however, these tables may also include forward references, at least in general, to what capabilities / requirements satisfy the referenced standard requirement.
 
@@ -42,7 +42,7 @@ ADD IEEE:  *Remote Control ICS table here*
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*: Context processing pertains to effective utilization of context information like workflow (e.g., orders) info, patient demographics and locations.
+a| *{standard_note}*: Context processing pertains to effective utilization of context information like workflow (e.g., orders) info, patient demographics and locations.
 A future version of SDPi will describe how to cope with contexts, with device coupling mechanisms described informally in TF-1 and formally in TF-2 (possibly as a transaction).
 |===
 

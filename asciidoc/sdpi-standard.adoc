@@ -18,8 +18,6 @@
 :source-highlighter: highlight.js
 :highlightjsdir: js/highlight
 
-// STANDALONE SDPi:  Deferred is the refactoring of all "supplement" to "standard" language
-
 // Set the document attribute to automatically generate
 // actor transactions table from semantic markup. Unset
 // to use manual tables. 
@@ -33,12 +31,12 @@
 :sdpi_version_minor: 4
 :sdpi_version_revision: 0
 // STANDALONE SDPi:  QUESTION:  Do we rework these to gemini_standard
-:ihe_supplement_sdpi_revision: {sdpi_version_major}.{sdpi_version_minor}.{sdpi_version_revision}
-:ihe_supplement_sdpi_revision_short: {sdpi_version_major}.{sdpi_version_minor}
-:ihe_supplement_sdpi_revision_date: {localdatetime}
-:ihe_supplement_sdpi_revision_label: Standard for Trial Use
-:ihe_supplement_sdpi_publication_month: December 19, 2025
-:ihe_supplement_sdpi_public_comment_submission_deadline: N/A
+:ihe_standard_sdpi_revision: {sdpi_version_major}.{sdpi_version_minor}.{sdpi_version_revision}
+:ihe_standard_sdpi_revision_short: {sdpi_version_major}.{sdpi_version_minor}
+:ihe_standard_sdpi_revision_date: {localdatetime}
+:ihe_standard_sdpi_revision_label: Standard for Trial Use
+:ihe_standard_sdpi_publication_month: December 19, 2025
+:ihe_standard_sdpi_public_comment_submission_deadline: N/A
 
 // Oid, assigned by IHE-DEV, for the SDPi specification
 // https://wiki.ihe.net/index.php/PCD_OID_Management
@@ -70,7 +68,7 @@ ifeval::["{backend}" == "html5"]
 
 <p style="font-size: 2.75em; text-align: center"><strong>Interoperability (SDPi)</strong></p>
 
-<p style="text-align: center">Revision {ihe_supplement_sdpi_revision} &mdash; {ihe_supplement_sdpi_revision_label}</p>
+<p style="text-align: center">Revision {ihe_standard_sdpi_revision} &mdash; {ihe_standard_sdpi_revision_label}</p>
 
 <p style="text-align: center"><strong>("Standalone" SDPi Standard -  For Review)</strong></p>
 ++++
@@ -82,10 +80,10 @@ endif::[]
 [frame=none,grid=none]
 |===
 | *Publication Date:*
-| {ihe_supplement_sdpi_publication_month}
+| {ihe_standard_sdpi_publication_month}
 
 | *Build Date:*
-| {ihe_supplement_sdpi_revision_date}
+| {ihe_standard_sdpi_revision_date}
 
 | *Author:*
 | Gemini Medical Device Interoperability Program Team (Joint HL7 & IHE Devices Working Groups)
@@ -109,15 +107,51 @@ ifeval::["{backend}" == "html5"]
 //A PDF version of the specification is available upon request.
 endif::[]
 
-[#supplement_clause_foreword,sdpi_offset=clear]
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi "Standalone" Standard -- Drafting Note*:
+
+This sdpi-standard document is being created out of and aligned with the current sdpi-standard document.
+This document is intended to provide the necessary organization and summary content that can ultimately be integrated into the IHE DEV TF "final text" normative version.
+When that integration to the DEV TF occurs, this "supplement" will no longer be needed and will be deprecated.
+
+NOTE: This supplement will directly reference the "standard" revision to which it is aligned.
+It may be that when a DEV TF integration occurs, that is only partial to "finalized" aspects of the SDPi standard and other capabilities will be in active development, thus requiring the need for this supplement -- potentially, for a long time!"
+
+The complete detailed content will remain in the sdpi-standard document as it has evolved in recent years; however, that document will be designed so that it will always remain -- standalone -- and will not be integrated into some other document.
+
+Editorial Task List (prioritized) for this Supplement:
+
+. Title Page - Update & review
+. Find and update all uses of "supplement" throughout current document
+.. In labels used for referencing
+.. In standard note sections
+.. ... ?
+. Add front matter not IHE TF based, but for a standalone document:
+.. Introduction: Gemini, Gemini TF Profile Standard, SDPi in particular;
+... Include Unique Features of TF Profile Standard (incl. embedded requirements, ... )
+.. Refactor any IHE TF template stuff to be "standalone" where appropriate
+.. Update section 2 overview of SDPi to a simple overview
+.. Add Normative References?  or Definitions section?
+.. Refactor forward references stuff from early in document to a more "permanent" location!
+. ...
+
+|===
+
+
+[#standard_clause_foreword,sdpi_offset=clear]
 = Foreword
+
+// Standalone TO DO ... this section
 
 This Gemini standard is a joint development effort between Health Level Seven International (HL7) and Integrating the Healthcare Enterprise (IHE) devices working groups.
 Its development and publication adheres to the consensus standards processes of both HL7, an ANSI accredited standards development organization, and IHE.
 The title of this document, "Technical Framework *_Standard_*", reflects its unique status as a Gemini specification, utilizing the IHE Technical Framework organization and elements (e.g., integration profiles, actors, transactions, content modules), but processed as an HL7 specification that will be published as a "standalone" standard and will persist even when its status transitions to normative standard (HL7) or Final Text (IHE).
 
-To facilitate integration with the companion IHE Devices Technical Framework (final text) specification, a companion to this standard will be created for each edition:  SDPi "Technical Framework Supplement", which will be organized according to IHE style guidelines, but it will be in major section outline only, with each section including a note indicating where the content is located in the published Gemini Technical Framework ("standalone") Standard document.
-Given its alignment with the companion IHE specification, some section numbers are skipped in this document to facilitate its intended integration into the above-mentioned "supplement".
+To facilitate integration with the companion IHE Devices Technical Framework (final text) specification, a companion to this standard will be created for each edition:  SDPi "Technical Framework Profile Standard", which will be organized according to IHE style guidelines, but it will be in major section outline only, with each section including a note indicating where the content is located in the published Gemini Technical Framework ("standalone") Standard document.
+Given its alignment with the companion IHE specification, some section numbers are skipped in this document to facilitate its intended integration into the above-mentioned "standard".
 Skipped section numbers are already present in the Devices Technical Framework and will not require changes due to the incorporation of the supplement once it transitions to normative standard / final text status.
 
 Additionally, some content that may otherwise be only referenced by a "supplement" document and defined elsewhere in the existing technical framework, will be incorporated in this specification to ensure that it is internally cohesive and does not force the reader to unnecessarily consult other documents.
@@ -126,7 +160,7 @@ Publication as a Standard for *Trial* Use (HL7) or *Trial* Implementation (IHE) 
 Product developers are encouraged to use the standard, recognizing the potential impact of this continuous development cycle and its status as a _"trial use"_ standard.
 
 
-This supplement is published on {ihe_supplement_sdpi_publication_month} for Trial Implementation and may be available for testing at subsequent IHE or HL7 testing events, such as an IHE Connectathon.
+This supplement is published on {ihe_standard_sdpi_publication_month} for Trial Implementation and may be available for testing at subsequent IHE or HL7 testing events, such as an IHE Connectathon.
 The standard may be amended based on the results of testing.
 Following successful testing and implementation maturity, it will transition to a normative standard, and the companion IHE supplement will be incorporated into the Devices Technical Framework.
 Comments are invited and can be submitted at https://www.ihe.net/DEV_Public_Comments/[Devices Public Comments] or by submitting a https://github.com/IHE/DEV.SDPi/issues/new/choose[GitHub Issue].

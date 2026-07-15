@@ -11,7 +11,7 @@ See https://wiki.ihe.net/index.php/PCD_OID_Management[PCD OID Management].
 They have designated `{SDPi-parent-oid}` as the parent OID for a hierarchy of object identifiers for this
 service-oriented device point-of-care interoperability (SDPi) specification. 
 
-This supplement is responsible for the hierarchy underneath the `{SDPi-parent-oid}` SDPi top level oid. 
+This standard is responsible for the hierarchy underneath the `{SDPi-parent-oid}` SDPi top level oid.
 
 Generally, the meaning of OIDs should not change once assigned. For example, `{SDPi-parent-oid}.3.40` will always refer to a
 RefActor:somds_participant[]. This OID will never be assigned another meaning even if, for some reason, a SOMDS participant is no longer 
@@ -109,7 +109,7 @@ sdpi_oid_table::[arc="profile-actor-options"]
 [#vol3_appendix_c_oid_actors]
 === Actors
 
-The actor definitions in this supplement are assigned OIDs from the `.*3*` arc under under the <<vol3_appendix_c_oid_top,Top level SDPi OID>>. 
+The actor definitions in this standard are assigned OIDs from the `.*3*` arc under under the <<vol3_appendix_c_oid_top,Top level SDPi OID>>.
 Actor arcs are generally assigned sequentially using the `oid-arcs` attribute on the ASCIIDoc section that defines the actor. 
 
 sdpi_oid_table::[arc="actors"]
@@ -117,7 +117,7 @@ sdpi_oid_table::[arc="actors"]
 [#vol3_appendix_c_oid_transactions]
 === Transactions
 
-The transactions defined in this supplement are assigned OIDs from the `.*4*` arc under the <<vol3_appendix_c_oid_top,Top level SDPi OID>>. 
+The transactions defined in this standard are assigned OIDs from the `.*4*` arc under the <<vol3_appendix_c_oid_top,Top level SDPi OID>>.
 Transaction arcs are automatically assigned when the document is processed by combining the transaction number with the parent OID for transactions. 
 
 sdpi_oid_table::[arc="transactions"]
@@ -125,7 +125,7 @@ sdpi_oid_table::[arc="transactions"]
 [#vol3_appendix_c_oid_content_modules]
 === Content modules
 
-Content modules defined in this supplement are assigned OIDs from the `.*8*` arc under the <<vol3_appendix_c_oid_top,Top level SDPi OID>>. 
+Content modules defined in this standard are assigned OIDs from the `.*8*` arc under the <<vol3_appendix_c_oid_top,Top level SDPi OID>>.
 Content module arcs are generally assigned sequentially using the `oid-arcs` attribute on the ASCIIDoc section that defines the content module. 
 
 sdpi_oid_table::[arc="content-modules"]
@@ -133,7 +133,7 @@ sdpi_oid_table::[arc="content-modules"]
 [#vol3_appendix_c_oid_use_cases]
 === Device Point-of-care interoperability use cases
 
-<<vol1_appendix_c_dpi_use_cases, Device Point-of-care interoperability use cases>> defined in this supplement are assigned OIDs from the `.*9*` arc under <<vol3_appendix_c_oid_top,Top level SDPi OID>>. 
+<<vol1_appendix_c_dpi_use_cases, Device Point-of-care interoperability use cases>> defined in this standard are assigned OIDs from the `.*9*` arc under <<vol3_appendix_c_oid_top,Top level SDPi OID>>.
 
 * Each use-case feature is sequentially, in the order it is added to the specification, assigned an arc under the `.9` parent OID using the `oid-arcs` attribute on the ASCIIDoc section that defines the feature. This OID identifies the use-case feature and is the parent for its scenarios. 
 * Each scenario in a use-case feature is sequentially, in the order it is added to the specification, assigned an arc under the corresponding feature using the `oid-arcs` attribute on the ASCIIDoc section that defines the scenario.
