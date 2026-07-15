@@ -34,6 +34,8 @@ Each section shall contain a list of action items of the following format: `<bri
 - Reworded R1007 to clarify that strictly increasing mdib version is scoped to a subscription ([#297](https://github.com/IHE/DEV.SDPi/issues/297))
 - Updated TLS version narrative for consistency with R1544 ([#497](https://github.com/IHE/DEV.SDPi/issues/497))
 - Updated actor grouping tables for SDPi-R, -A and -xC profiles for consistency and template compliance ([#544](https://github.com/IHE/DEV.SDPi/issues/544))
+- History Service XML Schema: remove hm:ChangeSequence element from root level; use element type over element ref ([#297](https://github.com/IHE/DEV.SDPi/issues/548))
+- History Service XML Schema: rename HistoryReportType to HistoricReportChoiceType ([#297](https://github.com/IHE/DEV.SDPi/issues/548))
  
 ### Editorial Fixes
 

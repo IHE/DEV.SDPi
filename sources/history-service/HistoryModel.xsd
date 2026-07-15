@@ -25,7 +25,7 @@
                     </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element ref="hm:ChangeSequence" minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="ChangeSequence" type="hm:ChangeSequenceType" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>Zero or more ChangeSequence elements to describe changes of different MDIB
                         sequences and/or instance numbers.
@@ -41,12 +41,6 @@
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
-	<xsd:element name="ChangeSequence" type="hm:ChangeSequenceType">
-		<xsd:annotation>
-			<xsd:documentation>An element that contains an MDIB snapshot, localized texts and subsequent MDIB changes.
-            </xsd:documentation>
-		</xsd:annotation>
-	</xsd:element>
 	<xsd:complexType name="ChangeSequenceType">
 		<xsd:annotation>
 			<xsd:documentation>Type definition of a change sequence.</xsd:documentation>
@@ -135,7 +129,7 @@
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element ref="ext:Extension" minOccurs="0"/>
-			<xsd:element name="Report" type="hm:HistoryReportTypeType"/>
+			<xsd:element name="Report" type="hm:HistoricReportChoiceType"/>
 		</xsd:sequence>
 		<xsd:attribute name="Time" type="pm:Timestamp" use="required">
 			<xsd:annotation>
@@ -143,7 +137,7 @@
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
-	<xsd:complexType name="HistoryReportTypeType">
+	<xsd:complexType name="HistoricReportChoiceType">
 		<xsd:choice>
 			<xsd:element ref="msg:DescriptionModificationReport"/>
 			<xsd:element ref="msg:EpisodicAlertReport"/>
