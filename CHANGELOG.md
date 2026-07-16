@@ -23,6 +23,7 @@ Each section shall contain a list of action items of the following format: `<bri
 - Clarification on the use of `wsa:To` in greeting {`Hello`, `Bye`} notifications sent by a discovery proxy to a consumer ([#534](https://github.com/IHE/DEV.SDPi/issues/534))
 - Required SDPi-P actor grouping entries for BICEPS Content Creator and BICEPS Content Consumer in TF-1:10.3 ([#476](https://github.com/IHE/DEV.SDPi/issues/476))
 - Support semantic markup for deprecating requirements, transactions, use-cases, profiles, content modules and actors ([#511](https://github.com/IHE/DEV.SDPi/issues/511)).
+- Clarify expected behaviour and requirements for consumers making multiple concurrent connections to providers ([#503](https://github.com/IHE/DEV.SDPi/issues/503)).
 
 ### Changes
 
@@ -55,7 +56,6 @@ Each section shall contain a list of action items of the following format: `<bri
 - Clarifying note to R7000 ([#501](https://github.com/IHE/DEV.SDPi/issues/501))
 - Clarifying statements to DEV-23, DEV-24, DEV-46, and DEV-47 w.r.t to ad-hoc and managed mode discovery([#409](https://github.com/IHE/DEV.SDPi/issues/409))
 - OID Framework to TF-3Z ([#474](https://github.com/IHE/DEV.SDPi/issues/474))
-- Clarify expected behaviour and requirements for consumers making multiple concurrent connections to providers ([#503](https://github.com/IHE/DEV.SDPi/issues/503)).
 - Distributed Alarm System option and related transactions DEV-48 and DEV-49 (a.k.a. early "pre-published" integration of the SDC A-PKP standard) ([#457](https://github.com/IHE/DEV.SDPi/issues/457))
 - Make restriction of xsd:durations to hours, minutes, seconds, and fractional seconds mandatory for all xsd:duration values ([#517](https://github.com/IHE/DEV.SDPi/issues/517))
 
