@@ -125,10 +125,10 @@ The complete detailed content will remain in the sdpi-standard document as it ha
 Editorial Task List (prioritized) for this Supplement:
 
 . Title Page - Update & review
-. Find and update all uses of "supplement" throughout current document
-.. In labels used for referencing
-.. In standard note sections
-.. ... ?
+. [.line-through]#Find and update all uses of "supplement" throughout current document#
+.. [.line-through]#In labels used for referencing#
+.. [.line-through]#In standard note sections#
+.. [.line-through]#... ?#
 . Add front matter not IHE TF based, but for a standalone document:
 .. Introduction: Gemini, Gemini TF Profile Standard, SDPi in particular;
 ... Include Unique Features of TF Profile Standard (incl. embedded requirements, ... )

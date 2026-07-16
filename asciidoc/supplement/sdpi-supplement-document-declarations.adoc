@@ -1,0 +1,97 @@
+
+////
+            FORWARD DECLARATIONS FOR THE DOCUMENT
+
+NOTES:
+     1) The items defined below are forward declarations to define labels for the entire document
+     2) VARIABLES are used not because the content may vary (such as transaction #'s) but
+     3) They can get expanded anywhere including in section headings
+
+////
+
+[#supplement_clause_forward_declarations,sdpi_offset=clear]
+== Standard Forward Declarations
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *{standard_note}*:
+
+*Standalone SDPi:*  _REWORK this section to make it a permanent Forward Declarations, perhaps refactoring it into something that is not labeled "Forward Declarations"!_
+
+The following table is included in this version of the standard to capture *_"forward" declarations of acronyms and labels_* that are used in the text but are not intended to be part of the General Introduction Appendix D Glossary.
+"Forward" means that they are used BEFORE the document section in which they are formally defined.
+Since AsciiDoc is a one-pass processor, forward declarations are required.
+
+There was no clear way of defining these replacement definitions in a way that is "under the hood" and not visible to the reader.
+The following table was thus created but may be moved or otherwise implemented in subsequent standard versions.
+
+Suggestions appreciated!
+
+NOTE:  Forward Declarations in the following table are being added "on demand" or when needed and not comprehensively for every acronym defined in the document that is not also included in the Glossary.
+
+|===
+
+
+[%autowidth]
+[cols="^1,^2,1,^2"]
+|===
+|Acronym |Label |Section Defined In | Type
+
+| [[supplement_acronym_aars,AARS]] AARS
+| [[supplement_label_use_case_name_aars,Alerts to Alert Recording Systems]] Alerts to Alert Recording Systems
+| <<supplement_vol1_clause_appendix_c_use_case_aars>>
+| Use Case
+
+| [[supplement_acronym_acns,ACNS]] ACNS
+| [[supplement_label_use_case_name_acns,Alerts to Clinician Notification Systems]] Alerts to Clinician Notification Systems
+| <<supplement_vol1_clause_appendix_c_use_case_acns>>
+| Use Case
+
+| [[supplement_acronym_agw,AGW]] AGW
+| [[supplement_label_system_type_name_agw,Alert Gateway]] Alert Gateway
+| <<supplement_vol3_clause_system_type_nomenclature_extensions>>
+| System Type
+
+| [[supplement_acronym_cs,CS]] CS
+| [[supplement_label_system_type_name_cs,Central Station]] Central Station
+| <<supplement_vol3_clause_system_type_nomenclature_extensions>>
+| System Type
+
+| [[supplement_acronym_dgw,DGW]] DGW
+| [[supplement_label_system_type_name_dgw,Data Gateway]] Data Gateway
+| <<supplement_vol3_clause_system_type_nomenclature_extensions>>
+| System Type
+
+| [[supplement_acronym_ddes,DDES]] DDES
+| [[supplement_label_use_case_name_ddes,Device Data to Enterprise Systems]] Device Data to Enterprise Systems
+| <<supplement_vol1_clause_appendix_c_use_case_ddes>>
+| Use Case
+
+| [[supplement_acronym_mdpws,MDPWS]] MDPWS
+| [[supplement_label_use_case_name_mdpws,Medical Devices Communication Profile for Web Services]] Medical Devices Communication Profile for Web Services
+| <<supplement_ref_ieee_11073_20702_2016>>
+| Standard
+
+| [[supplement_acronym_sas,SAS]] SAS
+| [[supplement_label_system_type_name_sas,Smart Alerting System]] Smart Alerting System
+| <<supplement_vol3_clause_system_type_nomenclature_extensions>>
+| System Type
+
+| [[supplement_acronym_sicdmp,SICDmp]] SICDmp
+| [[supplement_label_use_case_name_sicdmp,Standalone ICU Dashboard Multiple Patient]] Standalone ICU Dashboard Multiple Patient
+| <<supplement_vol1_clause_appendix_c_use_case_sicdmp>>
+| Use Case
+
+| [[supplement_acronym_sicdsp,SICDsp]] SICDsp
+| [[supplement_label_use_case_name_sicdsp,Standalone ICU Dashboard Single Patient]] Standalone ICU Dashboard Single Patient
+| <<supplement_vol1_clause_appendix_c_use_case_sicdsp>>
+| Use Case
+
+| [[supplement_acronym_stad,STAD]] STAD
+| [[supplement_label_use_case_name_stad,Synchronized Time Across Devices]] Synchronized Time Across Devices
+| <<supplement_vol1_clause_appendix_c_use_case_stad>>
+| Use Case
+
+|===

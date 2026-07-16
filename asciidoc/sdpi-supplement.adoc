@@ -172,7 +172,7 @@ include::sdpi-supplement-intro.adoc[]
 //
 // = Volume 1 -- Profiles
 //
-//include::volume1/tf1-main.adoc[]
+include::supplement/sdpi-supplement-tf1.adoc[]
 
 // Appendix A
 ////
