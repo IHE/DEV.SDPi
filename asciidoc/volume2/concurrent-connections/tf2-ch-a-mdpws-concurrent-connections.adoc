@@ -1,45 +1,42 @@
 [#vol2_ch_a_mdpws_concurrent_connections]
 ==== MDPWS Concurrent Consumer TCP Connections
 
-SDC allows a <<vol1_spec_sdpi_p_actor_somds_consumer>> to open multiple, concurrent TCP 
-connections to a <<vol1_spec_sdpi_p_actor_somds_provider>>'s hosted services.
-While this offers flexibility for implementations, <<vol1_spec_sdpi_p_actor_somds_provider>>
-may constrain the number of concurrent TCP connections to help mitigate risks to the availability of its 
-<<acronym_sfc,system function contribution>>.
-For example, securing connections may be expensive or network bandwidth may be limited. 
+SDC allows a <<vol1_spec_sdpi_p_actor_somds_consumer>> to open multiple,
+concurrent TCP connections to the hosted services of a
+<<vol1_spec_sdpi_p_actor_somds_provider>>. While this offers flexibility for 
+implementations, opening unlimited connections can negatively impact performance of
+and/or resources available in some <<vol1_spec_sdpi_p_actor_somds_provider>>s.
+Typical constraints might include the cost of securing connections, available 
+network bandwidth and sockets.
 
-This section describes scenarios and recommendations for managing concurrent connections
-between consumers and providers.
+To protect availability of its <<acronym_sfc,system function contribution>>, 
+the <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_provider>> 
+could choose, for example, to limit the number of concurrent TCP connections that one or more 
+<<vol1_spec_sdpi_p_actor_somds_consumer>>s can establish with the provider's
+hosted services. For example, the <<vol1_spec_sdpi_p_actor_somds_provider>> could:
 
-.R0201
-[sdpi_requirement#r0201,sdpi_req_level=may]
-[sdpi_req_type=risk_mitigation,sdpi_ses_type=effectiveness,sdpi_ses_test=wire]
-****
-[NORMATIVE]
-====
-The <<term_manufacturer>> of a <<vol1_spec_sdpi_p_actor_somds_provider>> may limit the number of 
-concurrent TCP connections from an individual <<vol1_spec_sdpi_p_actor_somds_consumer>> to its hosted services.
-====
+* drop connections from a <<vol1_spec_sdpi_p_actor_somds_consumer>> that exceed a configured limit
+  without sending any response; or
+* after securing the connection, respond with HTTP status code 429 (too many requests) 
+  to invite the <<vol1_spec_sdpi_p_actor_somds_consumer>> to reduce its connection count and/or 
+  frequency.
 
-[NOTE]
-====
-* A <<vol1_spec_sdpi_p_actor_somds_provider>> may choose to limit the number of concurrent connections 
-accepted from an individual <<vol1_spec_sdpi_p_actor_somds_consumer>> to one or more, or 
-allow unlimited connections, based on its resource capabilities and design goals.
-* To enforce TCP connection limits, a provider may identify a <<vol1_spec_sdpi_p_actor_somds_consumer>> by its:
-** <<term_transport_address>> and/or,
-** `[source endpoint]` message property (see <<ref_oasis_ws_addressing_2006>>) and/or,
-** client credentials used for TLS authentication.
-* Securing the connection may be the most expensive part of an SDC service operation, so a <<vol1_spec_sdpi_p_actor_somds_provider>> may 
-drop concurrent connections from a <<vol1_spec_sdpi_p_actor_somds_consumer>> that exceed its limits, or respond with 
-HTTP status code `429 (Too Many Requests)` (after securing the connection) to signal the <<vol1_spec_sdpi_p_actor_somds_consumer>> 
-to reduce its connection count and/or frequency.
-====
+However, securing a new connection could be the most resource-intensive part of an SDC service operation.
+So, under some conditions, the provider might not be able send a reply.
 
-// todo: specify how client credentials can identify consumer based on the work from the 
-// security working group: https://github.com/ornet-ev/wg-certificates 
+To enforce a connection limit, a <<vol1_spec_sdpi_p_actor_somds_provider>> could identify a
+<<vol1_spec_sdpi_p_actor_somds_consumer>> using one or more of the following:
 
-****
+* its <<term_transport_address>>;
+* the `[source endpoint]` message property (see <<ref_oasis_ws_addressing_2006>>); or
+* the client credentials used for TLS authentication.
+
+The client credentials and `[source endpoint]` information is only available after
+the connection has been secured and, at least part of, the message has been parsed. 
+So, a <<vol1_spec_sdpi_p_actor_somds_provider>> dropping connections, based only on the
+peer's <<term_transport_address>>, could be unable to distingish between multiple
+<<vol1_spec_sdpi_p_actor_somds_consumer>>s originating from the same host. 
+
 
 .R0202
 [sdpi_requirement#r0202,sdpi_req_level=shall]
@@ -58,27 +55,32 @@ its <<acronym_sfc,system function contribution>>.
 
 [NOTE]
 ====
-* A <<vol1_spec_sdpi_p_actor_somds_consumer>> may create concurrent connections 
+* A <<vol1_spec_sdpi_p_actor_somds_consumer>> could create concurrent connections 
 when it invokes operations on one or more of a <<vol1_spec_sdpi_p_actor_somds_provider>>'s
 services at the same time. 
 
-* A concurrent connection means 2 or more active client connections create by the
+* A concurrent connection means 2 or more active client connections created by the
 <<term_manufacturer>>'s <<vol1_spec_sdpi_p_actor_somds_participant>> to one other
 <<vol1_spec_sdpi_p_actor_somds_participant>>. This requirement does not apply to 
 connections to different <<vol1_spec_sdpi_p_actor_somds_participant>>s.
 
+* Two <<vol1_spec_sdpi_p_actor_somds_participant>>s sharing a host could be indistinguishable
+until the transport security handshake is complete and/or the message header is processed. 
+Shared hosting could impact <<vol1_spec_sdpi_p_actor_somds_participant>>s dropping 
+connections based on <<term_transport_address>> alone.
+
 * This requirement does not replace any limitation imposed by other requirements, which
-may limit the number of concurrent connections made by a <<vol1_spec_sdpi_p_actor_somds_participant>>
-such as RefRequirement:R1001[]. 
+could also limit the number of concurrent connections made by a 
+<<vol1_spec_sdpi_p_actor_somds_participant>> such as RefRequirement:R1001[]. 
 
-* A <<vol1_spec_sdpi_p_actor_somds_participant>> may limit the number concurrent connections
-and/or frequency of connections when it receives a response with HTTP status code 
-`429` (Too Many Requests). 
+* A <<vol1_spec_sdpi_p_actor_somds_participant>> could choose to limit the number 
+concurrent connections, and/or frequency of connections, when it receives a 
+response with HTTP status code `429` (too many requests). 
 
-* A <<vol1_spec_sdpi_p_actor_somds_consumer>> may limit the number of
+* A <<vol1_spec_sdpi_p_actor_somds_consumer>> could limit the number of
 active subscriptions or close connections with infrequent notifications. 
 
-* A <<vol1_spec_sdpi_p_actor_somds_participant>> may reject, with or without any 
+* A <<vol1_spec_sdpi_p_actor_somds_participant>> could reject, with or without any 
 response, any inbound connection attempt. For example, when its backlog of pending 
 connection attempts exceeds available capacity for new connections.
 
@@ -90,23 +92,24 @@ connection attempts exceeds available capacity for new connections.
 
 ====== Resource Constraints
 
-Devices with limited processing and/or memory resources (e.g., pulse oximeters, infusion pumps, etc.) may support
-only a small number of active TCP connections (e.g., 10-20). 
+Devices with limited processing and/or memory resources (e.g., pulse oximeters, infusion pumps, etc.) 
+might support only a small number of active TCP connections (e.g., 10-20). 
 These connections are allocated to support the <<vol1_spec_sdpi_p_actor_somds_provider>>s 
 <<acronym_sfc,system function contribution>> including: hosted services (e.g., `GET` and subscription management),
 publishing updates, discovery and logging. 
 
 A <<vol1_spec_sdpi_p_actor_somds_consumer>> opening multiple concurrent connections to a 
-<<vol1_spec_sdpi_p_actor_somds_provider>>'s hosted services may consume a disproportionate number of 
+<<vol1_spec_sdpi_p_actor_somds_provider>>'s hosted services could consume a disproportionate number of 
 available connections, reducing the number of <<vol1_spec_sdpi_p_actor_somds_consumer>>s that a 
 <<vol1_spec_sdpi_p_actor_somds_provider>> can support and/or compromising its <<acronym_sfc,system function contribution>>.
 
 ====== Consumer Rationale for Multiple Connections
 
-A <<vol1_spec_sdpi_p_actor_somds_consumer>> may open multiple concurrent connections to a provider's hosted services to:
+A <<vol1_spec_sdpi_p_actor_somds_consumer>> could choose to open multiple concurrent connections 
+to a provider's hosted services to:
 
-* separate time-critical operations (e.g., `SET SERVICE` operations) from less critical operations (e.g., subscription 
-renewals), 
+* separate time-critical operations (e.g., `SET SERVICE` operations) from less critical 
+operations (e.g., subscription renewals), 
 * reduce the risk of urgent messages being delayed by less urgent traffic, or
 * provide redundancy for critical operations.
 
@@ -114,12 +117,14 @@ renewals),
 
 ====== Status Signalling
 
-A <<vol1_spec_sdpi_p_actor_somds_provider>> experiencing excessive load:
+A <<vol1_spec_sdpi_p_actor_somds_provider>> experiencing excessive load could choose to:
 
-* may respond with HTTP status code `429` (Too Many Requests, <<ref_rfc_6585,RFC 6585, section 4>>), and 
-* may include a `Retry-After` header (<<ref_rfc_7231,RFC 7231, section 7.3.1>>) to indicate when the consumer may retry the request.
+* respond with HTTP status code `429` (too many requests, <<ref_rfc_6585,RFC 6585, section 4>>), and 
+* include a `Retry-After` header (<<ref_rfc_7231,RFC 7231, section 7.3.1>>) to indicate when the consumer 
+could retry the request.
 
-Consumers can interpret this response as a signal to adapt their connection strategy. For example, a consumer may:
+Consumers can interpret this response as a signal to adapt their connection strategy. For example, a consumer 
+could choose to:
 
 * reduce the number of concurrent connections,
 * use a single connection for all operations,
@@ -146,7 +151,7 @@ HTTP-date values and potential clock synchronization issues between devices.
 
 | Normal provider (no constraints)
 | Accept multiple connections per consumer
-| May use multiple connections for priority separation if desired
+| Use multiple connections for priority separation if desired
 
 | Provider under load (temporary)
 | Respond with `429` to new connection attempts and include a `Retry-After` header
