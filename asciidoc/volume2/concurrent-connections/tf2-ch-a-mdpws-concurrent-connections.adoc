@@ -119,16 +119,18 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> experiencing excessive load:
 * may respond with HTTP status code `429` (Too Many Requests, <<ref_rfc_6585,RFC 6585, section 4>>), and 
 * may include a `Retry-After` header (<<ref_rfc_7231,RFC 7231, section 7.3.1>>) to indicate when the consumer may retry the request.
 
-Consumers should interpret this response as a signal to adapt their connection strategy. For example, a consumer may:
+Consumers can interpret this response as a signal to adapt their connection strategy. For example, a consumer may:
 
 * reduce the number of concurrent connections,
 * use a single connection for all operations,
 * implement backoff and retry logic.
 
-A <<vol1_spec_sdpi_p_actor_somds_consumer>> receiving a `429` response should not interpret this as a operation failure, but rather as an indication that the provider is under load and needs the consumer to adjust its behaviour. 
-The consumer may use information in the `Retry-After` header, if present, to determine when to retry the request, but could also consider implementing an exponential backoff strategy to avoid overwhelming the provider with retries. 
+A <<vol1_spec_sdpi_p_actor_somds_consumer>> receiving a `429` response need not interpret this as a 
+permanent operation failure, but rather as an indication that the provider is under load and needs 
+the consumer to adjust its behaviour. 
+The consumer can use information in the `Retry-After` header, if present, to determine when to retry the request, but could also consider implementing an exponential backoff strategy to avoid overwhelming the provider with retries. 
 
-When a <<vol1_spec_sdpi_p_actor_somds_provider>> includes the `Retry-After` header (<<ref_rfc_7231,RFC 7231, section 7.3.1>>) in a `429 (Too Many Requests)` response, it should provide the retry period in seconds. RFC 7231 allows for an
+A <<vol1_spec_sdpi_p_actor_somds_provider>> that includes the `Retry-After` header (<<ref_rfc_7231,RFC 7231, section 7.3.1>>) in a `429 (Too Many Requests)` response, expresses the retry period in seconds. RFC 7231 allows for an
 HTTP-date format in the `Retry-After` header, but this is not recommended for SDC to avoid the complexity of parsing 
 HTTP-date values and potential clock synchronization issues between devices.
 
@@ -154,6 +156,6 @@ HTTP-date values and potential clock synchronization issues between devices.
 
 ===== Related Requirements
 
-* RefRequirement:r1001[]: Single connection to consumer for sending reports
+* RefRequirement:R1001[]: Single connection to consumer for sending reports
 
 
