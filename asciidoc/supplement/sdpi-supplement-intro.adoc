@@ -118,7 +118,7 @@ These three objectives may be summarized as follows:
 [none]
 * *Requirements Interoperability (RI)*
 [none]
-** Ability to integrate and automate requirements and capabilities from component specifications and standards to enable traceability and coverage at <<supplement_term_conformity_assessment>> (<<supplement_acronym_ca>>) of the component product interface
+** Ability to integrate and automate requirements and capabilities from component specifications and standards to enable traceability and coverage at <<term_conformity_assessment>> (<<acronym_ca>>) of the component product interface
 * *Model Centric (MC)*
 [none]
 ** Transition from a document-centric to a _computable model-based "single source of truth"_ specification from which the Technical Framework becomes a view of the model
