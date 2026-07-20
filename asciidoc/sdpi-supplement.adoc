@@ -159,12 +159,18 @@ Information about the organization of IHE Technical Frameworks and Supplements a
 
 The current version of the IHE Devices Technical Framework can be found at https://profiles.ihe.net/DEV/[DEV Technical Framework].
 
+// Forward declarations of common labels & acronyms & variables
+//
+include::supplement/sdpi-supplement-document-declarations.adoc[]
+
 // STANDALONE SDPi:  1st refactoring, moved copies of these files into the supplement/ directory
-include::sdpi-supplement-intro.adoc[]
+include::supplement/sdpi-supplement-intro.adoc[]
 
 // include::supplement/sdpi-standard-issues.adoc[]
 
 // = Volume 0 -- IHE Technical Frameworks General Introduction
+
+// Standalone TO DO - Do we move all these files in volume0 directory under supplement/ ?  It won't be relevant for the STANDALONE SDPi
 
 // STANDALONE SDPi:  1st refactoring, simply COMMENTED OUT the 3 volumes
 //include::volume0/tf0-main.adoc[]

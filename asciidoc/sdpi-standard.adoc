@@ -125,6 +125,7 @@ The complete detailed content will remain in the sdpi-standard document as it ha
 Editorial Task List (prioritized) for this Supplement:
 
 . Title Page - Update & review
+.. Change Contact from DEV@IHE.NET to IHE SDPi GitHub Issues link
 . [.line-through]#Find and update all uses of "supplement" throughout current document#
 .. [.line-through]#In labels used for referencing#
 .. [.line-through]#In standard note sections#
