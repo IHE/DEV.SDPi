@@ -46,7 +46,9 @@ _This_ is primarily an IHE transport profile footnote:[See the IHE Technical Fra
 It supports the transactions and information exchanged in accordance to a Service-Oriented Architecture (SOA) specialized for high-acuity points of care (e.g., operating table or ICU bed), defined as a <<supplement_term_service_oriented_medical_device_system>>.
 All the SDPi-P actors are therefore scoped with “<<supplement_acronym_somds>>” to clearly identify their application context and scope.
 
-Although all information exchanged between SDPi-P <<supplement_acronym_somds>> participating systems and applications must conform to the basic <<supplement_acronym_sdc>>/<<supplement_acronym_biceps>> content module requirements footnote:[See <<vol3_clause_sdc_biceps_semantic_content_module>>. ], content modules have been defined for common high-acuity medical devices such as infusion pumps, ventilators and physiologic monitors.
+Although all information exchanged between SDPi-P <<supplement_acronym_somds>> participating systems and applications must conform to the basic <<supplement_acronym_sdc>>/<<supplement_acronym_biceps>> content module requirements
+// STANDALONE SDPi:  Add footnote reference <<vol3_clause_sdc_biceps_semantic_content_module>>
+footnote:[See REF: vol3_clause_sdc_biceps_semantic_content_module. ], content modules have been defined for common high-acuity medical devices such as infusion pumps, ventilators and physiologic monitors.
 
 Note that future IHE _workflow profiles_ may be defined that build upon the transport and content module foundation established by the SDPi-P profile.
 For example, Operating Room / Surgery Point-of-Care Integration, ICU Point-of-Care Integration, or more service-focused profiles such as Point-of-Care Identity Management (PCIM) for device-patient association management, or Silent ICU / Quiet Hospital, where the acute point-of-care is integrated with enterprise systems around device alerting and alert distribution to provide an improved environment of care (reduced noise level and improved safety) and clinician interaction.
@@ -96,7 +98,7 @@ For example, Operating Room / Surgery Point-of-Care Integration, ICU Point-of-Ca
 === Use Case Feature {var_use_case_id}: <<supplement_label_use_case_name_sicdsp>> (<<supplement_acronym_sicdsp>>)
 
 :var_use_case_id: 3
-[#vsupplement_ol1_clause_appendix_c_use_case_sicdmp,sdpi_offset=4]
+[#vsupplement_vol1_clause_appendix_c_use_case_sicdmp,sdpi_offset=4]
 [role=use-case,use-case-id=sicdmp,sdpi_feature="Multiple Patient Standalone ICU Dashboard",oid-arcs=".3"]
 === Use Case Feature {var_use_case_id}: <<supplement_label_use_case_name_sicdmp>> (<<supplement_acronym_sicdmp>>)
 

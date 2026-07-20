@@ -172,8 +172,7 @@ include::supplement/sdpi-supplement-intro.adoc[]
 
 // Standalone TO DO - Do we move all these files in volume0 directory under supplement/ ?  It won't be relevant for the STANDALONE SDPi
 
-// STANDALONE SDPi:  1st refactoring, simply COMMENTED OUT the 3 volumes
-//include::volume0/tf0-main.adoc[]
+include::supplement/volume0/tf0-main.adoc[]
 
 //
 // = Volume 1 -- Profiles
@@ -181,6 +180,9 @@ include::supplement/sdpi-supplement-intro.adoc[]
 include::supplement/sdpi-supplement-tf1.adoc[]
 
 // Appendix A
+
+// Standalone TO DO - Add in sections below
+
 ////
 [appendix#vol1_appendix_a_requirements_management_for_p_n_t_interperability,sdpi_offset=A]
 == Requirements Management for Plug-and-Trust Interoperability

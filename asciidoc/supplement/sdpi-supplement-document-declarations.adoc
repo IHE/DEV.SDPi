@@ -33,6 +33,7 @@ NOTE:  Forward Declarations in the following table are being added "on demand" o
 
 |===
 
+// Standalone TO DO - Do we need any of the Acronym "Section Defined In" below?
 
 [%autowidth]
 [cols="^1,^2,1,^2"]
@@ -51,17 +52,17 @@ NOTE:  Forward Declarations in the following table are being added "on demand" o
 
 | [[supplement_acronym_agw,AGW]] AGW
 | [[supplement_label_system_type_name_agw,Alert Gateway]] Alert Gateway
-| <<supplement_vol3_clause_system_type_nomenclature_extensions>>
+| // Standalone TO DO:  <<supplement_vol3_clause_system_type_nomenclature_extensions>>
 | System Type
 
 | [[supplement_acronym_cs,CS]] CS
 | [[supplement_label_system_type_name_cs,Central Station]] Central Station
-| <<supplement_vol3_clause_system_type_nomenclature_extensions>>
+| // Standalone TO DO:  <<supplement_vol3_clause_system_type_nomenclature_extensions>>
 | System Type
 
 | [[supplement_acronym_dgw,DGW]] DGW
 | [[supplement_label_system_type_name_dgw,Data Gateway]] Data Gateway
-| <<supplement_vol3_clause_system_type_nomenclature_extensions>>
+| // Standalone TO DO:  <<supplement_vol3_clause_system_type_nomenclature_extensions>>
 | System Type
 
 | [[supplement_acronym_ddes,DDES]] DDES
@@ -71,12 +72,12 @@ NOTE:  Forward Declarations in the following table are being added "on demand" o
 
 | [[supplement_acronym_mdpws,MDPWS]] MDPWS
 | [[supplement_label_use_case_name_mdpws,Medical Devices Communication Profile for Web Services]] Medical Devices Communication Profile for Web Services
-| <<supplement_ref_ieee_11073_20702_2016>>
+| supplement_ref_ieee_11073_20702_2016  <<supplement_ref_ieee_11073_20702_2016>>
 | Standard
 
 | [[supplement_acronym_sas,SAS]] SAS
 | [[supplement_label_system_type_name_sas,Smart Alerting System]] Smart Alerting System
-| <<supplement_vol3_clause_system_type_nomenclature_extensions>>
+| // Standalone TO DO:  <<supplement_vol3_clause_system_type_nomenclature_extensions>>
 | System Type
 
 | [[supplement_acronym_sicdmp,SICDmp]] SICDmp

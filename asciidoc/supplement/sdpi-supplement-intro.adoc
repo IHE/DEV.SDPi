@@ -3,12 +3,17 @@
 [#supplement_clause_introduction_to_supplement,sdpi_offset=clear]
 = Introduction to this Supplement
 
+// Standalone TO DO - All narrative below + references <<...>> need to be resolved IF there is a need to link
+
 [%noheader]
 [%autowidth]
 [cols="1"]
 |===
 a| *SDPi {ihe_supplement_sdpi_revision_short} Supplement -- _STU / TI Version_ -- Note*:
 
+NOTE: What do release notes look like in the supplement vs. simply pointing to the standalone?
+
+////
 This version of the SDPi 2.4 Standard for Trial Use (HL7 STU) / Trial Implementation (IHE TI) supplement is the 1st release in 2026, continuing the objective to provide three to four releases each year that include both _incremental_ updates (e.g., editorial "fixes"), ballot comment resolutions (e.g., from HL7 ballot cycles), and additional capability enhancements.
 For this release, key changes include:
 
@@ -35,6 +40,8 @@ These known limitations and forward-looking content include:
 . *_<<supplement_term_safe_effective_secure>> Sections_* (see <<supplement_vol1_clause_appendix_a_ses_considerations_section_template>>) are included in the specification; however, their use and content will be significantly extended in future versions;
 . This supplement is currently rendered as a *"long form"* document -- one single HTML file; however, in subsequent versions the intent is to consider a multi-page / file HTML rendering + addition of a tabbed menu for navigating the sections of the supplement;
 . *{standard_note}* boxes are provided throughout the document to help guide reviewers and implementers.
+
+////
 
 |===
 
@@ -81,9 +88,9 @@ These sections typically include a basic description of use case scenarios, iden
 This information may also be used to drive the test cases that are used for conformity assessment, ensuring that the resulting specification implementation meets the intended needs.
 
 This supplement includes this same organization; however, it also defines a set of general, non-profile-specific clinical use cases that provide requirements, which may be mapped to multiple SDPi integration profiles.
-Section <<vol1_appendix_c_dpi_use_cases>> provides a collection of these high-level clinical use cases.
+Section <<supplement_vol1_appendix_c_dpi_use_cases>> provides a collection of these high-level clinical use cases.
 
-FOR READERS OF THIS SUPPLEMENT, a good strategy might be to first review the use cases in the Volume 1 appendix (e.g., <<vol1_clause_appendix_c_use_case_sicdmp>> ), and then review the specific profiles to which the clinical scenario requirements have been mapped.
+FOR READERS OF THIS SUPPLEMENT, a good strategy might be to first review the use cases in the Volume 1 appendix (e.g., <<supplement_vol1_clause_appendix_c_use_case_sicdmp>> ), and then review the specific profiles to which the clinical scenario requirements have been mapped.
 Reviewing the use case specifications in this order will provide the needed context to understand what is presented in each profile.
 
 [#supplement_clause_joint_ihe_hl7_gemini_ses_mdi_project_development]
@@ -111,7 +118,7 @@ These three objectives may be summarized as follows:
 [none]
 * *Requirements Interoperability (RI)*
 [none]
-** Ability to integrate and automate requirements and capabilities from component specifications and standards to enable traceability and coverage at <<term_conformity_assessment>> (<<acronym_ca>>) of the component product interface
+** Ability to integrate and automate requirements and capabilities from component specifications and standards to enable traceability and coverage at <<supplement_term_conformity_assessment>> (<<supplement_acronym_ca>>) of the component product interface
 * *Model Centric (MC)*
 [none]
 ** Transition from a document-centric to a _computable model-based "single source of truth"_ specification from which the Technical Framework becomes a view of the model
@@ -123,7 +130,7 @@ The SDPi {ihe_supplement_sdpi_revision} version of the supplement continues to m
 Clearly, moving toward <<term_model_centric>> specifications and full integration of <<term_model_based_systems_engineering>> will take considerable effort and time; however, this supplement represents a humble start in that direction.
 Subsequent supplement versions will build upon these objectives and support a new level of rigor for connectathon and product conformity assessment testing and ultimately test reports that directly impact the challenges around medical product regulatory submissions.
 
-Additional discussion is provided in <<vol1_appendix_a_requirements_management_for_p_n_t_interperability>>, and on the https://confluence.hl7.org/pages/viewpage.action?pageId=82906664#ConformityAssessment&Tooling-RI+MC+RRforMedTechSpecificationsInitiative[Gemini project's Confluence pages].
+Additional discussion is provided in <<supplement_vol1_appendix_a_requirements_management_for_p_n_t_interperability>>, and on the https://confluence.hl7.org/pages/viewpage.action?pageId=82906664#ConformityAssessment&Tooling-RI+MC+RRforMedTechSpecificationsInitiative[Gemini project's Confluence pages].
 See also related discussions on the Gemini Project's https://confluence.hl7.org/x/XhPUB[Pathway to an Ecosystem of Plug-and-Trust Products].
 
 
