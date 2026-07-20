@@ -70,6 +70,10 @@ No content from those three standards - including their requirements -  is norma
 
 * [[[ref_rfc_5905, RFC 5905]]] D. Mills et al., RFC 5905, Network Time Protocol Version 4: Protocol And Algorithms Specification, June 2010, available at https://www.rfc-editor.org/rfc/rfc5905
 
+* [[[ref_rfc_6585, RFC 6585]]] M. Nottingham, R. Fielding, RFC 6585, Additional HTTP Status Codes, April 2012, available at https://www.rfc-editor.org/rfc/rfc6585
+
+* [[[ref_rfc_7231, RFC 7231]]] R. Fielding, J. Reschke, RFC 7231, Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content, June 2014, available at https://www.rfc-editor.org/rfc/rfc7231
+
 * [[[ref_rfc_9110, RFC 9110]]] R. Fielding, M. Nottingham, J. Reschke, RFC 9110, HTTP Semantics, June 2022, available at https://www.rfc-editor.org/rfc/rfc9110
 
 * [[[ref_oasis_dpws_2009,OASIS DPWS:2009]]] OASIS Standard, Devices Profile for Web Services Version 1.1, OASIS Standard, 1 July 2009, available at http://docs.oasis-open.org/ws-dd/dpws/wsdd-dpws-1.1-spec.html
