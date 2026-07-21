@@ -161,10 +161,11 @@ The current version of the IHE Devices Technical Framework can be found at https
 
 // Forward declarations of common labels & acronyms & variables
 //
-include::supplement/sdpi-supplement-document-declarations.adoc[]
+// Standalone TO DO
+//include::supplement/sdpi-supplement-document-declarations.adoc[]
 
 // STANDALONE SDPi:  1st refactoring, moved copies of these files into the supplement/ directory
-include::supplement/sdpi-supplement-intro.adoc[]
+//include::supplement/sdpi-supplement-intro.adoc[]
 
 // include::supplement/sdpi-standard-issues.adoc[]
 
@@ -177,7 +178,8 @@ include::supplement/volume0/tf0-main.adoc[]
 //
 // = Volume 1 -- Profiles
 //
-include::supplement/sdpi-supplement-tf1.adoc[]
+// Standalone TO DO -
+//include::supplement/sdpi-supplement-tf1.adoc[]
 
 // Appendix A
 
