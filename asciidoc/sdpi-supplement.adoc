@@ -116,6 +116,8 @@ The complete detailed content will remain in the sdpi-standard document as it ha
 
 Editorial Task List (prioritized) for this Supplement:
 
+. Move over Introduction files
+. Move over TF-0 files
 . Add top level outline structure for supplement document
 . Change all labels to be supplement-specific & not duplicated from sdpi-standard
 . Add front matter updates per IHE TF Format but for this Supplement, explaining supplement/standalone & conceptual approach.
@@ -159,13 +161,7 @@ Information about the organization of IHE Technical Frameworks and Supplements a
 
 The current version of the IHE Devices Technical Framework can be found at https://profiles.ihe.net/DEV/[DEV Technical Framework].
 
-// Forward declarations of common labels & acronyms & variables
-//
-// Standalone TO DO
-//include::supplement/sdpi-supplement-document-declarations.adoc[]
-
-// STANDALONE SDPi:  1st refactoring, moved copies of these files into the supplement/ directory
-//include::supplement/sdpi-supplement-intro.adoc[]
+include::supplement/sdpi-supplement-intro.adoc[]
 
 // include::supplement/sdpi-standard-issues.adoc[]
 

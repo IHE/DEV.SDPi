@@ -33,66 +33,76 @@ NOTE:  Forward Declarations in the following table are being added "on demand" o
 
 |===
 
-// Standalone TO DO - Do we need any of the Acronym "Section Defined In" below?
 
 [%autowidth]
 [cols="^1,^2,1,^2"]
 |===
 |Acronym |Label |Section Defined In | Type
 
-| [[supplement_acronym_aars,AARS]] AARS
-| [[supplement_label_use_case_name_aars,Alerts to Alert Recording Systems]] Alerts to Alert Recording Systems
-| <<supplement_vol1_clause_appendix_c_use_case_aars>>
+| [[acronym_aars,AARS]] AARS
+| [[label_use_case_name_aars,Alerts to Alert Recording Systems]] Alerts to Alert Recording Systems
+// | <<vol1_clause_appendix_c_use_case_aars>>
+|
 | Use Case
 
-| [[supplement_acronym_acns,ACNS]] ACNS
-| [[supplement_label_use_case_name_acns,Alerts to Clinician Notification Systems]] Alerts to Clinician Notification Systems
-| <<supplement_vol1_clause_appendix_c_use_case_acns>>
+| [[acronym_acns,ACNS]] ACNS
+| [[label_use_case_name_acns,Alerts to Clinician Notification Systems]] Alerts to Clinician Notification Systems
+// | <<vol1_clause_appendix_c_use_case_acns>>
+|
 | Use Case
 
-| [[supplement_acronym_agw,AGW]] AGW
-| [[supplement_label_system_type_name_agw,Alert Gateway]] Alert Gateway
-| // Standalone TO DO:  <<supplement_vol3_clause_system_type_nomenclature_extensions>>
+| [[acronym_agw,AGW]] AGW
+| [[label_system_type_name_agw,Alert Gateway]] Alert Gateway
+// | <<vol3_clause_system_type_nomenclature_extensions>>
+|
 | System Type
 
-| [[supplement_acronym_cs,CS]] CS
-| [[supplement_label_system_type_name_cs,Central Station]] Central Station
-| // Standalone TO DO:  <<supplement_vol3_clause_system_type_nomenclature_extensions>>
+| [[acronym_cs,CS]] CS
+| [[label_system_type_name_cs,Central Station]] Central Station
+// | <<vol3_clause_system_type_nomenclature_extensions>>
+|
 | System Type
 
-| [[supplement_acronym_dgw,DGW]] DGW
-| [[supplement_label_system_type_name_dgw,Data Gateway]] Data Gateway
-| // Standalone TO DO:  <<supplement_vol3_clause_system_type_nomenclature_extensions>>
+| [[acronym_dgw,DGW]] DGW
+| [[label_system_type_name_dgw,Data Gateway]] Data Gateway
+// | <<vol3_clause_system_type_nomenclature_extensions>>
+|
 | System Type
 
-| [[supplement_acronym_ddes,DDES]] DDES
-| [[supplement_label_use_case_name_ddes,Device Data to Enterprise Systems]] Device Data to Enterprise Systems
-| <<supplement_vol1_clause_appendix_c_use_case_ddes>>
+| [[acronym_ddes,DDES]] DDES
+| [[label_use_case_name_ddes,Device Data to Enterprise Systems]] Device Data to Enterprise Systems
+// | <<vol1_clause_appendix_c_use_case_ddes>>
+|
 | Use Case
 
-| [[supplement_acronym_mdpws,MDPWS]] MDPWS
-| [[supplement_label_use_case_name_mdpws,Medical Devices Communication Profile for Web Services]] Medical Devices Communication Profile for Web Services
-| supplement_ref_ieee_11073_20702_2016  <<supplement_ref_ieee_11073_20702_2016>>
+| [[acronym_mdpws,MDPWS]] MDPWS
+| [[label_use_case_name_mdpws,Medical Devices Communication Profile for Web Services]] Medical Devices Communication Profile for Web Services
+// | ref_ieee_11073_20702_2016  <<ref_ieee_11073_20702_2016>>
+|
 | Standard
 
-| [[supplement_acronym_sas,SAS]] SAS
-| [[supplement_label_system_type_name_sas,Smart Alerting System]] Smart Alerting System
-| // Standalone TO DO:  <<supplement_vol3_clause_system_type_nomenclature_extensions>>
+| [[acronym_sas,SAS]] SAS
+| [[label_system_type_name_sas,Smart Alerting System]] Smart Alerting System
+// | <<vol3_clause_system_type_nomenclature_extensions>>
+|
 | System Type
 
-| [[supplement_acronym_sicdmp,SICDmp]] SICDmp
-| [[supplement_label_use_case_name_sicdmp,Standalone ICU Dashboard Multiple Patient]] Standalone ICU Dashboard Multiple Patient
-| <<supplement_vol1_clause_appendix_c_use_case_sicdmp>>
+| [[acronym_sicdmp,SICDmp]] SICDmp
+| [[label_use_case_name_sicdmp,Standalone ICU Dashboard Multiple Patient]] Standalone ICU Dashboard Multiple Patient
+// | <<vol1_clause_appendix_c_use_case_sicdmp>>
+|
 | Use Case
 
-| [[supplement_acronym_sicdsp,SICDsp]] SICDsp
-| [[supplement_label_use_case_name_sicdsp,Standalone ICU Dashboard Single Patient]] Standalone ICU Dashboard Single Patient
-| <<supplement_vol1_clause_appendix_c_use_case_sicdsp>>
+| [[acronym_sicdsp,SICDsp]] SICDsp
+| [[label_use_case_name_sicdsp,Standalone ICU Dashboard Single Patient]] Standalone ICU Dashboard Single Patient
+// | <<vol1_clause_appendix_c_use_case_sicdsp>>
+|
 | Use Case
 
-| [[supplement_acronym_stad,STAD]] STAD
-| [[supplement_label_use_case_name_stad,Synchronized Time Across Devices]] Synchronized Time Across Devices
-| <<supplement_vol1_clause_appendix_c_use_case_stad>>
+| [[acronym_stad,STAD]] STAD
+| [[label_use_case_name_stad,Synchronized Time Across Devices]] Synchronized Time Across Devices
+// | <<vol1_clause_appendix_c_use_case_stad>>
+|
 | Use Case
 
 |===
