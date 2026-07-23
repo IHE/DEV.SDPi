@@ -1,0 +1,4 @@
+// DEV-37 Transaction Summary
+
+Retrieve medical data from a <<actor_somds_medical_data_provider>>.
+

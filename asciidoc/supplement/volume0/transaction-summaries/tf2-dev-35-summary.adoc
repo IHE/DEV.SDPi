@@ -1,0 +1,3 @@
+// DEV-35 Transaction Summary
+
+Establish the exchange of medical data between a <<actor_somds_medical_data_provider>> and a <<actor_somds_medical_data_consumer>>.

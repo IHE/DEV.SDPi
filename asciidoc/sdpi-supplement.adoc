@@ -163,19 +163,17 @@ The current version of the IHE Devices Technical Framework can be found at https
 
 include::supplement/sdpi-supplement-intro.adoc[]
 
+// Standalone TO DO - Issues are only in the standard and not the supplement ... right?
 // include::supplement/sdpi-standard-issues.adoc[]
 
 // = Volume 0 -- IHE Technical Frameworks General Introduction
-
-// Standalone TO DO - Do we move all these files in volume0 directory under supplement/ ?  It won't be relevant for the STANDALONE SDPi
 
 include::supplement/volume0/tf0-main.adoc[]
 
 //
 // = Volume 1 -- Profiles
 //
-// Standalone TO DO -
-//include::supplement/sdpi-supplement-tf1.adoc[]
+include::supplement/sdpi-supplement-tf1.adoc[]
 
 // Appendix A
 

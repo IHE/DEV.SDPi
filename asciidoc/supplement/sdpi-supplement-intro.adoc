@@ -9,7 +9,7 @@
 |===
 a| *SDPi {ihe_supplement_sdpi_revision_short} Supplement -- _STU / TI Version_ -- Note*:
 
-NOTE: What do release notes look like in the supplement vs. simply pointing to the standalone?
+NOTE: #What do release notes look like in the supplement vs. simply pointing to the standalone#?
 
 This version of the SDPi 2.4 Standard for Trial Use (HL7 STU) / Trial Implementation (IHE TI) supplement is the 1st release in 2026, continuing the objective to provide three to four releases each year that include both _incremental_ updates (e.g., editorial "fixes"), ballot comment resolutions (e.g., from HL7 ballot cycles), and additional capability enhancements.
 For this release, key changes include:
@@ -48,7 +48,7 @@ These known limitations and forward-looking content include:
 include::document-declarations.adoc[]
 
 // Define oids for referenced standards
-//include::std-oid-definitions.adoc[]
+include::../std-oid-definitions.adoc[]
 
 
 [#clause_sdpi_supplement_overview]

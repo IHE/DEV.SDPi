@@ -1,120 +1,29 @@
-[#vol1_clause_profiles, supplement_sdpi_volume_caption=1]
+[#vol1_clause_profiles, sdpi_volume_caption=1]
 = Volume 1 -- Profiles
 
 // == Profiles
 
-// TF-1:2  Devices Integration Profiles
+// 2.
+//include::tf1-ch-2-overview.adoc[]
 
-[#supplement_vol1_clause_devices_integration_profiles,sdpi_offset=2]
-== Devices Integration Profiles
+// 10.
+//include::tf1-ch-10-sdpi-p.adoc[]
 
-// 2.2
-[#suupplement_vol1_clause_ses_considerations_requirements,sdpi_offset=2]
-=== Safety, Effectiveness and Security - Requirements and Considerations
+// 11.
+//include::tf1-ch-11-sdpi-r.adoc[]
 
-// 2.3
-[#suupplement_vol1_clause_integration_profiles_overview]
-=== Integration Profiles Overview
+// 12.
+//include::tf1-ch-12-sdpi-a.adoc[]
 
+// 13.
+//include::tf1-ch-13-sdpi-xc.adoc[]
 
-[#suupplement_vol1_clause_sdpi_integration_profiles_overview]
-==== Service-oriented Device Point-of-care Interoperability (SDPi)
+// Appendix A
+//include::tf1-ch-a-requirements-interoperability.adoc[]
 
+// Appendix B
+//include::tf1-ch-b-ref-standards-conformance.adoc[]
 
-[#suupplement_vol1_clause_sdpi_scope]
-===== SDPi Profiles – Scope of Application
-
-
-[#supplement_vol1_clause_sdpi_overview_framework]
-===== SDPi Profiles – Overview & Framework
-
-// Standalone TO DO - Do we have to specialize the "footnote:[...]" as well?
-
-// TF-1:10 SDPi Plug-and-Trust Profile
-
-[#supplement_vol1_clause_sdpi_p_profile,sdpi_offset=10,role=profile,profile-id=sdpi-p,reftext="Plug-and-trust Profile",oid-arcs=.11]
-== Service-oriented Device Point-of-care Interoperability – Plug-and-trust (SDPi-P) Profile
-[#supplement_vol1_clause_sdpi_p_profile_reftext,reftext="SDPi-P Profile"]
-
-The SDPi-Plug-and-trust ([[supplement_acronym_sdpi_p,SDPi-P]] SDPi-P) Profile supports foundational seamless connectivity, information exchange and service invocation as defined in the SDPi architecture detailed in <<supplement_vol1_clause_sdpi_overview_framework>>.
-Whereas the related SDPi Profiles for reporting, alerting and external control are explicitly intended to support medical care capabilities, the SDPi-P Profile focuses on basic healthcare device interoperability.
-All the capabilities defined in SDPi-P are leveraged by and extended in the medically focused profiles.
-This foundational profile not only supports medical device interoperability ("<<supplement_acronym_mdi>>"), providing for “plug-and-play” capabilities, but also with a tightly integrated “trust” framework (see <<supplement_vol1_appendix_a_requirements_management_for_p_n_t_interperability>>).
-The establishment of a trusted ecosystem of medical and non-medical devices and applications footnote:[Note that SDPi-P supports application interoperability including “Software as a Medical Device” (<<acronym_samd>>).] begins at the start of discovery and a secure connection.  Therefore, the profile's name:  <<supplement_term_plug_and_trust>>.
-
-_This_ is primarily an IHE transport profile footnote:[See the IHE Technical Frameworks General Introduction for a more detailed description of IHE profile types, published at https://profiles.ihe.net/GeneralIntro/[profiles.ihe.net/GeneralIntro/].], although it does define several content modules detailed in IHE Devices TF-3.
-It supports the transactions and information exchanged in accordance to a Service-Oriented Architecture (SOA) specialized for high-acuity points of care (e.g., operating table or ICU bed), defined as a <<supplement_term_service_oriented_medical_device_system>>.
-All the SDPi-P actors are therefore scoped with “<<supplement_acronym_somds>>” to clearly identify their application context and scope.
-
-Although all information exchanged between SDPi-P <<supplement_acronym_somds>> participating systems and applications must conform to the basic <<supplement_acronym_sdc>>/<<supplement_acronym_biceps>> content module requirements
-// STANDALONE SDPi:  Add footnote reference <<vol3_clause_sdc_biceps_semantic_content_module>>
-footnote:[See REF: vol3_clause_sdc_biceps_semantic_content_module. ], content modules have been defined for common high-acuity medical devices such as infusion pumps, ventilators and physiologic monitors.
-
-Note that future IHE _workflow profiles_ may be defined that build upon the transport and content module foundation established by the SDPi-P profile.
-For example, Operating Room / Surgery Point-of-Care Integration, ICU Point-of-Care Integration, or more service-focused profiles such as Point-of-Care Identity Management (PCIM) for device-patient association management, or Silent ICU / Quiet Hospital, where the acute point-of-care is integrated with enterprise systems around device alerting and alert distribution to provide an improved environment of care (reduced noise level and improved safety) and clinician interaction.
-
-
-
-// TF-1:11  SDPi - Reporting Profile
-
-[#supplement_vol1_clause_sdpi_r_profile,sdpi_offset=11,role=profile,profile-id=sdpi-r,reftext="Reporting Profile",oid-arcs=.12]
-== Service-oriented Device Point-of-care Interoperability – Reporting (SDPi-R) Profile
-
-
-// TF-1:12  SDPi - Alerting Profile
-
-[#supplement_vol1_clause_sdpi_a_profile,sdpi_offset=12,role=profile,profile-id=sdpi-a,reftext="Alerting Profile",oid-arcs=.13]
-== Service-oriented Device Point-of-care Interoperability – Alerting (SDPi-A) Profile
-
-
-// TF-1:13  SDPi - External Control Profile
-
-[#supplement_vol1_clause_sdpi_xc_profile,sdpi_offset=13,role=profile,profile-id=sdpi-xc,reftext="External Control Profile",oid-arcs=.14]
-== Service-oriented Device Point-of-care Interoperability – external Control (SDPi-xC) Profile
-
-// TF-1:A  Appendix A
-[appendix#supplement_vol1_appendix_a_requirements_management_for_p_n_t_interperability,sdpi_offset=A]
-== Requirements Management for Plug-and-Trust Interoperability
-
-
-// TF-1:B Appendix B
-[appendix#supplement_vol1_appendix_b_references,sdpi_offset=B]
-== References
-
-
-// TF-1:C Appendix C
-
-[appendix#supplement_vol1_appendix_c_dpi_use_cases,sdpi_offset=C]
-== Device Point-of-care Interoperability (DPI) Use Cases
-
-:var_use_case_id: 1
-[#supplement_vol1_clause_appendix_c_use_case_stad,sdpi_offset=2]
-[role=use-case,use-case-id=stad,sdpi_feature="Synchronized Time Across Devices",oid-arcs=".1"]
-=== Use Case Feature {var_use_case_id}: <<supplement_label_use_case_name_stad>> (<<supplement_acronym_stad>>)
-
-:var_use_case_id: 2
-[#supplement_vol1_clause_appendix_c_use_case_sicdsp,sdpi_offset=3]
-[role=use-case,use-case-id=sicdsp,sdpi_feature="Single Patient Standalone ICU Dashboard",oid-arcs=".2"]
-=== Use Case Feature {var_use_case_id}: <<supplement_label_use_case_name_sicdsp>> (<<supplement_acronym_sicdsp>>)
-
-:var_use_case_id: 3
-[#vsupplement_vol1_clause_appendix_c_use_case_sicdmp,sdpi_offset=4]
-[role=use-case,use-case-id=sicdmp,sdpi_feature="Multiple Patient Standalone ICU Dashboard",oid-arcs=".3"]
-=== Use Case Feature {var_use_case_id}: <<supplement_label_use_case_name_sicdmp>> (<<supplement_acronym_sicdmp>>)
-
-:var_use_case_id: 4
-[#supplement_vol1_clause_appendix_c_use_case_ddes,sdpi_offset=5]
-[role=use-case,use-case-id=ddes,sdpi_feature="Device Data to Enterprise Systems",oid-arcs=".4"]
-=== Use Case Feature {var_use_case_id}: <<supplement_label_use_case_name_ddes>> (<<supplement_acronym_ddes>>)
-
-:var_use_case_id: 5
-[#supplement_vol1_clause_appendix_c_use_case_acns,sdpi_offset=6]
-[role=use-case,use-case-id=acns,sdpi_feature="Alerts to Clinician Notification Systems",oid-arcs=".5"]
-=== Use Case Feature {var_use_case_id}: <<supplement_label_use_case_name_acns>> (<<supplement_acronym_acns>>)
-
-:var_use_case_id: 6
-[#supplement_vol1_clause_appendix_c_use_case_aars,sdpi_offset=7]
-[role=use-case,use-case-id=aars,sdpi_feature="Alerts to Alert Recording Systems",oid-arcs=".6"]
-=== Use Case Feature {var_use_case_id}: <<supplement_label_use_case_name_aars>> (<<supplement_acronym_aars>>)
-
+// Appendix C
+//include::use-cases/tf1-ch-c-use-cases.adoc[]
 
