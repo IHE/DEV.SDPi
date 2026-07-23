@@ -25,6 +25,7 @@ Each section shall contain a list of action items of the following format: `<bri
 - Clarification on the use of `wsa:To` in greeting {`Hello`, `Bye`} notifications sent by a discovery proxy to a consumer ([#534](https://github.com/IHE/DEV.SDPi/issues/534))
 - Required SDPi-P actor grouping entries for BICEPS Content Creator and BICEPS Content Consumer in TF-1:10.3 ([#476](https://github.com/IHE/DEV.SDPi/issues/476))
 - Support semantic markup for deprecating requirements, transactions, use-cases, profiles, content modules and actors ([#511](https://github.com/IHE/DEV.SDPi/issues/511)).
+- Clarify expected behaviour and requirements for consumers making multiple concurrent connections to providers ([#503](https://github.com/IHE/DEV.SDPi/issues/503)).
 
 ### Changes
 
