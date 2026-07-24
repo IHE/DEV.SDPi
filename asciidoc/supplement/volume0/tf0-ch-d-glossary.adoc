@@ -23,10 +23,10 @@ noheader]
 |New Glossary Term |Definition |Synonyms |Acronyms / Abbreviation |References |Type
 
 | [[term_abrupt_time_adjustment,abrupt time adjustment]] Abrupt time adjustment
-| A large change (typically more than 5 minutes) to a <<term_system_clock>>'s <<term_time_reference_frame>> to reconcile differences between the time reported by a <<term_system_clock>> and a <<acronym_ts_service>>, within the statistical uncertainty of the synchronization algorithm, as quickly as possible. Abrupt time-adjustments are also known as step-changes and <<term_non_slewing_time_adjustment>>s, particularly when using ref_rfc_5905, NTP to synchronize a <<term_system_clock>>.
+| A large change (typically more than 5 minutes) to a <<term_system_clock>>'s <<term_time_reference_frame>> to reconcile differences between the time reported by a <<term_system_clock>> and a <<acronym_ts_service>>, within the statistical uncertainty of the synchronization algorithm, as quickly as possible. Abrupt time-adjustments are also known as step-changes and <<term_non_slewing_time_adjustment>>s, particularly when using <<ref_rfc_5905, NTP>> to synchronize a <<term_system_clock>>.
 | <<term_non_slewing_time_adjustment>>
 |
-| ref_rfc_5905, NTPv4
+| <<ref_rfc_5905, NTPv4>>
 | Time
 
 | [[term_american_national_standards_institute,American National Standards Institute (ANSI)]] American National Standards Institute
@@ -40,39 +40,40 @@ noheader]
 | General reference to the abstract, implementation technology independent SDC components defined in the IEEE 11073-10207 standard.
 |
 | [[acronym_biceps,BICEPS]] BICEPS
-| ieee_11073_10207_2017
+| <<ref_ieee_11073_10207_2017>>
 | SDC
 
 | [[term_central_station,Central Station]] Central Station
 | A system that supports a multi-patient workplace with capabilities similar to a Cockpit.
 |
 |
-| See extended description and discussion in #LINK OR TEXT#:vol3_clause_system_type_nomenclature_extensions
+| See extended description and discussion in <<vol3_clause_sdc_biceps_semantic_content_module>>, section _System Type Nomenclature Extensions_
+// vol3_clause_system_type_nomenclature_extensions
 |
 
 | [[term_classic_dim,Classic DIM]] Classic Domain Information Model (DIM)
 | The foundational domain information model (DIM) that is recognized and implemented in all IEEE 11073 standards and profiles, for both <<acronym_pocd>> and <<acronym_phd>> devices.
 |
 | [[acronym_dim,DIM]] DIM
-| ref_ieee_11073_10201_2004
+| <<ref_ieee_11073_10201_2004>>
 | SDC
 
 | [[term_clinical_function,Clinical Function]] Clinical Function
 | Function or feature intended to be used for one or more specific medical purposes including but not limited to examination, monitoring, or modification of the structure or function of an individual's body; prediction, prevention, diagnosis, prognosis, treatment, or alleviation of a medical condition.
 |
 | [[acronym_cf,CF]] CF
-| ref_ieee_11073_10700_2022
+| <<ref_ieee_11073_10700_2022>>
 | SDC
 
 | [[term_clock_discipline_algorithm,clock-discipline algorithm]] Clock-discipline algorithm
 | The algorithm employed by a <<acronym_ts_service>> client to minimize the error between the <<term_reference_clock>> and the <<term_system_clock>>. It may include startup calibration steps, smooth (e.g., slewing) and, rarely, abrupt (e.g., non-slewing) corrections. 
 | 
 |
-| ref_rfc_5905, NTPv4
+| <<ref_rfc_5905, NTPv4>>
 | Time
 
 | [[term_coded_attribute, Coded Attribute]] Coded Attribute
-| A BICEPS Participant Model extension that allows for a #LINK OR TEXT#:vol1_spec_sdpi_p_actor_somds_provider to provide attributes from the first partition of the IEEE 11073-10101 nomenclature. Specified in #LINK OR TEXT#:vol3_clause_coded_attribute.
+| A BICEPS Participant Model extension that allows for a <<actor_somds_provider>> to provide attributes from the first partition of the IEEE 11073-10101 nomenclature. Specified in  #LINK OR TEXT - this reference is suspect#:vol3_clause_coded_attribute.
 |
 |
 | See https://www.nist.gov/conformity-assessment[NIST CA resources page]
@@ -93,7 +94,7 @@ noheader]
 | SDC
 
 | [[term_discovery_scope, Discovery Scope]] Discovery Scope
-| A set of zero to many identifiers that allows for organizing #LINK OR TEXT#:vol1_spec_sdpi_p_actor_somds_provider s into logical groups.
+| A set of zero to many identifiers that allows for organizing <<actor_somds_provider>> s into logical groups.
 |
 |
 |
@@ -136,7 +137,7 @@ noheader]
 | SDC
 
 | [[term_history_service, History Service]] History Service
-| A service to access historical <<acronym_mdib>> data by means of an initial <<term_mdib_configuration>> and subsequent change reports. The History Service replaces the ARCHIVE SERVICE specified in <<acronym_biceps>> and is used to implement #LINK OR TEXT#:vol0_transaction_summary_dev_32.
+| A service to access historical <<acronym_mdib>> data by means of an initial <<term_mdib_configuration>> and subsequent change reports. The History Service replaces the ARCHIVE SERVICE specified in <<acronym_biceps>> and is used to implement <<vol0_transaction_summary_dev_32>>.
 |
 |
 |
@@ -160,8 +161,8 @@ noheader]
 | Environment that combines interoperable heterogeneous POINT-OF-CARE (PoC) MEDICAL DEVICEs and other equipment integrated to create a medical device system for the care of a single high acuity patient.
 |
 | [[acronym_ice,ICE]] ICE
-| ieee_11073_20701_2018;
-ref_aami_2700_1_2019
+| <<ref_ieee_11073_20701_2018>>;
+<<ref_aami_2700_1_2019>>
 | SDC
 
 | [[term_international_medical_device_regulators_forum,International Medical Device Regulators Forum (IMDRF)]] International Medical Device Regulators Forum
@@ -200,14 +201,14 @@ ref_aami_2700_1_2019
 | Organization
 
 | [[term_medical_data_information_base,Medical Data Information Base (MDIB)]] Medical Data Information Base
-| Structured collection of any data objects that are provided by a #LINK OR TEXT#:vol1_spec_sdpi_p_actor_somds_provider or #LINK OR TEXT#:actor_biceps_content_creator, including both descriptive and state information.
+| Structured collection of any data objects that are provided by a <<actor_somds_provider>> or <<actor_biceps_content_creator>>, including both descriptive and state information.
 |
 | [[acronym_mdib,MDIB]] MDIB
-| ref_ieee_11073_10207_2017
+| <<ref_ieee_11073_10207_2017>>
 | SDC
 
 | [[term_mdib_configuration, MDIB Configuration]] MDIB Configuration
-| <<acronym_mdib>> that describes the state of a #LINK OR TEXT#:vol1_clause_sdpi_p_somds_provider at a specific MDIB version.
+| <<acronym_mdib>> that describes the state of a <<actor_somds_provider>> at a specific MDIB version.
 |
 |
 |
@@ -231,7 +232,7 @@ ref_aami_2700_1_2019
 | A general term that refers to all aspects of standards-based exchanges between medical (and health) devices, including <<acronym_pocd>> and <<acronym_phd>>; in some contexts, for example <<acronym_hl7>>, it refers to the IEEE 11073-10101 Nomenclature or "coding system".
 |
 | [[acronym_mdc,MDC]] MDC
-| ref_ieee_11073_10101_2020
+| <<ref_ieee_11073_10101_2020>>
 |
 
 | [[term_medical_device_interoperability,Medical Device Interoperability (MDI)]] Medical Device Interoperability
@@ -252,11 +253,11 @@ ref_aami_2700_1_2019
 | A core object type in the IEEE 11073 device communication standards.  It represents the top-level containment of the hierarchy of information objects contained in a device.
 |
 | [[acronym_mds,MDS]] MDS
-| ref_ieee_11073_10207_2017, ref_ieee_11073_10201_2004
+| <<ref_ieee_11073_10207_2017>>, <<ref_ieee_11073_10201_2004>>
 |
 
 | [[term_model_based_systems_engineering,Model-Based Systems Engineering (MBSE)]] Model-Based Systems Engineering
-| An approach to systems engineering where a single, highly integrated, executable model is created (often using OMG System's Modeling Language (e.g., ref_omg_sysml_2_0_spec), to capture all elements, from requirements to system components to Verification & Validation test cases.
+| An approach to systems engineering where a single, highly integrated, executable model is created (often using OMG System's Modeling Language (e.g., <<ref_omg_sysml_2_0_spec>>), to capture all elements, from requirements to system components to Verification & Validation test cases.
 |
 | [[acronym_mbse,MBSE]] MBSE
 | See also <<acronym_ri>>, <<acronym_mc>> and <<acronym_rr>>
@@ -274,14 +275,14 @@ elements, from requirements to system components to Verification & Validation te
 | A networking protocol for clock synchronization between computer systems over packet-switched, variable-latency data networks.
 |
 | [[acronym_ntp,NTP]] NTP
-| https://en.wikipedia.org/wiki/Network_Time_Protocol[NTP wikipedia article], ref_rfc_5905
+| https://en.wikipedia.org/wiki/Network_Time_Protocol[NTP wikipedia article], <<ref_rfc_5905>>
 |
 
 | [[term_non_slewing_time_adjustment,non-slewing time adjustment]] Non-slewing time adjustment
-| The <<term_abrupt_time_adjustment>> to a system clock's <<term_time_reference_frame>> described by ref_rfc_5905.
+| The <<term_abrupt_time_adjustment>> to a system clock's <<term_time_reference_frame>> described by <<ref_rfc_5905>>.
 | <<term_abrupt_time_adjustment>>
 |
-| ref_rfc_5905, NTPv4
+| <<ref_rfc_5905, NTPv4>>
 | Time
 
 | [[term_object_management_group, Object Management Group (OMG)]] Object Management Group
@@ -295,7 +296,7 @@ elements, from requirements to system components to Verification & Validation te
 | These generally refer to the IEEE 11073-1070x standards that provide a consensus set of risk control measures aligned with the four core <<acronym_mdi>> functions:  <<term_plug_and_trust>>, reporting, alerting and external control.
 |
 | [[acronym_pkp,PKP]] PKP
-| ref_ieee_11073_10700_2022
+| <<ref_ieee_11073_10700_2022>>
 | SDC
 
 // FOR THE FOLLOWING ROW ADD TO THE REFERENCES COLUMN:
@@ -329,7 +330,7 @@ elements, from requirements to system components to Verification & Validation te
 |
 
 | [[term_poc_dashboard,PoC Dashboard]] Point of Care Dashboard
-| A system that displays information from one or more #LINK OR TEXT#:vol1_spec_sdpi_p_actor_somds_participant systems associated with a single patient. Similar to a <<term_cockpit>> but without device-external control capabilities. May include both metric and alert information.
+| A system that displays information from one or more <<actor_somds_participant>> systems associated with a single patient. Similar to a <<term_cockpit>> but without device-external control capabilities. May include both metric and alert information.
 | Dashboard
 |
 |
@@ -350,7 +351,7 @@ elements, from requirements to system components to Verification & Validation te
 |
 
 | [[term_reference_clock,reference clock]] Reference clock
-| The source of time obtained from a <<term_time_synchronization_service>> and shared between #LINK OR TEXT#:vol1_spec_sdpi_p_actor_somds_participant s.
+| The source of time obtained from a <<term_time_synchronization_service>> and shared between <<actor_somds_participant>>s.
 |
 |
 |
@@ -364,10 +365,10 @@ elements, from requirements to system components to Verification & Validation te
 |
 
 | [[term_removable_subsystem,Removable Subsystem]] Removable Subsystem
-| A subsystem of a #LINK OR TEXT#:vol1_spec_sdpi_p_actor_somds_provider that can be attached to or removed from the #LINK OR TEXT#:vol1_spec_sdpi_p_actor_somds_provider and that is represented in the <<acronym_mdib>>.
+| A subsystem of a <<actor_somds_provider>> that can be attached to or removed from the <<actor_somds_provider>> and that is represented in the <<acronym_mdib>>.
 |
 |
-| See also ref_ieee_11073_10700_2022
+| See also <<ref_ieee_11073_10700_2022>>
 |
 
 | [[term_requirements_interoperability,Requirements Interoperability (RI)]] Requirements Interoperability
@@ -381,14 +382,14 @@ elements, from requirements to system components to Verification & Validation te
 | General name given to the requirements, general and specific, derived by the application of medical device and health software quality standards.
 |
 | [[acronym_ses,SES]] SES
-| ref_iso_81001_1_2021; ref_iec_80001_1_2021
+| <<ref_iso_81001_1_2021>>; <<ref_iec_80001_1_2021>>
 |
 
 | [[term_service_oriented_device_connectivity,Service-oriented Device Connectivity (SDC)]] Service-oriented Device Connectivity
 | Application of service-oriented architecture to support healthcare device interoperability.
 |
 | [[acronym_sdc,SDC]] SDC
-| ref_ieee_11073_20701_2018
+| <<ref_ieee_11073_20701_2018>>
 | SDC
 
 | [[term_service_oriented_device_poc_interoperability,Service-oriented Device Point of Care Interoperability (SDPi)]] Service-oriented Device Point of Care Interoperability
@@ -410,14 +411,14 @@ elements, from requirements to system components to Verification & Validation te
 implements a service-oriented <<acronym_sdc>> architecture composed of service providers and service consumers.
 |
 | [[acronym_somds,SOMDS]] SOMDS
-| ref_ieee_11073_10207_2017
+| <<ref_ieee_11073_10207_2017>>
 | SDC
 
 | [[term_slewing_adjustments,slewing time adjustments]] Slewing time adjustments
-| Adjustments, typically small, made to a <<term_system_clock>>'s frequency described by ref_rfc_5905. Generally so the time reported by the <<term_system_clock>> matches that of a <<acronym_ts_service>> at some point in the not too distant future, within the statistical uncertainty of the synchronization algorithm.
+| Adjustments, typically small, made to a <<term_system_clock>>'s frequency described by <<ref_rfc_5905>>. Generally so the time reported by the <<term_system_clock>> matches that of a <<acronym_ts_service>> at some point in the not too distant future, within the statistical uncertainty of the synchronization algorithm.
 | <<term_smooth_time_adjustments>>
 |
-| ref_rfc_5905, NTPv4
+| <<ref_rfc_5905, NTPv4>>
 | Time
 
 | [[term_smart_alarm_system,Smart Alarm System (SAS)]] Smart Alarm System
@@ -431,7 +432,7 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 | A gradual adjustment within a <<term_time_reference_frame>>, characterised by a continuous and monotonically increasing progression of timestamps without abrupt jumps or disruptions to the passage of time. Generally so that the time reported by a system clock matches that of a <<acronym_ts_service>> at some point in the future, within the statistical uncertainty of the synchronization algorithm. Typically involves running the <<term_system_clock>> faster or slower for some period. 
 | <<term_slewing_adjustments>>
 |
-| ref_rfc_5905, NTPv4
+| <<ref_rfc_5905, NTPv4>>
 | Time
 
 | [[term_software_as_a_medical_device,Software as a Medical Device (SaMD)]] Software as a Medical Device
@@ -442,7 +443,7 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 |
 
 | [[term_somds_provider_uid, SOMDS Provider UID]] SOMDS Provider UID
-| A globally unique identifier <<acronym_uid>> for a #LINK OR TEXT#:vol1_spec_sdpi_p_actor_somds_provider that is stable across re-initializations (i.e., resets / reboots).
+| A globally unique identifier <<acronym_uid>> for a <<actor_somds_provider>> that is stable across re-initializations (i.e., resets / reboots).
 | [[acronym_uid,UID]] UID
 |
 |
@@ -456,17 +457,17 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 | Organization
 
 | [[term_system_clock,system clock]] System clock
-| A source of <<term_timestamp>>s used in a #LINK OR TEXT#:vol1_spec_sdpi_p_actor_somds_participants system function contributions (<<acronym_sfc>>).
+| A source of <<term_timestamp>>s used in a <<actor_somds_participant>>s system function contributions (<<acronym_sfc>>).
 |
 |
 |
 | Time
 
 | [[term_system_function_contribution,System Function Contribution (SFC)]] System Function Contribution
-| Function of a #LINK OR TEXT#:vol1_spec_sdpi_p_actor_somds_participant that contributes to a <<term_clinical_function>> provided by a <<term_service_oriented_medical_device_system>>.
+| Function of a <<actor_somds_participant>> that contributes to a <<term_clinical_function>> provided by a <<term_service_oriented_medical_device_system>>.
 |
 | [[acronym_sfc,SFC]] SFC
-| Adapted from ref_ieee_11073_10700_2022.
+| Adapted from <<ref_ieee_11073_10700_2022>>.
 | SDC
 
 | [[term_time_reference_frame,time-reference frame]] Time-reference frame
@@ -498,7 +499,7 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 |
 
 | [[term_transport_address, Transport Address]] Transport Address
-| A physical endpoint address that can be used to communicate with a #LINK OR TEXT#:vol1_spec_sdpi_p_actor_somds_provider.
+| A physical endpoint address that can be used to communicate with a <<actor_somds_provider>>.
 | XAddr
 |
 |
@@ -508,7 +509,7 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 | A core object type in the IEEE 11073 device communication standards. It represents the second-level containment of the hierarchy of information objects contained in a device.
 |
 | [[acronym_vmd,VMD]] VMD
-| ref_ieee_11073_10207_2017, ref_ieee_11073_10201_2004
+| <<ref_ieee_11073_10207_2017>>, <<ref_ieee_11073_10201_2004>>
 |
 
 |===

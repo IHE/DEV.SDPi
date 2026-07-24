@@ -1,0 +1,193 @@
+[#vol2, sdpi_volume_caption=2]
+= Volume 2 -- Transactions
+
+[#vol2_clause_transactions,sdpi_offset=3]
+== Transactions
+
+NOTE:  #Need to determine whether to stub out each transaction or simply add a note pointing to the standard#
+
+////
+
+// Announce Network Presence
+include::dev-23/tf2-dev-23.adoc[]
+
+// Discover Network Topology [DEV-24]
+include::dev-24/tf2-dev-24.adoc[]
+
+// Discover BICEPS Services [DEV-25]
+include::dev-25/tf2-dev-25.adoc[]
+
+//=== Discover System Context and Capabilities [DEV-26]
+
+// Manage BICEPS Subscription [DEV-27]
+include::dev-27/tf2-dev-27.adoc[]
+
+//=== Notify Change in System Context and Capabilities [DEV-28]
+include::dev-28/tf2-dev-28.adoc[]
+
+//=== Publish BICEPS Update Reports [DEV-29]
+include::dev-29/tf2-dev-29.adoc[]
+
+//=== Retrieve BICEPS Content [DEV-30]
+include::dev-30/tf2-dev-30.adoc[]
+
+//=== Retrieve Archive Data [DEV-32]
+include::dev-32/tf2-dev-32.adoc[]
+
+//=== Retrieve Localization Information [DEV-33]
+include::dev-33/tf2-dev-33.adoc[]
+
+//=== Announce Network Departure [DEV-34]
+include::dev-34/tf2-dev-34.adoc[]
+
+//=== Establish Medical Data Exchange [DEV-35]
+include::dev-35/tf2-dev-35.adoc[]
+
+//=== Publish Medical Data [DEV-36]
+include::dev-36/tf2-dev-36.adoc[]
+
+//=== Retrieve Medical Data [DEV-37]
+include::dev-37/tf2-dev-37.adoc[]
+
+//=== Establish Medical Alert Exchange [DEV-38]
+include::dev-38/tf2-dev-38.adoc[]
+
+//=== Publish Medical Alert Update [DEV-39]
+include::dev-39/tf2-dev-39.adoc[]
+
+//=== Retrieve Medical Alert Status [DEV-40]
+include::dev-40/tf2-dev-40.adoc[]
+
+//=== Update Network Presence [DEV-46]
+include::dev-46/tf2-dev-46.adoc[]
+
+//=== Retrieve Network Presence [DEV-47]
+include::dev-47/tf2-dev-47.adoc[]
+
+//=== Establish Distributed Alarm System [DEV-48]
+include::dev-48/tf2-dev-48.adoc[]
+
+//=== End Distributed Alarm System [DEV-49]
+include::dev-49/tf2-dev-49.adoc[]
+
+// TODO how does this differ from DEV-30
+//
+//[appendix#clause-mdpws-constraints-corrigenda-adjuncts]
+//== MDPWS Constraints, Corrigenda & Adjuncts
+//
+//=== Handling missed discovery messages
+//
+// TODO https://confluence.hl7.org/display/GP/Topic%3A+Handling+missed+discovery+messages
+//
+//=== Compression Option
+//
+// TODO https://confluence.hl7.org/display/GP/Topic%3A+SDPi-P+Compression+Option
+//
+//=== WS-Eventing
+//
+//=== Subscription / Subscription Manager Identifier
+//
+// TODO finding from PAT: no use of wse:identifier, use path dispatching; see https://confluence.hl7.org/pages/viewpage.action?pageId=104579763
+//
+//=== SubscribeResponse Outline and XML Schema Conflict
+//
+// TODO finding from PAT: no use of infinite subscriptions; see https://confluence.hl7.org/pages/viewpage.action?pageId=131051997
+//
+//=== Use of SubscriptionManager Addresses for Renew and Unsubscribe
+//
+// TODO finding from PAT: requirement is should, make it mandatory; see https://confluence.hl7.org/pages/viewpage.action?pageId=131051997
+//
+//[appendix#clause-biceps-constraints-corrigenda-adjuncts]
+//== BICEPS Constraints, Corrigenda & Adjuncts
+//
+//=== SystemContext Profiling & Use
+//
+// TODO https://confluence.hl7.org/pages/viewpage.action?pageId=86970701
+//
+//=== Profiling BICEPS Services in SDPi-P
+//
+// no TOI contents available yet
+//
+//=== MDIB Version Update Guidelines
+//
+// no TOI contents available yet
+//
+//[appendix#clause-sdc-glue-constraints-corrigenda-adjuncts]
+//== SDC Glue Constraints, Corrigenda & Adjuncts
+//
+//=== Info exchanged during unsecured discovery
+//
+// TODO https://confluence.hl7.org/display/GP/Topic%3A+Info+exchanged+during+unsecured+discovery
+//
+//=== Connect Time Delay Algorithm
+//
+// TODO https://confluence.hl7.org/display/GP/Topic%3A+Connect+Time+Delay+Algorithm
+//
+
+//NOTE:  This document integrates all the content that makes up the standard volume 2 document.
+//
+//IMPORTANT:  Migrate the content below from main.adoc into this document OR rename main.adoc to this ... though the content is different.  +
+//{empty} +
+//*_See the Word document for what this is supposed to look like_*.
+
+////
+
+[appendix#vol2_appendix_a_mdpws_messages,sdpi_offset=A,role="protocol",protocol-id=mdpws]
+== IEEE 11073 SDC / MDPWS Message Specifications (Normative)
+
+NOTE:  #Add a summary of TF-2A here#
+
+=== Service Mapping
+
+=== Message Mapping
+
+=== Security Considerations
+
+[appendix#vol2_appendix_b_gateways,sdpi_offset=B]
+== Gateways (Normative)
+
+[sdpi_offset=1]
+=== Overview SDC Gateways
+Although the primary focus of the SDPi profiles is to enable device-to-device, plug-and-trust interoperability between provider and consumer systems on an SDC network, many potential applications also require integration with external systems that utilize protocols other than SDC. These applications include healthcare enterprise integration using other widely deployed specifications, such as the IHE DEV PCD profiles that leverage HL7 V2 messaging with IEEE 11073 semantic content, or access to lab and patient demographic information. The gateways defined in this appendix establish a consistent means for integrating SDC-enabled systems with systems that utilize other protocols and profile specifications.
+
+[#vol2_clause_appendix_sdpi_gateway_hl7_v2_general_mapping,role=gateway,gateway-id=hl7v2]
+=== SDPi Gateway -- HL7 V2 General Mapping
+This section specifies general <<acronym_hl7>> V2 requirements and mappings, which apply to the <<vol2_clause_appendix_sdpi_dec_gateway>> as well as to the <<vol2_clause_appendix_sdpi_acm_gateway>> sections below.
+
+[#vol2_clause_appendix_sdpi_dec_gateway,role=gateway,gateway-id=dec]
+=== SDPi DEC Gateway -- Mapping
+
+==== Scope
+This chapter defines the mapping from the <<acronym_mdib>> content as defined in this document and its underlying standards, to IHE Device Enterprise Communication (DEC) Profile messages as defined in the <<ref_ihe_dev_tf_2_2024>>.
+
+The <<actor_somds_dec_gateway>> represents the Device Observation Reporter (DOR) role of the IHE DEC profile.
+
+The following sections supplement the IHE DEC Profile as appropriate. If there are no supplementing definitions, the definitions as described in the <<ref_ihe_dev_tf_2_2024>> will apply.
+
+[#vol2_clause_appendix_sdpi_acm_gateway,role=gateway,gateway-id=acm]
+=== SDPi ACM Gateway -- Mapping
+
+==== Scope
+This chapter defines the mapping from the <<acronym_mdib>> content as defined in this document and its underlying standards, to IHE Alert Communication Management (ACM) Profile messages as defined in the <<ref_ihe_dev_tf_2_2024>>.
+
+The <<actor_somds_acm_gateway>> represents the Alarm Reporter (AR) role of the IHE ACM profile.
+
+The following sections supplement the IHE ACM Profile as appropriate. If there are no supplementing definitions, the definitions as described in the <<ref_ihe_dev_tf_2_2024>> apply.
+
+[#vol2_clause_appendix_sdpi_fhir_gateway,role=gateway,gateway-id=fhir]
+=== SDPi FHIR Gateway
+==== Scope
+This chapter defines the mapping from the <<acronym_mdib>> content as defined in this document and its underlying standards, to <<acronym_hl7>> <<acronym_fhir>> resources.
+
+The <<actor_somds_fhir_gateway>> represents a <<acronym_pocd>> data and/or alert reporter, which is defined in the <<ref_hl7_fhir_pocd_ig>>.
+
+The section https://build.fhir.org/ig/HL7/uv-pocd/mappingsdc.html[SDC to FHIR Mapping] of the <<ref_hl7_fhir_pocd_ig>> details the mapping from the <<acronym_mdib>> content to <<acronym_hl7>> <<acronym_fhir>> resources.
+
+
+
+[appendix#vol2_appendix_c_security_management,sdpi_offset=C]
+== Security Management (Normative)
+
+
+
+

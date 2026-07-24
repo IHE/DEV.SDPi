@@ -1,0 +1,78 @@
+
+[#vol3, sdpi_volume_caption=3]
+= Volume 3 -- Content Modules
+
+[#clause-content-modules]
+
+// == Content Modules
+
+NOTE: #Volume 3 has a significant number of supplement instructions that need to be migrated FROM the standard to this supplement
+
+// 8
+[#vol3_clause_content_modules,sdpi_offset=8]
+== DEV Semantic Content Modules
+
+
+// 8.1
+[sdpi_offset=1]
+=== Overview of device semantic content
+
+[%noheader]
+[cols="1"]
+|===
+| Move IHE DEV 2024 TF-3 Section 3 (text immediately after the section header) to this SDPi {gemini_standard_sdpi_revision_short} TF-3 Section 8.1
+|===
+
+////
+#TODO:  Update the IHE DEV 2024 TF-3 Section 3 content to be model/format independent#
+////
+
+// 8.2
+=== General device content considerations
+
+[%noheader]
+[cols="1"]
+|===
+| Move IHE DEV 2024 TF-3 sections 3.1 to this SDPi {gemini_standard_sdpi_revision_short} TF-3 Section 8.2
+|===
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *{standard_note}*: The content in the IHE DEV 2024 TF-3 3.1 Section will need to be edited to be agnostic to the underlying protocol, with protocol specifics being relegated to subsections in <<vol3_clause_protocol_specific_content_module_considerations>> below.
+|===
+
+
+// 8.3
+[#vol3_clause_protocol_specific_content_module_considerations]
+===  Protocol-Specific Content Module Considerations
+
+// 8.3.1
+[#vol3_clause_ieee_11073_10201_classic_dim_content_modules]
+==== IEEE 11073-10201 Classic DIM Content Modules
+
+[%noheader]
+[cols="1"]
+|===
+| Move IHE DEV 2024 TF-3 sections 3.2 to 3.7 to this SDPi {gemini_standard_sdpi_revision_short} TF-3 Section 8.3.1.2 TO 8.3.1..7
+
+A new 8.3.1.1 Section should be added to the Classic DIM content section that addresses basic reporting.
+This content would be extracted from the existing (2024) Section 3.1, where that content is specific to the Classic DIM (see related note above).
+|===
+
+// 8.3.2
+[#vol3_clause_sdc_biceps_semantic_content]
+[role=content-module,content-module-id=biceps,oid-arcs=".1"]
+==== IEEE 11073-10207 BICEPS Content Modules
+
+// 8.3.2.1
+[#vol3_clause_sdc_biceps_semantic_content_module]
+===== SDC/BICEPS Content Module
+
+
+
+// 8.7
+[#vol3_clause_device_specialization_content_modules,sdpi_offset=7]
+=== Device specialization content modules
+

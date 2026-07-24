@@ -116,13 +116,16 @@ The complete detailed content will remain in the sdpi-standard document as it ha
 
 Editorial Task List (prioritized) for this Supplement:
 
-. Move over Introduction files
-. Move over TF-0 files
+. [.line-through]#Move over Introduction files#
+. [.line-through]#Move over TF-0 files#
 . Add top level outline structure for supplement document
-. Change all labels to be supplement-specific & not duplicated from sdpi-standard
+.. Move Clause 2 Overview content to supplement (it will stay here intact)
+. [.line-through]#Change labels as appropriate / necessary to be supplement-specific so as to reduce any confusion#
 . Add front matter updates per IHE TF Format but for this Supplement, explaining supplement/standalone & conceptual approach.
 NOTE:  The TF-1:2 content might be identical in this document.
 . Add overview content for each outline section
+. Add Standard -> Supplement Release Update punch list (e.g., new actors / transactions ... in TF-0 appendices)
+. Migrate all supplement INSTRUCTIONS (e.g., from TF-3) to this supplement
 . ...
 
 |===
@@ -163,7 +166,7 @@ The current version of the IHE Devices Technical Framework can be found at https
 
 include::supplement/sdpi-supplement-intro.adoc[]
 
-// Standalone TO DO - Issues are only in the standard and not the supplement ... right?
+// Standalone TO DO - This is a common IHE SUPPLEMENT SECTION, we should include it and mention that they are in the standard
 // include::supplement/sdpi-standard-issues.adoc[]
 
 // = Volume 0 -- IHE Technical Frameworks General Introduction
@@ -175,59 +178,14 @@ include::supplement/volume0/tf0-main.adoc[]
 //
 include::supplement/sdpi-supplement-tf1.adoc[]
 
-// Appendix A
-
-// Standalone TO DO - Add in sections below
-
-////
-[appendix#vol1_appendix_a_requirements_management_for_p_n_t_interperability,sdpi_offset=A]
-== Requirements Management for Plug-and-Trust Interoperability
-
-[#vol1_clause_sdpi_requirements_modeling_integration]
-=== SDPi Requirements Modeling & Integration
-
-[#vol1_clause_appendix_a_ses_considerations_section_template]
-=== SES Considerations Section Template
-
-// Appendix B
-[appendix#vol1_appendix_b_references,sdpi_offset=B]
-== References
-
-[%noheader]
-[%autowidth]
-[cols="1"]
-|===
-| *{supplement_note}*:
-IHE Supplement TF-1:B References Appendix content is provided in *Gemini Standard TF-1:B*.
-|===
-
-
-[bibliography#vol1_appendix_b_referenced_standards]
-=== Referenced Standards
-
-[%noheader]
-[%autowidth]
-[cols="1"]
-|===
-| *{supplement_note}*:
-IHE Supplement TF-1:B.1 Referenced Standards  content is provided in *Gemini Standard TF-1:B.1 Referenced Standards*.
-|===
-
-// Appendix C
-
-[appendix#vol1_appendix_c_dpi_use_cases,sdpi_offset=C]
-== Device Point-of-care Interoperability (DPI) Use Cases
-
-[#vol1_clause_appendix_c_use_case_sicdmp,sdpi_offset=4]
-=== Use Case Feature {var_use_case_id}: <<label_use_case_name_sicdmp>> (<<acronym_sicdmp>>)
 
 //
 // = Volume 2 -- Transactions
 //
-//include::volume2/tf2-main.adoc[]
+include::supplement/sdpi-supplement-tf2.adoc[]
+
 //
 // = Volume 3 -- Content Modules
 //
-//include::volume3/tf3-main.adoc[]
+include::supplement/sdpi-supplement-tf3.adoc[]
 
-////

@@ -45,7 +45,7 @@ These known limitations and forward-looking content include:
 |===
 
 /// Forward declarations of common labels & acronyms & variables
-include::document-declarations.adoc[]
+include::sdpi-supplement-document-declarations.adoc[]
 
 // Define oids for referenced standards
 include::../std-oid-definitions.adoc[]
