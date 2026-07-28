@@ -62,7 +62,7 @@ ifeval::["{backend}" == "html5"]
 </div>
 <p style="font-size: 2.75em; text-align: center"><strong>Gemini</strong></p>
 
-<p style="font-size: 2.75em; text-align: center"><strong>Technical Framework Standard</strong></p>
+<p style="font-size: 2.75em; text-align: center"><strong>Technical Framework Profile Standard</strong></p>
 
 <p style="font-size: 2.75em; text-align: center"><strong>Service-oriented Device Point-of-care</strong></p>
 
@@ -110,16 +110,47 @@ endif::[]
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi "Standalone" Standard -- Drafting Note*:
+a| *SDPi "Standalone" Standard -- Release & Drafting Notes*:
 
-This sdpi-standard document is being created out of and aligned with the current sdpi-standard document.
-This document is intended to provide the necessary organization and summary content that can ultimately be integrated into the IHE DEV TF "final text" normative version.
-When that integration to the DEV TF occurs, this "supplement" will no longer be needed and will be deprecated.
+=== Release Note:
+This sdpi-standard document is in the process of being refactored into a "standalone" version of the SDPi standard.
+This release of the document represents an initial separation and reorganization of the content found in previous releases into two separate documents:
 
-NOTE: This supplement will directly reference the "standard" revision to which it is aligned.
-It may be that when a DEV TF integration occurs, that is only partial to "finalized" aspects of the SDPi standard and other capabilities will be in active development, thus requiring the need for this supplement -- potentially, for a long time!"
+. *sdpi-standard.html* -- contains all the normative content from the previous releases; however, the front matter is reorganized in alignment with other standards templates (e.g., Scope, Introduction / Overview, References, Acronyms, etc.).
+It still maintains the IHE Technical Framework organizational elements (e.g., Volume 1 Integration Profiles, Volume 2 Transactions, etc.); however, elements that are solely intended for an IHE Technical Framework Supplement (e.g., directions for how to integrate a section into the IHE Devices Technical Framework - Final Text) are removed and only contained in the new supplement document
+. *sdpi-supplement.html* -- contains the main outline of the standard document; however, all the normative content is referenced in the supplement to the appropriate location in the standard.
+The supplement includes all the rubric information needed for ultimately integrating it into the IHE Devices Technical Framework.
 
-The complete detailed content will remain in the sdpi-standard document as it has evolved in recent years; however, that document will be designed so that it will always remain -- standalone -- and will not be integrated into some other document.
+This releasse of the standard+supplement documents is still in process, as the "Drafting Note" below indicates!
+The outline of this standard, though, will be as follows:
+
+[none]
+. *Scope*
+[none]
+.. (content from current TF-1:2.3.1.1 and similar)
+. *Introduction & Overview*
+[none]
+.. *_Gemini Technical Framework Profile Standard_*
+[none]
+... (define what a Gemini TF Profile Standard ... is!)
+... (organization & conventions)
+.. *_SDPi Overview_*
+[none]
+... (refactor content from TF-1:2 and elsewhere)
+... (Use Cases?  Keep TF-1C or refactor here?)
+. *Terms, Definitions & Acronyms*
+[none]
+.. (content from TF-0, Forward declarations, ... )
+. *References*
+[none]
+.. (Content from TF-1B)
+. ...
+. *Volume 1 Integration Profiles*
+. *Volume 2 Transactions*
+. *Volume 3 Content Modules*
+
+
+=== Drafting Note:
 
 Editorial Task List (prioritized) for this Supplement:
 
@@ -137,7 +168,7 @@ Editorial Task List (prioritized) for this Supplement:
 .. Update section 2 overview of SDPi to a simple overview
 .. Add Normative References?  or Definitions section? - reference to Appendix B
 .. Refactor forward references stuff from early in document to a more "permanent" location!
-. Move all SUPPLEMENT INSTRUCTIONS from this document to the supplement
+. Move all SUPPLEMENT INSTRUCTIONS from this document to the supplement - "Standard Note" ...
 . Add Standard release punch-list that includes updating Supplement content to keep in sync
 . ...
 

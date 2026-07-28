@@ -48,7 +48,7 @@ noheader]
 |
 |
 | See extended description and discussion in <<vol3_clause_sdc_biceps_semantic_content_module>>, section _System Type Nomenclature Extensions_
-// vol3_clause_system_type_nomenclature_extensions
+<<vol3_clause_system_type_nomenclature_extensions>>
 |
 
 | [[term_classic_dim,Classic DIM]] Classic Domain Information Model (DIM)

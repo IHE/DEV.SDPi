@@ -1,4 +1,4 @@
-:standard_note: SDPi {ihe_supplement_sdpi_revision_short} Supplement Note
+:supplement_note: SDPi {ihe_supplement_sdpi_revision_short} Supplement Note
 
 [#supplement_clause_introduction_to_supplement,sdpi_offset=clear]
 = Introduction to this Supplement

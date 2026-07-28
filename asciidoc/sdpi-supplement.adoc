@@ -24,12 +24,12 @@
 // https://docs.asciidoctor.org/asciidoc/latest/attributes/unset-attributes/
 :markup-actor-transactions-table:
 
-:sdpi_milestone_publication: SDPi 2.4 Publication
-:sdpi_milestone_review: SDPi 2.4 Review
+:sdpi_milestone_publication: SDPi 2.5 Publication
+:sdpi_milestone_review: SDPi 2.5 Review
 
 :sdpi_version_major: 2
-:sdpi_version_minor: 4
-:sdpi_version_revision: 1
+:sdpi_version_minor: 5
+:sdpi_version_revision: 0
 :ihe_supplement_sdpi_revision: {sdpi_version_major}.{sdpi_version_minor}.{sdpi_version_revision}
 :ihe_supplement_sdpi_revision_short: {sdpi_version_major}.{sdpi_version_minor}
 :ihe_supplement_sdpi_revision_date: {localdatetime}
@@ -103,8 +103,10 @@ endif::[]
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi "Standalone" Supplement -- Drafting Note*:
+a| *SDPi "Standalone" Supplement -- Release & Drafting Notes*:
 
+
+=== Release Note
 This sdpi-supplement document is being created out of and aligned with the current sdpi-standard document.
 This document is intended to provide the necessary organization and summary content that can ultimately be integrated into the IHE DEV TF "final text" normative version.
 When that integration to the DEV TF occurs, this "supplement" will no longer be needed and will be deprecated.
@@ -114,11 +116,12 @@ It may be that when a DEV TF integration occurs, that is only partial to "finali
 
 The complete detailed content will remain in the sdpi-standard document as it has evolved in recent years; however, that document will be designed so that it will always remain -- standalone -- and will not be integrated into some other document.
 
+=== Drafting Note - Remaining Tasks & Open Questions
 Editorial Task List (prioritized) for this Supplement:
 
 . [.line-through]#Move over Introduction files#
 . [.line-through]#Move over TF-0 files#
-. Add top level outline structure for supplement document
+. [.line-through]#Add top level outline structure for supplement document#
 .. Move Clause 2 Overview content to supplement (it will stay here intact)
 . [.line-through]#Change labels as appropriate / necessary to be supplement-specific so as to reduce any confusion#
 . Add front matter updates per IHE TF Format but for this Supplement, explaining supplement/standalone & conceptual approach.
