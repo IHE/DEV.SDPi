@@ -220,11 +220,11 @@ relevant to the specification.
 === General format
 
 Implementation conformity statements take the form of tables. Templates for these _ICS tables_
-are given in <<vol4_ics_tables>>. The tables are completed and provided as an overall conformity
+are given in <<vol3_ics_tables>>. The tables are completed and provided as an overall conformity
 statement document.
 
 
-[#vol4_ics_tables]
+[#vol3_ics_tables]
 === Tables
 
 
