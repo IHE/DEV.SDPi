@@ -126,7 +126,7 @@ include::../dev-a-default-trigger-events.adoc[]
 
 ====== Message Semantics
 
-`s12:Envelope/s12:Body/msg:GetLocalizedTextResponse/msg:Text`:: The filtered list of localized texts, see also <<r0503>>.
+`s12:Envelope/s12:Body/msg:GetLocalizedTextResponse/msg:Text`:: The filtered list of localized texts.
 
 :var_expected_actions_ref: <<vol2_clause_dev_33_message_getlocalizedtextresponse_expected_actions>>
 include::../dev-a-default-expected-actions.adoc[]
@@ -143,4 +143,3 @@ In such cases, it is recommended that the requesting <<vol1_spec_sdpi_p_actor_so
 --
 It is good practice to first request available languages and then use the resulting languages one by one to request localized texts, which widely avoids response messages too large to process.
 --
-
