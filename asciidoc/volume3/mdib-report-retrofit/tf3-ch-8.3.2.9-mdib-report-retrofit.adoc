@@ -23,6 +23,9 @@ BICEPS does not specify the order in which report messages are sent to <<vol1_sp
 ====
 ****
 
+//R1007 deprecated as it is de facto made redundant by new BICEPS R0262 and all requirements in BICEPS sections 5.2.5.2 and 5.2.5.3
+DeprecateRequirement::R1007[version="2.5.0"]
+////
 .R1007
 [sdpi_requirement#r1007,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
@@ -36,7 +39,11 @@ Within an <<acronym_mdib>> sequence and subscription, a <<vol1_spec_sdpi_p_actor
 This requirement verifies that for a <<vol1_spec_sdpi_p_actor_somds_provider>> there will be no two reports with the same <<acronym_mdib>> version. Furthermore, it prohibits decrementing version numbers within an <<acronym_mdib>> sequence.
 ====
 ****
+////
 
+//R1008 deprecated as it is superseded by new BICEPS R0212
+DeprecateRequirement::R1008[version="2.5.0"]
+////
 .R1008
 [sdpi_requirement#r1008,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
@@ -52,7 +59,11 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall not send msg:DescriptionModifi
 * DEPRECATION NOTICE - This requirement is being incorporated into the IEEE 11073-10207 BICEPS standard through a corrigendum. Once IEEE has published the IEEE 11073-10207 BICEPS Corrigenda, this SDPi requirement will be no longer needed, and will hence be removed.
 ====
 ****
+////
 
+//R1009 deprecated as it is superseded by new BICEPS R5025
+DeprecateRequirement::R1009[version="2.5.0"]
+////
 .R1009
 [sdpi_requirement#r1009,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
@@ -68,6 +79,7 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall order msg:DescriptionModificat
 * DEPRECATION NOTICE - This requirement is being incorporated into the IEEE 11073-10207 BICEPS standard through a corrigendum (albeit without the clarification note immediately above). Once IEEE has published the IEEE 11073-10207 BICEPS Corrigenda, this SDPi requirement will be no longer needed, and will hence be removed.
 ====
 ****
+////
 
 ====== Corrigenda
 
@@ -87,6 +99,9 @@ Replaces biceps:R5024: "Descriptors in this list SHALL not include nested descri
 ====
 ****
 
+//R1011 deprecated as it is superseded by reworded BICEPS R5046
+DeprecateRequirement::R1011[version="2.5.0"]
+////
 Requirement <<r1011>> replaces biceps:R5046.
 
 .R1011
@@ -104,3 +119,4 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall communicate a parent descripto
 * DEPRECATION NOTICE - This requirement is being incorporated into the IEEE 11073-10207 BICEPS standard through a corrigendum. Once IEEE has published the IEEE 11073-10207 BICEPS Corrigenda, this SDPi requirement will be no longer needed, and will hence be removed.
 ====
 ****
+////

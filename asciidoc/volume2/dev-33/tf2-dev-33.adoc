@@ -118,6 +118,9 @@ The {var_label_dev_33_message_getlocalizedtext} message is sent whenever a <<vol
 
 When a <<vol1_spec_sdpi_p_actor_somds_consumer>> sends this message, the receiving <<vol1_spec_sdpi_p_actor_somds_provider>> responds with a <<vol2_clause_dev_33_message_getlocalizedtextresponse, {var_label_dev_33_message_getlocalizedtextresponse}>> message.
 
+//R0503 deprecated as it is superseded by new BICEPS R0261
+DeprecateRequirement::R0503[version="2.5.0"]
+////
 .R0503
 [sdpi_requirement#r0503,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
@@ -131,7 +134,11 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall respond to a {var_label_dev_33
 The filtering of localized texts sets is specified by <<r0504>>, <<r0505>>, <<r0506>>, <<r0507>>, and <<r0508>>.
 ====
 ****
+////
 
+//R0504 deprecated as it is superseded by new BICEPS R0250
+DeprecateRequirement::R0504[version="2.5.0"]
+////
 .R0504
 [sdpi_requirement#r0504,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
@@ -143,7 +150,11 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall select a set of localized text
 - If no <<payload_dev_33_getlocalizedtext_ref>> is given, the set contains all localized texts
 ====
 ****
+////
 
+//R0505 deprecated as it is superseded by new BICEPS R0248
+DeprecateRequirement::R0505[version="2.5.0"]
+////
 .R0505
 [sdpi_requirement#r0505,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
@@ -156,7 +167,11 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall select a set of localized text
 - If <<payload_dev_33_getlocalizedtext_version>> is not specified, then the latest version of localized texts are added to the set
 ====
 ****
+////
 
+//R0506 deprecated as it is superseded by new BICEPS R0249
+DeprecateRequirement::R0506[version="2.5.0"]
+////
 .R0506
 [sdpi_requirement#r0506,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
@@ -168,7 +183,11 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall select a set of localized text
 - If no <<payload_dev_33_getlocalizedtext_lang>> is given, the set contains all localized texts
 ====
 ****
+////
 
+//R0507 deprecated as it is superseded by new BICEPS R0238
+DeprecateRequirement::R0507[version="2.5.0"]
+////
 .R0507
 [sdpi_requirement#r0507,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
@@ -180,7 +199,11 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall select a set of localized text
 - If no <<payload_dev_33_getlocalizedtext_textwidth>> is given, the set contains all localized texts
 ====
 ****
+////
 
+//R0508 deprecated as it is superseded by new BICEPS R0239
+DeprecateRequirement::R0508[version="2.5.0"]
+////
 .R0508
 [sdpi_requirement#r0508,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
@@ -192,6 +215,7 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall select a set of localized text
 - If no <<payload_dev_33_getlocalizedtext_numberoflines>> is given, the set contains all localized texts
 ====
 ****
+////
 
 
 // ---------- GetLocalizedTextResponse ---------
@@ -211,7 +235,7 @@ The {var_label_dev_33_message_getlocalizedtextresponse} message is sent whenever
 [#vol2_clause_dev_33_message_getlocalizedtextresponse_semantics]
 ====== Message Semantics
 
-[[payload_dev_33_getlocalizedtextresponse_text]]Text:: The sequence of filtered localized texts, based on <<r0503>>.
+[[payload_dev_33_getlocalizedtextresponse_text]]Text:: The sequence of filtered localized texts.
 
 [#vol2_clause_dev_33_message_getlocalizedtextresponse_expected_actions]
 ====== Expected Actions
