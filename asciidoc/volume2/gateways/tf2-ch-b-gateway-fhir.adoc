@@ -3,7 +3,7 @@
 ==== Scope
 This chapter defines the mapping from the <<acronym_mdib>> content as defined in this document and its underlying standards, to <<acronym_hl7>> <<acronym_fhir>> resources.
 
-The <<actor_somds_fhir_gateway>> represents a <<acronym_pocd>> data and/or alert reporter, which is defined in the <<ref_hl7_fhir_pocd_ig>>.
+The <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>> represents a <<acronym_pocd>> data and/or alert reporter, which is defined in the <<ref_hl7_fhir_pocd_ig>>.
 
 The section https://build.fhir.org/ig/HL7/uv-pocd/mappingsdc.html[SDC to FHIR Mapping] of the <<ref_hl7_fhir_pocd_ig>> details the mapping from the <<acronym_mdib>> content to <<acronym_hl7>> <<acronym_fhir>> resources.
 

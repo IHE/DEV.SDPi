@@ -198,7 +198,7 @@
 | Organization
 
 | [[term_medical_data_information_base,Medical Data Information Base (MDIB)]] Medical Data Information Base
-| Structured collection of any data objects that are provided by a <<vol1_spec_sdpi_p_actor_somds_provider>> or <<actor_biceps_content_creator>>, including both descriptive and state information.
+| Structured collection of any data objects that are provided by a <<vol1_spec_sdpi_p_actor_somds_provider>> or <<vol1_spec_sdpi_p_actor_biceps_content_creator>>, including both descriptive and state information.
 |
 | [[acronym_mdib,MDIB]] MDIB
 | <<ref_ieee_11073_10207_2017>>

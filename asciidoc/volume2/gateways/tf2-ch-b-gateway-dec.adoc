@@ -4,7 +4,7 @@
 ==== Scope
 This chapter defines the mapping from the <<acronym_mdib>> content as defined in this document and its underlying standards, to IHE Device Enterprise Communication (DEC) Profile messages as defined in the <<ref_ihe_dev_tf_2_2024>>.
 
-The <<actor_somds_dec_gateway>> represents the Device Observation Reporter (DOR) role of the IHE DEC profile.
+The <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> represents the Device Observation Reporter (DOR) role of the IHE DEC profile.
 
 The following sections supplement the IHE DEC Profile as appropriate. If there are no supplementing definitions, the definitions as described in the <<ref_ihe_dev_tf_2_2024>> will apply.
 
@@ -37,7 +37,7 @@ The *pm:PatientContextState/pm:CoreData* element may also contain elements for a
 ****
 [NORMATIVE]
 ====
-If available, the <<actor_somds_dec_gateway>> shall export height and weight as OBX segments on the MDS level.
+If available, the <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall export height and weight as OBX segments on the MDS level.
 ====
 
 [NOTE]
@@ -62,7 +62,7 @@ The problem is that when the gateway loses connection to the PoC device it can o
 ****
 [NORMATIVE]
 ====
-A <<actor_somds_dec_gateway>> shall use the *pm:PatientContextState/@BindingStartTime* as the timestamp for the height and weight observation and send new values as corrected results.
+A <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall use the *pm:PatientContextState/@BindingStartTime* as the timestamp for the height and weight observation and send new values as corrected results.
 ====
 ****
 
@@ -255,7 +255,7 @@ The HL7 Observation Request (OBR) segment requires a mapping from the SDC contai
 
 [NORMATIVE]
 ====
-For the IHE DEC profile, the <<actor_somds_dec_gateway>> shall set the OBR-2 field to the identifier of the Device Observation Reporter (DOR) of the IHE DEC gateway (not the individual device identifier).
+For the IHE DEC profile, the <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall set the OBR-2 field to the identifier of the Device Observation Reporter (DOR) of the IHE DEC gateway (not the individual device identifier).
 ====
 
 [NOTE]
@@ -272,7 +272,7 @@ For further information, please refer to the <<ref_ihe_dev_tf_2_2024>>.
 
 [NORMATIVE]
 ====
-For the IHE DEC profile, the <<actor_somds_dec_gateway>> shall set the OBR-3 field to the identifier of the Device Observation Reporter (DOR) of the IHE DEC gateway (not the individual device identifier).
+For the IHE DEC profile, the <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall set the OBR-3 field to the identifier of the Device Observation Reporter (DOR) of the IHE DEC gateway (not the individual device identifier).
 ====
 
 [NOTE]
@@ -289,7 +289,7 @@ For further information, please refer to the <<ref_ihe_dev_tf_2_2024>>.
 
 [NORMATIVE]
 ====
-For the IHE DEC profile, the <<actor_somds_dec_gateway>> shall set the OBR-4 field to the service identifier of the <<vol1_spec_sdpi_p_actor_somds_provider>>.
+For the IHE DEC profile, the <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall set the OBR-4 field to the service identifier of the <<vol1_spec_sdpi_p_actor_somds_provider>>.
 ====
 
 [NOTE]
@@ -326,12 +326,12 @@ The absence of an overriding time point in the OBX-14 field implies that this is
 
 [NORMATIVE]
 ====
-A <<actor_somds_dec_gateway>> shall export continuously (periodically) measured metrics periodically at a defined interval.
+A <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall export continuously (periodically) measured metrics periodically at a defined interval.
 ====
 
 [NOTE]
 ====
-It is up to the <<actor_somds_dec_gateway>> how the export interval is defined. The interval might be a fixed interval of e.g., 30 seconds, or a configurable interval ranging e.g., between 10 seconds and 2 minutes.
+It is up to the <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> how the export interval is defined. The interval might be a fixed interval of e.g., 30 seconds, or a configurable interval ranging e.g., between 10 seconds and 2 minutes.
 ====
 ****
 
@@ -341,12 +341,12 @@ It is up to the <<actor_somds_dec_gateway>> how the export interval is defined. 
 
 [NORMATIVE]
 ====
-A <<actor_somds_dec_gateway>> shall set the OBR-7 field to the start date and time of current export interval.
+A <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall set the OBR-7 field to the start date and time of current export interval.
 ====
 
 [NOTE]
 ====
-If, for example, the export interval is set to 30 seconds, the <<actor_somds_dec_gateway>> will export HL7 messages every 30 seconds with the OBR-7 field set to start date and time of the interval e.g., *20231030155930*, *20231030160000*, *20231030160030*, and so on.
+If, for example, the export interval is set to 30 seconds, the <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> will export HL7 messages every 30 seconds with the OBR-7 field set to start date and time of the interval e.g., *20231030155930*, *20231030160000*, *20231030160030*, and so on.
 ====
 ****
 
@@ -356,7 +356,7 @@ If, for example, the export interval is set to 30 seconds, the <<actor_somds_dec
 
 [NORMATIVE]
 ====
-A <<actor_somds_dec_gateway>> shall export the latest metric value of all continuously (periodically) measured metrics with a *pm:AbstractMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@DeterminationTime* which is equal or greater than the start date and time of the current interval, and less than the start date and time of the next export interval.
+A <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall export the latest metric value of all continuously (periodically) measured metrics with a *pm:AbstractMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@DeterminationTime* which is equal or greater than the start date and time of the current interval, and less than the start date and time of the next export interval.
 ====
 
 [NOTE]
@@ -371,7 +371,7 @@ The OBR-7 field is set to the start time of the interval. The individual periodi
 
 [NORMATIVE]
 ====
-For exporting episodic metric values and the absence of any continuously measured metric values for the current export interval, a <<actor_somds_dec_gateway>> shall set the OBR-7 field to the start date and time of current export interval.
+For exporting episodic metric values and the absence of any continuously measured metric values for the current export interval, a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall set the OBR-7 field to the start date and time of current export interval.
 ====
 
 [NOTE]
@@ -383,7 +383,7 @@ For exporting episodic metric values and the absence of any continuously measure
 ****
 
 [NOTE]
-Only metrics that fulfil certain criteria are exported by the <<actor_somds_dec_gateway>>. Please refer to <<r8018>> and <<r8017>> for further information.
+Only metrics that fulfil certain criteria are exported by the <<vol1_spec_sdpi_r_actor_somds_dec_gateway>>. Please refer to <<r8018>> and <<r8017>> for further information.
 
 
 
@@ -394,14 +394,14 @@ Only metrics that fulfil certain criteria are exported by the <<actor_somds_dec_
 ****
 [NORMATIVE]
 ====
-A <<actor_somds_dec_gateway>> may set the OBR-8 field to the end date and time of the current export interval.
+A <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> may set the OBR-8 field to the end date and time of the current export interval.
 ====
 
 [NOTE]
 ====
 * This requirement relates to the OBR-7 field mapping. Please refer to <<ref_dec_OBR7_mapping>> for further information.
 
-* If, for example, the export interval is set to 30 seconds, the <<actor_somds_dec_gateway>> will export HL7 messages every 30 seconds with the OBR-7 field set to start date and time of the current interval and the OBR-8 field set to the start date and time of the next interval e.g.,  *20231030155930*|*20231030160000*, *20231030160000*|*20231030160030*, and so on.
+* If, for example, the export interval is set to 30 seconds, the <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> will export HL7 messages every 30 seconds with the OBR-7 field set to start date and time of the current interval and the OBR-8 field set to the start date and time of the next interval e.g.,  *20231030155930*|*20231030160000*, *20231030160000*|*20231030160030*, and so on.
 ====
 
 ****
@@ -414,7 +414,7 @@ A <<actor_somds_dec_gateway>> may set the OBR-8 field to the end date and time o
 ****
 [NORMATIVE]
 ====
-A <<actor_somds_dec_gateway>> shall set the OBR-10 field to the operator (user) information if available.
+A <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall set the OBR-10 field to the operator (user) information if available.
 
 The field is left empty if there is no valid SDC operator context.
 ====
@@ -497,7 +497,7 @@ Please refer to the <<ref_ihe_dev_tf_2_2024>> *OBX-1 Set ID - OBX* for further i
 ****
 [NORMATIVE]
 ====
-A <<actor_somds_dec_gateway>> shall set the OBX-2 field to the metric value type code as defined in *HL7 table 0125*.
+A <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall set the OBX-2 field to the metric value type code as defined in *HL7 table 0125*.
 ====
 
 [NOTE]
@@ -511,7 +511,7 @@ A <<actor_somds_dec_gateway>> shall set the OBX-2 field to the metric value type
 ****
 [NORMATIVE]
 ====
-A <<actor_somds_dec_gateway>> shall leave the OBX-2 field empty for OBX segments defining the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDS, VMD, or CHAN containment tree elements.
+A <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall leave the OBX-2 field empty for OBX segments defining the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDS, VMD, or CHAN containment tree elements.
 ====
 ****
 
@@ -547,7 +547,7 @@ Please refer to general Section <<ref_gateway_obx4_mapping>>.
 ****
 [NORMATIVE]
 ====
-A <<actor_somds_dec_gateway>> shall set the OBX-5 field to the value of the SDC metric.
+A <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall set the OBX-5 field to the value of the SDC metric.
 ====
 
 [NOTE]
@@ -570,7 +570,7 @@ For a device-related element such as MDS, VMD, or channel, the OBX-5 field shall
 ****
 [NORMATIVE]
 ====
-A <<actor_somds_dec_gateway>> shall only export metrics with a *pm:AbstractMetricValue/pm:MetricQuality/@Validity* set to *Vld* (Valid) or *Vldated* (Validated Data).
+A <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall only export metrics with a *pm:AbstractMetricValue/pm:MetricQuality/@Validity* set to *Vld* (Valid) or *Vldated* (Validated Data).
 ====
 
 [NOTE]
@@ -584,7 +584,7 @@ Metrics with a different *@Validity* are skipped/ignored.
 ****
 [NORMATIVE]
 ====
-A <<actor_somds_dec_gateway>> shall only export metrics with the *pm:AbstractMetricDescriptor/@MetricCategory* set to *Msrmt* (Measurement), *Clc* (Calculation) or *Set* (Setting).
+A <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall only export metrics with the *pm:AbstractMetricDescriptor/@MetricCategory* set to *Msrmt* (Measurement), *Clc* (Calculation) or *Set* (Setting).
 ====
 
 [NOTE]
@@ -601,14 +601,14 @@ Metrics with a different *@MetricCategory* are skipped/ignored.
 ****
 [NORMATIVE]
 ====
-For each numeric metric that complies with <<r8017>> and <<r8018>>, a <<actor_somds_dec_gateway>> shall set the OBX-5 field to the *pm:NumericMetricState/pm:MetricValue/@Value*.
+For each numeric metric that complies with <<r8017>> and <<r8018>>, a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall set the OBX-5 field to the *pm:NumericMetricState/pm:MetricValue/@Value*.
 ====
 
 [NOTE]
 ====
 * Note that the decimal number needs to be formatted according to the HL7 numeric value formatting rules.
 
-* Note that sample array metrics are not supported by the <<actor_somds_dec_gateway>>.
+* Note that sample array metrics are not supported by the <<vol1_spec_sdpi_r_actor_somds_dec_gateway>>.
 ====
 ****
 
@@ -619,7 +619,7 @@ For each numeric metric that complies with <<r8017>> and <<r8018>>, a <<actor_so
 ****
 [NORMATIVE]
 ====
-For each string metric that complies with R8017 and R8018, a <<actor_somds_dec_gateway>> shall set the OBX-5 field to the *pm:StringMetricState/pm:MetricValue/@Value*.
+For each string metric that complies with R8017 and R8018, a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall set the OBX-5 field to the *pm:StringMetricState/pm:MetricValue/@Value*.
 ====
 ****
 
@@ -631,7 +631,7 @@ For each string metric that complies with R8017 and R8018, a <<actor_somds_dec_g
 ****
 [NORMATIVE]
 ====
-For each enumeration string metric that complies with R8017 and R8018, a <<actor_somds_dec_gateway>> shall set the OBX-5 field to a coded element value.
+For each enumeration string metric that complies with R8017 and R8018, a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall set the OBX-5 field to a coded element value.
 ====
 
 [NOTE]
@@ -653,7 +653,7 @@ the OBX-2 is required to be set to *"ST"* (see also <<ref_tbl_dec_obx2_mapping>>
 ****
 [NORMATIVE]
 ====
-If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded element value in OBX-5 mapping, a <<actor_somds_dec_gateway>> shall map the identifier as described in Section <<ref_private_coding_system_note>>.
+If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded element value in OBX-5 mapping, a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall map the identifier as described in Section <<ref_private_coding_system_note>>.
 ====
 ****
 
@@ -696,7 +696,7 @@ In all other cases, the field is set to pm:EnumStringMetricDescriptor+++<wbr/>++
 ****
 [NORMATIVE]
 ====
-For each numeric metric, a <<actor_somds_dec_gateway>> shall set the OBX-6 field to a measurement unit.
+For each numeric metric, a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall set the OBX-6 field to a measurement unit.
 ====
 
 [NOTE]
@@ -712,7 +712,7 @@ For each numeric metric, a <<actor_somds_dec_gateway>> shall set the OBX-6 field
 ****
 [NORMATIVE]
 ====
-If a private *<<acronym_mdc>>* code is used for the coding of the SDC measurement unit of a metric, a <<actor_somds_dec_gateway>> shall map the identifier as described in Section <<ref_private_coding_system_note>>.
+If a private *<<acronym_mdc>>* code is used for the coding of the SDC measurement unit of a metric, a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall map the identifier as described in Section <<ref_private_coding_system_note>>.
 ====
 ****
 
@@ -755,7 +755,7 @@ In all other cases, the field is set to pm:NumericMetricDescriptor+++<wbr/>+++/p
 ****
 [NORMATIVE]
 ====
-A <<actor_somds_dec_gateway>> shall define the range of the alert limits on the metric level, if the *@Handle* of the metric is referenced by a *pm:LimitAlertConditionDescriptor* in the *pm:LimitAlertConditionDescriptor/pm:Source* list, by the format `<Lower Limit> - <Upper Limit>` where
+A <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall define the range of the alert limits on the metric level, if the *@Handle* of the metric is referenced by a *pm:LimitAlertConditionDescriptor* in the *pm:LimitAlertConditionDescriptor/pm:Source* list, by the format `<Lower Limit> - <Upper Limit>` where
 
 * `<Lower Limit>` is set to *pm:LimitAlertConditionState/pm:Limits/@Lower* and
 * `<Upper Limit>` is set to *pm:LimitAlertConditionState/pm:Limits/@Upper*.
@@ -772,7 +772,7 @@ Note that the decimal number needs to be formatted according to the HL7 numeric 
 ****
 [NORMATIVE]
 ====
-A <<actor_somds_dec_gateway>> shall not set this field to the device measurement range capability for device related segments.
+A <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall not set this field to the device measurement range capability for device related segments.
 ====
 
 [NOTE]
@@ -790,7 +790,7 @@ The OBX-8 field is not required to be set since the gateway exports valid and va
 ****
 [NORMATIVE]
 ====
-A <<actor_somds_dec_gateway>> shall leave the OBX-8 field empty as specified in the <<ref_ihe_dev_tf_2_2024>> for valid and validated metric values.
+A <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall leave the OBX-8 field empty as specified in the <<ref_ihe_dev_tf_2_2024>> for valid and validated metric values.
 ====
 ****
 
@@ -801,7 +801,7 @@ A <<actor_somds_dec_gateway>> shall leave the OBX-8 field empty as specified in 
 ****
 [NORMATIVE]
 ====
-For a device-related element such as MDS, VMD, or CHANNEL, a <<actor_somds_dec_gateway>> shall set the OBX-11 field to *"X"*.
+For a device-related element such as MDS, VMD, or CHANNEL, a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall set the OBX-11 field to *"X"*.
 ====
 ****
 
@@ -810,7 +810,7 @@ For a device-related element such as MDS, VMD, or CHANNEL, a <<actor_somds_dec_g
 ****
 [NORMATIVE]
 ====
-For metrics with the *pm:AbstractMetricValue/pm:MetricQuality/@Validity* set to *Vld* (Valid), a <<actor_somds_dec_gateway>> shall set the OBX-11 field to *"R"*.
+For metrics with the *pm:AbstractMetricValue/pm:MetricQuality/@Validity* set to *Vld* (Valid), a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall set the OBX-11 field to *"R"*.
 ====
 ****
 
@@ -819,7 +819,7 @@ For metrics with the *pm:AbstractMetricValue/pm:MetricQuality/@Validity* set to 
 ****
 [NORMATIVE]
 ====
-For metrics with the *pm:AbstractMetricValue/pm:MetricQuality/@Validity* set to *Vldated* (Validated Data), a <<actor_somds_dec_gateway>> shall set the OBX-11 field to *"F"*.
+For metrics with the *pm:AbstractMetricValue/pm:MetricQuality/@Validity* set to *Vldated* (Validated Data), a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall set the OBX-11 field to *"F"*.
 ====
 ****
 
@@ -830,7 +830,7 @@ For metrics with the *pm:AbstractMetricValue/pm:MetricQuality/@Validity* set to 
 ****
 [NORMATIVE]
 ====
-A <<actor_somds_dec_gateway>> shall set the OBX-14 field to the date and time of the intermittently measured metric value.
+A <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall set the OBX-14 field to the date and time of the intermittently measured metric value.
 ====
 
 [NOTE]
@@ -864,7 +864,7 @@ pm:StringMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@DeterminationTime
 ****
 [NORMATIVE]
 ====
-If available, a <<actor_somds_dec_gateway>> shall set the OBX-16 field to the operator.
+If available, a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall set the OBX-16 field to the operator.
 ====
 
 [NOTE]
@@ -882,7 +882,7 @@ If available, a <<actor_somds_dec_gateway>> shall set the OBX-16 field to the op
 ****
 [NORMATIVE]
 ====
-A <<actor_somds_dec_gateway>> shall set the OBX-17 field to one of the coded terms as specified in <<ref_tbl_dec_obx17_mapping>>, depending on the *pm:AbstractMetricDescriptor/@MetricCategory* (Category) and the *pm:AbstractMetricDescriptor/@DerivationMethod* (Derivation).
+A <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall set the OBX-17 field to one of the coded terms as specified in <<ref_tbl_dec_obx17_mapping>>, depending on the *pm:AbstractMetricDescriptor/@MetricCategory* (Category) and the *pm:AbstractMetricDescriptor/@DerivationMethod* (Derivation).
 ====
 ****
 
@@ -891,7 +891,7 @@ A <<actor_somds_dec_gateway>> shall set the OBX-17 field to one of the coded ter
 ****
 [NORMATIVE]
 ====
-A <<actor_somds_dec_gateway>> should repeat the OBX-17 field to express the *pm:AbstractMetricDescriptor/@MetricAvailability* as specified in <<ref_tbl_dec_obx17_mapping2>>.
+A <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> should repeat the OBX-17 field to express the *pm:AbstractMetricDescriptor/@MetricAvailability* as specified in <<ref_tbl_dec_obx17_mapping2>>.
 ====
 ****
 
@@ -949,7 +949,7 @@ Please refer to general Section <<ref_gateway_obx18_mapping>>.
 ****
 [NORMATIVE]
 ====
-If available for the metric, a <<actor_somds_dec_gateway>> shall set the OBX-20 field to body site.
+If available for the metric, a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall set the OBX-20 field to body site.
 ====
 
 [NOTE]
@@ -969,7 +969,7 @@ If available for the metric, a <<actor_somds_dec_gateway>> shall set the OBX-20 
 ****
 [NORMATIVE]
 ====
-If a private *<<acronym_mdc>>* code is used for the coding of a body site, a <<actor_somds_dec_gateway>> shall map the identifier as described in Section <<ref_private_coding_system_note>>.
+If a private *<<acronym_mdc>>* code is used for the coding of a body site, a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> shall map the identifier as described in Section <<ref_private_coding_system_note>>.
 ====
 ****
 

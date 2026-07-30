@@ -149,12 +149,12 @@ A <<vol1_spec_sdpi_p_actor_somds_consumer>> that receives multiple reports with 
 ****
 [NORMATIVE]
 ====
-A <<actor_somds_provider>> shall not send a notification of a subscription as long as there is another notification pending for that subscription.
+A <<vol1_spec_sdpi_p_actor_somds_provider>> shall not send a notification of a subscription as long as there is another notification pending for that subscription.
 ====
 
 [NOTE]
 ====
-This also requires <<actor_somds_provider>>s to serialize delivery of msg:OperationInvokedReport messages.
+This also requires <<vol1_spec_sdpi_p_actor_somds_provider>>s to serialize delivery of msg:OperationInvokedReport messages.
 ====
 ****
 

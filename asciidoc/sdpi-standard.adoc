@@ -91,7 +91,6 @@ endif::[]
 | *Issues / Questions:*
 | Submit a _New issue_ at https://github.com/IHE/DEV.SDPi/issues[Gemini DEV.SDPi GitHub Issues]
 
-*Standalone SDPi:*  _Should this email contact be included?  If so, what address(es)? One for IHE and one for HL7?_
 |===
 
 {empty} +
@@ -110,30 +109,44 @@ endif::[]
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi "Standalone" Standard -- Release & Drafting Notes*:
+a| *Gemini SDPi {ihe_standard_sdpi_revision_short} "Standalone" Standard -- Release & Drafting Notes*:
 
 === Release Note:
-This sdpi-standard document is in the process of being refactored into a "standalone" version of the SDPi standard.
-This release of the document represents an initial separation and reorganization of the content found in previous releases into two separate documents:
+This Gemini SDPi {ihe_standard_sdpi_revision_short} release is the first time the specification has been separated into two separate documents:
 
 . *sdpi-standard.html* -- contains all the normative content from the previous releases; however, the front matter is reorganized in alignment with other standards templates (e.g., Scope, Introduction / Overview, References, Acronyms, etc.).
 It still maintains the IHE Technical Framework organizational elements (e.g., Volume 1 Integration Profiles, Volume 2 Transactions, etc.); however, elements that are solely intended for an IHE Technical Framework Supplement (e.g., directions for how to integrate a section into the IHE Devices Technical Framework - Final Text) are removed and only contained in the new supplement document
 . *sdpi-supplement.html* -- contains the main outline of the standard document; however, all the normative content is referenced in the supplement to the appropriate location in the standard.
 The supplement includes all the rubric information needed for ultimately integrating it into the IHE Devices Technical Framework.
 
-This releasse of the standard+supplement documents is still in process, as the "Drafting Note" below indicates!
+For this release, key changes include:
+
+1. Resolution of all HL7 MAY 2026 Ballot Comments
+2. New History Service option with related transaction DEV-32
+3. "Standalone" SDPi -- initial creation of two documents:  Gemini Standard + IHE Supplement
+4. Support semantic markup for deprecating requirements, transactions, use-cases, profiles, content modules and actors
+5. Updates related to the corrected SDC BICEPS standard corrigendum
+6. Clarifications and corrections
+
+
+This release of the standard+supplement documents is still in process, as the "Drafting Note" below indicates!
 The outline of this standard, though, will be as follows:
 
+
+. *Overview*
 [none]
-. *Scope*
+.. *Scope*
+.. *Purpose*
 [none]
 .. (content from current TF-1:2.3.1.1 and similar)
+.. (Copyright and other related content from supplement)
 . *Introduction & Overview*
 [none]
 .. *_Gemini Technical Framework Profile Standard_*
 [none]
 ... (define what a Gemini TF Profile Standard ... is!)
-... (organization & conventions)
+... (organization & conventions - section numbering, ...)
+... (What & why AsciiDoc)
 .. *_SDPi Overview_*
 [none]
 ... (refactor content from TF-1:2 and elsewhere)
@@ -145,9 +158,9 @@ The outline of this standard, though, will be as follows:
 [none]
 .. (Content from TF-1B)
 . ...
-. *Volume 1 Integration Profiles*
-. *Volume 2 Transactions*
-. *Volume 3 Content Modules*
+. [.line-through]#*Volume 1 Integration Profiles*#
+. [.line-through]#*Volume 2 Transactions*#
+. [.line-through]#*Volume 3 Content Modules*#
 
 
 === Drafting Note:
@@ -178,19 +191,20 @@ Editorial Task List (prioritized) for this Supplement:
 [#standard_clause_foreword,sdpi_offset=clear]
 = Foreword
 
-// Standalone TO DO ... this section
+== HL7-IHE Gemini Device Interoperability Program
 
-This Gemini standard is a joint development effort between Health Level Seven International (HL7) and Integrating the Healthcare Enterprise (IHE) devices working groups.
+Recognizing the decades-long close collaboration between between Health Level Seven International (HL7) and Integrating the Healthcare Enterprise (IHE), and in order to better facilitate coordinated development, the Gemini Program was created as a home for joint projects.
+This Gemini standard is one such joint development project between the HL7 and IHE Devices working groups focused on acute care, plug-and-trust medical device interoperability.
 Its development and publication adheres to the consensus standards processes of both HL7, an ANSI accredited standards development organization, and IHE.
-The title of this document, "Technical Framework *_Standard_*", reflects its unique status as a Gemini specification, utilizing the IHE Technical Framework organization and elements (e.g., integration profiles, actors, transactions, content modules), but processed as an HL7 specification that will be published as a "standalone" standard and will persist even when its status transitions to normative standard (HL7) or Final Text (IHE).
+The title of this document, *_Technical Framework Profile Standard_*, reflects its unique status as a Gemini specification, utilizing the IHE Technical Framework organization and elements (e.g., integration profiles, actors, transactions, content modules), but processed as an HL7 specification that will be published as a "standalone" standard and will persist even when its status transitions to normative standard (HL7) or Final Text (IHE).
 
-To facilitate integration with the companion IHE Devices Technical Framework (final text) specification, a companion to this standard will be created for each edition:  SDPi "Technical Framework Profile Standard", which will be organized according to IHE style guidelines, but it will be in major section outline only, with each section including a note indicating where the content is located in the published Gemini Technical Framework ("standalone") Standard document.
+To facilitate integration with the companion IHE Devices Technical Framework (final text) specification, a companion to this standard is created for each edition:  "IHE Devices Technical Framework _Supplement_ -- Service-oriented Device Point-of-care Interoperability (SDPi)", which will be organized and adhere to IHE style guidelines for supplement documents, but it will be in major section outline only, with each section including a note indicating where the content is located in the published *Gemini Technical Framework Profile _Standard_* (this document).
 Given its alignment with the companion IHE specification, some section numbers are skipped in this document to facilitate its intended integration into the above-mentioned "standard".
 Skipped section numbers are already present in the Devices Technical Framework and will not require changes due to the incorporation of the supplement once it transitions to normative standard / final text status.
 
 Additionally, some content that may otherwise be only referenced by a "supplement" document and defined elsewhere in the existing technical framework, will be incorporated in this specification to ensure that it is internally cohesive and does not force the reader to unnecessarily consult other documents.
 
-Publication as a Standard for *Trial* Use (HL7) or *Trial* Implementation (IHE) reflects the continuous cycle of development, balloting and publication of the specification, to address addition of new capabilities as well as identified safety, effectiveness and security issues and enhancements.
+Publication as a *Standard for Trial Use* (HL7 STU) or *Trial Implementation* (IHE TI) reflects the continuous cycle of development, balloting and publication of the specification, to address addition of new capabilities as well as identified safety, effectiveness and security issues and enhancements.
 Product developers are encouraged to use the standard, recognizing the potential impact of this continuous development cycle and its status as a _"trial use"_ standard.
 
 
@@ -207,13 +221,15 @@ Information about the organization of IHE Technical Frameworks and Supplements a
 
 The current version of the IHE Devices Technical Framework can be found at https://profiles.ihe.net/DEV/[DEV Technical Framework].
 
-include::sdpi-standard-intro.adoc[]
-
 include::sdpi-standard-issues.adoc[]
 
-// = Volume 0 -- IHE Technical Frameworks General Introduction
+include::sdpi-standard-intro.adoc[]
 
-include::volume0/tf0-main.adoc[]
+
+// = Volume 0 -- IHE Technical Frameworks General Introduction
+// include::volume0/tf0-main.adoc[]  NO LONGER IN STANDARD, ONLY SUPPLEMENT
+
+
 
 // = Volume 1 -- Profiles
 

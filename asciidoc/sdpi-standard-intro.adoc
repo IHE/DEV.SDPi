@@ -9,7 +9,7 @@
 |===
 a| *SDPi {ihe_standard_sdpi_revision_short} Standard -- _STU / TI Version_ -- Note*:
 
-// Standalone TO DO ... this section
+// STANDALONE TO DO ... this section
 
 
 This version of the SDPi 2.3 Standard for Trial Use (HL7 STU) / Trial Implementation (IHE TI) standard is the 3rd release in 2025, continuing the objective to provide three to four releases each year that include both _incremental_ updates (e.g., editorial "fixes"), ballot comment resolutions (e.g., from HL7 ballot cycles), and additional capability enhancements.
@@ -17,12 +17,12 @@ For this release, key changes include:
 
 1. Added new extensions _ReportSequence_ and _Relations_
 2. Added conformity statement tables for SPDi-defined requirements
-3. Added semantic markup to support rich artefact generation
+3. Added semantic markup to support rich artifact generation
 
 Numerous other corrections and enhancements are included.
 
 All changes incorporated in a release are managed through Github Issues and reviewed Pull Requests.
-For a list of those related to this release, see <<sdpi_issue_management>> below.
+For a list of those related to this release, see <<sdpi_release_issue_management>> below.
 For HL7 ballot comment resolution, links are made from HL7 ballot Jira tickets to IHE DEV.SDPi Github Issues that then enable tracking of the comment resolution implementation in a specific release.
 
 
@@ -42,6 +42,85 @@ These known limitations and forward-looking content include:
 . *{standard_note}* boxes are provided throughout the document to help guide reviewers and implementers.
 
 |===
+
+
+[#clause_overview,sdpi_offset=clear]
+= Overview
+
+[#clause_sdpi_standard_scope]
+== Scope
+
+
+[#clause_sdpi_standard_purpose]
+== Purpose
+
+NOTE: #content from current TF-1:2.3.1.1 and similar#
+
+
+[#clause_sdpi_standard_copyright_licenses_trademarks]
+== Copyright Licenses & Trademarks
+
+NOTE: #Copyright and Trademark info#
+
+include::volume0/tf0-ch-9-copyrights.adoc[]
+
+// SDPi Trademark
+
+=== Trademark
+IHE^®^ and the IHE logo are trademarks of the Healthcare Information Management Systems Society in the United States and trademarks of IHE Europe in the European Community.
+Please refer to the IHE Technical Frameworks General Introduction, https://profiles.ihe.net/GeneralIntro/ch-10.html[Section 10 - Trademark] for information on their use.
+
+[#clause_sdpi_xml_namespaces]
+== XML Namespaces
+
+The XML namespace URI that is used by this specification is: `urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1`.
+
+<<table_xml_namespaces>> lists XML namespaces and prefixes that are used in this specification.
+The choice of any namespace prefix is arbitrary and not semantically significant.
+
+.Prefixes and XML namespaces used in this specification.
+[#table_xml_namespaces,cols="1,5,2",width=100%,]
+|===
+|Prefix |XML Namespace |Specification
+
+|sdpi
+|urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1
+|This specification, used by <<acronym_biceps>> extensions.
+
+|dp
+|urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.2.2
+|This specification, used by the <<vol1_spec_sdpi_p_actor_discovery_proxy>> actor.
+
+|dpws
+|http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01
+|<<ref_oasis_dpws_2009>>
+
+|hs
+|urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.3.1
+|This specification, used by service specification of the <<term_history_service>>.
+
+|hm
+|urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.3.2
+|This specification, used by model specification of the <<term_history_service>>.
+
+|wsa
+|http://www.w3.org/2005/08/addressing
+|<<ref_oasis_ws_addressing_2006>>
+
+|wsd
+|http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01
+|<<ref_oasis_ws_discovery_2009>>
+
+|wse
+|http://schemas.xmlsoap.org/ws/2004/08/eventing
+|<<ref_w3c_ws_eventing_2006>>
+
+|wsm
+|http://schemas.xmlsoap.org/ws/2004/09/mex
+|<<ref_w3c_ws_metadata_exchange_2008>>
+
+|===
+
 
 // Forward declarations of common labels & acronyms & variables
 include::document-declarations.adoc[]
@@ -133,10 +212,19 @@ Subsequent standard versions will build upon these objectives and support a new 
 Additional discussion is provided in <<vol1_appendix_a_requirements_management_for_p_n_t_interperability>>, and on the https://confluence.hl7.org/pages/viewpage.action?pageId=82906664#ConformityAssessment&Tooling-RI+MC+RRforMedTechSpecificationsInitiative[Gemini project's Confluence pages].
 See also related discussions on the Gemini Project's https://confluence.hl7.org/x/XhPUB[Pathway to an Ecosystem of Plug-and-Trust Products].
 
+[#clause_terms_definitions_acronyms,sdpi_offset=clear]
+= Terms, Definitions & Acronyms
+
+NOTE: #(content from TF-0, Forward declarations, ... )#
+
+include::volume0/tf0-ch-d-glossary.adoc[]
+
+NOTE: #FIX FOR BOGUS TRANSACTION ERRORS IN BUILD - NEED TO REFACTOR OUT#
+include::volume0/tf0-ch-b-transactions.adoc[]
+
 
 [#standard_clause_requirements_glossary]
 === Requirements Glossary
-
 
 [%noheader]
 [%autowidth]
@@ -149,4 +237,10 @@ This "glossary" provides a defined set of requirements terminology and meta data
 It is differentiated from the IHE TF-0 Glossary in that it is specifically created to support the integration of formal requirements interoperability specification content; whereas, the IHE glossary provides general terminology more at the application level that is used throughout all IHE technical frameworks and profile specifications.
 
 |===
+
+
+[#clause_references,sdpi_offset=clear]
+= References
+
+NOTE: #(Content from TF-1B)#
 

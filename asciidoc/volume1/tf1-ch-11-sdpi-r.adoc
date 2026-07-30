@@ -12,7 +12,7 @@ This is due to the fact that the primary purpose of this <<acronym_sdpi_r>> Prof
 Their requirements will be integrated into this standard, with their <<term_implementation_conformance_statement>> added to <<vol1_appendix_b_referenced_standards_conformance>> below.
 Many of those requirements will be mapped to the actors and transactions and other elements in this standard, including this <<acronym_sdpi_r>> Profile.
 
-Additionally, though the <<actor_somds_dec_gateway>> is defined below and fully specified in <<vol2_clause_appendix_sdpi_dec_gateway>>, the implementation guide for mapping from <<acronym_biceps>> to <<acronym_hl7>> <<acronym_fhir>> remains in development, pushing the specification of the <<vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway>> to a later version of this standard.
+Additionally, though the <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> is defined below and fully specified in <<vol2_clause_appendix_sdpi_dec_gateway>>, the implementation guide for mapping from <<acronym_biceps>> to <<acronym_hl7>> <<acronym_fhir>> remains in development, pushing the specification of the <<vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway>> to a later version of this standard.
 
 |===
 

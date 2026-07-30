@@ -103,18 +103,19 @@ endif::[]
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi "Standalone" Supplement -- Release & Drafting Notes*:
-
+a| *Gemini SDPi {ihe_supplement_sdpi_revision_short} "Standalone" Supplement -- Release & Drafting Notes*:
 
 === Release Note
-This sdpi-supplement document is being created out of and aligned with the current sdpi-standard document.
+This release of SDPi is the first version that includes a separate _sdpi-supplement_ specification (this document) that was created out of the previous released version and aligned with the current _sdpi-standard_ document.
 This document is intended to provide the necessary organization and summary content that can ultimately be integrated into the IHE DEV TF "final text" normative version.
-When that integration to the DEV TF occurs, this "supplement" will no longer be needed and will be deprecated.
+When that integration to the DEV TF occurs, this "supplement" will no longer be needed and will be deprecated; however, the "standard" document will always persist.
 
-NOTE: This supplement will directly reference the "standard" revision to which it is aligned.
-It may be that when a DEV TF integration occurs, that is only partial to "finalized" aspects of the SDPi standard and other capabilities will be in active development, thus requiring the need for this supplement -- potentially, for a long time!"
+NOTE: This supplement has the same revision label as the associated standard revision to which it is aligned.
+It may be that when a DEV TF integration occurs for those aspects of SDPi that are "final text", other capabilities will be in active development, thus requiring the need for this supplement -- potentially, for a long time!"
 
-The complete detailed content will remain in the sdpi-standard document as it has evolved in recent years; however, that document will be designed so that it will always remain -- standalone -- and will not be integrated into some other document.
+The complete detailed normative content will remain in the sdpi-standard document as it has evolved in recent years; however, that document will be designed so that it will always remain -- standalone -- and will not be integrated into some other document.
+
+For a summary of changes made to this release of the standard and related supplement, see the release note in the SDPi {ihe_supplement_sdpi_revision_short} Standard document.
 
 === Drafting Note - Remaining Tasks & Open Questions
 Editorial Task List (prioritized) for this Supplement:
@@ -169,7 +170,7 @@ The current version of the IHE Devices Technical Framework can be found at https
 
 include::supplement/sdpi-supplement-intro.adoc[]
 
-// Standalone TO DO - This is a common IHE SUPPLEMENT SECTION, we should include it and mention that they are in the standard
+// STANDALONE TO DO - This is a common IHE SUPPLEMENT SECTION, we should include it and mention that they are in the standard
 // include::supplement/sdpi-standard-issues.adoc[]
 
 // = Volume 0 -- IHE Technical Frameworks General Introduction

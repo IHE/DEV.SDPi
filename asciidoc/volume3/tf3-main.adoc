@@ -15,7 +15,7 @@
 |===
 a| *{standard_note}*: The organization of this Volume 3 standard factors in two major changes:
 
-// Standalone TO DO ... this section
+// STANDALONE TO DO ... this section
 
 
 . IHE Supplement template (2020), with content mapped from the <<ref_ihe_dev_tf_3_2024>> specification;

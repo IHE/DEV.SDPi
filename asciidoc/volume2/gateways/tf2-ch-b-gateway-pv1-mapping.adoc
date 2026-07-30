@@ -14,7 +14,7 @@ The SDC patient and location context information shall only be mapped to the cor
 
 [NOTE]
 ====
-* For a valid *pm:PatientContextState* or *pm:LocationContextSate*, the *pm:AbstractContextState/@ContextAssociation* attribute is set to *"Assoc"* and the *pm:AbstractContextState/pm:Validator* is set to a valid validator. A corresponding inferred patient or location ensemble context is not required for the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>>.
+* For a valid *pm:PatientContextState* or *pm:LocationContextSate*, the *pm:AbstractContextState/@ContextAssociation* attribute is set to *"Assoc"* and the *pm:AbstractContextState/pm:Validator* is set to a valid validator. A corresponding inferred patient or location ensemble context is not required for the <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> / <<vol1_spec_sdpi_a_actor_somds_acm_gateway>>.
 
 * If the SDC patient and/or location context information is not be used for the mapping, please refer to the <<ref_ihe_dev_tf_2_2024>> on how to populate the fields of the PV1 segment in this case.
 ====
@@ -26,7 +26,7 @@ The SDC patient and location context information shall only be mapped to the cor
 ****
 [NORMATIVE]
 ====
-A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-2 field to the code for the patient class.
+A <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> / <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> shall set the PV1-2 field to the code for the patient class.
 ====
 
 [NOTE]
@@ -45,7 +45,7 @@ The SDC data model does not support the concept of a patient class. Therefore, t
 ****
 [NORMATIVE]
 ====
-If <<r8111>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-3 field to the patient's assigned location.
+If <<r8111>> is met, then a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> / <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> shall set the PV1-3 field to the patient's assigned location.
 ====
 
 [NOTE]
@@ -102,7 +102,7 @@ If <<r8111>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gate
 ****
 [NORMATIVE]
 ====
-If <<r8111>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-19 field to the patient's visit identifier.
+If <<r8111>> is met, then a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> / <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> shall set the PV1-19 field to the patient's visit identifier.
 
 If the SDC patient identifier element *pm:PatientContextState/pm:Identification* contains more than one patient identifier, only the unique identifier assigned to the patient's visit is mapped according to the <<ref_tbl_pv119_mapping>> table.
 
@@ -156,14 +156,14 @@ Valid *"Identifier Type Code"* values for a visit number are, for example, *"VN"
 ****
 [NORMATIVE]
 ====
-If <<r8111>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-44 field to the patient's admission date/time.
+If <<r8111>> is met, then a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> / <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> shall set the PV1-44 field to the patient's admission date/time.
 ====
 
 [NOTE]
 ====
 The SDC data model does not support the concept of an admission date/time. There are also different types of admissions; e.g., hospital admission, care unit admission, etc.
 
-This said, it is up to the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> to figure out the admission date/time to be set in the PV1-44 field. If the gateway is not able to determine the admission date/time, the field is left empty.
+This said, it is up to the <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> / <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> to figure out the admission date/time to be set in the PV1-44 field. If the gateway is not able to determine the admission date/time, the field is left empty.
 ====
 ****
 
@@ -173,7 +173,7 @@ This said, it is up to the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gatew
 ****
 [NORMATIVE]
 ====
-If <<r8111>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-51 field to the code for the visit indicator.
+If <<r8111>> is met, then a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> / <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> shall set the PV1-51 field to the code for the visit indicator.
 
 If *"pm:PatientContextState/pm:Identification/pm:Type/@Code"* is "VN" (Visit Number), the field is set to *"V"*.
 

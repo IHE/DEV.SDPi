@@ -31,7 +31,7 @@ The HL7 segments *MSH*, *PID*, and *PV1* contain information which can differ be
 ****
 [NORMATIVE]
 ====
-A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the MSH-11 field to the code for the processing ID, which is either be *"P"* (Production) or *"D"* (Debugging).
+A <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> / <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> shall set the MSH-11 field to the code for the processing ID, which is either be *"P"* (Production) or *"D"* (Debugging).
 ====
 
 [NOTE]

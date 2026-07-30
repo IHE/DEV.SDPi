@@ -166,7 +166,7 @@ Profile options are provided for additional capabilities that may be required to
 
 ////
 
-// Standalone TO DO:  #TODO:  Add "alert delegation" to the Glossary and reference here#
+// STANDALONE TO DO:  #TODO:  Add "alert delegation" to the Glossary and reference here#
 
 
 [sdpi_offset=13]

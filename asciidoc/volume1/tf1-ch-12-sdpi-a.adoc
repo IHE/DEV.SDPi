@@ -17,7 +17,7 @@ As a result, the completion of these two transactions has been deferred to a sub
 
 Similarly, a related transaction, [DEV-43], namely providing clinician alert acknowledgement status information back to the alerting device, is also being discussed further and will be deferred to a subsequent version of the standard.
 
-Finally, it should be noted that  <<actor_somds_acm_gateway>> is defined below and fully specified in <<vol2_clause_appendix_sdpi_acm_gateway>>.
+Finally, it should be noted that  <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> is defined below and fully specified in <<vol2_clause_appendix_sdpi_acm_gateway>>.
 Also in development is <<acronym_hl7>> <<acronym_fhir>> support for medical alerting (e.g., refinement of the <<acronym_fhir>> DeviceAlert resource and future development of a <<acronym_fhir>> Device Alerting IG).
 As a result, a "SOMDS Medical Alert FHIR Gateway" is not included as an actor at this stage; however, it is expected to be added in the coming year or two.
 
@@ -122,7 +122,7 @@ include::../plantuml/vol1-figure-sdpi-a-reporting-example-sequence-diagram.puml[
 [#vol1_spec_sdpi_a_actor_somds_medical_alert_provider, reftext='SOMDS Medical Alert Provider',role="actor-alias",actor-id="somds_medical_alert_provider"]
 Actor Summary Definition:
 [none]
-. A <<vol1_spec_sdpi_p_actor_somds_provider>> grouped actor that sends medical alert information to a <<actor_somds_medical_alert_consumer>>.
+. A <<vol1_spec_sdpi_p_actor_somds_provider>> grouped actor that sends medical alert information to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>.
 
 This actor is designed to publish medical device alert information to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>, which in turn can communicate it safely and reliably to a clinician.
 Transactions enabled for this actor are identified in <<vol1_table_sdpi_a_actors_transactions>> above.

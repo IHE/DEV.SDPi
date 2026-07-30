@@ -1,3 +1,4 @@
 // DEV-46 Transaction Summary
 
-Provide network presence and absence of <<actor_somds_provider>> Actors in a <<acronym_somds>> network by updating the metadata in a <<actor_somds_discovery_proxy>> Actor.
+Provide network presence and absence of <<vol1_spec_sdpi_p_actor_somds_provider>> Actors in a <<acronym_somds>> network by updating the metadata in a <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor.
+

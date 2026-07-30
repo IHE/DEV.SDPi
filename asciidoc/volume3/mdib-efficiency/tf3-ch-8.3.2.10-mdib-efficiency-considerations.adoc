@@ -18,7 +18,7 @@ The <<acronym_mdib>> should be modelled in a minimalistic way, which results in 
 
 Low-frequent @DeterminationPeriod:: Determination periods of metrics should be short enough such that data remains clinically relevant when transmitted, but long enough such that data transmission does not cause high processor and network load.
 
-Metrics having a common @DeterminationPeriod:: This allows for the <<actor_somds_provider>> to collect updates in a single metric report instead of clustering updates across many metric reports.
+Metrics having a common @DeterminationPeriod:: This allows for the <<vol1_spec_sdpi_p_actor_somds_provider>> to collect updates in a single metric report instead of clustering updates across many metric reports.
 
 Waveforms having a common @DeterminationPeriod:: Real-time sample array metrics are used to model waveforms and are distributed by using the BICEPS WAVEFORM service.
 Analogous to other metric types, real-time sample array metrics should also share the same @DeterminationPeriod.
