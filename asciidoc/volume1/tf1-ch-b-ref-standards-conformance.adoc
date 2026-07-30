@@ -8,7 +8,7 @@
 |===
 | *{supplement_note}*: The inclusion of a References appendix is unique for IHE Technical Framework specifications.
 Typically, referenced standards sections are distributed throughout the specifications where appropriate; however, standards from other organizations (e.g., IEEE, ISO, IEC) typically have a "Normative References" clause and when desired a "Bibliography" clause.
-Also, integration of explicit standards' <<term_implementation_conformance_statement>> specifications (e.g., <<ref_ieee_11073_10207_2017>> <<acronym_ics>> tables) is unique, but needed to support requirements interoperability.
+Also, integration of explicit standards' <<term_implementation_conformance_statement>> specifications (e.g., <<ref_ieee_11073_10207_2017_Cor1_2025>> <<acronym_ics>> tables) is unique, but needed to support requirements interoperability.
 
 Ultimately, the content of this appendix may be rearranged and even relocated; however, for early versions of the SDPi supplement, it has proven helpful, and even of critical importance and value.
 |===
@@ -42,7 +42,7 @@ No content from those three standards - including their requirements -  is norma
 
 * [[[ref_ieee_11073_10201_2004,IEEE 11073-10201:2004]]] IEEE 11073-10201™ International Standard - Health informatics--Device interoperability--Part 10201:Point-of-care medical device communication--Domain information model.  Note this was updated in 2020.  Available at https://standards.ieee.org/ieee/11073-10201/10263/.
 
-* [[[ref_ieee_11073_10207_2017,IEEE 11073-10207:2017]]] IEEE 11073-10207-2017, Health informatics — Point-of-care medical device communication — Part 10207: Domain Information and Service Model for Service-Oriented Point-of-Care Medical Device Communication, 2017-12, available at https://standards.ieee.org/ieee/11073-10207/6032 footnote:ieee_permission[].
+* [[[ref_ieee_11073_10207_2017_Cor1_2025,IEEE 11073-10207-2017/Cor 1-2025]]] IEEE 11073-10207-2017/Cor 1-2025, Health informatics — Point-of-care medical device communication — Part 10207: Domain Information and Service Model for Service-Oriented Point-of-Care Medical Device Communication Corrigendum 1, 2025-12, available at https://standards.ieee.org/ieee/11073-10207-2017_Cor_1/11316/ footnote:ieee_permission[].
 
 * [[[ref_ieee_11073_10700_2022,IEEE 11073-10700:2022]]] IEEE 11073-10700™ IEEE Standard -- Health Informatics--Device Interoperability Part 10700: Point‐of‐Care Medical Device Communication--Standard for Base Requirements for Participants in a Service‐Oriented Device Connectivity (SDC) System, available at https://standards.ieee.org/ieee/11073-10700/10630/.
 
@@ -125,7 +125,7 @@ a| *{supplement_note}*:  This section intentionally left blank for the current v
 #TODO:  Provide a general overview of the topic, including some standards that provide Conformity statements, ICS tables, etc., and those that are moot on the topic - and how all of this is handled in this appendix and TF specification#
 ////
 
-// IEEE 11073-10207:2017 ICS
+// IEEE 11073-10207-2017/Cor 1-2025 ICS
 
 include::conformance-statements/tf1-ch-c-conformance-statement-ieee-11073-10207-2017.adoc[]
 
@@ -182,6 +182,5 @@ metalanguage - Extended BNF, 15 December 1996, available at https://standards.is
 The following bibliographic references include slide decks and recordings that are helpful in understanding these specifications.
 
 * [[[ref_ihe_eu_experience_2021_presentation_cooper_schlichting,IHE EU Experience-2021 IHE CA for MedTech Solutions]]] "IHE & IHE Catalyst: Advancing Interoperable MedTec Solutions with "Regulatory Submission Ready" Conformity Assessment", presentation by Todd Cooper and Dr. Stefan Schlichting, available at https://connectathon.ihe-europe.net/experience-sessions-2021-presentations[IHE Europe Experience 2021 Presentations web page].
-
 
 

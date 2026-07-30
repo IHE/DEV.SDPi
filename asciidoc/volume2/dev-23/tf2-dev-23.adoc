@@ -30,7 +30,7 @@ Listens for <<vol2_clause_dev_23_message_hello, {var_label_dev_23_message_hello}
 
 ==== Referenced Standards
 
-* <<ref_ieee_11073_10207_2017>> Section 9.2 Implicit Discovery
+* <<ref_ieee_11073_10207_2017_Cor1_2025>> Section 9.2 Implicit Discovery
 
 ==== Messages
 

@@ -35,7 +35,7 @@ Listens for <<vol2_clause_dev_34_message_bye, {var_label_dev_34_message_bye}>> m
 
 ==== Referenced Standards
 
-* <<ref_ieee_11073_10207_2017>> Section 9.2 Implicit Discovery
+* <<ref_ieee_11073_10207_2017_Cor1_2025>> Section 9.2 Implicit Discovery
 
 ==== Messages
 

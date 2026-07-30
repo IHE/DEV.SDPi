@@ -38,7 +38,7 @@
 | General reference to the abstract, implementation technology independent SDC components defined in the IEEE 11073-10207 standard.
 |
 | [[acronym_biceps,BICEPS]] BICEPS
-| <<ref_ieee_11073_10207_2017>>
+| <<ref_ieee_11073_10207_2017_Cor1_2025>>
 | SDC
 
 | [[term_central_station,Central Station]] Central Station
@@ -201,7 +201,7 @@
 | Structured collection of any data objects that are provided by a <<vol1_spec_sdpi_p_actor_somds_provider>> or <<actor_biceps_content_creator>>, including both descriptive and state information.
 |
 | [[acronym_mdib,MDIB]] MDIB
-| <<ref_ieee_11073_10207_2017>>
+| <<ref_ieee_11073_10207_2017_Cor1_2025>>
 | SDC
 
 | [[term_mdib_configuration, MDIB Configuration]] MDIB Configuration
@@ -250,7 +250,7 @@
 | A core object type in the IEEE 11073 device communication standards.  It represents the top-level containment of the hierarchy of information objects contained in a device.
 |
 | [[acronym_mds,MDS]] MDS
-| <<ref_ieee_11073_10207_2017>>, <<ref_ieee_11073_10201_2004>>
+| <<ref_ieee_11073_10207_2017_Cor1_2025>>, <<ref_ieee_11073_10201_2004>>
 |
 
 | [[term_model_based_systems_engineering,Model-Based Systems Engineering (MBSE)]] Model-Based Systems Engineering
@@ -408,7 +408,7 @@ elements, from requirements to system components to Verification & Validation te
 implements a service-oriented <<acronym_sdc>> architecture composed of service providers and service consumers.
 |
 | [[acronym_somds,SOMDS]] SOMDS
-| <<ref_ieee_11073_10207_2017>>
+| <<ref_ieee_11073_10207_2017_Cor1_2025>>
 | SDC
 
 | [[term_slewing_adjustments,slewing time adjustments]] Slewing time adjustments
@@ -506,7 +506,7 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 | A core object type in the IEEE 11073 device communication standards. It represents the second-level containment of the hierarchy of information objects contained in a device.
 |
 | [[acronym_vmd,VMD]] VMD
-| <<ref_ieee_11073_10207_2017>>, <<ref_ieee_11073_10201_2004>>
+| <<ref_ieee_11073_10207_2017_Cor1_2025>>, <<ref_ieee_11073_10201_2004>>
 |
 
 |===

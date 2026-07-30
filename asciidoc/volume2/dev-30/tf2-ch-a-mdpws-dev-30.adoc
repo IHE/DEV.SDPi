@@ -15,7 +15,7 @@ The <<vol2_clause_dev_30_message_getmdib, {var_label_dev_30_message_getmdib}>> m
 ====== Referenced Standards
 
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
-* <<ref_ieee_11073_10207_2017>> msg:GetMdib
+* <<ref_ieee_11073_10207_2017_Cor1_2025>> msg:GetMdib
 
 ====== Message Outline
 
@@ -44,7 +44,7 @@ The <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getm
 ====== Referenced Standards
 
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
-* <<ref_ieee_11073_10207_2017>> msg:GetMdibResponse
+* <<ref_ieee_11073_10207_2017_Cor1_2025>> msg:GetMdibResponse
 
 ====== Message Outline
 
@@ -81,7 +81,7 @@ A <<vol1_spec_sdpi_p_actor_somds_provider>> shall enclose all context states in 
 
 [NOTE]
 ====
-This requirement restricts optionality in including context states in GetMdibResponse messages as specified in <<ref_ieee_11073_10207_2017>>, C.57 GetMdibResponse:
+This requirement restricts optionality in including context states in GetMdibResponse messages as specified in <<ref_ieee_11073_10207_2017_Cor1_2025>>, C.57 GetMdibResponse:
 
 [quote]
 ____
@@ -89,7 +89,7 @@ Since contexts might include privacy-related information, a SERVICE PROVIDER MAY
 the MDS contexts empty.
 ____
 
-Since transmission of GetMdibResponse messages is required to be secured, there is no need for omitting context states to meet confidentiality; R0121 in <<ref_ieee_11073_10207_2017>> is still met.
+Since transmission of GetMdibResponse messages is required to be secured, there is no need for omitting context states to meet confidentiality; R0121 in <<ref_ieee_11073_10207_2017_Cor1_2025>> is still met.
 ====
 
 ****

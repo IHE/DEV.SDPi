@@ -1,6 +1,6 @@
 :var_uri_ws_discovery_transfer: https://www.w3.org/Submission/2006/SUBM-WS-Transfer-20060927/#Get
 :var_uri_dpws: http://docs.oasis-open.org/ws-dd/dpws/1.1/os/wsdd-dpws-1.1-spec-os.html#_Toc228672092
-:var_ref_biceps_service_model: <<ref_ieee_11073_10207_2017>> Section 7.3 Service Model
+:var_ref_biceps_service_model: <<ref_ieee_11073_10207_2017_Cor1_2025>> Section 7.3 Service Model
 :var_uri_namespace_sdc: http://standards.ieee.org/downloads/11073/11073-20701-2018
 
 [#vol2-clause-appendix-mdpws-dev-25]

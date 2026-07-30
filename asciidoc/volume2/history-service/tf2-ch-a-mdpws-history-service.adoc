@@ -267,7 +267,7 @@ All object identifiers used by the <<term_history_service>> are specified in <<v
 
 <<vol2_clause_appendix_a_mdpws_history_service_xmlschema>> shows the XML Schema file that specifies the <<term_history_service>> XML grammar.
 
-The XML Schema includes the BICEPS message, participant and extension Model files as provided as an additional resource at https://standards.ieee.org/ieee/11073-10207/6032/.
+The XML Schema includes the BICEPS message, participant and extension Model files as provided as an additional resource at https://standards.ieee.org/downloads/.
 
 .<<term_history_service>> XML Schema outline
 [source#vol2_clause_appendix_a_mdpws_history_service_xmlschema,xml]
