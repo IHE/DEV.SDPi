@@ -1,4 +1,4 @@
-// Standard Conformance Statement:  IEEE 11073-10207:2017
+// Standard Conformance Statement:  IEEE 11073-10207-2017/Cor 1-2025
 
 ==== ISO/IEC 11073-10207 BICEPS ICS Tables
 
@@ -12,7 +12,7 @@ Requirement Definition (this table's rows) will be referenced where they are sat
 
 |===
 
-*Standard Version:*  IEEE 11073-10207:2017
+*Standard Version:*  IEEE 11073-10207:2025
 
 ===== General
 
@@ -47,4 +47,3 @@ A future version of SDPi will describe how to cope with contexts, with device co
 |===
 
 ADD IEEE:  *Context Processing ICS table here*
-

@@ -34,7 +34,7 @@ When joining a <<acronym_somds>>, it announces its presence to the
 
 ==== Referenced Standards
 
-* <<ref_ieee_11073_10207_2017>> Section 9. Discovery Model
+* <<ref_ieee_11073_10207_2017_Cor1_2025>> Section 9. Discovery Model
 
 ==== Messages
 

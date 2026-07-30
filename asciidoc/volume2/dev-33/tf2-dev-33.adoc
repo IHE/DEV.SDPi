@@ -31,7 +31,7 @@ Listens for <<vol2_clause_dev_33_message_getsupportedlanguages, {var_label_dev_3
 
 ==== Referenced Standards
 
-* <<ref_ieee_11073_10207_2017>> Section 7.3.10 Localization Service
+* <<ref_ieee_11073_10207_2017_Cor1_2025>> Section 7.3.10 Localization Service
 
 ==== Messages
 

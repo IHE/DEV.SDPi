@@ -41,9 +41,9 @@ When at some point the subscription has to be ended, the <<vol1_spec_sdpi_p_acto
 
 ==== Referenced Standards
 
-* <<ref_ieee_11073_10207_2017>> Section 7.2.3 Publish-Subscribe
-* <<ref_ieee_11073_10207_2017>> Section 7.2.4 Streaming
-* <<ref_ieee_11073_10207_2017>> Annex C
+* <<ref_ieee_11073_10207_2017_Cor1_2025>> Section 7.2.3 Publish-Subscribe
+* <<ref_ieee_11073_10207_2017_Cor1_2025>> Section 7.2.4 Streaming
+* <<ref_ieee_11073_10207_2017_Cor1_2025>> Annex C
 
 ==== Messages
 
@@ -76,14 +76,14 @@ The {var_label_dev_27_message_subscribe} message is sent whenever a <<vol1_spec_
 
 [[payload_dev_27_susbcribe_filter]]Filter:: A filter to subscribe to a certain set of data items, including but not limited to one or multiple of the following:
 
-- DescriptionModificationReport as specified in <<ref_ieee_11073_10207_2017>>, Annex C.5
-- EpisodicAlertReport as specified in <<ref_ieee_11073_10207_2017>>, Annex C.11
-- EpisodicComponentReport as specified in <<ref_ieee_11073_10207_2017>>, Annex C.12
-- EpisodicContextReport as specified in <<ref_ieee_11073_10207_2017>>, Annex C.13
-- EpisodicMetricReport as specified in <<ref_ieee_11073_10207_2017>>, Annex C.14
-- EpisodicOperationalStateReport as specified in <<ref_ieee_11073_10207_2017>>, Annex C.15
-- OperationInvokedReport as specified in <<ref_ieee_11073_10207_2017>>, Annex C.77
-- WaveformStream as specified in <<ref_ieee_11073_10207_2017>>, Annex C.112
+- DescriptionModificationReport as specified in <<ref_ieee_11073_10207_2017_Cor1_2025>>, Annex C.5
+- EpisodicAlertReport as specified in <<ref_ieee_11073_10207_2017_Cor1_2025>>, Annex C.11
+- EpisodicComponentReport as specified in <<ref_ieee_11073_10207_2017_Cor1_2025>>, Annex C.12
+- EpisodicContextReport as specified in <<ref_ieee_11073_10207_2017_Cor1_2025>>, Annex C.13
+- EpisodicMetricReport as specified in <<ref_ieee_11073_10207_2017_Cor1_2025>>, Annex C.14
+- EpisodicOperationalStateReport as specified in <<ref_ieee_11073_10207_2017_Cor1_2025>>, Annex C.15
+- OperationInvokedReport as specified in <<ref_ieee_11073_10207_2017_Cor1_2025>>, Annex C.77
+- WaveformStream as specified in <<ref_ieee_11073_10207_2017_Cor1_2025>>, Annex C.112
 
 [[payload_dev_27_susbcribe_expiration_time]]Expiration Time:: A time requested for subscription expiration.
 

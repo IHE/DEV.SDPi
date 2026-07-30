@@ -3,7 +3,7 @@
 [#vol3_clause_sdc_biceps_semantic_content_module]
 ===== SDC/BICEPS Content Module
 
-The <<acronym_biceps>> standard, <<ref_ieee_11073_10207_2017>>, provides an extensive semantic model for all information exchanged between <<vol1_spec_sdpi_p_actor_somds_participant>> systems.  This section provides a general background for <<acronym_biceps>>-based content, including both what is unique to this standard (e.g., different from the <<term_classic_dim>>), and any extensions that are made by this SDPi supplement.
+The <<acronym_biceps>> standard, <<ref_ieee_11073_10207_2017_Cor1_2025>>, provides an extensive semantic model for all information exchanged between <<vol1_spec_sdpi_p_actor_somds_participant>> systems.  This section provides a general background for <<acronym_biceps>>-based content, including both what is unique to this standard (e.g., different from the <<term_classic_dim>>), and any extensions that are made by this SDPi supplement.
 
 
 .R0701
@@ -11,7 +11,7 @@ The <<acronym_biceps>> standard, <<ref_ieee_11073_10207_2017>>, provides an exte
 ****
 [NORMATIVE]
 ====
-All <<vol1_spec_sdpi_p_actor_somds_participant>> systems shall fully implement the semantic content requirements in the <<ref_ieee_11073_10207_2017>> <<acronym_biceps>> standard.
+All <<vol1_spec_sdpi_p_actor_somds_participant>> systems shall fully implement the semantic content requirements in the <<ref_ieee_11073_10207_2017_Cor1_2025>> <<acronym_biceps>> standard.
 ====
 
 [NOTE]
@@ -36,7 +36,7 @@ As described in <<vol1_clause_sdpi_p_soa_somds_architecture_alignment>> (see <<f
 [#figure_sdc_participant_model_descriptive_part]
 image::../images/vol3-diagram-sdc-participant-model-descriptive-part.svg[align=center]
 
-This model, detailed in <<ref_ieee_11073_10207_2017>>, provides a basic set of objects and containment relationships for describing the information and services supported by a medical device.
+This model, detailed in <<ref_ieee_11073_10207_2017_Cor1_2025>>, provides a basic set of objects and containment relationships for describing the information and services supported by a medical device.
 
 The core Medical Device System (*MDS*), Virtual Medical Device (*VMD*), Channel, and Metric objects are utilized for communicating basic information; whereas, the Alert System objects (not all are included on this diagram) support the specialized information around medical device alerts, alarms, and special events.
 What is unique to this descriptor model, though, is the inclusion of a set of SystemContext objects, as identified in <<figure_sdc_biceps_mdib_system_context_types_model>> below:
@@ -49,7 +49,7 @@ These  context types combine to support description of the operational environme
 Depending on a systems capabilities, they may be configured -- statically or dynamically -- with context information such as location or patient identification, or they may discover a <<vol1_spec_sdpi_p_actor_somds_provider>> on the network from which they can retrieve the information.
 These context types represent a significant improvement over previous medical device <<acronym_mdib>> description capabilities.
 
-NOTE:  A detailed description of this <<acronym_biceps>> description information model is beyond the scope of this specification.  Detailed information is available in the <<ref_ieee_11073_10207_2017>> standard and other materials identified in <<vol1_appendix_b_references>>.
+NOTE:  A detailed description of this <<acronym_biceps>> description information model is beyond the scope of this specification.  Detailed information is available in the <<ref_ieee_11073_10207_2017_Cor1_2025>> standard and other materials identified in <<vol1_appendix_b_references>>.
 
 [%noheader]
 [%autowidth]
@@ -88,7 +88,7 @@ Future versions will include general discussion about how BICEPS-based content i
 
 The <<acronym_biceps>> specification fully supports the private nomenclature extensions as defined in <<ref_ieee_11073_10101_2020>>.  Additionally it supports integration of other non-<<acronym_mdc>> terminology systems.
 
-See <<ref_ieee_11073_10207_2017>> for additional details.
+See <<ref_ieee_11073_10207_2017_Cor1_2025>> for additional details.
 
 // 8.3.2.
 [#vol3_clause_system_type_nomenclature_extensions]
@@ -206,7 +206,7 @@ This includes OIDs for private codes as detailed in <<ref_ieee_11073_10101_2020>
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  The <<acronym_sdc>> standards community is evaluating the use of safety class elements in the BICEPS specification (see <<ref_ieee_11073_10207_2017>>), and the related https://github.com/IHE/DEV.SDPi/issues/11[Github Issue #11 _Topic: SDPi-xC with Mixed Device Safety Classes_].
+a| *{supplement_note}*:  The <<acronym_sdc>> standards community is evaluating the use of safety class elements in the BICEPS specification (see <<ref_ieee_11073_10207_2017_Cor1_2025>>), and the related https://github.com/IHE/DEV.SDPi/issues/11[Github Issue #11 _Topic: SDPi-xC with Mixed Device Safety Classes_].
 The result of that discussion will directly impact the BICEPS SES Considerations Section below.
 
 For this version of the specification, the following wording has been suggested:
@@ -254,7 +254,7 @@ However, the fundamental rules are: Do not use a proprietary extension if the pu
 
 The borders of using extension are given by:
 
-* <<ref_ieee_11073_10207_2017>> Clause 8, especially R0109, and
+* <<ref_ieee_11073_10207_2017_Cor1_2025>> Clause 8, especially R0109, and
 * <<ref_ieee_11073_10700_2022>> Clause 6.7
 
 There are two kinds of extensions, those the <<vol1_spec_sdpi_p_actor_somds_consumer>> must understand to perform system functions safely with the <<vol1_spec_sdpi_p_actor_somds_provider>>, and those the <<vol1_spec_sdpi_p_actor_somds_consumer>> does not have to understand.

@@ -22,7 +22,7 @@ The <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_alertre
 ====== Referenced Standards
 
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
-* <<ref_ieee_11073_10207_2017>> msg:EpisodicAlertReport
+* <<ref_ieee_11073_10207_2017_Cor1_2025>> msg:EpisodicAlertReport
 
 ====== Message Outline
 
@@ -51,7 +51,7 @@ The <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_metricr
 ====== Referenced Standards
 
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
-* <<ref_ieee_11073_10207_2017>> msg:EpisodicMetricReport
+* <<ref_ieee_11073_10207_2017_Cor1_2025>> msg:EpisodicMetricReport
 
 ====== Message Outline
 
@@ -81,7 +81,7 @@ The <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_compone
 ====== Referenced Standards
 
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
-* <<ref_ieee_11073_10207_2017>> msg:EpisodicComponentReport
+* <<ref_ieee_11073_10207_2017_Cor1_2025>> msg:EpisodicComponentReport
 
 ====== Message Outline
 
@@ -110,7 +110,7 @@ The <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_descrip
 ====== Referenced Standards
 
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
-* <<ref_ieee_11073_10207_2017>> msg:DescriptionModificationReport
+* <<ref_ieee_11073_10207_2017_Cor1_2025>> msg:DescriptionModificationReport
 
 ====== Message Outline
 
@@ -139,7 +139,7 @@ The <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_operati
 ====== Referenced Standards
 
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
-* <<ref_ieee_11073_10207_2017>> msg:EpisodicOperationalStateReport
+* <<ref_ieee_11073_10207_2017_Cor1_2025>> msg:EpisodicOperationalStateReport
 
 ====== Message Outline
 
@@ -168,7 +168,7 @@ The <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_wavefor
 ====== Referenced Standards
 
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
-* <<ref_ieee_11073_10207_2017>> msg:WaveformStream
+* <<ref_ieee_11073_10207_2017_Cor1_2025>> msg:WaveformStream
 
 ====== Message Outline
 
