@@ -125,7 +125,7 @@ a| *{supplement_note}*:  This section intentionally left blank for the current v
 #TODO:  Provide a general overview of the topic, including some standards that provide Conformity statements, ICS tables, etc., and those that are moot on the topic - and how all of this is handled in this appendix and TF specification#
 ////
 
-// IEEE 11073-10207-2017/Cor 1-2025 ICS
+// IEEE 11073-10207:2025 ICS
 
 include::conformance-statements/tf1-ch-c-conformance-statement-ieee-11073-10207-2017.adoc[]
 
