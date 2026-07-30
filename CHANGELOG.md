@@ -18,12 +18,12 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Added
 
-- History Service design, MDPWS requirements and transactions ([#360](https://github.com/IHE/DEV.SDPi/issues/360))
+- History Service design, MDPWS requirements and transaction DEV-32 ([#360](https://github.com/IHE/DEV.SDPi/issues/360))
 - Clarification on SDPi-P safety requirements and considerations to explicitly include the application of the IEEE 11073-10700 standard ([#529](https://github.com/IHE/DEV.SDPi/issues/529))
 - Clarification on the use of `wsa:To` in greeting {`Hello`, `Bye`} notifications sent by a discovery proxy to a consumer ([#534](https://github.com/IHE/DEV.SDPi/issues/534))
 - Required SDPi-P actor grouping entries for BICEPS Content Creator and BICEPS Content Consumer in TF-1:10.3 ([#476](https://github.com/IHE/DEV.SDPi/issues/476))
-- Support semantic markup for deprecating requirements, transactions, use-cases, profiles, content modules and actors ([#511](https://github.com/IHE/DEV.SDPi/issues/511)).
-- Clarify expected behaviour and requirements for consumers making multiple concurrent connections to providers ([#503](https://github.com/IHE/DEV.SDPi/issues/503)).
+- Support for semantic markup for deprecating requirements, transactions, use-cases, profiles, content modules and actors ([#511](https://github.com/IHE/DEV.SDPi/issues/511))
+- Clarification on expected behaviour and requirements for consumers making multiple concurrent connections to providers ([#503](https://github.com/IHE/DEV.SDPi/issues/503))
 
 ### Changes
 
@@ -35,6 +35,7 @@ Each section shall contain a list of action items of the following format: `<bri
 - Updated actor grouping tables for SDPi-R, -A and -xC profiles for consistency and template compliance ([#544](https://github.com/IHE/DEV.SDPi/issues/544))
 - History Service XML Schema: remove hm:ChangeSequence element from root level; use element type over element ref ([#297](https://github.com/IHE/DEV.SDPi/issues/548))
 - History Service XML Schema: rename HistoryReportType to HistoricReportChoiceType ([#297](https://github.com/IHE/DEV.SDPi/issues/548))
+- Updates required to incorporate changes of BICEPS (IEEE 11073-10207) standard through its 2025 Corrigendum ([#485](https://github.com/IHE/DEV.SDPi/issues/485))
  
 ### Editorial Fixes
 
