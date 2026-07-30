@@ -127,7 +127,7 @@ a| *{supplement_note}*:  This section intentionally left blank for the current v
 
 // IEEE 11073-10207-2017/Cor 1-2025 ICS
 
-include::conformance-statements/tf1-ch-c-conformance-statement-ieee-11073-10207-2017.adoc[]
+include::conformance-statements/tf1-ch-c-conformance-statement-ieee-11073-10207-2017-Cor1-2025.adoc[]
 
 // ISO/IEEE 11073-10700:2022 ICS
 

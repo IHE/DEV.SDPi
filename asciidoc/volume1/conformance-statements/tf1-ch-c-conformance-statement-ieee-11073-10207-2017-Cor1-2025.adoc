@@ -1,6 +1,6 @@
 // Standard Conformance Statement:  IEEE 11073-10207-2017/Cor 1-2025
 
-==== ISO/IEC 11073-10207 BICEPS ICS Tables
+==== ISO/IEC 11073-10207-2017/Cor1-2025 BICEPS ICS Tables
 
 [%noheader]
 [%autowidth]
