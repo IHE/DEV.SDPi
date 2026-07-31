@@ -36,6 +36,7 @@ Each section shall contain a list of action items of the following format: `<bri
 - History Service XML Schema: remove hm:ChangeSequence element from root level; use element type over element ref ([#297](https://github.com/IHE/DEV.SDPi/issues/548))
 - History Service XML Schema: rename HistoryReportType to HistoricReportChoiceType ([#297](https://github.com/IHE/DEV.SDPi/issues/548))
 - Updates required to incorporate changes of BICEPS (IEEE 11073-10207) standard through its 2025 Corrigendum ([#485](https://github.com/IHE/DEV.SDPi/issues/485))
+- Updated SDPi-P Actors and Options Tables to include the new History Service option ([#561](https://github.com/IHE/DEV.SDPi/issues/561))
  
 ### Editorial Fixes
 
