@@ -254,7 +254,7 @@ However, the fundamental rules are: Do not use a proprietary extension if the pu
 
 The borders of using extension are given by:
 
-* <<ref_ieee_11073_10207_2017_Cor1_2025>> Clause 8, especially R0109, and
+* <<ref_ieee_11073_10207_2017_Cor1_2025>> Clause 8, especially R0109, R0200, R0203, and R0204, and
 * <<ref_ieee_11073_10700_2022>> Clause 6.7
 
 There are two kinds of extensions, those the <<vol1_spec_sdpi_p_actor_somds_consumer>> must understand to perform system functions safely with the <<vol1_spec_sdpi_p_actor_somds_provider>>, and those the <<vol1_spec_sdpi_p_actor_somds_consumer>> does not have to understand.
