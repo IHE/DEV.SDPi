@@ -23,9 +23,6 @@ BICEPS does not specify the order in which report messages are sent to <<vol1_sp
 ====
 ****
 
-//R1007 deprecated as it is de facto made redundant by new BICEPS R0262 and all requirements in BICEPS sections 5.2.5.2 and 5.2.5.3
-DeprecateRequirement::R1007[version="2.5.0"]
-////
 .R1007
 [sdpi_requirement#r1007,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
@@ -39,7 +36,6 @@ Within an <<acronym_mdib>> sequence and subscription, a <<vol1_spec_sdpi_p_actor
 This requirement verifies that for a <<vol1_spec_sdpi_p_actor_somds_provider>> there will be no two reports with the same <<acronym_mdib>> version. Furthermore, it prohibits decrementing version numbers within an <<acronym_mdib>> sequence.
 ====
 ****
-////
 
 //R1008 deprecated as it is superseded by new BICEPS R0212
 DeprecateRequirement::R1008[version="2.5.0"]
