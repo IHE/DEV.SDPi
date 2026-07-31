@@ -82,7 +82,6 @@ The {var_label_dev_30_message_getmdibresponse} message is sent whenever a <<vol1
 
 [[payload_dev_30_getmdibresponse_mddescription]]MdDescription:: The descriptive part of an MDIB.
 [[payload_dev_30_getmdibresponse_mdstate]]MdState:: The state part of an MDIB.
-(As the communication is encrypted, this can include ContextStates without violating <<ref_ieee_11073_10207_2017_Cor1_2025>> R0121.)
 
 [#vol2_clause_dev_30_message_getmdibresponse_expected_actions]
 ====== Expected Actions
