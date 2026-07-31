@@ -43,7 +43,7 @@ No content from those three standards - including their requirements -  is norma
 * [[[ref_ieee_11073_10201_2004,IEEE 11073-10201:2004]]] IEEE 11073-10201™ International Standard - Health informatics--Device interoperability--Part 10201:Point-of-care medical device communication--Domain information model.  Note this was updated in 2020.  Available at https://standards.ieee.org/ieee/11073-10201/10263/.
 
 * [[[ref_ieee_11073_10207_2017_Cor1_2025,IEEE 11073-10207:2025]]] IEEE 11073-10207-2017/Cor 1-2025, Health informatics — Point-of-care medical device communication — Part 10207: Domain Information and Service Model for Service-Oriented Point-of-Care Medical Device Communication Corrigendum 1, 2025-12, available at https://standards.ieee.org/ieee/11073-10207-2017_Cor_1/11316/ footnote:ieee_permission[].
-
++
 NOTE: The "IEEE 11073-10207-2017/Cor1-2025" standard is a corrigendum to the "IEEE 11073-10207-2017" standard. The corrigendum is a separate document that corrects errors in the original standard. The corrigendum is not a standalone document and must hence be used in conjunction with the original standard.
 
 * [[[ref_ieee_11073_10700_2022,IEEE 11073-10700:2022]]] IEEE 11073-10700™ IEEE Standard -- Health Informatics--Device Interoperability Part 10700: Point‐of‐Care Medical Device Communication--Standard for Base Requirements for Participants in a Service‐Oriented Device Connectivity (SDC) System, available at https://standards.ieee.org/ieee/11073-10700/10630/.
