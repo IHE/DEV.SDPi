@@ -1,6 +1,6 @@
 
-[appendix#vol0_appendix_b_transactions,sdpi_offset=B]
-=== Transactions
+// [appendix#vol0_appendix_b_transactions,sdpi_offset=B]
+// === Transactions
 
 [%noheader]
 [%autowidth]

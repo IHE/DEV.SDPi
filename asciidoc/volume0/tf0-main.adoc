@@ -1,5 +1,0 @@
-//
-//  Gemini Standalone Standard Note -
-//    All of the TF-0 content has been either moved to other locations in the standard OR is only in the SUPPLEMENT document.
-//
-

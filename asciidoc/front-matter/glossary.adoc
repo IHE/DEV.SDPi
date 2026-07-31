@@ -1,12 +1,7 @@
-[appendix#vol0_appendix_d_glossary,sdpi_offset=D]
-=== Glossary
 
-[%noheader]
-[%autowidth]
-[cols="1"]
-|===
-| *{standard_note}*: The General Introduction Appendix D Glossary in this initial version of the standard includes all terms and acronyms that are utilized throughout the other volumes.  Subsequent versions of the standard may re-locate items to other tables and sections within the technical framework.  To help differentiate between various classes or categories of terms, a *_new "Type" column_* has been added.  This could enable future dynamic resorting of the table by those users who are interested in, for example, only organizational definitions.  Finally, a *_References column_* has been added to pull this information out of the Definition column.
-|===
+[#clause_glossary,sdpi_offset=clear]
+=== General Terms
+
 
 [%noheader]
 [%autowidth]

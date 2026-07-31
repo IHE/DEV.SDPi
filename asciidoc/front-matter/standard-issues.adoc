@@ -34,6 +34,7 @@ In this way, namely bidirectional linking from Jira ticket and GitHub issue, rou
 The issues listed in this section or in https://github.com/IHE/DEV.SDPi/issues?q=is%3Aissue+is%3Aopen are open, and hence not yet ready for inclusion in this release and not subject to comment or review.
 
 //==== Open Issues
+// NOTE:  The following line must be kept exactly as worded in order for the processor to replace it with the list
 
 // open issues are inserted here
 
@@ -41,6 +42,8 @@ The issues listed in this section or in https://github.com/IHE/DEV.SDPi/issues?q
 === Closed Issues
 
 The issues listed in this section or in https://github.com/IHE/DEV.SDPi/issues?q=is%3Aissue+is%3Aclosed are closed.
+
+// NOTE:  The following line must be kept exactly as worded in order for the processor to replace it with the list
 
 // closed issues are inserted here
 

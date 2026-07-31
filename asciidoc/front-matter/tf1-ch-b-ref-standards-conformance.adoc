@@ -1,6 +1,6 @@
 
 [appendix#vol1_appendix_b_references,sdpi_offset=B]
-== References
+// == References
 
 [%noheader]
 [%autowidth]
@@ -127,25 +127,25 @@ a| *{standard_note}*:  This section intentionally left blank for the current ver
 
 // IEEE 11073-10207:2017 ICS
 
-include::conformance-statements/tf1-ch-c-conformance-statement-ieee-11073-10207-2017.adoc[]
+include::../volume1/conformance-statements/tf1-ch-c-conformance-statement-ieee-11073-10207-2017.adoc[]
 
 // ISO/IEEE 11073-10700:2022 ICS
 
-include::conformance-statements/tf1-ch-c-conformance-statement-ieee-11073-10700-2022.adoc[]
+include::../volume1/conformance-statements/tf1-ch-c-conformance-statement-ieee-11073-10700-2022.adoc[]
 
 // ISO/IEEE 11073-10701:2022 ICS
 
-include::conformance-statements/tf1-ch-c-conformance-statement-ieee-11073-10701-2022.adoc[]
+include::../volume1/conformance-statements/tf1-ch-c-conformance-statement-ieee-11073-10701-2022.adoc[]
 
 // Appendix B.x
-=== Bibliography
+== Bibliography
 
 In addition to Referenced Standards, which include normative requirements and capabilities that this technical framework utilizes, there are other standards, specifications, publications, presentations, materials, etc. that have proven valuable in both developing and understanding the framework's content.  This list identifies those items, including many of which are referenced throughout the specifications.
 
 NOTE: The subcategories for the following sections are solely intended to provide organization to the list of entries, facilitating the use of this section.
 
 [bibliography]
-==== Media (non-standards) References
+=== Media (non-standards) References
 
 The following bibliographic references include graphics, "infographic", and similar media.
 
@@ -153,7 +153,7 @@ The following bibliographic references include graphics, "infographic", and simi
 
 
 [bibliography]
-==== Standards & Publications
+=== Standards & Publications
 
 The following bibliographic references include standards that are related to this specification but do not contain normative requirements, as well as papers that are useful in understanding related concepts.
 
@@ -177,7 +177,7 @@ metalanguage - Extended BNF, 15 December 1996, available at https://standards.is
 * [[[ref_paper_design_pattern_for_soa_integration_of_medical_devices,Standardized Device Services - A Design Pattern for Service Oriented Integration of Medical Devices]]]  C. Mauro, A. Sunyaev, J. M. Leimeister, and H. Krcmar, 2010 43rd Hawaii International Conference on System Sciences, Honolulu, HI, USA: IEEE, Jan. 2010, pp. 1–10. doi: 10.1109/HICSS.2010.347.
 
 [bibliography]
-==== Presentations
+=== Presentations
 
 The following bibliographic references include slide decks and recordings that are helpful in understanding these specifications.
 

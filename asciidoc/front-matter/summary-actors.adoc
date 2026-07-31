@@ -1,6 +1,6 @@
 
-[appendix#vol0_appendix_a_actors,sdpi_offset=A]
-=== Actors
+// [appendix#vol0_appendix_a_actors,sdpi_offset=A]
+// === Actors
 
 [%noheader]
 [%autowidth]

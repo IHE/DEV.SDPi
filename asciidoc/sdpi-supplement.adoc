@@ -171,7 +171,7 @@ The current version of the IHE Devices Technical Framework can be found at https
 include::supplement/sdpi-supplement-intro.adoc[]
 
 // STANDALONE TO DO - This is a common IHE SUPPLEMENT SECTION, we should include it and mention that they are in the standard
-// include::supplement/sdpi-standard-issues.adoc[]
+// include::supplement/standard-issues.adoc[]
 
 // = Volume 0 -- IHE Technical Frameworks General Introduction
 

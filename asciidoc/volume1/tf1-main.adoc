@@ -22,7 +22,8 @@ include::tf1-ch-13-sdpi-xc.adoc[]
 include::tf1-ch-a-requirements-interoperability.adoc[]
 
 // Appendix B
-include::tf1-ch-b-ref-standards-conformance.adoc[]
+// STANDALONE TO DO:  Relocate content to References Section
+// include::tf1-ch-b-ref-standards-conformance.adoc[]
 
 // Appendix C
 include::use-cases/tf1-ch-c-use-cases.adoc[]

@@ -1,0 +1,8 @@
+
+[#clause_conformance,sdpi_offset=clear]
+= Conformance
+
+NOTE: #This new clause will include all referenced standards conformance information as well as other SDPi conformance info.#
+
+
+

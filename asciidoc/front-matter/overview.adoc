@@ -1,47 +1,4 @@
-:standard_note: SDPi {ihe_standard_sdpi_revision_short} Standard Note
 
-[#standard_clause_introduction_to_standard,sdpi_offset=clear]
-= Introduction to this Standard
-
-[%noheader]
-[%autowidth]
-[cols="1"]
-|===
-a| *SDPi {ihe_standard_sdpi_revision_short} Standard -- _STU / TI Version_ -- Note*:
-
-// STANDALONE TO DO ... this section
-
-
-This version of the SDPi 2.3 Standard for Trial Use (HL7 STU) / Trial Implementation (IHE TI) standard is the 3rd release in 2025, continuing the objective to provide three to four releases each year that include both _incremental_ updates (e.g., editorial "fixes"), ballot comment resolutions (e.g., from HL7 ballot cycles), and additional capability enhancements.
-For this release, key changes include:
-
-1. Added new extensions _ReportSequence_ and _Relations_
-2. Added conformity statement tables for SPDi-defined requirements
-3. Added semantic markup to support rich artifact generation
-
-Numerous other corrections and enhancements are included.
-
-All changes incorporated in a release are managed through Github Issues and reviewed Pull Requests.
-For a list of those related to this release, see <<sdpi_release_issue_management>> below.
-For HL7 ballot comment resolution, links are made from HL7 ballot Jira tickets to IHE DEV.SDPi Github Issues that then enable tracking of the comment resolution implementation in a specific release.
-
-
-NOTE: This standard also includes both normative and informative references to other specifications (see <<vol1_appendix_b_references>>), some of which are finalized and published and others that are either being developed or in revision.
-For example, the IEEE 11073-10702 PKP standard is in mature development stage; however, some requirements from that pre-standard may be included (non-normatively) in this SDPi specification, providing a pathway to early experience and validation.
-When a referenced specification is used that is in development or revision, a note will be provided in the <<vol1_appendix_b_referenced_standards>> clearly indicating its status.
-
-It is recognized that this release is a work-in-progress that will continue to subsequent versions.
-These known limitations and forward-looking content include:
-
-. Releases along with the planned capability additions are managed in the project's https://github.com/IHE/DEV.SDPi/milestones[DEV.SDPi milestones];
-. This standard includes four SDPi Profiles, though the typical IHE supplement is organized for a single profile; as a result, some adjustments have been made, especially in the supplement overview section where there is a general SDPi overview and then basic overviews for each of the Profiles; challenging areas include profile "options" where there are FOUR sections vs. one; it is a work in progress and feedback is appreciated, especially to enhance clarity;
-. *Open / Closed Issues tables* -- starting with SDPi 1.1 and subsequent, the approach for the IHE open / closed issues section was transitioned to utilize https://github.com/IHE/DEV.SDPi/issues[Github Issues] that are related to specific releases; each release updates the changelog file, detailing what is Added, Changed or Removed;
-. *Requirements boxes* (e.g., "R1234") are included especially in TF-2, with some also part of TF-1 and TF-3; this is an initial approach that *_will be significantly expanded in future versions of the standard_*; documentation is provided in <<vol1_clause_sdpi_requirements_modeling_integration>>, including discussion related to how it will be expanded in future versions of the standard;
-. *_<<term_safe_effective_secure>> Sections_* (see <<vol1_clause_appendix_a_ses_considerations_section_template>>) are included in the specification; however, their use and content will be significantly extended in future versions;
-. This standard is currently rendered as a *"long form"* document -- one single HTML file; however, in subsequent versions the intent is to consider a multi-page / file HTML rendering + addition of a tabbed menu for navigating the sections of the standard;
-. *{standard_note}* boxes are provided throughout the document to help guide reviewers and implementers.
-
-|===
 
 
 [#clause_overview,sdpi_offset=clear]
@@ -62,7 +19,7 @@ NOTE: #content from current TF-1:2.3.1.1 and similar#
 
 NOTE: #Copyright and Trademark info#
 
-include::volume0/tf0-ch-9-copyrights.adoc[]
+include::copyrights.adoc[]
 
 // SDPi Trademark
 
@@ -126,7 +83,7 @@ The choice of any namespace prefix is arbitrary and not semantically significant
 include::document-declarations.adoc[]
 
 // Define oids for referenced standards
-include::std-oid-definitions.adoc[]
+include::oid-definitions.adoc[]
 
 [#standard_clause_sdpi_standard_overview]
 == SDPi Standard Overview
@@ -212,35 +169,14 @@ Subsequent standard versions will build upon these objectives and support a new 
 Additional discussion is provided in <<vol1_appendix_a_requirements_management_for_p_n_t_interperability>>, and on the https://confluence.hl7.org/pages/viewpage.action?pageId=82906664#ConformityAssessment&Tooling-RI+MC+RRforMedTechSpecificationsInitiative[Gemini project's Confluence pages].
 See also related discussions on the Gemini Project's https://confluence.hl7.org/x/XhPUB[Pathway to an Ecosystem of Plug-and-Trust Products].
 
-[#clause_terms_definitions_acronyms,sdpi_offset=clear]
-= Terms, Definitions & Acronyms
 
-NOTE: #(content from TF-0, Forward declarations, ... )#
+[#clause_sdpi_actors_summary]
+=== SDPi Actors Summary
 
-include::volume0/tf0-ch-d-glossary.adoc[]
+include::summary-actors.adoc[]
 
-NOTE: #FIX FOR BOGUS TRANSACTION ERRORS IN BUILD - NEED TO REFACTOR OUT#
-include::volume0/tf0-ch-b-transactions.adoc[]
+[#clause_sdpi_transactions_summary]
+=== SDPi Transactions Summary
 
-
-[#standard_clause_requirements_glossary]
-=== Requirements Glossary
-
-[%noheader]
-[%autowidth]
-[cols="1"]
-|===
-a| *Editor's Note*:
-
-This "glossary" provides a defined set of requirements terminology and meta data is required in order to ensure consistency and processing / automation of requirements throughout the specification.
-
-It is differentiated from the IHE TF-0 Glossary in that it is specifically created to support the integration of formal requirements interoperability specification content; whereas, the IHE glossary provides general terminology more at the application level that is used throughout all IHE technical frameworks and profile specifications.
-
-|===
-
-
-[#clause_references,sdpi_offset=clear]
-= References
-
-NOTE: #(Content from TF-1B)#
+include::summary-transactions.adoc[]
 

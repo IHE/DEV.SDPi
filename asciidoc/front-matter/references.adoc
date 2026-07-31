@@ -1,0 +1,9 @@
+
+
+[#clause_references,sdpi_offset=clear]
+= References
+
+NOTE: #This new section integrates the content formerly in TF-1B)#
+
+include::tf1-ch-b-ref-standards-conformance.adoc[]
+

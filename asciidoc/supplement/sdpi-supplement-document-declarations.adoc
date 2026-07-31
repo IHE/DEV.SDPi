@@ -16,9 +16,7 @@ NOTES:
 [%autowidth]
 [cols="1"]
 |===
-a| *{standard_note}*:
-
-*Standalone SDPi:*  _REWORK this section to make it a permanent Forward Declarations, perhaps refactoring it into something that is not labeled "Forward Declarations"!_
+a| *{supplement_note}*:
 
 The following table is included in this version of the standard to capture *_"forward" declarations of acronyms and labels_* that are used in the text but are not intended to be part of the General Introduction Appendix D Glossary.
 "Forward" means that they are used BEFORE the document section in which they are formally defined.

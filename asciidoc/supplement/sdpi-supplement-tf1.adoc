@@ -106,7 +106,7 @@ NOTE: #Should this section be duplicated here to ensure that it is in the supple
 [%autowidth]
 [cols="1"]
 |===
-| *{standard_note}*: The standards listed in this section are predominantly published.
+| *{supplement_note}*: The standards listed in this section are predominantly published.
 However, in the current version, three of them are unpublished drafts and are hence subject to requirement changes once they are published: <<ref_hl7_fhir_pocd_ig>>, <<ref_ieee_11073_10702_202x>> and <<ref_ieee_11073_10703_202x>>.
 No content from those three standards - including their requirements -  is normatively used in the current version.
 |===
