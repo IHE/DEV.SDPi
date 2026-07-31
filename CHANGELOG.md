@@ -35,6 +35,7 @@ Each section shall contain a list of action items of the following format: `<bri
 - Updated actor grouping tables for SDPi-R, -A and -xC profiles for consistency and template compliance ([#544](https://github.com/IHE/DEV.SDPi/issues/544))
 - History Service XML Schema: remove hm:ChangeSequence element from root level; use element type over element ref ([#297](https://github.com/IHE/DEV.SDPi/issues/548))
 - History Service XML Schema: rename HistoryReportType to HistoricReportChoiceType ([#297](https://github.com/IHE/DEV.SDPi/issues/548))
+- Updated SDPi-P Actors and Options Tables to include the new History Service option ([#561](https://github.com/IHE/DEV.SDPi/issues/561))
  
 ### Editorial Fixes
 
