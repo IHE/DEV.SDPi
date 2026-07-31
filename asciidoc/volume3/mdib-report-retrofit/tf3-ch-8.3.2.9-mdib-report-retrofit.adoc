@@ -23,6 +23,7 @@ BICEPS does not specify the order in which report messages are sent to <<vol1_sp
 ====
 ****
 
+
 .R1007
 [sdpi_requirement#r1007,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
