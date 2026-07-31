@@ -28,8 +28,6 @@ ADD IEEE:  *Service Provider ICS table here*
 
 ===== Service Consumer
 
-NOTE:  CONS-1 is broken; R0115 is not optional in the released document.
-
 ADD IEEE:  *Service Consumer ICS table here*
 
 ===== Remote Control
