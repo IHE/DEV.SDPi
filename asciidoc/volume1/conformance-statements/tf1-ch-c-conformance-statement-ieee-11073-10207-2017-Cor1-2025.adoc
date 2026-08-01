@@ -1,6 +1,6 @@
-// Standard Conformance Statement:  IEEE 11073-10207:2017
+// Standard Conformance Statement:  IEEE 11073-10207:2025
 
-==== ISO/IEC 11073-10207 BICEPS ICS Tables
+==== ISO/IEC 11073-10207/Cor1-2025 BICEPS ICS Tables
 
 [%noheader]
 [%autowidth]
@@ -12,7 +12,7 @@ Requirement Definition (this table's rows) will be referenced where they are sat
 
 |===
 
-*Standard Version:*  IEEE 11073-10207:2017
+*Standard Version:*  IEEE 11073-10207:2025
 
 ===== General
 
@@ -27,8 +27,6 @@ Optional requirements for the service provider side excluding contexts and exter
 ADD IEEE:  *Service Provider ICS table here*
 
 ===== Service Consumer
-
-NOTE:  CONS-1 is broken; R0115 is not optional in the released document.
 
 ADD IEEE:  *Service Consumer ICS table here*
 
@@ -47,4 +45,3 @@ A future version of SDPi will describe how to cope with contexts, with device co
 |===
 
 ADD IEEE:  *Context Processing ICS table here*
-

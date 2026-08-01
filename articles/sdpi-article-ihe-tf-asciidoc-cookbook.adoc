@@ -895,7 +895,7 @@ The example below illustrates the AsciiDoc source required to define a content m
 [#vol3_clause_sdc_biceps_semantic_content_module,role="content-module", content-module-id="biceps",oid-arcs=".1,.1.1"]
 ===== SDC/BICEPS Content Module
 
-The biceps standard, <<ref_ieee_11073_10207_2017>>, provides an extensive semantic...
+The biceps standard, <<ref_ieee_11073_10207_2017_Cor1_2025>>, provides an extensive semantic...
 ----
 
 Attaching the `content-module` role to a section marks it as a [content module](https://profiles.ihe.net/DEV/SDPi/index.html#vol3). A (document-unique) identifier must be defined in the `content-module-id` attribute. The section title is used for the content module label. An <<defining-oids,object identifier (oid)>> is required for each content module. Typical a content module gets a version neutral oid (e.g., `.1`) and a versioned oid (e.g., `.1.1`). 

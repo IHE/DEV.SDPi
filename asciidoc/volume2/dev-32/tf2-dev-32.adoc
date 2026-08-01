@@ -27,7 +27,7 @@ While a subscription is running, the <<vol1_spec_sdpi_p_actor_somds_provider>> d
 
 ==== Referenced Standards
 
-* <<ref_ieee_11073_10207_2017>> Section 7.4 Message Model
+* <<ref_ieee_11073_10207_2017_Cor1_2025>> Section 7.4 Message Model
 
 ==== Messages
 

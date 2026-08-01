@@ -63,7 +63,6 @@ In addition, this extension defines specific interpretation for `pm:ClockState/@
 * in `pm:State[@xsi:type='pm:ClockState']`:
 ** `@ActivationState` is `StndBy` because the mdib contains timestamps that were not obtained from the current epoch (that is, `@DeterminationTime` for `m1` and `m2`),
 ** `@LastSet` shows any timestamp less than "1733317200000" (1 p.m.) may not be from the current epoch,
-** `@DateAndTime` shows this mdib snapshot was created at "1733324400000" (3 p.m.),
 ** `sdpi:Epochs[@Version='5']` indicates the current epoch is 5,
 ** `sdpi:Epochs/Epoch` shows timestamps from epochs 4 and 3 may be used in the mdib; earlier versions are not included because they are not referenced in the mdib. The `@Timestamp` on, for example, epoch 4 records the time (in the epoch 4 <<term_time_reference_frame>> when the abrupt time adjustment was made; the equivalent time in epoch 5, the next <<term_time_reference_frame>>, can be determined by adding the `@Offset` to the `@Timestamp`).
 * `pm:State[@DescriptorHandle='m1']` includes three timestamps (`DeterminationTime`, `StartTime` and `StopTime`); all were created in epoch 3 using a clock with the descriptor handle `clk`. It was not necessary to include the `@Clock` attribute because there is only one clock in the <<acronym_mdib>>. 

@@ -380,7 +380,7 @@ When the <<vol1_spec_sdpi_p_actor_somds_provider>> detects an <<term_abrupt_time
 ====
 * The <<term_manufacturer>> of the <<vol1_spec_sdpi_p_actor_somds_consumer>> considers the risks arising from <<term_timestamp>>s spanning <<term_time_reference_frame>>s from an <<term_abrupt_time_adjustment>> having occurred at the <<vol1_spec_sdpi_p_actor_somds_provider>> when the <<vol1_spec_sdpi_p_actor_somds_consumer>> receives a changed value in the <<vol1_spec_sdpi_p_actor_somds_provider>>'s MDIB sequence identifier or when the `pm:ClockState/@ActivationState` is `StndBy`.
 
-* This clarifies the ambiguity in <<ref_ieee_11073_10207_2017>>, section B.182 and <<ref_ieee_11073_20701_2018>>, R0014 when a participant uses slewing to make <<term_smooth_time_adjustments>> (using, for example, the <<ref_rfc_5905, NTPv4>> <<term_clock_discipline_algorithm>>) where information from one or more <<acronym_ts_service>>s is used to maintain clock-discipline and does not (generally) "set" the clock.
+* This clarifies the ambiguity in <<ref_ieee_11073_10207_2017_Cor1_2025>>, section B.182 and <<ref_ieee_11073_20701_2018>>, R0014 when a participant uses slewing to make <<term_smooth_time_adjustments>> (using, for example, the <<ref_rfc_5905, NTPv4>> <<term_clock_discipline_algorithm>>) where information from one or more <<acronym_ts_service>>s is used to maintain clock-discipline and does not (generally) "set" the clock.
 
 * Any <<term_timestamp>> strictly-less than `pm:ClockState/@LastSet` in the MDIB when `pm:ClockState/@ActivationState` is set to `StndBy` may be untrustworthy. 
 ====

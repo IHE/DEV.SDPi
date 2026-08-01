@@ -39,7 +39,7 @@
             </pm:Mds>
         </pm:MdDescription>
         <pm:MdState>
-          <pm:State ActivationState="StndBy" LastSet="1733317200000" DateAndTime="1733328000000"
+          <pm:State ActivationState="StndBy" LastSet="1733317200000"
                     DescriptorHandle="clk" StateVersion="15" RemoteSync="1" 
                     xsi:type="pm:ClockState">
             <ext:Extension>
