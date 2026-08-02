@@ -6,8 +6,10 @@
 //reset|+1|off
 [#vol2_clause_dev_34,sdpi_offset=34]
 //=== Announce Network Departure [{var_transaction_id}]
-[role=transaction,transaction-id=DEV-34]
+//[role=transaction,transaction-id=DEV-34]
 === _Reserved_ [{var_transaction_id}]
+
+DeprecateTransaction::DEV-34[version="2.2.0"]
 
 [%noheader]
 [%autowidth]
