@@ -16,6 +16,8 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ## Unreleased
 
+- Added markup to register transaction 34 deprecated in version 2.2.0 ([#559](https://github.com/IHE/DEV.SDPi/issues/559))
+
 ### Added
 
 - History Service design, MDPWS requirements and transaction DEV-32 ([#360](https://github.com/IHE/DEV.SDPi/issues/360))
