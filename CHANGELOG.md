@@ -16,7 +16,6 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ## Unreleased
 
-
 ### Added
 
 - History Service design, MDPWS requirements and transaction DEV-32 ([#360](https://github.com/IHE/DEV.SDPi/issues/360))
