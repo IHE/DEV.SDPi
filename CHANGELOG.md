@@ -43,7 +43,7 @@ Each section shall contain a list of action items of the following format: `<bri
 
 - Corrected wording in the SES section template ([#530](https://github.com/IHE/DEV.SDPi/issues/530))
 - Removed vendor-specific EHR examples in DDES use case narrative ([#531](https://github.com/IHE/DEV.SDPi/issues/531))
-
+- Add missing hm:HistoryQuery element in example ([#556](https://github.com/IHE/DEV.SDPi/issues/556))
 
 ## [2.4.1] - 2026-05-07
 
