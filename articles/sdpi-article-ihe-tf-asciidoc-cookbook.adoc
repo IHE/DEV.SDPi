@@ -983,6 +983,13 @@ Deprecated requirements and transactions are exported to `sdpi-requirements-depr
 `sdpi-transactions-deprecated.json`, respectively. All deprecated oids (including transactions and
 requirements) are exported to `sdpi-deprecated.json` for reference. 
 
+> [!TIP]
+> Be sure to _remove_ (or comment out) the obsolete object. The document processor
+> will report a fault when it finds both the deprecated and original object in the 
+> document. Most objects are registered in a line similar to `[role=transaction,transaction-id=DEV-34]`,
+> so that needs to be removed. Requirements are registered in blocks; the whole block needs
+> to be removed, with [block comments](https://docs.asciidoctor.org/asciidoc/latest/comments/#comment-blocks), for example. 
+
 [[cross-referencing]]
 === Cross-referencing
 
