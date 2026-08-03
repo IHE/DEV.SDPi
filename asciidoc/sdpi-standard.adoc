@@ -28,15 +28,14 @@
 :sdpi_milestone_review: SDPi 2.3 Review
 
 :sdpi_version_major: 2
-:sdpi_version_minor: 5
-:sdpi_version_revision: 0
-// STANDALONE SDPi:  QUESTION:  Do we rework these to gemini_standard
-:ihe_standard_sdpi_revision: {sdpi_version_major}.{sdpi_version_minor}.{sdpi_version_revision}
+:sdpi_version_minor: 4
+:sdpi_version_revision: 1
+:gemini_standard_sdpi_revision: {sdpi_version_major}.{sdpi_version_minor}.{sdpi_version_revision}
 :gemini_standard_sdpi_revision_short: {sdpi_version_major}.{sdpi_version_minor}
-:ihe_standard_sdpi_revision_date: {localdatetime}
-:ihe_standard_sdpi_revision_label: Standard for Trial Use
-:ihe_standard_sdpi_publication_month: December 19, 2025
-:ihe_standard_sdpi_public_comment_submission_deadline: N/A
+:gemini_standard_sdpi_revision_date: {localdatetime}
+:gemini_standard_sdpi_revision_label: Standard for Trial Use
+:gemini_standard_sdpi_publication_month: December 19, 2025
+:gemini_standard_sdpi_public_comment_submission_deadline: N/A
 
 // Oid, assigned by IHE-DEV, for the SDPi specification
 // https://wiki.ihe.net/index.php/PCD_OID_Management
@@ -70,7 +69,7 @@ ifeval::["{backend}" == "html5"]
 
 <p style="font-size: 2.75em; text-align: center"><strong>Interoperability (SDPi)</strong></p>
 
-<p style="text-align: center">Revision {ihe_standard_sdpi_revision} &mdash; {ihe_standard_sdpi_revision_label}</p>
+<p style="text-align: center">Revision {gemini_standard_sdpi_revision} &mdash; {gemini_standard_sdpi_revision_label}</p>
 
 <p style="text-align: center"><strong>("Standalone" SDPi Standard -  For Review)</strong></p>
 ++++
@@ -82,10 +81,10 @@ endif::[]
 [frame=none,grid=none]
 |===
 | *Publication Date:*
-| {ihe_standard_sdpi_publication_month}
+| {gemini_standard_sdpi_publication_month}
 
 | *Build Date:*
-| {ihe_standard_sdpi_revision_date}
+| {gemini_standard_sdpi_revision_date}
 
 | *Author:*
 | Gemini Medical Device Interoperability Program Team (Joint HL7 & IHE Devices Working Groups)

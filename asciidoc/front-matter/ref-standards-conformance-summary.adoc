@@ -1,0 +1,50 @@
+
+[appendix#vol1_appendix_b_references,sdpi_offset=B]
+// == References
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+| *{standard_note}*: The inclusion of a References appendix is unique for IHE Technical Framework specifications.
+Typically, referenced standards sections are distributed throughout the specifications where appropriate; however, standards from other organizations (e.g., IEEE, ISO, IEC) typically have a "Normative References" clause and when desired a "Bibliography" clause.
+Also, integration of explicit standards' <<term_implementation_conformance_statement>> specifications (e.g., <<ref_ieee_11073_10207_2017>> <<acronym_ics>> tables) is unique, but needed to support requirements interoperability.
+
+|===
+
+// Overview of SDPi conformance to referenced standards
+[#clause_references_referenced_standards_conformance]
+== Referenced Standards Conformance
+
+// Appendix B.x
+[sdpi_offset=1]
+==== Mapping Foundational Standard Requirements to SDPi Constructs
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *{standard_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+|===
+
+////
+#TODO:  Add RI overview & spec / styleguide for how requirements from ICS tables and similar are mapped to where they are satisfied + a link / reference to the general discussion in TF-1 Appendix A and the Referenced Standards model for RI#
+////
+
+// Summary of Standards Conformity Statements
+==== Summary of Standards Conformity Statements
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *{standard_note}*:  This section will include a _list of those standards that have / will have explicit ICS / conformance statement tables_ in the new Conformance clause at the end of the standard.
+|===
+
+////
+#TODO:  Provide a general overview of the topic, including some standards that provide Conformity statements, ICS tables, etc., and those that are moot on the topic - and how all of this is handled in this appendix and TF specification#
+////
+
+
+
+

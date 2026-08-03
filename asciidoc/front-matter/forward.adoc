@@ -19,7 +19,7 @@ Publication as a *Standard for Trial Use* (HL7 STU) or *Trial Implementation* (I
 Product developers are encouraged to use the standard, recognizing the potential impact of this continuous development cycle and its status as a _"trial use"_ standard.
 
 
-This supplement is published on {ihe_standard_sdpi_publication_month} for Trial Implementation and may be available for testing at subsequent IHE or HL7 testing events, such as an IHE Connectathon.
+This supplement is published on {gemini_standard_sdpi_publication_month} for Trial Implementation and may be available for testing at subsequent IHE or HL7 testing events, such as an IHE Connectathon.
 The standard may be amended based on the results of testing.
 Following successful testing and implementation maturity, it will transition to a normative standard, and the companion IHE supplement will be incorporated into the Devices Technical Framework.
 Comments are invited and can be submitted at https://www.ihe.net/DEV_Public_Comments/[Devices Public Comments] or by submitting a https://github.com/IHE/DEV.SDPi/issues/new/choose[GitHub Issue].

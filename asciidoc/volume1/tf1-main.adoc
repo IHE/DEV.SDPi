@@ -23,7 +23,7 @@ include::tf1-ch-a-requirements-interoperability.adoc[]
 
 // Appendix B
 // STANDALONE TO DO:  Relocate content to References Section
-// include::tf1-ch-b-ref-standards-conformance.adoc[]
+// include::ref-standards-conformance-summary.adoc[]
 
 // Appendix C
 include::use-cases/tf1-ch-c-use-cases.adoc[]
