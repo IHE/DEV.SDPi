@@ -32,5 +32,7 @@ rm -rf sdpi-documents/sdpi-supplement/readme.md
 rm -rf sdpi-documents/sdpi-standard.html
 rm -rf sdpi-documents/sdpi-supplement.html
 
+rm -rf sdpi-documents/.asciidoctor
+
 sudo apt-get install zip gzip tar
 zip -r "sdpi-documents-$1.zip" sdpi-documents
