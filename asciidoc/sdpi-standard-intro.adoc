@@ -9,14 +9,16 @@
 |===
 a| *SDPi {ihe_supplement_sdpi_revision_short} Standard -- _STU / TI Version_ -- Note*:
 
-This version of the SDPi 2.3 Standard for Trial Use (HL7 STU) / Trial Implementation (IHE TI) supplement is the 3rd release in 2025, continuing the objective to provide three to four releases each year that include both _incremental_ updates (e.g., editorial "fixes"), ballot comment resolutions (e.g., from HL7 ballot cycles), and additional capability enhancements.
+This version of the SDPi 2.5 Standard for Trial Use (HL7 STU) / Trial Implementation (IHE TI) supplement is the 2nd release in 2026, continuing the objective to provide three to four releases each year that include both _incremental_ updates (e.g., editorial "fixes"), ballot comment resolutions (e.g., from HL7 ballot cycles), and additional capability enhancements.
 For this release, key changes include:
 
-1. Added new extensions _ReportSequence_ and _Relations_
-2. Added conformity statement tables for SPDi-defined requirements
-3. Added semantic markup to support rich artefact generation
+1. Resolution of all May 2026 HL7 Ballot comments
+2. New History Service option with related transaction DEV-32
+3. Alignment with the SDC BICEPS standard corrigendum published in December 2025
+4. Support for semantic markup for deprecating requirements, transactions, use-cases, profiles, content modules and actors
+5. Initial two-document refactoring towards “Standalone SDPi” 
 
-Numerous other corrections and enhancements are included.
+Numerous additional corrections and enhancements are included.
 
 All changes incorporated in a release are managed through Github Issues and reviewed Pull Requests.
 For a list of those related to this release, see <<sdpi_issue_management>> below.
