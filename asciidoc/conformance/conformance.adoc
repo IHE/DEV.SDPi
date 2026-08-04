@@ -2,7 +2,6 @@
 [#clause_conformance,sdpi_offset=clear]
 = Conformance
 
-
 [%noheader]
 [cols="1"]
 |===
@@ -19,9 +18,26 @@ For example, in an updated and simplified version of the
 |===
 
 
-// Appendix B.x
+// Overview of conformance to this SDPi standard
 [sdpi_offset=1]
-== Mapping Foundational Standard Requirements to SDPi Constructs
+== Overview
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *{standard_note}*:  This section will provide a general introduction and overview of how implementations can claim and establish conformance with both the profile elements of this standard (e.g., SDPi-P SOMDS Provider with the Managed Discovery Option), as well as the normatively referenced standards that underpin this technical framework (e.g., ISO/IEEE 11073-10207).
+|===
+
+include::ics-overview.adoc[]
+
+//
+[sdpi_offset=1]
+== Normative references implementation conformity statements
+
+// Section provides detail for normative standards requirements traceability
+[sdpi_offset=1]
+=== Mapping Foundational Standard Requirements to SDPi Constructs
 
 [%noheader]
 [%autowidth]
@@ -34,8 +50,8 @@ a| *{standard_note}*:  This section intentionally left blank for the current ver
 #TODO:  Add RI overview & spec / styleguide for how requirements from ICS tables and similar are mapped to where they are satisfied + a link / reference to the general discussion in TF-1 Appendix A and the Referenced Standards model for RI#
 ////
 
-// Appendix B.x
-== Overview of Standards Conformity Statements
+// Section details ICS for Referenced Standards
+=== Overview of Normative Referenced Standards Conformity Statements
 
 [%noheader]
 [%autowidth]

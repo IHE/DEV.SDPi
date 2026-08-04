@@ -2,11 +2,12 @@
 
 
 [#clause_overview,sdpi_offset=clear]
-= Overview
+= Standard Overview
 
 [#clause_sdpi_standard_scope]
 == Scope
 
+NOTE: #content from current TF-1:2.3.1.1 SDPi Profiles – Scope of Application#
 
 [#clause_sdpi_standard_purpose]
 == Purpose
@@ -85,11 +86,13 @@ include::document-declarations.adoc[]
 // Define oids for referenced standards
 include::oid-definitions.adoc[]
 
-[#standard_clause_sdpi_standard_overview]
-== SDPi Standard Overview
+[#clause_sdpi_standard_overview,sdpi_offset=clear]
+= SDPi Profiles Overview
 
-[#standard_clause_sdpi_organization]
-=== SDPi Organization
+NOTE: #This secton integrates content previously in multiple locations in the standard, and as a result, there are duplications and inconsistencies in the "flow" of content.  This will be addressed as the "standalone" work is completed.#
+
+[#standard_clause_sdpi_organization,sdpi_offset=clear]
+== SDPi Organization
 
 This IHE Devices Technical Framework standard introduces a new _family of interoperability profiles_, Service-oriented Device Point-of-care Interoperability (SDPi), that comprise four separate profiles:
 
@@ -170,13 +173,16 @@ Additional discussion is provided in <<vol1_appendix_a_requirements_management_f
 See also related discussions on the Gemini Project's https://confluence.hl7.org/x/XhPUB[Pathway to an Ecosystem of Plug-and-Trust Products].
 
 
+include::profiles-detailed-overview.adoc[]
+
+
 [#clause_sdpi_actors_summary]
-=== SDPi Actors Summary
+== SDPi Actors Summary
 
 include::summary-actors.adoc[]
 
 [#clause_sdpi_transactions_summary]
-=== SDPi Transactions Summary
+== SDPi Transactions Summary
 
 include::summary-transactions.adoc[]
 

@@ -1,5 +1,5 @@
-[appendix#vol3_appendix_z_ics,sdpi_offset=Z]
-== Implementation conformity statements
+[#clause_sdpi_ics]
+== SDPi implementation conformity statements
 
 === General format
 

@@ -3,9 +3,6 @@
 
 // == Profiles
 
-// 2.
-include::tf1-ch-2-overview.adoc[]
-
 // 10.
 include::tf1-ch-10-sdpi-p.adoc[]
 

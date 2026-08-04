@@ -32,5 +32,34 @@ Information about the organization of IHE Technical Frameworks and Supplements a
 
 The current version of the IHE Devices Technical Framework can be found at https://profiles.ihe.net/DEV/[DEV Technical Framework].
 
+== Gemini Technical Framework Profile Standard
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *{standard_note}*:  This section will define this new type of standard:
+. Gemini - Joint effort between HL7 and IHE
+. Technical Framework - Specifying content per the IHE TF constructs (actors, transactions, content modules, volumes, etc.)
+. Profile - Includes both functionality-focused "integration profile" specifications, as well as normative referenced standard profiling (content selection and constraint)
+. Standard - a consensus standard that is developed in accordance with an accredited standards development process (e.g., ANSI accredited) and is on a track to become an international standard (e.g., via liaison from HL7 to ISO/TC 215 Health informatics).
+|===
+
+== General Technical Framework Organization
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *{standard_note}*:  This section will explain the general organization and clauses used in this standard, and the scope / rationale behind each.
+|===
+
+== Use of AsciiDoc
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *{standard_note}*:  Explaination and rationale behind the use of AsciiDoc for capturing the content of this standard.
+This will include other options that were considered, as well as the unique emergence in this document (e.g., during the pandemic) and the position it plays sitting between work from many other standards organizations that has been evolving over decades.
+|===
+
 include::standard-issues.adoc[]
 

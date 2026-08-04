@@ -3,6 +3,23 @@
 [appendix#vol1_appendix_c_dpi_use_cases,sdpi_offset=C]
 == Device Point-of-care Interoperability (DPI) Use Cases
 
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *{standard_note}*: This appendix of profile-non-specific use cases is novel to this SDPi standard and is not present in other IHE technical framework specifications.
+It is integral to the normative "requirements interoperability" aspect of this standard, though, and must be given a clear placement to ensure that this is maintained.
+
+#REVIEWER QUESTIONS#:
+
+. Should these detailed use case specifications be retained in this Volume 1 appendix or located in a separate SDPi Use Cases clause (top level)?
+If so, where in the standard would this be located?
+Before Volume 1 or after Volume 3?
+. IF maintained an a separate Volume 1 appendix, should a summary of use cases be added to the Front Matter (e.g., SDPi Standard Overview)?
+. *_A broader question is if NORMATIVE CONTENT is allowed outside of the Volume 1-3 structure of the standard?_*
+
+|===
+
 // C.1
 [sdpi_offset=1]
 === General Overview of DPI Use Cases & Analysis
@@ -14,7 +31,8 @@
 | *{standard_note}*: This initial section of Appendix C is informative and is still being detailed.  Completion is deferred to a later version of SDPi.
 It provides general background detail around how general (non-technology specific) clinical use case specifications are being utilized in this standard.
 
-*REVIEWER QUESTION*:  Please review the intended topics and identify any additional content that should be considered.  Especially helpful would be references to related standards and materials that would inform the approach taken in this appendix.
+*REVIEWER QUESTION*:  Please review the intended topics and identify any additional content that should be considered.
+Especially helpful would be references to related standards and materials that would inform the approach taken in this appendix.
 |===
 
 ////

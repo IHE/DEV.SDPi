@@ -154,49 +154,12 @@ These known limitations and forward-looking content include:
 This release of the standard+supplement documents is still in process, as the "Drafting Note" below indicates!
 The outline of this standard, though, will be as follows:
 
-//  *****************************************************************
-
-. *Overview*
-[none]
-.. *Scope*
-.. *Purpose*
-[none]
-.. (content from current TF-1:2.3.1.1 and similar)
-.. (Copyright and other related content from supplement)
-. *Introduction & Overview*
-[none]
-.. *_Gemini Technical Framework Profile Standard_*
-[none]
-... (define what a Gemini TF Profile Standard ... is!)
-... (organization & conventions - section numbering, ...)
-... (What & why AsciiDoc)
-.. *_SDPi Overview_*
-[none]
-... (refactor content from TF-1:2 and elsewhere)
-... (Use Cases?  Keep TF-1C or refactor here?)
-... Summary of SDPi Actors & Transactions
-. *Terms, Definitions & Acronyms*
-[none]
-.. (content from TF-0, Forward declarations, ... )
-. *References*
-[none]
-.. (Content from TF-1B)
-. ...
-. [.line-through]#*Volume 1 Integration Profiles*#
-. [.line-through]#*Volume 2 Transactions*#
-. [.line-through]#*Volume 3 Content Modules*#
-
 
 === "Standalone" SDPi Drafting Note:
 
 Editorial Task List (prioritized) for this Supplement:
 
-. [.line-through]#Title Page - Update & review#
-.. [.line-through]#Change Contact from DEV@IHE.NET to IHE SDPi GitHub Issues link#
-. [.line-through]#Find and update all uses of "supplement" throughout current document#
-.. [.line-through]#In labels used for referencing#
-.. [.line-through]#In standard note sections#
-.. [.line-through]#... ?#
+. Normalize the section labeling for refactored content in the standard that is no longer in a volume or appendix
 . Create common sdpi-version.adoc that can be shared between the two documents
 ..  Also refactor gemini_standard_ and ihe_supplement_ to common labels
 ..  Also refactor standard_clause_ to clause_

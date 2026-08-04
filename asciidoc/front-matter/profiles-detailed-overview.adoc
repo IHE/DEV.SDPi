@@ -179,7 +179,7 @@ Given the significant risks associated with allowing device-external control fun
 [%noheader]
 [cols="1"]
 |===
-| Add the following dependencies below to the IHE DEV TF Profile Dependencies table.
+| #Where should the following table be located within the SDPi standard?  Volume 1?#
 |===
 
 ////
