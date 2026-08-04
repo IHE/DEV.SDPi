@@ -115,7 +115,7 @@
 		</xsd:attribute>
 		<xsd:attribute name="CodingSystemVersion" type="xsd:string" use="optional">
 			<xsd:annotation>
-				<xsd:documentation>CodingSystemVersion can be used to discriminate between different versions of a coding system. CodingSystemVersion is an optional value and can be omitted in cases where a coding system is backwards compatible or CodingSystem includes versioning information.</xsd:documentation>
+				<xsd:documentation>CodingSystemVersion can be used to discriminate between different versions of a coding system. CodingSystemVersion is an optional value and can be omitted in case the CodingSystem has only a single version or includes versioning information.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="SymbolicCodeName" type="pm:SymbolicCodeName" use="optional">

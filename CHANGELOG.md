@@ -18,14 +18,23 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Added
 
-- History Service design, MDPWS requirements and transactions ([#360](https://github.com/IHE/DEV.SDPi/issues/360))
+### Changes
+
+### Editorial Fixes
+
+## [2.5.0] - 2026-08-04
+
+### Added
+
+- History Service design, MDPWS requirements and transaction DEV-32 ([#360](https://github.com/IHE/DEV.SDPi/issues/360))
 - Clarification on SDPi-P safety requirements and considerations to explicitly include the application of the IEEE 11073-10700 standard ([#529](https://github.com/IHE/DEV.SDPi/issues/529))
 - Clarification on the use of `wsa:To` in greeting {`Hello`, `Bye`} notifications sent by a discovery proxy to a consumer ([#534](https://github.com/IHE/DEV.SDPi/issues/534)).
 - Standalone SDPi - Editorial Content Update to the Standard and Supplement documents ([#528](https://github.com/IHE/DEV.SDPi/issues/528)).
 - Clarification on the use of `wsa:To` in greeting {`Hello`, `Bye`} notifications sent by a discovery proxy to a consumer ([#534](https://github.com/IHE/DEV.SDPi/issues/534))
 - Required SDPi-P actor grouping entries for BICEPS Content Creator and BICEPS Content Consumer in TF-1:10.3 ([#476](https://github.com/IHE/DEV.SDPi/issues/476))
-- Support semantic markup for deprecating requirements, transactions, use-cases, profiles, content modules and actors ([#511](https://github.com/IHE/DEV.SDPi/issues/511)).
-- Clarify expected behaviour and requirements for consumers making multiple concurrent connections to providers ([#503](https://github.com/IHE/DEV.SDPi/issues/503)).
+- Support for semantic markup for deprecating requirements, transactions, use-cases, profiles, content modules and actors ([#511](https://github.com/IHE/DEV.SDPi/issues/511))
+- Clarification on expected behaviour and requirements for consumers making multiple concurrent connections to providers ([#503](https://github.com/IHE/DEV.SDPi/issues/503))
+- Markup to register transaction DEV-34 as deprecated in version 2.2.0 ([#559](https://github.com/IHE/DEV.SDPi/issues/559))
 
 ### Changes
 
@@ -37,12 +46,14 @@ Each section shall contain a list of action items of the following format: `<bri
 - Updated actor grouping tables for SDPi-R, -A and -xC profiles for consistency and template compliance ([#544](https://github.com/IHE/DEV.SDPi/issues/544))
 - History Service XML Schema: remove hm:ChangeSequence element from root level; use element type over element ref ([#297](https://github.com/IHE/DEV.SDPi/issues/548))
 - History Service XML Schema: rename HistoryReportType to HistoricReportChoiceType ([#297](https://github.com/IHE/DEV.SDPi/issues/548))
+- Updates required to incorporate changes of BICEPS (IEEE 11073-10207) standard through its 2025 Corrigendum ([#485](https://github.com/IHE/DEV.SDPi/issues/485))
+- Updated SDPi-P Actors and Options Tables to include the new History Service option ([#561](https://github.com/IHE/DEV.SDPi/issues/561))
  
 ### Editorial Fixes
 
 - Corrected wording in the SES section template ([#530](https://github.com/IHE/DEV.SDPi/issues/530))
 - Removed vendor-specific EHR examples in DDES use case narrative ([#531](https://github.com/IHE/DEV.SDPi/issues/531))
-
+- Add missing hm:HistoryQuery element in example ([#556](https://github.com/IHE/DEV.SDPi/issues/556))
 
 ## [2.4.1] - 2026-05-07
 

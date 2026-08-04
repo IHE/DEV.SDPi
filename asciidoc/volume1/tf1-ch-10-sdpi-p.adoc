@@ -159,7 +159,7 @@ include::../plantuml/vol1-figure-sdpi-p-example-sequence-diagram.puml[]
 [#vol1_spec_sdpi_p_actor_somds_participant, reftext='SOMDS Participant',role="actor-alias",actor-id="somds_participant"]
 Actor Summary Definition:
 [none]
-. A foundational abstract actor that provides the SOA architectural constructs for interoperating in a Service-Oriented Medical Device System (SOMDS) network instance, including information, messaging and dynamic behavior models.   (See <<ref_ieee_11073_10207_2017>>  “PARTICIPANT” definition)
+. A foundational abstract actor that provides the SOA architectural constructs for interoperating in a Service-Oriented Medical Device System (SOMDS) network instance, including information, messaging and dynamic behavior models.   (See <<ref_ieee_11073_10207_2017_Cor1_2025>>  “PARTICIPANT” definition)
 
 All systems participating in a SOMDS network instance must implement this Abstract actor.
 
@@ -178,7 +178,7 @@ See <<vol1_clause_appendix_a_requirements_from_narratives_to_pnt_interfaces>> fo
 [#vol1_spec_sdpi_p_actor_somds_provider, reftext='SOMDS Provider',role="actor-alias",actor-id="somds_provider"]
 Actor Summary Definition:
 [none]
-. A <<vol1_spec_sdpi_p_actor_somds_participant>> that provides at least one service to the other participant systems.  (See <<ref_ieee_11073_10207_2017>>  “SERVICE PROVIDER” definition.)
+. A <<vol1_spec_sdpi_p_actor_somds_participant>> that provides at least one service to the other participant systems.  (See <<ref_ieee_11073_10207_2017_Cor1_2025>>  “SERVICE PROVIDER” definition.)
 
 Every <<vol1_spec_sdpi_p_actor_somds_provider>> is paired with (inherits from) the abstract _<<vol1_spec_sdpi_p_actor_somds_participant>>_ Actor.
 
@@ -189,7 +189,7 @@ A system that participates in a SOMDS network instance can include both <<vol1_s
 [#vol1_spec_sdpi_p_actor_somds_consumer, reftext='SOMDS Consumer',role=actor-alias,actor-id="somds_consumer"]
 Actor Summary Definition:
 [none]
-. A <<vol1_spec_sdpi_p_actor_somds_participant>> that discovers and utilizes at least one service, functional capability, exposed to a network communications backbone by a <<vol1_spec_sdpi_p_actor_somds_provider>>. (See <<ref_ieee_11073_10207_2017>>  “SERVICE CONSUMER” and “SERVICE” definitions.)
+. A <<vol1_spec_sdpi_p_actor_somds_participant>> that discovers and utilizes at least one service, functional capability, exposed to a network communications backbone by a <<vol1_spec_sdpi_p_actor_somds_provider>>. (See <<ref_ieee_11073_10207_2017_Cor1_2025>>  “SERVICE CONSUMER” and “SERVICE” definitions.)
 
 Every <<vol1_spec_sdpi_p_actor_somds_consumer>> is paired with (inherits from) the abstract _<<vol1_spec_sdpi_p_actor_somds_participant>>_ Actor.
 
@@ -326,7 +326,7 @@ See <<vol1_clause_smart_app_platforms>> for additional discussion.
 [#vol1_spec_sdpi_p_actor_biceps_content_creator, reftext='BICEPS Content Creator',role=actor-alias,actor-id="biceps_content_creator"]
 Actor Summary Definition:
 [none]
-. Provides <<acronym_mdib>> content conformant to <<ref_ieee_11073_10207_2017>> BICEPS specification and for consumption by other <<vol1_spec_sdpi_p_actor_biceps_content_consumer>> systems.
+. Provides <<acronym_mdib>> content conformant to <<ref_ieee_11073_10207_2017_Cor1_2025>> BICEPS specification and for consumption by other <<vol1_spec_sdpi_p_actor_biceps_content_consumer>> systems.
 
 All content created and provided by a <<vol1_spec_sdpi_p_actor_biceps_content_creator>> shall be conformant to the BICEPS content module specifications in <<vol3_clause_sdc_biceps_semantic_content_module>> and related sections.
 
@@ -350,7 +350,7 @@ sdpi_include_content_module::dialysis[actor-id="biceps_content_creator",support=
 [#vol1_spec_sdpi_p_actor_biceps_content_consumer, reftext='BICEPS Content Consumer',role=actor-alias,actor-id="biceps_content_consumer"]
 Actor Summary Definition:
 [none]
-. Processes <<acronym_mdib>> information conformant to <<ref_ieee_11073_10207_2017>> BICEPS specifications provided by <<vol1_spec_sdpi_p_actor_biceps_content_creator>> systems.
+. Processes <<acronym_mdib>> information conformant to <<ref_ieee_11073_10207_2017_Cor1_2025>> BICEPS specifications provided by <<vol1_spec_sdpi_p_actor_biceps_content_creator>> systems.
 
 A <<vol1_spec_sdpi_p_actor_biceps_content_consumer>> shall be capable of processing information provided by a <<vol1_spec_sdpi_p_actor_biceps_content_creator>>, in accordance to the BICEPS content module specifications in <<vol3_clause_sdc_biceps_semantic_content_module>> and related sections.
 
@@ -398,7 +398,6 @@ Future versions *_MAY_* include options such as
 * Safe Data Transmission
 * Compact Representation
 * Patient Context Management
-* Archive Service
 * Localization Service
 * Ensemble Participation
 * Mobile Health / Cloud Connected
@@ -419,19 +418,25 @@ notes.
 .^|Option Name
 .^|Vol. & Section
 
-.2+| <<vol1_spec_sdpi_p_actor_somds_consumer>>
+.3+| <<vol1_spec_sdpi_p_actor_somds_consumer>>
 | <<vol1_spec_sdpi_p_option_managed_discovery>>
 | <<vol1_clause_sdpi_p_option_managed_discovery>>
 
 | <<vol1_spec_sdpi_p_option_real_time_waveforms>>
 | <<vol1_clause_sdpi_p_option_real_time_waveforms>>
 
-.2+| <<vol1_spec_sdpi_p_actor_somds_provider>>
+| <<vol1_spec_sdpi_p_option_history>>
+| <<vol1_clause_sdpi_p_option_history>>
+
+.3+| <<vol1_spec_sdpi_p_actor_somds_provider>>
 | <<vol1_spec_sdpi_p_option_managed_discovery>>
 | <<vol1_clause_sdpi_p_option_managed_discovery>>
 
 | <<vol1_spec_sdpi_p_option_real_time_waveforms>>
 | <<vol1_clause_sdpi_p_option_real_time_waveforms>>
+
+| <<vol1_spec_sdpi_p_option_history>>
+| <<vol1_clause_sdpi_p_option_history>>
 
 | <<vol1_spec_sdpi_p_actor_discovery_proxy>>
 | <<vol1_spec_sdpi_p_option_managed_discovery>>
@@ -720,6 +725,7 @@ Note 1:  For optionality of the above transactions for the provider and consumer
 
 [#vol1_clause_sdpi_p_option_history,role=profile-option,profile-option-id="sdpi-p-history",oid-arcs=".8"]
 ==== History Service Option
+[#vol1_spec_sdpi_p_option_history,reftext='History Service Option']
 
 The <<term_history_service>> profile option provides a service for 
 <<vol1_spec_sdpi_p_actor_somds_consumer>> Actors to reconstruct

@@ -1,10 +1,10 @@
 ==== Processing of QNames
 
-<<term_q_name>>s are problematic when used in XML element content or attribute values (see <<vol3_clause_extension_qname>>).
-Unfortunately, the BICEPS Participant and Message Model as well some Web Services standards that are normatively referenced by <<ref_oasis_dpws_2009, DPWS>>, use <<term_q_name>>s in XML element content or attribute values.
+NOTE: This section was deprecated in SDPi 2.5.0 as it was no longer needed. It is kept for keeping section numbers unaltered.
 
-In order to increase interoperability between implementations of this profile, this section specifies requirements towards <<term_q_name>> handling in XML instances.
-
+//R1012 deprecated as it is superseded by new BICEPS R0214
+DeprecateRequirement::R1012[version="2.5.0"]
+////
 .R1012
 [sdpi_requirement#r1012,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
@@ -15,7 +15,11 @@ A <<vol1_spec_sdpi_p_actor_somds_participant>> shall resolve the namespace of a 
 ====
 
 ****
+////
 
+//R1013 deprecated as it is superseded by new BICEPS R0215
+DeprecateRequirement::R1013[version="2.5.0"]
+////
 .R1013
 [sdpi_requirement#r1013,sdpi_req_level=shall,sdpi_req_type=tech_feature]
 ****
@@ -26,4 +30,4 @@ A <<vol1_spec_sdpi_p_actor_somds_participant>> shall resolve the namespace of an
 ====
 
 ****
-
+////

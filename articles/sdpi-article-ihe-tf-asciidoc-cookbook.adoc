@@ -895,7 +895,7 @@ The example below illustrates the AsciiDoc source required to define a content m
 [#vol3_clause_sdc_biceps_semantic_content_module,role="content-module", content-module-id="biceps",oid-arcs=".1,.1.1"]
 ===== SDC/BICEPS Content Module
 
-The biceps standard, <<ref_ieee_11073_10207_2017>>, provides an extensive semantic...
+The biceps standard, <<ref_ieee_11073_10207_2017_Cor1_2025>>, provides an extensive semantic...
 ----
 
 Attaching the `content-module` role to a section marks it as a [content module](https://profiles.ihe.net/DEV/SDPi/index.html#vol3). A (document-unique) identifier must be defined in the `content-module-id` attribute. The section title is used for the content module label. An <<defining-oids,object identifier (oid)>> is required for each content module. Typical a content module gets a version neutral oid (e.g., `.1`) and a versioned oid (e.g., `.1.1`). 
@@ -982,6 +982,15 @@ when the OID was first no longer available. Format is:
 Deprecated requirements and transactions are exported to `sdpi-requirements-deprecated.json` and
 `sdpi-transactions-deprecated.json`, respectively. All deprecated oids (including transactions and
 requirements) are exported to `sdpi-deprecated.json` for reference. 
+
+[TIP]
+====
+Be sure to _remove_ (or comment out) the obsolete object. The document processor
+will report a fault when it finds both the deprecated and original object in the 
+document. Most objects are registered in a line similar to `[role=transaction,transaction-id=DEV-34]`,
+so that needs to be removed. Requirements are registered in blocks; the whole block needs
+to be removed, with [block comments](https://docs.asciidoctor.org/asciidoc/latest/comments/#comment-blocks), for example. 
+====
 
 [[cross-referencing]]
 === Cross-referencing

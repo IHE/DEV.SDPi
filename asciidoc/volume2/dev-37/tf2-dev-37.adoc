@@ -26,7 +26,7 @@ Listens for {var_label_dev_37_message_getmdib} messages, which it responds to wi
 
 ==== Referenced Standards
 
-* <<ref_ieee_11073_10207_2017>> Section 7.3.2 Get Service
+* <<ref_ieee_11073_10207_2017_Cor1_2025>> Section 7.3.2 Get Service
 
 ==== Messages
 

@@ -156,22 +156,38 @@ div.global-id p {
 
 <script src="js/copy2clipboard.js" ></script>
 <script type="text/javascript">
+    // Patched by LLM:
+    // Take down the "Menu is loading" overlay, show the TOC and add the bottom
+    // navigation bar. This used to run on document.readyState == 'complete' behind a
+    // hard-coded 500 ms setTimeout, which meant the already-usable menu stayed hidden
+    // until every image and web font had finished downloading, plus half a second.
+    // It is now called as soon as the collapsible TOC has actually been built (see the
+    // DOM-ready handler below). Idempotent, and still wired to readystatechange as a
+    // fallback so that a failure while building the TOC cannot leave the overlay stuck.
+    var uiRevealed = false;
+    function revealUI() {
+        if (uiRevealed) return;
+        uiRevealed = true;
+
+        // show left menu bar
+        var loadScreen = document.getElementById('load-screen');
+        if (loadScreen) loadScreen.style.visibility = "hidden";
+        var toc = document.getElementById('toc');
+        if (toc) toc.style.visibility = "visible";
+
+        // add bottom menu bar
+        var elemDiv = document.createElement('div');
+        var copyrightYear = new Date().getFullYear();
+        elemDiv.innerHTML = '<div class="bottom_bar"><div class="copyright_note">Copyright &#169; ' + copyrightYear + ': Health Level Seven International, and IHE International, Inc.</div><a href="#top">Top</a><a href="#vol3">Volume 3</a><a href="#vol2">Volume 2</a><a href="#vol1_clause_profiles">Volume 1</a><a href="#vol0_clause_ihe_technical_frameworks_general_introduction">General</a></div>';
+        elemDiv.className = 'bottom_bar';
+        document.body.appendChild(elemDiv);
+    }
+
     document.onreadystatechange = function () {
         var state = document.readyState
         if (state == 'complete') {
-            setTimeout(function() {
-                // show left menu bar
-                document.getElementById('load-screen').style.visibility = "hidden";
-                document.getElementById('toc').style.visibility = "visible"
-
-                // add bottom menu bar
-                var elemDiv = document.createElement('div');
-                var copyrightYear = new Date().getFullYear();
-                elemDiv.innerHTML = '<div class="bottom_bar"><div class="copyright_note">Copyright &#169; ' + copyrightYear + ': Health Level Seven International, and IHE International, Inc.</div><a href="#top">Top</a><a href="#vol3">Volume 3</a><a href="#vol2">Volume 2</a><a href="#vol1_clause_profiles">Volume 1</a><a href="#vol0_clause_ihe_technical_frameworks_general_introduction">General</a></div>';
-                elemDiv.className = 'bottom_bar';
-                document.body.appendChild(elemDiv);
-            },500);
-			AddClipboardDecoration();
+            revealUI();
+            AddClipboardDecoration();
         }
     }
 
@@ -226,6 +242,11 @@ div.global-id p {
             window.scrollTo(0, 1);
             window.scrollTo(0, 0);
         }
+
+        // The collapsible menu is built and sized at this point, so stop hiding it
+        // behind the loading overlay. Waiting for readyState 'complete' here would only
+        // add the download time of the images and web fonts the menu does not depend on.
+        revealUI();
     });
 
     // Set up before/after handlers

@@ -14,7 +14,7 @@ The <<vol2_clause_dev_33_message_getsupportedlanguages, {var_label_dev_33_messag
 ====== Referenced Standards
 
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
-* <<ref_ieee_11073_10207_2017>> msg:GetSupportedLanguages
+* <<ref_ieee_11073_10207_2017_Cor1_2025>> msg:GetSupportedLanguages
 
 ====== Message Outline
 
@@ -45,7 +45,7 @@ The <<vol2_clause_dev_33_message_getsupportedlanguagesresponse, {var_label_dev_3
 ====== Referenced Standards
 
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
-* <<ref_ieee_11073_10207_2017>> msg:GetSupportedLanguagesResponse
+* <<ref_ieee_11073_10207_2017_Cor1_2025>> msg:GetSupportedLanguagesResponse
 
 ====== Message Outline
 
@@ -76,7 +76,7 @@ The <<vol2_clause_dev_33_message_getlocalizedtext, {var_label_dev_33_message_get
 ====== Referenced Standards
 
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
-* <<ref_ieee_11073_10207_2017>> msg:GetLocalizedText
+* <<ref_ieee_11073_10207_2017_Cor1_2025>> msg:GetLocalizedText
 
 ====== Message Outline
 
@@ -111,7 +111,7 @@ The <<vol2_clause_dev_33_message_getlocalizedtextresponse, {var_label_dev_33_mes
 ====== Referenced Standards
 
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
-* <<ref_ieee_11073_10207_2017>> msg:GetLocalizedTextResponse
+* <<ref_ieee_11073_10207_2017_Cor1_2025>> msg:GetLocalizedTextResponse
 
 ====== Message Outline
 
@@ -126,7 +126,7 @@ include::../dev-a-default-trigger-events.adoc[]
 
 ====== Message Semantics
 
-`s12:Envelope/s12:Body/msg:GetLocalizedTextResponse/msg:Text`:: The filtered list of localized texts, see also <<r0503>>.
+`s12:Envelope/s12:Body/msg:GetLocalizedTextResponse/msg:Text`:: The filtered list of localized texts.
 
 :var_expected_actions_ref: <<vol2_clause_dev_33_message_getlocalizedtextresponse_expected_actions>>
 include::../dev-a-default-expected-actions.adoc[]
@@ -143,4 +143,3 @@ In such cases, it is recommended that the requesting <<vol1_spec_sdpi_p_actor_so
 --
 It is good practice to first request available languages and then use the resulting languages one by one to request localized texts, which widely avoids response messages too large to process.
 --
-

@@ -15,7 +15,7 @@ This section provides an overview about the referenced standards and profiles us
 * <<ref_ieee_11073_10702_202x>>
 * <<ref_ieee_11073_10701_2022>>
 * <<ref_ieee_11073_10700_2022>>
-* <<ref_ieee_11073_10207_2017>>
+* <<ref_ieee_11073_10207_2017_Cor1_2025>>
 
 ==== Private MDC Codes Consideration
 Please refer to general Section <<ref_private_coding_system_note>>.
