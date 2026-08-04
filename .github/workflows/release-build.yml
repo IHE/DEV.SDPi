@@ -48,8 +48,8 @@ jobs:
       # if: success() && github.ref == 'refs/heads/master'
       uses: actions/upload-artifact@v4
       with:
-        name: sdpi-standard
-        path: sdpi-documents/sdpi-standard
+        name: sdpi-documents
+        path: sdpi-documents
 
     - name: Create release page
       uses: ncipollo/release-action@v1
@@ -57,5 +57,5 @@ jobs:
         name: "Release of ${{  github.ref_name }} for TI"
         makeLatest: true
         body: "[📋Please click here for a detailed changelog](https://github.com/IHE/DEV.SDPi/blob/${{  github.ref_name }}/CHANGELOG.md)"
-        artifacts: "sdpi-standard-${{  github.ref_name }}.zip"
+        artifacts: "sdpi-documents-${{  github.ref_name }}.zip"
 
