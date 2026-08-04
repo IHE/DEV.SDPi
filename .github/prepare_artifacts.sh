@@ -6,6 +6,7 @@ gem install asciidoctor-diagram-plantuml
 asciidoctor -V
 cd asciidoc || exit
 
+rm -rf sdpi-documents
 mkdir sdpi-documents
 
 asciidoctor -r asciidoctor-diagram -D ../sdpi-documents sdpi-standard.adoc
@@ -30,6 +31,8 @@ rm -rf sdpi-documents/sdpi-supplement/readme.md
 
 rm -rf sdpi-documents/sdpi-standard.html
 rm -rf sdpi-documents/sdpi-supplement.html
+
+rm -rf sdpi-documents/.asciidoctor
 
 sudo apt-get install zip gzip tar
 zip -r "sdpi-documents-$1.zip" sdpi-documents
