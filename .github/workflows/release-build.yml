@@ -49,7 +49,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: sdpi-standard
-        path: sdpi-standard
+        path: sdpi-documents/sdpi-standard
 
     - name: Create release page
       uses: ncipollo/release-action@v1
