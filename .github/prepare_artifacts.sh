@@ -6,6 +6,7 @@ gem install asciidoctor-diagram-plantuml
 asciidoctor -V
 cd asciidoc || exit
 
+rm -rf sdpi-documents
 mkdir sdpi-documents
 
 asciidoctor -r asciidoctor-diagram -D ../sdpi-documents sdpi-standard.adoc

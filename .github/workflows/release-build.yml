@@ -37,8 +37,12 @@ jobs:
     - name: Setup gradle
       uses: gradle/actions/setup-gradle@v4
 
-    - name: Create HTML with Gradle
-      run: ./gradlew run --args="--input-file ../../asciidoc/sdpi-standard.adoc --output-folder ../../sdpi-standard --github-token ${{ secrets.SDPI_API_ACCESS_TOKEN_SECRET }} --backend html"
+    - name: Create SDPi Standard HTML with Gradle
+      run: ./gradlew run --args="--input-file ../../asciidoc/sdpi-standard.adoc --output-folder ../../sdpi-documents/sdpi-standard --github-token '${{ secrets.SDPI_API_ACCESS_TOKEN_SECRET }}' --backend html"
+      working-directory: .ci/asciidoc-converter
+
+    - name: Create SDPi Supplement HTML with Gradle
+      run: ./gradlew run --args="--input-file ../../asciidoc/sdpi-supplement.adoc --output-folder ../../sdpi-documents/sdpi-supplement --github-token '${{ secrets.SDPI_API_ACCESS_TOKEN_SECRET }}' --backend html"
       working-directory: .ci/asciidoc-converter
 
     - name: Generate PlantUML diagrams and static files
