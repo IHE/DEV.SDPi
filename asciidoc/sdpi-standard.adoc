@@ -76,6 +76,8 @@ ifeval::["{backend}" == "html5"]
 endif::[]
 {empty} +
 
+#Standalone SDPi STANDARD document - DRAFT VERSION - FOR COMMENT ONLY#
+
 [%noheader]
 [cols="1,4"]
 [frame=none,grid=none]

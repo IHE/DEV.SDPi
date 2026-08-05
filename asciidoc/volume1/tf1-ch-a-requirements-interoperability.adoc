@@ -5,6 +5,24 @@
 == Requirements Management for Plug-and-Trust Interoperability
 
 
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *{standard_note}*: This appendix provides valuable information regarding the "vision" and rationale for key elements of this standard, some of which are novel for any MDI specification.
+For previous versions of the Gemini SDPi specification, the content was captured in this appendix; however, it will not be migrated to the SUPPLEMENT document, and that begs whether it should be kept as a Volume 1 appendix or moved to a end-of-standard appendix (after conformance, for example), or somewhere else such as in the SDPi Profiles Overview.
+Note that many standards have Appendix A as a rationale and Appendix Z as a Bibliography.
+Finally, note that appendices in IHE TF volumes are allocated similarly to profile and transaction numbers, since ultimately they will need to be moved into a single domain technical framework specification.
+
+#REVIEWER QUESTIONS#:
+
+. Should this appendix be kept within Volume 1 or moved the end of the standard as an Appendix A for the entire standard?
+. If moved, is there another location than specified above that might be best for this information (e.g., in the front-matter somewhere)?
+
+|===
+
+
+
 These SDPi specifications include the model-centric integration of requirements from multiple sources -- both within IHE and from other <<acronym_sdo>>s -- enabling a new level of *requirements management* that provides new value to all stakeholders.  Also termed *_<<term_requirements_interoperability>>_*, innovative capabilities include:
 
 . Explicit linking of requirements from their definition to their satisfaction / utilization in defined _capabilities_;

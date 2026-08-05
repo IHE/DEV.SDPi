@@ -48,7 +48,7 @@ The choice of any namespace prefix is arbitrary and not semantically significant
 
 |dpws
 |http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01
-| #LINK OR TEXT#:ref_oasis_dpws_2009
+| ref_oasis_dpws_2009
 
 |hs
 |urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.3.1
@@ -60,19 +60,19 @@ The choice of any namespace prefix is arbitrary and not semantically significant
 
 |wsa
 |http://www.w3.org/2005/08/addressing
-| #LINK OR TEXT#:ref_oasis_ws_addressing_2006
+| ref_oasis_ws_addressing_2006
 
 |wsd
 |http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01
-| #LINK OR TEXT#:ref_oasis_ws_discovery_2009
+| ref_oasis_ws_discovery_2009
 
 |wse
 |http://schemas.xmlsoap.org/ws/2004/08/eventing
-| #LINK OR TEXT#:ref_w3c_ws_eventing_2006
+| ref_w3c_ws_eventing_2006
 
 |wsm
 |http://schemas.xmlsoap.org/ws/2004/09/mex
-| #LINK OR TEXT#:ref_w3c_ws_metadata_exchange_2008
+| ref_w3c_ws_metadata_exchange_2008
 
 |===
 

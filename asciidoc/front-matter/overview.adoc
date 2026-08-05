@@ -18,13 +18,15 @@ NOTE: #content from current TF-1:2.3.1.1 and similar#
 [#clause_sdpi_standard_copyright_licenses_trademarks]
 == Copyright Licenses & Trademarks
 
-NOTE: #Copyright and Trademark info#
 
 include::copyrights.adoc[]
 
 // SDPi Trademark
 
 === Trademark
+
+NOTE: #Should this also include HL7 here?  Other TM's that are in the IHE TF-0 but not in this standalone document#
+
 IHE^®^ and the IHE logo are trademarks of the Healthcare Information Management Systems Society in the United States and trademarks of IHE Europe in the European Community.
 Please refer to the IHE Technical Frameworks General Introduction, https://profiles.ihe.net/GeneralIntro/ch-10.html[Section 10 - Trademark] for information on their use.
 

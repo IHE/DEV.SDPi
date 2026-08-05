@@ -52,6 +52,22 @@ a| *{standard_note}*:  This section will define this new type of standard:
 a| *{standard_note}*:  This section will explain the general organization and clauses used in this standard, and the scope / rationale behind each.
 |===
 
+=== IHE Technical Framework Overview
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *{standard_note}*:  This section will explain the general organization and clauses used in IHE technical frameworks, including references and pointers to TF-0 content.
+|===
+
+=== Section Numbering Conventions
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *{standard_note}*:  This section will explain why section numbers in IHE TF volumes are numbered the way they are and #why this standard has non-contiguous sections in volume 1-3!#.
+|===
+
 == Use of AsciiDoc
 [%noheader]
 [%autowidth]
