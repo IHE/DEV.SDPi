@@ -175,7 +175,7 @@ class PopulateTables(private val docInfo: SdpiInformationCollector, private val 
 
         val strProfile = table.attributes[Roles.Profile.ID.key]?.toString()
         checkNotNull(strProfile) {
-            logger.error("Table missing required attribute '${Roles.Profile.ID.key}'")
+            logger.error("${table.sourceLocation} -> Table missing required attribute '${Roles.Profile.ID.key}'")
         }
 
         val strProfileOption = table.attributes[Roles.Profile.ID_PROFILE_OPTION.key]?.toString()
@@ -188,7 +188,7 @@ class PopulateTables(private val docInfo: SdpiInformationCollector, private val 
 
         val profile: SdpiProfile? = docInfo.getProfile(strProfile)
         checkNotNull(profile) {
-            logger.error("Unknown profile $strProfile")
+            logger.error("${table.sourceLocation} -> Unknown profile $strProfile")
         }
 
         val tableBuilder = TransactionTableBuilder(this, table, strActorId == null)
@@ -197,7 +197,7 @@ class PopulateTables(private val docInfo: SdpiInformationCollector, private val 
         if (strActorId != null) {
             val actor = profile.getActor(strActorId)
             checkNotNull(actor) {
-                logger.error("Actor $strActorId is not defined in profile $strProfile")
+                logger.error("${table.sourceLocation} -> Actor $strActorId is not defined in profile $strProfile")
             }
             addActorTransactions(tableBuilder, profile, actor, profileFilter)
         } else {
@@ -220,7 +220,7 @@ class PopulateTables(private val docInfo: SdpiInformationCollector, private val 
                 val strTransactionId = transactionReference.transactionId
                 val transaction: SdpiTransaction? = getTransaction(transactionReference)
                 checkNotNull(transaction) {
-                    logger.error("Unknown transaction id $strTransactionId")
+                    logger.error("${tableBuilder.table.sourceLocation} -> Unknown transaction id $strTransactionId")
                 }
 
                 val obligationsForTransaction =
@@ -300,7 +300,7 @@ class PopulateTables(private val docInfo: SdpiInformationCollector, private val 
                 val strRefId = ref.contentModuleId
                 val module: SdpiContentModule? = getContentModule(ref)
                 checkNotNull(module) {
-                    logger.error("Unknown content-module id $strRefId")
+                    logger.error("${tableBuilder.table.sourceLocation} -> Unknown content-module id $strRefId")
                 }
 
                 tableBuilder.addRow(
@@ -318,7 +318,7 @@ class PopulateTables(private val docInfo: SdpiInformationCollector, private val 
                 val strRefId = ref.contentModuleId
                 val module: SdpiContentModule? = getContentModule(ref)
                 checkNotNull(module) {
-                    logger.error("Unknown content-module id $strRefId")
+                    logger.error("${tableBuilder.table.sourceLocation} -> Unknown content-module id $strRefId")
                 }
 
                 tableBuilder.addRow(
@@ -355,7 +355,7 @@ class PopulateTables(private val docInfo: SdpiInformationCollector, private val 
 
         val strRootArcs = table.attributes[TableAttributes.OidTable.ROOT_ARC.key]?.toString()
         checkNotNull(strRootArcs) {
-            logger.error("$BLOCK_MACRO_NAME_OID_TABLE missing required attribute '${TableAttributes.OidTable.ROOT_ARC.key}'")
+            logger.error("${table.sourceLocation} -> $BLOCK_MACRO_NAME_OID_TABLE missing required attribute '${TableAttributes.OidTable.ROOT_ARC.key}'")
         }
 
         val oidsToTable = mutableListOf<SdpiOidReference>()
@@ -376,9 +376,9 @@ class PopulateTables(private val docInfo: SdpiInformationCollector, private val 
             } else if (strArc == WellKnownOid.DEV_REQUIREMENT.id) {
                 gatherRequirementOids(oidsToTable)
             } else if (strArc == "use-case-support") {
-                gatherUseCaseSupportOids(oidsToTable)
+                gatherUseCaseSupportOids(table, oidsToTable)
             } else {
-                logger.error("Oid tables don't support $strArc (yet?)")
+                logger.error("${table.sourceLocation} -> Oid tables don't support $strArc (yet?)")
             }
         }
 
@@ -484,12 +484,12 @@ class PopulateTables(private val docInfo: SdpiInformationCollector, private val 
         }
     }
 
-    private fun gatherUseCaseSupportOids(oidsToTable: MutableList<SdpiOidReference>) {
+    private fun gatherUseCaseSupportOids(table:Table, oidsToTable: MutableList<SdpiOidReference>) {
         for (profile in docInfo.profiles()) {
             for(support in profile.useCaseSupport) {
                 val useCase = docInfo.useCases()[support.useCaseId]
                 checkNotNull(useCase) {
-                    logger.error("Unknown use case `${support.useCaseId}` supported by profile `${profile.profileId}`")
+                    logger.error("${table.sourceLocation} -> Unknown use case `${support.useCaseId}` supported by profile `${profile.profileId}`")
                 }
                 for(strOid in support.oid) {
                     val oid = SdpiOidReference(

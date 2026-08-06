@@ -2,6 +2,7 @@ package org.sdpi.asciidoc
 
 import org.apache.logging.log4j.kotlin.loggerOf
 import org.asciidoctor.ast.ContentNode
+import org.asciidoctor.ast.Cursor
 import org.asciidoctor.ast.StructuralNode
 import org.sdpi.asciidoc.extension.Roles
 import org.sdpi.asciidoc.model.BlockOwner
@@ -139,6 +140,20 @@ fun getLocation(block: StructuralNode): String {
     } else {
         "";
     }
+}
+
+fun findSourceLocation(node: ContentNode): String {
+    var current: ContentNode? = node
+
+    while (current != null) {
+        if (current is StructuralNode) {
+            current.sourceLocation?.let { return it.toString() }
+        }
+
+        current = current.parent
+    }
+
+    return "Unknown"
 }
 
 fun getTitleFrom(block: StructuralNode): String {

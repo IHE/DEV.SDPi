@@ -37,10 +37,10 @@ class TransactionActorsProcessor : BlockProcessor(BLOCK_NAME_TRANSACTION_ACTORS)
     override fun process(parent: StructuralNode, reader: Reader, attributes: MutableMap<String, Any>): Any? {
         val strTransactionId = findIdFromParent(parent, Roles.Transaction.TRANSACTION.key, Roles.Transaction.TRANSACTION_ID.key)
         checkNotNull(strTransactionId) {
-            logger.error("Missing ${Roles.Transaction.TRANSACTION_ID.key} on section with role of ${Roles.Transaction.TRANSACTION.key}")
+            logger.error("${parent.sourceLocation} -> Missing ${Roles.Transaction.TRANSACTION_ID.key} on section with role of ${Roles.Transaction.TRANSACTION.key}")
         }
         if (transactionActors.containsKey(strTransactionId)) {
-            logger.error("Actors for transaction $strTransactionId have already been defined.")
+            logger.error("${parent.sourceLocation} -> Actors for transaction $strTransactionId have already been defined.")
         }
 
         logger.info("Processing actors for transaction $strTransactionId. ")

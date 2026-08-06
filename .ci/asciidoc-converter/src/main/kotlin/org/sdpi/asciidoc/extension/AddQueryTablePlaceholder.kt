@@ -66,7 +66,7 @@ class AddTransactionQueryPlaceholder : BlockMacroProcessor(BLOCK_MACRO_NAME_TRAN
         // Add filter attributes to the table for the tree processor to consume.
         val strProfile = attributes[Roles.Profile.ID.key]
         checkNotNull(strProfile) {
-            logger.error("$BLOCK_MACRO_NAME_TRANSACTION_TABLE missing required attribute '${Roles.Profile.ID.key}'")
+            logger.error("${parent.sourceLocation} -> $BLOCK_MACRO_NAME_TRANSACTION_TABLE missing required attribute '${Roles.Profile.ID.key}'")
         }
         placeholderTable.attributes[Roles.Profile.ID.key] = strProfile
 
@@ -98,7 +98,7 @@ class AddContentModuleQueryPlaceholder : BlockMacroProcessor(BLOCK_MACRO_NAME_CO
         // Add filter attributes to the table for the tree processor to consume.
         val strProfile = attributes[Roles.Profile.ID.key]
         checkNotNull(strProfile) {
-            logger.error("$BLOCK_MACRO_NAME_CONTENT_MODULE_TABLE missing required attribute '${Roles.Profile.ID.key}'")
+            logger.error("${parent.sourceLocation} -> $BLOCK_MACRO_NAME_CONTENT_MODULE_TABLE missing required attribute '${Roles.Profile.ID.key}'")
         }
         placeholderTable.attributes[Roles.Profile.ID.key] = strProfile
 
@@ -125,7 +125,7 @@ class AddOidQueryPlaceholder : BlockMacroProcessor(BLOCK_MACRO_NAME_OID_TABLE) {
         // Add filter attributes to the table for the tree processor to consume.
         val strRootArcs = attributes[TableAttributes.OidTable.ROOT_ARC.key]?.toString()
         checkNotNull(strRootArcs) {
-            logger.error("$BLOCK_MACRO_NAME_OID_TABLE missing required attribute '${TableAttributes.OidTable.ROOT_ARC.key}'")
+            logger.error("${parent.sourceLocation} -> $BLOCK_MACRO_NAME_OID_TABLE missing required attribute '${TableAttributes.OidTable.ROOT_ARC.key}'")
         }
         placeholderTable.attributes[TableAttributes.OidTable.ROOT_ARC.key] = strRootArcs
 
