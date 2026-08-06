@@ -144,7 +144,7 @@ class SdpiInformationCollector(
         }
 
         check(!profiles.containsKey(strProfileId)) {
-            logger.error("Duplicate profile id found: $strProfileId")
+            logger.error("${block.sourceLocation} -> Duplicate profile id found: $strProfileId")
         }
 
         val oids = getOids(block, "Profile $strProfileId", WellKnownOid.DEV_PROFILE)
@@ -249,7 +249,7 @@ class SdpiInformationCollector(
 
 
         val strLabel = block.reftext ?: block.title
-        logger.info("Found actor $strId => $strLabel")
+        logger.info("${block.sourceLocation} -> Found actor $strId => $strLabel")
 
         val reExtractTitleElements = Regex("""^\d+([.:]\d+)*\s+(.*)""")
         val mrTitleElements = reExtractTitleElements.find(strLabel)
@@ -335,7 +335,7 @@ class SdpiInformationCollector(
                 .also{logger.error{it}}
         }
 
-        logger.info("Found actor alias: $strAlias ==> $strId")
+        logger.info("${block.sourceLocation} -> Found actor alias: $strAlias ==> $strId")
 
         actorAliases[strAlias] = strId
     }
