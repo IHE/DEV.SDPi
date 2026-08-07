@@ -1,0 +1,78 @@
+
+[#clause_conformance,sdpi_offset=clear]
+= Conformance
+
+[%noheader]
+[cols="1"]
+|===
+a| *{standard_note}*: A new Conformance clause has been proposed for this Gemini SDPi standard, which will provide a new home for the previous revision  1:B.2 Referenced Standards Conformance, and is a companion section to the summary listing that is provided in that refactored section now located in the References section.
+Note that additional content, such as Appendix 3:Z Implementation conformity statements may also be moved here.
+NOTE: There may be some technical issues with consolidating all the conformance content in this section of the document.
+
+
+#REVIEWER QUESTIONS#:
+
+. Comment on the value, or not, of moving all conformance content to this clause, and whether any additional sections should be added earlier in the document regarding identification (listing) of those normative references that will be included in this clause.
+For example, in an updated and simplified version of the
+
+|===
+
+
+// Overview of conformance to this SDPi standard
+[sdpi_offset=1]
+== Overview
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *{standard_note}*:  This section will provide a general introduction and overview of how implementations can claim and establish conformance with both the profile elements of this standard (e.g., SDPi-P SOMDS Provider with the Managed Discovery Option), as well as the normatively referenced standards that underpin this technical framework (e.g., ISO/IEEE 11073-10207).
+|===
+
+include::ics-overview.adoc[]
+
+//
+[sdpi_offset=1]
+== Normative references implementation conformity statements
+
+// Section provides detail for normative standards requirements traceability
+[sdpi_offset=1]
+=== Mapping Foundational Standard Requirements to SDPi Constructs
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *{standard_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+|===
+
+////
+#TODO:  Add RI overview & spec / styleguide for how requirements from ICS tables and similar are mapped to where they are satisfied + a link / reference to the general discussion in TF-1 Appendix A and the Referenced Standards model for RI#
+////
+
+// Section details ICS for Referenced Standards
+=== Overview of Normative Referenced Standards Conformity Statements
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *{standard_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+|===
+
+////
+#TODO:  Provide a general overview of the topic, including some standards that provide Conformity statements, ICS tables, etc., and those that are moot on the topic - and how all of this is handled in this appendix and TF specification#
+////
+
+// IEEE 11073-10207:2017 ICS
+
+include::conformance-statements/conformance-statement-ieee-11073-10207-2017.adoc[]
+
+// ISO/IEEE 11073-10700:2022 ICS
+
+include::conformance-statements/conformance-statement-ieee-11073-10700-2022.adoc[]
+
+// ISO/IEEE 11073-10701:2022 ICS
+
+include::conformance-statements/conformance-statement-ieee-11073-10701-2022.adoc[]
+

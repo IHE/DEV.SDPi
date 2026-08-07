@@ -7,12 +7,12 @@
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This version of the <<acronym_sdpi_r>> Profile is built upon the foundational <<acronym_sdpi_p>> Profile but does not provide substantially more capabilities.
+a| *{standard_note}*:  This version of the <<acronym_sdpi_r>> Profile is built upon the foundational <<acronym_sdpi_p>> Profile but does not provide substantially more capabilities.
 This is due to the fact that the primary purpose of this <<acronym_sdpi_r>> Profile, namely communication of medical data to accomplish intended medical purposes, requires the full integration of two emerging IEEE standards:  <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>>.
-Their requirements will be integrated into this supplement, with their <<term_implementation_conformance_statement>> added to <<vol1_appendix_b_referenced_standards_conformance>> below.
-Many of those requirements will be mapped to the actors and transactions and other elements in this supplement, including this <<acronym_sdpi_r>> Profile.
+Their requirements will be integrated into this standard, with their <<term_implementation_conformance_statement>> added to <<clause_references_referenced_standards_conformance>> below.
+Many of those requirements will be mapped to the actors and transactions and other elements in this standard, including this <<acronym_sdpi_r>> Profile.
 
-Additionally, though the <<actor_somds_dec_gateway>> is defined below and fully specified in <<vol2_clause_appendix_sdpi_dec_gateway>>, the implementation guide for mapping from <<acronym_biceps>> to <<acronym_hl7>> <<acronym_fhir>> remains in development, pushing the specification of the <<vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway>> to a later version of this supplement.
+Additionally, though the <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> is defined below and fully specified in <<vol2_clause_appendix_sdpi_dec_gateway>>, the implementation guide for mapping from <<acronym_biceps>> to <<acronym_hl7>> <<acronym_fhir>> remains in development, pushing the specification of the <<vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway>> to a later version of this standard.
 
 |===
 
@@ -190,9 +190,9 @@ Actor Summary Definition:
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  The HL7 FHIR resources and related Point-of-Care Device FHIR Implementation Guide (PoCD FHIR IG) is still under active development.
+a| *{standard_note}*:  The HL7 FHIR resources and related Point-of-Care Device FHIR Implementation Guide (PoCD FHIR IG) is still under active development.
 Initial mappings have been made from <<acronym_sdc>> to <<acronym_fhir>>; however, they are not yet ready for profiling and product implementation.
-When the FHIR specifications are finalized, then this actor will be fully specified in a future SDPI Supplement version.
+When the FHIR specifications are finalized, then this actor will be fully specified in a future SDPI standard version.
 
 See <<vol1_spec_sdpi_p_actor_somds_fhir_gateway>> for additional information.
 |===
@@ -215,14 +215,14 @@ No options are defined for this profile.
 // [%autowidth]
 // [cols="1"]
 // |===
-// a| *{supplement_note}*:  This section is left intentionally blank to indicate capabilities that will be added in a future version of the SDPi Supplement.
+// a| *{standard_note}*:  This section is left intentionally blank to indicate capabilities that will be added in a future version of the SDPi standard.
 // 
 // [#vol1_clause_sdpi_r_actor_option_retrieve_remote_data_reftext, reftext='SDPi-R Option: Retrieve Remote Data']
 // [%noheader]
 // [%autowidth]
 // [cols="1"]
 // |===
-// a| *{supplement_note}*:  This section is left intentionally blank to indicate capabilities that will be added in a future version of the SDPi Supplement.
+// a| *{standard_note}*:  This section is left intentionally blank to indicate capabilities that will be added in a future version of the SDPi standard.
 //
 // This option will enable <<vol1_spec_sdpi_r_actor_somds_medical_data_consumer>> systems to access information in remote systems that are not part of its <<acronym_somds>> network instance.  This access will be provided by either a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> or <<vol1_spec_sdpi_r_actor_somds_fhir_medical_data_gateway>>.
 // For example, retrieving the latest laboratory information for a specific patient.
@@ -280,7 +280,7 @@ If this is a content profile, and actors from this profile are grouped with acto
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  An overview of the concepts for this <<vol1_clause_sdpi_r_profile_reftext>> will be provided in a future supplement version.
+a| *{standard_note}*:  An overview of the concepts for this <<vol1_clause_sdpi_r_profile_reftext>> will be provided in a future SDPi standard version.
 Note that this specification extends the concepts established in the base <<vol1_clause_sdpi_p_profile_reftext>>.
 
 |===
@@ -345,8 +345,8 @@ A primary source of safety requirements for this <<acronym_sdpi_r>> Profile come
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  The <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>> standards are now published by the IEEE.
-However, their requirements are yet to be integrated into this supplement, with many of them being mapped to elements in this <<acronym_sdpi_r>> Profile.
+a| *{standard_note}*:  The <<ref_ieee_11073_10700_2022>> and <<ref_ieee_11073_10701_2022>> standards are now published by the IEEE.
+However, their requirements are yet to be integrated into this standard, with many of them being mapped to elements in this <<acronym_sdpi_r>> Profile.
 
 |===
 

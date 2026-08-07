@@ -1,0 +1,49 @@
+
+[#sdpi_release_issue_management]
+== SDPi Release & Issue Management
+
+[sdpi_offset=clear]
+=== Overview
+
+All SDPi standard issues are tracked in the https://github.com/IHE/DEV.SDPi/issues[IHE Github DEV.SDPi repository Issues section].
+Filter the issues on their "state" to see them.  +
+
+* To see the full list of OPEN issues, go to https://github.com/IHE/DEV.SDPi/issues?q=is%3Aissue+is%3Aopen
+* To see the full list of CLOSED issues, go to https://github.com/IHE/DEV.SDPi/issues?q=is%3Aissue+is%3Aclosed
+
+For more detailed information on how the Gemini SES+MDI program manages issues from identification to resolution to incorporation into this standard, see the https://github.com/IHE/DEV.SDPi/wiki[_IHE SDPi wiki_].
+
+[sdpi_offset=clear]
+[#sdpi_release_issue_tracking]
+=== Release - Issue Tracking
+
+All releases of the SDPi standard include a list of issues that were closed and integrated into that version of the specification.
+To review the issues are associated with a specific release of the standard:
+. Go to https://github.com/IHE/DEV.SDPi/releases
+. Select the desired release from the list
+. Select "Please click here for a detailed changelog" for that release
+
+All of the identified changes include a link back to the associated SDPi Issue that enables review of all associated updates to the specification, as well as all the individuals, discussions and review processes that were involved.
+
+Since this is a joint HL7 - IHE Gemini publication, HL7 Jira issues that result from an HL7 ANSI-accredited ballot cycle, are linked reciprocally with a GitHub issue.
+In this way, namely bidirectional linking from Jira ticket and GitHub issue, round-trip traceability is achieved for resolution of ballot comments and the SDPi release in which the resolutions were implemented.
+
+[sdpi_offset=clear]
+=== Open Issues
+
+The issues listed in this section or in https://github.com/IHE/DEV.SDPi/issues?q=is%3Aissue+is%3Aopen are open, and hence not yet ready for inclusion in this release and not subject to comment or review.
+
+//==== Open Issues
+// NOTE:  The following line must be kept exactly as worded in order for the processor to replace it with the list
+
+// open issues are inserted here
+
+[sdpi_offset=clear]
+=== Closed Issues
+
+The issues listed in this section or in https://github.com/IHE/DEV.SDPi/issues?q=is%3Aissue+is%3Aclosed are closed.
+
+// NOTE:  The following line must be kept exactly as worded in order for the processor to replace it with the list
+
+// closed issues are inserted here
+

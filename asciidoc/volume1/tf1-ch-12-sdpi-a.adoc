@@ -7,17 +7,17 @@
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This initial version of the <<acronym_sdpi_a>> Profile is built upon the foundational <<acronym_sdpi_p>> Profile but adds services specialized for the communication and management of medical device alerting.
+a| *{standard_note}*:  This initial version of the <<acronym_sdpi_a>> Profile is built upon the foundational <<acronym_sdpi_p>> Profile but adds services specialized for the communication and management of medical device alerting.
 Additionally, since the primary purpose of this specification is the communication of medical alert information to accomplish intended medical purposes, it will require the completion and integration of the emerging IEEE 11073 Alert <<acronym_pkp>> standard  <<ref_ieee_11073_10702_202x>>.
-When this new standard is published, its requirements will be integrated into this supplement, with its <<term_implementation_conformance_statement>> added to <<vol1_appendix_b_referenced_standards_conformance>>.
+When this new standard is published, its requirements will be integrated into this standard, with its <<term_implementation_conformance_statement>> added to <<clause_references_referenced_standards_conformance>>.
 Many of those requirements will be mapped to the actors, transactions and other specifications in this specification.
 
 Two of the transactions identified below, [DEV-41] and [DEV-42] are related to Medical Alert Delegation; however, at this stage there is considerable standards development activity to update the current <<acronym_sdc>> standards, particularly in association with completing the Alert <<acronym_pkp>> standard  <<ref_ieee_11073_10702_202x>> and the External Control <<acronym_pkp>> standard  <<ref_ieee_11073_10703_202x>>.
-As a result, the completion of these two transactions has been deferred to a subsequent version of the supplement.
+As a result, the completion of these two transactions has been deferred to a subsequent version of the standard.
 
-Similarly, a related transaction, [DEV-43], namely providing clinician alert acknowledgement status information back to the alerting device, is also being discussed further and will be deferred to a subsequent version of the supplement.
+Similarly, a related transaction, [DEV-43], namely providing clinician alert acknowledgement status information back to the alerting device, is also being discussed further and will be deferred to a subsequent version of the standard.
 
-Finally, it should be noted that  <<actor_somds_acm_gateway>> is defined below and fully specified in <<vol2_clause_appendix_sdpi_acm_gateway>>.
+Finally, it should be noted that  <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> is defined below and fully specified in <<vol2_clause_appendix_sdpi_acm_gateway>>.
 Also in development is <<acronym_hl7>> <<acronym_fhir>> support for medical alerting (e.g., refinement of the <<acronym_fhir>> DeviceAlert resource and future development of a <<acronym_fhir>> Device Alerting IG).
 As a result, a "SOMDS Medical Alert FHIR Gateway" is not included as an actor at this stage; however, it is expected to be added in the coming year or two.
 
@@ -122,7 +122,7 @@ include::../plantuml/vol1-figure-sdpi-a-reporting-example-sequence-diagram.puml[
 [#vol1_spec_sdpi_a_actor_somds_medical_alert_provider, reftext='SOMDS Medical Alert Provider',role="actor-alias",actor-id="somds_medical_alert_provider"]
 Actor Summary Definition:
 [none]
-. A <<vol1_spec_sdpi_p_actor_somds_provider>> grouped actor that sends medical alert information to a <<actor_somds_medical_alert_consumer>>.
+. A <<vol1_spec_sdpi_p_actor_somds_provider>> grouped actor that sends medical alert information to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>.
 
 This actor is designed to publish medical device alert information to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>, which in turn can communicate it safely and reliably to a clinician.
 Transactions enabled for this actor are identified in <<vol1_table_sdpi_a_actors_transactions>> above.
@@ -215,7 +215,7 @@ sdpi_include_transaction::DEV-42[actor-id="somds_medical_alert_consumer",respond
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This section is intentionally left incomplete to indicate capabilities that will be added in a future version of the SDPi Supplement.
+a| *{standard_note}*:  This section is intentionally left incomplete to indicate capabilities that will be added in a future version of the SDPi standard.
 As stated elsewhere, the completion of the <<ref_ieee_11073_10702_202x>> and <<ref_ieee_11073_10703_202x>> standards is required before this profile can be fully completed (beyond alert reporting for DIS capabilities and DAS capabilities without delegation), and that is especially the case for alert delegation.
 
 *_The sequence diagram below for delegation is provided for informative purposes only and will be finalized when the IEEE standard and this profile option are completed._*
@@ -251,7 +251,7 @@ include::../plantuml/vol1-figure-sdpi-a-delegation-example-sequence-diagram.puml
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This section is left intentionally blank to indicate capabilities that will be added in a future version of the SDPi Supplement.
+a| *{standard_note}*:  This section is left intentionally blank to indicate capabilities that will be added in a future version of the SDPi standard.
 
 This option will enable <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> systems to safely and reliably receive from <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> systems user (clinician) acknowledgement of previously reported alert conditions.
 This option will enable the <<transaction_name_update_alert_acknowledgement_status>> [DEV-43] transaction.
@@ -270,7 +270,7 @@ sdpi_include_transaction::DEV-40[actor-id="somds_acm_gateway",initiator="optiona
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This section is left intentionally blank to indicate capabilities that will be added in a future version of the SDPi Supplement.
+a| *{standard_note}*:  This section is left intentionally blank to indicate capabilities that will be added in a future version of the SDPi standard.
 
 This option will enable <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> systems to receive [DEV-04]/[PCD-04] transactions from an ACM Alert Reporter and then act as a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> to communicate the signals to <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> systems.
 This option will enable the <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> to respond to <<transaction_name_establish_medical_alert_exchange>> [DEV-38] and <<transaction_name_retrieve_medical_alert_status>> [DEV-40] transactions, and to initiate <<transaction_name_publish_medical_alert_update>> [DEV-39] transactions.
@@ -326,7 +326,7 @@ If this is a content profile, and actors from this profile are grouped with acto
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  An overview of the concepts for this <<vol1_clause_sdpi_a_profile_reftext>> will be provided in a future supplement version.
+a| *{standard_note}*:  An overview of the concepts for this <<vol1_clause_sdpi_a_profile_reftext>> will be provided in a future SDPi standard version.
 Note that this specification extends the concepts established in the base <<vol1_clause_sdpi_p_profile_reftext>>.
 |===
 

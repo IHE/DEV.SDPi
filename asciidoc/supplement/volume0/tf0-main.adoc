@@ -6,6 +6,7 @@
 
 The https://profiles.ihe.net/GeneralIntro[IHE Technical Frameworks General Introduction] is shared by all of the IHE domain technical frameworks. Each technical framework volume contains links to this document where appropriate.
 
+//
 include::tf0-ch-9-copyrights.adoc[]
 
 // 10 Trademark
@@ -43,11 +44,11 @@ The choice of any namespace prefix is arbitrary and not semantically significant
 
 |dp
 |urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.2.2
-|This specification, used by the <<vol1_spec_sdpi_p_actor_discovery_proxy>> actor.
+|This specification, used by the <<actor_somds_discovery_proxy>> actor.
 
 |dpws
 |http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01
-|<<ref_oasis_dpws_2009>>
+| ref_oasis_dpws_2009
 
 |hs
 |urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.3.1
@@ -59,18 +60,19 @@ The choice of any namespace prefix is arbitrary and not semantically significant
 
 |wsa
 |http://www.w3.org/2005/08/addressing
-|<<ref_oasis_ws_addressing_2006>>
+| ref_oasis_ws_addressing_2006
 
 |wsd
 |http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01
-|<<ref_oasis_ws_discovery_2009>>
+| ref_oasis_ws_discovery_2009
 
 |wse
 |http://schemas.xmlsoap.org/ws/2004/08/eventing
-|<<ref_w3c_ws_eventing_2006>>
+| ref_w3c_ws_eventing_2006
 
 |wsm
 |http://schemas.xmlsoap.org/ws/2004/09/mex
-|<<ref_w3c_ws_metadata_exchange_2008>>
+| ref_w3c_ws_metadata_exchange_2008
 
 |===
+

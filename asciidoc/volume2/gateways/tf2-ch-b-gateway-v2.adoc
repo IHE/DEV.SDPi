@@ -10,7 +10,7 @@ NOTE: As stated in <<ref_ihe_dev_tf_2_2024>> all observation times reported SHOU
 
 NOTE: If the timestamps are to be specified in local time, it is important that the time zone is set correctly at the <<term_point_of_care_device>>.
 
-NOTE: It is not always guaranteed that the timezone configured at the <<actor_somds_provider>> and/or <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> corresponds with the timezone of the <<acronym_mds>> entities, for example, when a <<actor_somds_provider>> acting as device aggregator and/or the  <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> are running in a data center located in a different timezone than the <<acronym_mds>> entities.
+NOTE: It is not always guaranteed that the timezone configured at the <<vol1_spec_sdpi_p_actor_somds_provider>> and/or <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> / <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> corresponds with the timezone of the <<acronym_mds>> entities, for example, when a <<vol1_spec_sdpi_p_actor_somds_provider>> acting as device aggregator and/or the  <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> / <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> are running in a data center located in a different timezone than the <<acronym_mds>> entities.
 ====
 
 

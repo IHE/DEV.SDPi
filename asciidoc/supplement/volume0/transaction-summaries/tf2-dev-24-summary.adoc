@@ -1,0 +1,4 @@
+// DEV-24 Transaction Summary
+
+Discover and resolve all available <<actor_somds_provider>>s that a <<actor_somds_consumer>> is potentially interested in.
+

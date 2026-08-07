@@ -1,12 +1,7 @@
-[appendix#vol0_appendix_d_glossary,sdpi_offset=D]
-=== Glossary
 
-[%noheader]
-[%autowidth]
-[cols="1"]
-|===
-| *{supplement_note}*: The General Introduction Appendix D Glossary in this initial version of the supplement includes all terms and acronyms that are utilized throughout the other volumes.  Subsequent versions of the supplement may re-locate items to other tables and sections within the technical framework.  To help differentiate between various classes or categories of terms, a *_new "Type" column_* has been added.  This could enable future dynamic resorting of the table by those users who are interested in, for example, only organizational definitions.  Finally, a *_References column_* has been added to pull this information out of the Definition column.
-|===
+[#clause_glossary,sdpi_offset=clear]
+=== General Terms
+
 
 [%noheader]
 [%autowidth]
@@ -198,7 +193,7 @@
 | Organization
 
 | [[term_medical_data_information_base,Medical Data Information Base (MDIB)]] Medical Data Information Base
-| Structured collection of any data objects that are provided by a <<vol1_spec_sdpi_p_actor_somds_provider>> or <<actor_biceps_content_creator>>, including both descriptive and state information.
+| Structured collection of any data objects that are provided by a <<vol1_spec_sdpi_p_actor_somds_provider>> or <<vol1_spec_sdpi_p_actor_biceps_content_creator>>, including both descriptive and state information.
 |
 | [[acronym_mdib,MDIB]] MDIB
 | <<ref_ieee_11073_10207_2017_Cor1_2025>>

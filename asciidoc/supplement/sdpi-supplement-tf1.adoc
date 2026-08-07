@@ -1,21 +1,106 @@
+[#vol1_clause_profiles, sdpi_volume_caption=1]
+= Volume 1 -- Profiles
 
+// == Profiles
+
+// 2.
+include::sdpi-supplement-tf1-ch-2-overview.adoc[]
+
+// 10.
+// = Service-oriented Device Point-of-care Interoperability – Plug-and-trust (SDPi-P) Profile
+
+[#vol1_clause_sdpi_p_profile,sdpi_offset=10,role=profile,profile-id=sdpi-p,reftext="Plug-and-trust Profile",oid-arcs=.11]
+== Service-oriented Device Point-of-care Interoperability – Plug-and-trust (SDPi-P) Profile
+[#vol1_clause_sdpi_p_profile_reftext,reftext="SDPi-P Profile"]
+
+The SDPi-Plug-and-trust ([[acronym_sdpi_p,SDPi-P]] SDPi-P) Profile supports foundational seamless connectivity, information exchange and service invocation as defined in the SDPi architecture detailed in <<vol1_clause_sdpi_overview_framework>>.
+
+//<<vol1_clause_sdpi_overview_framework>>.
+
+Whereas the related SDPi Profiles for reporting, alerting and external control are explicitly intended to support medical care capabilities, the SDPi-P Profile focuses on basic healthcare device interoperability.
+All the capabilities defined in SDPi-P are leveraged by and extended in the medically focused profiles.
+This foundational profile not only supports medical device interoperability ("<<acronym_mdi>>"), providing for “plug-and-play” capabilities, but also with a tightly integrated “trust” framework (see <<vol1_appendix_a_requirements_management_for_p_n_t_interperability>>).
+The establishment of a trusted ecosystem of medical and non-medical devices and applications footnote:[Note that SDPi-P supports application interoperability including “Software as a Medical Device” (<<acronym_samd>>).] begins at the start of discovery and a secure connection.  Therefore, the profile's name:  <<term_plug_and_trust>>.
+
+NOTE:  #Add reference to the standard document for complete content#
+
+// 11.
+// = Service-oriented Device Point-of-care Interoperability - Reporting (SDPi-R) Profile
+
+[#vol1_clause_sdpi_r_profile,sdpi_offset=11,role=profile,profile-id=sdpi-r,reftext="Reporting Profile",oid-arcs=.12]
+== Service-oriented Device Point-of-care Interoperability – Reporting (SDPi-R) Profile
+
+
+[#vol1_clause_sdpi_r_profile_reftext,reftext="SDPi-R Profile"]
+The SDPi-Reporting ([[acronym_sdpi_r,SDPi-R]] SDPi-R) Profile supports the communication of information from one <<term_service_oriented_medical_device_system>> to other <<acronym_somds>> systems or to other external non-<<acronym_somds>> systems utilizing a <<label_system_type_name_dgw>>.
+Most of the actors and transactions in this specification are specialized versions of their counterparts in the <<acronym_sdpi_p>> Profile; however, are differentiated in that they are specifically designed to communicate information with an _intended medical purpose_.
+As a result, additional requirements are added to each actor and transaction to support address these additional safety and effectiveness requirements (See _SDPi-R Safety, Effectiveness and Security - Requirements and Considerations_ below).
+
+NOTE:  #Add reference to the standard document for complete content#
+
+// 12.
+// = Service-oriented Device Point-of-care Interoperability – Alerting (SDPi-A) Profile
+
+[#vol1_clause_sdpi_a_profile,sdpi_offset=12,role=profile,profile-id=sdpi-a,reftext="Alerting Profile",oid-arcs=.13]
+== Service-oriented Device Point-of-care Interoperability – Alerting (SDPi-A) Profile
+
+
+[#vol1_clause_sdpi_a_profile_reftext,reftext="SDPi-A Profile"]
+The SDPi-Alerting ([[acronym_sdpi_a,SDPi-A]] SDPi-A) Profile supports the communication of alert information from one <<term_service_oriented_medical_device_system>> to other <<acronym_somds>> systems or to other external non-<<acronym_somds>> systems utilizing a <<label_system_type_name_agw>>.
+The actors and transactions in this specification are specialized versions of their counterparts in the <<vol1_clause_sdpi_p_profile_reftext>>; however, are differentiated in that they are specifically designed to communicate alert information to fulfill an _intended medical purpose_, primarily to notify a clinician of a patient or device-related condition that requires their attention.
+Additional services have been provided to specifically support the exchange and management of this medical device alert information, providing a high-level of reliability and performance, commensurate with the potential risk to the patient if they are not promptly addressed.
+
+NOTE:  #Add reference to the standard document for complete content#
+
+// 13.
+// = Service-oriented Device Point-of-care Interoperability – external Control (SDPi-xC) Profile
+
+[#vol1_clause_sdpi_xc_profile,sdpi_offset=13,role=profile,profile-id=sdpi-xc,reftext="External Control Profile",oid-arcs=.14]
+== Service-oriented Device Point-of-care Interoperability – external Control (SDPi-xC) Profile
+
+NOTE:  #Add reference to the standard document for complete content#
+
+[#vol1_clause_sdpi_xc_profile_reftext,reftext="SDPi-xC Profile"]
+The SDPi-External Control ([[acronym_sdpi_xc,SDPi-xC]] SDPi-xC) Profile enables external or "remote" control of one device by another, both being in the same secure environment (<<term_medical_device_lan>>).
+This may be as simple as adjust an alarm limit or triggering a blood pressure cuff reading, to adjusting a respiration rate on a ventilator or titrating a drug dose rate on an infusion pump.
+Specializes services and semantics are provided to enable safe and secure control invocation.
+
+// TF-1 Appendix A
+[appendix#vol1_appendix_a_requirements_management_for_p_n_t_interperability,sdpi_offset=A]
+== Requirements Management for Plug-and-Trust Interoperability
+
+NOTE:  #Add Appendix A Overview here w/ reference to Standard section#
+
+// A.1
+[#vol1_clause_appendix_a_requirements_from_narratives_to_pnt_interfaces,sdpi_offset=1]
+=== Requirements:  From Narratives to Plug-and-Trust Interfaces
+
+// A.2
+[#vol1_appendix_a_integrating_ses]
+=== Integrating Safety, Effectiveness and Security Requirements and Considerations
+
+// A.3
+[#vol1_clause_appendix_a_ses_considerations_section_template]
+=== SES Considerations Section Template
+
+// A.4
+[#vol1_clause_sdpi_requirements_modeling_integration]
+=== SDPi Requirements Modeling & Integration
+
+// A.5
+[#vol1_clause_sdpi_requirement_future_extensibility]
+=== Future extensibility: Use Cases, MBSE Requirements Modeling & SysML 2.0
+
+
+// Appendix B
 [appendix#vol1_appendix_b_references,sdpi_offset=B]
 == References
-
-[%noheader]
-[%autowidth]
-[cols="1"]
-|===
-| *{supplement_note}*: The inclusion of a References appendix is unique for IHE Technical Framework specifications.
-Typically, referenced standards sections are distributed throughout the specifications where appropriate; however, standards from other organizations (e.g., IEEE, ISO, IEC) typically have a "Normative References" clause and when desired a "Bibliography" clause.
-Also, integration of explicit standards' <<term_implementation_conformance_statement>> specifications (e.g., <<ref_ieee_11073_10207_2017_Cor1_2025>> <<acronym_ics>> tables) is unique, but needed to support requirements interoperability.
-
-Ultimately, the content of this appendix may be rearranged and even relocated; however, for early versions of the SDPi supplement, it has proven helpful, and even of critical importance and value.
-|===
 
 // Appendix B
 [bibliography#vol1_appendix_b_referenced_standards]
 === Referenced Standards
+
+NOTE: #Should this section be duplicated here to ensure that it is in the supplemenbt and eventually in the IHE DEV TF?#
 
 [%noheader]
 [%autowidth]
@@ -98,48 +183,8 @@ NOTE: The "IEEE 11073-10207-2017/Cor1-2025" standard is a corrigendum to the "IE
 [#vol1_appendix_b_referenced_standards_conformance]
 === Referenced Standards Conformance
 
-// Appendix B.x
-[sdpi_offset=1]
-==== Mapping Foundational Standard Requirements to SDPi Constructs
+NOTE: #Add a general statement here regarding the SDPi Standard and a new clause on Conformance#
 
-[%noheader]
-[%autowidth]
-[cols="1"]
-|===
-a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
-|===
-
-////
-#TODO:  Add RI overview & spec / styleguide for how requirements from ICS tables and similar are mapped to where they are satisfied + a link / reference to the general discussion in TF-1 Appendix A and the Referenced Standards model for RI#
-////
-
-// Appendix B.x
-==== Overview of Standards Conformity Statements
-
-[%noheader]
-[%autowidth]
-[cols="1"]
-|===
-a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
-|===
-
-////
-#TODO:  Provide a general overview of the topic, including some standards that provide Conformity statements, ICS tables, etc., and those that are moot on the topic - and how all of this is handled in this appendix and TF specification#
-////
-
-// IEEE 11073-10207:2025 ICS
-
-include::conformance-statements/tf1-ch-c-conformance-statement-ieee-11073-10207-2017-Cor1-2025.adoc[]
-
-// ISO/IEEE 11073-10700:2022 ICS
-
-include::conformance-statements/tf1-ch-c-conformance-statement-ieee-11073-10700-2022.adoc[]
-
-// ISO/IEEE 11073-10701:2022 ICS
-
-include::conformance-statements/tf1-ch-c-conformance-statement-ieee-11073-10701-2022.adoc[]
-
-// Appendix B.x
 === Bibliography
 
 In addition to Referenced Standards, which include normative requirements and capabilities that this technical framework utilizes, there are other standards, specifications, publications, presentations, materials, etc. that have proven valuable in both developing and understanding the framework's content.  This list identifies those items, including many of which are referenced throughout the specifications.
@@ -184,5 +229,13 @@ metalanguage - Extended BNF, 15 December 1996, available at https://standards.is
 The following bibliographic references include slide decks and recordings that are helpful in understanding these specifications.
 
 * [[[ref_ihe_eu_experience_2021_presentation_cooper_schlichting,IHE EU Experience-2021 IHE CA for MedTech Solutions]]] "IHE & IHE Catalyst: Advancing Interoperable MedTec Solutions with "Regulatory Submission Ready" Conformity Assessment", presentation by Todd Cooper and Dr. Stefan Schlichting, available at https://connectathon.ihe-europe.net/experience-sessions-2021-presentations[IHE Europe Experience 2021 Presentations web page].
+
+
+// Appendix C
+// = Device Point-of-care Interoperability (DPI) Use Cases
+
+[appendix#vol1_appendix_c_dpi_use_cases,sdpi_offset=C]
+== Device Point-of-care Interoperability (DPI) Use Cases
+
 
 

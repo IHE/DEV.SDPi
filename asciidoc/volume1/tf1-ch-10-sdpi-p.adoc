@@ -26,7 +26,7 @@ For example, Operating Room / Surgery Point-of-Care Integration, ICU Point-of-Ca
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*: Some actors and transactions have been deferred to a subsequent version, but are included here for completeness.
+a| *{standard_note}*: Some actors and transactions have been deferred to a subsequent version, but are included here for completeness.
 Specifically:  SOMDS Sensor Gateway and SOMDS Smart App Platform have been deferred.
 
 Deferred transactions have been so indicated in the transactions table.
@@ -222,7 +222,7 @@ See related discussion at <<vol3_clause_biceps_mapping_using_somds_connector_con
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*: The TF-3 SDC/BICEPS Mapping of SOMDS Connector Content Modules section is out-of-scope, but included above for completeness of this actor overview.
+a| *{standard_note}*: The TF-3 SDC/BICEPS Mapping of SOMDS Connector Content Modules section is out-of-scope, but included above for completeness of this actor overview.
 |===
 
 Although the SDPi-P Profile _<<vol1_spec_sdpi_p_actor_somds_connector>>_ provides for non-SOMDS _protocol-specific_ adaptors, they establish the foundation for specifying system and application-specific interfaces such as for EHR or decision support systems (e.g., sepsis determination).
@@ -278,7 +278,7 @@ Generally, the <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> supports messaging fr
 [%autowidth]
 [cols="1"]
 |===
-| *{supplement_note}*: Detailed specifications for this actor are deferred to a later version of the SDPi Supplement.
+| *{standard_note}*: Detailed specifications for this actor are deferred to a later version of the SDPi standard.
 |===
 
 [#vol1_spec_sdpi_p_actor_somds_sensor_gateway, reftext='SOMDS Sensor Gateway',role=actor-alias,actor-id="somds_sensor_gateway"]
@@ -298,7 +298,7 @@ This also includes SOMDS integration of IoT (“Internet of Things”) architect
 [%autowidth]
 [cols="1"]
 |===
-| *{supplement_note}*: Detailed specifications for this actor are deferred to a later version of the SDPi Supplement.
+| *{standard_note}*: Detailed specifications for this actor are deferred to a later version of the SDPi standard.
 |===
 
 [#vol1_spec_sdpi_p_actor_somds_smart_app_platform, reftext='SOMDS Smart App Platform',role=actor-alias,actor-id="somds_smart_app"]
@@ -352,7 +352,7 @@ Actor Summary Definition:
 [none]
 . Processes <<acronym_mdib>> information conformant to <<ref_ieee_11073_10207_2017_Cor1_2025>> BICEPS specifications provided by <<vol1_spec_sdpi_p_actor_biceps_content_creator>> systems.
 
-A <<vol1_spec_sdpi_p_actor_biceps_content_consumer>> shall be capable of processing information provided by a <<actor_biceps_content_creator>>, in accordance to the BICEPS content module specifications in <<vol3_clause_sdc_biceps_semantic_content_module>> and related sections.
+A <<vol1_spec_sdpi_p_actor_biceps_content_consumer>> shall be capable of processing information provided by a <<vol1_spec_sdpi_p_actor_biceps_content_creator>>, in accordance to the BICEPS content module specifications in <<vol3_clause_sdc_biceps_semantic_content_module>> and related sections.
 
 ////
 
@@ -362,7 +362,7 @@ The supported BICEPS content processing shall include one or more of the options
 
 ////
 
-For robustness, a <<actor_biceps_content_consumer>> need only process the content that is necessary to support its capabilities, but shall also be able to accept any additional content that may be provided but is out-of-scope for its internal requirements. footnote:[Apply Postel’s Law:  Send conservatively, Accept liberally.]
+For robustness, a <<vol1_spec_sdpi_p_actor_biceps_content_consumer>> need only process the content that is necessary to support its capabilities, but shall also be able to accept any additional content that may be provided but is out-of-scope for its internal requirements. footnote:[Apply Postel’s Law:  Send conservatively, Accept liberally.]
 
 Note that although this SDPi-P content actor primarily supports information exchange between systems participating in a SOMDS network environment, they may be referenced by other non-SDPi profiles that utilize other non-SOMDS exchange architectures, transactions and technologies.
 
@@ -923,7 +923,7 @@ Specific <<vol1_clause_sdpi_p_profile_reftext>> transaction message bindings and
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+a| *{standard_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
 ////
 ////
@@ -937,7 +937,7 @@ a| *{supplement_note}*:  This section intentionally left blank for the current v
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+a| *{standard_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
 ////
 ////
@@ -953,7 +953,7 @@ Integration of CT and ATNA (TBD) below in required groupings is assumed but shou
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+a| *{standard_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
 ////
 ////
@@ -967,7 +967,7 @@ a| *{supplement_note}*:  This section intentionally left blank for the current v
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+a| *{standard_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
 ////
 ////
@@ -985,7 +985,7 @@ See Gateways in the actors discussion above … and below?
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+a| *{standard_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
 ////
 ////
@@ -1000,7 +1000,7 @@ Given the discussion in Actors above, is this necessary here?  Or should some of
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+a| *{standard_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
 ////
 ////
@@ -1013,7 +1013,7 @@ a| *{supplement_note}*:  This section intentionally left blank for the current v
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+a| *{standard_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
 ////
 ////
@@ -1026,7 +1026,7 @@ a| *{supplement_note}*:  This section intentionally left blank for the current v
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+a| *{standard_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
 
 ////

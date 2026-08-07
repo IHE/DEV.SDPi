@@ -1,0 +1,135 @@
+
+// [appendix#vol0_appendix_a_actors,sdpi_offset=A]
+// === Actors
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+|Add the following *_new or modified_* actors to the IHE Technical Frameworks General Introduction https://profiles.ihe.net/GeneralIntro/ch-A.html[Appendix A].
+|===
+
+////
+#TODO: ADD "summary_" TO THESE DEFINITIONS OR KEEP THEM AS IS; IF WE ADDED summary_ THEN THE MAIN REFERENCE WOULD BE TO THE PROFILE IN WHICH THEY ARE USED BUT AN ACTOR MAY BE USED IN MULTIPLE PROFILES ...#
+////
+
+[cols="1,2"]
+|===
+|New (or modified) Actor Name |Definition
+
+|[[actor_biceps_content_consumer,BICEPS Content Consumer]] BICEPS Content Consumer
+
+|Processes BICEPS-conformant content.
+
+|[[actor_biceps_content_creator,BICEPS Content Creator]] BICEPS Content Creator
+
+|Provides BICEPS-conformant content.
+
+|[[actor_somds_acm_gateway,SOMDS ACM Gateway]] SOMDS ACM Gateway
+
+|Exchanges medical alert information with an IHE ACM-based environment
+
+|[[actor_somds_connector,SOMDS Connector]] SOMDS Connector
+
+|Enables seamless interaction with systems and software applications that are outside the scope of a SOMDS network.
+
+|[[actor_somds_consumer,SOMDS Consumer]] SOMDS Consumer
+
+|Discovers and utilizes service(s) exposed by a <<actor_somds_provider>>.
+
+|[[actor_somds_dec_gateway,SOMDS DEC Gateway]] SOMDS DEC Gateway
+
+|Exchanges information between <<acronym_somds>> and IHE DEC-based environments.
+
+|[[actor_somds_discovery_proxy,Discovery Proxy]] Discovery Proxy
+
+|Accepts and makes available <<actor_somds_provider>> endpoint metadata in a <<acronym_somds>>.
+
+|[[actor_somds_fhir_gateway,SOMDS FHIR Gateway]] SOMDS FHIR Gateway
+
+|Exchanges information between SOMDS and HL7 FHIR-based environments.
+
+|[[actor_somds_fhir_medical_data_gateway,SOMDS FHIR Medical Data Gateway]] SOMDS FHIR Medical Data Gateway
+
+|Exchanges medical data between SOMDS and HL7 FHIR-based environments.
+
+|[[actor_somds_medical_alert_consumer,SOMDS Medical Alert Consumer]] SOMDS Medical Alert Consumer
+
+|Receives medical alert information from a <<actor_somds_medical_alert_provider>>.
+
+|[[actor_somds_medical_alert_provider,SOMDS Medical Alert Provider]] SOMDS Medical Alert Provider
+
+|Makes medical alert information and service(s) available to <<actor_somds_medical_alert_consumer>>s.
+
+|[[actor_somds_medical_control_consumer,SOMDS Medical Control Consumer]] SOMDS Medical Control Consumer
+
+|Discovers and invokes device-external control services supported by a
+<<actor_somds_medical_control_provider>>.
+
+|[[actor_somds_medical_control_provider,SOMDS Medical Control Provider]] SOMDS Medical Control Provider
+
+|Supports a set of device-external control services that may be discovered and invoked by a <<actor_somds_medical_control_consumer>>.
+
+|[[actor_somds_medical_data_consumer,SOMDS Medical Data Consumer]] SOMDS Medical Data Consumer
+
+|A <<actor_somds_consumer>> grouped actor that receives medical data from a <<actor_somds_provider>>.
+
+|[[actor_somds_medical_data_provider,SOMDS Medical Data Provider]] SOMDS Medical Data Provider
+
+|Sends medical data to a <<actor_somds_medical_data_consumer>>.
+
+|[[actor_somds_participant,SOMDS Participant]] SOMDS Participant
+
+|Provides basic, common connectivity capabilities that are shared by all actors that are part of a SOMDS network.
+
+|[[actor_somds_provider,SOMDS Provider]] SOMDS Provider
+
+|Makes service(s) available to <<actor_somds_consumer>>s.
+
+
+|[[actor_somds_sensor_gateway,SOMDS Sensor Gateway]] SOMDS Sensor Gateway
+
+|Supports integration of sensors external to a SOMDS network.
+
+|[[actor_somds_smart_app_platform,SOMDS Smart App Platform]] SOMDS Smart App Platform
+
+|Supports connection of software applications to a SOMDS network, including <<term_software_as_a_medical_device>>.
+
+|[[actor_somds_v2_gateway,SOMDS V2 Gateway]] SOMDS V2 Gateway
+
+|Exchanges information between SOMDS and HL7 Version 2 (V2) environments.
+
+|===
+
+The table below lists _existing_ actors that are utilized in this specification.
+
+////
+#TODO: VERIFY THAT THE GATEWAY ACTORS ARE FULLY ACCOUNTED FOR + ANY ADDITIONAL DEPENDENT ACTORS#
+////
+
+.Complete List of Existing Actors Utilized in this specification
+[cols="1,2"]
+|===
+|Existing Actor Name |Definition
+
+|[[actor_alert_consumer,Alert Consumer]] Alert Consumer
+| The Alert Consumer (ACON) receives the alert from the Alert Reporter (AR) and uses the alert information strictly as a consumer of the alert being raised.  There is no implementation requirement for how the ACON ultimately uses the alert information.
+
+|[[actor_alert_manager,Alert Manager]] Alert Manager
+| The Alert Manager (AM) receives the alerts from the Alert Reporter (AR), potentially analyzes the alert, and dispatches the alert to the Alert Communicator (AC), and optionally, provides the alert to the Alert Archiver (AA) or Alert Consumer (ACON) upon subscription.
+
+|[[actor_alert_reporter,Alert Reporter]] Alert Reporter
+| This actor originates the alert (an alarm, either physiological or technical, or an advisory).
+
+|[[actor_device_observation_consumer,Device Observation Consumer]] Device Observation Consumer
+| The actor responsible for receiving PCD data from the Device Observation Reporter, the Device Observation Filter, or both.
+
+|[[actor_device_observation_reporter,Device Observation Reporter]] Device Observation Reporter
+| The Device Observation Reporter (DOR) receives data from PCDs, including those based on proprietary formats, and maps the received data to transactions providing consistent syntax and semantics.
+
+
+| Time Client
+
+| Establishes time synchronization with one or more Time Servers using the NTP protocol and either the NTP or SNTP algorithms.  Maintains the local computer system clock synchronization with UTC based on synchronization with the Time Servers.
+
+|===

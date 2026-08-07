@@ -33,7 +33,7 @@
 :ihe_supplement_sdpi_revision: {sdpi_version_major}.{sdpi_version_minor}.{sdpi_version_revision}
 :ihe_supplement_sdpi_revision_short: {sdpi_version_major}.{sdpi_version_minor}
 :ihe_supplement_sdpi_revision_date: {localdatetime}
-:ihe_supplement_sdpi_revision_label: Standard for Trial Use / Implementation
+:ihe_supplement_sdpi_revision_label: Supplement for Trial Implementation
 :ihe_supplement_sdpi_publication_month: August 4, 2026
 :ihe_supplement_sdpi_public_comment_submission_deadline: N/A
 
@@ -73,6 +73,8 @@ ifeval::["{backend}" == "html5"]
 endif::[]
 {empty} +
 
+#Standalone SDPi SUPPLEMENT document - DRAFT VERSION - FOR COMMENT ONLY#
+
 [%noheader]
 [cols="1,4"]
 [frame=none,grid=none]
@@ -98,6 +100,42 @@ See https://profiles.ihe.net/DEV/[*HERE*] for STU/Trial Implementation and Final
 ifeval::["{backend}" == "html5"]
 //A PDF version of the specification is available upon request.
 endif::[]
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *Gemini SDPi {ihe_supplement_sdpi_revision_short} "Standalone" Supplement -- Release & Drafting Notes*:
+
+=== Release Note
+This release of SDPi is the first version that includes a separate _sdpi-supplement_ specification (this document) that was created out of the previous released version and aligned with the current _sdpi-standard_ document.
+This document is intended to provide the necessary organization and summary content that can ultimately be integrated into the IHE DEV TF "final text" normative version.
+When that integration to the DEV TF occurs, this "supplement" will no longer be needed and will be deprecated; however, the "standard" document will always persist.
+
+NOTE: This supplement has the same revision label as the associated standard revision to which it is aligned.
+It may be that when a DEV TF integration occurs for those aspects of SDPi that are "final text", other capabilities will be in active development, thus requiring the need for this supplement -- potentially, for a long time!"
+
+The complete detailed normative content will remain in the sdpi-standard document as it has evolved in recent years; however, that document will be designed so that it will always remain -- standalone -- and will not be integrated into some other document.
+
+For a summary of changes made to this release of the standard and related supplement, see the release note in the SDPi {ihe_supplement_sdpi_revision_short} Standard document.
+
+=== Drafting Note - Remaining Tasks & Open Questions
+Editorial Task List (prioritized) for this Supplement:
+
+. [.line-through]#Move over Introduction files#
+. [.line-through]#Move over TF-0 files#
+. [.line-through]#Add top level outline structure for supplement document#
+.. Move Clause 2 Overview content to supplement (it will stay here intact)
+. [.line-through]#Change labels as appropriate / necessary to be supplement-specific so as to reduce any confusion#
+. Add front matter updates per IHE TF Format but for this Supplement, explaining supplement/standalone & conceptual approach.
+NOTE:  The TF-1:2 content might be identical in this document.
+. Add overview content for each outline section
+. Add Standard -> Supplement Release Update punch list (e.g., new actors / transactions ... in TF-0 appendices)
+. Migrate all supplement INSTRUCTIONS (e.g., from TF-3) to this supplement
+. ...
+
+|===
+
 
 [#supplement_clause_foreword,sdpi_offset=clear]
 = Foreword
@@ -132,76 +170,28 @@ Information about the organization of IHE Technical Frameworks and Supplements a
 
 The current version of the IHE Devices Technical Framework can be found at https://profiles.ihe.net/DEV/[DEV Technical Framework].
 
-////
-TODO: for some reason, include macros in this file are (partially?) executed such that block processing plugins
-      fail due to missing input data. To avoid that, the include directions in this file has been changed from
-      "include::" to "include:".
-////
+include::supplement/sdpi-supplement-intro.adoc[]
 
-// STANDALONE SDPi:  1st refactoring, moved copies of these files into the supplement/ directory
-// include:supplement/sdpi-supplement-intro.adoc[]
-
-// include:supplement/sdpi-standard-issues.adoc[]
+// STANDALONE TO DO - This is a common IHE SUPPLEMENT SECTION, we should include it and mention that they are in the standard
+// include::supplement/standard-issues.adoc[]
 
 // = Volume 0 -- IHE Technical Frameworks General Introduction
 
-// STANDALONE SDPi:  1st refactoring, simply COMMENTED OUT the 3 volumes
-//include:volume0/tf0-main.adoc[]
+include::supplement/volume0/tf0-main.adoc[]
 
 //
 // = Volume 1 -- Profiles
 //
-//include:volume1/tf1-main.adoc[]
+include::supplement/sdpi-supplement-tf1.adoc[]
 
-// Appendix A
-////
-[appendix#vol1_appendix_a_requirements_management_for_p_n_t_interperability,sdpi_offset=A]
-== Requirements Management for Plug-and-Trust Interoperability
-
-[#vol1_clause_sdpi_requirements_modeling_integration]
-=== SDPi Requirements Modeling & Integration
-
-[#vol1_clause_appendix_a_ses_considerations_section_template]
-=== SES Considerations Section Template
-
-// Appendix B
-[appendix#vol1_appendix_b_references,sdpi_offset=B]
-== References
-
-[%noheader]
-[%autowidth]
-[cols="1"]
-|===
-| *{supplement_note}*:
-IHE Supplement TF-1:B References Appendix content is provided in *Gemini Standard TF-1:B*.
-|===
-
-
-include:volume1/tf1-main.adoc[]
-
-[%noheader]
-[%autowidth]
-[cols="1"]
-|===
-| *{supplement_note}*:
-IHE Supplement TF-1:B.1 Referenced Standards  content is provided in *Gemini Standard TF-1:B.1 Referenced Standards*.
-|===
-
-// Appendix C
-
-[appendix#vol1_appendix_c_dpi_use_cases,sdpi_offset=C]
-== Device Point-of-care Interoperability (DPI) Use Cases
-
-[#vol1_clause_appendix_c_use_case_sicdmp,sdpi_offset=4]
-=== Use Case Feature {var_use_case_id}: <<label_use_case_name_sicdmp>> (<<acronym_sicdmp>>)
 
 //
 // = Volume 2 -- Transactions
 //
-//include:volume2/tf2-main.adoc[]
+include::supplement/sdpi-supplement-tf2.adoc[]
+
 //
 // = Volume 3 -- Content Modules
 //
-//include:volume3/tf3-main.adoc[]
+include::supplement/sdpi-supplement-tf3.adoc[]
 
-////

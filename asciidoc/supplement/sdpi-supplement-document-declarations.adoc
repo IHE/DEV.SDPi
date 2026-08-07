@@ -18,14 +18,12 @@ NOTES:
 |===
 a| *{supplement_note}*:
 
-*Standalone SDPi:*  _REWORK this section to make it a permanent Forward Declarations, perhaps refactoring it into something that is not labeled "Forward Declarations"!_
-
 The following table is included in this version of the standard to capture *_"forward" declarations of acronyms and labels_* that are used in the text but are not intended to be part of the General Introduction Appendix D Glossary.
 "Forward" means that they are used BEFORE the document section in which they are formally defined.
 Since AsciiDoc is a one-pass processor, forward declarations are required.
 
 There was no clear way of defining these replacement definitions in a way that is "under the hood" and not visible to the reader.
-The following table was thus created but may be moved or otherwise implemented in subsequent supplement versions.
+The following table was thus created but may be moved or otherwise implemented in subsequent standard versions.
 
 Suggestions appreciated!
 
@@ -41,57 +39,68 @@ NOTE:  Forward Declarations in the following table are being added "on demand" o
 
 | [[acronym_aars,AARS]] AARS
 | [[label_use_case_name_aars,Alerts to Alert Recording Systems]] Alerts to Alert Recording Systems
-| <<vol1_clause_appendix_c_use_case_aars>>
+// | <<vol1_clause_appendix_c_use_case_aars>>
+|
 | Use Case
 
 | [[acronym_acns,ACNS]] ACNS
 | [[label_use_case_name_acns,Alerts to Clinician Notification Systems]] Alerts to Clinician Notification Systems
-| <<vol1_clause_appendix_c_use_case_acns>>
+// | <<vol1_clause_appendix_c_use_case_acns>>
+|
 | Use Case
 
 | [[acronym_agw,AGW]] AGW
 | [[label_system_type_name_agw,Alert Gateway]] Alert Gateway
-| <<vol3_clause_system_type_nomenclature_extensions>>
+// | <<vol3_clause_system_type_nomenclature_extensions>>
+|
 | System Type
 
 | [[acronym_cs,CS]] CS
 | [[label_system_type_name_cs,Central Station]] Central Station
-| <<vol3_clause_system_type_nomenclature_extensions>>
+// | <<vol3_clause_system_type_nomenclature_extensions>>
+|
 | System Type
 
 | [[acronym_dgw,DGW]] DGW
 | [[label_system_type_name_dgw,Data Gateway]] Data Gateway
-| <<vol3_clause_system_type_nomenclature_extensions>>
+// | <<vol3_clause_system_type_nomenclature_extensions>>
+|
 | System Type
 
 | [[acronym_ddes,DDES]] DDES
 | [[label_use_case_name_ddes,Device Data to Enterprise Systems]] Device Data to Enterprise Systems
-| <<vol1_clause_appendix_c_use_case_ddes>>
+// | <<vol1_clause_appendix_c_use_case_ddes>>
+|
 | Use Case
 
 | [[acronym_mdpws,MDPWS]] MDPWS
 | [[label_use_case_name_mdpws,Medical Devices Communication Profile for Web Services]] Medical Devices Communication Profile for Web Services
-| <<ref_ieee_11073_20702_2016>>
+// | ref_ieee_11073_20702_2016  <<ref_ieee_11073_20702_2016>>
+|
 | Standard
 
 | [[acronym_sas,SAS]] SAS
 | [[label_system_type_name_sas,Smart Alerting System]] Smart Alerting System
-| <<vol3_clause_system_type_nomenclature_extensions>>
+// | <<vol3_clause_system_type_nomenclature_extensions>>
+|
 | System Type
 
 | [[acronym_sicdmp,SICDmp]] SICDmp
 | [[label_use_case_name_sicdmp,Standalone ICU Dashboard Multiple Patient]] Standalone ICU Dashboard Multiple Patient
-| <<vol1_clause_appendix_c_use_case_sicdmp>>
+// | <<vol1_clause_appendix_c_use_case_sicdmp>>
+|
 | Use Case
 
 | [[acronym_sicdsp,SICDsp]] SICDsp
 | [[label_use_case_name_sicdsp,Standalone ICU Dashboard Single Patient]] Standalone ICU Dashboard Single Patient
-| <<vol1_clause_appendix_c_use_case_sicdsp>>
+// | <<vol1_clause_appendix_c_use_case_sicdsp>>
+|
 | Use Case
 
 | [[acronym_stad,STAD]] STAD
 | [[label_use_case_name_stad,Synchronized Time Across Devices]] Synchronized Time Across Devices
-| <<vol1_clause_appendix_c_use_case_stad>>
+// | <<vol1_clause_appendix_c_use_case_stad>>
+|
 | Use Case
 
 |===
