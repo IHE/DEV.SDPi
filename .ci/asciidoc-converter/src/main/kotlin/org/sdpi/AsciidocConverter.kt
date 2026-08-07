@@ -43,6 +43,12 @@ class ConverterOptions(
     val generateTestOutput: Boolean = false,
 
     /**
+     * When true, features implemented in pre- and post-processors
+     * are disabled so source file and line numbers are accurate.
+     */
+    val debugMode: Boolean = false,
+
+    /**
      * Folder where extracts (requirements, use-cases, etc.) should
      * be placed. If null, the extracts won't be written.
      */
@@ -97,7 +103,6 @@ class AsciidocConverter(
             .sourcemap(true)
             .headerFooter(!conversionOptions.generateTestOutput)
             .toStream(outputFile).build()
-        val bEnablePrePostProcessing = true
 
         val asciidoctor = Asciidoctor.Factory.create()
 
@@ -158,12 +163,16 @@ class AsciidocConverter(
         asciidoctor.javaExtensionRegistry().inlineMacro(TransactionReferenceMacroProcessor(infoCollector))
         asciidoctor.javaExtensionRegistry().inlineMacro(ProfileReferenceMacroProcessor(infoCollector))
 
-        if (bEnablePrePostProcessing) {
+        // Essential for document processing but breaks line number and source references, so
+        // we disable when debugging to simplify troubleshooting.
+        if (!conversionOptions.debugMode) {
             asciidoctor.javaExtensionRegistry().preprocessor(IssuesSectionPreprocessor(conversionOptions.githubToken))
             asciidoctor.javaExtensionRegistry().preprocessor(DisableSectNumsProcessor())
         }
 
-        if (bEnablePrePostProcessing) {
+        // Essential for document processing but breaks line number and source references, so
+        // we disable when debugging to simplify troubleshooting.
+        if (!conversionOptions.debugMode) {
             println("Enable pre post processing.")
             val referenceSanitizerPre = ReferenceSanitizerPreprocessor(anchorReplacements)
             asciidoctor.javaExtensionRegistry().preprocessor(referenceSanitizerPre)

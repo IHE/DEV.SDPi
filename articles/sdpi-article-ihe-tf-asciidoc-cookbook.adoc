@@ -1182,7 +1182,10 @@ The AsciiDoc source is automatically processed using GitHub actions.
 For testing, documents can be generated using Windows command line tools (probably for other operating systems too, but I don't know about that; please expand on this when you figure out how). To create output from the AsciiDoc source open a command prompt in the `.ci\asciidoc-converter` folder and use:
 
 * `build_document.bat` to create an html document (`sdpi-standard.html`),
-* `build_document_pdf.bat` to create an Acrobat PDF document (`sdpi-standard.pdf`).
+* `build_document_pdf.bat` to create an Acrobat PDF document (`sdpi-standard.pdf`),
+* `build_standard_debug.bat` to create an html document (`sdpi-standard.html`) with reasonably accurate source location in the trace 
+   output at the expense of document processing features (notably: section renumber, reference sanatizer/ anchor replacement is 
+   disabled). This is intendes _solely_ for tracking down build issues in local builds. The output created is not complete. 
 
 The output files are written to `sdpi-standard` folder. Extracts (requirements and use-cases in JSON format) are written to the `sdpi-standard\referenced-artifacts` folder. Extracts are generated along with the document output.
 

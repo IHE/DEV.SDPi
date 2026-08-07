@@ -52,6 +52,9 @@ class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {
     private val testGenerator by option("--test", help = "Writes document without headers for test output")
         .flag(default = false)
 
+    private  val debugGenerator by option("--debug", help="Simplified processing for accurate source and line number diagnostics")
+        .flag(default = false)
+
     override fun run() {
         runCatching {
             val asciidocErrorChecker = AsciidocErrorChecker()
@@ -74,6 +77,7 @@ class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {
                     outputFormat = backend,
                     dumpStructure = dumpStructure,
                     generateTestOutput = testGenerator,
+                    debugMode = debugGenerator,
                 )
             )
             converter.run()

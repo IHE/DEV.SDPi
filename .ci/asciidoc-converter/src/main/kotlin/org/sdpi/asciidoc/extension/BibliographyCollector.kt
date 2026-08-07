@@ -44,26 +44,26 @@ class BibliographyCollector : Treeprocessor() {
                 val mParsed = reBibParser.find(strItem)
                 checkNotNull(mParsed)
                 {
-                    "${getLocation(bibEntry)} invalid format '$strItem'".also { logger.error { it } }
+                    "${document.sourceLocation} -> ${getLocation(bibEntry)} invalid format '$strItem'".also { logger.error { it } }
                 }
                 val strRef = mParsed.groups["ref"]?.value
                 checkNotNull(strRef)
                 {
-                    "${getLocation(bibEntry)} missing reference".also { logger.error { it } }
+                    "${document.sourceLocation} -> ${getLocation(bibEntry)} missing reference".also { logger.error { it } }
                 }
                 val strRefText = mParsed.groups["reftxt"]?.value
                 checkNotNull(strRefText)
                 {
-                    "${getLocation(bibEntry)} missing reference text for $strRef".also { logger.error { it } }
+                    "${document.sourceLocation} -> ${getLocation(bibEntry)} missing reference text for $strRef".also { logger.error { it } }
                 }
                 val strSource = mParsed.groups["entry"]?.value
                 checkNotNull(strSource)
                 {
-                    "${getLocation(bibEntry)} missing reference source for $strRef".also { logger.error { it } }
+                    "${document.sourceLocation} -> ${getLocation(bibEntry)} missing reference source for $strRef".also { logger.error { it } }
                 }
 
                 if (bibliographyEntries.contains(strRef)) {
-                    "${getLocation(bibEntry)} duplicate reference id $strRef".also { logger.error { it } }
+                    "${document.sourceLocation} -> ${getLocation(bibEntry)} duplicate reference id $strRef".also { logger.error { it } }
                 }
                 bibliographyEntries[strRef] = BibliographyEntry(strRef, strRefText, strSource)
             }
