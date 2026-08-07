@@ -32,7 +32,7 @@ class ContentModuleIncludeProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_INCLU
     ): Any? {
         val (strProfileId, strProfileOptionId) = findProfileId(parent)
         checkNotNull(strProfileId) {
-            logger.error("$BLOCK_MACRO_NAME_INCLUDE_CONTENT_MODULE requires a ancestor block within the 'profile' role")
+            logger.error("${parent.sourceLocation} -> $BLOCK_MACRO_NAME_INCLUDE_CONTENT_MODULE requires a ancestor block within the 'profile' role")
         }
 
         val strActor = attributes[ContentModuleAttributes.ACTOR.key]?.toString() ?: findIdFromParent(
@@ -41,16 +41,16 @@ class ContentModuleIncludeProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_INCLU
             ContentModuleAttributes.ACTOR.key
         )
         checkNotNull(strActor) {
-            logger.error("$BLOCK_MACRO_NAME_INCLUDE_CONTENT_MODULE requires an ${ContentModuleAttributes.ACTOR.key} attribute or parent container")
+            logger.error("${parent.sourceLocation} -> $BLOCK_MACRO_NAME_INCLUDE_CONTENT_MODULE requires an ${ContentModuleAttributes.ACTOR.key} attribute or parent container")
         }
 
         val strObligation = attributes[ContentModuleAttributes.OBLIGATION.key]?.toString()
         checkNotNull(strObligation) {
-            logger.error("$BLOCK_MACRO_NAME_INCLUDE_CONTENT_MODULE requires an ${ContentModuleAttributes.OBLIGATION.key} attribute")
+            logger.error("${parent.sourceLocation} -> $BLOCK_MACRO_NAME_INCLUDE_CONTENT_MODULE requires an ${ContentModuleAttributes.OBLIGATION.key} attribute")
         }
         val obligation = parseObligation(strObligation)
         checkNotNull(obligation) {
-            logger.error("$BLOCK_MACRO_NAME_INCLUDE_CONTENT_MODULE requires valid ${ContentModuleAttributes.OBLIGATION.key} attribute")
+            logger.error("${parent.sourceLocation} -> $BLOCK_MACRO_NAME_INCLUDE_CONTENT_MODULE requires valid ${ContentModuleAttributes.OBLIGATION.key} attribute")
         }
 
         val strPlaceholderName = attributes[ContentModuleAttributes.PLACEHOLDER_NAME.key]?.toString()

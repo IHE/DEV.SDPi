@@ -48,7 +48,7 @@ class DocumentAnchorCollector : Treeprocessor() {
 
         if (strId != null) {
             if (knownAnchors.contains(strId)) {
-                logger.error("Found duplicate id $strId; ids should be unique.")
+                logger.error("${block.sourceLocation} -> Found duplicate id $strId; ids should be unique.")
             }
             knownAnchors[strId] = strRefText.toString()
         }

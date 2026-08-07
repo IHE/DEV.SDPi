@@ -32,23 +32,28 @@ class SupportUseCaseIncludeProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_SUPP
     override fun process(parent: StructuralNode, strActorId: String, attributes: MutableMap<String, Any>): Any? {
         val (strProfileId, strProfileOptionId, strUseCaseId) = findParentContext(parent)
         checkNotNull(strProfileId) {
-            logger.error("$BLOCK_MACRO_NAME_SUPPORT_USE_CASE requires a ancestor block with the 'profile' role")
+            "${parent.sourceLocation} -> $BLOCK_MACRO_NAME_SUPPORT_USE_CASE requires a ancestor block with the 'profile' role"
+                .also{logger.error{it}}
         }
         checkNotNull(strUseCaseId) {
-            logger.error("$BLOCK_MACRO_NAME_SUPPORT_USE_CASE requires a ancestor block with the '${Roles.UseCaseSupport.SECTION_ROLE.key}' role")
+            "${parent.sourceLocation} -> $BLOCK_MACRO_NAME_SUPPORT_USE_CASE requires a ancestor block with the '${Roles.UseCaseSupport.SECTION_ROLE.key}' role"
+                .also{logger.error{it}}
         }
 
         check(strActorId.isNotEmpty()) {
-            logger.error("$BLOCK_MACRO_NAME_SUPPORT_USE_CASE requires an actor target")
+            "${parent.sourceLocation} -> $BLOCK_MACRO_NAME_SUPPORT_USE_CASE requires an actor target"
+                .also{logger.error{it}}
         }
 
         val strObligation = attributes[Roles.UseCaseSupport.OBLIGATION.key]?.toString()
         checkNotNull(strObligation) {
-            logger.error("$BLOCK_MACRO_NAME_SUPPORT_USE_CASE requires an ${Roles.UseCaseSupport.OBLIGATION.key} attribute")
+            "${parent.sourceLocation} -> $BLOCK_MACRO_NAME_SUPPORT_USE_CASE requires an ${Roles.UseCaseSupport.OBLIGATION.key} attribute"
+                .also{logger.error{it}}
         }
         val obligation = parseObligation(strObligation)
         checkNotNull(obligation) {
-            logger.error("$BLOCK_MACRO_NAME_SUPPORT_USE_CASE requires valid ${UseCaseAttributes.OBLIGATION.key} attribute")
+            "${parent.sourceLocation} -> $BLOCK_MACRO_NAME_SUPPORT_USE_CASE requires valid ${UseCaseAttributes.OBLIGATION.key} attribute"
+                .also{logger.error{it}}
         }
 
 

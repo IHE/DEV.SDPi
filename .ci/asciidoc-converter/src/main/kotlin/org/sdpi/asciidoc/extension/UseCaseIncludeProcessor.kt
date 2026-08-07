@@ -29,7 +29,8 @@ class UseCaseIncludeProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_INCLUDE_USE
     override fun process(parent: StructuralNode, strUseCaseId: String, attributes: MutableMap<String, Any>): Any? {
         val (strProfileId, strProfileOptionId) = findProfileId(parent)
         checkNotNull(strProfileId) {
-            logger.error("$BLOCK_MACRO_NAME_INCLUDE_USE_CASE requires a ancestor block within the 'profile' role")
+            "${parent.sourceLocation} -> $BLOCK_MACRO_NAME_INCLUDE_USE_CASE requires a ancestor block within the 'profile' role"
+                .also{logger.error{it}}
         }
         val strActor = attributes[UseCaseAttributes.ACTOR.key]?.toString() ?: findIdFromParent(
             parent,
@@ -37,16 +38,19 @@ class UseCaseIncludeProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_INCLUDE_USE
             UseCaseAttributes.ACTOR.key
         )
         checkNotNull(strActor) {
-            logger.error("$BLOCK_MACRO_NAME_INCLUDE_USE_CASE requires an ${UseCaseAttributes.ACTOR.key} attribute or parent container")
+            "${parent.sourceLocation} -> $BLOCK_MACRO_NAME_INCLUDE_USE_CASE requires an ${UseCaseAttributes.ACTOR.key} attribute or parent container"
+                .also{logger.error{it}}
         }
 
         val strObligation = attributes[UseCaseAttributes.OBLIGATION.key]?.toString()
         checkNotNull(strObligation) {
-            logger.error("$BLOCK_MACRO_NAME_INCLUDE_USE_CASE requires an ${UseCaseAttributes.OBLIGATION.key} attribute")
+            "${parent.sourceLocation} -> $BLOCK_MACRO_NAME_INCLUDE_USE_CASE requires an ${UseCaseAttributes.OBLIGATION.key} attribute"
+                .also{logger.error{it}}
         }
         val obligation = parseObligation(strObligation)
         checkNotNull(obligation) {
-            logger.error("$BLOCK_MACRO_NAME_INCLUDE_USE_CASE requires valid ${UseCaseAttributes.OBLIGATION.key} attribute")
+            "${parent.sourceLocation} -> $BLOCK_MACRO_NAME_INCLUDE_USE_CASE requires valid ${UseCaseAttributes.OBLIGATION.key} attribute"
+                .also{logger.error{it}}
         }
 
 

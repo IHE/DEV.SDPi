@@ -30,7 +30,8 @@ class TransactionIncludeProcessor : BlockMacroProcessor(BLOCK_MACRO_NAME_INCLUDE
     override fun process(parent: StructuralNode, strTransactionId: String, attributes: MutableMap<String, Any>): Any? {
         val (strProfileId, strProfileOptionId, strActorOptionId) = findContextId(parent)
         checkNotNull(strProfileId) {
-            logger.error("$BLOCK_MACRO_NAME_INCLUDE_TRANSACTION requires a ancestor block within the 'profile' role")
+            "${parent.sourceLocation} -> $BLOCK_MACRO_NAME_INCLUDE_TRANSACTION requires a ancestor block within the 'profile' role"
+                .also{logger.error{it}}
         }
 
         val strPlaceholderName = attributes[TransactionIncludeAttributes.PLACEHOLDER_NAME.key]?.toString()

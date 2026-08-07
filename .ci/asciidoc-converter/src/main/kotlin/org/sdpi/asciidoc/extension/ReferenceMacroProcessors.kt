@@ -7,6 +7,7 @@ import org.asciidoctor.extension.InlineMacroProcessor
 import org.asciidoctor.extension.Name
 import org.sdpi.asciidoc.ExternalStandardAttributes
 import org.sdpi.asciidoc.LinkStyles
+import org.sdpi.asciidoc.findSourceLocation
 import org.sdpi.asciidoc.parseRequirementNumber
 
 /**
@@ -34,12 +35,12 @@ class RequirementReferenceMacroProcessor(private val documentInfo: SdpiInformati
             // Reference to a requirement defined locally in the supplement
             val nRequirementId = parseRequirementNumber(strTarget)
             checkNotNull(nRequirementId) {
-                "$strTarget is not a valid requirement number for a requirement reference".also { logger.error { it } }
+                "${findSourceLocation(parent)} -> $strTarget is not a valid requirement number for a requirement reference".also { logger.error { it } }
             }
 
             val req = documentInfo.requirements()[nRequirementId]
             checkNotNull(req) {
-                "Requirement '$strTarget' ($nRequirementId) doesn't exist".also { logger.error { it } }
+                "${findSourceLocation(parent)} -> Requirement '$strTarget' ($nRequirementId) doesn't exist".also { logger.error { it } }
             }
 
             val strHref = "#${req.getBlockId()}"
@@ -51,17 +52,17 @@ class RequirementReferenceMacroProcessor(private val documentInfo: SdpiInformati
             // Referencing a requirement defined in an included standard.
             val standard = externalStandardsProcessor.getStandard(strStandardId)
             checkNotNull(standard) {
-                "Standard '$strStandardId' doesn't exist".also { logger.error { it } }
+                "${findSourceLocation(parent)} -> Standard '$strStandardId' doesn't exist".also { logger.error { it } }
             }
 
             val citation = bibliographyCollector.findEntry(standard.citationKey)
             checkNotNull(citation) {
-                "Bibliography doesn't included a reference for key '${standard.citationKey}'".also { logger.error { it } }
+                "${findSourceLocation(parent)} -> Bibliography doesn't included a reference for key '${standard.citationKey}'".also { logger.error { it } }
             }
 
             val req = standard.getRequirement(strTarget)
             checkNotNull(req) {
-                "Standard '$strStandardId' doesn't include requirement '$strTarget'".also { logger.error { it } }
+                "${findSourceLocation(parent)} -> Standard '$strStandardId' doesn't include requirement '$strTarget'".also { logger.error { it } }
             }
 
             val strLinkText = "$strTarget in [${citation.referenceText}]"
@@ -90,7 +91,7 @@ class UseCaseReferenceMacroProcessor(private val documentInfo: SdpiInformationCo
     override fun process(parent: ContentNode, strTarget: String, attributes: MutableMap<String, Any>): PhraseNode {
         val useCase = documentInfo.useCases()[strTarget]
         checkNotNull(useCase) {
-            "Use case '$strTarget' doesn't exist".also { logger.error { it } }
+            "${findSourceLocation(parent)} -> Use case '$strTarget' doesn't exist".also { logger.error { it } }
         }
 
         val strHref = "#${useCase.anchor}"
@@ -110,7 +111,7 @@ class ActorReferenceMacroProcessor(private val documentInfo: SdpiInformationColl
     override fun process(parent: ContentNode, strTarget: String, attributes: MutableMap<String, Any>): PhraseNode {
         val actor = documentInfo.findActor(strTarget)
         checkNotNull(actor) {
-            "Actor '$strTarget' doesn't exist".also { logger.error { it } }
+            "${findSourceLocation(parent)} -> Actor '$strTarget' doesn't exist".also { logger.error { it } }
         }
 
         val strHref = "#${actor.anchor}"
@@ -131,7 +132,7 @@ class ContentModuleReferenceMacroProcessor(private val documentInfo: SdpiInforma
     override fun process(parent: ContentNode, strTarget: String, attributes: MutableMap<String, Any>): PhraseNode {
         val contentModule = documentInfo.contentModules()[strTarget]
         checkNotNull(contentModule) {
-            "Content module '$strTarget' doesn't exist".also { logger.error { it } }
+            "${findSourceLocation(parent)} -> Content module '$strTarget' doesn't exist".also { logger.error { it } }
         }
 
         val strHref = "#${contentModule.anchor}"
@@ -150,7 +151,7 @@ class TransactionReferenceMacroProcessor(private val documentInfo: SdpiInformati
     override fun process(parent: ContentNode, strTarget: String, attributes: MutableMap<String, Any>): PhraseNode {
         val transaction = documentInfo.transactions()[strTarget]
         checkNotNull(transaction) {
-            "Transaction '$strTarget' doesn't exist".also { logger.error { it } }
+            "${findSourceLocation(parent)} -> Transaction '$strTarget' doesn't exist".also { logger.error { it } }
         }
 
         val strHref = "#${transaction.anchor}"
@@ -170,7 +171,7 @@ class ProfileReferenceMacroProcessor(private val documentInfo: SdpiInformationCo
     override fun process(parent: ContentNode, strTarget: String, attributes: MutableMap<String, Any>): PhraseNode {
         val profile = documentInfo.getProfile(strTarget)
         checkNotNull(profile) {
-            "Profile '$strTarget' doesn't exist".also { logger.error { it } }
+            "${findSourceLocation(parent)} -> Profile '$strTarget' doesn't exist".also { logger.error { it } }
         }
 
         val strOption = attributes[Roles.Profile.ID_PROFILE_OPTION.key]?.toString()

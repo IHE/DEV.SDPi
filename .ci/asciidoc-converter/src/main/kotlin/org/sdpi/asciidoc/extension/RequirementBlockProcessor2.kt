@@ -68,7 +68,7 @@ class RequirementBlockProcessor2 : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
     }
 
     override fun process(parent: StructuralNode, reader: Reader, attributes: MutableMap<String, Any>): Any {
-        val requirementNumber: Int = getRequirementNumber(attributes)
+        val requirementNumber: Int = getRequirementNumber(parent, attributes)
         val strGlobalId = getRequirementOid(requirementNumber)
         val strLinkId = String.format("r%04d", requirementNumber)
 
@@ -106,7 +106,7 @@ class RequirementBlockProcessor2 : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
      * Requirement numbers must match the format defined by REQUIREMENT_NUMBER_FORMAT
      * or REQUIREMENT_TITLE_FORMAT for the id or title, respectively.
      */
-    private fun getRequirementNumber(mutableAttributes: MutableMap<String, Any>): Int {
+    private fun getRequirementNumber(parent: StructuralNode, mutableAttributes: MutableMap<String, Any>): Int {
         val strTitle = mutableAttributes["title"]
         val nTitleRequirementNumber = REQUIREMENT_TITLE_FORMAT.findAll(strTitle.toString())
             .map { it.groupValues[2] }.toList().first().toInt()
@@ -114,13 +114,13 @@ class RequirementBlockProcessor2 : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
         // Check the id, if present, matches.
         val strId = mutableAttributes["id"]
         checkNotNull(strId) {
-            "Requirement '$strTitle' does not have a matching id".also { logger.error { it } }
+            "${parent.sourceLocation} -> Requirement '$strTitle' does not have a matching id".also { logger.error { it } }
         }
 
         val nId = parseRequirementNumber(strId.toString())
         check(nId == nTitleRequirementNumber)
         {
-            "Requirement '$strTitle' does not have a matching id ($nId)".also { logger.error { it } }
+            "${parent.sourceLocation} -> Requirement '$strTitle' does not have a matching id ($nId)".also { logger.error { it } }
         }
 
         return nTitleRequirementNumber
