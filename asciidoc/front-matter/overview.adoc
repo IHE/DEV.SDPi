@@ -5,14 +5,18 @@
 = Standard Overview
 
 [#clause_sdpi_standard_scope]
-== Scope
+== Scope & Purpose
 
-NOTE: #content from current TF-1:2.3.1.1 SDPi Profiles – Scope of Application#
+The Service-oriented Device Point-of-care Interoperability (SDPi) Profile specifications provide detailed instructions for seamless plug-and-play interoperability between ISO/IEEE 11073 SDC-based medical devices (including SaMD), as well as between medical devices and health IT systems based on HL7 FHIR and HL7 Version 2.
+Key considerations include enabling safe, secure and effective interoperability for data reporting, alert notification, device-external control and other high-acuity point-of-care  use cases.
+Provision is made for coordination of individual device functional contributions to support clinical system functions that are provided by two or more participants.
 
-[#clause_sdpi_standard_purpose]
-== Purpose
+Notes:
 
-NOTE: #content from current TF-1:2.3.1.1 and similar#
+1. High-acuity points of care include operating rooms (OR), intensive care units (ICU), step-down units, and emergency care.
+2. Clinical system function example:  Physiological monitoring of a patient's condition as they are being weaned off of a ventilator.
+3. "SaMD" is Software as a Medical Device, including "clinical apps"; they are a class of health software.
+4. IEEE 11073 Service-oriented Device Connectivity (SDC) standards provide a Services Oriented Architecture (SOA) specification for safe, effective and secure medical device interoperability (SES MDI).
 
 
 [#clause_sdpi_standard_copyright_licenses_trademarks]
@@ -23,9 +27,10 @@ include::copyrights.adoc[]
 
 // SDPi Trademark
 
-=== Trademark
+=== Trademarks
 
-NOTE: #Should this also include HL7 here?  Other TM's that are in the IHE TF-0 but not in this standalone document#
+HL7^®^, HL7^®^ FHIR^®^, HL7^®^ V2^®^ and associated design marks (logos) are all registered trademarks by Health Level Seven.
+Refer to the https://www.hl7.org/legal/trademarks.cfm[Guide to Using HL7 Trademarks] web page for copyright and usage policy information.
 
 IHE^®^ and the IHE logo are trademarks of the Healthcare Information Management Systems Society in the United States and trademarks of IHE Europe in the European Community.
 Please refer to the IHE Technical Frameworks General Introduction, https://profiles.ihe.net/GeneralIntro/ch-10.html[Section 10 - Trademark] for information on their use.
@@ -91,12 +96,10 @@ include::oid-definitions.adoc[]
 [#clause_sdpi_standard_overview,sdpi_offset=clear]
 = SDPi Profiles Overview
 
-NOTE: #This secton integrates content previously in multiple locations in the standard, and as a result, there are duplications and inconsistencies in the "flow" of content.  This will be addressed as the "standalone" work is completed.#
-
 [#standard_clause_sdpi_organization,sdpi_offset=clear]
 == SDPi Organization
 
-This IHE Devices Technical Framework standard introduces a new _family of interoperability profiles_, Service-oriented Device Point-of-care Interoperability (SDPi), that comprise four separate profiles:
+This Gemini Technical Framework Profile standard introduces a new _family of interoperability profiles_, Service-oriented Device Point-of-care Interoperability (SDPi), that comprise four separate profiles:
 
 * SDPi-Plug-and-trust (*SDPi-P*) Profile
 * SDPi-Reporting (*SDPi-R*) Profile

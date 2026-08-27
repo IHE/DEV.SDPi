@@ -18,13 +18,5 @@ include::tf1-ch-13-sdpi-xc.adoc[]
 // Appendix A
 include::tf1-ch-a-requirements-interoperability.adoc[]
 
-NOTE: #REFACTOR ASCIIDOC TO REMOVE Appendix B and C from Volume 1#
 
-// Appendix B
-// STANDALONE TO DO:  Relocate content to References Section
-// include::ref-standards-conformance-summary.adoc[]
-
-// Appendix C
-// STANDALONE TO DO:  Relocate content to Use Cases section
-//include::use-cases/tf1-ch-c-use-cases.adoc[]
 

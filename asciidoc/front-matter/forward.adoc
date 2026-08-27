@@ -65,7 +65,7 @@ a| *{standard_note}*:  This section will explain the general organization and cl
 [%autowidth]
 [cols="1"]
 |===
-a| *{standard_note}*:  This section will explain why section numbers in IHE TF volumes are numbered the way they are and #why this standard has non-contiguous sections in volume 1-3!#.
+a| *{standard_note}*:  This section will explain why section numbers in IHE TF volumes are numbered the way they are and why this standard has non-contiguous sections in volume 1-3!.
 |===
 
 == Use of AsciiDoc to Publish HTML
@@ -73,7 +73,7 @@ a| *{standard_note}*:  This section will explain why section numbers in IHE TF v
 [%autowidth]
 [cols="1"]
 |===
-a| *{standard_note}*:  Explaination and rationale behind the use of AsciiDoc for capturing the content of this standard.
+a| *{standard_note}*:  Explanation and rationale behind the use of AsciiDoc for capturing the content of this standard.
 This will include other options that were considered, as well as the unique emergence in this document (e.g., during the pandemic) and the position it plays sitting between work from many other standards organizations that has been evolving over decades.
 |===
 

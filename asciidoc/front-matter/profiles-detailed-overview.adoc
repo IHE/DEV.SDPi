@@ -174,20 +174,19 @@ Given the significant risks associated with allowing device-external control fun
 
 
 [sdpi_offset=5]
-=== Dependencies between Integration Profiles
-
-[%noheader]
-[cols="1"]
-|===
-| #Where should the following table be located within the SDPi standard?  Volume 1?#
-|===
+=== Dependencies between SDPi and Other IHE Integration Profiles
 
 ////
 #TODO:  SHOULD ATNA BE ADDED TO THIS TABLE FOR SOMDS_PARTICIPANT?#
 ////
 
+The following table identifies dependencies between the SDPi profiles in this standard and other IHE technical framework profiles.
+"Dependency" indicates that implementation of an SDPi profile requires implementation of another external profile.
+
+NOTE:  Implementation dependencies on other non-IHE profiles are addressed in the normative references section and other referenced standards clauses throughout this standard.
+
 [#vol1_table_devices_integration_profile_dependencies]
-.Devices Integration Profile Dependencies
+.SDPi Dependencies on IHE Profiles
 
 [%autowidth]
 [cols="1,1,1,1"]

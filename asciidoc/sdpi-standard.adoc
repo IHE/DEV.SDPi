@@ -76,8 +76,6 @@ ifeval::["{backend}" == "html5"]
 endif::[]
 {empty} +
 
-#Standalone SDPi STANDARD document - DRAFT VERSION - FOR COMMENT ONLY#
-
 [%noheader]
 [cols="1,4"]
 [frame=none,grid=none]
@@ -165,21 +163,18 @@ Editorial Task List (prioritized) for this Supplement:
 . Create common sdpi-version.adoc that can be shared between the two documents
 ..  Also refactor gemini_standard_ and ihe_supplement_ to common labels
 ..  Also refactor standard_clause_ to clause_
-. Refactor front matter not IHE TF based, but for a standalone document:
+. Refactor front matter for a standalone document:
 .. [.line-through]#Remove TF-0 content (supplement only)#
 .. Introduction: Gemini, Gemini TF Profile Standard, SDPi in particular;
 ... Include Unique Features of TF Profile Standard (incl. embedded requirements, ... )
 .. Refactor any IHE TF template content to be "standalone" where appropriate
 .. Update section 2 overview of SDPi to a simple overview
-.. Add Normative References?  or Definitions section? - reference to Appendix B
 .. Refactor forward references content from early in document to a more "permanent" location!
 . Move all SUPPLEMENT INSTRUCTIONS from this document to the supplement - "Standard Note" ...
 . Add Standard release punch-list that includes updating Supplement content to keep in sync
 . ...
 
 |===
-
-NOTE: #QUESTION:  For the STANDARD, should section numbers be added or omitted and only have those for the Volume 1-3 that conform to IHE DEV TF elements?#
 
 include::front-matter/forward.adoc[]
 
