@@ -1,3 +1,4 @@
 // DEV-47 Transaction Summary
 
-Retrieve presence metadata from a <<actor_somds_discovery_proxy>> Actor for a specified set of <<actor_somds_provider>> Actors that may be connected to a <<acronym_somds>> network.
+Retrieve presence metadata from a <<vol1_spec_sdpi_p_actor_discovery_proxy>> Actor for a specified set of <<vol1_spec_sdpi_p_actor_somds_provider>> Actors that may be connected to a <<acronym_somds>> network.
+

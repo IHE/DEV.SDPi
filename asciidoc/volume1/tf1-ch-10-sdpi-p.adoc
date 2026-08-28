@@ -6,7 +6,7 @@
 The SDPi-Plug-and-trust ([[acronym_sdpi_p,SDPi-P]] SDPi-P) Profile supports foundational seamless connectivity, information exchange and service invocation as defined in the SDPi architecture detailed in <<vol1_clause_sdpi_overview_framework>>.
 Whereas the related SDPi Profiles for reporting, alerting and external control are explicitly intended to support medical care capabilities, the SDPi-P Profile focuses on basic healthcare device interoperability.
 All the capabilities defined in SDPi-P are leveraged by and extended in the medically focused profiles.
-This foundational profile not only supports medical device interoperability ("<<acronym_mdi>>"), providing for “plug-and-play” capabilities, but also with a tightly integrated “trust” framework (see <<vol1_appendix_a_requirements_management_for_p_n_t_interperability>>).
+This foundational profile not only supports medical device interoperability ("<<acronym_mdi>>"), providing for “plug-and-play” capabilities, but also with a tightly integrated “trust” framework (see <<clause_p_n_t_interperability_requirements_management>>).
 The establishment of a trusted ecosystem of medical and non-medical devices and applications footnote:[Note that SDPi-P supports application interoperability including “Software as a Medical Device” (<<acronym_samd>>).] begins at the start of discovery and a secure connection.  Therefore, the profile's name:  <<term_plug_and_trust>>.
 
 _This_ is primarily an IHE transport profile footnote:[See the IHE Technical Frameworks General Introduction for a more detailed description of IHE profile types, published at https://profiles.ihe.net/GeneralIntro/[profiles.ihe.net/GeneralIntro/].], although it does define several content modules detailed in IHE Devices TF-3.
@@ -26,7 +26,7 @@ For example, Operating Room / Surgery Point-of-Care Integration, ICU Point-of-Ca
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*: Some actors and transactions have been deferred to a subsequent version, but are included here for completeness.
+a| *{standard_note}*: Some actors and transactions have been deferred to a subsequent version, but are included here for completeness.
 Specifically:  SOMDS Sensor Gateway and SOMDS Smart App Platform have been deferred.
 
 Deferred transactions have been so indicated in the transactions table.
@@ -164,8 +164,8 @@ Actor Summary Definition:
 All systems participating in a SOMDS network instance must implement this Abstract actor.
 
 All SDPi Profiles actors are grouped with (inherit from) this actor, including both transport / transaction actors and content module actors.
-This required grouping ensures that all systems connecting to a SOMDS network support the <<acronym_ses_mdi>>  requirements footnote:[See <<vol1_appendix_a_requirements_management_for_p_n_t_interperability>> and <<vol1_clause_ses_considerations_requirements>> for more detail on <<acronym_ses_mdi>>] necessary for establishing a <<term_plug_and_trust>> ecosystem, including the secure and dynamic provision of an implementation’s <<term_system_function_contribution>>.
-See <<vol1_clause_appendix_a_requirements_from_narratives_to_pnt_interfaces>> for additional discussion.
+This required grouping ensures that all systems connecting to a SOMDS network support the <<acronym_ses_mdi>>  requirements footnote:[See <<clause_p_n_t_interperability_requirements_management>> and <<clause_ses_considerations_requirements>> for more detail on <<acronym_ses_mdi>>] necessary for establishing a <<term_plug_and_trust>> ecosystem, including the secure and dynamic provision of an implementation’s <<term_system_function_contribution>>.
+See <<clause_requirements_from_narratives_to_pnt_interfaces>> for additional discussion.
 
 ////
 
@@ -222,7 +222,7 @@ See related discussion at <<vol3_clause_biceps_mapping_using_somds_connector_con
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*: The TF-3 SDC/BICEPS Mapping of SOMDS Connector Content Modules section is out-of-scope, but included above for completeness of this actor overview.
+a| *{standard_note}*: The TF-3 SDC/BICEPS Mapping of SOMDS Connector Content Modules section is out-of-scope, but included above for completeness of this actor overview.
 |===
 
 Although the SDPi-P Profile _<<vol1_spec_sdpi_p_actor_somds_connector>>_ provides for non-SOMDS _protocol-specific_ adaptors, they establish the foundation for specifying system and application-specific interfaces such as for EHR or decision support systems (e.g., sepsis determination).
@@ -278,7 +278,7 @@ Generally, the <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> supports messaging fr
 [%autowidth]
 [cols="1"]
 |===
-| *{supplement_note}*: Detailed specifications for this actor are deferred to a later version of the SDPi Supplement.
+| *{standard_note}*: Detailed specifications for this actor are deferred to a later version of the SDPi standard.
 |===
 
 [#vol1_spec_sdpi_p_actor_somds_sensor_gateway, reftext='SOMDS Sensor Gateway',role=actor-alias,actor-id="somds_sensor_gateway"]
@@ -298,7 +298,7 @@ This also includes SOMDS integration of IoT (“Internet of Things”) architect
 [%autowidth]
 [cols="1"]
 |===
-| *{supplement_note}*: Detailed specifications for this actor are deferred to a later version of the SDPi Supplement.
+| *{standard_note}*: Detailed specifications for this actor are deferred to a later version of the SDPi standard.
 |===
 
 [#vol1_spec_sdpi_p_actor_somds_smart_app_platform, reftext='SOMDS Smart App Platform',role=actor-alias,actor-id="somds_smart_app"]
@@ -352,7 +352,7 @@ Actor Summary Definition:
 [none]
 . Processes <<acronym_mdib>> information conformant to <<ref_ieee_11073_10207_2017_Cor1_2025>> BICEPS specifications provided by <<vol1_spec_sdpi_p_actor_biceps_content_creator>> systems.
 
-A <<vol1_spec_sdpi_p_actor_biceps_content_consumer>> shall be capable of processing information provided by a <<actor_biceps_content_creator>>, in accordance to the BICEPS content module specifications in <<vol3_clause_sdc_biceps_semantic_content_module>> and related sections.
+A <<vol1_spec_sdpi_p_actor_biceps_content_consumer>> shall be capable of processing information provided by a <<vol1_spec_sdpi_p_actor_biceps_content_creator>>, in accordance to the BICEPS content module specifications in <<vol3_clause_sdc_biceps_semantic_content_module>> and related sections.
 
 ////
 
@@ -362,7 +362,7 @@ The supported BICEPS content processing shall include one or more of the options
 
 ////
 
-For robustness, a <<actor_biceps_content_consumer>> need only process the content that is necessary to support its capabilities, but shall also be able to accept any additional content that may be provided but is out-of-scope for its internal requirements. footnote:[Apply Postel’s Law:  Send conservatively, Accept liberally.]
+For robustness, a <<vol1_spec_sdpi_p_actor_biceps_content_consumer>> need only process the content that is necessary to support its capabilities, but shall also be able to accept any additional content that may be provided but is out-of-scope for its internal requirements. footnote:[Apply Postel’s Law:  Send conservatively, Accept liberally.]
 
 Note that although this SDPi-P content actor primarily supports information exchange between systems participating in a SOMDS network environment, they may be referenced by other non-SDPi profiles that utilize other non-SOMDS exchange architectures, transactions and technologies.
 
@@ -923,7 +923,7 @@ Specific <<vol1_clause_sdpi_p_profile_reftext>> transaction message bindings and
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+a| *{standard_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
 ////
 ////
@@ -937,7 +937,7 @@ a| *{supplement_note}*:  This section intentionally left blank for the current v
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+a| *{standard_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
 ////
 ////
@@ -953,7 +953,7 @@ Integration of CT and ATNA (TBD) below in required groupings is assumed but shou
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+a| *{standard_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
 ////
 ////
@@ -967,7 +967,7 @@ a| *{supplement_note}*:  This section intentionally left blank for the current v
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+a| *{standard_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
 ////
 ////
@@ -985,7 +985,7 @@ See Gateways in the actors discussion above … and below?
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+a| *{standard_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
 ////
 ////
@@ -1000,7 +1000,7 @@ Given the discussion in Actors above, is this necessary here?  Or should some of
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+a| *{standard_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
 ////
 ////
@@ -1013,7 +1013,7 @@ a| *{supplement_note}*:  This section intentionally left blank for the current v
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+a| *{standard_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
 ////
 ////
@@ -1026,7 +1026,7 @@ a| *{supplement_note}*:  This section intentionally left blank for the current v
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+a| *{standard_note}*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
 |===
 
 ////
@@ -1036,7 +1036,7 @@ a| *{supplement_note}*:  This section intentionally left blank for the current v
 [#vol1_clause_sdpi_p_use_cases]
 ==== Use Cases
 [#vol1_clause_sdpi_p_use_cases_reftext, reftext='SDPi-P Use Cases']
-The SDPi-P Profile supports requirements from use cases detailed in <<vol1_appendix_c_dpi_use_cases>>.  The following subsections identify the specific use case requirements that are fulfilled with capabilities provided by this specification.
+The SDPi-P Profile supports requirements from use cases detailed in <<clause_sdpi_use_cases>>.  The following subsections identify the specific use case requirements that are fulfilled with capabilities provided by this specification.
 
 ////
 #TODO:  For each of these, add discussion to HOW and WHERE (with links) that the requirements are met.  Include a Requirements usage block?  CT DEPENDENCY IN SOMDS_PARTICIPANT MEETS THESE REQUIREMENTS#
@@ -1044,7 +1044,7 @@ The SDPi-P Profile supports requirements from use cases detailed in <<vol1_appen
 
 [role="support-use-case", use-case-id="stad", oid-arcs=.1]
 ===== <<label_use_case_name_stad>> (<<acronym_stad>>)
-This use case fully addresses the requirements from  <<vol1_clause_appendix_c_use_case_stad>>.
+This use case fully addresses the requirements from  << >>.
 
 Specific capabilities supporting the <<acronym_stad>> use case include:
 
@@ -1054,8 +1054,8 @@ Specific capabilities supporting the <<acronym_stad>> use case include:
 ////
 (see <<vol1_clause_sdpi_p_ensuring_time_synchronization>>)
 ////
-* *Technical Pre-Conditions*:  <<acronym_stad>> <<vol1_clause_appendix_c_use_case_stad_technical_precondition>> are fully supported by SDPi-P
-* *Scenarios*:  <<acronym_stad>> <<vol1_clause_appendix_c_use_case_stad_scenarios>> are fully supported by SDPi-P
+* *Technical Pre-Conditions*:  <<acronym_stad>> <<vol1_clause_sdpi_use_case_stad_technical_precondition>> are fully supported by SDPi-P
+* *Scenarios*:  <<acronym_stad>> <<vol1_clause_sdpi_usee_case_stad_scenarios>> are fully supported by SDPi-P
 
 ////
 #TODO:  Should a sequence diagram be included here?  Or in above?  For each of the STAD Scenarios a sequence diagram should be provided.  This could include transactions and actor linkages as well#
@@ -1075,14 +1075,14 @@ sdpi_support_use_case::discovery_proxy[support=required]
 
 [role="support-use-case", use-case-id="sicdsp", oid-arcs=.2]
 ===== <<label_use_case_name_sicdsp>> (<<acronym_sicdsp>>)
-This use case provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_sicdsp>>.
+This use case provides capabilities for requirements from <<clause_use_case_sicdsp>>.
 
 Specific capabilities supporting the <<acronym_sicdsp>> use case include:
 
 * *System Type*:  <<acronym_md_lan>> supported by SDPi-P <<acronym_pnt>> capabilities (see <<vol1_figure_sdpi_p_example_sequence_diagram>>)
 * *System Type*:  <<system_type_dashboard>> is supported by the BICEPS Content Module Systems Types Nomenclature (see <<vol1_table_system_type_nomenclature_extensions>>)
-* *Technical Pre-Conditions*: <<acronym_sicdsp>> <<vol1_clause_appendix_c_use_case_sicdsp_technical_precondition>> are fully supported by SDPi-P
-* *Scenarios*: <<acronym_sicdsp>> <<vol1_clause_appendix_c_use_case_sicdsp_scenarios>> basic communication requirements are supported by SDPi-P
+* *Technical Pre-Conditions*: <<acronym_sicdsp>> <<clause_use_case_sicdsp_technical_precondition>> are fully supported by SDPi-P
+* *Scenarios*: <<acronym_sicdsp>> <<clause_use_case_sicdsp_scenarios>> basic communication requirements are supported by SDPi-P
 
 ////
 #TODO:  Do SystemContext/PatientContext/LocationContext need to be called out here to meet requirements related to "ICU" or "single patient"?#
@@ -1095,14 +1095,14 @@ sdpi_support_use_case::biceps_content_consumer[support=optional]
 
 [role="support-use-case", use-case-id="sicdmp", oid-arcs=.3]
 ===== <<label_use_case_name_sicdmp>> (<<acronym_sicdmp>>)
-This use case provides capabilities for requirements from  <<vol1_clause_appendix_c_use_case_sicdmp>>.
+This use case provides capabilities for requirements from  <<clause_use_case_sicdmp>>.
 
 Specific capabilities supporting the <<acronym_sicdmp>> use case include:
 
 * *System Type*:  <<acronym_md_lan>> supported by SDPi-P <<acronym_pnt>> capabilities (see <<vol1_figure_sdpi_p_example_sequence_diagram>>)
 * *System Type*:  <<system_type_dashboard>> is supported by the BICEPS Content Module Systems Types Nomenclature (see <<vol1_table_system_type_nomenclature_extensions>>)
-* *Technical Pre-Conditions*: <<acronym_sicdmp>> <<vol1_clause_appendix_c_use_case_sicdmp_technical_precondition>> are fully supported by SDPi-P
-* *Scenarios*: <<acronym_sicdmp>> <<vol1_clause_appendix_c_use_case_sicdmp_scenarios>> basic communication requirements are supported by SDPi-P
+* *Technical Pre-Conditions*: <<acronym_sicdmp>> <<clause_use_case_sicdmp_technical_precondition>> are fully supported by SDPi-P
+* *Scenarios*: <<acronym_sicdmp>> <<clause_use_case_sicdmp_scenarios>> basic communication requirements are supported by SDPi-P
 
 ////
 #TODO:  Do SystemContext/PatientContext/LocationContext need to be called out here to meet requirements related to "ICU" or "multiple patient"?#
@@ -1115,14 +1115,14 @@ sdpi_support_use_case::biceps_content_consumer[support=optional]
 
 [role="support-use-case", use-case-id="ddes", oid-arcs=.4]
 ===== <<label_use_case_name_ddes>> (<<acronym_ddes>>)
-This use case provides capabilities for requirements from  <<vol1_clause_appendix_c_use_case_ddes>>.
+This use case provides capabilities for requirements from  <<clause_use_case_ddes>>.
 
 Specific capabilities supporting the  <<acronym_ddes>> use case include:
 
 * *System Type*:  <<system_type_device_gateway>> is supported by the BICEPS Content Module Systems Types Nomenclature (see <<vol1_table_system_type_nomenclature_extensions>>)
 * *Service Type*: Data  <<system_type_device_gateway>> Service is supported by the BICEPS Content Module Systems Types Nomenclature (see <<vol1_table_system_type_nomenclature_extensions>>)
-* *Technical Pre-Conditions*: <<acronym_ddes>> <<vol1_clause_appendix_c_use_case_ddes_technical_precondition>> are fully supported by SDPi-P
-* *Scenarios*: <<acronym_ddes>> <<vol1_clause_appendix_c_use_case_ddes_scenarios>> basic communication requirements are supported by SDPi-P
+* *Technical Pre-Conditions*: <<acronym_ddes>> <<clause_use_case_ddes_technical_precondition>> are fully supported by SDPi-P
+* *Scenarios*: <<acronym_ddes>> <<clause_use_case_ddes_scenarios>> basic communication requirements are supported by SDPi-P
 
 sdpi_support_use_case::somds_connector[support=required]
 sdpi_support_use_case::somds_fhir_gateway[support=required]
@@ -1131,14 +1131,14 @@ sdpi_support_use_case::somds_sensor_gateway[support=required]
 
 [role="support-use-case", use-case-id="acns", oid-arcs=.5]
 ===== <<label_use_case_name_acns>> (<<acronym_acns>>)
-This use case provides capabilities for requirements from  <<vol1_clause_appendix_c_use_case_acns>>.
+This use case provides capabilities for requirements from  <<clause_use_case_acns>>.
 
 Specific capabilities supporting the <<acronym_acns>> use case include:
 
 * *System Type*:  <<label_system_type_name_agw>> (<<acronym_agw>>) is supported by the BICEPS Content Module Systems Types Nomenclature (see <<vol1_table_system_type_nomenclature_extensions>>)
 * *Service Type*:  Alert <<system_type_device_gateway>> Service is supported by the BICEPS Content Module Systems Types Nomenclature (see <<vol1_table_system_type_nomenclature_extensions>>)
-* *Technical Pre-Conditions*:  <<acronym_acns>> <<vol1_clause_appendix_c_use_case_acns_technical_precondition>> are fully supported by SDPi-P
-* *Scenarios*:  <<acronym_acns>> <<vol1_clause_appendix_c_use_case_acns_scenarios>> basic communication requirements are supported by SDPi-P
+* *Technical Pre-Conditions*:  <<acronym_acns>> <<clause_use_case_acns_technical_precondition>> are fully supported by SDPi-P
+* *Scenarios*:  <<acronym_acns>> <<clause_use_case_acns_scenarios>> basic communication requirements are supported by SDPi-P
 
 sdpi_support_use_case::somds_connector[support=optional]
 sdpi_support_use_case::somds_fhir_gateway[support=optional]
@@ -1147,14 +1147,14 @@ sdpi_support_use_case::somds_sensor_gateway[support=optional]
 
 [role="support-use-case", use-case-id="aars", oid-arcs=.6]
 ===== <<label_use_case_name_aars>> (<<acronym_aars>>)
-This use case provides capabilities for requirements from  <<vol1_clause_appendix_c_use_case_aars>>.
+This use case provides capabilities for requirements from  <<clause_use_case_aars>>.
 
 Specific capabilities supporting the <<acronym_aars>> use case include:
 
 * *System Type*:  <<label_system_type_name_agw>> (<<acronym_agw>>) is supported by the BICEPS Content Module Systems Types Nomenclature (see <<vol1_table_system_type_nomenclature_extensions>>)
 * *Service Type*:  <<label_system_type_name_agw>> Service is supported by the BICEPS Content Module Systems Types Nomenclature (see <<vol1_table_system_type_nomenclature_extensions>>)
-* *Technical Pre-Conditions*:  <<acronym_aars>> <<vol1_clause_appendix_c_use_case_aars_technical_precondition>> are fully supported by SDPi-P
-* *Scenarios*:  <<acronym_aars>> <<vol1_clause_appendix_c_use_case_aars_scenarios>> basic communication requirements are supported by SDPi-P
+* *Technical Pre-Conditions*:  <<acronym_aars>> <<clause_use_case_aars_technical_precondition>> are fully supported by SDPi-P
+* *Scenarios*:  <<acronym_aars>> <<clause_use_case_aars_scenarios>> basic communication requirements are supported by SDPi-P
 
 sdpi_support_use_case::somds_connector[support=optional]
 sdpi_support_use_case::somds_fhir_gateway[support=optional]
@@ -1167,7 +1167,7 @@ sdpi_support_use_case::somds_sensor_gateway[support=optional]
 ==== SES General Considerations
 Requirements from the <<ref_iso_81001_1_2021>>, <<ref_iec_80001_1_2021>>, and related standards should be fully applied to this technical framework element.
 
-For additional guidance, see Section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
+For additional guidance, see Section <<clause_ses_considerations_and_requirements>>.
 
 In addition, SES requirements from <<ref_ieee_11073_10700_2022>> should be fully applied to this technical framework element.
 

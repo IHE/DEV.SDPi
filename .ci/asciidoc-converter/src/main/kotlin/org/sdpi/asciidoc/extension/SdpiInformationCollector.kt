@@ -979,7 +979,7 @@ class SdpiInformationCollector(
         gatherUseCaseBlocks(block, specBlocks)
 
         val useCaseOids = getOids(block, "${block.sourceLocation} -> Use case $strUseCaseId", WellKnownOid.DEV_USE_CASE_GLOBAL)
-
+        logger.info("${block.sourceLocation} use case: $strUseCaseId, oid = $useCaseOids")
         val backgroundContent: MutableList<GherkinStep> = mutableListOf()
         val scenarios: MutableList<UseCaseScenario> = mutableListOf()
         var iBlock = 0
@@ -997,6 +997,7 @@ class SdpiInformationCollector(
                 }
 
                 val scenarioOids = getOids(useCaseBlock, "${block.sourceLocation} -> Use case $strUseCaseId scenario ${oTitle.toString()}", useCaseOids)
+                logger.info("${block.sourceLocation} use case: $strUseCaseId, scenario: $oTitle, oid = $scenarioOids")
 
                 val iStepBlock = iBlock + 1
                 check(iStepBlock < specBlocks.count() && specBlocks[iStepBlock].hasRole(Roles.UseCase.STEPS.key))
@@ -1007,7 +1008,6 @@ class SdpiInformationCollector(
                 val scenarioSteps = getSteps(stepBlock)
                 scenarios.add(UseCaseScenario(scenarioOids, oTitle.toString(), scenarioSteps))
             }
-
 
             ++iBlock
         }
@@ -1036,6 +1036,12 @@ class SdpiInformationCollector(
     private fun gatherUseCaseBlocks(block: StructuralNode, specBlocks: MutableList<StructuralNode>) {
         for (child in block.blocks) {
             val strRole = child.role
+
+            check(strRole != Roles.UseCase.FEATURE.key) {
+                "${child.sourceLocation} use case ${child.attributes[UseCaseAttributes.ID.key]} must not be nested inside another use case. Check heading levels."
+                    .also{logger.error{it}}
+            }
+
             when (strRole) {
                 Roles.UseCase.BACKGROUND.key -> specBlocks.add(child)
                 Roles.UseCase.SCENARIO.key -> {

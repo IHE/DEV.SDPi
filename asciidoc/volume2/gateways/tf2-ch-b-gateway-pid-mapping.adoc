@@ -14,7 +14,7 @@ The SDC patient context information shall only be mapped to the corresponding fi
 [NOTE]
 ====
 
-* For a valid *pm:PatientContextState*, the *pm:AbstractContextState/@ContextAssociation* attribute is set to *"Assoc"* and the *pm:AbstractContextState/pm:Validator* is set to a valid validator. A corresponding inferred patient ensemble context is not required for the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>>.
+* For a valid *pm:PatientContextState*, the *pm:AbstractContextState/@ContextAssociation* attribute is set to *"Assoc"* and the *pm:AbstractContextState/pm:Validator* is set to a valid validator. A corresponding inferred patient ensemble context is not required for the <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> / <<vol1_spec_sdpi_a_actor_somds_acm_gateway>>.
 
 * If the SDC patient context information is not intended to be used for the mapping, please refer to the <<ref_ihe_dev_tf_2_2024>> on how to populate the fields of the PID segment in this case.
 ====
@@ -26,7 +26,7 @@ The SDC patient context information shall only be mapped to the corresponding fi
 ****
 [NORMATIVE]
 ====
-If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall map the patient identifiers to the PID-3 field.
+If <<r8102>> is met, then a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> / <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> shall map the patient identifiers to the PID-3 field.
 ====
 
 [NOTE]
@@ -100,7 +100,7 @@ The following identifier type codes are proposed to be used for the patient iden
 ****
 [NORMATIVE]
 ====
-If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-5 field to the patient name information.
+If <<r8102>> is met, then a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> / <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> shall set the PID-5 field to the patient name information.
 ====
 
 [NOTE]
@@ -154,7 +154,7 @@ Please refer also to the corresponding section in the <<ref_ihe_dev_tf_2_2024>>.
 ****
 [NORMATIVE]
 ====
-If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-6 field to the mother's maiden name or birth name before marriage.
+If <<r8102>> is met, then a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> / <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> shall set the PID-6 field to the mother's maiden name or birth name before marriage.
 ====
 
 [NOTE]
@@ -186,7 +186,7 @@ If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gate
 ****
 [NORMATIVE]
 ====
-If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-7 field to the date and time of birth.
+If <<r8102>> is met, then a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> / <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> shall set the PID-7 field to the date and time of birth.
 ====
 
 [NOTE]
@@ -228,7 +228,7 @@ Mappings to the *PID-8 Administrative Sex* field are allowed in certain cases as
 ****
 [NORMATIVE]
 ====
-If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall export the patient's sex as OBX segment on the MDS level.
+If <<r8102>> is met, then a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> / <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> shall export the patient's sex as OBX segment on the MDS level.
 ====
 
 [NOTE]
@@ -242,7 +242,7 @@ The mapping for the patient's sex is defined in table <<ref_tbl_dec_obx_sex_mapp
 ****
 [NORMATIVE]
 ====
-If <<r8102>> is met and the patient's sex in the <<acronym_mdib>> is sourced from the PID-8 field in HL7 V2 ADT messages provided by the hospital ADT system, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> may set the PID-8 field to the code for the administrative sex.
+If <<r8102>> is met and the patient's sex in the <<acronym_mdib>> is sourced from the PID-8 field in HL7 V2 ADT messages provided by the hospital ADT system, then a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> / <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> may set the PID-8 field to the code for the administrative sex.
 ====
 
 [NOTE]
@@ -256,7 +256,7 @@ If <<r8102>> is met and the patient's sex in the <<acronym_mdib>> is sourced fro
 ****
 [NORMATIVE]
 ====
-If <<r8102>> is met and the <<actor_somds_v2_gateway>> provides the Healthcare Delivery Organization (HDO) the possibility to configure the export of the patient's sex set in the <<acronym_mdib>> in the PID-8 field, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-8 field to the code for the administrative sex.
+If <<r8102>> is met and the <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> provides the Healthcare Delivery Organization (HDO) the possibility to configure the export of the patient's sex set in the <<acronym_mdib>> in the PID-8 field, then a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> / <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> shall set the PID-8 field to the code for the administrative sex.
 ====
 
 [NOTE]
@@ -270,7 +270,7 @@ If <<r8102>> is met and the <<actor_somds_v2_gateway>> provides the Healthcare D
 ****
 [NORMATIVE]
 ====
-If the <<actor_somds_v2_gateway>> provides the Healthcare Delivery Organization (HDO) the possibility to configure the export of the patient's sex in the PID-8 field, the manufacturer of the <<actor_somds_v2_gateway>> shall require in the ACCOMPANYING INFORMATION that the HDO has to consider the risk that the patient's sex set in the <<acronym_mdib>> and mapped to the PID-8 field does not lead to a misinterpretation of the sex concept on <<actor_somds_v2_gateway>> consumer side.
+If the <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> provides the Healthcare Delivery Organization (HDO) the possibility to configure the export of the patient's sex in the PID-8 field, the manufacturer of the <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> shall require in the ACCOMPANYING INFORMATION that the HDO has to consider the risk that the patient's sex set in the <<acronym_mdib>> and mapped to the PID-8 field does not lead to a misinterpretation of the sex concept on <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> consumer side.
 ====
 ****
 
@@ -377,7 +377,7 @@ When there are further updates of the sex value after the association of the pat
 ****
 [NORMATIVE]
 ====
-If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-10 field to the patient's race.
+If <<r8102>> is met, then a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> / <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> shall set the PID-10 field to the patient's race.
 ====
 
 [NOTE]
@@ -441,7 +441,7 @@ If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gate
 ****
 [NORMATIVE]
 ====
-If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-31 field to an indicator whether the patient's identity is known.
+If <<r8102>> is met, then a <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> / <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> shall set the PID-31 field to an indicator whether the patient's identity is known.
 ====
 
 [NOTE]
@@ -450,6 +450,6 @@ If <<r8102>> is met, then a <<actor_somds_dec_gateway>> / <<actor_somds_acm_gate
 
 * In all other cases, the value is set to "Y".
 
-* A corresponding inferred patient ensemble context is not required for the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> in order to determine a valid *pm:PatientContextState*.
+* A corresponding inferred patient ensemble context is not required for the <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> / <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> in order to determine a valid *pm:PatientContextState*.
 ====
 ****

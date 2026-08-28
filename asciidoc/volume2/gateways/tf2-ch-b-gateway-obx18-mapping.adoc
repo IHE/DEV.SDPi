@@ -6,7 +6,7 @@
 ****
 [NORMATIVE]
 ====
-A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the OBX-18 field to the equipment (or device) identifier on the MDS level and/or the measurement module identifier of the equipment on the VMD level as defined in section <<vol3_clause_equipment_identifier>>.
+A <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> / <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> shall set the OBX-18 field to the equipment (or device) identifier on the MDS level and/or the measurement module identifier of the equipment on the VMD level as defined in section <<vol3_clause_equipment_identifier>>.
 ====
 
 [NOTE]

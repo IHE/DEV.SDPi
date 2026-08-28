@@ -1,0 +1,4 @@
+// DEV-23 Transaction Summary
+
+Notify all <<actor_somds_consumer>>s that a <<actor_somds_provider>> is connected to the network and ready to exchange messages with other <<actor_somds_participant>>s.
+

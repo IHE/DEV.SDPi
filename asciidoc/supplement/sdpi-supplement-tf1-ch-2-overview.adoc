@@ -22,12 +22,12 @@ These general concepts will help the technical framework reader understand the b
 [#vol1_clause_ses_considerations_requirements,sdpi_offset=2]
 === Safety, Effectiveness and Security - Requirements and Considerations
 IHE specifications often include sections for "Security Considerations" and "Safety Considerations", capturing both general and specific guidance and requirements for system implementers.
-This supplement extends these two concepts to include a third:  Effectiveness.
+This standard extends these two concepts to include a third:  Effectiveness.
 The sections are titled "Safety, Effectiveness and Security - Requirements and Considerations" and make use of the underlying term <<term_safe_effective_secure>>.
 
 The background for <<acronym_ses>> is discussed in detail in <<vol1_appendix_a_integrating_ses>>; however, in general "<<acronym_ses>>" is used as a reference to the standards encompassed (directly and indirectly by reference) in <<term_joint_working_group_7>>, including <<ref_iso_81001_1_2021>> and <<ref_iec_80001_1_2021>>.
 These standards are primarily, though not exclusively, focused on *_risk management of health software_* (including <<acronym_samd>>) *_and medical devices that are deployed on various kinds of infrastructure_*, with a focus to managing three key properties:  *Safety, Effectiveness and Security*.
-Thus the "Safety, Effectiveness and Security - Requirements and Considerations" sections in this supplement are intended to reflect the results of that risk management and to guide those who are tasked with deploying and managing these interoperable solutions during use.
+Thus the "Safety, Effectiveness and Security - Requirements and Considerations" sections in this standard are intended to reflect the results of that risk management and to guide those who are tasked with deploying and managing these interoperable solutions during use.
 
 Note that specific requirements from the above mentioned standards, may also be captured in <<vol1_appendix_b_referenced_standards_conformance>>.
 Generally, requirements from these standards would be mapped to the appropriate "Safety, Effectiveness and Security - Requirements and Considerations" sections throughout the specification.
@@ -123,7 +123,7 @@ Within this context, the core focus of these Profiles is direct <<acronym_d2d>> 
 Gateway actors provide integration with systems beyond the scope of the acute bedside context, typically though not necessarily using other protocols.
 This <<acronym_d2d>> is differentiated with the current implementation reality where devices use proprietary protocols to talk with their manufacturer's gateway server, requiring a level of indirection (server-to-server integration), and the attendant performance, quality and capability limitations.
 
-See <<vol1_clause_sdpi_p_soa_somds_architecture_alignment>> below for additional conceptual overview information on the conceptual foundations of the <<acronym_sdc>> standards.
+See *_SOA & SOMDS Architecture Alignment_* in the Overview - Concepts section of the <<vol1_clause_sdpi_p_profile>> for additional conceptual overview information on the conceptual foundations of the <<acronym_sdc>> standards.
 
 [sdpi_offset=10]
 ==== Service-oriented Device Point-of-care Interoperability - Plug-and-trust (SDPi-P) Profile
@@ -199,7 +199,7 @@ Given the significant risks associated with allowing device-external control fun
 
 | <<acronym_sdpi_p>>
 | Consistent Time (CT)
-| Each <<acronym_sdpi_p>> actor implementation (i.e., <<vol1_spec_sdpi_p_actor_somds_participant>>) shall be grouped with the CT Time Client Actor. Note:  All <<acronym_sdpi>> actors are also grouped with the <<vol1_spec_sdpi_p_actor_somds_participant>> Actor.
+| Each <<acronym_sdpi_p>> actor implementation (i.e., <<actor_somds_participant>>) shall be grouped with the CT Time Client Actor. Note:  All <<acronym_sdpi>> actors are also grouped with the <<actor_somds_participant>> Actor.
 | Required for consistent time-stamping of transactions and data.
 
 | <<acronym_sdpi_r>>

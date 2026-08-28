@@ -7,17 +7,17 @@
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This initial version of the <<acronym_sdpi_a>> Profile is built upon the foundational <<acronym_sdpi_p>> Profile but adds services specialized for the communication and management of medical device alerting.
+a| *{standard_note}*:  This initial version of the <<acronym_sdpi_a>> Profile is built upon the foundational <<acronym_sdpi_p>> Profile but adds services specialized for the communication and management of medical device alerting.
 Additionally, since the primary purpose of this specification is the communication of medical alert information to accomplish intended medical purposes, it will require the completion and integration of the emerging IEEE 11073 Alert <<acronym_pkp>> standard  <<ref_ieee_11073_10702_202x>>.
-When this new standard is published, its requirements will be integrated into this supplement, with its <<term_implementation_conformance_statement>> added to <<vol1_appendix_b_referenced_standards_conformance>>.
+When this new standard is published, its requirements will be integrated into this standard, with its <<term_implementation_conformance_statement>> added to <<clause_references_referenced_standards_conformance>>.
 Many of those requirements will be mapped to the actors, transactions and other specifications in this specification.
 
 Two of the transactions identified below, [DEV-41] and [DEV-42] are related to Medical Alert Delegation; however, at this stage there is considerable standards development activity to update the current <<acronym_sdc>> standards, particularly in association with completing the Alert <<acronym_pkp>> standard  <<ref_ieee_11073_10702_202x>> and the External Control <<acronym_pkp>> standard  <<ref_ieee_11073_10703_202x>>.
-As a result, the completion of these two transactions has been deferred to a subsequent version of the supplement.
+As a result, the completion of these two transactions has been deferred to a subsequent version of the standard.
 
-Similarly, a related transaction, [DEV-43], namely providing clinician alert acknowledgement status information back to the alerting device, is also being discussed further and will be deferred to a subsequent version of the supplement.
+Similarly, a related transaction, [DEV-43], namely providing clinician alert acknowledgement status information back to the alerting device, is also being discussed further and will be deferred to a subsequent version of the standard.
 
-Finally, it should be noted that  <<actor_somds_acm_gateway>> is defined below and fully specified in <<vol2_clause_appendix_sdpi_acm_gateway>>.
+Finally, it should be noted that  <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> is defined below and fully specified in <<vol2_clause_appendix_sdpi_acm_gateway>>.
 Also in development is <<acronym_hl7>> <<acronym_fhir>> support for medical alerting (e.g., refinement of the <<acronym_fhir>> DeviceAlert resource and future development of a <<acronym_fhir>> Device Alerting IG).
 As a result, a "SOMDS Medical Alert FHIR Gateway" is not included as an actor at this stage; however, it is expected to be added in the coming year or two.
 
@@ -122,7 +122,7 @@ include::../plantuml/vol1-figure-sdpi-a-reporting-example-sequence-diagram.puml[
 [#vol1_spec_sdpi_a_actor_somds_medical_alert_provider, reftext='SOMDS Medical Alert Provider',role="actor-alias",actor-id="somds_medical_alert_provider"]
 Actor Summary Definition:
 [none]
-. A <<vol1_spec_sdpi_p_actor_somds_provider>> grouped actor that sends medical alert information to a <<actor_somds_medical_alert_consumer>>.
+. A <<vol1_spec_sdpi_p_actor_somds_provider>> grouped actor that sends medical alert information to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>.
 
 This actor is designed to publish medical device alert information to a <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>, which in turn can communicate it safely and reliably to a clinician.
 Transactions enabled for this actor are identified in <<vol1_table_sdpi_a_actors_transactions>> above.
@@ -215,7 +215,7 @@ sdpi_include_transaction::DEV-42[actor-id="somds_medical_alert_consumer",respond
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This section is intentionally left incomplete to indicate capabilities that will be added in a future version of the SDPi Supplement.
+a| *{standard_note}*:  This section is intentionally left incomplete to indicate capabilities that will be added in a future version of the SDPi standard.
 As stated elsewhere, the completion of the <<ref_ieee_11073_10702_202x>> and <<ref_ieee_11073_10703_202x>> standards is required before this profile can be fully completed (beyond alert reporting for DIS capabilities and DAS capabilities without delegation), and that is especially the case for alert delegation.
 
 *_The sequence diagram below for delegation is provided for informative purposes only and will be finalized when the IEEE standard and this profile option are completed._*
@@ -251,7 +251,7 @@ include::../plantuml/vol1-figure-sdpi-a-delegation-example-sequence-diagram.puml
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This section is left intentionally blank to indicate capabilities that will be added in a future version of the SDPi Supplement.
+a| *{standard_note}*:  This section is left intentionally blank to indicate capabilities that will be added in a future version of the SDPi standard.
 
 This option will enable <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> systems to safely and reliably receive from <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> systems user (clinician) acknowledgement of previously reported alert conditions.
 This option will enable the <<transaction_name_update_alert_acknowledgement_status>> [DEV-43] transaction.
@@ -270,7 +270,7 @@ sdpi_include_transaction::DEV-40[actor-id="somds_acm_gateway",initiator="optiona
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This section is left intentionally blank to indicate capabilities that will be added in a future version of the SDPi Supplement.
+a| *{standard_note}*:  This section is left intentionally blank to indicate capabilities that will be added in a future version of the SDPi standard.
 
 This option will enable <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> systems to receive [DEV-04]/[PCD-04] transactions from an ACM Alert Reporter and then act as a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> to communicate the signals to <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> systems.
 This option will enable the <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> to respond to <<transaction_name_establish_medical_alert_exchange>> [DEV-38] and <<transaction_name_retrieve_medical_alert_status>> [DEV-40] transactions, and to initiate <<transaction_name_publish_medical_alert_update>> [DEV-39] transactions.
@@ -326,66 +326,66 @@ If this is a content profile, and actors from this profile are grouped with acto
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  An overview of the concepts for this <<vol1_clause_sdpi_a_profile_reftext>> will be provided in a future supplement version.
+a| *{standard_note}*:  An overview of the concepts for this <<vol1_clause_sdpi_a_profile_reftext>> will be provided in a future SDPi standard version.
 Note that this specification extends the concepts established in the base <<vol1_clause_sdpi_p_profile_reftext>>.
 |===
 
 [#vol1_clause_sdpi_a_use_cases_reftext, reftext='SDPi-A Use Cases']
 ==== Use Cases
-The SDPi-A Profile supports requirements from use cases detailed in <<vol1_appendix_c_dpi_use_cases>>.
+The SDPi-A Profile supports requirements from use cases detailed in <<clause_sdpi_use_cases>>.
 The following subsections identify the specific use case requirements that are fulfilled with capabilities provided by this SDPi-A Profile.
 
 
 [role="support-use-case", use-case-id="sicdsp", oid-arcs=.1]
 ===== <<label_use_case_name_sicdsp>> (<<acronym_sicdsp>>)
-This use case provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_sicdsp>>.
+This use case provides capabilities for requirements from <<clause_use_case_sicdsp>>.
 
 Specific capabilities supporting the <<acronym_sicdsp>> use case include:
 
 * *System Type*:  N/A
 * *Service Type*:  N/A
 * *Technical Pre-Conditions*: N/A
-* *Scenarios*: <<acronym_sicdsp>> <<vol1_clause_appendix_c_use_case_sicdsp_scenarios>> communication of medical alert information to a <<vol1_spec_sdpi_p_actor_somds_consumer>> <<system_type_dashboard>>
+* *Scenarios*: <<acronym_sicdsp>> <<clause_use_case_sicdsp_scenarios>> communication of medical alert information to a <<vol1_spec_sdpi_p_actor_somds_consumer>> <<system_type_dashboard>>
 
 sdpi_support_use_case::somds_medical_alert_consumer[support=optional]
 
 
 [role="support-use-case", use-case-id="sicdmp", oid-arcs=.2]
 ===== <<label_use_case_name_sicdmp>> (<<acronym_sicdmp>>)
-This use case provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_sicdmp>>.
+This use case provides capabilities for requirements from <<clause_use_case_sicdmp>>.
 
 Specific capabilities supporting the <<acronym_sicdmp>> use case include:
 
 * *System Type*:  N/A
 * *System Type*:  N/A
 * *Technical Pre-Conditions*: N/A
-* *Scenarios*: <<acronym_sicdmp>> <<vol1_clause_appendix_c_use_case_sicdmp_scenarios>> communication of medical alert information to a <<vol1_spec_sdpi_p_actor_somds_consumer>> <<system_type_dashboard>>
+* *Scenarios*: <<acronym_sicdmp>> <<clause_use_case_sicdmp_scenarios>> communication of medical alert information to a <<vol1_spec_sdpi_p_actor_somds_consumer>> <<system_type_dashboard>>
 
 sdpi_support_use_case::somds_medical_alert_consumer[support=optional]
 
 [role="support-use-case", use-case-id="acns", oid-arcs=.3]
 ===== <<label_use_case_name_acns>> (<<acronym_acns>>)
-This use case provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_acns>>.
+This use case provides capabilities for requirements from <<clause_use_case_acns>>.
 
 Specific capabilities supporting the <<acronym_acns>> use case include:
 
 * *System Type*:  N/A
 * *Service Type*:  N/A
 * *Technical Pre-Conditions*:  N/A
-* *Scenarios*:  <<acronym_acns>> <<vol1_clause_appendix_c_use_case_acns_scenarios>> communication of medical alert information to a <<vol1_spec_sdpi_p_actor_somds_consumer>> Alert <<system_type_device_gateway>>
+* *Scenarios*:  <<acronym_acns>> <<clause_use_case_acns_scenarios>> communication of medical alert information to a <<vol1_spec_sdpi_p_actor_somds_consumer>> Alert <<system_type_device_gateway>>
 
 sdpi_support_use_case::somds_acm_gateway[support=optional]
 
 [role="support-use-case", use-case-id="aars", oid-arcs=.4]
 ===== <<label_use_case_name_aars>> (<<acronym_aars>>)
-This use case provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_aars>>.
+This use case provides capabilities for requirements from <<clause_use_case_aars>>.
 
 Specific capabilities supporting the <<acronym_aars>> use case include:
 
 * *System Type*:  N/A
 * *Service Type*:  N/A
 * *Technical Pre-Conditions*:  N/A
-* *Scenarios*:  <<acronym_aars>> <<vol1_clause_appendix_c_use_case_aars_scenarios>> communication of medical alert information to a <<vol1_spec_sdpi_p_actor_somds_consumer>> Alert <<system_type_device_gateway>>
+* *Scenarios*:  <<acronym_aars>> <<clause_use_case_aars_scenarios>> communication of medical alert information to a <<vol1_spec_sdpi_p_actor_somds_consumer>> Alert <<system_type_device_gateway>>
 
 sdpi_support_use_case::somds_acm_gateway[support=optional]
 
@@ -405,7 +405,7 @@ Many specific implementation details such as the use of wireless technology, has
 Additional device-specific standards may specify latency or delay thresholds.
 For example, the <<ref_iec_60601_2_27_2011>> standard specifies a delay for "brady" alerts (i.e., 10 seconds); however, the realization of this requirement must be understood in the care environment and the systems and network configuration that is utilized for communication of that alert condition.  In other words, even when there is a particular standard that defines a specific time constraint, risk management based on that implementation environment must be fully performed and maintained during operation in order to ensure the clinical needs are met.
 
-For additional general guidance, see Section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
+For additional general guidance, see Section <<clause_ses_considerations_and_requirements>>.
 
 ==== Safety Requirements & Considerations
 No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ Section above.
@@ -414,7 +414,7 @@ No additional safety requirements or considerations are identified for this tech
 No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 ==== Security Requirements & Considerations
-No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P Profile (see <<vol1_clause_appendix_a_ses_considerations_section_template>>), and those specified in the _<<acronym_ses>> General Considerations_ Section above.
+No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P Profile (see <<clause_ses_considerations_section_template>>), and those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 [#vol1_clause_sdpi_a_cross_profile_considerations]
 === SDPi-A Cross Profile Considerations

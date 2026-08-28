@@ -1,7 +1,7 @@
 [#vol3_clause_timestamp_versioning]
 ====== Timestamp versioning
 
-BICEPS does not provide any means to convey step-changes in a <<vol1_spec_sdpi_p_actor_somds_participant>>'s <<term_time_reference_frame>> (see <<vol1_clause_appendix_c_use_case_stad_non_slew, use case for non-slewing time adjustments>>). 
+BICEPS does not provide any means to convey step-changes in a <<vol1_spec_sdpi_p_actor_somds_participant>>'s <<term_time_reference_frame>> (see <<clause_use_case_stad_non_slew, use case for non-slewing time adjustments>>).
 
 A <<vol1_spec_sdpi_p_actor_somds_provider>> includes <<term_timestamp>>s in many state updates. For example: `pm:AlertConditionState/@DeterminationTime`, `pm:AbstractMetricValue/@DeterminationTime` and `pm:AbstractContextState/@BindingStartTime`. From time-to-time, though rarely in normal operation, a 
 <<vol1_spec_sdpi_p_actor_somds_participant>> may determine that the difference between its <<term_time_reference_frame>> and that of the <<acronym_ts_service>> is greater than can be accommodated by <<term_smooth_time_adjustments>> to the <<term_system_clock>>. This may occur, for example:

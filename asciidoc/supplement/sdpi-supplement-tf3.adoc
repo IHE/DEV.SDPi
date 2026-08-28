@@ -1,0 +1,238 @@
+
+[#vol3, sdpi_volume_caption=3]
+= Volume 3 -- Content Modules
+
+[#clause-content-modules]
+
+// == Content Modules
+
+NOTE: #Volume 3 has a significant number of supplement instructions that need to be migrated FROM the standard to this supplement
+
+// 8
+[#vol3_clause_content_modules,sdpi_offset=8]
+== DEV Semantic Content Modules
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *{supplement_note}*: The organization of this Volume 3 standard factors in two major changes:
+
+// STANDALONE TO DO ... this section
+
+
+. IHE Supplement template (2020), with content mapped from the <<ref_ihe_dev_tf_3_2024>> specification;
+
+. Addition of <<acronym_biceps>> content to a volume that is organized according to the "classic" <<ref_ieee_11073_10201_2004>> domain information model (DIM).
+
+For this version of the standard, content from the 2024 version that was in sections 3 and 7 has now been collected into a single Section 8.
+
+In order to clearly identify the standard content that is related to <<acronym_biceps>>, specific sections with <<acronym_biceps>> in the title have been added.
+Although this results in a fairly clean standard document, the flow of the outline is at times non sequitur.
+To address that problem -- again arising from the original volume organization never contemplating additional semantic content standards alignment beyond the Classic DIM -- subsections that are aligned with the Classic DIM have been organized in a subsection with that scope.
+That new content which is based on <<acronym_biceps>> is also contained within a similarly labeled set of subsections -- both at the same outline level.
+
+For the existing TF-3 content in the <<ref_ihe_dev_tf_3_2024>>, especially Section 3, though this standard includes editor guidance for which sections are mapped where in the updated outline, the actual content is a mix of general device informatics topics and details that are based on the "classic" <<ref_ieee_11073_10201_2004>> DIM.
+
+*_Updating the existing IHE DEV Technical Framework content will be either deferred to a later version of this SDPi standard or will be accomplished through a specific Change Proposal (CP) to the published IHE DEV TF-3._*
+
+Additionally, for this version of SDPi, it isn't clear how best to address a similar division of the device specialization sections (e.g., infusion pump or ventilator).
+Version note boxes (like this one) have therefore been added to the specializations section and a single BICEPS subsection has been added.
+Subsequent versions of the specification may address this more comprehensively.
+
+*REVIEWER QUESTION*:  Please consider not only the <<acronym_biceps>>-related updates but also the changes to the general organization and provide guidance as to whether this TF-3 is better organized for clarity and future extensions, or if a different approach should be taken.
+
+|===
+
+
+// 8.1
+[sdpi_offset=1]
+=== Overview of device semantic content
+
+[%noheader]
+[cols="1"]
+|===
+| Move IHE DEV 2024 TF-3 Section 3 (text immediately after the section header) to this SDPi {ihe_supplement_sdpi_revision_short} TF-3 Section 8.1
+|===
+
+////
+#TODO:  Update the IHE DEV 2024 TF-3 Section 3 content to be model/format independent#
+////
+
+// 8.2
+=== General device content considerations
+
+[%noheader]
+[cols="1"]
+|===
+| Move IHE DEV 2024 TF-3 sections 3.1 to this SDPi {ihe_supplement_sdpi_revision_short} TF-3 Section 8.2
+|===
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *{supplement_note}*: The content in the IHE DEV 2024 TF-3 3.1 Section will need to be edited to be agnostic to the underlying protocol, with protocol specifics being relegated to subsections in <<vol3_clause_protocol_specific_content_module_considerations>> below.
+|===
+
+
+// 8.3
+[#vol3_clause_protocol_specific_content_module_considerations]
+
+===  Protocol-Specific Content Module Considerations
+NOTE:  #Provide Standard Section Reference language here#
+
+// 8.3.1
+[#vol3_clause_ieee_11073_10201_classic_dim_content_modules]
+==== IEEE 11073-10201 Classic DIM Content Modules
+
+[%noheader]
+[cols="1"]
+|===
+| Move IHE DEV 2024 TF-3 sections 3.2 to 3.7 to this SDPi {ihe_supplement_sdpi_revision_short} TF-3 Section 8.3.1.2 TO 8.3.1..7
+
+A new 8.3.1.1 Section should be added to the Classic DIM content section that addresses basic reporting.
+This content would be extracted from the existing (2024) Section 3.1, where that content is specific to the Classic DIM (see related note above).
+|===
+
+// 8.3.2
+[#vol3_clause_sdc_biceps_semantic_content]
+[role=content-module,content-module-id=biceps,oid-arcs=".1"]
+==== IEEE 11073-10207 BICEPS Content Modules
+
+// 8.3.2.1
+[#vol3_clause_sdc_biceps_semantic_content_module]
+===== SDC/BICEPS Content Module
+
+
+// 3:8.3.2.6
+[#vol3_clause_system_type_nomenclature_extensions]
+===== System Type Nomenclature Extensions
+In addition to specific device specializations (see <<vol3_clause_device_specialization_content_modules>> below), SDPi specifications, especially TF-1 use cases, refer to a number of general classes or types of systems.
+These systems provide common services to all other <<actor_somds_participant>>'s; however, in order to be discovered on the network, they must have system type identifiers that can be recognized by these other systems (explicitly / implicitly).
+
+NOTE:  #This section is only included due to a reference from the Glossary for Central Station.  QUESTION: Should that glossary reference be generalized without a hard reference link?#
+
+
+// 8.3.3
+==== RESERVED
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *{supplement_note}*: This is a place holder section for content modules related to the Personal Health Device (PHD) semantics defined in the IEEE 11073-10206 and 11073-20601 standards.
+Though there are no PHD requirements in this standard, there are PHD profiles that may be integrated into the IHE DEV Technical Framework, and as a result may add content to this section.
+|===
+
+// 8.4 8.5 8.6 RESERVED
+=== RESERVED
+
+[%noheader]
+[cols="1"]
+|===
+| Move IHE DEV 2024 TF-3 Section 4 Reserved to this SDPi {ihe_supplement_sdpi_revision_short} TF-3 Section 8.4
+|===
+
+=== RESERVED
+
+[%noheader]
+[cols="1"]
+|===
+| Move IHE DEV 2024 TF-3 Section 5 Reserved to this SDPi {ihe_supplement_sdpi_revision_short} TF-3 Section 8.5
+|===
+
+=== RESERVED
+
+[%noheader]
+[cols="1"]
+|===
+| Move IHE DEV 2024 TF-3 Section 6 Reserved to this {ihe_supplement_sdpi_revision_short} TF-3 Section 8.6
+|===
+
+// 8.7
+[#vol3_clause_device_specialization_content_modules,sdpi_offset=7]
+=== Device specialization content modules
+
+// Appendix A BICEPS Extension Provisions SML Schemas
+[appendix#vol3_appendix_a_xml_schemas,sdpi_offset=A]
+== BICEPS Extension Provisions XML Schemas
+
+XML Schemas in this appendix include the BICEPS message, participant and extension Model files as provided as an additional resource at https://standards.ieee.org/ieee/11073-10207/6032/.
+
+// Appendix B BICEPS Extension Namespace
+[appendix#vol3_appendix_b_biceps_extension_namespace,sdpi_offset=B]
+== BICEPS Extension Namespace
+
+Extensions to the BICEPS Participant and Message Model defined in this specification utilize the XML Schema target namespace URI `urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1`, of which the OID is further detailed in <<vol3_table_sdpi_biceps_extension_namespace>> and <<vol3_appendix_c_oids>>.
+
+[#vol3_table_sdpi_biceps_extension_namespace]
+.SDPi BICEPS Extension Namespace OID Assignment
+[cols="2,3,1",options="autowidth, header"]
+|===
+| Primary identifier
+| Concept description
+| Secondary identifier
+
+| `{SDPi-parent-oid}`
+| Profile specific OID for SDPi
+| sdpi
+
+| `{SDPi-parent-oid}.*1*`
+| Describes namespaces for different purposes as specified by its sub-nodes
+| namespaces
+
+| `{SDPi-parent-oid}.*1.1*`
+| Extensions to the BICEPS Participant and Message Model
+| biceps-extensions
+
+| `{SDPi-parent-oid}.*1.1.1*`
+| Major version 1 for extensions to the BICEPS Participant and Message Model.
+In order to avoid proliferation of OIDs below `{SDPi-parent-oid}.1.1`, versions are incremented only if incompatible changes are made to an extension.
+| version1
+
+|===
+
+// Appendix C OID identifiers
+[appendix#vol3_appendix_c_oids,sdpi_offset=C]
+== OID identifiers
+
+Object identifiers, or OIDs, are globally unique numeric identifiers used to name something in a formal, unambiguous way.
+They are typically formatted as dotted number strings (`1.3.6.1.4.1.19376.1.6`, for example). Each number (or _arc_) is a node in a
+hierarchical, tree-structured, namespace. The top of the tree, and first arc in the sequence, is managed by standards
+bodies who delegate responsibility for distinct branches in the hierarchy.
+
+IHE DEV is responsible for managing arcs from the _IHE DEV parent_ OID `1.3.6.1.4.1.19376.1.6`.
+See https://wiki.ihe.net/index.php/PCD_OID_Management[PCD OID Management].
+They have designated `{SDPi-parent-oid}` as the parent OID for a hierarchy of object identifiers for this
+service-oriented device point-of-care interoperability (SDPi) specification.
+
+This standard is responsible for the hierarchy underneath the `{SDPi-parent-oid}` SDPi top level oid.
+
+Generally, the meaning of OIDs should not change once assigned. For example, `{SDPi-parent-oid}.3.40` will always refer to a
+<<actor_somds_participant>>. This OID will never be assigned another meaning even if, for some reason, a SOMDS participant is no longer
+relevant to the specification.
+
+// Appendix Z  Implementation conformity statements
+[appendix#vol3_appendix_z_ics,sdpi_offset=Z]
+== Implementation conformity statements
+
+=== General format
+
+Implementation conformity statements take the form of tables. Templates for these _ICS tables_
+are given in <<vol3_ics_tables>>. The tables are completed and provided as an overall conformity
+statement document.
+
+
+[#vol3_ics_tables]
+=== Tables
+
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *{supplement_note}*: This section includes ICS tables that have been generated from requirements in the preceding content of this standard.  Tables are generated for each of the SDPi actors, such as <<actor_somds_provider>> or <<actor_somds_dec_gateway>>, enabling a concise reference for answering the quesiton "What are the implementation requirements for a <<actor_somds_discovery_proxy>>?", for example.
+|===
+
+

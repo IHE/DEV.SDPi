@@ -1,0 +1,47 @@
+
+=== Copyright Licenses
+IHE technical documents refer to, and make use of, a number of standards developed and published by several standards development organizations.
+Please refer to the IHE Technical Frameworks General Introduction, https://profiles.ihe.net/GeneralIntro/ch-9.html[Section 9 - Copyright Licenses] for copyright license information for frequently referenced base standards.
+Information pertaining to the use of IHE International copyrighted materials is also available there.
+
+==== Copyright of Base Standards
+
+===== IEEE 11073 (Health Device Interoperability)
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *{standard_note}*:  The content below is verbatim from the IEEE permission letter.
+An abbreviated version may be provided in subsequent standard versions with a reference to the complete letter.
+
+The copyright language will need to be updated to support future PKP standards <<ref_ieee_11073_10702_202x>> and <<ref_ieee_11073_10703_202x>>.
+
+Note that NIST and the RTTMS tools are a key factor in the nomenclature aspect of the licensing discussion.
+
+|===
+
+IEEE^®^ and IEEE 11073^®^ are registered trademarks of the The Institute of Electrical and Electronics Engineers, Inc.  IEEE has granted permission to IHE and HL7 to use portions of 11073-10207, 11073-20701, 11073-20702, 11073-10700, 11073-10701 (the “Material”), subject to the following conditions:
+
+. IHE’s use of the Material shall be for the following purpose: (the “Purpose”):
+
+* IHE specification developers want to include the Implementation Conformance Specification (ICS) tables from each of these standards and add to the "Support" column the specifics of how and where the IHE specifications address the SDC capability.
+
+* Additionally, the IHE profile specifications may include summarization and references to specific content and in a few cases, inclusion of a graphic that would then point the reader back to standard for detailed review. For example, 11073-10207, Figure 2 "BICEPS component decomposition".
+
+* Finally, all three of these standards have integrated requirement designations. For example, 11073-20701, Section (10.1) "R0064: An SDC PARTICIPANT SHOULD utilize the highest TLS version." These requirements may also be referenced (at least by Rxxxx designator) to indicate when and how they are addressed in the IHE specification(s). IHE agrees to share with the 11073 working groups any iteration of its derivative work for the benefits of the 11073 community of users.
+
+. IHE understands and agrees that the following shall appear in each section where the material is used:
+
+* _Adapted and reprinted with permission from IEEE. Copyright IEEE Year.  All rights reserved._*  footnote:ieee_permission[Adapted and reprinted with permission from IEEE. Copyright IEEE Year.  All rights reserved.]
+
+. IHE understands and agrees that the Material is the intellectual property of IEEE. Except as provided in this agreement no ownership rights to the Material shall be transferred to IHE.
+
+. Except as necessary to give effect to the Purpose, no other use of the Material including, but not limited to, reproduction or distribution of the IEEE Standards in any format is prohibited without prior written consent of IEEE.
+
+. The Material is provided “as is,” To the extent permitted by law, IEEE disclaims all representations and warranties to the Material.
+
+. IHE shall note that any comments or interpretations of the Material are its own and do not represent the views of IEEE, its members or affiliates.
+
+. IHE understands and agrees that this grant permission may not be transferred or assigned without the express written permission of IEEE.
+

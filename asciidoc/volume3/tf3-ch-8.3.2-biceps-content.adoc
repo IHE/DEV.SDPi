@@ -3,7 +3,7 @@
 [#vol3_clause_sdc_biceps_semantic_content_module]
 ===== SDC/BICEPS Content Module
 
-The <<acronym_biceps>> standard, <<ref_ieee_11073_10207_2017_Cor1_2025>>, provides an extensive semantic model for all information exchanged between <<vol1_spec_sdpi_p_actor_somds_participant>> systems.  This section provides a general background for <<acronym_biceps>>-based content, including both what is unique to this standard (e.g., different from the <<term_classic_dim>>), and any extensions that are made by this SDPi supplement.
+The <<acronym_biceps>> standard, <<ref_ieee_11073_10207_2017_Cor1_2025>>, provides an extensive semantic model for all information exchanged between <<vol1_spec_sdpi_p_actor_somds_participant>> systems.  This section provides a general background for <<acronym_biceps>>-based content, including both what is unique to this standard (e.g., different from the <<term_classic_dim>>), and any extensions that are made by this SDPi standard.
 
 
 .R0701
@@ -55,12 +55,12 @@ NOTE:  A detailed description of this <<acronym_biceps>> description information
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*: This version of the supplement does not fully support profiles of all the elements in the descriptive model, including:
+a| *{standard_note}*: This version of the standard does not fully support profiles of all the elements in the descriptive model, including:
 
 * Service Control Object (SCO) and Operations
 * Battery objects
 
-Additionally, only limited support for the *_AlertSystem_* (and related objects), and for the *_SystemContext_* types are provided in SDPi {ihe_supplement_sdpi_revision_short}.
+Additionally, only limited support for the *_AlertSystem_* (and related objects), and for the *_SystemContext_* types are provided in SDPi {gemini_standard_sdpi_revision_short}.
 Subsequent versions of the specification will address complete functionality.
 |===
 
@@ -78,7 +78,7 @@ The basic containment from MDS to VMD to Channel to Metric is maintained within 
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  This clause is intentionally left blank for this version.
+a| *{standard_note}*:  This clause is intentionally left blank for this version.
 Future versions will include general discussion about how BICEPS-based content is formally mapped to that of other protocols, typically utilizing a <<vol1_spec_sdpi_p_actor_somds_connector>>.
 
 |===
@@ -135,7 +135,7 @@ In addition to specific device specializations (see <<vol3_clause_device_special
 .^| [[system_type_device_gateway,Gateway]] Gateway
 .^| (tba)
 .^| [[acronym_dgw,DGW]] DGW, <<acronym_agw>>
-.^| Gateway PARTICIPANT that provides, for example, ADT information or laboratory results (inbound). Note:  <<acronym_agw>> is for an <<label_system_type_name_agw>> system.  (For example, see <<vol1_clause_appendix_c_use_case_acns_technical_precondition>>)
+.^| Gateway PARTICIPANT that provides, for example, ADT information or laboratory results (inbound). Note:  <<acronym_agw>> is for an <<label_system_type_name_agw>> system.  (For example, see <<clause_use_case_acns_technical_precondition>>)
 
 .^| [[system_type_device_smart_alerting,Smart Alerting]] Smart Alerting
 .^| (tba)
@@ -206,7 +206,7 @@ This includes OIDs for private codes as detailed in <<ref_ieee_11073_10101_2020>
 [%autowidth]
 [cols="1"]
 |===
-a| *{supplement_note}*:  The <<acronym_sdc>> standards community is evaluating the use of safety class elements in the BICEPS specification (see <<ref_ieee_11073_10207_2017_Cor1_2025>>), and the related https://github.com/IHE/DEV.SDPi/issues/11[Github Issue #11 _Topic: SDPi-xC with Mixed Device Safety Classes_].
+a| *{standard_note}*:  The <<acronym_sdc>> standards community is evaluating the use of safety class elements in the BICEPS specification (see <<ref_ieee_11073_10207_2017_Cor1_2025>>), and the related https://github.com/IHE/DEV.SDPi/issues/11[Github Issue #11 _Topic: SDPi-xC with Mixed Device Safety Classes_].
 The result of that discussion will directly impact the BICEPS SES Considerations Section below.
 
 For this version of the specification, the following wording has been suggested:
@@ -220,7 +220,7 @@ For this version of the specification, the following wording has been suggested:
 ====== SES General Considerations
 Requirements from the <<ref_iso_81001_1_2021>>, <<ref_iec_80001_1_2021>>, and related standards should be fully applied to this technical framework element.
 
-For additional guidance, see Section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
+For additional guidance, see Section <<clause_ses_considerations_and_requirements>>.
 
 ====== Safety Requirements & Considerations
 No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ Section above.

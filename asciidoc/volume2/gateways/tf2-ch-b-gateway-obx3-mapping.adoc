@@ -7,7 +7,7 @@
 
 [NORMATIVE]
 ====
-A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the OBX-3 field to the identifier of the element in the hierarchical containment tree such as MDS, VMD, CHAN, or the actual related metric to be exported.
+A <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> / <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> shall set the OBX-3 field to the identifier of the element in the hierarchical containment tree such as MDS, VMD, CHAN, or the actual related metric to be exported.
 ====
 
 [NOTE]
@@ -22,7 +22,7 @@ A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the OBX-3 
 ****
 [NORMATIVE]
 ====
-If a private *<<acronym_mdc>>* code is used for the coding of the SDC containment tree element, the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall map an identifier of the element in the hierarchical containment tree such as MDS, VMD, CHAN, or the actual related metric as described in Section <<ref_private_coding_system_note>>.
+If a private *<<acronym_mdc>>* code is used for the coding of the SDC containment tree element, the <<vol1_spec_sdpi_r_actor_somds_dec_gateway>> / <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> shall map an identifier of the element in the hierarchical containment tree such as MDS, VMD, CHAN, or the actual related metric as described in Section <<ref_private_coding_system_note>>.
 ====
 ****
 
