@@ -49,6 +49,7 @@ a| *{standard_note}*:  This section intentionally left blank for the current ver
 #TODO:  Include difference between logical actors and business (real world implementation) systems#
 ////
 
+[#clause_use_case_specification_conventions_using_cucumber_gherkin]
 === Use Case Specification Conventions Using Cucumber/Gherkin
 
 [%noheader]

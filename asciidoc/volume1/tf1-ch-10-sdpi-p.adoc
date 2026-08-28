@@ -6,7 +6,7 @@
 The SDPi-Plug-and-trust ([[acronym_sdpi_p,SDPi-P]] SDPi-P) Profile supports foundational seamless connectivity, information exchange and service invocation as defined in the SDPi architecture detailed in <<vol1_clause_sdpi_overview_framework>>.
 Whereas the related SDPi Profiles for reporting, alerting and external control are explicitly intended to support medical care capabilities, the SDPi-P Profile focuses on basic healthcare device interoperability.
 All the capabilities defined in SDPi-P are leveraged by and extended in the medically focused profiles.
-This foundational profile not only supports medical device interoperability ("<<acronym_mdi>>"), providing for “plug-and-play” capabilities, but also with a tightly integrated “trust” framework (see <<vol1_appendix_a_requirements_management_for_p_n_t_interperability>>).
+This foundational profile not only supports medical device interoperability ("<<acronym_mdi>>"), providing for “plug-and-play” capabilities, but also with a tightly integrated “trust” framework (see <<clause_p_n_t_interperability_requirements_management>>).
 The establishment of a trusted ecosystem of medical and non-medical devices and applications footnote:[Note that SDPi-P supports application interoperability including “Software as a Medical Device” (<<acronym_samd>>).] begins at the start of discovery and a secure connection.  Therefore, the profile's name:  <<term_plug_and_trust>>.
 
 _This_ is primarily an IHE transport profile footnote:[See the IHE Technical Frameworks General Introduction for a more detailed description of IHE profile types, published at https://profiles.ihe.net/GeneralIntro/[profiles.ihe.net/GeneralIntro/].], although it does define several content modules detailed in IHE Devices TF-3.
@@ -164,8 +164,8 @@ Actor Summary Definition:
 All systems participating in a SOMDS network instance must implement this Abstract actor.
 
 All SDPi Profiles actors are grouped with (inherit from) this actor, including both transport / transaction actors and content module actors.
-This required grouping ensures that all systems connecting to a SOMDS network support the <<acronym_ses_mdi>>  requirements footnote:[See <<vol1_appendix_a_requirements_management_for_p_n_t_interperability>> and <<vol1_clause_ses_considerations_requirements>> for more detail on <<acronym_ses_mdi>>] necessary for establishing a <<term_plug_and_trust>> ecosystem, including the secure and dynamic provision of an implementation’s <<term_system_function_contribution>>.
-See <<vol1_clause_appendix_a_requirements_from_narratives_to_pnt_interfaces>> for additional discussion.
+This required grouping ensures that all systems connecting to a SOMDS network support the <<acronym_ses_mdi>>  requirements footnote:[See <<clause_p_n_t_interperability_requirements_management>> and <<clause_ses_considerations_requirements>> for more detail on <<acronym_ses_mdi>>] necessary for establishing a <<term_plug_and_trust>> ecosystem, including the secure and dynamic provision of an implementation’s <<term_system_function_contribution>>.
+See <<clause_requirements_from_narratives_to_pnt_interfaces>> for additional discussion.
 
 ////
 
@@ -1167,7 +1167,7 @@ sdpi_support_use_case::somds_sensor_gateway[support=optional]
 ==== SES General Considerations
 Requirements from the <<ref_iso_81001_1_2021>>, <<ref_iec_80001_1_2021>>, and related standards should be fully applied to this technical framework element.
 
-For additional guidance, see Section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
+For additional guidance, see Section <<clause_ses_considerations_and_requirements>>.
 
 In addition, SES requirements from <<ref_ieee_11073_10700_2022>> should be fully applied to this technical framework element.
 

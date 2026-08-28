@@ -1,29 +1,9 @@
 // = Requirements Management for Plug-and-Trust Interoperability
 
-// Appendix A
-[appendix#vol1_appendix_a_requirements_management_for_p_n_t_interperability,sdpi_offset=A]
-== Requirements Management for Plug-and-Trust Interoperability
+[#clause_p_n_t_interperability_requirements_management,sdpi_offset=clear]
+= Plug-and-Trust Interoperability Requirements Management
 
-
-[%noheader]
-[%autowidth]
-[cols="1"]
-|===
-a| *{standard_note}*: This appendix provides valuable information regarding the "vision" and rationale for key elements of this standard, some of which are novel for any MDI specification.
-For previous versions of the Gemini SDPi specification, the content was captured in this appendix; however, it will not be migrated to the SUPPLEMENT document, and that begs whether it should be kept as a Volume 1 appendix or moved to a end-of-standard appendix (after conformance, for example), or somewhere else such as in the SDPi Profiles Overview.
-Note that many standards have Appendix A as a rationale and Appendix Z as a Bibliography.
-Finally, note that appendices in IHE TF volumes are allocated similarly to profile and transaction numbers, since ultimately they will need to be moved into a single domain technical framework specification.
-
-#REVIEWER QUESTIONS#:
-
-. Should this appendix be kept within Volume 1 or moved the end of the standard as an Appendix A for the entire standard?
-. If moved, is there another location than specified above that might be best for this information (e.g., in the front-matter somewhere)?
-
-|===
-
-
-
-These SDPi specifications include the model-centric integration of requirements from multiple sources -- both within IHE and from other <<acronym_sdo>>s -- enabling a new level of *requirements management* that provides new value to all stakeholders.  Also termed *_<<term_requirements_interoperability>>_*, innovative capabilities include:
+This standard includes a model-centric integration of requirements from multiple sources -- both within Gemini and from other <<acronym_sdo>>s -- enabling a new level of *requirements management* that provides new value to all stakeholders.  Also termed *_<<term_requirements_interoperability>>_*, innovative capabilities include:
 
 . Explicit linking of requirements from their definition to their satisfaction / utilization in defined _capabilities_;
 . Explicit linking of requirements from external sources (e.g., normative standards references) to where they are supported in the profile specification, either completely, partially, unsupported or out-of-scope;
@@ -36,11 +16,11 @@ These combine to establish <<acronym_ri>> as the door to a new generation of tru
 
 From another perspective, _requirements interoperability_ looks at one standard as having both a set of requirements that must be satisfied for a system to be conformant, and a set of capabilities that it provides that can be utilized to meet the requirements of other standards.  Requirements interoperability essentially looks at each standard as a set of building blocks that can be snapped together and integrated into a coherent and cohesive structure.
 
-The following sections in this appendix provide background on the concepts and rationale behind requirements interoperability and the details for how it is implemented in this specification.
+The following sections provide background on the concepts and rationale behind requirements interoperability and the details for how it is implemented in this specification.
 
-// A.1
-[#vol1_clause_appendix_a_requirements_from_narratives_to_pnt_interfaces,sdpi_offset=1]
-=== Requirements:  From Narratives to Plug-and-Trust Interfaces
+
+[#clause_requirements_from_narratives_to_pnt_interfaces,sdpi_offset=1]
+== Requirements:  From Narratives to Plug-and-Trust Interfaces
 
 For every device or system interface that supports the elements specified in this technical framework, requirements and capabilities are derived from many different standards, types of standards, and standards development organizations (SDO).
 Some are technology focused, such as the IEEE 11073 standards for health device communication, and others are more focused on quality and risk management, such as the ISO/IEC 80001-1 and ISO 14971 standards.
@@ -50,7 +30,7 @@ In order to manage this diversity and wealth of specifications and standards, th
 
 .Hanging Gardens Framework
 [#hanging_gardens_framework]
-image::../images/vol1-diagram-hanging-gardens.svg[]
+image::../images/diagram-hanging-gardens.svg[]
 
 Though a full explanation of the framework is beyond this discussion footnote:hanging_gardens_framework_article[A more detailed explanation of this model is provided on the https://confluence.hl7.org/x/4ijxB[IHE-HL7 Gemini _Hanging Gardens Framework_ confluence page].
 Last accessed 2022.10.04.], some general observations will help understand the value and use of the framework:
@@ -62,13 +42,13 @@ Last accessed 2022.10.04.], some general observations will help understand the v
 . Profile standards, such as the SDPi+FHIR, generally integrate specifications through the layers from the top to the bottom similar, with each layer contributing to those below and converging in a single interface capability bundle;
 . Physical layers are leveraged, not re-invented, which is why there is no color in the bottom layer;
 . _*Requirements interoperability*_ is achieved by tracing "profile lines" from top to bottom, integrating requirements from one layer's specification to the capabilities provided by another layer;
-. Requirement TYPEs are rooted in the layers that they represent and link type definitions to their use in this specification; see <<vol1_clause_sdpi_requirements_core_model>> Section below.
+. Requirement TYPEs are rooted in the layers that they represent and link type definitions to their use in this specification; see <<clause_sdpi_requirements_core_model>> Section below.
 
 NOTE:  The implementation of this high-level framework will be extended as the specifications and tooling mature.
 
-// A.2
-[#vol1_appendix_a_integrating_ses]
-=== Integrating Safety, Effectiveness and Security Requirements and Considerations
+
+[#clause_integrating_ses]
+== Integrating Safety, Effectiveness and Security Requirements and Considerations
 
 In 2007, a joint effort between ISO/TC 215 and IEC/SC 62A was launched -- Joint Working Group 7 (JWG7) -- to focus on how to apply risk management to medical devices and health information systems and software that needed to interoperate on shared (hospital owned and managed) networking infrastructure.
 The resulting standard, <<ref_iec_80001_1_2021>>, with a first edition published in 2010 and revised in 2021, not only provided a process for performing coordinated multi-stakeholder risk management for these technologies, but recognized the three *key properties* that would be the focus of that risk management:  *_Safety, Effectiveness & Security (SES)_* footnote:ses_definitions[For definitions of these and other related terms, consult the https://81001.org[NHS 81001.org web page.] Last accessed 2022.10.04.].
@@ -101,10 +81,10 @@ NOTE:  The moniker *_<<acronym_ses_mdi>>_* is shorthand to refer to the integrat
 
 How does this address the "interoperability trust gap"?  By integrating SES directly into the specifications, especially integrating the ISO/IEC 11073-1070x standards, enabling "plug-and-trust" system product components, the SES implementation and operational requirements and responsibilities are greatly reduced, the "gap" is filled for all stakeholders, and the goals of improved safety, security and clinical effectiveness of technology can be readily realized.
 
-[#vol1_clause_appendix_a_ses_considerations_section_template]
-=== SES Considerations Section Template
+[#clause_ses_considerations_section_template]
+== SES Considerations Section Template
 
-Given the forgoing discussion in <<vol1_clause_ses_considerations_requirements>>, a standardized template is defined for addressing <<acronym_ses>> requirements as appropriate, including within the scope of profiles, actors, transactions, and content modules.
+Given the forgoing discussion in <<clause_ses_considerations_requirements>>, a standardized template is defined for addressing <<acronym_ses>> requirements as appropriate, including within the scope of profiles, actors, transactions, and content modules.
 The content in the following sections should be included and then specialized as appropriate for the associated technical framework element.
 
 ////
@@ -120,27 +100,27 @@ The content in the following sections should be included and then specialized as
 |===
 a| *SES Section Template*:
 
-[#vol1_clause_appendix_a_ses_considerations_and_requirements]
-=== Safety, Effectiveness and Security - Requirements and Considerations
+[#clause_ses_considerations_and_requirements]
+== Safety, Effectiveness and Security - Requirements and Considerations
 
-==== SES General Considerations
+=== SES General Considerations
 NOTE: This section includes guidance and requirements that are not further specialized for specific <<acronym_ses>> properties.
 
 Requirements from the <<ref_iso_81001_1_2021>>, <<ref_iec_80001_1_2021>>, and related standards should be fully applied to this technical framework element.
 
-For additional guidance, see Section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
+For additional guidance, see Section <<clause_ses_considerations_and_requirements>>.
 
-==== Safety Requirements & Considerations
+=== Safety Requirements & Considerations
 NOTE: This section includes guidance and requirements that are focused on unique *_Safety_* requirements associated with the relevant technical framework element.  Note: a simple definition of safety within the context of risk management is "freedom from unacceptable harm" (see https://81001.org/concept/safety[81001.org/safety])
 
 No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
-==== Effectiveness Requirements & Considerations
+=== Effectiveness Requirements & Considerations
 NOTE: This section includes guidance and requirements that are focused on unique *_Effectiveness_* requirements associated with the relevant technical framework element.  Note:  in the context of risk management key properties, effectiveness is the ability to perform the intended use (see https://81001.org/concept/effectiveness[81001.org/effectiveness])
 
 No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
-==== Security Requirements & Considerations
+=== Security Requirements & Considerations
 NOTE: This section includes guidance and requirements that are focused on unique *_Security_* requirements associated with the relevant technical framework element.
 In the context of risk management key properties, security is a state where information and systems are protected from unauthorized activities to a degree that the related risks to confidentiality, integrity, and availability are maintained at an acceptable level throughout the lifecycle (see https://81001.org/concept/security[81001.org/security])
 
@@ -150,8 +130,8 @@ No additional security requirements and considerations are identified for this t
 
 |===
 
-[#vol1_clause_sdpi_requirements_modeling_integration]
-=== SDPi Requirements Modeling & Integration
+[#clause_sdpi_requirements_modeling_integration]
+== SDPi Requirements Modeling & Integration
 
 
 [%noheader]
@@ -171,8 +151,8 @@ See <<vol1_figure_appendix_a_sdpi_requirements_core_model>> below for possible p
 
 It should be further noted that though conformity testing aspects are beyond this revision of the SDPi specification, the modeling constructs used below will also be directly associated with test assertions and integrated into test / verification cases to provide for advanced V&V of interoperable system components and entire systems of products.
 
-[#vol1_clause_sdpi_requirements_core_model]
-==== SDPi Requirements Core Model
+[#clause_sdpi_requirements_core_model]
+=== SDPi Requirements Core Model
 
 To formally integrate requirements in to this specification, the following model details the core types of requirements that will be utilized:
 
@@ -209,7 +189,7 @@ Each type defines a unique class of requirements that build upon a foundational 
 | Use Case Feature
 | A functional "feature" requirement based on clinical use case scenarios.
 | sdpi_requirement_use_case
-| See TF-1 Appendix C, Gherkin-based model
+| See <<clause_use_case_specification_conventions_using_cucumber_gherkin>>
 
 | Referenced Standard ICS
 | Requirement definitions that are specified in a normative reference.
@@ -219,7 +199,7 @@ Each type defines a unique class of requirements that build upon a foundational 
 | SES
 | Non-technical requirements related to Safety, Effectiveness, and Security are captured in these blocks.  These are especially relevant to mapping IEEE 11073-1070x Participant Key Purposes standard requirements to elements within the SDPi specification.
 | sdpi_requirement_ses
-| See SES Section <<vol1_appendix_a_integrating_ses>>
+| See SES Section <<clause_integrating_ses>>
 
 | Tech Feature
 | Technology focused requirements result from the use of a particular implementation approach.  For example, use of TLS 1.3 may also result in the need to address related technical capabilities.
@@ -240,8 +220,8 @@ The following subsections provide additional detail for each element of the abov
 Note that each item includes metadata that is used for computability purposes as well as textual elements that are visibly rendered in the document.
 All content may be exported from the specification and contained in a requirements summary specification in a common format (e.g., JSON), which may be used for additional purposes such as integration into requirements management tools and conformity assessment testing artifacts.
 
-[#vol1_clause_sdpi_requirement_type_requirement_definition]
-==== Requirement Type: _Requirement Definition_
+[#clause_sdpi_requirement_type_requirement_definition]
+=== Requirement Type: _Requirement Definition_
 
 Each type of requirement shares a common set of metadata represented by the abstract "Requirement Definition" in the model above.
 This metadata supports the basic capabilities of each requirement including classification (subtype), navigation (traceability), and grouping.
@@ -258,7 +238,7 @@ This metadata supports the basic capabilities of each requirement including clas
 | Each requirement instance must include an identifier that is unique within the scope of the specification, and may be rendered in human-readable form
 | `sdpi_requirement`
 | `[sdpi_requirement#r7009]`
-| See <<vol1_clause_sdpi_requirement_assigning_unique_identifiers>> and https://github.com/IHE/DEV.SDPi/blob/master/articles/sdpi-article-ihe-tf-asciidoc-cookbook.adoc#semantic-requirements[defining requirements] for additional discussion; note this identifier may be used for tracking in systems such as requirement management tools
+| See <<clause_sdpi_requirement_assigning_unique_identifiers>> and https://github.com/IHE/DEV.SDPi/blob/master/articles/sdpi-article-ihe-tf-asciidoc-cookbook.adoc#semantic-requirements[defining requirements] for additional discussion; note this identifier may be used for tracking in systems such as requirement management tools
 
 | Requirement OID
 | An ISO Object Identifier that assigned from the <<vol3_appendix_c_oid_requirements,SDPi requirement OID hierarchy>> for the specific requirement.
@@ -317,8 +297,8 @@ a|
 
 The following sections discuss additional aspects of requirements formalization using this foundational _Requirement Definition_ metadata.
 
-[#vol1_clause_sdpi_requirement_assigning_unique_identifiers]
-===== Assigning Unique Identifiers
+[#clause_sdpi_requirement_assigning_unique_identifiers]
+==== Assigning Unique Identifiers
 
 Every requirement must have a unique instance identifier that is used for:
 
@@ -365,7 +345,7 @@ Changes that are not material and *do not* require a new _unique identifier_ inc
 
 NOTE: changes requiring assignment of new requirement identifiers may evolve with experience and/or finalization of the profile.
 
-===== Usage Levels
+==== Usage Levels
 
 Requirement Level must be valued as one of the following strings:  "shall", "should", "may".
 For example, "sdpi_req_level=should"
@@ -383,7 +363,7 @@ Another approach, would be to add a Requirement Condition data element that incl
 This will be addressed in subsequent versions of this specification.
 ////
 
-===== Requirement Grouping
+==== Requirement Grouping
 
 Some requirements may be grouped beyond their specification scope, requirement type or inter-requirement linkages.
 For example, security related requirements may include a "security" group label, regardless of where they are located in the specification.
@@ -394,7 +374,7 @@ For example:  sdpi_req_group=security,real-time
 
 This element should only be used when other association mechanisms do not easily meet the need.
 
-==== Requirement Navigation
+=== Requirement Navigation
 Although <<vol1_figure_appendix_a_sdpi_requirements_core_model>> generally indicates bi-directional navigation (arrows on both ends of Requirement-Usage pairs, supporting *_bi-directional bindings_* and navigation is not always helpful and is never easy.
 This is especially the case when considering potential future updates to the profile specifications.
 In that case, the general rule is:
@@ -412,8 +392,8 @@ Application of this rule would also hold true in other places such as backward r
 
 In some cases, it may be necessary to provide bi-directional bindings; however, that would be the exception, not the rule.
 
-[#vol1_clause_sdpi_requirement_type_technical_feature]
-==== Requirement Type: _Technical Feature_
+[#clause_sdpi_requirement_type_technical_feature]
+=== Requirement Type: _Technical Feature_
 
 *Description*:  A basic technical requirement that is not one of the other catageories and does not require additional metadata.
 
@@ -426,13 +406,13 @@ In some cases, it may be necessary to provide bi-directional bindings; however, 
 *Example*:  A <<vol1_spec_sdpi_p_actor_somds_participant>> should use a dynamically configured IP address.
 
 
-[#vol1_clause_sdpi_requirement_type_ihe_profile]
-==== Requirement Type: _IHE Profile_
+[#clause_sdpi_requirement_type_ihe_profile]
+=== Requirement Type: _IHE Profile_
 
 *Description*:  Requirement associated to an aspect of an IHE profile specification
 
 Each of the top-level profile elements in <<figure_sdpi_requirement_ihe_profile>> may require additional sub-elements; however, care must be taken not to replicate the entire specification in requirements metadata!
-This reflects the ultimate objective of having a fully modeled specification, with the documentation generated automatically (see <<vol1_clause_sdpi_requirement_future_extensibility>>).
+This reflects the ultimate objective of having a fully modeled specification, with the documentation generated automatically (see <<clause_sdpi_requirement_future_extensibility>>).
 At this point, only what is required to provide the intended capabilities (see below) should be included.
 Heuristic: start with less and add as needed.
 
@@ -458,8 +438,8 @@ image::../images/vol1-diagram-sdpi-req-ihe-profile.svg[align=center]
 . Question:  What requirements shall a <<vol1_spec_sdpi_p_actor_somds_provider>> support?
 . Answer:  Search exported requirements for Requirement Type=IHE Profile + AIPO=somds-provider_sdpi-p
 
-[#vol1_clause_sdpi_requirement_type_use_case_feature]
-==== Requirement Type: _Use Case Feature_
+[#clause_sdpi_requirement_type_use_case_feature]
+=== Requirement Type: _Use Case Feature_
 
 *Description*:  A requirement in a high-level, profile-independent use case specification
 
@@ -482,8 +462,8 @@ a| *{standard_note}*: Additional detail will be added in a subsequent version.  
 |===
 
 
-[#vol1_clause_sdpi_requirement_type_referenced_standard_ics]
-==== Requirement Type: _Referenced Standard ICS_
+[#clause_sdpi_requirement_type_referenced_standard_ics]
+=== Requirement Type: _Referenced Standard ICS_
 
 *Description*:  A requirement linked to a referenced standard.
 
@@ -497,8 +477,8 @@ a| *{standard_note}*: Additional detail will be added in a subsequent version.  
 . Source requirement identifier in referenced standard
 |===
 
-[#vol1_clause_sdpi_requirement_type_ses]
-==== Requirement Type: _SES_
+[#clause_sdpi_requirement_type_ses]
+=== Requirement Type: _SES_
 
 *Description*:  Requirement that represents a quality aspect of the specification typically related to risk management activities and resulting mitigations
 
@@ -521,8 +501,8 @@ a| *{standard_note}*: Additional detail will be added in a subsequent version.  
 |===
 
 
-[#vol1_clause_sdpi_requirement_use_type_requirement_fulfillment]
-==== Requirement Use Type: _Requirement Fulfillment_
+[#clause_sdpi_requirement_use_type_requirement_fulfillment]
+=== Requirement Use Type: _Requirement Fulfillment_
 
 *Description*:  Provides a link from a capability that may be associated with a test assertion to one or more requirements that it fulfills.
 
@@ -538,7 +518,7 @@ a| *{standard_note}*: Additional detail will be added in a subsequent version.  
 |===
 
 
-==== Relationship to Gazelle Master Model + Assertion Manager Tool
+=== Relationship to Gazelle Master Model + Assertion Manager Tool
 
 IHE formalizes all profile conformity assessment elements in the https://gazelle.ihe.net/GMM/home.seam[*_Gazelle Master Model (GMM)_*], including actors, transactions, profiles, profile options, and the test cases that are needed to ensure implementation conformance to each profile specification requirement.  To associate groups of conformity tests with systems being tested, Gazelle defines an *"AIPO"* bundle:
 * *Actor*
@@ -577,8 +557,8 @@ NOTE:  https://hl7.org/fhir/[HL7 FHIR] includes an https://hl7.org/fhir/testscri
 - IF THIS IS THE RIGHT PLACE TO DOCUMENT IT!
 ////
 
-[#vol1_clause_sdpi_requirement_future_extensibility]
-=== Future extensibility: Use Cases, MBSE Requirements Modeling & SysML 2.0
+[#clause_sdpi_requirement_future_extensibility]
+== Future extensibility: Use Cases, MBSE Requirements Modeling & SysML 2.0
 
 <<acronym_omg>>'s Systems Modeling Language 2.0 (see <<ref_omg_sysml_2_0_spec>> Section 7.20 Requirements language and <<ref_omg_sysml_2_0_intro_graphical_model>>), provides extended support for requirements modeling that not only provides the foundation for implementation of <<term_model_based_systems_engineering>> methodology (see https://en.wikipedia.org/wiki/Model-based_systems_engineering[MBSE Wikipedia article and references]), but also a computable specification that enables automated verification (e.g., using "Verification Cases").
 As these technologies evolve and are more generally accessible to standards communities, it will be possible to align the above requirements model with that specified in SysML 2.0 and ultimately to provide a specification that can be verified correct and validated through simulation.

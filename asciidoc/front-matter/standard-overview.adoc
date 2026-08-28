@@ -1,0 +1,95 @@
+
+
+
+[#clause_overview,sdpi_offset=clear]
+= Standard Overview
+
+[#clause_sdpi_standard_scope]
+== Scope & Purpose
+
+The Service-oriented Device Point-of-care Interoperability (SDPi) Profile specifications provide detailed instructions for seamless plug-and-play interoperability between ISO/IEEE 11073 SDC-based medical devices (including SaMD), as well as between medical devices and health IT systems based on HL7 FHIR and HL7 Version 2.
+Key considerations include enabling safe, secure and effective interoperability for data reporting, alert notification, device-external control and other high-acuity point-of-care  use cases.
+Provision is made for coordination of individual device functional contributions to support clinical system functions that are provided by two or more participants.
+
+Notes:
+
+1. High-acuity points of care include operating rooms (OR), intensive care units (ICU), step-down units, and emergency care.
+2. Clinical system function example:  Physiological monitoring of a patient's condition as they are being weaned off of a ventilator.
+3. "SaMD" is Software as a Medical Device, including "clinical apps"; they are a class of health software.
+4. IEEE 11073 Service-oriented Device Connectivity (SDC) standards provide a Services Oriented Architecture (SOA) specification for safe, effective and secure medical device interoperability (SES MDI).
+
+
+[#clause_sdpi_standard_copyright_licenses_trademarks]
+== Copyright Licenses & Trademarks
+
+
+include::copyrights.adoc[]
+
+// SDPi Trademark
+
+=== Trademarks
+
+HL7^®^, HL7^®^ FHIR^®^, HL7^®^ V2^®^ and associated design marks (logos) are all registered trademarks by Health Level Seven.
+Refer to the https://www.hl7.org/legal/trademarks.cfm[Guide to Using HL7 Trademarks] web page for copyright and usage policy information.
+
+IHE^®^ and the IHE logo are trademarks of the Healthcare Information Management Systems Society in the United States and trademarks of IHE Europe in the European Community.
+Please refer to the IHE Technical Frameworks General Introduction, https://profiles.ihe.net/GeneralIntro/ch-10.html[Section 10 - Trademark] for information on their use.
+
+[#clause_sdpi_xml_namespaces]
+== XML Namespaces
+
+The XML namespace URI that is used by this specification is: `urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1`.
+
+<<table_xml_namespaces>> lists XML namespaces and prefixes that are used in this specification.
+The choice of any namespace prefix is arbitrary and not semantically significant.
+
+.Prefixes and XML namespaces used in this specification.
+[#table_xml_namespaces,cols="1,5,2",width=100%,]
+|===
+|Prefix |XML Namespace |Specification
+
+|sdpi
+|urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1
+|This specification, used by <<acronym_biceps>> extensions.
+
+|dp
+|urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.2.2
+|This specification, used by the <<vol1_spec_sdpi_p_actor_discovery_proxy>> actor.
+
+|dpws
+|http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01
+|<<ref_oasis_dpws_2009>>
+
+|hs
+|urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.3.1
+|This specification, used by service specification of the <<term_history_service>>.
+
+|hm
+|urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.3.2
+|This specification, used by model specification of the <<term_history_service>>.
+
+|wsa
+|http://www.w3.org/2005/08/addressing
+|<<ref_oasis_ws_addressing_2006>>
+
+|wsd
+|http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01
+|<<ref_oasis_ws_discovery_2009>>
+
+|wse
+|http://schemas.xmlsoap.org/ws/2004/08/eventing
+|<<ref_w3c_ws_eventing_2006>>
+
+|wsm
+|http://schemas.xmlsoap.org/ws/2004/09/mex
+|<<ref_w3c_ws_metadata_exchange_2008>>
+
+|===
+
+
+// Forward declarations of common labels & acronyms & variables
+include::document-declarations.adoc[]
+
+// Define oids for referenced standards
+include::oid-definitions.adoc[]
+

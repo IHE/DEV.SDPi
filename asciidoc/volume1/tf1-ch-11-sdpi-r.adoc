@@ -350,7 +350,7 @@ However, their requirements are yet to be integrated into this standard, with ma
 
 |===
 
-For additional guidance, see Section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
+For additional guidance, see Section <<clause_ses_considerations_and_requirements>>.
 
 ==== Safety Requirements & Considerations
 No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ Section above.
@@ -359,7 +359,7 @@ No additional safety requirements or considerations are identified for this tech
 No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 ==== Security Requirements & Considerations
-No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P Profile (see <<vol1_clause_appendix_a_ses_considerations_section_template>>), and those specified in the _<<acronym_ses>> General Considerations_ Section above.
+No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P Profile (see <<clause_ses_considerations_section_template>>), and those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 [#vol1_clause_sdpi_r_cross_profile_considerations]
 === SDPi-R Cross Profile Considerations

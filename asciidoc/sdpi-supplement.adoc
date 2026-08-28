@@ -37,6 +37,8 @@
 :ihe_supplement_sdpi_publication_month: August 4, 2026
 :ihe_supplement_sdpi_public_comment_submission_deadline: N/A
 
+:ihe_supplement_sdpi_standard_sync_revision: {sdpi_version_major}.{sdpi_version_minor}.{sdpi_version_revision}
+
 // Oid, assigned by IHE-DEV, for the SDPi specification
 // https://wiki.ihe.net/index.php/PCD_OID_Management
 // STANDALONE SDPi:  Disabled the following line ... we may eventually need something in this supplement for OIDs but breaking it now makes sure that this is a SLIM document to start with!
@@ -73,7 +75,6 @@ ifeval::["{backend}" == "html5"]
 endif::[]
 {empty} +
 
-#Standalone SDPi SUPPLEMENT document - DRAFT VERSION - FOR COMMENT ONLY#
 
 [%noheader]
 [cols="1,4"]
@@ -101,6 +102,24 @@ ifeval::["{backend}" == "html5"]
 //A PDF version of the specification is available upon request.
 endif::[]
 
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *Gemini SDPi "Standalone" Supplement -- First Merge-to-Master Note*:
+
+Given the large number of files (100+) that have been modified as part of this "Standalone SDPi" effort, as well as the fact that after release 2.5.0 this is the only current active pull request branch, it was decided to go ahead and merge the current work to the DEV.SDPi GitHub Master branch.
+It is recognized that there is still significant work to be done to update the content of the standard, especially in the initial sections, so that they are complete, cohesive and read well for all stakeholders.
+These follow-on standard document tasks will be addressed in a subsequent https://github.com/IHE/DEV.SDPi/issues/575[DEV.SDPi Issue # 575 Standalone SDPi - 2.0].
+
+For this SDPi supplement specification document, though, additional review and trial use will be required to identify what additional work should be accomplished.
+Similarly that will be addressed in a follow-on DEV.SDPi issue when appropriate.
+
+|===
+
+
+
 [%noheader]
 [%autowidth]
 [cols="1"]
@@ -118,21 +137,6 @@ It may be that when a DEV TF integration occurs for those aspects of SDPi that a
 The complete detailed normative content will remain in the sdpi-standard document as it has evolved in recent years; however, that document will be designed so that it will always remain -- standalone -- and will not be integrated into some other document.
 
 For a summary of changes made to this release of the standard and related supplement, see the release note in the SDPi {ihe_supplement_sdpi_revision_short} Standard document.
-
-=== Drafting Note - Remaining Tasks & Open Questions
-Editorial Task List (prioritized) for this Supplement:
-
-. [.line-through]#Move over Introduction files#
-. [.line-through]#Move over TF-0 files#
-. [.line-through]#Add top level outline structure for supplement document#
-.. Move Clause 2 Overview content to supplement (it will stay here intact)
-. [.line-through]#Change labels as appropriate / necessary to be supplement-specific so as to reduce any confusion#
-. Add front matter updates per IHE TF Format but for this Supplement, explaining supplement/standalone & conceptual approach.
-NOTE:  The TF-1:2 content might be identical in this document.
-. Add overview content for each outline section
-. Add Standard -> Supplement Release Update punch list (e.g., new actors / transactions ... in TF-0 appendices)
-. Migrate all supplement INSTRUCTIONS (e.g., from TF-3) to this supplement
-. ...
 
 |===
 

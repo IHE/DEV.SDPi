@@ -15,14 +15,15 @@ include::sdpi-supplement-tf1-ch-2-overview.adoc[]
 
 The SDPi-Plug-and-trust ([[acronym_sdpi_p,SDPi-P]] SDPi-P) Profile supports foundational seamless connectivity, information exchange and service invocation as defined in the SDPi architecture detailed in <<vol1_clause_sdpi_overview_framework>>.
 
-//<<vol1_clause_sdpi_overview_framework>>.
-
 Whereas the related SDPi Profiles for reporting, alerting and external control are explicitly intended to support medical care capabilities, the SDPi-P Profile focuses on basic healthcare device interoperability.
 All the capabilities defined in SDPi-P are leveraged by and extended in the medically focused profiles.
 This foundational profile not only supports medical device interoperability ("<<acronym_mdi>>"), providing for “plug-and-play” capabilities, but also with a tightly integrated “trust” framework (see <<vol1_appendix_a_requirements_management_for_p_n_t_interperability>>).
 The establishment of a trusted ecosystem of medical and non-medical devices and applications footnote:[Note that SDPi-P supports application interoperability including “Software as a Medical Device” (<<acronym_samd>>).] begins at the start of discovery and a secure connection.  Therefore, the profile's name:  <<term_plug_and_trust>>.
 
-NOTE:  #Add reference to the standard document for complete content#
+IMPORTANT: All detail and normative content for this <<vol1_clause_sdpi_p_profile_reftext>> Profile is published in the **_Gemini Technical Framework Profile Standard -- Service-oriented Device Point-of-care Interoperability (SDPi)_** (release {ihe_supplement_sdpi_standard_sync_revision}), Volume 1:10.
+Refer to that specification for all normative specifications for this profile.
+
+// SUPPLEMENT TODO:  The above standard volume value should NOT be hard wired, but just using the normal reference did not resolve into the section number but the reftext.
 
 // 11.
 // = Service-oriented Device Point-of-care Interoperability - Reporting (SDPi-R) Profile
@@ -36,7 +37,11 @@ The SDPi-Reporting ([[acronym_sdpi_r,SDPi-R]] SDPi-R) Profile supports the commu
 Most of the actors and transactions in this specification are specialized versions of their counterparts in the <<acronym_sdpi_p>> Profile; however, are differentiated in that they are specifically designed to communicate information with an _intended medical purpose_.
 As a result, additional requirements are added to each actor and transaction to support address these additional safety and effectiveness requirements (See _SDPi-R Safety, Effectiveness and Security - Requirements and Considerations_ below).
 
-NOTE:  #Add reference to the standard document for complete content#
+IMPORTANT: All detail and normative content for this <<vol1_clause_sdpi_r_profile_reftext>> Profile is published in the **_Gemini Technical Framework Profile Standard -- Service-oriented Device Point-of-care Interoperability (SDPi)_** (release {ihe_supplement_sdpi_standard_sync_revision}), Volume 1:11.
+Refer to that specification for all normative specifications for this profile.
+
+// SUPPLEMENT TODO:  The above standard volume value should NOT be hard wired, but just using the normal reference did not resolve into the section number but the reftext.
+
 
 // 12.
 // = Service-oriented Device Point-of-care Interoperability – Alerting (SDPi-A) Profile
@@ -50,7 +55,11 @@ The SDPi-Alerting ([[acronym_sdpi_a,SDPi-A]] SDPi-A) Profile supports the commun
 The actors and transactions in this specification are specialized versions of their counterparts in the <<vol1_clause_sdpi_p_profile_reftext>>; however, are differentiated in that they are specifically designed to communicate alert information to fulfill an _intended medical purpose_, primarily to notify a clinician of a patient or device-related condition that requires their attention.
 Additional services have been provided to specifically support the exchange and management of this medical device alert information, providing a high-level of reliability and performance, commensurate with the potential risk to the patient if they are not promptly addressed.
 
-NOTE:  #Add reference to the standard document for complete content#
+IMPORTANT: All detail and normative content for this <<vol1_clause_sdpi_a_profile_reftext>> Profile is published in the **_Gemini Technical Framework Profile Standard -- Service-oriented Device Point-of-care Interoperability (SDPi)_** (release {ihe_supplement_sdpi_standard_sync_revision}), Volume 1:12.
+Refer to that document for all normative specifications for this profile.
+
+// SUPPLEMENT TODO:  The above standard volume value should NOT be hard wired, but just using the normal reference did not resolve into the section number but the reftext.
+
 
 // 13.
 // = Service-oriented Device Point-of-care Interoperability – external Control (SDPi-xC) Profile
@@ -58,7 +67,11 @@ NOTE:  #Add reference to the standard document for complete content#
 [#vol1_clause_sdpi_xc_profile,sdpi_offset=13,role=profile,profile-id=sdpi-xc,reftext="External Control Profile",oid-arcs=.14]
 == Service-oriented Device Point-of-care Interoperability – external Control (SDPi-xC) Profile
 
-NOTE:  #Add reference to the standard document for complete content#
+IMPORTANT: All detail and normative content for this <<vol1_clause_sdpi_xc_profile_reftext>> Profile is published in the **_Gemini Technical Framework Profile Standard -- Service-oriented Device Point-of-care Interoperability (SDPi)_** (release {ihe_supplement_sdpi_standard_sync_revision}), Volume 1:13.
+Refer to that document for all normative specifications for this profile.
+
+// SUPPLEMENT TODO:  The above standard volume value should NOT be hard wired, but just using the normal reference did not resolve into the section number but the reftext.
+
 
 [#vol1_clause_sdpi_xc_profile_reftext,reftext="SDPi-xC Profile"]
 The SDPi-External Control ([[acronym_sdpi_xc,SDPi-xC]] SDPi-xC) Profile enables external or "remote" control of one device by another, both being in the same secure environment (<<term_medical_device_lan>>).
@@ -69,7 +82,16 @@ Specializes services and semantics are provided to enable safe and secure contro
 [appendix#vol1_appendix_a_requirements_management_for_p_n_t_interperability,sdpi_offset=A]
 == Requirements Management for Plug-and-Trust Interoperability
 
-NOTE:  #Add Appendix A Overview here w/ reference to Standard section#
+IMPORTANT:  This informative appendix has been updated and is published in the **_Gemini Technical Framework Profile Standard -- Service-oriented Device Point-of-care Interoperability (SDPi)_** (release {ihe_supplement_sdpi_standard_sync_revision}), *_Plug-and-TTrust Interoperability Requirements Management_* section.
+
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *{supplement_note}*: This informative appendix may be added to the IHE DEV TF-1; however, its primary importance is in the standard document and not in the supplement.
+
+|===
 
 // A.1
 [#vol1_clause_appendix_a_requirements_from_narratives_to_pnt_interfaces,sdpi_offset=1]
@@ -99,8 +121,6 @@ NOTE:  #Add Appendix A Overview here w/ reference to Standard section#
 // Appendix B
 [bibliography#vol1_appendix_b_referenced_standards]
 === Referenced Standards
-
-NOTE: #Should this section be duplicated here to ensure that it is in the supplement and eventually in the IHE DEV TF?#
 
 [%noheader]
 [%autowidth]

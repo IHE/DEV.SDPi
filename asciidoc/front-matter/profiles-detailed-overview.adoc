@@ -19,13 +19,13 @@ These general concepts will help the technical framework reader understand the b
 |===
 
 // 2.2
-[#vol1_clause_ses_considerations_requirements,sdpi_offset=2]
+[#clause_ses_considerations_requirements,sdpi_offset=2]
 === Safety, Effectiveness and Security - Requirements and Considerations
 IHE specifications often include sections for "Security Considerations" and "Safety Considerations", capturing both general and specific guidance and requirements for system implementers.
 This standard extends these two concepts to include a third:  Effectiveness.
 The sections are titled "Safety, Effectiveness and Security - Requirements and Considerations" and make use of the underlying term <<term_safe_effective_secure>>.
 
-The background for <<acronym_ses>> is discussed in detail in <<vol1_appendix_a_integrating_ses>>; however, in general "<<acronym_ses>>" is used as a reference to the standards encompassed (directly and indirectly by reference) in <<term_joint_working_group_7>>, including <<ref_iso_81001_1_2021>> and <<ref_iec_80001_1_2021>>.
+The background for <<acronym_ses>> is discussed in detail in <<clause_integrating_ses>>; however, in general "<<acronym_ses>>" is used as a reference to the standards encompassed (directly and indirectly by reference) in <<term_joint_working_group_7>>, including <<ref_iso_81001_1_2021>> and <<ref_iec_80001_1_2021>>.
 These standards are primarily, though not exclusively, focused on *_risk management of health software_* (including <<acronym_samd>>) *_and medical devices that are deployed on various kinds of infrastructure_*, with a focus to managing three key properties:  *Safety, Effectiveness and Security*.
 Thus the "Safety, Effectiveness and Security - Requirements and Considerations" sections in this standard are intended to reflect the results of that risk management and to guide those who are tasked with deploying and managing these interoperable solutions during use.
 
@@ -102,7 +102,7 @@ The above figure illustrates how this balance was achieved, including:
 .. The Profiles are built upon a solid foundation of existing standards from various <<acronym_sdo>>s. Such standards are currently implemented for device information exchange, albeit in different use contexts such as healthcare enterprise / <<acronym_ehr>> integration.
 .. The actors provide defined mappings from SDPi transactions and semantics to those of other standards and standards profiles (e.g., IHE DEC or ACM).
 .. Gateways can be bi-directional, receiving information from non-SDPi enabled systems, such as patient demographics information from an <<acronym_ehr>>.
-.. For a more complete "Big Picture" perspective, see the discussion in <<vol1_clause_appendix_a_requirements_from_narratives_to_pnt_interfaces>>.
+.. For a more complete "Big Picture" perspective, see the discussion in <<clause_requirements_from_narratives_to_pnt_interfaces>>.
 . *PKPs for Medical Purposes*
 [none]
 .. A unique aspect of the IEEE 11073 <<acronym_sdc>> family of standards are the inclusion of the <<term_participant_key_purposes>> standards that advance <<term_safe_effective_secure>> "medical" interoperability.

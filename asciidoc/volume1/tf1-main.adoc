@@ -15,8 +15,5 @@ include::tf1-ch-12-sdpi-a.adoc[]
 // 13.
 include::tf1-ch-13-sdpi-xc.adoc[]
 
-// Appendix A
-include::tf1-ch-a-requirements-interoperability.adoc[]
-
 
 

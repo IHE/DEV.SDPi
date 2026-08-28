@@ -183,7 +183,7 @@ Therefore, with this release of the SDPi specification, this section remains inc
 ==== SES General Considerations
 Requirements from the <<ref_iso_81001_1_2021>>, <<ref_iec_80001_1_2021>>, and related standards should be fully applied to this technical framework element.
 
-For additional guidance, see Section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
+For additional guidance, see Section <<clause_ses_considerations_and_requirements>>.
 
 ==== Safety Requirements & Considerations
 No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ Section above.
@@ -192,7 +192,7 @@ No additional safety requirements or considerations are identified for this tech
 No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 ==== Security Requirements & Considerations
-No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P Profile (see <<vol1_clause_appendix_a_ses_considerations_section_template>>), and those specified in the _<<acronym_ses>> General Considerations_ Section above.
+No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P Profile (see <<clause_ses_considerations_section_template>>), and those specified in the _<<acronym_ses>> General Considerations_ Section above.
 
 Note that capability '_external or "remote" control of one device by another_' enabled by this SDPi-xC Profile refers to "external" to the device that is controlled, while both devices are in the same secure environment (<<term_medical_device_lan>>).
 

@@ -20,7 +20,7 @@ What is unique for this Gemini SDPi standard, is that some of the normative cont
 This begs the question of whether that content should only be referenced from this "standalone" specification, summarized in this specification and then referenced, or copied and adapted for this specification?
 Note:  Requirements interoperability metadata is currently included ONLY in this Gemini standard, and as a result, if implementation testing and conformity assessment will include semantic content that leverages this metadata, and if some of those requirements are curently only in the IHE DEV TF specification, then they will need to be included in this standard with the appropriate labeling so as to ensure that they are part of the exported requirements data.
 
-#REVIEWER QUESTIONS#:
+REVIEWER QUESTIONS:
 
 . Only SDPi-specific semantic content has been included in this current "standalone" draft of the SDPi standard; however, to understand the broader device informatics context, additional content (possibly summarized from the IHE Devices Technical framework, Volume 3) may be necessary for understanding this SDPi content.
 *_Please comment on what additional informational content (non-normative) should be added to this volume for clarity._*

@@ -106,6 +106,19 @@ ifeval::["{backend}" == "html5"]
 //A PDF version of the specification is available upon request.
 endif::[]
 
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *Gemini SDPi "Standalone" Standard -- First Merge-to-Master Note*:
+
+Given the large number of files (100+) that have been modified as part of this "Standalone SDPi" effort, as well as the fact that after release 2.5.0 this is the only current active pull request branch, it was decided to go ahead and merge the current work to the DEV.SDPi GitHub Master branch.
+It is recognized that there is still significant work to be done to update the content, especially in the initial sections, so that they are complete, cohesive and read well for all stakeholders.
+These follow-on tasks will be addressed in a subsequent https://github.com/IHE/DEV.SDPi/issues/575[DEV.SDPi Issue # 575 Standalone SDPi - 2.0].
+
+|===
+
 [%noheader]
 [%autowidth]
 [cols="1"]
@@ -147,38 +160,22 @@ These known limitations and forward-looking content include:
 . Releases along with the planned capability additions are managed in the project's https://github.com/IHE/DEV.SDPi/milestones[DEV.SDPi milestones];
 . This standard includes four SDPi Profiles, though the typical IHE supplement is organized for a single profile; as a result, some adjustments have been made, especially in the supplement overview section where there is a general SDPi overview and then basic overviews for each of the Profiles; challenging areas include profile "options" where there are FOUR sections vs. one; it is a work in progress and feedback is appreciated, especially to enhance clarity;
 . *Open / Closed Issues tables* -- starting with SDPi 1.1 and subsequent, the approach for the IHE open / closed issues section was transitioned to utilize https://github.com/IHE/DEV.SDPi/issues[Github Issues] that are related to specific releases; each release updates the changelog file, detailing what is Added, Changed or Removed;
-. *Requirements boxes* (e.g., "R1234") are included especially in TF-2, with some also part of TF-1 and TF-3; this is an initial approach that *_will be significantly expanded in future versions of the standard_*; documentation is provided in <<vol1_clause_sdpi_requirements_modeling_integration>>, including discussion related to how it will be expanded in future versions of the standard;
-. *_<<term_safe_effective_secure>> Sections_* (see <<vol1_clause_appendix_a_ses_considerations_section_template>>) are included in the specification; however, their use and content will be significantly extended in future versions;
+. *Requirements boxes* (e.g., "R1234") are included especially in TF-2, with some also part of TF-1 and TF-3; this is an initial approach that *_will be significantly expanded in future versions of the standard_*; documentation is provided in <<clause_sdpi_requirements_modeling_integration>>, including discussion related to how it will be expanded in future versions of the standard;
+. *_<<term_safe_effective_secure>> Sections_* (see <<clause_ses_considerations_section_template>>) are included in the specification; however, their use and content will be significantly extended in future versions;
 . This standard is currently rendered as a *"long form"* document -- one single HTML file; however, in subsequent versions the intent is to consider a multi-page / file HTML rendering + addition of a tabbed menu for navigating the sections of the standard;
 . *{standard_note}* boxes are provided throughout the document to help guide reviewers and implementers.
 This release of the standard+supplement documents is still in process, as the "Drafting Note" below indicates!
 The outline of this standard, though, will be as follows:
 
-
-=== "Standalone" SDPi Drafting Note:
-
-Editorial Task List (prioritized) for this Supplement:
-
-. Normalize the section labeling for refactored content in the standard that is no longer in a volume or appendix
-. Create common sdpi-version.adoc that can be shared between the two documents
-..  Also refactor gemini_standard_ and ihe_supplement_ to common labels
-..  Also refactor standard_clause_ to clause_
-. Refactor front matter for a standalone document:
-.. [.line-through]#Remove TF-0 content (supplement only)#
-.. Introduction: Gemini, Gemini TF Profile Standard, SDPi in particular;
-... Include Unique Features of TF Profile Standard (incl. embedded requirements, ... )
-.. Refactor any IHE TF template content to be "standalone" where appropriate
-.. Update section 2 overview of SDPi to a simple overview
-.. Refactor forward references content from early in document to a more "permanent" location!
-. Move all SUPPLEMENT INSTRUCTIONS from this document to the supplement - "Standard Note" ...
-. Add Standard release punch-list that includes updating Supplement content to keep in sync
-. ...
-
 |===
 
 include::front-matter/forward.adoc[]
 
-include::front-matter/overview.adoc[]
+include::front-matter/standard-overview.adoc[]
+
+include::front-matter/pnt-requirements-management.adoc[]
+
+include::front-matter/sdpi-profiles-overview.adoc[]
 
 include::front-matter/terms-definitions.adoc[]
 

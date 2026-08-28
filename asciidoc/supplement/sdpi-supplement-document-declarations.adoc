@@ -10,7 +10,7 @@ NOTES:
 ////
 
 [#supplement_clause_forward_declarations,sdpi_offset=clear]
-== Standard Forward Declarations
+== Supplement Forward Declarations
 
 [%noheader]
 [%autowidth]

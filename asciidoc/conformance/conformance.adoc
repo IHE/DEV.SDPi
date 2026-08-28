@@ -10,10 +10,9 @@ Note that additional content, such as Appendix 3:Z Implementation conformity sta
 NOTE: There may be some technical issues with consolidating all the conformance content in this section of the document.
 
 
-#REVIEWER QUESTIONS#:
+REVIEWER QUESTIONS:
 
-. Comment on the value, or not, of moving all conformance content to this clause, and whether any additional sections should be added earlier in the document regarding identification (listing) of those normative references that will be included in this clause.
-For example, in an updated and simplified version of the
+. Comment on the value, or not, of moving all conformance-related content to this clause, and whether any additional sections should be added earlier in the document regarding identification (listing) of those normative references that will be included in this clause.
 
 |===
 
