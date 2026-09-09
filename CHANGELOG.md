@@ -22,6 +22,7 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Changes
 
+- Standalone SDPi - Standard - 2.0 ([#575](https://github.com/IHE/DEV.SDPi/issues/575))
 - Standalone SDPi - Supplement - 2.0 ([#576](https://github.com/IHE/DEV.SDPi/issues/576))
 
 ### Editorial Fixes
