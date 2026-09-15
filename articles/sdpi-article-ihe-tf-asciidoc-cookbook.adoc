@@ -341,7 +341,7 @@ For a bulleted list of items, the final "full stop" character of each non-final 
 == Semantic markup
 https://docs.asciidoctor.org/asciidoctorj/latest/[Asciidoctor], which converts these files into other formats (e.g., html, pdf), has been https://docs.asciidoctor.org/asciidoctorj/latest/extensions/extensions-introduction/[extended] to process domain specific content for the supplement. These extensions provide semantic markup of content that is used to automatically generate, for example, implementation conformance statement tables and export requirements and use cases in JSON format for external tooling (see https://profiles.ihe.net/DEV/SDPi/index.html#vol1_appendix_a_requirements_management_for_p_n_t_interperability[requirements management for plug-and-trust interoperability]). 
 
-Content extracted, using markup in the source described below, and exported, to `sdpi-standard/referenced-artifacts/` in JSON format includes:
+Content extracted, using markup in the source described below, and exported, to `sdpi-standard/exported-artifacts/` in JSON format includes:
 
 * `sdpi-profiles.json`: all profiles (e.g., SDPi), including actors and options defined, and the transactions, content modules and use-cases supported,
 * `sdpi-content-modules.json`: content modules (e.g., SDC/BICEPS, etc),
@@ -1187,7 +1187,7 @@ For testing, documents can be generated using Windows command line tools (probab
    output at the expense of document processing features (notably: section renumber, reference sanatizer/ anchor replacement is 
    disabled). This is intendes _solely_ for tracking down build issues in local builds. The output created is not complete. 
 
-The output files are written to `sdpi-standard` folder. Extracts (requirements and use-cases in JSON format) are written to the `sdpi-standard\referenced-artifacts` folder. Extracts are generated along with the document output.
+The output files are written to `sdpi-standard` folder. Extracts (requirements and use-cases in JSON format) are written to the `sdpi-standard\exported-artifacts` folder. Extracts are generated along with the document output.
 
 IMPORTANT: Don't commit files in the `sdpi-standard` folder to the repository.
 
