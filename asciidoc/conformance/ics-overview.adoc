@@ -135,7 +135,7 @@ RefActor:somds_medical_data_consumer[] actors indicate conformatity with this pr
 .Implementation conformity statements that apply to all <<vol1_clause_sdpi_r_somds_medical_data_consumer>>s.
 sdpi_ics_table::[sdpi_req_actor=somds_medical_data_consumer]
 
-==== SOMDS Dec Gateway
+==== SOMDS DEC Gateway
 
 RefActor:somds_dec_gateway[] actors indicate conformatity with this profile by completing <<vol3_ics_actor_somds_dec_gateway>>.
 

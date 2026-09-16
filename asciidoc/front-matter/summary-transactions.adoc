@@ -2,13 +2,6 @@
 // [appendix#vol0_appendix_b_transactions,sdpi_offset=B]
 // === Transactions
 
-[%noheader]
-[%autowidth]
-[cols="1"]
-|===
-|Add the following *_new or modified_* transactions to the IHE Technical Frameworks General Introduction https://profiles.ihe.net/GeneralIntro/ch-B.html[Appendix B].
-|===
-
 ////
 
 #TODO: The syntax in the following table does not work when referenced; you cannot have [[...]] [[...]] back to back without some text in between.  Each entry needs to be modified to enable proper use of the block IDs#
