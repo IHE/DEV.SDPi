@@ -18,6 +18,7 @@ cp -R asciidoc/images sdpi-documents/sdpi-standard/images
 cp -R asciidoc/js sdpi-documents/sdpi-standard/js
 cp -R asciidoc/css sdpi-documents/sdpi-standard/css
 cp -R asciidoc/fonts sdpi-documents/sdpi-standard/fonts
+cp -R referenced-artifacts sdpi-documents/sdpi-standard/referenced-artifacts
 rm -rf sdpi-documents/sdpi-standard/.asciidoctor
 rm -rf sdpi-documents/sdpi-standard/readme.md
 
@@ -26,6 +27,7 @@ cp -R asciidoc/images sdpi-documents/sdpi-supplement/images
 cp -R asciidoc/js sdpi-documents/sdpi-supplement/js
 cp -R asciidoc/css sdpi-documents/sdpi-supplement/css
 cp -R asciidoc/fonts sdpi-documents/sdpi-supplement/fonts
+cp -R referenced-artifacts sdpi-documents/sdpi-supplement/referenced-artifacts
 rm -rf sdpi-documents/sdpi-supplement/.asciidoctor
 rm -rf sdpi-documents/sdpi-supplement/readme.md
 
