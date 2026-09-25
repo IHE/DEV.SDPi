@@ -55,7 +55,7 @@ class ConverterOptions(
     val extractsFolder: Path? = null,
 ) {
     companion object {
-        private const val DEFAULT_EXTRACTS_FOLDER: String = "referenced-artifacts"
+        private const val DEFAULT_EXTRACTS_FOLDER: String = "exported-artifacts"
 
         fun makeDefaultPath(strOutputFolder: String): Path {
             return Path.of(strOutputFolder, DEFAULT_EXTRACTS_FOLDER)

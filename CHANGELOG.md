@@ -17,6 +17,7 @@ Each section shall contain a list of action items of the following format: `<bri
 ## Unreleased
 
 - Batch file (`.ci/asciidoc-converter/build_standard_debug.bat`) to aid troubleshooting document processing.
+- Generate artefacts into `exported-artifacts` instead of `referenced-artifacts` ([#574](https://github.com/IHE/DEV.SDPi/issues/574))
 
 ### Added
 
