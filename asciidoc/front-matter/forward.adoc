@@ -82,8 +82,26 @@ This will include other options that were considered, as well as the unique emer
 [%autowidth]
 [cols="1"]
 |===
-a| *{standard_note}*:  Explantion of the conformance related requirements metadata into the JSON files contained in the referenced-artifacts folder.
+a| *{standard_note}*:  Explantion of the conformance related requirements metadata into the JSON files contained in the exported-artifacts folder.
 Include a table with the file names and purpose, per what will be published in the profiles.IHE.net/DEV SDPi pages.
+|===
+
+Information automatically is extracted from the specifcation source files and published in a machine readible `json` format is summarized in <<forward_json_extracts>>
+
+[#forward_json_extracts]
+.Content exported from the specification
+[%autowidth]
+[cols="1,2", options="header"]
+|===
+| Filename | Friendly Name 
+| `sdpi-content-modules.json` |  Content modules defined in the SDPI specification 
+| `sdpi-profiles.json` |  Transactions, content modules, actors, use cases and profile actor options for SDPi profiles 
+| `sdpi-requirements.json` |  Requirement definitions from the SDPi specification 
+| `sdpi-transactions.json` |  Transaction definitions from the SDPi specification, including actor contributions 
+| `sdpi-use-cases.json` |  Use case definitions, including specification background and scenarios, from the SDPi specification 
+| `sdpi-transactions-deprecated.json` |  SDPi transactions that have been deprecated 
+| `sdpi-requirements-deprecated.json` |  SDPi requirements  that have been deprecated
+| `sdpi-deprecated.json` |  Collection of all deprecated oids (including transactions and requirements)
 |===
 
 include::standard-issues.adoc[]
