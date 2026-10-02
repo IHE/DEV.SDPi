@@ -2,13 +2,6 @@
 // [appendix#vol0_appendix_a_actors,sdpi_offset=A]
 // === Actors
 
-[%noheader]
-[%autowidth]
-[cols="1"]
-|===
-|Add the following *_new or modified_* actors to the IHE Technical Frameworks General Introduction https://profiles.ihe.net/GeneralIntro/ch-A.html[Appendix A].
-|===
-
 ////
 #TODO: ADD "summary_" TO THESE DEFINITIONS OR KEEP THEM AS IS; IF WE ADDED summary_ THEN THE MAIN REFERENCE WOULD BE TO THE PROFILE IN WHICH THEY ARE USED BUT AN ACTOR MAY BE USED IN MULTIPLE PROFILES ...#
 ////
