@@ -33,8 +33,8 @@
 
 | <<transaction_name_discover_system_context_and_capabilities>> (_deferred_)
 | Responder
-| R
-| Deferred to a future version of SDPi
+| ...
+| Deferred to a future version of SDPi. Once the transaction is defined by such future version of SDPi, the expectation is that it will be required (R) for the actor.
 // <<vol2_clause_dev_26>>
 
 | <<transaction_name_manage_biceps_subscription>>
@@ -59,8 +59,8 @@
 
 | <<transaction_name_set_provider_state>> (_deferred_)
 | Responder
-| O
-| Deferred to a future version of SDPi
+| ...
+| Deferred to a future version of SDPi. Once the transaction is defined by such future version of SDPi, the expectation is that it will be optional (O) for the actor.
 // <<vol2_clause_dev_31>>
 
 
@@ -104,8 +104,8 @@
 
 | <<transaction_name_discover_system_context_and_capabilities>> (_deferred_)
 | Initiator
-| R
-| Deferred to a future version of SDPi
+| ...
+| Deferred to a future version of SDPi. Once the transaction is defined by such future version of SDPi, the expectation is that it will be required (R) for the actor.
 // <<vol2_clause_dev_26>>
 
 
@@ -131,8 +131,8 @@
 
 | <<transaction_name_set_provider_state>> (_deferred_)
 | Initiator
-| O
-| Deferred to a future version of SDPi
+| ...
+| Deferred to a future version of SDPi. Once the transaction is defined by such future version of SDPi, the expectation is that it will be optional (O) for the actor.
 // <<vol2_clause_dev_31>>
 
 
