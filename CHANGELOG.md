@@ -26,6 +26,7 @@ Each section shall contain a list of action items of the following format: `<bri
 - Corrected actors and transactions tables 1:10.1-1, 1:12.1-1 and 1:13.1-1 to remove requirement for deferred transactions ([#601](https://github.com/IHE/DEV.SDPi/issues/601))
 
 ### Editorial Fixes
+- Clarified note regarding IEEE copyright ([#599](https://github.com/IHE/DEV.SDPi/issues/599))
 
 ## [2.5.0] - 2026-08-04
 
