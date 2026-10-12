@@ -128,7 +128,7 @@ a| *Gemini SDPi {gemini_standard_sdpi_revision_short} "Standalone" Standard -- R
 === Release Note:
 This version of the SDPi {gemini_standard_sdpi_revision_short} Standard for Trial Use (HL7 STU) / Trial Implementation (IHE TI) standard is the 3rd release in 2026, continuing the objective to provide three to four releases each year that include both _incremental_ updates (e.g., editorial "fixes"), ballot comment resolutions (e.g., from HL7 ballot cycles), and additional capability enhancements.
 
-This Gemini SDPi {gemini_standard_sdpi_revision_short} release is the first time the specification has been separated into two separate documents:
+This Gemini SDPi {gemini_standard_sdpi_revision_short} release is separated into two separate documents:
 
 . *sdpi-standard.html* -- contains all the normative content from the previous releases; however, the front matter is reorganized in alignment with other standards templates (e.g., Scope, Introduction / Overview, References, Acronyms, etc.).
 It still maintains the IHE Technical Framework organizational elements (e.g., Volume 1 Integration Profiles, Volume 2 Transactions, etc.); however, elements that are solely intended for an IHE Technical Framework Supplement (e.g., directions for how to integrate a section into the IHE Devices Technical Framework - Final Text) are removed and only contained in the new supplement document
