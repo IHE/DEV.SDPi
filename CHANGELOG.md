@@ -27,6 +27,7 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Editorial Fixes
 - Clarified note regarding IEEE copyright ([#599](https://github.com/IHE/DEV.SDPi/issues/599))
+- Updates to cover page and notes for completing SDPi 2.6 release ([#606](https://github.com/IHE/DEV.SDPi/issues/606))
 
 ## [2.5.0] - 2026-08-04
 
