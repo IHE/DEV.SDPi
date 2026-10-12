@@ -16,6 +16,8 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ## Unreleased
 
+## [2.6.0] - 2026-10-12
+
 ### Added
 
 - Batch file (`.ci/asciidoc-converter/build_standard_debug.bat`) to aid troubleshooting document processing.
