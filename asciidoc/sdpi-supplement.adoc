@@ -24,17 +24,17 @@
 // https://docs.asciidoctor.org/asciidoc/latest/attributes/unset-attributes/
 :markup-actor-transactions-table:
 
-:sdpi_milestone_publication: SDPi 2.5 Publication
-:sdpi_milestone_review: SDPi 2.5 Review
+:sdpi_milestone_publication: SDPi 2.6 Publication
+:sdpi_milestone_review: SDPi 2.6 Review
 
 :sdpi_version_major: 2
-:sdpi_version_minor: 5
+:sdpi_version_minor: 6
 :sdpi_version_revision: 0
 :ihe_supplement_sdpi_revision: {sdpi_version_major}.{sdpi_version_minor}.{sdpi_version_revision}
 :ihe_supplement_sdpi_revision_short: {sdpi_version_major}.{sdpi_version_minor}
 :ihe_supplement_sdpi_revision_date: {localdatetime}
 :ihe_supplement_sdpi_revision_label: Supplement for Trial Implementation
-:ihe_supplement_sdpi_publication_month: August 4, 2026
+:ihe_supplement_sdpi_publication_month: October 12, 2026
 :ihe_supplement_sdpi_public_comment_submission_deadline: N/A
 
 :ihe_supplement_sdpi_standard_sync_revision: {sdpi_version_major}.{sdpi_version_minor}.{sdpi_version_revision}
@@ -127,7 +127,7 @@ Similarly that will be addressed in a follow-on DEV.SDPi issue when appropriate.
 a| *Gemini SDPi {ihe_supplement_sdpi_revision_short} "Standalone" Supplement -- Release & Drafting Notes*:
 
 === Release Note
-This release of SDPi is the first version that includes a separate _sdpi-supplement_ specification (this document) that was created out of the previous released version and aligned with the current _sdpi-standard_ document.
+This release of SDPi is the second version that includes a separate _sdpi-supplement_ specification (this document) that was created out of the previous released version and aligned with the current _sdpi-standard_ document.
 This document is intended to provide the necessary organization and summary content that can ultimately be integrated into the IHE DEV TF "final text" normative version.
 When that integration to the DEV TF occurs, this "supplement" will no longer be needed and will be deprecated; however, the "standard" document will always persist.
 

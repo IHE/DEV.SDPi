@@ -15,7 +15,7 @@ Information pertaining to the use of IHE International copyrighted materials is 
 a| *{standard_note}*:  The content below is verbatim from the IEEE permission letter.
 An abbreviated version may be provided in subsequent standard versions with a reference to the complete letter.
 
-The copyright language will need to be updated to support future PKP standards <<ref_ieee_11073_10702_202x>> and <<ref_ieee_11073_10703_202x>>.
+The IEEE permission letter in this section covers five published IEEE 11073 standards. <<ref_ieee_11073_10702_202x>> and <<ref_ieee_11073_10703_202x>> are not yet published and are therefore not covered by this permission agreement. Content from these draft standards included in this specification is limited to informative references only. Upon their publication, updated permission will be sought.
 
 Note that NIST and the RTTMS tools are a key factor in the nomenclature aspect of the licensing discussion.
 
