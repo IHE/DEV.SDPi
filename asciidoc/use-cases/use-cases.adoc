@@ -101,27 +101,31 @@ include::use-case-profile-60601-1-8.adoc[]
 // Variables for Use Cases
 :var_use_case_id: 1
 
-// C.2  Use Case Feature: Synchronized Time Across Devices (STAD)
+// C.1  Use Case Feature: Synchronized Time Across Devices (STAD)
 :var_use_case_id: 1
 include::use-case-stad.adoc[]
 
-// C.3  Use Case Feature: Standalone ICU Dashboard SP (SICDSP)
+// C2  Use Case Feature: Standalone ICU Dashboard SP (SICDSP)
 :var_use_case_id: 2
 include::use-case-sicdsp.adoc[]
 
-// C.4  Use Case Feature: Standalone ICU Dashboard MP (SICDMP)
+// C.3  Use Case Feature: Standalone ICU Dashboard MP (SICDMP)
 :var_use_case_id: 3
 include::use-case-sicdmp.adoc[]
 
-// C.5  Use Case Feature: Device Data to Enterprise Systems (DDES)
+// C.4  Use Case Feature: Device Data to Enterprise Systems (DDES)
 :var_use_case_id: 4
 include::case-ddes.adoc[]
 
-// C.6  Use Case Feature: Alerts to Clinician Notification Systems (ACNS)
+// C.5  Use Case Feature: Alerts to Clinician Notification Systems (ACNS)
 :var_use_case_id: 5
 include::use-case-acns.adoc[]
 
-// C.7  Use Case Feature: Alerts to Alert Recording Systems (AARS)
+// C.6  Use Case Feature: Alerts to Alert Recording Systems (AARS)
 :var_use_case_id: 6
 include::use-case-aars.adoc[]
+
+// C.7  Use Case Feature: Silent Point-of-Care (SPoC)
+:var_use_case_id: 7
+include::use-case-spoc.adoc[]
 
