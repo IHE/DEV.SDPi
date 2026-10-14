@@ -16,6 +16,14 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ## Unreleased
 
+### Added
+- Add Silent Point-of-Care Use Case to SDPi Use Cases Section [#493](https://github.com/IHE/DEV.SDPi/issues/493))
+
+### Changes
+
+### Editorial Fixes
+
+
 ## [2.6.1] - 2026-10-14
 
 ### Changes
