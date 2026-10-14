@@ -31,6 +31,8 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Changes
 
+- Standalone SDPi - Standard - 2.0 ([#575](https://github.com/IHE/DEV.SDPi/issues/575))
+- Standalone SDPi - Supplement - 2.0 ([#576](https://github.com/IHE/DEV.SDPi/issues/576))
 - Generate artefacts into `exported-artifacts` instead of `referenced-artifacts` ([#574](https://github.com/IHE/DEV.SDPi/issues/574))
 - Corrected actors and transactions tables 1:10.1-1, 1:12.1-1 and 1:13.1-1 to remove requirement for deferred transactions ([#601](https://github.com/IHE/DEV.SDPi/issues/601))
 
