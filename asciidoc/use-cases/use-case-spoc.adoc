@@ -16,16 +16,17 @@
 
 .<<label_use_case_name_spoc>> (<<acronym_spoc>>) -- Technical View
 
-image::../images/vol1-diagram-use-case-acns-tech-view.svg[]
-
+image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 [#clause_use_case_spoc_technical_precondition]
 === Technical Pre-Conditions
 
 [role=use-case-background]
 ====
-*Given* ...
+*Given* All devices communicate using a common MD LAN protocol
 
-*And* ...
+*And* At least one DAS Manager is connected to the MD LAN
+
+*And* All connected devices support Silent PoC Mode functionality
 ====
 
 
@@ -34,7 +35,75 @@ image::../images/vol1-diagram-use-case-acns-tech-view.svg[]
 
 [role=use-case-scenario,sdpi_scenario="SPoC Scenario Name"]
 [oid-arcs=".1"]
-==== Scenario: <<acronym_spoc>> {var_use_case_id}.1 - SPoC Scenario Label
+==== Scenario: <<acronym_spoc>> {var_use_case_id}.1 - Connect PoC devices to a DAS
+
+[role=use-case-steps]
+====
+*Given* ...
+
+*When* ...
+
+*Then* ...
+====
+
+
+[#clause_use_case_spoc_scenarios]
+=== Scenarios
+
+[role=use-case-scenario,sdpi_scenario="SPoC Scenario Name"]
+[oid-arcs=".2"]
+==== Scenario: <<acronym_spoc>> {var_use_case_id}.2 - Establish a DAS for a Newly Connected Device
+
+[role=use-case-steps]
+====
+*Given* ...
+
+*When* ...
+
+*Then* ...
+====
+
+
+[#clause_use_case_spoc_scenarios]
+=== Scenarios
+
+[role=use-case-scenario,sdpi_scenario="SPoC Scenario Name"]
+[oid-arcs=".3"]
+==== Scenario: <<acronym_spoc>> {var_use_case_id}.3 - Place a PoC in Silent Mode - No Active Alarms
+
+[role=use-case-steps]
+====
+*Given* ...
+
+*When* ...
+
+*Then* ...
+====
+
+
+[#clause_use_case_spoc_scenarios]
+=== Scenarios
+
+[role=use-case-scenario,sdpi_scenario="SPoC Scenario Name"]
+[oid-arcs=".4"]
+==== Scenario: <<acronym_spoc>> {var_use_case_id}.4 - Place a PoC in Silent Model - Alarms Already Active
+
+[role=use-case-steps]
+====
+*Given* ...
+
+*When* ...
+
+*Then* ...
+====
+
+
+[#clause_use_case_spoc_scenarios]
+=== Scenarios
+
+[role=use-case-scenario,sdpi_scenario="SPoC Scenario Name"]
+[oid-arcs=".5"]
+==== Scenario: <<acronym_spoc>> {var_use_case_id}.5 - Establish Primary and Backup DAS Coordinators
 
 [role=use-case-steps]
 ====
