@@ -29,12 +29,12 @@
 
 :sdpi_version_major: 2
 :sdpi_version_minor: 6
-:sdpi_version_revision: 0
+:sdpi_version_revision: 1
 :gemini_standard_sdpi_revision: {sdpi_version_major}.{sdpi_version_minor}.{sdpi_version_revision}
 :gemini_standard_sdpi_revision_short: {sdpi_version_major}.{sdpi_version_minor}
 :gemini_standard_sdpi_revision_date: {localdatetime}
 :gemini_standard_sdpi_revision_label: Standard for Trial Use
-:gemini_standard_sdpi_publication_month: October 12, 2026
+:gemini_standard_sdpi_publication_month: October 14, 2026
 :gemini_standard_sdpi_public_comment_submission_deadline: N/A
 
 // Oid, assigned by IHE-DEV, for the SDPi specification
@@ -137,8 +137,9 @@ The supplement includes all the rubric information needed for ultimately integra
 
 For this release, key changes include:
 
-1. Resolution of first two comments from the HL7 SEPTEMBER 2026 Ballot
-2. Improvements to build artifactory
+1. Standalone SDPi - Editorial content update to the standard and supplement documents
+2. Resolution of first two comments from the HL7 SEPTEMBER 2026 Ballot
+3. Improvements to build artifactory
 
 All changes incorporated in a release are managed through Github Issues and reviewed Pull Requests.
 For a list of those related to this release, see

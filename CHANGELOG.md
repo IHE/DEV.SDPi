@@ -16,11 +16,18 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ## Unreleased
 
+## [2.6.1] - 2026-10-14
+
+### Changes
+
+- Corrected attribution of ([#528](https://github.com/IHE/DEV.SDPi/issues/528)) from version 2.5.0 to 2.6.0 and deleted duplicate entry in 2.5.0
+
 ## [2.6.0] - 2026-10-12
 
 ### Added
 
-- Batch file (`.ci/asciidoc-converter/build_standard_debug.bat`) to aid troubleshooting document processing.
+- Standalone SDPi - Editorial Content Update to the Standard and Supplement documents ([#528](https://github.com/IHE/DEV.SDPi/issues/528))
+- Batch file (`.ci/asciidoc-converter/build_standard_debug.bat`) to aid troubleshooting document processing
 
 ### Changes
 
@@ -37,8 +44,6 @@ Each section shall contain a list of action items of the following format: `<bri
 
 - History Service design, MDPWS requirements and transaction DEV-32 ([#360](https://github.com/IHE/DEV.SDPi/issues/360))
 - Clarification on SDPi-P safety requirements and considerations to explicitly include the application of the IEEE 11073-10700 standard ([#529](https://github.com/IHE/DEV.SDPi/issues/529))
-- Clarification on the use of `wsa:To` in greeting {`Hello`, `Bye`} notifications sent by a discovery proxy to a consumer ([#534](https://github.com/IHE/DEV.SDPi/issues/534)).
-- Standalone SDPi - Editorial Content Update to the Standard and Supplement documents ([#528](https://github.com/IHE/DEV.SDPi/issues/528)).
 - Clarification on the use of `wsa:To` in greeting {`Hello`, `Bye`} notifications sent by a discovery proxy to a consumer ([#534](https://github.com/IHE/DEV.SDPi/issues/534))
 - Required SDPi-P actor grouping entries for BICEPS Content Creator and BICEPS Content Consumer in TF-1:10.3 ([#476](https://github.com/IHE/DEV.SDPi/issues/476))
 - Support for semantic markup for deprecating requirements, transactions, use-cases, profiles, content modules and actors ([#511](https://github.com/IHE/DEV.SDPi/issues/511))
