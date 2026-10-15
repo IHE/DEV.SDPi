@@ -101,3 +101,17 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 
 *Then* ...
 ====
+
+
+[role=use-case-scenario,sdpi_scenario="Coordinate Mixed DIS-DAS PoC Ecosystem"]
+[oid-arcs=".6"]
+==== Scenario: <<acronym_spoc>> {var_use_case_id}.6 - Coordinate Mixed DIS-DAS PoC Ecosystem
+
+[role=use-case-steps]
+====
+*Given* ...
+
+*When* ...
+
+*Then* ...
+====
