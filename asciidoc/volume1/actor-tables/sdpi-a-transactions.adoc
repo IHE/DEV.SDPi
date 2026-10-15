@@ -9,7 +9,7 @@
 .^|Optionality
 .^|Reference
 
-.8+| <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>
+.10+| <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>
 .^| <<transaction_name_establish_medical_alert_exchange>>
 .^| Responder
 .^| R
@@ -26,13 +26,13 @@
 | <<vol2_clause_dev_40>>
 
 | <<transaction_name_establish_medical_alert_delegation>> (_deferred_)
-| Responder
+| Responder and Initiator
 | ...
 | [DEV-41] Deferred to a future version of SDPi. Once the transaction is defined by such future version of SDPi, the expectation is that it will be required for the actor if <<vol1_clause_sdpi_a_actor_option_alert_delegation_reftext>> is supported.
 // <<vol2_clause_dev_41>>
 
 | <<transaction_name_end_medical_alert_delegation>> (_deferred_)
-| Initiator
+| Responder and Initiator
 | ...
 | [DEV-42] Deferred to a future version of SDPi. Once the transaction is defined by such future version of SDPi, the expectation is that it will be required for the actor if <<vol1_clause_sdpi_a_actor_option_alert_delegation_reftext>> is supported.
 // <<vol2_clause_dev_42>>
@@ -53,7 +53,19 @@
 | R ^(See^ ^Note^ ^2)^
 | <<vol2_clause_dev_49>>
 
-.8+| <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>
+| <<transaction_name_activate_medical_alert_signals>> (_deferred_)
+| Responder and Initiator
+| ...
+| [DEV-55] Deferred to a future version of SDPi.
+// <<vol2_clause_dev_55>>
+
+| <<transaction_name_deactivate_medical_alert_signals>> (_deferred_)
+| Responder and Initiator
+| ...
+| [DEV-56] Deferred to a future version of SDPi.
+// <<vol2_clause_dev_56>>
+
+.10+| <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>
 .^| <<transaction_name_establish_medical_alert_exchange>>
 .^| Initiator
 .^| R
@@ -96,6 +108,18 @@
 | Responder and Initiator
 | R ^(See^ ^Note^ ^2)^
 | <<vol2_clause_dev_49>>
+
+| <<transaction_name_activate_medical_alert_signals>> (_deferred_)
+| Responder and Initiator
+| ...
+| [DEV-55] Deferred to a future version of SDPi.
+// <<vol2_clause_dev_55>>
+
+| <<transaction_name_deactivate_medical_alert_signals>> (_deferred_)
+| Responder and Initiator
+| ...
+| [DEV-56] Deferred to a future version of SDPi.
+// <<vol2_clause_dev_56>>
 
 .4+| <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> ^(See^ ^Note^ ^1)^
 .^| <<transaction_name_establish_medical_alert_exchange>>

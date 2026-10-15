@@ -177,4 +177,16 @@ include::../volume2/dev-49/tf2-dev-49-summary.adoc[]
 
 .^| DEV-50 | _Reserved_ |
 
+.^| [[vol0_transaction_summary_dev_55,DEV-55 Activate Medical Alert Signals]]
+[[transaction_number_dev_55,DEV-55]] DEV-55
+| [[transaction_name_activate_medical_alert_signals,Activate Medical Alert Signals]] Activate Medical Alert Signals
+| Deferred to a future version of SDPi
+// include::../volume2/dev-55/tf2-dev-55-summary.adoc[]
+
+.^| [[vol0_transaction_summary_dev_56,DEV-56 Deactivate Medical Alert Signals]]
+[[transaction_number_dev_56,DEV-56]] DEV-56
+| [[transaction_name_deactivate_medical_alert_signals,Deactivate Medical Alert Signals]] Deactivate Medical Alert Signals
+| Deferred to a future version of SDPi
+// include::../volume2/dev-56/tf2-dev-56-summary.adoc[]
+
 |===

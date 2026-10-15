@@ -17,6 +17,9 @@ As a result, the completion of these two transactions has been deferred to a sub
 
 Similarly, a related transaction, [DEV-43], namely providing clinician alert acknowledgement status information back to the alerting device, is also being discussed further and will be deferred to a subsequent version of the standard.
 
+The <<transaction_name_activate_medical_alert_signals>> [DEV-55] and <<transaction_name_deactivate_medical_alert_signals>> [DEV-56] transactions are also deferred to a future version of SDPi.
+Both the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> and <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> will act as initiator and responder for these transactions.
+
 Finally, it should be noted that  <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> is defined below and fully specified in <<vol2_clause_appendix_sdpi_acm_gateway>>.
 Also in development is <<acronym_hl7>> <<acronym_fhir>> support for medical alerting (e.g., refinement of the <<acronym_fhir>> DeviceAlert resource and future development of a <<acronym_fhir>> Device Alerting IG).
 As a result, a "SOMDS Medical Alert FHIR Gateway" is not included as an actor at this stage; however, it is expected to be added in the coming year or two.
@@ -80,13 +83,17 @@ sdpi_include_transaction::DEV-39[actor-id="somds_acm_gateway",initiator="require
 sdpi_include_transaction::DEV-40[actor-id="somds_acm_gateway",responder="required"]
 
 // Deferred transactions. 
-sdpi_include_transaction::DEV-41[actor-id="somds_medical_alert_provider",responder="optional",placeholder-name="Establish medical alert delegation"]
-sdpi_include_transaction::DEV-42[actor-id="somds_medical_alert_provider",initiator="optional",placeholder-name="End medical alert delegation"]
+sdpi_include_transaction::DEV-41[actor-id="somds_medical_alert_provider",responder="optional",initiator="optional",placeholder-name="Establish medical alert delegation"]
+sdpi_include_transaction::DEV-42[actor-id="somds_medical_alert_provider",initiator="optional",responder="optional",placeholder-name="End medical alert delegation"]
 sdpi_include_transaction::DEV-43[actor-id="somds_medical_alert_provider",responder="required",placeholder-name="Update alert acknowledgement status"]
+sdpi_include_transaction::DEV-55[actor-id="somds_medical_alert_provider",initiator="optional",responder="optional",placeholder-name="Activate medical alert signals"]
+sdpi_include_transaction::DEV-56[actor-id="somds_medical_alert_provider",initiator="optional",responder="optional",placeholder-name="Deactivate medical alert signals"]
 
 sdpi_include_transaction::DEV-41[actor-id="somds_medical_alert_consumer",initiator="optional",placeholder-name="Establish medical alert delegation"]
 sdpi_include_transaction::DEV-42[actor-id="somds_medical_alert_consumer",responder="optional",placeholder-name="End medical alert delegation"]
 sdpi_include_transaction::DEV-43[actor-id="somds_medical_alert_consumer",initiator="required",placeholder-name="Update alert acknowledgement status"]
+sdpi_include_transaction::DEV-55[actor-id="somds_medical_alert_consumer",initiator="optional",responder="optional",placeholder-name="Activate medical alert signals"]
+sdpi_include_transaction::DEV-56[actor-id="somds_medical_alert_consumer",initiator="optional",responder="optional",placeholder-name="Deactivate medical alert signals"]
 
 sdpi_include_transaction::DEV-43[actor-id="somds_acm_gateway",initiator="required",placeholder-name="Update alert acknowledgement status"]
 
