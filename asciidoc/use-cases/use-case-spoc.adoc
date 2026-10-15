@@ -33,7 +33,7 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 [#clause_use_case_spoc_scenarios]
 === Scenarios
 
-[role=use-case-scenario,sdpi_scenario="SPoC Scenario Name"]
+[role=use-case-scenario,sdpi_scenario="Connect PoC devices to a DAS"]
 [oid-arcs=".1"]
 ==== Scenario: <<acronym_spoc>> {var_use_case_id}.1 - Connect PoC devices to a DAS
 
@@ -47,10 +47,7 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 ====
 
 
-[#clause_use_case_spoc_scenarios]
-=== Scenarios
-
-[role=use-case-scenario,sdpi_scenario="SPoC Scenario Name"]
+[role=use-case-scenario,sdpi_scenario="Establish a DAS for a Newly Connected Device"]
 [oid-arcs=".2"]
 ==== Scenario: <<acronym_spoc>> {var_use_case_id}.2 - Establish a DAS for a Newly Connected Device
 
@@ -64,10 +61,7 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 ====
 
 
-[#clause_use_case_spoc_scenarios]
-=== Scenarios
-
-[role=use-case-scenario,sdpi_scenario="SPoC Scenario Name"]
+[role=use-case-scenario,sdpi_scenario="Place a PoC in Silent Mode - No Active Alarms"]
 [oid-arcs=".3"]
 ==== Scenario: <<acronym_spoc>> {var_use_case_id}.3 - Place a PoC in Silent Mode - No Active Alarms
 
@@ -81,12 +75,9 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 ====
 
 
-[#clause_use_case_spoc_scenarios]
-=== Scenarios
-
-[role=use-case-scenario,sdpi_scenario="SPoC Scenario Name"]
+[role=use-case-scenario,sdpi_scenario="Place a PoC in Silent Mode - Alarms Already Active"]
 [oid-arcs=".4"]
-==== Scenario: <<acronym_spoc>> {var_use_case_id}.4 - Place a PoC in Silent Model - Alarms Already Active
+==== Scenario: <<acronym_spoc>> {var_use_case_id}.4 - Place a PoC in Silent Mode - Alarms Already Active
 
 [role=use-case-steps]
 ====
@@ -98,10 +89,7 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 ====
 
 
-[#clause_use_case_spoc_scenarios]
-=== Scenarios
-
-[role=use-case-scenario,sdpi_scenario="SPoC Scenario Name"]
+[role=use-case-scenario,sdpi_scenario="Establish Primary and Backup DAS Coordinators"]
 [oid-arcs=".5"]
 ==== Scenario: <<acronym_spoc>> {var_use_case_id}.5 - Establish Primary and Backup DAS Coordinators
 
@@ -113,4 +101,3 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 
 *Then* ...
 ====
-
