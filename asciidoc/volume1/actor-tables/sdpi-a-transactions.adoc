@@ -82,13 +82,13 @@
 | <<vol2_clause_dev_40>>
 
 | <<transaction_name_establish_medical_alert_delegation>> (_deferred_)
-| Initiator
+| Responder and Initiator
 | ...
 | [DEV-41] Deferred to a future version of SDPi. Once the transaction is defined by such future version of SDPi, the expectation is that it will be required for the actor if <<vol1_clause_sdpi_a_actor_option_alert_delegation_reftext>> is supported.
 // <<vol2_clause_dev_41>>
 
 | <<transaction_name_end_medical_alert_delegation>> (_deferred_)
-| Responder
+| Responder and Initiator
 | ...
 | [DEV-42] Deferred to a future version of SDPi. Once the transaction is defined by such future version of SDPi, the expectation is that it will be required for the actor if <<vol1_clause_sdpi_a_actor_option_alert_delegation_reftext>> is supported.
 // <<vol2_clause_dev_42>>
