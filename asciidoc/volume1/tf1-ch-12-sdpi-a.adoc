@@ -80,12 +80,12 @@ sdpi_include_transaction::DEV-39[actor-id="somds_acm_gateway",initiator="require
 sdpi_include_transaction::DEV-40[actor-id="somds_acm_gateway",responder="required"]
 
 // Deferred transactions. 
-sdpi_include_transaction::DEV-41[actor-id="somds_medical_alert_provider",responder="optional",placeholder-name="Manage medical alert delegation"]
-sdpi_include_transaction::DEV-42[actor-id="somds_medical_alert_provider",initiator="optional",placeholder-name="Delegate medical alert"]
+sdpi_include_transaction::DEV-41[actor-id="somds_medical_alert_provider",responder="optional",placeholder-name="Establish medical alert delegation"]
+sdpi_include_transaction::DEV-42[actor-id="somds_medical_alert_provider",initiator="optional",placeholder-name="End medical alert delegation"]
 sdpi_include_transaction::DEV-43[actor-id="somds_medical_alert_provider",responder="required",placeholder-name="Update alert acknowledgement status"]
 
-sdpi_include_transaction::DEV-41[actor-id="somds_medical_alert_consumer",initiator="optional",placeholder-name="Manage medical alert delegation"]
-sdpi_include_transaction::DEV-42[actor-id="somds_medical_alert_consumer",responder="optional",placeholder-name="Delegate medical alert"]
+sdpi_include_transaction::DEV-41[actor-id="somds_medical_alert_consumer",initiator="optional",placeholder-name="Establish medical alert delegation"]
+sdpi_include_transaction::DEV-42[actor-id="somds_medical_alert_consumer",responder="optional",placeholder-name="End medical alert delegation"]
 sdpi_include_transaction::DEV-43[actor-id="somds_medical_alert_consumer",initiator="required",placeholder-name="Update alert acknowledgement status"]
 
 sdpi_include_transaction::DEV-43[actor-id="somds_acm_gateway",initiator="required",placeholder-name="Update alert acknowledgement status"]
@@ -204,11 +204,11 @@ sdpi_include_transaction::DEV-49[actor-id=somds_medical_alert_provider,responder
 ==== Alert Delegation Option
 
 // Deferred transactions. 
-sdpi_include_transaction::DEV-41[actor-id="somds_medical_alert_provider",responder="required",placeholder-name="Manage medical alert delegation"]
-sdpi_include_transaction::DEV-42[actor-id="somds_medical_alert_provider",initiator="required",placeholder-name="Delegate medical alert"]
+sdpi_include_transaction::DEV-41[actor-id="somds_medical_alert_provider",responder="required",placeholder-name="Establish medical alert delegation"]
+sdpi_include_transaction::DEV-42[actor-id="somds_medical_alert_provider",initiator="required",placeholder-name="End medical alert delegation"]
 
-sdpi_include_transaction::DEV-41[actor-id="somds_medical_alert_consumer",initiator="required",placeholder-name="Manage medical alert delegation"]
-sdpi_include_transaction::DEV-42[actor-id="somds_medical_alert_consumer",responder="required",placeholder-name="Delegate medical alert"]
+sdpi_include_transaction::DEV-41[actor-id="somds_medical_alert_consumer",initiator="required",placeholder-name="Establish medical alert delegation"]
+sdpi_include_transaction::DEV-42[actor-id="somds_medical_alert_consumer",responder="required",placeholder-name="End medical alert delegation"]
 
 [#vol1_clause_sdpi_a_actor_option_alert_delegation_reftext, reftext='SDPi-A Option:  Alert Delegation']
 [%noheader]
@@ -221,7 +221,7 @@ As stated elsewhere, the completion of the <<ref_ieee_11073_10702_202x>> and <<r
 *_The sequence diagram below for delegation is provided for informative purposes only and will be finalized when the IEEE standard and this profile option are completed._*
 
 This option will enable <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> systems to safely and reliably transfer or "delegate" audible annunciation of alert conditions to another system.
-This option will enable both the <<transaction_name_manage_medical_alert_delegation>> [DEV-41] and <<transaction_name_delegate_medical_alert>> [DEV-42] transactions.
+This option will enable both the <<transaction_name_establish_medical_alert_delegation>> [DEV-41] and <<transaction_name_end_medical_alert_delegation>> [DEV-42] transactions.
 
 |===
 

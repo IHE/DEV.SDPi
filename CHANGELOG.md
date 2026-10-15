@@ -18,7 +18,7 @@ Each section shall contain a list of action items of the following format: `<bri
 
 ### Added
 - Add Silent Point-of-Care Use Case to SDPi Use Cases Section [#493](https://github.com/IHE/DEV.SDPi/issues/493)) 
-- For SDPoC, Rename DEV-41 & DEV-42 + Add placeholderS for DEV-55 & DEV-56  [#614](https://github.com/IHE/DEV.SDPi/issues/614))
+- For SPoC, Rename DEV-41 & DEV-42 + Add placeholderS for DEV-55 & DEV-56  [#614](https://github.com/IHE/DEV.SDPi/issues/614))
 
 ### Changes
 

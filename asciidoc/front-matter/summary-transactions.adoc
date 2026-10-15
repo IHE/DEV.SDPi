@@ -121,15 +121,15 @@ include::../volume2/dev-39/tf2-dev-39-summary.adoc[]
 |
 include::../volume2/dev-40/tf2-dev-40-summary.adoc[]
 
-.^| [[vol0_transaction_summary_dev_41,DEV-41 Manage Medical Alert Delegation]]
+.^| [[vol0_transaction_summary_dev_41,DEV-41 Establish Medical Alert Delegation]]
 [[transaction_number_dev_41,DEV-41]] DEV-41
-| [[transaction_name_manage_medical_alert_delegation,Manage Medical Alert Delegation]] Manage Medical Alert Delegation
+| [[transaction_name_establish_medical_alert_delegation,Establish Medical Alert Delegation]] Establish Medical Alert Delegation
 | Deferred to a future version of SDPi
 // include::../volume2/dev-41/tf2-dev-41-summary.adoc[]
 
-.^| [[vol0_transaction_summary_dev_42,DEV-42 Delegate Medical Alert]]
+.^| [[vol0_transaction_summary_dev_42,DEV-42 End Medical Alert Delegation]]
 [[transaction_number_dev_42,DEV-42]] DEV-42
-| [[transaction_name_delegate_medical_alert,Delegate Medical Alert]] Delegate Medical Alert
+| [[transaction_name_end_medical_alert_delegation,End Medical Alert Delegation]] End Medical Alert Delegation
 | Deferred to a future version of SDPi
 // include::../volume2/dev-42/tf2-dev-42-summary.adoc[]
 
@@ -178,4 +178,3 @@ include::../volume2/dev-49/tf2-dev-49-summary.adoc[]
 .^| DEV-50 | _Reserved_ |
 
 |===
-
