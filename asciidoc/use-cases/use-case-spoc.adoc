@@ -12,7 +12,6 @@
 #ADD BENEFITS LIST#
 
 === Technical View
-#UPDATE GRAPHIC TO SPOC#
 
 .<<label_use_case_name_spoc>> (<<acronym_spoc>>) -- Technical View
 
