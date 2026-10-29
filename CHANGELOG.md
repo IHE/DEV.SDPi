@@ -14,7 +14,16 @@ The SDPi changelog shall not contain the following sections
 
 Each section shall contain a list of action items of the following format: `<brief one-sentence description of what has been done> (#<issue number & URL>).`
 
-## Unreleased
+## Unreleased (towards version 2.7)
+
+### Added
+
+- Clarification on the applicability scope of SDPi excluding home and community environments. ([#583](https://github.com/IHE/DEV.SDPi/issues/583))
+
+### Changes
+
+### Editorial Fixes
+
 
 ## [2.6.1] - 2026-10-14
 
