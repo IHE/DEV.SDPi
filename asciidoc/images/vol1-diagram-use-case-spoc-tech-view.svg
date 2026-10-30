@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1063.6666"
+   height="610.66669"
+   overflow="hidden"
+   version="1.1"
+   id="svg185"
+   sodipodi:docname="vol1-diagram-use-case-spoc-tech-view.svg"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview187"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     fit-margin-top="15"
+     fit-margin-left="15"
+     fit-margin-right="15"
+     fit-margin-bottom="15"
+     inkscape:zoom="0.8609375"
+     inkscape:cx="842.68603"
+     inkscape:cy="300.83485"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g183" />
+  <defs
+     id="defs27">
+    <clipPath
+       id="clip0">
+      <rect
+         x="0"
+         y="0"
+         width="257175"
+         height="476250"
+         id="rect2" />
+    </clipPath>
+    <image
+       width="52"
+       height="90"
+       xlink:href="data:image/jpeg;base64,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"
+       preserveAspectRatio="none"
+       id="img1" />
+    <clipPath
+       id="clip2">
+      <rect
+         x="0"
+         y="0"
+         width="257175"
+         height="445111"
+         id="rect6" />
+    </clipPath>
+    <clipPath
+       id="clip3">
+      <rect
+         x="0"
+         y="0"
+         width="257175"
+         height="466725"
+         id="rect9" />
+    </clipPath>
+    <clipPath
+       id="clip4">
+      <rect
+         x="0"
+         y="0"
+         width="257175"
+         height="445111"
+         id="rect12" />
+    </clipPath>
+    <clipPath
+       id="clip5">
+      <rect
+         x="0"
+         y="0"
+         width="257175"
+         height="466725"
+         id="rect15" />
+    </clipPath>
+    <clipPath
+       id="clip6">
+      <rect
+         x="0"
+         y="0"
+         width="257175"
+         height="445111"
+         id="rect18" />
+    </clipPath>
+    <clipPath
+       id="clip7">
+      <rect
+         x="0"
+         y="0"
+         width="257175"
+         height="466725"
+         id="rect21" />
+    </clipPath>
+    <clipPath
+       id="clip8">
+      <rect
+         x="0"
+         y="0"
+         width="257175"
+         height="445111"
+         id="rect24" />
+    </clipPath>
+  </defs>
+  <g
+     id="g183"
+     transform="translate(-123.16666,-59.166764)">
+    <rect
+       style="fill:#ffffff"
+       id="rect517"
+       width="1092.9945"
+       height="649.29218"
+       x="106.90532"
+       y="44.066944" />
+    <path
+       d="M 603.984,269.314 602.5,190.5"
+       stroke="#ff0000"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       stroke-dasharray="3, 3"
+       fill="none"
+       fill-rule="evenodd"
+       id="path31" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="21.3333px"
+       transform="translate(359.608,547)"
+       id="text33">Patient 1</text>
+    <rect
+       x="343.5"
+       y="462.5"
+       width="101"
+       height="49"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#9fc5e8"
+       id="rect35" />
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="18.6667px"
+       transform="translate(362.616,493)"
+       id="text37">Monitor</text>
+    <rect
+       x="475.5"
+       y="462.5"
+       width="87"
+       height="49"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#9fc5e8"
+       id="rect39" />
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="18.6667px"
+       transform="translate(494.118,493)"
+       id="text41">Pump</text>
+    <rect
+       x="202.5"
+       y="462.5"
+       width="101"
+       height="49"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#ff0000"
+       id="rect43" />
+    <text
+       fill="#ffffff"
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="18.6667px"
+       transform="translate(213.3,493)"
+       id="text45">Ventilator</text>
+    <path
+       d="M 240.5,396.5 H 988.226"
+       stroke="#44546a"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       id="path47" />
+    <path
+       d="M 0,0 40.069,0.494908"
+       stroke="#ff0000"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       stroke-dasharray="3, 3"
+       fill="none"
+       fill-rule="evenodd"
+       transform="matrix(1,0,0,-1,303.5,486.995)"
+       id="path49" />
+    <path
+       d="M 0,0 1.04987e-4,67.2126"
+       stroke="#44546a"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       transform="matrix(1,0,0,-1,395.5,462.713)"
+       id="path51" />
+    <path
+       d="M 514.5,462.713 V 395.5"
+       stroke="#44546a"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       id="path53" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="21.3333px"
+       transform="translate(353.222,383)"
+       id="text55">MD LAN</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="21.3333px"
+       transform="translate(787.244,547)"
+       id="text57">Patient 2</text>
+    <rect
+       x="662.5"
+       y="461.5"
+       width="101"
+       height="49"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#9fc5e8"
+       id="rect59" />
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="18.6667px"
+       transform="translate(681.82,492)"
+       id="text61">Monitor</text>
+    <rect
+       x="782.5"
+       y="461.5"
+       width="87"
+       height="49"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#9fc5e8"
+       id="rect63" />
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="18.6667px"
+       transform="translate(801.258,492)"
+       id="text65">Pump</text>
+    <rect
+       x="886.5"
+       y="461.5"
+       width="101"
+       height="49"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#9fc5e8"
+       id="rect67" />
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="18.6667px"
+       transform="translate(897.486,492)"
+       id="text69">Ventilator</text>
+    <path
+       d="M 714.5,460.642 V 394.5"
+       stroke="#44546a"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       id="path71" />
+    <path
+       d="M 0,0 1.04987e-4,67.2126"
+       stroke="#44546a"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       transform="matrix(1,0,0,-1,823.5,462.713)"
+       id="path73" />
+    <path
+       d="M 941.5,462.713 V 395.5"
+       stroke="#44546a"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       id="path75" />
+    <path
+       d="M 0,0 1.04987e-4,210.243"
+       stroke="#44546a"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       transform="matrix(1,0,0,-1,609.5,397.744)"
+       id="path77" />
+    <rect
+       x="186.5"
+       y="323.5"
+       width="404"
+       height="254"
+       stroke="#2f528f"
+       stroke-width="2.66667"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       stroke-dasharray="10.6667, 8"
+       fill="none"
+       id="rect79" />
+    <rect
+       x="632.5"
+       y="323.5"
+       width="404"
+       height="254"
+       stroke="#2f528f"
+       stroke-width="2.66667"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       stroke-dasharray="10.6667, 8"
+       fill="none"
+       id="rect81" />
+    <rect
+       x="543.5"
+       y="252.5"
+       width="128"
+       height="49"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#a4c2f4"
+       id="rect83" />
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="18.6667px"
+       transform="translate(582.413,272)"
+       id="text85">SPoC</text>
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="18.6667px"
+       transform="translate(558.247,295)"
+       id="text87">Coordinator</text>
+    <path
+       d="M 0,0 1.04987e-4,64.6288"
+       stroke="#44546a"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       transform="matrix(1,0,0,-1,851.5,252.129)"
+       id="path89" />
+    <path
+       d="M 459.5,187.5 H 917.466"
+       stroke="#44546a"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       id="path91" />
+    <path
+       d="M 0.0158264,-1.83326 35.0557,-1.53077 35.024,2.13576 -0.0158264,1.83326 Z M 33.2541,-5.21313 44.2062,0.381627 33.1591,5.78646 Z"
+       fill="#3f6ec3"
+       transform="matrix(1,0,0,-1,671,276.382)"
+       id="path93" />
+    <rect
+       x="715.5"
+       y="252.5"
+       width="200"
+       height="49"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#a4c2f4"
+       id="rect95" />
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="18.6667px"
+       transform="translate(739.662,272)"
+       id="text97">Alert Annunciation</text>
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="18.6667px"
+       transform="translate(784.162,295)"
+       id="text99">Service</text>
+    <rect
+       x="327.5"
+       y="214.5"
+       width="796"
+       height="409"
+       stroke="#548235"
+       stroke-width="2.66667"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       stroke-dasharray="10.6667, 8"
+       fill="none"
+       id="rect101" />
+    <text
+       fill="#548235"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="32px"
+       transform="translate(343.997,255)"
+       id="text103">DAS</text>
+    <text
+       fill="#4472c4"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="21.3333px"
+       transform="translate(226.758,559)"
+       id="text105">PoC A</text>
+    <text
+       fill="#4472c4"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="21.3333px"
+       transform="translate(941.102,566)"
+       id="text107">PoC B</text>
+    <rect
+       x="139.5"
+       y="75.500099"
+       width="1031"
+       height="578"
+       stroke="#ff0000"
+       stroke-width="2.66667"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       stroke-dasharray="10.6667, 8"
+       fill="none"
+       id="rect109" />
+    <text
+       fill="#ff0000"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="32px"
+       transform="translate(173.075,128)"
+       id="text111">D</text>
+    <text
+       fill="#ff0000"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="32px"
+       transform="translate(193.242,128)"
+       id="text113">I</text>
+    <text
+       fill="#ff0000"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="32px"
+       transform="translate(201.742,128)"
+       id="text115">S</text>
+    <rect
+       x="845.5"
+       y="107.5"
+       width="159"
+       height="49"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#a4c2f4"
+       id="rect117" />
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="18.6667px"
+       transform="translate(857.967,127)"
+       id="text119">Clinician</text>
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="18.6667px"
+       transform="translate(933.634,127)"
+       id="text121">Notific</text>
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="18.6667px"
+       transform="translate(985.467,127)"
+       id="text123">.</text>
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="18.6667px"
+       transform="translate(893.22,150)"
+       id="text125">System</text>
+    <path
+       d="m 1005.34,105.5 4.07,11.541 -1.68,1.361 5.12,9.889 -1.68,1.652 6.33,16.557 -10.73,-12.689 2.05,-1.762 -6.67,-8.127 2.39,-2.512 -7.04,-8.526 z"
+       stroke="#2f528f"
+       stroke-width="2.66667"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#4472c4"
+       fill-rule="evenodd"
+       id="path127" />
+    <g
+       clip-path="url(#clip0)"
+       transform="matrix(1.04987e-4,0,0,1.04987e-4,1067,105)"
+       id="g133">
+      <g
+         clip-path="url(#clip2)"
+         transform="matrix(1,0,0,1.06996,0,-0.0625)"
+         id="g131">
+        <use
+           width="100%"
+           height="100%"
+           xlink:href="#img1"
+           transform="scale(4945.67)"
+           id="use129"
+           x="0"
+           y="0" />
+      </g>
+    </g>
+    <g
+       clip-path="url(#clip3)"
+       transform="matrix(1.04987e-4,0,0,1.04987e-4,1075,113)"
+       id="g139">
+      <g
+         clip-path="url(#clip4)"
+         transform="scale(1,1.04856)"
+         id="g137">
+        <use
+           width="100%"
+           height="100%"
+           xlink:href="#img1"
+           transform="scale(4945.67)"
+           id="use135"
+           x="0"
+           y="0" />
+      </g>
+    </g>
+    <g
+       clip-path="url(#clip5)"
+       transform="matrix(1.04987e-4,0,0,1.04987e-4,1082,121)"
+       id="g145">
+      <g
+         clip-path="url(#clip6)"
+         transform="scale(1,1.04856)"
+         id="g143">
+        <use
+           width="100%"
+           height="100%"
+           xlink:href="#img1"
+           transform="scale(4945.67)"
+           id="use141"
+           x="0"
+           y="0" />
+      </g>
+    </g>
+    <g
+       clip-path="url(#clip7)"
+       transform="matrix(1.04987e-4,0,0,1.04987e-4,1090,129)"
+       id="g151">
+      <g
+         clip-path="url(#clip8)"
+         transform="matrix(1,0,0,1.04856,-1,0)"
+         id="g149">
+        <use
+           width="100%"
+           height="100%"
+           xlink:href="#img1"
+           transform="scale(4945.67)"
+           id="use147"
+           x="0"
+           y="0" />
+      </g>
+    </g>
+    <path
+       d="m 1104.42,103.5 2.03,5.63 -0.83,0.664 2.55,4.824 -0.83,0.805 3.16,8.077 -5.36,-6.19 1.02,-0.859 -3.34,-3.965 1.2,-1.225 -3.52,-4.159 z"
+       stroke="#2f528f"
+       stroke-width="2.66667"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#4472c4"
+       fill-rule="evenodd"
+       id="path153" />
+    <rect
+       x="1050.5"
+       y="94.500099"
+       width="96"
+       height="91"
+       stroke="#2f528f"
+       stroke-width="2.66667"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#4472c4"
+       fill-opacity="0.101961"
+       id="rect155" />
+    <rect
+       x="668.5"
+       y="107.5"
+       width="128"
+       height="49"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#a4c2f4"
+       id="rect157" />
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="18.6667px"
+       transform="translate(694.511,127)"
+       id="text159">Alert GW</text>
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="18.6667px"
+       transform="translate(701.257,150)"
+       id="text161">Service</text>
+    <path
+       d="M 1.83333,-6.16779e-6 1.83341,22.0399 -1.83326,22.04 -1.83333,6.16779e-6 Z M 5.50007,20.2066 l -5.499965013,11 -5.500034987,-11 z"
+       fill="#3f6ec3"
+       transform="matrix(1,0,0,-1,732,187.207)"
+       id="path163" />
+    <path
+       d="M 0.0250908,-1.83316 39.582,-1.29174 39.5318,2.37458 -0.0250908,1.83316 Z M 37.799,-4.98315 48.7227,0.666877 37.6485,6.01582 Z"
+       fill="#3f6ec3"
+       transform="matrix(1,0,0,-1,796,132.667)"
+       id="path165" />
+    <path
+       d="M 389.984,468.314 388.5,389.5"
+       stroke="#ff0000"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       stroke-dasharray="3, 3"
+       fill="none"
+       fill-rule="evenodd"
+       id="path167" />
+    <path
+       d="M 390.5,389.5 H 603.31"
+       stroke="#ff0000"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       stroke-dasharray="3, 3"
+       fill="none"
+       fill-rule="evenodd"
+       id="path169" />
+    <path
+       d="M 0,0 1.04987e-4,28.4722"
+       stroke="#ff0000"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       stroke-dasharray="3, 3"
+       fill="none"
+       fill-rule="evenodd"
+       transform="matrix(1,0,0,-1,725.5,185.972)"
+       id="path171" />
+    <path
+       d="M 603.984,385.314 602.5,306.5"
+       stroke="#ff0000"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       stroke-dasharray="3, 3"
+       fill="none"
+       fill-rule="evenodd"
+       id="path173" />
+    <path
+       d="M 602.5,180.5 H 724.856"
+       stroke="#ff0000"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       stroke-dasharray="3, 3"
+       fill="none"
+       fill-rule="evenodd"
+       id="path175" />
+    <rect
+       x="217.5"
+       y="334.5"
+       width="86"
+       height="49"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#e7e6e6"
+       id="rect177" />
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="18.6667px"
+       transform="translate(235.901,365)"
+       id="text179">Pump</text>
+    <path
+       d="M 0,0 1.04987e-4,15.3122"
+       stroke="#44546a"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       transform="matrix(1,0,0,-1,264.5,397.812)"
+       id="path181" />
+  </g>
+</svg>
