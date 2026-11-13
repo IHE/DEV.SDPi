@@ -122,9 +122,10 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 [oid-arcs=".6"]
 ==== Scenario: <<acronym_spoc>> {var_use_case_id}.6 - Coordinate Mixed DIS-DAS PoC Ecosystem
 
+#This scenario needs review, since there is no defined way of coordinating a mixed DIS-DAS PoC ecosystem. It could be either removed (with simplification of the SPoC diagram) or changed to describe a mere coexistence of DIS and DAS or...#
+
 [role=use-case-steps]
 ====
-#This scenario needs review, since there is no defined way of coordinating a mixed DIS-DAS PoC ecosystem. It could be either removed (with simplification of the SPoC diagram) or changed to describe a mere coexistence of DIS and DAS or...#
 *Given* ...
 
 *When* ...
