@@ -396,6 +396,20 @@ Specific capabilities supporting the <<acronym_aars>> use case include:
 
 sdpi_support_use_case::somds_acm_gateway[support=optional]
 
+[role="support-use-case", use-case-id="spoc", oid-arcs=.5]
+===== <<label_use_case_name_spoc>> (<<acronym_spoc>>)
+This use case provides capabilities for requirements from <<clause_use_case_spoc>>.
+
+Specific capabilities supporting the <<acronym_spoc>> use case include:
+
+* *System Type*:  N/A
+* *Service Type*:  N/A
+* *Technical Pre-Conditions*:  <<acronym_spoc>> <<clause_use_case_spoc_technical_precondition>>
+* *Scenarios*:  <<acronym_spoc>> <<clause_use_case_spoc_scenarios>> establishing a DAS and placing a PoC in silent mode
+
+sdpi_support_use_case::somds_medical_alert_provider[support=optional]
+sdpi_support_use_case::somds_medical_alert_consumer[support=optional]
+
 [#vol1_clause_sdpi_a_ses_considerations]
 === SDPi-A Safety, Effectiveness and Security - Requirements and Considerations
 
