@@ -361,6 +361,22 @@
        stroke-miterlimit="10"
        fill="#a4c2f4"
        id="rect83" />
+    <rect
+       x="362.5"
+       y="252.5"
+       width="160"
+       height="49"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#a4c2f4"
+       id="rect-spoc-icu-dashboard" />
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="18.6667px"
+       transform="translate(378,283)"
+       id="text-spoc-icu-dashboard">ICU Dashboard</text>
     <text
        font-family="Arial, Arial_MSFontService, sans-serif"
        font-weight="400"
@@ -373,6 +389,14 @@
        font-size="18.6667px"
        transform="translate(558.247,295)"
        id="text87">Coordinator</text>
+    <path
+       d="M 522.5,277 H 543.5"
+       stroke="#3f6ec3"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       id="path-spoc-icu-dashboard" />
     <path
        d="M 0,0 1.04987e-4,64.6288"
        stroke="#44546a"
@@ -421,9 +445,9 @@
        id="text99">Service</text>
     <rect
        x="327.5"
-       y="214.5"
+       y="199.5"
        width="796"
-       height="409"
+       height="424"
        stroke="#548235"
        stroke-width="2.66667"
        stroke-linejoin="round"
@@ -436,7 +460,7 @@
        font-family="Calibri, Calibri_MSFontService, sans-serif"
        font-weight="700"
        font-size="32px"
-       transform="translate(343.997,255)"
+       transform="translate(343.997,240)"
        id="text103">DAS</text>
     <text
        fill="#4472c4"

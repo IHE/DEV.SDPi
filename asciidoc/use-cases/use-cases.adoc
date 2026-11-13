@@ -19,11 +19,11 @@ a| *{standard_note}*: This new section integrates the content formerly in TF-1C.
 [%autowidth]
 [cols="1"]
 |===
-| *{standard_note}*: This initial section of Appendix C is informative and is still being detailed.  Completion is deferred to a later version of SDPi.
+| *{standard_note}*: This section is informative and is still being detailed.  Completion is deferred to a later version of SDPi.
 It provides general background detail around how general (non-technology specific) clinical use case specifications are being utilized in this standard.
 
 *REVIEWER QUESTION*:  Please review the intended topics and identify any additional content that should be considered.
-Especially helpful would be references to related standards and materials that would inform the approach taken in this appendix.
+Especially helpful would be references to related standards and materials that would inform the approach taken herewith.
 |===
 
 ////
