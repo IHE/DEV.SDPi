@@ -5,7 +5,7 @@
 
 === Narrative
 
-In the ICU, Nurse Maya Chen is monitoring Mr. Alvarez, who is mechanically ventilated and connected to several infusion pumps and a patient monitor. While there is no clinician in the ICU, the device alarms are coordinated through a Distributed Alarm System (DAS) and made available at the central station, allowing Maya to monitor them without being in the room. Beyond announcing alarms (though an ICU Dashboard or an Alert Annunciation Service), the central station also coordinates the Silent Point of Care (SPoC). To reduce noise around Mr. Alvarez, Maya activates Silent PoC mode at the central station. Consequently, the devices mute their local auditory alarm signals while alarms continue to be announced through the central station.
+In the ICU, Nurse Maya is monitoring Mr. Alvarez, who is mechanically ventilated and connected to several infusion pumps and a patient monitor. While there is no clinician in the ICU, the device alarms are coordinated through a Distributed Alarm System (DAS) and made available at the central station, allowing Maya to monitor them without being in the room. Beyond announcing alarms (though an ICU Dashboard or an Alert Annunciation Service), the central station also coordinates the Silent Point of Care (SPoC). To reduce noise around Mr. Alvarez, Maya activates Silent PoC mode at the central station. Consequently, the devices mute their local auditory alarm signals while alarms continue to be announced through the central station.
 
 === Benefits
 
@@ -27,7 +27,7 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 
 *And* At least one SPoC Coordinator is connected to the <<acronym_md_lan>>
 
-*And* All connected devices support Distributed Alarm System (DAS) and Silent PoC mode functionality
+*And* All connected devices support Distributed Alarm System (DAS) functionality
 ====
 
 
@@ -63,7 +63,7 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 
 *When* An alarm is detected at the device(s)
 
-*Then* The SPoC Coordinator annunciates the auditory alarm signal through an Alert Annunciation Service and / or ICU Dashboard
+*Then* The SPoC Coordinator annunciates the auditory alarm signal through an Alert Annunciation Service
 
 *Then* The device(s) remains quiet
 ====
@@ -87,7 +87,7 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 
 *When* An alarm is detected at the device(s)
 
-*Then* The SPoC Coordinator annunciates the auditory alarm signal through an Alert Annunciation Service and / or ICU Dashboard
+*Then* The SPoC Coordinator annunciates the auditory alarm signal through an Alert Annunciation Service
 
 *Then* The device(s) remains quiet
 ====
@@ -118,19 +118,19 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 *Then* The DAS is regarded as terminated, and the device(s) regain(s) full responsibility for local alarm annunciation
 ====
 
-[role=use-case-scenario,sdpi_scenario="Coordinate Mixed DIS-DAS PoC Ecosystem"]
+[role=use-case-scenario,sdpi_scenario="Mixed DIS-DAS PoC Ecosystem"]
 [oid-arcs=".6"]
-==== Scenario: <<acronym_spoc>> {var_use_case_id}.6 - Coordinate Mixed DIS-DAS PoC Ecosystem
-
-#This scenario needs review, since there is no defined way of coordinating a mixed DIS-DAS PoC ecosystem. It could be either removed (with simplification of the SPoC diagram) or changed to describe a mere coexistence of DIS and DAS or...#
+==== Scenario: <<acronym_spoc>> {var_use_case_id}.6 - Mixed DIS-DAS PoC Ecosystem
 
 [role=use-case-steps]
 ====
-*Given* ...
+*Given* A DAS has been established with a subset of devices, wether or not in Silent PoC mode
 
-*When* ...
+*Given* A DIS has been established with a different subset of devices
 
-*Then* ...
+*When* the devices are communicating on the the <<acronym_md_lan>>
+
+*Then* The DAS and DIS subsets of devices coexist on the <<acronym_md_lan>>, each maintaining their respective alarm management functionalities
 ====
 
-#OPEN QUESTION: Should there also be a scenario for Silent PoC with local deactivation and re-activation (Use case D.1.6 in A-PKP draft)?#
+#TODO: Add a scenario for Silent PoC with local deactivation and re-activation (Use case D.1.6 in A-PKP draft)#

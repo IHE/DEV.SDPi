@@ -149,7 +149,7 @@
        stroke="#000000"
        stroke-linejoin="round"
        stroke-miterlimit="10"
-       fill="#9fc5e8"
+       fill="#548235"
        id="rect35" />
     <text
        font-family="Arial, Arial_MSFontService, sans-serif"
@@ -165,7 +165,7 @@
        stroke="#000000"
        stroke-linejoin="round"
        stroke-miterlimit="10"
-       fill="#9fc5e8"
+       fill="#548235"
        id="rect39" />
     <text
        font-family="Arial, Arial_MSFontService, sans-serif"
@@ -184,7 +184,7 @@
        fill="#ff0000"
        id="rect43" />
     <text
-       fill="#ffffff"
+       fill="#000000"
        font-family="Arial, Arial_MSFontService, sans-serif"
        font-weight="400"
        font-size="18.6667px"
@@ -249,7 +249,7 @@
        stroke="#000000"
        stroke-linejoin="round"
        stroke-miterlimit="10"
-       fill="#9fc5e8"
+       fill="#548235"
        id="rect59" />
     <text
        font-family="Arial, Arial_MSFontService, sans-serif"
@@ -265,7 +265,7 @@
        stroke="#000000"
        stroke-linejoin="round"
        stroke-miterlimit="10"
-       fill="#9fc5e8"
+       fill="#548235"
        id="rect63" />
     <text
        font-family="Arial, Arial_MSFontService, sans-serif"
@@ -281,7 +281,7 @@
        stroke="#000000"
        stroke-linejoin="round"
        stroke-miterlimit="10"
-       fill="#9fc5e8"
+       fill="#548235"
        id="rect67" />
     <text
        font-family="Arial, Arial_MSFontService, sans-serif"
@@ -359,7 +359,7 @@
        stroke="#000000"
        stroke-linejoin="round"
        stroke-miterlimit="10"
-       fill="#a4c2f4"
+       fill="#548235"
        id="rect83" />
     <rect
        x="362.5"
@@ -369,7 +369,7 @@
        stroke="#000000"
        stroke-linejoin="round"
        stroke-miterlimit="10"
-       fill="#a4c2f4"
+       fill="#548235"
        id="rect-spoc-icu-dashboard" />
     <text
        font-family="Arial, Arial_MSFontService, sans-serif"
@@ -429,7 +429,7 @@
        stroke="#000000"
        stroke-linejoin="round"
        stroke-miterlimit="10"
-       fill="#a4c2f4"
+       fill="#548235"
        id="rect95" />
     <text
        font-family="Arial, Arial_MSFontService, sans-serif"
@@ -736,9 +736,10 @@
        stroke="#000000"
        stroke-linejoin="round"
        stroke-miterlimit="10"
-       fill="#e7e6e6"
+       fill="#ff0000"
        id="rect177" />
     <text
+       fill="#000000"
        font-family="Arial, Arial_MSFontService, sans-serif"
        font-weight="400"
        font-size="18.6667px"
