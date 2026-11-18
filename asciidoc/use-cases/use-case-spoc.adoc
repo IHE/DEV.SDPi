@@ -26,8 +26,6 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 *Given* All devices communicate using a common <<acronym_md_lan>> protocol
 
 *And* At least one SPoC Coordinator is connected to the <<acronym_md_lan>>
-
-*And* All connected devices support Distributed Alarm System (DAS) functionality
 ====
 
 
@@ -40,6 +38,8 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 
 [role=use-case-steps]
 ====
+*Given* Device(s) support Distributed Alarm System (DAS) functionality
+
 *Given* Device(s) is / are not in a DAS
 
 *When* A clinical user enables the DAS at the SPoC Coordinator
