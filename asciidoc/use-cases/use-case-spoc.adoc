@@ -128,9 +128,39 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 
 *Given* A DIS has been established with a different subset of devices
 
-*When* the devices are communicating on the the <<acronym_md_lan>>
+*When* The devices are communicating on the the <<acronym_md_lan>>
 
 *Then* The DAS and DIS subsets of devices coexist on the <<acronym_md_lan>>, each maintaining their respective alarm management functionalities
 ====
 
-#TODO: Add a scenario for Silent PoC with local deactivation and re-activation (Use case D.1.6 in A-PKP draft)#
+[role=use-case-scenario,sdpi_scenario="Silent PoC with local deactivation and manual re-activation"]
+[oid-arcs=".7"]
+==== Scenario: <<acronym_spoc>> {var_use_case_id}.7 - Silent PoC with local deactivation and manual re-activation
+
+[role=use-case-steps]
+====
+*Given* A DAS has been established and placed in Silent PoC mode
+
+*When* A clinical user locally deactivates Silent PoC mode at a device (so as to hear any device alarm signals while being at the patient's PoC)
+
+*Then* The device exits Silent PoC mode and resumes local alarm annunciation
+
+*When* The clinical user locally re-activates Silent PoC mode at the device (before leaving the patient's PoC)
+
+*Then* The device re-enters Silent PoC mode, suspends local alarm annunciation and notifies the clinical user of the Silent PoC mode re-activation
+====
+
+[role=use-case-scenario,sdpi_scenario="Silent PoC with local deactivation and automatic re-activation"]
+[oid-arcs=".8"]
+==== Scenario: <<acronym_spoc>> {var_use_case_id}.8 - Silent PoC with local deactivation and automatic re-activation
+
+[role=use-case-steps]
+====
+*Given* A DAS has been established and placed in Silent PoC mode
+
+*When* A clinical user locally deactivates Silent PoC mode at a device (so as to hear any device alarm signals while being at the patient's PoC)
+
+*Then* The device exits Silent PoC mode and resumes local alarm annunciation
+
+*Then* After a preset period of time, the device automatically re-enters Silent PoC mode, suspends local alarm annunciation and notifies the clinical user of the Silent PoC mode re-activation
+====
