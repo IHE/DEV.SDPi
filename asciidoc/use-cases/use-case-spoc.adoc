@@ -53,7 +53,7 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 
 [role=use-case-steps]
 ====
-*Given* A DAS has been established and Silent PoC mode is allowed at the device(s)
+*Given* A DAS has been established, and Silent PoC mode is allowed at the device(s)
 
 *Given* The device(s) has / have NOT not detected an alarm condition
 
@@ -75,7 +75,7 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 
 [role=use-case-steps]
 ====
-*Given* A DAS has been established and Silent PoC mode is allowed at the device(s)
+*Given* A DAS has been established, and Silent PoC mode is allowed at the device(s)
 
 *Given* The device(s) has / have detected an alarm condition
 
@@ -92,50 +92,76 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 *Then* The device(s) remains quiet
 ====
 
-[role=use-case-scenario,sdpi_scenario="Graceful termination of DAS"]
+[role=use-case-scenario,sdpi_scenario="Graceful termination of DAS from SPoC Coordinator"]
 [oid-arcs=".4"]
-==== Scenario: <<acronym_spoc>> {var_use_case_id}.4 - Graceful termination of DAS
+==== Scenario: <<acronym_spoc>> {var_use_case_id}.4 - Graceful termination of DAS from SPoC Coordinator
 
 [role=use-case-steps]
 ====
-*Given* A DAS has been established, wether or not in Silent PoC mode
+*Given* A DAS has been established, whether or not in Silent PoC mode
 
-*When* A clinical user disables the DAS at the SPoC Coordinator or at the device(s)
+*When* A clinical user disables the DAS at the SPoC Coordinator
 
 *Then* The DAS is gracefully terminated, and the device(s) regain(s) full responsibility for local alarm annunciation
 ====
 
-[role=use-case-scenario,sdpi_scenario="Uncontrolled termination of DAS"]
+[role=use-case-scenario,sdpi_scenario="Graceful termination of DAS from device"]
 [oid-arcs=".5"]
-==== Scenario: <<acronym_spoc>> {var_use_case_id}.5 - Uncontrolled termination of DAS
+==== Scenario: <<acronym_spoc>> {var_use_case_id}.5 - Graceful termination of DAS from device
 
 [role=use-case-steps]
 ====
-*Given* A DAS has been established, wether or not in Silent PoC mode
+*Given* A DAS has been established, whether or not in Silent PoC mode
 
-*When* Either a device or the SPoC Coordinator detect a technical failure that disrupts the DAS function of guaranteeing delivery of alarms with technical confirmation
+*When* A clinical user disables the DAS at a device
+
+*Then* The DAS is gracefully terminated, and the device(s) regain(s) full responsibility for local alarm annunciation
+====
+
+[role=use-case-scenario,sdpi_scenario="Uncontrolled termination of DAS from SPoC Coordinator"]
+[oid-arcs=".6"]
+==== Scenario: <<acronym_spoc>> {var_use_case_id}.6 - Uncontrolled termination of DAS from SPoC Coordinator
+
+[role=use-case-steps]
+====
+*Given* A DAS has been established, whether or not in Silent PoC mode
+
+*When* The SPoC Coordinator detects a technical failure that disrupts the DAS function of guaranteeing delivery of alarms with technical confirmation
+
+*Then* The DAS is regarded as terminated, and the device(s) regain(s) full responsibility for local alarm annunciation
+====
+
+[role=use-case-scenario,sdpi_scenario="Uncontrolled termination of DAS from device"]
+[oid-arcs=".7"]
+==== Scenario: <<acronym_spoc>> {var_use_case_id}.7 - Uncontrolled termination of DAS from device
+
+[role=use-case-steps]
+====
+*Given* A DAS has been established, whether or not in Silent PoC mode
+
+*When* A device detects a technical failure that disrupts the DAS function of guaranteeing delivery of alarms with technical confirmation
 
 *Then* The DAS is regarded as terminated, and the device(s) regain(s) full responsibility for local alarm annunciation
 ====
 
 [role=use-case-scenario,sdpi_scenario="Mixed DIS-DAS PoC Ecosystem"]
-[oid-arcs=".6"]
-==== Scenario: <<acronym_spoc>> {var_use_case_id}.6 - Mixed DIS-DAS PoC Ecosystem
+[oid-arcs=".8"]
+==== Scenario: <<acronym_spoc>> {var_use_case_id}.8 - Mixed DIS-DAS PoC Ecosystem
 
 [role=use-case-steps]
 ====
-*Given* A DAS has been established with a subset of devices, wether or not in Silent PoC mode
+*Given* A DAS has been established with a subset of devices, whether or not in Silent PoC mode
 
 *Given* A DIS has been established with a different subset of devices
 
-*When* The devices are communicating on the the <<acronym_md_lan>>
+*When* The devices are communicating on the <<acronym_md_lan>>
 
 *Then* The DAS and DIS subsets of devices coexist on the <<acronym_md_lan>>, each maintaining their respective alarm management functionalities
 ====
 
 [role=use-case-scenario,sdpi_scenario="Silent PoC with local deactivation and manual re-activation"]
-[oid-arcs=".7"]
-==== Scenario: <<acronym_spoc>> {var_use_case_id}.7 - Silent PoC with local deactivation and manual re-activation
+[oid-arcs=".9"]
+==== Scenario: <<acronym_spoc>> {var_use_case_id}.9 - Silent PoC with local deactivation and manual re-activation
 
 [role=use-case-steps]
 ====
@@ -151,8 +177,8 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 ====
 
 [role=use-case-scenario,sdpi_scenario="Silent PoC with local deactivation and automatic re-activation"]
-[oid-arcs=".8"]
-==== Scenario: <<acronym_spoc>> {var_use_case_id}.8 - Silent PoC with local deactivation and automatic re-activation
+[oid-arcs=".10"]
+==== Scenario: <<acronym_spoc>> {var_use_case_id}.10 - Silent PoC with local deactivation and automatic re-activation
 
 [role=use-case-steps]
 ====
