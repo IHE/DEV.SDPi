@@ -728,6 +728,16 @@
        fill="none"
        fill-rule="evenodd"
        id="path175" />
+    <path
+       d="M 260.5,383.5 V 396.5 H 609.5 V 301.5 M 609.5,252.5 V 187.5 H 732 V 156.5"
+       stroke="#ff0000"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       stroke-dasharray="3, 3"
+       fill="none"
+       fill-rule="evenodd"
+       id="path181" />
     <rect
        x="217.5"
        y="334.5"
