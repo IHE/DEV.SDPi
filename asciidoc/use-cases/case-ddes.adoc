@@ -11,9 +11,9 @@ A local hospital is in the middle of a new <<acronym_ehr>> rollout.  Joe Furst i
 === Benefits
 Automatically feeding patient data from the medical devices to medical record applications reduces the documentation burden on the clinicians, improves the accuracy of the medical record and enables 'real-time' analysis of the data which can be used to generate (potentially AI based) smart alerts to the clinical staff.
 
-=== Technical View
+=== Clinical View
 
-.<<label_use_case_name_ddes>> (<<acronym_ddes>>) -- Technical View
+.<<label_use_case_name_ddes>> (<<acronym_ddes>>) -- Clinical View
 
 image::../images/vol1-diagram-use-case-ddes-tech-view.svg[]
 

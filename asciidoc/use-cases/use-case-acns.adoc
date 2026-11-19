@@ -11,9 +11,9 @@ Bonjour Hospital is in the process of installing a nurse alert notification syst
 === Benefits
 The ability of the system to share alert events directly with the responsible nurse allows that nurse to be aware of issues with the patient without being next to or near the patient.  It is also the first step in implementing a Quiet Hospital or Silent Hospital approach where alerts are not signaled at the patient bedside thereby reducing the amount of noise that the patient is subjected to and improving their ability to recuperate.
 
-=== Technical View
+=== Clinical View
 
-.<<label_use_case_name_acns>> (<<acronym_acns>>) -- Technical View
+.<<label_use_case_name_acns>> (<<acronym_acns>>) -- Clinical View
 
 image::../images/vol1-diagram-use-case-acns-tech-view.svg[]
 

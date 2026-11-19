@@ -13,9 +13,9 @@ By muting auditory alarms at the bedside while retaining central annunciation, S
 
 For clinical users, remote annunciation of alarms at the clinician's location can help them review and prioritize alarm conditions across patients without first visiting each patient room. This may improve alarm visibility and management, reduce workload and mental fatigue, and support communication among the care team.
 
-=== Technical View
+=== Clinical View
 
-.<<label_use_case_name_spoc>> (<<acronym_spoc>>) -- Technical View
+.<<label_use_case_name_spoc>> (<<acronym_spoc>>) -- Clinical View
 
 image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 [#clause_use_case_spoc_technical_precondition]
