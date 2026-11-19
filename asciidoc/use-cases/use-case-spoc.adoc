@@ -1,0 +1,192 @@
+[#clause_use_case_spoc,sdpi_offset=7]
+[role=use-case,use-case-id=spoc,sdpi_feature="Silent Point-of-Care",oid-arcs=".7"]
+== Use Case Feature {var_use_case_id}: <<label_use_case_name_spoc>> (<<acronym_spoc>>)
+
+
+=== Narrative
+
+In the ICU, Nurse Maya is monitoring Mr. Alvarez, who is mechanically ventilated and connected to several infusion pumps and a patient monitor. While there is no clinician in the ICU, the device alarms are coordinated through a Distributed Alarm System (DAS) and made available at the central station, allowing Maya to monitor them without being in the room. Beyond announcing alarms (though an ICU Dashboard or an Alert Annunciation Service), the central station also coordinates the Silent Point of Care (SPoC). To reduce noise around Mr. Alvarez, Maya activates Silent PoC mode at the central station. Consequently, the devices mute their local auditory alarm signals while alarms continue to be announced through the central station.
+
+=== Benefits
+
+By muting auditory alarms at the bedside while retaining central annunciation, Silent PoC can reduce disruptive auditory input around the patient. This may help support sleep and a stable day–night rhythm, lower stress and anxiety, reduce the risk of delirium, and potentially support faster recovery.
+
+For clinical users, remote annunciation of alarms at the clinician's location can help them review and prioritize alarm conditions across patients without first visiting each patient room. This may improve alarm visibility and management, reduce workload and mental fatigue, and support communication among the care team.
+
+=== Clinical View
+
+.<<label_use_case_name_spoc>> (<<acronym_spoc>>) -- Clinical View
+
+image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
+[#clause_use_case_spoc_technical_precondition]
+=== Technical Pre-Conditions
+
+[role=use-case-background]
+====
+*Given* All devices communicate using a common <<acronym_md_lan>> protocol
+
+*And* At least one SPoC Coordinator is connected to the <<acronym_md_lan>>
+====
+
+
+[#clause_use_case_spoc_scenarios]
+=== Scenarios
+
+[role=use-case-scenario,sdpi_scenario="Connect PoC device(s) to a DAS"]
+[oid-arcs=".1"]
+==== Scenario: <<acronym_spoc>> {var_use_case_id}.1 - Connect PoC device(s) to a DAS
+
+[role=use-case-steps]
+====
+*Given* Device(s) support Distributed Alarm System (DAS) functionality
+
+*Given* Device(s) is / are not in a DAS
+
+*When* A clinical user enables the DAS at the SPoC Coordinator
+
+*Then* SPoC Coordinator establishes a DAS for connected device(s)
+====
+
+[role=use-case-scenario,sdpi_scenario="Place a PoC in Silent Mode - No Active Alarms"]
+[oid-arcs=".2"]
+==== Scenario: <<acronym_spoc>> {var_use_case_id}.2 - Place a PoC in Silent Mode - No Active Alarms
+
+[role=use-case-steps]
+====
+*Given* A DAS has been established, and Silent PoC mode is allowed at the device(s)
+
+*Given* The device(s) has / have NOT not detected an alarm condition
+
+*When* The clinical user initiates Silent PoC mode at the SPoC Coordinator  
+
+*Then* The device(s) enable(s) Silent PoC mode, thereby muting local annunciation of auditory alarm signals
+
+*When* An alarm is detected at the device(s)
+
+*Then* The SPoC Coordinator annunciates the auditory alarm signal through an Alert Annunciation Service
+
+*Then* The device(s) remains quiet
+====
+
+
+[role=use-case-scenario,sdpi_scenario="Place a PoC in Silent Mode - Alarms Already Active"]
+[oid-arcs=".3"]
+==== Scenario: <<acronym_spoc>> {var_use_case_id}.3 - Place a PoC in Silent Mode - Alarms Already Active
+
+[role=use-case-steps]
+====
+*Given* A DAS has been established, and Silent PoC mode is allowed at the device(s)
+
+*Given* The device(s) has / have detected an alarm condition
+
+*When* The clinical user initiates Silent PoC mode at the SPoC Coordinator  
+
+*Then*  The SPoC Coordinator annunciates the alarm signal through an Alert Annunciation Service and / or ICU Dashboard, before the device(s) is / are put into Silent PoC mode
+
+*Then* The device(s) enable(s) Silent PoC mode, thereby muting local annunciation of auditory alarm signals
+
+*When* An alarm is detected at the device(s)
+
+*Then* The SPoC Coordinator annunciates the auditory alarm signal through an Alert Annunciation Service
+
+*Then* The device(s) remains quiet
+====
+
+[role=use-case-scenario,sdpi_scenario="Graceful termination of DAS from SPoC Coordinator"]
+[oid-arcs=".4"]
+==== Scenario: <<acronym_spoc>> {var_use_case_id}.4 - Graceful termination of DAS from SPoC Coordinator
+
+[role=use-case-steps]
+====
+*Given* A DAS has been established, whether or not in Silent PoC mode
+
+*When* A clinical user disables the DAS at the SPoC Coordinator
+
+*Then* The DAS is gracefully terminated, and the device(s) regain(s) full responsibility for local alarm annunciation
+====
+
+[role=use-case-scenario,sdpi_scenario="Graceful termination of DAS from device"]
+[oid-arcs=".5"]
+==== Scenario: <<acronym_spoc>> {var_use_case_id}.5 - Graceful termination of DAS from device
+
+[role=use-case-steps]
+====
+*Given* A DAS has been established, whether or not in Silent PoC mode
+
+*When* A clinical user disables the DAS at a device
+
+*Then* The DAS is gracefully terminated, and the device(s) regain(s) full responsibility for local alarm annunciation
+====
+
+[role=use-case-scenario,sdpi_scenario="Uncontrolled termination of DAS from SPoC Coordinator"]
+[oid-arcs=".6"]
+==== Scenario: <<acronym_spoc>> {var_use_case_id}.6 - Uncontrolled termination of DAS from SPoC Coordinator
+
+[role=use-case-steps]
+====
+*Given* A DAS has been established, whether or not in Silent PoC mode
+
+*When* The SPoC Coordinator detects a technical failure that disrupts the DAS function of guaranteeing delivery of alarms with technical confirmation
+
+*Then* The DAS is regarded as terminated, and the device(s) regain(s) full responsibility for local alarm annunciation
+====
+
+[role=use-case-scenario,sdpi_scenario="Uncontrolled termination of DAS from device"]
+[oid-arcs=".7"]
+==== Scenario: <<acronym_spoc>> {var_use_case_id}.7 - Uncontrolled termination of DAS from device
+
+[role=use-case-steps]
+====
+*Given* A DAS has been established, whether or not in Silent PoC mode
+
+*When* A device detects a technical failure that disrupts the DAS function of guaranteeing delivery of alarms with technical confirmation
+
+*Then* The DAS is regarded as terminated, and the device(s) regain(s) full responsibility for local alarm annunciation
+====
+
+[role=use-case-scenario,sdpi_scenario="Mixed DIS-DAS PoC Ecosystem"]
+[oid-arcs=".8"]
+==== Scenario: <<acronym_spoc>> {var_use_case_id}.8 - Mixed DIS-DAS PoC Ecosystem
+
+[role=use-case-steps]
+====
+*Given* A DAS has been established with a subset of devices, whether or not in Silent PoC mode
+
+*Given* A DIS has been established with a different subset of devices
+
+*When* The devices are communicating on the <<acronym_md_lan>>
+
+*Then* The DAS and DIS subsets of devices coexist on the <<acronym_md_lan>>, each maintaining their respective alarm management functionalities
+====
+
+[role=use-case-scenario,sdpi_scenario="Silent PoC with local deactivation and manual re-activation"]
+[oid-arcs=".9"]
+==== Scenario: <<acronym_spoc>> {var_use_case_id}.9 - Silent PoC with local deactivation and manual re-activation
+
+[role=use-case-steps]
+====
+*Given* A DAS has been established and placed in Silent PoC mode
+
+*When* A clinical user locally deactivates Silent PoC mode at a device (so as to hear any device alarm signals while being at the patient's PoC)
+
+*Then* The device exits Silent PoC mode and resumes local alarm annunciation
+
+*When* The clinical user locally re-activates Silent PoC mode at the device (before leaving the patient's PoC)
+
+*Then* The device re-enters Silent PoC mode, suspends local alarm annunciation and notifies the clinical user of the Silent PoC mode re-activation
+====
+
+[role=use-case-scenario,sdpi_scenario="Silent PoC with local deactivation and automatic re-activation"]
+[oid-arcs=".10"]
+==== Scenario: <<acronym_spoc>> {var_use_case_id}.10 - Silent PoC with local deactivation and automatic re-activation
+
+[role=use-case-steps]
+====
+*Given* A DAS has been established and placed in Silent PoC mode
+
+*When* A clinical user locally deactivates Silent PoC mode at a device (so as to hear any device alarm signals while being at the patient's PoC)
+
+*Then* The device exits Silent PoC mode and resumes local alarm annunciation
+
+*Then* After a preset period of time, the device automatically re-enters Silent PoC mode, suspends local alarm annunciation and notifies the clinical user of the Silent PoC mode re-activation
+====

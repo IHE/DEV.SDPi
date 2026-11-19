@@ -11,9 +11,9 @@ Mumbai General is in the process of installing an IT system which will capture a
 === Benefits
 The ability to review alerts allows clinicians to track the condition of a patient over a longer time span.  For example to see whether a medication is reducing the occurrence of specific events such as ventricular beats or tachycardia events.
 
-=== Technical View
+=== Clinical View
 
-.<<label_use_case_name_aars>> (<<acronym_aars>>) -- Technical View
+.<<label_use_case_name_aars>> (<<acronym_aars>>) -- Clinical View
 
 image::../images/vol1-diagram-use-case-aars-tech-view.svg[]
 

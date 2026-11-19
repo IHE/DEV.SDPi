@@ -11,9 +11,9 @@ Dr. Reich is in one of her patient’s ICU room checking on their status. She ca
 === Benefits
 The concept of a 'dashboard display' supports the display of data in various locations in a care facility with reduced functionality and therefore reduced risk.  By removing the requirement that the device annunciate alerts and support remote control the potential types of users is expanded improving access to the patient's data and status.
 
-=== Technical View
+=== Clinical View
 
-.<<label_use_case_name_sicdsp>> (<<acronym_sicdsp>>) -- Technical View
+.<<label_use_case_name_sicdsp>> (<<acronym_sicdsp>>) -- Clinical View
 
 image::../images/vol1-diagram-use-case-sicdsp-tech-view.svg[]
 
