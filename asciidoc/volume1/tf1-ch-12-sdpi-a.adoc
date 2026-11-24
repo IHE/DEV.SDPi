@@ -436,8 +436,8 @@ Specific capabilities supporting the <<acronym_spoc>> use case include:
 |<<clause_use_case_spoc_scenario_7_9,SPoC Scenario 7.9>>, <<clause_use_case_spoc_scenario_7_10,SPoC Scenario 7.10>>|To deactivate Silent PoC mode, a device initiates <<transaction_name_end_medical_alert_delegation>> (DEV-42). Upon Silent PoC mode re-activation, the device initiates <<transaction_name_establish_medical_alert_delegation>> (DEV-41).
 |===
 
-sdpi_support_use_case::somds_medical_alert_provider[support=optional]
-sdpi_support_use_case::somds_medical_alert_consumer[support=optional]
+sdpi_support_use_case::somds_medical_alert_provider[support=required]
+sdpi_support_use_case::somds_medical_alert_consumer[support=required]
 sdpi_support_use_case::somds_acm_gateway[support=optional]
 
 [#vol1_clause_sdpi_a_ses_considerations]
