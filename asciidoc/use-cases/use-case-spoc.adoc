@@ -25,7 +25,16 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 ====
 *Given* All devices communicate using a common <<acronym_md_lan>> protocol
 
-*And* At least one SPoC Coordinator is connected to the <<acronym_md_lan>>
+*And* One SPoC Coordinator is connected to the <<acronym_md_lan>>
+
+*And* One ICU Dashboard is connected to the <<acronym_md_lan>>
+
+*And* One Alert Annunciation Service is connected to the <<acronym_md_lan>>
+
+*And* All devices report either a device label and/or location and/or patient ID
+
+*And* The SPoC Coordinator, ICU Dashboard and Alert Annunciation Service are associated with a specific set of device labels, and/or location(s)
+
 ====
 
 
@@ -34,6 +43,7 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 
 [role=use-case-scenario,sdpi_scenario="Connect PoC device(s) to a DAS"]
 [oid-arcs=".1"]
+[#clause_use_case_spoc_scenario_7_1]
 ==== Scenario: <<acronym_spoc>> {var_use_case_id}.1 - Connect PoC device(s) to a DAS
 
 [role=use-case-steps]
@@ -49,6 +59,7 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 
 [role=use-case-scenario,sdpi_scenario="Place a PoC in Silent Mode - No Active Alarms"]
 [oid-arcs=".2"]
+[#clause_use_case_spoc_scenario_7_2]
 ==== Scenario: <<acronym_spoc>> {var_use_case_id}.2 - Place a PoC in Silent Mode - No Active Alarms
 
 [role=use-case-steps]
@@ -71,6 +82,7 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 
 [role=use-case-scenario,sdpi_scenario="Place a PoC in Silent Mode - Alarms Already Active"]
 [oid-arcs=".3"]
+[#clause_use_case_spoc_scenario_7_3]
 ==== Scenario: <<acronym_spoc>> {var_use_case_id}.3 - Place a PoC in Silent Mode - Alarms Already Active
 
 [role=use-case-steps]
@@ -94,6 +106,7 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 
 [role=use-case-scenario,sdpi_scenario="Graceful termination of DAS from SPoC Coordinator"]
 [oid-arcs=".4"]
+[#clause_use_case_spoc_scenario_7_4]
 ==== Scenario: <<acronym_spoc>> {var_use_case_id}.4 - Graceful termination of DAS from SPoC Coordinator
 
 [role=use-case-steps]
@@ -107,6 +120,7 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 
 [role=use-case-scenario,sdpi_scenario="Graceful termination of DAS from device"]
 [oid-arcs=".5"]
+[#clause_use_case_spoc_scenario_7_5]
 ==== Scenario: <<acronym_spoc>> {var_use_case_id}.5 - Graceful termination of DAS from device
 
 [role=use-case-steps]
@@ -120,6 +134,7 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 
 [role=use-case-scenario,sdpi_scenario="Uncontrolled termination of DAS from SPoC Coordinator"]
 [oid-arcs=".6"]
+[#clause_use_case_spoc_scenario_7_6]
 ==== Scenario: <<acronym_spoc>> {var_use_case_id}.6 - Uncontrolled termination of DAS from SPoC Coordinator
 
 [role=use-case-steps]
@@ -133,6 +148,7 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 
 [role=use-case-scenario,sdpi_scenario="Uncontrolled termination of DAS from device"]
 [oid-arcs=".7"]
+[#clause_use_case_spoc_scenario_7_7]
 ==== Scenario: <<acronym_spoc>> {var_use_case_id}.7 - Uncontrolled termination of DAS from device
 
 [role=use-case-steps]
@@ -146,10 +162,17 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 
 [role=use-case-scenario,sdpi_scenario="Mixed DIS-DAS PoC Ecosystem"]
 [oid-arcs=".8"]
+[#clause_use_case_spoc_scenario_7_8]
 ==== Scenario: <<acronym_spoc>> {var_use_case_id}.8 - Mixed DIS-DAS PoC Ecosystem
 
 [role=use-case-steps]
 ====
+*Given* One <<label_system_type_name_agw>> (<<acronym_agw>>) Service on the <<acronym_md_lan>>
+
+*Given* One <<system_type_clinical_notification_system>> on the <<acronym_md_lan>>
+
+*Given* The <<label_system_type_name_agw>> (<<acronym_agw>>) Service and the <<system_type_clinical_notification_system>> are associated with a specific set of device labels, and/or location(s)
+
 *Given* A DAS has been established with a subset of devices, whether or not in Silent PoC mode
 
 *Given* A DIS has been established with a different subset of devices
@@ -161,6 +184,7 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 
 [role=use-case-scenario,sdpi_scenario="Silent PoC with local deactivation and manual re-activation"]
 [oid-arcs=".9"]
+[#clause_use_case_spoc_scenario_7_9]
 ==== Scenario: <<acronym_spoc>> {var_use_case_id}.9 - Silent PoC with local deactivation and manual re-activation
 
 [role=use-case-steps]
@@ -178,6 +202,7 @@ image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
 
 [role=use-case-scenario,sdpi_scenario="Silent PoC with local deactivation and automatic re-activation"]
 [oid-arcs=".10"]
+[#clause_use_case_spoc_scenario_7_10]
 ==== Scenario: <<acronym_spoc>> {var_use_case_id}.10 - Silent PoC with local deactivation and automatic re-activation
 
 [role=use-case-steps]

@@ -402,13 +402,43 @@ This use case provides capabilities for requirements from <<clause_use_case_spoc
 
 Specific capabilities supporting the <<acronym_spoc>> use case include:
 
-* *System Type*:  N/A
-* *Service Type*:  N/A
-* *Technical Pre-Conditions*:  <<acronym_spoc>> <<clause_use_case_spoc_technical_precondition>>
-* *Scenarios*:  <<acronym_spoc>> <<clause_use_case_spoc_scenarios>> establishing a DAS and placing a PoC in silent mode
+* *System / Service Type*:
+
+[#vol1_table_sdpi_a_spoc_capability_mapping]
+.SDPi-A - SPoC Capability Mapping
+[%autowidth]
+[cols="1,1,1,1", options="header"]
+|===
+| Use Case System / Service Type | SDPi Actor | SDPi Profile | SDPi Profile Option
+|SPoC Coordinator / ICU Dashboard / Alert Annunciation Service ^(See^ ^Note^ ^1)^|<<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>|<<vol1_clause_sdpi_a_profile>>|<<vol1_clause_sdpi_a_actor_option_distributed_alarm_system_reftext>>, <<vol1_clause_sdpi_a_actor_option_alert_delegation_reftext>>
+|Alert Gateway Service / Clinical Notification System ^(See^ ^Note^ ^1)^|<<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>|<<vol1_clause_sdpi_a_profile>>|None
+|Devices in DIS (pump and ventilator in red boxes)|<<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>|<<vol1_clause_sdpi_a_profile>>|None
+|Devices in DAS (monitor, pump and ventilator in green boxes)|<<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>|<<vol1_clause_sdpi_a_profile>>|<<vol1_clause_sdpi_a_actor_option_distributed_alarm_system_reftext>>, <<vol1_clause_sdpi_a_actor_option_alert_delegation_reftext>>
+4+<| Note 1: The listed systems / services may be implemented jointly. When implemented as distinct entities, communication amongst them is out of scope for this standard.
+|===
+
+* *Technical Pre-Conditions* and *Scenarios*:
+
+[#vol1_table_sdpi_a_spoc_transaction_trigger_event_mapping]
+.SDPi-A - SPoC Transaction Trigger Event Mapping
+[%autowidth]
+[cols="1,1", options="header"]
+|===
+| Use Case Clause | Transaction Trigger Events
+| <<acronym_spoc>> <<clause_use_case_spoc_technical_precondition>> |To enable device association, the SPoC Coordinator / ICU Dashboard / Alert Annunciation Service initiates <<transaction_name_establish_medical_alert_exchange>> (DEV-38) with each device that will participate in the DAS
+|<<clause_use_case_spoc_scenario_7_1,SPoC Scenario 7.1>>|To establish the DAS, the SPoC Coordinator initiates <<transaction_name_establish_distributed_alarm_system>> (DEV-48) with each device
+|<<clause_use_case_spoc_scenario_7_2,SPoC Scenario 7.2>>, <<clause_use_case_spoc_scenario_7_3,SPoC Scenario 7.3>>|To place the PoC in Silent Mode, the SPoC Coordinator initiates <<transaction_name_establish_medical_alert_delegation>> (DEV-41) with each device
+|<<clause_use_case_spoc_scenario_7_4,SPoC Scenario 7.4>>|To terminate the DAS, the SPoC Coordinator initiates <<transaction_name_end_distributed_alarm_system>> (DEV-49)
+|<<clause_use_case_spoc_scenario_7_5,SPoC Scenario 7.5>>|To terminate the DAS, a device initiates <<transaction_name_end_distributed_alarm_system>> (DEV-49)
+|<<clause_use_case_spoc_scenario_7_6,SPoC Scenario 7.6>>|The SPoC Coordinator determines that the message exchange with a device does not meet the requirements specified in <<transaction_name_establish_distributed_alarm_system>> (DEV-48) for successful DAS maintenance. Then, both parties regard the DAS as terminated.
+|<<clause_use_case_spoc_scenario_7_7,SPoC Scenario 7.7>>|A device determines that the message exchange with the SPoC Coordinator does not meet the requirements specified in <<transaction_name_establish_distributed_alarm_system>> (DEV-48) for successful DAS maintenance. Then, both parties regard the DAS as terminated.
+|<<clause_use_case_spoc_scenario_7_8,SPoC Scenario 7.8>>|To enable device association, the Alert Gateway Service / Clinical Notification System initiates <<transaction_name_establish_medical_alert_exchange>> (DEV-38) with each device that will participate in the DIS.
+|<<clause_use_case_spoc_scenario_7_9,SPoC Scenario 7.9>>, <<clause_use_case_spoc_scenario_7_10,SPoC Scenario 7.10>>|To deactivate Silent PoC mode, a device initiates <<transaction_name_end_medical_alert_delegation>> (DEV-42). Upon Silent PoC mode re-activation, the device initiates <<transaction_name_establish_medical_alert_delegation>> (DEV-41).
+|===
 
 sdpi_support_use_case::somds_medical_alert_provider[support=optional]
 sdpi_support_use_case::somds_medical_alert_consumer[support=optional]
+sdpi_support_use_case::somds_acm_gateway[support=optional]
 
 [#vol1_clause_sdpi_a_ses_considerations]
 === SDPi-A Safety, Effectiveness and Security - Requirements and Considerations
