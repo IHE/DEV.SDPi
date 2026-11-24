@@ -1166,7 +1166,6 @@ Specific capabilities supporting the <<acronym_aars>> use case include:
 //sdpi_support_use_case::somds_connector[support=optional]
 sdpi_support_use_case::somds_fhir_gateway[support=optional]
 sdpi_support_use_case::somds_v2_gateway[support=optional]
-sdpi_support_use_case::somds_fhir_gateway[support=optional]
 sdpi_support_use_case::somds_sensor_gateway[support=optional]
 
 [role="support-use-case", use-case-id="spoc", oid-arcs=.7]
