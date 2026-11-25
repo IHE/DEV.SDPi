@@ -23,7 +23,7 @@ Each section shall contain a list of action items of the following format: `<bri
 ### Changes
 
 ### Editorial Fixes
-
+- Clarified notes on the status of the IEEE 11073-10702 PKP standard ([#600](https://github.com/IHE/DEV.SDPi/issues/600))
 
 ## [2.6.1] - 2026-10-14
 
