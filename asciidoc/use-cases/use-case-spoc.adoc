@@ -17,7 +17,7 @@ For clinical users, remote annunciation of alarms at the clinician's location ca
 
 .<<label_use_case_name_spoc>> (<<acronym_spoc>>) -- Clinical View
 
-image:../images/vol1-diagram-use-case-spoc-tech-view.svg[]
+image:../images/vol1-diagram-use-case-spoc-clinical-view.svg[]
 [#clause_use_case_spoc_technical_precondition]
 === Technical Pre-Conditions
 
