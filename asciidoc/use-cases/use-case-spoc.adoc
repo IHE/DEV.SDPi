@@ -179,7 +179,7 @@ image:../images/vol1-diagram-use-case-spoc-clinical-view.svg[]
 
 *Given* A DIS has been established with a different subset of devices
 
-*When* The a clinical user initiates Silent PoC mode at the SPoC Coordinator
+*When* A clinical user initiates Silent PoC mode at the SPoC Coordinator
 
 *Then* The device(s) in the DAS enable(s) Silent PoC mode
 
