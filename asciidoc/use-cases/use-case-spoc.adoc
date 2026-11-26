@@ -18,6 +18,7 @@ For clinical users, remote annunciation of alarms at the clinician's location ca
 .<<label_use_case_name_spoc>> (<<acronym_spoc>>) -- Clinical View
 
 image:../images/vol1-diagram-use-case-spoc-clinical-view.svg[]
+
 [#clause_use_case_spoc_technical_precondition]
 === Technical Pre-Conditions
 
@@ -34,7 +35,6 @@ image:../images/vol1-diagram-use-case-spoc-clinical-view.svg[]
 *And* All devices report either a device label and/or location and/or patient ID
 
 *And* The SPoC Coordinator, ICU Dashboard and Alert Annunciation Service are associated with a specific set of device labels, and/or location(s)
-
 ====
 
 
@@ -141,9 +141,11 @@ image:../images/vol1-diagram-use-case-spoc-clinical-view.svg[]
 ====
 *Given* A DAS has been established, whether or not in Silent PoC mode
 
-*When* The SPoC Coordinator detects a technical failure that disrupts the DAS function of guaranteeing delivery of alarms with technical confirmation
+*When* A technical failure disrupts the communication between the SPoC Coordinator and all devices in the DAS
 
-*Then* The DAS is regarded as terminated, and the device(s) regain(s) full responsibility for local alarm annunciation
+*Then* The SPoC Coordinator regards the DAS as terminated
+
+*Then* The device(s) regard(s) the DAS as terminated, and regain(s) full responsibility for local alarm annunciation
 ====
 
 [role=use-case-scenario,sdpi_scenario="Uncontrolled termination of DAS from device"]
@@ -153,11 +155,11 @@ image:../images/vol1-diagram-use-case-spoc-clinical-view.svg[]
 
 [role=use-case-steps]
 ====
-*Given* A DAS has been established, whether or not in Silent PoC mode
+*Given* A DAS has been established with two or more devices, whether or not in Silent PoC mode
 
-*When* A device detects a technical failure that disrupts the DAS function of guaranteeing delivery of alarms with technical confirmation
+*When* A technical failure disrupts the communication between the SPoC Coordinator and one device in the DAS
 
-*Then* The DAS is regarded as terminated, and the device(s) regain(s) full responsibility for local alarm annunciation
+*Then* The disconnected device regards the DAS as terminated, and regains full responsibility for local alarm annunciation
 ====
 
 [role=use-case-scenario,sdpi_scenario="Mixed DIS-DAS PoC Ecosystem"]
@@ -165,21 +167,37 @@ image:../images/vol1-diagram-use-case-spoc-clinical-view.svg[]
 [#clause_use_case_spoc_scenario_7_8]
 ==== Scenario: <<acronym_spoc>> {var_use_case_id}.8 - Mixed DIS-DAS PoC Ecosystem
 
+[#clause_use_case_spoc_technical_precondition_Mixed_DIS_DAS_scenario]
+===== Additional Technical Pre-Conditions
+
+[role=use-case-background]
+====
+*Given* One <<label_system_type_name_agw>> (<<acronym_agw>>) Service is connected to the <<acronym_md_lan>>
+
+*And* One <<system_type_clinical_notification_system>> is connected to the <<acronym_md_lan>>
+
+*And* The <<label_system_type_name_agw>> (<<acronym_agw>>) Service and the <<system_type_clinical_notification_system>> are associated with a specific set of device labels, and/or location(s)
+====
+
 [role=use-case-steps]
 ====
-*Given* One <<label_system_type_name_agw>> (<<acronym_agw>>) Service on the <<acronym_md_lan>>
-
-*Given* One <<system_type_clinical_notification_system>> on the <<acronym_md_lan>>
-
-*Given* The <<label_system_type_name_agw>> (<<acronym_agw>>) Service and the <<system_type_clinical_notification_system>> are associated with a specific set of device labels, and/or location(s)
-
-*Given* A DAS has been established with a subset of devices, whether or not in Silent PoC mode
+*Given* A DAS has been established with a subset of devices, and Silent PoC mode is allowed at the device(s)
 
 *Given* A DIS has been established with a different subset of devices
 
-*When* The devices are communicating on the <<acronym_md_lan>>
+*When* The a clinical user initiates Silent PoC mode at the SPoC Coordinator
 
-*Then* The DAS and DIS subsets of devices coexist on the <<acronym_md_lan>>, each maintaining their respective alarm management functionalities
+*Then* The device(s) in the DAS enable(s) Silent PoC mode
+
+*When* An alarm is detected at a device in the DAS
+
+*Then* The SPoC Coordinator annunciates the auditory alarm signal through an Alert Annunciation Service
+
+*Then* The device that detected the alarm remains quiet
+
+*When* A second alarm is detected at a device in the DIS
+
+*Then* The device that detected the second alarm annunciates the auditory alarm signal locally
 ====
 
 [role=use-case-scenario,sdpi_scenario="Silent PoC with local deactivation and manual re-activation"]
