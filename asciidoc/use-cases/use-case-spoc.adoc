@@ -167,20 +167,14 @@ image:../images/vol1-diagram-use-case-spoc-clinical-view.svg[]
 [#clause_use_case_spoc_scenario_7_8]
 ==== Scenario: <<acronym_spoc>> {var_use_case_id}.8 - Mixed DIS-DAS PoC Ecosystem
 
-[#clause_use_case_spoc_technical_precondition_Mixed_DIS_DAS_scenario]
-===== Additional Technical Pre-Conditions
-
-[role=use-case-background]
+[role=use-case-steps]
 ====
 *Given* One <<label_system_type_name_agw>> (<<acronym_agw>>) Service is connected to the <<acronym_md_lan>>
 
-*And* One <<system_type_clinical_notification_system>> is connected to the <<acronym_md_lan>>
+*Given* One <<system_type_clinical_notification_system>> is connected to the <<acronym_md_lan>>
 
-*And* The <<label_system_type_name_agw>> (<<acronym_agw>>) Service and the <<system_type_clinical_notification_system>> are associated with a specific set of device labels, and/or location(s)
-====
+*Given* The <<label_system_type_name_agw>> (<<acronym_agw>>) Service and the <<system_type_clinical_notification_system>> are associated with a specific set of device labels, and/or location(s)
 
-[role=use-case-steps]
-====
 *Given* A DAS has been established with a subset of devices, and Silent PoC mode is allowed at the device(s)
 
 *Given* A DIS has been established with a different subset of devices
