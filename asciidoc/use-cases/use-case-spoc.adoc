@@ -5,7 +5,7 @@
 
 === Narrative
 
-In the ICU, Nurse Maya is monitoring Mr. Alvarez, who is mechanically ventilated and connected to several infusion pumps and a patient monitor. Since clinicians are not continuously at the ICU bedside, device alarms are coordinated through a Distributed Alarm System (DAS) and made available at the central station. This allows Maya to monitor them without being in the room. Beyond announcing alarms (though an ICU Dashboard or an Alert Annunciation Service), the central station also coordinates the Silent Point of Care (SPoC). To reduce noise around Mr. Alvarez, Maya activates Silent PoC mode at the central station. Consequently, the devices mute their local auditory alarm signals while alarms continue to be announced through the central station.
+In the ICU, Nurse Maya is monitoring Mr. Alvarez, who is mechanically ventilated and connected to several infusion pumps and a patient monitor. Since clinicians are not continuously at the ICU bedside, device alarms are coordinated through a Distributed Alarm System (DAS) and made available at the central station. This allows Maya to monitor them without being in the room. Beyond announcing alarms (through an ICU Dashboard or an Alert Annunciation Service), the central station also coordinates the Silent Point of Care (SPoC). To reduce noise around Mr. Alvarez, Maya activates Silent PoC mode at the central station. Consequently, the devices mute their local auditory alarm signals while alarms continue to be announced through the central station.
 
 === Benefits
 
