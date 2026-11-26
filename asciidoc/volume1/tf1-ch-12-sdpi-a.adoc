@@ -17,6 +17,9 @@ As a result, the completion of these two transactions has been deferred to a sub
 
 Similarly, a related transaction, [DEV-43], namely providing clinician alert acknowledgement status information back to the alerting device, is also being discussed further and will be deferred to a subsequent version of the standard.
 
+The <<transaction_name_activate_medical_alert_signals>> [DEV-55] and <<transaction_name_deactivate_medical_alert_signals>> [DEV-56] transactions are also deferred to a future version of SDPi.
+Both the <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> and <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>> will act as initiator and responder for these transactions.
+
 Finally, it should be noted that  <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> is defined below and fully specified in <<vol2_clause_appendix_sdpi_acm_gateway>>.
 Also in development is <<acronym_hl7>> <<acronym_fhir>> support for medical alerting (e.g., refinement of the <<acronym_fhir>> DeviceAlert resource and future development of a <<acronym_fhir>> Device Alerting IG).
 As a result, a "SOMDS Medical Alert FHIR Gateway" is not included as an actor at this stage; however, it is expected to be added in the coming year or two.
@@ -80,13 +83,17 @@ sdpi_include_transaction::DEV-39[actor-id="somds_acm_gateway",initiator="require
 sdpi_include_transaction::DEV-40[actor-id="somds_acm_gateway",responder="required"]
 
 // Deferred transactions. 
-sdpi_include_transaction::DEV-41[actor-id="somds_medical_alert_provider",responder="optional",placeholder-name="Manage medical alert delegation"]
-sdpi_include_transaction::DEV-42[actor-id="somds_medical_alert_provider",initiator="optional",placeholder-name="Delegate medical alert"]
+sdpi_include_transaction::DEV-41[actor-id="somds_medical_alert_provider",responder="optional",initiator="optional",placeholder-name="Establish medical alert delegation"]
+sdpi_include_transaction::DEV-42[actor-id="somds_medical_alert_provider",initiator="optional",responder="optional",placeholder-name="End medical alert delegation"]
 sdpi_include_transaction::DEV-43[actor-id="somds_medical_alert_provider",responder="required",placeholder-name="Update alert acknowledgement status"]
+sdpi_include_transaction::DEV-55[actor-id="somds_medical_alert_provider",initiator="optional",responder="optional",placeholder-name="Activate medical alert signals"]
+sdpi_include_transaction::DEV-56[actor-id="somds_medical_alert_provider",initiator="optional",responder="optional",placeholder-name="Deactivate medical alert signals"]
 
-sdpi_include_transaction::DEV-41[actor-id="somds_medical_alert_consumer",initiator="optional",placeholder-name="Manage medical alert delegation"]
-sdpi_include_transaction::DEV-42[actor-id="somds_medical_alert_consumer",responder="optional",placeholder-name="Delegate medical alert"]
+sdpi_include_transaction::DEV-41[actor-id="somds_medical_alert_consumer",initiator="optional",responder="optional",placeholder-name="Establish medical alert delegation"]
+sdpi_include_transaction::DEV-42[actor-id="somds_medical_alert_consumer",responder="optional",initiator="optional",placeholder-name="End medical alert delegation"]
 sdpi_include_transaction::DEV-43[actor-id="somds_medical_alert_consumer",initiator="required",placeholder-name="Update alert acknowledgement status"]
+sdpi_include_transaction::DEV-55[actor-id="somds_medical_alert_consumer",initiator="optional",responder="optional",placeholder-name="Activate medical alert signals"]
+sdpi_include_transaction::DEV-56[actor-id="somds_medical_alert_consumer",initiator="optional",responder="optional",placeholder-name="Deactivate medical alert signals"]
 
 sdpi_include_transaction::DEV-43[actor-id="somds_acm_gateway",initiator="required",placeholder-name="Update alert acknowledgement status"]
 
@@ -204,11 +211,11 @@ sdpi_include_transaction::DEV-49[actor-id=somds_medical_alert_provider,responder
 ==== Alert Delegation Option
 
 // Deferred transactions. 
-sdpi_include_transaction::DEV-41[actor-id="somds_medical_alert_provider",responder="required",placeholder-name="Manage medical alert delegation"]
-sdpi_include_transaction::DEV-42[actor-id="somds_medical_alert_provider",initiator="required",placeholder-name="Delegate medical alert"]
+sdpi_include_transaction::DEV-41[actor-id="somds_medical_alert_provider",responder="required",initiator="required",placeholder-name="Establish medical alert delegation"]
+sdpi_include_transaction::DEV-42[actor-id="somds_medical_alert_provider",initiator="required",responder="required",placeholder-name="End medical alert delegation"]
 
-sdpi_include_transaction::DEV-41[actor-id="somds_medical_alert_consumer",initiator="required",placeholder-name="Manage medical alert delegation"]
-sdpi_include_transaction::DEV-42[actor-id="somds_medical_alert_consumer",responder="required",placeholder-name="Delegate medical alert"]
+sdpi_include_transaction::DEV-41[actor-id="somds_medical_alert_consumer",initiator="required",responder="required",placeholder-name="Establish medical alert delegation"]
+sdpi_include_transaction::DEV-42[actor-id="somds_medical_alert_consumer",responder="required",initiator="required",placeholder-name="End medical alert delegation"]
 
 [#vol1_clause_sdpi_a_actor_option_alert_delegation_reftext, reftext='SDPi-A Option:  Alert Delegation']
 [%noheader]
@@ -221,7 +228,7 @@ As stated elsewhere, the completion of the <<ref_ieee_11073_10702_202x>> and <<r
 *_The sequence diagram below for delegation is provided for informative purposes only and will be finalized when the IEEE standard and this profile option are completed._*
 
 This option will enable <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>> systems to safely and reliably transfer or "delegate" audible annunciation of alert conditions to another system.
-This option will enable both the <<transaction_name_manage_medical_alert_delegation>> [DEV-41] and <<transaction_name_delegate_medical_alert>> [DEV-42] transactions.
+This option will enable both the <<transaction_name_establish_medical_alert_delegation>> [DEV-41] and <<transaction_name_end_medical_alert_delegation>> [DEV-42] transactions.
 
 |===
 
@@ -387,6 +394,50 @@ Specific capabilities supporting the <<acronym_aars>> use case include:
 * *Technical Pre-Conditions*:  N/A
 * *Scenarios*:  <<acronym_aars>> <<clause_use_case_aars_scenarios>> communication of medical alert information to a <<vol1_spec_sdpi_p_actor_somds_consumer>> Alert <<system_type_device_gateway>>
 
+sdpi_support_use_case::somds_acm_gateway[support=optional]
+
+[role="support-use-case", use-case-id="spoc", oid-arcs=.5]
+===== <<label_use_case_name_spoc>> (<<acronym_spoc>>)
+This use case provides capabilities for requirements from <<clause_use_case_spoc>>.
+
+Specific capabilities supporting the <<acronym_spoc>> use case include:
+
+* *System / Service Type*:
+
+[#vol1_table_sdpi_a_spoc_capability_mapping]
+.SDPi-A - SPoC Capability Mapping
+[%autowidth]
+[cols="1,1,1,1", options="header"]
+|===
+| Use Case System / Service Type | SDPi Actor | SDPi Profile | SDPi Profile Option
+|SPoC Coordinator / ICU Dashboard / Alert Annunciation Service ^(See^ ^Note^ ^1)^|<<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>|<<vol1_clause_sdpi_a_profile>>|<<vol1_clause_sdpi_a_actor_option_distributed_alarm_system_reftext>>, <<vol1_clause_sdpi_a_actor_option_alert_delegation_reftext>>
+|Alert Gateway Service / Clinical Notification System ^(See^ ^Note^ ^1)^|<<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>|<<vol1_clause_sdpi_a_profile>>|None
+|Devices in DIS (pump and ventilator in red boxes)|<<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>|<<vol1_clause_sdpi_a_profile>>|None
+|Devices in DAS (monitor, pump and ventilator in green boxes)|<<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>|<<vol1_clause_sdpi_a_profile>>|<<vol1_clause_sdpi_a_actor_option_distributed_alarm_system_reftext>>, <<vol1_clause_sdpi_a_actor_option_alert_delegation_reftext>>
+4+<| Note 1: The listed systems / services may be implemented jointly. When implemented as distinct entities, communication amongst them is out of scope for this standard.
+|===
+
+* *Technical Pre-Conditions* and *Scenarios*:
+
+[#vol1_table_sdpi_a_spoc_transaction_trigger_event_mapping]
+.SDPi-A - SPoC Transaction Trigger Event Mapping
+[%autowidth]
+[cols="1,1", options="header"]
+|===
+| Use Case Clause | Transaction Trigger Events
+| <<acronym_spoc>> <<clause_use_case_spoc_technical_precondition>> |To enable device association, the SPoC Coordinator / ICU Dashboard / Alert Annunciation Service initiates <<transaction_name_establish_medical_alert_exchange>> (DEV-38) with each device that will participate in the DAS
+|<<clause_use_case_spoc_scenario_7_1,SPoC Scenario 7.1>>|To establish the DAS, the SPoC Coordinator initiates <<transaction_name_establish_distributed_alarm_system>> (DEV-48) with each device
+|<<clause_use_case_spoc_scenario_7_2,SPoC Scenario 7.2>>, <<clause_use_case_spoc_scenario_7_3,SPoC Scenario 7.3>>|To place the PoC in Silent Mode, the SPoC Coordinator initiates <<transaction_name_establish_medical_alert_delegation>> (DEV-41) with each device
+|<<clause_use_case_spoc_scenario_7_4,SPoC Scenario 7.4>>|To terminate the DAS, the SPoC Coordinator initiates <<transaction_name_end_distributed_alarm_system>> (DEV-49)
+|<<clause_use_case_spoc_scenario_7_5,SPoC Scenario 7.5>>|To terminate the DAS, a device initiates <<transaction_name_end_distributed_alarm_system>> (DEV-49)
+|<<clause_use_case_spoc_scenario_7_6,SPoC Scenario 7.6>>|The SPoC Coordinator determines that the message exchange with a device does not meet the requirements specified in <<transaction_name_establish_distributed_alarm_system>> (DEV-48) for successful DAS maintenance. Then, both parties regard the DAS as terminated.
+|<<clause_use_case_spoc_scenario_7_7,SPoC Scenario 7.7>>|A device determines that the message exchange with the SPoC Coordinator does not meet the requirements specified in <<transaction_name_establish_distributed_alarm_system>> (DEV-48) for successful DAS maintenance. Then, both parties regard the DAS as terminated.
+|<<clause_use_case_spoc_scenario_7_8,SPoC Scenario 7.8>>|To enable device association, the Alert Gateway Service / Clinical Notification System initiates <<transaction_name_establish_medical_alert_exchange>> (DEV-38) with each device that will participate in the DIS.
+|<<clause_use_case_spoc_scenario_7_9,SPoC Scenario 7.9>>, <<clause_use_case_spoc_scenario_7_10,SPoC Scenario 7.10>>|To deactivate Silent PoC mode, a device initiates <<transaction_name_end_medical_alert_delegation>> (DEV-42). Upon Silent PoC mode re-activation, the device initiates <<transaction_name_establish_medical_alert_delegation>> (DEV-41).
+|===
+
+sdpi_support_use_case::somds_medical_alert_provider[support=required]
+sdpi_support_use_case::somds_medical_alert_consumer[support=required]
 sdpi_support_use_case::somds_acm_gateway[support=optional]
 
 [#vol1_clause_sdpi_a_ses_considerations]

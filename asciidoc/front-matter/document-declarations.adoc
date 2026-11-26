@@ -87,6 +87,12 @@ NOTE:  Forward Declarations in the following table are being added "on demand" o
 | <<clause_use_case_sicdsp>>
 | Use Case
 
+| [[acronym_spoc,SPoC]] SPoC
+| [[label_use_case_name_spoc,Silent Point-of-Care]] Silent Point-of-Care
+| <<clause_use_case_spoc>>
+| Use Case
+
+
 | [[acronym_stad,STAD]] STAD
 | [[label_use_case_name_stad,Synchronized Time Across Devices]] Synchronized Time Across Devices
 | <<clause_use_case_stad>>
